@@ -1,0 +1,111 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_2",
+    "Outer": "Moth_png",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 1.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 120.0,
+            "Y": 10.0,
+            "Z": 120.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "9228071E4B0F774B3613FAA145CE8578"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Moth_png",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 768.0,
+        "Y": 1024.0
+      },
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D TP_AtlasItems_3",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_AtlasItems_3.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant TranslucentUnlitSpriteMaterial",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup Moth_png:BodySetup_2",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Moth_png.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 61.0,
+          "Y": 60.0,
+          "Z": 0.43603516,
+          "W": 0.5019531
+        },
+        {
+          "X": -59.0,
+          "Y": 60.0,
+          "Z": 0.3774414,
+          "W": 0.5019531
+        },
+        {
+          "X": -59.0,
+          "Y": -60.0,
+          "Z": 0.3774414,
+          "W": 0.5605469
+        },
+        {
+          "X": 61.0,
+          "Y": -60.0,
+          "Z": 0.43603516,
+          "W": 0.5605469
+        },
+        {
+          "X": 61.0,
+          "Y": 60.0,
+          "Z": 0.43603516,
+          "W": 0.5019531
+        },
+        {
+          "X": -59.0,
+          "Y": -60.0,
+          "Z": 0.3774414,
+          "W": 0.5605469
+        }
+      ]
+    }
+  }
+]

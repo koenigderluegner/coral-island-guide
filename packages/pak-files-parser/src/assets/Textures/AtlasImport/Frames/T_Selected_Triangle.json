@@ -1,0 +1,111 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "T_Selected_Triangle",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 256.0,
+            "Y": 10.0,
+            "Z": 256.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "8FF54BD64F5A05451B5334A4AFE7FC96"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "T_Selected_Triangle",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 768.0,
+        "Y": 256.0
+      },
+      "BakedSourceDimension": {
+        "X": 256.0,
+        "Y": 256.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D TP_AtlasSkillTree",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_AtlasSkillTree.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant TranslucentUnlitSpriteMaterial",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup T_Selected_Triangle:BodySetup_1",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/T_Selected_Triangle.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 128.0,
+          "Y": 128.0,
+          "Z": 1.0,
+          "W": 0.25
+        },
+        {
+          "X": -128.0,
+          "Y": 128.0,
+          "Z": 0.75,
+          "W": 0.25
+        },
+        {
+          "X": -128.0,
+          "Y": -128.0,
+          "Z": 0.75,
+          "W": 0.5
+        },
+        {
+          "X": 128.0,
+          "Y": -128.0,
+          "Z": 1.0,
+          "W": 0.5
+        },
+        {
+          "X": 128.0,
+          "Y": 128.0,
+          "Z": 1.0,
+          "W": 0.25
+        },
+        {
+          "X": -128.0,
+          "Y": -128.0,
+          "Z": 0.75,
+          "W": 0.5
+        }
+      ]
+    }
+  }
+]

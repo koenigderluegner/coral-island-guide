@@ -1,0 +1,111 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_2",
+    "Outer": "Dragon_s_Tear_png",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 90.0,
+            "Y": 10.0,
+            "Z": 120.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "4FE3928941F2ED594555D7B8F3E18902"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Dragon_s_Tear_png",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 0.0,
+        "Y": 512.0
+      },
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D TP_AtlasItems_4_old",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_AtlasItems_4_old.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant TranslucentUnlitSpriteMaterial",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup Dragon_s_Tear_png:BodySetup_2",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Dragon_s_Tear_png.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 45.0,
+          "Y": 60.0,
+          "Z": 0.053222656,
+          "W": 0.25195312
+        },
+        {
+          "X": -45.0,
+          "Y": 60.0,
+          "Z": 0.009277344,
+          "W": 0.25195312
+        },
+        {
+          "X": -45.0,
+          "Y": -60.0,
+          "Z": 0.009277344,
+          "W": 0.31054688
+        },
+        {
+          "X": 45.0,
+          "Y": -60.0,
+          "Z": 0.053222656,
+          "W": 0.31054688
+        },
+        {
+          "X": 45.0,
+          "Y": 60.0,
+          "Z": 0.053222656,
+          "W": 0.25195312
+        },
+        {
+          "X": -45.0,
+          "Y": -60.0,
+          "Z": 0.009277344,
+          "W": 0.31054688
+        }
+      ]
+    }
+  }
+]

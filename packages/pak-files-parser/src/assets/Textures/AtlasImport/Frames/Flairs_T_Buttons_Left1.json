@@ -1,0 +1,111 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_2",
+    "Outer": "Flairs_T_Buttons_Left1",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -1.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 20.0,
+            "Y": 10.0,
+            "Z": 38.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "7E949DA04315AA2A1B65C0871FC68B4C"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Flairs_T_Buttons_Left1",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 1.0,
+        "Y": 1.0
+      },
+      "BakedSourceDimension": {
+        "X": 38.0,
+        "Y": 38.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D TP_AtlasUIFlairs",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_AtlasUIFlairs.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant TranslucentUnlitSpriteMaterial",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup Flairs_T_Buttons_Left1:BodySetup_2",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Flairs_T_Buttons_Left1.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 9.0,
+          "Y": 19.0,
+          "Z": 0.11328125,
+          "W": 0.00390625
+        },
+        {
+          "X": -11.0,
+          "Y": 19.0,
+          "Z": 0.03515625,
+          "W": 0.00390625
+        },
+        {
+          "X": -11.0,
+          "Y": -19.0,
+          "Z": 0.03515625,
+          "W": 0.15234375
+        },
+        {
+          "X": 9.0,
+          "Y": -19.0,
+          "Z": 0.11328125,
+          "W": 0.15234375
+        },
+        {
+          "X": 9.0,
+          "Y": 19.0,
+          "Z": 0.11328125,
+          "W": 0.00390625
+        },
+        {
+          "X": -11.0,
+          "Y": -19.0,
+          "Z": 0.03515625,
+          "W": 0.15234375
+        }
+      ]
+    }
+  }
+]

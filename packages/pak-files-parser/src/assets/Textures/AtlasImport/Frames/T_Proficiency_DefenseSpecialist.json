@@ -1,0 +1,111 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "T_Proficiency_DefenseSpecialist",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 110.0,
+            "Y": 10.0,
+            "Z": 105.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "E6CA11BC40DE417DEE72EEAB7D5D4A69"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "T_Proficiency_DefenseSpecialist",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 768.0,
+        "Y": 128.0
+      },
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D TP_AtlasSkillTree",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_AtlasSkillTree.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant TranslucentUnlitSpriteMaterial",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup T_Proficiency_DefenseSpecialist:BodySetup_1",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/T_Proficiency_DefenseSpecialist.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 55.0,
+          "Y": 53.0,
+          "Z": 0.86621094,
+          "W": 0.13574219
+        },
+        {
+          "X": -55.0,
+          "Y": 53.0,
+          "Z": 0.75878906,
+          "W": 0.13574219
+        },
+        {
+          "X": -55.0,
+          "Y": -52.0,
+          "Z": 0.75878906,
+          "W": 0.23828125
+        },
+        {
+          "X": 55.0,
+          "Y": -52.0,
+          "Z": 0.86621094,
+          "W": 0.23828125
+        },
+        {
+          "X": 55.0,
+          "Y": 53.0,
+          "Z": 0.86621094,
+          "W": 0.13574219
+        },
+        {
+          "X": -55.0,
+          "Y": -52.0,
+          "Z": 0.75878906,
+          "W": 0.23828125
+        }
+      ]
+    }
+  }
+]

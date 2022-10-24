@@ -1,0 +1,111 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "Icons_Locked",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 44.0,
+            "Y": 10.0,
+            "Z": 58.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "8AF4B3604F8F7A312E76E09BDD7E24ED"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Icons_Locked",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 311.0,
+        "Y": 132.0
+      },
+      "BakedSourceDimension": {
+        "X": 44.0,
+        "Y": 58.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D T_AtlasIcons",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/T_AtlasIcons.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant TranslucentUnlitSpriteMaterial",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup Icons_Locked:BodySetup_1",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Icons_Locked.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 22.0,
+          "Y": 29.0,
+          "Z": 0.6933594,
+          "W": 0.2578125
+        },
+        {
+          "X": -22.0,
+          "Y": 29.0,
+          "Z": 0.6074219,
+          "W": 0.2578125
+        },
+        {
+          "X": -22.0,
+          "Y": -29.0,
+          "Z": 0.6074219,
+          "W": 0.37109375
+        },
+        {
+          "X": 22.0,
+          "Y": -29.0,
+          "Z": 0.6933594,
+          "W": 0.37109375
+        },
+        {
+          "X": 22.0,
+          "Y": 29.0,
+          "Z": 0.6933594,
+          "W": 0.2578125
+        },
+        {
+          "X": -22.0,
+          "Y": -29.0,
+          "Z": 0.6074219,
+          "W": 0.37109375
+        }
+      ]
+    }
+  }
+]

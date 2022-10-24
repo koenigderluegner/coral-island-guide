@@ -1,0 +1,111 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "T_Social_SilverTongue",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 110.0,
+            "Y": 10.0,
+            "Z": 110.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "7F412AD84C3E9C64E376F5B7BF2CCB04"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "T_Social_SilverTongue",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 512.0,
+        "Y": 512.0
+      },
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D TP_AtlasSkillTree",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_AtlasSkillTree.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant TranslucentUnlitSpriteMaterial",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup T_Social_SilverTongue:BodySetup_1",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/T_Social_SilverTongue.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 55.0,
+          "Y": 55.0,
+          "Z": 0.61621094,
+          "W": 0.50878906
+        },
+        {
+          "X": -55.0,
+          "Y": 55.0,
+          "Z": 0.50878906,
+          "W": 0.50878906
+        },
+        {
+          "X": -55.0,
+          "Y": -55.0,
+          "Z": 0.50878906,
+          "W": 0.61621094
+        },
+        {
+          "X": 55.0,
+          "Y": -55.0,
+          "Z": 0.61621094,
+          "W": 0.61621094
+        },
+        {
+          "X": 55.0,
+          "Y": 55.0,
+          "Z": 0.61621094,
+          "W": 0.50878906
+        },
+        {
+          "X": -55.0,
+          "Y": -55.0,
+          "Z": 0.50878906,
+          "W": 0.61621094
+        }
+      ]
+    }
+  }
+]
