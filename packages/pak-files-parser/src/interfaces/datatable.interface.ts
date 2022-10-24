@@ -1,6 +1,4 @@
-import { InventoryItem } from './inventory-item.interface';
-
-export interface InventoryItemsInterface {
+export interface Datatable<T> {
     "Type": string,
     "Name": string,
     "Properties": {
@@ -10,6 +8,6 @@ export interface InventoryItemsInterface {
         }
     },
     "Rows": {
-        [key: string]: InventoryItem
+        [key: string]: T
     }
 }
