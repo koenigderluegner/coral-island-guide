@@ -1,31 +1,31 @@
 export interface InventoryItemEngineInterface {
-    "usage": "EC_ItemUsageType::None",
-    "toolType": "EC_ToolType::None",
+    "usage": string;
+    "toolType": string;
     "category": {
         "data": {
             "DataTable": {
-                "ObjectName": "DataTable DT_ItemGiftCategory",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/ItemLogic/DT_ItemGiftCategory.0"
+                "ObjectName": string;
+                "ObjectPath": string;
             },
-            "RowName": "Flowers"
+            "RowName": string;
         }
     },
-    "tags": [],
+    "tags": string[],
     "icon": {
-        "ObjectName": "PaperSprite placeholder_icon_png",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/placeholder_icon_png.1"
+        "ObjectName": string;
+        "ObjectPath": string;
     },
     "mesh": {
-        "AssetPathName": "None",
-        "SubPathString": ""
+        "AssetPathName": string;
+        "SubPathString": string;
     },
     "soundEventOnPickup": null,
     "categoryFloatiesDropClass": {
-        "AssetPathName": "/Game/ProjectCoral/Placables/FloatingDrop/BP_FloatingDrop_Greenery.BP_FloatingDrop_Greenery_C",
-        "SubPathString": ""
+        "AssetPathName": string;
+        "SubPathString": string;
     },
     "overrideFloatiesDropClass": {
-        "AssetPathName": "None",
-        "SubPathString": ""
+        "AssetPathName": string;
+        "SubPathString": string;
     }
 }

@@ -2,6 +2,7 @@ import { InventoryItems } from '../types/inventory-items.type';
 import { InventoryItemsEngineInterface } from '../interfaces/inventory-items-engine.interface';
 import { readAsset } from '../util/functions';
 import { InventoryItem } from '../interfaces/inventory-item.interface';
+import { Item } from '@ci/data-types';
 
 export class ItemDbGenerator {
 
@@ -16,7 +17,7 @@ export class ItemDbGenerator {
     }
 
     generate() {
-        const map: Map<string, Record<any, any>> = new Map<string, Record<any, any>>();
+        const map: Map<string, Item> = new Map<string, Item>();
 
         const qualityMap: Map<string, string> = new Map<string, string>([
             ['-a', 'bronze'],
@@ -41,7 +42,7 @@ export class ItemDbGenerator {
 
             }
 
-            const item: Record<any, any> = {
+            const item: Item = {
                 id: itemKey,
                 displayName: dbItem.name.SourceString,
                 price: dbItem.price,
@@ -56,8 +57,8 @@ export class ItemDbGenerator {
 
             let engineData = this.itemEngineDataDb[0]?.Properties.dataMap[itemKey];
             if (engineData) {
-                item['tags'] = engineData.tags ?? [];
-                item['iconMeta'] = engineData.icon ?? null;
+                item.tags = engineData.tags ?? [];
+                item.iconMeta = engineData.icon ?? null;
             }
 
             map.set(itemKey, item);

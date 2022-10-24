@@ -1,13 +1,14 @@
-import { InventoryItems } from './types/inventory-items.type';
-import { generateJson, readAsset } from './util/functions';
+import { generateJson } from './util/functions';
 import { ItemDbGenerator } from './app/item-db.generator';
-
-const recipesDB = readAsset<InventoryItems[]>('DT_CraftingRecipes.json');
+import { CraftingRecipeDbGenerator } from './app/crafting-recipe-db.generator';
 
 
 const itemDbGenerator = new ItemDbGenerator();
 const itemDbMap = itemDbGenerator.generate();
 
+const recipeDbGenerator: CraftingRecipeDbGenerator = new CraftingRecipeDbGenerator(itemDbMap);
+const craftingRecipeDbMap = recipeDbGenerator.generate();
 
 generateJson('items.json', [...itemDbMap.values()]);
+generateJson('crafting-recipes.json', [...craftingRecipeDbMap.values()]);
 

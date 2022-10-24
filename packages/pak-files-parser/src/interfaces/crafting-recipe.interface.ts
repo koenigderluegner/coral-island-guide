@@ -1,4 +1,4 @@
-export interface CraftingRecipe {
+export interface RawCraftingRecipe {
     "readableName": string,
     "item": {
         "data": {
