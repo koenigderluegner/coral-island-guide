@@ -42,6 +42,9 @@ export class ItemDbGenerator {
 
             }
 
+            const iconName = dbItem.name.SourceString + '.png';
+
+
             const item: Item = {
                 id: itemKey,
                 displayName: dbItem.name.SourceString,
@@ -53,6 +56,7 @@ export class ItemDbGenerator {
                 displayKey: dbItem.displayKey,
                 description: dbItem.description.SourceString,
                 qualities: {},
+                iconName,
             };
 
             let engineData = this.itemEngineDataDb[0]?.Properties.dataMap[itemKey];
@@ -60,6 +64,19 @@ export class ItemDbGenerator {
                 item.tags = engineData.tags ?? [];
                 item.iconMeta = engineData.icon ?? null;
             }
+
+            if (dbItem.name.SourceString === '????') {
+
+
+                let sanitizedName = item.iconMeta?.ObjectName.split(' ')[1].replace('_png', '.png');
+
+                if (!sanitizedName?.endsWith('.png')) {
+                    sanitizedName = `${sanitizedName}.png`;
+                }
+
+                item.iconName = sanitizedName;
+            }
+
 
             map.set(itemKey, item);
 

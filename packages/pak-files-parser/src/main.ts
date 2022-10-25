@@ -1,4 +1,4 @@
-import { generateJson } from './util/functions';
+import { createPathIfNotExists, generateJson } from './util/functions';
 import { ItemDbGenerator } from './app/item-db.generator';
 import { CraftingRecipeDbGenerator } from './app/crafting-recipe-db.generator';
 import glob from 'glob';
@@ -6,13 +6,18 @@ import sharp from 'sharp';
 import path from 'path';
 import fs from 'fs';
 import { Item } from '@ci/data-types';
-
+import { BugsAndInsectsDbGenerator } from './app/bugs-and-insects-db.generator';
+import { OceanCritterDbGenerator } from './app/ocean-critter-db.generator';
 
 const itemDbGenerator = new ItemDbGenerator();
 const itemDbMap = itemDbGenerator.generate();
 
-const recipeDbGenerator: CraftingRecipeDbGenerator = new CraftingRecipeDbGenerator(itemDbMap);
-const craftingRecipeDbMap = recipeDbGenerator.generate();
+const generators: Record<string, { generate: () => Map<string, any> }> = {
+    items: itemDbGenerator,
+    'crafting-recipes': new CraftingRecipeDbGenerator(itemDbMap),
+    'bugs-and-insects': new BugsAndInsectsDbGenerator(itemDbMap),
+    'ocean-critters': new OceanCritterDbGenerator(itemDbMap),
+};
 
 const texturePath = path.join(__dirname, 'assets', 'Textures', 'AtlasImport', 'Frames',);
 
@@ -42,9 +47,6 @@ function extractImages(): void {
     const generatedDirPAth = path.join(__dirname, 'generated', 'images', 'icons');
 
 
-    if (!fs.existsSync(generatedDirPAth))
-        fs.mkdirSync(generatedDirPAth, {recursive: true});
-
     glob('*', {cwd: texturePath}, (error: Error | null, filesWithJs: string[]) => {
         if (error) {
             console.log(error);
@@ -56,19 +58,10 @@ function extractImages(): void {
             })).filter((a: Frame) => a.Type === 'PaperSprite')[0];
 
             let find = items.find(item => item.iconMeta?.ObjectName === data.Type + ' ' + data.Name);
-            let sanitizedName = data.Name.replace('_png', '.png');
 
-            if (!sanitizedName.endsWith('.png')) {
-                sanitizedName = `${sanitizedName}.png`;
-            }
-
-            if (find?.displayName === '????') {
-                console.log(find);
-                find.displayName = sanitizedName;
-            }
 
             const imageMetaData = {
-                fileName: find?.displayName ? find.displayName + '.png' : sanitizedName,
+                fileName: find?.iconName,
                 width: data.Properties.BakedSourceDimension.X,
                 height: data.Properties.BakedSourceDimension.Y,
                 top: data.Properties.BakedSourceUV?.Y ?? 0,
@@ -78,11 +71,11 @@ function extractImages(): void {
 
             const image = sharp(path.join(__dirname, 'assets', 'images', imageMetaData.sourceImage + '.png'));
 
-
-            image.extract(imageMetaData).png().toFile(path.join(generatedDirPAth, imageMetaData.fileName)).catch((err: any) => {
-                console.log(imageMetaData, find, data);
-                console.log(err);
-            });
+            if (imageMetaData.fileName)
+                image.extract(imageMetaData).png().toFile(path.join(generatedDirPAth, imageMetaData.fileName)).catch((err: any) => {
+                    console.log(imageMetaData, find, data);
+                    console.log(err);
+                });
 
 
         });
@@ -91,7 +84,33 @@ function extractImages(): void {
     });
 }
 
+// extractImages();
+function copyAssetsForFiles(files: string[]): void {
+    const generatedDirPAth = path.join(__dirname, 'generated', 'images', 'icons');
+    const outputPath = path.join(__dirname, 'output', 'images', 'icons');
+    createPathIfNotExists(outputPath);
+    files.forEach(fileName => {
+        if (fs.existsSync(path.join(generatedDirPAth, fileName)))
+            fs.copyFileSync(path.join(generatedDirPAth, fileName), path.join(outputPath, fileName));
+    });
+}
 
-generateJson('items.json', [...itemDbMap.values()]);
-generateJson('crafting-recipes.json', [...craftingRecipeDbMap.values()]);
+Object.keys(generators).forEach(generatorName => {
+        const generatedMap = generators[generatorName].generate();
 
+        // if (generatorName === 'ocean-critters') {
+        //     [...generatedMap.values()].forEach((critter: Critter) => {
+        //         console.log(`|{{Icon|${critter.item.displayName}|75}}`);
+        //         console.log(`|[[${critter.item.displayName}]]`);
+        //         console.log(`|{{Quality price|${critter.item.sellPrice}|bro=${critter.item.qualities.bronze?.sellPrice}|sil=${critter.item.qualities.silver?.sellPrice}|gol=${critter.item.qualities.gold?.sellPrice}|osm=${critter.item.qualities.osmium?.sellPrice}}}`);
+        //         console.log(`|`);
+        //         console.log(`|-`);
+        //         if (critter.item.iconName)
+        //             copyAssetsForFiles([critter.item.iconName]);
+        //
+        //     });
+        // }
+
+        generateJson(`${generatorName}.json`, [...generatedMap.values()]);
+    }
+);

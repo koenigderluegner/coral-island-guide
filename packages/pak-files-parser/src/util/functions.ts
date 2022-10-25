@@ -18,3 +18,8 @@ export function generateJson(fileName: string, jsonContent: any) {
         flag: 'w+'
     });
 }
+
+export function createPathIfNotExists(path: string): void {
+    if (!fs.existsSync(path))
+        fs.mkdirSync(path, {recursive: true});
+}

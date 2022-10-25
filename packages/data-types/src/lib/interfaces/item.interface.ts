@@ -20,6 +20,7 @@ export interface Item {
         "ObjectName": string;
         "ObjectPath": string;
     };
+    iconName: string | null;
 }
 
 interface QualityPrices {
