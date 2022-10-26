@@ -1,0 +1,11 @@
+<aside>
+    <nav>
+        <ul>
+            <li *ngFor="let child of (viewChildren?.toArray() ?? []); let i = index"
+                class="app-module-sidebar-list-item" [class.active]="i == 0">
+                <app-ui-icon *ngIf="child.uiIcon" [uiIcon]="child.uiIcon" class="!h-8"></app-ui-icon>
+                <ng-template [ngTemplateOutlet]="child.innerTemplate"></ng-template>
+            </li>
+        </ul>
+    </nav>
+</aside>

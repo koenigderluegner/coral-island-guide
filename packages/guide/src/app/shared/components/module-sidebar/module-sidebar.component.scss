@@ -1,0 +1,42 @@
+.app-module-sidebar {
+  height: 100%;
+  width: 400px;
+  @apply block backdrop-blur-xl;
+  background-color: rgba(0, 0, 0, .85);
+  padding: 60px 40px 60px 60px;
+}
+
+.app-module-sidebar-list-item {
+  border-radius: 30px;
+  height: 80px;
+  border: 3px solid #191919;
+  @apply text-lg font-semibold flex justify-center text-neutral-500 hover:text-neutral-300 border-neutral-500 hover:border-neutral-300 items-center gap-x-2;
+
+  &:hover .app-ui-icon {
+    color: #645a54
+  }
+
+  .app-ui-icon {
+    color: #3F3834;
+
+
+  }
+
+  &.active {
+    @apply bg-white text-black border-white;
+
+    .app-ui-icon {
+      color: #E4B07E;
+    }
+
+  }
+
+
+  &:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+}
+
+.app-module-sidebar-list-item-icon {
+
+}

@@ -17,12 +17,13 @@ type NaviLinks = {
 export class HeaderComponent {
 
     @HostBinding('class.app-header') private _setClass = true;
-    readonly UI_ICONS = UiIcon;
 
-    naviLinks: NaviLinks = [{
-        text: 'Journal',
-        uiIcon: UiIcon.JOURNAL,
-        path: 'journal'
-    }];
+    naviLinks: NaviLinks = [
+        {
+            text: 'Journal',
+            uiIcon: UiIcon.JOURNAL,
+            path: 'journal'
+        },
+    ];
 
 }

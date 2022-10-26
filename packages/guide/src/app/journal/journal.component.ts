@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { UiIcon } from '../shared/enums/ui-icon.enum';
 
 @Component({
-  selector: 'app-journal',
-  templateUrl: './journal.component.html',
-  styleUrls: ['./journal.component.css'],
+    selector: 'app-journal',
+    templateUrl: './journal.component.html',
+    styleUrls: ['./journal.component.css'],
 })
-export class JournalComponent implements OnInit {
-  constructor() {
-  }
+export class JournalComponent {
 
-  ngOnInit(): void {
-  }
+    UI_ICONS = UiIcon;
+
 }
