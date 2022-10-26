@@ -1,4 +1,4 @@
-import { createPathIfNotExists, generateJson } from './util/functions';
+import { generateJson } from './util/functions';
 import { ItemDbGenerator } from './app/item-db.generator';
 import { CraftingRecipeDbGenerator } from './app/crafting-recipe-db.generator';
 import glob from 'glob';
@@ -8,6 +8,7 @@ import fs from 'fs';
 import { Item } from '@ci/data-types';
 import { BugsAndInsectsDbGenerator } from './app/bugs-and-insects-db.generator';
 import { OceanCritterDbGenerator } from './app/ocean-critter-db.generator';
+import { FishDbGenerator } from './app/fish-db.generator';
 
 const itemDbGenerator = new ItemDbGenerator();
 const itemDbMap = itemDbGenerator.generate();
@@ -17,6 +18,7 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'crafting-recipes': new CraftingRecipeDbGenerator(itemDbMap),
     'bugs-and-insects': new BugsAndInsectsDbGenerator(itemDbMap),
     'ocean-critters': new OceanCritterDbGenerator(itemDbMap),
+    'fish': new FishDbGenerator(itemDbMap),
 };
 
 const texturePath = path.join(__dirname, 'assets', 'Textures', 'AtlasImport', 'Frames',);
@@ -85,32 +87,10 @@ function extractImages(): void {
 }
 
 // extractImages();
-function copyAssetsForFiles(files: string[]): void {
-    const generatedDirPAth = path.join(__dirname, 'generated', 'images', 'icons');
-    const outputPath = path.join(__dirname, 'output', 'images', 'icons');
-    createPathIfNotExists(outputPath);
-    files.forEach(fileName => {
-        if (fs.existsSync(path.join(generatedDirPAth, fileName)))
-            fs.copyFileSync(path.join(generatedDirPAth, fileName), path.join(outputPath, fileName));
-    });
-}
+
 
 Object.keys(generators).forEach(generatorName => {
         const generatedMap = generators[generatorName].generate();
-
-        // if (generatorName === 'ocean-critters') {
-        //     [...generatedMap.values()].forEach((critter: Critter) => {
-        //         console.log(`|{{Icon|${critter.item.displayName}|75}}`);
-        //         console.log(`|[[${critter.item.displayName}]]`);
-        //         console.log(`|{{Quality price|${critter.item.sellPrice}|bro=${critter.item.qualities.bronze?.sellPrice}|sil=${critter.item.qualities.silver?.sellPrice}|gol=${critter.item.qualities.gold?.sellPrice}|osm=${critter.item.qualities.osmium?.sellPrice}}}`);
-        //         console.log(`|`);
-        //         console.log(`|-`);
-        //         if (critter.item.iconName)
-        //             copyAssetsForFiles([critter.item.iconName]);
-        //
-        //     });
-        // }
-
         generateJson(`${generatorName}.json`, [...generatedMap.values()]);
     }
 );
