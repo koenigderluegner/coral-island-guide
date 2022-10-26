@@ -7,17 +7,25 @@ import { RarityIconComponent } from './components/rarity-icon/rarity-icon.compon
 import { ModuleSidebarComponent } from './components/module-sidebar/module-sidebar.component';
 import { ModuleSidebarItemComponent } from './components/module-sidebar-item/module-sidebar-item.component';
 import { RouterModule } from '@angular/router';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
-  declarations: [
-    UiIconComponent,
-    ItemIconComponent,
-    RarityIconComponent,
-    ModuleSidebarComponent,
-    ModuleSidebarItemComponent,
-  ],
-  imports: [CommonModule, HttpClientModule, RouterModule],
-  exports: [UiIconComponent, ModuleSidebarComponent, ModuleSidebarItemComponent],
+    declarations: [
+        UiIconComponent,
+        ItemIconComponent,
+        RarityIconComponent,
+        ModuleSidebarComponent,
+        ModuleSidebarItemComponent,
+        CardComponent,
+    ],
+    imports: [CommonModule, HttpClientModule, RouterModule],
+    exports: [
+        UiIconComponent,
+        ModuleSidebarComponent,
+        ModuleSidebarItemComponent,
+        ItemIconComponent,
+        CardComponent,
+    ],
 })
 export class SharedModule {
 }

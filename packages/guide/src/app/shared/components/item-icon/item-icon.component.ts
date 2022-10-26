@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Quality } from '@ci/data-types';
 
 @Component({
-  selector: 'app-item-icon',
-  templateUrl: './item-icon.component.html',
-  styleUrls: ['./item-icon.component.scss'],
+    selector: 'app-item-icon',
+    templateUrl: './item-icon.component.html',
+    styleUrls: ['./item-icon.component.scss'],
 })
-export class ItemIconComponent implements OnInit {
-  constructor() {
-  }
+export class ItemIconComponent {
 
-  ngOnInit(): void {
-  }
+    @Input() itemName: string | null = null;
+    @Input() quality?: Quality;
 }

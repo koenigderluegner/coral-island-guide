@@ -1,9 +1,11 @@
-<div class="flex h-full">
+<div class="h-full  pl-[400px]">
     <app-module-sidebar>
-        <app-module-sidebar-item [uiIcon]="UI_ICONS.FARMING">Produce</app-module-sidebar-item>
+        <app-module-sidebar-item routerLink="produce" [uiIcon]="UI_ICONS.FARMING">Produce</app-module-sidebar-item>
         <app-module-sidebar-item routerLink="caught" [uiIcon]="UI_ICONS.CATCHING">Caught</app-module-sidebar-item>
-        <app-module-sidebar-item [uiIcon]="UI_ICONS.ARTISAN">Found</app-module-sidebar-item>
+        <app-module-sidebar-item routerLink="found" [uiIcon]="UI_ICONS.ARTISAN">Found</app-module-sidebar-item>
     </app-module-sidebar>
-    <router-outlet></router-outlet>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
 </div>
 

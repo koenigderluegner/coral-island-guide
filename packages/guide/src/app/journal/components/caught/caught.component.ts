@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { DatabaseService } from '../../../shared/services/database.service';
+import { Critter, Fish } from '@ci/data-types';
 
 @Component({
-  selector: 'app-caught',
-  templateUrl: './caught.component.html',
-  styleUrls: ['./caught.component.scss'],
+    selector: 'app-caught',
+    templateUrl: './caught.component.html',
+    styleUrls: ['./caught.component.scss'],
 })
-export class CaughtComponent implements OnInit {
-  constructor() {
-  }
+export class CaughtComponent {
 
-  ngOnInit(): void {
-  }
+    selectedEntity?: Fish | Critter;
+
+    constructor(public readonly database: DatabaseService) {
+    }
 }

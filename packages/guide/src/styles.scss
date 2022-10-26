@@ -3,17 +3,36 @@
 @tailwind utilities;
 
 @import "styles/tabs";
+@import "styles/grid";
+
+@font-face {
+  font-family: 'QTVagaRound';
+  src: url('assets/fonts/QTVagaRound-Bold.woff2') format('woff2'),
+  url('assets/fonts/QTVagaRound-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'QTVagaRound';
+  src: url('assets/fonts/QTVagaRound.woff2') format('woff2'),
+  url('assets/fonts/QTVagaRound.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 html {
   @apply w-full h-full;
 }
 
 body {
+  font-family: 'QTVagaRound', sans-serif;
   @apply backdrop-blur-xl min-h-full;
-  background: linear-gradient(
-                  rgba(0, 0, 0, 0.5),
-                  rgba(0, 0, 0, 0.5)
-  ), url('https://assets.gamepur.com/wp-content/uploads/2022/10/11101620/Coral-Island.jpg') center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url('https://assets.gamepur.com/wp-content/uploads/2022/10/11101620/Coral-Island.jpg') center no-repeat fixed;
   background-size: cover, cover;
 }
 
