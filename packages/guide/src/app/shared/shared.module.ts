@@ -6,6 +6,7 @@ import { ItemIconComponent } from './components/item-icon/item-icon.component';
 import { RarityIconComponent } from './components/rarity-icon/rarity-icon.component';
 import { ModuleSidebarComponent } from './components/module-sidebar/module-sidebar.component';
 import { ModuleSidebarItemComponent } from './components/module-sidebar-item/module-sidebar-item.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { ModuleSidebarItemComponent } from './components/module-sidebar-item/mod
     ModuleSidebarComponent,
     ModuleSidebarItemComponent,
   ],
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, RouterModule],
   exports: [UiIconComponent, ModuleSidebarComponent, ModuleSidebarItemComponent],
 })
 export class SharedModule {

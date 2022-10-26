@@ -2,4 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-/* You can add global styles to this file, and also import other style files */
+@import "styles/tabs";
+
+html {
+  @apply w-full h-full;
+}
+
+body {
+  @apply backdrop-blur-xl min-h-full;
+  background: linear-gradient(
+                  rgba(0, 0, 0, 0.5),
+                  rgba(0, 0, 0, 0.5)
+  ), url('https://assets.gamepur.com/wp-content/uploads/2022/10/11101620/Coral-Island.jpg') center no-repeat;
+  background-size: cover, cover;
+}
+
+.mat-ripple-element {
+  display: none !important;
+}
