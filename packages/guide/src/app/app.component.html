@@ -1,1 +1,4 @@
-<app-nx-welcome></app-nx-welcome> <router-outlet></router-outlet>
+<ng-container *ngIf="items$ |async">
+    loaded
+    <router-outlet></router-outlet>
+</ng-container>
