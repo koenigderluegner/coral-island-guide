@@ -1,7 +1,6 @@
-import { Critter } from '../../../data-types/src/lib/interfaces/critter.interface';
-import { addSpacesToPascalCase, copyAssetsForFiles, getTruthyValues } from './functions';
-import { Item } from '@ci/data-types';
-import { Fish } from '../../../data-types/src/lib/interfaces/fish.interface';
+import { Critter, Fish, Item } from '@ci/data-types';
+import { addSpacesToPascalCase, getEnumValue, getTruthyValues } from '@ci/util';
+import { copyAssetsForFiles } from './functions';
 
 export function printCritter(critter: Critter[]): void {
 
@@ -21,28 +20,38 @@ export function printCritter(critter: Critter[]): void {
 export function printFish(critter: Fish[]): void {
 
 
-    // {| class="fandom-table sortable" style="text-align:center;"
-    //     |-
-    //         !Name
-    //     !Base Price
-    //     !Location
-    //     !Time
-    //     !Weather
-    //     !Season
-    //     !Rarity
-    //     |-
-
+    console.log(`{| class="fandom-table sortable" style="text-align:center;"`);
+    console.log(`|-`);
+    console.log(`!Name`);
+    console.log(`!Base Price`);
+    console.log(`!Location`);
+    console.log(`!Time`);
+    console.log(`!Weather`);
+    console.log(`!Season`);
+    console.log(`!Rarity`);
+    console.log(`!Size`);
+    console.log(`|-`);
 
     critter.forEach((critter: Fish) => {
 
+        let seasonString = `${getTruthyValues(critter.spawnSeason)}`;
+
+        if (critter.isUsingSpecificDate) {
+            seasonString = critter.dateRangeList.map(range => {
+                return `From ${getEnumValue(range.startsFrom.season)} ${range.startsFrom.day} to ${getEnumValue(range.lastsTill.season)} ${range.lastsTill.day}`;
+            }).join(', ');
+
+        }
+
 
         console.log(`|{{I|${critter.item.displayName}}}`); // Name
-        console.log(`|${critter.item.sellPrice}{{G}}`); // Base Price
+        console.log(`|${critter.item.sellPrice} {{G}}`); // Base Price
         console.log(`|${critter.spawnLocation.map(addSpacesToPascalCase).join(', ')}`); // Locations
         console.log(`|${getTruthyValues(critter.spawnTime)}`); // Time
         console.log(`|${getTruthyValues(critter.spawnWeather)}`); // Weather
-        console.log(`|${getTruthyValues(critter.spawnSeason)}`); // Season
-        console.log(`|${critter.rarity}`); // Rarity
+        console.log(`|${seasonString}`); // Season
+        console.log(`|${addSpacesToPascalCase(critter.rarity)}`); // Rarity
+        console.log(`|${critter.fishSize}`); // Rarity
         console.log(`|-`); // end row
         if (critter.item.iconName)
             copyAssetsForFiles([critter.item.iconName]);

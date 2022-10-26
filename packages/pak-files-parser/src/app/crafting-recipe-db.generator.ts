@@ -1,8 +1,7 @@
 import { readAsset } from '../util/functions';
 import { CraftingRecipes } from '../types/crafting-recipes.type';
 import { RawCraftingRecipe } from '../interfaces/crafting-recipe.interface';
-import { Item } from '@ci/data-types';
-import { CraftingRecipe } from '../../../data-types/src/lib/interfaces/crafting-recipe.interface';
+import { CraftingRecipe, Item } from '@ci/data-types';
 
 export class CraftingRecipeDbGenerator {
 

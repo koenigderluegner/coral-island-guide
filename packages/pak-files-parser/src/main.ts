@@ -1,4 +1,4 @@
-import { generateJson } from './util/functions';
+import { createPathIfNotExists, generateJson } from './util/functions';
 import { ItemDbGenerator } from './app/item-db.generator';
 import { CraftingRecipeDbGenerator } from './app/crafting-recipe-db.generator';
 import glob from 'glob';
@@ -44,53 +44,84 @@ interface Frame {
 
 const items: Item[] = [...itemDbMap.values()];
 
-function extractImages(): void {
+
+async function createImges(fileBasename: string) {
+    const generatedDirPAth = path.join(__dirname, 'generated', 'images', 'icons');
+    const data: Frame = JSON.parse(fs.readFileSync(path.join(texturePath, fileBasename), {
+        encoding: 'utf8',
+        flag: 'r'
+    })).filter((a: Frame) => a.Type === 'PaperSprite')[0];
+
+    let find = items.find(item => item.iconMeta?.ObjectName === data.Type + ' ' + data.Name);
+
+
+    const imageMetaData = {
+        fileName: find?.iconName,
+        width: data.Properties.BakedSourceDimension.X,
+        height: data.Properties.BakedSourceDimension.Y,
+        top: data.Properties.BakedSourceUV?.Y ?? 0,
+        left: data.Properties.BakedSourceUV?.X ?? 0,
+        sourceImage: data.Properties.BakedSourceTexture.ObjectName.split(' ')[1],
+    };
+
+    const image = sharp(path.join(__dirname, 'assets', 'images', imageMetaData.sourceImage + '.png'));
+
+    if (imageMetaData.fileName) {
+        try {
+            await image.extract(imageMetaData).png().toFile(path.join(generatedDirPAth, imageMetaData.fileName));
+        } catch (e) {
+            console.log(e);
+        }
+
+
+    } else {
+        try {
+            await image.extract(imageMetaData).png().toFile(path.join(generatedDirPAth, '0000_' + data.Name.replace('_png', '.png')));
+        } catch (e) {
+            console.log(e);
+        }
+    }
+}
+
+async function extractImages() {
 
     const generatedDirPAth = path.join(__dirname, 'generated', 'images', 'icons');
 
+    createPathIfNotExists(generatedDirPAth);
 
-    glob('*', {cwd: texturePath}, (error: Error | null, filesWithJs: string[]) => {
+
+    glob('*', {cwd: texturePath}, async (error: Error | null, filesWithJs: string[]) => {
         if (error) {
             console.log(error);
         }
-        filesWithJs.forEach(async fileBasename => {
-            const data: Frame = JSON.parse(fs.readFileSync(path.join(texturePath, fileBasename), {
-                encoding: 'utf8',
-                flag: 'r'
-            })).filter((a: Frame) => a.Type === 'PaperSprite')[0];
+        console.log(`extracting ${filesWithJs.length} images`);
+        let counter = 0;
+        for (const fileBasename of filesWithJs) {
 
-            let find = items.find(item => item.iconMeta?.ObjectName === data.Type + ' ' + data.Name);
+            await createImges(fileBasename);
 
 
-            const imageMetaData = {
-                fileName: find?.iconName,
-                width: data.Properties.BakedSourceDimension.X,
-                height: data.Properties.BakedSourceDimension.Y,
-                top: data.Properties.BakedSourceUV?.Y ?? 0,
-                left: data.Properties.BakedSourceUV?.X ?? 0,
-                sourceImage: data.Properties.BakedSourceTexture.ObjectName.split(' ')[1],
-            };
+            counter++;
+            if (counter % 100 === 0) {
+                console.log(`processed ${counter} images...`);
+            }
 
-            const image = sharp(path.join(__dirname, 'assets', 'images', imageMetaData.sourceImage + '.png'));
+        }
 
-            if (imageMetaData.fileName)
-                image.extract(imageMetaData).png().toFile(path.join(generatedDirPAth, imageMetaData.fileName)).catch((err: any) => {
-                    console.log(imageMetaData, find, data);
-                    console.log(err);
-                });
-
-
-        });
-
+        console.log('extracting done');
 
     });
 }
 
-// extractImages();
+extractImages();
 
 
 Object.keys(generators).forEach(generatorName => {
         const generatedMap = generators[generatorName].generate();
+
+        // if(generatorName === 'fish')
+        //     printFish([...generatedMap.values()])
+
         generateJson(`${generatorName}.json`, [...generatedMap.values()]);
     }
 );

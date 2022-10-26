@@ -1,8 +1,8 @@
-import { getEnumValue, readAsset } from '../util/functions';
-import { Item } from '@ci/data-types';
+import { addSpacesToPascalCase, getEnumValue, } from '@ci/util';
+import { Fish, Item } from '@ci/data-types';
 import { Fishs } from '../types/fishs.type';
 import { RawFish } from '../interfaces/raw-fish.interface';
-import { Fish } from '../../../data-types/src/lib/interfaces/fish.interface';
+import { readAsset } from '../util/functions';
 
 export class FishDbGenerator {
 
@@ -36,7 +36,7 @@ export class FishDbGenerator {
                         canBeCatchOnPond: dbItem.SpawnArea.CanBeCatchOnPond,
                         canBeCatchOnRiver: dbItem.SpawnArea.CanBeCatchOnRiver,
                     },
-                    spawnLocation: dbItem.SpawnLocation.map(getEnumValue),
+                    spawnLocation: dbItem.SpawnLocation.map(getEnumValue).map(addSpacesToPascalCase),
                     spawnTime: {
                         morning: dbItem.SpawnTime.Morning,
                         afternoon: dbItem.SpawnTime.Afternoon,
@@ -69,12 +69,12 @@ export class FishDbGenerator {
                             random: dr.random,
                             lastsTill: {
                                 day: dr.lastsTill.day,
-                                season: dr.lastsTill.season,
+                                season: getEnumValue(dr.lastsTill.season),
                                 year: dr.lastsTill.year,
                             },
                             startsFrom: {
                                 day: dr.startsFrom.day,
-                                season: dr.startsFrom.season,
+                                season: getEnumValue(dr.startsFrom.season),
                                 year: dr.startsFrom.year,
                             },
                         };

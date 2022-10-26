@@ -1,0 +1,12 @@
+<app-item-icon [itemName]="item?.iconName" [quality]="QUALITY.BASE"></app-item-icon>
+<app-item-icon [itemName]="item?.iconName" [quality]="QUALITY.BRONZE"></app-item-icon>
+<app-item-icon [itemName]="item?.iconName" [quality]="QUALITY.SILVER"></app-item-icon>
+<app-item-icon [itemName]="item?.iconName" [quality]="QUALITY.GOLD"></app-item-icon>
+<app-item-icon [itemName]="item?.iconName" [quality]="QUALITY.OSMIUM"></app-item-icon>
+<ng-container *ngIf="includePrices && item">
+    <app-money [amount]="item.sellPrice"></app-money>
+    <app-money [amount]="item.qualities?.bronze?.sellPrice"></app-money>
+    <app-money [amount]="item.qualities?.silver?.sellPrice"></app-money>
+    <app-money [amount]="item.qualities?.gold?.sellPrice"></app-money>
+    <app-money [amount]="item.qualities?.osmium?.sellPrice"></app-money>
+</ng-container>

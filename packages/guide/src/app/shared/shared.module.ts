@@ -8,6 +8,9 @@ import { ModuleSidebarComponent } from './components/module-sidebar/module-sideb
 import { ModuleSidebarItemComponent } from './components/module-sidebar-item/module-sidebar-item.component';
 import { RouterModule } from '@angular/router';
 import { CardComponent } from './components/card/card.component';
+import { QualityGridComponent } from './components/quality-grid/quality-grid.component';
+import { MoneyComponent } from './components/money/money.component';
+import { BaseItemCardComponent } from './components/base-item-card/base-item-card.component';
 
 @NgModule({
     declarations: [
@@ -17,6 +20,9 @@ import { CardComponent } from './components/card/card.component';
         ModuleSidebarComponent,
         ModuleSidebarItemComponent,
         CardComponent,
+        QualityGridComponent,
+        MoneyComponent,
+        BaseItemCardComponent,
     ],
     imports: [CommonModule, HttpClientModule, RouterModule],
     exports: [
@@ -25,6 +31,8 @@ import { CardComponent } from './components/card/card.component';
         ModuleSidebarItemComponent,
         ItemIconComponent,
         CardComponent,
+        QualityGridComponent,
+        BaseItemCardComponent,
     ],
 })
 export class SharedModule {

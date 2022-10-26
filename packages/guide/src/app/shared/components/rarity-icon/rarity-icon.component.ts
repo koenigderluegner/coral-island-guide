@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Quality } from '@ci/data-types';
 
 @Component({
-  selector: 'app-rarity-icon',
-  templateUrl: './rarity-icon.component.html',
-  styleUrls: ['./rarity-icon.component.scss'],
+    selector: 'app-rarity-icon',
+    templateUrl: './rarity-icon.component.html',
+    styleUrls: ['./rarity-icon.component.scss'],
 })
-export class RarityIconComponent implements OnInit {
-  constructor() {
-  }
+// TODO rename to quality
+export class RarityIconComponent {
 
-  ngOnInit(): void {
-  }
+    QUALITY = Quality;
+    @Input() quality?: Quality;
 }

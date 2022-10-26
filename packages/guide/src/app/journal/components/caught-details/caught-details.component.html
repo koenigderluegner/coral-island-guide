@@ -1,3 +1,10 @@
-<app-card>
-    {{fish?.item?.displayName}}
-</app-card>
+<app-base-item-card *ngIf="critter" [item]="critter.item">
+    <div>Rarity: <span class="text-black">{{critter.rarity}}</span></div>
+    <ng-container *ngIf="isFish(critter)">
+        <div>Size: <span class="text-black">{{critter.fishSize}}</span></div>
+        <div>
+            Season: <span
+                class="text-black">{{!critter.isUsingSpecificDate ? getTruthyValues(critter.spawnSeason) : dateRangesToString(critter.dateRangeList)}}</span>
+        </div>
+    </ng-container>
+</app-base-item-card>

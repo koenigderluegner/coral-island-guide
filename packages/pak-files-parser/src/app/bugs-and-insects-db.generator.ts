@@ -1,8 +1,8 @@
 import { readAsset } from '../util/functions';
-import { Item } from '@ci/data-types';
+import { Critter, Item } from '@ci/data-types';
 import { BugsAndInsects } from '../types/bugs-and-insects.type';
-import { Critter } from '../../../data-types/src/lib/interfaces/critter.interface';
 import { BugAndInsect } from '../interfaces/bug-and-insect.interface';
+import { getEnumValue } from '@ci/util';
 
 export class BugsAndInsectsDbGenerator {
 
@@ -26,7 +26,7 @@ export class BugsAndInsectsDbGenerator {
             if (item) {
                 const insect: Critter = {
                     key: itemKey,
-                    rarity: dbItem.rarity,
+                    rarity: getEnumValue(dbItem.rarity),
                     minCaughtSize: dbItem.minCaughtSize,
                     maxCaughtSize: dbItem.maxCaughtSize,
                     bugsBehaviourPreset: dbItem.bugsBehaviourPreset.RowName,
