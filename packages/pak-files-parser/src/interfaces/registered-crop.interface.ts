@@ -40,6 +40,7 @@ export interface RegisteredCrop {
             }
         ]
     },
+    "stages": { length: number; }[]
     "overrideExperience": false,
     "overrideExperienceOnHarvest": 0,
     "readableName": "Potato seeds",

@@ -8,13 +8,13 @@
         </div>
 
         <div>Season: <span class="text-black">{{(crop.growableSeason.join(', '))}}</span></div>
+        <div>Time to mature: <span class="text-black">{{crop.growTime}} days</span></div>
         <div *ngIf="crop.isRegrowable">Regrows: <span class="text-black">{{[1, crop.regrowableLength] | max}}
             days</span></div>
-        <div>Is scythe required: <span class="text-black">{{crop.isScytheRequired ? 'Yes' : 'No'}}</span></div>
-        <div>Is trellis crop: <span class="text-black">{{crop.isTrellisCrop ? 'Yes' : 'No'}}</span></div>
-        <div>Can combine: <span class="text-black">{{crop.canCombine ? 'Yes' : 'No'}}
-            <ng-container *ngIf="crop.canCombine"> ({{crop.chanceToCombine.chance}}%)</ng-container></span></div>
+        <div *ngIf="crop.canCombine">Can combine: <span class="text-black">{{crop.chanceToCombine.chance}}%</span></div>
         <div>Size (WxL): <span class="text-black">{{crop.size.width}}x{{crop.size.length}}</span></div>
+        <div *ngIf="crop.isScytheRequired" class="text-black">Scythe required</div>
+        <div *ngIf="crop.isTrellisCrop" class="text-black">Is trellis crop</div>
     </ng-container>
 
 </app-base-item-card>

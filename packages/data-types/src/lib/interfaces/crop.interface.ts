@@ -28,6 +28,7 @@ export interface Crop {
     },
     canCombine: boolean,
     chanceToCombine: { chance: number }
+    growTime: number;
     isRegrowable: boolean,
     regrowableLength: number
     overrideExperience: boolean,
