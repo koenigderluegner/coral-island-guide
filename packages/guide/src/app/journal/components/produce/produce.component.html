@@ -1,0 +1,27 @@
+<div class="flex">
+    <mat-tab-group class="px-[50px] block" animationDuration="0">
+        <mat-tab label="Crops">
+            <div *ngIf="(crops$ |async) as fish" class="grid gap-4 grid-cols-8">
+                <app-item-icon *ngFor="let fishEntry of fish" [itemName]="fishEntry.iconName"
+                               class="icon-grid-item" (click)="selectedEntity = fishEntry"></app-item-icon>
+            </div>
+
+        </mat-tab>
+        <mat-tab label="Animal Products">
+            <div *ngIf="(animalProducts$ |async) as fish" class="grid gap-4 grid-cols-8">
+                <app-item-icon *ngFor="let fishEntry of fish" [itemName]="fishEntry.iconName"
+                               class="icon-grid-item" (click)="selectedEntity = fishEntry"></app-item-icon>
+            </div>
+        </mat-tab>
+        <mat-tab label="Artisan Products">
+            <div *ngIf="(artisanProducts$ |async) as fish" class="grid gap-4 grid-cols-8">
+                <app-item-icon *ngFor="let fishEntry of fish" [itemName]="fishEntry.iconName"
+                               class="icon-grid-item" (click)="selectedEntity = fishEntry"></app-item-icon>
+            </div>
+        </mat-tab>
+
+    </mat-tab-group>
+    <div class="flex-shrink-0 w-[600px] px-10">
+        <app-produce-details class="sticky top-0" *ngIf="selectedEntity" [item]="selectedEntity"></app-produce-details>
+    </div>
+</div>
