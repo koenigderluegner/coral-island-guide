@@ -14,13 +14,9 @@ export class AppComponent {
     items$: Observable<Item[]>;
 
     constructor(private readonly _http: HttpClient,
-                private d: DatabaseService
+                private databaseService: DatabaseService,
     ) {
-
-        this.items$ = this.d.fetchItems$();
-
-
+        this.items$ = this.databaseService.fetchItems$();
     }
-
 
 }
