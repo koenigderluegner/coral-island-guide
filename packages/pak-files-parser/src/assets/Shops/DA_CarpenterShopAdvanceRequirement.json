@@ -1,0 +1,32 @@
+[
+  {
+    "Type": "C_GameplayRequirementsConfig",
+    "Name": "DA_CarpenterShopAdvanceRequirement",
+    "Properties": {
+      "map": {
+        "Stable": {
+          "type": "EC_RequirementCollectionType::And",
+          "requirements": [
+            {
+              "ObjectName": "C_ItemInInventoryRequirement DA_CarpenterShopAdvanceRequirement:C_ItemInInventoryRequirement_0",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_CarpenterShopAdvanceRequirement.1"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Type": "C_ItemInInventoryRequirement",
+    "Name": "C_ItemInInventoryRequirement_0",
+    "Outer": "DA_CarpenterShopAdvanceRequirement",
+    "Properties": {
+      "inventoryItem": {
+        "data": {
+          "RowName": "item_110011"
+        },
+        "itemID": "item_110011"
+      }
+    }
+  }
+]

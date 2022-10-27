@@ -9,7 +9,7 @@ export class JournalOrderDbGenerator {
 
     constructor(journalPath: string) {
 
-        // ProjectCoral Content Project Coral Core Data Crafting
+        // ProjectCoral Content Project Coral Data Journal
         this.recipesDB = readAsset<JournalOrders[]>(`Journal/${journalPath}`);
 
     }

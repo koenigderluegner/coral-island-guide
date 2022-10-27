@@ -1,0 +1,54 @@
+[
+  {
+    "Type": "C_OpeningHoursConfig",
+    "Name": "rajCoffeeHours",
+    "Properties": {
+      "coreOpeningHoursConfig": {
+        "coreOpeningDays": [
+          "EC_DayOfTheWeek::Monday",
+          "EC_DayOfTheWeek::Tuesday",
+          "EC_DayOfTheWeek::Wednesday",
+          "EC_DayOfTheWeek::Thursday",
+          "EC_DayOfTheWeek::Friday",
+          "EC_DayOfTheWeek::Saturday",
+          "EC_DayOfTheWeek::Sunday"
+        ],
+        "coreOpeningHours": {
+          "fromTime": {
+            "hours": 8
+          },
+          "toTime": {
+            "hours": 17
+          }
+        },
+        "dayOfTheWeekSpecificOpeningHours": {
+          "EC_DayOfTheWeek::Saturday": {
+            "fromTime": {
+              "hours": 8,
+              "minutes": 0
+            },
+            "toTime": {
+              "hours": 13,
+              "minutes": 0
+            }
+          },
+          "EC_DayOfTheWeek::Sunday": {
+            "fromTime": {
+              "hours": 8,
+              "minutes": 0
+            },
+            "toTime": {
+              "hours": 13,
+              "minutes": 0
+            }
+          }
+        }
+      },
+      "closeWhenWeather": [
+        "EC_Weather::Rain",
+        "EC_Weather::Storm",
+        "EC_Weather::Blizzard"
+      ]
+    }
+  }
+]
