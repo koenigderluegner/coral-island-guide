@@ -10,6 +10,7 @@ import { BugsAndInsectsDbGenerator } from './app/bugs-and-insects-db.generator';
 import { OceanCritterDbGenerator } from './app/ocean-critter-db.generator';
 import { FishDbGenerator } from './app/fish-db.generator';
 import { JournalOrderDbGenerator } from './app/journal-order-db.generator';
+import { CropsDbGenerator } from './app/crops-db.generator';
 
 const itemDbGenerator = new ItemDbGenerator();
 const itemDbMap = itemDbGenerator.generate();
@@ -20,6 +21,7 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'bugs-and-insects': new BugsAndInsectsDbGenerator(itemDbMap),
     'ocean-critters': new OceanCritterDbGenerator(itemDbMap),
     'fish': new FishDbGenerator(itemDbMap),
+    'crops': new CropsDbGenerator(itemDbMap),
 
     'journal-fish': new JournalOrderDbGenerator('Caught/DT_JournalFish.json'),
     'journal-insects': new JournalOrderDbGenerator('Caught/DT_JournalInsects.json'),
@@ -34,29 +36,27 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'journal-animal-products': new JournalOrderDbGenerator('Produce/DT_JournalAnimalProducts.json'),
     'journal-artisan-products': new JournalOrderDbGenerator('Produce/DT_JournalArtisanProducts.json'),
     'journal-crops': new JournalOrderDbGenerator('Produce/DT_JournalCrops.json'),
-
-
 };
 
 const texturePath = path.join(__dirname, 'assets', 'Textures', 'AtlasImport', 'Frames',);
 
 interface Frame {
-    "Type": "PaperSprite",
-    "Name": "Stone_Portrait_png1",
+    "Type": string;
+    "Name": string;
     "Properties": {
         "BakedSourceUV": {
-            "X": 3328.0,
-            "Y": 2325.0
+            "X": number
+            "Y": number
         },
         "BakedSourceDimension": {
-            "X": 128.0,
-            "Y": 128.0
+            "X": number
+            "Y": number
         },
         "BakedSourceTexture": {
-            "ObjectName": "Texture2D T_AtlasItems_2",
-            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/T_AtlasItems_2.0"
+            "ObjectName": string
+            "ObjectPath": string
         },
-    }
+    };
 }
 
 const items: Item[] = [...itemDbMap.values()];
@@ -69,11 +69,14 @@ async function createImges(fileBasename: string) {
         flag: 'r'
     })).filter((a: Frame) => a.Type === 'PaperSprite')[0];
 
-    let find = items.find(item => item.iconMeta?.ObjectName === data.Type + ' ' + data.Name);
+    let find = items.filter(item => item.iconMeta?.ObjectName === data.Type + ' ' + data.Name);
 
+    if (find.length !== 1) {
+        console.log(`found ${find.length} for ${data.Name}`, find.map(item => item.displayName));
+    }
 
     const imageMetaData = {
-        fileName: find?.iconName,
+        fileName: find[0]?.iconName,
         width: data.Properties.BakedSourceDimension.X,
         height: data.Properties.BakedSourceDimension.Y,
         top: data.Properties.BakedSourceUV?.Y ?? 0,

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page.component';
 import { Item } from '@ci/data-types';
-import { Observable } from 'rxjs';
+import { Observable, switchMap } from 'rxjs';
 
 @Component({
     selector: 'app-produce',
@@ -24,9 +24,12 @@ export class ProduceComponent extends BaseJournalPageComponent<Item> {
             this._database.fetchJournalOrder$('journal-artisan-products'),
             this._database.fetchItems$()
         );
-        this.crops$ = this.getFilteredJournalData(
-            this._database.fetchJournalOrder$('journal-crops'),
-            this._database.fetchItems$()
+        this.crops$ = this._database.fetchCrops$().pipe(
+            switchMap(() =>
+                this.getFilteredJournalData(
+                    this._database.fetchJournalOrder$('journal-crops'),
+                    this._database.fetchItems$()
+                ))
         );
 
     }

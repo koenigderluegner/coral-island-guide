@@ -1,1 +1,20 @@
-<app-base-item-card *ngIf="item" [item]="item"></app-base-item-card>
+<app-base-item-card *ngIf="item" [item]="item">
+
+    <ng-container *ngIf="crop$ | async as crop">
+        <div class="flex items-center mb-2">
+            <app-item-icon class="h-10 w-10 mr-1" [itemName]="crop.item.iconName"></app-item-icon>
+            <span class="text-black mr-3">{{crop.readableName}}</span>
+            <app-money [amount]="crop.item.price"></app-money>
+        </div>
+
+        <div>Season: <span class="text-black">{{(crop.growableSeason.join(', '))}}</span></div>
+        <div *ngIf="crop.isRegrowable">Regrows: <span class="text-black">{{[1, crop.regrowableLength] | max}}
+            days</span></div>
+        <div>Is scythe required: <span class="text-black">{{crop.isScytheRequired ? 'Yes' : 'No'}}</span></div>
+        <div>Is trellis crop: <span class="text-black">{{crop.isTrellisCrop ? 'Yes' : 'No'}}</span></div>
+        <div>Can combine: <span class="text-black">{{crop.canCombine ? 'Yes' : 'No'}}
+            <ng-container *ngIf="crop.canCombine"> ({{crop.chanceToCombine.chance}}%)</ng-container></span></div>
+        <div>Size (WxL): <span class="text-black">{{crop.size.width}}x{{crop.size.length}}</span></div>
+    </ng-container>
+
+</app-base-item-card>

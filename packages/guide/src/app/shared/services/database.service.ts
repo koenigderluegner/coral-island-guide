@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, shareReplay } from 'rxjs';
-import { CraftingRecipe, Critter, Fish, Item } from '@ci/data-types';
+import { Observable, shareReplay, tap } from 'rxjs';
+import { CraftingRecipe, Critter, Crop, Fish, Item } from '@ci/data-types';
 import { JournalOrder } from '../../../../../data-types/src/lib/interfaces/journal-order.interface';
 import { AvailableJournalOrders } from '../types/available-journal-orders.type';
 
@@ -12,12 +12,14 @@ export class DatabaseService {
 
     private readonly _BASE_PATH = 'assets/database';
     private _ITEMS$?: Observable<Item[]>;
+    private _ITEMS: Item[] = [];
     private _FISH$?: Observable<Fish[]>;
     private _CRAFTING_RECIPE$?: Observable<CraftingRecipe[]>;
     private _OCEAN_CRITTERS?: Observable<Critter[]>;
     private _BUGS_AND_INSECTS?: Observable<Critter[]>;
 
     private _JOURNAL_ORDERS: Map<string, Observable<JournalOrder[]>> = new Map<string, Observable<JournalOrder[]>>();
+    private _CROPS$?: Observable<Crop[]>;
 
     constructor(private readonly _http: HttpClient) {
     }
@@ -27,6 +29,7 @@ export class DatabaseService {
         if (!this._ITEMS$) {
             this._ITEMS$ = this._http.get<Item[]>(`${this._BASE_PATH}/items.json`)
                 .pipe(
+                    tap(items => this._ITEMS = items),
                     shareReplay(1)
                 );
         }
@@ -71,6 +74,16 @@ export class DatabaseService {
                 );
         }
         return this._BUGS_AND_INSECTS;
+    }
+
+    fetchCrops$(): Observable<Crop[]> {
+        if (!this._CROPS$) {
+            this._CROPS$ = this._http.get<Crop[]>(`${this._BASE_PATH}/crops.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+        return this._CROPS$;
     }
 
     fetchJournalOrder$(listName: AvailableJournalOrders): Observable<JournalOrder[]> {
