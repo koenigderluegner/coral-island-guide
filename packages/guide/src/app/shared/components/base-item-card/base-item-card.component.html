@@ -7,7 +7,16 @@
 
     <ng-content></ng-content>
 
-    <app-quality-grid [item]="item" includePrices class="mt-6"></app-quality-grid>
+    <app-quality-grid *ngIf="(item.qualities | keyvalue).length; else basePrice" [item]="item" includePrices
+                      class="mt-6"></app-quality-grid>
 
 
 </app-card>
+
+<ng-template #basePrice>
+    <div class="flex">
+        Sells for:
+        <app-money class="ml-2 text-black" [amount]="item?.sellPrice"></app-money>
+    </div>
+
+</ng-template>
