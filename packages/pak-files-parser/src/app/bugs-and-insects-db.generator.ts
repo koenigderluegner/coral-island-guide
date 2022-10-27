@@ -2,7 +2,7 @@ import { readAsset } from '../util/functions';
 import { Critter, Item } from '@ci/data-types';
 import { BugsAndInsects } from '../types/bugs-and-insects.type';
 import { BugAndInsect } from '../interfaces/bug-and-insect.interface';
-import { getEnumValue } from '@ci/util';
+import { addSpacesToPascalCase, getEnumValue } from '@ci/util';
 
 export class BugsAndInsectsDbGenerator {
 
@@ -26,7 +26,7 @@ export class BugsAndInsectsDbGenerator {
             if (item) {
                 const insect: Critter = {
                     key: itemKey,
-                    rarity: getEnumValue(dbItem.rarity),
+                    rarity: addSpacesToPascalCase(getEnumValue(dbItem.rarity)),
                     minCaughtSize: dbItem.minCaughtSize,
                     maxCaughtSize: dbItem.maxCaughtSize,
                     bugsBehaviourPreset: dbItem.bugsBehaviourPreset.RowName,

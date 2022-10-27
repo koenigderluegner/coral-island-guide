@@ -9,6 +9,7 @@ import { Item } from '@ci/data-types';
 import { BugsAndInsectsDbGenerator } from './app/bugs-and-insects-db.generator';
 import { OceanCritterDbGenerator } from './app/ocean-critter-db.generator';
 import { FishDbGenerator } from './app/fish-db.generator';
+import { JournalOrderDbGenerator } from './app/journal-order-db.generator';
 
 const itemDbGenerator = new ItemDbGenerator();
 const itemDbMap = itemDbGenerator.generate();
@@ -19,6 +20,22 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'bugs-and-insects': new BugsAndInsectsDbGenerator(itemDbMap),
     'ocean-critters': new OceanCritterDbGenerator(itemDbMap),
     'fish': new FishDbGenerator(itemDbMap),
+
+    'journal-fish': new JournalOrderDbGenerator('Caught/DT_JournalFish.json'),
+    'journal-insects': new JournalOrderDbGenerator('Caught/DT_JournalInsects.json'),
+    'journal-sea-critters': new JournalOrderDbGenerator('Caught/DT_JournalSeaCritters.json'),
+
+    'journal-artifacts': new JournalOrderDbGenerator('Found/DT_JournalArtifact.json'),
+    'journal-fossils': new JournalOrderDbGenerator('Found/DT_JournalFossils.json'),
+    'journal-gems': new JournalOrderDbGenerator('Found/DT_JournalGems.json'),
+    'journal-scavangable': new JournalOrderDbGenerator('Found/DT_JournalScavangable.json'),
+
+
+    'journal-animal-products': new JournalOrderDbGenerator('Produce/DT_JournalAnimalProducts.json'),
+    'journal-artisan-products': new JournalOrderDbGenerator('Produce/DT_JournalArtisanProducts.json'),
+    'journal-crops': new JournalOrderDbGenerator('Produce/DT_JournalCrops.json'),
+
+
 };
 
 const texturePath = path.join(__dirname, 'assets', 'Textures', 'AtlasImport', 'Frames',);

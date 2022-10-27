@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, shareReplay } from 'rxjs';
 import { CraftingRecipe, Critter, Fish, Item } from '@ci/data-types';
+import { JournalOrder } from '../../../../../data-types/src/lib/interfaces/journal-order.interface';
+import { AvailableJournalOrders } from '../types/available-journal-orders.type';
 
 @Injectable({
     providedIn: 'root'
@@ -14,6 +16,8 @@ export class DatabaseService {
     private _CRAFTING_RECIPE$?: Observable<CraftingRecipe[]>;
     private _OCEAN_CRITTERS?: Observable<Critter[]>;
     private _BUGS_AND_INSECTS?: Observable<Critter[]>;
+
+    private _JOURNAL_ORDERS: Map<string, Observable<JournalOrder[]>> = new Map<string, Observable<JournalOrder[]>>();
 
     constructor(private readonly _http: HttpClient) {
     }
@@ -67,6 +71,17 @@ export class DatabaseService {
                 );
         }
         return this._BUGS_AND_INSECTS;
+    }
+
+    fetchJournalOrder$(listName: AvailableJournalOrders): Observable<JournalOrder[]> {
+        if (!this._JOURNAL_ORDERS.get(listName)) {
+            this._JOURNAL_ORDERS.set(listName, this._http.get<JournalOrder[]>(`${this._BASE_PATH}/${listName}.json`)
+                .pipe(
+                    shareReplay(1)
+                )
+            );
+        }
+        return this._JOURNAL_ORDERS.get(listName)!;
     }
 
 

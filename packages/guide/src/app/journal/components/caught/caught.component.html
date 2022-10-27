@@ -1,20 +1,20 @@
 <div class="flex">
     <mat-tab-group class="px-[50px] block" animationDuration="0">
         <mat-tab label="Fish">
-            <div *ngIf="(database.fetchFish$() |async) as fish" class="grid gap-4 grid-cols-8">
+            <div *ngIf="(fish$ |async) as fish" class="grid gap-4 grid-cols-8">
                 <app-item-icon *ngFor="let fishEntry of fish" [itemName]="fishEntry.item.iconName"
                                class="icon-grid-item" (click)="selectedEntity = fishEntry"></app-item-icon>
             </div>
 
         </mat-tab>
         <mat-tab label="Insects">
-            <div *ngIf="(database.fetchBugsAndInsects$() |async) as fish" class="grid gap-4 grid-cols-8">
+            <div *ngIf="(insects$ |async) as fish" class="grid gap-4 grid-cols-8">
                 <app-item-icon *ngFor="let fishEntry of fish" [itemName]="fishEntry.item.iconName"
                                class="icon-grid-item" (click)="selectedEntity = fishEntry"></app-item-icon>
             </div>
         </mat-tab>
         <mat-tab label="Sea Critters">
-            <div *ngIf="(database.fetchOceanCritters$() |async) as fish" class="grid gap-4 grid-cols-8">
+            <div *ngIf="(seaCritters$ |async) as fish" class="grid gap-4 grid-cols-8">
                 <app-item-icon *ngFor="let fishEntry of fish" [itemName]="fishEntry.item.iconName"
                                class="icon-grid-item" (click)="selectedEntity = fishEntry"></app-item-icon>
             </div>
