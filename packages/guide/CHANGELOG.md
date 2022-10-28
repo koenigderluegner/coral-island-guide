@@ -1,5 +1,11 @@
 ## Changelog
 
+### TBD
+
+#### Changed
+
+- Fixed card icon being stretched under special circumstances
+
 ### 0.1.2 - 2022-10-28
 
 #### Changed
