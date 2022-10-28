@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, shareReplay, tap } from 'rxjs';
-import { CraftingRecipe, Critter, Crop, Fish, Item } from '@ci/data-types';
-import { JournalOrder } from '../../../../../data-types/src/lib/interfaces/journal-order.interface';
+import { CraftingRecipe, Critter, Crop, Fish, Item, JournalOrder, TagBasedItem } from '@ci/data-types';
 import { AvailableJournalOrders } from '../types/available-journal-orders.type';
 
 @Injectable({
@@ -20,6 +19,7 @@ export class DatabaseService {
 
     private _JOURNAL_ORDERS: Map<string, Observable<JournalOrder[]>> = new Map<string, Observable<JournalOrder[]>>();
     private _CROPS$?: Observable<Crop[]>;
+    private _TAG_BASED_ITEMS$?: Observable<TagBasedItem[]>;
 
     constructor(private readonly _http: HttpClient) {
     }
@@ -54,6 +54,16 @@ export class DatabaseService {
                 );
         }
         return this._CRAFTING_RECIPE$;
+    }
+
+    fetchTagBasedItems$(): Observable<TagBasedItem[]> {
+        if (!this._TAG_BASED_ITEMS$) {
+            this._TAG_BASED_ITEMS$ = this._http.get<TagBasedItem[]>(`${this._BASE_PATH}/tag-based-items.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+        return this._TAG_BASED_ITEMS$;
     }
 
     fetchOceanCritters$(): Observable<Critter[]> {

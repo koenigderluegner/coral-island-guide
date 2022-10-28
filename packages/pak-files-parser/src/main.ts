@@ -10,6 +10,7 @@ import { OceanCritterDbGenerator } from './app/ocean-critter-db.generator';
 import { FishDbGenerator } from './app/fish-db.generator';
 import { JournalOrderDbGenerator } from './app/journal-order-db.generator';
 import { CropsDbGenerator } from './app/crops-db.generator';
+import { TagBasedItemGenericDbGenerator } from './app/tag-based-item-generic-db.generator';
 
 const itemDbGenerator = new ItemDbGenerator();
 const itemDbMap = itemDbGenerator.generate();
@@ -21,6 +22,7 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'ocean-critters': new OceanCritterDbGenerator(itemDbMap),
     'fish': new FishDbGenerator(itemDbMap),
     'crops': new CropsDbGenerator(itemDbMap),
+    'tag-based-items': new TagBasedItemGenericDbGenerator(itemDbMap),
 
     'journal-fish': new JournalOrderDbGenerator('Caught/DT_JournalFish.json'),
     'journal-insects': new JournalOrderDbGenerator('Caught/DT_JournalInsects.json'),
@@ -37,6 +39,8 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'journal-crops': new JournalOrderDbGenerator('Produce/DT_JournalCrops.json'),
 };
 
+
+// manually added generic seed icon from PC Content PC Core Data TemporaryIcon
 const texturePath = path.join(__dirname, 'assets', 'Textures', 'AtlasImport', 'Frames',);
 
 interface Frame {
@@ -59,7 +63,7 @@ interface Frame {
 }
 
 async function createImges(fileBasename: string, skipIfExists = true) {
-    const generatedDirPAth = path.join(__dirname, 'generated', 'images', 'icons');
+    const generatedDirPAth = path.join(__dirname, '..', 'generated', 'images', 'icons');
     const data: Frame = JSON.parse(fs.readFileSync(path.join(texturePath, fileBasename), {
         encoding: 'utf8',
         flag: 'r'
@@ -91,7 +95,7 @@ async function createImges(fileBasename: string, skipIfExists = true) {
 
 async function extractImages() {
 
-    const generatedDirPAth = path.join(__dirname, 'generated', 'images', 'icons');
+    const generatedDirPAth = path.join(__dirname, '..', 'generated', 'images', 'icons');
 
     createPathIfNotExists(generatedDirPAth);
 

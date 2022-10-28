@@ -26,7 +26,17 @@ export interface RawCraftingRecipe {
             "amount": number
         }
     ],
-    "genericIngredients": [],
+    "genericIngredients": {
+        "genericItem": {
+            "DataTable": {
+                "ObjectName": string;
+                "ObjectPath": string;
+            },
+            "RowName": string;
+        },
+        "shouldBeSameItem": false,
+        "amount": 3
+    }[],
     "dataCategory": {
         "DataTable": {
             "ObjectName": string

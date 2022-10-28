@@ -16,10 +16,14 @@ export class InventoryComponent implements OnInit {
     constructor(private readonly _database: DatabaseService) {
         this.recipes$ = combineLatest([
             _database.fetchCraftingRecipes$(),
-            _database.fetchItems$()
+            _database.fetchItems$(),
+            _database.fetchTagBasedItems$()
         ]).pipe(
-            map(([recipes, items]) => {
-                recipes.forEach(recipe => recipe.item = items.find(item => item.id === recipe.key.toLowerCase()));
+            map(([recipes, items, tagBasedItems]) => {
+                recipes.forEach(recipe => {
+                    recipe.item = items.find(item => item.id === recipe.key.toLowerCase());
+                    recipe.genericIngredients.forEach(gi => gi.genericItem = tagBasedItems.find(item => item.key === gi.key));
+                });
 
                 return recipes;
             })

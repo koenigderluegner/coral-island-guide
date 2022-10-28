@@ -49,12 +49,17 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "packages/pak-files-parser/jest.config.ts",
         "passWithNoTests": true
       }
     }
   },
-  "tags": []
+  "tags": [],
+  "implicitDependencies": [
+    "data-types"
+  ]
 }

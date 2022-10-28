@@ -1,5 +1,16 @@
 import { Component, Input } from '@angular/core';
-import { Item } from '@ci/data-types';
+import { Item, TagBasedItem } from '@ci/data-types';
+
+type ItemEntry = {
+    item?: Item;
+    amount: number
+};
+
+type GenericEntry = {
+    shouldBeSameItem: boolean,
+    amount: number;
+    genericItem?: TagBasedItem
+};
 
 @Component({
     selector: 'app-item-list',
@@ -7,8 +18,10 @@ import { Item } from '@ci/data-types';
     styleUrls: ['./item-list.component.scss'],
 })
 export class ItemListComponent {
-    @Input() itemList?: {
-        item?: Item;
-        amount: number
-    }[];
+    @Input() itemList?: (ItemEntry | GenericEntry)[];
+
+
+    protected isGenericEntry(e: ItemEntry | GenericEntry): e is GenericEntry {
+        return 'shouldBeSameItem' in e;
+    }
 }

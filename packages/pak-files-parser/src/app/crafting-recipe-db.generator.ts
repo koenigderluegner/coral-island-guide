@@ -29,7 +29,9 @@ export class CraftingRecipeDbGenerator {
                     const item = this.itemMap.get(ingredient.item.itemID);
                     return {item, amount: ingredient.amount};
                 }),
-                genericIngredients: dbItem.genericIngredients,
+                genericIngredients: dbItem.genericIngredients.map(gi => {
+                    return {key: gi.genericItem.RowName, amount: gi.amount, shouldBeSameItem: gi.shouldBeSameItem};
+                }),
                 category: dbItem.dataCategory.RowName
             };
 

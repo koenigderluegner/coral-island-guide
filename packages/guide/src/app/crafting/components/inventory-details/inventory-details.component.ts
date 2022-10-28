@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CraftingRecipe } from '@ci/data-types';
+import { ItemListComponent } from '../../../shared/components/item-list/item-list.component';
 
 @Component({
     selector: 'app-inventory-details',
@@ -8,11 +9,12 @@ import { CraftingRecipe } from '@ci/data-types';
 })
 export class InventoryDetailsComponent implements OnChanges {
     @Input() craftingRecipe?: CraftingRecipe;
+    protected itemList: ItemListComponent['itemList'];
 
     ngOnChanges(changes: SimpleChanges): void {
         let currentValue: undefined | CraftingRecipe = changes['craftingRecipe']?.currentValue;
         if (currentValue) {
-            console.log(currentValue);
+            this.itemList = [...currentValue.ingredients, ...currentValue.genericIngredients];
         }
     }
 
