@@ -1,6 +1,6 @@
 import { InventoryItems } from '../types/inventory-items.type';
 import { InventoryItemsEngineInterface } from '../interfaces/inventory-items-engine.interface';
-import { readAsset } from '../util/functions';
+import { convertToIconName, readAsset } from '../util/functions';
 import { InventoryItem } from '../interfaces/inventory-item.interface';
 import { Item } from '@ci/data-types';
 
@@ -42,7 +42,7 @@ export class ItemDbGenerator {
 
             }
 
-            const iconName = dbItem.name.SourceString + '.png';
+            const iconName = '';
 
 
             const item: Item = {
@@ -63,21 +63,9 @@ export class ItemDbGenerator {
             if (engineData) {
                 item.tags = engineData.tags ?? [];
                 item.iconMeta = engineData.icon ?? null;
+
+                item.iconName = convertToIconName(item.iconMeta?.ObjectName.split(' ')[1]);
             }
-
-            if (dbItem.name.SourceString === '????') {
-
-
-                let sanitizedName = item.iconMeta?.ObjectName.split(' ')[1].replace('_png', '.png');
-
-                if (!sanitizedName?.endsWith('.png')) {
-                    sanitizedName = `${sanitizedName}.png`;
-                }
-
-                item.iconName = sanitizedName;
-            }
-
-
             map.set(itemKey, item);
 
 

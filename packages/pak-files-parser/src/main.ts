@@ -1,11 +1,10 @@
-import { createPathIfNotExists, generateJson } from './util/functions';
+import { convertToIconName, createPathIfNotExists, generateJson } from './util/functions';
 import { ItemDbGenerator } from './app/item-db.generator';
 import { CraftingRecipeDbGenerator } from './app/crafting-recipe-db.generator';
 import glob from 'glob';
 import sharp from 'sharp';
 import path from 'path';
 import fs from 'fs';
-import { Item } from '@ci/data-types';
 import { BugsAndInsectsDbGenerator } from './app/bugs-and-insects-db.generator';
 import { OceanCritterDbGenerator } from './app/ocean-critter-db.generator';
 import { FishDbGenerator } from './app/fish-db.generator';
@@ -59,24 +58,17 @@ interface Frame {
     };
 }
 
-const items: Item[] = [...itemDbMap.values()];
-
-
-async function createImges(fileBasename: string) {
+async function createImges(fileBasename: string, skipIfExists = true) {
     const generatedDirPAth = path.join(__dirname, 'generated', 'images', 'icons');
     const data: Frame = JSON.parse(fs.readFileSync(path.join(texturePath, fileBasename), {
         encoding: 'utf8',
         flag: 'r'
     })).filter((a: Frame) => a.Type === 'PaperSprite')[0];
-
-    let find = items.filter(item => item.iconMeta?.ObjectName === data.Type + ' ' + data.Name);
-
-    if (find.length !== 1) {
-        console.log(`found ${find.length} for ${data.Name}`, find.map(item => item.displayName));
-    }
+    const fileName = convertToIconName(data.Name);
+    if (skipIfExists && fs.existsSync(path.join(generatedDirPAth, fileName))) return;
 
     const imageMetaData = {
-        fileName: find[0]?.iconName,
+        fileName,
         width: data.Properties.BakedSourceDimension.X,
         height: data.Properties.BakedSourceDimension.Y,
         top: data.Properties.BakedSourceUV?.Y ?? 0,
@@ -94,12 +86,6 @@ async function createImges(fileBasename: string) {
         }
 
 
-    } else {
-        try {
-            await image.extract(imageMetaData).png().toFile(path.join(generatedDirPAth, '0000_' + data.Name.replace('_png', '.png')));
-        } catch (e) {
-            console.log(e);
-        }
     }
 }
 
@@ -118,7 +104,7 @@ async function extractImages() {
         let counter = 0;
         for (const fileBasename of filesWithJs) {
 
-            await createImges(fileBasename);
+            await createImges(fileBasename, true);
 
 
             counter++;

@@ -33,3 +33,13 @@ export function copyAssetsForFiles(files: string[]): void {
             fs.copyFileSync(path.join(generatedDirPAth, fileName), path.join(outputPath, fileName));
     });
 }
+
+export function convertToIconName(objectName: string): string {
+    let sanitizedName = objectName.replace(/_png[0-9]*$/, '.png');
+
+    if (!sanitizedName?.endsWith('.png')) {
+        sanitizedName = `${sanitizedName}.png`;
+    }
+
+    return sanitizedName;
+}
