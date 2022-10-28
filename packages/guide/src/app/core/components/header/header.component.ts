@@ -23,6 +23,10 @@ export class HeaderComponent {
             text: 'Journal',
             uiIcon: UiIcon.JOURNAL,
             path: 'journal'
+        }, {
+            text: 'Crafting',
+            uiIcon: UiIcon.CRAFTING,
+            path: 'crafting'
         },
     ];
 

@@ -2,11 +2,11 @@
     <div class="logo"></div>
 
     <nav>
-        <ul>
+        <ul class="flex gap-x-6">
             <li *ngFor="let naviLink of naviLinks">
                 <a [routerLink]="naviLink.path"
-                   class="flex flex-col py-3 px-2 text-neutral-400 hover:text-neutral-300 items-center"
-                   [routerLinkActive]="'text-white'">
+                   class=" flex flex-col py-3 px-2 text-neutral-400 hover:text-neutral-300 items-center text-center"
+                   [routerLinkActive]="['text-white', 'active']">
                     <app-ui-icon [uiIcon]="naviLink.uiIcon" class="mb-2"></app-ui-icon>
                     <span class="text-lg font-semibold">{{naviLink.text}}</span>
                 </a>

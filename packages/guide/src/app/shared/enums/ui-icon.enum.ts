@@ -1,6 +1,7 @@
 export enum UiIcon {
     // PAUSE MENU TOP
     JOURNAL = 'T_Icon_Journal',
+    CRAFTING = 'T_Icon_Crafting',
 
     // PAUSE MENU SIDEBAR
     CATCHING = 'T_Icon_CatchingM',

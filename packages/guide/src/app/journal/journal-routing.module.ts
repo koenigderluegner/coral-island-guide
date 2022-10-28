@@ -6,7 +6,11 @@ import { FoundComponent } from './components/found/found.component';
 import { ProduceComponent } from './components/produce/produce.component';
 
 const routes: Routes = [
-
+    {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'produce'
+    },
     {
 
         path: '',
@@ -17,11 +21,7 @@ const routes: Routes = [
             {path: 'produce', component: ProduceComponent},
         ]
     },
-    {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'caught'
-    },
+
 
 ];
 
