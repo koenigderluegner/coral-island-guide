@@ -7,4 +7,5 @@ export interface CraftingRecipe {
     ingredients: { item?: Item, amount: number }[]
     genericIngredients: [],
     category: string;
+    item?: Item
 }

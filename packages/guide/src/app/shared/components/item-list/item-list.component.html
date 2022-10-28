@@ -1,0 +1,11 @@
+<ng-container *ngFor="let itemListItem of itemList; let last = last">
+    <div class="flex justify-between py-1">
+        <div class="flex gap-x-3 items-center" *ngIf="itemListItem.item">
+            <app-item-icon class="w-10" [itemName]="itemListItem.item.iconName"></app-item-icon>
+            <span>{{itemListItem.item.displayName}}</span>
+        </div>
+        <div class="flex items-center">{{itemListItem.amount}}</div>
+
+    </div>
+    <hr>
+</ng-container>

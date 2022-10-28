@@ -21,8 +21,6 @@ const routes: Routes = [
             {path: 'produce', component: ProduceComponent},
         ]
     },
-
-
 ];
 
 @NgModule({

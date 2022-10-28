@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
 import { CraftingComponent } from './crafting.component';
 import { SharedModule } from '../shared/shared.module';
-
-const routes: Routes = [{path: '', component: CraftingComponent}];
+import { InventoryComponent } from './components/inventory/inventory.component';
+import { CraftingRoutingModule } from './crafting-routing.module';
+import { MatTabsModule } from '@angular/material/tabs';
+import { InventoryDetailsComponent } from './components/inventory-details/inventory-details.component';
 
 @NgModule({
-  declarations: [CraftingComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), SharedModule],
+  declarations: [
+    CraftingComponent,
+    InventoryComponent,
+    InventoryDetailsComponent,
+  ],
+  imports: [CommonModule, CraftingRoutingModule, SharedModule, MatTabsModule],
 })
 export class CraftingModule {
 }

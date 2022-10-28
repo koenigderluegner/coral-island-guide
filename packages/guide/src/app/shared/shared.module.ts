@@ -12,6 +12,7 @@ import { QualityGridComponent } from './components/quality-grid/quality-grid.com
 import { MoneyComponent } from './components/money/money.component';
 import { BaseItemCardComponent } from './components/base-item-card/base-item-card.component';
 import { MaxPipe } from './pipes/max.pipe';
+import { ItemListComponent } from './components/item-list/item-list.component';
 
 @NgModule({
     declarations: [
@@ -25,6 +26,7 @@ import { MaxPipe } from './pipes/max.pipe';
         MoneyComponent,
         BaseItemCardComponent,
         MaxPipe,
+        ItemListComponent,
     ],
     imports: [CommonModule, HttpClientModule, RouterModule],
     exports: [
@@ -37,6 +39,7 @@ import { MaxPipe } from './pipes/max.pipe';
         BaseItemCardComponent,
         MoneyComponent,
         MaxPipe,
+        ItemListComponent,
     ],
 })
 export class SharedModule {
