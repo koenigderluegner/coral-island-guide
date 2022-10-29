@@ -5,6 +5,8 @@ export * from './lib/interfaces/item.interface';
 export * from './lib/interfaces/crop.interface';
 export * from './lib/interfaces/tag-based-item.interface';
 export * from './lib/interfaces/journal-order.interface';
-
+export * from './lib/interfaces/item-processing.interface';
 
 export * from './lib/enums/quality.enum';
+
+export * from './lib/types/minimal-item.type';

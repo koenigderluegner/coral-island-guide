@@ -1,11 +1,12 @@
 import fs from 'fs';
 import path from 'path';
+import { Item, MinimalItem } from '@ci/data-types';
 
 export function readAsset<T = any>(fileName: string): T {
     return JSON.parse(fs.readFileSync(path.join(__dirname, 'assets', fileName), {encoding: 'utf8', flag: 'r'}));
 }
 
-export function generateJson(fileName: string, jsonContent: any) {
+export function generateJson(fileName: string, jsonContent: any, readable = false) {
 
     const generatedDirPAth = path.join(__dirname, 'generated');
 
@@ -13,7 +14,7 @@ export function generateJson(fileName: string, jsonContent: any) {
         fs.mkdirSync(generatedDirPAth, {recursive: true});
 
 
-    fs.writeFileSync(path.join(generatedDirPAth, fileName), JSON.stringify(jsonContent, null, 4), {
+    fs.writeFileSync(path.join(generatedDirPAth, fileName), JSON.stringify(jsonContent, null, readable ? 4 : undefined), {
         encoding: 'utf8',
         flag: 'w+'
     });
@@ -42,4 +43,12 @@ export function convertToIconName(objectName: string): string {
     }
 
     return sanitizedName;
+}
+
+export function minifyItem(item: Item): MinimalItem {
+    return {
+        id: item.id,
+        displayName: item.displayName,
+        iconName: item.iconName
+    };
 }

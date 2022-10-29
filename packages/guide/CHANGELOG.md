@@ -2,9 +2,14 @@
 
 ### TBD
 
+#### Added
+
+- Added item processors to crafting
+
 #### Changed
 
 - Fixed card icon being stretched under special circumstances
+- Minified data to save bandwidth
 
 ### 0.1.2 - 2022-10-28
 

@@ -6,12 +6,14 @@ import { InventoryComponent } from './components/inventory/inventory.component';
 import { CraftingRoutingModule } from './crafting-routing.module';
 import { MatTabsModule } from '@angular/material/tabs';
 import { InventoryDetailsComponent } from './components/inventory-details/inventory-details.component';
+import { ProcessorComponent } from './components/processor/processor.component';
 
 @NgModule({
   declarations: [
     CraftingComponent,
     InventoryComponent,
     InventoryDetailsComponent,
+    ProcessorComponent,
   ],
   imports: [CommonModule, CraftingRoutingModule, SharedModule, MatTabsModule],
 })

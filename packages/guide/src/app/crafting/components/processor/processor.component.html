@@ -1,0 +1,31 @@
+<div class="flex">
+    <mat-tab-group class="px-[50px] block" animationDuration="0" (selectedTabChange)="l($event)"
+                   [selectedIndex]="selectedTabIndex">
+        <mat-tab *ngFor="let machineName of machineNames" label="{{machineName}}">
+            <div *ngIf="(filteredData$(machineName) | async) as processorItems" class="grid gap-4 grid-cols-8">
+
+                <app-item-icon *ngFor="let itemProcess of processorItems" [itemName]="itemProcess.output.item.iconName"
+                               class="icon-grid-item" (click)="selectedEntity = itemProcess"
+                               [subIconName]="reusedImages.includes(itemProcess.output.item.iconName ?? '') ? itemProcess.input.item.iconName
+                                : undefined">
+                </app-item-icon>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+    {{selectedEntity}}
+    <div class="flex-shrink-0 w-[600px] px-10">
+
+        <app-base-item-card *ngIf="selectedEntity" [item]="selectedEntity.output.item">
+            <div>Processing time:
+                <span class="text-black">
+                <ng-container *ngIf="selectedEntity.day"> {{selectedEntity.day}} day(s)</ng-container>
+                <ng-container *ngIf="selectedEntity.time.hours"> {{selectedEntity.time.hours}} hour(s)</ng-container>
+                <ng-container *ngIf="selectedEntity.time.minutes"> {{selectedEntity.time.minutes}}
+                    minute(s)</ng-container>
+                </span>
+            </div>
+            <app-item-list [itemList]="getItemList(selectedEntity)" class="mb-3"></app-item-list>
+        </app-base-item-card>
+
+    </div>
+</div>

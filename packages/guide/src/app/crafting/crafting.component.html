@@ -1,7 +1,11 @@
 <div class="h-full pl-[400px] py-[60px]">
     <app-module-sidebar>
-        <app-module-sidebar-item [uiIcon]="UI_ICONS.CRAFTING" routerLink="inventory">Inventory-Crafting
-        </app-module-sidebar-item>
+        <ng-container *ngIf="itemProcessingRecipes$ | async as itemProcessingRecipes">
+            <app-module-sidebar-item [uiIcon]="UI_ICONS.CRAFTING" routerLink="inventory">Inventory-Crafting
+            </app-module-sidebar-item>
+            <app-module-sidebar-item [uiIcon]="UI_ICONS.ARTISAN" routerLink="artisan">Processing
+            </app-module-sidebar-item>
+        </ng-container>
     </app-module-sidebar>
     <div>
         <router-outlet></router-outlet>

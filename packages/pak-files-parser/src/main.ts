@@ -11,6 +11,7 @@ import { FishDbGenerator } from './app/fish-db.generator';
 import { JournalOrderDbGenerator } from './app/journal-order-db.generator';
 import { CropsDbGenerator } from './app/crops-db.generator';
 import { TagBasedItemGenericDbGenerator } from './app/tag-based-item-generic-db.generator';
+import { ItemProcessorDbGenerator } from './app/item-processor-db.generator';
 
 const itemDbGenerator = new ItemDbGenerator();
 const itemDbMap = itemDbGenerator.generate();
@@ -22,7 +23,8 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'ocean-critters': new OceanCritterDbGenerator(itemDbMap),
     'fish': new FishDbGenerator(itemDbMap),
     'crops': new CropsDbGenerator(itemDbMap),
-    'tag-based-items': new TagBasedItemGenericDbGenerator(itemDbMap),
+    'tag-based-items': new TagBasedItemGenericDbGenerator(),
+    'item-processing': new ItemProcessorDbGenerator(itemDbMap),
 
     'journal-fish': new JournalOrderDbGenerator('Caught/DT_JournalFish.json'),
     'journal-insects': new JournalOrderDbGenerator('Caught/DT_JournalInsects.json'),

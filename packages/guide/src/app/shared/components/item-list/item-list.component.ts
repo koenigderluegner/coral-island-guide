@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { Item, TagBasedItem } from '@ci/data-types';
+import { MinimalItem, TagBasedItem } from '@ci/data-types';
 
 type ItemEntry = {
-    item?: Item;
+    item?: MinimalItem;
     amount: number
 };
 

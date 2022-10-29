@@ -13,5 +13,6 @@ export class ItemIconComponent {
 
 
     @Input() itemName?: string | null;
+    @Input() subIconName?: string | null;
     @Input() quality?: Quality;
 }

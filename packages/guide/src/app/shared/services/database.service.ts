@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, shareReplay, tap } from 'rxjs';
-import { CraftingRecipe, Critter, Crop, Fish, Item, JournalOrder, TagBasedItem } from '@ci/data-types';
+import { map, Observable, shareReplay, tap } from 'rxjs';
+import { CraftingRecipe, Critter, Crop, Fish, Item, ItemProcessing, JournalOrder, TagBasedItem } from '@ci/data-types';
 import { AvailableJournalOrders } from '../types/available-journal-orders.type';
 
 @Injectable({
@@ -20,8 +20,13 @@ export class DatabaseService {
     private _JOURNAL_ORDERS: Map<string, Observable<JournalOrder[]>> = new Map<string, Observable<JournalOrder[]>>();
     private _CROPS$?: Observable<Crop[]>;
     private _TAG_BASED_ITEMS$?: Observable<TagBasedItem[]>;
+    private _ITEM_PROCESSING_RECIPE$?: Observable<Record<string, ItemProcessing[]>>;
 
     constructor(private readonly _http: HttpClient) {
+    }
+
+    getItems(): Item[] {
+        return this._ITEMS;
     }
 
 
@@ -54,6 +59,17 @@ export class DatabaseService {
                 );
         }
         return this._CRAFTING_RECIPE$;
+    }
+
+    fetchItemProcessingRecipes$(): Observable<Record<string, ItemProcessing[]>> {
+        if (!this._ITEM_PROCESSING_RECIPE$) {
+            this._ITEM_PROCESSING_RECIPE$ = this._http.get<Record<string, ItemProcessing[]>[]>(`${this._BASE_PATH}/item-processing.json`)
+                .pipe(
+                    map(ipa => ipa[0]),
+                    shareReplay(1)
+                );
+        }
+        return this._ITEM_PROCESSING_RECIPE$;
     }
 
     fetchTagBasedItems$(): Observable<TagBasedItem[]> {
