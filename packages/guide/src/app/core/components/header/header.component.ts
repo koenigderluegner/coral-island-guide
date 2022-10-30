@@ -27,6 +27,10 @@ export class HeaderComponent {
             text: 'Crafting',
             uiIcon: UiIcon.CRAFTING,
             path: 'crafting'
+        }, {
+            text: 'People',
+            uiIcon: UiIcon.PEOPLE,
+            path: 'people'
         },
     ];
 

@@ -1,5 +1,11 @@
 ## Changelog
 
+### 0.3.0 TBD
+
+#### Added
+
+- Added gifting information
+
 ### 0.2.0 2022-10-30
 
 #### Added

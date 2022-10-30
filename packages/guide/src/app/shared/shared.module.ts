@@ -19,6 +19,7 @@ import { SidebarContainerComponent } from './components/sidebar-container/sideba
 import { ListDetailContainerComponent } from './components/list-detail-container/list-detail-container.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { InlineMinimalItemComponent } from './components/inline-minimal-item/inline-minimal-item.component';
 
 @NgModule({
     declarations: [
@@ -35,6 +36,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
         ItemListComponent,
         SidebarContainerComponent,
         ListDetailContainerComponent,
+        InlineMinimalItemComponent,
     ],
     imports: [
         CommonModule,
@@ -58,6 +60,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
         ItemListComponent,
         SidebarContainerComponent,
         ListDetailContainerComponent,
+        InlineMinimalItemComponent,
     ],
 })
 export class SharedModule {

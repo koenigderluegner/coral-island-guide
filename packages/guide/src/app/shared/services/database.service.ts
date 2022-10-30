@@ -1,8 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable, shareReplay, tap } from 'rxjs';
-import { CraftingRecipe, Critter, Crop, Fish, Item, ItemProcessing, JournalOrder, TagBasedItem } from '@ci/data-types';
+import {
+    CraftingRecipe,
+    Critter,
+    Crop,
+    Fish,
+    GiftPreferences,
+    Item,
+    ItemProcessing,
+    JournalOrder,
+    TagBasedItem
+} from '@ci/data-types';
 import { AvailableJournalOrders } from '../types/available-journal-orders.type';
+import { MapKeyed } from '../types/map-keyed.type';
 
 @Injectable({
     providedIn: 'root'
@@ -21,6 +32,7 @@ export class DatabaseService {
     private _CROPS$?: Observable<Crop[]>;
     private _TAG_BASED_ITEMS$?: Observable<TagBasedItem[]>;
     private _ITEM_PROCESSING_RECIPE$?: Observable<Record<string, ItemProcessing[]>>;
+    private _GIFT_PREFERENCES$?: Observable<MapKeyed<GiftPreferences>[]>;
 
     constructor(private readonly _http: HttpClient) {
     }
@@ -121,6 +133,28 @@ export class DatabaseService {
             );
         }
         return this._JOURNAL_ORDERS.get(listName)!;
+    }
+
+    fetchGiftingPreferences$(): Observable<MapKeyed<GiftPreferences>[]> {
+        if (!this._GIFT_PREFERENCES$) {
+            this._GIFT_PREFERENCES$ = this._http.get<{ [person: string]: GiftPreferences }[]>(`${this._BASE_PATH}/gift-preferences.json`)
+                .pipe(
+                    map(prefs => this.flatObjectMap(prefs)),
+                    shareReplay(1)
+                );
+        }
+        return this._GIFT_PREFERENCES$;
+    }
+
+    flatObjectMap<T>(objectMap: { [key: string]: T }[]): (T & { mapKey: string })[] {
+
+        return objectMap.map(entry => {
+            const mapKey = Object.keys(entry)[0];
+
+            return {...entry[mapKey], mapKey};
+        });
+
+
     }
 
 
