@@ -11,6 +11,13 @@ export class ModuleSidebarComponent {
     @HostBinding('class.app-module-sidebar') private _setClass = true;
 
     @ContentChildren(ModuleSidebarItemComponent) viewChildren?: QueryList<ModuleSidebarItemComponent>;
+    showMenu = false;
 
 
+    toggleMenu($event: MouseEvent) {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        this.showMenu = !this.showMenu;
+    }
 }

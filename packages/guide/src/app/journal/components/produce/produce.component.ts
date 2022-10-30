@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page.component';
 import { Item } from '@ci/data-types';
-import { Observable, switchMap } from 'rxjs';
+import { switchMap } from 'rxjs';
 
 @Component({
     selector: 'app-produce',
@@ -10,27 +10,35 @@ import { Observable, switchMap } from 'rxjs';
 })
 export class ProduceComponent extends BaseJournalPageComponent<Item> {
 
-    animalProducts$: Observable<Item[]>;
-    artisanProducts$: Observable<Item[]>;
-    crops$: Observable<Item[]>;
-
     constructor() {
         super();
-        this.animalProducts$ = this.getFilteredJournalData(
-            this._database.fetchJournalOrder$('journal-animal-products'),
-            this._database.fetchItems$()
-        );
-        this.artisanProducts$ = this.getFilteredJournalData(
-            this._database.fetchJournalOrder$('journal-artisan-products'),
-            this._database.fetchItems$()
-        );
-        this.crops$ = this._database.fetchCrops$().pipe(
-            switchMap(() =>
-                this.getFilteredJournalData(
-                    this._database.fetchJournalOrder$('journal-crops'),
-                    this._database.fetchItems$()
-                ))
-        );
 
+
+        this.tabs = [
+            {
+                title: 'Crops',
+                data: this._database.fetchCrops$().pipe(
+                    switchMap(() =>
+                        this.getFilteredJournalData(
+                            this._database.fetchJournalOrder$('journal-crops'),
+                            this._database.fetchItems$()
+                        ))
+                )
+            }, {
+                title: 'Animal Products',
+                data: this.getFilteredJournalData(
+                    this._database.fetchJournalOrder$('journal-animal-products'),
+                    this._database.fetchItems$()
+                )
+            }, {
+                title: 'Artisan Products',
+                data: this.getFilteredJournalData(
+                    this._database.fetchJournalOrder$('journal-artisan-products'),
+                    this._database.fetchItems$()
+                )
+            },
+        ];
     }
+
+
 }

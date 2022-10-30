@@ -12,25 +12,27 @@ import { FoundComponent } from './components/found/found.component';
 import { ProduceComponent } from './components/produce/produce.component';
 import { FoundDetailsComponent } from './components/found-details/found-details.component';
 import { ProduceDetailsComponent } from './components/produce-details/produce-details.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
-  declarations: [
-    JournalComponent,
-    CaughtComponent,
-    CaughtDetailsComponent,
-    BaseJournalPageComponent,
-    FoundComponent,
-    ProduceComponent,
-    FoundDetailsComponent,
-    ProduceDetailsComponent,
-  ],
-  imports: [
-    CommonModule,
-    JournalRoutingModule,
-    SharedModule,
-    MatTabsModule,
-    MatCardModule,
-  ],
+    declarations: [
+        JournalComponent,
+        CaughtComponent,
+        CaughtDetailsComponent,
+        BaseJournalPageComponent,
+        FoundComponent,
+        ProduceComponent,
+        FoundDetailsComponent,
+        ProduceDetailsComponent,
+    ],
+    imports: [
+        CommonModule,
+        JournalRoutingModule,
+        SharedModule,
+        MatTabsModule,
+        MatCardModule,
+        MatSidenavModule
+    ],
 })
 export class JournalModule {
 }

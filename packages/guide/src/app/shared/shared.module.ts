@@ -13,6 +13,12 @@ import { MoneyComponent } from './components/money/money.component';
 import { BaseItemCardComponent } from './components/base-item-card/base-item-card.component';
 import { MaxPipe } from './pipes/max.pipe';
 import { ItemListComponent } from './components/item-list/item-list.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatMenuModule } from '@angular/material/menu';
+import { SidebarContainerComponent } from './components/sidebar-container/sidebar-container.component';
+import { ListDetailContainerComponent } from './components/list-detail-container/list-detail-container.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
     declarations: [
@@ -27,8 +33,18 @@ import { ItemListComponent } from './components/item-list/item-list.component';
         BaseItemCardComponent,
         MaxPipe,
         ItemListComponent,
+        SidebarContainerComponent,
+        ListDetailContainerComponent,
     ],
-    imports: [CommonModule, HttpClientModule, RouterModule],
+    imports: [
+        CommonModule,
+        HttpClientModule,
+        RouterModule,
+        MatSelectModule,
+        MatMenuModule,
+        MatTabsModule,
+        MatSidenavModule,
+    ],
     exports: [
         UiIconComponent,
         ModuleSidebarComponent,
@@ -40,6 +56,8 @@ import { ItemListComponent } from './components/item-list/item-list.component';
         MoneyComponent,
         MaxPipe,
         ItemListComponent,
+        SidebarContainerComponent,
+        ListDetailContainerComponent,
     ],
 })
 export class SharedModule {

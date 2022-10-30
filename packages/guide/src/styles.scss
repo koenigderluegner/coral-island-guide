@@ -32,7 +32,7 @@ body {
   color: #8a7c67;
   font-family: 'QTVagaRound', sans-serif;
   @apply backdrop-blur-xl min-h-full;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) fixed,
   url('https://assets.gamepur.com/wp-content/uploads/2022/10/11101620/Coral-Island.jpg') center no-repeat fixed;
   background-size: cover, cover;
 }
@@ -46,4 +46,29 @@ hr {
   height: 4px;
   border-radius: 2px;
   background: rgba(127, 127, 127, .1);
+}
+
+
+.drawer-close-button {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  z-index: 1;
+}
+
+@screen xl {
+
+  .mat-drawer-container {
+    height: 100%;
+  }
+
+  .mat-drawer-inner-container {
+    padding: 60px 30px;
+  }
+
+  .drawer-close-button {
+    right: 45px;
+    top: 75px;
+
+  }
 }

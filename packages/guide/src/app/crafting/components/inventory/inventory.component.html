@@ -1,19 +1,15 @@
-<div class="flex">
-    <mat-tab-group class="px-[50px] block" animationDuration="0">
+<app-list-detail-container [(openDrawer)]="openDrawer">
+    <app-inventory-details listDetail *ngIf="selectedEntity"
+                           [craftingRecipe]="selectedEntity"></app-inventory-details>
+    <mat-tab-group class="px-2 xl:px-[50px] w-full" animationDuration="0">
         <mat-tab label="All">
-            <div *ngIf="(recipes$ |async) as fish" class="grid gap-4 grid-cols-8">
+            <div *ngIf="(recipes$ |async) as recipes" class="grid gap-4 icon-grid">
 
-                <app-item-icon *ngFor="let fishEntry of fish" [itemName]="fishEntry.item?.iconName"
-                               class="icon-grid-item" (click)="selectedEntity = fishEntry">
+                <app-item-icon *ngFor="let recipe of recipes" [itemName]="recipe.item?.iconName"
+                               class="icon-grid-item" (click)="showDetails(recipe)">
                 </app-item-icon>
             </div>
 
         </mat-tab>
     </mat-tab-group>
-    <div class="flex-shrink-0 w-[600px] px-10">
-
-        <app-inventory-details class="sticky top-0" *ngIf="selectedEntity"
-                               [craftingRecipe]="selectedEntity"></app-inventory-details>
-
-    </div>
-</div>
+</app-list-detail-container>

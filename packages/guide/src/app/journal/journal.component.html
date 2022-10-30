@@ -1,11 +1,8 @@
-<div class="h-full  pl-[400px] py-[60px]">
+<app-sidebar-container>
     <app-module-sidebar>
         <app-module-sidebar-item routerLink="produce" [uiIcon]="UI_ICONS.FARMING">Produce</app-module-sidebar-item>
         <app-module-sidebar-item routerLink="caught" [uiIcon]="UI_ICONS.CATCHING">Caught</app-module-sidebar-item>
         <app-module-sidebar-item routerLink="found" [uiIcon]="UI_ICONS.ARTISAN">Found</app-module-sidebar-item>
     </app-module-sidebar>
-    <div>
-        <router-outlet></router-outlet>
-    </div>
-</div>
-
+    <router-outlet class="hidden"></router-outlet>
+</app-sidebar-container>

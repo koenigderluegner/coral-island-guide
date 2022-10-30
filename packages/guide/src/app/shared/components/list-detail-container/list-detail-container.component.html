@@ -1,0 +1,16 @@
+<mat-sidenav-container class="example-container" [hasBackdrop]="false">
+    <mat-sidenav #drawer [mode]="'over'" position="end" class="w-full lg:w-[600px]"
+                 [fixedInViewport]="mobileQuery.matches" (closed)="openDrawerChange.emit(false)">
+        <button type="button" class="drawer-close-button" (click)="drawer.close()">
+            <app-ui-icon class="!w-8 !h-8" [uiIcon]="uiIcon.CROSS"></app-ui-icon>
+        </button>
+        <ng-content select="[listDetail]"></ng-content>
+    </mat-sidenav>
+    <mat-sidenav-content class="pt-2 pb-6 2xl:pt-[60px] xl:pr-[600px] w-full">
+
+        <ng-content></ng-content>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+

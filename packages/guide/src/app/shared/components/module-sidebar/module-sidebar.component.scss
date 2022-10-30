@@ -1,17 +1,23 @@
 .app-module-sidebar {
-  width: 400px;
   @apply block backdrop-blur-xl;
   background-color: rgba(0, 0, 0, .75);
-  padding: 60px 40px 60px 60px;
-  left: 0;
-  top: 100px;
-  bottom: 0;
-  position: absolute;
+  padding: 8px;
+
+  .hide-menu .app-module-sidebar-list-item:not(.active) {
+    display: none;
+  }
+}
+
+@screen 2xl {
+  .app-module-sidebar {
+    padding: 60px 40px 60px 60px;
+  }
 }
 
 .app-module-sidebar-list-item {
+  padding: 15px;
   border-radius: 30px;
-  height: 80px;
+  height: 46px;
   border: 3px solid #191919;
   @apply text-lg font-semibold flex justify-center text-neutral-500 hover:text-neutral-300 border-neutral-500 hover:border-neutral-300 items-center gap-x-2;
 
@@ -32,6 +38,17 @@
       color: #E4B07E;
     }
 
+  }
+
+  &:not(.active) button {
+    display: none
+  }
+
+  @screen xl {
+    display: flex !important;
+    & {
+      height: 80px;;
+    }
   }
 
 }

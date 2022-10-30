@@ -1,18 +1,37 @@
 .app-card {
   background-color: #f7f2e8;
   border-radius: 30px;
-  padding: 48px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
 
   [cardIcon] {
-    height: 220px;
+    height: 140px;
     @apply flex justify-center;
 
+
     & > img {
-      height: 220px;
+      height: 140px;
       width: auto;
     }
   }
 
+
+  @screen xl {
+
+    & {
+
+      padding: 48px;
+
+      [cardIcon] {
+        height: 220px;
+
+        & > img {
+          height: 220px;
+        }
+      }
+    }
+  }
+
 }
+

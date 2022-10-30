@@ -9,5 +9,4 @@ import { UiIcon } from '../shared/enums/ui-icon.enum';
 export class JournalComponent {
 
     UI_ICONS = UiIcon;
-
 }

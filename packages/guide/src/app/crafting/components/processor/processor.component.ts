@@ -12,6 +12,9 @@ import { MatTabChangeEvent } from '@angular/material/tabs';
     styleUrls: ['./processor.component.scss'],
 })
 export class ProcessorComponent {
+
+    openDrawer = false;
+
     selectedEntity?: ItemProcessing;
     reusedImages: string[] = [];
 
@@ -70,5 +73,10 @@ export class ProcessorComponent {
         let tab = $event.tab.textLabel.toLowerCase();
         console.log(tab);
         this._router.navigate(['..', tab], {relativeTo: this._route});
+    }
+
+    showDetails(entry?: ItemProcessing) {
+        this.selectedEntity = entry;
+        this.openDrawer = true;
     }
 }

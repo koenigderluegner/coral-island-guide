@@ -1,14 +1,18 @@
-import { Component, inject } from '@angular/core';
-import { Item } from '@ci/data-types';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { Item, JournalOrder } from '@ci/data-types';
 import { combineLatest, map, Observable } from 'rxjs';
-import { JournalOrder } from '../../../../../../data-types/src/lib/interfaces/journal-order.interface';
 import { DatabaseService } from '../../../shared/services/database.service';
+import { UiIcon } from '../../../shared/enums/ui-icon.enum';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 @Component({
     template: ''
 })
 export class BaseJournalPageComponent<D> {
 
+    uiIcon = UiIcon;
+    tabs: { title: string; data: Observable<D[]> }[] = [];
+    openDrawer = false;
     selectedEntity?: D;
 
     protected readonly _database: DatabaseService = inject(DatabaseService);
@@ -27,5 +31,26 @@ export class BaseJournalPageComponent<D> {
                 return res;
             })
         );
+    }
+
+    mobileQuery: MediaQueryList;
+
+    private readonly _mobileQueryListener: () => void;
+    media: MediaMatcher = inject(MediaMatcher);
+    changeDetectorRef: ChangeDetectorRef = inject(ChangeDetectorRef);
+
+    constructor() {
+        this.mobileQuery = this.media.matchMedia('(max-width: 600px)');
+        this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
+        this.mobileQuery.addListener(this._mobileQueryListener);
+    }
+
+    showDetails(fishEntry?: D) {
+        this.selectedEntity = fishEntry;
+        this.openDrawer = true;
+    }
+
+    ngOnDestroy(): void {
+        this.mobileQuery.removeListener(this._mobileQueryListener);
     }
 }

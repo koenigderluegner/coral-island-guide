@@ -1,8 +1,9 @@
 <div class="flex justify-between px-4">
 
     <a routerLink="/" class="flex gap-x-4 items-center">
-        <img src="assets/ui/images/icons/Super_Coral.png" width="64" height="64">
-        <span class="text-4xl font-semibold">Coral Guide</span>
+        <img src="assets/ui/images/icons/Super_Coral.png" class="h-12 w-12 xl:w-16 xl:h-16">
+        <span class="text-4xl font-semibold hidden xl:block">Coral Guide</span>
+        <span class="text-4xl font-semibold block xl:hidden">CG</span>
     </a>
     <nav>
         <ul class="flex gap-x-6">
@@ -10,15 +11,16 @@
                 <a [routerLink]="naviLink.path"
                    class=" flex flex-col py-3 px-2 text-neutral-400 hover:text-neutral-300 items-center text-center"
                    [routerLinkActive]="['text-white', 'active']">
-                    <app-ui-icon [uiIcon]="naviLink.uiIcon" class="mb-2"></app-ui-icon>
-                    <span class="text-lg font-semibold">{{naviLink.text}}</span>
+                    <app-ui-icon [uiIcon]="naviLink.uiIcon"
+                                 class="!h-6 !w-6 xl:!h-12 xl:!w-12 mb-2 max-xl"></app-ui-icon>
+                    <span class="xl:text-lg font-semibold">{{naviLink.text}}</span>
                 </a>
 
             </li>
         </ul>
     </nav>
 
-    <div class="user-sync"></div>
+    <div class="user-sync hidden xl:block"></div>
 
 
 </div>

@@ -1,0 +1,25 @@
+.module-grid {
+  grid-template-columns:  1fr;
+  @apply auto-rows-min;
+
+  .app-module-sidebar {
+    @apply w-full xl:w-[300px] 2xl:w-[400px]
+  }
+
+}
+
+@screen xl {
+  .module-grid {
+    grid-template-columns:  300px calc(100% - 300px);
+    @apply auto-rows-auto;
+  }
+
+  .app-module-sidebar {
+    min-height: calc(100vh - 108px);
+  }
+}
+@screen 2xl {
+  .module-grid {
+    grid-template-columns:  400px calc(100% - 400px);
+  }
+}

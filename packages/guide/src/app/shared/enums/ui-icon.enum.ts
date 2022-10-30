@@ -1,4 +1,6 @@
 export enum UiIcon {
+    // MISC
+    CROSS = 'T_Icon_Cross',
     // PAUSE MENU TOP
     JOURNAL = 'T_Icon_Journal',
     CRAFTING = 'T_Icon_Crafting',

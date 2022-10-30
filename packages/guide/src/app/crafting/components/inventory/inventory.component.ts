@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CraftingRecipe } from '@ci/data-types';
 import { DatabaseService } from '../../../shared/services/database.service';
 import { combineLatest, map, Observable } from 'rxjs';
@@ -8,7 +8,9 @@ import { combineLatest, map, Observable } from 'rxjs';
     templateUrl: './inventory.component.html',
     styleUrls: ['./inventory.component.scss'],
 })
-export class InventoryComponent implements OnInit {
+export class InventoryComponent {
+    openDrawer = false;
+
     selectedEntity?: CraftingRecipe;
 
     recipes$: Observable<CraftingRecipe[]>;
@@ -30,6 +32,8 @@ export class InventoryComponent implements OnInit {
         );
     }
 
-    ngOnInit(): void {
+    showDetails(fishEntry?: CraftingRecipe) {
+        this.selectedEntity = fishEntry;
+        this.openDrawer = true;
     }
 }

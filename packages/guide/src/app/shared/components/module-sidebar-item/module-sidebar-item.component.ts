@@ -1,4 +1,4 @@
-import { Component, Input, TemplateRef, ViewChild } from '@angular/core';
+import { Component, Input, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { UiIcon } from '../../enums/ui-icon.enum';
 import { RouterLink } from '@angular/router';
 
@@ -6,6 +6,7 @@ import { RouterLink } from '@angular/router';
     selector: 'app-module-sidebar-item',
     templateUrl: './module-sidebar-item.component.html',
     styleUrls: ['./module-sidebar-item.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class ModuleSidebarItemComponent {
     @ViewChild('innerTemplate') public innerTemplate: TemplateRef<any> | null = null;

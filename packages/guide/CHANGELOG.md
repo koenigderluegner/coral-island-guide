@@ -4,6 +4,7 @@
 
 #### Added
 
+- Added mobile support
 - Added item processors to crafting
 
 #### Changed
