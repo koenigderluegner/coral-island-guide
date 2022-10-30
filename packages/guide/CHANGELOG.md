@@ -9,6 +9,7 @@
 
 #### Changed
 
+- Fixed item category not being properly displayed
 - Fixed card icon being stretched under special circumstances
 - Minified data to save bandwidth
 
