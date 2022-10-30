@@ -6,7 +6,7 @@ export interface RawGiftPreferenceInterface {
     dislikePreferences: RawPreferecne[],
     hatePreferences: RawPreferecne[],
 
-
+    [key: string]: RawPreferecne[]
 }
 
 interface RawPreferecne {

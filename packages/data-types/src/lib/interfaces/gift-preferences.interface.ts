@@ -7,4 +7,6 @@ export interface GiftPreferences {
     neutralPreferences: GiftPreference[],
     dislikePreferences: GiftPreference[],
     hatePreferences: GiftPreference[],
+
+    [key: string]: GiftPreference[]
 }
