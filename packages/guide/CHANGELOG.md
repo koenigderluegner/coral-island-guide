@@ -1,5 +1,11 @@
 ## Changelog
 
+### 0.3.1 2022-10-30
+
+#### Changed
+
+- Fixed missing neutral, disliked and hated gifts
+
 ### 0.3.0 2022-10-30
 
 #### Added

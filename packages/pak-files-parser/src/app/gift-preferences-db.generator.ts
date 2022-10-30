@@ -29,13 +29,13 @@ export class GiftPreferencesDbGenerator extends BaseGenerator<RawGiftPreferenceI
         Object.keys(dbItem).forEach(preferenceType => {
             prefs[preferenceType] = dbItem[preferenceType].map(this.transform).filter(notEmpty).filter(rgp => {
 
-                return !this.universalLikes?.[preferenceType].some((t: GiftPreference) => {
+                return !this.universalLikes?.[preferenceType].find((t: GiftPreference) => {
                     if (t.type === 'item' && rgp.type === 'item') {
                         return t.item.id === rgp.item.id;
                     } else if (t.type === 'category' && rgp.type === 'category') {
                         return t.categoryName === rgp.categoryName;
                     }
-                    return true;
+                    return false;
                 });
 
             });
