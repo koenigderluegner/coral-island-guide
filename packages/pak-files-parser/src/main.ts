@@ -13,9 +13,13 @@ import { CropsDbGenerator } from './app/crops-db.generator';
 import { TagBasedItemGenericDbGenerator } from './app/tag-based-item-generic-db.generator';
 import { ItemProcessorDbGenerator } from './app/item-processor-db.generator';
 import { GiftPreferencesDbGenerator } from './app/gift-preferences-db.generator';
+import { NPCDbGenerator } from './app/npc-db.generator';
 
 const itemDbGenerator = new ItemDbGenerator();
 const itemDbMap = itemDbGenerator.generate();
+
+const npcDbGenerator = new NPCDbGenerator(itemDbMap);
+const npcDbMap = npcDbGenerator.generate();
 
 const generators: Record<string, { generate: () => Map<string, any> }> = {
     'crafting-recipes': new CraftingRecipeDbGenerator(itemDbMap),
@@ -40,7 +44,8 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'journal-artisan-products': new JournalOrderDbGenerator('Produce/DT_JournalArtisanProducts.json'),
     'journal-crops': new JournalOrderDbGenerator('Produce/DT_JournalCrops.json'),
 
-    'gift-preferences': new GiftPreferencesDbGenerator(itemDbMap),
+    'gift-preferences': new GiftPreferencesDbGenerator(itemDbMap, npcDbMap),
+    'npcs': new NPCDbGenerator(itemDbMap),
 
     // last so applied changed will be written as well
     items: {generate: () => itemDbMap},

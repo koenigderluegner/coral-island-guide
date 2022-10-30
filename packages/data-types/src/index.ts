@@ -7,6 +7,7 @@ export * from './lib/interfaces/tag-based-item.interface';
 export * from './lib/interfaces/journal-order.interface';
 export * from './lib/interfaces/item-processing.interface';
 export * from './lib/interfaces/gift-preferences.interface';
+export * from './lib/interfaces/npc.interface';
 
 export * from './lib/enums/quality.enum';
 

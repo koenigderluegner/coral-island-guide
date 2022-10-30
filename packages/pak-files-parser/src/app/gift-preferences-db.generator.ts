@@ -1,6 +1,6 @@
 import { BaseGenerator } from './base-generator.class';
 import { RawGiftPreferenceInterface } from '../interfaces/raw-gift-preference.interface';
-import { GiftPreference, GiftPreferences, Item } from '@ci/data-types';
+import { GiftPreference, GiftPreferences, Item, NPC } from '@ci/data-types';
 import { Datatable } from '../interfaces/datatable.interface';
 import { minifyItem, notEmpty, readAsset } from '../util/functions';
 
@@ -10,13 +10,19 @@ export class GiftPreferencesDbGenerator extends BaseGenerator<RawGiftPreferenceI
     universalLikes?: GiftPreferences;
 
 
-    constructor(protected itemMap: Map<string, Item>) {
+    constructor(protected itemMap: Map<string, Item>, protected npcMap: Map<string, NPC>) {
         super();
         this.transform = this.transform.bind(this);
     }
 
-    handleEntry(itemKey: string, dbItem: RawGiftPreferenceInterface): Record<string, GiftPreferences> {
+    handleEntry(itemKey: string, dbItem: RawGiftPreferenceInterface): Record<string, GiftPreferences> | undefined {
         const rec: Record<string, GiftPreferences> = {};
+
+        if (itemKey !== 'ci_universal') {
+            if (!this.npcMap.get(itemKey)?.canReceiveGifts) {
+                return undefined;
+            }
+        }
 
 
         const prefs: Record<keyof GiftPreferences, GiftPreference[]> = {};
