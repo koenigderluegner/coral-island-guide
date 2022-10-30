@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { GiftPreferences } from '@ci/data-types';
 import { MapKeyed } from '../../../shared/types/map-keyed.type';
 import { UiIcon } from '../../../shared/enums/ui-icon.enum';
+import { addSpacesToPascalCase } from '@ci/util';
 
 @Component({
     selector: 'app-gifting',
@@ -12,6 +13,8 @@ import { UiIcon } from '../../../shared/enums/ui-icon.enum';
     encapsulation: ViewEncapsulation.None
 })
 export class GiftingComponent {
+
+
     gifting$: Observable<MapKeyed<GiftPreferences>[]>;
 
     preferencesMap: { icon: UiIcon, label: string; preferenceField: string }[] = [
@@ -22,6 +25,8 @@ export class GiftingComponent {
         {icon: UiIcon.DISLIKE, label: 'Dislike', preferenceField: 'dislikePreferences'},
         {icon: UiIcon.HATE, label: 'Hate', preferenceField: 'hatePreferences'},
     ];
+
+    protected _addSpacesToPascalCase = addSpacesToPascalCase;
 
     constructor(private readonly _database: DatabaseService) {
         this.gifting$ = this._database.fetchGiftingPreferences$();

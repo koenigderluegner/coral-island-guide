@@ -18,7 +18,7 @@
                         <ng-container *ngFor="let loved of giftingPreferences[prefMap.preferenceField]">
                             <app-inline-minimal-item *ngIf="loved.type === 'item'"
                                                      [minimalItem]="loved.item"></app-inline-minimal-item>
-                            <span *ngIf="loved.type === 'category'">All {{loved.categoryName}}</span>
+                            <span *ngIf="loved.type === 'category'">All {{_addSpacesToPascalCase(loved.categoryName)}}</span>
                         </ng-container>
                     </div>
                 </ng-container>
