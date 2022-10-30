@@ -12,6 +12,7 @@ import { JournalOrderDbGenerator } from './app/journal-order-db.generator';
 import { CropsDbGenerator } from './app/crops-db.generator';
 import { TagBasedItemGenericDbGenerator } from './app/tag-based-item-generic-db.generator';
 import { ItemProcessorDbGenerator } from './app/item-processor-db.generator';
+import { GiftPreferencesDbGenerator } from './app/gift-preferences-db.generator';
 
 const itemDbGenerator = new ItemDbGenerator();
 const itemDbMap = itemDbGenerator.generate();
@@ -38,6 +39,8 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'journal-animal-products': new JournalOrderDbGenerator('Produce/DT_JournalAnimalProducts.json'),
     'journal-artisan-products': new JournalOrderDbGenerator('Produce/DT_JournalArtisanProducts.json'),
     'journal-crops': new JournalOrderDbGenerator('Produce/DT_JournalCrops.json'),
+
+    'gift-preferences': new GiftPreferencesDbGenerator(itemDbMap),
 
     // last so applied changed will be written as well
     items: {generate: () => itemDbMap},

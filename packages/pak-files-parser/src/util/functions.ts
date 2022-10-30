@@ -52,3 +52,7 @@ export function minifyItem(item: Item): MinimalItem {
         iconName: item.iconName
     };
 }
+
+export function notEmpty<TValue>(value: TValue | null | undefined): value is TValue {
+    return value !== null && value !== undefined;
+}

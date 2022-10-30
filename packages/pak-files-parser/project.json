@@ -6,14 +6,18 @@
   "targets": {
     "build": {
       "executor": "@nrwl/webpack:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "target": "node",
         "compiler": "tsc",
         "outputPath": "dist/packages/pak-files-parser",
         "main": "packages/pak-files-parser/src/main.ts",
         "tsConfig": "packages/pak-files-parser/tsconfig.app.json",
-        "assets": ["packages/pak-files-parser/src/assets"]
+        "assets": [
+          "packages/pak-files-parser/src/assets"
+        ]
       },
       "configurations": {
         "production": {
@@ -42,9 +46,13 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["packages/pak-files-parser/**/*.ts"]
+        "lintFilePatterns": [
+          "packages/pak-files-parser/**/*.ts"
+        ]
       }
     },
     "test": {
