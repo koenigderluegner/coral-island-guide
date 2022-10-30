@@ -56,6 +56,9 @@ export class CropsDbGenerator {
 
                 };
 
+                crop.item.description = crop.item.description.replace('{cropGrowLength}', '' + crop.growTime);
+                crop.item.description = crop.item.description.replace('{cropRegrowLength}', '' + crop.regrowableLength);
+
                 map.set(crop.key, crop);
             }
 

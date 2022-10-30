@@ -17,7 +17,6 @@ const itemDbGenerator = new ItemDbGenerator();
 const itemDbMap = itemDbGenerator.generate();
 
 const generators: Record<string, { generate: () => Map<string, any> }> = {
-    items: itemDbGenerator,
     'crafting-recipes': new CraftingRecipeDbGenerator(itemDbMap),
     'bugs-and-insects': new BugsAndInsectsDbGenerator(itemDbMap),
     'ocean-critters': new OceanCritterDbGenerator(itemDbMap),
@@ -39,6 +38,9 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'journal-animal-products': new JournalOrderDbGenerator('Produce/DT_JournalAnimalProducts.json'),
     'journal-artisan-products': new JournalOrderDbGenerator('Produce/DT_JournalArtisanProducts.json'),
     'journal-crops': new JournalOrderDbGenerator('Produce/DT_JournalCrops.json'),
+
+    // last so applied changed will be written as well
+    items: {generate: () => itemDbMap},
 };
 
 
