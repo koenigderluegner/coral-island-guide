@@ -1,5 +1,19 @@
 ## Changelog
 
+### 0.3.2 2022-11-01
+
+#### Added
+
+- Added locations to fish details
+- Added table view for caught-journal
+- Added filter for seasons (fish journal only at the moment)
+- Added browser theme color (mobile)
+- Added support for Safaris viewport-fit (landscape mode)
+
+#### Changed
+
+- Fixed rarity text for caught journal entries
+
 ### 0.3.1 2022-10-30
 
 #### Changed

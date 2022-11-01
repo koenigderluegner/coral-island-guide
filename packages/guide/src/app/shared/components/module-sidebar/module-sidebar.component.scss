@@ -1,7 +1,13 @@
+@import "mixins";
+
 .app-module-sidebar {
-  @apply block backdrop-blur-xl;
+  @apply block backdrop-blur-xl py-2;
   background-color: rgba(0, 0, 0, .75);
-  padding: 8px;
+
+  @include safe-area(padding-right, 8px, right);
+  @include safe-area(padding-left, 8px, left);
+
+  padding-right: max(8px, env(safe-area-inset-right));
 
   .hide-menu .app-module-sidebar-list-item:not(.active) {
     display: none;

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Critter, Fish } from '@ci/data-types';
-import { getTruthyValues } from '@ci/util';
+import { addSpacesToPascalCase, getTruthyValues } from '@ci/util';
 
 @Component({
     selector: 'app-caught-details',
@@ -15,6 +15,7 @@ export class CaughtDetailsComponent {
     }
 
     getTruthyValues = getTruthyValues;
+    addSpacesToPascalCase = addSpacesToPascalCase;
 
     dateRangesToString(dateRanges: Fish['dateRangeList']): string {
         return dateRanges.map(range => {

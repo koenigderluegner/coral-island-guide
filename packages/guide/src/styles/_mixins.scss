@@ -1,0 +1,4 @@
+@mixin safe-area($property, $value, $side) {
+  #{$property}: max(#{$value}, env(safe-area-inset-#{$side}));
+
+}

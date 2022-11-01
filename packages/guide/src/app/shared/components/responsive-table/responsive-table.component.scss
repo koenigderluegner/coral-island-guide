@@ -1,0 +1,49 @@
+.app-responsive-table {
+  display: block;
+  table-layout: fixed;
+  overflow: auto;
+  max-height: 100vh;
+  @apply text-black;
+  background: #f7f2e8;
+  border-radius: 5px;
+
+  @media (pointer: coarse) {
+    & {
+      max-width: calc(100% - 24px);
+    }
+  }
+
+  table {
+    @apply w-full;
+  }
+
+
+  tr:nth-child(odd) td {
+    background: #fcfbf8;
+  }
+
+  .app-item-icon {
+    width: 40px;
+  }
+
+  th, .cdk-column-icon {
+    background: #f7f2e8
+  }
+
+  th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+    padding-right: 16px;
+  }
+
+}
+
+@screen sm {
+  .app-responsive-table {
+    max-height: unset;
+  }
+}
+@screen lg {
+  .app-responsive-table {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}

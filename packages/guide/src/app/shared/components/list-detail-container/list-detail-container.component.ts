@@ -27,6 +27,18 @@ export class ListDetailContainerComponent {
 
     _openDrawer = false;
 
+    @Input()
+    get removePlaceholder(): boolean {
+        return this._removePlaceholder;
+    }
+
+    set removePlaceholder(size: boolean | number | string | null | undefined) {
+        this._removePlaceholder = coerceBooleanProperty(size);
+    }
+
+
+    _removePlaceholder = false;
+
     uiIcon = UiIcon;
 
     mobileQuery: MediaQueryList;

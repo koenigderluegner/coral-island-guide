@@ -7,4 +7,6 @@ export interface Critter {
     "maxCaughtSize": number;
     bugsBehaviourPreset: string;
     item: Item;
+
+    [key: string]: Item | string | number;
 }

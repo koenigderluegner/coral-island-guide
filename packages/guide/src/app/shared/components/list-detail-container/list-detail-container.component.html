@@ -1,4 +1,4 @@
-<mat-sidenav-container class="example-container" [hasBackdrop]="false">
+<mat-sidenav-container [hasBackdrop]="false">
     <mat-sidenav #drawer [mode]="'over'" position="end" class="w-full lg:w-[600px]"
                  [fixedInViewport]="mobileQuery.matches" (closed)="openDrawerChange.emit(false)">
         <button type="button" class="drawer-close-button" (click)="drawer.close()">
@@ -6,7 +6,7 @@
         </button>
         <ng-content select="[listDetail]"></ng-content>
     </mat-sidenav>
-    <mat-sidenav-content class="pt-2 pb-6 2xl:pt-[60px] xl:pr-[600px] w-full">
+    <mat-sidenav-content class="pt-2 pb-6 2xl:pt-[60px] w-full" [class.placeholder-padding]="!removePlaceholder">
 
         <ng-content></ng-content>
 

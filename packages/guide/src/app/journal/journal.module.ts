@@ -13,6 +13,14 @@ import { ProduceComponent } from './components/produce/produce.component';
 import { FoundDetailsComponent } from './components/found-details/found-details.component';
 import { ProduceDetailsComponent } from './components/produce-details/produce-details.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { CaughtTableComponent } from './components/tables/caught-table/caught-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { FoundTableComponent } from './components/tables/found-table/found-table.component';
+import { ProduceTableComponent } from './components/tables/produce-table/produce-table.component';
+import { MatSortModule } from '@angular/material/sort';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -24,6 +32,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
         ProduceComponent,
         FoundDetailsComponent,
         ProduceDetailsComponent,
+        CaughtTableComponent,
+        FoundTableComponent,
+        ProduceTableComponent,
     ],
     imports: [
         CommonModule,
@@ -31,7 +42,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
         SharedModule,
         MatTabsModule,
         MatCardModule,
-        MatSidenavModule
+        MatSidenavModule,
+        MatTableModule,
+        MatSortModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        ReactiveFormsModule,
     ],
 })
 export class JournalModule {
