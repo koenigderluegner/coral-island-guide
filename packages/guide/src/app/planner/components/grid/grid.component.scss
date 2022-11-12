@@ -1,0 +1,31 @@
+#horizontal-grid-lines, #vertical-grid-lines {
+  border: 1px solid red;
+  pointer-events: none;
+}
+
+#vertical-grid-lines {
+  border-top: none;
+  border-bottom: none;
+}
+
+#horizontal-grid-lines {
+  border-left: none;
+  border-right: none;
+}
+
+.planner-grid-item {
+  border: 1px solid rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+
+  .app-item-icon {
+    transform: scale(1.5);
+  }
+}
+
+.layers .placed-grid-item {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(0, 0, 0, .3);
+  border: 1px solid rgba(0, 0, 0, .7);
+}
