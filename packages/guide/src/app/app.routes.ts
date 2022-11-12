@@ -36,4 +36,9 @@ export const appRoutes: Route[] = [
         loadChildren: () =>
             import('./people/people.module').then((m) => m.PeopleModule),
     },
+    {
+        path: 'planner',
+        loadChildren: () =>
+            import('./planner/planner.module').then((m) => m.PlannerModule),
+    },
 ];
