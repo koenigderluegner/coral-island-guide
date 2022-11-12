@@ -1,6 +1,7 @@
 #horizontal-grid-lines, #vertical-grid-lines {
-  border: 1px solid red;
+  border: 1px solid black;
   pointer-events: none;
+  z-index: 2;
 }
 
 #vertical-grid-lines {
@@ -11,21 +12,25 @@
 #horizontal-grid-lines {
   border-left: none;
   border-right: none;
+
 }
 
 .planner-grid-item {
   border: 1px solid rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.3);
   overflow: hidden;
+}
 
-  .app-item-icon {
-    transform: scale(1.5);
+.layers {
+  position: absolute;
+
+  .placed-grid-item {
+    position: absolute;
+    pointer-events: none;
+    border: 1px solid rgba(0, 0, 0, .7);
   }
 }
 
-.layers .placed-grid-item {
-  position: absolute;
-  pointer-events: none;
-  background: rgba(0, 0, 0, .3);
-  border: 1px solid rgba(0, 0, 0, .7);
+.selected-item-grid {
+  z-index: -1;
 }

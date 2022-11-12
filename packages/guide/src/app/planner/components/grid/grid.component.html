@@ -1,20 +1,30 @@
+<p class="text-black">{{layers | json}}</p>
 <div class="flex">
-    <div class="flex relative w-fit" id="plannerWrapper">
+    <div class="flex relative w-fit" style="width: {{width*cellSize}}px; height: {{height*cellSize}}px"
+         id="plannerWrapper">
         <div id="horizontal-grid-lines" class=" left-0 right-0  absolute"></div>
         <div id="vertical-grid-lines" class=" top-0 bottom-0  absolute"></div>
         <div class="layers" *ngFor="let layer of layers">
 
-            <table *ngFor="let layer of layers">
+            <table class="table-fixed w-full">
                 <tr *ngFor="let i of yDummyArray; let y = index">
-                    <td style="width: {{cellSize}}px; height: {{cellSize}}px" class="hover:bg-pink-500"
-                        (mouseenter)="hover($event)" (click)="create($event, x,y)"
+                    <td style="width: {{cellSize}}px; height: {{cellSize}}px"
+                        (mouseenter)="hover($event, x, y)" (click)="create($event, x,y)"
                         *ngFor="let j of xDummyArray; let x = index"></td>
                 </tr>
             </table>
 
 
         </div>
-        <div id="plannerSelected" class="absolute pointer-events-none planner-grid-item"></div>
+        <div id="plannerSelected" class="absolute pointer-events-none planner-grid-item box-content">
+            <div id="selectedItem"></div>
+            <div class="flex absolute box-content flex-wrap top-0 selected-item-grid" *ngIf="selectedItem;">
+                <div *ngFor="let _ of selectedItemSize ; let i = index"
+                     style="width: {{cellSize}}px; height: {{cellSize}}px; background: #f0f"
+                     [attr.data-x]="i % selectedItem.width"
+                     [attr.data-y]="(i - (i % selectedItem.width)) / selectedItem.width"></div>
+            </div>
+        </div>
 
     </div>
     <div id="grid-selectable-options"></div>

@@ -11,14 +11,8 @@ import {
 import { PlannerLayer } from '../../classes/planner-layer.class';
 import { coerceNumberProperty } from '@angular/cdk/coercion';
 import { ItemIconComponent } from '../../../shared/components/item-icon/item-icon.component';
-import { ComponentType } from '@angular/cdk/overlay';
+import { GridPlaceable } from '../../interfaces/grid-placeable.interface';
 
-interface placeable<T> {
-    component: ComponentType<T>,
-    width: number,
-    height: number,
-    inputs: Map<string, unknown>;
-}
 
 @Component({
     selector: 'app-grid',
@@ -28,9 +22,10 @@ interface placeable<T> {
 })
 export class GridComponent implements OnInit {
 
-    cellSize = 36;
+    cellSize = 30;
     protected version = 1;
-    private selectedItem: placeable<any> | null = null;
+    selectedItem: (GridPlaceable<any> & { key: string }) | null = null;
+    selectedItemSize: number[] = [];
 
     @Input() set width(width: any) {
         this._width = coerceNumberProperty(width, 1);
@@ -54,18 +49,21 @@ export class GridComponent implements OnInit {
     protected yDummyArray: number[] = [0];
     protected xDummyArray: number[] = [0];
 
-    placeableItems: Map<string, placeable<any>> = new Map<string, placeable<any>>();
+    placeableItems: Map<string, GridPlaceable<any>> = new Map<string, GridPlaceable<any>>();
 
     constructor(
         private appRef: ApplicationRef,
         private injector: EnvironmentInjector
     ) {
         this.addLayer();
+        this.addLayer();
+        this.addLayer();
 
         this.placeableItems.set('spinkler1', {
             component: ItemIconComponent,
             width: 1,
             height: 1,
+            layer: 2,
             inputs: new Map<string, unknown>([
                 ['itemName', 'Items_Sprinkler.png']
             ])
@@ -74,6 +72,7 @@ export class GridComponent implements OnInit {
             component: ItemIconComponent,
             width: 2,
             height: 2,
+            layer: 2,
             inputs: new Map<string, unknown>([
                 ['itemName', 'Yogurt_Machine.png']
             ])
@@ -95,6 +94,8 @@ export class GridComponent implements OnInit {
         if (layer < 0 || layer >= this.layers.length
             || x < 0 || x >= this._width
             || y < 0 || y >= this._height) return false;
+
+        if (this.layers[layer].placeables.find(placeable => (x >= placeable.x && (x <= (placeable.x + placeable.item.width))) && (y >= placeable.y && y <= (placeable.y + placeable.item.height)))) return false;
 
         return true;
     }
@@ -121,7 +122,7 @@ export class GridComponent implements OnInit {
 
     }
 
-    hover($event: Event) {
+    hover($event: Event, x: number, y: number) {
 
         const {top, left, height, width} = this.getPosition($event);
 
@@ -133,6 +134,8 @@ export class GridComponent implements OnInit {
         if (!wrapper) return;
         wrapper.style.top = top + 'px';
         wrapper.style.left = left + 'px';
+        wrapper.style.height = (this.selectedItem?.height ?? 1) * height + 'px';
+        wrapper.style.width = (this.selectedItem?.width ?? 1) * width + 'px';
 
         if (horizontalLines) {
             horizontalLines.style.top = top + 'px';
@@ -144,10 +147,24 @@ export class GridComponent implements OnInit {
             verticalLines.style.width = width + 'px';
         }
 
+        if (this.selectedItem) {
+            for (let xi = x; xi < x + this.selectedItem?.width; xi++) {
+                for (let yi = y; yi < y + this.selectedItem?.height; yi++) {
+                    const seelctedItemGridItem = document.querySelector(`[data-x="${xi - x}"][data-y="${yi - y}"]`) as HTMLDivElement;
+                    if (!this.canPlace(this.selectedItem.layer, xi, yi)) {
+                        seelctedItemGridItem.style.background = '#f00';
+                    } else {
+                        seelctedItemGridItem.style.background = '#0f0';
+                    }
+                }
+
+            }
+        }
+
 
     }
 
-    create($event: Event, x?: number, y?: number): void {
+    create($event: Event, x: number, y: number): void {
 
         const {top, left} = this.getPosition($event);
 
@@ -162,13 +179,18 @@ export class GridComponent implements OnInit {
         }
         nativeElement.classList.add('placed-grid-item');
         this.attachComponent('.layers', dialogRef);
+        if (this.selectedItem) {
+            const layer = this.layers[this.selectedItem.layer];
+
+            layer.addPlaceable(this.selectedItem.key, {x, y, item: this.selectedItem});
+        }
     }
 
     private setSelectedItem(key: string) {
 
         const value = this.placeableItems.get(key);
         if (!value) return;
-        this.selectedItem = value;
+        this.selectedItem = {...value, key};
 
         const componentRef = this.createComponent(value);
         let nativeElement = componentRef.location.nativeElement;
@@ -176,18 +198,20 @@ export class GridComponent implements OnInit {
             this.setSelectedItem(key));
 
         let elementById = document.getElementById('plannerSelected');
+        let selectedItemContainer = document.getElementById('selectedItem');
 
-        if (!elementById) return;
+        if (!elementById || !selectedItemContainer) return;
 
-        elementById.innerHTML = '';
+        selectedItemContainer.innerHTML = '';
         elementById.style.width = value.width * this.cellSize + 'px';
         elementById.style.height = value.width * this.cellSize + 'px';
-        this.attachComponent('#plannerSelected', componentRef);
+        this.attachComponent('#selectedItem', componentRef);
+        this.selectedItemSize = Array(this.selectedItem.width * this.selectedItem.height).fill(0);
 
 
     }
 
-    createComponent<T>(value: placeable<T>): ComponentRef<T> {
+    createComponent<T>(value: GridPlaceable<T>): ComponentRef<T> {
         const componentRef = createComponent(value.component, {
             environmentInjector: this.injector
         });
@@ -239,4 +263,5 @@ export class GridComponent implements OnInit {
             height: boundingClientRect.height
         };
     }
+
 }
