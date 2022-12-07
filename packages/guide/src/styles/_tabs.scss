@@ -1,13 +1,13 @@
-.mat-tab-group {
+.mat-mdc-tab-group {
   width: 100%;
   max-width: calc(100vw - (env(safe-area-inset-right) + env(safe-area-inset-right))) !important;
 }
 
-.mat-tab-labels {
+.mat-mdc-tab-labels {
   @apply gap-x-3 justify-center mb-3;
 }
 
-.mat-tab-label {
+.mdc-tab {
   opacity: 1 !important;
   background: rgba(255, 255, 255, .3);
   border: 3px solid rgba(255, 255, 255, .3);
@@ -15,6 +15,10 @@
   border-radius: 15px;
 }
 
-.mat-tab-label-active {
+.mdc-tab--active {
   @apply bg-white text-black border-white
+}
+
+.mdc-tab-indicator .mdc-tab-indicator__content--underline {
+  display: none;
 }

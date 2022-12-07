@@ -4,7 +4,7 @@ import { DatabaseService } from '../../../shared/services/database.service';
 import { map, Observable, take, tap } from 'rxjs';
 import { ItemProcessing, Quality } from '@ci/data-types';
 import { ItemListComponent } from '../../../shared/components/item-list/item-list.component';
-import { MatTabChangeEvent } from '@angular/material/tabs';
+import { MatTabChangeEvent } from "@angular/material/tabs";
 
 @Component({
     selector: 'app-processor',
