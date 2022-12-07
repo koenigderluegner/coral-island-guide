@@ -1,9 +1,11 @@
 import { GridPlaceable } from '../interfaces/grid-placeable.interface';
 
+type Placeable = { x: number, y: number; item: (GridPlaceable<any> & { key: string }) };
+
 export class PlannerLayer {
     protected width: number;
     protected height: number;
-    placeables: { x: number, y: number; item: (GridPlaceable<any> & { key: string }) }[] = [];
+    placeables: Placeable[] = [];
 
 
     constructor(width: number, height: number) {
@@ -11,8 +13,20 @@ export class PlannerLayer {
         this.height = height;
     }
 
-    addPlaceable(key: string, item: { x: number, y: number; item: (GridPlaceable<any> & { key: string }) }): void {
+    addPlaceable(item: Placeable): void {
         this.placeables.push(item);
     }
+
+    at(x: number, y: number): Placeable | null {
+        return this.placeables.find(placeable => {
+            let leftBound = placeable.x;
+            let rightBound = (leftBound + placeable.item.width) - 1;
+            let topBound = placeable.y;
+            let bottomBound = (topBound + placeable.item.height) - 1;
+            return (x >= leftBound && (x <= rightBound)) && (y >= topBound && y <= bottomBound)
+        }) ?? null;
+
+    }
+
 
 }

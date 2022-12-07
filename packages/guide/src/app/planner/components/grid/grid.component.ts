@@ -10,8 +10,8 @@ import {
 } from '@angular/core';
 import { PlannerLayer } from '../../classes/planner-layer.class';
 import { coerceNumberProperty } from '@angular/cdk/coercion';
-import { ItemIconComponent } from '../../../shared/components/item-icon/item-icon.component';
 import { GridPlaceable } from '../../interfaces/grid-placeable.interface';
+import { PlaceableItemsMap } from "../../registered-planner-items";
 
 
 @Component({
@@ -22,7 +22,7 @@ import { GridPlaceable } from '../../interfaces/grid-placeable.interface';
 })
 export class GridComponent implements OnInit {
 
-    cellSize = 30;
+    cellSize = 22;
     protected version = 1;
     selectedItem: (GridPlaceable<any> & { key: string }) | null = null;
     selectedItemSize: number[] = [];
@@ -49,7 +49,7 @@ export class GridComponent implements OnInit {
     protected yDummyArray: number[] = [0];
     protected xDummyArray: number[] = [0];
 
-    placeableItems: Map<string, GridPlaceable<any>> = new Map<string, GridPlaceable<any>>();
+
 
     constructor(
         private appRef: ApplicationRef,
@@ -58,26 +58,6 @@ export class GridComponent implements OnInit {
         this.addLayer();
         this.addLayer();
         this.addLayer();
-
-        this.placeableItems.set('spinkler1', {
-            component: ItemIconComponent,
-            width: 1,
-            height: 1,
-            layer: 2,
-            inputs: new Map<string, unknown>([
-                ['itemName', 'Items_Sprinkler.png']
-            ])
-        });
-        this.placeableItems.set('yogurtmachine', {
-            component: ItemIconComponent,
-            width: 2,
-            height: 2,
-            layer: 2,
-            inputs: new Map<string, unknown>([
-                ['itemName', 'Yogurt_Machine.png']
-            ])
-        });
-
 
     }
 
@@ -95,9 +75,9 @@ export class GridComponent implements OnInit {
             || x < 0 || x >= this._width
             || y < 0 || y >= this._height) return false;
 
-        if (this.layers[layer].placeables.find(placeable => (x >= placeable.x && (x <= (placeable.x + placeable.item.width))) && (y >= placeable.y && y <= (placeable.y + placeable.item.height)))) return false;
+        return !this.layers[layer].at(x, y);
 
-        return true;
+
     }
 
     ngOnInit(): void {
@@ -105,8 +85,8 @@ export class GridComponent implements OnInit {
         this.yDummyArray = Array(this._height).fill(0);
 
 
-        for (let key of this.placeableItems.keys()) {
-            const value = this.placeableItems.get(key);
+        for (let key of PlaceableItemsMap.keys()) {
+            const value = PlaceableItemsMap.get(key);
             if (!value) continue;
 
             const dialogRef = this.createComponent(value);
@@ -115,10 +95,7 @@ export class GridComponent implements OnInit {
                 this.setSelectedItem(key));
 
             this.attachComponent('#grid-selectable-options', dialogRef);
-
-
         }
-
 
     }
 
@@ -132,19 +109,19 @@ export class GridComponent implements OnInit {
 
 
         if (!wrapper) return;
-        wrapper.style.top = top + 'px';
-        wrapper.style.left = left + 'px';
-        wrapper.style.height = (this.selectedItem?.height ?? 1) * height + 'px';
-        wrapper.style.width = (this.selectedItem?.width ?? 1) * width + 'px';
+        wrapper.style.top = top - 1 + 'px';
+        wrapper.style.left = left - 1 + 'px';
+        wrapper.style.height = (this.selectedItem?.height ?? 1) * height - 1 + 'px';
+        wrapper.style.width = (this.selectedItem?.width ?? 1) * width - 1 + 'px';
 
         if (horizontalLines) {
-            horizontalLines.style.top = top + 'px';
-            horizontalLines.style.height = height + 'px';
+            horizontalLines.style.top = top - 1 + 'px';
+            horizontalLines.style.height = height + 1 + 'px';
         }
 
         if (verticalLines) {
-            verticalLines.style.left = left + 'px';
-            verticalLines.style.width = width + 'px';
+            verticalLines.style.left = left - 1 + 'px';
+            verticalLines.style.width = width + 1 + 'px';
         }
 
         if (this.selectedItem) {
@@ -174,21 +151,21 @@ export class GridComponent implements OnInit {
         const dialogRef = this.createComponent(sprinkler1);
         let nativeElement = dialogRef.location.nativeElement;
         if (x !== undefined && y !== undefined) {
-            nativeElement.style.top = top + 'px';
-            nativeElement.style.left = left + 'px';
+            nativeElement.style.top = top - 1 + 'px';
+            nativeElement.style.left = left - 1 + 'px';
         }
         nativeElement.classList.add('placed-grid-item');
         this.attachComponent('.layers', dialogRef);
         if (this.selectedItem) {
             const layer = this.layers[this.selectedItem.layer];
 
-            layer.addPlaceable(this.selectedItem.key, {x, y, item: this.selectedItem});
+            layer.addPlaceable({x, y, item: this.selectedItem});
         }
     }
 
     private setSelectedItem(key: string) {
 
-        const value = this.placeableItems.get(key);
+        const value = PlaceableItemsMap.get(key);
         if (!value) return;
         this.selectedItem = {...value, key};
 
@@ -221,8 +198,8 @@ export class GridComponent implements OnInit {
             componentRef.setInput(inputName, value.inputs.get(inputName));
         }
         let nativeElement = componentRef.location.nativeElement;
-        nativeElement.style.width = value.width * this.cellSize + 'px';
-        nativeElement.style.height = value.height * this.cellSize + 'px';
+        nativeElement.style.width = value.width * this.cellSize + 1 + 'px';
+        nativeElement.style.height = value.height * this.cellSize + 1 + 'px';
 
 
         return componentRef;

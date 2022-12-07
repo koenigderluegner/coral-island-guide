@@ -16,9 +16,17 @@
 
 
         </div>
+        <table class="table-fixed w-full pointer-events-none absolute grid-overlay">
+            <tr *ngFor="let i of yDummyArray; let y = index">
+                <td style="width: {{cellSize}}px; height: {{cellSize}}px"
+                    (mouseenter)="hover($event, x, y)" (click)="create($event, x,y)"
+                    *ngFor="let j of xDummyArray; let x = index"></td>
+            </tr>
+        </table>
         <div id="plannerSelected" class="absolute pointer-events-none planner-grid-item box-content">
             <div id="selectedItem"></div>
-            <div class="flex absolute box-content flex-wrap top-0 selected-item-grid" *ngIf="selectedItem;">
+            <div class="flex absolute box-content flex-wrap top-0 selected-item-grid" *ngIf="selectedItem;"
+                 style="width: {{selectedItem.width * cellSize}}px">
                 <div *ngFor="let _ of selectedItemSize ; let i = index"
                      style="width: {{cellSize}}px; height: {{cellSize}}px; background: #f0f"
                      [attr.data-x]="i % selectedItem.width"
