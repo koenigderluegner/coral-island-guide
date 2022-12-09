@@ -27,10 +27,8 @@ export class BaseJournalPageComponent<D extends ({ item: Item } | Item)> {
     protected readonly _database: DatabaseService = inject(DatabaseService);
 
     getFilteredJournalData(journalOrder$: Observable<JournalOrder[]>, data: Observable<D[]>): Observable<D[]> {
-        console.log(this.formControl.value);
         return combineLatest([journalOrder$, data, this.formControl.valueChanges.pipe(startWith(this.formControl.value))]).pipe(map(
             ([orders, entries, filterValues]) => {
-                console.log({orders, entries, filterValues});
                 const res: D[] = [];
 
 

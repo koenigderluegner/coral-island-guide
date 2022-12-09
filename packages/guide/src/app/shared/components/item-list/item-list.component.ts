@@ -1,16 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { MinimalItem, TagBasedItem } from '@ci/data-types';
+import { GenericEntry, ItemEntry } from '@ci/data-types';
 
-type ItemEntry = {
-    item?: MinimalItem;
-    amount: number
-};
-
-type GenericEntry = {
-    shouldBeSameItem: boolean,
-    amount: number;
-    genericItem?: TagBasedItem
-};
 
 @Component({
     selector: 'app-item-list',

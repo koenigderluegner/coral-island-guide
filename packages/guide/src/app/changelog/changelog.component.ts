@@ -16,8 +16,4 @@ export class ChangelogComponent {
 
     markdown = pageMarkdown;
 
-    constructor() {
-        console.log(pageMarkdown);
-    }
-
 }

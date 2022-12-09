@@ -42,6 +42,8 @@ export class ItemProcessorDbGenerator {
 
                 const dbItem: RawItemProcessing | undefined = this.datatables[machineName][0].Rows[pseudoItemKey];
 
+                if (dbItem.input.item.itemID === 'None') return;
+
                 const inputItem = minifyItem(this.itemMap.get(this.removeQualityFlag(dbItem.input.item.itemID))!);
                 const outputItem = minifyItem(this.itemMap.get(this.removeQualityFlag(dbItem.output.itemID))!);
 
@@ -54,6 +56,7 @@ export class ItemProcessorDbGenerator {
                     time: dbItem.time,
                     additionalInput: dbItem.additionalInput.map(ai => {
                         const item = this.itemMap.get(this.removeQualityFlag(ai.item.itemID))!;
+
                         return {
                             amount: ai.amount,
                             item: minifyItem(item)
