@@ -8,7 +8,7 @@ import {
     OnInit,
     ViewEncapsulation
 } from '@angular/core';
-import { PlannerLayer } from '../../classes/planner-layer.class';
+import { Placeable, PlannerLayer } from '../../classes/planner-layer.class';
 import { coerceNumberProperty } from '@angular/cdk/coercion';
 import { GridPlaceable } from '../../interfaces/grid-placeable.interface';
 import { PlaceableItemsMap } from "../../registered-planner-items";
@@ -50,7 +50,6 @@ export class GridComponent implements OnInit {
     protected xDummyArray: number[] = [0];
 
 
-
     constructor(
         private appRef: ApplicationRef,
         private injector: EnvironmentInjector
@@ -81,6 +80,7 @@ export class GridComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.load('[ [], [], [ { "x": 57, "y": 3, "key": "yogurtmachine" }, { "x": 48, "y": 8, "key": "yogurtmachine" }, { "x": 38, "y": 5, "key": "yogurtmachine" }, { "x": 1, "y": 1, "key": "yogurtmachine" }, { "x": 80, "y": 0, "key": "spinkler1" } ] ]')
         this.xDummyArray = Array(this._width).fill(0);
         this.yDummyArray = Array(this._height).fill(0);
 
@@ -239,6 +239,35 @@ export class GridComponent implements OnInit {
             width: boundingClientRect.width,
             height: boundingClientRect.height
         };
+    }
+
+    save(): void {
+        console.log(JSON.stringify(this.layers));
+    }
+
+    load(data: string): void {
+
+        const loadedData: ReturnType<PlannerLayer['toJSON']>[] = JSON.parse(data);
+
+        loadedData.forEach((layerData, index) => {
+            const layer = this.getLayerAt(index)
+            if (!layer) this.addLayer();
+
+            layerData.forEach(dataEntry => {
+                // TODO place component
+                const gridPlaceable = PlaceableItemsMap.get(dataEntry.key);
+                if (gridPlaceable) {
+                    const placeable: Placeable = {
+                        x: dataEntry.x,
+                        y: dataEntry.y,
+                        item: {...gridPlaceable, key: dataEntry.key}
+                    }
+                    layer?.addPlaceable(placeable);
+                }
+
+            })
+        })
+        console.log(loadedData);
     }
 
 }
