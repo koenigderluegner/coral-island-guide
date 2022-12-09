@@ -1,6 +1,6 @@
 import { GridPlaceable } from '../interfaces/grid-placeable.interface';
 
-type Placeable = { x: number, y: number; item: (GridPlaceable<any> & { key: string }) };
+export type Placeable = { x: number, y: number; item: (GridPlaceable<any> & { key: string }) };
 
 export class PlannerLayer {
     protected width: number;
@@ -28,5 +28,11 @@ export class PlannerLayer {
 
     }
 
+
+    toJSON(): { key: string, x: number, y: number }[] {
+        return this.placeables.map(placeable => {
+            return {x: placeable.x, y: placeable.y, key: placeable.item.key}
+        })
+    }
 
 }
