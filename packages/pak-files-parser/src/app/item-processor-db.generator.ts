@@ -15,6 +15,7 @@ export class ItemProcessorDbGenerator {
     }
 
     generate(): Map<string, Record<string, ItemProcessing[]>> {
+                // Content ProjectCoral Data ItempProcessing
         const itemProcessingDir = path.join(__dirname, 'assets', 'ItemProcessing',);
         const res: Map<string, Record<string, ItemProcessing[]>> = new Map<string, Record<string, ItemProcessing[]>>();
 
@@ -47,7 +48,7 @@ export class ItemProcessorDbGenerator {
                 const exisitingItem = recipes.find(recipe => recipe.output.item.id === outputItem.id);
 
 
-                let newRecipe = {
+                let newRecipe: ItemProcessing = {
                     useCategory: dbItem.useCategory,
                     day: dbItem.day,
                     time: dbItem.time,
@@ -65,7 +66,11 @@ export class ItemProcessorDbGenerator {
                     output: {
                         amount: dbItem.amount,
                         item: outputItem
-                    }
+                    },
+                    genericInput: dbItem.useGenericRequirement ? {
+                        amount: dbItem.genericInput.amount,
+                        key: dbItem.genericInput.genericItem.RowName,
+                    } : null
 
                 };
 

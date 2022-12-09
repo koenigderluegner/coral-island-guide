@@ -22,6 +22,14 @@ export interface RawItemProcessing {
             "RowName": string
         }
     },
+    "useGenericRequirement": boolean,
+    "genericInput": {
+        "genericItem": {
+            "DataTable": null | string,
+            "RowName": "None"
+        },
+        "amount": number
+    },
     "inputAmount": number,
     "additionalInput": {
         "item": {
