@@ -14,6 +14,7 @@ import { TagBasedItemGenericDbGenerator } from './app/tag-based-item-generic-db.
 import { ItemProcessorDbGenerator } from './app/item-processor-db.generator';
 import { GiftPreferencesDbGenerator } from './app/gift-preferences-db.generator';
 import { NPCDbGenerator } from './app/npc-db.generator';
+import { CraftingRecipeUnlockedByMasteryDbGenerator } from "./app/crafting-recipe-unlocked-by-mastery-db.generator";
 
 const itemDbGenerator = new ItemDbGenerator();
 const itemDbMap = itemDbGenerator.generate();
@@ -21,8 +22,11 @@ const itemDbMap = itemDbGenerator.generate();
 const npcDbGenerator = new NPCDbGenerator(itemDbMap);
 const npcDbMap = npcDbGenerator.generate();
 
+const craftingRecipeUnlockedByMasteryDbGenerator = new CraftingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
+const craftingRecipeUnlockedByMasteryDbMap = craftingRecipeUnlockedByMasteryDbGenerator.generate();
+
 const generators: Record<string, { generate: () => Map<string, any> }> = {
-    'crafting-recipes': new CraftingRecipeDbGenerator(itemDbMap),
+    'crafting-recipes': new CraftingRecipeDbGenerator(itemDbMap, craftingRecipeUnlockedByMasteryDbMap),
     'bugs-and-insects': new BugsAndInsectsDbGenerator(itemDbMap),
     'ocean-critters': new OceanCritterDbGenerator(itemDbMap),
     'fish': new FishDbGenerator(itemDbMap),
@@ -46,6 +50,8 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
 
     'gift-preferences': new GiftPreferencesDbGenerator(itemDbMap, npcDbMap),
     'npcs': new NPCDbGenerator(itemDbMap),
+
+    'crafting-unlocks-by-mastery': {generate: () => craftingRecipeUnlockedByMasteryDbMap},
 
     // last so applied changed will be written as well
     items: {generate: () => itemDbMap},

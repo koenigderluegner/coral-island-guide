@@ -1,5 +1,10 @@
 <app-base-item-card *ngIf="craftingRecipe && craftingRecipe.item" [item]="craftingRecipe.item">
 
+    <div *ngIf="craftingRecipe.craftingUnlock">
+        Unlocked: <span
+            class="text-black">Level {{craftingRecipe.craftingUnlock.masteryLevel}}
+        in {{craftingRecipe.craftingUnlock.masteryType}}</span>
+    </div>
 
     <app-item-list [itemList]="itemList" class="mb-3"></app-item-list>
 

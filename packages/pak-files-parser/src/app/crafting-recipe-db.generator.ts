@@ -1,13 +1,13 @@
 import { readAsset } from '../util/functions';
 import { CraftingRecipes } from '../types/crafting-recipes.type';
 import { RawCraftingRecipe } from '../interfaces/crafting-recipe.interface';
-import { CraftingRecipe, Item } from '@ci/data-types';
+import { CraftingRecipe, CraftingUnlockByMastery, Item } from '@ci/data-types';
 
 export class CraftingRecipeDbGenerator {
 
     recipesDB: CraftingRecipes[];
 
-    constructor(protected itemMap: Map<string, Item>) {
+    constructor(protected itemMap: Map<string, Item>, protected craftingUnlockMap: Map<string, CraftingUnlockByMastery>) {
 
         // ProjectCoral Content Project Coral Core Data Crafting
         this.recipesDB = readAsset<CraftingRecipes[]>('DT_CraftingRecipes.json');
@@ -32,7 +32,8 @@ export class CraftingRecipeDbGenerator {
                 genericIngredients: dbItem.genericIngredients.map(gi => {
                     return {key: gi.genericItem.RowName, amount: gi.amount, shouldBeSameItem: gi.shouldBeSameItem};
                 }),
-                category: dbItem.dataCategory.RowName
+                category: dbItem.dataCategory.RowName,
+                craftingUnlock: this.craftingUnlockMap.get(itemKey)
             };
 
             map.set(itemKey, craftingRecipe);
