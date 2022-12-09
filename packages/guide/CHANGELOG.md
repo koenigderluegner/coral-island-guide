@@ -1,5 +1,13 @@
 ## Changelog
 
+### 0.3.3 2022-12-09
+
+#### Added
+
+- Added data of winter update 2022 (2022-12-09)
+    - Fixed parsing errors caused by this
+- Added mastery unlocks to crafting recipes
+
 ### 0.3.2 2022-11-01
 
 #### Added
