@@ -12,6 +12,6 @@ export class ItemListComponent {
 
 
     protected isGenericEntry(e: ItemEntry | GenericEntry): e is GenericEntry {
-        return 'shouldBeSameItem' in e;
+        return 'genericItem' in e;
     }
 }
