@@ -109,18 +109,18 @@ export class GridComponent implements OnInit {
 
 
         if (!wrapper) return;
-        wrapper.style.top = top - 1 + 'px';
-        wrapper.style.left = left - 1 + 'px';
+        wrapper.style.top = top + 'px';
+        wrapper.style.left = left + 'px';
         wrapper.style.height = (this.selectedItem?.height ?? 1) * height - 1 + 'px';
         wrapper.style.width = (this.selectedItem?.width ?? 1) * width - 1 + 'px';
 
         if (horizontalLines) {
-            horizontalLines.style.top = top - 1 + 'px';
+            horizontalLines.style.top = top + 'px';
             horizontalLines.style.height = height + 1 + 'px';
         }
 
         if (verticalLines) {
-            verticalLines.style.left = left - 1 + 'px';
+            verticalLines.style.left = left + 'px';
             verticalLines.style.width = width + 1 + 'px';
         }
 
@@ -151,8 +151,8 @@ export class GridComponent implements OnInit {
         const dialogRef = this.createComponent(sprinkler1);
         let nativeElement = dialogRef.location.nativeElement;
         if (x !== undefined && y !== undefined) {
-            nativeElement.style.top = top - 1 + 'px';
-            nativeElement.style.left = left - 1 + 'px';
+            nativeElement.style.top = top + 'px';
+            nativeElement.style.left = left + 'px';
         }
         nativeElement.classList.add('placed-grid-item');
         this.attachComponent('.layers', dialogRef);
