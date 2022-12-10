@@ -2,6 +2,13 @@
 <div class="flex">
     <div class="flex relative w-fit" style="width: {{width*cellSize}}px; height: {{height*cellSize}}px"
          id="plannerWrapper">
+        <table class="table-fixed w-full pointer-events-none absolute grid-overlay">
+            <tr *ngFor="let i of yDummyArray; let y = index">
+                <td style="width: {{cellSize}}px; height: {{cellSize}}px"
+                    (mouseenter)="hover($event, x, y)" (click)="create($event, x,y)"
+                    *ngFor="let j of xDummyArray; let x = index"></td>
+            </tr>
+        </table>
         <div id="horizontal-grid-lines" class=" left-0 right-0  absolute"></div>
         <div id="vertical-grid-lines" class=" top-0 bottom-0  absolute"></div>
         <div class="layers" *ngFor="let layer of layers; let i = index">
@@ -16,13 +23,7 @@
 
 
         </div>
-        <table class="table-fixed w-full pointer-events-none absolute grid-overlay">
-            <tr *ngFor="let i of yDummyArray; let y = index">
-                <td style="width: {{cellSize}}px; height: {{cellSize}}px"
-                    (mouseenter)="hover($event, x, y)" (click)="create($event, x,y)"
-                    *ngFor="let j of xDummyArray; let x = index"></td>
-            </tr>
-        </table>
+
         <div id="plannerSelected" class="absolute pointer-events-none planner-grid-item box-content">
             <div id="selectedItem"></div>
             <div class="flex absolute box-content flex-wrap top-0 selected-item-grid" *ngIf="selectedItem;"
