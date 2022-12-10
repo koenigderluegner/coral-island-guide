@@ -1,4 +1,5 @@
 import {
+    AfterViewInit,
     ApplicationRef,
     Component,
     ComponentRef,
@@ -20,7 +21,7 @@ import { PlaceableItemsMap } from "../../registered-planner-items";
     styleUrls: ['./grid.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class GridComponent implements OnInit {
+export class GridComponent implements OnInit, AfterViewInit {
 
     cellSize = 22;
     protected version = 1;
@@ -80,7 +81,6 @@ export class GridComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.load('[ [], [], [ { "x": 57, "y": 3, "key": "yogurtmachine" }, { "x": 48, "y": 8, "key": "yogurtmachine" }, { "x": 38, "y": 5, "key": "yogurtmachine" }, { "x": 1, "y": 1, "key": "yogurtmachine" }, { "x": 80, "y": 0, "key": "spinkler1" } ] ]')
         this.xDummyArray = Array(this._width).fill(0);
         this.yDummyArray = Array(this._height).fill(0);
 
@@ -101,7 +101,7 @@ export class GridComponent implements OnInit {
 
     hover($event: Event, x: number, y: number) {
 
-        const {top, left, height, width} = this.getPosition($event);
+        const {top, left, height, width} = this.getPosition($event.target as HTMLTableCellElement | null);
 
         const wrapper = document.getElementById('plannerSelected');
         const horizontalLines = document.getElementById('horizontal-grid-lines');
@@ -143,24 +143,27 @@ export class GridComponent implements OnInit {
 
     create($event: Event, x: number, y: number): void {
 
-        const {top, left} = this.getPosition($event);
+        const {top, left} = this.getPosition($event.target as HTMLTableCellElement | null);
 
 
         let sprinkler1 = this.selectedItem;
         if (!sprinkler1) return;
-        const dialogRef = this.createComponent(sprinkler1);
-        let nativeElement = dialogRef.location.nativeElement;
-        if (x !== undefined && y !== undefined) {
-            nativeElement.style.top = top + 'px';
-            nativeElement.style.left = left + 'px';
-        }
-        nativeElement.classList.add('placed-grid-item');
-        this.attachComponent('.layers', dialogRef);
+        const component = this.createComponent(sprinkler1);
+        this.placeComponent(top, left, component)
         if (this.selectedItem) {
             const layer = this.layers[this.selectedItem.layer];
-
             layer.addPlaceable({x, y, item: this.selectedItem});
         }
+    }
+
+    private placeComponent(top: number, left: number, component: ComponentRef<any>) {
+        let nativeElement = component.location.nativeElement;
+
+        nativeElement.style.top = top + 'px';
+        nativeElement.style.left = left + 'px';
+
+        nativeElement.classList.add('placed-grid-item');
+        this.attachComponent('.layers', component);
     }
 
     private setSelectedItem(key: string) {
@@ -211,9 +214,8 @@ export class GridComponent implements OnInit {
         this.appRef.attachView(component.hostView);
     }
 
-    getPosition($event: Event): { top: number, left: number, bottom: number, right: number, width: number, height: number } {
+    getPosition(cell: HTMLTableCellElement | null): { top: number, left: number, bottom: number, right: number, width: number, height: number } {
 
-        const cell: HTMLTableCellElement | null = $event.target as HTMLTableCellElement | null;
         const plannerWrapper = document.getElementById('plannerWrapper');
 
         let boundingClientRect = cell?.getBoundingClientRect();
@@ -254,9 +256,12 @@ export class GridComponent implements OnInit {
             if (!layer) this.addLayer();
 
             layerData.forEach(dataEntry => {
-                // TODO place component
+                const cellElement: HTMLTableCellElement | null = document.querySelector(`.layers [data-layer-table="${index}"] [data-table-row="${dataEntry.y}"]  [data-table-col="${dataEntry.x}"] `);
+
                 const gridPlaceable = PlaceableItemsMap.get(dataEntry.key);
-                if (gridPlaceable) {
+                if (gridPlaceable && cellElement) {
+                    const {top, left} = this.getPosition(cellElement)
+                    this.placeComponent(top, left, this.createComponent(gridPlaceable))
                     const placeable: Placeable = {
                         x: dataEntry.x,
                         y: dataEntry.y,
@@ -268,6 +273,11 @@ export class GridComponent implements OnInit {
             })
         })
         console.log(loadedData);
+    }
+
+    ngAfterViewInit(): void {
+        this.load('[[],[],[{"x":57,"y":3,"key":"yogurtmachine"},{"x":48,"y":8,"key":"yogurtmachine"},{"x":38,"y":5,"key":"yogurtmachine"},{"x":1,"y":1,"key":"yogurtmachine"},{"x":80,"y":0,"key":"spinkler1"},{"x":3,"y":1,"key":"yogurtmachine"},{"x":5,"y":1,"key":"yogurtmachine"},{"x":7,"y":0,"key":"yogurtmachine"},{"x":23,"y":12,"key":"yogurtmachine"},{"x":38,"y":19,"key":"yogurtmachine"},{"x":35,"y":15,"key":"yogurtmachine"},{"x":44,"y":16,"key":"yogurtmachine"},{"x":53,"y":22,"key":"yogurtmachine"},{"x":20,"y":23,"key":"yogurtmachine"},{"x":11,"y":26,"key":"yogurtmachine"},{"x":62,"y":10,"key":"yogurtmachine"},{"x":12,"y":2,"key":"yogurtmachine"},{"x":10,"y":5,"key":"yogurtmachine"},{"x":79,"y":59,"key":"yogurtmachine"},{"x":79,"y":58,"key":"spinkler1"}]]')
+
     }
 
 }
