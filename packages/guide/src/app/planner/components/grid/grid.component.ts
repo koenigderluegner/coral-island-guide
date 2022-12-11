@@ -1,5 +1,4 @@
 import {
-    AfterViewInit,
     ApplicationRef,
     Component,
     ComponentRef,
@@ -21,7 +20,7 @@ import { PlaceableItemsMap } from "../../registered-planner-items";
     styleUrls: ['./grid.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class GridComponent implements OnInit, AfterViewInit {
+export class GridComponent implements OnInit {
 
     cellSize = 22;
     protected version = 1;
@@ -273,11 +272,6 @@ export class GridComponent implements OnInit, AfterViewInit {
             })
         })
         console.log(loadedData);
-    }
-
-    ngAfterViewInit(): void {
-        this.load('[[],[],[{"x":57,"y":3,"key":"yogurtmachine"},{"x":48,"y":8,"key":"yogurtmachine"},{"x":38,"y":5,"key":"yogurtmachine"},{"x":1,"y":1,"key":"yogurtmachine"},{"x":80,"y":0,"key":"spinkler1"},{"x":3,"y":1,"key":"yogurtmachine"},{"x":5,"y":1,"key":"yogurtmachine"},{"x":7,"y":0,"key":"yogurtmachine"},{"x":23,"y":12,"key":"yogurtmachine"},{"x":38,"y":19,"key":"yogurtmachine"},{"x":35,"y":15,"key":"yogurtmachine"},{"x":44,"y":16,"key":"yogurtmachine"},{"x":53,"y":22,"key":"yogurtmachine"},{"x":20,"y":23,"key":"yogurtmachine"},{"x":11,"y":26,"key":"yogurtmachine"},{"x":62,"y":10,"key":"yogurtmachine"},{"x":12,"y":2,"key":"yogurtmachine"},{"x":10,"y":5,"key":"yogurtmachine"},{"x":79,"y":59,"key":"yogurtmachine"},{"x":79,"y":58,"key":"spinkler1"}]]')
-
     }
 
 }
