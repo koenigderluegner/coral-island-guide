@@ -126,11 +126,11 @@ export class GridComponent implements OnInit {
         if (this.selectedItem) {
             for (let xi = x; xi < x + this.selectedItem?.width; xi++) {
                 for (let yi = y; yi < y + this.selectedItem?.height; yi++) {
-                    const seelctedItemGridItem = document.querySelector(`[data-x="${xi - x}"][data-y="${yi - y}"]`) as HTMLDivElement;
+                    const selectedItemGridItem = document.querySelector(`[data-x="${xi - x}"][data-y="${yi - y}"]`) as HTMLDivElement;
                     if (!this.canPlace(this.selectedItem.layer, xi, yi)) {
-                        seelctedItemGridItem.style.background = '#f00';
+                        selectedItemGridItem.style.background = 'rgb(255 0 0 / .4)';
                     } else {
-                        seelctedItemGridItem.style.background = '#0f0';
+                        selectedItemGridItem.style.background = 'transparent';
                     }
                 }
 

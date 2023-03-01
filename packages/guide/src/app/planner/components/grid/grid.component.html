@@ -1,10 +1,10 @@
 <p class="text-black">{{layers | json}}</p>
 <div class="flex justify-around my-4">
-    <div class="flex relative w-fit" style="width: {{width*cellSize}}px; height: {{height*cellSize}}px"
+    <div class="flex relative w-fit" [style.width.px]="width*cellSize" [style.height.px]="height*cellSize"
          id="plannerWrapper">
         <table class="table-fixed w-full pointer-events-none absolute grid-overlay planner-map-standard-farm">
             <tr *ngFor="let i of yDummyArray; let y = index">
-                <td style="width: {{cellSize}}px; height: {{cellSize}}px"
+                <td [style.width.px]="cellSize" [style.height.px]="cellSize"
                     (mouseenter)="hover($event, x, y)" (click)="create($event, x,y)"
                     *ngFor="let j of xDummyArray; let x = index"></td>
             </tr>
@@ -15,7 +15,7 @@
 
             <table class="table-fixed w-full" [attr.data-layer-table]="i">
                 <tr *ngFor="let i of yDummyArray; let y = index" [attr.data-table-row]="y">
-                    <td style="width: {{cellSize}}px; height: {{cellSize}}px"
+                    <td [style.width.px]="cellSize" [style.height.px]="cellSize"
                         (mouseenter)="hover($event, x, y)" (click)="create($event, x,y)"
                         *ngFor="let j of xDummyArray; let x = index" [attr.data-table-col]="x"></td>
                 </tr>
@@ -27,9 +27,9 @@
         <div id="plannerSelected" class="absolute pointer-events-none planner-grid-item box-content">
             <div id="selectedItem"></div>
             <div class="flex absolute box-content flex-wrap top-0 selected-item-grid" *ngIf="selectedItem;"
-                 style="width: {{selectedItem.width * cellSize}}px">
+                 [style.width.px]="selectedItem.width * cellSize">
                 <div *ngFor="let _ of selectedItemSize ; let i = index"
-                     style="width: {{cellSize}}px; height: {{cellSize}}px; background: #f0f"
+                     [style.width.px]="cellSize" [style.height.px]="cellSize"
                      [attr.data-x]="i % selectedItem.width"
                      [attr.data-y]="(i - (i % selectedItem.width)) / selectedItem.width"></div>
             </div>
