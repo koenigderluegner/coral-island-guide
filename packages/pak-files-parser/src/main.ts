@@ -15,6 +15,10 @@ import { ItemProcessorDbGenerator } from './app/item-processor-db.generator';
 import { GiftPreferencesDbGenerator } from './app/gift-preferences-db.generator';
 import { NPCDbGenerator } from './app/npc-db.generator';
 import { CraftingRecipeUnlockedByMasteryDbGenerator } from "./app/crafting-recipe-unlocked-by-mastery-db.generator";
+import { config } from "./config";
+
+const itemIconPath = config.itemIconPath
+
 
 const itemDbGenerator = new ItemDbGenerator();
 const itemDbMap = itemDbGenerator.generate();
@@ -81,13 +85,12 @@ interface Frame {
 }
 
 async function createImges(fileBasename: string, skipIfExists = true) {
-    const generatedDirPAth = path.join(__dirname, '..', 'generated', 'images', 'icons');
     const data: Frame = JSON.parse(fs.readFileSync(path.join(texturePath, fileBasename), {
         encoding: 'utf8',
         flag: 'r'
     })).filter((a: Frame) => a.Type === 'PaperSprite')[0];
     const fileName = convertToIconName(data.Name);
-    if (skipIfExists && fs.existsSync(path.join(generatedDirPAth, fileName))) return;
+    if (skipIfExists && fs.existsSync(path.join(itemIconPath, fileName))) return;
 
     const imageMetaData = {
         fileName,
@@ -102,7 +105,7 @@ async function createImges(fileBasename: string, skipIfExists = true) {
 
     if (imageMetaData.fileName) {
         try {
-            await image.extract(imageMetaData).png().toFile(path.join(generatedDirPAth, imageMetaData.fileName));
+            await image.extract(imageMetaData).png().toFile(path.join(itemIconPath, imageMetaData.fileName));
         } catch (e) {
             console.log(e);
         }
@@ -113,9 +116,8 @@ async function createImges(fileBasename: string, skipIfExists = true) {
 
 async function extractImages() {
 
-    const generatedDirPAth = path.join(__dirname, '..', 'generated', 'images', 'icons');
 
-    createPathIfNotExists(generatedDirPAth);
+    createPathIfNotExists(itemIconPath);
 
 
     glob('*', {cwd: texturePath}, async (error: Error | null, filesWithJs: string[]) => {
@@ -150,6 +152,6 @@ Object.keys(generators).forEach(generatorName => {
         // if(generatorName === 'fish')
         //     printFish([...generatedMap.values()])
 
-        generateJson(`${generatorName}.json`, [...generatedMap.values()]);
+    generateJson(`${generatorName}.json`, [...generatedMap.values()], true);
     }
 );
