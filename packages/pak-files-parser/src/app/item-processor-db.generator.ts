@@ -16,7 +16,7 @@ export class ItemProcessorDbGenerator {
 
     generate(): Map<string, Record<string, ItemProcessing[]>> {
                 // Content ProjectCoral Data ItempProcessing
-        const itemProcessingDir = path.join(__dirname, 'assets', 'ItemProcessing',);
+        const itemProcessingDir = path.join(__dirname, 'assets', 'ProjectCoral/Content/ProjectCoral/Core/Data', 'ItemProcessing',);
         const res: Map<string, Record<string, ItemProcessing[]>> = new Map<string, Record<string, ItemProcessing[]>>();
 
         const rec: Record<string, ItemProcessing[]> = {};
