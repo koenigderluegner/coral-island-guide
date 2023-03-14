@@ -1,0 +1,49 @@
+[
+  {
+    "Type": "C_RequirementsConfig",
+    "Name": "DA_JudgeRossWeather",
+    "Properties": {
+      "requirements": {
+        "type": "EC_RequirementCollectionType::Or",
+        "requirements": [
+          {
+            "ObjectName": "C_WeatherRequirement DA_JudgeRossWeather:C_WeatherRequirement_0",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/DA_JudgeRossWeather.1"
+          },
+          {
+            "ObjectName": "C_WeatherRequirement DA_JudgeRossWeather:C_WeatherRequirement_1",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/DA_JudgeRossWeather.2"
+          },
+          {
+            "ObjectName": "C_WeatherRequirement DA_JudgeRossWeather:C_WeatherRequirement_2",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/DA_JudgeRossWeather.3"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Type": "C_WeatherRequirement",
+    "Name": "C_WeatherRequirement_0",
+    "Outer": "DA_JudgeRossWeather",
+    "Properties": {
+      "expectedWeather": "EC_Weather::Rain"
+    }
+  },
+  {
+    "Type": "C_WeatherRequirement",
+    "Name": "C_WeatherRequirement_1",
+    "Outer": "DA_JudgeRossWeather",
+    "Properties": {
+      "expectedWeather": "EC_Weather::Storm"
+    }
+  },
+  {
+    "Type": "C_WeatherRequirement",
+    "Name": "C_WeatherRequirement_2",
+    "Outer": "DA_JudgeRossWeather",
+    "Properties": {
+      "expectedWeather": "EC_Weather::Snow"
+    }
+  }
+]

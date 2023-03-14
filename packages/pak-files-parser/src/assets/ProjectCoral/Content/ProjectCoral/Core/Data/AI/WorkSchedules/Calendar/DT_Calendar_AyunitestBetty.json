@@ -1,0 +1,46 @@
+[
+  {
+    "Type": "DataTable",
+    "Name": "DT_Calendar_AyunitestBetty",
+    "Properties": {
+      "RowStruct": {
+        "ObjectName": "ScriptStruct C_WorkCalendarEntry",
+        "ObjectPath": "/Script/ProjectCoral"
+      }
+    },
+    "Rows": {
+      "BettyRoutine1": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "weatherOverrides": {
+          "EC_Weather::Rain": {
+            "daysOfTheWeek": [
+              "EC_DayOfTheWeek::Tuesday"
+            ]
+          }
+        },
+        "seasonOverrides": {
+          "EC_Season::Spring": {
+            "daysOfTheWeek": [
+              "EC_DayOfTheWeek::Monday",
+              "EC_DayOfTheWeek::Friday"
+            ]
+          },
+          "EC_Season::Fall": {
+            "daysOfTheWeek": []
+          }
+        },
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": null
+      }
+    }
+  }
+]
