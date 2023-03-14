@@ -10,6 +10,7 @@ import { addSpacesToPascalCase } from '@ci/util';
 })
 export class BaseItemCardComponent implements OnInit, OnChanges {
     @Input() item?: Item | MinimalItem;
+    @Input() amount?: number;
     protected fetchedItem?: Item;
     protected addSpacesToPascalCase = addSpacesToPascalCase;
 

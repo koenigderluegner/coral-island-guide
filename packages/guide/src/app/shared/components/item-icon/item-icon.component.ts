@@ -1,5 +1,6 @@
 import { Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
 import { Quality } from '@ci/data-types';
+import { coerceNumberProperty } from "@angular/cdk/coercion";
 
 @Component({
     selector: 'app-item-icon',
@@ -15,4 +16,16 @@ export class ItemIconComponent {
     @Input() itemName?: string | null;
     @Input() subIconName?: string | null;
     @Input() quality?: Quality;
+
+    @Input()
+    get amount(): number {
+        return this._amount;
+    }
+
+    set amount(size: boolean | number | string | null | undefined) {
+        this._amount = coerceNumberProperty(size);
+    }
+
+    _amount = 0;
+
 }
