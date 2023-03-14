@@ -18,7 +18,7 @@ import { CraftingRecipeUnlockedByMasteryDbGenerator } from "./app/crafting-recip
 import { config } from "./config";
 
 const itemIconPath = config.itemIconPath
-
+const texturePath = config.texturePath;
 
 const itemDbGenerator = new ItemDbGenerator();
 const itemDbMap = itemDbGenerator.generate();
@@ -63,7 +63,7 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
 
 
 // manually added generic seed icon from PC Content PC Core Data TemporaryIcon
-const texturePath = path.join(__dirname, 'assets', 'Textures', 'AtlasImport', 'Frames',);
+
 
 interface Frame {
     "Type": string;
@@ -84,7 +84,7 @@ interface Frame {
     };
 }
 
-async function createImges(fileBasename: string, skipIfExists = true) {
+async function createImages(fileBasename: string, skipIfExists = true) {
     const data: Frame = JSON.parse(fs.readFileSync(path.join(texturePath, fileBasename), {
         encoding: 'utf8',
         flag: 'r'
@@ -128,7 +128,7 @@ async function extractImages() {
         let counter = 0;
         for (const fileBasename of filesWithJs) {
 
-            await createImges(fileBasename, true);
+            await createImages(fileBasename, true);
 
 
             counter++;

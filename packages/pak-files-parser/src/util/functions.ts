@@ -13,7 +13,7 @@ export function generateJson(fileName: string, jsonContent: any, readable = fals
         fs.mkdirSync(databasePath, {recursive: true});
 
 
-    fs.writeFileSync(path.join(databasePath, fileName), JSON.stringify(jsonContent, null, readable ? 4 : undefined), {
+    fs.writeFileSync(path.join(databasePath, fileName), JSON.stringify(jsonContent, null, readable ? 2 : undefined), {
         encoding: 'utf8',
         flag: 'w+'
     });
