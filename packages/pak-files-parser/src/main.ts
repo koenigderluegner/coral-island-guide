@@ -16,6 +16,7 @@ import { GiftPreferencesDbGenerator } from './app/gift-preferences-db.generator'
 import { NPCDbGenerator } from './app/npc-db.generator';
 import { CraftingRecipeUnlockedByMasteryDbGenerator } from "./app/crafting-recipe-unlocked-by-mastery-db.generator";
 import { config } from "./config";
+import { CookingRecipeUnlockedByMasteryDbGenerator } from "./app/cooking-recipe-unlocked-by-mastery-db.generator";
 
 const itemIconPath = config.itemIconPath
 const texturePath = config.texturePath;
@@ -28,6 +29,9 @@ const npcDbMap = npcDbGenerator.generate();
 
 const craftingRecipeUnlockedByMasteryDbGenerator = new CraftingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
 const craftingRecipeUnlockedByMasteryDbMap = craftingRecipeUnlockedByMasteryDbGenerator.generate();
+
+const cookingRecipeUnlockedByMasteryDbGenerator = new CookingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
+const cookingRecipeUnlockedByMasteryDbMap = cookingRecipeUnlockedByMasteryDbGenerator.generate();
 
 const generators: Record<string, { generate: () => Map<string, any> }> = {
     'crafting-recipes': new CraftingRecipeDbGenerator(itemDbMap, craftingRecipeUnlockedByMasteryDbMap),
@@ -56,6 +60,7 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'npcs': new NPCDbGenerator(itemDbMap),
 
     'crafting-unlocks-by-mastery': {generate: () => craftingRecipeUnlockedByMasteryDbMap},
+    'cooking-unlocks-by-mastery': {generate: () => cookingRecipeUnlockedByMasteryDbMap},
 
     // last so applied changed will be written as well
     items: {generate: () => itemDbMap},

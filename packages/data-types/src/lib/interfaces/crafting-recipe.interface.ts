@@ -1,6 +1,6 @@
 import { Item } from './item.interface';
 import { TagBasedItem } from './tag-based-item.interface';
-import { CraftingUnlockByMastery } from "./crafting-unlock-by-mastery.interface";
+import { UnlockByMastery } from "./crafting-unlock-by-mastery.interface";
 
 export interface CraftingRecipe {
     key: string;
@@ -14,6 +14,6 @@ export interface CraftingRecipe {
         genericItem?: TagBasedItem
     }[],
     category: string;
-    craftingUnlock?: CraftingUnlockByMastery
+    craftingUnlock?: UnlockByMastery
     item?: Item
 }

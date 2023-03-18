@@ -1,13 +1,13 @@
 import { readAsset } from '../util/functions';
 import { CraftingRecipes } from '../types/crafting-recipes.type';
 import { RawCraftingRecipe } from '../interfaces/crafting-recipe.interface';
-import { CraftingRecipe, CraftingUnlockByMastery, Item } from '@ci/data-types';
+import { CraftingRecipe, Item, UnlockByMastery } from '@ci/data-types';
 
 export class CraftingRecipeDbGenerator {
 
     recipesDB: CraftingRecipes[];
 
-    constructor(protected itemMap: Map<string, Item>, protected craftingUnlockMap: Map<string, CraftingUnlockByMastery>) {
+    constructor(protected itemMap: Map<string, Item>, protected craftingUnlockMap: Map<string, UnlockByMastery>) {
 
         // ProjectCoral Content Project Coral Core Data Crafting
         this.recipesDB = readAsset<CraftingRecipes[]>('DT_CraftingRecipes.json');
