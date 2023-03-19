@@ -1,5 +1,11 @@
 ## Changelog
 
+### 0.4.0 TBD
+
+#### Added
+
+- Cooking under crafting
+
 ### 0.3.4 2023-03-15
 
 #### Added
