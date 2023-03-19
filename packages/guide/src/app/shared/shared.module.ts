@@ -22,6 +22,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { InlineMinimalItemComponent } from './components/inline-minimal-item/inline-minimal-item.component';
 import { ResponsiveTableComponent } from './components/responsive-table/responsive-table.component';
 import { MatTableModule } from '@angular/material/table';
+import { SpacesToPascalCasePipe } from './pipes/spaces-to-pascal-case.pipe';
 
 @NgModule({
     declarations: [
@@ -40,6 +41,7 @@ import { MatTableModule } from '@angular/material/table';
         ListDetailContainerComponent,
         InlineMinimalItemComponent,
         ResponsiveTableComponent,
+        SpacesToPascalCasePipe,
     ],
     imports: [
         CommonModule,
@@ -66,6 +68,7 @@ import { MatTableModule } from '@angular/material/table';
         ListDetailContainerComponent,
         InlineMinimalItemComponent,
         ResponsiveTableComponent,
+        SpacesToPascalCasePipe,
     ],
 })
 export class SharedModule {
