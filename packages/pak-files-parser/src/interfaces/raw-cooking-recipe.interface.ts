@@ -1,4 +1,4 @@
-type Ingredients = ({
+export type CookingIngredients = ({
     "useCustomName": false,
     "customName": {
         "CultureInvariantString": null
@@ -50,7 +50,7 @@ export interface RawCookingRecipe {
         "Key": string;
         "SourceString": string;
     },
-    "ingredients": Ingredients[],
+    "ingredients": CookingIngredients[],
     "genericIngredients": {
         "genericItem": {
             "DataTable": {
