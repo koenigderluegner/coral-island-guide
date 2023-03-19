@@ -1,6 +1,13 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     <app-base-item-card *ngIf="selectedEntity" listDetail [item]="selectedEntity.item"
                         [amount]="selectedEntity.amount">
+
+        <div *ngIf="selectedEntity.craftingUnlock" class="mb-3">
+            Unlocked: <span
+                class="text-black">Level {{selectedEntity.craftingUnlock.masteryLevel}}
+            in {{selectedEntity.craftingUnlock.masteryType}}</span>
+        </div>
+
         <app-item-list [itemList]="getItemList(selectedEntity)" class="mb-3"></app-item-list>
         <ng-container *ngIf="selectedEntity.eitherOrIngredients.length">
             <span class="text-black"> Either of the following</span>
