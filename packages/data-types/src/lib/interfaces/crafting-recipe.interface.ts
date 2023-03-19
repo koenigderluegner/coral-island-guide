@@ -1,6 +1,6 @@
 import { Item } from './item.interface';
 import { TagBasedItem } from './tag-based-item.interface';
-import { UnlockByMastery } from "./crafting-unlock-by-mastery.interface";
+import { UnlockByMastery } from "./unlock-by-mastery.interface";
 
 export interface CraftingRecipe {
     key: string;

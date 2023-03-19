@@ -17,6 +17,7 @@ import { NPCDbGenerator } from './app/npc-db.generator';
 import { CraftingRecipeUnlockedByMasteryDbGenerator } from "./app/crafting-recipe-unlocked-by-mastery-db.generator";
 import { config } from "./config";
 import { CookingRecipeUnlockedByMasteryDbGenerator } from "./app/cooking-recipe-unlocked-by-mastery-db.generator";
+import { CookingDbGenerator } from "./app/cooking-db.generator";
 
 const itemIconPath = config.itemIconPath
 const texturePath = config.texturePath;
@@ -33,14 +34,17 @@ const craftingRecipeUnlockedByMasteryDbMap = craftingRecipeUnlockedByMasteryDbGe
 const cookingRecipeUnlockedByMasteryDbGenerator = new CookingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
 const cookingRecipeUnlockedByMasteryDbMap = cookingRecipeUnlockedByMasteryDbGenerator.generate();
 
+const tagBasedItemsDbGenerator = new TagBasedItemGenericDbGenerator();
+const tagBasedItemsDbMap = tagBasedItemsDbGenerator.generate();
+
 const generators: Record<string, { generate: () => Map<string, any> }> = {
     'crafting-recipes': new CraftingRecipeDbGenerator(itemDbMap, craftingRecipeUnlockedByMasteryDbMap),
     'bugs-and-insects': new BugsAndInsectsDbGenerator(itemDbMap),
     'ocean-critters': new OceanCritterDbGenerator(itemDbMap),
     'fish': new FishDbGenerator(itemDbMap),
     'crops': new CropsDbGenerator(itemDbMap),
-    'tag-based-items': new TagBasedItemGenericDbGenerator(),
     'item-processing': new ItemProcessorDbGenerator(itemDbMap),
+    'cooking-recipes': new CookingDbGenerator(itemDbMap, cookingRecipeUnlockedByMasteryDbMap, tagBasedItemsDbMap),
 
     'journal-fish': new JournalOrderDbGenerator('Caught/DT_JournalFish.json'),
     'journal-insects': new JournalOrderDbGenerator('Caught/DT_JournalInsects.json'),
@@ -59,6 +63,8 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'gift-preferences': new GiftPreferencesDbGenerator(itemDbMap, npcDbMap),
     'npcs': new NPCDbGenerator(itemDbMap),
 
+
+    'tag-based-items': {generate: () => tagBasedItemsDbMap},
     'crafting-unlocks-by-mastery': {generate: () => craftingRecipeUnlockedByMasteryDbMap},
     'cooking-unlocks-by-mastery': {generate: () => cookingRecipeUnlockedByMasteryDbMap},
 
