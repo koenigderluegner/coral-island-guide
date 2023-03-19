@@ -1,3 +1,4 @@
+export * from './lib/interfaces/cooking-recipe.interface';
 export * from './lib/interfaces/crafting-recipe.interface';
 export * from './lib/interfaces/critter.interface';
 export * from './lib/interfaces/fish.interface';

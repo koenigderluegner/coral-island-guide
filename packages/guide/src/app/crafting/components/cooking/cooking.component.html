@@ -1,0 +1,55 @@
+<app-list-detail-container [(openDrawer)]="openDrawer">
+    <app-base-item-card *ngIf="selectedEntity" listDetail [item]="selectedEntity.item"
+                        [amount]="selectedEntity.amount">
+        <app-item-list [itemList]="getItemList(selectedEntity)" class="mb-3"></app-item-list>
+        <ng-container *ngIf="selectedEntity.eitherOrIngredients.length">
+            <span class="text-black"> Either of the following</span>
+
+            <ng-container *ngFor="let ingredients of selectedEntity.eitherOrIngredients; let last = last">
+                <app-item-list [itemList]="ingredients" class="mb-3"></app-item-list>
+                <hr *ngIf="!last" class="my-5"/>
+            </ng-container>
+
+        </ng-container>
+        <ng-container *ngIf="selectedEntity.additionsToGenerics">
+            <span class="text-black"> The following counting as</span>
+
+            <div class="mb-3" *ngFor="let itemListItem of (selectedEntity.additionsToGenerics | keyvalue)">
+                <ng-container *ngFor="let item of itemListItem.value">
+                    <div class="flex justify-between py-1">
+
+                        <div class="flex gap-x-3 items-center" *ngIf="item">
+                            <app-item-icon class="w-10" [itemName]="item.iconName"></app-item-icon>
+                            <span>{{item.displayName}}</span>
+                        </div>
+
+
+                        <div class="flex items-center">as {{itemListItem.key}}</div>
+
+                    </div>
+                    <hr>
+                </ng-container>
+            </div>
+
+        </ng-container>
+
+
+    </app-base-item-card>
+
+
+    <mat-tab-group class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false" (selectedTabChange)="updateUrl($event)"
+                   [selectedIndex]="selectedTabIndex">
+        <mat-tab *ngFor="let utensilName of utensilNames" label="{{utensilName}}">
+            <div *ngIf="(filteredData$(utensilName) | async) as processorItems" class="grid gap-4 icon-grid">
+
+                <app-item-icon *ngFor="let itemProcess of processorItems"
+                               [itemName]="itemProcess.item?.iconName"
+                               class="icon-grid-item"
+                               [amount]="itemProcess.amount"
+                               (click)="showDetails(itemProcess)">
+                </app-item-icon>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+
+</app-list-detail-container>

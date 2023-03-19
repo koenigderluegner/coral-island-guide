@@ -1,3 +1,44 @@
+type Ingredients = ({
+    "useCustomName": false,
+    "customName": {
+        "CultureInvariantString": null
+    },
+} | {
+    "useCustomName": true,
+    "customName": {
+        "Namespace": string;
+        "Key": string;
+        "SourceString": string;
+    }
+}) & {
+    "listIngredients":
+        {
+            "itemData": {
+                "data": {
+                    "DataTable": {
+                        "ObjectName": string;
+                        "ObjectPath": string;
+                    },
+                    "RowName": string;
+                },
+                "itemID": string;
+            },
+            "useCategoryData": boolean
+            "categoryData": {
+                "data": {
+                    "DataTable": {
+                        "ObjectName": string;
+                        "ObjectPath": string;
+                    },
+                    "RowName": string;
+                }
+            },
+            "canUseSameItem": boolean
+            "quantity": number,
+            "excludeItemData": []
+        }[]
+}
+
 export interface RawCookingRecipe {
     "name": {
         "Namespace": string;
@@ -9,49 +50,7 @@ export interface RawCookingRecipe {
         "Key": string;
         "SourceString": string;
     },
-    "ingredients":
-        ({
-            "useCustomName": false,
-            "customName": {
-                "CultureInvariantString": null
-            },
-        } | {
-            "useCustomName": true,
-            "customName": {
-                "Namespace": string;
-                "Key": string;
-                "SourceString": string;
-            }
-        }) & {
-
-
-        "listIngredients":
-            {
-                "itemData": {
-                    "data": {
-                        "DataTable": {
-                            "ObjectName": string;
-                            "ObjectPath": string;
-                        },
-                        "RowName": string;
-                    },
-                    "itemID": string;
-                },
-                "useCategoryData": boolean
-                "categoryData": {
-                    "data": {
-                        "DataTable": {
-                            "ObjectName": string;
-                            "ObjectPath": string;
-                        },
-                        "RowName": string;
-                    }
-                },
-                "canUseSameItem": boolean
-                "quantity": number,
-                "excludeItemData": []
-            }[]
-    }[],
+    "ingredients": Ingredients[],
     "genericIngredients": {
         "genericItem": {
             "DataTable": {

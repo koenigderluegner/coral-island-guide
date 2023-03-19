@@ -9,7 +9,6 @@ import { MatTabChangeEvent } from "@angular/material/tabs";
 @Component({
     selector: 'app-processor',
     templateUrl: './processor.component.html',
-    styleUrls: ['./processor.component.scss'],
 })
 export class ProcessorComponent {
 
