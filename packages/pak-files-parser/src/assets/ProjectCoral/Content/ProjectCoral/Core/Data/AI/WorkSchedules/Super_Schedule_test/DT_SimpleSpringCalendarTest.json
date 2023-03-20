@@ -1,0 +1,81 @@
+[
+  {
+    "Type": "DataTable",
+    "Name": "DT_SimpleSpringCalendarTest",
+    "Properties": {
+      "RowStruct": {
+        "ObjectName": "ScriptStruct C_WorkCalendarEntry",
+        "ObjectPath": "/Script/ProjectCoral"
+      }
+    },
+    "Rows": {
+      "everyDayInSpring": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "weatherOverrides": {},
+        "seasonOverrides": {
+          "EC_Season::Spring": {
+            "daysOfTheWeek": [
+              "EC_DayOfTheWeek::Monday",
+              "EC_DayOfTheWeek::Tuesday",
+              "EC_DayOfTheWeek::Wednesday",
+              "EC_DayOfTheWeek::Thursday",
+              "EC_DayOfTheWeek::Friday",
+              "EC_DayOfTheWeek::Saturday",
+              "EC_DayOfTheWeek::Sunday"
+            ]
+          }
+        },
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": null
+      },
+      "testRequirementsSchedule": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "weatherOverrides": {},
+        "seasonOverrides": {},
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig DA_TestRequirement",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/DA_TestRequirement.1"
+        }
+      },
+      "festivalTestRunning": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "weatherOverrides": {},
+        "seasonOverrides": {},
+        "festivalOverrides": [
+          "CherryBlossom"
+        ],
+        "festivalStatesAllowed": [
+          "EC_FestivalState::RunningFestival"
+        ],
+        "conditions": null
+      }
+    }
+  }
+]

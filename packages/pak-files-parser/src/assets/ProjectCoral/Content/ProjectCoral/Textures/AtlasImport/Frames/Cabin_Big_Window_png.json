@@ -1,0 +1,111 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_2",
+    "Outer": "Cabin_Big_Window_png",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -0.5,
+              "Y": 0.0,
+              "Z": 1.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 105.0,
+            "Y": 10.0,
+            "Z": 118.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "CDE18BDB48B5989CD778BA8AA4917EC7"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Cabin_Big_Window_png",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 512.0,
+        "Y": 384.0
+      },
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D TP_AtlasItems_5",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_AtlasItems_5.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant TranslucentUnlitSpriteMaterial",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup Cabin_Big_Window_png:BodySetup_2",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Cabin_Big_Window_png.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 52.0,
+          "Y": 60.0,
+          "Z": 0.30664062,
+          "W": 0.18945312
+        },
+        {
+          "X": -53.0,
+          "Y": 60.0,
+          "Z": 0.2553711,
+          "W": 0.18945312
+        },
+        {
+          "X": -53.0,
+          "Y": -58.0,
+          "Z": 0.2553711,
+          "W": 0.24707031
+        },
+        {
+          "X": 52.0,
+          "Y": -58.0,
+          "Z": 0.30664062,
+          "W": 0.24707031
+        },
+        {
+          "X": 52.0,
+          "Y": 60.0,
+          "Z": 0.30664062,
+          "W": 0.18945312
+        },
+        {
+          "X": -53.0,
+          "Y": -58.0,
+          "Z": 0.2553711,
+          "W": 0.24707031
+        }
+      ]
+    }
+  }
+]

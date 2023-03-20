@@ -15,6 +15,12 @@ import { ItemProcessorDbGenerator } from './app/item-processor-db.generator';
 import { GiftPreferencesDbGenerator } from './app/gift-preferences-db.generator';
 import { NPCDbGenerator } from './app/npc-db.generator';
 import { CraftingRecipeUnlockedByMasteryDbGenerator } from "./app/crafting-recipe-unlocked-by-mastery-db.generator";
+import { config } from "./config";
+import { CookingRecipeUnlockedByMasteryDbGenerator } from "./app/cooking-recipe-unlocked-by-mastery-db.generator";
+import { CookingDbGenerator } from "./app/cooking-db.generator";
+
+const itemIconPath = config.itemIconPath
+const texturePath = config.texturePath;
 
 const itemDbGenerator = new ItemDbGenerator();
 const itemDbMap = itemDbGenerator.generate();
@@ -25,14 +31,20 @@ const npcDbMap = npcDbGenerator.generate();
 const craftingRecipeUnlockedByMasteryDbGenerator = new CraftingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
 const craftingRecipeUnlockedByMasteryDbMap = craftingRecipeUnlockedByMasteryDbGenerator.generate();
 
+const cookingRecipeUnlockedByMasteryDbGenerator = new CookingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
+const cookingRecipeUnlockedByMasteryDbMap = cookingRecipeUnlockedByMasteryDbGenerator.generate();
+
+const tagBasedItemsDbGenerator = new TagBasedItemGenericDbGenerator();
+const tagBasedItemsDbMap = tagBasedItemsDbGenerator.generate();
+
 const generators: Record<string, { generate: () => Map<string, any> }> = {
     'crafting-recipes': new CraftingRecipeDbGenerator(itemDbMap, craftingRecipeUnlockedByMasteryDbMap),
     'bugs-and-insects': new BugsAndInsectsDbGenerator(itemDbMap),
     'ocean-critters': new OceanCritterDbGenerator(itemDbMap),
     'fish': new FishDbGenerator(itemDbMap),
     'crops': new CropsDbGenerator(itemDbMap),
-    'tag-based-items': new TagBasedItemGenericDbGenerator(),
     'item-processing': new ItemProcessorDbGenerator(itemDbMap),
+    'cooking-recipes': new CookingDbGenerator(itemDbMap, cookingRecipeUnlockedByMasteryDbMap, tagBasedItemsDbMap),
 
     'journal-fish': new JournalOrderDbGenerator('Caught/DT_JournalFish.json'),
     'journal-insects': new JournalOrderDbGenerator('Caught/DT_JournalInsects.json'),
@@ -51,7 +63,10 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'gift-preferences': new GiftPreferencesDbGenerator(itemDbMap, npcDbMap),
     'npcs': new NPCDbGenerator(itemDbMap),
 
+
+    'tag-based-items': {generate: () => tagBasedItemsDbMap},
     'crafting-unlocks-by-mastery': {generate: () => craftingRecipeUnlockedByMasteryDbMap},
+    'cooking-unlocks-by-mastery': {generate: () => cookingRecipeUnlockedByMasteryDbMap},
 
     // last so applied changed will be written as well
     items: {generate: () => itemDbMap},
@@ -59,7 +74,7 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
 
 
 // manually added generic seed icon from PC Content PC Core Data TemporaryIcon
-const texturePath = path.join(__dirname, 'assets', 'Textures', 'AtlasImport', 'Frames',);
+
 
 interface Frame {
     "Type": string;
@@ -80,14 +95,13 @@ interface Frame {
     };
 }
 
-async function createImges(fileBasename: string, skipIfExists = true) {
-    const generatedDirPAth = path.join(__dirname, '..', 'generated', 'images', 'icons');
+async function createImages(fileBasename: string, skipIfExists = true) {
     const data: Frame = JSON.parse(fs.readFileSync(path.join(texturePath, fileBasename), {
         encoding: 'utf8',
         flag: 'r'
     })).filter((a: Frame) => a.Type === 'PaperSprite')[0];
     const fileName = convertToIconName(data.Name);
-    if (skipIfExists && fs.existsSync(path.join(generatedDirPAth, fileName))) return;
+    if (skipIfExists && fs.existsSync(path.join(itemIconPath, fileName))) return;
 
     const imageMetaData = {
         fileName,
@@ -102,7 +116,7 @@ async function createImges(fileBasename: string, skipIfExists = true) {
 
     if (imageMetaData.fileName) {
         try {
-            await image.extract(imageMetaData).png().toFile(path.join(generatedDirPAth, imageMetaData.fileName));
+            await image.extract(imageMetaData).png().toFile(path.join(itemIconPath, imageMetaData.fileName));
         } catch (e) {
             console.log(e);
         }
@@ -113,9 +127,8 @@ async function createImges(fileBasename: string, skipIfExists = true) {
 
 async function extractImages() {
 
-    const generatedDirPAth = path.join(__dirname, '..', 'generated', 'images', 'icons');
 
-    createPathIfNotExists(generatedDirPAth);
+    createPathIfNotExists(itemIconPath);
 
 
     glob('*', {cwd: texturePath}, async (error: Error | null, filesWithJs: string[]) => {
@@ -126,7 +139,7 @@ async function extractImages() {
         let counter = 0;
         for (const fileBasename of filesWithJs) {
 
-            await createImges(fileBasename, true);
+            await createImages(fileBasename, true);
 
 
             counter++;
@@ -150,6 +163,6 @@ Object.keys(generators).forEach(generatorName => {
         // if(generatorName === 'fish')
         //     printFish([...generatedMap.values()])
 
-        generateJson(`${generatorName}.json`, [...generatedMap.values()]);
+    generateJson(`${generatorName}.json`, [...generatedMap.values()], true);
     }
 );

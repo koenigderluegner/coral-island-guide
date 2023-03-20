@@ -1,20 +1,19 @@
 import fs from 'fs';
 import path from 'path';
 import { Item, MinimalItem } from '@ci/data-types';
+import { config } from "../config";
 
 export function readAsset<T = any>(fileName: string): T {
     return JSON.parse(fs.readFileSync(path.join(__dirname, 'assets', fileName), {encoding: 'utf8', flag: 'r'}));
 }
 
 export function generateJson(fileName: string, jsonContent: any, readable = false) {
-
-    const generatedDirPAth = path.join(__dirname, 'generated');
-
-    if (!fs.existsSync(path.join(__dirname, 'generated')))
-        fs.mkdirSync(generatedDirPAth, {recursive: true});
+    const databasePath = config.databasePath
+    if (!fs.existsSync(databasePath))
+        fs.mkdirSync(databasePath, {recursive: true});
 
 
-    fs.writeFileSync(path.join(generatedDirPAth, fileName), JSON.stringify(jsonContent, null, readable ? 4 : undefined), {
+    fs.writeFileSync(path.join(databasePath, fileName), JSON.stringify(jsonContent, null, readable ? 2 : undefined), {
         encoding: 'utf8',
         flag: 'w+'
     });
@@ -55,4 +54,11 @@ export function minifyItem(item: Item): MinimalItem {
 
 export function notEmpty<TValue>(value: TValue | null | undefined): value is TValue {
     return value !== null && value !== undefined;
+}
+
+export function removeQualityFlag(itemKey: string): string {
+    if (itemKey.endsWith('-a') || itemKey.endsWith('-b') || itemKey.endsWith('-c') || itemKey.endsWith('-d')) {
+        return itemKey.slice(0, -2);
+    }
+    return itemKey;
 }

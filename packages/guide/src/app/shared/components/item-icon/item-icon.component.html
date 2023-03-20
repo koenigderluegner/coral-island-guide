@@ -4,4 +4,6 @@
 <app-item-icon *ngIf="subIconName" [itemName]="subIconName"
                class="!absolute bottom-[5px] left-[5px] w-[50%]"></app-item-icon>
 <app-rarity-icon *ngIf="quality" [quality]="quality"
-                 class="absolute bottom-[5px] right-[5px] w-[35%]"></app-rarity-icon>
+                 class="absolute top-[5px] left-[5px] w-[35%]"></app-rarity-icon>
+<div *ngIf="amount > 1"
+     class="bg-[#F1D9B5] absolute bottom-0 right-0 py-1 px-2 text-black font-semibold text-lg rounded-lg">{{amount}}</div>

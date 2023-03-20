@@ -1,0 +1,590 @@
+[
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_AWBP_SkippingRope",
+    "Outer": "AWBP_SkippingRope_C",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": 1,
+        "ElementSize": 4,
+        "PropertyFlags": 148
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "K2Node_Event_context",
+        "Flags": 1,
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum EC_AnimationContext",
+          "ObjectPath": "/Script/ProjectCoral"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": 1,
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_npc",
+        "Flags": 1,
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class C_NpcCharacter",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Npc_Character",
+        "Flags": 1,
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass BP_NpcCharacter_C",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/_Characters/NPCs/BP_NpcCharacter.27"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": 1,
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_SwitchEnum_CmpSuccess",
+        "Flags": 1,
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetAnimInstance_ReturnValue",
+        "Flags": 1,
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class AnimInstance",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_Event_DeltaSeconds",
+        "Flags": 1,
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsABP_Skipping_Rope",
+        "Flags": 1,
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "AnimBlueprintGeneratedClass ABP_SkippingRope_C",
+          "ObjectPath": "ProjectCoral/Content/_Imports/Tools/Skipping_Rope/ABP_SkippingRope.10"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess_1",
+        "Flags": 1,
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": 32769
+  },
+  {
+    "Type": "Function",
+    "Name": "OnAnimationContextChanged",
+    "Outer": "AWBP_SkippingRope_C",
+    "SuperStruct": {
+      "ObjectName": "Function C_WorldWaypoint:OnAnimationContextChanged",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "ChildProperties": [
+      {
+        "Type": "EnumProperty",
+        "Name": "context",
+        "Flags": 1,
+        "ElementSize": 1,
+        "PropertyFlags": 148,
+        "Enum": {
+          "ObjectName": "Enum EC_AnimationContext",
+          "ObjectPath": "/Script/ProjectCoral"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": 1,
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "npc",
+        "Flags": 1,
+        "ElementSize": 8,
+        "PropertyFlags": 148,
+        "PropertyClass": {
+          "ObjectName": "Class C_NpcCharacter",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      }
+    ],
+    "FunctionFlags": 134744064
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveTick",
+    "Outer": "AWBP_SkippingRope_C",
+    "SuperStruct": {
+      "ObjectName": "Function Actor:ReceiveTick",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "FloatProperty",
+        "Name": "DeltaSeconds",
+        "Flags": 1,
+        "ElementSize": 4,
+        "PropertyFlags": 148
+      }
+    ],
+    "FunctionFlags": 134350848
+  },
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "AWBP_SkippingRope_C",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript AWBP_SkippingRope_C:SimpleConstructionScript_0",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.11"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function AWBP_SkippingRope_C:ExecuteUbergraph_AWBP_SkippingRope",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.0"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class C_AnimationWaypoint",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function AWBP_SkippingRope_C:ReceiveTick",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.2"
+      },
+      {
+        "ObjectName": "Function AWBP_SkippingRope_C:OnAnimationContextChanged",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.1"
+      },
+      {
+        "ObjectName": "Function AWBP_SkippingRope_C:ExecuteUbergraph_AWBP_SkippingRope",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.0"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": 2097153,
+        "ElementSize": 16,
+        "PropertyFlags": 2105344,
+        "Struct": {
+          "ObjectName": "ScriptStruct PointerToUberGraphFrame",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "StationMesh1",
+        "Flags": 2097153,
+        "ElementSize": 8,
+        "PropertyFlags": 17180393476,
+        "PropertyClass": {
+          "ObjectName": "Class StaticMeshComponent",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "PositionComponent1",
+        "Flags": 2097153,
+        "ElementSize": 8,
+        "PropertyFlags": 17180393476,
+        "PropertyClass": {
+          "ObjectName": "Class SceneComponent",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "Socket Name",
+        "Flags": 2097153,
+        "ElementSize": 12,
+        "PropertyFlags": 5
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Mesh_Attachment",
+        "Flags": 2097153,
+        "ElementSize": 8,
+        "PropertyFlags": 5,
+        "PropertyClass": {
+          "ObjectName": "Class SkeletalMesh",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "ABP Attachment",
+        "Flags": 2097153,
+        "ElementSize": 8,
+        "PropertyFlags": 5,
+        "PropertyClass": {
+          "ObjectName": "Class Class",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class Object",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "Adjust Long Rope",
+        "Flags": 2097153,
+        "ElementSize": 4,
+        "PropertyFlags": 5
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Adjust Left Rope",
+        "Flags": 2097153,
+        "ElementSize": 12,
+        "PropertyFlags": 5,
+        "Struct": {
+          "ObjectName": "ScriptStruct Vector",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "Adjust Heigh Active",
+        "Flags": 2097153,
+        "ElementSize": 4,
+        "PropertyFlags": 5
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Adjust Heigh Char",
+        "Flags": 2097153,
+        "ElementSize": 12,
+        "PropertyFlags": 5,
+        "Struct": {
+          "ObjectName": "ScriptStruct Vector",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "Test_offset",
+        "Flags": 2097153,
+        "ElementSize": 1,
+        "PropertyFlags": 5,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "Is Archie",
+        "Flags": 2097153,
+        "ElementSize": 1,
+        "PropertyFlags": 5,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Custom Location SKM",
+        "Flags": 2097153,
+        "ElementSize": 12,
+        "PropertyFlags": 5,
+        "Struct": {
+          "ObjectName": "ScriptStruct Vector",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Custom Rotation SKM",
+        "Flags": 2097153,
+        "ElementSize": 12,
+        "PropertyFlags": 5,
+        "Struct": {
+          "ObjectName": "ScriptStruct Rotator",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "Wire R",
+        "Flags": 2097153,
+        "ElementSize": 4,
+        "PropertyFlags": 5
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Wire R Rotation",
+        "Flags": 2097153,
+        "ElementSize": 12,
+        "PropertyFlags": 5,
+        "Struct": {
+          "ObjectName": "ScriptStruct Rotator",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "NPC Reff",
+        "Flags": 2097153,
+        "ElementSize": 8,
+        "PropertyFlags": 67589,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass BP_NpcCharacter_C",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/_Characters/NPCs/BP_NpcCharacter.27"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_AWBP_SkippingRope": {
+        "ObjectName": "Function AWBP_SkippingRope_C:ExecuteUbergraph_AWBP_SkippingRope",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.0"
+      },
+      "OnAnimationContextChanged": {
+        "ObjectName": "Function AWBP_SkippingRope_C:OnAnimationContextChanged",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.1"
+      },
+      "ReceiveTick": {
+        "ObjectName": "Function AWBP_SkippingRope_C:ReceiveTick",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.2"
+      }
+    },
+    "ClassFlags": 8652820,
+    "ClassWithin": {
+      "ObjectName": "Class Object",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "AWBP_SkippingRope_C Default__AWBP_SkippingRope_C",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.4"
+    }
+  },
+  {
+    "Type": "AWBP_SkippingRope_C",
+    "Name": "Default__AWBP_SkippingRope_C",
+    "Properties": {
+      "UberGraphFrame": {},
+      "Socket Name": "SC_Skipping",
+      "Mesh_Attachment": {
+        "ObjectName": "SkeletalMesh SK_SkippingRope",
+        "ObjectPath": "ProjectCoral/Content/_Imports/Tools/Skipping_Rope/SK_SkippingRope.0"
+      },
+      "ABP Attachment": {
+        "ObjectName": "AnimBlueprintGeneratedClass ABP_SkippingRope_C",
+        "ObjectPath": "ProjectCoral/Content/_Imports/Tools/Skipping_Rope/ABP_SkippingRope.10"
+      },
+      "Adjust Left Rope": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Adjust Heigh Char": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Custom Location SKM": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Custom Rotation SKM": {
+        "Pitch": 0.0,
+        "Yaw": 0.0,
+        "Roll": 0.0
+      },
+      "Wire R Rotation": {
+        "Pitch": 0.0,
+        "Yaw": 0.0,
+        "Roll": 0.0
+      },
+      "linkedState": "EC_WaypointLinkedState::NotLinked",
+      "stationMeshComponent": {
+        "ObjectName": "StaticMeshComponent Default__AWBP_SkippingRope_C:StationMesh",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.13"
+      },
+      "RootComponent": {
+        "ObjectName": "SceneComponent Default__AWBP_SkippingRope_C:PositionComponent",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.7"
+      }
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "AWBP_SkippingRope_C"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "PositionComponent1_GEN_VARIABLE",
+    "Outer": "AWBP_SkippingRope_C"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "PositionComponent",
+    "Outer": "Default__AWBP_SkippingRope_C"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class SceneComponent",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent AWBP_SkippingRope_C:DefaultSceneRoot_GEN_VARIABLE",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.5"
+      },
+      "VariableGuid": "F75551E3-4BFD0ECC-B999B192-8BD339AC",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class SceneComponent",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent AWBP_SkippingRope_C:PositionComponent1_GEN_VARIABLE",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.6"
+      },
+      "ParentComponentOrVariableName": "PositionComponent",
+      "bIsParentComponentNative": true,
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node AWBP_SkippingRope_C:SimpleConstructionScript_0.SCS_Node_2",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.10"
+        }
+      ],
+      "VariableGuid": "1C76881F-42787728-004D50B6-288A78E3",
+      "InternalVariableName": "PositionComponent1"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class StaticMeshComponent",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent AWBP_SkippingRope_C:StationMesh1_GEN_VARIABLE",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.12"
+      },
+      "VariableGuid": "2CE6C401-41305189-249A1693-A132ADD9",
+      "InternalVariableName": "StationMesh1"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "AWBP_SkippingRope_C",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node AWBP_SkippingRope_C:SimpleConstructionScript_0.SCS_Node_1",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.9"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node AWBP_SkippingRope_C:SimpleConstructionScript_0.SCS_Node_1",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.9"
+        },
+        {
+          "ObjectName": "SCS_Node AWBP_SkippingRope_C:SimpleConstructionScript_0.SCS_Node_2",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.10"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node AWBP_SkippingRope_C:SimpleConstructionScript_0.SCS_Node_0",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.8"
+      }
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "StationMesh1_GEN_VARIABLE",
+    "Outer": "AWBP_SkippingRope_C",
+    "Properties": {
+      "bUseDefaultCollision": true,
+      "bGenerateOverlapEvents": false,
+      "BodyInstance": {
+        "ObjectType": "ECC_WorldStatic",
+        "CollisionProfileName": "BlockAll"
+      },
+      "bAbsoluteScale": true
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "StationMesh",
+    "Outer": "Default__AWBP_SkippingRope_C",
+    "Properties": {
+      "AttachParent": {
+        "ObjectName": "SceneComponent Default__AWBP_SkippingRope_C:PositionComponent",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SkippingRope.7"
+      }
+    }
+  }
+]

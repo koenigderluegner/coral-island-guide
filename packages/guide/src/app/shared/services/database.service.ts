@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable, shareReplay, tap } from 'rxjs';
 import {
+    CookingRecipe,
     CraftingRecipe,
     Critter,
     Crop,
@@ -32,6 +33,7 @@ export class DatabaseService {
     private _CROPS$?: Observable<Crop[]>;
     private _TAG_BASED_ITEMS$?: Observable<TagBasedItem[]>;
     private _ITEM_PROCESSING_RECIPE$?: Observable<Record<string, ItemProcessing[]>>;
+    private _COOKING_RECIPE$?: Observable<Record<string, CookingRecipe[]>>;
     private _GIFT_PREFERENCES$?: Observable<MapKeyed<GiftPreferences>[]>;
 
     constructor(private readonly _http: HttpClient) {
@@ -82,6 +84,18 @@ export class DatabaseService {
                 );
         }
         return this._ITEM_PROCESSING_RECIPE$;
+    }
+
+
+    fetchCookingRecipes$(): Observable<Record<string, CookingRecipe[]>> {
+        if (!this._COOKING_RECIPE$) {
+            this._COOKING_RECIPE$ = this._http.get<Record<string, CookingRecipe[]>[]>(`${this._BASE_PATH}/cooking-recipes.json`)
+                .pipe(
+                    map(ipa => ipa[0]),
+                    shareReplay(1)
+                );
+        }
+        return this._COOKING_RECIPE$;
     }
 
     fetchTagBasedItems$(): Observable<TagBasedItem[]> {

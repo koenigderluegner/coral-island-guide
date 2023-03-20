@@ -1,5 +1,18 @@
 ## Changelog
 
+### 0.4.0 TBD
+
+#### Added
+
+- Cooking under crafting
+
+### 0.3.4 2023-03-15
+
+#### Added
+
+- Added data of spring update 2023 (2022-03-14)
+- Show output amount for processing
+
 ### 0.3.3 2022-12-09
 
 #### Added

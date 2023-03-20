@@ -1,5 +1,5 @@
 import { readAsset } from '../util/functions';
-import { JournalOrder } from '../../../data-types/src/lib/interfaces/journal-order.interface';
+import { JournalOrder } from '@ci/data-types';
 import { RawJournalOrder } from '../interfaces/raw-journal-order.interface';
 import { JournalOrders } from '../types/journal-orders.type';
 
@@ -10,7 +10,7 @@ export class JournalOrderDbGenerator {
     constructor(journalPath: string) {
 
         // ProjectCoral Content Project Coral Data Journal
-        this.recipesDB = readAsset<JournalOrders[]>(`Journal/${journalPath}`);
+        this.recipesDB = readAsset<JournalOrders[]>(`ProjectCoral/Content/ProjectCoral/Data/Journal/${journalPath}`);
 
     }
 

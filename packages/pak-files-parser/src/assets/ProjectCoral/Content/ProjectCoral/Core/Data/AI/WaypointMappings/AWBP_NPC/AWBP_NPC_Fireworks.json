@@ -1,0 +1,565 @@
+[
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_AWBP_NPC_Fireworks",
+    "Outer": "AWBP_NPC_Fireworks_C",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": 1,
+        "ElementSize": 4,
+        "PropertyFlags": 148
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "K2Node_Event_context",
+        "Flags": 1,
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum EC_AnimationContext",
+          "ObjectPath": "/Script/ProjectCoral"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": 1,
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_npc",
+        "Flags": 1,
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class C_NpcCharacter",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Npc_Character",
+        "Flags": 1,
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass BP_NpcCharacter_C",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/_Characters/NPCs/BP_NpcCharacter.27"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": 1,
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_SwitchEnum_CmpSuccess",
+        "Flags": 1,
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_K2_AttachToComponent_ReturnValue",
+        "Flags": 1,
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": 32769
+  },
+  {
+    "Type": "Function",
+    "Name": "OnAnimationContextChanged",
+    "Outer": "AWBP_NPC_Fireworks_C",
+    "SuperStruct": {
+      "ObjectName": "Function C_WorldWaypoint:OnAnimationContextChanged",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "ChildProperties": [
+      {
+        "Type": "EnumProperty",
+        "Name": "context",
+        "Flags": 1,
+        "ElementSize": 1,
+        "PropertyFlags": 148,
+        "Enum": {
+          "ObjectName": "Enum EC_AnimationContext",
+          "ObjectPath": "/Script/ProjectCoral"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": 1,
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "npc",
+        "Flags": 1,
+        "ElementSize": 8,
+        "PropertyFlags": 148,
+        "PropertyClass": {
+          "ObjectName": "Class C_NpcCharacter",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      }
+    ],
+    "FunctionFlags": 134744064
+  },
+  {
+    "Type": "Function",
+    "Name": "Light Intensity__UpdateFunc",
+    "Outer": "AWBP_NPC_Fireworks_C",
+    "FunctionFlags": 134217728
+  },
+  {
+    "Type": "Function",
+    "Name": "Light Intensity__FinishedFunc",
+    "Outer": "AWBP_NPC_Fireworks_C",
+    "FunctionFlags": 134217728
+  },
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "AWBP_NPC_Fireworks_C",
+    "Properties": {
+      "Timelines": [
+        {
+          "ObjectName": "TimelineTemplate AWBP_NPC_Fireworks_C:Light Intensity_Template",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.18"
+        }
+      ],
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript AWBP_NPC_Fireworks_C:SimpleConstructionScript_0",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.15"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function AWBP_NPC_Fireworks_C:ExecuteUbergraph_AWBP_NPC_Fireworks",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.0"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class C_AnimationWaypoint",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function AWBP_NPC_Fireworks_C:Light Intensity__FinishedFunc",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.3"
+      },
+      {
+        "ObjectName": "Function AWBP_NPC_Fireworks_C:Light Intensity__UpdateFunc",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.2"
+      },
+      {
+        "ObjectName": "Function AWBP_NPC_Fireworks_C:OnAnimationContextChanged",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.1"
+      },
+      {
+        "ObjectName": "Function AWBP_NPC_Fireworks_C:ExecuteUbergraph_AWBP_NPC_Fireworks",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.0"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": 2097153,
+        "ElementSize": 16,
+        "PropertyFlags": 2105344,
+        "Struct": {
+          "ObjectName": "ScriptStruct PointerToUberGraphFrame",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Light Firework",
+        "Flags": 2097153,
+        "ElementSize": 8,
+        "PropertyFlags": 17180393476,
+        "PropertyClass": {
+          "ObjectName": "Class PointLightComponent",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "StationMesh1",
+        "Flags": 2097153,
+        "ElementSize": 8,
+        "PropertyFlags": 17180393476,
+        "PropertyClass": {
+          "ObjectName": "Class StaticMeshComponent",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "PositionComponent1",
+        "Flags": 2097153,
+        "ElementSize": 8,
+        "PropertyFlags": 17180393476,
+        "PropertyClass": {
+          "ObjectName": "Class SceneComponent",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "Light_Intensity_Light_Intensity_5B14988A4C92C79A1F928DA1809B05A3",
+        "Flags": 2097153,
+        "ElementSize": 4
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "Light_Intensity__Direction_5B14988A4C92C79A1F928DA1809B05A3",
+        "Flags": 2097153,
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum ETimelineDirection",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Light Intensity",
+        "Flags": 2097153,
+        "ElementSize": 8,
+        "PropertyFlags": 524292,
+        "PropertyClass": {
+          "ObjectName": "Class TimelineComponent",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "NPC Ref",
+        "Flags": 2097153,
+        "ElementSize": 8,
+        "PropertyFlags": 2053,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass BP_NpcCharacter_C",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/_Characters/NPCs/BP_NpcCharacter.27"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_AWBP_NPC_Fireworks": {
+        "ObjectName": "Function AWBP_NPC_Fireworks_C:ExecuteUbergraph_AWBP_NPC_Fireworks",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.0"
+      },
+      "OnAnimationContextChanged": {
+        "ObjectName": "Function AWBP_NPC_Fireworks_C:OnAnimationContextChanged",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.1"
+      },
+      "Light Intensity__UpdateFunc": {
+        "ObjectName": "Function AWBP_NPC_Fireworks_C:Light Intensity__UpdateFunc",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.2"
+      },
+      "Light Intensity__FinishedFunc": {
+        "ObjectName": "Function AWBP_NPC_Fireworks_C:Light Intensity__FinishedFunc",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.3"
+      }
+    },
+    "ClassFlags": 8652820,
+    "ClassWithin": {
+      "ObjectName": "Class Object",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "AWBP_NPC_Fireworks_C Default__AWBP_NPC_Fireworks_C",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.5"
+    }
+  },
+  {
+    "Type": "AWBP_NPC_Fireworks_C",
+    "Name": "Default__AWBP_NPC_Fireworks_C",
+    "Properties": {
+      "UberGraphFrame": {},
+      "animset": {
+        "ObjectName": "C_Animset Animset_NPC_PlayFireworks",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Animation/Animsets_v2/Animset_NPC_PlayFireworks.0"
+      },
+      "linkedState": "EC_WaypointLinkedState::NotLinked",
+      "stationMeshComponent": {
+        "ObjectName": "StaticMeshComponent Default__AWBP_NPC_Fireworks_C:StationMesh",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.17"
+      },
+      "previewMesh": {
+        "ObjectName": "SkeletalMesh SK_Rafael_v2_1",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Rafael/Ver2/SK_Rafael_v2_1.1"
+      },
+      "previewAnimationPosition": 0.0,
+      "defaultAnimation": {
+        "ObjectName": "AnimSequence A_NPC_Rafael_IdlePose",
+        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/NPCIdle_Anim/A_NPC_Rafael_IdlePose.1"
+      },
+      "useDefaultMaterials": true,
+      "RootComponent": {
+        "ObjectName": "SceneComponent Default__AWBP_NPC_Fireworks_C:PositionComponent",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.10"
+      }
+    }
+  },
+  {
+    "Type": "CurveFloat",
+    "Name": "CurveFloat_0",
+    "Outer": "AWBP_NPC_Fireworks_C",
+    "Properties": {
+      "FloatCurve": {
+        "Keys": [
+          {
+            "InterpMode": "RCIM_Linear",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 0.0,
+            "Value": 0.004400015,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          },
+          {
+            "InterpMode": "RCIM_Linear",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 1.5,
+            "Value": 12000.0,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Type": "PointLightComponent",
+    "Name": "Light Firework_GEN_VARIABLE",
+    "Outer": "AWBP_NPC_Fireworks_C",
+    "Properties": {
+      "AttenuationRadius": 300.0,
+      "Intensity": 0.0,
+      "LightColor": {
+        "B": 97,
+        "G": 169,
+        "R": 255,
+        "A": 255,
+        "Hex": "FFFFA961"
+      },
+      "RelativeLocation": {
+        "X": -80.0,
+        "Y": 15.0,
+        "Z": 70.0
+      }
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "AWBP_NPC_Fireworks_C"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "PositionComponent1_GEN_VARIABLE",
+    "Outer": "AWBP_NPC_Fireworks_C"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "PositionComponent",
+    "Outer": "Default__AWBP_NPC_Fireworks_C"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class SceneComponent",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent AWBP_NPC_Fireworks_C:DefaultSceneRoot_GEN_VARIABLE",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.8"
+      },
+      "VariableGuid": "86FF7B1C-4355787F-27DF6394-7F85B608",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class SceneComponent",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent AWBP_NPC_Fireworks_C:PositionComponent1_GEN_VARIABLE",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.9"
+      },
+      "ParentComponentOrVariableName": "PositionComponent",
+      "bIsParentComponentNative": true,
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node AWBP_NPC_Fireworks_C:SimpleConstructionScript_0.SCS_Node_2",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.13"
+        }
+      ],
+      "VariableGuid": "F617F3AE-4467C6A8-71615386-0F8FAB75",
+      "InternalVariableName": "PositionComponent1"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class StaticMeshComponent",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent AWBP_NPC_Fireworks_C:StationMesh1_GEN_VARIABLE",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.16"
+      },
+      "VariableGuid": "D1473881-4D00FA25-9648CBA3-916603D9",
+      "InternalVariableName": "StationMesh1"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_7",
+    "Outer": "SimpleConstructionScript_0",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class PointLightComponent",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "PointLightComponent AWBP_NPC_Fireworks_C:Light Firework_GEN_VARIABLE",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.7"
+      },
+      "ParentComponentOrVariableName": "PositionComponent",
+      "bIsParentComponentNative": true,
+      "MetaDataArray": [
+        {
+          "DataKey": "tooltip",
+          "DataValue": ""
+        }
+      ],
+      "VariableGuid": "519B863A-4DC49075-48F977AD-E945F02B",
+      "InternalVariableName": "Light Firework"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "AWBP_NPC_Fireworks_C",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node AWBP_NPC_Fireworks_C:SimpleConstructionScript_0.SCS_Node_1",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.12"
+        },
+        {
+          "ObjectName": "SCS_Node AWBP_NPC_Fireworks_C:SimpleConstructionScript_0.SCS_Node_7",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.14"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node AWBP_NPC_Fireworks_C:SimpleConstructionScript_0.SCS_Node_1",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.12"
+        },
+        {
+          "ObjectName": "SCS_Node AWBP_NPC_Fireworks_C:SimpleConstructionScript_0.SCS_Node_2",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.13"
+        },
+        {
+          "ObjectName": "SCS_Node AWBP_NPC_Fireworks_C:SimpleConstructionScript_0.SCS_Node_7",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.14"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node AWBP_NPC_Fireworks_C:SimpleConstructionScript_0.SCS_Node_0",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.11"
+      }
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "StationMesh1_GEN_VARIABLE",
+    "Outer": "AWBP_NPC_Fireworks_C",
+    "Properties": {
+      "bUseDefaultCollision": true,
+      "bGenerateOverlapEvents": false,
+      "BodyInstance": {
+        "ObjectType": "ECC_WorldStatic",
+        "CollisionProfileName": "BlockAll"
+      },
+      "bAbsoluteScale": true
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "StationMesh",
+    "Outer": "Default__AWBP_NPC_Fireworks_C",
+    "Properties": {
+      "AttachParent": {
+        "ObjectName": "SceneComponent Default__AWBP_NPC_Fireworks_C:PositionComponent",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.10"
+      }
+    }
+  },
+  {
+    "Type": "TimelineTemplate",
+    "Name": "Light Intensity_Template",
+    "Outer": "AWBP_NPC_Fireworks_C",
+    "Properties": {
+      "LengthMode": "TL_LastKeyFrame",
+      "FloatTracks": [
+        {
+          "CurveFloat": {
+            "ObjectName": "CurveFloat AWBP_NPC_Fireworks_C:CurveFloat_0",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_Fireworks.6"
+          },
+          "PropertyName": "Light_Intensity_Light_Intensity_5B14988A4C92C79A1F928DA1809B05A3",
+          "TrackName": "Light_Intensity",
+          "bIsExternalCurve": false
+        }
+      ],
+      "TimelineGuid": "5B14988A-4C92C79A-1F928DA1-809B05A3",
+      "VariableName": "Light Intensity",
+      "DirectionPropertyName": "Light_Intensity__Direction_5B14988A4C92C79A1F928DA1809B05A3",
+      "UpdateFunctionName": "Light Intensity__UpdateFunc",
+      "FinishedFunctionName": "Light Intensity__FinishedFunc"
+    }
+  }
+]

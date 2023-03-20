@@ -1,5 +1,5 @@
 <app-card *ngIf="fetchedItem" class="text-lg font-semibold">
-    <app-item-icon cardIcon itemName="{{fetchedItem.iconName}}"></app-item-icon>
+    <app-item-icon cardIcon itemName="{{fetchedItem.iconName}}" [amount]="amount"></app-item-icon>
     <div class="text-black text-2xl">{{fetchedItem.displayName}}</div>
     <span class="text-accent text-2xl">   {{addSpacesToPascalCase(fetchedItem.displayKey)}}</span>
     <hr class="my-5"/>

@@ -22,11 +22,6 @@ export const appRoutes: Route[] = [
             import('./crafting/crafting.module').then((m) => m.CraftingModule),
     },
     {
-        path: 'cooking',
-        loadChildren: () =>
-            import('./cooking/cooking.module').then((m) => m.CookingModule),
-    },
-    {
         path: 'shops',
         loadChildren: () =>
             import('./shops/shops.module').then((m) => m.ShopsModule),

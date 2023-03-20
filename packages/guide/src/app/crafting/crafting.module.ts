@@ -7,15 +7,17 @@ import { CraftingRoutingModule } from './crafting-routing.module';
 import { MatTabsModule } from '@angular/material/tabs';
 import { InventoryDetailsComponent } from './components/inventory-details/inventory-details.component';
 import { ProcessorComponent } from './components/processor/processor.component';
+import { CookingComponent } from './components/cooking/cooking.component';
 
 @NgModule({
-  declarations: [
-    CraftingComponent,
-    InventoryComponent,
-    InventoryDetailsComponent,
-    ProcessorComponent,
-  ],
-  imports: [CommonModule, CraftingRoutingModule, SharedModule, MatTabsModule],
+    declarations: [
+        CraftingComponent,
+        InventoryComponent,
+        InventoryDetailsComponent,
+        ProcessorComponent,
+        CookingComponent,
+    ],
+    imports: [CommonModule, CraftingRoutingModule, SharedModule, MatTabsModule],
 })
 export class CraftingModule {
 }

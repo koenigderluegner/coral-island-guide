@@ -1,0 +1,111 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_4",
+    "Outer": "Monster_Window_png",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -1.5,
+              "Y": 0.0,
+              "Z": 1.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 89.0,
+            "Y": 10.0,
+            "Z": 120.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "73EBBE5D49F5C06221CF9993BE991D2D"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Monster_Window_png",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 128.0,
+        "Y": 1045.0
+      },
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D TP_AtlasItems_6",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_AtlasItems_6.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant TranslucentUnlitSpriteMaterial",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup Monster_Window_png:BodySetup_4",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Monster_Window_png.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 43.0,
+          "Y": 61.0,
+          "Z": 0.057373047,
+          "W": 0.25585938
+        },
+        {
+          "X": -46.0,
+          "Y": 61.0,
+          "Z": 0.03564453,
+          "W": 0.25585938
+        },
+        {
+          "X": -46.0,
+          "Y": -59.0,
+          "Z": 0.03564453,
+          "W": 0.28515625
+        },
+        {
+          "X": 43.0,
+          "Y": -59.0,
+          "Z": 0.057373047,
+          "W": 0.28515625
+        },
+        {
+          "X": 43.0,
+          "Y": 61.0,
+          "Z": 0.057373047,
+          "W": 0.25585938
+        },
+        {
+          "X": -46.0,
+          "Y": -59.0,
+          "Z": 0.03564453,
+          "W": 0.28515625
+        }
+      ]
+    }
+  }
+]
