@@ -1,17 +1,16 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Crop, Item } from '@ci/data-types';
+import { Crop, FruitPlant, FruitTree, Item } from '@ci/data-types';
 import { DatabaseService } from '../../../shared/services/database.service';
-import { map, Observable } from 'rxjs';
+import { combineLatest, map, Observable } from 'rxjs';
 import { getTruthyValues } from '@ci/util';
 
 @Component({
     selector: 'app-produce-details',
     templateUrl: './produce-details.component.html',
-    styleUrls: ['./produce-details.component.scss'],
 })
 export class ProduceDetailsComponent implements OnChanges {
     @Input() item?: Item;
-    crop$?: Observable<Crop | undefined>;
+    crop$?: Observable<Crop | FruitPlant | FruitTree | undefined>;
     getTruthyValues = getTruthyValues;
 
 
@@ -22,11 +21,17 @@ export class ProduceDetailsComponent implements OnChanges {
         const currentValue: Item | undefined = changes['item']?.currentValue;
         if (currentValue) {
 
-            this.crop$ = (this._database.fetchCrops$().pipe(
-                map(crops => {
-                    return crops.find(crop => crop.pickupableItemId === currentValue.id);
+            this.crop$ = combineLatest([
+                this._database.fetchCrops$(),
+                this._database.fetchFruitTrees$(),
+                this._database.fetchFruitPlants$(),
+            ]).pipe(
+                map(([crops, fruitTrees, fruitPlants]) => {
+                    return crops.find(crop => crop.pickupableItemId === currentValue.id)
+                        ?? fruitPlants.find(crop => crop.dropData.some(dropData => dropData.itemId === currentValue.id))
+                        ?? fruitTrees.find(crop => crop.dropData.some(dropData => dropData.itemId === currentValue.id));
                 })
-            ));
+            );
 
 
         }

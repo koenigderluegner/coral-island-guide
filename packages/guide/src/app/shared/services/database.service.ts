@@ -7,6 +7,8 @@ import {
     Critter,
     Crop,
     Fish,
+    FruitPlant,
+    FruitTree,
     GiftPreferences,
     Item,
     ItemProcessing,
@@ -31,6 +33,8 @@ export class DatabaseService {
 
     private _JOURNAL_ORDERS: Map<string, Observable<JournalOrder[]>> = new Map<string, Observable<JournalOrder[]>>();
     private _CROPS$?: Observable<Crop[]>;
+    private _FRUIT_TREES$?: Observable<FruitTree[]>;
+    private _FRUIT_PLANTS$?: Observable<FruitPlant[]>;
     private _TAG_BASED_ITEMS$?: Observable<TagBasedItem[]>;
     private _ITEM_PROCESSING_RECIPE$?: Observable<Record<string, ItemProcessing[]>>;
     private _COOKING_RECIPE$?: Observable<Record<string, CookingRecipe[]>>;
@@ -136,6 +140,26 @@ export class DatabaseService {
                 );
         }
         return this._CROPS$;
+    }
+
+    fetchFruitTrees$(): Observable<FruitTree[]> {
+        if (!this._FRUIT_TREES$) {
+            this._FRUIT_TREES$ = this._http.get<Crop[]>(`${this._BASE_PATH}/fruit-trees.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+        return this._FRUIT_TREES$;
+    }
+
+    fetchFruitPlants$(): Observable<FruitPlant[]> {
+        if (!this._FRUIT_PLANTS$) {
+            this._FRUIT_PLANTS$ = this._http.get<Crop[]>(`${this._BASE_PATH}/fruit-plants.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+        return this._FRUIT_PLANTS$;
     }
 
     fetchJournalOrder$(listName: AvailableJournalOrders): Observable<JournalOrder[]> {

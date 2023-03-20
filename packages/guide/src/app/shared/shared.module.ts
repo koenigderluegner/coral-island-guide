@@ -23,6 +23,7 @@ import { InlineMinimalItemComponent } from './components/inline-minimal-item/inl
 import { ResponsiveTableComponent } from './components/responsive-table/responsive-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { SpacesToPascalCasePipe } from './pipes/spaces-to-pascal-case.pipe';
+import { IsCropPipe } from './pipes/is-crop.pipe';
 
 @NgModule({
     declarations: [
@@ -42,6 +43,7 @@ import { SpacesToPascalCasePipe } from './pipes/spaces-to-pascal-case.pipe';
         InlineMinimalItemComponent,
         ResponsiveTableComponent,
         SpacesToPascalCasePipe,
+        IsCropPipe,
     ],
     imports: [
         CommonModule,
@@ -69,6 +71,7 @@ import { SpacesToPascalCasePipe } from './pipes/spaces-to-pascal-case.pipe';
         InlineMinimalItemComponent,
         ResponsiveTableComponent,
         SpacesToPascalCasePipe,
+        IsCropPipe,
     ],
 })
 export class SharedModule {

@@ -2,7 +2,7 @@
 
     <ng-container *ngIf="crop$ | async as crop">
         <div class="flex items-center mb-2">
-            <app-item-icon class="h-10 w-10 mr-1" [itemName]="crop.item.iconName"></app-item-icon>
+            <app-item-icon [itemName]="crop.item.iconName" class="h-10 w-10 mr-1"/>
             <span class="text-black mr-3">{{crop.readableName}}</span>
             <app-money [amount]="crop.item.price"></app-money>
         </div>
@@ -11,10 +11,13 @@
         <div>Time to mature: <span class="text-black">{{crop.growTime}} days</span></div>
         <div *ngIf="crop.isRegrowable">Regrows: <span class="text-black">{{[1, crop.regrowableLength] | max}}
             days</span></div>
-        <div *ngIf="crop.canCombine">Can combine: <span class="text-black">{{crop.chanceToCombine.chance}}%</span></div>
-        <div>Size (WxL): <span class="text-black">{{crop.size.width}}x{{crop.size.length}}</span></div>
-        <div *ngIf="crop.isScytheRequired" class="text-black">Scythe required</div>
-        <div *ngIf="crop.isTrellisCrop" class="text-black">Is trellis crop</div>
+        <ng-container *ngIf="crop |isCrop">
+            <div *ngIf="crop.canCombine">Can combine: <span class="text-black">{{crop.chanceToCombine.chance}}%</span>
+            </div>
+            <div>Size (WxL): <span class="text-black">{{crop.size.width}}x{{crop.size.length}}</span></div>
+            <div *ngIf="crop.isScytheRequired" class="text-black">Scythe required</div>
+            <div *ngIf="crop.isTrellisCrop" class="text-black">Is trellis crop</div>
+        </ng-container>
     </ng-container>
 
 </app-base-item-card>
