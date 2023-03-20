@@ -1,3 +1,4 @@
+export * from './lib/interfaces/cooking-recipe.interface';
 export * from './lib/interfaces/crafting-recipe.interface';
 export * from './lib/interfaces/critter.interface';
 export * from './lib/interfaces/fish.interface';
@@ -8,7 +9,7 @@ export * from './lib/interfaces/journal-order.interface';
 export * from './lib/interfaces/item-processing.interface';
 export * from './lib/interfaces/gift-preferences.interface';
 export * from './lib/interfaces/npc.interface';
-export * from './lib/interfaces/crafting-unlock-by-mastery.interface';
+export * from './lib/interfaces/unlock-by-mastery.interface';
 
 export * from './lib/enums/quality.enum';
 

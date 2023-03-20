@@ -4,7 +4,7 @@ import { Datatable } from '../interfaces/datatable.interface';
 import fs from 'fs';
 import { RawItemProcessing } from '../interfaces/raw-item-processing.interface';
 import { Item, ItemProcessing } from '@ci/data-types';
-import { minifyItem } from '../util/functions';
+import { minifyItem, removeQualityFlag } from '../util/functions';
 
 export class ItemProcessorDbGenerator {
 
@@ -44,8 +44,8 @@ export class ItemProcessorDbGenerator {
 
                 if (dbItem.input.item.itemID === 'None') return;
 
-                const inputItem = minifyItem(this.itemMap.get(this.removeQualityFlag(dbItem.input.item.itemID))!);
-                const outputItem = minifyItem(this.itemMap.get(this.removeQualityFlag(dbItem.output.itemID))!);
+                const inputItem = minifyItem(this.itemMap.get(removeQualityFlag(dbItem.input.item.itemID))!);
+                const outputItem = minifyItem(this.itemMap.get(removeQualityFlag(dbItem.output.itemID))!);
 
                 const exisitingItem = recipes.find(recipe => recipe.output.item.id === outputItem.id);
 
@@ -55,7 +55,7 @@ export class ItemProcessorDbGenerator {
                     day: dbItem.day,
                     time: dbItem.time,
                     additionalInput: dbItem.additionalInput.map(ai => {
-                        const item = this.itemMap.get(this.removeQualityFlag(ai.item.itemID))!;
+                        const item = this.itemMap.get(removeQualityFlag(ai.item.itemID))!;
 
                         return {
                             amount: ai.amount,
@@ -97,11 +97,5 @@ export class ItemProcessorDbGenerator {
 
     }
 
-    removeQualityFlag(itemKey: string): string {
-        if (itemKey.endsWith('-a') || itemKey.endsWith('-b') || itemKey.endsWith('-c') || itemKey.endsWith('-d')) {
-            return itemKey.slice(0, -2);
-        }
-        return itemKey;
-    }
 
 }

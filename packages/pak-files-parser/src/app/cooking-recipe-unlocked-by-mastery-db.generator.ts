@@ -3,8 +3,9 @@ import { RawUnlockByMastery } from "../interfaces/raw-unlock-by-mastery.interfac
 import { Datatable } from "../interfaces/datatable.interface";
 import { UnlockedByMasteryDbGenerator } from "./unlocked-by-mastery-db.generator";
 
-export class CraftingRecipeUnlockedByMasteryDbGenerator extends UnlockedByMasteryDbGenerator {
+export class CookingRecipeUnlockedByMasteryDbGenerator extends UnlockedByMasteryDbGenerator {
 
-    recipesDB: Datatable<RawUnlockByMastery>[] = readAsset<Datatable<RawUnlockByMastery>[]>('DT_CraftingUnlockByMastery.json');
+    // ProjectCoral Content ProjectCoral Data Cooking
+    recipesDB: Datatable<RawUnlockByMastery>[] = readAsset<Datatable<RawUnlockByMastery>[]>('DT_CookingRecipeUnlockByMastery.json');
 
 }
