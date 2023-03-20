@@ -18,6 +18,8 @@ import { CraftingRecipeUnlockedByMasteryDbGenerator } from "./app/crafting-recip
 import { config } from "./config";
 import { CookingRecipeUnlockedByMasteryDbGenerator } from "./app/cooking-recipe-unlocked-by-mastery-db.generator";
 import { CookingDbGenerator } from "./app/cooking-db.generator";
+import { FruitTreeDbGenerator } from "./app/fruit-tree-db.generator";
+import { FruitPlantDbGenerator } from "./app/fruit-plant-db.generator";
 
 const itemIconPath = config.itemIconPath
 const texturePath = config.texturePath;
@@ -43,6 +45,8 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'ocean-critters': new OceanCritterDbGenerator(itemDbMap),
     'fish': new FishDbGenerator(itemDbMap),
     'crops': new CropsDbGenerator(itemDbMap),
+    'fruit-trees': new FruitTreeDbGenerator(itemDbMap),
+    'fruit-plants': new FruitPlantDbGenerator(itemDbMap),
     'item-processing': new ItemProcessorDbGenerator(itemDbMap),
     'cooking-recipes': new CookingDbGenerator(itemDbMap, cookingRecipeUnlockedByMasteryDbMap, tagBasedItemsDbMap),
 
