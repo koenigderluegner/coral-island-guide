@@ -5,6 +5,7 @@
 #### Added
 
 - Cooking under crafting
+- Fruit tree and fruit plants data to journal crops
 
 ### 0.3.4 2023-03-15
 
