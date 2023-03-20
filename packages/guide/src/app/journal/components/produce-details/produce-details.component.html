@@ -14,10 +14,10 @@
         <ng-container *ngIf="crop |isCrop">
             <div *ngIf="crop.canCombine">Can combine: <span class="text-black">{{crop.chanceToCombine.chance}}%</span>
             </div>
-            <div>Size (WxL): <span class="text-black">{{crop.size.width}}x{{crop.size.length}}</span></div>
             <div *ngIf="crop.isScytheRequired" class="text-black">Scythe required</div>
             <div *ngIf="crop.isTrellisCrop" class="text-black">Is trellis crop</div>
         </ng-container>
+        <div>Size (WxL): <span class="text-black">{{crop.size.width}}x{{crop.size.length}}</span></div>
     </ng-container>
 
 </app-base-item-card>
