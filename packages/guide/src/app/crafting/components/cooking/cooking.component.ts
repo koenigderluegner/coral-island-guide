@@ -88,7 +88,7 @@ export class CookingComponent {
     }
 
     updateUrl($event: MatTabChangeEvent) {
-        let tab = $event.tab.textLabel.toLowerCase();
+        let tab = $event.tab.textLabel.toLowerCase().replace(' ', '');
         this._router.navigate(['..', tab], {relativeTo: this._route});
     }
 
