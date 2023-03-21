@@ -1,5 +1,11 @@
 ## Changelog
 
+### 0.4.1 2023-03-21
+
+#### Fixed
+
+- Removed quality grid in cooking as it always produces base quality
+
 ### 0.4.0 2023-03-21
 
 #### Added
