@@ -4,8 +4,11 @@
 
 #### Added
 
-- Cooking under crafting
-- Fruit tree and fruit plants data to journal crops
+- Added cooking under crafting
+- Added fruit tree and fruit plants data to journal crops
+- Added handling of refinements and deviating processing time per quality
+    - This fixes the multiple entries for the aging barrel
+- Show output amount for inventory crafting as well
 
 ### 0.3.4 2023-03-15
 

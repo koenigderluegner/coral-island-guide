@@ -6,6 +6,7 @@
             <div *ngIf="(recipes$ |async) as recipes" class="grid gap-4 icon-grid">
 
                 <app-item-icon *ngFor="let recipe of recipes" [itemName]="recipe.item?.iconName"
+                               [amount]="recipe.amount"
                                class="icon-grid-item" (click)="showDetails(recipe)">
                 </app-item-icon>
             </div>
