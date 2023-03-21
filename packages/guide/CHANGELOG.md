@@ -6,6 +6,8 @@
 
 - Cooking under crafting
 - Fruit tree and fruit plants data to journal crops
+- Added handling of refinements and deviating processing time per quality
+    - This fixes the multiple entries for the aging barrel
 
 ### 0.3.4 2023-03-15
 
