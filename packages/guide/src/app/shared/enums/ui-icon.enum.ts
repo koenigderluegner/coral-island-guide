@@ -1,6 +1,9 @@
 export enum UiIcon {
     // MISC
     CROSS = 'T_Icon_Cross',
+    EMPTY_STAR = 'T_Icon_Styles',
+    ARROW_RIGHT = 'T_BoxArrowRight',
+
     // PAUSE MENU TOP
     JOURNAL = 'T_Icon_Journal',
     CRAFTING = 'T_Icon_Crafting',
@@ -10,6 +13,7 @@ export enum UiIcon {
     CATCHING = 'T_Icon_CatchingM',
     FARMING = 'T_Icon_FarmingM',
     ARTISAN = 'T_Icon_ArtisanM',
+    COOKING = 'T_Icon_ConsumablesM',
 
     //
     GIFTING = 'Icons_Gift',
