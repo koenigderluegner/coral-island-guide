@@ -1,15 +1,29 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     <app-base-item-card *ngIf="selectedEntity" listDetail [item]="selectedEntity.output.item"
                         [amount]="selectedEntity.output.amount">
-        <div>Processing time:
+
+        <div *ngIf="!selectedEntity.qualities" class="mb-3">Processing time:
             <span class="text-black">
-                <ng-container *ngIf="selectedEntity.day"> {{selectedEntity.day}} day(s)</ng-container>
-                <ng-container *ngIf="selectedEntity.time.hours"> {{selectedEntity.time.hours}} hour(s)</ng-container>
-                <ng-container *ngIf="selectedEntity.time.minutes"> {{selectedEntity.time.minutes}}
-                    minute(s)</ng-container>
+              <app-processing-time [processingTime]="selectedEntity"/>
                 </span>
         </div>
+
         <app-item-list [itemList]="getItemList(selectedEntity)" class="mb-3"></app-item-list>
+
+
+        <ng-container *ngIf="selectedEntity.qualities">
+            <div class="mb-3">Time per input quality
+                <app-processing-time-per-quality [baseProcessingTime]="selectedEntity"
+                                                 [processingTimePerQualities]="selectedEntity.qualities"/>
+            </div>
+        </ng-container>
+
+
+        <ng-container *ngIf="selectedEntity.refinements">
+            <div class="mb-3">Time to improve quality
+                <app-refinements-list [refinements]="selectedEntity.refinements"/>
+            </div>
+        </ng-container>
     </app-base-item-card>
 
 

@@ -2,10 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable, shareReplay, tap } from 'rxjs';
 import {
+    CookingRecipe,
     CraftingRecipe,
     Critter,
     Crop,
     Fish,
+    FruitPlant,
+    FruitTree,
     GiftPreferences,
     Item,
     ItemProcessing,
@@ -30,8 +33,11 @@ export class DatabaseService {
 
     private _JOURNAL_ORDERS: Map<string, Observable<JournalOrder[]>> = new Map<string, Observable<JournalOrder[]>>();
     private _CROPS$?: Observable<Crop[]>;
+    private _FRUIT_TREES$?: Observable<FruitTree[]>;
+    private _FRUIT_PLANTS$?: Observable<FruitPlant[]>;
     private _TAG_BASED_ITEMS$?: Observable<TagBasedItem[]>;
     private _ITEM_PROCESSING_RECIPE$?: Observable<Record<string, ItemProcessing[]>>;
+    private _COOKING_RECIPE$?: Observable<Record<string, CookingRecipe[]>>;
     private _GIFT_PREFERENCES$?: Observable<MapKeyed<GiftPreferences>[]>;
 
     constructor(private readonly _http: HttpClient) {
@@ -84,6 +90,18 @@ export class DatabaseService {
         return this._ITEM_PROCESSING_RECIPE$;
     }
 
+
+    fetchCookingRecipes$(): Observable<Record<string, CookingRecipe[]>> {
+        if (!this._COOKING_RECIPE$) {
+            this._COOKING_RECIPE$ = this._http.get<Record<string, CookingRecipe[]>[]>(`${this._BASE_PATH}/cooking-recipes.json`)
+                .pipe(
+                    map(ipa => ipa[0]),
+                    shareReplay(1)
+                );
+        }
+        return this._COOKING_RECIPE$;
+    }
+
     fetchTagBasedItems$(): Observable<TagBasedItem[]> {
         if (!this._TAG_BASED_ITEMS$) {
             this._TAG_BASED_ITEMS$ = this._http.get<TagBasedItem[]>(`${this._BASE_PATH}/tag-based-items.json`)
@@ -122,6 +140,26 @@ export class DatabaseService {
                 );
         }
         return this._CROPS$;
+    }
+
+    fetchFruitTrees$(): Observable<FruitTree[]> {
+        if (!this._FRUIT_TREES$) {
+            this._FRUIT_TREES$ = this._http.get<Crop[]>(`${this._BASE_PATH}/fruit-trees.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+        return this._FRUIT_TREES$;
+    }
+
+    fetchFruitPlants$(): Observable<FruitPlant[]> {
+        if (!this._FRUIT_PLANTS$) {
+            this._FRUIT_PLANTS$ = this._http.get<Crop[]>(`${this._BASE_PATH}/fruit-plants.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+        return this._FRUIT_PLANTS$;
     }
 
     fetchJournalOrder$(listName: AvailableJournalOrders): Observable<JournalOrder[]> {

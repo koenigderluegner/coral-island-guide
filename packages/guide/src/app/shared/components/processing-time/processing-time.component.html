@@ -1,0 +1,8 @@
+<ng-container *ngIf="processingTime">
+    <ng-container *ngIf="processingTime.day"> {{processingTime.day}}
+        day{{processingTime.day > 1 ? 's' : ''}}</ng-container>
+    <ng-container *ngIf="processingTime.time?.hours"> {{processingTime.time.hours}}
+        hour{{processingTime.time.hours > 1 ? 's' : ''}}</ng-container>
+    <ng-container *ngIf="processingTime.time?.minutes"> {{processingTime.time.minutes}}
+        minute{{processingTime.time.minutes > 1 ? 's' : ''}}</ng-container>
+</ng-container>

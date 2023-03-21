@@ -4,7 +4,7 @@ import { Datatable } from '../interfaces/datatable.interface';
 import fs from 'fs';
 import { RawItemProcessing } from '../interfaces/raw-item-processing.interface';
 import { Item, ItemProcessing } from '@ci/data-types';
-import { minifyItem } from '../util/functions';
+import { getQuality, minifyItem, removeQualityFlag } from '../util/functions';
 
 export class ItemProcessorDbGenerator {
 
@@ -15,7 +15,7 @@ export class ItemProcessorDbGenerator {
     }
 
     generate(): Map<string, Record<string, ItemProcessing[]>> {
-                // Content ProjectCoral Data ItempProcessing
+        // Content ProjectCoral Data ItempProcessing
         const itemProcessingDir = path.join(__dirname, 'assets', 'ProjectCoral/Content/ProjectCoral/Data', 'ItemProcessing',);
         const res: Map<string, Record<string, ItemProcessing[]>> = new Map<string, Record<string, ItemProcessing[]>>();
 
@@ -44,8 +44,8 @@ export class ItemProcessorDbGenerator {
 
                 if (dbItem.input.item.itemID === 'None') return;
 
-                const inputItem = minifyItem(this.itemMap.get(this.removeQualityFlag(dbItem.input.item.itemID))!);
-                const outputItem = minifyItem(this.itemMap.get(this.removeQualityFlag(dbItem.output.itemID))!);
+                const inputItem = minifyItem(this.itemMap.get(removeQualityFlag(dbItem.input.item.itemID))!);
+                const outputItem = minifyItem(this.itemMap.get(removeQualityFlag(dbItem.output.itemID))!);
 
                 const exisitingItem = recipes.find(recipe => recipe.output.item.id === outputItem.id);
 
@@ -55,7 +55,7 @@ export class ItemProcessorDbGenerator {
                     day: dbItem.day,
                     time: dbItem.time,
                     additionalInput: dbItem.additionalInput.map(ai => {
-                        const item = this.itemMap.get(this.removeQualityFlag(ai.item.itemID))!;
+                        const item = this.itemMap.get(removeQualityFlag(ai.item.itemID))!;
 
                         return {
                             amount: ai.amount,
@@ -73,17 +73,59 @@ export class ItemProcessorDbGenerator {
                     genericInput: dbItem.useGenericRequirement ? {
                         amount: dbItem.genericInput.amount,
                         key: dbItem.genericInput.genericItem.RowName,
-                    } : null
-
+                    } : null,
                 };
 
-                if (exisitingItem && JSON.stringify(exisitingItem) === JSON.stringify(newRecipe)) {
-                    return;
+                if (exisitingItem) {
+
+                    let {qualities, ...qualitylessExistingItem} = exisitingItem;
+                    let {qualities: _, ...qualitylessNewItem} = newRecipe;
+
+
+                    if (JSON.stringify(qualitylessExistingItem) === JSON.stringify(qualitylessNewItem))
+                        return;
+
+                    const inputQuality = getQuality(dbItem.input.item.itemID);
+                    const outputQuality = getQuality(dbItem.output.itemID);
+                    const inputQualityMatchesOutputQuality = inputQuality === outputQuality;
+
+                    const genericInputMatches = JSON.stringify(exisitingItem.genericInput) === JSON.stringify(newRecipe.genericInput)
+
+                    const isProcessingTimeMismatching = newRecipe.day !== exisitingItem.day || newRecipe.time.hours !== exisitingItem.time.hours || newRecipe.time.minutes !== exisitingItem.time.minutes;
+
+                    if (isProcessingTimeMismatching && inputQualityMatchesOutputQuality && genericInputMatches) {
+
+                        if (exisitingItem.qualities === undefined) {
+                            exisitingItem.qualities = {}
+                        }
+
+                        exisitingItem.qualities[outputQuality] = {
+                            day: newRecipe.day,
+                            time: newRecipe.time
+                        };
+                        return
+                    }
+
+                    if (!inputQualityMatchesOutputQuality && inputItem.id === outputItem.id) {
+
+                        if (!Array.isArray(exisitingItem.refinements)) {
+                            exisitingItem.refinements = []
+                        }
+
+                        exisitingItem.refinements.push({
+                            from: inputQuality,
+                            to: outputQuality,
+                            day: newRecipe.day,
+                            time: newRecipe.time
+                        })
+
+                        return;
+
+                    }
+
                 }
 
-
                 recipes.push(newRecipe);
-
 
             });
 
@@ -97,11 +139,5 @@ export class ItemProcessorDbGenerator {
 
     }
 
-    removeQualityFlag(itemKey: string): string {
-        if (itemKey.endsWith('-a') || itemKey.endsWith('-b') || itemKey.endsWith('-c') || itemKey.endsWith('-d')) {
-            return itemKey.slice(0, -2);
-        }
-        return itemKey;
-    }
 
 }

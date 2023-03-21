@@ -1,4 +1,4 @@
-export interface RawCraftingUnlockByMastery {
+export interface RawUnlockByMastery {
     "masteryLevel": number,
     "desc": string,
     "unlockRecipe": {

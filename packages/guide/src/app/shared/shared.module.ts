@@ -22,6 +22,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { InlineMinimalItemComponent } from './components/inline-minimal-item/inline-minimal-item.component';
 import { ResponsiveTableComponent } from './components/responsive-table/responsive-table.component';
 import { MatTableModule } from '@angular/material/table';
+import { SpacesToPascalCasePipe } from './pipes/spaces-to-pascal-case.pipe';
+import { IsCropPipe } from './pipes/is-crop.pipe';
+import { RefinementsListComponent } from './components/refinements-list/refinements-list.component';
+import { CastToQualityPipe } from './pipes/cast-to-quality.pipe';
+import { ProcessingTimeComponent } from './components/processing-time/processing-time.component';
+import { ProcessingTimePerQualityComponent } from './components/processing-time-per-quality/processing-time-per-quality.component';
 
 @NgModule({
     declarations: [
@@ -40,6 +46,12 @@ import { MatTableModule } from '@angular/material/table';
         ListDetailContainerComponent,
         InlineMinimalItemComponent,
         ResponsiveTableComponent,
+        SpacesToPascalCasePipe,
+        IsCropPipe,
+        RefinementsListComponent,
+        CastToQualityPipe,
+        ProcessingTimeComponent,
+        ProcessingTimePerQualityComponent,
     ],
     imports: [
         CommonModule,
@@ -66,6 +78,13 @@ import { MatTableModule } from '@angular/material/table';
         ListDetailContainerComponent,
         InlineMinimalItemComponent,
         ResponsiveTableComponent,
+        SpacesToPascalCasePipe,
+        IsCropPipe,
+        RefinementsListComponent,
+        RarityIconComponent,
+        CastToQualityPipe,
+        ProcessingTimeComponent,
+        ProcessingTimePerQualityComponent,
     ],
 })
 export class SharedModule {
