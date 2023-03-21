@@ -47,7 +47,8 @@ export class ItemProcessorDbGenerator {
                 const inputItem = minifyItem(this.itemMap.get(removeQualityFlag(dbItem.input.item.itemID))!);
                 const outputItem = minifyItem(this.itemMap.get(removeQualityFlag(dbItem.output.itemID))!);
 
-                const exisitingItem = recipes.find(recipe => recipe.output.item.id === outputItem.id);
+                const exisitingItems = recipes.filter(recipe => recipe.output.item.id === outputItem.id);
+                const exisitingItem = exisitingItems.length === 1 ? exisitingItems[0] : exisitingItems.find(recipe => recipe.input.item.id === inputItem.id)
 
 
                 let newRecipe: ItemProcessing = {
