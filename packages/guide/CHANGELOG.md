@@ -6,6 +6,7 @@
 
 - Removed quality grid in cooking as it always produces base quality
 - Fixed multiple entries for same recipe in dye maker
+- Removed empty dish from cooking
 
 ### 0.4.0 2023-03-21
 

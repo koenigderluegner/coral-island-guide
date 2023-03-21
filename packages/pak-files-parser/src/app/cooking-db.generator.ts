@@ -20,6 +20,8 @@ export class CookingDbGenerator {
     handleEntry(dbItem: RawCookingRecipe): CookingRecipe | undefined {
         const itemKey = dbItem.result.itemID;
 
+        if (itemKey === 'None') return;
+
         let additionsToGenerics: Record<string, MinimalItem[]> | undefined = undefined;
 
         const ingredients: CookingRecipe["ingredients"] = [];
