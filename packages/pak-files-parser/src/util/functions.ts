@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { Item, MinimalItem } from '@ci/data-types';
+import { Item, MinimalItem, Quality } from '@ci/data-types';
 import { config } from "../config";
 
 export function readAsset<T = any>(fileName: string): T {
@@ -61,4 +61,13 @@ export function removeQualityFlag(itemKey: string): string {
         return itemKey.slice(0, -2);
     }
     return itemKey;
+}
+
+export function getQuality(itemKey: string): Quality {
+    if (itemKey.endsWith('-a')) return Quality.BRONZE;
+    if (itemKey.endsWith('-b')) return Quality.SILVER;
+    if (itemKey.endsWith('-c')) return Quality.GOLD;
+    if (itemKey.endsWith('-d')) return Quality.OSMIUM;
+
+    return Quality.BASE;
 }

@@ -4,7 +4,7 @@ import { Datatable } from '../interfaces/datatable.interface';
 import fs from 'fs';
 import { RawItemProcessing } from '../interfaces/raw-item-processing.interface';
 import { Item, ItemProcessing } from '@ci/data-types';
-import { minifyItem, removeQualityFlag } from '../util/functions';
+import { getQuality, minifyItem, removeQualityFlag } from '../util/functions';
 
 export class ItemProcessorDbGenerator {
 
@@ -15,7 +15,7 @@ export class ItemProcessorDbGenerator {
     }
 
     generate(): Map<string, Record<string, ItemProcessing[]>> {
-                // Content ProjectCoral Data ItempProcessing
+        // Content ProjectCoral Data ItempProcessing
         const itemProcessingDir = path.join(__dirname, 'assets', 'ProjectCoral/Content/ProjectCoral/Data', 'ItemProcessing',);
         const res: Map<string, Record<string, ItemProcessing[]>> = new Map<string, Record<string, ItemProcessing[]>>();
 
@@ -73,17 +73,59 @@ export class ItemProcessorDbGenerator {
                     genericInput: dbItem.useGenericRequirement ? {
                         amount: dbItem.genericInput.amount,
                         key: dbItem.genericInput.genericItem.RowName,
-                    } : null
-
+                    } : null,
                 };
 
-                if (exisitingItem && JSON.stringify(exisitingItem) === JSON.stringify(newRecipe)) {
-                    return;
+                if (exisitingItem) {
+
+                    let {qualities, ...qualitylessExistingItem} = exisitingItem;
+                    let {qualities: _, ...qualitylessNewItem} = newRecipe;
+
+
+                    if (JSON.stringify(qualitylessExistingItem) === JSON.stringify(qualitylessNewItem))
+                        return;
+
+                    const inputQuality = getQuality(dbItem.input.item.itemID);
+                    const outputQuality = getQuality(dbItem.output.itemID);
+                    const inputQualityMatchesOutputQuality = inputQuality === outputQuality;
+
+                    const genericInputMatches = JSON.stringify(exisitingItem.genericInput) === JSON.stringify(newRecipe.genericInput)
+
+                    const isProcessingTimeMismatching = newRecipe.day !== exisitingItem.day || newRecipe.time.hours !== exisitingItem.time.hours || newRecipe.time.minutes !== exisitingItem.time.minutes;
+
+                    if (isProcessingTimeMismatching && inputQualityMatchesOutputQuality && genericInputMatches) {
+
+                        if (exisitingItem.qualities === undefined) {
+                            exisitingItem.qualities = {}
+                        }
+
+                        exisitingItem.qualities[outputQuality] = {
+                            day: newRecipe.day,
+                            time: newRecipe.time
+                        };
+                        return
+                    }
+
+                    if (!inputQualityMatchesOutputQuality && inputItem.id === outputItem.id) {
+
+                        if (!Array.isArray(exisitingItem.refinements)) {
+                            exisitingItem.refinements = []
+                        }
+
+                        exisitingItem.refinements.push({
+                            from: inputQuality,
+                            to: outputQuality,
+                            day: newRecipe.day,
+                            time: newRecipe.time
+                        })
+
+                        return;
+
+                    }
+
                 }
 
-
                 recipes.push(newRecipe);
-
 
             });
 
