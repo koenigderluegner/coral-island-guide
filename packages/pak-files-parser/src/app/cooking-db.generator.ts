@@ -73,7 +73,11 @@ export class CookingDbGenerator {
                             additionsToGenerics[genericDisplayName] = []
                         }
 
-                        ingredientList.forEach(ingredient => additionsToGenerics?.[genericDisplayName].push(minifyItem(ingredient.item)));
+                        ingredientList.forEach(ingredient => {
+
+                            if (!additionsToGenerics?.[genericDisplayName].find(minifiedItem => minifiedItem.id === ingredient.item.id))
+                                additionsToGenerics?.[genericDisplayName].push(minifyItem(ingredient.item))
+                        });
 
                         ingredientList = [];
                     }
