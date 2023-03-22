@@ -1,1 +1,13 @@
-<p>database works!</p>
+<div class="container mx-auto">
+    <mat-form-field class="btn my-3">
+        <input [formControl]="searchTermControl" class="placeholder:text-white" matInput placeholder="Search term"/>
+    </mat-form-field>
+
+    <div class="grid gap-4 icon-grid" id="grid">
+
+        <app-item-icon (click)="showDetails(itemProcess, index)"
+                       *ngFor="let itemProcess of (filteredItems$ | async); let index = index"
+                       [itemName]="itemProcess.iconName"
+                       class="icon-grid-item"/>
+    </div>
+</div>

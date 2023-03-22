@@ -1,13 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
 import { DatabaseComponent } from './database.component';
-
-const routes: Routes = [{path: '', component: DatabaseComponent}];
+import { DatabaseRoutingModule } from './database-routing.module';
+import { SharedModule } from '../shared/shared.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DatabaseDetailsComponent } from './components/database-details/database-details.component';
 
 @NgModule({
-  declarations: [DatabaseComponent],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+    declarations: [DatabaseComponent, DatabaseDetailsComponent],
+    imports: [
+        CommonModule,
+        DatabaseRoutingModule,
+        SharedModule,
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule,
+    ],
 })
 export class DatabaseModule {
 }
