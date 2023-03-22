@@ -20,6 +20,8 @@ export class CookingDbGenerator {
     handleEntry(dbItem: RawCookingRecipe): CookingRecipe | undefined {
         const itemKey = dbItem.result.itemID;
 
+        if (itemKey === 'None') return;
+
         let additionsToGenerics: Record<string, MinimalItem[]> | undefined = undefined;
 
         const ingredients: CookingRecipe["ingredients"] = [];
@@ -71,7 +73,11 @@ export class CookingDbGenerator {
                             additionsToGenerics[genericDisplayName] = []
                         }
 
-                        ingredientList.forEach(ingredient => additionsToGenerics?.[genericDisplayName].push(minifyItem(ingredient.item)));
+                        ingredientList.forEach(ingredient => {
+
+                            if (!additionsToGenerics?.[genericDisplayName].find(minifiedItem => minifiedItem.id === ingredient.item.id))
+                                additionsToGenerics?.[genericDisplayName].push(minifyItem(ingredient.item))
+                        });
 
                         ingredientList = [];
                     }

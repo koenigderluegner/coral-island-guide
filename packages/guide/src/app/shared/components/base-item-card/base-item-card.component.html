@@ -7,7 +7,8 @@
 
     <ng-content></ng-content>
 
-    <app-quality-grid *ngIf="(fetchedItem.qualities | keyvalue).length; else basePrice" [item]="fetchedItem"
+    <app-quality-grid *ngIf="(fetchedItem.qualities | keyvalue).length && !hideQualityGrid; else basePrice"
+                      [item]="fetchedItem"
                       includePrices
                       class="mt-6"></app-quality-grid>
 

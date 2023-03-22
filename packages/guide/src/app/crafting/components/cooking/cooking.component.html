@@ -1,5 +1,8 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
-    <app-base-item-card *ngIf="selectedEntity" listDetail [item]="selectedEntity.item"
+    <app-base-item-card *ngIf="selectedEntity"
+                        [item]="selectedEntity.item"
+                        hideQualityGrid
+                        listDetail
                         [amount]="selectedEntity.amount">
 
         <div *ngIf="selectedEntity.craftingUnlock" class="mb-3">
@@ -39,8 +42,6 @@
             </div>
 
         </ng-container>
-
-
     </app-base-item-card>
 
 
