@@ -1,8 +1,8 @@
 export interface BugAndInsect {
-    // "bugType": {
-    //     "ObjectName": "BlueprintGeneratedClass BP_Pawn_Bugs_MapleLeafCutterMoth_C",
-    //     "ObjectPath": "ProjectCoral/Content/ProjectCoral/Bugs/BP_Pawn_Bugs_MapleLeafCutterMoth.0"
-    // },
+    "bugType": {
+        "ObjectName": string
+        "ObjectPath": string
+    },
     "BugsAndInsectsSKU": {
         // "data": {
         //     "DataTable": {
