@@ -31,7 +31,7 @@ export class ItemDbGenerator {
 
             const dbItem: InventoryItem = this.itemDb[0]?.Rows[itemKey];
 
-            if (!dbItem.name.SourceString) return;
+            if (this._isBlacklisted(itemKey, dbItem)) return;
 
             if (itemKey.endsWith('-a') || itemKey.endsWith('-b') || itemKey.endsWith('-c') || itemKey.endsWith('-d')) {
                 let qualities = map.get(itemKey.slice(0, -2))?.['qualities'];
@@ -76,5 +76,31 @@ export class ItemDbGenerator {
         });
 
         return map;
+    }
+
+    private _isBlacklisted(key: string, dbItem: InventoryItem): boolean {
+
+        if (!dbItem.name.SourceString) return true;
+
+        const moveOrders = [
+            'item_110024',
+            'item_110025',
+            'item_110026',
+            'item_110027',
+            'item_110028',
+            'item_110029',
+            'item_110030',
+            'item_110031',
+            'item_110032',
+            'item_110033',
+            'item_110034',
+            'item_110035',
+            'item_110036',
+            'item_110037',
+        ];
+
+        return moveOrders.includes(key);
+
+
     }
 }
