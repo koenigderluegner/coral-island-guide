@@ -1,4 +1,16 @@
 <div class="container mx-auto">
+    <app-card *ngIf="!shouldHideImportantNote" class="my-3">
+        <div class="prose lg:prose-xl">
+            <h2>Important note</h2>
+            <p>The item list loads a lot of stuff, this may take a while.
+                The list below shows everything, that got not filtered beforehand.
+                Some of those items will never be obtainable as they only provide a technical purpose.
+                The information shown per item are as complete as the rest of this website.
+                When new features get added, the details in here will expand as well.</p>
+            <button (click)="hideImportantNote()" class="btn btn-secondary">Got it!</button>
+        </div>
+    </app-card>
+
     <mat-form-field class="btn my-3">
         <input [formControl]="searchTermControl" class="placeholder:text-white" matInput placeholder="Search term"/>
     </mat-form-field>
