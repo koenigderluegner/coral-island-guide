@@ -1,10 +1,10 @@
 import { ApplicationRef, Component, ComponentRef, createComponent, EnvironmentInjector, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { DatabaseService } from "../shared/services/database.service";
 import { Item, Quality } from "@ci/data-types";
 import { getQuality } from "@ci/util";
 import { FormControl } from "@angular/forms";
-import { concat, debounceTime, map, Observable, startWith, take, tap } from "rxjs";
+import { concat, debounceTime, map, Observable, take, tap } from "rxjs";
 import { DatabaseDetailsComponent } from "./components/database-details/database-details.component";
 import { coerceBooleanProperty } from "@angular/cdk/coercion";
 
@@ -27,6 +27,7 @@ export class DatabaseComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute,
+        private router: Router,
         private database: DatabaseService,
         private appRef: ApplicationRef,
         private injector: EnvironmentInjector
@@ -40,22 +41,28 @@ export class DatabaseComponent implements OnInit {
             this.filteredAmount = items.length;
             return items
         });
-        this.filteredItems$ = concat(
-            this.searchTermControl.valueChanges.pipe(startWith(''), mapToItems, take(1)),
-            this.searchTermControl.valueChanges.pipe(
-                debounceTime(300),
-                tap(() => {
-                    document.getElementById("database-details")?.remove();
-                }),
-                mapToItems
+
+
+        this.filteredItems$ =
+            concat(
+                this.route.queryParams.pipe(map(params => {
+                    const value = params['q'] ?? '';
+                    this.searchTermControl.setValue(value, {emitEvent: false});
+                    return value;
+                }), mapToItems, take(1)),
+                this.searchTermControl.valueChanges.pipe(
+                    debounceTime(300),
+                    tap((searchTerm) => {
+                        this.updateQueryParam(searchTerm);
+                        document.getElementById("database-details")?.remove();
+                    }),
+                    mapToItems
+                )
             )
-        )
     }
 
     ngOnInit() {
-        this.route.params.subscribe(params => {
-            console.log(params);
-        });
+
     }
 
     showDetails(itemProcess: Item, index: number) {
@@ -112,5 +119,18 @@ export class DatabaseComponent implements OnInit {
     hideImportantNote() {
         this.shouldHideImportantNote = true;
         localStorage.setItem(this.localStorageHideNoteKey, 'true');
+    }
+
+    public updateQueryParam(searchTerm: string) {
+
+
+        this.router.navigate(
+            [],
+            {
+                relativeTo: this.route,
+                queryParams: {q: searchTerm},
+                queryParamsHandling: 'merge',
+                replaceUrl: true
+            });
     }
 }
