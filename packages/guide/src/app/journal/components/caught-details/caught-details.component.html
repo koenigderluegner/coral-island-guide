@@ -2,16 +2,36 @@
     <div>Rarity: <span class="text-black">{{addSpacesToPascalCase(critter.rarity)}}</span></div>
     <ng-container *ngIf="isFish(critter)">
         <div>Size: <span class="text-black">{{critter.fishSize}}</span></div>
-        <div>Time: <span class="text-black">{{getTruthyValues(critter.spawnTime)}}</span></div>
+    </ng-container>
+    <div>Time: <span class="text-black">{{getTruthyValues(critter.spawnTime)}}</span></div>
+    <ng-container *ngIf="isFish(critter)">
         <div>
             Season: <span
                 class="text-black">{{!critter.isUsingSpecificDate ? getTruthyValues(critter.spawnSeason) : dateRangesToString(critter.dateRangeList)}}</span>
         </div>
-        <div>Weather: <span class="text-black">{{getTruthyValues(critter.spawnWeather)}}</span></div>
-        <div>
-            Location: <span
-                class="text-black">{{ critter.spawnLocation.join(', ')}}</span>
-        </div>
-
     </ng-container>
+    <ng-container *ngIf="!isFish(critter)">
+        <div>
+            Season: <span
+                class="text-black">{{getTruthyValues(critter.spawnSeason)}}</span>
+        </div>
+    </ng-container>
+
+    <div *ngIf="getTruthyValues(critter.spawnWeather) as weather">Weather: <span class="text-black">{{weather}}</span>
+    </div>
+    <div>
+        Location: <span
+            class="text-black">{{ critter.spawnLocation.join(', ')}}</span>
+    </div>
+
+    <ng-container *ngIf="!isFish(critter)">
+        <div *ngIf="critter.spawnAmountModifiers && critter.spawnAmountModifiers.length">Spawn amount modifiers
+            <div *ngFor="let modifier of critter.spawnAmountModifiers" class="flex justify-between">
+                <span>{{modifier[0]}}</span>
+                <span class="text-black">{{modifier[1]}}</span>
+            </div>
+            <hr>
+        </div>
+    </ng-container>
+
 </app-base-item-card>

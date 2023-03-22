@@ -40,22 +40,13 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
 
     }
 
-    private _isFish(array: (Critter | Fish) | undefined): array is Fish {
-        return !!array && 'fishName' in array;
-    }
-
-
     override filterPredicate(foundEntry: Fish | Critter, filterValues: Season[]): boolean {
 
         if (filterValues.length === 0) return false;
 
-        if (this._isFish(foundEntry)) {
-            const seasonString = getTruthyValues(foundEntry.spawnSeason).toLowerCase();
-            return seasonString === 'any' || filterValues.some(season => seasonString.includes(('' + season).toLowerCase()));
-        }
+        const seasonString = getTruthyValues(foundEntry.spawnSeason).toLowerCase();
+        return seasonString === 'any' || filterValues.some(season => seasonString.includes(('' + season).toLowerCase()));
 
-        return true;
     }
-
 
 }
