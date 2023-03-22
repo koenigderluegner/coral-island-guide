@@ -1,5 +1,12 @@
 ## Changelog
 
+### TBD
+
+#### Added
+
+- Added information for bugs and sea critters
+    - The season filter now works for them as well
+
 ### 0.4.1 2023-03-22
 
 #### Fixed
