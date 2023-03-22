@@ -27,7 +27,11 @@ export class ItemDbGenerator {
         ]);
         Object.keys(this.itemDb[0]?.Rows).forEach(itemKey => {
 
+            if (itemKey === 'None') return;
+
             const dbItem: InventoryItem = this.itemDb[0]?.Rows[itemKey];
+
+            if (!dbItem.name.SourceString) return;
 
             if (itemKey.endsWith('-a') || itemKey.endsWith('-b') || itemKey.endsWith('-c') || itemKey.endsWith('-d')) {
                 let qualities = map.get(itemKey.slice(0, -2))?.['qualities'];

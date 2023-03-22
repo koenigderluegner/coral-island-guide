@@ -1,3 +1,5 @@
+import { Quality } from "@ci/data-types";
+
 export function getEnumValue(EnumString: string): string {
     let strings = EnumString.split('::');
 
@@ -29,4 +31,21 @@ function capitalizeFirstLetter(string: string) {
 
 export function addSpacesToPascalCase(pascalCase: string): string {
     return pascalCase.replaceAll(/([A-Z])/g, ' $1').trim();
+}
+
+
+export function removeQualityFlag(itemKey: string): string {
+    if (itemKey.endsWith('-a') || itemKey.endsWith('-b') || itemKey.endsWith('-c') || itemKey.endsWith('-d')) {
+        return itemKey.slice(0, -2);
+    }
+    return itemKey;
+}
+
+export function getQuality(itemKey: string): Quality {
+    if (itemKey.endsWith('-a') || itemKey.endsWith('-2')) return Quality.BRONZE;
+    if (itemKey.endsWith('-b') || itemKey.endsWith('-3')) return Quality.SILVER;
+    if (itemKey.endsWith('-c') || itemKey.endsWith('-4')) return Quality.GOLD;
+    if (itemKey.endsWith('-d') || itemKey.endsWith('-5')) return Quality.OSMIUM;
+
+    return Quality.BASE;
 }
