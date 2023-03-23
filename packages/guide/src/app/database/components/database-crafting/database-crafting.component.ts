@@ -1,5 +1,5 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { Item } from "@ci/data-types";
+import { Component, ViewEncapsulation } from '@angular/core';
+import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.component";
 
 @Component({
     selector: 'app-database-crafting',
@@ -7,8 +7,6 @@ import { Item } from "@ci/data-types";
     styleUrls: ['./database-crafting.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class DatabaseCraftingComponent {
-
-    @Input() item?: Item;
+export class DatabaseCraftingComponent extends BaseDatabaseDetailPartComponent {
 
 }

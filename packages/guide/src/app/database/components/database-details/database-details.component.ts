@@ -1,14 +1,16 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
 import { Item } from "@ci/data-types";
 
 @Component({
     selector: 'app-database-details',
     templateUrl: './database-details.component.html',
     styleUrls: ['./database-details.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class DatabaseDetailsComponent {
 
     @Input() item?: Item;
+    @HostBinding('class.col-span-full') private _setClass = true;
 
 
 }

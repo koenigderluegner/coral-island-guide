@@ -10,21 +10,25 @@
             <button (click)="hideImportantNote()" class="btn btn-secondary">Got it!</button>
         </div>
     </app-card>
+    <ng-container *ngIf="allPrefetched">
+        <mat-form-field class="btn my-3">
+            <input [formControl]="searchTermControl" class="placeholder:text-white" matInput placeholder="Search term"/>
+        </mat-form-field>
 
-    <mat-form-field class="btn my-3">
-        <input [formControl]="searchTermControl" class="placeholder:text-white" matInput placeholder="Search term"/>
-    </mat-form-field>
+        <div class="grid gap-4 icon-grid" id="grid">
+            <ng-container *ngIf="(filteredItems$ | async)">
 
-    <div class="grid gap-4 icon-grid" id="grid">
-        <ng-container *ngIf="(filteredItems$ | async)">
+                <app-item-icon (click)="showDetails(itemProcess, index)"
+                               *ngFor="let itemProcess of filteredItems; let index = index"
+                               [itemName]="itemProcess.iconName"
+                               class="icon-grid-item"/>
 
-            <app-item-icon (click)="showDetails(itemProcess, index)"
-                           *ngFor="let itemProcess of filteredItems; let index = index"
-                           [itemName]="itemProcess.iconName"
-                           class="icon-grid-item"/>
+                <ng-container *ngIf="initialItemLoad()"/>
 
-            <ng-container *ngIf="initialItemLoad()"/>
-
-        </ng-container>
-    </div>
+            </ng-container>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!allPrefetched">
+        <mat-spinner class="text-white mx-auto my-5"></mat-spinner>
+    </ng-container>
 </div>

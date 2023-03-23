@@ -15,14 +15,14 @@ import { coerceBooleanProperty } from "@angular/cdk/coercion";
 export class DatabaseComponent {
 
     protected readonly items: Item[];
-
     protected searchTermControl: FormControl<string> = new FormControl<string>('', {nonNullable: true});
     protected filteredItems$: Observable<Item[]>;
     protected shouldHideImportantNote = false;
     protected filteredItems: Item[] = [];
+    protected allPrefetched = false;
+
     private _localStorageHideNoteKey = 'databaseHideImportantNote';
     private _didInitialLoad = false;
-
 
     constructor(
         private route: ActivatedRoute,
@@ -31,7 +31,10 @@ export class DatabaseComponent {
         private appRef: ApplicationRef,
         private injector: EnvironmentInjector
     ) {
-
+        this.database.getDatabaseDetails().pipe(
+            tap(() => this.allPrefetched = true),
+            take(1)
+        ).subscribe();
         this.shouldHideImportantNote = coerceBooleanProperty(localStorage.getItem(this._localStorageHideNoteKey));
 
         this.items = database.getItems().filter(item => getQuality(item.id) === Quality.BASE);

@@ -1,5 +1,5 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { Item } from "@ci/data-types";
+import { Component, ViewEncapsulation } from '@angular/core';
+import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.component";
 
 @Component({
     selector: 'app-database-gifts',
@@ -7,8 +7,7 @@ import { Item } from "@ci/data-types";
     styleUrls: ['./database-gifts.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class DatabaseGiftsComponent {
+export class DatabaseGiftsComponent extends BaseDatabaseDetailPartComponent {
 
-    @Input() item?: Item;
 
 }

@@ -1,1 +1,4 @@
-<p>database-sea-critters works!</p>
+<ng-container *ngIf="critter">
+    <h3 class="database-header">Bugs and insects</h3>
+    <app-caught-table [dataSource]="[critter]"/>
+</ng-container>

@@ -1,5 +1,6 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { Item } from "@ci/data-types";
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Critter } from "@ci/data-types";
+import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.component";
 
 @Component({
     selector: 'app-database-insects',
@@ -7,8 +8,15 @@ import { Item } from "@ci/data-types";
     styleUrls: ['./database-insects.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class DatabaseInsectsComponent {
+export class DatabaseInsectsComponent extends BaseDatabaseDetailPartComponent implements OnInit {
 
-    @Input() item?: Item;
+    protected critter?: Critter;
+
+    ngOnInit(): void {
+        if (!this.item) return;
+
+        this.critter = this.database.getBugsAndInsects().find(critter => critter.item.id === this.item?.id);
+    }
+
 
 }

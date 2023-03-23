@@ -16,6 +16,9 @@ import { DatabaseArtisanComponent } from './components/database-artisan/database
 import { DatabaseCraftingComponent } from './components/database-crafting/database-crafting.component';
 import { DatabaseCookingComponent } from './components/database-cooking/database-cooking.component';
 import { DatabaseGiftsComponent } from './components/database-gifts/database-gifts.component';
+import { BaseDatabaseDetailPartComponent } from "./components/base-database-detail-part.component";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { JournalModule } from "../journal/journal.module";
 
 @NgModule({
     declarations: [
@@ -30,6 +33,7 @@ import { DatabaseGiftsComponent } from './components/database-gifts/database-gif
         DatabaseCraftingComponent,
         DatabaseCookingComponent,
         DatabaseGiftsComponent,
+        BaseDatabaseDetailPartComponent
     ],
     imports: [
         CommonModule,
@@ -38,6 +42,8 @@ import { DatabaseGiftsComponent } from './components/database-gifts/database-gif
         MatFormFieldModule,
         MatInputModule,
         ReactiveFormsModule,
+        MatProgressSpinnerModule,
+        JournalModule,
     ],
 })
 export class DatabaseModule {
