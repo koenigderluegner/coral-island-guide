@@ -1,4 +1,4 @@
-import { ApplicationRef, Component, ComponentRef, createComponent, EnvironmentInjector, OnInit } from '@angular/core';
+import { ApplicationRef, Component, ComponentRef, createComponent, EnvironmentInjector } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { DatabaseService } from "../shared/services/database.service";
 import { Item, Quality } from "@ci/data-types";
@@ -11,9 +11,8 @@ import { coerceBooleanProperty } from "@angular/cdk/coercion";
 @Component({
     selector: 'app-database',
     templateUrl: './database.component.html',
-    styleUrls: ['./database.component.css'],
 })
-export class DatabaseComponent implements OnInit {
+export class DatabaseComponent {
 
     protected readonly items: Item[];
 
@@ -63,9 +62,6 @@ export class DatabaseComponent implements OnInit {
             )
     }
 
-    ngOnInit() {
-
-    }
 
     showDetails(itemProcess: Item, index: number) {
         console.log(index, itemProcess);
