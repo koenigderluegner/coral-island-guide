@@ -28,6 +28,8 @@ import { RefinementsListComponent } from './components/refinements-list/refineme
 import { CastToQualityPipe } from './pipes/cast-to-quality.pipe';
 import { ProcessingTimeComponent } from './components/processing-time/processing-time.component';
 import { ProcessingTimePerQualityComponent } from './components/processing-time-per-quality/processing-time-per-quality.component';
+import { TableItemListComponent } from './components/table-item-list/table-item-list.component';
+import { CraftingRecipeIngredientsPipe } from './pipes/crafting-recipe-ingredients.pipe';
 
 @NgModule({
     declarations: [
@@ -52,6 +54,8 @@ import { ProcessingTimePerQualityComponent } from './components/processing-time-
         CastToQualityPipe,
         ProcessingTimeComponent,
         ProcessingTimePerQualityComponent,
+        TableItemListComponent,
+        CraftingRecipeIngredientsPipe,
     ],
     imports: [
         CommonModule,
@@ -85,6 +89,8 @@ import { ProcessingTimePerQualityComponent } from './components/processing-time-
         CastToQualityPipe,
         ProcessingTimeComponent,
         ProcessingTimePerQualityComponent,
+        TableItemListComponent,
+        CraftingRecipeIngredientsPipe,
     ],
 })
 export class SharedModule {

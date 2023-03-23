@@ -103,9 +103,23 @@ export class DatabaseService {
         return this._FISH;
     }
 
+
     fetchCraftingRecipes$(): Observable<CraftingRecipe[]> {
         if (!this._CRAFTING_RECIPE$) {
-            this._CRAFTING_RECIPE$ = this._http.get<CraftingRecipe[]>(`${this._BASE_PATH}/crafting-recipes.json`)
+            this._CRAFTING_RECIPE$ = combineLatest([
+                this._http.get<CraftingRecipe[]>(`${this._BASE_PATH}/crafting-recipes.json`),
+                this.fetchItems$(),
+                this.fetchTagBasedItems$()
+            ]).pipe(
+                map(([recipes, items, tagBasedItems]) => {
+                    recipes.forEach(recipe => {
+                        recipe.item = items.find(item => item.id === recipe.key.toLowerCase());
+                        recipe.genericIngredients.forEach(gi => gi.genericItem = tagBasedItems.find(item => item.key === gi.key));
+                    });
+
+                    return recipes;
+                })
+            )
                 .pipe(
                     tap(craftingRecipes => this._CRAFTING_RECIPE = craftingRecipes),
                     shareReplay(1)

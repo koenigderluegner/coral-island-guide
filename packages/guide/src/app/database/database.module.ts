@@ -19,6 +19,7 @@ import { DatabaseGiftsComponent } from './components/database-gifts/database-gif
 import { BaseDatabaseDetailPartComponent } from "./components/base-database-detail-part.component";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { JournalModule } from "../journal/journal.module";
+import { CraftingModule } from "../crafting/crafting.module";
 
 @NgModule({
     declarations: [
@@ -44,6 +45,7 @@ import { JournalModule } from "../journal/journal.module";
         ReactiveFormsModule,
         MatProgressSpinnerModule,
         JournalModule,
+        CraftingModule,
     ],
 })
 export class DatabaseModule {

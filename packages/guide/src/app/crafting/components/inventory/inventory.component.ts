@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CraftingRecipe } from '@ci/data-types';
 import { DatabaseService } from '../../../shared/services/database.service';
-import { combineLatest, map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-inventory',
@@ -16,20 +16,7 @@ export class InventoryComponent {
     recipes$: Observable<CraftingRecipe[]>;
 
     constructor(private readonly _database: DatabaseService) {
-        this.recipes$ = combineLatest([
-            _database.fetchCraftingRecipes$(),
-            _database.fetchItems$(),
-            _database.fetchTagBasedItems$()
-        ]).pipe(
-            map(([recipes, items, tagBasedItems]) => {
-                recipes.forEach(recipe => {
-                    recipe.item = items.find(item => item.id === recipe.key.toLowerCase());
-                    recipe.genericIngredients.forEach(gi => gi.genericItem = tagBasedItems.find(item => item.key === gi.key));
-                });
-
-                return recipes;
-            })
-        );
+        this.recipes$ = _database.fetchCraftingRecipes$();
     }
 
     showDetails(fishEntry?: CraftingRecipe) {
