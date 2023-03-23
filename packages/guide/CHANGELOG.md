@@ -4,8 +4,15 @@
 
 #### Added
 
-- Added information for bugs and sea critters
+- Added information for bugs and sea critters. Thanks to Nautilus on Discord for telling me where to find the necessary
+  data!
     - The season filter now works for them as well
+- Added button to detail cards to open selected item in database.
+- Added overlay menu for mobile users.
+
+#### Fixed
+
+- Moved amount in detail cards more to the center to not fly off.
 
 ### 0.4.1 2023-03-22
 

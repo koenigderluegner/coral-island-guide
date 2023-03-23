@@ -3,6 +3,7 @@ import { Item, MinimalItem } from '@ci/data-types';
 import { DatabaseService } from '../../services/database.service';
 import { addSpacesToPascalCase } from '@ci/util';
 import { coerceBooleanProperty } from "@angular/cdk/coercion";
+import { UiIcon } from "../../enums/ui-icon.enum";
 
 @Component({
     selector: 'app-base-item-card',
@@ -13,6 +14,7 @@ export class BaseItemCardComponent implements OnInit, OnChanges {
     @Input() item?: Item | MinimalItem;
     @Input() amount?: number;
     @Output() openDrawerChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+    protected uiIcon = UiIcon;
     protected fetchedItem?: Item;
     protected addSpacesToPascalCase = addSpacesToPascalCase;
 

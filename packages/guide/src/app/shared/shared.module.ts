@@ -33,6 +33,7 @@ import { CraftingRecipeIngredientsPipe } from './pipes/crafting-recipe-ingredien
 import { CookingRecipeIngredientsPipe } from './pipes/cooking-recipe-ingredients.pipe';
 import { CastToMinimalItemArrayPipe } from './pipes/cast-to-minimal-item-array.pipe';
 import { ItemProcessingIngredientsPipe } from './pipes/item-processing-ingredients.pipe';
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 @NgModule({
     declarations: [
@@ -72,6 +73,7 @@ import { ItemProcessingIngredientsPipe } from './pipes/item-processing-ingredien
         MatTabsModule,
         MatSidenavModule,
         MatTableModule,
+        MatTooltipModule,
     ],
     exports: [
         UiIconComponent,
