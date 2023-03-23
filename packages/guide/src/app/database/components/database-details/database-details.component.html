@@ -1,22 +1,22 @@
 <app-card *ngIf="item">
-    <div>
-        <header class="flex items-center mb-5">
-            <app-item-icon [itemName]="item.iconName" class="mr-3 w-14"/>
-            <div class="flex flex-col gap-0.5">
-                <h2 class="!my-0 font-semibold text-xl text-black">{{item.displayName}}</h2>
-                <span>{{item.id}}</span>
-            </div>
-        </header>
 
-        <app-database-artisan [item]="item"/>
-        <app-database-cooking [item]="item"/>
-        <app-database-crafting [item]="item"/>
-        <app-database-crops [item]="item"/>
-        <app-database-fishing [item]="item"/>
-        <app-database-gifts [item]="item"/>
-        <app-database-insects [item]="item"/>
-        <app-database-sea-critters [item]="item"/>
+    <header class="flex items-center mb-5">
+        <app-item-icon [itemName]="item.iconName" class="mr-3 w-14"/>
+        <div class="flex flex-col gap-0.5">
+            <h2 class="!my-0 font-semibold text-xl text-black">{{item.displayName}}</h2>
+            <span>{{item.id}}</span>
+        </div>
+    </header>
 
-    </div>
+    <div class="empty-details text-black my-5 text-lg">There's currently no data for this item. :(</div>
+
+    <app-database-artisan [item]="item"/>
+    <app-database-cooking [item]="item"/>
+    <app-database-crafting [item]="item"/>
+    <app-database-crops [item]="item"/>
+    <app-database-fishing [item]="item"/>
+    <app-database-gifts [item]="item"/>
+    <app-database-insects [item]="item"/>
+    <app-database-sea-critters [item]="item"/>
 
 </app-card>

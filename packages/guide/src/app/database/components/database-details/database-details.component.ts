@@ -10,7 +10,7 @@ import { Item } from "@ci/data-types";
 export class DatabaseDetailsComponent {
 
     @Input() item?: Item;
-    @HostBinding('class.col-span-full') private _setClass = true;
+    @HostBinding('class') private _classes = 'col-span-full database-details';
 
 
 }
