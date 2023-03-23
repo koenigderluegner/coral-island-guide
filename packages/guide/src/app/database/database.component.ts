@@ -97,7 +97,7 @@ export class DatabaseComponent {
         this.insertAfter(component, insertAfterElement);
 
         if (scrollIntoView)
-            document.getElementById("database-details")?.scrollIntoView(true);
+            setTimeout(() => document.getElementById("database-details")?.scrollIntoView(true), 0)
 
     }
 
