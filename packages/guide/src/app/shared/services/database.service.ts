@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable, shareReplay, tap } from 'rxjs';
+import { combineLatest, map, Observable, shareReplay, tap } from 'rxjs';
 import {
     CookingRecipe,
     CraftingRecipe,
@@ -27,21 +27,50 @@ export class DatabaseService {
     private _ITEMS$?: Observable<Item[]>;
     private _ITEMS: Item[] = [];
     private _FISH$?: Observable<Fish[]>;
+    private _FISH: Fish[] = [];
     private _CRAFTING_RECIPE$?: Observable<CraftingRecipe[]>;
-    private _OCEAN_CRITTERS?: Observable<Critter[]>;
-    private _BUGS_AND_INSECTS?: Observable<Critter[]>;
+    private _CRAFTING_RECIPE: CraftingRecipe[] = [];
+    private _OCEAN_CRITTERS$?: Observable<Critter[]>;
+    private _OCEAN_CRITTERS: Critter[] = [];
+    private _BUGS_AND_INSECTS$?: Observable<Critter[]>;
+    private _BUGS_AND_INSECTS: Critter[] = [];
 
     private _JOURNAL_ORDERS: Map<string, Observable<JournalOrder[]>> = new Map<string, Observable<JournalOrder[]>>();
     private _CROPS$?: Observable<Crop[]>;
+    private _CROPS: Crop[] = [];
     private _FRUIT_TREES$?: Observable<FruitTree[]>;
+    private _FRUIT_TREES: FruitTree[] = [];
     private _FRUIT_PLANTS$?: Observable<FruitPlant[]>;
+    private _FRUIT_PLANTS: FruitPlant[] = [];
     private _TAG_BASED_ITEMS$?: Observable<TagBasedItem[]>;
+    private _TAG_BASED_ITEMS: TagBasedItem[] = [];
     private _ITEM_PROCESSING_RECIPE$?: Observable<Record<string, ItemProcessing[]>>;
+    private _ITEM_PROCESSING_RECIPE: Record<string, ItemProcessing[]> = {};
     private _COOKING_RECIPE$?: Observable<Record<string, CookingRecipe[]>>;
+    private _COOKING_RECIPE: Record<string, CookingRecipe[]> = {};
     private _GIFT_PREFERENCES$?: Observable<MapKeyed<GiftPreferences>[]>;
+    private _GIFT_PREFERENCES: MapKeyed<GiftPreferences>[] = [];
 
     constructor(private readonly _http: HttpClient) {
     }
+
+
+    getDatabaseDetails(): Observable<unknown> {
+        return combineLatest([
+            this.fetchFish$(),
+            this.fetchCraftingRecipes$(),
+            this.fetchItemProcessingRecipes$(),
+            this.fetchCookingRecipes$(),
+            this.fetchTagBasedItems$(),
+            this.fetchOceanCritters$(),
+            this.fetchBugsAndInsects$(),
+            this.fetchCrops$(),
+            this.fetchFruitTrees$(),
+            this.fetchFruitPlants$(),
+            this.fetchGiftingPreferences$()
+        ]);
+    }
+
 
     getItems(): Item[] {
         return this._ITEMS;
@@ -63,20 +92,31 @@ export class DatabaseService {
         if (!this._FISH$) {
             this._FISH$ = this._http.get<Fish[]>(`${this._BASE_PATH}/fish.json`)
                 .pipe(
+                    tap(fish => this._FISH = fish),
                     shareReplay(1)
                 );
         }
         return this._FISH$;
     }
 
+    getFish(): Fish[] {
+        return this._FISH;
+    }
+
     fetchCraftingRecipes$(): Observable<CraftingRecipe[]> {
         if (!this._CRAFTING_RECIPE$) {
             this._CRAFTING_RECIPE$ = this._http.get<CraftingRecipe[]>(`${this._BASE_PATH}/crafting-recipes.json`)
                 .pipe(
+                    tap(craftingRecipes => this._CRAFTING_RECIPE = craftingRecipes),
                     shareReplay(1)
                 );
         }
         return this._CRAFTING_RECIPE$;
+    }
+
+
+    getCraftingRecipes(): CraftingRecipe[] {
+        return this._CRAFTING_RECIPE;
     }
 
     fetchItemProcessingRecipes$(): Observable<Record<string, ItemProcessing[]>> {
@@ -84,10 +124,15 @@ export class DatabaseService {
             this._ITEM_PROCESSING_RECIPE$ = this._http.get<Record<string, ItemProcessing[]>[]>(`${this._BASE_PATH}/item-processing.json`)
                 .pipe(
                     map(ipa => ipa[0]),
+                    tap(ipa => this._ITEM_PROCESSING_RECIPE = ipa),
                     shareReplay(1)
                 );
         }
         return this._ITEM_PROCESSING_RECIPE$;
+    }
+
+    getItemProcessingRecipes(): Record<string, ItemProcessing[]> {
+        return this._ITEM_PROCESSING_RECIPE;
     }
 
 
@@ -95,71 +140,112 @@ export class DatabaseService {
         if (!this._COOKING_RECIPE$) {
             this._COOKING_RECIPE$ = this._http.get<Record<string, CookingRecipe[]>[]>(`${this._BASE_PATH}/cooking-recipes.json`)
                 .pipe(
-                    map(ipa => ipa[0]),
+                    map(cooking => cooking[0]),
+                    tap(cooking => this._COOKING_RECIPE = cooking),
                     shareReplay(1)
                 );
         }
         return this._COOKING_RECIPE$;
     }
 
+    getCookingRecipes(): Record<string, CookingRecipe[]> {
+        return this._COOKING_RECIPE;
+    }
+
     fetchTagBasedItems$(): Observable<TagBasedItem[]> {
         if (!this._TAG_BASED_ITEMS$) {
             this._TAG_BASED_ITEMS$ = this._http.get<TagBasedItem[]>(`${this._BASE_PATH}/tag-based-items.json`)
                 .pipe(
+                    tap(tagBasedItems => this._TAG_BASED_ITEMS = tagBasedItems),
                     shareReplay(1)
                 );
         }
         return this._TAG_BASED_ITEMS$;
     }
 
+    getTagBasedItems(): TagBasedItem[] {
+        return this._TAG_BASED_ITEMS;
+    }
+
+
     fetchOceanCritters$(): Observable<Critter[]> {
-        if (!this._OCEAN_CRITTERS) {
-            this._OCEAN_CRITTERS = this._http.get<Critter[]>(`${this._BASE_PATH}/ocean-critters.json`)
+        if (!this._OCEAN_CRITTERS$) {
+            this._OCEAN_CRITTERS$ = this._http.get<Critter[]>(`${this._BASE_PATH}/ocean-critters.json`)
                 .pipe(
+                    tap(oceanCritters => this._OCEAN_CRITTERS = oceanCritters),
                     shareReplay(1)
                 );
         }
+        return this._OCEAN_CRITTERS$;
+    }
+
+    getOceanCritters(): Critter[] {
         return this._OCEAN_CRITTERS;
     }
 
+
     fetchBugsAndInsects$(): Observable<Critter[]> {
-        if (!this._BUGS_AND_INSECTS) {
-            this._BUGS_AND_INSECTS = this._http.get<Critter[]>(`${this._BASE_PATH}/bugs-and-insects.json`)
+        if (!this._BUGS_AND_INSECTS$) {
+            this._BUGS_AND_INSECTS$ = this._http.get<Critter[]>(`${this._BASE_PATH}/bugs-and-insects.json`)
                 .pipe(
+                    tap(bugs => this._BUGS_AND_INSECTS = bugs),
                     shareReplay(1)
                 );
         }
+        return this._BUGS_AND_INSECTS$;
+    }
+
+
+    getBugsAndInsects(): Critter[] {
         return this._BUGS_AND_INSECTS;
     }
+
 
     fetchCrops$(): Observable<Crop[]> {
         if (!this._CROPS$) {
             this._CROPS$ = this._http.get<Crop[]>(`${this._BASE_PATH}/crops.json`)
                 .pipe(
+                    tap(crops => this._CROPS = crops),
                     shareReplay(1)
                 );
         }
         return this._CROPS$;
     }
 
+    getCrops(): Crop[] {
+        return this._CROPS;
+    }
+
+
     fetchFruitTrees$(): Observable<FruitTree[]> {
         if (!this._FRUIT_TREES$) {
             this._FRUIT_TREES$ = this._http.get<Crop[]>(`${this._BASE_PATH}/fruit-trees.json`)
                 .pipe(
+                    tap(fruitTrees => this._FRUIT_TREES = fruitTrees),
                     shareReplay(1)
                 );
         }
         return this._FRUIT_TREES$;
     }
 
+    getFruitTrees(): FruitTree[] {
+        return this._FRUIT_TREES;
+    }
+
+
     fetchFruitPlants$(): Observable<FruitPlant[]> {
         if (!this._FRUIT_PLANTS$) {
             this._FRUIT_PLANTS$ = this._http.get<Crop[]>(`${this._BASE_PATH}/fruit-plants.json`)
                 .pipe(
+                    tap(fruitPlants => this._FRUIT_PLANTS = fruitPlants),
                     shareReplay(1)
                 );
         }
         return this._FRUIT_PLANTS$;
+    }
+
+    getFruitPlants(): FruitPlant[] {
+        return this._FRUIT_PLANTS;
     }
 
     fetchJournalOrder$(listName: AvailableJournalOrders): Observable<JournalOrder[]> {
@@ -178,10 +264,15 @@ export class DatabaseService {
             this._GIFT_PREFERENCES$ = this._http.get<{ [person: string]: GiftPreferences }[]>(`${this._BASE_PATH}/gift-preferences.json`)
                 .pipe(
                     map(prefs => this.flatObjectMap(prefs)),
+                    tap(prefs => this._GIFT_PREFERENCES = prefs),
                     shareReplay(1)
                 );
         }
         return this._GIFT_PREFERENCES$;
+    }
+
+    getGiftingPreferences(): MapKeyed<GiftPreferences>[] {
+        return this._GIFT_PREFERENCES;
     }
 
     flatObjectMap<T>(objectMap: { [key: string]: T }[]): (T & { mapKey: string })[] {
