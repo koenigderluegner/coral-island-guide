@@ -28,7 +28,8 @@ import { MatSortModule } from "@angular/material/sort";
     imports: [CommonModule, CraftingRoutingModule, SharedModule, MatTabsModule, MatTableModule, MatSortModule],
     exports: [
         InventoryTableComponent,
-        CookingTableComponent
+        CookingTableComponent,
+        ProcessorTableComponent
     ]
 })
 export class CraftingModule {

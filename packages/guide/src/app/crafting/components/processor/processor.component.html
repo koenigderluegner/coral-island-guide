@@ -8,7 +8,7 @@
                 </span>
         </div>
 
-        <app-item-list [itemList]="getItemList(selectedEntity)" class="mb-3"></app-item-list>
+        <app-item-list [itemList]="selectedEntity | itemProcessingIngredients" class="mb-3"/>
 
 
         <ng-container *ngIf="selectedEntity.qualities">

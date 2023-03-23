@@ -32,6 +32,7 @@ import { TableItemListComponent } from './components/table-item-list/table-item-
 import { CraftingRecipeIngredientsPipe } from './pipes/crafting-recipe-ingredients.pipe';
 import { CookingRecipeIngredientsPipe } from './pipes/cooking-recipe-ingredients.pipe';
 import { CastToMinimalItemArrayPipe } from './pipes/cast-to-minimal-item-array.pipe';
+import { ItemProcessingIngredientsPipe } from './pipes/item-processing-ingredients.pipe';
 
 @NgModule({
     declarations: [
@@ -60,6 +61,7 @@ import { CastToMinimalItemArrayPipe } from './pipes/cast-to-minimal-item-array.p
         CraftingRecipeIngredientsPipe,
         CookingRecipeIngredientsPipe,
         CastToMinimalItemArrayPipe,
+        ItemProcessingIngredientsPipe,
     ],
     imports: [
         CommonModule,
@@ -97,6 +99,7 @@ import { CastToMinimalItemArrayPipe } from './pipes/cast-to-minimal-item-array.p
         CraftingRecipeIngredientsPipe,
         CookingRecipeIngredientsPipe,
         CastToMinimalItemArrayPipe,
+        ItemProcessingIngredientsPipe,
     ],
 })
 export class SharedModule {

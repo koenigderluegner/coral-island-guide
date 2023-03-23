@@ -135,9 +135,25 @@ export class DatabaseService {
 
     fetchItemProcessingRecipes$(): Observable<Record<string, ItemProcessing[]>> {
         if (!this._ITEM_PROCESSING_RECIPE$) {
-            this._ITEM_PROCESSING_RECIPE$ = this._http.get<Record<string, ItemProcessing[]>[]>(`${this._BASE_PATH}/item-processing.json`)
+            this._ITEM_PROCESSING_RECIPE$ = combineLatest([
+                this._http.get<Record<string, ItemProcessing[]>[]>(`${this._BASE_PATH}/item-processing.json`),
+                this.fetchTagBasedItems$()
+            ])
                 .pipe(
-                    map(ipa => ipa[0]),
+                    map(([ipa, tagBasedItems]) => {
+                        const recipes: Record<string, ItemProcessing[]> = ipa[0];
+
+                        Object.keys(recipes).forEach(maschineName => {
+                            recipes[maschineName].forEach(item => {
+                                item.machine = maschineName;
+                                if (item.genericInput) {
+                                    item.genericInput.genericItem = tagBasedItems.find(tbi => tbi.key === item.genericInput?.key)
+                                }
+                            })
+                        })
+
+                        return recipes
+                    }),
                     tap(ipa => this._ITEM_PROCESSING_RECIPE = ipa),
                     shareReplay(1)
                 );

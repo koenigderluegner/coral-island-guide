@@ -25,5 +25,6 @@ export interface ItemProcessing {
             minutes: number
         }
     }>
+    machine?: string;
     refinements?: ItemProcessingRefinement[]
 }
