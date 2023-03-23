@@ -49,6 +49,10 @@ import { ReactiveFormsModule } from '@angular/forms';
         MatSelectModule,
         ReactiveFormsModule,
     ],
+    exports: [
+        CaughtDetailsComponent,
+        CaughtTableComponent
+    ]
 })
 export class JournalModule {
 }

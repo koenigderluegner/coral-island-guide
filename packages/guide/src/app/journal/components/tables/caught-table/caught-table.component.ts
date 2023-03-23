@@ -17,29 +17,35 @@ export class CaughtTableComponent<TFilter extends Array<string | number>> implem
     matDataSource?: MatTableDataSource<CaughtTableComponent<TFilter>['dataSource'][0]>;
 
     @ViewChild(MatSort) sort?: MatSort;
+    displayedColumns: string[] = [];
+    displayHeaderColumns = this.displayedColumns.filter(column => column !== 'icon')
+    getTruthyValues = getTruthyValues;
+    addSpacesToPascalCase = addSpacesToPascalCase;
+    @Input() dataSource: (Critter | Fish)[] = [];
+    protected readonly BASE_DISPLAY_COLUMNS = [
+        'icon',
+        'key',
+        'rarity',
+        'weather',
+        'season',
+        'time',
+        'location',
+    ];
 
+    constructor() {
+        this.sortingDataAccessor = this.sortingDataAccessor.bind(this);
+
+    }
+
+    private static _isFishArray(array: (Critter | Fish)[] | undefined): array is Fish[] {
+        return !!array?.[0] && 'fishName' in array[0];
+    }
 
     ngAfterViewInit() {
         if (this.matDataSource && this.sort) {
             this.matDataSource.sort = this.sort;
             this.matDataSource.sortingDataAccessor = this.sortingDataAccessor as MatTableDataSource<CaughtTableComponent<TFilter>['dataSource'][0]>['sortingDataAccessor'];
         }
-    }
-
-    protected readonly BASE_DISPLAY_COLUMNS = [
-        'icon',
-        'key',
-        'rarity',
-    ];
-    displayedColumns: string[] = [];
-
-    getTruthyValues = getTruthyValues;
-
-    addSpacesToPascalCase = addSpacesToPascalCase;
-
-    constructor() {
-        this.sortingDataAccessor = this.sortingDataAccessor.bind(this);
-
     }
 
     ngOnChanges(changes: SimpleChanges): void {
@@ -49,25 +55,14 @@ export class CaughtTableComponent<TFilter extends Array<string | number>> implem
         }
     }
 
-
     dateRangesToString(dateRanges: Fish['dateRangeList']): string[] {
         return dateRanges.map(range => {
             return `From ${(range.startsFrom.season)} ${range.startsFrom.day} to ${(range.lastsTill.season)} ${range.lastsTill.day}`;
         });
     }
 
-    @Input() dataSource: (Critter | Fish)[] = [];
-
     ngOnInit(): void {
         this.setupDataSource(this.dataSource);
-    }
-
-    private static _isFishArray(array: (Critter | Fish)[] | undefined): array is Fish[] {
-        return !!array?.[0] && 'fishName' in array[0];
-    }
-
-    private _isFish(array: (Critter | Fish) | undefined): array is Fish {
-        return !!array && 'fishName' in array;
     }
 
     sortingDataAccessor(item: CaughtTableComponent<TFilter>['dataSource'][0], property: 'weather' | 'rarity' | 'fishSize' | 'season' | 'time' | 'key'): string | number {
@@ -79,6 +74,44 @@ export class CaughtTableComponent<TFilter extends Array<string | number>> implem
             case 'key': {
                 return item[property];
             }
+            case 'time': {
+
+                const allTrue = getTruthyValues(item.spawnTime);
+
+                if (allTrue === 'Any') return 1;
+
+                return item.spawnTime.morning
+                    ? 10
+                    : item.spawnTime.afternoon
+                        ? 20
+                        : item.spawnTime.evening
+                            ? 30
+                            : item.spawnTime.night
+                                ? 40
+                                : 0;
+
+            }
+            case 'weather': {
+
+                const allTrue = getTruthyValues(item.spawnWeather);
+
+                if (allTrue === 'Any') return 1;
+
+                return item.spawnWeather.sunny
+                    ? 10
+                    : item.spawnWeather.rain
+                        ? 20
+                        : item.spawnWeather.snow
+                            ? 30
+                            : item.spawnWeather.blizzard
+                                ? 40
+                                : item.spawnWeather.windy
+                                    ? 50
+                                    : item.spawnWeather.storm
+                                        ? 60
+                                        : 0;
+
+            }
 
         }
 
@@ -86,44 +119,6 @@ export class CaughtTableComponent<TFilter extends Array<string | number>> implem
             switch (property) {
                 case 'fishSize': {
                     return critterSizeMap.get(item['fishSize']) ?? 0;
-                }
-                case 'time': {
-
-                    const allTrue = getTruthyValues(item.spawnTime);
-
-                    if (allTrue === 'Any') return 1;
-
-                    return item.spawnTime.morning
-                        ? 10
-                        : item.spawnTime.afternoon
-                            ? 20
-                            : item.spawnTime.evening
-                                ? 30
-                                : item.spawnTime.night
-                                    ? 40
-                                    : 0;
-
-                }
-                case 'weather': {
-
-                    const allTrue = getTruthyValues(item.spawnWeather);
-
-                    if (allTrue === 'Any') return 1;
-
-                    return item.spawnWeather.sunny
-                        ? 10
-                        : item.spawnWeather.rain
-                            ? 20
-                            : item.spawnWeather.snow
-                                ? 30
-                                : item.spawnWeather.blizzard
-                                    ? 40
-                                    : item.spawnWeather.windy
-                                        ? 50
-                                        : item.spawnWeather.storm
-                                            ? 60
-                                            : 0;
-
                 }
 
                 default: {
@@ -136,19 +131,20 @@ export class CaughtTableComponent<TFilter extends Array<string | number>> implem
 
     };
 
+    private _isFish(array: (Critter | Fish) | undefined): array is Fish {
+        return !!array && 'fishName' in array;
+    }
+
     private setupDataSource(dataSource: (Critter | Fish)[]) {
         this.matDataSource = new MatTableDataSource(dataSource);
         this.displayedColumns = [...this.BASE_DISPLAY_COLUMNS];
+        this.displayedColumns = [...this.BASE_DISPLAY_COLUMNS];
 
         if (CaughtTableComponent._isFishArray(this.dataSource)) {
-            this.displayedColumns.push(...[
-                'fishSize',
-                'weather',
-                'season',
-                'time',
-                'location',
-            ]);
+            this.displayedColumns.splice(3, 0, 'fishSize');
         }
+
+        this.displayHeaderColumns = this.displayedColumns.filter(column => column !== 'icon')
 
     }
 }
