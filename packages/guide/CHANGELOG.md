@@ -13,6 +13,7 @@
 #### Fixed
 
 - Moved amount in detail cards more to the center to not fly off.
+- Filtered a few technical items to reduce data download size.
 
 ### 0.4.1 2023-03-22
 
