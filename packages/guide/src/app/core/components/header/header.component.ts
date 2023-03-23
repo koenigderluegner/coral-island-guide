@@ -1,6 +1,7 @@
 import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
 import { UiIcon } from '../../../shared/enums/ui-icon.enum';
-import { RouterLink } from '@angular/router';
+import { NavigationStart, Router, RouterEvent, RouterLink } from '@angular/router';
+import { filter } from "rxjs";
 
 type NaviLinks = {
     path: RouterLink['routerLink'];
@@ -16,8 +17,6 @@ type NaviLinks = {
 })
 export class HeaderComponent {
 
-    @HostBinding('class.app-header') private _setClass = true;
-
     naviLinks: NaviLinks = [
         {
             text: 'Journal',
@@ -31,7 +30,22 @@ export class HeaderComponent {
             text: 'People',
             uiIcon: UiIcon.PEOPLE,
             path: 'people'
+        }, {
+            text: 'Item database',
+            uiIcon: UiIcon.DATABASE,
+            path: 'database'
         },
     ];
+    isOpen = false;
+    protected uiIcon = UiIcon;
+    @HostBinding('class.app-header') private _setClass = true;
+
+    constructor(private _router: Router) {
+        _router.events.pipe(
+            filter((e): e is RouterEvent => e instanceof NavigationStart)
+        ).subscribe(() => {
+            this.isOpen = false;
+        });
+    }
 
 }
