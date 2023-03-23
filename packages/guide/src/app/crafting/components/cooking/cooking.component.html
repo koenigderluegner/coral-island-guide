@@ -11,7 +11,7 @@
             in {{selectedEntity.craftingUnlock.masteryType}}</span>
         </div>
 
-        <app-item-list [itemList]="getItemList(selectedEntity)" class="mb-3"></app-item-list>
+        <app-item-list [itemList]="selectedEntity | cookingRecipeIngredients" class="mb-3"></app-item-list>
         <ng-container *ngIf="selectedEntity.eitherOrIngredients.length">
             <span class="text-black"> Either of the following</span>
 
@@ -25,7 +25,7 @@
             <span class="text-black"> The following counting as</span>
 
             <div class="mb-3" *ngFor="let itemListItem of (selectedEntity.additionsToGenerics | keyvalue)">
-                <ng-container *ngFor="let item of itemListItem.value">
+                <ng-container *ngFor="let item of (itemListItem.value | castToMinimalItemArray)">
                     <div class="flex justify-between py-1">
 
                         <div class="flex gap-x-3 items-center" *ngIf="item">

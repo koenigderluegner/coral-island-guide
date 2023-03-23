@@ -1,1 +1,8 @@
-<p>database-cooking works!</p>
+<ng-container *ngIf="usedIn.length">
+    <h3 class="database-header">Used to cook</h3>
+    <app-cooking-table [dataSource]="usedIn" showUtensil/>
+</ng-container>
+<ng-container *ngIf="craftedFrom.length">
+    <h3 class="database-header">Cooking recipe</h3>
+    <app-cooking-table [dataSource]="craftedFrom" showUtensil/>
+</ng-container>

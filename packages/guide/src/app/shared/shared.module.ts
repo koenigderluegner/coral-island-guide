@@ -30,6 +30,8 @@ import { ProcessingTimeComponent } from './components/processing-time/processing
 import { ProcessingTimePerQualityComponent } from './components/processing-time-per-quality/processing-time-per-quality.component';
 import { TableItemListComponent } from './components/table-item-list/table-item-list.component';
 import { CraftingRecipeIngredientsPipe } from './pipes/crafting-recipe-ingredients.pipe';
+import { CookingRecipeIngredientsPipe } from './pipes/cooking-recipe-ingredients.pipe';
+import { CastToMinimalItemArrayPipe } from './pipes/cast-to-minimal-item-array.pipe';
 
 @NgModule({
     declarations: [
@@ -56,6 +58,8 @@ import { CraftingRecipeIngredientsPipe } from './pipes/crafting-recipe-ingredien
         ProcessingTimePerQualityComponent,
         TableItemListComponent,
         CraftingRecipeIngredientsPipe,
+        CookingRecipeIngredientsPipe,
+        CastToMinimalItemArrayPipe,
     ],
     imports: [
         CommonModule,
@@ -91,6 +95,8 @@ import { CraftingRecipeIngredientsPipe } from './pipes/crafting-recipe-ingredien
         ProcessingTimePerQualityComponent,
         TableItemListComponent,
         CraftingRecipeIngredientsPipe,
+        CookingRecipeIngredientsPipe,
+        CastToMinimalItemArrayPipe,
     ],
 })
 export class SharedModule {
