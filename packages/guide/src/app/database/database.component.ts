@@ -20,9 +20,9 @@ export class DatabaseComponent implements OnInit {
     protected searchTermControl: FormControl<string> = new FormControl<string>('', {nonNullable: true});
     protected filteredItems$: Observable<Item[]>;
     protected shouldHideImportantNote = false;
-
-    private localStorageHideNoteKey = 'databaseHideImportantNote';
-    private filteredAmount = 0;
+    protected filteredItems: Item[] = [];
+    private _localStorageHideNoteKey = 'databaseHideImportantNote';
+    private _didInitialLoad = false;
 
 
     constructor(
@@ -33,12 +33,12 @@ export class DatabaseComponent implements OnInit {
         private injector: EnvironmentInjector
     ) {
 
-        this.shouldHideImportantNote = coerceBooleanProperty(localStorage.getItem(this.localStorageHideNoteKey));
+        this.shouldHideImportantNote = coerceBooleanProperty(localStorage.getItem(this._localStorageHideNoteKey));
 
         this.items = database.getItems().filter(item => getQuality(item.id) === Quality.BASE);
         const mapToItems = map<string, Item[]>(searchTerm => {
             const items = this.items.filter(item => item.displayName.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()));
-            this.filteredAmount = items.length;
+            this.filteredItems = items;
             return items
         });
 
@@ -46,17 +46,19 @@ export class DatabaseComponent implements OnInit {
         this.filteredItems$ =
             concat(
                 this.route.queryParams.pipe(map(params => {
-                    const value = params['q'] ?? '';
-                    this.searchTermControl.setValue(value, {emitEvent: false});
-                    return value;
-                }), mapToItems, take(1)),
+                        const value = params['q'] ?? '';
+                        this.searchTermControl.setValue(value, {emitEvent: false});
+                        return value;
+                    }), mapToItems,
+
+                    take(1)),
                 this.searchTermControl.valueChanges.pipe(
                     debounceTime(300),
                     tap((searchTerm) => {
                         this.updateQueryParam(searchTerm);
                         document.getElementById("database-details")?.remove();
                     }),
-                    mapToItems
+                    mapToItems,
                 )
             )
     }
@@ -67,6 +69,8 @@ export class DatabaseComponent implements OnInit {
 
     showDetails(itemProcess: Item, index: number) {
         console.log(index, itemProcess);
+
+        this.updateRouteParam(itemProcess.id);
 
         document.getElementById("database-details")?.remove();
 
@@ -83,7 +87,7 @@ export class DatabaseComponent implements OnInit {
 
         console.log(gridRowCount, gridColumnCount);
         const clickedRow = Math.floor(index / gridColumnCount);
-        const insertAfter = Math.min(this.filteredAmount, (clickedRow + 1) * gridColumnCount);
+        const insertAfter = Math.min(this.filteredItems.length, (clickedRow + 1) * gridColumnCount);
 
         console.log(clickedRow, insertAfter);
 
@@ -118,7 +122,7 @@ export class DatabaseComponent implements OnInit {
 
     hideImportantNote() {
         this.shouldHideImportantNote = true;
-        localStorage.setItem(this.localStorageHideNoteKey, 'true');
+        localStorage.setItem(this._localStorageHideNoteKey, 'true');
     }
 
     public updateQueryParam(searchTerm: string) {
@@ -132,5 +136,33 @@ export class DatabaseComponent implements OnInit {
                 queryParamsHandling: 'merge',
                 replaceUrl: true
             });
+    }
+
+    public updateRouteParam(itemId: string) {
+
+        this.router.navigate(
+            ['..', itemId],
+            {
+                relativeTo: this.route,
+                replaceUrl: true,
+                queryParamsHandling: "preserve"
+            });
+    }
+
+    initialItemLoad(): void {
+        if (this._didInitialLoad) return;
+        this.route.params.pipe(
+            tap(params => {
+                const itemId = params['itemId'];
+                if (!itemId) return;
+                const indexOfItem = this.filteredItems.findIndex(item => item.id === itemId);
+
+                if (indexOfItem > -1) {
+                    this.showDetails(this.filteredItems[indexOfItem], indexOfItem);
+                }
+                this._didInitialLoad = true;
+            }),
+            take(1)
+        ).subscribe()
     }
 }

@@ -16,10 +16,15 @@
     </mat-form-field>
 
     <div class="grid gap-4 icon-grid" id="grid">
+        <ng-container *ngIf="(filteredItems$ | async)">
 
-        <app-item-icon (click)="showDetails(itemProcess, index)"
-                       *ngFor="let itemProcess of (filteredItems$ | async); let index = index"
-                       [itemName]="itemProcess.iconName"
-                       class="icon-grid-item"/>
+            <app-item-icon (click)="showDetails(itemProcess, index)"
+                           *ngFor="let itemProcess of filteredItems; let index = index"
+                           [itemName]="itemProcess.iconName"
+                           class="icon-grid-item"/>
+
+            <ng-container *ngIf="initialItemLoad()"/>
+
+        </ng-container>
     </div>
 </div>
