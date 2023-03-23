@@ -36,7 +36,7 @@ export class HeaderComponent {
             path: 'database'
         },
     ];
-    isOpen = false;
+    @HostBinding('class.open-menu') isOpen = false;
     protected uiIcon = UiIcon;
     @HostBinding('class.app-header') private _setClass = true;
 
