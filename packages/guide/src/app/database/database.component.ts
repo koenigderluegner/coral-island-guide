@@ -66,7 +66,7 @@ export class DatabaseComponent {
     }
 
 
-    showDetails(itemProcess: Item, index: number) {
+    showDetails(itemProcess: Item, index: number, scrollIntoView = false) {
         console.log(index, itemProcess);
 
         this.updateRouteParam(itemProcess.id);
@@ -95,6 +95,9 @@ export class DatabaseComponent {
         let component = this.createComponent(itemProcess)
 
         this.insertAfter(component, insertAfterElement);
+
+        if (scrollIntoView)
+            document.getElementById("database-details")?.scrollIntoView(true);
 
     }
 
@@ -157,8 +160,9 @@ export class DatabaseComponent {
                 const indexOfItem = this.filteredItems.findIndex(item => item.id === itemId);
 
                 if (indexOfItem > -1) {
-                    this.showDetails(this.filteredItems[indexOfItem], indexOfItem);
+                    this.showDetails(this.filteredItems[indexOfItem], indexOfItem, true);
                 }
+
                 this._didInitialLoad = true;
             }),
             take(1)
