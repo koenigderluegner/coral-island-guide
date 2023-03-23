@@ -34,6 +34,7 @@ import { CookingRecipeIngredientsPipe } from './pipes/cooking-recipe-ingredients
 import { CastToMinimalItemArrayPipe } from './pipes/cast-to-minimal-item-array.pipe';
 import { ItemProcessingIngredientsPipe } from './pipes/item-processing-ingredients.pipe';
 import { MatTooltipModule } from "@angular/material/tooltip";
+import { AddSpacesToPascalCasePipe } from './pipes/add-spaces-to-pascal-case.pipe';
 
 @NgModule({
     declarations: [
@@ -63,6 +64,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
         CookingRecipeIngredientsPipe,
         CastToMinimalItemArrayPipe,
         ItemProcessingIngredientsPipe,
+        AddSpacesToPascalCasePipe,
     ],
     imports: [
         CommonModule,
@@ -102,6 +104,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
         CookingRecipeIngredientsPipe,
         CastToMinimalItemArrayPipe,
         ItemProcessingIngredientsPipe,
+        AddSpacesToPascalCasePipe,
     ],
 })
 export class SharedModule {

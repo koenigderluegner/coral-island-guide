@@ -137,10 +137,11 @@ export class DatabaseService {
         if (!this._ITEM_PROCESSING_RECIPE$) {
             this._ITEM_PROCESSING_RECIPE$ = combineLatest([
                 this._http.get<Record<string, ItemProcessing[]>[]>(`${this._BASE_PATH}/item-processing.json`),
-                this.fetchTagBasedItems$()
+                this.fetchTagBasedItems$(),
+                this.fetchItems$()
             ])
                 .pipe(
-                    map(([ipa, tagBasedItems]) => {
+                    map(([ipa, tagBasedItems, items]) => {
                         const recipes: Record<string, ItemProcessing[]> = ipa[0];
 
                         Object.keys(recipes).forEach(maschineName => {
@@ -149,6 +150,7 @@ export class DatabaseService {
                                 if (item.genericInput) {
                                     item.genericInput.genericItem = tagBasedItems.find(tbi => tbi.key === item.genericInput?.key)
                                 }
+                                item.output.item.sellPrice = items.find(i => i.id === item.output.item.id)?.sellPrice
                             })
                         })
 

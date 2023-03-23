@@ -156,6 +156,7 @@ export class DatabaseComponent {
         this.route.params.pipe(
             tap(params => {
                 const itemId = params['itemId'];
+                this._didInitialLoad = true;
                 if (!itemId) return;
                 const indexOfItem = this.filteredItems.findIndex(item => item.id === itemId);
 
@@ -163,7 +164,6 @@ export class DatabaseComponent {
                     this.showDetails(this.filteredItems[indexOfItem], indexOfItem, true);
                 }
 
-                this._didInitialLoad = true;
             }),
             take(1)
         ).subscribe()

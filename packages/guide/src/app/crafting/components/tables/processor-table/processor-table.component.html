@@ -32,13 +32,14 @@
         </ng-container>
 
         <ng-container matColumnDef="processor">
-            <th *matHeaderCellDef class="whitespace-nowrap" mat-header-cell> Processor</th>
-            <td *matCellDef="let element" class="text-col w-[1%]" mat-cell>
-                {{element.machine}}
+            <th *matHeaderCellDef mat-header-cell>Processor</th>
+            <td *matCellDef="let element" class="text-col w-[1%] whitespace-nowrap" mat-cell>
+                {{element.machine | addSpacesToPascalCase | titlecase}}
             </td>
         </ng-container>
+
         <ng-container matColumnDef="processingTime">
-            <th *matHeaderCellDef class="whitespace-nowrap" mat-header-cell> Processor</th>
+            <th *matHeaderCellDef mat-header-cell> Time</th>
             <td *matCellDef="let element" class="text-col w-[1%] whitespace-nowrap" mat-cell>
                 <app-processing-time [processingTime]="element"/>
             </td>

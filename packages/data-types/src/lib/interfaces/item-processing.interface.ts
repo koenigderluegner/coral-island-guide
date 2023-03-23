@@ -14,7 +14,7 @@ export interface ItemProcessing {
         amount: number;
         genericItem?: TagBasedItem
     }
-    output: { item: MinimalItem, amount: number };
+    output: { item: MinimalItem & { sellPrice?: number }, amount: number; };
     input: { item: MinimalItem, amount: number }
     additionalInput: { item: MinimalItem, amount: number; }[];
     useCategory: boolean;
