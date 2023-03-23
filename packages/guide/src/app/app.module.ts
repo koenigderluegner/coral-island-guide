@@ -12,7 +12,7 @@ import { MAT_RIPPLE_GLOBAL_OPTIONS } from "@angular/material/core";
 import { MAT_TABS_CONFIG } from "@angular/material/tabs";
 
 const routerOptions: ExtraOptions = {
-    scrollPositionRestoration: 'enabled',
+    scrollPositionRestoration: 'disabled',
     anchorScrolling: 'enabled',
     scrollOffset: [0, 64],
     initialNavigation: 'enabledBlocking',
