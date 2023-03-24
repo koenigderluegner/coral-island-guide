@@ -1,5 +1,11 @@
 ## Changelog
 
+### 0.6.0 TBD
+
+#### Fixed
+
+- Fixed wrong title for ocean critters in database
+
 ### 0.5.1 2023-03-24
 
 #### Fixed
