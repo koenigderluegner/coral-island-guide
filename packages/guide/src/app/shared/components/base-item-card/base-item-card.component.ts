@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Item, MinimalItem } from '@ci/data-types';
 import { DatabaseService } from '../../services/database.service';
-import { addSpacesToPascalCase } from '@ci/util';
 import { coerceBooleanProperty } from "@angular/cdk/coercion";
 import { UiIcon } from "../../enums/ui-icon.enum";
 
@@ -16,7 +15,6 @@ export class BaseItemCardComponent implements OnInit, OnChanges {
     @Output() openDrawerChange: EventEmitter<boolean> = new EventEmitter<boolean>();
     protected uiIcon = UiIcon;
     protected fetchedItem?: Item;
-    protected addSpacesToPascalCase = addSpacesToPascalCase;
 
     constructor(private readonly _database: DatabaseService) {
     }
@@ -38,7 +36,7 @@ export class BaseItemCardComponent implements OnInit, OnChanges {
     }
 
     isItem(item: Item | MinimalItem): item is Item {
-        return ('sellPrice' in item);
+        return ('sellPrice' in item) && ('price' in item);
     }
 
     ngOnChanges(changes: SimpleChanges): void {

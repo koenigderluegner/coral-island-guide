@@ -1,5 +1,11 @@
 ## Changelog
 
+### 0.5.1 2023-03-24
+
+#### Fixed
+
+- Fixed broken artisan page. Thanks to apra on discord for the quick feedback.
+
 ### 0.5.0 2023-03-24
 
 #### Added

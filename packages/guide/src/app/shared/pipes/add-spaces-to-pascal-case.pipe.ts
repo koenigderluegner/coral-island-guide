@@ -6,8 +6,8 @@ import { addSpacesToPascalCase } from "@ci/util";
 })
 export class AddSpacesToPascalCasePipe implements PipeTransform {
 
-    transform(value: string): string {
-        return addSpacesToPascalCase(value);
+    transform(value: string | null | undefined): string {
+        return value ? addSpacesToPascalCase(value) : '';
     }
 
 }

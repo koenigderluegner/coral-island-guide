@@ -3,7 +3,7 @@
     <div class="flex justify-between items-center">
         <div class="flex flex-col">
             <div class="text-black text-2xl">{{fetchedItem.displayName}}</div>
-            <span class="text-accent text-2xl">   {{addSpacesToPascalCase(fetchedItem.displayKey)}}</span>
+            <span class="text-accent text-2xl">   {{fetchedItem.displayKey | addSpacesToPascalCase}}</span>
         </div>
         <span matTooltip="Open in database" matTooltipPosition="before">
             <a [routerLink]="[ '/database', fetchedItem.id]">
