@@ -39,7 +39,8 @@ export class DatabaseComponent {
 
         this.items = database.getItems().filter(item => getQuality(item.id) === Quality.BASE);
         const mapToItems = map<string, Item[]>(searchTerm => {
-            const items = this.items.filter(item => item.displayName.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()));
+            const searchString = searchTerm.toLocaleLowerCase();
+            const items = this.items.filter(item => item.displayName.toLocaleLowerCase().includes(searchString) || (searchString.startsWith('item_') && item.id.startsWith(searchString)));
             this.filteredItems = items;
             return items
         });
