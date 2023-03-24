@@ -5,4 +5,8 @@
         hour{{processingTime.time.hours > 1 ? 's' : ''}}</ng-container>
     <ng-container *ngIf="processingTime.time?.minutes"> {{processingTime.time.minutes}}
         minute{{processingTime.time.minutes > 1 ? 's' : ''}}</ng-container>
+    <ng-container
+            *ngIf="processingTime.day === 0 && processingTime.time?.hours === 0 && processingTime.time?.minutes === 0">
+        instant
+    </ng-container>
 </ng-container>

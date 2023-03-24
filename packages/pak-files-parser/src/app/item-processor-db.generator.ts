@@ -4,7 +4,8 @@ import { Datatable } from '../interfaces/datatable.interface';
 import fs from 'fs';
 import { RawItemProcessing } from '../interfaces/raw-item-processing.interface';
 import { Item, ItemProcessing } from '@ci/data-types';
-import { getQuality, minifyItem, removeQualityFlag } from '../util/functions';
+import { minifyItem } from '../util/functions';
+import { getQuality, removeQualityFlag } from "@ci/util";
 
 export class ItemProcessorDbGenerator {
 
