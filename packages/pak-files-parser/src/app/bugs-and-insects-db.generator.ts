@@ -3,14 +3,21 @@ import { Critter, Item } from '@ci/data-types';
 import { BugsAndInsects } from '../types/bugs-and-insects.type';
 import { BugAndInsect } from '../interfaces/bug-and-insect.interface';
 import { addSpacesToPascalCase, getEnumValue } from '@ci/util';
+import { WildlifeSeaCrittersRegistryDbGenerator } from "./wildlife-sea-critters-registry-db.generator";
+import { WildlifeSeaCrittersRegistry } from "../interfaces/wildlife-sea-critters-registry.interface";
 
 export class BugsAndInsectsDbGenerator {
 
     critterDb: BugsAndInsects[];
+    private wildlifeRegistry: WildlifeSeaCrittersRegistry[];
 
-    constructor(protected itemMap: Map<string, Item>, protected _assetPath = 'DT_BugsAndInsects.json') {
+    // ProjectCoral/Content/ProjectCoral/Grid/
+    // ProjectCoral/Content/ProjectCoral/Placables/WildLife
+    constructor(protected itemMap: Map<string, Item>, protected _assetPath = 'DT_BugsAndInsects.json', protected _wildlifeRegistry = 'DT_WildLifeRegistry.json', protected _gridZones = 'DT_GridZones.json',) {
         // ProjectCoral Content Project Coral Bugs
         this.critterDb = readAsset<BugsAndInsects[]>(this._assetPath);
+        const wildlifeSeaCrittersRegistryDbGenerator = new WildlifeSeaCrittersRegistryDbGenerator(_wildlifeRegistry, _gridZones);
+        this.wildlifeRegistry = [...wildlifeSeaCrittersRegistryDbGenerator.generate().values()];
 
     }
 
@@ -19,9 +26,22 @@ export class BugsAndInsectsDbGenerator {
 
         Object.keys(this.critterDb[0]?.Rows).forEach(itemKey => {
 
+
+            if (itemKey === 'GHOST') return;
+
             const dbItem: BugAndInsect = this.critterDb[0]?.Rows[itemKey];
 
             const item: Item | undefined = this.itemMap.get(dbItem.BugsAndInsectsSKU.itemID);
+
+            // the keys in wildlife registry don't match the ones from entity table, so we need to check over the type
+            const wildlifeRegistry = this.wildlifeRegistry.find(wildlife => wildlife.type === dbItem.bugType.ObjectName);
+
+            if (!wildlifeRegistry) {
+                console.warn('Missing data for wildlife entry', itemKey)
+                return;
+            }
+
+            const {type, ...wildlifeData} = wildlifeRegistry
 
             if (item) {
                 const insect: Critter = {
@@ -30,7 +50,8 @@ export class BugsAndInsectsDbGenerator {
                     minCaughtSize: dbItem.minCaughtSize,
                     maxCaughtSize: dbItem.maxCaughtSize,
                     bugsBehaviourPreset: dbItem.bugsBehaviourPreset.RowName,
-                    item
+                    item,
+                    ...wildlifeData
                 };
 
                 map.set(insect.key, insect);

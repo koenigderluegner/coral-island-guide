@@ -1,5 +1,21 @@
 ## Changelog
 
+### 0.5.0 2023-03-24
+
+#### Added
+
+- Added information for bugs and sea critters. Thanks to Nautilus on Discord for telling me where to find the necessary
+  data!
+    - The season filter now works for them as well
+- Item database to look up items and their uses
+- Added button to detail cards to open selected item in database.
+- Added overlay menu for mobile users.
+
+#### Fixed
+
+- Moved amount in detail cards more to the center to not fly off.
+- Filtered a few technical items to reduce data download size.
+
 ### 0.4.1 2023-03-22
 
 #### Fixed

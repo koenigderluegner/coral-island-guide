@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { CookingRecipe, GenericEntry, Quality } from "@ci/data-types";
+import { CookingRecipe, Quality } from "@ci/data-types";
 import { ActivatedRoute, Router } from "@angular/router";
 import { DatabaseService } from "../../../shared/services/database.service";
 import { combineLatest, map, Observable, take, tap } from "rxjs";
-import { ItemListComponent } from "../../../shared/components/item-list/item-list.component";
 import { MatTabChangeEvent } from "@angular/material/tabs";
 
 @Component({
@@ -49,26 +48,6 @@ export class CookingComponent {
         });
 
 
-    }
-
-    getItemList(item: CookingRecipe): ItemListComponent['itemList'] {
-
-        const items: ItemListComponent['itemList'] = [...item.ingredients];
-
-        if (item.genericIngredients.length) {
-
-            item.genericIngredients.forEach(genericIngredient => {
-                const genericInput: GenericEntry = {
-                    shouldBeSameItem: false,
-                    amount: genericIngredient.amount,
-                    genericItem: genericIngredient.genericItem
-                }
-
-                items.push(genericInput)
-            });
-        }
-
-        return items;
     }
 
     private _getMultipleIconNames(iconNames: string[]): string[] {

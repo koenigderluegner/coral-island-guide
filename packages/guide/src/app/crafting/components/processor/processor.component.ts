@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DatabaseService } from '../../../shared/services/database.service';
-import { combineLatest, map, Observable, take, tap } from 'rxjs';
-import { GenericEntry, ItemProcessing, Quality, TagBasedItem } from '@ci/data-types';
-import { ItemListComponent } from '../../../shared/components/item-list/item-list.component';
+import { map, Observable, take, tap } from 'rxjs';
+import { ItemProcessing, Quality } from '@ci/data-types';
 import { MatTabChangeEvent } from "@angular/material/tabs";
 
 @Component({
@@ -21,22 +20,16 @@ export class ProcessorComponent {
 
     quality = Quality;
     machineNames: string[] = [];
-    tagBasedItems: TagBasedItem[] = [];
 
     constructor(private readonly _route: ActivatedRoute,
                 private readonly _router: Router,
                 private readonly _databaseService: DatabaseService) {
 
-        combineLatest([
-            _databaseService.fetchItemProcessingRecipes$(),
-            _databaseService.fetchTagBasedItems$()
-        ]).pipe(take(1)).subscribe({
-            next: ([records, tagBasedItems]) => {
+        _databaseService.fetchItemProcessingRecipes$().pipe(take(1)).subscribe({
+            next: (records) => {
                 this.machineNames = Object.keys(records);
-                this.tagBasedItems = tagBasedItems;
                 this._route.paramMap.pipe(
                     tap(params => {
-
 
                         const processor = params.get('processor');
 
@@ -50,25 +43,6 @@ export class ProcessorComponent {
         });
 
 
-    }
-
-    getItemList(item: ItemProcessing): ItemListComponent['itemList'] {
-        const items: ItemListComponent['itemList'] = [item.input, ...item.additionalInput];
-        if (item.genericInput) {
-            const genericInput: GenericEntry = {
-                shouldBeSameItem: true,
-                amount: item.genericInput.amount,
-                genericItem: this.tagBasedItems.find(tbi => tbi.key === item.genericInput?.key)
-            }
-
-            items.push(genericInput)
-        }
-        return items;
-    }
-
-    private _getMultipleIconNames(iconNames: string[]): string[] {
-        const filtered = iconNames.filter((v, i) => iconNames.indexOf(v) !== i);
-        return [...new Set(filtered)];
     }
 
     filteredData$(maschineName: string): Observable<ItemProcessing[]> {
@@ -90,5 +64,10 @@ export class ProcessorComponent {
     showDetails(entry?: ItemProcessing) {
         this.selectedEntity = entry;
         this.openDrawer = true;
+    }
+
+    private _getMultipleIconNames(iconNames: string[]): string[] {
+        const filtered = iconNames.filter((v, i) => iconNames.indexOf(v) !== i);
+        return [...new Set(filtered)];
     }
 }

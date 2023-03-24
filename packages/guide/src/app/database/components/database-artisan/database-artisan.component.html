@@ -1,0 +1,8 @@
+<ng-container *ngIf="usedIn.length">
+    <h3 class="database-header">Usage in processing</h3>
+    <app-processor-table [dataSource]="usedIn" showProcessor/>
+</ng-container>
+<ng-container *ngIf="craftedFrom.length">
+    <h3 class="database-header">Processing</h3>
+    <app-processor-table [dataSource]="craftedFrom" showProcessor/>
+</ng-container>

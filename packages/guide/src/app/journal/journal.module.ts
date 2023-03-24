@@ -21,6 +21,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CropTableComponent } from './components/tables/crop-table/crop-table.component';
 
 @NgModule({
     declarations: [
@@ -35,6 +36,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         CaughtTableComponent,
         FoundTableComponent,
         ProduceTableComponent,
+        CropTableComponent,
     ],
     imports: [
         CommonModule,
@@ -49,6 +51,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         MatSelectModule,
         ReactiveFormsModule,
     ],
+    exports: [CaughtDetailsComponent, CaughtTableComponent, CropTableComponent],
 })
 export class JournalModule {
 }

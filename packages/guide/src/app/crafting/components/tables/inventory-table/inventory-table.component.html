@@ -1,0 +1,46 @@
+<app-responsive-table>
+    <table *ngIf="matDataSource" [dataSource]="matDataSource" mat-table matSort>
+        <ng-container matColumnDef="icon" sticky>
+            <td *matCellDef="let element" class="!pl-2 !pr-0  w-10 text-center icon-col " mat-cell>
+                <app-item-icon [itemName]="element.item?.iconName"></app-item-icon>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="outputName">
+            <th *matHeaderCellDef [attr.colspan]="2" class="backdrop-blur-xl" mat-header-cell mat-sort-header> Output
+            </th>
+            <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>{{element.item?.displayName}}
+                ({{element.amount}})
+            </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="ingredients">
+            <th *matHeaderCellDef mat-header-cell> Ingredients</th>
+            <td *matCellDef="let element" class="list-col" mat-cell>
+                <app-table-item-list [itemList]="element | craftingRecipeIngredients"/>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="unlock">
+            <th *matHeaderCellDef mat-header-cell> Unlocked by</th>
+            <td *matCellDef="let element" class="text-col" mat-cell>
+                <ng-container *ngIf="element.craftingUnlock">
+                    Level {{element.craftingUnlock.masteryLevel}}
+                    in {{element.craftingUnlock.masteryType}}
+                </ng-container>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+            <th *matHeaderCellDef class="whitespace-nowrap" mat-header-cell> Sell price</th>
+            <td *matCellDef="let element" class="text-col !text-right w-[1%]" mat-cell>
+                <app-money [amount]="element.item.sellPrice"/>
+            </td>
+        </ng-container>
+
+
+        <tr *matHeaderRowDef="displayHeaderColumns; sticky: true" mat-header-row></tr>
+        <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+    </table>
+</app-responsive-table>

@@ -1,26 +1,55 @@
 <div class="flex justify-between px-4">
 
     <a routerLink="/" class="flex gap-x-4 items-center">
-        <img src="assets/ui/images/icons/Super_Coral.png" class="h-12 w-12 xl:w-16 xl:h-16">
+        <img alt="Super Coral. Logo of the website." class="h-12 w-12 xl:w-16 xl:h-16"
+             src="assets/ui/images/icons/Super_Coral.png">
         <span class="text-4xl font-semibold hidden xl:block">Coral Guide</span>
         <span class="text-4xl font-semibold block xl:hidden">CG</span>
     </a>
-    <nav>
+    <nav class="hidden sm:block">
         <ul class="flex gap-x-6">
             <li *ngFor="let naviLink of naviLinks">
                 <a [routerLink]="naviLink.path"
                    class=" flex flex-col py-3 px-2 text-neutral-400 hover:text-neutral-300 items-center text-center"
                    [routerLinkActive]="['text-white', 'active']">
-                    <app-ui-icon [uiIcon]="naviLink.uiIcon"
-                                 class="!h-6 !w-6 xl:!h-12 xl:!w-12 mb-2 max-xl"></app-ui-icon>
+                    <app-ui-icon [uiIcon]="naviLink.uiIcon" class="!h-6 !w-6 xl:!h-12 xl:!w-12 mb-2 max-xl"/>
                     <span class="xl:text-lg font-semibold">{{naviLink.text}}</span>
                 </a>
 
             </li>
         </ul>
     </nav>
-
+    <div class="block sm:hidden">
+        <button #trigger="cdkOverlayOrigin"
+                (click)="isOpen = !isOpen" cdkOverlayOrigin
+                class=" flex flex-col py-3 px-2 text-neutral-400 hover:text-neutral-300 items-center text-center"
+                type="button">
+            <app-ui-icon [class.!text-accent]="isOpen" [uiIcon]="uiIcon.BURGER_MENU" class="!h-10 !w-10 max-xl"/>
+        </button>
+    </div>
     <div class="user-sync hidden xl:block"></div>
 
 
 </div>
+
+<ng-template
+        [cdkConnectedOverlayBackdropClass]="['cdk-overlay-dark-backdrop', '!transition-none']"
+        [cdkConnectedOverlayOpen]="isOpen"
+        [cdkConnectedOverlayOrigin]="trigger"
+        [cdkConnectedOverlayPanelClass]="'mobile-menu-panel'"
+        cdkConnectedOverlay
+        cdkConnectedOverlayHasBackdrop
+
+>
+    <ul class="py-4">
+        <li *ngFor="let naviLink of naviLinks" class="my-2">
+            <a [routerLinkActive]="['text-white', 'active']"
+               [routerLink]="naviLink.path"
+               class=" flex py-3 px-4 text-neutral-400 hover:text-neutral-300 items-center">
+                <app-ui-icon [uiIcon]="naviLink.uiIcon" class="!h-6 !w-6 mr-3 max-xl"/>
+                <span class="font-semibold">{{naviLink.text}}</span>
+            </a>
+
+        </li>
+    </ul>
+</ng-template>
