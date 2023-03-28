@@ -5,7 +5,7 @@ import { DatabaseService } from '../../../shared/services/database.service';
 import { UiIcon } from '../../../shared/enums/ui-icon.enum';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { Season } from '../../../shared/enums/season.enum';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 export interface BaseJournalPageComponent<D> {
     filterPredicate?(foundEntry: D, filterValues: BaseJournalPageComponent<D>['formControl']['value']): boolean;
@@ -22,9 +22,23 @@ export class BaseJournalPageComponent<D extends ({ item: Item } | Item)> {
     selectedEntity?: D;
 
     season = Season;
-    formControl: FormControl<Season[]>;
-
+    formControl: FormGroup<{ season: FormControl<Season[]>, weather: FormControl<string[]> }>;
+    mobileQuery: MediaQueryList;
+    media: MediaMatcher = inject(MediaMatcher);
+    changeDetectorRef: ChangeDetectorRef = inject(ChangeDetectorRef);
     protected readonly _database: DatabaseService = inject(DatabaseService);
+    protected formBuilder: FormBuilder = inject(FormBuilder);
+    private readonly _mobileQueryListener: () => void;
+
+    constructor() {
+        this.mobileQuery = this.media.matchMedia('(max-width: 600px)');
+        this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
+        this.mobileQuery.addListener(this._mobileQueryListener);
+        this.formControl = this.formBuilder.nonNullable.group({
+            season: this.formBuilder.control<Season[]>([Season.SPRING, Season.SUMMER, Season.FALL, Season.WINTER], {nonNullable: true}),
+            weather: this.formBuilder.control<string[]>([], {nonNullable: true}),
+        })
+    }
 
     getFilteredJournalData(journalOrder$: Observable<JournalOrder[]>, data: Observable<D[]>): Observable<D[]> {
         return combineLatest([journalOrder$, data, this.formControl.valueChanges.pipe(startWith(this.formControl.value))]).pipe(map(
@@ -47,19 +61,6 @@ export class BaseJournalPageComponent<D extends ({ item: Item } | Item)> {
                 return res;
             })
         );
-    }
-
-    mobileQuery: MediaQueryList;
-
-    private readonly _mobileQueryListener: () => void;
-    media: MediaMatcher = inject(MediaMatcher);
-    changeDetectorRef: ChangeDetectorRef = inject(ChangeDetectorRef);
-
-    constructor() {
-        this.mobileQuery = this.media.matchMedia('(max-width: 600px)');
-        this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
-        this.mobileQuery.addListener(this._mobileQueryListener);
-        this.formControl = new FormControl<Season[]>([Season.SPRING, Season.SUMMER, Season.FALL, Season.WINTER], {nonNullable: true});
     }
 
     showDetails(fishEntry?: D) {
