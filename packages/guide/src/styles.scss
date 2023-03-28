@@ -1,3 +1,5 @@
+@use '@angular/material' as mat;
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,6 +10,53 @@
 @import "styles/buttons";
 @import "styles/mat-select";
 @import "@angular/cdk/overlay-prebuilt.css";
+
+@include mat.core();
+
+$white-palette: (
+        50: #fff,
+        100: #fff,
+        200: #fff,
+        300: #fff,
+        400: #fff,
+        500: #fff,
+        600: #fff,
+        700: #fff,
+        800: #fff,
+        900: #fff,
+        A100: #fff,
+        A200: #fff,
+        A400: #fff,
+        A700: #fff,
+        contrast: (
+                50: #000,
+                100: #000,
+                200: #000,
+                300: #000,
+                400: #000,
+                500: #000,
+                600: #000,
+                700: #000,
+                800: #000,
+                900: #000,
+                A100: #000,
+                A200: #000,
+                A400: #000,
+                A700: #000,
+        )
+);
+
+$my-primary: mat.define-palette($white-palette, 500);
+
+$my-theme: mat.define-light-theme((
+        color: (
+                primary: $my-primary,
+                accent: $my-primary,
+        )
+));
+
+
+@include mat.progress-spinner-color($my-theme);
 
 @font-face {
   font-family: 'QTVagaRound';
@@ -43,6 +92,14 @@ body {
 
 .mdc-line-ripple {
   display: none;
+}
+
+.mdc-tooltip__surface {
+  --mdc-plain-tooltip-supporting-text-size: 1.25rem;
+}
+
+table .mdc-data-table__header-row {
+  height: 48px;
 }
 
 hr {

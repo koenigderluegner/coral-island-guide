@@ -13,6 +13,11 @@ export const appRoutes: Route[] = [
     },
     {
         path: 'database',
+        pathMatch: 'full',
+        redirectTo: 'database/'
+    },
+    {
+        path: 'database/:itemId',
         loadChildren: () =>
             import('./database/database.module').then((m) => m.DatabaseModule),
     },

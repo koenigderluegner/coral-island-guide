@@ -1,7 +1,7 @@
 import { CookingRecipe, Item, MinimalItem, TagBasedItem, UnlockByMastery } from "@ci/data-types";
-import { minifyItem, readAsset, removeQualityFlag } from "../util/functions";
+import { minifyItem, readAsset } from "../util/functions";
 import { CookingIngredients, RawCookingRecipe } from "../interfaces/raw-cooking-recipe.interface";
-import { getEnumValue } from "@ci/util";
+import { getEnumValue, removeQualityFlag } from "@ci/util";
 import { CookingRecipes } from "../types/cooking-recipes.type";
 
 export class CookingDbGenerator {
@@ -19,6 +19,8 @@ export class CookingDbGenerator {
 
     handleEntry(dbItem: RawCookingRecipe): CookingRecipe | undefined {
         const itemKey = dbItem.result.itemID;
+
+        if (itemKey === 'None') return;
 
         let additionsToGenerics: Record<string, MinimalItem[]> | undefined = undefined;
 
@@ -71,7 +73,11 @@ export class CookingDbGenerator {
                             additionsToGenerics[genericDisplayName] = []
                         }
 
-                        ingredientList.forEach(ingredient => additionsToGenerics?.[genericDisplayName].push(minifyItem(ingredient.item)));
+                        ingredientList.forEach(ingredient => {
+
+                            if (!additionsToGenerics?.[genericDisplayName].find(minifiedItem => minifiedItem.id === ingredient.item.id))
+                                additionsToGenerics?.[genericDisplayName].push(minifyItem(ingredient.item))
+                        });
 
                         ingredientList = [];
                     }

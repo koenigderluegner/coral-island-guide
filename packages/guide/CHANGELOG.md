@@ -1,10 +1,45 @@
 ## Changelog
 
-### 0.4.0 TBD
+### 0.5.1 2023-03-24
+
+#### Fixed
+
+- Fixed broken artisan page. Thanks to apra on discord for the quick feedback.
+
+### 0.5.0 2023-03-24
 
 #### Added
 
-- Cooking under crafting
+- Added information for bugs and sea critters. Thanks to Nautilus on Discord for telling me where to find the necessary
+  data!
+    - The season filter now works for them as well
+- Item database to look up items and their uses
+- Added button to detail cards to open selected item in database.
+- Added overlay menu for mobile users.
+
+#### Fixed
+
+- Moved amount in detail cards more to the center to not fly off.
+- Filtered a few technical items to reduce data download size.
+
+### 0.4.1 2023-03-22
+
+#### Fixed
+
+- Removed quality grid in cooking as it always produces base quality
+- Fixed multiple entries for same recipe in dye maker
+- Removed empty dish from cooking
+- Fixed multiple of same item listed as addition to generic in cooking
+
+### 0.4.0 2023-03-21
+
+#### Added
+
+- Added cooking under crafting
+- Added fruit tree and fruit plants data to journal crops
+- Added handling of refinements and deviating processing time per quality
+    - This fixes the multiple entries for the aging barrel
+- Show output amount for inventory crafting as well
 
 ### 0.3.4 2023-03-15
 

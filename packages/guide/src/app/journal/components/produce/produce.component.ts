@@ -6,7 +6,6 @@ import { switchMap } from 'rxjs';
 @Component({
     selector: 'app-produce',
     templateUrl: './produce.component.html',
-    styleUrls: ['./produce.component.scss'],
 })
 export class ProduceComponent extends BaseJournalPageComponent<Item> {
 

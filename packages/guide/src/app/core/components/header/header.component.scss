@@ -3,6 +3,22 @@
   background-color: rgba(0, 0, 0, .75);
 
 
+  &.open-menu {
+    z-index: 1001; // over mobile menu overlay
+  }
+
+
+  .active .app-ui-icon {
+    @apply text-accent
+  }
+}
+
+.mobile-menu-panel {
+  @apply block backdrop-blur-xl px-safe;
+  background-color: rgba(0, 0, 0, .75);
+  left: 0 !important;
+  right: 0 !important;
+
   .active .app-ui-icon {
     @apply text-accent
   }

@@ -1,12 +1,6 @@
-import { Item } from '@ci/data-types';
+import { BaseCatchableInterface } from "./base-catchable.interface";
 
-export interface Critter {
-    key: string;
-    "rarity": string;
-    "minCaughtSize": number;
-    "maxCaughtSize": number;
+export interface Critter extends BaseCatchableInterface {
     bugsBehaviourPreset: string;
-    item: Item;
-
-    [key: string]: Item | string | number;
+    spawnAmountModifiers?: [string, number][]
 }

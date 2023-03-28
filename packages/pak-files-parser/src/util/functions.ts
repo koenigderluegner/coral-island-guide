@@ -56,9 +56,3 @@ export function notEmpty<TValue>(value: TValue | null | undefined): value is TVa
     return value !== null && value !== undefined;
 }
 
-export function removeQualityFlag(itemKey: string): string {
-    if (itemKey.endsWith('-a') || itemKey.endsWith('-b') || itemKey.endsWith('-c') || itemKey.endsWith('-d')) {
-        return itemKey.slice(0, -2);
-    }
-    return itemKey;
-}

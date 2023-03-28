@@ -1,13 +1,23 @@
 <app-card *ngIf="fetchedItem" class="text-lg font-semibold">
-    <app-item-icon cardIcon itemName="{{fetchedItem.iconName}}" [amount]="amount"></app-item-icon>
-    <div class="text-black text-2xl">{{fetchedItem.displayName}}</div>
-    <span class="text-accent text-2xl">   {{addSpacesToPascalCase(fetchedItem.displayKey)}}</span>
+    <app-item-icon [amount]="amount" cardIcon itemName="{{fetchedItem.iconName}}"/>
+    <div class="flex justify-between items-center">
+        <div class="flex flex-col">
+            <div class="text-black text-2xl">{{fetchedItem.displayName}}</div>
+            <span class="text-accent text-2xl">   {{fetchedItem.displayKey | addSpacesToPascalCase}}</span>
+        </div>
+        <span matTooltip="Open in database" matTooltipPosition="before">
+            <a [routerLink]="[ '/database', fetchedItem.id]">
+                  <app-ui-icon [uiIcon]="uiIcon.DATABASE" class="hover:!text-black "/>
+            </a>
+        </span>
+    </div>
     <hr class="my-5"/>
     <span class="text-lg mb-6">{{fetchedItem.description}}</span>
 
     <ng-content></ng-content>
 
-    <app-quality-grid *ngIf="(fetchedItem.qualities | keyvalue).length; else basePrice" [item]="fetchedItem"
+    <app-quality-grid *ngIf="(fetchedItem.qualities | keyvalue).length && !hideQualityGrid; else basePrice"
+                      [item]="fetchedItem"
                       includePrices
                       class="mt-6"></app-quality-grid>
 
