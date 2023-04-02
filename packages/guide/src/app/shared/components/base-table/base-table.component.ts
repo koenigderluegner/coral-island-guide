@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { MatTableDataSource } from "@angular/material/table";
 import { MatSort } from "@angular/material/sort";
-import { Item, Season } from "@ci/data-types";
+import { MinimalItem, Season } from "@ci/data-types";
 
 @Component({
     template: ''
@@ -55,7 +55,7 @@ export abstract class BaseTableComponent<T> implements OnInit, OnChanges, AfterV
         this.displayHeaderColumns = this.displayedColumns.filter(column => column !== 'icon')
     }
 
-    protected sortHelper<T extends Item>(item: T | undefined | Season[], property?: string): string | number | null {
+    protected sortHelper<T extends MinimalItem & { sellPrice?: number }>(item: T | undefined | Season[], property?: string): string | number | null {
 
         if (!item) return null;
 
@@ -69,12 +69,13 @@ export abstract class BaseTableComponent<T> implements OnInit, OnChanges, AfterV
 
 
         switch (property) {
+
             case 'outputName':
             case 'displayName':
                 return item.displayName
-            
+
             case 'sellPrice':
-                return item.sellPrice
+                return item.sellPrice ?? -1
 
             default:
                 return null;
