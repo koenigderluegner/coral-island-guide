@@ -3,46 +3,7 @@
 
     <mat-tab-group class=" px-2 xl:px-[50px] w-full" mat-stretch-tabs="false">
         <mat-tab [label]="tab.title" *ngFor="let tab of tabs">
-            <div class="mb-3 flex gap-x-3">
-                <button class="btn" type="button"
-                        (click)="showTable = !showTable">{{showTable ? 'Show grid' : 'Show table'}}</button>
-                <ng-container [formGroup]="formControl">
-                    <mat-form-field class="btn">
-                        <mat-label *ngIf="!formControl.value.season?.length">Season</mat-label>
-                        <mat-select disableOptionCentering formControlName="season" multiple>
-                            <mat-select-trigger>
-                                {{formControl.value.season?.[0] || 'Filter'}}
-                                <span *ngIf="(formControl.value.season?.length || 0) > 1" class="text-sm opacity-80">
-        (+{{(formControl.value.season?.length || 0) - 1}} {{formControl.value.season?.length === 2 ? 'other' : 'others'}}
-                                    )
-      </span>
-                            </mat-select-trigger>
-                            <mat-option
-                                    *ngFor="let topping of [season.SPRING, season.SUMMER, season.FALL, season.WINTER]"
-                                    [value]="topping">{{topping}}</mat-option>
-
-                        </mat-select>
-                    </mat-form-field>
-
-                    <mat-form-field class="btn">
-                        <mat-label *ngIf="!formControl.value.weather?.length">Weather</mat-label>
-                        <mat-select disableOptionCentering formControlName="weather" multiple>
-                            <mat-select-trigger>
-                                {{formControl.value.weather?.[0] || 'Filter'}}
-                                <span *ngIf="(formControl.value.weather?.length || 0) > 1" class="text-sm opacity-80">
-        (+{{(formControl.value.weather?.length || 0) - 1}} {{formControl.value.weather?.length === 2 ? 'other' : 'others'}}
-                                    )
-      </span>
-
-                            </mat-select-trigger>
-                            <mat-option
-                                    *ngFor="let topping of ['Sunny', 'Rain', 'Storm', 'Windy', 'Snow', 'Blizzard']"
-                                    [value]="topping">{{topping}}</mat-option>
-
-                        </mat-select>
-                    </mat-form-field>
-                </ng-container>
-            </div>
+            <app-data-filter [(showTable)]="showTable" [parentFormGroup]="formControl"/>
             <ng-container *ngIf="(tab.data |async) as syncedData">
                 <ng-container *ngIf="!showTable">
                     <div class="grid gap-4 icon-grid">

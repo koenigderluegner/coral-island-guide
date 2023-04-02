@@ -1,0 +1,25 @@
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormGroup } from "@angular/forms";
+import { Season } from "../../enums/season.enum";
+import { FilterForm } from "../../types/filter-form.type";
+
+@Component({
+    selector: 'app-data-filter',
+    templateUrl: './data-filter.component.html',
+})
+export class DataFilterComponent {
+
+    @Input() parentFormGroup?: FormGroup<FilterForm>;
+
+    @Input() showTable!: boolean;
+    @Output() showTableChange = new EventEmitter<boolean>();
+
+    protected season = Season;
+
+    setShowTable(showTable: boolean): void {
+        this.showTable = showTable;
+        this.showTableChange.emit(this.showTable);
+    }
+
+
+}

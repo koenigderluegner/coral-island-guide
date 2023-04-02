@@ -1,42 +1,70 @@
 import { Component } from '@angular/core';
 import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page.component';
-import { Item } from '@ci/data-types';
-import { switchMap } from 'rxjs';
+import { BaseCrop, Crop, FruitPlant, FruitTree, Item } from '@ci/data-types';
+import { combineLatest, of, switchMap } from 'rxjs';
+import { FormControl, FormGroup } from "@angular/forms";
+import { FilterForm } from "../../../shared/types/filter-form.type";
+import { Season } from "../../../shared/enums/season.enum";
+import { nonNullable } from "@ci/util";
 
 @Component({
     selector: 'app-produce',
     templateUrl: './produce.component.html',
 })
-export class ProduceComponent extends BaseJournalPageComponent<Item> {
+export class ProduceComponent extends BaseJournalPageComponent<Item | Crop | FruitPlant | FruitTree> {
 
     constructor() {
-        super();
-
+        super(new FormGroup<FilterForm>({
+            season: new FormControl<Season[]>([Season.SPRING, Season.SUMMER, Season.FALL, Season.WINTER], {nonNullable: true}),
+        }));
 
         this.tabs = [
             {
                 title: 'Crops',
-                data: this._database.fetchCrops$().pipe(
-                    switchMap(() =>
+                data: combineLatest([
+                    this._database.fetchCrops$(),
+                    this._database.fetchFruitTrees$(),
+                    this._database.fetchFruitPlants$(),
+                ]).pipe(
+                    switchMap(([crops, fruitTrees, fruitPlants]) =>
                         this.getFilteredJournalData(
                             this._database.fetchJournalOrder$('journal-crops'),
-                            this._database.fetchItems$()
+                            this._database.fetchItems$().pipe(
+                                switchMap(items => {
+                                    return of(items.map(item => {
+                                        return crops.find(crop => crop.pickupableItemId === item.id)
+                                            ?? fruitPlants.find(crop => crop.dropData.some(dropData => dropData.itemId === item.id))
+                                            ?? fruitTrees.find(crop => crop.dropData.some(dropData => dropData.itemId === item.id));
+                                    }).filter(nonNullable))
+                                })
+                            ),
+                            0
                         ))
                 )
             }, {
                 title: 'Animal Products',
                 data: this.getFilteredJournalData(
                     this._database.fetchJournalOrder$('journal-animal-products'),
-                    this._database.fetchItems$()
+                    this._database.fetchItems$(),
+                    1
                 )
             }, {
                 title: 'Artisan Products',
                 data: this.getFilteredJournalData(
                     this._database.fetchJournalOrder$('journal-artisan-products'),
-                    this._database.fetchItems$()
+                    this._database.fetchItems$(),
+                    2
                 )
             },
         ];
+    }
+
+    protected castToItemArray(array: Array<any>): Item[] {
+        return array as Item[]
+    }
+
+    protected castToBaseCropArray(array: Array<any>): BaseCrop[] {
+        return array as BaseCrop[]
     }
 
 

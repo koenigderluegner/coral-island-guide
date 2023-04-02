@@ -1,57 +1,73 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
-import { Item, JournalOrder } from '@ci/data-types';
-import { combineLatest, map, Observable, startWith } from 'rxjs';
+import { ChangeDetectorRef, Component, inject, ViewChild } from '@angular/core';
+import { BaseCrop, Item, JournalOrder } from '@ci/data-types';
+import { combineLatest, map, Observable, of, startWith } from 'rxjs';
 import { DatabaseService } from '../../../shared/services/database.service';
 import { UiIcon } from '../../../shared/enums/ui-icon.enum';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { Season } from '../../../shared/enums/season.enum';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
+import { FilterForm } from "../../../shared/types/filter-form.type";
+import { MatTabGroup } from "@angular/material/tabs";
 
 export interface BaseJournalPageComponent<D> {
-    filterPredicate?(foundEntry: D, filterValues: BaseJournalPageComponent<D>['formControl']['value']): boolean;
+    filterPredicate?(foundEntry: D, filterValues: BaseJournalPageComponent<D>['formControl']['value'], index: number): boolean;
 }
+
 
 @Component({
     template: ''
 })
 export class BaseJournalPageComponent<D extends ({ item: Item } | Item)> {
 
+    @ViewChild(MatTabGroup) matTabGroup?: MatTabGroup
+
     uiIcon = UiIcon;
     tabs: { title: string; data: Observable<D[]> }[] = [];
     openDrawer = false;
     selectedEntity?: D;
-
     season = Season;
-    formControl: FormGroup<{ season: FormControl<Season[]>, weather: FormControl<string[]> }>;
+    formControl: FormGroup<FilterForm>;
     mobileQuery: MediaQueryList;
     media: MediaMatcher = inject(MediaMatcher);
-    changeDetectorRef: ChangeDetectorRef = inject(ChangeDetectorRef);
+    protected showTable = false;
     protected readonly _database: DatabaseService = inject(DatabaseService);
-    protected formBuilder: FormBuilder = inject(FormBuilder);
+    private changeDetectorRef: ChangeDetectorRef = inject(ChangeDetectorRef);
     private readonly _mobileQueryListener: () => void;
 
-    constructor() {
+    constructor(formControl: FormGroup<FilterForm>) {
         this.mobileQuery = this.media.matchMedia('(max-width: 600px)');
         this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
         this.mobileQuery.addListener(this._mobileQueryListener);
-        this.formControl = this.formBuilder.nonNullable.group({
-            season: this.formBuilder.control<Season[]>([Season.SPRING, Season.SUMMER, Season.FALL, Season.WINTER], {nonNullable: true}),
-            weather: this.formBuilder.control<string[]>([], {nonNullable: true}),
-        })
+
+        this.formControl = formControl;
+
     }
 
-    getFilteredJournalData(journalOrder$: Observable<JournalOrder[]>, data: Observable<D[]>): Observable<D[]> {
-        return combineLatest([journalOrder$, data, this.formControl.valueChanges.pipe(startWith(this.formControl.value))]).pipe(map(
-            ([orders, entries, filterValues]) => {
+    getFilteredJournalData(journalOrder$: Observable<JournalOrder[]>, data: Observable<D[]>, index: number): Observable<D[]> {
+        return combineLatest([
+                journalOrder$,
+                data,
+                this.formControl.valueChanges.pipe(startWith(this.formControl.value)),
+                of(index)
+            ],
+        ).pipe(map(
+            ([orders, entries, filterValues, index]) => {
                 const res: D[] = [];
 
 
                 orders.sort((a, b) => a.order > b.order ? 1 : -1).forEach(journalOrder => {
-                    const foundEntry: D | undefined = entries.find(f => 'item' in f ? (f.item.id === journalOrder.key) : (f.id === journalOrder.key));
+                    const foundEntry: D | undefined = entries.find(f => {
+
+                        if ('dropData' in f) {
+                            return ((f as BaseCrop).dropData[0].item?.id === journalOrder.key)
+                        }
+
+                        return 'item' in f ? (f.item.id === journalOrder.key) : (f.id === journalOrder.key)
+                    });
                     if (foundEntry) {
                         if (!this.filterPredicate)
                             res.push(foundEntry);
-                        if (this.filterPredicate && this.filterPredicate(foundEntry, filterValues)) {
+                        if (this.filterPredicate && this.filterPredicate(foundEntry, filterValues, index)) {
                             res.push(foundEntry);
                         }
 
@@ -71,4 +87,5 @@ export class BaseJournalPageComponent<D extends ({ item: Item } | Item)> {
     ngOnDestroy(): void {
         this.mobileQuery.removeListener(this._mobileQueryListener);
     }
+
 }
