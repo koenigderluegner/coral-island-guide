@@ -1,4 +1,4 @@
 import { FormControl } from "@angular/forms";
-import { Season } from "../enums/season.enum";
+import { Season } from "@ci/data-types";
 
 export type FilterForm = { season?: FormControl<Season[]>, weather?: FormControl<string[]> }

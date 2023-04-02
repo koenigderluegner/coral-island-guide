@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup } from "@angular/forms";
-import { Season } from "../../enums/season.enum";
+import { Season } from "@ci/data-types";
 import { FilterForm } from "../../types/filter-form.type";
 
 @Component({

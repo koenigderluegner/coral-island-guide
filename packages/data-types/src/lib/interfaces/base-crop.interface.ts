@@ -1,9 +1,10 @@
 import { Item } from "@ci/data-types";
+import { Season } from "../enums/season.enum";
 
 export interface BaseCrop {
     key: string;
     item: Item;
-    growableSeason: string[],
+    growableSeason: Season[],
     dropData:
         {
             itemId: string;

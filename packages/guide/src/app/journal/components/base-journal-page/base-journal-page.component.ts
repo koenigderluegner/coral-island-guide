@@ -1,10 +1,9 @@
 import { ChangeDetectorRef, Component, inject, ViewChild } from '@angular/core';
-import { BaseCrop, Item, JournalOrder } from '@ci/data-types';
+import { BaseCrop, Item, JournalOrder, Season } from '@ci/data-types';
 import { combineLatest, map, Observable, of, startWith } from 'rxjs';
 import { DatabaseService } from '../../../shared/services/database.service';
 import { UiIcon } from '../../../shared/enums/ui-icon.enum';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { Season } from '../../../shared/enums/season.enum';
 import { FormGroup } from '@angular/forms';
 import { FilterForm } from "../../../shared/types/filter-form.type";
 import { MatTabGroup } from "@angular/material/tabs";

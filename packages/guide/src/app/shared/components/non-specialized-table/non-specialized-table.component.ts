@@ -10,6 +10,13 @@ export class NonSpecializedTableComponent extends BaseTableComponent<Item> {
     protected readonly BASE_DISPLAY_COLUMNS: string[] = [
         'icon',
         'displayName',
-        'price'
+        'sellPrice'
     ];
+
+    override sortingDataAccessor = (item: NonSpecializedTableComponent['dataSource'][0], property: string) => {
+        const sortHelperValue = this.sortHelper(item, property)
+
+        return sortHelperValue ?? 0;
+    };
+
 }

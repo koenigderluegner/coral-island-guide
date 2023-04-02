@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { Critter, Fish } from '@ci/data-types';
+import { Critter, Fish, Season } from '@ci/data-types';
 import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page.component';
 import { getTruthyValues } from '@ci/util';
-import { Season } from '../../../shared/enums/season.enum';
 import { FilterForm } from "../../../shared/types/filter-form.type";
 import { FormControl, FormGroup } from "@angular/forms";
 

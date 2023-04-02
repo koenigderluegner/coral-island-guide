@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page.component';
-import { BaseCrop, Crop, FruitPlant, FruitTree, Item } from '@ci/data-types';
+import { BaseCrop, Crop, FruitPlant, FruitTree, Item, Season } from '@ci/data-types';
 import { combineLatest, of, switchMap } from 'rxjs';
 import { FormControl, FormGroup } from "@angular/forms";
 import { FilterForm } from "../../../shared/types/filter-form.type";
-import { Season } from "../../../shared/enums/season.enum";
 import { nonNullable } from "@ci/util";
 
 @Component({
