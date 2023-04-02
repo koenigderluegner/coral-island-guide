@@ -16,14 +16,14 @@
 
 
         <ng-container matColumnDef="size">
-            <th *matHeaderCellDef mat-header-cell> Size</th>
+            <th *matHeaderCellDef mat-header-cell mat-sort-header> Size</th>
             <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
                 {{element.size.width}}x{{element.size.length}}
             </td>
         </ng-container>
 
         <ng-container matColumnDef="season">
-            <th *matHeaderCellDef mat-header-cell> Seasons</th>
+            <th *matHeaderCellDef mat-header-cell mat-sort-header> Seasons</th>
             <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
                 {{(element.growableSeason.join(', '))}}
             </td>
@@ -31,7 +31,7 @@
 
 
         <ng-container matColumnDef="regrow">
-            <th *matHeaderCellDef mat-header-cell> Regrow</th>
+            <th *matHeaderCellDef mat-header-cell mat-sort-header> Regrow</th>
             <td *matCellDef="let element" class="text-col text-right whitespace-nowrap" mat-cell>
                 <ng-container *ngIf="element.isRegrowable">{{[1, element.regrowableLength] | max}} days</ng-container>
             </td>
@@ -39,7 +39,7 @@
 
 
         <ng-container matColumnDef="growTime">
-            <th *matHeaderCellDef mat-header-cell> Grow time</th>
+            <th *matHeaderCellDef mat-header-cell mat-sort-header> Grow time</th>
             <td *matCellDef="let element" class="text-col text-right whitespace-nowrap" mat-cell>
                 {{element.growTime}} days
             </td>
@@ -47,7 +47,7 @@
 
 
         <ng-container matColumnDef="seed">
-            <th *matHeaderCellDef class="whitespace-nowrap" mat-header-cell> Seed</th>
+            <th *matHeaderCellDef class="whitespace-nowrap" mat-header-cell mat-sort-header> Seed</th>
             <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
                 <div class="flex gap-x-3 items-center">
                     <app-item-icon [itemName]="element.item?.iconName" class="!w-7"/>
@@ -57,15 +57,15 @@
         </ng-container>
 
         <ng-container matColumnDef="seedPrice">
-            <th *matHeaderCellDef class="whitespace-nowrap" mat-header-cell> Seed buy price</th>
+            <th *matHeaderCellDef class="whitespace-nowrap" mat-header-cell mat-sort-header> Seed buy price</th>
             <td *matCellDef="let element" class="text-col !text-right w-[1%]" mat-cell>
                 <app-money [amount]="element.item.price"/>
             </td>
         </ng-container>
 
 
-        <ng-container matColumnDef="price">
-            <th *matHeaderCellDef class="whitespace-nowrap" mat-header-cell> Sell price</th>
+        <ng-container matColumnDef="sellPrice">
+            <th *matHeaderCellDef class="whitespace-nowrap" mat-header-cell mat-sort-header> Sell price</th>
             <td *matCellDef="let element" class="text-col !text-right w-[1%]" mat-cell>
                 <app-money [amount]="element.dropData[0]?.item?.sellPrice"/>
             </td>
