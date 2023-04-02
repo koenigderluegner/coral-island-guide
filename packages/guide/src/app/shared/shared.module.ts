@@ -39,8 +39,10 @@ import { DataFilterComponent } from './components/data-filter/data-filter.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { IsItemPipe } from './pipes/is-item.pipe';
 import { NonSpecializedTableComponent } from './components/non-specialized-table/non-specialized-table.component';
-import { MatSortModule } from "@angular/material/sort";
+import { MatSortModule } from '@angular/material/sort';
 import { IsBaseCropPipe } from './pipes/is-base-crop.pipe';
+import { BaseSelectableContainerComponent } from './components/base-selectable-container/base-selectable-container.component';
+import { BaseTabbedSelectableContainerComponent } from './components/base-tabbed-selectable-container/base-tabbed-selectable-container.component';
 
 @NgModule({
     declarations: [
@@ -75,6 +77,8 @@ import { IsBaseCropPipe } from './pipes/is-base-crop.pipe';
         IsItemPipe,
         NonSpecializedTableComponent,
         IsBaseCropPipe,
+        BaseSelectableContainerComponent,
+        BaseTabbedSelectableContainerComponent,
     ],
     imports: [
         CommonModule,

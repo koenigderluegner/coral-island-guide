@@ -2,10 +2,15 @@
 
 ### 0.6.0 TBD
 
+#### Added
+
+- Added data tables to all journal and crafting pages
+
 #### Changed
 
 - Fixed wrong title for ocean critters in database
 - Reordered database detail information to put best match on top
+- Added spaces to processor names
 
 ### 0.5.1 2023-03-24
 
