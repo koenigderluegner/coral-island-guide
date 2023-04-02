@@ -13,8 +13,8 @@
       </span>
                 </mat-select-trigger>
                 <mat-option
-                        *ngFor="let topping of [season.SPRING, season.SUMMER, season.FALL, season.WINTER]"
-                        [value]="topping">{{topping}}</mat-option>
+                        *ngFor="let seasonOption of [season.SPRING, season.SUMMER, season.FALL, season.WINTER]"
+                        [value]="seasonOption">{{seasonOption}}</mat-option>
 
             </mat-select>
         </mat-form-field>
@@ -31,8 +31,8 @@
 
                 </mat-select-trigger>
                 <mat-option
-                        *ngFor="let topping of ['Sunny', 'Rain', 'Storm', 'Windy', 'Snow', 'Blizzard']"
-                        [value]="topping">{{topping}}</mat-option>
+                        *ngFor="let weatherOption of [weather.SUNNY, weather.RAIN, weather.SNOW, weather.WINDY, weather.STORM, weather.BLIZZARD]"
+                        [value]="weatherOption">{{weatherOption}}</mat-option>
 
             </mat-select>
         </mat-form-field>

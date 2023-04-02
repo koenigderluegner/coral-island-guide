@@ -14,7 +14,7 @@ export class ProduceComponent extends BaseJournalPageComponent<Item | Crop | Fru
 
     constructor() {
         super(new FormGroup<FilterForm>({
-            season: new FormControl<Season[]>([Season.SPRING, Season.SUMMER, Season.FALL, Season.WINTER], {nonNullable: true}),
+            season: new FormControl<Season[]>(Object.values(Season), {nonNullable: true}),
         }));
 
         this.tabs = [
