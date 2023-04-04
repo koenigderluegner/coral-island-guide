@@ -10,7 +10,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        accent: '#d89e43'
+          accent: '#d89e43',
+          beige: '#f7f2e8'
       }
     },
   },
