@@ -3,7 +3,7 @@ import { Datatable } from "../interfaces/datatable.interface";
 import { minifyItem, readAsset } from "../util/functions";
 import { RawOffering } from "../interfaces/raw-offering.interface";
 import { CookingRecipe, Item, Offerings } from "@ci/data-types";
-import { getQuality, nonNullable } from "@ci/util";
+import { getQuality, nonNullable, removeQualityFlag } from "@ci/util";
 import { OfferingRewardsDbGenerator } from "./offering-rewards-db.generator";
 import { OfferingMatch } from "../interfaces/offering-match.interface";
 
@@ -38,12 +38,13 @@ export class OfferingDetailsDbGenerator extends BaseGenerator<RawOffering, Offer
             requiredItems: dbItem.requiredItems
                 .map(requiredItem => {
                     const itemKey = requiredItem.itemData.itemID;
-                    const item = this.itemMap.get(itemKey);
+                    const item = this.itemMap.get(removeQualityFlag(itemKey));
                     if (!item) return;
+                    const quality = getQuality(itemKey);
                     return {
                         item: minifyItem(item),
                         amount: requiredItem.itemQuantity,
-                        quality: getQuality(itemKey)
+                        quality
                     }
                 })
                 .filter(nonNullable),
