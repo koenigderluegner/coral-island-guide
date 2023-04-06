@@ -7,7 +7,10 @@
             <ng-container *ngIf="(tab.data |async) as syncedData">
                 <div *ngIf="!showTable" class="grid gap-4 icon-grid">
                     <app-item-icon (click)="showDetails(entry)" *ngFor="let entry of syncedData"
-                                   [itemName]="entry.iconName" class="icon-grid-item"></app-item-icon>
+                                   [class.selected-icon]="selectedEntity?.id === entry.id"
+                                   [itemName]="entry.iconName"
+                                   class="icon-grid-item"
+                    />
                 </div>
                 <app-non-specialized-table *ngIf="showTable" [dataSource]="syncedData"/>
             </ng-container>
