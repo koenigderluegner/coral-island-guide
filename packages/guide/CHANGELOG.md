@@ -4,6 +4,7 @@
 
 #### Added
 
+- Added quality prices to database if existent
 - Added locations
     - Added lake temple with offerings as first location
 - Added data tables to all journal and crafting pages
