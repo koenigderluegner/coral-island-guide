@@ -20,7 +20,7 @@ export class DatabaseComponent {
     protected shouldHideImportantNote = false;
     protected filteredItems: Item[] = [];
     protected allPrefetched = false;
-
+    protected selectedItem?: Item;
     private _localStorageHideNoteKey = 'databaseHideImportantNote';
     private _didInitialLoad = false;
 
@@ -67,11 +67,11 @@ export class DatabaseComponent {
     }
 
 
-    showDetails(itemProcess: Item, index: number, scrollIntoView = false) {
-        console.log(index, itemProcess);
+    showDetails(item: Item, index: number, scrollIntoView = false) {
 
-        this.updateRouteParam(itemProcess.id);
+        this.updateRouteParam(item.id);
 
+        this.selectedItem = undefined;
         document.getElementById("database-details")?.remove();
 
 
@@ -79,23 +79,20 @@ export class DatabaseComponent {
         if (!grid) return;
         const gridComputedStyle = window.getComputedStyle(grid);
 
-        // get number of grid rows
-        const gridRowCount = gridComputedStyle.getPropertyValue("grid-template-rows").split(" ").length;
-
-// get number of grid columns
+        // get number of grid columns
         const gridColumnCount = gridComputedStyle.getPropertyValue("grid-template-columns").split(" ").length;
 
-        console.log(gridRowCount, gridColumnCount);
         const clickedRow = Math.floor(index / gridColumnCount);
         const insertAfter = Math.min(this.filteredItems.length, (clickedRow + 1) * gridColumnCount);
 
-        console.log(clickedRow, insertAfter);
 
         const insertAfterElement = document.querySelector(`#grid app-item-icon:nth-of-type(${insertAfter})`) as HTMLElement | null;
         if (!insertAfterElement) return;
-        let component = this.createComponent(itemProcess)
+        let component = this.createComponent(item)
 
         this.insertAfter(component, insertAfterElement);
+
+        this.selectedItem = item;
 
         if (scrollIntoView)
             setTimeout(() => document.getElementById("database-details")?.scrollIntoView(true), 0)
