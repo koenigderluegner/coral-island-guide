@@ -18,6 +18,7 @@ export enum UiIcon {
     FARMING = 'T_Icon_FarmingM',
     ARTISAN = 'T_Icon_ArtisanM',
     COOKING = 'T_Icon_ConsumablesM',
+    OFFERING = 'T_Icon_Offering',
 
     //
     GIFTING = 'Icons_Gift',
