@@ -13,6 +13,7 @@ import {
     Item,
     ItemProcessing,
     JournalOrder,
+    OfferingAltar,
     TagBasedItem
 } from '@ci/data-types';
 import { AvailableJournalOrders } from '../types/available-journal-orders.type';
@@ -51,6 +52,10 @@ export class DatabaseService {
     private _GIFT_PREFERENCES$?: Observable<MapKeyed<GiftPreferences>[]>;
     private _GIFT_PREFERENCES: MapKeyed<GiftPreferences>[] = [];
 
+
+    private _OFFERINGS$?: Observable<OfferingAltar[]>;
+    private _OFFERINGS: OfferingAltar[] = [];
+
     constructor(private readonly _http: HttpClient) {
     }
 
@@ -67,7 +72,8 @@ export class DatabaseService {
             this.fetchCrops$(),
             this.fetchFruitTrees$(),
             this.fetchFruitPlants$(),
-            this.fetchGiftingPreferences$()
+            this.fetchGiftingPreferences$(),
+            this.fetchOfferings$(),
         ]);
     }
 
@@ -86,6 +92,23 @@ export class DatabaseService {
                 );
         }
         return this._ITEMS$;
+    }
+
+
+    getOfferings(): OfferingAltar[] {
+        return this._OFFERINGS;
+    }
+
+
+    fetchOfferings$(): Observable<OfferingAltar[]> {
+        if (!this._OFFERINGS$) {
+            this._OFFERINGS$ = this._http.get<OfferingAltar[]>(`${this._BASE_PATH}/offerings.json`)
+                .pipe(
+                    tap(items => this._OFFERINGS = items),
+                    shareReplay(1)
+                );
+        }
+        return this._OFFERINGS$;
     }
 
     fetchFish$(): Observable<Fish[]> {

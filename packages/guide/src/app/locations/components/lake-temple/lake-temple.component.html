@@ -1,0 +1,44 @@
+<app-list-detail-container [(openDrawer)]="openDrawer">
+    <app-base-item-card *ngIf="selectedEntity"
+                        [item]="selectedEntity"
+                        listDetail/>
+    <mat-tab-group (selectedTabChange)="updateUrl($event)" *ngIf="offerings$ | async as offeringAltars" [selectedIndex]="selectedTabIndex"
+                   class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false">
+        <mat-tab *ngFor="let offeringAltar of offeringAltars"
+                 label="{{offeringAltar.offeringGroupTitle | spacesToPascalCase}}">
+            <div class="bg-merino rounded-lg mb-4 text-lg font-semibold p-4 md:p-8">
+                Reward: {{offeringAltar.offeringGroupRewardText}}</div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div (click)="activeOffering = offering"
+                     *ngFor="let offering of offeringAltar.offerings"
+                     [class.bg-merino-300]="activeOffering?.title === offering.title" class="rounded-lg bg-merino flex flex-col items-center gap-4 px-4 py-8 hover:bg-merino-200">
+                    <img height="128" src="assets/ui/images/offering/{{offering.imageName}}.png" width="128">
+                    <div class="text-lg font-semibold">{{offering.title}}</div>
+                </div>
+            </div>
+
+        </mat-tab>
+
+
+    </mat-tab-group>
+
+
+    <div *ngIf="activeOffering" class="px-2 xl:px-[50px]">
+        <div class="bg-merino rounded-lg mb-4 text-lg font-semibold p-4 md:p-8 my-8">
+            {{activeOffering.numOfItemRequired === -1 ? 'All' : activeOffering.numOfItemRequired}} of the following
+            items are required:
+        </div>
+        <div class="grid gap-4 icon-grid  mt-8">
+
+            <app-item-icon (click)="showDetails(itemProcess.item)"
+                           *ngFor="let itemProcess of activeOffering.requiredItems"
+                           [amount]="itemProcess.amount"
+                           [class.selected-icon]="selectedEntity?.id === itemProcess.item.id"
+                           [itemName]="itemProcess.item?.iconName"
+                           [quality]="itemProcess.quality"
+                           class="icon-grid-item">
+            </app-item-icon>
+        </div>
+    </div>
+
+</app-list-detail-container>
