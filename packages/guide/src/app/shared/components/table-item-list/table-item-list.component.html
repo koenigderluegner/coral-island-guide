@@ -1,14 +1,15 @@
 <ng-container *ngFor="let itemListItem of itemList; let last = last">
     <div class="flex justify-between mb-1">
         <ng-container *ngIf="!isGenericEntry(itemListItem)">
-            <div *ngIf="itemListItem.item" class="flex gap-x-3 items-center">
-                <app-item-icon [itemName]="itemListItem.item.iconName" class="!w-7"></app-item-icon>
-                <span class="whitespace-nowrap">{{itemListItem.item.displayName}}</span>
+            <div *ngIf="itemListItem.item" class="flex gap-2 items-center">
+                <app-item-icon [itemName]="itemListItem.item.iconName" class="!w-7"/>
+                <span class="ml-1 whitespace-nowrap">{{itemListItem.item.displayName}}</span>
+                <app-rarity-icon *ngIf="itemListItem.quality" [quality]="itemListItem.quality" class="!w-4"/>
             </div>
         </ng-container>
         <ng-container *ngIf="isGenericEntry(itemListItem)">
             <div *ngIf="itemListItem.genericItem" class="flex gap-x-3 items-center">
-                <app-item-icon [itemName]="itemListItem.genericItem.iconName" class="!w-7"></app-item-icon>
+                <app-item-icon [itemName]="itemListItem.genericItem.iconName" class="!w-7"/>
                 <span class="whitespace-nowrap">{{itemListItem.genericItem.displayName}}
                     <ng-container *ngIf="itemListItem.shouldBeSameItem"> (all the same)</ng-container>
                 </span>

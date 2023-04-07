@@ -3,12 +3,15 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { LocationsComponent } from './locations.component';
 import { SharedModule } from '../shared/shared.module';
 import { LakeTempleComponent } from './components/lake-temple/lake-temple.component';
-import { LocationsRoutingModule } from "./locations-routing.module";
-import { MatTabsModule } from "@angular/material/tabs";
+import { LocationsRoutingModule } from './locations-routing.module';
+import { MatTabsModule } from '@angular/material/tabs';
+import { OfferingsTableComponent } from './components/tables/offerings-table/offerings-table.component';
+import { MatTableModule } from "@angular/material/table";
+import { MatSortModule } from "@angular/material/sort";
 
 @NgModule({
-    declarations: [LocationsComponent, LakeTempleComponent],
-    imports: [CommonModule, LocationsRoutingModule, SharedModule, MatTabsModule, NgOptimizedImage],
+    declarations: [LocationsComponent, LakeTempleComponent, OfferingsTableComponent],
+    imports: [CommonModule, LocationsRoutingModule, SharedModule, MatTabsModule, NgOptimizedImage, MatTableModule, MatSortModule],
 })
 export class LocationsModule {
 }
