@@ -21,6 +21,7 @@ import { CookingDbGenerator } from "./app/cooking-db.generator";
 import { FruitTreeDbGenerator } from "./app/fruit-tree-db.generator";
 import { FruitPlantDbGenerator } from "./app/fruit-plant-db.generator";
 import { OfferingsDbGenerator } from "./app/offerings-db.generator";
+import { ConsumablesDbGenerator } from "./app/consumables-db.generator";
 
 const itemIconPath = config.itemIconPath
 const texturePath = config.texturePath;
@@ -72,6 +73,7 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'gift-preferences': new GiftPreferencesDbGenerator(itemDbMap, npcDbMap),
     'npcs': new NPCDbGenerator(itemDbMap),
 
+    'consumables': new ConsumablesDbGenerator(),
 
     'tag-based-items': {generate: () => tagBasedItemsDbMap},
     'crafting-unlocks-by-mastery': {generate: () => craftingRecipeUnlockedByMasteryDbMap},
@@ -170,9 +172,18 @@ extractImages();
 Object.keys(generators).forEach(generatorName => {
         const generatedMap = generators[generatorName].generate();
 
-        // if(generatorName === 'fish')
-        //     printFish([...generatedMap.values()])
+        // if(generatorName === 'consumables')
+        // {
+        //     // @ts-ignore
+        //     console.log(generators['consumables'].buff);
+        //     // @ts-ignore
+        //     console.log(generators['consumables'].level);
+        //     // @ts-ignore
+        //     console.log(generators['consumables'].duration);
+        //     // @ts-ignore
+        //     console.log(generators['consumables'].itemType);
+        // }
 
-    generateJson(`${generatorName}.json`, [...generatedMap.values()], true);
+        generateJson(`${generatorName}.json`, [...generatedMap.values()], true);
     }
 );
