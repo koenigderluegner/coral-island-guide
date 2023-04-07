@@ -1,14 +1,19 @@
 <app-list-detail-container [(openDrawer)]="openDrawer" [removePlaceholder]="showTable">
     <app-caught-details listDetail *ngIf="selectedEntity" [critter]="selectedEntity"></app-caught-details>
 
-    <mat-tab-group class=" px-2 xl:px-[50px] w-full" mat-stretch-tabs="false">
+    <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex"
+                   class=" px-2 xl:px-[50px] w-full"
+                   mat-stretch-tabs="false">
         <mat-tab [label]="tab.title" *ngFor="let tab of tabs">
             <app-data-filter [(showTable)]="showTable" [parentFormGroup]="formControl"/>
             <ng-container *ngIf="(tab.data |async) as syncedData">
                 <ng-container *ngIf="!showTable">
                     <div class="grid gap-4 icon-grid">
                         <app-item-icon *ngFor="let entry of syncedData" [itemName]="entry.item.iconName"
-                                       class="icon-grid-item" (click)="showDetails(entry)"></app-item-icon>
+                                       (click)="showDetails(entry)"
+                                       [class.selected-icon]="selectedEntity?.item?.id === entry.item.id"
+                                       class="icon-grid-item"
+                        />
                     </div>
                 </ng-container>
                 <ng-container *ngIf="showTable">

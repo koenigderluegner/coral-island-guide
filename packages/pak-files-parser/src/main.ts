@@ -20,6 +20,7 @@ import { CookingRecipeUnlockedByMasteryDbGenerator } from "./app/cooking-recipe-
 import { CookingDbGenerator } from "./app/cooking-db.generator";
 import { FruitTreeDbGenerator } from "./app/fruit-tree-db.generator";
 import { FruitPlantDbGenerator } from "./app/fruit-plant-db.generator";
+import { OfferingsDbGenerator } from "./app/offerings-db.generator";
 
 const itemIconPath = config.itemIconPath
 const texturePath = config.texturePath;
@@ -39,6 +40,9 @@ const cookingRecipeUnlockedByMasteryDbMap = cookingRecipeUnlockedByMasteryDbGene
 const tagBasedItemsDbGenerator = new TagBasedItemGenericDbGenerator();
 const tagBasedItemsDbMap = tagBasedItemsDbGenerator.generate();
 
+const cookingDbGenerator = new CookingDbGenerator(itemDbMap, cookingRecipeUnlockedByMasteryDbMap, tagBasedItemsDbMap);
+const cookingDbMap = cookingDbGenerator.generate();
+
 const generators: Record<string, { generate: () => Map<string, any> }> = {
     'crafting-recipes': new CraftingRecipeDbGenerator(itemDbMap, craftingRecipeUnlockedByMasteryDbMap),
     'bugs-and-insects': new BugsAndInsectsDbGenerator(itemDbMap),
@@ -48,7 +52,6 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'fruit-trees': new FruitTreeDbGenerator(itemDbMap),
     'fruit-plants': new FruitPlantDbGenerator(itemDbMap),
     'item-processing': new ItemProcessorDbGenerator(itemDbMap),
-    'cooking-recipes': new CookingDbGenerator(itemDbMap, cookingRecipeUnlockedByMasteryDbMap, tagBasedItemsDbMap),
 
     'journal-fish': new JournalOrderDbGenerator('Caught/DT_JournalFish.json'),
     'journal-insects': new JournalOrderDbGenerator('Caught/DT_JournalInsects.json'),
@@ -64,6 +67,8 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'journal-artisan-products': new JournalOrderDbGenerator('Produce/DT_JournalArtisanProducts.json'),
     'journal-crops': new JournalOrderDbGenerator('Produce/DT_JournalCrops.json'),
 
+    'offerings': new OfferingsDbGenerator(itemDbMap, cookingDbMap),
+
     'gift-preferences': new GiftPreferencesDbGenerator(itemDbMap, npcDbMap),
     'npcs': new NPCDbGenerator(itemDbMap),
 
@@ -71,6 +76,7 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'tag-based-items': {generate: () => tagBasedItemsDbMap},
     'crafting-unlocks-by-mastery': {generate: () => craftingRecipeUnlockedByMasteryDbMap},
     'cooking-unlocks-by-mastery': {generate: () => cookingRecipeUnlockedByMasteryDbMap},
+    'cooking-recipes': {generate: () => cookingDbMap},
 
     // last so applied changed will be written as well
     items: {generate: () => itemDbMap},
@@ -147,7 +153,7 @@ async function extractImages() {
 
 
             counter++;
-            if (counter % 100 === 0) {
+            if (counter % 500 === 0) {
                 console.log(`processed ${counter} images...`);
             }
 

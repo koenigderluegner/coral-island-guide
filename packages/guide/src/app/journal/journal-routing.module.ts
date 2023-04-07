@@ -16,9 +16,12 @@ const routes: Routes = [
         path: '',
         component: JournalComponent,
         children: [
-            {path: 'caught', component: CaughtComponent},
-            {path: 'found', component: FoundComponent},
-            {path: 'produce', component: ProduceComponent},
+            {path: 'caught', redirectTo: 'caught/', pathMatch: 'full'},
+            {path: 'caught/:tabName', component: CaughtComponent, title: 'Caught - Journal'},
+            {path: 'found', redirectTo: 'found/', pathMatch: 'full'},
+            {path: 'found/:tabName', component: FoundComponent, title: 'Found - Journal'},
+            {path: 'produce', redirectTo: 'produce/', pathMatch: 'full'},
+            {path: 'produce/:tabName', component: ProduceComponent, title: 'Produce - Journal'},
         ]
     },
 ];

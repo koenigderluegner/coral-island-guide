@@ -8,7 +8,10 @@
 
                     <app-item-icon (click)="showDetails(recipe)" *ngFor="let recipe of recipes"
                                    [amount]="recipe.amount"
-                                   [itemName]="recipe.item?.iconName" class="icon-grid-item">
+                                   [class.selected-icon]="selectedEntity?.item?.id === recipe.item?.id"
+                                   [itemName]="recipe.item?.iconName"
+                                   class="icon-grid-item"
+                    >
                     </app-item-icon>
                 </div>
                 <app-inventory-table *ngIf="showTable" [dataSource]="recipes"/>

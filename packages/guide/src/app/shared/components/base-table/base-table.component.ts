@@ -8,16 +8,11 @@ import { MinimalItem, Season } from "@ci/data-types";
 })
 export abstract class BaseTableComponent<T> implements OnInit, OnChanges, AfterViewInit {
 
-    @Input() dataSource: T[] = [];
-
     matDataSource?: MatTableDataSource<T>;
     displayedColumns: string[] = [];
     displayHeaderColumns: string[] = [];
-
     @ViewChild(MatSort) sort?: MatSort;
-
     sortingDataAccessor?: (item: T, property: string) => string | number
-
     protected abstract readonly BASE_DISPLAY_COLUMNS: string[]
 
     constructor() {
@@ -25,6 +20,17 @@ export abstract class BaseTableComponent<T> implements OnInit, OnChanges, AfterV
         this.sortHelper = this.sortHelper.bind(this);
     }
 
+    private _dataSource: T[] = [];
+
+    @Input()
+
+    public get dataSource(): T[] {
+        return this._dataSource;
+    }
+
+    public set dataSource(value: T[]) {
+        this._dataSource = value;
+    }
 
     ngAfterViewInit() {
         if (this.matDataSource && this.sort) {

@@ -17,16 +17,7 @@ export class ProcessorComponent extends BaseTabbedSelectableContainerComponent<I
         this._database.fetchItemProcessingRecipes$().pipe(take(1)).subscribe({
             next: (records) => {
                 this.machineNames = Object.keys(records);
-                this._route.paramMap.pipe(
-                    tap(params => {
-
-                        const processor = params.get('processor');
-
-                        if (processor)
-                            this.selectedTabIndex = this.machineNames.map(s => s.toLowerCase()).indexOf(processor);
-                    })
-                ).subscribe();
-
+                this.activateTabFromRoute(this.machineNames)
             }
         });
 
@@ -38,7 +29,7 @@ export class ProcessorComponent extends BaseTabbedSelectableContainerComponent<I
                 return records[maschineName];
             }),
             tap(items => {
-                this.reusedImages = this._getMultipleIconNames(items.map(i => i.output.item.iconName ?? ''));
+                this.reusedImages = this.getMultipleIconNames(items.map(i => i.output.item.iconName ?? ''));
             })
         );
     }

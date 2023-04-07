@@ -9,17 +9,17 @@ const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'inventory'
+        redirectTo: 'inventory',
     },
     {
         path: '',
         component: CraftingComponent,
         children: [
-            {path: 'inventory', component: InventoryComponent},
+            {path: 'inventory', component: InventoryComponent, title: 'Inventory - Crafting'},
             {path: 'artisan', redirectTo: 'artisan/', pathMatch: 'full'},
-            {path: 'artisan/:processor', component: ProcessorComponent},
+            {path: 'artisan/:tabName', component: ProcessorComponent, title: 'Artisan - Crafting'},
             {path: 'cooking', redirectTo: 'cooking/', pathMatch: 'full'},
-            {path: 'cooking/:utensil', component: CookingComponent},
+            {path: 'cooking/:tabName', component: CookingComponent, title: 'Cooking - Crafting'},
         ]
     },
 

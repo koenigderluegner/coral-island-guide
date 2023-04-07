@@ -3,6 +3,7 @@ import { Item, MinimalItem, TagBasedItem, UnlockByMastery } from "@ci/data-types
 export interface CookingRecipe {
     key: string;
     amount: number
+    cookingKey: string;
     ingredients: { item?: MinimalItem, amount: number }[]
     genericIngredients: {
         key: string;

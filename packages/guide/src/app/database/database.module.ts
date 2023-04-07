@@ -16,10 +16,12 @@ import { DatabaseArtisanComponent } from './components/database-artisan/database
 import { DatabaseCraftingComponent } from './components/database-crafting/database-crafting.component';
 import { DatabaseCookingComponent } from './components/database-cooking/database-cooking.component';
 import { DatabaseGiftsComponent } from './components/database-gifts/database-gifts.component';
-import { BaseDatabaseDetailPartComponent } from "./components/base-database-detail-part.component";
-import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
-import { JournalModule } from "../journal/journal.module";
-import { CraftingModule } from "../crafting/crafting.module";
+import { BaseDatabaseDetailPartComponent } from './components/base-database-detail-part.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { JournalModule } from '../journal/journal.module';
+import { CraftingModule } from '../crafting/crafting.module';
+import { DatabaseOfferingsComponent } from './components/database-offerings/database-offerings.component';
+import { LocationsModule } from "../locations/locations.module";
 
 @NgModule({
     declarations: [
@@ -34,7 +36,8 @@ import { CraftingModule } from "../crafting/crafting.module";
         DatabaseCraftingComponent,
         DatabaseCookingComponent,
         DatabaseGiftsComponent,
-        BaseDatabaseDetailPartComponent
+        BaseDatabaseDetailPartComponent,
+        DatabaseOfferingsComponent,
     ],
     imports: [
         CommonModule,
@@ -46,6 +49,7 @@ import { CraftingModule } from "../crafting/crafting.module";
         MatProgressSpinnerModule,
         JournalModule,
         CraftingModule,
+        LocationsModule,
     ],
 })
 export class DatabaseModule {
