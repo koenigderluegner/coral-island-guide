@@ -14,7 +14,7 @@ const routes: Routes = [
         component: LocationsComponent,
         children: [
             {path: 'lake-temple', redirectTo: 'lake-temple/', pathMatch: 'full'},
-            {path: 'lake-temple/:altar', component: LakeTempleComponent},
+            {path: 'lake-temple/:tabName', component: LakeTempleComponent, title: 'Lake temple - Locations'},
         ]
     }
 ];

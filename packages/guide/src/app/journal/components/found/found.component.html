@@ -1,7 +1,9 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     <app-found-details *ngIf="selectedEntity" [item]="selectedEntity" listDetail/>
 
-    <mat-tab-group class=" px-2 xl:px-[50px] w-full" mat-stretch-tabs="false">
+    <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex"
+                   class=" px-2 xl:px-[50px] w-full"
+                   mat-stretch-tabs="false">
         <mat-tab [label]="tab.title" *ngFor="let tab of tabs">
             <app-data-filter [(showTable)]="showTable" [parentFormGroup]="formControl"/>
             <ng-container *ngIf="(tab.data |async) as syncedData">

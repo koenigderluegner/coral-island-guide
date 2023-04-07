@@ -20,15 +20,7 @@ export class CookingComponent extends BaseTabbedSelectableContainerComponent<Coo
         ]).pipe(take(1)).subscribe({
             next: ([records]) => {
                 this.utensilNames = Object.keys(records);
-                this._route.paramMap.pipe(
-                    tap(params => {
-
-                        const utensil = params.get('utensil');
-
-                        if (utensil)
-                            this.selectedTabIndex = this.utensilNames.map(s => s.toLowerCase()).indexOf(utensil);
-                    })
-                ).subscribe();
+                this.activateTabFromRoute(this.utensilNames)
 
 
             }
@@ -43,7 +35,7 @@ export class CookingComponent extends BaseTabbedSelectableContainerComponent<Coo
                 return records[maschineName];
             }),
             tap(items => {
-                this.reusedImages = this._getMultipleIconNames(items.map(i => i.item?.iconName ?? ''));
+                this.reusedImages = this.getMultipleIconNames(items.map(i => i.item?.iconName ?? ''));
             })
         );
     }

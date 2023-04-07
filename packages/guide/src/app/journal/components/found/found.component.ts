@@ -7,7 +7,6 @@ import { FilterForm } from "../../../shared/types/filter-form.type";
 @Component({
     selector: 'app-found',
     templateUrl: './found.component.html',
-    styleUrls: ['./found.component.scss'],
 })
 export class FoundComponent extends BaseJournalPageComponent<Item> {
 
@@ -46,6 +45,8 @@ export class FoundComponent extends BaseJournalPageComponent<Item> {
                 )
             },
         ];
+
+        this.activateTabFromRoute(this.tabs.map(tab => tab.title));
 
     }
 }

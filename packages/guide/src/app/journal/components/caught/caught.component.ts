@@ -8,7 +8,6 @@ import { FormControl, FormGroup } from "@angular/forms";
 @Component({
     selector: 'app-caught',
     templateUrl: './caught.component.html',
-    styleUrls: ['./caught.component.scss'],
 })
 export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
 
@@ -47,6 +46,8 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
                 )
             },
         ];
+
+        this.activateTabFromRoute(this.tabs.map(tab => tab.title));
 
     }
 

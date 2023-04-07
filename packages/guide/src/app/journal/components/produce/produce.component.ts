@@ -56,6 +56,8 @@ export class ProduceComponent extends BaseJournalPageComponent<Item | Crop | Fru
                 )
             },
         ];
+
+        this.activateTabFromRoute(this.tabs.map(tab => tab.title));
     }
 
     protected castToItemArray(array: Array<any>): Item[] {
