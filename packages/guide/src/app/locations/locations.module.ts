@@ -12,6 +12,9 @@ import { MatSortModule } from "@angular/material/sort";
 @NgModule({
     declarations: [LocationsComponent, LakeTempleComponent, OfferingsTableComponent],
     imports: [CommonModule, LocationsRoutingModule, SharedModule, MatTabsModule, NgOptimizedImage, MatTableModule, MatSortModule],
+    exports: [
+        OfferingsTableComponent
+    ]
 })
 export class LocationsModule {
 }
