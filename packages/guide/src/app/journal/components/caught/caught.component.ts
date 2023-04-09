@@ -53,12 +53,19 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
 
     override filterPredicate(foundEntry: Fish | Critter, filterValues: FormGroup<FilterForm>["value"], index: number): boolean {
         if (!filterValues.season?.length) return false;
+        if (!filterValues.weather?.length) return false;
+
 
         const seasonString = getTruthyValues(foundEntry.spawnSeason).toLowerCase();
-        const seasonMatch = seasonString === 'any' || !!filterValues.season?.some(season => seasonString.includes(('' + season).toLowerCase()));
+        const seasonMatch = seasonString === 'any'
+            || filterValues.season?.length === Object.values(Season).length
+            || !!filterValues.season?.some(season => seasonString.includes(('' + season).toLowerCase()));
 
         const weatherString = getTruthyValues(foundEntry.spawnWeather).toLowerCase();
-        const weatherMatch = (index === this.SEA_CRITTERS_INDEX) || weatherString === 'any' || !!filterValues.weather?.some(weather => weatherString.includes(('' + weather).toLowerCase()));
+        const weatherMatch = (index === this.SEA_CRITTERS_INDEX)
+            || weatherString === 'any'
+            || filterValues.weather?.length === Object.values(Weather).length
+            || !!filterValues.weather?.some(weather => weatherString.includes(('' + weather).toLowerCase()));
         return seasonMatch && weatherMatch;
 
     }
