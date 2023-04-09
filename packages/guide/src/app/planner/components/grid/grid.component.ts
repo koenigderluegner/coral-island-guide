@@ -1,17 +1,10 @@
-import {
-    ApplicationRef,
-    Component,
-    ComponentRef,
-    createComponent,
-    EnvironmentInjector,
-    Input,
-    OnInit,
-    ViewEncapsulation
-} from '@angular/core';
+import { Component, ComponentRef, EnvironmentInjector, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Placeable, PlannerLayer } from '../../classes/planner-layer.class';
 import { coerceNumberProperty } from '@angular/cdk/coercion';
 import { GridPlaceable } from '../../interfaces/grid-placeable.interface';
 import { PlaceableItemsMap } from "../../registered-planner-items";
+import { DatabaseService } from "../../../shared/services/database.service";
+import { PlannerService } from "../../services/planner.service";
 
 
 @Component({
@@ -22,44 +15,48 @@ import { PlaceableItemsMap } from "../../registered-planner-items";
 })
 export class GridComponent implements OnInit {
 
-    cellSize = 22;
-    protected version = 1;
+    cellSize = 28;
     selectedItem: (GridPlaceable<any> & { key: string }) | null = null;
     selectedItemSize: number[] = [];
+    protected version = 1;
+    protected layers: PlannerLayer[] = [];
+    protected yDummyArray: number[] = [0];
+    protected xDummyArray: number[] = [0];
 
-    @Input() set width(width: any) {
-        this._width = coerceNumberProperty(width, 1);
+    constructor(
+        private injector: EnvironmentInjector,
+        private _db: DatabaseService,
+        private readonly plannerService: PlannerService
+    ) {
+        this.cellSize = this.plannerService.cellSize;
+        this.addLayer();
+        this.addLayer();
+        this.addLayer();
+
+
+        plannerService.getSelectedItemKey().subscribe({next: itemKey => this.setSelectedItem(itemKey)})
+
     }
+
+    _width = 1;
 
     get width(): number {
         return this._width;
     }
 
-    @Input() set height(height: any) {
-        this._height = coerceNumberProperty(height, 1);
+    @Input() set width(width: any) {
+        this._width = coerceNumberProperty(width, 1);
     }
+
+    _height = 1;
 
     get height(): number {
         return this._height;
     }
 
-    _width = 1;
-    _height = 1;
-    protected layers: PlannerLayer[] = [];
-    protected yDummyArray: number[] = [0];
-    protected xDummyArray: number[] = [0];
-
-
-    constructor(
-        private appRef: ApplicationRef,
-        private injector: EnvironmentInjector
-    ) {
-        this.addLayer();
-        this.addLayer();
-        this.addLayer();
-
+    @Input() set height(height: any) {
+        this._height = coerceNumberProperty(height, 1);
     }
-
 
     addLayer(): void {
         this.layers.push(new PlannerLayer(this._width, this._height));
@@ -83,18 +80,6 @@ export class GridComponent implements OnInit {
         this.xDummyArray = Array(this._width).fill(0);
         this.yDummyArray = Array(this._height).fill(0);
 
-
-        for (let key of PlaceableItemsMap.keys()) {
-            const value = PlaceableItemsMap.get(key);
-            if (!value) continue;
-
-            const dialogRef = this.createComponent(value);
-            let nativeElement = dialogRef.location.nativeElement;
-            nativeElement.addEventListener('click', () =>
-                this.setSelectedItem(key));
-
-            this.attachComponent('#grid-selectable-options', dialogRef);
-        }
 
     }
 
@@ -147,7 +132,7 @@ export class GridComponent implements OnInit {
 
         let sprinkler1 = this.selectedItem;
         if (!sprinkler1) return;
-        const component = this.createComponent(sprinkler1);
+        const component = this.plannerService.createComponent(sprinkler1);
         this.placeComponent(top, left, component)
         if (this.selectedItem) {
             const layer = this.layers[this.selectedItem.layer];
@@ -155,63 +140,6 @@ export class GridComponent implements OnInit {
         }
     }
 
-    private placeComponent(top: number, left: number, component: ComponentRef<any>) {
-        let nativeElement = component.location.nativeElement;
-
-        nativeElement.style.top = top + 'px';
-        nativeElement.style.left = left + 'px';
-
-        nativeElement.classList.add('placed-grid-item');
-        this.attachComponent('.layers', component);
-    }
-
-    private setSelectedItem(key: string) {
-
-        const value = PlaceableItemsMap.get(key);
-        if (!value) return;
-        this.selectedItem = {...value, key};
-
-        const componentRef = this.createComponent(value);
-        let nativeElement = componentRef.location.nativeElement;
-        nativeElement.addEventListener('click', () =>
-            this.setSelectedItem(key));
-
-        let elementById = document.getElementById('plannerSelected');
-        let selectedItemContainer = document.getElementById('selectedItem');
-
-        if (!elementById || !selectedItemContainer) return;
-
-        selectedItemContainer.innerHTML = '';
-        elementById.style.width = value.width * this.cellSize + 'px';
-        elementById.style.height = value.width * this.cellSize + 'px';
-        this.attachComponent('#selectedItem', componentRef);
-        this.selectedItemSize = Array(this.selectedItem.width * this.selectedItem.height).fill(0);
-
-
-    }
-
-    createComponent<T>(value: GridPlaceable<T>): ComponentRef<T> {
-        const componentRef = createComponent(value.component, {
-            environmentInjector: this.injector
-        });
-
-
-        for (let inputName of value.inputs.keys()) {
-            componentRef.setInput(inputName, value.inputs.get(inputName));
-        }
-        let nativeElement = componentRef.location.nativeElement;
-        nativeElement.style.width = value.width * this.cellSize + 1 + 'px';
-        nativeElement.style.height = value.height * this.cellSize + 1 + 'px';
-
-
-        return componentRef;
-
-    }
-
-    attachComponent(query: string, component: ComponentRef<any>): void {
-        document.querySelector(query)?.appendChild(component.location.nativeElement);
-        this.appRef.attachView(component.hostView);
-    }
 
     getPosition(cell: HTMLTableCellElement | null): { top: number, left: number, bottom: number, right: number, width: number, height: number } {
 
@@ -260,7 +188,7 @@ export class GridComponent implements OnInit {
                 const gridPlaceable = PlaceableItemsMap.get(dataEntry.key);
                 if (gridPlaceable && cellElement) {
                     const {top, left} = this.getPosition(cellElement)
-                    this.placeComponent(top, left, this.createComponent(gridPlaceable))
+                    this.placeComponent(top, left, this.plannerService.createComponent(gridPlaceable))
                     const placeable: Placeable = {
                         x: dataEntry.x,
                         y: dataEntry.y,
@@ -272,6 +200,42 @@ export class GridComponent implements OnInit {
             })
         })
         console.log(loadedData);
+    }
+
+
+    private placeComponent(top: number, left: number, component: ComponentRef<any>) {
+        let nativeElement = component.location.nativeElement;
+
+        nativeElement.style.top = top + 'px';
+        nativeElement.style.left = left + 'px';
+
+        nativeElement.classList.add('placed-grid-item');
+        this.plannerService.attachComponent('.layers', component);
+    }
+
+    private setSelectedItem(key: string) {
+
+        const value = PlaceableItemsMap.get(key);
+        if (!value) return;
+        this.selectedItem = {...value, key};
+
+        const componentRef = this.plannerService.createComponent(value);
+        let nativeElement = componentRef.location.nativeElement;
+        nativeElement.addEventListener('click', () =>
+            this.setSelectedItem(key));
+
+        let elementById = document.getElementById('plannerSelected');
+        let selectedItemContainer = document.getElementById('selectedItem');
+
+        if (!elementById || !selectedItemContainer) return;
+
+        selectedItemContainer.innerHTML = '';
+        elementById.style.width = value.width * this.cellSize + 'px';
+        elementById.style.height = value.width * this.cellSize + 'px';
+        this.plannerService.attachComponent('#selectedItem', componentRef);
+        this.selectedItemSize = Array(this.selectedItem.width * this.selectedItem.height).fill(0);
+
+
     }
 
 }

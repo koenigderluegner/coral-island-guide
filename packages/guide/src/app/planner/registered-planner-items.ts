@@ -9,7 +9,25 @@ PlaceableItemsMap.set('spinkler1', {
     height: 1,
     layer: 2,
     inputs: new Map<string, unknown>([
-        ['itemName', 'Items_Sprinkler.png']
+        ['itemName', 'Sprinkler_1.png']
+    ])
+});
+PlaceableItemsMap.set('spinkler2', {
+    component: ItemIconComponent,
+    width: 1,
+    height: 1,
+    layer: 2,
+    inputs: new Map<string, unknown>([
+        ['itemName', 'Sprinkler_2.png']
+    ])
+});
+PlaceableItemsMap.set('spinkler3', {
+    component: ItemIconComponent,
+    width: 1,
+    height: 1,
+    layer: 2,
+    inputs: new Map<string, unknown>([
+        ['itemName', 'Sprinkler_3.png']
     ])
 });
 

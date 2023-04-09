@@ -1,0 +1,51 @@
+$light-border: 1px solid rgba(255 255 255  / .3);
+
+.planner-toolbar {
+
+  border-top: $light-border;
+  @apply block backdrop-blur-xl px-4 px-safe;
+
+  background-color: rgba(0, 0, 0, .75);
+
+  & > ul {
+    display: flex;
+
+    & > li {
+      border-right: $light-border;
+    }
+  }
+
+  li {
+    position: relative;
+    @apply px-4 py-2 text-lg font-semibold flex gap-x-2 whitespace-nowrap;
+
+    .app-item-icon {
+      width: 32px !important;
+      height: 32px !important;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .75)
+    }
+  }
+
+  li ul {
+    z-index: 5;
+    @apply absolute bottom-0;
+    transform: translateY(100%);
+    @apply backdrop-blur-xl;
+    background-color: rgba(0, 0, 0, .75);
+    display: none;
+
+    ul {
+      bottom: unset;
+      right: 0;
+      top: 0;
+      transform: translateX(calc(100% - 1px));
+    }
+  }
+
+  li:hover > ul {
+    display: block;
+  }
+}
