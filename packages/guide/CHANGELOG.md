@@ -13,6 +13,7 @@
 - Added data tables to all journal and crafting pages
 - Added sorting to existing tables (note: not all columns are sortable)
 - Added highlight for selected item in grid view
+- Added buffs and nutrition to cooking
 
 #### Changed
 
