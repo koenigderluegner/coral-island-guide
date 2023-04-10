@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { combineLatest, map, Observable, shareReplay, tap } from 'rxjs';
 import {
+    Consumable,
     CookingRecipe,
     CraftingRecipe,
     Critter,
@@ -49,6 +50,8 @@ export class DatabaseService {
     private _ITEM_PROCESSING_RECIPE: Record<string, ItemProcessing[]> = {};
     private _COOKING_RECIPE$?: Observable<Record<string, CookingRecipe[]>>;
     private _COOKING_RECIPE: Record<string, CookingRecipe[]> = {};
+    private _CONSUMABLES$?: Observable<Consumable[]>;
+    private _CONSUMABLES: Consumable[] = [];
     private _GIFT_PREFERENCES$?: Observable<MapKeyed<GiftPreferences>[]>;
     private _GIFT_PREFERENCES: MapKeyed<GiftPreferences>[] = [];
 
@@ -109,6 +112,23 @@ export class DatabaseService {
                 );
         }
         return this._OFFERINGS$;
+    }
+
+
+    getConsumables(): Consumable[] {
+        return this._CONSUMABLES;
+    }
+
+
+    fetchConsumables$(): Observable<Consumable[]> {
+        if (!this._CONSUMABLES$) {
+            this._CONSUMABLES$ = this._http.get<Consumable[]>(`${this._BASE_PATH}/consumables.json`)
+                .pipe(
+                    tap(items => this._CONSUMABLES = items),
+                    shareReplay(1)
+                );
+        }
+        return this._CONSUMABLES$;
     }
 
     fetchFish$(): Observable<Fish[]> {

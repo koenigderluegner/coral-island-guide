@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CookingRecipe, Quality } from "@ci/data-types";
+import { Consumable, CookingRecipe, Quality } from "@ci/data-types";
 import { combineLatest, map, Observable, take, tap } from "rxjs";
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
 
@@ -9,16 +9,20 @@ import { BaseTabbedSelectableContainerComponent } from "../../../shared/componen
 })
 export class CookingComponent extends BaseTabbedSelectableContainerComponent<CookingRecipe> {
 
-    quality = Quality;
     utensilNames: string[] = [];
+    protected quality = Quality;
+    protected selectedEntityConsumable: Consumable | undefined;
+    private _consumables: Consumable[] = [];
 
     constructor() {
         super();
 
         combineLatest([
-            this._database.fetchCookingRecipes$()
+            this._database.fetchCookingRecipes$(),
+            this._database.fetchConsumables$()
         ]).pipe(take(1)).subscribe({
-            next: ([records]) => {
+            next: ([records, consumables]) => {
+                this._consumables = consumables;
                 this.utensilNames = Object.keys(records);
                 this.activateTabFromRoute(this.utensilNames)
 
@@ -38,6 +42,11 @@ export class CookingComponent extends BaseTabbedSelectableContainerComponent<Coo
                 this.reusedImages = this.getMultipleIconNames(items.map(i => i.item?.iconName ?? ''));
             })
         );
+    }
+
+    override showDetails(selectedEntry?: CookingRecipe) {
+        super.showDetails(selectedEntry);
+        this.selectedEntityConsumable = this._consumables.find(consumable => consumable.key === selectedEntry?.item?.id)
     }
 
 }

@@ -5,6 +5,18 @@
                         listDetail
                         [amount]="selectedEntity.amount">
 
+        <ng-container *ngIf="selectedEntityConsumable">
+            <div>Health: <span class="text-black">{{selectedEntityConsumable.healthDelta}}</span></div>
+            <div [class.mb-3]="selectedEntityConsumable.buff === 'None'">Energy: <span
+                    class="text-black">{{selectedEntityConsumable.staminaDelta}}</span></div>
+            <div *ngIf="selectedEntityConsumable.buff !== 'None'" class="mb-3">Buff:
+                <span class="text-black">
+                  {{selectedEntityConsumable.buff | addSpacesToPascalCase}},
+                  Level {{selectedEntityConsumable.level}} for {{selectedEntityConsumable.duration}} seconds
+                </span>
+            </div>
+        </ng-container>
+
         <div *ngIf="selectedEntity.craftingUnlock" class="mb-3">
             Unlocked: <span
                 class="text-black">Level {{selectedEntity.craftingUnlock.masteryLevel}}
