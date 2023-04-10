@@ -4,7 +4,7 @@ import { PlannerService } from "../../services/planner.service";
 import { combineLatest } from "rxjs";
 import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
 import { DatabaseService } from "../../../shared/services/database.service";
-import { Season } from "../../../shared/enums/season.enum";
+import { Season } from "@ci/data-types";
 
 
 interface Tree {
