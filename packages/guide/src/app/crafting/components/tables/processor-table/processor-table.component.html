@@ -24,8 +24,8 @@
         </ng-container>
 
 
-        <ng-container matColumnDef="price">
-            <th *matHeaderCellDef class="whitespace-nowrap" mat-header-cell> Sell price</th>
+        <ng-container matColumnDef="sellPrice">
+            <th *matHeaderCellDef class="whitespace-nowrap" mat-header-cell mat-sort-header> Sell price</th>
             <td *matCellDef="let element" class="text-col !text-right w-[1%]" mat-cell>
                 <app-money [amount]="element.output.item.sellPrice"/>
             </td>
@@ -39,7 +39,7 @@
         </ng-container>
 
         <ng-container matColumnDef="processingTime">
-            <th *matHeaderCellDef mat-header-cell> Time</th>
+            <th *matHeaderCellDef mat-header-cell mat-sort-header> Time</th>
             <td *matCellDef="let element" class="text-col w-[1%] whitespace-nowrap" mat-cell>
                 <app-processing-time [processingTime]="element"/>
             </td>

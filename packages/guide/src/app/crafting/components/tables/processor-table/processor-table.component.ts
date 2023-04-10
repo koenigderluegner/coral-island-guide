@@ -6,7 +6,6 @@ import { coerceBooleanProperty } from "@angular/cdk/coercion";
 @Component({
     selector: 'app-processor-table',
     templateUrl: './processor-table.component.html',
-    styleUrls: ['./processor-table.component.scss'],
 })
 export class ProcessorTableComponent extends BaseTableComponent<ItemProcessing> {
 
@@ -15,7 +14,7 @@ export class ProcessorTableComponent extends BaseTableComponent<ItemProcessing> 
         'outputName',
         'ingredients',
         'processingTime',
-        'price',
+        'sellPrice',
     ];
 
     _showProcessor = false;
@@ -28,6 +27,22 @@ export class ProcessorTableComponent extends BaseTableComponent<ItemProcessing> 
     set showProcessor(size: boolean | number | string | null | undefined) {
         this._showProcessor = coerceBooleanProperty(size);
     }
+
+    override sortingDataAccessor = (item: ItemProcessing, property: string) => {
+
+        const sortHelperValue = this.sortHelper(item.output.item, property)
+
+        if (sortHelperValue !== null) return sortHelperValue;
+
+        if (property === 'processingTime') {
+            return item.day * 24 * 60
+                + item.time.hours * 60
+                + item.time.minutes
+        }
+
+        return 0;
+
+    };
 
     protected override setupDataSource(dataSource: BaseTableComponent<ItemProcessing>["dataSource"]) {
         super.setupDataSource(dataSource);

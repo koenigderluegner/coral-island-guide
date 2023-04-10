@@ -1,43 +1,70 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
-import { Item, JournalOrder } from '@ci/data-types';
-import { combineLatest, map, Observable, startWith } from 'rxjs';
-import { DatabaseService } from '../../../shared/services/database.service';
+import { ChangeDetectorRef, Component, inject, ViewChild } from '@angular/core';
+import { BaseCrop, Item, JournalOrder, Season } from '@ci/data-types';
+import { combineLatest, map, Observable, of, startWith } from 'rxjs';
 import { UiIcon } from '../../../shared/enums/ui-icon.enum';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { Season } from '../../../shared/enums/season.enum';
-import { FormControl } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
+import { FilterForm } from "../../../shared/types/filter-form.type";
+import { MatTabGroup } from "@angular/material/tabs";
+import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
 
 export interface BaseJournalPageComponent<D> {
-    filterPredicate?(foundEntry: D, filterValues: BaseJournalPageComponent<D>['formControl']['value']): boolean;
+    filterPredicate?(foundEntry: D, filterValues: BaseJournalPageComponent<D>['formControl']['value'], index: number): boolean;
 }
+
 
 @Component({
     template: ''
 })
-export class BaseJournalPageComponent<D extends ({ item: Item } | Item)> {
+export class BaseJournalPageComponent<D extends ({ item: Item } | Item)> extends BaseTabbedSelectableContainerComponent<D> {
+
+    @ViewChild(MatTabGroup) matTabGroup?: MatTabGroup
 
     uiIcon = UiIcon;
     tabs: { title: string; data: Observable<D[]> }[] = [];
-    openDrawer = false;
-    selectedEntity?: D;
 
     season = Season;
-    formControl: FormControl<Season[]>;
+    formControl: FormGroup<FilterForm>;
+    mobileQuery: MediaQueryList;
+    media: MediaMatcher = inject(MediaMatcher);
+    private changeDetectorRef: ChangeDetectorRef = inject(ChangeDetectorRef);
+    private readonly _mobileQueryListener: () => void;
 
-    protected readonly _database: DatabaseService = inject(DatabaseService);
+    constructor(formControl: FormGroup<FilterForm>) {
+        super();
+        this.mobileQuery = this.media.matchMedia('(max-width: 600px)');
+        this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
+        this.mobileQuery.addListener(this._mobileQueryListener);
 
-    getFilteredJournalData(journalOrder$: Observable<JournalOrder[]>, data: Observable<D[]>): Observable<D[]> {
-        return combineLatest([journalOrder$, data, this.formControl.valueChanges.pipe(startWith(this.formControl.value))]).pipe(map(
-            ([orders, entries, filterValues]) => {
+        this.formControl = formControl;
+
+    }
+
+    getFilteredJournalData(journalOrder$: Observable<JournalOrder[]>, data: Observable<D[]>, index: number): Observable<D[]> {
+        return combineLatest([
+                journalOrder$,
+                data,
+                this.formControl.valueChanges.pipe(startWith(this.formControl.value)),
+                of(index)
+            ],
+        ).pipe(map(
+            ([orders, entries, filterValues, index]) => {
                 const res: D[] = [];
 
 
                 orders.sort((a, b) => a.order > b.order ? 1 : -1).forEach(journalOrder => {
-                    const foundEntry: D | undefined = entries.find(f => 'item' in f ? (f.item.id === journalOrder.key) : (f.id === journalOrder.key));
+                    const foundEntry: D | undefined = entries.find(f => {
+
+                        if ('dropData' in f) {
+                            return ((f as BaseCrop).dropData[0].item?.id === journalOrder.key)
+                        }
+
+                        return 'item' in f ? (f.item.id === journalOrder.key) : (f.id === journalOrder.key)
+                    });
                     if (foundEntry) {
                         if (!this.filterPredicate)
                             res.push(foundEntry);
-                        if (this.filterPredicate && this.filterPredicate(foundEntry, filterValues)) {
+                        if (this.filterPredicate && this.filterPredicate(foundEntry, filterValues, index)) {
                             res.push(foundEntry);
                         }
 
@@ -49,25 +76,8 @@ export class BaseJournalPageComponent<D extends ({ item: Item } | Item)> {
         );
     }
 
-    mobileQuery: MediaQueryList;
-
-    private readonly _mobileQueryListener: () => void;
-    media: MediaMatcher = inject(MediaMatcher);
-    changeDetectorRef: ChangeDetectorRef = inject(ChangeDetectorRef);
-
-    constructor() {
-        this.mobileQuery = this.media.matchMedia('(max-width: 600px)');
-        this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
-        this.mobileQuery.addListener(this._mobileQueryListener);
-        this.formControl = new FormControl<Season[]>([Season.SPRING, Season.SUMMER, Season.FALL, Season.WINTER], {nonNullable: true});
-    }
-
-    showDetails(fishEntry?: D) {
-        this.selectedEntity = fishEntry;
-        this.openDrawer = true;
-    }
-
     ngOnDestroy(): void {
         this.mobileQuery.removeListener(this._mobileQueryListener);
     }
+
 }

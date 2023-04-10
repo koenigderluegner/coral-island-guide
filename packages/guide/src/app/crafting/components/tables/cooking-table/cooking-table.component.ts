@@ -6,7 +6,6 @@ import { coerceBooleanProperty } from "@angular/cdk/coercion";
 @Component({
     selector: 'app-cooking-table',
     templateUrl: './cooking-table.component.html',
-    styleUrls: ['./cooking-table.component.scss'],
 })
 export class CookingTableComponent extends BaseTableComponent<CookingRecipe> {
 
@@ -14,7 +13,7 @@ export class CookingTableComponent extends BaseTableComponent<CookingRecipe> {
         'icon',
         'outputName',
         'ingredients',
-        'price',
+        'sellPrice',
         'unlock'
     ];
 
@@ -41,4 +40,14 @@ export class CookingTableComponent extends BaseTableComponent<CookingRecipe> {
             this.displayHeaderColumns = this.displayedColumns.filter(col => col !== 'icon');
         }
     }
+
+    override sortingDataAccessor = (item: CookingRecipe, property: string) => {
+
+        const sortHelperValue = this.sortHelper(item.item, property)
+
+        if (sortHelperValue !== null) return sortHelperValue;
+
+        return 0;
+
+    };
 }

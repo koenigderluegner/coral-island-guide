@@ -1,0 +1,8 @@
+<ng-container *ngIf="requiredAsOffering.length">
+    <h3 class="database-header">Required for offering</h3>
+    <app-offerings-table [dataSource]="requiredAsOffering" showAltar/>
+</ng-container>
+<ng-container *ngIf="isRewardIn.length">
+    <h3 class="database-header">Offering reward</h3>
+    <app-offerings-table [dataSource]="isRewardIn" showAltar/>
+</ng-container>

@@ -3,6 +3,7 @@ import { InventoryItemsEngineInterface } from '../interfaces/inventory-items-eng
 import { convertToIconName, readAsset } from '../util/functions';
 import { InventoryItem } from '../interfaces/inventory-item.interface';
 import { Item } from '@ci/data-types';
+import { getQuality, removeQualityFlag } from "@ci/util";
 
 export class ItemDbGenerator {
 
@@ -19,12 +20,6 @@ export class ItemDbGenerator {
     generate() {
         const map: Map<string, Item> = new Map<string, Item>();
 
-        const qualityMap: Map<string, string> = new Map<string, string>([
-            ['-a', 'bronze'],
-            ['-b', 'silver'],
-            ['-c', 'gold'],
-            ['-d', 'osmium'],
-        ]);
         Object.keys(this.itemDb[0]?.Rows).forEach(itemKey => {
 
             if (itemKey === 'None') return;
@@ -34,8 +29,8 @@ export class ItemDbGenerator {
             if (this._isBlacklisted(itemKey, dbItem)) return;
 
             if (itemKey.endsWith('-a') || itemKey.endsWith('-b') || itemKey.endsWith('-c') || itemKey.endsWith('-d')) {
-                let qualities = map.get(itemKey.slice(0, -2))?.['qualities'];
-                let quality = qualityMap.get(itemKey.slice(-2));
+                let qualities = map.get(removeQualityFlag(itemKey))?.['qualities'];
+                let quality = getQuality(itemKey);
                 if (qualities && quality)
                     qualities[quality] = {
                         price: dbItem.price,

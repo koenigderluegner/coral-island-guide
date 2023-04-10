@@ -27,20 +27,25 @@
     </app-base-item-card>
 
 
-    <mat-tab-group class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false" (selectedTabChange)="l($event)"
+    <mat-tab-group (selectedTabChange)="updateUrl($event)" class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false"
                    [selectedIndex]="selectedTabIndex">
-        <mat-tab *ngFor="let machineName of machineNames" label="{{machineName}}">
-            <div *ngIf="(filteredData$(machineName) | async) as processorItems" class="grid gap-4 icon-grid">
+        <mat-tab *ngFor="let machineName of machineNames" label="{{machineName | spacesToPascalCase | titlecase}}">
+            <app-data-filter [(showTable)]="showTable"/>
+            <ng-container *ngIf="(filteredData$(machineName) | async) as processorItems">
+                <div *ngIf="!showTable" class="grid gap-4 icon-grid">
 
-                <app-item-icon *ngFor="let itemProcess of processorItems"
-                               [itemName]="itemProcess.output.item.iconName"
-                               class="icon-grid-item"
-                               [amount]="itemProcess.output.amount"
-                               (click)="showDetails(itemProcess)"
-                               [subIconName]="reusedImages.includes(itemProcess.output.item.iconName ?? '') ? itemProcess.input.item.iconName
-                                : undefined">
-                </app-item-icon>
-            </div>
+                    <app-item-icon (click)="showDetails(itemProcess)"
+                                   *ngFor="let itemProcess of processorItems"
+                                   [amount]="itemProcess.output.amount"
+                                   [itemName]="itemProcess.output.item.iconName"
+                                   [subIconName]="reusedImages.includes(itemProcess.output.item.iconName ?? '') ? itemProcess.input.item.iconName
+                                : undefined"
+                                   [class.selected-icon]="selectedEntity?.output?.item?.id === itemProcess.output?.item?.id"
+                                   class="icon-grid-item">
+                    </app-item-icon>
+                </div>
+                <app-processor-table *ngIf="showTable" [dataSource]="processorItems"/>
+            </ng-container>
         </mat-tab>
     </mat-tab-group>
 

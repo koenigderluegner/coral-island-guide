@@ -7,6 +7,7 @@ import { FormControl } from "@angular/forms";
 import { concat, debounceTime, map, Observable, take, tap } from "rxjs";
 import { DatabaseDetailsComponent } from "./components/database-details/database-details.component";
 import { coerceBooleanProperty } from "@angular/cdk/coercion";
+import { Title } from "@angular/platform-browser";
 
 @Component({
     selector: 'app-database',
@@ -20,24 +21,25 @@ export class DatabaseComponent {
     protected shouldHideImportantNote = false;
     protected filteredItems: Item[] = [];
     protected allPrefetched = false;
-
+    protected selectedItem?: Item;
     private _localStorageHideNoteKey = 'databaseHideImportantNote';
     private _didInitialLoad = false;
 
     constructor(
-        private route: ActivatedRoute,
-        private router: Router,
-        private database: DatabaseService,
-        private appRef: ApplicationRef,
-        private injector: EnvironmentInjector
+        private _route: ActivatedRoute,
+        private _router: Router,
+        private _database: DatabaseService,
+        private _appRef: ApplicationRef,
+        private _injector: EnvironmentInjector,
+        private _title: Title,
     ) {
-        this.database.getDatabaseDetails().pipe(
+        this._database.getDatabaseDetails().pipe(
             tap(() => this.allPrefetched = true),
             take(1)
         ).subscribe();
         this.shouldHideImportantNote = coerceBooleanProperty(localStorage.getItem(this._localStorageHideNoteKey));
 
-        this.items = database.getItems().filter(item => getQuality(item.id) === Quality.BASE);
+        this.items = _database.getItems().filter(item => getQuality(item.id) === Quality.BASE);
         const mapToItems = map<string, Item[]>(searchTerm => {
             const searchString = searchTerm.toLocaleLowerCase();
             const items = this.items.filter(item => item.displayName.toLocaleLowerCase().includes(searchString) || (searchString.startsWith('item_') && item.id.startsWith(searchString)));
@@ -48,7 +50,7 @@ export class DatabaseComponent {
 
         this.filteredItems$ =
             concat(
-                this.route.queryParams.pipe(map(params => {
+                this._route.queryParams.pipe(map(params => {
                         const value = params['q'] ?? '';
                         this.searchTermControl.setValue(value, {emitEvent: false});
                         return value;
@@ -67,11 +69,11 @@ export class DatabaseComponent {
     }
 
 
-    showDetails(itemProcess: Item, index: number, scrollIntoView = false) {
-        console.log(index, itemProcess);
+    showDetails(item: Item, index: number, scrollIntoView = false) {
 
-        this.updateRouteParam(itemProcess.id);
+        this.updateRouteParam(item.id);
 
+        this.selectedItem = undefined;
         document.getElementById("database-details")?.remove();
 
 
@@ -79,23 +81,20 @@ export class DatabaseComponent {
         if (!grid) return;
         const gridComputedStyle = window.getComputedStyle(grid);
 
-        // get number of grid rows
-        const gridRowCount = gridComputedStyle.getPropertyValue("grid-template-rows").split(" ").length;
-
-// get number of grid columns
+        // get number of grid columns
         const gridColumnCount = gridComputedStyle.getPropertyValue("grid-template-columns").split(" ").length;
 
-        console.log(gridRowCount, gridColumnCount);
         const clickedRow = Math.floor(index / gridColumnCount);
         const insertAfter = Math.min(this.filteredItems.length, (clickedRow + 1) * gridColumnCount);
 
-        console.log(clickedRow, insertAfter);
 
         const insertAfterElement = document.querySelector(`#grid app-item-icon:nth-of-type(${insertAfter})`) as HTMLElement | null;
         if (!insertAfterElement) return;
-        let component = this.createComponent(itemProcess)
+        let component = this.createComponent(item)
 
         this.insertAfter(component, insertAfterElement);
+
+        this.selectedItem = item;
 
         if (scrollIntoView)
             setTimeout(() => document.getElementById("database-details")?.scrollIntoView(true), 0)
@@ -104,13 +103,13 @@ export class DatabaseComponent {
 
     insertAfter(newNode: ComponentRef<DatabaseDetailsComponent>, existingNode: HTMLElement) {
         existingNode.parentNode?.insertBefore(newNode.location.nativeElement, existingNode.nextSibling);
-        this.appRef.attachView(newNode.hostView);
+        this._appRef.attachView(newNode.hostView);
     }
 
 
     createComponent(value: Item): ComponentRef<DatabaseDetailsComponent> {
         const componentRef = createComponent(DatabaseDetailsComponent, {
-            environmentInjector: this.injector
+            environmentInjector: this._injector
         });
 
         componentRef.setInput('item', value)
@@ -131,10 +130,10 @@ export class DatabaseComponent {
     public updateQueryParam(searchTerm: string) {
 
 
-        this.router.navigate(
+        this._router.navigate(
             [],
             {
-                relativeTo: this.route,
+                relativeTo: this._route,
                 queryParams: {q: searchTerm},
                 queryParamsHandling: 'merge',
                 replaceUrl: true
@@ -143,18 +142,18 @@ export class DatabaseComponent {
 
     public updateRouteParam(itemId: string) {
 
-        this.router.navigate(
+        this._router.navigate(
             ['..', itemId],
             {
-                relativeTo: this.route,
+                relativeTo: this._route,
                 replaceUrl: true,
                 queryParamsHandling: "preserve"
-            });
+            }).then(() => !!this.selectedItem && this.updateTitle(this.selectedItem.displayName));
     }
 
     initialItemLoad(): void {
         if (this._didInitialLoad) return;
-        this.route.params.pipe(
+        this._route.params.pipe(
             tap(params => {
                 const itemId = params['itemId'];
                 this._didInitialLoad = true;
@@ -168,5 +167,12 @@ export class DatabaseComponent {
             }),
             take(1)
         ).subscribe()
+    }
+
+    protected updateTitle(itemName: string) {
+        const title = this._title.getTitle();
+        if (title) {
+            this._title.setTitle(`${itemName} - ${title}`)
+        }
     }
 }

@@ -14,7 +14,7 @@ const routes: Routes = [
         path: '',
         component: PeopleComponent,
         children: [
-            {path: 'gifting', component: GiftingComponent},
+            {path: 'gifting', component: GiftingComponent, title: 'Gifting - People'},
         ]
     },
 ];
