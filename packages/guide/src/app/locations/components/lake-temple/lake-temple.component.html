@@ -31,6 +31,22 @@
 
 
     <div *ngIf="activeOffering" class="px-2 xl:px-[50px]">
+
+
+        <div class="bg-merino rounded-lg mb-4 text-lg font-semibold p-4 my-8">
+            Rewards:
+        </div>
+
+        <div class="grid gap-4 icon-grid  mt-8">
+            <app-item-icon (click)="showDetails(itemProcess.item)"
+                           *ngFor="let itemProcess of activeOffering.rewards.items"
+                           [amount]="itemProcess.amount"
+                           [class.selected-icon]="selectedEntity?.id === itemProcess.item.id"
+                           [itemName]="itemProcess.item?.iconName"
+                           class="icon-grid-item">
+            </app-item-icon>
+        </div>
+
         <div class="bg-merino rounded-lg mb-4 text-lg font-semibold p-4 my-8">
             {{activeOffering.numOfItemRequired === -1 ? 'All' : activeOffering.numOfItemRequired}} of the following
             items are required:
