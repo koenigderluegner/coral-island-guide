@@ -49,3 +49,7 @@ export function getQuality(itemKey: string): Quality {
 
     return Quality.BASE;
 }
+
+export function nonNullable<T>(value: T): value is NonNullable<T> {
+    return value !== null && value !== undefined;
+}

@@ -1,19 +1,25 @@
 import { Component } from '@angular/core';
-import { Critter, Fish } from '@ci/data-types';
+import { Critter, Fish, Season, Weather } from '@ci/data-types';
 import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page.component';
 import { getTruthyValues } from '@ci/util';
-import { Season } from '../../../shared/enums/season.enum';
+import { FilterForm } from "../../../shared/types/filter-form.type";
+import { FormControl, FormGroup } from "@angular/forms";
 
 @Component({
     selector: 'app-caught',
     templateUrl: './caught.component.html',
-    styleUrls: ['./caught.component.scss'],
 })
 export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
-    showTable = false;
+
+
+    private readonly SEA_CRITTERS_INDEX = 2;
+
 
     constructor() {
-        super();
+        super(new FormGroup<FilterForm>({
+            season: new FormControl<Season[]>(Object.values(Season), {nonNullable: true}),
+            weather: new FormControl<string[]>(Object.values(Weather), {nonNullable: true}),
+        }));
 
 
         this.tabs = [
@@ -21,31 +27,46 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
                 title: 'Fish',
                 data: this.getFilteredJournalData(
                     this._database.fetchJournalOrder$('journal-fish'),
-                    this._database.fetchFish$()
+                    this._database.fetchFish$(),
+                    0
                 )
             }, {
                 title: 'Insects',
                 data: this.getFilteredJournalData(
                     this._database.fetchJournalOrder$('journal-insects'),
-                    this._database.fetchBugsAndInsects$()
+                    this._database.fetchBugsAndInsects$(),
+                    1
                 )
             }, {
                 title: 'Sea Critters',
                 data: this.getFilteredJournalData(
                     this._database.fetchJournalOrder$('journal-sea-critters'),
-                    this._database.fetchOceanCritters$()
+                    this._database.fetchOceanCritters$(),
+                    2
                 )
             },
         ];
 
+        this.activateTabFromRoute(this.tabs.map(tab => tab.title));
+
     }
 
-    override filterPredicate(foundEntry: Fish | Critter, filterValues: Season[]): boolean {
+    override filterPredicate(foundEntry: Fish | Critter, filterValues: FormGroup<FilterForm>["value"], index: number): boolean {
+        if (!filterValues.season?.length) return false;
+        if (!filterValues.weather?.length) return false;
 
-        if (filterValues.length === 0) return false;
 
         const seasonString = getTruthyValues(foundEntry.spawnSeason).toLowerCase();
-        return seasonString === 'any' || filterValues.some(season => seasonString.includes(('' + season).toLowerCase()));
+        const seasonMatch = seasonString === 'any'
+            || filterValues.season?.length === Object.values(Season).length
+            || !!filterValues.season?.some(season => seasonString.includes(('' + season).toLowerCase()));
+
+        const weatherString = getTruthyValues(foundEntry.spawnWeather).toLowerCase();
+        const weatherMatch = (index === this.SEA_CRITTERS_INDEX)
+            || weatherString === 'any'
+            || filterValues.weather?.length === Object.values(Weather).length
+            || !!filterValues.weather?.some(weather => weatherString.includes(('' + weather).toLowerCase()));
+        return seasonMatch && weatherMatch;
 
     }
 

@@ -18,10 +18,12 @@
         <div class="grid gap-4 icon-grid" id="grid">
             <ng-container *ngIf="(filteredItems$ | async)">
 
-                <app-item-icon (click)="showDetails(itemProcess, index)"
-                               *ngFor="let itemProcess of filteredItems; let index = index"
-                               [itemName]="itemProcess.iconName"
-                               class="icon-grid-item"/>
+                <app-item-icon (click)="showDetails(item, index)"
+                               *ngFor="let item of filteredItems; let index = index"
+                               [class.selected-icon]="selectedItem?.id === item.id"
+                               [itemName]="item.iconName"
+                               class="icon-grid-item"
+                />
 
                 <ng-container *ngIf="initialItemLoad()"/>
 

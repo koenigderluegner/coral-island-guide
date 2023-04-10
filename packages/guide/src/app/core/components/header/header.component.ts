@@ -31,6 +31,10 @@ export class HeaderComponent {
             uiIcon: UiIcon.PEOPLE,
             path: 'people'
         }, {
+            text: 'Locations',
+            uiIcon: UiIcon.MAP,
+            path: 'locations'
+        }, {
             text: 'Item database',
             uiIcon: UiIcon.DATABASE,
             path: 'database'

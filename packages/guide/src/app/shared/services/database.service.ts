@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { combineLatest, map, Observable, shareReplay, tap } from 'rxjs';
 import {
+    Consumable,
     CookingRecipe,
     CraftingRecipe,
     Critter,
@@ -13,6 +14,7 @@ import {
     Item,
     ItemProcessing,
     JournalOrder,
+    OfferingAltar,
     TagBasedItem
 } from '@ci/data-types';
 import { AvailableJournalOrders } from '../types/available-journal-orders.type';
@@ -48,8 +50,14 @@ export class DatabaseService {
     private _ITEM_PROCESSING_RECIPE: Record<string, ItemProcessing[]> = {};
     private _COOKING_RECIPE$?: Observable<Record<string, CookingRecipe[]>>;
     private _COOKING_RECIPE: Record<string, CookingRecipe[]> = {};
+    private _CONSUMABLES$?: Observable<Consumable[]>;
+    private _CONSUMABLES: Consumable[] = [];
     private _GIFT_PREFERENCES$?: Observable<MapKeyed<GiftPreferences>[]>;
     private _GIFT_PREFERENCES: MapKeyed<GiftPreferences>[] = [];
+
+
+    private _OFFERINGS$?: Observable<OfferingAltar[]>;
+    private _OFFERINGS: OfferingAltar[] = [];
 
     constructor(private readonly _http: HttpClient) {
     }
@@ -67,7 +75,8 @@ export class DatabaseService {
             this.fetchCrops$(),
             this.fetchFruitTrees$(),
             this.fetchFruitPlants$(),
-            this.fetchGiftingPreferences$()
+            this.fetchGiftingPreferences$(),
+            this.fetchOfferings$(),
         ]);
     }
 
@@ -86,6 +95,40 @@ export class DatabaseService {
                 );
         }
         return this._ITEMS$;
+    }
+
+
+    getOfferings(): OfferingAltar[] {
+        return this._OFFERINGS;
+    }
+
+
+    fetchOfferings$(): Observable<OfferingAltar[]> {
+        if (!this._OFFERINGS$) {
+            this._OFFERINGS$ = this._http.get<OfferingAltar[]>(`${this._BASE_PATH}/offerings.json`)
+                .pipe(
+                    tap(items => this._OFFERINGS = items),
+                    shareReplay(1)
+                );
+        }
+        return this._OFFERINGS$;
+    }
+
+
+    getConsumables(): Consumable[] {
+        return this._CONSUMABLES;
+    }
+
+
+    fetchConsumables$(): Observable<Consumable[]> {
+        if (!this._CONSUMABLES$) {
+            this._CONSUMABLES$ = this._http.get<Consumable[]>(`${this._BASE_PATH}/consumables.json`)
+                .pipe(
+                    tap(items => this._CONSUMABLES = items),
+                    shareReplay(1)
+                );
+        }
+        return this._CONSUMABLES$;
     }
 
     fetchFish$(): Observable<Fish[]> {

@@ -33,8 +33,16 @@ import { CraftingRecipeIngredientsPipe } from './pipes/crafting-recipe-ingredien
 import { CookingRecipeIngredientsPipe } from './pipes/cooking-recipe-ingredients.pipe';
 import { CastToMinimalItemArrayPipe } from './pipes/cast-to-minimal-item-array.pipe';
 import { ItemProcessingIngredientsPipe } from './pipes/item-processing-ingredients.pipe';
-import { MatTooltipModule } from "@angular/material/tooltip";
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { AddSpacesToPascalCasePipe } from './pipes/add-spaces-to-pascal-case.pipe';
+import { DataFilterComponent } from './components/data-filter/data-filter.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { IsItemPipe } from './pipes/is-item.pipe';
+import { NonSpecializedTableComponent } from './components/non-specialized-table/non-specialized-table.component';
+import { MatSortModule } from '@angular/material/sort';
+import { IsBaseCropPipe } from './pipes/is-base-crop.pipe';
+import { BaseSelectableContainerComponent } from './components/base-selectable-container/base-selectable-container.component';
+import { BaseTabbedSelectableContainerComponent } from './components/base-tabbed-selectable-container/base-tabbed-selectable-container.component';
 
 @NgModule({
     declarations: [
@@ -65,6 +73,12 @@ import { AddSpacesToPascalCasePipe } from './pipes/add-spaces-to-pascal-case.pip
         CastToMinimalItemArrayPipe,
         ItemProcessingIngredientsPipe,
         AddSpacesToPascalCasePipe,
+        DataFilterComponent,
+        IsItemPipe,
+        NonSpecializedTableComponent,
+        IsBaseCropPipe,
+        BaseSelectableContainerComponent,
+        BaseTabbedSelectableContainerComponent,
     ],
     imports: [
         CommonModule,
@@ -76,6 +90,8 @@ import { AddSpacesToPascalCasePipe } from './pipes/add-spaces-to-pascal-case.pip
         MatSidenavModule,
         MatTableModule,
         MatTooltipModule,
+        ReactiveFormsModule,
+        MatSortModule,
     ],
     exports: [
         UiIconComponent,
@@ -105,6 +121,10 @@ import { AddSpacesToPascalCasePipe } from './pipes/add-spaces-to-pascal-case.pip
         CastToMinimalItemArrayPipe,
         ItemProcessingIngredientsPipe,
         AddSpacesToPascalCasePipe,
+        DataFilterComponent,
+        IsItemPipe,
+        NonSpecializedTableComponent,
+        IsBaseCropPipe,
     ],
 })
 export class SharedModule {

@@ -1,8 +1,30 @@
 ## Changelog
 
+### 0.6.0 2023-04-10
+
+#### Added
+
+- Added direct urls to journal tabs
+- Added title to views so that the browser tab name should be more useful
+- Added quality prices to database if existent
+- Added locations
+    - Added lake temple with offerings as first location
+        - Added offerings to database
+- Added data tables to all journal and crafting pages
+- Added sorting to existing tables (note: not all columns are sortable)
+- Added highlight for selected item in grid view
+- Added buffs and nutrition to cooking
+
+#### Changed
+
+- Fixed wrong title for ocean critters in database
+- Reordered database detail information to put best match on top
+- Added spaces to processor names
+- Fixed ground beetle being missing at journal page
+
 ### 0.5.1 2023-03-24
 
-#### Fixed
+#### Changed
 
 - Fixed broken artisan page. Thanks to apra on discord for the quick feedback.
 
@@ -17,14 +39,14 @@
 - Added button to detail cards to open selected item in database.
 - Added overlay menu for mobile users.
 
-#### Fixed
+#### Changed
 
 - Moved amount in detail cards more to the center to not fly off.
 - Filtered a few technical items to reduce data download size.
 
 ### 0.4.1 2023-03-22
 
-#### Fixed
+#### Changed
 
 - Removed quality grid in cooking as it always produces base quality
 - Fixed multiple entries for same recipe in dye maker

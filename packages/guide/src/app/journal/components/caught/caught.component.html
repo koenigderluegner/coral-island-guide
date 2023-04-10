@@ -1,36 +1,19 @@
 <app-list-detail-container [(openDrawer)]="openDrawer" [removePlaceholder]="showTable">
     <app-caught-details listDetail *ngIf="selectedEntity" [critter]="selectedEntity"></app-caught-details>
 
-    <mat-tab-group class=" px-2 xl:px-[50px] w-full" mat-stretch-tabs="false">
+    <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex"
+                   class=" px-2 xl:px-[50px] w-full"
+                   mat-stretch-tabs="false">
         <mat-tab [label]="tab.title" *ngFor="let tab of tabs">
-            <div class="mb-3 flex gap-x-3">
-                <button class="btn" type="button"
-                        (click)="showTable = !showTable">{{showTable ? 'Show grid' : 'Show table'}}</button>
-
-                <mat-form-field class="btn">
-                    <mat-label *ngIf="!formControl.value.length">Filter</mat-label>
-                    <mat-select multiple disableOptionCentering [formControl]="formControl">
-                        <mat-select-trigger>
-                            {{formControl.value?.[0] || 'Filter'}}
-                            <span class="text-sm opacity-80" *ngIf="(formControl.value?.length || 0) > 1">
-        (+{{(formControl.value?.length || 0) - 1}} {{formControl.value?.length === 2 ? 'other' : 'others'}})
-      </span>
-
-                        </mat-select-trigger>
-                        <mat-optgroup label="Season">
-                            <mat-option
-                                    *ngFor="let topping of [season.SPRING, season.SUMMER, season.FALL, season.WINTER]"
-                                    [value]="topping">{{topping}}</mat-option>
-                        </mat-optgroup>
-                    </mat-select>
-                </mat-form-field>
-
-            </div>
+            <app-data-filter [(showTable)]="showTable" [parentFormGroup]="formControl"/>
             <ng-container *ngIf="(tab.data |async) as syncedData">
                 <ng-container *ngIf="!showTable">
                     <div class="grid gap-4 icon-grid">
                         <app-item-icon *ngFor="let entry of syncedData" [itemName]="entry.item.iconName"
-                                       class="icon-grid-item" (click)="showDetails(entry)"></app-item-icon>
+                                       (click)="showDetails(entry)"
+                                       [class.selected-icon]="selectedEntity?.item?.id === entry.item.id"
+                                       class="icon-grid-item"
+                        />
                     </div>
                 </ng-container>
                 <ng-container *ngIf="showTable">

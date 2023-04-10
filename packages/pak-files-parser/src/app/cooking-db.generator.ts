@@ -17,7 +17,7 @@ export class CookingDbGenerator {
 
     }
 
-    handleEntry(dbItem: RawCookingRecipe): CookingRecipe | undefined {
+    handleEntry(dbItem: RawCookingRecipe, cookingKey: string): CookingRecipe | undefined {
         const itemKey = dbItem.result.itemID;
 
         if (itemKey === 'None') return;
@@ -105,6 +105,7 @@ export class CookingDbGenerator {
         return {
             key: itemKey,
             amount: 1, // currently always 1
+            cookingKey,
             item: this.itemMap.get(itemKey),
             craftingUnlock: this.cookingUnlockMap.get(itemKey),
             utensils: dbItem.utensils.map(utensil => getEnumValue(utensil)),
@@ -120,7 +121,7 @@ export class CookingDbGenerator {
         const cookingMap: Record<string, CookingRecipe[]> = {}
         Object.keys(this.datatable?.[0]?.Rows).forEach(itemKey => {
             const dbItem = this.getDBItem(itemKey);
-            const entry: CookingRecipe | undefined = this.handleEntry(dbItem);
+            const entry: CookingRecipe | undefined = this.handleEntry(dbItem, itemKey);
 
             if (entry === undefined) return;
 

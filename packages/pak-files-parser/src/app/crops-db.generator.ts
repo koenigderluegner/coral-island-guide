@@ -1,4 +1,4 @@
-import { Crop, Item } from '@ci/data-types';
+import { Crop, Item, Season } from '@ci/data-types';
 import { readAsset } from '../util/functions';
 import { RegisteredCrop } from '../interfaces/registered-crop.interface';
 import { CropRegistry } from '../types/crop-registry.type';
@@ -32,7 +32,7 @@ export class CropsDbGenerator {
                     size: dbItem.size,
                     canCombine: dbItem.canCombine,
                     chanceToCombine: dbItem.chanceToCombine,
-                    growableSeason: dbItem.growableSeason.map(getEnumValue),
+                    growableSeason: dbItem.growableSeason.map(getEnumValue) as Season[],
                     growTime: dbItem.stages.map(s => s.length).reduce((p, v) => p + v, 0),
                     isRegrowable: dbItem.isRegrowable,
                     regrowableLength: dbItem.regrowableLength,
