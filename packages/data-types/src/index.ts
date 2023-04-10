@@ -1,4 +1,5 @@
 export * from './lib/interfaces/base-crop.interface';
+export * from './lib/interfaces/consumable.interface';
 export * from './lib/interfaces/cooking-recipe.interface';
 export * from './lib/interfaces/crafting-recipe.interface';
 export * from './lib/interfaces/critter.interface';
