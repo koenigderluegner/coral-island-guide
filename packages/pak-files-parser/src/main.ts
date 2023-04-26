@@ -23,8 +23,9 @@ import { FruitPlantDbGenerator } from "./app/fruit-plant-db.generator";
 import { OfferingsDbGenerator } from "./app/offerings-db.generator";
 import { ConsumablesDbGenerator } from "./app/consumables-db.generator";
 
+
 const itemIconPath = config.itemIconPath
-const texturePath = config.texturePath;
+const texturesPath = config.texturesPath;
 
 const itemDbGenerator = new ItemDbGenerator();
 const itemDbMap = itemDbGenerator.generate();
@@ -108,12 +109,19 @@ interface Frame {
 }
 
 async function createImages(fileBasename: string, skipIfExists = true) {
-    const data: Frame = JSON.parse(fs.readFileSync(path.join(texturePath, fileBasename), {
+    const data: Frame = JSON.parse(fs.readFileSync(path.join(texturesPath, fileBasename), {
         encoding: 'utf8',
         flag: 'r'
     })).filter((a: Frame) => a.Type === 'PaperSprite')[0];
+
+    if (!data) return;
+
+
     const fileName = convertToIconName(data.Name);
     if (skipIfExists && fs.existsSync(path.join(itemIconPath, fileName))) return;
+
+    const filePAth = data.Properties.BakedSourceTexture.ObjectPath.split('.');
+    filePAth.pop()
 
     const imageMetaData = {
         fileName,
@@ -121,10 +129,12 @@ async function createImages(fileBasename: string, skipIfExists = true) {
         height: data.Properties.BakedSourceDimension.Y,
         top: data.Properties.BakedSourceUV?.Y ?? 0,
         left: data.Properties.BakedSourceUV?.X ?? 0,
-        sourceImage: data.Properties.BakedSourceTexture.ObjectName.split(' ')[1],
+        sourceImage: filePAth.join('.'),
     };
 
-    const image = sharp(path.join(__dirname, 'assets', 'images', imageMetaData.sourceImage + '.png'));
+    const sourceImagePath = path.join(__dirname, 'assets', imageMetaData.sourceImage + '.png');
+
+    const image = sharp(sourceImagePath);
 
     if (imageMetaData.fileName) {
         try {
@@ -143,11 +153,11 @@ async function extractImages() {
     createPathIfNotExists(itemIconPath);
 
 
-    glob('*', {cwd: texturePath}, async (error: Error | null, filesWithJs: string[]) => {
+    glob('**/*.json', {cwd: texturesPath,}, async (error: Error | null, filesWithJs: string[]) => {
         if (error) {
             console.log(error);
         }
-        console.log(`extracting ${filesWithJs.length} images`);
+        console.log(`checking ${filesWithJs.length} frames`);
         let counter = 0;
         for (const fileBasename of filesWithJs) {
 

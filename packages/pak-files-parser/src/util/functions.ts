@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { Item, MinimalItem } from '@ci/data-types';
 import { config } from "../config";
+import { SourceString } from "../types/source-string.type";
 
 export function readAsset<T = any>(fileName: string): T {
     return JSON.parse(fs.readFileSync(path.join(__dirname, 'assets', fileName), {encoding: 'utf8', flag: 'r'}));
@@ -54,5 +55,9 @@ export function minifyItem(item: Item): MinimalItem {
 
 export function notEmpty<TValue>(value: TValue | null | undefined): value is TValue {
     return value !== null && value !== undefined;
+}
+
+export function getSourceStringResult(sourceString: SourceString): string {
+    return 'SourceString' in sourceString ? sourceString.SourceString : sourceString.Key;
 }
 

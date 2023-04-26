@@ -2,6 +2,9 @@ export interface BugAndInsect {
     "bugType": {
         "ObjectName": string
         "ObjectPath": string
+    } | {
+        "AssetPathName": string
+        "SubPathString": string
     },
     "BugsAndInsectsSKU": {
         // "data": {

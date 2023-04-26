@@ -2,6 +2,9 @@ export interface RawWildlifeSeaCrittersRegistry {
     "type": {
         "ObjectName": string;
         "ObjectPath": string;
+    } | {
+        "AssetPathName": string,
+        "SubPathString": string
     },
     "spawnOptions": {
         "spawnLimit": {

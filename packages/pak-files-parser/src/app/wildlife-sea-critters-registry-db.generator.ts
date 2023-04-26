@@ -44,7 +44,7 @@ export class WildlifeSeaCrittersRegistryDbGenerator extends BaseGenerator<RawWil
         }
 
         return {
-            type: dbItem.type.ObjectName,
+            type: 'ObjectName' in dbItem.type ? dbItem.type.ObjectName : dbItem.type.AssetPathName,
             spawnSeason: {
                 spring: seasons.includes('spring'),
                 summer: seasons.includes('summer'),

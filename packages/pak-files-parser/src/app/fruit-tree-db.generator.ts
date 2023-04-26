@@ -49,7 +49,7 @@ export class FruitTreeDbGenerator extends BaseGenerator<RawFruitTree, FruitTree>
 
         };
 
-        crop.item.description = crop.item.description.replace('{cropGrowLength}', '' + crop.growTime);
+        crop.item.description = (crop.item.description ?? '').replace('{cropGrowLength}', '' + crop.growTime);
         crop.item.description = crop.item.description.replace('{cropRegrowLength}', '' + crop.regrowableLength);
 
         return crop;

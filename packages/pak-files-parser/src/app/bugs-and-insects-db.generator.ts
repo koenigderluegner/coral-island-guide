@@ -34,7 +34,8 @@ export class BugsAndInsectsDbGenerator {
             const item: Item | undefined = this.itemMap.get(dbItem.BugsAndInsectsSKU.itemID);
 
             // the keys in wildlife registry don't match the ones from entity table, so we need to check over the type
-            const wildlifeRegistry = this.wildlifeRegistry.find(wildlife => wildlife.type === dbItem.bugType.ObjectName);
+            const bugType = 'ObjectName' in dbItem.bugType ? dbItem.bugType.ObjectName : dbItem.bugType.AssetPathName;
+            const wildlifeRegistry = this.wildlifeRegistry.find(wildlife => wildlife.type === bugType);
 
             if (!wildlifeRegistry) {
                 console.warn('Missing data for wildlife entry', itemKey)
