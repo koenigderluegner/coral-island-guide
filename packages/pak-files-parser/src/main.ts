@@ -22,6 +22,9 @@ import { FruitTreeDbGenerator } from "./app/fruit-tree-db.generator";
 import { FruitPlantDbGenerator } from "./app/fruit-plant-db.generator";
 import { OfferingsDbGenerator } from "./app/offerings-db.generator";
 import { ConsumablesDbGenerator } from "./app/consumables-db.generator";
+import { environment } from "./environments/environment";
+
+console.log('CURRENT ENVIRONMENT SET TO ' + (environment.isBeta ? 'BETA' : 'LIVE'));
 
 
 const itemIconPath = config.itemIconPath
@@ -132,7 +135,7 @@ async function createImages(fileBasename: string, skipIfExists = true) {
         sourceImage: filePAth.join('.'),
     };
 
-    const sourceImagePath = path.join(__dirname, 'assets', imageMetaData.sourceImage + '.png');
+    const sourceImagePath = path.join(environment.assetPath, imageMetaData.sourceImage + '.png');
 
     const image = sharp(sourceImagePath);
 
