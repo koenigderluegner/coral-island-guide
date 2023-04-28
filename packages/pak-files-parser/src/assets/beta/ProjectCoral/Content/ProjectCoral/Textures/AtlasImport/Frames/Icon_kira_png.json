@@ -1,0 +1,113 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "Icon_kira_png",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 172.0,
+            "Y": 10.0,
+            "Z": 241.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "1E4840CF4CEC1820A8FAD9B56B1E6396"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Icon_kira_png",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 881.0,
+        "Y": 0.0
+      },
+      "BakedSourceDimension": {
+        "X": 172.0,
+        "Y": 241.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'TP_NPC_Icons'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_NPC_Icons.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Icon_kira_png:BodySetup_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Icon_kira_png.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 86.0,
+          "Y": 121.0,
+          "Z": 0.51416016,
+          "W": 0.0
+        },
+        {
+          "X": -86.0,
+          "Y": 121.0,
+          "Z": 0.43017578,
+          "W": 0.0
+        },
+        {
+          "X": -86.0,
+          "Y": -120.0,
+          "Z": 0.43017578,
+          "W": 0.11767578
+        },
+        {
+          "X": 86.0,
+          "Y": -120.0,
+          "Z": 0.51416016,
+          "W": 0.11767578
+        },
+        {
+          "X": 86.0,
+          "Y": 121.0,
+          "Z": 0.51416016,
+          "W": 0.0
+        },
+        {
+          "X": -86.0,
+          "Y": -120.0,
+          "Z": 0.43017578,
+          "W": 0.11767578
+        }
+      ]
+    }
+  }
+]

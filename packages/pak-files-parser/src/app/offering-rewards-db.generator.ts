@@ -36,13 +36,26 @@ export class OfferingRewardsDbGenerator extends BaseGenerator<RawOfferingReward,
 
         const rewards: OfferingReward = {items: [], recipes: []}
 
-        const conf = this.rewardsConfig.Properties.map[dbItem.rewardID]?.effects;
+        const map = this.rewardsConfig.Properties.map;
+
+        let conf;
+
+        if (Array.isArray(map)) {
+            const offeringRewardsConfigEffectsMaps = map.find(entry => Object.keys(entry).includes(dbItem.rewardID));
+            conf = offeringRewardsConfigEffectsMaps?.[dbItem.rewardID]?.effects
+        } else {
+            conf = map[dbItem.rewardID]?.effects
+        }
 
         if (!conf) console.log('no reward conf for ', dbItem.rewardID)
         if (conf) {
             conf.forEach(effect => {
-                const key = effect.ObjectName.split(':')[1];
+                let key = effect.ObjectName.split(':')[1];
+
+                // need to trim ' as they changed their syntax using ' instead of whitespaces
+                key = key.replace(/^\'+/, '').replace(/\'+$/, '');
                 const reward = this.rewardsDa.find(a => a.Name === key) as OfferingRewardConfigCookingRecipe | OfferingRewardConfigAddItem;
+
                 if ('itemData' in reward.Properties) {
                     const item = this.itemMap.get(reward.Properties.itemData.itemID);
                     if (!item) {

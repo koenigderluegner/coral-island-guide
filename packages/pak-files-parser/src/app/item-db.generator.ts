@@ -1,6 +1,6 @@
 import { InventoryItems } from '../types/inventory-items.type';
 import { InventoryItemsEngineInterface } from '../interfaces/inventory-items-engine.interface';
-import { convertToIconName, getSourceStringResult, readAsset } from '../util/functions';
+import { convertToIconName, getReferencedString, getSourceStringResult, readAsset } from '../util/functions';
 import { InventoryItem } from '../interfaces/inventory-item.interface';
 import { Item } from '@ci/data-types';
 import { getQuality, removeQualityFlag } from "@ci/util";
@@ -55,12 +55,24 @@ export class ItemDbGenerator {
                 iconName,
             };
 
-            let engineData = this.itemEngineDataDb[0]?.Properties.dataMap[itemKey];
+            const dataMap = this.itemEngineDataDb[0]?.Properties.dataMap;
+            let engineData;
+            if (Array.isArray(dataMap)) {
+                const offeringRewardsConfigEffectsMaps = dataMap.find(entry => Object.keys(entry).includes(itemKey));
+                engineData = offeringRewardsConfigEffectsMaps?.[itemKey]
+            } else {
+                engineData = dataMap[itemKey]
+            }
+
             if (engineData) {
                 item.tags = engineData.tags ?? [];
                 item.iconMeta = engineData.icon ?? null;
 
-                item.iconName = convertToIconName(item.iconMeta?.ObjectName.split(' ')[1]);
+                const objectName = item.iconMeta?.ObjectName;
+                if (!!objectName) {
+                    item.iconName = convertToIconName(getReferencedString(objectName));
+                }
+
             }
             map.set(itemKey, item);
 

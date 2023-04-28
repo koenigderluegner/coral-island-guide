@@ -37,14 +37,16 @@ export type OfferingRewardsConfigEffects = {
     "Type": "C_GameplayEffectsConfig",
     "Name": "DA_OfferingReward",
     "Properties": {
-        "map": Record<string, {
-            "effects": {
-                "ObjectName": string;
-                "ObjectPath": string;
-            }            []
-        }>
+        "map": OfferingRewardsConfigEffectsMap | OfferingRewardsConfigEffectsMap[]
     }
 }
+
+type OfferingRewardsConfigEffectsMap = Record<string, {
+    "effects": {
+        "ObjectName": string;
+        "ObjectPath": string;
+    }            []
+}>
 
 export type OfferingRewardConfig =
     OfferingRewardConfigStaminaFruit

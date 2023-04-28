@@ -62,3 +62,11 @@ export function getSourceStringResult(sourceString: SourceString): string {
     return 'SourceString' in sourceString ? sourceString.SourceString : sourceString.Key;
 }
 
+export function getReferencedString(a: string): string {
+    if (a.includes(' ')) {
+        return a.split(' ')[1];
+    } else {
+        return a.split('\'')[1];
+    }
+}
+

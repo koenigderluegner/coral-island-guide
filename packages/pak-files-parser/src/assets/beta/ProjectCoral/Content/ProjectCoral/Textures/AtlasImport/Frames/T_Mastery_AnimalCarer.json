@@ -1,0 +1,113 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "T_Mastery_AnimalCarer",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -0.5,
+              "Y": 0.0,
+              "Z": 0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 111.0,
+            "Y": 10.0,
+            "Z": 109.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "40D7286949DCD10CF23E95BFCBE642E5"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "T_Mastery_AnimalCarer",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 192.0,
+        "Y": 0.0
+      },
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'TP_AtlasSkillTree'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_AtlasSkillTree.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'T_Mastery_AnimalCarer:BodySetup_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/T_Mastery_AnimalCarer.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 55.0,
+          "Y": 55.0,
+          "Z": 0.30371094,
+          "W": 0.0087890625
+        },
+        {
+          "X": -56.0,
+          "Y": 55.0,
+          "Z": 0.1953125,
+          "W": 0.0087890625
+        },
+        {
+          "X": -56.0,
+          "Y": -54.0,
+          "Z": 0.1953125,
+          "W": 0.115234375
+        },
+        {
+          "X": 55.0,
+          "Y": -54.0,
+          "Z": 0.30371094,
+          "W": 0.115234375
+        },
+        {
+          "X": 55.0,
+          "Y": 55.0,
+          "Z": 0.30371094,
+          "W": 0.0087890625
+        },
+        {
+          "X": -56.0,
+          "Y": -54.0,
+          "Z": 0.1953125,
+          "W": 0.115234375
+        }
+      ]
+    }
+  }
+]

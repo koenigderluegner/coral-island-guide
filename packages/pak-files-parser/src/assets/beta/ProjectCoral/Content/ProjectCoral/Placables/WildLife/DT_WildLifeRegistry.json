@@ -1,0 +1,5429 @@
+[
+  {
+    "Type": "DataTable",
+    "Name": "DT_WildLifeRegistry",
+    "Class": "UScriptClass'DataTable'",
+    "Properties": {
+      "RowStruct": {
+        "ObjectName": "ScriptStruct'C_WildLifeOptions'",
+        "ObjectPath": "/Script/ProjectCoral"
+      }
+    },
+    "Rows": {
+      "MapleLeafcutterMoth": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_MapleLeafCutterMoth.BP_Pawn_Bugs_MapleLeafCutterMoth_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::HalfDay",
+          "spawnPeriod": "EC_GridObjectPeriod::HalfDay",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Summer",
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "PolyphemusMoth": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_PolyphemusMoth.BP_Pawn_Bugs_PolyphemusMoth_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [
+            {
+              "C_RequirementsConfig'ProjectCoral/Content/ProjectCoral/Placables/WildLife/Condition/DA_Requirement_RainToday.DA_Requirement_RainToday'": 1.5
+            }
+          ],
+          "lifetime": "EC_GridObjectPeriod::HalfDay",
+          "spawnPeriod": "EC_GridObjectPeriod::HalfDay",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Town_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lookout_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer"
+          ],
+          "dayTimeAllowed": false,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Rain",
+            "EC_Weather::Storm",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "ManFacedStinkBug": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_ManFacedStinkBug.BP_Pawn_Bugs_ManFacedStinkBug_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::HalfDay",
+          "spawnPeriod": "EC_GridObjectPeriod::HalfDay",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lookout_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestHigher_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestLower_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Summer",
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": false,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "GhostMantis": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_GhostMantis.BP_Pawn_Bugs_GhostMantis_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [
+            {
+              "C_RequirementsConfig'ProjectCoral/Content/ProjectCoral/Placables/WildLife/Condition/DA_Requirement_RainToday.DA_Requirement_RainToday'": 1.5
+            }
+          ],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "MidForest_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer",
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "Cricket": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_Cricket.BP_Pawn_Bugs_Cricket_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::HalfDay",
+          "spawnPeriod": "EC_GridObjectPeriod::HalfDay",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lookout_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Vineyard_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestFarm_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestHigher_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestLower_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer"
+          ],
+          "dayTimeAllowed": false,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "TigerBeetle": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_TigerBeetle.BP_Pawn_Bugs_TigerBeetle_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::HalfDay",
+          "spawnPeriod": "EC_GridObjectPeriod::HalfDay",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lookout_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Town_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "HarpalusBeetle": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_HarpalusBeetle.BP_Pawn_Bugs_HarpalusBeetle_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::HalfDay",
+          "spawnPeriod": "EC_GridObjectPeriod::HalfDay",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Town_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lookout_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestFarm_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Vineyard_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "HotSpring_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "Firefly": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_Firefly.BP_Pawn_Bugs_Firefly_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::HalfDay",
+          "spawnPeriod": "EC_GridObjectPeriod::HalfDay",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestFarm_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestHigher_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestLower_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer"
+          ],
+          "dayTimeAllowed": false,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "Wasp": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_Wasp.BP_Pawn_Bugs_Wasp_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::HalfDay",
+          "spawnPeriod": "EC_GridObjectPeriod::HalfDay",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Vineyard_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "HotSpring_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestFarm_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestHigher_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestLower_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer",
+            "EC_Season::Fall",
+            "EC_Season::Winter"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "CecropiaCatterpillar": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_CecropiaCatterpillar.BP_Pawn_Bugs_CecropiaCatterpillar_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::HalfDay",
+          "spawnPeriod": "EC_GridObjectPeriod::HalfDay",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lookout_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestLower_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Vineyard_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "MidForest_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer"
+          ],
+          "dayTimeAllowed": false,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "PipevineSwallowtailButterfly": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_PipevineSwallowTailButterfly.BP_Pawn_Bugs_PipevineSwallowTailButterfly_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::HalfDay",
+          "spawnPeriod": "EC_GridObjectPeriod::HalfDay",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestFarm_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestLower_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer",
+            "EC_Season::Fall",
+            "EC_Season::Winter"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "LittleWoodSatyrButterfly": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_LittleWoodSatyrButterfly.BP_Pawn_Bugs_LittleWoodSatyrButterfly_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::HalfDay",
+          "spawnPeriod": "EC_GridObjectPeriod::HalfDay",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "WolfSpider": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_WolfSpider.BP_Pawn_Bugs_WolfSpider_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::HalfDay",
+          "spawnPeriod": "EC_GridObjectPeriod::TimeOfDay",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestLower_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "MidForest_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Vineyard_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "HotSpring_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Summer"
+          ],
+          "dayTimeAllowed": false,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "YuccaMoth": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_YuccaMoth.BP_Pawn_Bugs_YuccaMoth_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Town_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "HotSpring_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "Snail": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_Snail.BP_Pawn_Bugs_Snail_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Town_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Vineyard_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestFarm_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestHigher_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestLower_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer",
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Rain",
+            "EC_Weather::Storm",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "PussMoth": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_PussMoth.BP_Pawn_Bugs_PussMoth_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestHigher_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Vineyard_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "HotSpring_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "Centipede": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_Centipede.BP_Pawn_Bugs_Centipede_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Town_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestHigher_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Vineyard_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer",
+            "EC_Season::Fall",
+            "EC_Season::Winter"
+          ],
+          "dayTimeAllowed": false,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "LadyBeetle": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_LadyBeetle.BP_Pawn_Bugs_LadyBeetle_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Town_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lookout_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "HotSpring_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer",
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "ViolinBeetle": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_ViolinBeetle.BP_Pawn_Bugs_ViolinBeetle_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Forest_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Vineyard_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Summer",
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "ScaritesBeetle": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_ScaritesBeetle.BP_Pawn_Bugs_ScaritesBeetle_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Vineyard_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestLower_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestHigher_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer"
+          ],
+          "dayTimeAllowed": false,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "OrchidMantis": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_OrchidMantis.BP_Pawn_Bugs_OrchidMantis_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "MidForest_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Summer",
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "Fly": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_Fly.BP_Pawn_Bugs_Fly_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Town_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lookout_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Dump_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer",
+            "EC_Season::Fall",
+            "EC_Season::Winter"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "BlueMorphoButterfly": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_BlueMoprhoButterfly.BP_Pawn_Bugs_BlueMoprhoButterfly_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "MidForest_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Summer"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "CrownedHairstreakButterfly": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_CrownedHairstreakButerfly.BP_Pawn_Bugs_CrownedHairstreakButerfly_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "MidForest_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Summer"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "WidowSpider": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_WidowSpider.BP_Pawn_Bugs_WidowSpider_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Town_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lookout_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Forest_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": false,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "AssamSilkmothMoth": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_AssamSilkmoth.BP_Pawn_Bugs_AssamSilkmoth_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lookout_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Vineyard_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "HotSpring_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestFarm_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestHigher_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "Dragonfly": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_Dragonfly.BP_Pawn_Bugs_Dragonfly_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Town_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Summer",
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "RoveBeetle": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_RoveBeetle.BP_Pawn_Bugs_RoveBeetle_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Vineyard_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Fall",
+            "EC_Season::Winter"
+          ],
+          "dayTimeAllowed": false,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "SoldierBeetle": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_SoldierBeetle.BP_Pawn_Bugs_SoldierBeetle_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Town_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lookout_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "HotSpring_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Summer",
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "PrayingMantis": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_PrayingMantis.BP_Pawn_Bugs_PrayingMantis_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestLower_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Fall",
+            "EC_Season::Winter"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "TigerSwallowtailButterfly": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_TigerSwallowtailButterfly.BP_Pawn_Bugs_TigerSwallowtailButterfly_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Vineyard_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "HotSpring_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestFarm_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestLower_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer",
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "JanettaForesterButterfly": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_JanettaForesterButterfly.BP_Pawn_Bugs_JanettaForesterButterfly_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Vineyard_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "HotSpring_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestFarm_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestHigher_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Fall",
+            "EC_Season::Winter"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "Tarantula": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_Tarantula.BP_Pawn_Bugs_Tarantula_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Town_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": false,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "AtlasMoth": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_AtlasMoth.BP_Pawn_Bugs_AtlasMoth_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "MidForest_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestLower_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Fall",
+            "EC_Season::Winter"
+          ],
+          "dayTimeAllowed": false,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "Grasshopper": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_Grasshopper.BP_Pawn_Bugs_Grasshopper_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestHigher_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Fall",
+            "EC_Season::Winter"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm",
+            "EC_Weather::Windy",
+            "EC_Weather::Snow",
+            "EC_Weather::Blizzard"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "GroundBeetle": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_GroundBeetle.BP_Pawn_Bugs_GroundBeetle_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Town_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lookout_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Vineyard_Tiles"
+            }
+          ],
+          "seasons": [],
+          "dayTimeAllowed": false,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm",
+            "EC_Weather::Windy",
+            "EC_Weather::Snow",
+            "EC_Weather::Blizzard"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "LeafBeetle": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_LeafBeetle.BP_Pawn_Bugs_LeafBeetle_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestHigher_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Vineyard_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "HotSpring_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Winter"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "MonarchCaterpillar": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_MonarchCaterpillar.BP_Pawn_Bugs_MonarchCaterpillar_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Fall",
+            "EC_Season::Winter"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Windy",
+            "EC_Weather::Snow"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "SpicebushSwallowtailButterfly": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_SpicebushSwallowtailButterfly.BP_Pawn_Bugs_SpicebushSwallowtailButterfly_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Winter"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "BirdwingButterfly": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_BirdwingButterfly.BP_Pawn_Bugs_BirdwingButterfly_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lookout_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Forest_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "MidForest_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Winter"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "Moth": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_Moth.BP_Pawn_Bugs_Moth_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Town_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Vineyard_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "HotSpring_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer",
+            "EC_Season::Fall",
+            "EC_Season::Winter"
+          ],
+          "dayTimeAllowed": false,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "MagnoliaGreenJumper": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_MagnoliaGreenJumper.BP_Pawn_Bugs_MagnoliaGreenJumper_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestFarm_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Rain",
+            "EC_Weather::Storm"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "BandedWollyBear": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_BandedWollyBear.BP_Pawn_Bugs_BandedWollyBear_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Town_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lookout_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Fall",
+            "EC_Season::Winter"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Windy",
+            "EC_Weather::Snow",
+            "EC_Weather::Blizzard"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "EasternBlackSwallowtail": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_EasternBlackSwallowtail.BP_Pawn_Bugs_EasternBlackSwallowtail_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lookout_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestFarm_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "HotSpring_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "MidForest_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": false,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Rain",
+            "EC_Weather::Storm"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "GulfFritilarry": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_GulfFritilarry.BP_Pawn_Bugs_GulfFritilarry_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lookout_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Vineyard_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Summer",
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "HickoryHornedDevil": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_HickoryHornedDevil.BP_Pawn_Bugs_HickoryHornedDevil_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lookout_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestLower_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer"
+          ],
+          "dayTimeAllowed": false,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "LunaMoth": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_LunaMoth.BP_Pawn_Bugs_LunaMoth_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Town_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestLower_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "MidForest_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer",
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "PineSphinx": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_PineSphinx.BP_Pawn_Bugs_PineSphinx_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Town_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lookout_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer",
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "SaddleBack": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_SaddleBack.BP_Pawn_Bugs_SaddleBack_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lookout_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestFarm_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Summer",
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "WesternTigerSwallowtail": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_WesternTigerSwallowtail.BP_Pawn_Bugs_WesternTigerSwallowtail_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Town_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "HotSpring_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Summer",
+            "EC_Season::Winter"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "StripedGardenCaterpillar": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_StripedGardenCaterpillar.BP_Pawn_Bugs_StripedGardenCaterpillar_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Beach_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "HotSpring_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer",
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "OlivewingButterfly": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_OlivewingButterfly.BP_Pawn_Bugs_OlivewingButterfly_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Lake_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Woodlands_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestFarm_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestHigher_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Fall",
+            "EC_Season::Winter"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "RedAdmiral": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_RedAdmiral.BP_Pawn_Bugs_RedAdmiral_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "GardenLane_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "ForestLower_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "Vineyard_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer",
+            "EC_Season::Fall"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": false,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Windy"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      },
+      "Moth_PLACEHOLDER": {
+        "type": {
+          "AssetPathName": "/Game/ProjectCoral/Bugs/BP_Pawn_Bugs_Moth.BP_Pawn_Bugs_Moth_C",
+          "SubPathString": ""
+        },
+        "spawnOptions": {
+          "spawnLimit": {
+            "Type": "ERangeBoundTypes::Open",
+            "Value": 0
+          },
+          "dailySpawn": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "spawnAmountGenerator": {
+            "ObjectName": "Class'C_SpawnAmountGenerator'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "spawnAmountConditionModifier": [],
+          "lifetime": "EC_GridObjectPeriod::Inherit",
+          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "firstDayMaximize": false,
+          "fillLimitOnFirstDay": false,
+          "zoneRarityDistribution": []
+        },
+        "conditions": {
+          "always": false,
+          "zones": [
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "DigSite_Tiles"
+            },
+            {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_GridZones'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.0"
+              },
+              "RowName": "DeepForest_Tiles"
+            }
+          ],
+          "seasons": [
+            "EC_Season::Spring",
+            "EC_Season::Summer",
+            "EC_Season::Fall",
+            "EC_Season::Winter"
+          ],
+          "dayTimeAllowed": true,
+          "nightTimeAllowed": true,
+          "time": [],
+          "weekDays": [],
+          "weather": [
+            "EC_Weather::Sunny",
+            "EC_Weather::Rain",
+            "EC_Weather::Storm"
+          ],
+          "townRank": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "oceanQuality": {
+            "LowerBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            },
+            "UpperBound": {
+              "Type": "ERangeBoundTypes::Open",
+              "Value": 0
+            }
+          },
+          "requirements": null
+        },
+        "IsEditorOnly": false
+      }
+    }
+  }
+]

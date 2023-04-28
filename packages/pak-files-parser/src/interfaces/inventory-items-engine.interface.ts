@@ -6,7 +6,9 @@ export interface InventoryItemsEngineInterface {
     "Properties": {
         "dataMap": {
             [key: string]: InventoryItemEngineInterface,
-        }
+        } | {
+            [key: string]: InventoryItemEngineInterface,
+        }[]
     }
     "decoratorConfig": {
         "ObjectName": string

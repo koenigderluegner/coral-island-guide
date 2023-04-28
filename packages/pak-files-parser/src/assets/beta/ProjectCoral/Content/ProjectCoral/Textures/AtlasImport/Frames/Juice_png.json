@@ -1,0 +1,113 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_2",
+    "Outer": "Juice_png",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -3.0,
+              "Y": 0.0,
+              "Z": 0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 98.0,
+            "Y": 10.0,
+            "Z": 125.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "FC73327A4A8C983CCEA019B8A3B3BEC2"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Juice_png",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 2688.0,
+        "Y": 1301.0
+      },
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'T_AtlasItems_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/T_AtlasItems_2.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Juice_png:BodySetup_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Juice_png.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 46.0,
+          "Y": 63.0,
+          "Z": 0.68310547,
+          "W": 0.3178711
+        },
+        {
+          "X": -52.0,
+          "Y": 63.0,
+          "Z": 0.6591797,
+          "W": 0.3178711
+        },
+        {
+          "X": -52.0,
+          "Y": -62.0,
+          "Z": 0.6591797,
+          "W": 0.34838867
+        },
+        {
+          "X": 46.0,
+          "Y": -62.0,
+          "Z": 0.68310547,
+          "W": 0.34838867
+        },
+        {
+          "X": 46.0,
+          "Y": 63.0,
+          "Z": 0.68310547,
+          "W": 0.3178711
+        },
+        {
+          "X": -52.0,
+          "Y": -62.0,
+          "Z": 0.6591797,
+          "W": 0.34838867
+        }
+      ]
+    }
+  }
+]
