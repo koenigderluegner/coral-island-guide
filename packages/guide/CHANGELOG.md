@@ -1,5 +1,11 @@
 ## Changelog
 
+### 0.7.0 2023-04-29
+
+#### Added
+
+- Added beta mode. Go to settings, enable the checkbox and save to reload. Reverse to go back to live data.
+
 ### 0.6.0 2023-04-10
 
 #### Added
