@@ -10,8 +10,7 @@ export class TagBasedItemGenericDbGenerator extends BaseGenerator<RawTagBasedIte
 
     constructor() {
         super();
-        // ProjectCoral Content Project Coral Core Data
-        this.datatable = readAsset('DT_TagBasedItemGeneric.json');
+        this.datatable = readAsset('ProjectCoral/Content/ProjectCoral/Core/Data/DT_TagBasedItemGeneric.json');
 
     }
 

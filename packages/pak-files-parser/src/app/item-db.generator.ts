@@ -11,9 +11,8 @@ export class ItemDbGenerator {
     itemEngineDataDb: InventoryItemsEngineInterface[];
 
     constructor() {
-        // ProjectCoral Content Project Coral Core Data
-        this.itemDb = readAsset<InventoryItems[]>('DT_InventoryItems.json');
-        this.itemEngineDataDb = readAsset<InventoryItemsEngineInterface[]>('DA_InventoryItemsEngineData.json');
+        this.itemDb = readAsset<InventoryItems[]>('ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.json');
+        this.itemEngineDataDb = readAsset<InventoryItemsEngineInterface[]>('ProjectCoral/Content/ProjectCoral/Core/Data/DA_InventoryItemsEngineData.json');
 
     }
 

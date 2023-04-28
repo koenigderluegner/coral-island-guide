@@ -9,8 +9,7 @@ export class CropsDbGenerator {
     cropRegistry: CropRegistry[];
 
     constructor(protected itemMap: Map<string, Item>) {
-        // ProjectCoral Content ProjectCoral Core HismcManagers Crop
-        this.cropRegistry = readAsset<CropRegistry[]>('DT_CropRegistry.json');
+        this.cropRegistry = readAsset<CropRegistry[]>('ProjectCoral/Content/ProjectCoral/Core/HismcManagers/Crop/DT_CropRegistry.json');
 
     }
 

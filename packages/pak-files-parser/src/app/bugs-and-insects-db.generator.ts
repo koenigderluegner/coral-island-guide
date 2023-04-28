@@ -11,10 +11,11 @@ export class BugsAndInsectsDbGenerator {
     critterDb: BugsAndInsects[];
     private wildlifeRegistry: WildlifeSeaCrittersRegistry[];
 
-    // ProjectCoral/Content/ProjectCoral/Grid/
-    // ProjectCoral/Content/ProjectCoral/Placables/WildLife
-    constructor(protected itemMap: Map<string, Item>, protected _assetPath = 'DT_BugsAndInsects.json', protected _wildlifeRegistry = 'DT_WildLifeRegistry.json', protected _gridZones = 'DT_GridZones.json',) {
-        // ProjectCoral Content Project Coral Bugs
+    constructor(protected itemMap: Map<string, Item>,
+                protected _assetPath = 'ProjectCoral/Content/ProjectCoral/Bugs/DT_BugsAndInsects.json',
+                protected _wildlifeRegistry = 'ProjectCoral/Content/ProjectCoral/Placables/WildLife/DT_WildLifeRegistry.json',
+                protected _gridZones = 'ProjectCoral/Content/ProjectCoral/Grid/DT_GridZones.json',) {
+
         this.critterDb = readAsset<BugsAndInsects[]>(this._assetPath);
         const wildlifeSeaCrittersRegistryDbGenerator = new WildlifeSeaCrittersRegistryDbGenerator(_wildlifeRegistry, _gridZones);
         this.wildlifeRegistry = [...wildlifeSeaCrittersRegistryDbGenerator.generate().values()];

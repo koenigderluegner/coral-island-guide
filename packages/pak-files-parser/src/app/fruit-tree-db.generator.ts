@@ -9,12 +9,12 @@ import { RawFruitTree } from "../interfaces/raw-fruit-tree.interface";
 export class FruitTreeDbGenerator extends BaseGenerator<RawFruitTree, FruitTree> {
 
     cropRegistry: CropRegistry[];
-    datatable: Datatable<RawFruitTree>[] = readAsset<Datatable<RawFruitTree>[]>('DT_FruitTreeRegistry.json');
+    datatable: Datatable<RawFruitTree>[] = readAsset<Datatable<RawFruitTree>[]>('ProjectCoral/Content/ProjectCoral/Core/HismcManagers/FruitTree/DT_FruitTreeRegistry.json');
 
     constructor(protected itemMap: Map<string, Item>) {
         super()
         // ProjectCoral Content ProjectCoral Core HismcManagers FruitTree
-        this.cropRegistry = readAsset<CropRegistry[]>('DT_FruitTreeRegistry.json');
+        this.cropRegistry = readAsset<CropRegistry[]>('ProjectCoral/Content/ProjectCoral/Core/HismcManagers/FruitTree/DT_FruitTreeRegistry.json');
 
     }
 

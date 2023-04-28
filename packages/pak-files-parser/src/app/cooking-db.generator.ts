@@ -6,8 +6,7 @@ import { CookingRecipes } from "../types/cooking-recipes.type";
 
 export class CookingDbGenerator {
 
-    // ProjectCoral Content ProjectCoral Data Cooking
-    datatable: CookingRecipes = readAsset('DT_CookingRecipes.json');
+    datatable: CookingRecipes = readAsset('ProjectCoral/Content/ProjectCoral/Data/Cooking/DT_CookingRecipes.json');
 
     constructor(
         protected itemMap: Map<string, Item>,

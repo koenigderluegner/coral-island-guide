@@ -9,12 +9,12 @@ import { Datatable } from "../interfaces/datatable.interface";
 export class FruitPlantDbGenerator extends BaseGenerator<RawFruitPlant, FruitPlant> {
 
     cropRegistry: CropRegistry[];
-    datatable: Datatable<RawFruitPlant>[] = readAsset<Datatable<RawFruitPlant>[]>('DT_FruitPlantRegistry.json');
+    datatable: Datatable<RawFruitPlant>[] = readAsset<Datatable<RawFruitPlant>[]>('ProjectCoral/Content/ProjectCoral/Core/HismcManagers/FruitPlant/DT_FruitPlantRegistry.json');
 
     constructor(protected itemMap: Map<string, Item>) {
         super()
         // ProjectCoral Content ProjectCoral Core HismcManagers FruitPlant
-        this.cropRegistry = readAsset<CropRegistry[]>('DT_FruitPlantRegistry.json');
+        this.cropRegistry = readAsset<CropRegistry[]>('ProjectCoral/Content/ProjectCoral/Core/HismcManagers/FruitPlant/DT_FruitPlantRegistry.json');
 
     }
 
