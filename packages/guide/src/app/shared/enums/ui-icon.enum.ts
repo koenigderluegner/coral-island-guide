@@ -12,6 +12,7 @@ export enum UiIcon {
     MAP = 'T_Icon_Map',
     TO_DO = 'T_Icon_Errands',
     BURGER_MENU = 'T_Icon_BurgerMenu',
+    SETTINGS = 'T_Icon_GameSettings',
 
     // PAUSE MENU SIDEBAR
     CATCHING = 'T_Icon_CatchingM',

@@ -13,7 +13,8 @@ export class SettingsService {
 
     private _settings?: Settings
 
-    saveSettings(settings: Settings): void {
+    saveSettings(partialSettings: Partial<Settings>): void {
+        const settings = {...this.DEFAULT_SETTINGS, ...partialSettings};
         localStorage.setItem(this.SETTINGS_STORAGE_KEY, JSON.stringify(settings));
 
         this._settings = settings;
