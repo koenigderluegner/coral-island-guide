@@ -1,0 +1,113 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_2",
+    "Outer": "Flairs_T_Decorations_LLeaves",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -0.5,
+              "Y": 0.0,
+              "Z": 1.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 91.0,
+            "Y": 10.0,
+            "Z": 66.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "C2FAEA8D4CCA3965F4889B813290449B"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Flairs_T_Decorations_LLeaves",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 81.0,
+        "Y": 1.0
+      },
+      "BakedSourceDimension": {
+        "X": 91.0,
+        "Y": 91.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'TP_AtlasUIFlairs'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_AtlasUIFlairs.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Flairs_T_Decorations_LLeaves:BodySetup_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Flairs_T_Decorations_LLeaves.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 45.0,
+          "Y": 34.0,
+          "Z": 0.671875,
+          "W": 0.05078125
+        },
+        {
+          "X": -46.0,
+          "Y": 34.0,
+          "Z": 0.31640625,
+          "W": 0.05078125
+        },
+        {
+          "X": -46.0,
+          "Y": -32.0,
+          "Z": 0.31640625,
+          "W": 0.30859375
+        },
+        {
+          "X": 45.0,
+          "Y": -32.0,
+          "Z": 0.671875,
+          "W": 0.30859375
+        },
+        {
+          "X": 45.0,
+          "Y": 34.0,
+          "Z": 0.671875,
+          "W": 0.05078125
+        },
+        {
+          "X": -46.0,
+          "Y": -32.0,
+          "Z": 0.31640625,
+          "W": 0.30859375
+        }
+      ]
+    }
+  }
+]

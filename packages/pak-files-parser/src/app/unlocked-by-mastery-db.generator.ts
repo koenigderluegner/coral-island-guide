@@ -11,28 +11,50 @@ export abstract class UnlockedByMasteryDbGenerator {
 
     generate(): Map<string, UnlockByMastery> {
         const map: Map<string, UnlockByMastery> = new Map<string, UnlockByMastery>();
-
-        Object.keys(this.recipesDB[0]?.Rows).forEach(itemKey => {
+        const masteryLevels = Object.keys(this.recipesDB[0]?.Rows);
+        masteryLevels.forEach(itemKey => {
 
             const dbItem: RawUnlockByMastery = this.recipesDB[0]?.Rows[itemKey];
 
+            const unlockRecipeList = dbItem.unlockRecipe;
+            let unlockRecipes;
 
-            Object.keys(dbItem.unlockRecipe).forEach(typeEnum => {
-                dbItem.unlockRecipe[typeEnum].craftingList.forEach(craftingItem => {
-
-                    if (craftingItem.item.itemID === 'None') return;
-
-                    const unlockByMastery: UnlockByMastery = {
-                        key: craftingItem.item.itemID,
-                        masteryLevel: dbItem.masteryLevel,
-                        masteryType: getEnumValue(typeEnum)
-                    }
-
-                    map.set(unlockByMastery.key, unlockByMastery);
+            if (!Array.isArray(unlockRecipeList)) {
+                unlockRecipes = [unlockRecipeList]
+            } else {
+                unlockRecipes = unlockRecipeList
+            }
 
 
+            unlockRecipes.forEach(unlockRecipe => {
+
+
+                const masteryTypes = Object.keys(unlockRecipe);
+                masteryTypes.forEach(typeEnum => {
+
+                    const craftingList = unlockRecipe[typeEnum]?.craftingList;
+
+                    if (!craftingList) return;
+
+                    craftingList.forEach(craftingItem => {
+
+                        if (craftingItem.item.itemID === 'None') return;
+
+                        const unlockByMastery: UnlockByMastery = {
+                            key: craftingItem.item.itemID,
+                            masteryLevel: dbItem.masteryLevel,
+                            masteryType: getEnumValue(typeEnum)
+                        }
+
+                        map.set(unlockByMastery.key, unlockByMastery);
+
+
+                    })
                 })
+
+
             })
+
 
         });
 

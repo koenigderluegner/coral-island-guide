@@ -1,0 +1,113 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "Icon_valentina_png",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -0.5,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 165.0,
+            "Y": 10.0,
+            "Z": 246.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "BD8372194FE9FAF5321BABBCD0D6E2FD"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Icon_valentina_png",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 0.0,
+        "Y": 246.0
+      },
+      "BakedSourceDimension": {
+        "X": 165.0,
+        "Y": 246.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'TP_NPC_Icons'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_NPC_Icons.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Icon_valentina_png:BodySetup_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Icon_valentina_png.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 82.0,
+          "Y": 123.0,
+          "Z": 0.080566406,
+          "W": 0.12011719
+        },
+        {
+          "X": -83.0,
+          "Y": 123.0,
+          "Z": 0.0,
+          "W": 0.12011719
+        },
+        {
+          "X": -83.0,
+          "Y": -123.0,
+          "Z": 0.0,
+          "W": 0.24023438
+        },
+        {
+          "X": 82.0,
+          "Y": -123.0,
+          "Z": 0.080566406,
+          "W": 0.24023438
+        },
+        {
+          "X": 82.0,
+          "Y": 123.0,
+          "Z": 0.080566406,
+          "W": 0.12011719
+        },
+        {
+          "X": -83.0,
+          "Y": -123.0,
+          "Z": 0.0,
+          "W": 0.24023438
+        }
+      ]
+    }
+  }
+]

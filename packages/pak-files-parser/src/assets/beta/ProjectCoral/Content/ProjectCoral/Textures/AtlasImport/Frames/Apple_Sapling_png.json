@@ -1,0 +1,113 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_2",
+    "Outer": "Apple_Sapling_png",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -2.5,
+              "Y": 0.0,
+              "Z": 1.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 81.0,
+            "Y": 10.0,
+            "Z": 123.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "98D3B8B5469B0DAB4189D6A0B7205F72"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Apple_Sapling_png",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 256.0,
+        "Y": 0.0
+      },
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'TP_AtlasItems_3'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_AtlasItems_3.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Apple_Sapling_png:BodySetup_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Apple_Sapling_png.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 38.0,
+          "Y": 63.0,
+          "Z": 0.17480469,
+          "W": 0.00048828125
+        },
+        {
+          "X": -43.0,
+          "Y": 63.0,
+          "Z": 0.1352539,
+          "W": 0.00048828125
+        },
+        {
+          "X": -43.0,
+          "Y": -60.0,
+          "Z": 0.1352539,
+          "W": 0.060546875
+        },
+        {
+          "X": 38.0,
+          "Y": -60.0,
+          "Z": 0.17480469,
+          "W": 0.060546875
+        },
+        {
+          "X": 38.0,
+          "Y": 63.0,
+          "Z": 0.17480469,
+          "W": 0.00048828125
+        },
+        {
+          "X": -43.0,
+          "Y": -60.0,
+          "Z": 0.1352539,
+          "W": 0.060546875
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,113 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_2",
+    "Outer": "Emblem_Cap_png",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -1.0,
+              "Y": 0.0,
+              "Z": 0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 124.0,
+            "Y": 10.0,
+            "Z": 83.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "E0479CD84C447CF0690A8A9D7D8DC3A9"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Emblem_Cap_png",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 1792.0,
+        "Y": 640.0
+      },
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'TP_AtlasItems_5'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_AtlasItems_5.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Emblem_Cap_png:BodySetup_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Emblem_Cap_png.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 61.0,
+          "Y": 42.0,
+          "Z": 0.93603516,
+          "W": 0.3232422
+        },
+        {
+          "X": -63.0,
+          "Y": 42.0,
+          "Z": 0.8754883,
+          "W": 0.3232422
+        },
+        {
+          "X": -63.0,
+          "Y": -41.0,
+          "Z": 0.8754883,
+          "W": 0.36376953
+        },
+        {
+          "X": 61.0,
+          "Y": -41.0,
+          "Z": 0.93603516,
+          "W": 0.36376953
+        },
+        {
+          "X": 61.0,
+          "Y": 42.0,
+          "Z": 0.93603516,
+          "W": 0.3232422
+        },
+        {
+          "X": -63.0,
+          "Y": -41.0,
+          "Z": 0.8754883,
+          "W": 0.36376953
+        }
+      ]
+    }
+  }
+]

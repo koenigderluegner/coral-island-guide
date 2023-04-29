@@ -23,11 +23,13 @@
         "production": {
           "optimization": true,
           "extractLicenses": true,
-          "inspect": false,
+          "inspect": false
+        },
+        "beta": {
           "fileReplacements": [
             {
               "replace": "packages/pak-files-parser/src/environments/environment.ts",
-              "with": "packages/pak-files-parser/src/environments/environment.prod.ts"
+              "with": "packages/pak-files-parser/src/environments/environment.beta.ts"
             }
           ]
         }
@@ -41,6 +43,9 @@
       "configurations": {
         "production": {
           "buildTarget": "pak-files-parser:build:production"
+        },
+        "beta": {
+          "buildTarget": "pak-files-parser:build:beta"
         }
       }
     },

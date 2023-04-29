@@ -1,9 +1,9 @@
 import { BaseGenerator } from './base-generator.class';
 import { GiftPreferences, Item, NPC } from '@ci/data-types';
 import { Datatable } from '../interfaces/datatable.interface';
-import { readAsset } from '../util/functions';
+import { getSourceStringResult, readAsset } from '../util/functions';
 import { RawNPC } from '../interfaces/raw-npc.interface';
-import { getEnumValue } from '@ci/util';
+import { addSpacesToPascalCase, getEnumValue } from '@ci/util';
 
 export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
 
@@ -23,9 +23,10 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
             canInteract: dbItem.canInteract,
             canReceiveGifts: dbItem.canReceiveGifts,
             isDateable: dbItem.isDateable,
-            characterName: dbItem.CharacterName.SourceString,
+            // TODO get name from translation file
+            characterName: addSpacesToPascalCase(getSourceStringResult(dbItem.CharacterName)),
             CharacterCategory: getEnumValue(dbItem.CharacterCategory),
-            description: dbItem.Description.SourceString
+            description: getSourceStringResult(dbItem.Description)
         };
 
     }

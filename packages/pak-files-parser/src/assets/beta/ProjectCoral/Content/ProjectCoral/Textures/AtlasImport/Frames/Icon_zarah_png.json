@@ -1,0 +1,113 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "Icon_zarah_png",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 200.0,
+            "Y": 10.0,
+            "Z": 248.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "6D91055B44F56402AD142ABB163B5953"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Icon_zarah_png",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 897.0,
+        "Y": 246.0
+      },
+      "BakedSourceDimension": {
+        "X": 200.0,
+        "Y": 248.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'TP_NPC_Icons'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_NPC_Icons.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Icon_zarah_png:BodySetup_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Icon_zarah_png.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 100.0,
+          "Y": 124.0,
+          "Z": 0.53564453,
+          "W": 0.12011719
+        },
+        {
+          "X": -100.0,
+          "Y": 124.0,
+          "Z": 0.43798828,
+          "W": 0.12011719
+        },
+        {
+          "X": -100.0,
+          "Y": -124.0,
+          "Z": 0.43798828,
+          "W": 0.24121094
+        },
+        {
+          "X": 100.0,
+          "Y": -124.0,
+          "Z": 0.53564453,
+          "W": 0.24121094
+        },
+        {
+          "X": 100.0,
+          "Y": 124.0,
+          "Z": 0.53564453,
+          "W": 0.12011719
+        },
+        {
+          "X": -100.0,
+          "Y": -124.0,
+          "Z": 0.43798828,
+          "W": 0.24121094
+        }
+      ]
+    }
+  }
+]

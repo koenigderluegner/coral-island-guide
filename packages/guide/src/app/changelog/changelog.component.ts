@@ -9,8 +9,7 @@ import { MarkdownModule, MarkdownService } from 'ngx-markdown';
     standalone: true,
     imports: [CommonModule, MarkdownModule],
     providers: [MarkdownService],
-    templateUrl: './changelog.component.html',
-    styleUrls: ['./changelog.component.scss'],
+    template: '<markdown [data]="markdown"></markdown>',
 })
 export class ChangelogComponent {
 

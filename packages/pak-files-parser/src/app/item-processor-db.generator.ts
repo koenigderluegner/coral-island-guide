@@ -6,6 +6,7 @@ import { RawItemProcessing } from '../interfaces/raw-item-processing.interface';
 import { Item, ItemProcessing } from '@ci/data-types';
 import { minifyItem } from '../util/functions';
 import { getQuality, removeQualityFlag } from "@ci/util";
+import { environment } from "../environments/environment";
 
 export class ItemProcessorDbGenerator {
 
@@ -16,8 +17,8 @@ export class ItemProcessorDbGenerator {
     }
 
     generate(): Map<string, Record<string, ItemProcessing[]>> {
-        // Content ProjectCoral Data ItempProcessing
-        const itemProcessingDir = path.join(__dirname, 'assets', 'ProjectCoral/Content/ProjectCoral/Data', 'ItemProcessing',);
+
+        const itemProcessingDir = path.join(environment.assetPath, 'ProjectCoral/Content/ProjectCoral/Data', 'ItemProcessing',);
         const res: Map<string, Record<string, ItemProcessing[]>> = new Map<string, Record<string, ItemProcessing[]>>();
 
         const rec: Record<string, ItemProcessing[]> = {};
