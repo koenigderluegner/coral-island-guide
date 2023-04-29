@@ -19,13 +19,14 @@ import {
 } from '@ci/data-types';
 import { AvailableJournalOrders } from '../types/available-journal-orders.type';
 import { MapKeyed } from '../types/map-keyed.type';
+import { SettingsService } from "./settings.service";
 
 @Injectable({
     providedIn: 'root'
 })
 export class DatabaseService {
 
-    private readonly _BASE_PATH = 'assets/database';
+    private readonly _BASE_PATH: string;
     private _ITEMS$?: Observable<Item[]>;
     private _ITEMS: Item[] = [];
     private _FISH$?: Observable<Fish[]>;
@@ -59,7 +60,11 @@ export class DatabaseService {
     private _OFFERINGS$?: Observable<OfferingAltar[]>;
     private _OFFERINGS: OfferingAltar[] = [];
 
-    constructor(private readonly _http: HttpClient) {
+    constructor(private readonly _http: HttpClient,
+                private readonly _settings: SettingsService) {
+        const version = this._settings.getSettings().useBeta ? 'beta' : 'live';
+
+        this._BASE_PATH = `assets/${version}/database`;
     }
 
 

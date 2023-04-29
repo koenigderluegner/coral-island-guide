@@ -8,9 +8,7 @@ export class CraftingRecipeDbGenerator {
     recipesDB: CraftingRecipes[];
 
     constructor(protected itemMap: Map<string, Item>, protected craftingUnlockMap: Map<string, UnlockByMastery>) {
-
-        // ProjectCoral Content Project Coral Core Data Crafting
-        this.recipesDB = readAsset<CraftingRecipes[]>('DT_CraftingRecipes.json');
+        this.recipesDB = readAsset<CraftingRecipes[]>('ProjectCoral/Content/ProjectCoral/Core/Data/Crafting/DT_CraftingRecipes.json');
 
     }
 

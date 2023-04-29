@@ -1,6 +1,7 @@
 import { Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
 import { Quality } from '@ci/data-types';
 import { coerceNumberProperty } from "@angular/cdk/coercion";
+import { SettingsService } from "../../services/settings.service";
 
 @Component({
     selector: 'app-item-icon',
@@ -10,12 +11,16 @@ import { coerceNumberProperty } from "@angular/cdk/coercion";
 })
 export class ItemIconComponent {
 
-    @HostBinding('class.app-item-icon') private _setClass = true;
-
-
     @Input() itemName?: string | null;
     @Input() subIconName?: string | null;
     @Input() quality?: Quality;
+    _amount = 0;
+    protected version: string;
+    @HostBinding('class.app-item-icon') private _setClass = true;
+
+    constructor(private readonly _settings: SettingsService) {
+        this.version = this._settings.getSettings().useBeta ? 'beta' : 'live';
+    }
 
     @Input()
     get amount(): number {
@@ -25,7 +30,5 @@ export class ItemIconComponent {
     set amount(size: boolean | number | string | null | undefined) {
         this._amount = coerceNumberProperty(size);
     }
-
-    _amount = 0;
 
 }

@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Jasper_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 2.0,
+              "Y": 0.0,
+              "Z": 3.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 98.0,
+            "Y": 10.0,
+            "Z": 115.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "99EBBC5240360E23581AE4A67B36DF58"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Jasper_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Jasper'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Gem_Artifacts_Fossils/Gems/Gem_textures/Jasper.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Jasper_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Gem_Artifacts_Fossils/Gems/Jasper_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 51.0,
+          "Y": 61.0,
+          "Z": 0.8984375,
+          "W": 0.0234375
+        },
+        {
+          "X": -47.0,
+          "Y": 61.0,
+          "Z": 0.1328125,
+          "W": 0.0234375
+        },
+        {
+          "X": -47.0,
+          "Y": -54.0,
+          "Z": 0.1328125,
+          "W": 0.921875
+        },
+        {
+          "X": 51.0,
+          "Y": -54.0,
+          "Z": 0.8984375,
+          "W": 0.921875
+        },
+        {
+          "X": 51.0,
+          "Y": 61.0,
+          "Z": 0.8984375,
+          "W": 0.0234375
+        },
+        {
+          "X": -47.0,
+          "Y": -54.0,
+          "Z": 0.1328125,
+          "W": 0.921875
+        }
+      ]
+    }
+  }
+]

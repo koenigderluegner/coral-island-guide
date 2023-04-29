@@ -1,15 +1,9 @@
+import { SourceString } from "../types/source-string.type";
+
 export interface RawNPC {
     "characterID": string,
-    "CharacterName": {
-        "Namespace": string,
-        "Key": string,
-        "SourceString": string,
-    },
-    "Description": {
-        "Namespace": string,
-        "Key": string,
-        "SourceString": string,
-    },
+    "CharacterName": SourceString,
+    "Description": SourceString,
     "portraitsDT": {
         "ObjectName": string,
         "ObjectPath": string,

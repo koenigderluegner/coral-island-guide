@@ -1,6 +1,6 @@
 import { BaseGenerator } from "./base-generator.class";
 import { Datatable } from "../interfaces/datatable.interface";
-import { minifyItem, readAsset } from "../util/functions";
+import { getReferencedString, minifyItem, readAsset } from "../util/functions";
 import { RawOffering } from "../interfaces/raw-offering.interface";
 import { CookingRecipe, Item, Offerings } from "@ci/data-types";
 import { getQuality, nonNullable, removeQualityFlag } from "@ci/util";
@@ -29,7 +29,7 @@ export class OfferingDetailsDbGenerator extends BaseGenerator<RawOffering, Offer
 
         return {
             title: dbItem.offeringTitleText.SourceString,
-            imageName: dbItem.offeringImage.ObjectName.split(' ')[1],
+            imageName: getReferencedString(dbItem.offeringImage.ObjectName),
             numOfItemRequired: dbItem.numOfItemRequired,
             rewards: offeringMatch?.rewards ?? {
                 items: [],

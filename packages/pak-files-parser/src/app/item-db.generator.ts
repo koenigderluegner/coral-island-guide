@@ -1,6 +1,6 @@
 import { InventoryItems } from '../types/inventory-items.type';
 import { InventoryItemsEngineInterface } from '../interfaces/inventory-items-engine.interface';
-import { convertToIconName, readAsset } from '../util/functions';
+import { convertToIconName, getReferencedString, getSourceStringResult, readAsset } from '../util/functions';
 import { InventoryItem } from '../interfaces/inventory-item.interface';
 import { Item } from '@ci/data-types';
 import { getQuality, removeQualityFlag } from "@ci/util";
@@ -11,9 +11,8 @@ export class ItemDbGenerator {
     itemEngineDataDb: InventoryItemsEngineInterface[];
 
     constructor() {
-        // ProjectCoral Content Project Coral Core Data
-        this.itemDb = readAsset<InventoryItems[]>('DT_InventoryItems.json');
-        this.itemEngineDataDb = readAsset<InventoryItemsEngineInterface[]>('DA_InventoryItemsEngineData.json');
+        this.itemDb = readAsset<InventoryItems[]>('ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.json');
+        this.itemEngineDataDb = readAsset<InventoryItemsEngineInterface[]>('ProjectCoral/Content/ProjectCoral/Core/Data/DA_InventoryItemsEngineData.json');
 
     }
 
@@ -25,8 +24,6 @@ export class ItemDbGenerator {
             if (itemKey === 'None') return;
 
             const dbItem: InventoryItem = this.itemDb[0]?.Rows[itemKey];
-
-            if (this._isBlacklisted(itemKey, dbItem)) return;
 
             if (itemKey.endsWith('-a') || itemKey.endsWith('-b') || itemKey.endsWith('-c') || itemKey.endsWith('-d')) {
                 let qualities = map.get(removeQualityFlag(itemKey))?.['qualities'];
@@ -46,24 +43,36 @@ export class ItemDbGenerator {
 
             const item: Item = {
                 id: itemKey,
-                displayName: dbItem.name.SourceString,
+                displayName: getSourceStringResult(dbItem.name),
                 price: dbItem.price,
                 sellPrice: dbItem.sellPrice,
                 sellAt: dbItem.sellAt,
                 stackable: dbItem.stackable,
-                inventoryCategory: dbItem.inventoryDisplayCategory.SourceString,
+                inventoryCategory: getSourceStringResult(dbItem.inventoryDisplayCategory),
                 displayKey: dbItem.displayKey,
                 description: dbItem.description.SourceString,
                 qualities: {},
                 iconName,
             };
 
-            let engineData = this.itemEngineDataDb[0]?.Properties.dataMap[itemKey];
+            const dataMap = this.itemEngineDataDb[0]?.Properties.dataMap;
+            let engineData;
+            if (Array.isArray(dataMap)) {
+                const offeringRewardsConfigEffectsMaps = dataMap.find(entry => Object.keys(entry).includes(itemKey));
+                engineData = offeringRewardsConfigEffectsMaps?.[itemKey]
+            } else {
+                engineData = dataMap[itemKey]
+            }
+
             if (engineData) {
                 item.tags = engineData.tags ?? [];
                 item.iconMeta = engineData.icon ?? null;
 
-                item.iconName = convertToIconName(item.iconMeta?.ObjectName.split(' ')[1]);
+                const objectName = item.iconMeta?.ObjectName;
+                if (!!objectName) {
+                    item.iconName = convertToIconName(getReferencedString(objectName));
+                }
+
             }
             map.set(itemKey, item);
 
@@ -73,29 +82,5 @@ export class ItemDbGenerator {
         return map;
     }
 
-    private _isBlacklisted(key: string, dbItem: InventoryItem): boolean {
 
-        if (!dbItem.name.SourceString) return true;
-
-        const moveOrders = [
-            'item_110024',
-            'item_110025',
-            'item_110026',
-            'item_110027',
-            'item_110028',
-            'item_110029',
-            'item_110030',
-            'item_110031',
-            'item_110032',
-            'item_110033',
-            'item_110034',
-            'item_110035',
-            'item_110036',
-            'item_110037',
-        ];
-
-        return moveOrders.includes(key);
-
-
-    }
 }

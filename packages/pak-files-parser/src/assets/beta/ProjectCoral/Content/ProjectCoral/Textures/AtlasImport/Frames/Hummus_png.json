@@ -1,0 +1,113 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_2",
+    "Outer": "Hummus_png",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.5,
+              "Y": 0.0,
+              "Z": -1.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 121.0,
+            "Y": 10.0,
+            "Z": 96.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "02E98FF1432E19DE4121E7AA43C5BFBA"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Hummus_png",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 384.0,
+        "Y": 768.0
+      },
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'TP_AtlasItems_3'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_AtlasItems_3.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Hummus_png:BodySetup_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Hummus_png.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 61.0,
+          "Y": 47.0,
+          "Z": 0.24853516,
+          "W": 0.38330078
+        },
+        {
+          "X": -60.0,
+          "Y": 47.0,
+          "Z": 0.18945312,
+          "W": 0.38330078
+        },
+        {
+          "X": -60.0,
+          "Y": -49.0,
+          "Z": 0.18945312,
+          "W": 0.43017578
+        },
+        {
+          "X": 61.0,
+          "Y": -49.0,
+          "Z": 0.24853516,
+          "W": 0.43017578
+        },
+        {
+          "X": 61.0,
+          "Y": 47.0,
+          "Z": 0.24853516,
+          "W": 0.38330078
+        },
+        {
+          "X": -60.0,
+          "Y": -49.0,
+          "Z": 0.18945312,
+          "W": 0.43017578
+        }
+      ]
+    }
+  }
+]

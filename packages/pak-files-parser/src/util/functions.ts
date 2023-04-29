@@ -2,9 +2,11 @@ import fs from 'fs';
 import path from 'path';
 import { Item, MinimalItem } from '@ci/data-types';
 import { config } from "../config";
+import { SourceString } from "../types/source-string.type";
+import { environment } from "../environments/environment";
 
 export function readAsset<T = any>(fileName: string): T {
-    return JSON.parse(fs.readFileSync(path.join(__dirname, 'assets', fileName), {encoding: 'utf8', flag: 'r'}));
+    return JSON.parse(fs.readFileSync(path.join(environment.assetPath, fileName), {encoding: 'utf8', flag: 'r'}));
 }
 
 export function generateJson(fileName: string, jsonContent: any, readable = false) {
@@ -54,5 +56,17 @@ export function minifyItem(item: Item): MinimalItem {
 
 export function notEmpty<TValue>(value: TValue | null | undefined): value is TValue {
     return value !== null && value !== undefined;
+}
+
+export function getSourceStringResult(sourceString: SourceString): string {
+    return 'SourceString' in sourceString ? sourceString.SourceString : sourceString.Key;
+}
+
+export function getReferencedString(a: string): string {
+    if (a.includes(' ')) {
+        return a.split(' ')[1];
+    } else {
+        return a.split('\'')[1];
+    }
 }
 

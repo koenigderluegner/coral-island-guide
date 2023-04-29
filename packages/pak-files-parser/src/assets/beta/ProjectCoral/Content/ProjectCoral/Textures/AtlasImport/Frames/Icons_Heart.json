@@ -1,0 +1,113 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "Icons_Heart",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 38.0,
+            "Y": 10.0,
+            "Z": 34.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "74DB8D234997BB53800C6CA724C941A9"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Icons_Heart",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 240.0,
+        "Y": 132.0
+      },
+      "BakedSourceDimension": {
+        "X": 38.0,
+        "Y": 34.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'T_AtlasIcons'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/T_AtlasIcons.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Icons_Heart:BodySetup_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Icons_Heart.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 19.0,
+          "Y": 17.0,
+          "Z": 0.54296875,
+          "W": 0.2578125
+        },
+        {
+          "X": -19.0,
+          "Y": 17.0,
+          "Z": 0.46875,
+          "W": 0.2578125
+        },
+        {
+          "X": -19.0,
+          "Y": -17.0,
+          "Z": 0.46875,
+          "W": 0.32421875
+        },
+        {
+          "X": 19.0,
+          "Y": -17.0,
+          "Z": 0.54296875,
+          "W": 0.32421875
+        },
+        {
+          "X": 19.0,
+          "Y": 17.0,
+          "Z": 0.54296875,
+          "W": 0.2578125
+        },
+        {
+          "X": -19.0,
+          "Y": -17.0,
+          "Z": 0.46875,
+          "W": 0.32421875
+        }
+      ]
+    }
+  }
+]

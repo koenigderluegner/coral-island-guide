@@ -9,8 +9,7 @@ export class FishDbGenerator {
     critterDb: Fishs[];
 
     constructor(protected itemMap: Map<string, Item>) {
-        // ProjectCoral Content Project Coral Data Fish
-        this.critterDb = readAsset<Fishs[]>('DT_Fish.json');
+        this.critterDb = readAsset<Fishs[]>('ProjectCoral/Content/ProjectCoral/Data/Fish/DT_Fish.json');
 
     }
 

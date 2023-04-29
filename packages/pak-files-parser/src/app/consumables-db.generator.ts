@@ -7,9 +7,7 @@ import { getEnumValue } from "@ci/util";
 
 export class ConsumablesDbGenerator extends BaseGenerator<RawConsumable, Consumable> {
 
-    // ProjectCoral Content ProjectCoral Core Data ItemLogic
-
-    datatable: Datatable<RawConsumable>[] = readAsset<Datatable<RawConsumable>[]>('DT_Consumable.json');
+    datatable: Datatable<RawConsumable>[] = readAsset<Datatable<RawConsumable>[]>('ProjectCoral/Content/ProjectCoral/Core/Data/ItemLogic/DT_Consumable.json');
 
     handleEntry(itemKey: string, dbItem: RawConsumable): Consumable {
 

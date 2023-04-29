@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Wind_essence_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": -0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 120.0,
+            "Y": 10.0,
+            "Z": 123.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "7A108BDA46113CE63DF116ACFBA9ED28"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Wind_essence_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Wind_essence'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Misc_Icons/Monster_loot/Textures/Wind_essence.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Wind_essence_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Misc_Icons/Monster_loot/Wind_essence_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 60.0,
+          "Y": 61.0,
+          "Z": 0.96875,
+          "W": 0.0234375
+        },
+        {
+          "X": -60.0,
+          "Y": 61.0,
+          "Z": 0.03125,
+          "W": 0.0234375
+        },
+        {
+          "X": -60.0,
+          "Y": -62.0,
+          "Z": 0.03125,
+          "W": 0.984375
+        },
+        {
+          "X": 60.0,
+          "Y": -62.0,
+          "Z": 0.96875,
+          "W": 0.984375
+        },
+        {
+          "X": 60.0,
+          "Y": 61.0,
+          "Z": 0.96875,
+          "W": 0.0234375
+        },
+        {
+          "X": -60.0,
+          "Y": -62.0,
+          "Z": 0.03125,
+          "W": 0.984375
+        }
+      ]
+    }
+  }
+]

@@ -1,12 +1,15 @@
 <div class="flex justify-between px-4">
-
-    <a routerLink="/" class="flex gap-x-4 items-center">
-        <img alt="Super Coral. Logo of the website." class="h-12 w-12 xl:w-16 xl:h-16"
-             src="assets/ui/images/icons/Super_Coral.png">
-        <span class="text-4xl font-semibold hidden xl:block">Coral Guide</span>
-        <span class="text-4xl font-semibold block xl:hidden">CG</span>
-    </a>
-    <nav class="hidden sm:block">
+    <div class="relative flex">
+        <a class="flex gap-x-4 items-center" routerLink="/">
+            <img alt="Super Coral. Logo of the website." class="h-12 w-12 xl:w-16 xl:h-16"
+                 src="assets/ui/images/icons/Super_Coral.png">
+            <span class="text-4xl font-semibold hidden xl:block">Coral Guide</span>
+            <span class="text-4xl font-semibold block xl:hidden">CG</span>
+        </a>
+        <span *ngIf="isBeta"
+              class="beta-badge xl:!top-5 leading-none font-bold text-black absolute px-1.5 py-1 rounded-sm right-0">BETA</span>
+    </div>
+    <nav class="hidden md:block">
         <ul class="flex gap-x-6">
             <li *ngFor="let naviLink of naviLinks">
                 <a [routerLink]="naviLink.path"
@@ -19,7 +22,7 @@
             </li>
         </ul>
     </nav>
-    <div class="block sm:hidden">
+    <div class="block md:hidden">
         <button #trigger="cdkOverlayOrigin"
                 (click)="isOpen = !isOpen" cdkOverlayOrigin
                 class=" flex flex-col py-3 px-2 text-neutral-400 hover:text-neutral-300 items-center text-center"

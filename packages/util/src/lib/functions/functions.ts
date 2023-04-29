@@ -29,8 +29,8 @@ function capitalizeFirstLetter(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-export function addSpacesToPascalCase(pascalCase: string): string {
-    return pascalCase.replaceAll(/([A-Z])/g, ' $1').trim();
+export function addSpacesToPascalCase(pascalCase: string | undefined): string {
+    return (pascalCase ?? '').replaceAll(/([A-Z])/g, ' $1').trim();
 }
 
 

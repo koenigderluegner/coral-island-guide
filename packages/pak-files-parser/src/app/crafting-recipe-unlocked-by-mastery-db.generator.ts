@@ -5,6 +5,6 @@ import { UnlockedByMasteryDbGenerator } from "./unlocked-by-mastery-db.generator
 
 export class CraftingRecipeUnlockedByMasteryDbGenerator extends UnlockedByMasteryDbGenerator {
 
-    recipesDB: Datatable<RawUnlockByMastery>[] = readAsset<Datatable<RawUnlockByMastery>[]>('DT_CraftingUnlockByMastery.json');
+    recipesDB: Datatable<RawUnlockByMastery>[] = readAsset<Datatable<RawUnlockByMastery>[]>('ProjectCoral/Content/ProjectCoral/Core/Data/Crafting/DT_CraftingUnlockByMastery.json');
 
 }

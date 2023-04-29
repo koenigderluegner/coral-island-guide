@@ -1,0 +1,113 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "T_Mastery_Tracker",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -2.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 106.0,
+            "Y": 10.0,
+            "Z": 110.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "D4912E244B57568BB1406D8CF416D10C"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "T_Mastery_Tracker",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 256.0,
+        "Y": 128.0
+      },
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'TP_AtlasSkillTree'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_AtlasSkillTree.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'T_Mastery_Tracker:BodySetup_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/T_Mastery_Tracker.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 51.0,
+          "Y": 55.0,
+          "Z": 0.3623047,
+          "W": 0.13378906
+        },
+        {
+          "X": -55.0,
+          "Y": 55.0,
+          "Z": 0.25878906,
+          "W": 0.13378906
+        },
+        {
+          "X": -55.0,
+          "Y": -55.0,
+          "Z": 0.25878906,
+          "W": 0.24121094
+        },
+        {
+          "X": 51.0,
+          "Y": -55.0,
+          "Z": 0.3623047,
+          "W": 0.24121094
+        },
+        {
+          "X": 51.0,
+          "Y": 55.0,
+          "Z": 0.3623047,
+          "W": 0.13378906
+        },
+        {
+          "X": -55.0,
+          "Y": -55.0,
+          "Z": 0.25878906,
+          "W": 0.24121094
+        }
+      ]
+    }
+  }
+]
