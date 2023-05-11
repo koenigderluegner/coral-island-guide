@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Flat_TV_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 104.0,
+            "Y": 10.0,
+            "Z": 110.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "841DF5F6492B49E5FD49D6A532F69389"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Flat_TV_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Flat_TV'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/East_asian_indoor/East_asian_indoor_textures/Flat_TV.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Flat_TV_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/East_asian_indoor/Flat_TV_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 52.0,
+          "Y": 55.0,
+          "Z": 0.90625,
+          "W": 0.0703125
+        },
+        {
+          "X": -52.0,
+          "Y": 55.0,
+          "Z": 0.09375,
+          "W": 0.0703125
+        },
+        {
+          "X": -52.0,
+          "Y": -55.0,
+          "Z": 0.09375,
+          "W": 0.9296875
+        },
+        {
+          "X": 52.0,
+          "Y": -55.0,
+          "Z": 0.90625,
+          "W": 0.9296875
+        },
+        {
+          "X": 52.0,
+          "Y": 55.0,
+          "Z": 0.90625,
+          "W": 0.0703125
+        },
+        {
+          "X": -52.0,
+          "Y": -55.0,
+          "Z": 0.09375,
+          "W": 0.9296875
+        }
+      ]
+    }
+  }
+]
