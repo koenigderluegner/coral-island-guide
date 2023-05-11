@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Earth_Totem_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 1.0,
+              "Y": 0.0,
+              "Z": 0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 94.0,
+            "Y": 10.0,
+            "Z": 119.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "6F8BA4CF4AF04C7CAA1C31B738E01B03"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Earth_Totem_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Earth_Totem'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Gem_Artifacts_Fossils/Gems/Gem_textures/Earth_Totem.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Earth_Totem_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Gem_Artifacts_Fossils/Gems/Earth_Totem_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 48.0,
+          "Y": 60.0,
+          "Z": 0.875,
+          "W": 0.03125
+        },
+        {
+          "X": -46.0,
+          "Y": 60.0,
+          "Z": 0.140625,
+          "W": 0.03125
+        },
+        {
+          "X": -46.0,
+          "Y": -59.0,
+          "Z": 0.140625,
+          "W": 0.9609375
+        },
+        {
+          "X": 48.0,
+          "Y": -59.0,
+          "Z": 0.875,
+          "W": 0.9609375
+        },
+        {
+          "X": 48.0,
+          "Y": 60.0,
+          "Z": 0.875,
+          "W": 0.03125
+        },
+        {
+          "X": -46.0,
+          "Y": -59.0,
+          "Z": 0.140625,
+          "W": 0.9609375
+        }
+      ]
+    }
+  }
+]
