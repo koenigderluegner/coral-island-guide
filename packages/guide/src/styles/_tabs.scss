@@ -1,24 +1,30 @@
 .mat-mdc-tab-group {
   width: 100%;
   max-width: calc(100vw - (env(safe-area-inset-right) + env(safe-area-inset-right))) !important;
-}
 
-.mat-mdc-tab-labels {
-  @apply gap-x-3 justify-center mb-3;
-}
 
-.mdc-tab {
-  opacity: 1 !important;
-  background: rgba(255, 255, 255, .3);
-  border: 3px solid rgba(255, 255, 255, .3);
-  @apply font-semibold text-white;
-  border-radius: 15px;
-}
+  .mat-mdc-tab-labels {
+    @apply gap-x-3 justify-center mb-3;
+  }
 
-.mdc-tab--active {
-  @apply bg-white text-black border-white
-}
+  .mdc-tab {
+    opacity: 1 !important;
+    background: rgba(255, 255, 255, .3);
+    border: 3px solid rgba(255, 255, 255, .3);
+    @apply font-semibold text-white;
+    border-radius: 15px;
+  }
 
-.mdc-tab-indicator .mdc-tab-indicator__content--underline {
-  display: none;
+  .mdc-tab--active {
+    @apply bg-white text-black border-white
+  }
+
+  .mdc-tab__content {
+    height: unset;
+  }
+
+  .mdc-tab-indicator .mdc-tab-indicator__content--underline {
+    display: none;
+  }
+
 }
