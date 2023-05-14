@@ -99,7 +99,7 @@ export class PlannerToolbarComponent {
     }
 
     private _registerBuildings(): TreeNode {
-
+        // core /hismcmanager/farmbuilding
         const buildingsNode: TreeNode = {
             key: 'Buildings',
             children: []

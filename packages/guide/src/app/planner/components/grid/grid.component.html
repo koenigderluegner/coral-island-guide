@@ -10,15 +10,14 @@
         </table>
         <div id="horizontal-grid-lines" class=" left-0 right-0  absolute"></div>
         <div id="vertical-grid-lines" class=" top-0 bottom-0  absolute"></div>
+        <table class="table-fixed w-full">
+            <tr *ngFor="let i of yDummyArray; let y = index" [attr.data-table-row]="y">
+                <td (click)="create($event, x,y)" (mouseenter)="hover($event, x, y)"
+                    *ngFor="let j of xDummyArray; let x = index" [attr.data-table-col]="x"
+                    [style.height.px]="cellSize" [style.width.px]="cellSize"></td>
+            </tr>
+        </table>
         <div class="layers" *ngFor="let layer of layers; let i = index">
-
-            <table class="table-fixed w-full" [attr.data-layer-table]="i">
-                <tr *ngFor="let i of yDummyArray; let y = index" [attr.data-table-row]="y">
-                    <td [style.width.px]="cellSize" [style.height.px]="cellSize"
-                        (mouseenter)="hover($event, x, y)" (click)="create($event, x,y)"
-                        *ngFor="let j of xDummyArray; let x = index" [attr.data-table-col]="x"></td>
-                </tr>
-            </table>
 
 
         </div>
