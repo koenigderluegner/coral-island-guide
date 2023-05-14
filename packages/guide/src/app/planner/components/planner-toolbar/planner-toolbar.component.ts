@@ -4,7 +4,7 @@ import { PlannerService } from "../../services/planner.service";
 import { combineLatest } from "rxjs";
 import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
 import { DatabaseService } from "../../../shared/services/database.service";
-import { Season } from "@ci/data-types";
+import { Crop, FruitPlant, FruitTree, Season } from "@ci/data-types";
 
 
 interface Tree {
@@ -48,134 +48,11 @@ export class PlannerToolbarComponent {
         ]).subscribe({
             next: ([crops, plants, trees]) => {
 
-
-                const fruitPlantsNode: TreeNode = {
-                    key: 'Fruit plants',
-                    children: []
-                }
-
-                const fruitTreesNode: TreeNode = {
-                    key: 'Fruit trees',
-                    children: []
-                }
-
-
-                const springCropsNode: TreeNode = {
-                    key: 'Spring crops',
-                    children: []
-                }
-
-                const summerCropsNode: TreeNode = {
-                    key: 'Summer crops',
-                    children: []
-                }
-
-                const fallCropsNode: TreeNode = {
-                    key: 'Fall crops',
-                    children: []
-                }
-
-                const winterCropsNode: TreeNode = {
-                    key: 'Winter crops',
-                    children: []
-                }
-
-
-                crops.forEach(crop => {
-                    const key = crop.dropData[0].itemId;
-                    const label = crop.dropData[0].item?.displayName;
-                    PlaceableItemsMap.set(crop.dropData[0].itemId, {
-                        component: ItemIconComponent,
-                        width: crop.size.width,
-                        height: crop.size.length,
-                        layer: 2,
-                        inputs: new Map<string, unknown>([
-                            ['itemName', crop.dropData[0].item?.iconName ?? 'placeholder.png']
-                        ])
-                    });
-
-                    const treeNode = {
-                        key,
-                        label,
-                        children: []
-                    };
-                    if (crop.growableSeason.includes(Season.SPRING)) {
-                        springCropsNode.children.push(treeNode)
-                    }
-                    if (crop.growableSeason.includes(Season.SUMMER)) {
-                        summerCropsNode.children.push(treeNode)
-                    }
-                    if (crop.growableSeason.includes(Season.FALL)) {
-                        fallCropsNode.children.push(treeNode)
-                    }
-                    if (crop.growableSeason.includes(Season.WINTER)) {
-                        winterCropsNode.children.push(treeNode)
-                    }
-
-
-                });
-
-                plants.forEach(crop => {
-                    const key = crop.dropData[0].itemId;
-                    const label = crop.dropData[0].item?.displayName;
-                    PlaceableItemsMap.set(crop.dropData[0].itemId, {
-                        component: ItemIconComponent,
-                        width: crop.size.width,
-                        height: crop.size.length,
-                        layer: 2,
-                        inputs: new Map<string, unknown>([
-                            ['itemName', crop.dropData[0].item?.iconName ?? 'placeholder.png']
-                        ])
-                    });
-
-                    fruitPlantsNode.children.push({
-                        key,
-                        label,
-                        children: []
-                    })
-
-                });
-
-
-                trees.forEach(crop => {
-
-                    const key = crop.dropData[0].itemId;
-                    const label = crop.dropData[0].item?.displayName;
-                    PlaceableItemsMap.set(key, {
-                        component: ItemIconComponent,
-                        width: crop.size.width,
-                        height: crop.size.length,
-                        layer: 2,
-                        inputs: new Map<string, unknown>([
-                            ['itemName', crop.dropData[0].item?.iconName ?? 'placeholder.png']
-                        ])
-                    });
-
-                    fruitTreesNode.children.push({
-                        key,
-                        label,
-                        children: []
-                    })
-
-
-                });
-
-                const produceNode: TreeNode = {
-                    key: '',
-                    label: 'Produce',
-                    children: []
-                }
-
-                produceNode.children.push(springCropsNode);
-                produceNode.children.push(summerCropsNode);
-                produceNode.children.push(fallCropsNode);
-                produceNode.children.push(winterCropsNode);
-
-                produceNode.children.push(fruitPlantsNode);
-                produceNode.children.push(fruitTreesNode);
-
-
+                const produceNode = this._registerProduces(crops, plants, trees);
                 this.navigation.root.children.push(produceNode);
+
+                const buildingsNode = this._registerBuildings();
+                this.navigation.root.children.push(buildingsNode);
 
                 this.createPlaceableList()
 
@@ -219,6 +96,193 @@ export class PlannerToolbarComponent {
         })
 
         return secondLevelList
+    }
+
+    private _registerBuildings(): TreeNode {
+
+        const buildingsNode: TreeNode = {
+            key: 'Buildings',
+            children: []
+        }
+
+        const buildings: { key: string; label: string; size: { width: number; length: number }, iconName: string }[] = [];
+
+        [
+            {itemKey: 'item_110001', size: {width: 8, length: 5}},  // barn level 1
+            {itemKey: 'item_110004', size: {width: 7, length: 4}},  // coop level 1
+            {itemKey: 'item_110007', size: {width: 4, length: 3}},  // mill
+            {itemKey: 'item_110008', size: {width: 9, length: 8}},  // shed
+            {itemKey: 'item_110009', size: {width: 15, length: 12}},  // large shed
+            {itemKey: 'item_110010', size: {width: 3, length: 3}},  // silo
+            {itemKey: 'item_110011', size: {width: 4, length: 3}},  // stable
+            {itemKey: 'item_110012', size: {width: 3, length: 3}},  // well
+            {itemKey: 'item_110013', size: {width: 1, length: 1}},  // shipping bin
+            {itemKey: 'item_110014', size: {width: 1, length: 1}},  // pet house
+            {itemKey: 'item_110023', size: {width: 5, length: 5}},  // fish pond
+            {itemKey: 'item_65444', size: {width: 5, length: 5}},  // insect house
+        ].forEach(({itemKey, size}) => {
+            const item = this._db.getItems().find(item => item.id === itemKey);
+            if (item) {
+                buildings.push({
+                    key: itemKey,
+                    label: item.displayName,
+                    iconName: item.iconName ?? 'placeholder.png',
+                    size
+                })
+            }
+        })
+
+
+        buildings.forEach(building => {
+            const key = building.key;
+            const label = building.label;
+            PlaceableItemsMap.set(building.key, {
+                component: ItemIconComponent,
+                width: building.size.width,
+                height: building.size.length,
+                layer: 2,
+                inputs: new Map<string, unknown>([
+                    ['itemName', building.iconName]
+                ])
+            });
+
+            const treeNode: TreeNode = {
+                key, label, children: []
+            }
+            buildingsNode.children.push(treeNode);
+        })
+
+
+        return buildingsNode
+
+    }
+
+    private _registerProduces(crops: Crop[], plants: FruitPlant[], trees: FruitTree[]): TreeNode {
+        const fruitPlantsNode: TreeNode = {
+            key: 'Fruit plants',
+            children: []
+        }
+
+        const fruitTreesNode: TreeNode = {
+            key: 'Fruit trees',
+            children: []
+        }
+
+
+        const springCropsNode: TreeNode = {
+            key: 'Spring crops',
+            children: []
+        }
+
+        const summerCropsNode: TreeNode = {
+            key: 'Summer crops',
+            children: []
+        }
+
+        const fallCropsNode: TreeNode = {
+            key: 'Fall crops',
+            children: []
+        }
+
+        const winterCropsNode: TreeNode = {
+            key: 'Winter crops',
+            children: []
+        }
+
+
+        crops.forEach(crop => {
+            const key = crop.dropData[0].itemId;
+            const label = crop.dropData[0].item?.displayName;
+            PlaceableItemsMap.set(crop.dropData[0].itemId, {
+                component: ItemIconComponent,
+                width: crop.size.width,
+                height: crop.size.length,
+                layer: 2,
+                inputs: new Map<string, unknown>([
+                    ['itemName', crop.dropData[0].item?.iconName ?? 'placeholder.png']
+                ])
+            });
+
+            const treeNode = {
+                key,
+                label,
+                children: []
+            };
+            if (crop.growableSeason.includes(Season.SPRING)) {
+                springCropsNode.children.push(treeNode)
+            }
+            if (crop.growableSeason.includes(Season.SUMMER)) {
+                summerCropsNode.children.push(treeNode)
+            }
+            if (crop.growableSeason.includes(Season.FALL)) {
+                fallCropsNode.children.push(treeNode)
+            }
+            if (crop.growableSeason.includes(Season.WINTER)) {
+                winterCropsNode.children.push(treeNode)
+            }
+
+
+        });
+
+        plants.forEach(crop => {
+            const key = crop.dropData[0].itemId;
+            const label = crop.dropData[0].item?.displayName;
+            PlaceableItemsMap.set(crop.dropData[0].itemId, {
+                component: ItemIconComponent,
+                width: crop.size.width,
+                height: crop.size.length,
+                layer: 2,
+                inputs: new Map<string, unknown>([
+                    ['itemName', crop.dropData[0].item?.iconName ?? 'placeholder.png']
+                ])
+            });
+
+            fruitPlantsNode.children.push({
+                key,
+                label,
+                children: []
+            })
+
+        });
+
+
+        trees.forEach(crop => {
+
+            const key = crop.dropData[0].itemId;
+            const label = crop.dropData[0].item?.displayName;
+            PlaceableItemsMap.set(key, {
+                component: ItemIconComponent,
+                width: crop.size.width,
+                height: crop.size.length,
+                layer: 2,
+                inputs: new Map<string, unknown>([
+                    ['itemName', crop.dropData[0].item?.iconName ?? 'placeholder.png']
+                ])
+            });
+
+            fruitTreesNode.children.push({
+                key,
+                label,
+                children: []
+            })
+
+
+        });
+
+        const produceNode: TreeNode = {
+            key: '',
+            label: 'Produce',
+            children: []
+        }
+
+        produceNode.children.push(springCropsNode);
+        produceNode.children.push(summerCropsNode);
+        produceNode.children.push(fallCropsNode);
+        produceNode.children.push(winterCropsNode);
+
+        produceNode.children.push(fruitPlantsNode);
+        produceNode.children.push(fruitTreesNode);
+        return produceNode;
     }
 
     private createPlaceableList() {
