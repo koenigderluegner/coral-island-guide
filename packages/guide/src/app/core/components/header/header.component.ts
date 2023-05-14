@@ -1,6 +1,6 @@
 import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
 import { UiIcon } from '../../../shared/enums/ui-icon.enum';
-import { NavigationStart, Router, RouterEvent, RouterLink } from '@angular/router';
+import { NavigationStart, Router, RouterLink } from '@angular/router';
 import { filter } from "rxjs";
 import { SettingsService } from "../../../shared/services/settings.service";
 
@@ -53,7 +53,7 @@ export class HeaderComponent {
     constructor(private _router: Router,
                 private readonly _settingsService: SettingsService) {
         _router.events.pipe(
-            filter((e): e is RouterEvent => e instanceof NavigationStart)
+            filter((e) => e instanceof NavigationStart)
         ).subscribe(() => {
             this.isOpen = false;
         });

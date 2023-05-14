@@ -1,5 +1,11 @@
 ## Changelog
 
+### 0.7.1 2023-05-11
+
+#### Changed
+
+- Changed beta data and images to version Beta Hotfix v-0.4-63857
+
 ### 0.7.0 2023-04-29
 
 #### Added
