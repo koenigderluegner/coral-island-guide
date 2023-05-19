@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Blue_Plastic_Chair_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.5,
+              "Y": 0.0,
+              "Z": 0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 91.0,
+            "Y": 10.0,
+            "Z": 127.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "0299CD164C0F56767F00749B65227195"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Blue_Plastic_Chair_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Blue_Plastic_Chair'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/Beach_outdoor/Beach_outdoor_textures/Blue_Plastic_Chair.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Blue_Plastic_Chair_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/Beach_outdoor/Blue_Plastic_Chair_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 46.0,
+          "Y": 64.0,
+          "Z": 0.859375,
+          "W": 0.0
+        },
+        {
+          "X": -45.0,
+          "Y": 64.0,
+          "Z": 0.1484375,
+          "W": 0.0
+        },
+        {
+          "X": -45.0,
+          "Y": -63.0,
+          "Z": 0.1484375,
+          "W": 0.9921875
+        },
+        {
+          "X": 46.0,
+          "Y": -63.0,
+          "Z": 0.859375,
+          "W": 0.9921875
+        },
+        {
+          "X": 46.0,
+          "Y": 64.0,
+          "Z": 0.859375,
+          "W": 0.0
+        },
+        {
+          "X": -45.0,
+          "Y": -63.0,
+          "Z": 0.1484375,
+          "W": 0.9921875
+        }
+      ]
+    }
+  }
+]

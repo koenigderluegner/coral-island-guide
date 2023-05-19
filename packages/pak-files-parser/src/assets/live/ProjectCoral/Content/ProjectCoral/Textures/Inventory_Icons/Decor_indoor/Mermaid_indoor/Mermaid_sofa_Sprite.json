@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Mermaid_sofa_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.5,
+              "Y": 0.0,
+              "Z": -10.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 251.0,
+            "Y": 10.0,
+            "Z": 226.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "E64123C745A049B2E3563C8BF855A20A"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Mermaid_sofa_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 256.0,
+        "Y": 256.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Mermaid_sofa'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/Mermaid_indoor/Mermaid_indoor_textures/Mermaid_sofa.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Mermaid_sofa_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/Mermaid_indoor/Mermaid_sofa_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 126.0,
+          "Y": 103.0,
+          "Z": 0.9921875,
+          "W": 0.09765625
+        },
+        {
+          "X": -125.0,
+          "Y": 103.0,
+          "Z": 0.01171875,
+          "W": 0.09765625
+        },
+        {
+          "X": -125.0,
+          "Y": -123.0,
+          "Z": 0.01171875,
+          "W": 0.98046875
+        },
+        {
+          "X": 126.0,
+          "Y": -123.0,
+          "Z": 0.9921875,
+          "W": 0.98046875
+        },
+        {
+          "X": 126.0,
+          "Y": 103.0,
+          "Z": 0.9921875,
+          "W": 0.09765625
+        },
+        {
+          "X": -125.0,
+          "Y": -123.0,
+          "Z": 0.01171875,
+          "W": 0.98046875
+        }
+      ]
+    }
+  }
+]
