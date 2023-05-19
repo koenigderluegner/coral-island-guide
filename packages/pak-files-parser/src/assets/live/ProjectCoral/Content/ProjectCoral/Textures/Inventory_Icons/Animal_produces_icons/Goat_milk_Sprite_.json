@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "Goat_milk_Sprite_",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.5,
+              "Y": 0.0,
+              "Z": -2.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 75.0,
+            "Y": 10.0,
+            "Z": 110.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "B459BC10493398A19DE63CA5DAE26E65"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Goat_milk_Sprite_",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Goat_milk_'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Textures/Goat_milk_.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Goat_milk_Sprite_:BodySetup_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Goat_milk_Sprite_.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 38.0,
+          "Y": 53.0,
+          "Z": 0.796875,
+          "W": 0.0859375
+        },
+        {
+          "X": -37.0,
+          "Y": 53.0,
+          "Z": 0.2109375,
+          "W": 0.0859375
+        },
+        {
+          "X": -37.0,
+          "Y": -57.0,
+          "Z": 0.2109375,
+          "W": 0.9453125
+        },
+        {
+          "X": 38.0,
+          "Y": -57.0,
+          "Z": 0.796875,
+          "W": 0.9453125
+        },
+        {
+          "X": 38.0,
+          "Y": 53.0,
+          "Z": 0.796875,
+          "W": 0.0859375
+        },
+        {
+          "X": -37.0,
+          "Y": -57.0,
+          "Z": 0.2109375,
+          "W": 0.9453125
+        }
+      ]
+    }
+  }
+]

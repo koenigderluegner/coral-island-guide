@@ -1,5 +1,11 @@
 ## Changelog
 
+### 0.7.2 2023-05-19
+
+#### Changed
+
+- Added live data for version 0.4
+
 ### 0.7.1 2023-05-11
 
 #### Changed

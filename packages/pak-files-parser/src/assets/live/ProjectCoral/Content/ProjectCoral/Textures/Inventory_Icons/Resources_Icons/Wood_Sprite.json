@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Wood_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -2.0,
+              "Y": -0.0,
+              "Z": -1.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 118.0,
+            "Y": 10.0,
+            "Z": 70.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "3330D9824624D12F3F1B199080D89598"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Wood_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Wood'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Resources_Icons/Textures/Wood.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Wood_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Resources_Icons/Wood_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 57.0,
+          "Y": 34.0,
+          "Z": 0.9453125,
+          "W": 0.234375
+        },
+        {
+          "X": -61.0,
+          "Y": 34.0,
+          "Z": 0.0234375,
+          "W": 0.234375
+        },
+        {
+          "X": -61.0,
+          "Y": -36.0,
+          "Z": 0.0234375,
+          "W": 0.78125
+        },
+        {
+          "X": 57.0,
+          "Y": -36.0,
+          "Z": 0.9453125,
+          "W": 0.78125
+        },
+        {
+          "X": 57.0,
+          "Y": 34.0,
+          "Z": 0.9453125,
+          "W": 0.234375
+        },
+        {
+          "X": -61.0,
+          "Y": -36.0,
+          "Z": 0.0234375,
+          "W": 0.78125
+        }
+      ]
+    }
+  }
+]

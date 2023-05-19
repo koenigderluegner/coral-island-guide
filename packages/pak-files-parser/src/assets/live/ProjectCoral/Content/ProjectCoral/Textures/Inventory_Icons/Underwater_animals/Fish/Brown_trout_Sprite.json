@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Brown_trout_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.5,
+              "Y": 0.0,
+              "Z": -0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 125.0,
+            "Y": 10.0,
+            "Z": 71.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "E58FD089474B02803F078DAB6DBB9637"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Brown_trout_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Brown_trout'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Underwater_animals/Fish/Textures/Brown_trout.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Brown_trout_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Underwater_animals/Fish/Brown_trout_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 63.0,
+          "Y": 35.0,
+          "Z": 0.9921875,
+          "W": 0.2265625
+        },
+        {
+          "X": -62.0,
+          "Y": 35.0,
+          "Z": 0.015625,
+          "W": 0.2265625
+        },
+        {
+          "X": -62.0,
+          "Y": -36.0,
+          "Z": 0.015625,
+          "W": 0.78125
+        },
+        {
+          "X": 63.0,
+          "Y": -36.0,
+          "Z": 0.9921875,
+          "W": 0.78125
+        },
+        {
+          "X": 63.0,
+          "Y": 35.0,
+          "Z": 0.9921875,
+          "W": 0.2265625
+        },
+        {
+          "X": -62.0,
+          "Y": -36.0,
+          "Z": 0.015625,
+          "W": 0.78125
+        }
+      ]
+    }
+  }
+]

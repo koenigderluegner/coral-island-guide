@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Flame_essence_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -1.0,
+              "Y": -0.0,
+              "Z": -1.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 118.0,
+            "Y": 10.0,
+            "Z": 120.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "C081FC6942D378E5E0CC449D068B6797"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Flame_essence_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Flame_essence'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Misc_Icons/Monster_loot/Textures/Flame_essence.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Flame_essence_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Misc_Icons/Monster_loot/Flame_essence_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 58.0,
+          "Y": 59.0,
+          "Z": 0.953125,
+          "W": 0.0390625
+        },
+        {
+          "X": -60.0,
+          "Y": 59.0,
+          "Z": 0.03125,
+          "W": 0.0390625
+        },
+        {
+          "X": -60.0,
+          "Y": -61.0,
+          "Z": 0.03125,
+          "W": 0.9765625
+        },
+        {
+          "X": 58.0,
+          "Y": -61.0,
+          "Z": 0.953125,
+          "W": 0.9765625
+        },
+        {
+          "X": 58.0,
+          "Y": 59.0,
+          "Z": 0.953125,
+          "W": 0.0390625
+        },
+        {
+          "X": -60.0,
+          "Y": -61.0,
+          "Z": 0.03125,
+          "W": 0.9765625
+        }
+      ]
+    }
+  }
+]

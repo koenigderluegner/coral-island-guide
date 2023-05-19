@@ -123,8 +123,8 @@ async function createImages(fileBasename: string, skipIfExists = true) {
     const fileName = convertToIconName(data.Name);
     if (skipIfExists && fs.existsSync(path.join(itemIconPath, fileName))) return;
 
-    const filePAth = data.Properties.BakedSourceTexture.ObjectPath.split('.');
-    filePAth.pop()
+    const filePath = data.Properties.BakedSourceTexture.ObjectPath.split('.');
+    filePath.pop()
 
     const imageMetaData = {
         fileName,
@@ -132,7 +132,7 @@ async function createImages(fileBasename: string, skipIfExists = true) {
         height: data.Properties.BakedSourceDimension.Y,
         top: data.Properties.BakedSourceUV?.Y ?? 0,
         left: data.Properties.BakedSourceUV?.X ?? 0,
-        sourceImage: filePAth.join('.'),
+        sourceImage: filePath.join('.'),
     };
 
     const sourceImagePath = path.join(environment.assetPath, imageMetaData.sourceImage + '.png');

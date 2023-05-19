@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Stone_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -1.5,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 115.0,
+            "Y": 10.0,
+            "Z": 104.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "A0EF45DC4B1C965505793FA6B0F47551"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Stone_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Stone'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Resources_Icons/Textures/Stone.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Stone_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Resources_Icons/Stone_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 56.0,
+          "Y": 52.0,
+          "Z": 0.9375,
+          "W": 0.09375
+        },
+        {
+          "X": -59.0,
+          "Y": 52.0,
+          "Z": 0.0390625,
+          "W": 0.09375
+        },
+        {
+          "X": -59.0,
+          "Y": -52.0,
+          "Z": 0.0390625,
+          "W": 0.90625
+        },
+        {
+          "X": 56.0,
+          "Y": -52.0,
+          "Z": 0.9375,
+          "W": 0.90625
+        },
+        {
+          "X": 56.0,
+          "Y": 52.0,
+          "Z": 0.9375,
+          "W": 0.09375
+        },
+        {
+          "X": -59.0,
+          "Y": -52.0,
+          "Z": 0.0390625,
+          "W": 0.90625
+        }
+      ]
+    }
+  }
+]
