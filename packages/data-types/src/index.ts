@@ -17,6 +17,7 @@ export * from './lib/interfaces/tag-based-item.interface';
 export * from './lib/interfaces/unlock-by-mastery.interface';
 export * from './lib/interfaces/offering-altar.interface';
 export * from './lib/interfaces/offerings.interface';
+export * from './lib/interfaces/offering.interface';
 export * from './lib/interfaces/offering-reward.interface';
 
 export * from './lib/enums/quality.enum';

@@ -54,7 +54,8 @@ const appRoutes: Route[] = [
         path: 'locations',
         loadChildren: () => import('./locations/locations.module').then((m) => m.LocationsModule),
     },
-    {path: 'settings',
+    {
+        path: 'settings',
         loadChildren: () => import('./settings/settings.module').then((m) => m.SettingsModule)
     },
     {

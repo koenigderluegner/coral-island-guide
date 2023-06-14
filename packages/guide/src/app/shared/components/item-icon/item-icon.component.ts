@@ -11,9 +11,9 @@ import { SettingsService } from "../../services/settings.service";
 })
 export class ItemIconComponent {
 
-    @Input() itemName?: string | null;
+    @Input() itemName?: string | null | undefined;
     @Input() subIconName?: string | null;
-    @Input() quality?: Quality;
+    @Input() quality?: Quality | undefined;
     _amount = 0;
     protected version: string;
     @HostBinding('class.app-item-icon') private _setClass = true;
