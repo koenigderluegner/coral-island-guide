@@ -53,11 +53,11 @@
         </div>
         <div class="grid gap-4 icon-grid  mt-8">
 
-            <app-item-icon (click)="showDetails(itemProcess.item)"
+            <app-item-icon (click)="showDetails(itemProcess)"
                            *ngFor="let itemProcess of activeOffering.requiredItems"
                            [amount]="itemProcess.amount"
                            [class.selected-icon]="selectedEntity?.id === itemProcess.item.id"
-                           [itemName]="itemProcess.item?.iconName"
+                           [itemName]="itemProcess.item.iconName"
                            [quality]="itemProcess.quality"
                            class="icon-grid-item">
             </app-item-icon>
