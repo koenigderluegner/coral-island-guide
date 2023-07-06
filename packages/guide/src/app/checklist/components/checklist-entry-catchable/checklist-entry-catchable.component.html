@@ -1,5 +1,5 @@
 <app-checklist-entry-base *ngIf="entry | isFish" [item]="entry.item">
-    <div> - {{(entry.rarity | spacesToPascalCase)}}</div>
+    <div> • <span title="Rarity">{{(entry.rarity | spacesToPascalCase)}}</span></div>
 </app-checklist-entry-base>
 <app-checklist-entry-base *ngIf="!(entry | isFish)" [item]="entry.item">
 

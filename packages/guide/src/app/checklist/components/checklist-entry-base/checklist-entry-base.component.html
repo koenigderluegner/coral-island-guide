@@ -4,5 +4,5 @@
     <app-rarity-icon *ngIf="quality" [quality]="quality" class="!w-4"/>
 </div>
 <ng-content/>
-<span class="ml-auto font-semibold mr-4">x{{amount}}</span>
+<span class="ml-auto font-semibold mr-4">{{amount ? 'x' + amount : ''}}</span>
 <mat-checkbox></mat-checkbox>
