@@ -1,4 +1,24 @@
 <app-card class="container mx-auto">
-    <h2 class="mb-2 mt-4 font-semibold text-xl text-black">Offerings</h2>
-    <app-checklist-entry-offering *ngFor="let offering of checklist.offerings" [entry]="offering" class="mb-2"/>
+    <ng-container *ngIf="checklist.offerings.length">
+        <h2 class="mb-2 mt-4 font-semibold text-xl text-black">Offerings</h2>
+        <app-checklist-entry-offering *ngFor="let offering of checklist.offerings" [entry]="offering" class="mb-2"/>
+    </ng-container>
+
+    <ng-container *ngIf="checklist.journal.fish.length || checklist.journal.critter.length">
+        <h2 class="mb-2 mt-4 font-semibold text-xl text-black">Journal catchables</h2>
+        <app-checklist-entry-catchable *ngFor="let fish of checklist.journal.fish" [entry]="fish" class="mb-2"/>
+        <app-checklist-entry-catchable *ngFor="let critter of checklist.journal.critter" [entry]="critter"
+                                       class="mb-2"/>
+    </ng-container>
+
+    <ng-container
+            *ngIf="!checklist.offerings.length && !checklist.journal.fish.length && !checklist.journal.critter.length">
+        <h2 class="mb-2 mt-4 font-semibold text-xl text-black">No entries in checklist</h2>
+        <p class="text-black">
+            Your current checklist is empty! Visit the <a class="underline" routerLink="/journal">journal</a>, the
+            <a class="underline" routerLink="/locations/lake-temple">offerings</a> or other places to add entries to
+            your
+            checklist.
+        </p>
+    </ng-container>
 </app-card>

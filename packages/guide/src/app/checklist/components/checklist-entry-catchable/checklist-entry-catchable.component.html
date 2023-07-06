@@ -1,1 +1,6 @@
-<p>checklist-entry-catchable works!</p>
+<app-checklist-entry-base *ngIf="entry | isFish" [item]="entry.item">
+    <div> - {{(entry.rarity | spacesToPascalCase)}}</div>
+</app-checklist-entry-base>
+<app-checklist-entry-base *ngIf="!(entry | isFish)" [item]="entry.item">
+
+</app-checklist-entry-base>

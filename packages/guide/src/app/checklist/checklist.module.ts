@@ -8,6 +8,7 @@ import { ChecklistEntryCatchableComponent } from './components/checklist-entry-c
 import { ChecklistEntryBaseComponent } from './components/checklist-entry-base/checklist-entry-base.component';
 import { SharedModule } from "../shared/shared.module";
 import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatTableModule } from "@angular/material/table";
 
 const routes: Routes = [{path: '', component: ChecklistComponent}];
 
@@ -19,7 +20,12 @@ const routes: Routes = [{path: '', component: ChecklistComponent}];
         ChecklistEntryCatchableComponent,
         ChecklistEntryBaseComponent,
     ],
-    imports: [CommonModule, RouterModule.forChild(routes), SharedModule, MatCheckboxModule],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        SharedModule, MatCheckboxModule,
+        MatTableModule
+    ],
 })
 export class ChecklistModule {
 }
