@@ -1,7 +1,8 @@
 <app-card class="container mx-auto">
     <ng-container *ngIf="checklist.offerings.length">
         <h2 class="mb-2 mt-4 font-semibold text-xl text-black">Offerings</h2>
-        <app-checklist-entry-offering *ngFor="let offering of checklist.offerings" [entry]="offering" class="mb-2"/>
+        <app-checklist-entry-offering *ngFor="let offering of checklist.offerings" @leaveAnimation [entry]="offering"
+                                      class="mb-2"/>
     </ng-container>
 
     <ng-container *ngIf="checklist.journal.fish.length || checklist.journal.critter.length">
