@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { ChecklistCategory } from "../enums/checklist-category.enum";
-import { Critter, Fish, Offering } from "@ci/data-types";
+import { Critter, Fish, MinimalItem, Offering } from "@ci/data-types";
 import { Checklist } from "../interfaces/checklist.interface";
+import { SelectionModel } from "@angular/cdk/collections";
+
+type MarkedSelection = { category: ChecklistCategory, item: MinimalItem };
 
 @Injectable({
     providedIn: 'root'
@@ -9,11 +12,20 @@ import { Checklist } from "../interfaces/checklist.interface";
 export class ChecklistService {
     private static _CURRENT_CHECKLIST_VERSION = 1
     private static _CHECKLIST_STORE_KEY = 'checklist'
+    clearTimer?: number;
+    clearTimeout = 3000;
     private currentChecklistIndex = 0;
     private _checklists: Checklist[] = [];
+    private _markedAsCompleted: SelectionModel<MarkedSelection> = new SelectionModel<{
+        category: ChecklistCategory;
+        item: MinimalItem
+    }>(true, [])
 
     constructor() {
-        this.read()
+        this.read();
+        this._markedAsCompleted.compareWith = (o1, o2) => {
+            return o1.category === o2.category && o1.item.id === o2.item.id
+        }
     }
 
     add(type: ChecklistCategory.JOURNAL_FISH, data: Fish): void
@@ -66,6 +78,26 @@ export class ChecklistService {
         }
     }
 
+    updateStatus(category: ChecklistCategory, item: MinimalItem, checked: boolean) {
+        const selection: MarkedSelection = {category, item}
+        if (checked) {
+            this._markedAsCompleted.select(selection)
+        } else {
+            this._markedAsCompleted.deselect(selection)
+        }
+
+        this._resetClearTimer();
+
+
+    }
+
+    private _resetClearTimer() {
+        clearTimeout(this.clearTimer);
+        this.clearTimer = setTimeout(() => {
+            this._completeEntries()
+        }, this.clearTimeout) as unknown as number;
+    }
+
     private _createEmptyChecklist(): Checklist {
         return {
             version: ChecklistService._CURRENT_CHECKLIST_VERSION,
@@ -75,5 +107,37 @@ export class ChecklistService {
                 fish: []
             }
         } satisfies Checklist
+    }
+
+    private _completeEntries() {
+        const completedEntries = this._markedAsCompleted.selected;
+        this._markedAsCompleted.clear();
+
+        let foundIndex = -1
+
+        completedEntries.forEach(entry => {
+            switch (entry.category) {
+                case ChecklistCategory.OFFERINGS:
+                    foundIndex = this.getCurrentChecklist().offerings.findIndex(offering => offering.item.id === entry.item.id)
+                    if (foundIndex >= 0) {
+                        this.getCurrentChecklist().offerings.splice(foundIndex, 1);
+                    }
+                    break;
+                case ChecklistCategory.JOURNAL_CRITTER:
+                    foundIndex = this.getCurrentChecklist().journal.critter.findIndex(offering => offering.item.id === entry.item.id)
+                    if (foundIndex >= 0) {
+                        this.getCurrentChecklist().journal.critter.splice(foundIndex, 1);
+                    }
+                    break;
+                case ChecklistCategory.JOURNAL_FISH:
+                    foundIndex = this.getCurrentChecklist().journal.fish.findIndex(offering => offering.item.id === entry.item.id)
+                    if (foundIndex >= 0) {
+                        this.getCurrentChecklist().journal.fish.splice(foundIndex, 1);
+                    }
+                    break;
+            }
+        });
+
+        this.save()
     }
 }

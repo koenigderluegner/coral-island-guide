@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Offering } from "@ci/data-types";
+import { ChecklistCategory } from "../../../core/enums/checklist-category.enum";
 
 @Component({
     selector: 'app-checklist-entry-offering',
@@ -8,6 +9,7 @@ import { Offering } from "@ci/data-types";
 export class ChecklistEntryOfferingComponent {
 
     @Input({required: true}) entry!: Offering;
+    protected category = ChecklistCategory.OFFERINGS
 
 
 }
