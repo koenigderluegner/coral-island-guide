@@ -17,6 +17,7 @@ const routerOptions: ExtraOptions = {
     anchorScrolling: 'enabled',
     scrollOffset: [0, 64],
     initialNavigation: 'enabledBlocking',
+    bindToComponentInputs: true
 };
 
 const appRoutes: Route[] = [

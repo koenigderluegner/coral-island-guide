@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { Component, EventEmitter, HostBinding, inject, Input, Output } from '@angular/core';
 import { MinimalItem, Quality } from "@ci/data-types";
 import { ChecklistService } from "../../../core/services/checklist.service";
 import { ChecklistCategory } from "../../../core/enums/checklist-category.enum";
@@ -15,11 +15,13 @@ export class ChecklistEntryBaseComponent {
     @Input() quality?: Quality | undefined;
     @Input({required: true}) item!: MinimalItem;
     @Input({required: true}) category!: ChecklistCategory;
-    @Output() markedAsComplete: EventEmitter<MinimalItem> = new EventEmitter<MinimalItem>()
+    @Output() markedAsComplete: EventEmitter<MinimalItem> = new EventEmitter<MinimalItem>();
     protected qualities = Quality;
+    @HostBinding('class.opacity-50') protected isChecked = false;
     private _checklistService: ChecklistService = inject(ChecklistService)
 
     toggleCompletionStatus($event: MatCheckboxChange) {
+        this.isChecked = $event.checked;
         this._checklistService.updateStatus(this.category, this.item, $event.checked)
     }
 }

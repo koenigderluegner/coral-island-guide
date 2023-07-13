@@ -1,6 +1,6 @@
 <div *ngIf="item" class="flex gap-2 items-center">
     <app-item-icon [itemName]="item.iconName" class="!w-7"/>
-    <span class="ml-1 whitespace-nowrap">{{item.displayName}}</span>
+    <span [class.line-through]="isChecked" class="ml-1 whitespace-nowrap">{{item.displayName}}</span>
     <app-rarity-icon *ngIf="quality" [quality]="quality" class="!w-4"/>
 </div>
 <ng-content/>

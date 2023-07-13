@@ -1,25 +1,64 @@
-<app-card class="container mx-auto">
-    <ng-container *ngIf="checklist.offerings.length">
-        <h2 class="mb-2 mt-4 font-semibold text-xl text-black">Offerings</h2>
-        <app-checklist-entry-offering *ngFor="let offering of checklist.offerings" @leaveAnimation [entry]="offering"
-                                      class="mb-2"/>
-    </ng-container>
+<app-sidebar-container>
+    <app-module-sidebar>
+        <ng-container>
+            <app-module-sidebar-item exact routerLink="/checklist">
+                <div class="flex justify-between grow">
+                    <span>All</span>
+                    <span>{{checklist.offerings.length + checklist.journal.fish.length + checklist.journal.critter.length}}</span>
+                </div>
+            </app-module-sidebar-item>
+            <app-module-sidebar-item routerLink="/checklist/offerings">
+                <div class="flex justify-between grow">
+                    <span>Offerings</span>
+                    <span>{{checklist.offerings.length}}</span>
+                </div>
+            </app-module-sidebar-item>
+            <app-module-sidebar-item routerLink="/checklist/catchables">
+                <div class="flex justify-between grow">
+                    <span>Catchables</span>
+                    <span>{{checklist.journal.fish.length + checklist.journal.critter.length}}</span>
+                </div>
+            </app-module-sidebar-item>
 
-    <ng-container *ngIf="checklist.journal.fish.length || checklist.journal.critter.length">
-        <h2 class="mb-2 mt-4 font-semibold text-xl text-black">Journal catchables</h2>
-        <app-checklist-entry-catchable *ngFor="let fish of checklist.journal.fish" [entry]="fish" class="mb-2"/>
-        <app-checklist-entry-catchable *ngFor="let critter of checklist.journal.critter" [entry]="critter"
-                                       class="mb-2"/>
-    </ng-container>
+        </ng-container>
+    </app-module-sidebar>
+    <app-card class="container">
+        <ng-container *ngIf="checklist.offerings.length && (checklistId === 'offerings' || checklistId ===undefined)">
+            <h2 class="mb-2 mt-4 font-semibold text-xl text-black">Offerings</h2>
+            <div [@.disabled]="!(checklistId === 'offerings' || checklistId ===undefined)">
+                <app-checklist-entry-offering *ngFor="let offering of checklist.offerings"
+                                              @leaveAnimation
+                                              [entry]="offering"
+                                              class="mb-2 block"/>
+            </div>
+        </ng-container>
 
-    <ng-container
-            *ngIf="!checklist.offerings.length && !checklist.journal.fish.length && !checklist.journal.critter.length">
-        <h2 class="mb-2 mt-4 font-semibold text-xl text-black">No entries in checklist</h2>
-        <p class="text-black">
-            Your current checklist is empty! Visit the <a class="underline" routerLink="/journal">journal</a>, the
-            <a class="underline" routerLink="/locations/lake-temple">offerings</a> or other places to add entries to
-            your
-            checklist.
-        </p>
-    </ng-container>
-</app-card>
+        <ng-container
+                *ngIf="(checklist.journal.fish.length || checklist.journal.critter.length) && (checklistId === 'catchables' || checklistId ===undefined)">
+            <h2 class="mb-2 mt-4 font-semibold text-xl text-black">Journal catchables</h2>
+            <div [@.disabled]="!(checklistId === 'catchables' || checklistId ===undefined)">
+                <app-checklist-entry-catchable *ngFor="let fish of checklist.journal.fish" @leaveAnimation
+                                               [entry]="fish" class="mb-2 block"/>
+                <app-checklist-entry-catchable *ngFor="let critter of checklist.journal.critter" @leaveAnimation
+                                               [entry]="critter"
+                                               class="mb-2 block"/>
+            </div>
+        </ng-container>
+
+        <ng-container
+                *ngIf="!checklist.offerings.length && !checklist.journal.fish.length && !checklist.journal.critter.length">
+            <h2 class="mb-2 mt-4 font-semibold text-xl text-black">No entries in checklist</h2>
+            <p class="text-black">
+                Your current checklist is empty! Visit the <a class="underline" routerLink="/journal">journal</a>, the
+                <a class="underline" routerLink="/locations/lake-temple">offerings</a> or other places to add entries to
+                your
+                checklist.
+            </p>
+        </ng-container>
+    </app-card>
+</app-sidebar-container>
+
+
+
+
+

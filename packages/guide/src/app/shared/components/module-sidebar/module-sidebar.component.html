@@ -5,6 +5,7 @@
                 <li>
                     <a [routerLink]="child.routerLink" class="app-module-sidebar-list-item"
                        [routerLinkActive]="'active'"
+                       [routerLinkActiveOptions]="{exact: !!child.exact}"
                        [class.mb-4]="!last" (click)="showMenu = false">
                         <app-ui-icon *ngIf="child.uiIcon" [uiIcon]="child.uiIcon" class="!h-8"></app-ui-icon>
                         <ng-template [ngTemplateOutlet]="child.innerTemplate"></ng-template>

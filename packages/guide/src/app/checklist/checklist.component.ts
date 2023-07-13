@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ChecklistService } from "../core/services/checklist.service";
 import { Checklist } from "../core/interfaces/checklist.interface";
 import { animate, style, transition, trigger } from "@angular/animations";
@@ -23,6 +23,8 @@ import { animate, style, transition, trigger } from "@angular/animations";
     ]
 })
 export class ChecklistComponent {
+
+    @Input() checklistId?: string;
 
     protected checklist: Checklist;
 

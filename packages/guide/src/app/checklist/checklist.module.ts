@@ -10,7 +10,10 @@ import { SharedModule } from "../shared/shared.module";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatTableModule } from "@angular/material/table";
 
-const routes: Routes = [{path: '', component: ChecklistComponent}];
+const routes: Routes = [
+    {path: '', component: ChecklistComponent},
+    {path: ':checklistId', component: ChecklistComponent}
+];
 
 @NgModule({
     declarations: [
