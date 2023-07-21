@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Llama_wool_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": -2.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 74.0,
+            "Y": 10.0,
+            "Z": 67.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "4240B8E94084EDF3B1820C94E3A042EE"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Llama_wool_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Llama_wool'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Textures/Llama_wool.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Llama_wool_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Llama_wool_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 37.0,
+          "Y": 31.0,
+          "Z": 0.7890625,
+          "W": 0.2578125
+        },
+        {
+          "X": -37.0,
+          "Y": 31.0,
+          "Z": 0.2109375,
+          "W": 0.2578125
+        },
+        {
+          "X": -37.0,
+          "Y": -36.0,
+          "Z": 0.2109375,
+          "W": 0.78125
+        },
+        {
+          "X": 37.0,
+          "Y": -36.0,
+          "Z": 0.7890625,
+          "W": 0.78125
+        },
+        {
+          "X": 37.0,
+          "Y": 31.0,
+          "Z": 0.7890625,
+          "W": 0.2578125
+        },
+        {
+          "X": -37.0,
+          "Y": -36.0,
+          "Z": 0.2109375,
+          "W": 0.78125
+        }
+      ]
+    }
+  }
+]

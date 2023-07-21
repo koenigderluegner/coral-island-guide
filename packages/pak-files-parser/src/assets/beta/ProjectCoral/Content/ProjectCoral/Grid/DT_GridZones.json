@@ -3740,16 +3740,16 @@
             "EC_GridObjectType::Excavation": {
               "spawnLimit": {
                 "Type": "ERangeBoundTypes::Inclusive",
-                "Value": 2
+                "Value": 13
               },
               "dailySpawn": {
                 "LowerBound": {
                   "Type": "ERangeBoundTypes::Inclusive",
-                  "Value": 2
+                  "Value": 11
                 },
                 "UpperBound": {
                   "Type": "ERangeBoundTypes::Inclusive",
-                  "Value": 2
+                  "Value": 13
                 }
               },
               "spawnAmountGenerator": {
@@ -3757,8 +3757,8 @@
                 "ObjectPath": "/Script/ProjectCoral"
               },
               "spawnAmountConditionModifier": [],
-              "lifetime": "EC_GridObjectPeriod::Day",
-              "spawnPeriod": "EC_GridObjectPeriod::Day",
+              "lifetime": "EC_GridObjectPeriod::Week",
+              "spawnPeriod": "EC_GridObjectPeriod::Week",
               "firstDayMaximize": false,
               "fillLimitOnFirstDay": false,
               "zoneRarityDistribution": []
@@ -3834,8 +3834,8 @@
             "ObjectPath": "/Script/ProjectCoral"
           },
           "spawnAmountConditionModifier": [],
-          "lifetime": "EC_GridObjectPeriod::Inherit",
-          "spawnPeriod": "EC_GridObjectPeriod::Inherit",
+          "lifetime": "EC_GridObjectPeriod::Week",
+          "spawnPeriod": "EC_GridObjectPeriod::Week",
           "firstDayMaximize": false,
           "fillLimitOnFirstDay": false,
           "zoneRarityDistribution": []
@@ -3848,7 +3848,7 @@
       "DeepForest_Tiles": {
         "enabled": true,
         "isParent": false,
-        "spawnMaxLimit": 3,
+        "spawnMaxLimit": 4,
         "color": {
           "R": 0.0,
           "G": 0.0,
@@ -3864,7 +3864,80 @@
           "RowName": "DeepForest"
         },
         "tags": [],
-        "spawnOptionsMap": [],
+        "spawnOptionsMap": [
+          {
+            "EC_GridObjectType::Loot": {
+              "spawnLimit": {
+                "Type": "ERangeBoundTypes::Open",
+                "Value": 0
+              },
+              "dailySpawn": {
+                "LowerBound": {
+                  "Type": "ERangeBoundTypes::Inclusive",
+                  "Value": 0
+                },
+                "UpperBound": {
+                  "Type": "ERangeBoundTypes::Inclusive",
+                  "Value": 4
+                }
+              },
+              "spawnAmountGenerator": {
+                "ObjectName": "Class'C_SpawnAmountGenerator'",
+                "ObjectPath": "/Script/ProjectCoral"
+              },
+              "spawnAmountConditionModifier": [],
+              "lifetime": "EC_GridObjectPeriod::Week",
+              "spawnPeriod": "EC_GridObjectPeriod::Day",
+              "firstDayMaximize": false,
+              "fillLimitOnFirstDay": false,
+              "zoneRarityDistribution": [
+                {
+                  "EC_CaughtableRarityEnum::Legendary": 1.0
+                },
+                {
+                  "EC_CaughtableRarityEnum::SuperRare": 3.0
+                },
+                {
+                  "EC_CaughtableRarityEnum::Rare": 7.0
+                },
+                {
+                  "EC_CaughtableRarityEnum::Uncommon": 25.0
+                },
+                {
+                  "EC_CaughtableRarityEnum::Common": 64.0
+                }
+              ]
+            }
+          },
+          {
+            "EC_GridObjectType::DisturbedSoil": {
+              "spawnLimit": {
+                "Type": "ERangeBoundTypes::Inclusive",
+                "Value": 2
+              },
+              "dailySpawn": {
+                "LowerBound": {
+                  "Type": "ERangeBoundTypes::Inclusive",
+                  "Value": 1
+                },
+                "UpperBound": {
+                  "Type": "ERangeBoundTypes::Inclusive",
+                  "Value": 1
+                }
+              },
+              "spawnAmountGenerator": {
+                "ObjectName": "Class'C_SpawnAmountGenerator'",
+                "ObjectPath": "/Script/ProjectCoral"
+              },
+              "spawnAmountConditionModifier": [],
+              "lifetime": "EC_GridObjectPeriod::Season",
+              "spawnPeriod": "EC_GridObjectPeriod::Week",
+              "firstDayMaximize": false,
+              "fillLimitOnFirstDay": false,
+              "zoneRarityDistribution": []
+            }
+          }
+        ],
         "encounterSpawnOptions": [
           {
             "Key": {
@@ -3882,7 +3955,7 @@
                 },
                 "UpperBound": {
                   "Type": "ERangeBoundTypes::Inclusive",
-                  "Value": 2
+                  "Value": 3
                 }
               },
               "spawnAmountGenerator": {

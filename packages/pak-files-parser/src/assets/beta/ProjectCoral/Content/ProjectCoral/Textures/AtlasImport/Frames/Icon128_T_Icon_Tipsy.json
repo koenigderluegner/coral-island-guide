@@ -1,0 +1,113 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "Icon128_T_Icon_Tipsy",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 128.0,
+            "Y": 10.0,
+            "Z": 128.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "A262C5F946A701ACE0F88EB6BDCA6AF1"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Icon128_T_Icon_Tipsy",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 131.0,
+        "Y": 131.0
+      },
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'TP_Icons128'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_Icons128.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Icon128_T_Icon_Tipsy:BodySetup_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Icon128_T_Icon_Tipsy.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 64.0,
+          "Y": 64.0,
+          "Z": 0.2529297,
+          "W": 0.12792969
+        },
+        {
+          "X": -64.0,
+          "Y": 64.0,
+          "Z": 0.12792969,
+          "W": 0.12792969
+        },
+        {
+          "X": -64.0,
+          "Y": -64.0,
+          "Z": 0.12792969,
+          "W": 0.2529297
+        },
+        {
+          "X": 64.0,
+          "Y": -64.0,
+          "Z": 0.2529297,
+          "W": 0.2529297
+        },
+        {
+          "X": 64.0,
+          "Y": 64.0,
+          "Z": 0.2529297,
+          "W": 0.12792969
+        },
+        {
+          "X": -64.0,
+          "Y": -64.0,
+          "Z": 0.12792969,
+          "W": 0.2529297
+        }
+      ]
+    }
+  }
+]

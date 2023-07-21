@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Puree_Machine_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -0.5,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 113.0,
+            "Y": 10.0,
+            "Z": 108.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "362CE0ED4FCBF15EA9F767AFAB3F6543"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Puree_Machine_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Puree_Machine'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Artisan_machine_products/Artisan_machines/Textures/Puree_Machine.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Puree_Machine_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Artisan_machine_products/Artisan_machines/Puree_Machine_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 56.0,
+          "Y": 54.0,
+          "Z": 0.9375,
+          "W": 0.078125
+        },
+        {
+          "X": -57.0,
+          "Y": 54.0,
+          "Z": 0.0546875,
+          "W": 0.078125
+        },
+        {
+          "X": -57.0,
+          "Y": -54.0,
+          "Z": 0.0546875,
+          "W": 0.921875
+        },
+        {
+          "X": 56.0,
+          "Y": -54.0,
+          "Z": 0.9375,
+          "W": 0.921875
+        },
+        {
+          "X": 56.0,
+          "Y": 54.0,
+          "Z": 0.9375,
+          "W": 0.078125
+        },
+        {
+          "X": -57.0,
+          "Y": -54.0,
+          "Z": 0.0546875,
+          "W": 0.921875
+        }
+      ]
+    }
+  }
+]

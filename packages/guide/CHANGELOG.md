@@ -1,5 +1,11 @@
 ## Changelog
 
+### 0.7.3 2023-07-21
+
+#### Changed
+
+- Added beta data for version 0.5-19
+
 ### 0.7.2 2023-05-19
 
 #### Changed

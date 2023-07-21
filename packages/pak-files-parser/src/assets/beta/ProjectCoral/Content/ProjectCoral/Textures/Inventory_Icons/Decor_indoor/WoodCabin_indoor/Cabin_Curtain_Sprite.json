@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Cabin_Curtain_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": -6.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 124.0,
+            "Y": 10.0,
+            "Z": 105.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "CB744EBC44ADF3DA8854EB869D89C432"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Cabin_Curtain_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Cabin_Curtain'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/WoodCabin_indoor/WoodCabin_Indoor_Textures/Cabin_Curtain.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Cabin_Curtain_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/WoodCabin_indoor/Cabin_Curtain_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 62.0,
+          "Y": 46.0,
+          "Z": 0.984375,
+          "W": 0.140625
+        },
+        {
+          "X": -62.0,
+          "Y": 46.0,
+          "Z": 0.015625,
+          "W": 0.140625
+        },
+        {
+          "X": -62.0,
+          "Y": -59.0,
+          "Z": 0.015625,
+          "W": 0.9609375
+        },
+        {
+          "X": 62.0,
+          "Y": -59.0,
+          "Z": 0.984375,
+          "W": 0.9609375
+        },
+        {
+          "X": 62.0,
+          "Y": 46.0,
+          "Z": 0.984375,
+          "W": 0.140625
+        },
+        {
+          "X": -62.0,
+          "Y": -59.0,
+          "Z": 0.015625,
+          "W": 0.9609375
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Cabin_Chair_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 1.5,
+              "Y": 0.0,
+              "Z": -1.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 85.0,
+            "Y": 10.0,
+            "Z": 120.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "DFC11572491008CF8D8A5D8A77E4D112"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Cabin_Chair_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Cabin_Chair'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/WoodCabin_indoor/WoodCabin_Indoor_Textures/Cabin_Chair.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Cabin_Chair_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/WoodCabin_indoor/Cabin_Chair_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 44.0,
+          "Y": 59.0,
+          "Z": 0.84375,
+          "W": 0.0390625
+        },
+        {
+          "X": -41.0,
+          "Y": 59.0,
+          "Z": 0.1796875,
+          "W": 0.0390625
+        },
+        {
+          "X": -41.0,
+          "Y": -61.0,
+          "Z": 0.1796875,
+          "W": 0.9765625
+        },
+        {
+          "X": 44.0,
+          "Y": -61.0,
+          "Z": 0.84375,
+          "W": 0.9765625
+        },
+        {
+          "X": 44.0,
+          "Y": 59.0,
+          "Z": 0.84375,
+          "W": 0.0390625
+        },
+        {
+          "X": -41.0,
+          "Y": -61.0,
+          "Z": 0.1796875,
+          "W": 0.9765625
+        }
+      ]
+    }
+  }
+]

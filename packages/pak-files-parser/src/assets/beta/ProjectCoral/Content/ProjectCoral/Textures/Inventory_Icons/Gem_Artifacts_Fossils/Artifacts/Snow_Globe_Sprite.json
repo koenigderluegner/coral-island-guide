@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Snow_Globe_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 2.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 98.0,
+            "Y": 10.0,
+            "Z": 118.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "F0B61F4E4D2DC50D04FEB2A6F25C59AA"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Snow_Globe_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Snow_Globe'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Gem_Artifacts_Fossils/Artifacts/Artifact_textures/Snow_Globe.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Snow_Globe_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Gem_Artifacts_Fossils/Artifacts/Snow_Globe_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 51.0,
+          "Y": 59.0,
+          "Z": 0.8984375,
+          "W": 0.0390625
+        },
+        {
+          "X": -47.0,
+          "Y": 59.0,
+          "Z": 0.1328125,
+          "W": 0.0390625
+        },
+        {
+          "X": -47.0,
+          "Y": -59.0,
+          "Z": 0.1328125,
+          "W": 0.9609375
+        },
+        {
+          "X": 51.0,
+          "Y": -59.0,
+          "Z": 0.8984375,
+          "W": 0.9609375
+        },
+        {
+          "X": 51.0,
+          "Y": 59.0,
+          "Z": 0.8984375,
+          "W": 0.0390625
+        },
+        {
+          "X": -47.0,
+          "Y": -59.0,
+          "Z": 0.1328125,
+          "W": 0.9609375
+        }
+      ]
+    }
+  }
+]
