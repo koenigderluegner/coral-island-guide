@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ChecklistCategory } from "../enums/checklist-category.enum";
-import { Critter, Fish, MinimalItem, Offering } from "@ci/data-types";
+import { CookingRecipe, Critter, Fish, Item, MinimalItem, Offering } from "@ci/data-types";
 import { Checklist } from "../interfaces/checklist.interface";
 import { SelectionModel } from "@angular/cdk/collections";
 
@@ -29,16 +29,33 @@ export class ChecklistService {
     }
 
     add(type: ChecklistCategory.JOURNAL_FISH, data: Fish): void
-    add(type: ChecklistCategory.JOURNAL_CRITTER, data: Critter): void
+    add(type: ChecklistCategory.JOURNAL_CRITTER | ChecklistCategory.JOURNAL_INSECTS, data: Critter): void
     add(type: ChecklistCategory.OFFERINGS, data: Offering): void
+    add(type: ChecklistCategory.COOKING_RECIPES, data: CookingRecipe): void
+    add(type: ChecklistCategory.JOURNAL_GEMS | ChecklistCategory.JOURNAL_FOSSILS | ChecklistCategory.JOURNAL_ARTIFACTS, data: Item): void
     add(type: ChecklistCategory, data: any): void {
 
         switch (type) {
             case ChecklistCategory.OFFERINGS:
                 this.getCurrentChecklist().offerings.push(data);
                 break;
+            case ChecklistCategory.COOKING_RECIPES:
+                this.getCurrentChecklist().cookingRecipes.push(data);
+                break;
             case ChecklistCategory.JOURNAL_CRITTER:
                 this.getCurrentChecklist().journal.critter.push(data);
+                break;
+            case ChecklistCategory.JOURNAL_INSECTS:
+                this.getCurrentChecklist().journal.insects.push(data);
+                break;
+            case ChecklistCategory.JOURNAL_ARTIFACTS:
+                this.getCurrentChecklist().journal.artifacts.push(data);
+                break;
+            case ChecklistCategory.JOURNAL_FOSSILS:
+                this.getCurrentChecklist().journal.fossils.push(data);
+                break;
+            case ChecklistCategory.JOURNAL_GEMS:
+                this.getCurrentChecklist().journal.gems.push(data);
                 break;
             case ChecklistCategory.JOURNAL_FISH:
                 this.getCurrentChecklist().journal.fish.push(data);
@@ -102,9 +119,14 @@ export class ChecklistService {
         return {
             version: ChecklistService._CURRENT_CHECKLIST_VERSION,
             offerings: [],
+            cookingRecipes: [],
             journal: {
                 critter: [],
-                fish: []
+                fish: [],
+                gems: [],
+                artifacts: [],
+                fossils: [],
+                insects: [],
             }
         } satisfies Checklist
     }
