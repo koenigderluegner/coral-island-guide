@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Wild_Mushroom_Polenta_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 1.0,
+              "Y": 0.0,
+              "Z": 3.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 124.0,
+            "Y": 10.0,
+            "Z": 90.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "8114930148E5F45AE2C65D83826C7C72"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Wild_Mushroom_Polenta_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Wild_Mushroom_Polenta'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Consumables/Consumable_textures/Wild_Mushroom_Polenta.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Wild_Mushroom_Polenta_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Consumables/Wild_Mushroom_Polenta_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 63.0,
+          "Y": 48.0,
+          "Z": 0.9921875,
+          "W": 0.125
+        },
+        {
+          "X": -61.0,
+          "Y": 48.0,
+          "Z": 0.0234375,
+          "W": 0.125
+        },
+        {
+          "X": -61.0,
+          "Y": -42.0,
+          "Z": 0.0234375,
+          "W": 0.828125
+        },
+        {
+          "X": 63.0,
+          "Y": -42.0,
+          "Z": 0.9921875,
+          "W": 0.828125
+        },
+        {
+          "X": 63.0,
+          "Y": 48.0,
+          "Z": 0.9921875,
+          "W": 0.125
+        },
+        {
+          "X": -61.0,
+          "Y": -42.0,
+          "Z": 0.0234375,
+          "W": 0.828125
+        }
+      ]
+    }
+  }
+]

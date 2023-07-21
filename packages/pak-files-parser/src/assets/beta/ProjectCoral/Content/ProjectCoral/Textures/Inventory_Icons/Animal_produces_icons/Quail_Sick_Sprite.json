@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Quail_Sick_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -1.5,
+              "Y": 0.0,
+              "Z": 1.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 243.0,
+            "Y": 10.0,
+            "Z": 244.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "747CCE2F457F6547FF4942BC0497D818"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Quail_Sick_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 256.0,
+        "Y": 256.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Quail_Sick'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Textures/Quail_Sick.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Quail_Sick_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Quail_Sick_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 120.0,
+          "Y": 123.0,
+          "Z": 0.96875,
+          "W": 0.01953125
+        },
+        {
+          "X": -123.0,
+          "Y": 123.0,
+          "Z": 0.01953125,
+          "W": 0.01953125
+        },
+        {
+          "X": -123.0,
+          "Y": -121.0,
+          "Z": 0.01953125,
+          "W": 0.97265625
+        },
+        {
+          "X": 120.0,
+          "Y": -121.0,
+          "Z": 0.96875,
+          "W": 0.97265625
+        },
+        {
+          "X": 120.0,
+          "Y": 123.0,
+          "Z": 0.96875,
+          "W": 0.01953125
+        },
+        {
+          "X": -123.0,
+          "Y": -121.0,
+          "Z": 0.01953125,
+          "W": 0.97265625
+        }
+      ]
+    }
+  }
+]

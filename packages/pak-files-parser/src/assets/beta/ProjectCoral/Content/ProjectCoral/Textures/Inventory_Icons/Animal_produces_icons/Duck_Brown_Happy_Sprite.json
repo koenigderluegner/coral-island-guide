@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Duck_Brown_Happy_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -3.0,
+              "Y": 0.0,
+              "Z": 1.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 246.0,
+            "Y": 10.0,
+            "Z": 250.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "5D230EBF4CD355D38BA37596FAADF728"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Duck_Brown_Happy_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 256.0,
+        "Y": 256.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Duck_Brown_Happy'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Textures/Duck_Brown_Happy.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Duck_Brown_Happy_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Duck_Brown_Happy_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 120.0,
+          "Y": 126.0,
+          "Z": 0.96875,
+          "W": 0.0078125
+        },
+        {
+          "X": -126.0,
+          "Y": 126.0,
+          "Z": 0.0078125,
+          "W": 0.0078125
+        },
+        {
+          "X": -126.0,
+          "Y": -124.0,
+          "Z": 0.0078125,
+          "W": 0.984375
+        },
+        {
+          "X": 120.0,
+          "Y": -124.0,
+          "Z": 0.96875,
+          "W": 0.984375
+        },
+        {
+          "X": 120.0,
+          "Y": 126.0,
+          "Z": 0.96875,
+          "W": 0.0078125
+        },
+        {
+          "X": -126.0,
+          "Y": -124.0,
+          "Z": 0.0078125,
+          "W": 0.984375
+        }
+      ]
+    }
+  }
+]

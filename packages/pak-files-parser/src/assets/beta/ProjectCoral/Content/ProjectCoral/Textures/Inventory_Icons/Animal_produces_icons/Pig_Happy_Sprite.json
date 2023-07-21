@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Pig_Happy_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -1.5,
+              "Y": -0.0,
+              "Z": -4.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 247.0,
+            "Y": 10.0,
+            "Z": 244.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "3902386D44048A506D23C8B23E38BB13"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Pig_Happy_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 256.0,
+        "Y": 256.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Pig_Happy'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Textures/Pig_Happy.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Pig_Happy_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Pig_Happy_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 122.0,
+          "Y": 118.0,
+          "Z": 0.9765625,
+          "W": 0.0390625
+        },
+        {
+          "X": -125.0,
+          "Y": 118.0,
+          "Z": 0.01171875,
+          "W": 0.0390625
+        },
+        {
+          "X": -125.0,
+          "Y": -126.0,
+          "Z": 0.01171875,
+          "W": 0.9921875
+        },
+        {
+          "X": 122.0,
+          "Y": -126.0,
+          "Z": 0.9765625,
+          "W": 0.9921875
+        },
+        {
+          "X": 122.0,
+          "Y": 118.0,
+          "Z": 0.9765625,
+          "W": 0.0390625
+        },
+        {
+          "X": -125.0,
+          "Y": -126.0,
+          "Z": 0.01171875,
+          "W": 0.9921875
+        }
+      ]
+    }
+  }
+]
