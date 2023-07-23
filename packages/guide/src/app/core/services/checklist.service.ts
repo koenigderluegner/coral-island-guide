@@ -164,6 +164,12 @@ export class ChecklistService {
                         this.getCurrentChecklist().journal.fish.splice(foundIndex, 1);
                     }
                     break;
+                case ChecklistCategory.JOURNAL_INSECTS:
+                    foundIndex = this.getCurrentChecklist().journal.insects.findIndex(offering => offering.item.id === entry.item.id)
+                    if (foundIndex >= 0) {
+                        this.getCurrentChecklist().journal.insects.splice(foundIndex, 1);
+                    }
+                    break;
             }
         });
 

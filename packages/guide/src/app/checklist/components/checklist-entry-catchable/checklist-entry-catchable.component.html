@@ -1,9 +1,0 @@
-<app-checklist-entry-base *ngIf="entry | isFish" [category]="category.JOURNAL_FISH" [item]="entry.item">
-    <div> • <span title="Rarity">{{(entry.rarity | spacesToPascalCase)}}</span></div>
-</app-checklist-entry-base>
-<app-checklist-entry-base
-        *ngIf="!(entry | isFish)"
-        [category]="category.JOURNAL_CRITTER"
-        [item]="entry.item">
-
-</app-checklist-entry-base>

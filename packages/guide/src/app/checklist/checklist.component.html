@@ -4,7 +4,7 @@
             <app-module-sidebar-item exact routerLink="/checklist">
                 <div class="flex justify-between grow">
                     <span>All</span>
-                    <span>{{checklist.offerings.length + checklist.journal.fish.length + checklist.journal.critter.length}}</span>
+                    <span>{{checklist.offerings.length + checklist.journal.fish.length + checklist.journal.critter.length + checklist.journal.insects.length}}</span>
                 </div>
             </app-module-sidebar-item>
             <app-module-sidebar-item routerLink="/checklist/offerings">
@@ -13,40 +13,65 @@
                     <span>{{checklist.offerings.length}}</span>
                 </div>
             </app-module-sidebar-item>
-            <app-module-sidebar-item routerLink="/checklist/catchables">
+            <app-module-sidebar-item routerLink="/checklist/fish">
                 <div class="flex justify-between grow">
-                    <span>Catchables</span>
-                    <span>{{checklist.journal.fish.length + checklist.journal.critter.length}}</span>
+                    <span>Fish</span>
+                    <span>{{checklist.journal.fish.length}}</span>
+                </div>
+            </app-module-sidebar-item>
+            <app-module-sidebar-item routerLink="/checklist/insects">
+                <div class="flex justify-between grow">
+                    <span>Insects</span>
+                    <span>{{checklist.journal.insects.length}}</span>
+                </div>
+            </app-module-sidebar-item>
+            <app-module-sidebar-item routerLink="/checklist/sea-critters">
+                <div class="flex justify-between grow">
+                    <span>Sea Critters</span>
+                    <span>{{checklist.journal.critter.length}}</span>
                 </div>
             </app-module-sidebar-item>
 
         </ng-container>
     </app-module-sidebar>
-    <app-card class="container">
-        <ng-container *ngIf="checklist.offerings.length && (checklistId === 'offerings' || checklistId ===undefined)">
-            <h2 class="mb-2 mt-4 font-semibold text-xl text-black">Offerings</h2>
-            <div [@.disabled]="!(checklistId === 'offerings' || checklistId ===undefined)">
-                <app-checklist-entry-offering *ngFor="let offering of checklist.offerings"
-                                              @leaveAnimation
-                                              [entry]="offering"
+    <app-card class="m-2 2xl:mx-16 2xl:mt-16 2xl:mb-10">
+        <h1 class="mb-4 font-semibold text-2xl text-black">Checklists{{isBeta ? ' [BETA VERSION]' : ''}}</h1>
+
+        <app-checklist-partial [checklistId]="checklistId" [data]="checklist.offerings" dataChecklistId="offerings"
+                               title="Offerings">
+            <ng-template let-data>
+                <app-checklist-entry-offering *ngFor="let offering of data" @leaveAnimation [entry]="offering"
                                               class="mb-2 block"/>
-            </div>
-        </ng-container>
+            </ng-template>
+        </app-checklist-partial>
+
+        <app-checklist-partial [checklistId]="checklistId" [data]="checklist.journal.fish" dataChecklistId="fish"
+                               title="Journal fish">
+            <ng-template let-data>
+                <app-checklist-entry-fish *ngFor="let fish of data" @leaveAnimation [entry]="fish"
+                                          class="mb-2 block"/>
+            </ng-template>
+        </app-checklist-partial>
+
+        <app-checklist-partial [checklistId]="checklistId" [data]="checklist.journal.insects" dataChecklistId="insects"
+                               title="Journal insects">
+            <ng-template let-data>
+                <app-checklist-entry-insect *ngFor="let insect of data" @leaveAnimation [entry]="insect"
+                                            class="mb-2 block"/>
+            </ng-template>
+        </app-checklist-partial>
+
+        <app-checklist-partial [checklistId]="checklistId" [data]="checklist.journal.critter"
+                               dataChecklistId="sea-critters"
+                               title="Journal sea-critters">
+            <ng-template let-data>
+                <app-checklist-sea-critter *ngFor="let seaCritter of data" @leaveAnimation [entry]="seaCritter"
+                                           class="mb-2 block"/>
+            </ng-template>
+        </app-checklist-partial>
 
         <ng-container
-                *ngIf="(checklist.journal.fish.length || checklist.journal.critter.length) && (checklistId === 'catchables' || checklistId ===undefined)">
-            <h2 class="mb-2 mt-4 font-semibold text-xl text-black">Journal catchables</h2>
-            <div [@.disabled]="!(checklistId === 'catchables' || checklistId ===undefined)">
-                <app-checklist-entry-catchable *ngFor="let fish of checklist.journal.fish" @leaveAnimation
-                                               [entry]="fish" class="mb-2 block"/>
-                <app-checklist-entry-catchable *ngFor="let critter of checklist.journal.critter" @leaveAnimation
-                                               [entry]="critter"
-                                               class="mb-2 block"/>
-            </div>
-        </ng-container>
-
-        <ng-container
-                *ngIf="!checklist.offerings.length && !checklist.journal.fish.length && !checklist.journal.critter.length">
+                *ngIf="!checklist.offerings.length && !checklist.journal.fish.length && !checklist.journal.critter.length && !checklist.journal.insects.length  ">
             <h2 class="mb-2 mt-4 font-semibold text-xl text-black">No entries in checklist</h2>
             <p class="text-black">
                 Your current checklist is empty! Visit the <a class="underline" routerLink="/journal">journal</a>, the

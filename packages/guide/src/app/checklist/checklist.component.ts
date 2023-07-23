@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ChecklistService } from "../core/services/checklist.service";
 import { Checklist } from "../core/interfaces/checklist.interface";
 import { animate, style, transition, trigger } from "@angular/animations";
+import { SettingsService } from "../shared/services/settings.service";
 
 @Component({
     selector: 'app-checklist',
@@ -27,9 +28,11 @@ export class ChecklistComponent {
     @Input() checklistId?: string;
 
     protected checklist: Checklist;
+    protected readonly isBeta: boolean;
 
-    constructor(private readonly _checklistService: ChecklistService) {
-        this.checklist = this._checklistService.getCurrentChecklist()
+    constructor(private readonly _checklistService: ChecklistService, private readonly settings: SettingsService) {
+        this.checklist = this._checklistService.getCurrentChecklist();
+        this.isBeta = this.settings.getSettings().useBeta;
     }
 
 }

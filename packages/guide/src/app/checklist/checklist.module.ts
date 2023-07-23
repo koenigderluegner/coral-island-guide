@@ -4,15 +4,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { ChecklistComponent } from './checklist.component';
 import { ChecklistEntryComponent } from './components/checklist-entry/checklist-entry.component';
 import { ChecklistEntryOfferingComponent } from './components/checklist-entry-offering/checklist-entry-offering.component';
-import { ChecklistEntryCatchableComponent } from './components/checklist-entry-catchable/checklist-entry-catchable.component';
+import { ChecklistEntryFishComponent } from './components/checklist-entry-fish/checklist-entry-fish.component';
 import { ChecklistEntryBaseComponent } from './components/checklist-entry-base/checklist-entry-base.component';
-import { SharedModule } from "../shared/shared.module";
-import { MatCheckboxModule } from "@angular/material/checkbox";
-import { MatTableModule } from "@angular/material/table";
+import { SharedModule } from '../shared/shared.module';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatTableModule } from '@angular/material/table';
+import { ChecklistPartialComponent } from './components/checklist-partial/checklist-partial.component';
+import { ChecklistEntryInsectComponent } from './components/checklist-entry-insect/checklist-entry-insect.component';
+import { ChecklistEntrySeaCritterComponent } from './components/checklist-entry-sea-critter/checklist-entry-sea-critter.component';
 
 const routes: Routes = [
     {path: '', component: ChecklistComponent},
-    {path: ':checklistId', component: ChecklistComponent}
+    {path: ':checklistId', component: ChecklistComponent},
 ];
 
 @NgModule({
@@ -20,15 +23,13 @@ const routes: Routes = [
         ChecklistComponent,
         ChecklistEntryComponent,
         ChecklistEntryOfferingComponent,
-        ChecklistEntryCatchableComponent,
+        ChecklistEntryFishComponent,
         ChecklistEntryBaseComponent,
+        ChecklistPartialComponent,
+        ChecklistEntryInsectComponent,
+        ChecklistEntrySeaCritterComponent,
     ],
-    imports: [
-        CommonModule,
-        RouterModule.forChild(routes),
-        SharedModule, MatCheckboxModule,
-        MatTableModule
-    ],
+    imports: [CommonModule, RouterModule.forChild(routes), SharedModule, MatCheckboxModule, MatTableModule],
 })
 export class ChecklistModule {
 }

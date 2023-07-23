@@ -36,7 +36,6 @@ export class LakeTempleComponent extends BaseTabbedSelectableContainerComponent<
         this.entryForChecklist = selectedEntry;
 
         if (selectedEntry && 'amount' in selectedEntry) {
-            this._checklist.add(ChecklistCategory.OFFERINGS, selectedEntry);
             super.showDetails(selectedEntry.item);
         } else {
             super.showDetails(selectedEntry);

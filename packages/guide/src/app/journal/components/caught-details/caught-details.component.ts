@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Critter, Fish } from '@ci/data-types';
 import { getTruthyValues } from '@ci/util';
+import { CaughtComponent } from "../caught/caught.component";
 
 @Component({
     selector: 'app-caught-details',
@@ -8,6 +9,7 @@ import { getTruthyValues } from '@ci/util';
 })
 export class CaughtDetailsComponent {
     @Input({required: true}) critter!: Fish | Critter;
+    @Input() registerToChecklist?: CaughtComponent['registerToChecklist'];
 
     getTruthyValues = getTruthyValues;
 
