@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { MinimalItem, Offering, OfferingAltar, Offerings } from "@ci/data-types";
 import { Observable, tap } from "rxjs";
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
-import { ChecklistService } from "../../../core/services/checklist.service";
 import { ChecklistCategory } from "../../../core/enums/checklist-category.enum";
 
 @Component({
@@ -12,8 +11,10 @@ import { ChecklistCategory } from "../../../core/enums/checklist-category.enum";
 export class LakeTempleComponent extends BaseTabbedSelectableContainerComponent<MinimalItem> {
     protected activeOffering?: Offerings;
     protected offerings$: Observable<OfferingAltar[]>;
+    protected entryForChecklist?: Offering | MinimalItem;
 
-    constructor(private readonly _checklist: ChecklistService) {
+
+    constructor() {
         super()
         this.offerings$ = this._database.fetchOfferings$().pipe(
             tap((records) => {
@@ -23,10 +24,17 @@ export class LakeTempleComponent extends BaseTabbedSelectableContainerComponent<
             )
         );
 
+    }
 
+    override registerToChecklist(entry: MinimalItem | Offering) {
+        if ('item' in entry) {
+            this._checklist.add(ChecklistCategory.OFFERINGS, entry)
+        }
     }
 
     override showDetails(selectedEntry?: Offering | MinimalItem) {
+        this.entryForChecklist = selectedEntry;
+
         if (selectedEntry && 'amount' in selectedEntry) {
             this._checklist.add(ChecklistCategory.OFFERINGS, selectedEntry);
             super.showDetails(selectedEntry.item);

@@ -60,6 +60,9 @@ export class ChecklistService {
             case ChecklistCategory.JOURNAL_FISH:
                 this.getCurrentChecklist().journal.fish.push(data);
                 break;
+            default:
+                this.getCurrentChecklist().uncategorized.push(data);
+                break;
         }
 
         this.save();
@@ -127,7 +130,8 @@ export class ChecklistService {
                 artifacts: [],
                 fossils: [],
                 insects: [],
-            }
+            },
+            uncategorized: []
         } satisfies Checklist
     }
 

@@ -1,4 +1,4 @@
-import { CookingRecipe, Critter, Fish, Item, Offering } from "@ci/data-types";
+import { CookingRecipe, Critter, Fish, Item, MinimalItem, Offering } from "@ci/data-types";
 
 export interface Checklist {
     version: number;
@@ -11,5 +11,6 @@ export interface Checklist {
         gems: Item[],
         fossils: Item[],
     }
-    cookingRecipes: CookingRecipe[]
+    cookingRecipes: CookingRecipe[],
+    uncategorized: MinimalItem[]
 }

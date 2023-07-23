@@ -1,4 +1,12 @@
-<app-card *ngIf="fetchedItem" class="text-lg font-semibold">
+<app-card *ngIf="fetchedItem" class="text-lg font-semibold relative">
+    <div class="card-actions h-8 absolute right-[75px] top-[15px]">
+        <span [matTooltip]="addedToChecklist.observed ? 'Add to checklist' :'Checklist not available for this entry'">
+            <button (click)="addedToChecklist.emit()" [disabled]="!addedToChecklist.observed">
+                <app-ui-icon [uiIcon]="UiIcon.TO_DO" class="!w-8 !h-8 hover:!text-black focus-visible:!text-black"/>
+            </button>
+        </span>
+    </div>
+
     <app-item-icon [amount]="amount" cardIcon itemName="{{fetchedItem.iconName}}"/>
     <div class="flex justify-between items-center">
         <div class="flex flex-col">
@@ -7,7 +15,7 @@
         </div>
         <span matTooltip="Open in database" matTooltipPosition="before">
             <a [routerLink]="[ '/database', fetchedItem.id]">
-                  <app-ui-icon [uiIcon]="uiIcon.DATABASE" class="hover:!text-black "/>
+                  <app-ui-icon [uiIcon]="uiIcon.DATABASE" class="focus-visible:!text-black hover:!text-black "/>
             </a>
         </span>
     </div>
