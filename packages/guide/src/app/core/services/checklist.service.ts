@@ -3,6 +3,7 @@ import { ChecklistCategory } from "../enums/checklist-category.enum";
 import { CookingRecipe, Critter, Fish, Item, MinimalItem, Offering } from "@ci/data-types";
 import { Checklist } from "../interfaces/checklist.interface";
 import { SelectionModel } from "@angular/cdk/collections";
+import { SettingsService } from "../../shared/services/settings.service";
 
 type MarkedSelection = { category: ChecklistCategory, item: MinimalItem };
 
@@ -20,8 +21,10 @@ export class ChecklistService {
         category: ChecklistCategory;
         item: MinimalItem
     }>(true, [])
+    private readonly versionSuffix: string;
 
-    constructor() {
+    constructor(private readonly _settings: SettingsService) {
+        this.versionSuffix = this._settings.getSettings().useBeta ? '_beta' : '_live';
         this.read();
         this._markedAsCompleted.compareWith = (o1, o2) => {
             return o1.category === o2.category && o1.item.id === o2.item.id
@@ -85,11 +88,11 @@ export class ChecklistService {
     }
 
     save(): void {
-        localStorage.setItem(ChecklistService._CHECKLIST_STORE_KEY, JSON.stringify(this._checklists));
+        localStorage.setItem(ChecklistService._CHECKLIST_STORE_KEY + this.versionSuffix, JSON.stringify(this._checklists));
     }
 
     read(): void {
-        const checklists = localStorage.getItem(ChecklistService._CHECKLIST_STORE_KEY);
+        const checklists = localStorage.getItem(ChecklistService._CHECKLIST_STORE_KEY + this.versionSuffix);
         if (checklists) {
             this._checklists = JSON.parse(checklists);
         } else {
