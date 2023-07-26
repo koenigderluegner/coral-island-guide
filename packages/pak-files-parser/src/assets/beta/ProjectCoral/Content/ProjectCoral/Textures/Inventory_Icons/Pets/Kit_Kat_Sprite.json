@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Kit_Kat_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 480.0,
+            "Y": 10.0,
+            "Z": 450.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "E8B2A28D4F4F25DB451DF4A673030138"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Kit_Kat_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 512.0,
+        "Y": 512.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Kit_Kat'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Pets/Pets_Textures/Kit_Kat.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Kit_Kat_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Pets/Kit_Kat_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 240.0,
+          "Y": 225.0,
+          "Z": 0.96875,
+          "W": 0.060546875
+        },
+        {
+          "X": -240.0,
+          "Y": 225.0,
+          "Z": 0.03125,
+          "W": 0.060546875
+        },
+        {
+          "X": -240.0,
+          "Y": -225.0,
+          "Z": 0.03125,
+          "W": 0.9394531
+        },
+        {
+          "X": 240.0,
+          "Y": -225.0,
+          "Z": 0.96875,
+          "W": 0.9394531
+        },
+        {
+          "X": 240.0,
+          "Y": 225.0,
+          "Z": 0.96875,
+          "W": 0.060546875
+        },
+        {
+          "X": -240.0,
+          "Y": -225.0,
+          "Z": 0.03125,
+          "W": 0.9394531
+        }
+      ]
+    }
+  }
+]

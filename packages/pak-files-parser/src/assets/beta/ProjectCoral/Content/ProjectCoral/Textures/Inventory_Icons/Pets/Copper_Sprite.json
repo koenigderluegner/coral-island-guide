@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Copper_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -3.5,
+              "Y": 0.0,
+              "Z": 1.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 359.0,
+            "Y": 10.0,
+            "Z": 497.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "BAD99C5A4D539CEDFE457E8C6E41E8E2"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Copper_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 512.0,
+        "Y": 512.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Copper'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Pets/Pets_Textures/Copper.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Copper_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Pets/Copper_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 176.0,
+          "Y": 250.0,
+          "Z": 0.84375,
+          "W": 0.01171875
+        },
+        {
+          "X": -183.0,
+          "Y": 250.0,
+          "Z": 0.14257812,
+          "W": 0.01171875
+        },
+        {
+          "X": -183.0,
+          "Y": -247.0,
+          "Z": 0.14257812,
+          "W": 0.9824219
+        },
+        {
+          "X": 176.0,
+          "Y": -247.0,
+          "Z": 0.84375,
+          "W": 0.9824219
+        },
+        {
+          "X": 176.0,
+          "Y": 250.0,
+          "Z": 0.84375,
+          "W": 0.01171875
+        },
+        {
+          "X": -183.0,
+          "Y": -247.0,
+          "Z": 0.14257812,
+          "W": 0.9824219
+        }
+      ]
+    }
+  }
+]
