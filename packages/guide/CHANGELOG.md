@@ -1,10 +1,14 @@
 ## Changelog
 
-### 0.8.0 TBD
+### 0.7.3 2023-07-21
 
 #### Added
 
 - Added descriptions to database entries
+
+#### Changed
+
+- Added beta data for version 0.5-67
 
 ### 0.7.3 2023-07-21
 
