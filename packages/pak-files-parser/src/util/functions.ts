@@ -17,7 +17,8 @@ export function generateJson(fileName: string, jsonContent: any, readable = fals
 
     fs.writeFileSync(path.join(databasePath, fileName), JSON.stringify(jsonContent, null, readable ? 2 : undefined), {
         encoding: 'utf8',
-        flag: 'w+'
+        flag: 'w+',
+
     });
 }
 
