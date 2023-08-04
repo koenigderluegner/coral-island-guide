@@ -101,11 +101,18 @@ export class CookingDbGenerator {
             }
         })
 
+        const item = this.itemMap.get(itemKey);
+
+        if (!item) {
+            console.log('Missing item for cooking recipe!', itemKey)
+            return;
+        }
+
         return {
             key: itemKey,
             amount: 1, // currently always 1
             cookingKey,
-            item: this.itemMap.get(itemKey),
+            item,
             craftingUnlock: this.cookingUnlockMap.get(itemKey),
             utensils: dbItem.utensils.map(utensil => getEnumValue(utensil)),
             genericIngredients,
@@ -146,7 +153,14 @@ export class CookingDbGenerator {
         return this.datatable?.[0]?.Rows[itemKey];
     }
 
-    private _addGenericIngredient(genericIngredients: { amount: number; key: string; genericItem: TagBasedItem | undefined }[], foundTagBasedItem: TagBasedItem, nonMatchingIngredients: { item: Item; amount: number }[], ingredientList: { item: Item; amount: number }[]) {
+    private _addGenericIngredient(genericIngredients: {
+        amount: number;
+        key: string;
+        genericItem: TagBasedItem | undefined
+    }[], foundTagBasedItem: TagBasedItem, nonMatchingIngredients: { item: Item; amount: number }[], ingredientList: {
+        item: Item;
+        amount: number
+    }[]) {
         genericIngredients.push({
             genericItem: foundTagBasedItem,
             amount: nonMatchingIngredients[0].amount,
@@ -155,7 +169,10 @@ export class CookingDbGenerator {
         return ingredientList.filter(ingredient => !nonMatchingIngredients.some(nmi => nmi.item.id === ingredient.item.id));
     }
 
-    private _initialIngredientList(ingredient: CookingIngredients, genericTags: string[]): { item: Item; amount: number }[] {
+    private _initialIngredientList(ingredient: CookingIngredients, genericTags: string[]): {
+        item: Item;
+        amount: number
+    }[] {
         const ingredientList: { item: Item; amount: number }[] = []
 
         ingredient.listIngredients.forEach(lIngredient => {

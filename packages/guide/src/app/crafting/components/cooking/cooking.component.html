@@ -67,8 +67,8 @@
                     <app-item-icon (click)="showDetails(itemProcess)"
                                    *ngFor="let itemProcess of processorItems"
                                    [amount]="itemProcess.amount"
-                                   [itemName]="itemProcess.item?.iconName"
-                                   [class.selected-icon]="selectedEntity?.item?.id === itemProcess.item?.id"
+                                   [class.selected-icon]="selectedEntity?.item?.id === itemProcess.item.id"
+                                   [itemName]="itemProcess.item.iconName"
                                    class="icon-grid-item">
                     </app-item-icon>
                 </div>

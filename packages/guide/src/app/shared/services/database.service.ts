@@ -341,7 +341,9 @@ export class DatabaseService {
 
     fetchGiftingPreferences$(): Observable<MapKeyed<GiftPreferences>[]> {
         if (!this._GIFT_PREFERENCES$) {
-            this._GIFT_PREFERENCES$ = this._http.get<{ [person: string]: GiftPreferences }[]>(`${this._BASE_PATH}/gift-preferences.json`)
+            this._GIFT_PREFERENCES$ = this._http.get<{
+                [person: string]: GiftPreferences
+            }[]>(`${this._BASE_PATH}/gift-preferences.json`)
                 .pipe(
                     map(prefs => this.flatObjectMap(prefs)),
                     tap(prefs => this._GIFT_PREFERENCES = prefs),

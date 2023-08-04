@@ -1,6 +1,7 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     <app-base-item-card *ngIf="selectedEntity"
                         [item]="selectedEntity"
+                        [checklistCategory]="checklistCategory.OFFERINGS"
                         (addedToChecklist)="entryForChecklist && registerToChecklist(entryForChecklist)"
                         listDetail/>
     <mat-tab-group (selectedTabChange)="updateUrl($event)" *ngIf="offerings$ | async as offeringAltars"
@@ -43,7 +44,7 @@
                            *ngFor="let offeringReward of activeOffering.rewards.items"
                            [amount]="offeringReward.amount"
                            [class.selected-icon]="selectedEntity?.id === offeringReward.item.id"
-                           [itemName]="offeringReward.item?.iconName"
+                           [itemName]="offeringReward.item.iconName"
                            class="icon-grid-item">
             </app-item-icon>
         </div>

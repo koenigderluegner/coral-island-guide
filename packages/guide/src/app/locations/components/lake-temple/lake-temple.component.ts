@@ -12,6 +12,7 @@ export class LakeTempleComponent extends BaseTabbedSelectableContainerComponent<
     protected activeOffering?: Offerings;
     protected offerings$: Observable<OfferingAltar[]>;
     protected entryForChecklist?: Offering | MinimalItem;
+    protected checklistCategory = ChecklistCategory;
 
 
     constructor() {

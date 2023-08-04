@@ -4,6 +4,7 @@ import { CookingRecipe, Critter, Fish, Item, MinimalItem, Offering } from "@ci/d
 import { Checklist } from "../interfaces/checklist.interface";
 import { SelectionModel } from "@angular/cdk/collections";
 import { SettingsService } from "../../shared/services/settings.service";
+import { Observable, Subject } from "rxjs";
 
 type MarkedSelection = { category: ChecklistCategory, item: MinimalItem };
 
@@ -11,8 +12,10 @@ type MarkedSelection = { category: ChecklistCategory, item: MinimalItem };
     providedIn: 'root'
 })
 export class ChecklistService {
+
     private static _CURRENT_CHECKLIST_VERSION = 1
     private static _CHECKLIST_STORE_KEY = 'checklist'
+    private _completedCategory$: Subject<ChecklistCategory> = new Subject<ChecklistCategory>();
     clearTimer?: number;
     clearTimeout = 3000;
     private currentChecklistIndex = 0;
@@ -31,42 +34,31 @@ export class ChecklistService {
         }
     }
 
-    add(type: ChecklistCategory.JOURNAL_FISH, data: Fish): void
-    add(type: ChecklistCategory.JOURNAL_CRITTER | ChecklistCategory.JOURNAL_INSECTS, data: Critter): void
-    add(type: ChecklistCategory.OFFERINGS, data: Offering): void
-    add(type: ChecklistCategory.COOKING_RECIPES, data: CookingRecipe): void
+    get currentChecklistAmount(): number {
+        const checklist = this.getCurrentChecklist();
+        return checklist.offerings.length
+            + checklist.journal.critter.length
+            + checklist.journal.insects.length
+            + checklist.journal.fish.length
+            + checklist.journal.artifacts.length
+            + checklist.journal.gems.length
+            + checklist.journal.fossils.length
+            + checklist.cookingRecipes.length
+            + checklist.uncategorized.length
+    }
+
+    get currentIsEmpty(): boolean {
+        return this.currentChecklistAmount === 0;
+    }
+
+    add(type: ChecklistCategory.JOURNAL_FISH, data: Fish): void;
+    add(type: ChecklistCategory.JOURNAL_CRITTER | ChecklistCategory.JOURNAL_INSECTS, data: Critter): void;
+    add(type: ChecklistCategory.OFFERINGS, data: Offering): void;
+    add(type: ChecklistCategory.COOKING_RECIPES, data: CookingRecipe): void;
     add(type: ChecklistCategory.JOURNAL_GEMS | ChecklistCategory.JOURNAL_FOSSILS | ChecklistCategory.JOURNAL_ARTIFACTS, data: Item): void
     add(type: ChecklistCategory, data: any): void {
 
-        switch (type) {
-            case ChecklistCategory.OFFERINGS:
-                this.getCurrentChecklist().offerings.push(data);
-                break;
-            case ChecklistCategory.COOKING_RECIPES:
-                this.getCurrentChecklist().cookingRecipes.push(data);
-                break;
-            case ChecklistCategory.JOURNAL_CRITTER:
-                this.getCurrentChecklist().journal.critter.push(data);
-                break;
-            case ChecklistCategory.JOURNAL_INSECTS:
-                this.getCurrentChecklist().journal.insects.push(data);
-                break;
-            case ChecklistCategory.JOURNAL_ARTIFACTS:
-                this.getCurrentChecklist().journal.artifacts.push(data);
-                break;
-            case ChecklistCategory.JOURNAL_FOSSILS:
-                this.getCurrentChecklist().journal.fossils.push(data);
-                break;
-            case ChecklistCategory.JOURNAL_GEMS:
-                this.getCurrentChecklist().journal.gems.push(data);
-                break;
-            case ChecklistCategory.JOURNAL_FISH:
-                this.getCurrentChecklist().journal.fish.push(data);
-                break;
-            default:
-                this.getCurrentChecklist().uncategorized.push(data);
-                break;
-        }
+        this.getCategoryList(type).push(data);
 
         this.save();
 
@@ -101,7 +93,7 @@ export class ChecklistService {
         }
     }
 
-    updateStatus(category: ChecklistCategory, item: MinimalItem, checked: boolean) {
+    updateStatus(category: ChecklistCategory, item: MinimalItem, checked: boolean, skipTimer = false) {
         const selection: MarkedSelection = {category, item}
         if (checked) {
             this._markedAsCompleted.select(selection)
@@ -109,9 +101,71 @@ export class ChecklistService {
             this._markedAsCompleted.deselect(selection)
         }
 
-        this._resetClearTimer();
+        if (skipTimer) {
+            this._completeEntries()
+        } else {
+            this._resetClearTimer();
+        }
 
 
+    }
+
+    alreadyInList(type: ChecklistCategory, data: { item: MinimalItem } | MinimalItem): boolean {
+
+
+        const list = this.getCategoryList(type);
+
+        if (list.length === 0) return false;
+
+        const dataId = ('item' in data) ? data.item.id : data.id;
+
+        if ('item' in list[0]) {
+            return !!(list as { item: MinimalItem }[]).find(entry => entry.item.id === dataId)
+        } else {
+            return !!(list as MinimalItem[]).find(entry => entry.id === dataId)
+        }
+
+    }
+
+    getCategoryList(type: ChecklistCategory): Array<MinimalItem | { item: MinimalItem }> {
+        switch (type) {
+            case ChecklistCategory.OFFERINGS:
+                return this.getCurrentChecklist().offerings;
+
+            case ChecklistCategory.COOKING_RECIPES:
+                return this.getCurrentChecklist().cookingRecipes;
+
+            case ChecklistCategory.JOURNAL_CRITTER:
+                return this.getCurrentChecklist().journal.critter;
+
+            case ChecklistCategory.JOURNAL_INSECTS:
+                return this.getCurrentChecklist().journal.insects;
+
+            case ChecklistCategory.JOURNAL_ARTIFACTS:
+                return this.getCurrentChecklist().journal.artifacts;
+
+            case ChecklistCategory.JOURNAL_FOSSILS:
+                return this.getCurrentChecklist().journal.fossils;
+
+            case ChecklistCategory.JOURNAL_GEMS:
+                return this.getCurrentChecklist().journal.gems;
+
+            case ChecklistCategory.JOURNAL_FISH:
+                return this.getCurrentChecklist().journal.fish;
+
+            default:
+                return this.getCurrentChecklist().uncategorized;
+
+        }
+
+    }
+
+    categoryCompleted$(): Observable<ChecklistCategory> {
+        return this._completedCategory$.asObservable();
+    }
+
+    completeCategory(category: ChecklistCategory) {
+        this._completedCategory$.next(category);
     }
 
     private _resetClearTimer() {
