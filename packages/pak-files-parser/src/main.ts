@@ -23,6 +23,7 @@ import { FruitPlantDbGenerator } from "./app/fruit-plant-db.generator";
 import { OfferingsDbGenerator } from "./app/offerings-db.generator";
 import { ConsumablesDbGenerator } from "./app/consumables-db.generator";
 import { environment } from "./environments/environment";
+import { BlacksmithOpeningHoursGenerator } from "./app/opening-hours-generators/blacksmith-opening-hours.generator";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + (environment.isBeta ? 'BETA' : 'LIVE'));
 
@@ -78,6 +79,8 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'npcs': new NPCDbGenerator(itemDbMap),
 
     'consumables': new ConsumablesDbGenerator(),
+
+    'blacksmith-opening-hours': new BlacksmithOpeningHoursGenerator(),
 
     'tag-based-items': {generate: () => tagBasedItemsDbMap},
     'crafting-unlocks-by-mastery': {generate: () => craftingRecipeUnlockedByMasteryDbMap},
