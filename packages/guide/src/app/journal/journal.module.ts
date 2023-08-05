@@ -10,7 +10,6 @@ import { MatCardModule } from '@angular/material/card';
 import { BaseJournalPageComponent } from './components/base-journal-page/base-journal-page.component';
 import { FoundComponent } from './components/found/found.component';
 import { ProduceComponent } from './components/produce/produce.component';
-import { FoundDetailsComponent } from './components/found-details/found-details.component';
 import { ProduceDetailsComponent } from './components/produce-details/produce-details.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { CaughtTableComponent } from './components/tables/caught-table/caught-table.component';
@@ -31,7 +30,6 @@ import { CropTableComponent } from './components/tables/crop-table/crop-table.co
         BaseJournalPageComponent,
         FoundComponent,
         ProduceComponent,
-        FoundDetailsComponent,
         ProduceDetailsComponent,
         CaughtTableComponent,
         FoundTableComponent,

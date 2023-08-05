@@ -43,6 +43,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { IsBaseCropPipe } from './pipes/is-base-crop.pipe';
 import { BaseSelectableContainerComponent } from './components/base-selectable-container/base-selectable-container.component';
 import { BaseTabbedSelectableContainerComponent } from './components/base-tabbed-selectable-container/base-tabbed-selectable-container.component';
+import { IsFishPipe } from './pipes/is-fish.pipe';
 
 @NgModule({
     declarations: [
@@ -79,6 +80,7 @@ import { BaseTabbedSelectableContainerComponent } from './components/base-tabbed
         IsBaseCropPipe,
         BaseSelectableContainerComponent,
         BaseTabbedSelectableContainerComponent,
+        IsFishPipe,
     ],
     imports: [
         CommonModule,
@@ -125,6 +127,7 @@ import { BaseTabbedSelectableContainerComponent } from './components/base-tabbed
         IsItemPipe,
         NonSpecializedTableComponent,
         IsBaseCropPipe,
+        IsFishPipe,
     ],
 })
 export class SharedModule {

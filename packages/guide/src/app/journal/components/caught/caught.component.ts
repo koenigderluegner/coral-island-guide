@@ -4,6 +4,7 @@ import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page
 import { getTruthyValues } from '@ci/util';
 import { FilterForm } from "../../../shared/types/filter-form.type";
 import { FormControl, FormGroup } from "@angular/forms";
+import { ChecklistCategory } from "../../../core/enums/checklist-category.enum";
 
 @Component({
     selector: 'app-caught',
@@ -14,12 +15,13 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
 
     private readonly SEA_CRITTERS_INDEX = 2;
 
-
     constructor() {
         super(new FormGroup<FilterForm>({
             season: new FormControl<Season[]>(Object.values(Season), {nonNullable: true}),
             weather: new FormControl<string[]>(Object.values(Weather), {nonNullable: true}),
         }));
+
+        this.registerToChecklist = this.registerToChecklist.bind(this)
 
 
         this.tabs = [
@@ -42,13 +44,25 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
                 data: this.getFilteredJournalData(
                     this._database.fetchJournalOrder$('journal-sea-critters'),
                     this._database.fetchOceanCritters$(),
-                    2
+                    this.SEA_CRITTERS_INDEX
                 )
             },
         ];
 
         this.activateTabFromRoute(this.tabs.map(tab => tab.title));
 
+    }
+
+    override registerToChecklist(entry: Fish | Critter) {
+        if ('fishName' in entry) {
+            this._checklist.add(ChecklistCategory.JOURNAL_FISH, entry)
+        } else {
+            if ((this.matTabGroup?.selectedIndex === this.SEA_CRITTERS_INDEX)) {
+                this._checklist.add(ChecklistCategory.JOURNAL_CRITTER, entry)
+            } else {
+                this._checklist.add(ChecklistCategory.JOURNAL_INSECTS, entry)
+            }
+        }
     }
 
     override filterPredicate(foundEntry: Fish | Critter, filterValues: FormGroup<FilterForm>["value"], index: number): boolean {

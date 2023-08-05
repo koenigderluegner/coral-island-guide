@@ -1,0 +1,172 @@
+<app-sidebar-container>
+    <app-module-sidebar>
+        <ng-container>
+            <app-module-sidebar-item exact routerLink="/checklist">
+                <div class="flex justify-between grow">
+                    <span>All</span>
+                    <span>{{checklistService.currentChecklistAmount}}</span>
+                </div>
+            </app-module-sidebar-item>
+            <app-module-sidebar-item routerLink="/checklist/offerings">
+                <div class="flex justify-between grow">
+                    <span>Offerings</span>
+                    <span>{{checklist.offerings.length}}</span>
+                </div>
+            </app-module-sidebar-item>
+            <app-module-sidebar-item routerLink="/checklist/fish">
+                <div class="flex justify-between grow">
+                    <span>Fish</span>
+                    <span>{{checklist.journal.fish.length}}</span>
+                </div>
+            </app-module-sidebar-item>
+            <app-module-sidebar-item routerLink="/checklist/insects">
+                <div class="flex justify-between grow">
+                    <span>Insects</span>
+                    <span>{{checklist.journal.insects.length}}</span>
+                </div>
+            </app-module-sidebar-item>
+            <app-module-sidebar-item routerLink="/checklist/sea-critters">
+                <div class="flex justify-between grow">
+                    <span>Sea Critters</span>
+                    <span>{{checklist.journal.critter.length}}</span>
+                </div>
+            </app-module-sidebar-item>
+            <app-module-sidebar-item routerLink="/checklist/artifacts">
+                <div class="flex justify-between grow">
+                    <span>Artifacts</span>
+                    <span>{{checklist.journal.artifacts.length}}</span>
+                </div>
+            </app-module-sidebar-item>
+            <app-module-sidebar-item routerLink="/checklist/gems">
+                <div class="flex justify-between grow">
+                    <span>Gems</span>
+                    <span>{{checklist.journal.gems.length}}</span>
+                </div>
+            </app-module-sidebar-item>
+            <app-module-sidebar-item routerLink="/checklist/fossils">
+                <div class="flex justify-between grow">
+                    <span>Fossils</span>
+                    <span>{{checklist.journal.fossils.length}}</span>
+                </div>
+            </app-module-sidebar-item>
+            <app-module-sidebar-item routerLink="/checklist/cooking-recipes">
+                <div class="flex justify-between grow">
+                    <span>Cooking recipes</span>
+                    <span>{{checklist.cookingRecipes.length}}</span>
+                </div>
+            </app-module-sidebar-item>
+
+        </ng-container>
+    </app-module-sidebar>
+    <app-card class="m-2 2xl:mx-16 2xl:mt-16 2xl:mb-10">
+        <h1 class="mb-4 font-semibold text-2xl text-black">Checklists{{isBeta ? ' [BETA VERSION]' : ''}}</h1>
+
+        <app-checklist-partial [category]="checklistCategory.OFFERINGS"
+                               [checklistId]="checklistId"
+                               [data]="checklist.offerings"
+                               dataChecklistId="offerings"
+                               title="Offerings">
+            <ng-template let-data>
+                <app-checklist-entry-offering *ngFor="let offering of data" @leaveAnimation [entry]="offering"
+                                              class="mb-2 block"/>
+            </ng-template>
+        </app-checklist-partial>
+
+        <app-checklist-partial [category]="checklistCategory.JOURNAL_FISH"
+                               [checklistId]="checklistId"
+                               [data]="checklist.journal.fish"
+                               dataChecklistId="fish"
+                               title="Journal fish">
+            <ng-template let-data>
+                <app-checklist-entry-fish *ngFor="let fish of data" @leaveAnimation [entry]="fish"
+                                          class="mb-2 block"/>
+            </ng-template>
+        </app-checklist-partial>
+
+        <app-checklist-partial [category]="checklistCategory.JOURNAL_INSECTS"
+                               [checklistId]="checklistId"
+                               [data]="checklist.journal.insects"
+                               dataChecklistId="insects"
+                               title="Journal insects">
+            <ng-template let-data>
+                <app-checklist-entry-insect *ngFor="let insect of data" @leaveAnimation [entry]="insect"
+                                            class="mb-2 block"/>
+            </ng-template>
+        </app-checklist-partial>
+
+        <app-checklist-partial [category]="checklistCategory.JOURNAL_CRITTER"
+                               [checklistId]="checklistId"
+                               dataChecklistId="sea-critters"
+                               [data]="checklist.journal.critter"
+                               title="Journal sea-critters">
+            <ng-template let-data>
+                <app-checklist-sea-critter *ngFor="let seaCritter of data" @leaveAnimation [entry]="seaCritter"
+                                           class="mb-2 block"/>
+            </ng-template>
+        </app-checklist-partial>
+
+
+        <app-checklist-partial [category]="checklistCategory.JOURNAL_ARTIFACTS"
+                               [checklistId]="checklistId"
+                               [data]="checklist.journal.artifacts"
+                               dataChecklistId="artifacts"
+                               title="Artifacts">
+            <ng-template let-data>
+                <app-checklist-entry-base *ngFor="let artifact of data" @leaveAnimation
+                                          [category]="checklistCategory.JOURNAL_ARTIFACTS"
+                                          [item]="artifact" class="mb-2 block"/>
+            </ng-template>
+        </app-checklist-partial>
+
+        <app-checklist-partial [category]="checklistCategory.JOURNAL_GEMS"
+                               [checklistId]="checklistId"
+                               [data]="checklist.journal.gems"
+                               dataChecklistId="gems"
+                               title="Gems">
+            <ng-template let-data>
+                <app-checklist-entry-base *ngFor="let gem of data" @leaveAnimation
+                                          [category]="checklistCategory.JOURNAL_GEMS"
+                                          [item]="gem" class="mb-2 block"/>
+            </ng-template>
+        </app-checklist-partial>
+
+        <app-checklist-partial [category]="checklistCategory.JOURNAL_FOSSILS"
+                               [checklistId]="checklistId"
+                               [data]="checklist.journal.fossils"
+                               dataChecklistId="fossils"
+                               title="Fossils">
+            <ng-template let-data>
+                <app-checklist-entry-base *ngFor="let fossil of data" @leaveAnimation
+                                          [category]="checklistCategory.JOURNAL_FOSSILS"
+                                          [item]="fossil" class="mb-2 block"/>
+            </ng-template>
+        </app-checklist-partial>
+
+        <app-checklist-partial [category]="checklistCategory.COOKING_RECIPES"
+                               [checklistId]="checklistId"
+                               [data]="checklist.cookingRecipes"
+                               dataChecklistId="cooking-recipes"
+                               title="Cooking recipes">
+            <ng-template let-data>
+                <app-checklist-entry-base *ngFor="let recipe of data" @leaveAnimation
+                                          [category]="checklistCategory.COOKING_RECIPES"
+                                          [item]="recipe.item" class="mb-2 block"/>
+            </ng-template>
+        </app-checklist-partial>
+
+        <ng-container *ngIf="checklistService.currentIsEmpty && !checklistId">
+            <h2 class="mb-2 mt-4 font-semibold text-xl text-black">No entries in checklist</h2>
+            <p class="text-black">
+                Your current checklist is empty! Visit the <a class="underline" routerLink="/journal">journal</a>, the
+                <a class="underline" routerLink="/locations/lake-temple">offerings</a> or other places to add entries to
+                your
+                checklist.
+            </p>
+        </ng-container>
+    </app-card>
+</app-sidebar-container>
+
+
+
+
+

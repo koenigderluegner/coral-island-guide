@@ -17,6 +17,7 @@ const routerOptions: ExtraOptions = {
     anchorScrolling: 'enabled',
     scrollOffset: [0, 64],
     initialNavigation: 'enabledBlocking',
+    bindToComponentInputs: true
 };
 
 const appRoutes: Route[] = [
@@ -54,7 +55,14 @@ const appRoutes: Route[] = [
         path: 'locations',
         loadChildren: () => import('./locations/locations.module').then((m) => m.LocationsModule),
     },
-    {path: 'settings', loadChildren: () => import('./settings/settings.module').then((m) => m.SettingsModule)},
+    {
+        path: 'settings',
+        loadChildren: () => import('./settings/settings.module').then((m) => m.SettingsModule)
+    },
+    {
+        path: 'checklist',
+        loadChildren: () => import('./checklist/checklist.module').then(m => m.ChecklistModule)
+    },
 ];
 
 @NgModule({

@@ -1,16 +1,18 @@
-<app-base-item-card *ngIf="critter" [item]="critter.item">
-    <div>Rarity: <span class="text-black">{{addSpacesToPascalCase(critter.rarity)}}</span></div>
-    <ng-container *ngIf="isFish(critter)">
+<app-base-item-card (addedToChecklist)="registerToChecklist && registerToChecklist(critter)" *ngIf="critter"
+                    [checklistCategory]="checklistCategory"
+                    [item]="critter.item">
+    <div>Rarity: <span class="text-black">{{critter.rarity | spacesToPascalCase}}</span></div>
+    <ng-container *ngIf="critter | isFish">
         <div>Size: <span class="text-black">{{critter.fishSize}}</span></div>
     </ng-container>
     <div>Time: <span class="text-black">{{getTruthyValues(critter.spawnTime)}}</span></div>
-    <ng-container *ngIf="isFish(critter)">
+    <ng-container *ngIf="critter | isFish">
         <div>
             Season: <span
                 class="text-black">{{!critter.isUsingSpecificDate ? getTruthyValues(critter.spawnSeason) : dateRangesToString(critter.dateRangeList)}}</span>
         </div>
     </ng-container>
-    <ng-container *ngIf="!isFish(critter)">
+    <ng-container *ngIf="!(critter | isFish)">
         <div>
             Season: <span
                 class="text-black">{{getTruthyValues(critter.spawnSeason)}}</span>
@@ -24,7 +26,7 @@
             class="text-black">{{ critter.spawnLocation.join(', ')}}</span>
     </div>
 
-    <ng-container *ngIf="!isFish(critter)">
+    <ng-container *ngIf="!(critter | isFish)">
         <div *ngIf="critter.spawnAmountModifiers && critter.spawnAmountModifiers.length">Spawn amount modifiers
             <div *ngFor="let modifier of critter.spawnAmountModifiers" class="flex justify-between">
                 <span>{{modifier[0]}}</span>

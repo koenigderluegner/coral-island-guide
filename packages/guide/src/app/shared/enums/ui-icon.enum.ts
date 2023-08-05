@@ -11,6 +11,7 @@ export enum UiIcon {
     DATABASE = 'T_Icon_AllQuest',
     MAP = 'T_Icon_Map',
     TO_DO = 'T_Icon_Errands',
+    TO_DO_ON_LIST = 'T_Icon_Checklist_Checked',
     BURGER_MENU = 'T_Icon_BurgerMenu',
     SETTINGS = 'T_Icon_GameSettings',
 

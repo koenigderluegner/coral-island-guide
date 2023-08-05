@@ -1,15 +1,10 @@
 import { OfferingReward } from "./offering-reward.interface";
-import { MinimalItem } from "../types/minimal-item.type";
-import { Quality } from "../enums/quality.enum";
+import { Offering } from "./offering.interface";
 
 export interface Offerings {
     title: string;
     imageName: string;
     numOfItemRequired: number;
-    requiredItems: {
-        item: MinimalItem,
-        amount: number,
-        quality?: Quality
-    }[];
+    requiredItems: Offering[];
     rewards: OfferingReward;
 }

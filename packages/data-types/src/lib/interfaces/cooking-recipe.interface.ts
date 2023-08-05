@@ -11,7 +11,7 @@ export interface CookingRecipe {
         genericItem?: TagBasedItem
     }[],
     craftingUnlock?: UnlockByMastery
-    item?: Item
+    item: Item
     utensils: string[]
     eitherOrIngredients: { item?: MinimalItem, amount: number }[][]
     additionsToGenerics?: Record<string, MinimalItem[]>

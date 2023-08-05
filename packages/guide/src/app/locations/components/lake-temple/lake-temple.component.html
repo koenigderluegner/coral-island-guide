@@ -1,6 +1,8 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     <app-base-item-card *ngIf="selectedEntity"
                         [item]="selectedEntity"
+                        [checklistCategory]="checklistCategory.OFFERINGS"
+                        (addedToChecklist)="entryForChecklist && registerToChecklist(entryForChecklist)"
                         listDetail/>
     <mat-tab-group (selectedTabChange)="updateUrl($event)" *ngIf="offerings$ | async as offeringAltars"
                    [selectedIndex]="selectedTabIndex"
@@ -38,11 +40,11 @@
         </div>
 
         <div class="grid gap-4 icon-grid  mt-8">
-            <app-item-icon (click)="showDetails(itemProcess.item)"
-                           *ngFor="let itemProcess of activeOffering.rewards.items"
-                           [amount]="itemProcess.amount"
-                           [class.selected-icon]="selectedEntity?.id === itemProcess.item.id"
-                           [itemName]="itemProcess.item?.iconName"
+            <app-item-icon (click)="showDetails(offeringReward.item)"
+                           *ngFor="let offeringReward of activeOffering.rewards.items"
+                           [amount]="offeringReward.amount"
+                           [class.selected-icon]="selectedEntity?.id === offeringReward.item.id"
+                           [itemName]="offeringReward.item.iconName"
                            class="icon-grid-item">
             </app-item-icon>
         </div>
@@ -53,12 +55,12 @@
         </div>
         <div class="grid gap-4 icon-grid  mt-8">
 
-            <app-item-icon (click)="showDetails(itemProcess.item)"
-                           *ngFor="let itemProcess of activeOffering.requiredItems"
-                           [amount]="itemProcess.amount"
-                           [class.selected-icon]="selectedEntity?.id === itemProcess.item.id"
-                           [itemName]="itemProcess.item?.iconName"
-                           [quality]="itemProcess.quality"
+            <app-item-icon (click)="showDetails(offering)"
+                           *ngFor="let offering of activeOffering.requiredItems"
+                           [amount]="offering.amount"
+                           [class.selected-icon]="selectedEntity?.id === offering.item.id"
+                           [itemName]="offering.item.iconName"
+                           [quality]="offering.quality"
                            class="icon-grid-item">
             </app-item-icon>
         </div>

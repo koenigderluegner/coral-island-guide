@@ -23,23 +23,33 @@ export class HeaderComponent {
             text: 'Journal',
             uiIcon: UiIcon.JOURNAL,
             path: 'journal'
-        }, {
+        },
+        {
             text: 'Crafting',
             uiIcon: UiIcon.CRAFTING,
             path: 'crafting'
-        }, {
+        },
+        {
             text: 'People',
             uiIcon: UiIcon.PEOPLE,
             path: 'people'
-        }, {
+        },
+        {
             text: 'Locations',
             uiIcon: UiIcon.MAP,
             path: 'locations'
-        }, {
+        },
+        {
+            text: 'Checklist',
+            uiIcon: UiIcon.TO_DO,
+            path: 'checklist'
+        },
+        {
             text: 'Item database',
             uiIcon: UiIcon.DATABASE,
             path: 'database'
-        }, {
+        },
+        {
             text: 'Settings',
             uiIcon: UiIcon.SETTINGS,
             path: 'settings'
