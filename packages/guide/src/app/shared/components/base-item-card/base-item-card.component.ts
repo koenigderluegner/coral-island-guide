@@ -22,7 +22,7 @@ import { ChecklistService } from "../../../core/services/checklist.service";
 export class BaseItemCardComponent implements OnInit, OnChanges {
     @Input() item?: Item | MinimalItem;
     @Input() amount?: number;
-    @Input() checklistCategory?: ChecklistCategory;
+    @Input() checklistCategory?: ChecklistCategory | undefined;
     @Output() openDrawerChange: EventEmitter<boolean> = new EventEmitter<boolean>();
     @Output() addedToChecklist: EventEmitter<void> = new EventEmitter<void>();
     @Input({transform: booleanAttribute}) hideQualityGrid = false

@@ -31,6 +31,24 @@
                     <span>{{checklist.journal.critter.length}}</span>
                 </div>
             </app-module-sidebar-item>
+            <app-module-sidebar-item routerLink="/checklist/artifacts">
+                <div class="flex justify-between grow">
+                    <span>Artifacts</span>
+                    <span>{{checklist.journal.artifacts.length}}</span>
+                </div>
+            </app-module-sidebar-item>
+            <app-module-sidebar-item routerLink="/checklist/gems">
+                <div class="flex justify-between grow">
+                    <span>Gems</span>
+                    <span>{{checklist.journal.gems.length}}</span>
+                </div>
+            </app-module-sidebar-item>
+            <app-module-sidebar-item routerLink="/checklist/fossils">
+                <div class="flex justify-between grow">
+                    <span>Fossils</span>
+                    <span>{{checklist.journal.fossils.length}}</span>
+                </div>
+            </app-module-sidebar-item>
 
         </ng-container>
     </app-module-sidebar>
@@ -78,6 +96,40 @@
             <ng-template let-data>
                 <app-checklist-sea-critter *ngFor="let seaCritter of data" @leaveAnimation [entry]="seaCritter"
                                            class="mb-2 block"/>
+            </ng-template>
+        </app-checklist-partial>
+
+
+        <app-checklist-partial [category]="checklistCategory.JOURNAL_ARTIFACTS"
+                               [checklistId]="checklistId"
+                               [data]="checklist.journal.artifacts"
+                               dataChecklistId="artifacts"
+                               title="Artifacts">
+            <ng-template let-data>
+                <app-checklist-entry-base *ngFor="let artifact of data" @leaveAnimation [category]="checklistCategory.JOURNAL_ARTIFACTS"
+                                          [item]="artifact" class="mb-2 block"/>
+            </ng-template>
+        </app-checklist-partial>
+
+        <app-checklist-partial [category]="checklistCategory.JOURNAL_GEMS"
+                               [checklistId]="checklistId"
+                               [data]="checklist.journal.gems"
+                               dataChecklistId="gems"
+                               title="Gems">
+            <ng-template let-data>
+                <app-checklist-entry-base *ngFor="let gem of data" @leaveAnimation [category]="checklistCategory.JOURNAL_GEMS"
+                                          [item]="gem" class="mb-2 block"/>
+            </ng-template>
+        </app-checklist-partial>
+
+        <app-checklist-partial [category]="checklistCategory.JOURNAL_FOSSILS"
+                               [checklistId]="checklistId"
+                               [data]="checklist.journal.fossils"
+                               dataChecklistId="fossils"
+                               title="Fossils">
+            <ng-template let-data>
+                <app-checklist-entry-base *ngFor="let fossil of data" @leaveAnimation [category]="checklistCategory.JOURNAL_FOSSILS"
+                                          [item]="fossil" class="mb-2 block"/>
             </ng-template>
         </app-checklist-partial>
 

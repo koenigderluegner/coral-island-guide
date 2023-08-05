@@ -15,9 +15,9 @@ export class ChecklistService {
 
     private static _CURRENT_CHECKLIST_VERSION = 1
     private static _CHECKLIST_STORE_KEY = 'checklist'
-    private _completedCategory$: Subject<ChecklistCategory> = new Subject<ChecklistCategory>();
     clearTimer?: number;
     clearTimeout = 3000;
+    private _completedCategory$: Subject<ChecklistCategory> = new Subject<ChecklistCategory>();
     private currentChecklistIndex = 0;
     private _checklists: Checklist[] = [];
     private _markedAsCompleted: SelectionModel<MarkedSelection> = new SelectionModel<{
@@ -222,6 +222,24 @@ export class ChecklistService {
                     foundIndex = this.getCurrentChecklist().journal.insects.findIndex(offering => offering.item.id === entry.item.id)
                     if (foundIndex >= 0) {
                         this.getCurrentChecklist().journal.insects.splice(foundIndex, 1);
+                    }
+                    break;
+                case ChecklistCategory.JOURNAL_GEMS:
+                    foundIndex = this.getCurrentChecklist().journal.gems.findIndex(offering => offering.id === entry.item.id)
+                    if (foundIndex >= 0) {
+                        this.getCurrentChecklist().journal.gems.splice(foundIndex, 1);
+                    }
+                    break;
+                case ChecklistCategory.JOURNAL_FOSSILS:
+                    foundIndex = this.getCurrentChecklist().journal.fossils.findIndex(offering => offering.id === entry.item.id)
+                    if (foundIndex >= 0) {
+                        this.getCurrentChecklist().journal.fossils.splice(foundIndex, 1);
+                    }
+                    break;
+                case ChecklistCategory.JOURNAL_ARTIFACTS:
+                    foundIndex = this.getCurrentChecklist().journal.artifacts.findIndex(offering => offering.id === entry.item.id)
+                    if (foundIndex >= 0) {
+                        this.getCurrentChecklist().journal.artifacts.splice(foundIndex, 1);
                     }
                     break;
             }
