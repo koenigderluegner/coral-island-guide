@@ -1,5 +1,15 @@
 ## Changelog
 
+### 0.8.0 TBD
+
+#### Added
+
+- Added checklists
+    - There are seperate lists for beta and live version.
+    - To add entries, open details of entries for example a fish in journal and press the checklist icon at the top of
+      the card next to the 'x'.
+    - Added option to reset checklist in settings if something gets stuck.
+
 ### 0.7.4 2023-07-26
 
 #### Added
