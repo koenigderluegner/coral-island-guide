@@ -242,6 +242,12 @@ export class ChecklistService {
                         this.getCurrentChecklist().journal.artifacts.splice(foundIndex, 1);
                     }
                     break;
+                case ChecklistCategory.COOKING_RECIPES:
+                    foundIndex = this.getCurrentChecklist().cookingRecipes.findIndex(offering => offering.item.id === entry.item.id)
+                    if (foundIndex >= 0) {
+                        this.getCurrentChecklist().cookingRecipes.splice(foundIndex, 1);
+                    }
+                    break;
             }
         });
 

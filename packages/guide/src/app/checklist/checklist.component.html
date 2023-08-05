@@ -49,6 +49,12 @@
                     <span>{{checklist.journal.fossils.length}}</span>
                 </div>
             </app-module-sidebar-item>
+            <app-module-sidebar-item routerLink="/checklist/cooking-recipes">
+                <div class="flex justify-between grow">
+                    <span>Cooking recipes</span>
+                    <span>{{checklist.cookingRecipes.length}}</span>
+                </div>
+            </app-module-sidebar-item>
 
         </ng-container>
     </app-module-sidebar>
@@ -106,7 +112,8 @@
                                dataChecklistId="artifacts"
                                title="Artifacts">
             <ng-template let-data>
-                <app-checklist-entry-base *ngFor="let artifact of data" @leaveAnimation [category]="checklistCategory.JOURNAL_ARTIFACTS"
+                <app-checklist-entry-base *ngFor="let artifact of data" @leaveAnimation
+                                          [category]="checklistCategory.JOURNAL_ARTIFACTS"
                                           [item]="artifact" class="mb-2 block"/>
             </ng-template>
         </app-checklist-partial>
@@ -117,7 +124,8 @@
                                dataChecklistId="gems"
                                title="Gems">
             <ng-template let-data>
-                <app-checklist-entry-base *ngFor="let gem of data" @leaveAnimation [category]="checklistCategory.JOURNAL_GEMS"
+                <app-checklist-entry-base *ngFor="let gem of data" @leaveAnimation
+                                          [category]="checklistCategory.JOURNAL_GEMS"
                                           [item]="gem" class="mb-2 block"/>
             </ng-template>
         </app-checklist-partial>
@@ -128,8 +136,21 @@
                                dataChecklistId="fossils"
                                title="Fossils">
             <ng-template let-data>
-                <app-checklist-entry-base *ngFor="let fossil of data" @leaveAnimation [category]="checklistCategory.JOURNAL_FOSSILS"
+                <app-checklist-entry-base *ngFor="let fossil of data" @leaveAnimation
+                                          [category]="checklistCategory.JOURNAL_FOSSILS"
                                           [item]="fossil" class="mb-2 block"/>
+            </ng-template>
+        </app-checklist-partial>
+
+        <app-checklist-partial [category]="checklistCategory.COOKING_RECIPES"
+                               [checklistId]="checklistId"
+                               [data]="checklist.cookingRecipes"
+                               dataChecklistId="cooking-recipes"
+                               title="Cooking recipes">
+            <ng-template let-data>
+                <app-checklist-entry-base *ngFor="let recipe of data" @leaveAnimation
+                                          [category]="checklistCategory.COOKING_RECIPES"
+                                          [item]="recipe.item" class="mb-2 block"/>
             </ng-template>
         </app-checklist-partial>
 
