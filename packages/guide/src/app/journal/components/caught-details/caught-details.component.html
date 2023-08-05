@@ -1,4 +1,5 @@
 <app-base-item-card (addedToChecklist)="registerToChecklist && registerToChecklist(critter)" *ngIf="critter"
+                    [checklistCategory]="checklistCategory"
                     [item]="critter.item">
     <div>Rarity: <span class="text-black">{{critter.rarity | spacesToPascalCase}}</span></div>
     <ng-container *ngIf="critter | isFish">
