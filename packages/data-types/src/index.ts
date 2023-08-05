@@ -21,6 +21,8 @@ export * from './lib/interfaces/tag-based-item.interface';
 export * from './lib/interfaces/time.interface';
 export * from './lib/interfaces/unlock-by-mastery.interface';
 export * from './lib/interfaces/opening-hours.interface';
+export * from './lib/interfaces/specific-date.interface';
+export * from './lib/interfaces/shop-item-data.interface';
 
 export * from './lib/enums/quality.enum';
 export * from './lib/enums/season.enum';
