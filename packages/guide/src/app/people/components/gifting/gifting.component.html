@@ -16,9 +16,8 @@
                     </div>
                     <div class="gifting-gifts-grid ">
                         <ng-container *ngFor="let loved of giftingPreferences[prefMap.preferenceField]">
-                            <app-inline-minimal-item *ngIf="loved.type === 'item'"
-                                                     [minimalItem]="loved.item"></app-inline-minimal-item>
-                            <span *ngIf="loved.type === 'category'">All {{_addSpacesToPascalCase(loved.categoryName)}}</span>
+                            <app-inline-minimal-item *ngIf="loved.type === 'item'" [minimalItem]="loved.item"/>
+                            <span *ngIf="loved.type === 'category'">All {{loved.categoryName | addSpacesToPascalCase}}</span>
                         </ng-container>
                     </div>
                 </ng-container>

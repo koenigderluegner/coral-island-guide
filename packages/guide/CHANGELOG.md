@@ -11,6 +11,10 @@
     - Added option to reset checklist in settings if something gets stuck.
 - Added sell price to items without qualities to database
 
+#### Changed
+
+- Minor visual improvements in gifting list
+
 ### 0.7.4 2023-07-26
 
 #### Added

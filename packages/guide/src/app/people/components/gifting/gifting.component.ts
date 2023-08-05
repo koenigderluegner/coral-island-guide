@@ -1,10 +1,9 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { DatabaseService } from '../../../shared/services/database.service';
 import { Observable } from 'rxjs';
 import { GiftPreferences } from '@ci/data-types';
 import { MapKeyed } from '../../../shared/types/map-keyed.type';
 import { UiIcon } from '../../../shared/enums/ui-icon.enum';
-import { addSpacesToPascalCase } from '@ci/util';
 
 @Component({
     selector: 'app-gifting',
@@ -14,8 +13,7 @@ import { addSpacesToPascalCase } from '@ci/util';
 })
 export class GiftingComponent {
 
-
-    gifting$: Observable<MapKeyed<GiftPreferences>[]>;
+    gifting$: Observable<MapKeyed<GiftPreferences>[]> = inject(DatabaseService).fetchGiftingPreferences$();
 
     preferencesMap: { icon: UiIcon, label: string; preferenceField: string }[] = [
         {icon: UiIcon.LOVE, label: 'Favorite', preferenceField: 'favoritePreferences'},
@@ -26,10 +24,5 @@ export class GiftingComponent {
         {icon: UiIcon.HATE, label: 'Hate', preferenceField: 'hatePreferences'},
     ];
 
-    protected _addSpacesToPascalCase = addSpacesToPascalCase;
-
-    constructor(private readonly _database: DatabaseService) {
-        this.gifting$ = this._database.fetchGiftingPreferences$();
-    }
 
 }
