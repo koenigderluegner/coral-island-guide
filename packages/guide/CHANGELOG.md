@@ -5,8 +5,8 @@
 #### Added
 
 - Added checklists
-    - There are seperate lists for beta and live version.
-    - To add entries, open details of entries for example a fish in journal and press the checklist icon at the top of
+    - There are separate lists for beta and live version.
+    - To add entries, open details for an entry for example a fish in journal and press the checklist icon at the top of
       the card next to the 'x'.
     - Added option to reset checklist in settings if something gets stuck.
 - Added sell price to items without qualities to database
