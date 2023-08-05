@@ -110,6 +110,16 @@ export class ChecklistService {
 
     }
 
+    resetLiveChecklist(): void {
+        localStorage.setItem(ChecklistService._CHECKLIST_STORE_KEY + '_live', JSON.stringify([this._createEmptyChecklist()]));
+        this.read();
+    }
+
+    resetBetaChecklist(): void {
+        localStorage.setItem(ChecklistService._CHECKLIST_STORE_KEY + '_beta', JSON.stringify([this._createEmptyChecklist()]));
+        this.read()
+    }
+
     alreadyInList(type: ChecklistCategory, data: { item: MinimalItem } | MinimalItem): boolean {
 
 
