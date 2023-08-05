@@ -9,6 +9,7 @@
     - To add entries, open details of entries for example a fish in journal and press the checklist icon at the top of
       the card next to the 'x'.
     - Added option to reset checklist in settings if something gets stuck.
+- Added sell price to items without qualities to database
 
 ### 0.7.4 2023-07-26
 
