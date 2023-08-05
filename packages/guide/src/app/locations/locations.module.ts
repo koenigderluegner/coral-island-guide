@@ -6,15 +6,22 @@ import { LakeTempleComponent } from './components/lake-temple/lake-temple.compon
 import { LocationsRoutingModule } from './locations-routing.module';
 import { MatTabsModule } from '@angular/material/tabs';
 import { OfferingsTableComponent } from './components/tables/offerings-table/offerings-table.component';
-import { MatTableModule } from "@angular/material/table";
-import { MatSortModule } from "@angular/material/sort";
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { BlacksmithComponent } from './components/blacksmith/blacksmith.component';
 
 @NgModule({
-    declarations: [LocationsComponent, LakeTempleComponent, OfferingsTableComponent],
-    imports: [CommonModule, LocationsRoutingModule, SharedModule, MatTabsModule, NgOptimizedImage, MatTableModule, MatSortModule],
-    exports: [
-        OfferingsTableComponent
-    ]
+    declarations: [LocationsComponent, LakeTempleComponent, OfferingsTableComponent, BlacksmithComponent],
+    imports: [
+        CommonModule,
+        LocationsRoutingModule,
+        SharedModule,
+        MatTabsModule,
+        NgOptimizedImage,
+        MatTableModule,
+        MatSortModule,
+    ],
+    exports: [OfferingsTableComponent],
 })
 export class LocationsModule {
 }
