@@ -44,6 +44,8 @@ import { IsBaseCropPipe } from './pipes/is-base-crop.pipe';
 import { BaseSelectableContainerComponent } from './components/base-selectable-container/base-selectable-container.component';
 import { BaseTabbedSelectableContainerComponent } from './components/base-tabbed-selectable-container/base-tabbed-selectable-container.component';
 import { IsFishPipe } from './pipes/is-fish.pipe';
+import { IngameDatePipe } from './pipes/ingame-date.pipe';
+import { IngameTimePipe } from './pipes/ingame-time.pipe';
 
 @NgModule({
     declarations: [
@@ -81,6 +83,8 @@ import { IsFishPipe } from './pipes/is-fish.pipe';
         BaseSelectableContainerComponent,
         BaseTabbedSelectableContainerComponent,
         IsFishPipe,
+        IngameDatePipe,
+        IngameTimePipe,
     ],
     imports: [
         CommonModule,
@@ -128,6 +132,8 @@ import { IsFishPipe } from './pipes/is-fish.pipe';
         NonSpecializedTableComponent,
         IsBaseCropPipe,
         IsFishPipe,
+        IngameDatePipe,
+        IngameTimePipe,
     ],
 })
 export class SharedModule {

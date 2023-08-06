@@ -1,4 +1,4 @@
-import { MinimalItem, SpecificDate, Time } from "@ci/data-types";
+import { Item, MinimalItem, SpecificDate, Time } from "@ci/data-types";
 
 
 export type ShopItemData = {
@@ -9,7 +9,7 @@ export type ShopItemData = {
     "allowedWeather": string[],
     "forbiddenWeather": string[],
     "townRank": number;
-    item: MinimalItem;
+    item: MinimalItem & Pick<Item, 'price'>;
     "priority": number,
     "priceOverride": number,
     "tag": string[]

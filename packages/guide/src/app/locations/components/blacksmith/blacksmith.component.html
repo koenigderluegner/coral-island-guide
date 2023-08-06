@@ -1,1 +1,57 @@
-<p>blacksmith works!</p>
+<app-list-detail-container [(openDrawer)]="openDrawer">
+    <app-shop-item-data-details *ngIf="selectedEntity" [shopItemData]="selectedEntity" listDetail/>
+
+    <div class="px-2 xl:px-[50px] w-full">
+
+        <app-card class="mb-6">
+            <h1 class="mb-4 font-semibold text-3xl text-black flex items-center gap-x-4 ">
+                <app-ui-icon [uiIcon]="uiIcon.BLACKSMITH"/>
+                Blacksmith
+            </h1>
+            <div *ngIf="(openingHours$ |async) as openingHours" class="flex gap-8 text-black">
+                <div *ngFor="let keyValuePair of openingHours | keyvalue">
+                    <div class="font-semibold text-xl">{{keyValuePair.key}}</div>
+                    <div class="grid grid-cols-2">
+                        <ng-container
+                                *ngIf="keyValuePair.value.isCoreOnlyWeekdays || keyValuePair.value.isCoreEveryDay">
+                            <div>  {{ keyValuePair.value.isCoreEveryDay ? 'Every day' : 'Weekdays' }}:</div>
+                            <div>{{keyValuePair.value.coreOpeningHours.from | ingameTime}}-{{
+                                keyValuePair.value.coreOpeningHours.to | ingameTime}}</div>
+                        </ng-container>
+                        <ng-container
+                                *ngIf="!keyValuePair.value.isCoreOnlyWeekdays && !keyValuePair.value.isCoreEveryDay">
+                            <div>  {{ shortenWeekdays(keyValuePair.value.coreOpeningDays).join()}}:</div>
+                            <div>  {{keyValuePair.value.coreOpeningHours.from | ingameTime}}-{{
+                                keyValuePair.value.coreOpeningHours.to | ingameTime}}</div>
+                        </ng-container>
+                        <ng-container *ngIf="keyValuePair.value.dayOfTheWeekSpecificOpeningHours">
+                            <ng-container
+                                    *ngFor="let specificKeyValuePair of keyValuePair.value.dayOfTheWeekSpecificOpeningHours | keyvalue">
+                                <div>  {{ specificKeyValuePair.key}}:</div>
+                                <div>  {{specificKeyValuePair.value.from | ingameTime}}-{{
+                                    specificKeyValuePair.value.to | ingameTime}}
+                                </div>
+                            </ng-container>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </app-card>
+
+        <h2 class="mb-4 font-semibold text-2xl text-white">Stock list</h2>
+        <ng-container *ngIf="(shopItemData$ |async) as shopItemData">
+
+            <div *ngIf="!showTable" class="grid gap-4 icon-grid">
+
+                <app-item-icon (click)="showDetails(shopItem)" *ngFor="let shopItem of shopItemData"
+                               [class.selected-icon]="selectedEntity?.item?.id === shopItem.item.id"
+                               [itemName]="shopItem.item.iconName"
+                               class="icon-grid-item">
+                </app-item-icon>
+            </div>
+            <app-shop-item-data-table *ngIf="showTable"/>
+
+        </ng-container>
+
+    </div>
+</app-list-detail-container>

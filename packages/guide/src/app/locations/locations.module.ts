@@ -9,9 +9,19 @@ import { OfferingsTableComponent } from './components/tables/offerings-table/off
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { BlacksmithComponent } from './components/blacksmith/blacksmith.component';
+import { CraftingModule } from '../crafting/crafting.module';
+import { ShopItemDataDetailsComponent } from './components/shop-item-data-details/shop-item-data-details.component';
+import { ShopItemDataTableComponent } from './components/tables/shop-item-data-table/shop-item-data-table.component';
 
 @NgModule({
-    declarations: [LocationsComponent, LakeTempleComponent, OfferingsTableComponent, BlacksmithComponent],
+    declarations: [
+        LocationsComponent,
+        LakeTempleComponent,
+        OfferingsTableComponent,
+        BlacksmithComponent,
+        ShopItemDataDetailsComponent,
+        ShopItemDataTableComponent,
+    ],
     imports: [
         CommonModule,
         LocationsRoutingModule,
@@ -20,6 +30,7 @@ import { BlacksmithComponent } from './components/blacksmith/blacksmith.componen
         NgOptimizedImage,
         MatTableModule,
         MatSortModule,
+        CraftingModule,
     ],
     exports: [OfferingsTableComponent],
 })
