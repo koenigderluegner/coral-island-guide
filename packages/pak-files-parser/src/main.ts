@@ -25,6 +25,7 @@ import { ConsumablesDbGenerator } from "./app/consumables-db.generator";
 import { environment } from "./environments/environment";
 import { BlacksmithOpeningHoursGenerator } from "./app/opening-hours-generators/blacksmith-opening-hours.generator";
 import { ShopItemDataGenerator } from "./app/shop-item-data.generator";
+import { ItemProcessShopGenerator } from "./app/item-process-shop.generator";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + (environment.isBeta ? 'BETA' : 'LIVE'));
 
@@ -83,6 +84,7 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
 
     'blacksmith-opening-hours': new BlacksmithOpeningHoursGenerator(),
     'blacksmith-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DT_BlacksmithShop_AlphaV1.json'),
+    'blacksmith-shop-process-items': new ItemProcessShopGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_NodeCofferProcessShopData.json'),
 
     'tag-based-items': {generate: () => tagBasedItemsDbMap},
     'crafting-unlocks-by-mastery': {generate: () => craftingRecipeUnlockedByMasteryDbMap},

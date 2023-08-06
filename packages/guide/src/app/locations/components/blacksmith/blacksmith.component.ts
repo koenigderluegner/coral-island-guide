@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { OpeningHours, ShopItemData } from "@ci/data-types";
+import { ItemProcessShopData, OpeningHours, ShopItemData } from "@ci/data-types";
 import { Observable } from "rxjs";
 import { BaseSelectableContainerComponent } from "../../../shared/components/base-selectable-container/base-selectable-container.component";
 import { UiIcon } from "../../../shared/enums/ui-icon.enum";
@@ -14,15 +14,30 @@ export class BlacksmithComponent extends BaseSelectableContainerComponent<ShopIt
     protected shopItemData$: Observable<ShopItemData[]>;
     protected uiIcon = UiIcon;
     protected openingHours$: Observable<Record<string, OpeningHours>>;
+    protected itemProcessing$: Observable<ItemProcessShopData[]>;
+    protected selectedProcessEntity: ItemProcessShopData | undefined;
+
 
     constructor() {
         super();
         this.shopItemData$ = this._database.fetchShopItemDataBlacksmith$();
         this.openingHours$ = this._database.fetchOpeningHoursBlacksmith$();
+        this.itemProcessing$ = this._database.fetchShopProcessItemsBlacksmith$();
     }
 
     shortenWeekdays(weekdays: string[]): string[] {
         return weekdays.map(s => s.substring(0, 3))
+    }
+
+    override showDetails(selectedEntry?: ShopItemData) {
+        this.selectedProcessEntity = undefined;
+        super.showDetails(selectedEntry);
+    }
+
+    showProcessDetails(selectedEntry?: ItemProcessShopData) {
+        this.selectedEntity = undefined;
+        this.selectedProcessEntity = selectedEntry;
+        this.openDrawer = true;
     }
 
 }

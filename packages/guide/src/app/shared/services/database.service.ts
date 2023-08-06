@@ -13,6 +13,7 @@ import {
     GiftPreferences,
     Item,
     ItemProcessing,
+    ItemProcessShopData,
     JournalOrder,
     OfferingAltar,
     OpeningHours,
@@ -64,6 +65,9 @@ export class DatabaseService {
 
     private _SHOP_ITEMS_BLACKSMITH$?: Observable<ShopItemData[]>;
     private _SHOP_ITEMS_BLACKSMITH: ShopItemData[] = [];
+
+    private _SHOP_PROCESS_ITEMS_BLACKSMITH$?: Observable<ItemProcessShopData[]>;
+    private _SHOP_PROCESS_ITEMS_BLACKSMITH: ItemProcessShopData[] = [];
 
     private _OPENING_HOURS_BLACKSMITH$?: Observable<Record<string, OpeningHours>>;
     private _OPENING_HOURS_BLACKSMITH: Record<string, OpeningHours> = {};
@@ -128,11 +132,6 @@ export class DatabaseService {
         return this._OFFERINGS$;
     }
 
-    getShopItemDataBlacksmith(): ShopItemData[] {
-        return this._SHOP_ITEMS_BLACKSMITH;
-    }
-
-
     fetchShopItemDataBlacksmith$(): Observable<ShopItemData[]> {
         if (!this._SHOP_ITEMS_BLACKSMITH$) {
             this._SHOP_ITEMS_BLACKSMITH$ = this._http.get<ShopItemData[]>(`${this._BASE_PATH}/blacksmith-shop-items.json`)
@@ -142,6 +141,17 @@ export class DatabaseService {
                 );
         }
         return this._SHOP_ITEMS_BLACKSMITH$;
+    }
+
+    fetchShopProcessItemsBlacksmith$(): Observable<ItemProcessShopData[]> {
+        if (!this._SHOP_PROCESS_ITEMS_BLACKSMITH$) {
+            this._SHOP_PROCESS_ITEMS_BLACKSMITH$ = this._http.get<ItemProcessShopData[]>(`${this._BASE_PATH}/blacksmith-shop-process-items.json`)
+                .pipe(
+                    tap(items => this._SHOP_PROCESS_ITEMS_BLACKSMITH = items),
+                    shareReplay(1)
+                );
+        }
+        return this._SHOP_PROCESS_ITEMS_BLACKSMITH$;
     }
 
     fetchOpeningHoursBlacksmith$(): Observable<Record<string, OpeningHours>> {
