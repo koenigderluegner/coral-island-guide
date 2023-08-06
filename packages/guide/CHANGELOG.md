@@ -10,6 +10,10 @@
       the card next to the 'x'.
     - Added option to reset checklist in settings if something gets stuck.
 - Added sell price to items without qualities to database
+- \[Experimental] Added blacksmith to locations
+    - Shows opening hours, stocklist and item processing
+        - Values might be incorrect, as data without implementation is ambiguous
+    - Data will be added to database at a later point.
 
 #### Changed
 
