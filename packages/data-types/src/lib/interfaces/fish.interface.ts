@@ -1,4 +1,5 @@
 import { BaseCatchableInterface } from "./base-catchable.interface";
+import { SpecificDate } from "./specific-date.interface";
 
 export interface Fish extends BaseCatchableInterface {
     isEnabled: boolean;
@@ -16,16 +17,8 @@ export interface Fish extends BaseCatchableInterface {
         isValidOnSpecificDate: boolean,
         isValidIndefinitelyOnceStarted: boolean,
         random: boolean,
-        startsFrom: {
-            day: number,
-            season: string,
-            year: number
-        },
-        lastsTill: {
-            day: number,
-            season: string,
-            year: number
-        }
+        startsFrom: SpecificDate,
+        lastsTill: SpecificDate
     }[],
     experienceGrantedWhenCaught: number
 }

@@ -6,15 +6,33 @@ import { LakeTempleComponent } from './components/lake-temple/lake-temple.compon
 import { LocationsRoutingModule } from './locations-routing.module';
 import { MatTabsModule } from '@angular/material/tabs';
 import { OfferingsTableComponent } from './components/tables/offerings-table/offerings-table.component';
-import { MatTableModule } from "@angular/material/table";
-import { MatSortModule } from "@angular/material/sort";
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { BlacksmithComponent } from './components/blacksmith/blacksmith.component';
+import { CraftingModule } from '../crafting/crafting.module';
+import { ShopItemDataDetailsComponent } from './components/shop-item-data-details/shop-item-data-details.component';
+import { ShopItemDataTableComponent } from './components/tables/shop-item-data-table/shop-item-data-table.component';
 
 @NgModule({
-    declarations: [LocationsComponent, LakeTempleComponent, OfferingsTableComponent],
-    imports: [CommonModule, LocationsRoutingModule, SharedModule, MatTabsModule, NgOptimizedImage, MatTableModule, MatSortModule],
-    exports: [
-        OfferingsTableComponent
-    ]
+    declarations: [
+        LocationsComponent,
+        LakeTempleComponent,
+        OfferingsTableComponent,
+        BlacksmithComponent,
+        ShopItemDataDetailsComponent,
+        ShopItemDataTableComponent,
+    ],
+    imports: [
+        CommonModule,
+        LocationsRoutingModule,
+        SharedModule,
+        MatTabsModule,
+        NgOptimizedImage,
+        MatTableModule,
+        MatSortModule,
+        CraftingModule,
+    ],
+    exports: [OfferingsTableComponent],
 })
 export class LocationsModule {
 }

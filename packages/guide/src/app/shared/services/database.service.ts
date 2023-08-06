@@ -13,8 +13,11 @@ import {
     GiftPreferences,
     Item,
     ItemProcessing,
+    ItemProcessShopData,
     JournalOrder,
     OfferingAltar,
+    OpeningHours,
+    ShopItemData,
     TagBasedItem
 } from '@ci/data-types';
 import { AvailableJournalOrders } from '../types/available-journal-orders.type';
@@ -60,6 +63,15 @@ export class DatabaseService {
     private _OFFERINGS$?: Observable<OfferingAltar[]>;
     private _OFFERINGS: OfferingAltar[] = [];
 
+    private _SHOP_ITEMS_BLACKSMITH$?: Observable<ShopItemData[]>;
+    private _SHOP_ITEMS_BLACKSMITH: ShopItemData[] = [];
+
+    private _SHOP_PROCESS_ITEMS_BLACKSMITH$?: Observable<ItemProcessShopData[]>;
+    private _SHOP_PROCESS_ITEMS_BLACKSMITH: ItemProcessShopData[] = [];
+
+    private _OPENING_HOURS_BLACKSMITH$?: Observable<Record<string, OpeningHours>>;
+    private _OPENING_HOURS_BLACKSMITH: Record<string, OpeningHours> = {};
+
     constructor(private readonly _http: HttpClient,
                 private readonly _settings: SettingsService) {
         const version = this._settings.getSettings().useBeta ? 'beta' : 'live';
@@ -82,6 +94,7 @@ export class DatabaseService {
             this.fetchFruitPlants$(),
             this.fetchGiftingPreferences$(),
             this.fetchOfferings$(),
+            this.fetchShopItemDataBlacksmith$(),
         ]);
     }
 
@@ -117,6 +130,40 @@ export class DatabaseService {
                 );
         }
         return this._OFFERINGS$;
+    }
+
+    fetchShopItemDataBlacksmith$(): Observable<ShopItemData[]> {
+        if (!this._SHOP_ITEMS_BLACKSMITH$) {
+            this._SHOP_ITEMS_BLACKSMITH$ = this._http.get<ShopItemData[]>(`${this._BASE_PATH}/blacksmith-shop-items.json`)
+                .pipe(
+                    tap(items => this._SHOP_ITEMS_BLACKSMITH = items),
+                    shareReplay(1)
+                );
+        }
+        return this._SHOP_ITEMS_BLACKSMITH$;
+    }
+
+    fetchShopProcessItemsBlacksmith$(): Observable<ItemProcessShopData[]> {
+        if (!this._SHOP_PROCESS_ITEMS_BLACKSMITH$) {
+            this._SHOP_PROCESS_ITEMS_BLACKSMITH$ = this._http.get<ItemProcessShopData[]>(`${this._BASE_PATH}/blacksmith-shop-process-items.json`)
+                .pipe(
+                    tap(items => this._SHOP_PROCESS_ITEMS_BLACKSMITH = items),
+                    shareReplay(1)
+                );
+        }
+        return this._SHOP_PROCESS_ITEMS_BLACKSMITH$;
+    }
+
+    fetchOpeningHoursBlacksmith$(): Observable<Record<string, OpeningHours>> {
+        if (!this._OPENING_HOURS_BLACKSMITH$) {
+            this._OPENING_HOURS_BLACKSMITH$ = this._http.get<Record<string, OpeningHours>[]>(`${this._BASE_PATH}/blacksmith-opening-hours.json`)
+                .pipe(
+                    map(items => items[0]),
+                    tap(items => this._OPENING_HOURS_BLACKSMITH = items),
+                    shareReplay(1)
+                );
+        }
+        return this._OPENING_HOURS_BLACKSMITH$;
     }
 
 
