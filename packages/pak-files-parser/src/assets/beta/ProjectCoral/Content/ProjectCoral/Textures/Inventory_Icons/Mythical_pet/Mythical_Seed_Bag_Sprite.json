@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Mythical_Seed_Bag_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -1.0,
+              "Y": 0.0,
+              "Z": 0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 112.0,
+            "Y": 10.0,
+            "Z": 117.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "BF5017D44C60EF31FCD5EDBADAD2DEE9"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Mythical_Seed_Bag_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Mythical_Seed_Bag'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Mythical_pet/Mythical_pet_textures/Mythical_Seed_Bag.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Mythical_Seed_Bag_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Mythical_pet/Mythical_Seed_Bag_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 55.0,
+          "Y": 59.0,
+          "Z": 0.9296875,
+          "W": 0.0390625
+        },
+        {
+          "X": -57.0,
+          "Y": 59.0,
+          "Z": 0.0546875,
+          "W": 0.0390625
+        },
+        {
+          "X": -57.0,
+          "Y": -58.0,
+          "Z": 0.0546875,
+          "W": 0.953125
+        },
+        {
+          "X": 55.0,
+          "Y": -58.0,
+          "Z": 0.9296875,
+          "W": 0.953125
+        },
+        {
+          "X": 55.0,
+          "Y": 59.0,
+          "Z": 0.9296875,
+          "W": 0.0390625
+        },
+        {
+          "X": -57.0,
+          "Y": -58.0,
+          "Z": 0.0546875,
+          "W": 0.953125
+        }
+      ]
+    }
+  }
+]
