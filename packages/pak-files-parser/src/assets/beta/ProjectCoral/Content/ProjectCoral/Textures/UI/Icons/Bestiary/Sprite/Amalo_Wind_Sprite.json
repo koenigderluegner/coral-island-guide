@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Amalo_Wind_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 244.0,
+            "Y": 10.0,
+            "Z": 244.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "1DF5E01D417BB91B81BDB7B92838947A"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Amalo_Wind_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 256.0,
+        "Y": 256.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Amalo_Wind'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/UI/Icons/Bestiary/Amalo_Wind.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Amalo_Wind_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/UI/Icons/Bestiary/Sprite/Amalo_Wind_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 122.0,
+          "Y": 122.0,
+          "Z": 0.9765625,
+          "W": 0.0234375
+        },
+        {
+          "X": -122.0,
+          "Y": 122.0,
+          "Z": 0.0234375,
+          "W": 0.0234375
+        },
+        {
+          "X": -122.0,
+          "Y": -122.0,
+          "Z": 0.0234375,
+          "W": 0.9765625
+        },
+        {
+          "X": 122.0,
+          "Y": -122.0,
+          "Z": 0.9765625,
+          "W": 0.9765625
+        },
+        {
+          "X": 122.0,
+          "Y": 122.0,
+          "Z": 0.9765625,
+          "W": 0.0234375
+        },
+        {
+          "X": -122.0,
+          "Y": -122.0,
+          "Z": 0.0234375,
+          "W": 0.9765625
+        }
+      ]
+    }
+  }
+]
