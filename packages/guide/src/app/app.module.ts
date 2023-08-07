@@ -63,6 +63,10 @@ const appRoutes: Route[] = [
         path: 'checklist',
         loadChildren: () => import('./checklist/checklist.module').then(m => m.ChecklistModule)
     },
+    {
+        path: 'only-in-beta',
+        loadComponent: () => import('./only-in-beta/only-in-beta.component').then(c => c.OnlyInBetaComponent)
+    }
 ];
 
 @NgModule({

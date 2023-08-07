@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UiIcon } from "../shared/enums/ui-icon.enum";
+import { SettingsService } from "../shared/services/settings.service";
 
 @Component({
     selector: 'app-locations',
@@ -7,4 +8,7 @@ import { UiIcon } from "../shared/enums/ui-icon.enum";
 })
 export class LocationsComponent {
     protected uiIcon = UiIcon;
+
+    constructor(protected settings: SettingsService) {
+    }
 }

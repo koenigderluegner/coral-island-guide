@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LocationsComponent } from './locations.component';
 import { LakeTempleComponent } from "./components/lake-temple/lake-temple.component";
 import { BlacksmithComponent } from "./components/blacksmith/blacksmith.component";
+import { onlyInBetaGuard } from "../core/guards/only-in-beta.guard";
 
 const routes: Routes = [
     {
@@ -16,7 +17,12 @@ const routes: Routes = [
         children: [
             {path: 'lake-temple', redirectTo: 'lake-temple/', pathMatch: 'full'},
             {path: 'lake-temple/:tabName', component: LakeTempleComponent, title: 'Lake temple - Locations'},
-            {path: 'blacksmith', component: BlacksmithComponent, title: 'Blacksmith - Locations'},
+            {
+                path: 'blacksmith',
+                component: BlacksmithComponent,
+                title: 'Blacksmith - Locations',
+                canActivate: [onlyInBetaGuard]
+            },
         ]
     }
 ];
