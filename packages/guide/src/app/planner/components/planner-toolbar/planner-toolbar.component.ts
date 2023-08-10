@@ -105,7 +105,12 @@ export class PlannerToolbarComponent {
             children: []
         }
 
-        const buildings: { key: string; label: string; size: { width: number; length: number }, iconName: string }[] = [];
+        const buildings: {
+            key: string;
+            label: string;
+            size: { width: number; length: number },
+            iconName: string
+        }[] = [];
 
         [
             {itemKey: 'item_110001', size: {width: 8, length: 5}},  // barn level 1
@@ -191,6 +196,8 @@ export class PlannerToolbarComponent {
 
 
         crops.forEach(crop => {
+            if (!crop.dropData.length) return;
+
             const key = crop.dropData[0].itemId;
             const label = crop.dropData[0].item?.displayName;
             PlaceableItemsMap.set(crop.dropData[0].itemId, {
