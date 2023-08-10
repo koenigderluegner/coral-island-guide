@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { DatabaseService } from "../../services/database.service";
+import { ChecklistService } from "../../../core/services/checklist.service";
 
 @Component({
     template: '',
@@ -11,10 +12,13 @@ export class BaseSelectableContainerComponent<T> {
     openDrawer = false;
     selectedEntity?: T;
     protected readonly _database: DatabaseService = inject(DatabaseService)
+    protected readonly _checklist: ChecklistService = inject(ChecklistService)
 
     showDetails(selectedEntry?: T) {
         this.selectedEntity = selectedEntry;
         this.openDrawer = true;
     }
+
+    registerToChecklist?(entry: T): void;
 
 }

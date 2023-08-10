@@ -8,5 +8,14 @@
     mask-size: contain;
     -webkit-mask-size: contain;
   }
+
+  [disabled] & {
+    opacity: 0.5;
+
+    &:hover, &:focus-visible {
+      /* FIXME: shouldn't require important */
+      color: inherit !important;
+    }
+  }
 }
 

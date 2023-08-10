@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "Milk_Sprite_",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 3.0,
+              "Y": 0.0,
+              "Z": -3.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 88.0,
+            "Y": 10.0,
+            "Z": 108.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "3EEF0474457DF9E7035B64865FC4CB35"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Milk_Sprite_",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Milk_'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Textures/Milk_.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Milk_Sprite_:BodySetup_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Milk_Sprite_.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 47.0,
+          "Y": 51.0,
+          "Z": 0.8671875,
+          "W": 0.1015625
+        },
+        {
+          "X": -41.0,
+          "Y": 51.0,
+          "Z": 0.1796875,
+          "W": 0.1015625
+        },
+        {
+          "X": -41.0,
+          "Y": -57.0,
+          "Z": 0.1796875,
+          "W": 0.9453125
+        },
+        {
+          "X": 47.0,
+          "Y": -57.0,
+          "Z": 0.8671875,
+          "W": 0.9453125
+        },
+        {
+          "X": 47.0,
+          "Y": 51.0,
+          "Z": 0.8671875,
+          "W": 0.1015625
+        },
+        {
+          "X": -41.0,
+          "Y": -57.0,
+          "Z": 0.1796875,
+          "W": 0.9453125
+        }
+      ]
+    }
+  }
+]

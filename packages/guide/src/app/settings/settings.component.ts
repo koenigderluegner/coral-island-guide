@@ -1,7 +1,13 @@
 import { Component } from '@angular/core';
 import { SettingsService } from "../shared/services/settings.service";
 import { FormControl, FormGroup } from "@angular/forms";
-import { Settings } from "../shared/interfaces/settings.interface";
+import { ChecklistService } from "../core/services/checklist.service";
+
+type SettingsFormGroup = {
+    useBeta: FormControl<boolean>;
+    resetLiveChecklist: FormControl<boolean>;
+    resetBetaChecklist: FormControl<boolean>;
+};
 
 @Component({
     selector: 'app-settings',
@@ -9,12 +15,14 @@ import { Settings } from "../shared/interfaces/settings.interface";
 })
 export class SettingsComponent {
 
-    settingsForm: FormGroup<{ useBeta: FormControl<boolean> }>
+    settingsForm: FormGroup<SettingsFormGroup>
     protected reloadRequired = false;
 
-    constructor(private readonly _settingsService: SettingsService) {
-        this.settingsForm = new FormGroup<{ useBeta: FormControl<boolean> }>({
-            useBeta: new FormControl<boolean>(false, {nonNullable: true})
+    constructor(private readonly _settingsService: SettingsService, private _checkList: ChecklistService) {
+        this.settingsForm = new FormGroup<SettingsFormGroup>({
+            useBeta: new FormControl<boolean>(false, {nonNullable: true}),
+            resetLiveChecklist: new FormControl<boolean>(false, {nonNullable: true}),
+            resetBetaChecklist: new FormControl<boolean>(false, {nonNullable: true}),
         });
 
         const settings = this._settingsService.getSettings();
@@ -28,7 +36,18 @@ export class SettingsComponent {
     }
 
     saveSettings(): void {
-        const settings: Partial<Settings> = this.settingsForm.value;
+        const settings = {...this.settingsForm.value};
+
+        if (settings.resetLiveChecklist) {
+            this._checkList.resetLiveChecklist()
+        }
+
+        if (settings.resetBetaChecklist) {
+            this._checkList.resetBetaChecklist()
+        }
+
+        delete settings.resetBetaChecklist;
+        delete settings.resetLiveChecklist;
 
         this._settingsService.saveSettings(settings);
 

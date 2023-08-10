@@ -19,6 +19,11 @@ export class BaseTabbedSelectableContainerComponent<T> extends BaseSelectableCon
     protected readonly _title: Title = inject(Title);
 
     updateUrl($event: MatTabChangeEvent | string) {
+
+        if (typeof $event !== 'string') {
+            this.selectedTabIndex = $event.index
+        }
+
         const tabName = typeof $event === "string" ? $event : $event.tab.textLabel;
         const formattedTabName = tabName.toLowerCase().replaceAll(' ', '');
 

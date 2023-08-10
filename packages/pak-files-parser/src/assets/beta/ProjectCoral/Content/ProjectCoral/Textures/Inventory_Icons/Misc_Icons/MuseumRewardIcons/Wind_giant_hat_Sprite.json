@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Wind_giant_hat_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -2.5,
+              "Y": 0.0,
+              "Z": 2.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 223.0,
+            "Y": 10.0,
+            "Z": 248.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "C23EF5FF4B3F70BF27118EAD2205B09A"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Wind_giant_hat_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 256.0,
+        "Y": 256.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Wind_giant_hat'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Misc_Icons/MuseumRewardIcons/MuseumRewardIcons_Textures/Wind_giant_hat.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Wind_giant_hat_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Misc_Icons/MuseumRewardIcons/Wind_giant_hat_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 109.0,
+          "Y": 126.0,
+          "Z": 0.92578125,
+          "W": 0.0078125
+        },
+        {
+          "X": -114.0,
+          "Y": 126.0,
+          "Z": 0.0546875,
+          "W": 0.0078125
+        },
+        {
+          "X": -114.0,
+          "Y": -122.0,
+          "Z": 0.0546875,
+          "W": 0.9765625
+        },
+        {
+          "X": 109.0,
+          "Y": -122.0,
+          "Z": 0.92578125,
+          "W": 0.9765625
+        },
+        {
+          "X": 109.0,
+          "Y": 126.0,
+          "Z": 0.92578125,
+          "W": 0.0078125
+        },
+        {
+          "X": -114.0,
+          "Y": -122.0,
+          "Z": 0.0546875,
+          "W": 0.9765625
+        }
+      ]
+    }
+  }
+]

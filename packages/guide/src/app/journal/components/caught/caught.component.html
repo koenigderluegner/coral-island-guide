@@ -1,5 +1,6 @@
 <app-list-detail-container [(openDrawer)]="openDrawer" [removePlaceholder]="showTable">
-    <app-caught-details listDetail *ngIf="selectedEntity" [critter]="selectedEntity"></app-caught-details>
+    <app-caught-details *ngIf="selectedEntity" [critter]="selectedEntity" [registerToChecklist]="registerToChecklist"
+                        listDetail></app-caught-details>
 
     <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex"
                    class=" px-2 xl:px-[50px] w-full"

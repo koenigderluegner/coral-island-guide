@@ -1,8 +1,18 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+    booleanAttribute,
+    Component,
+    EventEmitter,
+    Input,
+    OnChanges,
+    OnInit,
+    Output,
+    SimpleChanges
+} from '@angular/core';
 import { Item, MinimalItem } from '@ci/data-types';
 import { DatabaseService } from '../../services/database.service';
-import { coerceBooleanProperty } from "@angular/cdk/coercion";
 import { UiIcon } from "../../enums/ui-icon.enum";
+import { ChecklistCategory } from "../../../core/enums/checklist-category.enum";
+import { ChecklistService } from "../../../core/services/checklist.service";
 
 @Component({
     selector: 'app-base-item-card',
@@ -12,23 +22,16 @@ import { UiIcon } from "../../enums/ui-icon.enum";
 export class BaseItemCardComponent implements OnInit, OnChanges {
     @Input() item?: Item | MinimalItem;
     @Input() amount?: number;
+    @Input() checklistCategory?: ChecklistCategory | undefined;
     @Output() openDrawerChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Output() addedToChecklist: EventEmitter<void> = new EventEmitter<void>();
+    @Input({transform: booleanAttribute}) hideQualityGrid = false
     protected uiIcon = UiIcon;
     protected fetchedItem?: Item;
+    protected readonly UiIcon = UiIcon;
 
-    constructor(private readonly _database: DatabaseService) {
-    }
-
-    _hideQualityGrid = false;
-
-    @Input()
-    get hideQualityGrid(): boolean {
-        return this._hideQualityGrid;
-    }
-
-    set hideQualityGrid(value: boolean | number | string | null | undefined) {
-        this._hideQualityGrid = coerceBooleanProperty(value);
-
+    constructor(private readonly _database: DatabaseService,
+                protected readonly checklistService: ChecklistService) {
     }
 
     ngOnInit(): void {
@@ -43,6 +46,10 @@ export class BaseItemCardComponent implements OnInit, OnChanges {
         this._setItem(changes['item'].currentValue);
     }
 
+    removeFromCheckList(checklistCategory: ChecklistCategory, item: Item | MinimalItem) {
+        this.checklistService.updateStatus(checklistCategory, item, true, true)
+    }
+
     private _setItem(item: Item | MinimalItem | undefined): void {
         if (!item) return;
         if (!this.isItem(item)) {
@@ -51,6 +58,4 @@ export class BaseItemCardComponent implements OnInit, OnChanges {
             this.fetchedItem = item;
         }
     }
-
-
 }

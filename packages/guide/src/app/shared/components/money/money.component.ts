@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, numberAttribute } from '@angular/core';
 
 @Component({
     selector: 'app-money',
@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./money.component.scss'],
 })
 export class MoneyComponent {
-    @Input() amount?: number | null;
+    @Input({transform: numberAttribute, required: true}) amount!: number;
 }

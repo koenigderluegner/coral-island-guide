@@ -17,6 +17,7 @@ const routerOptions: ExtraOptions = {
     anchorScrolling: 'enabled',
     scrollOffset: [0, 64],
     initialNavigation: 'enabledBlocking',
+    bindToComponentInputs: true
 };
 
 const appRoutes: Route[] = [
@@ -55,13 +56,21 @@ const appRoutes: Route[] = [
         loadChildren: () => import('./locations/locations.module').then((m) => m.LocationsModule),
     },
     {
+        path: 'settings',
+        loadChildren: () => import('./settings/settings.module').then((m) => m.SettingsModule)
+    },
+    {
+        path: 'checklist',
+        loadChildren: () => import('./checklist/checklist.module').then(m => m.ChecklistModule)
+    },
+    {
+        path: 'only-in-beta',
+        loadComponent: () => import('./only-in-beta/only-in-beta.component').then(c => c.OnlyInBetaComponent)
+    },
+    {
         path: 'planner',
         loadChildren: () =>
             import('./planner/planner.module').then((m) => m.PlannerModule),
-    },
-    {
-        path: 'settings',
-        loadChildren: () => import('./settings/settings.module').then((m) => m.SettingsModule)
     },
 ];
 

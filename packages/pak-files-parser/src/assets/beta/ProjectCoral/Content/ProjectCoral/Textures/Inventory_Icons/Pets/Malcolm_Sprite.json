@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Malcolm_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.5,
+              "Y": 0.0,
+              "Z": 6.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 501.0,
+            "Y": 10.0,
+            "Z": 480.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "0F9E13CA4DFB43EFC79B27B61570CFAC"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Malcolm_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 512.0,
+        "Y": 512.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Malcolm'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Pets/Pets_Textures/Malcolm.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Malcolm_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Pets/Malcolm_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 251.0,
+          "Y": 246.0,
+          "Z": 0.9902344,
+          "W": 0.01953125
+        },
+        {
+          "X": -250.0,
+          "Y": 246.0,
+          "Z": 0.01171875,
+          "W": 0.01953125
+        },
+        {
+          "X": -250.0,
+          "Y": -234.0,
+          "Z": 0.01171875,
+          "W": 0.95703125
+        },
+        {
+          "X": 251.0,
+          "Y": -234.0,
+          "Z": 0.9902344,
+          "W": 0.95703125
+        },
+        {
+          "X": 251.0,
+          "Y": 246.0,
+          "Z": 0.9902344,
+          "W": 0.01953125
+        },
+        {
+          "X": -250.0,
+          "Y": -234.0,
+          "Z": 0.01171875,
+          "W": 0.95703125
+        }
+      ]
+    }
+  }
+]

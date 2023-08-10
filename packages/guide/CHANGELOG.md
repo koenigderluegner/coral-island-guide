@@ -1,5 +1,46 @@
 ## Changelog
 
+### 0.8.0 2023-08-07
+
+#### Added
+
+- Added checklists
+    - There are separate lists for beta and live version.
+    - To add entries, open details for an entry for example a fish in journal and press the checklist icon at the top of
+      the card next to the 'x'.
+    - Added option to reset checklist in settings if something gets stuck.
+- Added sell price to items without qualities to database
+- \[Experimental] Beta only: Added blacksmith to locations
+    - Shows opening hours, stocklist and item processing
+        - Values might be incorrect, as data without implementation is ambiguous
+    - Data will be added to database at a later point.
+
+#### Changed
+
+- Minor visual improvements in gifting list
+
+### 0.7.4 2023-07-26
+
+#### Added
+
+- Added descriptions to database entries
+
+#### Changed
+
+- Added beta data for version 0.5-67
+
+### 0.7.3 2023-07-21
+
+#### Changed
+
+- Added beta data for version 0.5-19
+
+### 0.7.2 2023-05-19
+
+#### Changed
+
+- Added live data for version 0.4
+
 ### 0.7.1 2023-05-11
 
 #### Changed

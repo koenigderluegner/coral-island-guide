@@ -9,5 +9,5 @@ import { MinimalItem } from '@ci/data-types';
 })
 export class InlineMinimalItemComponent {
     @HostBinding('class.app-inline-minimal-item') private _setClass = true;
-    @Input() minimalItem?: MinimalItem;
+    @Input({required: true}) minimalItem!: MinimalItem;
 }

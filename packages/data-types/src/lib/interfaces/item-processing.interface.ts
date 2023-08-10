@@ -2,13 +2,11 @@ import { MinimalItem } from '../types/minimal-item.type';
 import { TagBasedItem } from "./tag-based-item.interface";
 import { ItemProcessingRefinement } from "./item-processing-refinement.interface";
 import { Quality } from "../enums/quality.enum";
+import { Time } from "./time.interface";
 
 export interface ItemProcessing {
     day: number,
-    time: {
-        hours: number,
-        minutes: number
-    }
+    time: Time
     genericInput: null | {
         key: string;
         amount: number;

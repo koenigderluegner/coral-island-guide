@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "Sturdy_Computer_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 1.0,
+              "Y": 0.0,
+              "Z": 4.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 352.0,
+            "Y": 10.0,
+            "Z": 496.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "6CF3FE814EB08EC20A06148125F77C6B"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Sturdy_Computer_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 512.0,
+        "Y": 512.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Sturdy_Computer'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/FarmingTools_Icons/Textures/Sturdy_Computer.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Sturdy_Computer_Sprite:BodySetup_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/FarmingTools_Icons/Sturdy_Computer_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 177.0,
+          "Y": 252.0,
+          "Z": 0.8457031,
+          "W": 0.0078125
+        },
+        {
+          "X": -175.0,
+          "Y": 252.0,
+          "Z": 0.15820312,
+          "W": 0.0078125
+        },
+        {
+          "X": -175.0,
+          "Y": -244.0,
+          "Z": 0.15820312,
+          "W": 0.9765625
+        },
+        {
+          "X": 177.0,
+          "Y": -244.0,
+          "Z": 0.8457031,
+          "W": 0.9765625
+        },
+        {
+          "X": 177.0,
+          "Y": 252.0,
+          "Z": 0.8457031,
+          "W": 0.0078125
+        },
+        {
+          "X": -175.0,
+          "Y": -244.0,
+          "Z": 0.15820312,
+          "W": 0.9765625
+        }
+      ]
+    }
+  }
+]

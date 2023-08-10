@@ -1,0 +1,70 @@
+<app-base-item-card [item]="shopItemData.item">
+    <div>Buy price:
+        <span class="text-black">
+            <app-money
+                    [amount]="shopItemData.priceOverride !== 0 ? shopItemData.priceOverride : shopItemData.item.price"/>
+        </span>
+    </div>
+    <div *ngIf="shopItemData.availableDuringTime && shopItemData.timeRange">Only at times:
+        <span class="inline-flex">
+            {{(shopItemData.timeRange.fromTime.hours | number: '2.0') + ':' + (shopItemData.timeRange.fromTime.minutes | number: '2.0')}}
+            -
+            {{(shopItemData.timeRange.toTime.hours | number: '2.0') + ':' + (shopItemData.timeRange.toTime.minutes | number: '2.0')}}
+        </span>
+    </div>
+
+
+    <div *ngIf="shopItemData.availableSinceDate && shopItemData.sinceDate">Available since:
+        <span
+                class="text-black">{{shopItemData.sinceDate | ingameDate}}
+        </span>
+    </div>
+
+    <div *ngIf="shopItemData.availableTillDate && shopItemData.tillDate">Available until:
+        <span
+                class="text-black">{{shopItemData.tillDate | ingameDate}}
+        </span>
+    </div>
+
+    <div *ngIf="shopItemData.forbiddenDays.length">Except on days:
+        <span
+                class="text-black">{{shopItemData.forbiddenDays.join(',')}}
+        </span>
+    </div>
+
+    <div *ngIf="shopItemData.allowedDays.length">Only on days:
+        <span
+                class="text-black">{{shopItemData.allowedDays.join(',')}}
+        </span>
+    </div>
+    <div *ngIf="shopItemData.forbiddenDays.length">Except on days:
+        <span
+                class="text-black">{{shopItemData.forbiddenDays.join(',')}}
+        </span>
+    </div>
+
+    <div *ngIf="shopItemData.allowedWeather.length">Only at weather:
+        <span
+                class="text-black">{{shopItemData.allowedWeather.join(',')}}
+        </span>
+    </div>
+    <div *ngIf="shopItemData.forbiddenWeather.length">Except at weather:
+        <span
+                class="text-black">{{shopItemData.forbiddenWeather.join(',')}}
+        </span>
+    </div>
+
+
+    <div *ngIf="shopItemData.allowedSeasons.length">Only at seasons:
+        <span
+                class="text-black">{{shopItemData.allowedSeasons.join(',')}}
+        </span>
+    </div>
+    <div *ngIf="shopItemData.forbiddenSeasons.length">Except at seasons:
+        <span
+                class="text-black">{{shopItemData.forbiddenSeasons.join(',')}}
+        </span>
+    </div>
+
+
+</app-base-item-card>

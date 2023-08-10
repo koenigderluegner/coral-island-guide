@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Small_aquarium_cabinet_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.5,
+              "Y": 0.0,
+              "Z": -3.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 89.0,
+            "Y": 10.0,
+            "Z": 85.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "D30E015545F830126F34B98E971DD5AC"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Small_aquarium_cabinet_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Small_aquarium_cabinet'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/East_asian_indoor/East_asian_indoor_textures/Small_aquarium_cabinet.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Small_aquarium_cabinet_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/East_asian_indoor/Small_aquarium_cabinet_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 45.0,
+          "Y": 39.0,
+          "Z": 0.8515625,
+          "W": 0.1953125
+        },
+        {
+          "X": -44.0,
+          "Y": 39.0,
+          "Z": 0.15625,
+          "W": 0.1953125
+        },
+        {
+          "X": -44.0,
+          "Y": -46.0,
+          "Z": 0.15625,
+          "W": 0.859375
+        },
+        {
+          "X": 45.0,
+          "Y": -46.0,
+          "Z": 0.8515625,
+          "W": 0.859375
+        },
+        {
+          "X": 45.0,
+          "Y": 39.0,
+          "Z": 0.8515625,
+          "W": 0.1953125
+        },
+        {
+          "X": -44.0,
+          "Y": -46.0,
+          "Z": 0.15625,
+          "W": 0.859375
+        }
+      ]
+    }
+  }
+]

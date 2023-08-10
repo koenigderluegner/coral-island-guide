@@ -19,7 +19,7 @@
             <ng-container *ngIf="(filteredItems$ | async)">
 
                 <app-item-icon (click)="showDetails(item, index)"
-                               *ngFor="let item of filteredItems; let index = index"
+                               *ngFor="let item of filteredItems; let index = index; trackBy: trackById"
                                [class.selected-icon]="selectedItem?.id === item.id"
                                [itemName]="item.iconName"
                                class="icon-grid-item"

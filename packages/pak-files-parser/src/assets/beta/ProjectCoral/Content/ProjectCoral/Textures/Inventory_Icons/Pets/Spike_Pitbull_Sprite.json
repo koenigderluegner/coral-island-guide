@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Spike_Pitbull_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 2.0,
+              "Y": 0.0,
+              "Z": -8.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 496.0,
+            "Y": 10.0,
+            "Z": 383.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "08A6C5DF4FB4A1FBF9B04E9E41004CDC"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Spike_Pitbull_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 512.0,
+        "Y": 512.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Spike_Pitbull'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Pets/Pets_Textures/Spike_Pitbull.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Spike_Pitbull_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Pets/Spike_Pitbull_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 250.0,
+          "Y": 183.0,
+          "Z": 0.98828125,
+          "W": 0.14257812
+        },
+        {
+          "X": -246.0,
+          "Y": 183.0,
+          "Z": 0.01953125,
+          "W": 0.14257812
+        },
+        {
+          "X": -246.0,
+          "Y": -200.0,
+          "Z": 0.01953125,
+          "W": 0.890625
+        },
+        {
+          "X": 250.0,
+          "Y": -200.0,
+          "Z": 0.98828125,
+          "W": 0.890625
+        },
+        {
+          "X": 250.0,
+          "Y": 183.0,
+          "Z": 0.98828125,
+          "W": 0.14257812
+        },
+        {
+          "X": -246.0,
+          "Y": -200.0,
+          "Z": 0.01953125,
+          "W": 0.890625
+        }
+      ]
+    }
+  }
+]

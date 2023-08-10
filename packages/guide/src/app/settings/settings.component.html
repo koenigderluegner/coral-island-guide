@@ -1,9 +1,9 @@
 <app-card class="text-black container block mx-auto my-10">
     <form (click)="saveSettings()" [formGroup]="settingsForm">
-        <div class="grid md:grid-cols-3 pb-12 gap-y-10 gap-x-8 border-b border-accent/50">
+        <div class="grid md:grid-cols-3 pb-12 gap-y-10 gap-x-8 border-b border-accent/50 mb-8">
             <div>
                 <h3 class="leading-7 font-bold text-lg">Beta data</h3>
-                <p>Options for latest beta build. Current beta data: Summer Update 2023 </p>
+                <p>Options for latest beta build. Current beta data: Merfolk Update 2023 </p>
             </div>
             <div class="bg-amber-50/70 md:col-span-2 px-4 py-6 sm:p-8 sm:rounded-lg">
 
@@ -21,7 +21,42 @@
 
             </div>
         </div>
-        <div class="pt-6 sm:pt-8 flex justify-between items-center">
+        <div class="grid md:grid-cols-3 pb-12 gap-y-10 gap-x-8 border-b border-accent/50 mb-8">
+            <div>
+                <h3 class="leading-7 font-bold text-lg">Checklists</h3>
+                <p>Options for checklists. Reset your checklist data if they behave in unwanted behavior and set
+                    defaults for viewing. </p>
+            </div>
+            <div class="bg-amber-50/70 md:col-span-2 px-4 py-6 sm:p-8 sm:rounded-lg flex flex-col gap-6">
+
+
+                <div class="flex gap-x-3">
+                    <div class="flex h-6 items-center">
+                        <input formControlName="resetLiveChecklist" id="resetLiveChecklist" name="resetLiveChecklist"
+                               type="checkbox">
+                    </div>
+                    <div>
+                        <label class="font-bold leading-6" for="resetLiveChecklist">Reset live checklists</label>
+                        <p class="leading-6">Reset all checklists which were created while using live data.</p>
+                    </div>
+                </div>
+
+
+                <div class="flex gap-x-3">
+                    <div class="flex h-6 items-center">
+                        <input formControlName="resetBetaChecklist" id="resetBetaChecklist" name="resetBetaChecklist"
+                               type="checkbox">
+                    </div>
+                    <div>
+                        <label class="font-bold leading-6" for="resetBetaChecklist">Reset beta checklists</label>
+                        <p class="leading-6">Reset all checklists which were created while using beta data.</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="mt-6 sm:mt-8 flex justify-between items-center">
             <p *ngIf="reloadRequired" class="font-bold">Changes that require a reload were made. Saving will reload
                 automatically.</p>
             <button class="btn-amber ml-auto" type="submit">Save</button>
