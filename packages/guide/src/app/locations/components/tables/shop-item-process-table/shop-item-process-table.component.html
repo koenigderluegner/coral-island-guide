@@ -25,19 +25,21 @@
         <ng-container matColumnDef="outputChances">
             <th *matHeaderCellDef class="backdrop-blur-xl" mat-header-cell mat-sort-header>Output chances</th>
             <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
-                <ng-container *ngFor="let itemListItem of element.outputChanges">
-                    <div class="flex justify-between py-1">
-                        <div *ngIf="itemListItem.item" class="flex gap-x-3 items-center">
-                            <app-item-icon [itemName]="itemListItem.item.iconName" class="w-10"></app-item-icon>
-                            <span>{{itemListItem.item.displayName}}</span>
-                            <span>x{{itemListItem.amount}}</span>
+
+
+                <ng-container *ngFor="let itemListItem of element.outputChanges; let last = last">
+                    <div class="flex justify-between mb-1">
+
+                        <div *ngIf="itemListItem.item" class="flex gap-2 items-center">
+                            <app-item-icon [itemName]="itemListItem.item.iconName" class="!w-7"/>
+                            <span class="ml-1 whitespace-nowrap">{{itemListItem.item.displayName}}&nbsp;x{{itemListItem.amount}}</span>
                         </div>
 
-                        <div class="flex items-center">{{itemListItem.chance}}%</div>
-
+                        <div class="ml-2 flex items-center">{{itemListItem.chance}}%</div>
                     </div>
-                    <hr>
                 </ng-container>
+
+
             </td>
         </ng-container>
 
