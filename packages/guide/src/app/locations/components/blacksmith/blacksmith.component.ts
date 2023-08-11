@@ -7,7 +7,6 @@ import { UiIcon } from "../../../shared/enums/ui-icon.enum";
 @Component({
     selector: 'app-blacksmith',
     templateUrl: './blacksmith.component.html',
-    styleUrls: ['./blacksmith.component.scss'],
 })
 export class BlacksmithComponent extends BaseSelectableContainerComponent<ShopItemData> {
 
@@ -16,6 +15,7 @@ export class BlacksmithComponent extends BaseSelectableContainerComponent<ShopIt
     protected openingHours$: Observable<Record<string, OpeningHours>>;
     protected itemProcessing$: Observable<ItemProcessShopData[]>;
     protected selectedProcessEntity: ItemProcessShopData | undefined;
+    protected showProcessingTable = false
 
 
     constructor() {

@@ -1,29 +1,31 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
-    <app-base-item-card *ngIf="selectedProcessEntity" [item]="selectedProcessEntity.input" listDetail>
+    <ng-container listDetail>
+        <app-base-item-card *ngIf="selectedProcessEntity" [item]="selectedProcessEntity.input">
 
-        <div *ngIf="selectedProcessEntity.inputAmount > 1">
-            Amount needed for processing: <span class="text-black">selectedProcessEntity.inputAmount</span>
-        </div>
-        <div>Cost to process:
-            <app-money [amount]="selectedProcessEntity.processingCost"/>
-        </div>
-        <div class="my-2">
-            <ng-container *ngFor="let itemListItem of selectedProcessEntity.outputChanges">
-                <div class="flex justify-between py-1">
-                    <div *ngIf="itemListItem.item" class="flex gap-x-3 items-center">
-                        <app-item-icon [itemName]="itemListItem.item.iconName" class="w-10"></app-item-icon>
-                        <span>{{itemListItem.item.displayName}}</span>
-                        <span>x{{itemListItem.amount}}</span>
+            <div *ngIf="selectedProcessEntity.inputAmount > 1">
+                Amount needed for processing: <span class="text-black">selectedProcessEntity.inputAmount</span>
+            </div>
+            <div>Cost to process:
+                <app-money [amount]="selectedProcessEntity.processingCost"/>
+            </div>
+            <div class="my-2">
+                <ng-container *ngFor="let itemListItem of selectedProcessEntity.outputChanges">
+                    <div class="flex justify-between py-1">
+                        <div *ngIf="itemListItem.item" class="flex gap-x-3 items-center">
+                            <app-item-icon [itemName]="itemListItem.item.iconName" class="w-10"></app-item-icon>
+                            <span>{{itemListItem.item.displayName}}</span>
+                            <span>x{{itemListItem.amount}}</span>
+                        </div>
+
+                        <div class="flex items-center">{{itemListItem.chance}}%</div>
+
                     </div>
-
-                    <div class="flex items-center">{{itemListItem.chance}}%</div>
-
-                </div>
-                <hr>
-            </ng-container>
-        </div>
-    </app-base-item-card>
-    <app-shop-item-data-details *ngIf="selectedEntity" [shopItemData]="selectedEntity" listDetail/>
+                    <hr>
+                </ng-container>
+            </div>
+        </app-base-item-card>
+        <app-shop-item-data-details *ngIf="selectedEntity" [shopItemData]="selectedEntity"/>
+    </ng-container>
 
     <div class="px-2 xl:px-[50px] w-full">
 
@@ -64,7 +66,7 @@
 
         <h2 class="mb-3 font-semibold text-2xl text-white">Stock list</h2>
         <ng-container *ngIf="(shopItemData$ |async) as shopItemData">
-
+            <app-data-filter [(showTable)]="showTable"/>
             <div *ngIf="!showTable" class="grid gap-4 icon-grid">
 
                 <app-item-icon (click)="showDetails(shopItem)" *ngFor="let shopItem of shopItemData"
@@ -73,7 +75,7 @@
                                class="icon-grid-item">
                 </app-item-icon>
             </div>
-            <app-shop-item-data-table *ngIf="showTable"/>
+            <app-shop-item-data-table *ngIf="showTable" [dataSource]="shopItemData"/>
 
         </ng-container>
 
@@ -81,7 +83,8 @@
         <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Item processing</h2>
         <ng-container *ngIf="(itemProcessing$ |async) as shopItemData">
 
-            <div *ngIf="!showTable" class="grid gap-4 icon-grid">
+            <app-data-filter [(showTable)]="showProcessingTable"/>
+            <div *ngIf="!showProcessingTable" class="grid gap-4 icon-grid">
 
                 <app-item-icon (click)="showProcessDetails(shopItem)" *ngFor="let shopItem of shopItemData"
                                [class.selected-icon]="selectedProcessEntity?.input?.id === shopItem.input.id"
@@ -89,7 +92,7 @@
                                class="icon-grid-item">
                 </app-item-icon>
             </div>
-            <app-shop-item-data-table *ngIf="showTable"/>
+            <app-shop-item-process-table *ngIf="showProcessingTable" [dataSource]="shopItemData"/>
 
         </ng-container>
 

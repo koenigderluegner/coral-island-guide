@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
-import { ShopItemData } from "@ci/data-types";
+import { ItemProcessShopData } from "@ci/data-types";
 
 @Component({
-    selector: 'app-shop-item-data-table',
-    templateUrl: './shop-item-data-table.component.html',
+    selector: 'app-shop-item-process-table',
+    templateUrl: './shop-item-process-table.component.html',
 })
-export class ShopItemDataTableComponent extends BaseTableComponent<ShopItemData & {
+export class ShopItemProcessTableComponent extends BaseTableComponent<ItemProcessShopData & {
     shop?: { url: string; displayName: string }
 }> {
     protected readonly BASE_DISPLAY_COLUMNS: string[] = [
         'icon',
         'displayName',
-        'price',
-        'sellPrice'
+        'outputChances'
     ];
 
     override ngOnInit() {
@@ -23,6 +22,4 @@ export class ShopItemDataTableComponent extends BaseTableComponent<ShopItemData 
             this.displayHeaderColumns = this.displayedColumns.filter(column => column !== 'icon')
         }
     }
-
-
 }

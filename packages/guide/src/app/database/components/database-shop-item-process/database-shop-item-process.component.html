@@ -1,0 +1,8 @@
+<ng-container *ngIf="chancetoBeProcessedFrom.length">
+    <h3 class="database-header">Chance as processing result</h3>
+    <app-shop-item-process-table [dataSource]="chancetoBeProcessedFrom"/>
+</ng-container>
+<ng-container *ngIf="canBeProcessed.length">
+    <h3 class="database-header">Can be processed at</h3>
+    <app-shop-item-process-table [dataSource]="canBeProcessed"/>
+</ng-container>

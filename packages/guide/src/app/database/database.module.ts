@@ -21,7 +21,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { JournalModule } from '../journal/journal.module';
 import { CraftingModule } from '../crafting/crafting.module';
 import { DatabaseOfferingsComponent } from './components/database-offerings/database-offerings.component';
-import { LocationsModule } from "../locations/locations.module";
+import { LocationsModule } from '../locations/locations.module';
+import { DatabaseShopDataComponent } from './components/database-shop-data/database-shop-data.component';
+import { DatabaseShopItemProcessComponent } from './components/database-shop-item-process/database-shop-item-process.component';
 
 @NgModule({
     declarations: [
@@ -38,6 +40,8 @@ import { LocationsModule } from "../locations/locations.module";
         DatabaseGiftsComponent,
         BaseDatabaseDetailPartComponent,
         DatabaseOfferingsComponent,
+        DatabaseShopDataComponent,
+        DatabaseShopItemProcessComponent,
     ],
     imports: [
         CommonModule,

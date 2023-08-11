@@ -21,7 +21,11 @@ export class ShopItemDataGenerator extends BaseGenerator<RawShopItemData, ShopIt
 
         if (!foundItem) return;
 
-        const item = {...minifyItem(foundItem), price: foundItem.price};
+        const item: ShopItemData['item'] = {
+            ...minifyItem(foundItem),
+            price: foundItem.price,
+            sellPrice: foundItem.sellPrice
+        };
 
         const tillDate: Pick<ShopItemData, 'availableTillDate' | 'tillDate'> = {
             availableTillDate: dbItem.availableTillDate,
