@@ -9,7 +9,7 @@ export type ShopItemData = {
     "allowedWeather": string[],
     "forbiddenWeather": string[],
     "townRank": number;
-    item: MinimalItem & Pick<Item, 'price'>;
+    item: MinimalItem & Pick<Item, 'price' | 'sellPrice'>;
     "priority": number,
     "priceOverride": number,
     "tag": string[]

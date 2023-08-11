@@ -95,6 +95,7 @@ export class DatabaseService {
             this.fetchGiftingPreferences$(),
             this.fetchOfferings$(),
             this.fetchShopItemDataBlacksmith$(),
+            this.fetchShopProcessItemsBlacksmith$()
         ]);
     }
 
@@ -132,6 +133,10 @@ export class DatabaseService {
         return this._OFFERINGS$;
     }
 
+    getShopItemDataBlacksmith(): ShopItemData[] {
+        return this._SHOP_ITEMS_BLACKSMITH;
+    }
+
     fetchShopItemDataBlacksmith$(): Observable<ShopItemData[]> {
         if (!this._SHOP_ITEMS_BLACKSMITH$) {
             this._SHOP_ITEMS_BLACKSMITH$ = this._http.get<ShopItemData[]>(`${this._BASE_PATH}/blacksmith-shop-items.json`)
@@ -141,6 +146,10 @@ export class DatabaseService {
                 );
         }
         return this._SHOP_ITEMS_BLACKSMITH$;
+    }
+
+    getShopProcessItemsBlacksmith(): ItemProcessShopData[] {
+        return this._SHOP_PROCESS_ITEMS_BLACKSMITH;
     }
 
     fetchShopProcessItemsBlacksmith$(): Observable<ItemProcessShopData[]> {

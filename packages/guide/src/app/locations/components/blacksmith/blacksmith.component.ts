@@ -16,6 +16,7 @@ export class BlacksmithComponent extends BaseSelectableContainerComponent<ShopIt
     protected openingHours$: Observable<Record<string, OpeningHours>>;
     protected itemProcessing$: Observable<ItemProcessShopData[]>;
     protected selectedProcessEntity: ItemProcessShopData | undefined;
+    protected showProcessingTable = false
 
 
     constructor() {

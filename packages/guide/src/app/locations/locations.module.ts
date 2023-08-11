@@ -12,6 +12,9 @@ import { BlacksmithComponent } from './components/blacksmith/blacksmith.componen
 import { CraftingModule } from '../crafting/crafting.module';
 import { ShopItemDataDetailsComponent } from './components/shop-item-data-details/shop-item-data-details.component';
 import { ShopItemDataTableComponent } from './components/tables/shop-item-data-table/shop-item-data-table.component';
+import {
+    ShopItemProcessTableComponent
+} from './components/tables/shop-item-process-table/shop-item-process-table.component';
 
 @NgModule({
     declarations: [
@@ -21,6 +24,7 @@ import { ShopItemDataTableComponent } from './components/tables/shop-item-data-t
         BlacksmithComponent,
         ShopItemDataDetailsComponent,
         ShopItemDataTableComponent,
+        ShopItemProcessTableComponent,
     ],
     imports: [
         CommonModule,
@@ -32,7 +36,7 @@ import { ShopItemDataTableComponent } from './components/tables/shop-item-data-t
         MatSortModule,
         CraftingModule,
     ],
-    exports: [OfferingsTableComponent],
+    exports: [OfferingsTableComponent, ShopItemDataTableComponent, ShopItemProcessTableComponent],
 })
 export class LocationsModule {
 }
