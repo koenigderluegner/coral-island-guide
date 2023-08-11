@@ -7,7 +7,6 @@ import { UiIcon } from "../../../shared/enums/ui-icon.enum";
 @Component({
     selector: 'app-blacksmith',
     templateUrl: './blacksmith.component.html',
-    styleUrls: ['./blacksmith.component.scss'],
 })
 export class BlacksmithComponent extends BaseSelectableContainerComponent<ShopItemData> {
 

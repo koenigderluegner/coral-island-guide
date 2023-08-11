@@ -39,7 +39,7 @@ export class BaseItemCardComponent implements OnInit, OnChanges {
     }
 
     isItem(item: Item | MinimalItem): item is Item {
-        return ('sellPrice' in item) && ('price' in item);
+        return ('sellPrice' in item) && ('price' in item) && ('description' in item);
     }
 
     ngOnChanges(changes: SimpleChanges): void {
