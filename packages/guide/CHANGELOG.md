@@ -1,5 +1,12 @@
 ## Changelog
 
+### 0.9.0 TBD
+
+#### Added
+
+- Added tables to shop data and shop processing
+    - Those tables were added to database as well
+
 ### 0.8.0 2023-08-07
 
 #### Added
