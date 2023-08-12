@@ -15,6 +15,10 @@ import { ShopItemDataTableComponent } from './components/tables/shop-item-data-t
 import {
     ShopItemProcessTableComponent
 } from './components/tables/shop-item-process-table/shop-item-process-table.component';
+import {
+    ShopItemProcessDataDetailsComponent
+} from './components/shop-item-process-data-details/shop-item-process-data-details.component';
+import { OpeningHoursComponent } from './components/opening-hours/opening-hours.component';
 
 @NgModule({
     declarations: [
@@ -25,6 +29,8 @@ import {
         ShopItemDataDetailsComponent,
         ShopItemDataTableComponent,
         ShopItemProcessTableComponent,
+        ShopItemProcessDataDetailsComponent,
+        OpeningHoursComponent,
     ],
     imports: [
         CommonModule,

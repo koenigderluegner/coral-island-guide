@@ -1,29 +1,6 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     <ng-container listDetail>
-        <app-base-item-card *ngIf="selectedProcessEntity" [item]="selectedProcessEntity.input">
-
-            <div *ngIf="selectedProcessEntity.inputAmount > 1">
-                Amount needed for processing: <span class="text-black">selectedProcessEntity.inputAmount</span>
-            </div>
-            <div>Cost to process:
-                <app-money [amount]="selectedProcessEntity.processingCost"/>
-            </div>
-            <div class="my-2">
-                <ng-container *ngFor="let itemListItem of selectedProcessEntity.outputChanges">
-                    <div class="flex justify-between py-1">
-                        <div *ngIf="itemListItem.item" class="flex gap-x-3 items-center">
-                            <app-item-icon [itemName]="itemListItem.item.iconName" class="w-10"></app-item-icon>
-                            <span>{{itemListItem.item.displayName}}</span>
-                            <span>x{{itemListItem.amount}}</span>
-                        </div>
-
-                        <div class="flex items-center">{{itemListItem.chance}}%</div>
-
-                    </div>
-                    <hr>
-                </ng-container>
-            </div>
-        </app-base-item-card>
+        <app-shop-item-process-data-details *ngIf="selectedProcessEntity" [itemProcessData]="selectedProcessEntity"/>
         <app-shop-item-data-details *ngIf="selectedEntity" [shopItemData]="selectedEntity"/>
     </ng-container>
 
@@ -34,34 +11,7 @@
                 <app-ui-icon [uiIcon]="uiIcon.BLACKSMITH"/>
                 Blacksmith
             </h1>
-            <div *ngIf="(openingHours$ |async) as openingHours" class="flex gap-8 text-black">
-                <div *ngFor="let keyValuePair of openingHours | keyvalue">
-                    <div class="font-semibold text-xl">{{keyValuePair.key}}</div>
-                    <div class="grid grid-cols-2">
-                        <ng-container
-                                *ngIf="keyValuePair.value.isCoreOnlyWeekdays || keyValuePair.value.isCoreEveryDay">
-                            <div>  {{ keyValuePair.value.isCoreEveryDay ? 'Every day' : 'Weekdays' }}:</div>
-                            <div>{{keyValuePair.value.coreOpeningHours.from | ingameTime}}-{{
-                                keyValuePair.value.coreOpeningHours.to | ingameTime}}</div>
-                        </ng-container>
-                        <ng-container
-                                *ngIf="!keyValuePair.value.isCoreOnlyWeekdays && !keyValuePair.value.isCoreEveryDay">
-                            <div>  {{ shortenWeekdays(keyValuePair.value.coreOpeningDays).join()}}:</div>
-                            <div>  {{keyValuePair.value.coreOpeningHours.from | ingameTime}}-{{
-                                keyValuePair.value.coreOpeningHours.to | ingameTime}}</div>
-                        </ng-container>
-                        <ng-container *ngIf="keyValuePair.value.dayOfTheWeekSpecificOpeningHours">
-                            <ng-container
-                                    *ngFor="let specificKeyValuePair of keyValuePair.value.dayOfTheWeekSpecificOpeningHours | keyvalue">
-                                <div>  {{ specificKeyValuePair.key}}:</div>
-                                <div>  {{specificKeyValuePair.value.from | ingameTime}}-{{
-                                    specificKeyValuePair.value.to | ingameTime}}
-                                </div>
-                            </ng-container>
-                        </ng-container>
-                    </div>
-                </div>
-            </div>
+            <app-opening-hours *ngIf="(openingHours$ |async) as openingHours" [openingHours]="openingHours"/>
         </app-card>
 
         <h2 class="mb-3 font-semibold text-2xl text-white">Stock list</h2>

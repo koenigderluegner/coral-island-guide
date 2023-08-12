@@ -25,10 +25,6 @@ export class BlacksmithComponent extends BaseSelectableContainerComponent<ShopIt
         this.itemProcessing$ = this._database.fetchShopProcessItemsBlacksmith$();
     }
 
-    shortenWeekdays(weekdays: string[]): string[] {
-        return weekdays.map(s => s.substring(0, 3))
-    }
-
     override showDetails(selectedEntry?: ShopItemData) {
         this.selectedProcessEntity = undefined;
         super.showDetails(selectedEntry);
