@@ -20,9 +20,9 @@ export class BlacksmithComponent extends BaseSelectableContainerComponent<ShopIt
 
     constructor() {
         super();
-        this.shopItemData$ = this._database.fetchShopItemDataBlacksmith$();
-        this.openingHours$ = this._database.fetchOpeningHoursBlacksmith$();
-        this.itemProcessing$ = this._database.fetchShopProcessItemsBlacksmith$();
+        this.shopItemData$ = this._database.fetchShopItemData$("blacksmith");
+        this.openingHours$ = this._database.fetchOpeningHours$("blacksmith");
+        this.itemProcessing$ = this._database.fetchShopProcessItems$("blacksmith");
     }
 
     override showDetails(selectedEntry?: ShopItemData) {
