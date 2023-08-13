@@ -20,6 +20,8 @@ import { GeneralStoreComponent } from './components/general-store/general-store.
 import { CarpenterComponent } from './components/carpenter/carpenter.component';
 import { ItemUpgradeDetailsComponent } from './components/item-upgrade-details/item-upgrade-details.component';
 import { ItemUpgradeTableComponent } from './components/tables/item-upgrade-table/item-upgrade-table.component';
+import { MerfolkGeneralStoreComponent } from './components/merfolk-general-store/merfolk-general-store.component';
+import { MerfolkOracleTailStoreComponent } from './components/merfolk-oracle-tail-store/merfolk-oracle-tail-store.component';
 
 @NgModule({
     declarations: [
@@ -37,6 +39,8 @@ import { ItemUpgradeTableComponent } from './components/tables/item-upgrade-tabl
         OpeningHoursComponent,
         ItemUpgradeDetailsComponent,
         ItemUpgradeTableComponent,
+        MerfolkGeneralStoreComponent,
+        MerfolkOracleTailStoreComponent,
     ],
     imports: [
         CommonModule,

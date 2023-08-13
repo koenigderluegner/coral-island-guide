@@ -99,6 +99,8 @@ export class DatabaseService {
             this.fetchShopProcessItems$("lab"),
             this.fetchShopItemData$("carpenter"),
             this.fetchShopItemData$("general-store"),
+            this.fetchShopItemData$("merfolk-general-store"),
+            this.fetchShopItemData$("merfolk-oracle-tail-store"),
         ]);
     }
 

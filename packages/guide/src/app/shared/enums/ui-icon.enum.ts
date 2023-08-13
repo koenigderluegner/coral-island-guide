@@ -3,6 +3,7 @@ export enum UiIcon {
     CROSS = 'T_Icon_Cross',
     EMPTY_STAR = 'T_Icon_Styles',
     ARROW_RIGHT = 'T_BoxArrowRight',
+    CORAL = 'T_Icon_GoldMinimal',
 
     // PAUSE MENU TOP
     JOURNAL = 'T_Icon_Journal',

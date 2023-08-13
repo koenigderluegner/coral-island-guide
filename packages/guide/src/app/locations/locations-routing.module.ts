@@ -8,6 +8,8 @@ import { LabComponent } from "./components/lab/lab.component";
 import { ShopDisplayNames } from "@ci/data-types";
 import { GeneralStoreComponent } from "./components/general-store/general-store.component";
 import { CarpenterComponent } from "./components/carpenter/carpenter.component";
+import { MerfolkGeneralStoreComponent } from "./components/merfolk-general-store/merfolk-general-store.component";
+import { MerfolkOracleTailStoreComponent } from "./components/merfolk-oracle-tail-store/merfolk-oracle-tail-store.component";
 
 const routes: Routes = [
     {
@@ -43,6 +45,18 @@ const routes: Routes = [
                 path: 'carpenter',
                 component: CarpenterComponent,
                 title: `${ShopDisplayNames['general-store']} - Locations`,
+                canActivate: [onlyInBetaGuard]
+            },
+            {
+                path: 'merfolk-general-store',
+                component: MerfolkGeneralStoreComponent,
+                title: `${ShopDisplayNames['merfolk-general-store']} - Locations`,
+                canActivate: [onlyInBetaGuard]
+            },
+            {
+                path: 'merfolk-oracle-tail-store',
+                component: MerfolkOracleTailStoreComponent,
+                title: `${ShopDisplayNames['merfolk-oracle-tail-store']} - Locations`,
                 canActivate: [onlyInBetaGuard]
             },
         ]
