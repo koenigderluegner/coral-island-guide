@@ -6,24 +6,26 @@
         </span>
     </div>
 
-    <div>Unlock requirements:</div>
-    <app-item-list [itemList]="itemUpgradeData.unlockRequirements" class="mb-6"/>
-
+    <ng-container *ngIf="itemUpgradeData.unlockRequirements.length">
+        <div>Unlock requirements:</div>
+        <app-item-list [itemList]="itemUpgradeData.unlockRequirements" class="mb-6"/>
+    </ng-container>
     <div class="mb-3">Upgrade time:
         <span class="text-black">
            {{itemUpgradeData.daysDelay}} days
         </span>
     </div>
 
-
-    <div>Upgrade requirements:</div>
-    <div>Cost:
-        <span class="text-black">
+    <ng-container *ngIf="itemUpgradeData.requirements.length || itemUpgradeData.priceOverride ||itemUpgradeData.price">
+        <div>Upgrade requirements:</div>
+        <div *ngIf="itemUpgradeData.priceOverride ||itemUpgradeData.price">Cost:
+            <span class="text-black">
             <app-money
                     [amount]="itemUpgradeData.priceOverride !== 0 ? itemUpgradeData.priceOverride : itemUpgradeData.price"/>
         </span>
-    </div>
-    <app-item-list [itemList]="itemUpgradeData.requirements" class="mb-3"/>
-
+        </div>
+        <app-item-list *ngIf="itemUpgradeData.requirements.length" [itemList]="itemUpgradeData.requirements"
+                       class="mb-3"/>
+    </ng-container>
 
 </app-base-item-card>

@@ -100,6 +100,7 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
 
     'carpenter-opening-hours': new CarpenterOpeningHoursGenerator(),
     'carpenter-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DT_Carpenter_AlphaV1.json'),
+    'carpenter-item-upgrade': new ItemUpgradeDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_CarpenterBuldingUpgrades.json'),
 
     'tag-based-items': {generate: () => tagBasedItemsDbMap},
     'crafting-unlocks-by-mastery': {generate: () => craftingRecipeUnlockedByMasteryDbMap},
