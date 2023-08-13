@@ -24,6 +24,7 @@ import { DatabaseOfferingsComponent } from './components/database-offerings/data
 import { LocationsModule } from '../locations/locations.module';
 import { DatabaseShopDataComponent } from './components/database-shop-data/database-shop-data.component';
 import { DatabaseShopItemProcessComponent } from './components/database-shop-item-process/database-shop-item-process.component';
+import { DatabaseItemUpgradeComponent } from './components/database-item-upgrade/database-item-upgrade.component';
 
 @NgModule({
     declarations: [
@@ -42,6 +43,7 @@ import { DatabaseShopItemProcessComponent } from './components/database-shop-ite
         DatabaseOfferingsComponent,
         DatabaseShopDataComponent,
         DatabaseShopItemProcessComponent,
+        DatabaseItemUpgradeComponent,
     ],
     imports: [
         CommonModule,

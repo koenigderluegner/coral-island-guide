@@ -52,7 +52,7 @@ import { MerfolkOracleTailStoreComponent } from './components/merfolk-oracle-tai
         MatSortModule,
         CraftingModule,
     ],
-    exports: [OfferingsTableComponent, ShopItemDataTableComponent, ShopItemProcessTableComponent],
+    exports: [OfferingsTableComponent, ShopItemDataTableComponent, ShopItemProcessTableComponent, ItemUpgradeTableComponent],
 })
 export class LocationsModule {
 }

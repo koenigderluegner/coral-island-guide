@@ -101,6 +101,8 @@ export class DatabaseService {
             this.fetchShopItemData$("general-store"),
             this.fetchShopItemData$("merfolk-general-store"),
             this.fetchShopItemData$("merfolk-oracle-tail-store"),
+            this.fetchItemUpgradeData$("blacksmith"),
+            this.fetchItemUpgradeData$("carpenter"),
         ]);
     }
 
