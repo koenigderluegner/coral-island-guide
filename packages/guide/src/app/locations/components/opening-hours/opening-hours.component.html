@@ -1,6 +1,6 @@
 <div *ngFor="let keyValuePair of openingHours | keyvalue">
     <div class="font-semibold text-xl">{{keyValuePair.key}}</div>
-    <div class="grid grid-cols-2">
+    <div class="grid grid-cols-2 gap-2">
         <ng-container
                 *ngIf="keyValuePair.value.isCoreOnlyWeekdays || keyValuePair.value.isCoreEveryDay">
             <div>  {{ keyValuePair.value.isCoreEveryDay ? 'Every day' : 'Weekdays' }}:</div>
@@ -9,7 +9,7 @@
         </ng-container>
         <ng-container
                 *ngIf="!keyValuePair.value.isCoreOnlyWeekdays && !keyValuePair.value.isCoreEveryDay">
-            <div>  {{ shortenWeekdays(keyValuePair.value.coreOpeningDays).join()}}:</div>
+            <div>  {{ shortenWeekdays(keyValuePair.value.coreOpeningDays).join(', ')}}:</div>
             <div>  {{keyValuePair.value.coreOpeningHours.from | ingameTime}}-{{
                 keyValuePair.value.coreOpeningHours.to | ingameTime}}</div>
         </ng-container>
