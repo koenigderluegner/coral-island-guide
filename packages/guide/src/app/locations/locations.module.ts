@@ -12,16 +12,14 @@ import { BlacksmithComponent } from './components/blacksmith/blacksmith.componen
 import { CraftingModule } from '../crafting/crafting.module';
 import { ShopItemDataDetailsComponent } from './components/shop-item-data-details/shop-item-data-details.component';
 import { ShopItemDataTableComponent } from './components/tables/shop-item-data-table/shop-item-data-table.component';
-import {
-    ShopItemProcessTableComponent
-} from './components/tables/shop-item-process-table/shop-item-process-table.component';
+import { ShopItemProcessTableComponent } from './components/tables/shop-item-process-table/shop-item-process-table.component';
 import { LabComponent } from './components/lab/lab.component';
-import {
-    ShopItemProcessDataDetailsComponent
-} from './components/shop-item-process-data-details/shop-item-process-data-details.component';
+import { ShopItemProcessDataDetailsComponent } from './components/shop-item-process-data-details/shop-item-process-data-details.component';
 import { OpeningHoursComponent } from './components/opening-hours/opening-hours.component';
-import { GeneralStoreComponent } from "./components/general-store/general-store.component";
-import { CarpenterComponent } from "./components/carpenter/carpenter.component";
+import { GeneralStoreComponent } from './components/general-store/general-store.component';
+import { CarpenterComponent } from './components/carpenter/carpenter.component';
+import { ItemUpgradeDetailsComponent } from './components/item-upgrade-details/item-upgrade-details.component';
+import { ItemUpgradeTableComponent } from './components/tables/item-upgrade-table/item-upgrade-table.component';
 
 @NgModule({
     declarations: [
@@ -37,6 +35,8 @@ import { CarpenterComponent } from "./components/carpenter/carpenter.component";
         CarpenterComponent,
         ShopItemProcessDataDetailsComponent,
         OpeningHoursComponent,
+        ItemUpgradeDetailsComponent,
+        ItemUpgradeTableComponent,
     ],
     imports: [
         CommonModule,

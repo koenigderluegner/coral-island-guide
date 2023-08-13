@@ -14,6 +14,7 @@ import {
     Item,
     ItemProcessing,
     ItemProcessShopData,
+    ItemUpgradeData,
     JournalOrder,
     OfferingAltar,
     OpeningHours,
@@ -67,6 +68,7 @@ export class DatabaseService {
     private _SHOP_ITEMS: Map<string, ShopItemData[]> = new Map<string, ShopItemData[]>();
     private _SHOP_PROCESS_ITEMS: Map<string, ItemProcessShopData[]> = new Map<string, ItemProcessShopData[]>();
     private _OPENING_HOURS: Map<string, Record<string, OpeningHours>> = new Map<string, Record<string, OpeningHours>>();
+    private _ITEM_UPGRADE: Map<string, ItemUpgradeData[]> = new Map<string, ItemUpgradeData[]>();
 
 
     constructor(private readonly _http: HttpClient,
@@ -381,6 +383,19 @@ export class DatabaseService {
 
     }
 
+    fetchItemUpgradeData$(shopName: ShopName): Observable<ItemUpgradeData[]> {
+        if (!this._ITEM_UPGRADE.has(shopName)) {
+            return this._http.get<ItemUpgradeData[]>(`${this._BASE_PATH}/${shopName}-item-upgrade.json`)
+                .pipe(
+                    tap(items => this._ITEM_UPGRADE.set(shopName, items)),
+                    shareReplay(1)
+                );
+        } else {
+            return of(this._ITEM_UPGRADE.get(shopName)!)
+        }
+
+    }
+
     fetchOpeningHours$(shopName: ShopName): Observable<Record<string, OpeningHours>> {
         if (!this._OPENING_HOURS.has(shopName)) {
             return this._http.get<Record<string, OpeningHours>[]>(`${this._BASE_PATH}/${shopName}-opening-hours.json`)
@@ -401,6 +416,10 @@ export class DatabaseService {
 
     getShopData(shopName: ShopName): ShopItemData[] {
         return this._SHOP_ITEMS.get(shopName) ?? [];
+    }
+
+    getItemUpgradeData(shopName: ShopName): ItemUpgradeData[] {
+        return this._ITEM_UPGRADE.get(shopName) ?? [];
     }
 
     getOpeningHours(shopName: ShopName): Record<string, OpeningHours> {
