@@ -4,8 +4,10 @@
 
 #### Added
 
+- Added more shops: Lab, Sams general store and Carpenter
 - Added tables to shop data and shop processing
     - Those tables were added to database as well
+- Added town rank to shop data details
 
 ### 0.8.0 2023-08-07
 
