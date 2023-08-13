@@ -92,7 +92,11 @@ export class DatabaseService {
             this.fetchGiftingPreferences$(),
             this.fetchOfferings$(),
             this.fetchShopItemData$("blacksmith"),
-            this.fetchShopProcessItems$("blacksmith")
+            this.fetchShopProcessItems$("blacksmith"),
+            this.fetchShopItemData$("lab"),
+            this.fetchShopProcessItems$("lab"),
+            this.fetchShopItemData$("carpenter"),
+            this.fetchShopItemData$("general-store"),
         ]);
     }
 
