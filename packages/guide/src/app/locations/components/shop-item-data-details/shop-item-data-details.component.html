@@ -5,6 +5,11 @@
                     [amount]="shopItemData.priceOverride !== 0 ? shopItemData.priceOverride : shopItemData.item.price"/>
         </span>
     </div>
+    <div>Town rank:
+        <span class="text-black">
+           {{shopItemData.townRank | townrank}}
+        </span>
+    </div>
     <div *ngIf="shopItemData.availableDuringTime && shopItemData.timeRange">Only at times:
         <span class="inline-flex">
             {{(shopItemData.timeRange.fromTime.hours | number: '2.0') + ':' + (shopItemData.timeRange.fromTime.minutes | number: '2.0')}}

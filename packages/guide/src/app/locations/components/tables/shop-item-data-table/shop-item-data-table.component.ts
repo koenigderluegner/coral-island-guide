@@ -12,6 +12,7 @@ export class ShopItemDataTableComponent extends BaseTableComponent<ShopItemData 
     protected readonly BASE_DISPLAY_COLUMNS: string[] = [
         'icon',
         'displayName',
+        'townRank',
         'price',
         'sellPrice'
     ];
