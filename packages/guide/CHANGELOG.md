@@ -4,8 +4,11 @@
 
 #### Added
 
+- Added more shops: Lab, Sams general store, Carpenter, Merfolk general store and Merfolk tail store
 - Added tables to shop data and shop processing
     - Those tables were added to database as well
+- Added town rank to shop data details
+- Added upgrade data to shops
 
 ### 0.8.0 2023-08-07
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.component";
-import { ShopItemData } from "@ci/data-types";
+import { ShopDisplayNames, ShopItemData, ShopNames } from "@ci/data-types";
 
 
 type ShopItemDataWithShop = ShopItemData & {
@@ -16,17 +16,19 @@ export class DatabaseShopDataComponent extends BaseDatabaseDetailPartComponent i
 
     ngOnInit(): void {
         if (!this.item) return;
-        const recipes = this.database.getShopItemDataBlacksmith();
 
-        this.toBuyAt = recipes.map<ShopItemDataWithShop>(sd => {
-            return {
-                ...sd,
-                shop: {
-                    url: 'blacksmith',
-                    displayName: 'Blacksmith'
+
+        this.toBuyAt = ShopNames.map(shopName => {
+            return this.database.getShopData(shopName).map<ShopItemDataWithShop>(sd => {
+                return {
+                    ...sd,
+                    shop: {
+                        url: shopName,
+                        displayName: ShopDisplayNames[shopName]
+                    }
                 }
-            }
-        }).filter(altar => {
+            })
+        }).flat().filter(altar => {
             return this.item?.id === altar.item.id
 
         });

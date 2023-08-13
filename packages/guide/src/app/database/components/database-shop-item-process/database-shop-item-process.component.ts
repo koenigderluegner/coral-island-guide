@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.component";
-import { ItemProcessShopData } from "@ci/data-types";
+import { ItemProcessShopData, ShopDisplayNames, ShopNames } from "@ci/data-types";
 import { nonNullable } from "@ci/util";
 
 type ItemProcessShopDataWithShop = ItemProcessShopData & {
@@ -20,7 +20,17 @@ export class DatabaseShopItemProcessComponent extends BaseDatabaseDetailPartComp
 
     ngOnInit(): void {
         if (!this.item) return;
-        const recipes = this.database.getShopProcessItemsBlacksmith();
+        const recipes = ShopNames.map(shopName => {
+            return this.database.getShopProcessItems(shopName).map<ItemProcessShopDataWithShop>(sd => {
+                return {
+                    ...sd,
+                    shop: {
+                        url: shopName,
+                        displayName: ShopDisplayNames[shopName]
+                    }
+                }
+            })
+        }).flat();
 
         this.chancetoBeProcessedFrom = recipes.map<ItemProcessShopDataWithShop | undefined>(sd => {
             const foundItemWithChance = sd.outputChanges.find(output => output.item.id === this.item?.id)
@@ -28,24 +38,11 @@ export class DatabaseShopItemProcessComponent extends BaseDatabaseDetailPartComp
             return {
                 ...sd,
                 outputChanges: [foundItemWithChance],
-                shop: {
-                    url: 'blacksmith',
-                    displayName: 'Blacksmith'
-                }
+
             }
         }).filter(nonNullable);
 
-        this.canBeProcessed = recipes
-            .filter(sd => sd.input.id === this.item?.id)
-            .map<ItemProcessShopDataWithShop>(sd => {
-                return {
-                    ...sd,
-                    shop: {
-                        url: 'blacksmith',
-                        displayName: 'Blacksmith'
-                    }
-                }
-            })
+        this.canBeProcessed = recipes.filter(sd => sd.input.id === this.item?.id)
 
 
     }

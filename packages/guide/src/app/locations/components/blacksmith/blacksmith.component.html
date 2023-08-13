@@ -1,30 +1,8 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     <ng-container listDetail>
-        <app-base-item-card *ngIf="selectedProcessEntity" [item]="selectedProcessEntity.input">
-
-            <div *ngIf="selectedProcessEntity.inputAmount > 1">
-                Amount needed for processing: <span class="text-black">selectedProcessEntity.inputAmount</span>
-            </div>
-            <div>Cost to process:
-                <app-money [amount]="selectedProcessEntity.processingCost"/>
-            </div>
-            <div class="my-2">
-                <ng-container *ngFor="let itemListItem of selectedProcessEntity.outputChanges">
-                    <div class="flex justify-between py-1">
-                        <div *ngIf="itemListItem.item" class="flex gap-x-3 items-center">
-                            <app-item-icon [itemName]="itemListItem.item.iconName" class="w-10"></app-item-icon>
-                            <span>{{itemListItem.item.displayName}}</span>
-                            <span>x{{itemListItem.amount}}</span>
-                        </div>
-
-                        <div class="flex items-center">{{itemListItem.chance}}%</div>
-
-                    </div>
-                    <hr>
-                </ng-container>
-            </div>
-        </app-base-item-card>
+        <app-shop-item-process-data-details *ngIf="selectedProcessEntity" [itemProcessData]="selectedProcessEntity"/>
         <app-shop-item-data-details *ngIf="selectedEntity" [shopItemData]="selectedEntity"/>
+        <app-item-upgrade-details *ngIf="selectedItemUpgrade" [itemUpgradeData]="selectedItemUpgrade"/>
     </ng-container>
 
     <div class="px-2 xl:px-[50px] w-full">
@@ -34,34 +12,7 @@
                 <app-ui-icon [uiIcon]="uiIcon.BLACKSMITH"/>
                 Blacksmith
             </h1>
-            <div *ngIf="(openingHours$ |async) as openingHours" class="flex gap-8 text-black">
-                <div *ngFor="let keyValuePair of openingHours | keyvalue">
-                    <div class="font-semibold text-xl">{{keyValuePair.key}}</div>
-                    <div class="grid grid-cols-2">
-                        <ng-container
-                                *ngIf="keyValuePair.value.isCoreOnlyWeekdays || keyValuePair.value.isCoreEveryDay">
-                            <div>  {{ keyValuePair.value.isCoreEveryDay ? 'Every day' : 'Weekdays' }}:</div>
-                            <div>{{keyValuePair.value.coreOpeningHours.from | ingameTime}}-{{
-                                keyValuePair.value.coreOpeningHours.to | ingameTime}}</div>
-                        </ng-container>
-                        <ng-container
-                                *ngIf="!keyValuePair.value.isCoreOnlyWeekdays && !keyValuePair.value.isCoreEveryDay">
-                            <div>  {{ shortenWeekdays(keyValuePair.value.coreOpeningDays).join()}}:</div>
-                            <div>  {{keyValuePair.value.coreOpeningHours.from | ingameTime}}-{{
-                                keyValuePair.value.coreOpeningHours.to | ingameTime}}</div>
-                        </ng-container>
-                        <ng-container *ngIf="keyValuePair.value.dayOfTheWeekSpecificOpeningHours">
-                            <ng-container
-                                    *ngFor="let specificKeyValuePair of keyValuePair.value.dayOfTheWeekSpecificOpeningHours | keyvalue">
-                                <div>  {{ specificKeyValuePair.key}}:</div>
-                                <div>  {{specificKeyValuePair.value.from | ingameTime}}-{{
-                                    specificKeyValuePair.value.to | ingameTime}}
-                                </div>
-                            </ng-container>
-                        </ng-container>
-                    </div>
-                </div>
-            </div>
+            <app-opening-hours *ngIf="(openingHours$ |async) as openingHours" [openingHours]="openingHours"/>
         </app-card>
 
         <h2 class="mb-3 font-semibold text-2xl text-white">Stock list</h2>
@@ -93,6 +44,23 @@
                 </app-item-icon>
             </div>
             <app-shop-item-process-table *ngIf="showProcessingTable" [dataSource]="shopItemData"/>
+
+        </ng-container>
+
+
+        <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Tool upgrades</h2>
+        <ng-container *ngIf="(itemUpgrade$ |async) as shopItemData">
+
+            <app-data-filter [(showTable)]="showPItemUpgradeTable"/>
+            <div *ngIf="!showPItemUpgradeTable" class="grid gap-4 icon-grid">
+
+                <app-item-icon (click)="showItemUpgradeDetails(shopItem)" *ngFor="let shopItem of shopItemData"
+                               [class.selected-icon]="selectedItemUpgrade?.item?.id === shopItem.item.id"
+                               [itemName]="shopItem.item.iconName"
+                               class="icon-grid-item">
+                </app-item-icon>
+            </div>
+            <app-item-upgrade-table *ngIf="showPItemUpgradeTable" [dataSource]="shopItemData"/>
 
         </ng-container>
 

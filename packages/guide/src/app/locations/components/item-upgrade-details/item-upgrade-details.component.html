@@ -1,0 +1,31 @@
+<app-base-item-card [item]="itemUpgradeData.item">
+
+    <div class="mb-3">Town rank:
+        <span class="text-black">
+           {{itemUpgradeData.townRank | townrank}}
+        </span>
+    </div>
+
+    <ng-container *ngIf="itemUpgradeData.unlockRequirements.length">
+        <div>Unlock requirements:</div>
+        <app-item-list [itemList]="itemUpgradeData.unlockRequirements" class="mb-6"/>
+    </ng-container>
+    <div class="mb-3">Upgrade time:
+        <span class="text-black">
+           {{itemUpgradeData.daysDelay}} days
+        </span>
+    </div>
+
+    <ng-container *ngIf="itemUpgradeData.requirements.length || itemUpgradeData.priceOverride ||itemUpgradeData.price">
+        <div>Upgrade requirements:</div>
+        <div *ngIf="itemUpgradeData.priceOverride ||itemUpgradeData.price">Cost:
+            <span class="text-black">
+            <app-money
+                    [amount]="itemUpgradeData.priceOverride !== 0 ? itemUpgradeData.priceOverride : itemUpgradeData.price"/>
+        </span>
+        </div>
+        <app-item-list *ngIf="itemUpgradeData.requirements.length" [itemList]="itemUpgradeData.requirements"
+                       class="mb-3"/>
+    </ng-container>
+
+</app-base-item-card>

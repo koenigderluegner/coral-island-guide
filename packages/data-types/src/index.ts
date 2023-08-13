@@ -24,6 +24,8 @@ export * from './lib/interfaces/opening-hours.interface';
 export * from './lib/interfaces/specific-date.interface';
 export * from './lib/interfaces/shop-item-data.interface';
 export * from './lib/interfaces/item-process-shop-data.interface';
+export * from './lib/interfaces/item-upgrade-data.interface';
+
 
 export * from './lib/enums/quality.enum';
 export * from './lib/enums/season.enum';
@@ -33,3 +35,4 @@ export * from './lib/types/minimal-item.type';
 export * from './lib/types/gift-preference.type';
 export * from './lib/types/generic-entry.type';
 export * from './lib/types/item-entry.type';
+export * from './lib/types/shop-names.type';

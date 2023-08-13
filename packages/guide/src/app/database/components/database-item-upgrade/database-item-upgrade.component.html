@@ -1,0 +1,8 @@
+<ng-container *ngIf="isTheResult.length">
+    <h3 class="database-header">Is result of upgrade</h3>
+    <app-item-upgrade-table [dataSource]="isTheResult"/>
+</ng-container>
+<ng-container *ngIf="isRequirement.length">
+    <h3 class="database-header">Is used as requirement in</h3>
+    <app-item-upgrade-table [dataSource]="isRequirement"/>
+</ng-container>

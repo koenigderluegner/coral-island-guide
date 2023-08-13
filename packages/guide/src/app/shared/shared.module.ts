@@ -46,6 +46,7 @@ import { BaseTabbedSelectableContainerComponent } from './components/base-tabbed
 import { IsFishPipe } from './pipes/is-fish.pipe';
 import { IngameDatePipe } from './pipes/ingame-date.pipe';
 import { IngameTimePipe } from './pipes/ingame-time.pipe';
+import { TownrankPipe } from './pipes/townrank.pipe';
 
 @NgModule({
     declarations: [
@@ -85,6 +86,7 @@ import { IngameTimePipe } from './pipes/ingame-time.pipe';
         IsFishPipe,
         IngameDatePipe,
         IngameTimePipe,
+        TownrankPipe,
     ],
     imports: [
         CommonModule,
@@ -134,6 +136,7 @@ import { IngameTimePipe } from './pipes/ingame-time.pipe';
         IsFishPipe,
         IngameDatePipe,
         IngameTimePipe,
+        TownrankPipe,
     ],
 })
 export class SharedModule {

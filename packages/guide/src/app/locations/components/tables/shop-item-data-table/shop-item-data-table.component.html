@@ -22,6 +22,14 @@
             </td>
         </ng-container>
 
+        <ng-container matColumnDef="townRank">
+            <th *matHeaderCellDef class="backdrop-blur-xl whitespace-nowrap" mat-header-cell mat-sort-header>Town Rank
+            </th>
+            <td *matCellDef="let element" class="text-col w-[1%]" mat-cell>
+                {{element.townRank | townrank}}
+            </td>
+        </ng-container>
+
         <ng-container matColumnDef="price">
             <th *matHeaderCellDef class="backdrop-blur-xl whitespace-nowrap" mat-header-cell mat-sort-header>Price
             </th>

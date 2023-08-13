@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ItemProcessShopData, OpeningHours, ShopItemData } from "@ci/data-types";
+import { ItemProcessShopData, ItemUpgradeData, OpeningHours, ShopItemData } from "@ci/data-types";
 import { Observable } from "rxjs";
 import { BaseSelectableContainerComponent } from "../../../shared/components/base-selectable-container/base-selectable-container.component";
 import { UiIcon } from "../../../shared/enums/ui-icon.enum";
@@ -15,28 +15,37 @@ export class BlacksmithComponent extends BaseSelectableContainerComponent<ShopIt
     protected openingHours$: Observable<Record<string, OpeningHours>>;
     protected itemProcessing$: Observable<ItemProcessShopData[]>;
     protected selectedProcessEntity: ItemProcessShopData | undefined;
-    protected showProcessingTable = false
+    protected selectedItemUpgrade: ItemUpgradeData | undefined;
+    protected showProcessingTable = false;
+    protected showPItemUpgradeTable = false;
+    protected itemUpgrade$: Observable<ItemUpgradeData[]>;
 
 
     constructor() {
         super();
-        this.shopItemData$ = this._database.fetchShopItemDataBlacksmith$();
-        this.openingHours$ = this._database.fetchOpeningHoursBlacksmith$();
-        this.itemProcessing$ = this._database.fetchShopProcessItemsBlacksmith$();
-    }
-
-    shortenWeekdays(weekdays: string[]): string[] {
-        return weekdays.map(s => s.substring(0, 3))
+        this.shopItemData$ = this._database.fetchShopItemData$("blacksmith");
+        this.openingHours$ = this._database.fetchOpeningHours$("blacksmith");
+        this.itemProcessing$ = this._database.fetchShopProcessItems$("blacksmith");
+        this.itemUpgrade$ = this._database.fetchItemUpgradeData$("blacksmith");
     }
 
     override showDetails(selectedEntry?: ShopItemData) {
         this.selectedProcessEntity = undefined;
+        this.selectedItemUpgrade = undefined;
         super.showDetails(selectedEntry);
     }
 
     showProcessDetails(selectedEntry?: ItemProcessShopData) {
         this.selectedEntity = undefined;
+        this.selectedItemUpgrade = undefined;
         this.selectedProcessEntity = selectedEntry;
+        this.openDrawer = true;
+    }
+
+    showItemUpgradeDetails(selectedEntry?: ItemUpgradeData) {
+        this.selectedEntity = undefined;
+        this.selectedItemUpgrade = selectedEntry;
+        this.selectedProcessEntity = undefined;
         this.openDrawer = true;
     }
 
