@@ -5,6 +5,8 @@ import { LakeTempleComponent } from "./components/lake-temple/lake-temple.compon
 import { BlacksmithComponent } from "./components/blacksmith/blacksmith.component";
 import { onlyInBetaGuard } from "../core/guards/only-in-beta.guard";
 import { LabComponent } from "./components/lab/lab.component";
+import { ShopDisplayNames } from "@ci/data-types";
+import { GeneralStoreComponent } from "./components/general-store/general-store.component";
 
 const routes: Routes = [
     {
@@ -28,6 +30,12 @@ const routes: Routes = [
                 path: 'lab',
                 component: LabComponent,
                 title: 'Lab - Locations',
+                canActivate: [onlyInBetaGuard]
+            },
+            {
+                path: 'general-store',
+                component: GeneralStoreComponent,
+                title: `${ShopDisplayNames['general-store']} - Locations`,
                 canActivate: [onlyInBetaGuard]
             },
         ]

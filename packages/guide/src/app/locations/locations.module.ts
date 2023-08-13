@@ -20,6 +20,8 @@ import {
     ShopItemProcessDataDetailsComponent
 } from './components/shop-item-process-data-details/shop-item-process-data-details.component';
 import { OpeningHoursComponent } from './components/opening-hours/opening-hours.component';
+import { GeneralStoreComponent } from "./components/general-store/general-store.component";
+import { CarpenterComponent } from "./components/carpenter/carpenter.component";
 
 @NgModule({
     declarations: [
@@ -31,6 +33,8 @@ import { OpeningHoursComponent } from './components/opening-hours/opening-hours.
         ShopItemDataTableComponent,
         ShopItemProcessTableComponent,
         LabComponent,
+        GeneralStoreComponent,
+        CarpenterComponent,
         ShopItemProcessDataDetailsComponent,
         OpeningHoursComponent,
     ],

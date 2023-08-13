@@ -27,6 +27,7 @@ import { BlacksmithOpeningHoursGenerator } from "./app/opening-hours-generators/
 import { ShopItemDataGenerator } from "./app/shop-item-data.generator";
 import { ItemProcessShopGenerator } from "./app/item-process-shop.generator";
 import { LabOpeningHoursGenerator } from "./app/opening-hours-generators/lab-opening-hours.generator";
+import { GeneralStoreOpeningHoursGenerator } from "./app/opening-hours-generators/general-store-opening-hours.generator";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + (environment.isBeta ? 'BETA' : 'LIVE'));
 
@@ -90,6 +91,9 @@ const generators: Record<string, { generate: () => Map<string, any> }> = {
     'lab-opening-hours': new LabOpeningHoursGenerator(),
     'lab-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_LabShop.json'),
     'lab-shop-process-items': new ItemProcessShopGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_FossilProcessShopData.json'),
+
+    'general-store-opening-hours': new GeneralStoreOpeningHoursGenerator(),
+    'general-store-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DT_SamShopItems_AlphaV1.json'),
 
     'tag-based-items': {generate: () => tagBasedItemsDbMap},
     'crafting-unlocks-by-mastery': {generate: () => craftingRecipeUnlockedByMasteryDbMap},
