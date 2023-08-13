@@ -15,6 +15,7 @@ import { ShopItemDataTableComponent } from './components/tables/shop-item-data-t
 import {
     ShopItemProcessTableComponent
 } from './components/tables/shop-item-process-table/shop-item-process-table.component';
+import { LabComponent } from './components/lab/lab.component';
 import {
     ShopItemProcessDataDetailsComponent
 } from './components/shop-item-process-data-details/shop-item-process-data-details.component';
@@ -29,6 +30,7 @@ import { OpeningHoursComponent } from './components/opening-hours/opening-hours.
         ShopItemDataDetailsComponent,
         ShopItemDataTableComponent,
         ShopItemProcessTableComponent,
+        LabComponent,
         ShopItemProcessDataDetailsComponent,
         OpeningHoursComponent,
     ],

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.component";
-import { ItemProcessShopData } from "@ci/data-types";
+import { ItemProcessShopData, ShopDisplayNames, ShopNames } from "@ci/data-types";
 import { nonNullable } from "@ci/util";
-import { ShopDisplayNames, ShopNames } from "../../../shared/types/shop-names.type";
 
 type ItemProcessShopDataWithShop = ItemProcessShopData & {
     shop: {

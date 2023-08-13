@@ -33,3 +33,4 @@ export * from './lib/types/minimal-item.type';
 export * from './lib/types/gift-preference.type';
 export * from './lib/types/generic-entry.type';
 export * from './lib/types/item-entry.type';
+export * from './lib/types/shop-names.type';

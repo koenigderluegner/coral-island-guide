@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.component";
-import { ShopItemData } from "@ci/data-types";
-import { ShopDisplayNames, ShopNames } from "../../../shared/types/shop-names.type";
+import { ShopDisplayNames, ShopItemData, ShopNames } from "@ci/data-types";
 
 
 type ShopItemDataWithShop = ShopItemData & {

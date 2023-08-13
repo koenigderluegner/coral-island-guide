@@ -18,12 +18,12 @@ import {
     OfferingAltar,
     OpeningHours,
     ShopItemData,
+    ShopName,
     TagBasedItem
 } from '@ci/data-types';
 import { AvailableJournalOrders } from '../types/available-journal-orders.type';
 import { MapKeyed } from '../types/map-keyed.type';
 import { SettingsService } from "./settings.service";
-import { ShopName } from "../types/shop-names.type";
 
 @Injectable({
     providedIn: 'root'
