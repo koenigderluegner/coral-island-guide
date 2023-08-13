@@ -7,6 +7,7 @@ import { onlyInBetaGuard } from "../core/guards/only-in-beta.guard";
 import { LabComponent } from "./components/lab/lab.component";
 import { ShopDisplayNames } from "@ci/data-types";
 import { GeneralStoreComponent } from "./components/general-store/general-store.component";
+import { CarpenterComponent } from "./components/carpenter/carpenter.component";
 
 const routes: Routes = [
     {
@@ -35,6 +36,12 @@ const routes: Routes = [
             {
                 path: 'general-store',
                 component: GeneralStoreComponent,
+                title: `${ShopDisplayNames['general-store']} - Locations`,
+                canActivate: [onlyInBetaGuard]
+            },
+            {
+                path: 'carpenter',
+                component: CarpenterComponent,
                 title: `${ShopDisplayNames['general-store']} - Locations`,
                 canActivate: [onlyInBetaGuard]
             },
