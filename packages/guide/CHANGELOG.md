@@ -1,5 +1,11 @@
 ## Changelog
 
+### 0.9.2 2023-08-15
+
+#### Changed
+
+- Fixed database not loading in live mode. Thanks jennawebbles for reporting.
+
 ### 0.9.1 2023-08-15
 
 #### Changed
