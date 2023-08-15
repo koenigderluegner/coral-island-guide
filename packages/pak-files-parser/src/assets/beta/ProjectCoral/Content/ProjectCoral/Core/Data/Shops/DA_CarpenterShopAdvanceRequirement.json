@@ -1,0 +1,36 @@
+[
+  {
+    "Type": "C_GameplayRequirementsConfig",
+    "Name": "DA_CarpenterShopAdvanceRequirement",
+    "Class": "UScriptClass'C_GameplayRequirementsConfig'",
+    "Properties": {
+      "map": [
+        {
+          "Stable": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_HasRanchBuildingRequirement'DA_CarpenterShopAdvanceRequirement:C_HasRanchBuildingRequirement_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_CarpenterShopAdvanceRequirement.1"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_HasRanchBuildingRequirement",
+    "Name": "C_HasRanchBuildingRequirement_0",
+    "Outer": "DA_CarpenterShopAdvanceRequirement",
+    "Class": "UScriptClass'C_HasRanchBuildingRequirement'",
+    "Properties": {
+      "ranchBuildingClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_StableBuildingActor_C'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/HismcManagers/FarmBuilding/FarmBuildingActor/BP_StableBuildingActor.2"
+      },
+      "requiredBuilding": 1,
+      "invertResult": true
+    }
+  }
+]
