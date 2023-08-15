@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "Cellar_Key_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -6.0,
+              "Y": -0.0,
+              "Z": -0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 440.0,
+            "Y": 10.0,
+            "Z": 501.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "719DDCE74DC4A1B7A49FA3AACD3216FB"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Cellar_Key_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 512.0,
+        "Y": 512.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Cellar_Key'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Misc_Icons/Others/Textures/Cellar_Key.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Cellar_Key_Sprite:BodySetup_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Misc_Icons/Others/Cellar_Key_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 214.0,
+          "Y": 250.0,
+          "Z": 0.91796875,
+          "W": 0.01171875
+        },
+        {
+          "X": -226.0,
+          "Y": 250.0,
+          "Z": 0.05859375,
+          "W": 0.01171875
+        },
+        {
+          "X": -226.0,
+          "Y": -251.0,
+          "Z": 0.05859375,
+          "W": 0.9902344
+        },
+        {
+          "X": 214.0,
+          "Y": -251.0,
+          "Z": 0.91796875,
+          "W": 0.9902344
+        },
+        {
+          "X": 214.0,
+          "Y": 250.0,
+          "Z": 0.91796875,
+          "W": 0.01171875
+        },
+        {
+          "X": -226.0,
+          "Y": -251.0,
+          "Z": 0.05859375,
+          "W": 0.9902344
+        }
+      ]
+    }
+  }
+]
