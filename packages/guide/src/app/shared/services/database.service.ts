@@ -93,16 +93,21 @@ export class DatabaseService {
             this.fetchFruitPlants$(),
             this.fetchGiftingPreferences$(),
             this.fetchOfferings$(),
-            this.fetchShopItemData$("blacksmith"),
-            this.fetchShopProcessItems$("blacksmith"),
-            this.fetchShopItemData$("lab"),
-            this.fetchShopProcessItems$("lab"),
-            this.fetchShopItemData$("carpenter"),
-            this.fetchShopItemData$("general-store"),
-            this.fetchShopItemData$("merfolk-general-store"),
-            this.fetchShopItemData$("merfolk-oracle-tail-store"),
-            this.fetchItemUpgradeData$("blacksmith"),
-            this.fetchItemUpgradeData$("carpenter"),
+            ...(
+                this._settings.getSettings().useBeta
+                    ? [this.fetchShopItemData$("blacksmith"),
+                        this.fetchShopProcessItems$("blacksmith"),
+                        this.fetchShopItemData$("lab"),
+                        this.fetchShopProcessItems$("lab"),
+                        this.fetchShopItemData$("carpenter"),
+                        this.fetchShopItemData$("general-store"),
+                        this.fetchShopItemData$("merfolk-general-store"),
+                        this.fetchShopItemData$("merfolk-oracle-tail-store"),
+                        this.fetchItemUpgradeData$("blacksmith"),
+                        this.fetchItemUpgradeData$("carpenter"),
+                    ]
+                    : []
+            )
         ]);
     }
 
