@@ -33,6 +33,8 @@ import { ItemUpgradeDataGenerator } from "./app/item-upgrade-data.generator";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + (environment.isBeta ? 'BETA' : 'LIVE'));
 
+const readable = true;
+const skipIfExists = true;
 
 const itemIconPath = config.itemIconPath
 const texturesPath = config.texturesPath;
@@ -191,7 +193,8 @@ async function extractImages() {
         let counter = 0;
         for (const fileBasename of filesWithJs) {
 
-            await createImages(fileBasename, true);
+
+            await createImages(fileBasename, skipIfExists);
 
 
             counter++;
@@ -224,6 +227,7 @@ Object.keys(generators).forEach(generatorName => {
         //     console.log(generators['consumables'].itemType);
         // }
 
-        generateJson(`${generatorName}.json`, [...generatedMap.values()], true);
+
+    generateJson(`${generatorName}.json`, [...generatedMap.values()], readable);
     }
 );
