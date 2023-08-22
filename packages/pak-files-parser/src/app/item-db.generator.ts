@@ -66,11 +66,10 @@ export class ItemDbGenerator {
 
             if (engineData) {
                 item.tags = engineData.tags ?? [];
-                item.iconMeta = engineData.icon ?? null;
 
-                const objectName = item.iconMeta?.ObjectName;
+                const objectName = engineData.icon?.ObjectName;
                 if (!!objectName) {
-                    item.iconName = convertToIconName(getReferencedString(objectName));
+                    item.iconName = convertToIconName(getReferencedString(objectName)).replace('.png', '');
                 }
 
             }

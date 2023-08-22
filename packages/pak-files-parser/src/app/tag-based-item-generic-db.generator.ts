@@ -19,7 +19,7 @@ export class TagBasedItemGenericDbGenerator extends BaseGenerator<RawTagBasedIte
         return {
             key: itemKey,
             tags: dbItem.tagQuery.TagDictionary.map(t => t.TagName),
-            iconName: convertToIconName(dbItem.icon.AssetPathName.split('.').pop() ?? ''),
+            iconName: convertToIconName(dbItem.icon.AssetPathName.split('.').pop() ?? '').replace('.png', ''),
             displayName: dbItem.readableText.SourceString ?? dbItem.tagQuery.UserDescription ?? itemKey
         };
     }

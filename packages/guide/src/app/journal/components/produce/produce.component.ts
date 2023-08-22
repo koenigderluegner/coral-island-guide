@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page.component';
-import { BaseCrop, Crop, FruitPlant, FruitTree, Item, Season } from '@ci/data-types';
+import { BaseCrop, Crop, FruitPlant, FruitTree, Item, MinimalItem, Season } from '@ci/data-types';
 import { combineLatest, of, switchMap } from 'rxjs';
 import { FormControl, FormGroup } from "@angular/forms";
 import { FilterForm } from "../../../shared/types/filter-form.type";
@@ -10,7 +10,7 @@ import { nonNullable } from "@ci/util";
     selector: 'app-produce',
     templateUrl: './produce.component.html',
 })
-export class ProduceComponent extends BaseJournalPageComponent<Item | Crop | FruitPlant | FruitTree> {
+export class ProduceComponent extends BaseJournalPageComponent<MinimalItem | Crop | FruitPlant | FruitTree> {
 
     constructor() {
         super(new FormGroup<FilterForm>({

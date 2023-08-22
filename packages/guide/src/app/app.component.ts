@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { DatabaseService } from './shared/services/database.service';
 import { Observable } from 'rxjs';
 import { Item } from '@ci/data-types';
@@ -13,8 +12,8 @@ export class AppComponent {
 
     items$: Observable<Item[]>;
 
-    constructor(private readonly _http: HttpClient,
-                private databaseService: DatabaseService,
+    constructor(
+        private databaseService: DatabaseService,
     ) {
         this.items$ = this.databaseService.fetchItems$();
     }

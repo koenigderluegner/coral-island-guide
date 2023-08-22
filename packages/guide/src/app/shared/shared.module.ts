@@ -47,6 +47,7 @@ import { IsFishPipe } from './pipes/is-fish.pipe';
 import { IngameDatePipe } from './pipes/ingame-date.pipe';
 import { IngameTimePipe } from './pipes/ingame-time.pipe';
 import { TownrankPipe } from './pipes/townrank.pipe';
+import { IsMinimalItemPipe } from './pipes/is-minimal-item.pipe';
 
 @NgModule({
     declarations: [
@@ -87,6 +88,7 @@ import { TownrankPipe } from './pipes/townrank.pipe';
         IngameDatePipe,
         IngameTimePipe,
         TownrankPipe,
+        IsMinimalItemPipe,
     ],
     imports: [
         CommonModule,
@@ -137,6 +139,7 @@ import { TownrankPipe } from './pipes/townrank.pipe';
         IngameDatePipe,
         IngameTimePipe,
         TownrankPipe,
+        IsMinimalItemPipe,
     ],
 })
 export class SharedModule {

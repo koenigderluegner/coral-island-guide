@@ -2,6 +2,7 @@ import {
     booleanAttribute,
     Component,
     EventEmitter,
+    inject,
     Input,
     OnChanges,
     OnInit,
@@ -17,22 +18,19 @@ import { ChecklistService } from "../../../core/services/checklist.service";
 @Component({
     selector: 'app-base-item-card',
     templateUrl: './base-item-card.component.html',
-    styleUrls: ['./base-item-card.component.scss'],
 })
 export class BaseItemCardComponent implements OnInit, OnChanges {
-    @Input() item?: Item | MinimalItem;
+    @Input({required: true}) item!: Item | MinimalItem;
     @Input() amount?: number;
     @Input() checklistCategory?: ChecklistCategory | undefined;
     @Output() openDrawerChange: EventEmitter<boolean> = new EventEmitter<boolean>();
     @Output() addedToChecklist: EventEmitter<void> = new EventEmitter<void>();
     @Input({transform: booleanAttribute}) hideQualityGrid = false
     protected uiIcon = UiIcon;
-    protected fetchedItem?: Item;
+    protected fetchedItem!: Item;
     protected readonly UiIcon = UiIcon;
-
-    constructor(private readonly _database: DatabaseService,
-                protected readonly checklistService: ChecklistService) {
-    }
+    protected readonly checklistService: ChecklistService = inject(ChecklistService)
+    private readonly _database: DatabaseService = inject(DatabaseService);
 
     ngOnInit(): void {
         this._setItem(this.item);
@@ -50,10 +48,17 @@ export class BaseItemCardComponent implements OnInit, OnChanges {
         this.checklistService.updateStatus(checklistCategory, item, true, true)
     }
 
-    private _setItem(item: Item | MinimalItem | undefined): void {
-        if (!item) return;
+    private _setItem(item: Item | MinimalItem): void {
+
         if (!this.isItem(item)) {
-            this.fetchedItem = this._database.getItems().find(i => i.id === item.id);
+            const fetchedItem = this._database.getItems().find(i => i.id === item.id);
+
+            if (!fetchedItem) {
+                console.error(`couldn't find ${item.id} in base-card`)
+                return;
+            }
+
+            this.fetchedItem = fetchedItem;
         } else {
             this.fetchedItem = item;
         }

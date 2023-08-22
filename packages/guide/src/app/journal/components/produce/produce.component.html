@@ -11,8 +11,8 @@
                 <div *ngIf="!showTable" class="grid gap-4 icon-grid">
                     <ng-container *ngFor="let entry of syncedData">
                         <app-item-icon (click)="showDetails(entry)"
-                                       [itemName]="(entry | isItem) ? entry.iconName : entry.dropData[0].item?.iconName"
-                                       [class.selected-icon]="((selectedEntity | isItem) ? selectedEntity.id : selectedEntity?.dropData?.[0]?.item?.id) === ((entry | isItem) ? entry.id : entry.dropData[0].item?.id)"
+                                       [class.selected-icon]="((selectedEntity | isMinimalItem) ? selectedEntity.id : selectedEntity?.dropData?.[0]?.item?.id) === ((entry | isMinimalItem) ? entry.id : entry.dropData[0].item.id)"
+                                       [itemName]="(entry | isMinimalItem) ? entry.iconName : entry.dropData[0].item.iconName"
                                        class="icon-grid-item"
                         />
                     </ng-container>

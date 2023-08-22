@@ -1,6 +1,6 @@
 <app-card *ngIf="fetchedItem" class="text-lg font-semibold relative">
     <div class="card-actions h-8 absolute right-[75px] top-[15px]">
-        <ng-container *ngIf="checklistCategory && item">
+        <ng-container *ngIf="checklistCategory">
             <button (click)="removeFromCheckList(checklistCategory, item)"
                     *ngIf="checklistService.alreadyInList(checklistCategory, item)" matTooltip="Remove from checklist">
                 <app-ui-icon [uiIcon]="UiIcon.TO_DO_ON_LIST"
@@ -48,7 +48,7 @@
 <ng-template #basePrice>
     <div class="flex">
         Sells for:
-        <app-money class="ml-2 text-black" [amount]="fetchedItem?.sellPrice"></app-money>
+        <app-money [amount]="fetchedItem.sellPrice" class="ml-2 text-black"></app-money>
     </div>
 
 </ng-template>

@@ -1,5 +1,11 @@
 ## Changelog
 
+### TBD
+
+#### Changed
+
+- Reduced database file sizes to save bandwidth/loading time
+
 ### 0.9.3 2023-08-22
 
 #### Changed

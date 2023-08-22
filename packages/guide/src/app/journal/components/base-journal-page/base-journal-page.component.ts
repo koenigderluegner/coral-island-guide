@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, inject, ViewChild } from '@angular/core';
-import { BaseCrop, Item, JournalOrder, Season } from '@ci/data-types';
+import { BaseCrop, JournalOrder, MinimalItem, Season } from '@ci/data-types';
 import { combineLatest, map, Observable, of, startWith } from 'rxjs';
 import { UiIcon } from '../../../shared/enums/ui-icon.enum';
 import { MediaMatcher } from '@angular/cdk/layout';
@@ -16,7 +16,9 @@ export interface BaseJournalPageComponent<D> {
 @Component({
     template: ''
 })
-export class BaseJournalPageComponent<D extends ({ item: Item } | Item)> extends BaseTabbedSelectableContainerComponent<D> {
+export class BaseJournalPageComponent<D extends ({
+    item: MinimalItem
+} | MinimalItem)> extends BaseTabbedSelectableContainerComponent<D> {
 
     @ViewChild(MatTabGroup) matTabGroup?: MatTabGroup
 
