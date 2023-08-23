@@ -149,8 +149,8 @@ async function createImages(fileBasename: string, skipIfExists = true) {
     if (!data) return;
 
 
-    const fileName = convertToIconName(data.Name);
-    if (skipIfExists && fs.existsSync(path.join(itemIconPath, fileName))) return;
+    const fileName = convertToIconName(data.Name).replace('.png', '');
+    if (skipIfExists && fs.existsSync(path.join(itemIconPath, fileName + '.png')) && fs.existsSync(path.join(itemIconPath, fileName + '.webp'))) return;
 
     const filePath = data.Properties.BakedSourceTexture.ObjectPath.split('.');
     filePath.pop()
@@ -170,7 +170,11 @@ async function createImages(fileBasename: string, skipIfExists = true) {
 
     if (imageMetaData.fileName) {
         try {
-            await image.extract(imageMetaData).png().toFile(path.join(itemIconPath, imageMetaData.fileName));
+            const sourceImage = image.extract(imageMetaData);
+            if (!fs.existsSync(path.join(itemIconPath, fileName + '.png')))
+                await sourceImage.png().toFile(path.join(itemIconPath, imageMetaData.fileName + '.png'));
+            if (!fs.existsSync(path.join(itemIconPath, fileName + '.webp')))
+                await sourceImage.webp().toFile(path.join(itemIconPath, imageMetaData.fileName + '.webp'));
         } catch (e) {
             console.log(e);
         }
@@ -228,6 +232,6 @@ Object.keys(generators).forEach(generatorName => {
         // }
 
 
-    generateJson(`${generatorName}.json`, [...generatedMap.values()], readable);
+        generateJson(`${generatorName}.json`, [...generatedMap.values()], readable);
     }
 );
