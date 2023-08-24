@@ -5,6 +5,7 @@
 #### Changed
 
 - Updated beta data to 0.5-103
+- Removed note that some shops aren't reachable as it doesn't apply anymore
 - Reduced database file sizes to save bandwidth/loading time
 - Added Webp images to drastically reduce file size for images to save bandwidth/loading time
 
