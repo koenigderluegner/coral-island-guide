@@ -1,10 +1,13 @@
 ## Changelog
 
-### TBD
+### 0.9.4 2023-08-24
 
 #### Changed
 
+- Updated beta data to 0.5-103
+- Removed note that some shops aren't reachable as it doesn't apply anymore
 - Reduced database file sizes to save bandwidth/loading time
+- Added Webp images to drastically reduce file size for images to save bandwidth/loading time
 
 ### 0.9.3 2023-08-22
 
