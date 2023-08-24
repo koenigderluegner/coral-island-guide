@@ -6,8 +6,7 @@
         "cacheableOperations": [
           "build",
           "lint",
-          "test",
-          "e2e"
+          "test"
         ]
       }
     }
@@ -19,17 +18,17 @@
   },
   "generators": {
     "@nx/angular:application": {
-      "style": "scss",
+      "style": "none",
       "linter": "eslint",
       "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
+      "e2eTestRunner": "none"
     },
     "@nx/angular:library": {
       "linter": "eslint",
       "unitTestRunner": "jest"
     },
     "@nx/angular:component": {
-      "style": "scss"
+      "style": "none"
     }
   },
   "targetDefaults": {
