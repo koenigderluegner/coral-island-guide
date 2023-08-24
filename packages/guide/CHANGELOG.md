@@ -4,7 +4,9 @@
 
 #### Changed
 
+- Updated beta data to 0.5-103
 - Reduced database file sizes to save bandwidth/loading time
+- Added Webp images to drastically reduce file size for images to save bandwidth/loading time
 
 ### 0.9.3 2023-08-22
 
