@@ -1,6 +1,6 @@
 ## Changelog
 
-### TBD
+### 0.9.4 2023-08-24
 
 #### Changed
 
