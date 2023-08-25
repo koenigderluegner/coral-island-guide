@@ -166,6 +166,8 @@ interface Frame {
     };
 }
 
+const filesToDelete: string[] = []
+
 function printProgress(progress: number) {
     process.stdout.clearLine(0);
     process.stdout.cursorTo(0);
@@ -175,12 +177,16 @@ function printProgress(progress: number) {
 }
 
 async function createImages(fileBasename: string, skipIfExists = true) {
-    const data: Frame = JSON.parse(fs.readFileSync(path.join(texturesPath, fileBasename), {
+    const frameFilePath = path.join(texturesPath, fileBasename);
+    const data: Frame = JSON.parse(fs.readFileSync(frameFilePath, {
         encoding: 'utf8',
         flag: 'r'
     })).filter((a: Frame) => a.Type === 'PaperSprite')[0];
 
-    if (!data) return;
+    if (!data) {
+        filesToDelete.push(frameFilePath);
+        return;
+    }
 
 
     const fileName = convertToIconName(data.Name).replace('.png', '');
@@ -245,6 +251,21 @@ async function extractImages() {
 
         }
         Logger.success('image extraction done');
+
+        if (filesToDelete.length) {
+            counter = 0
+            Logger.info(`found ${filesToDelete.length} useless frames. Trying to delete...`);
+            filesToDelete.forEach(path => {
+                const sourceFilePath = path.replace('\\dist', '').replace('\\assets', '\\src\\assets')
+                if (fs.existsSync(sourceFilePath)) {
+                    fs.unlinkSync(sourceFilePath);
+                }
+                counter++;
+                printProgress((counter / filesToDelete.length) * 100);
+
+            })
+        }
+
 
     });
 }
