@@ -2,7 +2,9 @@
   "name": "coral-island-guide",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "prepare-deploy": "nx run pak-files-parser:prepare:beta && nx run pak-files-parser:prepare:live && nx run guide:build:production && move .\\dist\\packages\\guide\\index.html .\\dist\\packages\\guide\\404.html"
+  },
   "private": true,
   "devDependencies": {
     "@angular-devkit/build-angular": "16.1.3",

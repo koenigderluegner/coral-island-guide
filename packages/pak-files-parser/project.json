@@ -49,6 +49,29 @@
         }
       }
     },
+    "prepare": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "pak-files-parser:build",
+        "watch": false,
+        "inspect": false
+      },
+      "configurations": {
+        "live": {
+          "buildTarget": "pak-files-parser:build:production",
+          "args": [
+            "--prepare"
+          ]
+        },
+        "dev": {
+          "buildTarget": "pak-files-parser:build:beta",
+          "args": [
+            "--prepare"
+          ]
+        }
+      },
+      "defaultConfiguration": "dev"
+    },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": [
