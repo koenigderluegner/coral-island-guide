@@ -5,6 +5,22 @@ import { config } from "../config";
 import { SourceString } from "../types/source-string.type";
 import { environment } from "../environments/environment";
 
+export function getParsedArgs(): Record<string, any> {
+    return process.argv
+        .filter(s => s.startsWith('-'))
+        .map(s => s.replace(/^-+/, "").toLocaleLowerCase())
+        .reduce((prev: Record<string, any>, current) => {
+            const parts = current.split('=');
+            if (parts.length === 2) {
+                prev[parts[0]] = parts[1] === 'false' ? false : parts[1] === 'true' ? true : parts[1];
+            } else {
+                prev[parts[0]] = true
+            }
+
+            return prev;
+        }, {})
+}
+
 export function readAsset<T = any>(fileName: string): T {
     return JSON.parse(fs.readFileSync(path.join(environment.assetPath, fileName), {encoding: 'utf8', flag: 'r'}));
 }
