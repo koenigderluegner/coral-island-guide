@@ -27,15 +27,18 @@ export function readAsset<T = any>(fileName: string): T {
 
 export function generateJson(fileName: string, jsonContent: any, readable = false) {
     const databasePath = config.databasePath
-    if (!fs.existsSync(databasePath))
-        fs.mkdirSync(databasePath, {recursive: true});
+
+    createPathIfNotExists(databasePath);
 
 
-    fs.writeFileSync(path.join(databasePath, fileName), JSON.stringify(jsonContent, null, readable ? 2 : undefined), {
-        encoding: 'utf8',
-        flag: 'w+',
-
-    });
+    fs.writeFileSync(
+        path.join(databasePath, fileName),
+        JSON.stringify(jsonContent, null, readable ? 2 : undefined),
+        {
+            encoding: 'utf8',
+            flag: 'w+',
+        }
+    );
 }
 
 export function createPathIfNotExists(path: string): void {
@@ -44,12 +47,12 @@ export function createPathIfNotExists(path: string): void {
 }
 
 export function copyAssetsForFiles(files: string[]): void {
-    const generatedDirPAth = path.join(__dirname, 'generated', 'images', 'icons');
+    const generatedDirPath = path.join(__dirname, 'generated', 'images', 'icons');
     const outputPath = path.join(__dirname, 'output', 'images', 'icons');
     createPathIfNotExists(outputPath);
     files.forEach(fileName => {
-        if (fs.existsSync(path.join(generatedDirPAth, fileName)))
-            fs.copyFileSync(path.join(generatedDirPAth, fileName), path.join(outputPath, fileName));
+        if (fs.existsSync(path.join(generatedDirPath, fileName)))
+            fs.copyFileSync(path.join(generatedDirPath, fileName), path.join(outputPath, fileName));
     });
 }
 
