@@ -1,0 +1,32 @@
+<app-list-detail-container [(openDrawer)]="openDrawer">
+    <ng-container listDetail>
+        <app-shop-item-data-details *ngIf="selectedEntity" [shopItemData]="selectedEntity"/>
+    </ng-container>
+
+    <div class="px-2 xl:px-[50px] w-full">
+
+        <app-card class="mb-6">
+            <h1 class="mb-4 font-semibold text-3xl text-black flex items-center gap-x-4 ">
+                <app-ui-icon [uiIcon]="uiIcon.ANIMAL_SHELTER"/>
+                Pet shop
+            </h1>
+            Open 24/7
+        </app-card>
+
+        <h2 class="mb-3 font-semibold text-2xl text-white">Stock list</h2>
+        <ng-container *ngIf="(shopItemData$ |async) as shopItemData">
+            <app-data-filter [(showTable)]="showTable"/>
+            <div *ngIf="!showTable" class="grid gap-4 icon-grid">
+
+                <app-item-icon (click)="showDetails(shopItem)" *ngFor="let shopItem of shopItemData"
+                               [class.selected-icon]="selectedEntity?.item?.id === shopItem.item.id"
+                               [itemName]="shopItem.item.iconName"
+                               class="icon-grid-item">
+                </app-item-icon>
+            </div>
+            <app-shop-item-data-table *ngIf="showTable" [dataSource]="shopItemData"/>
+
+        </ng-container>
+
+    </div>
+</app-list-detail-container>
