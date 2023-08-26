@@ -5,21 +5,40 @@ import { config } from "../config";
 import { SourceString } from "../types/source-string.type";
 import { environment } from "../environments/environment";
 
+export function getParsedArgs(): Record<string, any> {
+    return process.argv
+        .filter(s => s.startsWith('-'))
+        .map(s => s.replace(/^-+/, "").toLocaleLowerCase())
+        .reduce((prev: Record<string, any>, current) => {
+            const parts = current.split('=');
+            if (parts.length === 2) {
+                prev[parts[0]] = parts[1] === 'false' ? false : parts[1] === 'true' ? true : parts[1];
+            } else {
+                prev[parts[0]] = true
+            }
+
+            return prev;
+        }, {})
+}
+
 export function readAsset<T = any>(fileName: string): T {
     return JSON.parse(fs.readFileSync(path.join(environment.assetPath, fileName), {encoding: 'utf8', flag: 'r'}));
 }
 
 export function generateJson(fileName: string, jsonContent: any, readable = false) {
     const databasePath = config.databasePath
-    if (!fs.existsSync(databasePath))
-        fs.mkdirSync(databasePath, {recursive: true});
+
+    createPathIfNotExists(databasePath);
 
 
-    fs.writeFileSync(path.join(databasePath, fileName), JSON.stringify(jsonContent, null, readable ? 2 : undefined), {
-        encoding: 'utf8',
-        flag: 'w+',
-
-    });
+    fs.writeFileSync(
+        path.join(databasePath, fileName),
+        JSON.stringify(jsonContent, null, readable ? 2 : undefined),
+        {
+            encoding: 'utf8',
+            flag: 'w+',
+        }
+    );
 }
 
 export function createPathIfNotExists(path: string): void {
@@ -28,12 +47,12 @@ export function createPathIfNotExists(path: string): void {
 }
 
 export function copyAssetsForFiles(files: string[]): void {
-    const generatedDirPAth = path.join(__dirname, 'generated', 'images', 'icons');
+    const generatedDirPath = path.join(__dirname, 'generated', 'images', 'icons');
     const outputPath = path.join(__dirname, 'output', 'images', 'icons');
     createPathIfNotExists(outputPath);
     files.forEach(fileName => {
-        if (fs.existsSync(path.join(generatedDirPAth, fileName)))
-            fs.copyFileSync(path.join(generatedDirPAth, fileName), path.join(outputPath, fileName));
+        if (fs.existsSync(path.join(generatedDirPath, fileName)))
+            fs.copyFileSync(path.join(generatedDirPath, fileName), path.join(outputPath, fileName));
     });
 }
 
