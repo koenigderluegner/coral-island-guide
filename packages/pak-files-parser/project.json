@@ -6,18 +6,14 @@
   "targets": {
     "build": {
       "executor": "@nrwl/webpack:webpack",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "target": "node",
         "compiler": "tsc",
         "outputPath": "dist/packages/pak-files-parser",
         "main": "packages/pak-files-parser/src/main.ts",
         "tsConfig": "packages/pak-files-parser/tsconfig.app.json",
-        "assets": [
-          "packages/pak-files-parser/src/assets"
-        ]
+        "assets": ["packages/pak-files-parser/src/assets"]
       },
       "configurations": {
         "production": {
@@ -59,35 +55,25 @@
       "configurations": {
         "live": {
           "buildTarget": "pak-files-parser:build:production",
-          "args": [
-            "--prepare"
-          ]
+          "args": ["--prepare"]
         },
         "dev": {
           "buildTarget": "pak-files-parser:build:beta",
-          "args": [
-            "--prepare"
-          ]
+          "args": ["--prepare"]
         }
       },
       "defaultConfiguration": "dev"
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "packages/pak-files-parser/**/*.ts"
-        ]
+        "lintFilePatterns": ["packages/pak-files-parser/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "packages/pak-files-parser/jest.config.ts",
         "passWithNoTests": true
@@ -95,7 +81,5 @@
     }
   },
   "tags": [],
-  "implicitDependencies": [
-    "data-types"
-  ]
+  "implicitDependencies": ["data-types"]
 }
