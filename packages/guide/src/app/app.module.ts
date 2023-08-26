@@ -44,10 +44,6 @@ const appRoutes: Route[] = [
         loadChildren: () => import('./crafting/crafting.module').then((m) => m.CraftingModule),
     },
     {
-        path: 'shops',
-        loadChildren: () => import('./shops/shops.module').then((m) => m.ShopsModule),
-    },
-    {
         path: 'people',
         loadChildren: () => import('./people/people.module').then((m) => m.PeopleModule),
     },
