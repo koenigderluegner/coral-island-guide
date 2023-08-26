@@ -23,4 +23,12 @@ export class Logger {
     static success(...data: any) {
         console.log(chalk.green('SUCCESS:'.padEnd(this.PAD_SIZE, ' ')), ...data)
     }
+
+    static progress(progress: number) {
+        process.stdout.clearLine(0);
+        process.stdout.cursorTo(0);
+        const percentage = progress.toFixed(2).padStart(3, '0') + '%';
+        process.stdout.write(chalk.blue('PROGRESS:'.padEnd(Logger.PAD_SIZE)) + ' ' + percentage);
+        if (progress === 100) console.log()
+    }
 }

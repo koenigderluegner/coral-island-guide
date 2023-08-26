@@ -1,10 +1,6 @@
-import { convertToIconName, createPathIfNotExists, generateJson, getParsedArgs } from './util/functions';
+import { generateJson, getParsedArgs } from './util/functions';
 import { ItemDbGenerator } from './app/item-db.generator';
 import { CraftingRecipeDbGenerator } from './app/crafting-recipe-db.generator';
-import glob from 'glob';
-import sharp from 'sharp';
-import path from 'path';
-import fs from 'fs';
 import { BugsAndInsectsDbGenerator } from './app/bugs-and-insects-db.generator';
 import { OceanCritterDbGenerator } from './app/ocean-critter-db.generator';
 import { FishDbGenerator } from './app/fish-db.generator';
@@ -27,23 +23,25 @@ import { BlacksmithOpeningHoursGenerator } from "./app/opening-hours-generators/
 import { ShopItemDataGenerator } from "./app/shop-item-data.generator";
 import { ItemProcessShopGenerator } from "./app/item-process-shop.generator";
 import { LabOpeningHoursGenerator } from "./app/opening-hours-generators/lab-opening-hours.generator";
-import {
-    GeneralStoreOpeningHoursGenerator
-} from "./app/opening-hours-generators/general-store-opening-hours.generator";
+import { GeneralStoreOpeningHoursGenerator } from "./app/opening-hours-generators/general-store-opening-hours.generator";
 import { CarpenterOpeningHoursGenerator } from "./app/opening-hours-generators/carpenter-opening-hours.generator";
 import { ItemUpgradeDataGenerator } from "./app/item-upgrade-data.generator";
 import { Logger } from "./util/logger.class";
 import chalk from "chalk";
+import { ItemIconsImageProcessor } from "./app/image-processors/item-icons.image-processor";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
 const parsedArgs = getParsedArgs()
 
-const readable = !parsedArgs['prepare'] && true;
-const skipIfExists = !parsedArgs['prepare'] && true;
 
 const itemIconPath = config.itemIconPath
-const texturesPath = config.texturesPath;
+const itemIconsTexturesPath = config.texturesPath;
+const skipIfExists = !parsedArgs['prepare'] && true;
+const itemIconsImageProcessor: ItemIconsImageProcessor = new ItemIconsImageProcessor(itemIconsTexturesPath, itemIconPath, skipIfExists);
+
+
+const readable = !parsedArgs['prepare'] && true;
 
 const itemDbGenerator = new ItemDbGenerator();
 const itemDbMap = itemDbGenerator.generate();
@@ -144,134 +142,6 @@ try {
     Logger.error('Generators couldn\'t be executed', e.message)
 }
 
-// manually added generic seed icon from PC Content PC Core Data TemporaryIcon
-
-
-interface Frame {
-    "Type": string;
-    "Name": string;
-    "Properties": {
-        "BakedSourceUV": {
-            "X": number
-            "Y": number
-        },
-        "BakedSourceDimension": {
-            "X": number
-            "Y": number
-        },
-        "BakedSourceTexture": {
-            "ObjectName": string
-            "ObjectPath": string
-        },
-    };
-}
-
-const filesToDelete: string[] = []
-
-function printProgress(progress: number) {
-    process.stdout.clearLine(0);
-    process.stdout.cursorTo(0);
-    const percentage = progress.toFixed(2).padStart(3, '0') + '%';
-    process.stdout.write(chalk.blue('PROGRESS:'.padEnd(Logger.PAD_SIZE)) + ' ' + percentage);
-    if (progress === 100) console.log()
-}
-
-async function createImages(fileBasename: string, skipIfExists = true) {
-    const frameFilePath = path.join(texturesPath, fileBasename);
-    const data: Frame = JSON.parse(fs.readFileSync(frameFilePath, {
-        encoding: 'utf8',
-        flag: 'r'
-    })).filter((a: Frame) => a.Type === 'PaperSprite')[0];
-
-    if (!data) {
-        filesToDelete.push(frameFilePath);
-        return;
-    }
-
-
-    const fileName = convertToIconName(data.Name).replace('.png', '');
-    const pngPath = path.join(itemIconPath, fileName + '.png');
-    const webpPath = path.join(itemIconPath, fileName + '.webp');
-
-    const pngTargetExists = fs.existsSync(pngPath);
-    const webpTargetExists = fs.existsSync(webpPath);
-    if (skipIfExists && pngTargetExists && webpTargetExists) return;
-
-    const filePath = data.Properties.BakedSourceTexture.ObjectPath.split('.');
-    filePath.pop()
-
-    const imageMetaData = {
-        fileName,
-        width: data.Properties.BakedSourceDimension.X,
-        height: data.Properties.BakedSourceDimension.Y,
-        top: data.Properties.BakedSourceUV?.Y ?? 0,
-        left: data.Properties.BakedSourceUV?.X ?? 0,
-        sourceImage: filePath.join('.'),
-    };
-
-    const sourceImagePath = path.join(environment.assetPath, imageMetaData.sourceImage + '.png');
-
-    const image = sharp(sourceImagePath);
-
-    if (imageMetaData.fileName) {
-        try {
-            const sourceImage = image.extract(imageMetaData);
-            if (!pngTargetExists || !skipIfExists)
-                await sourceImage.png().toFile(path.join(itemIconPath, imageMetaData.fileName + '.png'));
-            if (!webpTargetExists || !skipIfExists)
-                await sourceImage.webp().toFile(path.join(itemIconPath, imageMetaData.fileName + '.webp'));
-        } catch (e) {
-            console.log(e);
-        }
-
-
-    }
-}
-
-async function extractImages() {
-
-
-    createPathIfNotExists(itemIconPath);
-
-
-    glob('**/*.json', {cwd: texturesPath,}, async (error: Error | null, filesWithJs: string[]) => {
-        if (error) {
-            console.log(error);
-        }
-        Logger.log(`checking ${filesWithJs.length} frames`);
-        let counter = 0;
-        for (const fileBasename of filesWithJs) {
-
-
-            await createImages(fileBasename, skipIfExists);
-
-
-            counter++;
-            printProgress((counter / filesWithJs.length) * 100);
-
-        }
-        Logger.success('image extraction done');
-
-        if (filesToDelete.length) {
-            counter = 0
-            Logger.info(`found ${filesToDelete.length} useless frames. Trying to delete...`);
-            filesToDelete.forEach(path => {
-                const sourceFilePath = path.replace('\\dist', '').replace('\\assets', '\\src\\assets')
-                if (fs.existsSync(sourceFilePath)) {
-                    fs.unlinkSync(sourceFilePath);
-                }
-                counter++;
-                printProgress((counter / filesToDelete.length) * 100);
-
-            })
-        }
-
-
-    });
-}
-
-extractImages();
-
 Object.keys(generators).forEach(generatorName => {
         try {
             const generatedMap = generators[generatorName].generate();
@@ -284,3 +154,5 @@ Object.keys(generators).forEach(generatorName => {
 
     }
 );
+
+itemIconsImageProcessor.process();
