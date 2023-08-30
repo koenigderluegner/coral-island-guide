@@ -65,12 +65,10 @@ export class ItemIconsImageProcessor {
 
 
         const fileName = convertToIconName(data.Name).replace('.png', '');
-        const pngPath = path.join(this.outputPath, fileName + '.png');
         const webpPath = path.join(this.outputPath, fileName + '.webp');
 
-        const pngTargetExists = fs.existsSync(pngPath);
         const webpTargetExists = fs.existsSync(webpPath);
-        if (skipIfExists && pngTargetExists && webpTargetExists) return;
+        if (skipIfExists  && webpTargetExists) return;
 
         const filePath = data.Properties.BakedSourceTexture.ObjectPath.split('.');
         filePath.pop()
@@ -91,8 +89,6 @@ export class ItemIconsImageProcessor {
         if (imageMetaData.fileName) {
             try {
                 const sourceImage = image.extract(imageMetaData);
-                if (!pngTargetExists || !skipIfExists)
-                    await sourceImage.png().toFile(path.join(this.outputPath, imageMetaData.fileName + '.png'));
                 if (!webpTargetExists || !skipIfExists)
                     await sourceImage.webp().toFile(path.join(this.outputPath, imageMetaData.fileName + '.webp'));
             } catch (e) {

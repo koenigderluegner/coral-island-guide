@@ -166,17 +166,15 @@ export class NpcPortraitsImageProcessor {
 
         const fileName = this._getFileName(sourceImagePath)
 
-        const pngPath = path.join(outputPath, npcKey, fileName + '.png');
         const webpPath = path.join(outputPath, npcKey, fileName + '.webp');
 
-        const pngTargetExists = fs.existsSync(pngPath);
         const webpTargetExists = fs.existsSync(webpPath);
 
-        const targetPathParts = pngPath.split(path.sep);
+        const targetPathParts = webpPath.split(path.sep);
         targetPathParts.pop()
         const targetPath = targetPathParts.join(path.sep)
         createPathIfNotExists(targetPath)
-        if (this.skipIfExists && pngTargetExists && webpTargetExists) return;
+        if (this.skipIfExists &&  webpTargetExists) return;
 
 
         let image = sharp(sourceImagePath);
@@ -186,9 +184,6 @@ export class NpcPortraitsImageProcessor {
         }
 
         try {
-
-            if (!pngTargetExists || !this.skipIfExists)
-                await image.png().toFile(pngPath);
             if (!webpTargetExists || !this.skipIfExists)
                 await image.webp().toFile(webpPath);
         } catch (e) {
