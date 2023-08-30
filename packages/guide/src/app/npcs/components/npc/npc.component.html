@@ -1,0 +1,28 @@
+<ng-container *ngIf="npc">
+    <app-card class="mb-6">
+        <h1 class="mb-4 font-semibold text-3xl text-black flex items-center gap-x-4 ">
+            {{npc.characterName}}
+        </h1>
+    </app-card>
+
+    <app-card>
+        <div *ngFor="let appearancePair of (npc.appearances | keyvalue)" class="font-semibold text-black mb-6">
+            <h3 class="text-xl">{{appearancePair.key}}</h3>
+            <div class="grid portrait-grid gap-4">
+                <div *ngFor="let emotionPair of (appearancePair.value | keyvalue)" class="flex flex-col shadow-lg p-2">
+                    <app-npc-portrait [npcKey]="npc.key" [portraitName]="emotionPair.value"
+                                      class="h-[400px] flex items-end justify-center"/>
+                    <span class="">{{emotionPair.key}}</span>
+                </div>
+            </div>
+        </div>
+    </app-card>
+
+</ng-container>
+<ng-container *ngIf="!npc">
+    <app-card>
+        <h1 class="mb-4 font-semibold text-3xl text-black flex items-center gap-x-4 ">
+            NPC not found.
+        </h1>
+    </app-card>
+</ng-container>

@@ -16,8 +16,10 @@ import {
     ItemProcessShopData,
     ItemUpgradeData,
     JournalOrder,
+    NPC,
     OfferingAltar,
     OpeningHours,
+    PetShopAdoptions,
     ShopItemData,
     ShopName,
     TagBasedItem
@@ -69,6 +71,10 @@ export class DatabaseService {
     private _SHOP_PROCESS_ITEMS: Map<string, ItemProcessShopData[]> = new Map<string, ItemProcessShopData[]>();
     private _OPENING_HOURS: Map<string, Record<string, OpeningHours>> = new Map<string, Record<string, OpeningHours>>();
     private _ITEM_UPGRADE: Map<string, ItemUpgradeData[]> = new Map<string, ItemUpgradeData[]>();
+    private _PET_SHOP_ADOPTIONS$?: Observable<PetShopAdoptions[]>;
+    private _PET_SHOP_ADOPTIONS: PetShopAdoptions[] = [];
+    private _NPCS: NPC[] = [];
+    private _NPCS$?: Observable<NPC[]>;
 
 
     constructor(private readonly _http: HttpClient,
@@ -126,6 +132,22 @@ export class DatabaseService {
                 );
         }
         return this._ITEMS$;
+    }
+
+    getNPCs(): NPC[] {
+        return this._NPCS;
+    }
+
+
+    fetchNPCs$(): Observable<NPC[]> {
+        if (!this._NPCS$) {
+            this._NPCS$ = this._http.get<NPC[]>(`${this._BASE_PATH}/npcs.json`)
+                .pipe(
+                    tap(items => this._NPCS = items),
+                    shareReplay(1)
+                );
+        }
+        return this._NPCS$;
     }
 
 
@@ -377,6 +399,17 @@ export class DatabaseService {
         });
 
 
+    }
+
+    fetchPetShopAdoptions$(): Observable<PetShopAdoptions[]> {
+        if (!this._PET_SHOP_ADOPTIONS$) {
+            this._PET_SHOP_ADOPTIONS$ = this._http.get<PetShopAdoptions[]>(`${this._BASE_PATH}/pet-shop-adoptions.json`)
+                .pipe(
+                    tap(prefs => this._PET_SHOP_ADOPTIONS = prefs),
+                    shareReplay(1)
+                );
+        }
+        return this._PET_SHOP_ADOPTIONS$;
     }
 
     fetchShopProcessItems$(shopName: ShopName): Observable<ItemProcessShopData[]> {

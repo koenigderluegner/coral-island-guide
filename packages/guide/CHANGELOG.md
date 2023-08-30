@@ -1,5 +1,15 @@
 ## Changelog
 
+### TBD
+
+#### Added
+
+- Added pet shop
+
+#### Changed
+
+- Changed people URL to npcs. A redirection was added for now.
+
 ### 0.9.4 2023-08-24
 
 #### Changed

@@ -29,6 +29,8 @@ import { ItemUpgradeDataGenerator } from "./app/item-upgrade-data.generator";
 import { Logger } from "./util/logger.class";
 import chalk from "chalk";
 import { ItemIconsImageProcessor } from "./app/image-processors/item-icons.image-processor";
+import { PetShopAdoptionsGenerator } from "./app/pet-shop-adoptions.generator";
+import { NpcPortraitsImageProcessor } from "./app/image-processors/npc-portraits.image-processor";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
@@ -46,7 +48,7 @@ const readable = !parsedArgs['prepare'] && true;
 const itemDbGenerator = new ItemDbGenerator();
 const itemDbMap = itemDbGenerator.generate();
 
-const npcDbGenerator = new NPCDbGenerator(itemDbMap);
+const npcDbGenerator = new NPCDbGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.json');
 const npcDbMap = npcDbGenerator.generate();
 
 const craftingRecipeUnlockedByMasteryDbGenerator = new CraftingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
@@ -92,6 +94,8 @@ try {
             'merfolk-general-store-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopMerfolkGeneralStore.json'),
             'merfolk-oracle-tail-store-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopMerfolkOracleTailStore.json'),
 
+            'pet-shop-adoptions': new PetShopAdoptionsGenerator(npcDbMap)
+
         }
     } else {
         liveGenerators = {}
@@ -125,13 +129,13 @@ try {
         'offerings': new OfferingsDbGenerator(itemDbMap, cookingDbMap),
 
         'gift-preferences': new GiftPreferencesDbGenerator(itemDbMap, npcDbMap),
-        'npcs': new NPCDbGenerator(itemDbMap),
 
         'consumables': new ConsumablesDbGenerator(),
 
         ...betaGenerators,
         ...liveGenerators,
 
+        'npcs': {generate: () => npcDbMap},
         'tag-based-items': {generate: () => tagBasedItemsDbMap},
         'crafting-unlocks-by-mastery': {generate: () => craftingRecipeUnlockedByMasteryDbMap},
         'cooking-unlocks-by-mastery': {generate: () => cookingRecipeUnlockedByMasteryDbMap},
@@ -159,3 +163,4 @@ Object.keys(generators).forEach(generatorName => {
 );
 
 itemIconsImageProcessor.process();
+new NpcPortraitsImageProcessor(config.characterPortraitsPath, config.portaitPath, config.headPortaitPath).process()

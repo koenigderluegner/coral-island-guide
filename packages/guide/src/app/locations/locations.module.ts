@@ -23,6 +23,8 @@ import { ItemUpgradeTableComponent } from './components/tables/item-upgrade-tabl
 import { MerfolkGeneralStoreComponent } from './components/merfolk-general-store/merfolk-general-store.component';
 import { MerfolkOracleTailStoreComponent } from './components/merfolk-oracle-tail-store/merfolk-oracle-tail-store.component';
 import { PetShopComponent } from './components/pet-shop/pet-shop.component';
+import { PetAdoptionDetailsComponent } from './components/pet-adoption-details/pet-adoption-details.component';
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 @NgModule({
     declarations: [
@@ -43,6 +45,7 @@ import { PetShopComponent } from './components/pet-shop/pet-shop.component';
         MerfolkGeneralStoreComponent,
         MerfolkOracleTailStoreComponent,
         PetShopComponent,
+        PetAdoptionDetailsComponent,
     ],
     imports: [
         CommonModule,
@@ -53,6 +56,7 @@ import { PetShopComponent } from './components/pet-shop/pet-shop.component';
         MatTableModule,
         MatSortModule,
         CraftingModule,
+        MatTooltipModule,
     ],
     exports: [
         OfferingsTableComponent,

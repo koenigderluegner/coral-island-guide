@@ -1,6 +1,7 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     <ng-container listDetail>
         <app-shop-item-data-details *ngIf="selectedEntity" [shopItemData]="selectedEntity"/>
+        <app-pet-adoption-details *ngIf="selectedAdoption" [adoption]="selectedAdoption"/>
     </ng-container>
 
     <div class="px-2 xl:px-[50px] w-full">
@@ -25,6 +26,20 @@
                 </app-item-icon>
             </div>
             <app-shop-item-data-table *ngIf="showTable" [dataSource]="shopItemData"/>
+
+        </ng-container>
+
+        <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Adoptions</h2>
+        <ng-container *ngIf="(petShopAdoptions$ |async) as petShopAdoptions">
+            <app-data-filter [(showTable)]="showTable"/>
+            <div *ngIf="!showTable" class="grid gap-4 icon-grid">
+
+                <app-item-icon (click)="showAdoptionDetails(petShopAdoption)"
+                               *ngFor="let petShopAdoption of petShopAdoptions"
+                               [itemName]="petShopAdoption.iconName"
+                               class="icon-grid-item">
+                </app-item-icon>
+            </div>
 
         </ng-container>
 

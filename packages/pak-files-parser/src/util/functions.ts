@@ -84,9 +84,9 @@ export function getSourceStringResult(sourceString: SourceString): string {
 
 export function getReferencedString(a: string): string {
     if (a.includes(' ')) {
-        return a.split(' ')[1];
+        return a.split(' ')[1] ?? '';
     } else {
-        return a.split('\'')[1];
+        return a.split('\'')[1] ?? '';
     }
 }
 

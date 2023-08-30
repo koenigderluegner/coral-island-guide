@@ -6,5 +6,9 @@ export interface NPC {
     canHaveRelationships: boolean,
     canReceiveGifts: boolean,
     canInteract: boolean,
-    CharacterCategory: string
+    characterCategory: string,
+    iconName: string;
+    appearances: Record<string, Record<string, string>>
+    headerPortraitFileName: string |null;
+    customHead?: true
 }

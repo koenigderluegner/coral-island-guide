@@ -45,7 +45,12 @@ const appRoutes: Route[] = [
     },
     {
         path: 'people',
-        loadChildren: () => import('./people/people.module').then((m) => m.PeopleModule),
+        pathMatch: 'prefix',
+        redirectTo: 'npcs',
+    },
+    {
+        path: 'npcs',
+        loadChildren: () => import('./npcs/npcs.module').then((m) => m.NPCsModule),
     },
     {
         path: 'locations',

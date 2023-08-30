@@ -48,6 +48,8 @@ import { IngameDatePipe } from './pipes/ingame-date.pipe';
 import { IngameTimePipe } from './pipes/ingame-time.pipe';
 import { TownrankPipe } from './pipes/townrank.pipe';
 import { IsMinimalItemPipe } from './pipes/is-minimal-item.pipe';
+import { NpcPortraitComponent } from './components/npc-portrait/npc-portrait.component';
+import { NpcHeadPortraitComponent } from './components/npc-head-portrait/npc-head-portrait.component';
 
 @NgModule({
     declarations: [
@@ -89,6 +91,8 @@ import { IsMinimalItemPipe } from './pipes/is-minimal-item.pipe';
         IngameTimePipe,
         TownrankPipe,
         IsMinimalItemPipe,
+        NpcPortraitComponent,
+        NpcHeadPortraitComponent,
     ],
     imports: [
         CommonModule,
@@ -140,7 +144,8 @@ import { IsMinimalItemPipe } from './pipes/is-minimal-item.pipe';
         IngameTimePipe,
         TownrankPipe,
         IsMinimalItemPipe,
+        NpcPortraitComponent,
+        NpcHeadPortraitComponent,
     ],
 })
-export class SharedModule {
-}
+export class SharedModule {}
