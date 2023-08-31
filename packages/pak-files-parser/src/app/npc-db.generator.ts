@@ -5,7 +5,6 @@ import { convertToIconName, getSourceStringResult, readAsset } from '../util/fun
 import { RawNPC } from '../interfaces/raw-npc.interface';
 import { addSpacesToPascalCase, getEnumValue } from '@ci/util';
 import { RawNpcAppearances } from "../interfaces/raw-npc-appearances.interface";
-import { Logger } from "../util/logger.class";
 import path from "path";
 import { environment } from "../environments/environment";
 import fs from "fs";
@@ -31,7 +30,6 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
         try {
             npcAppearances = readAsset<Datatable<RawNpcAppearances>[]>(fileName)[+index].Rows;
         } catch (e) {
-            Logger.warn(`Can't find NPC appearances for ${itemKey} at path ${fileName}`)
         }
 
 
@@ -40,22 +38,30 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
         let customHead;
 
         const sourceImagePath = path.join(environment.assetPath, portraitPath + '.png');
-        if (!fs.existsSync(sourceImagePath) || portraitPath === 'None') {
+        const guessedPath = path.join(environment.assetPath, 'ProjectCoral', 'Content', 'ProjectCoral', 'Textures', 'UI', 'NPCHeadPortraits', 'T_Relationship' + itemKey + '.png');
+        const customPath = path.join(...environment.assetPath.split(path.sep).slice(0, -1), 'custom', 'head-portraits', itemKey + '.png');
+        const guessedPetPath = path.join(environment.assetPath, 'ProjectCoral', 'Content', 'ProjectCoral', 'Textures', 'UI', 'NPCHeadPortraits', 'Pet', 'T_Relationship' + itemKey + '.png');
 
+        if (fs.existsSync(sourceImagePath) && fs.existsSync(guessedPath) && sourceImagePath !== guessedPath) {
+            headerPortraitFileName = guessedPath.split(path.sep).at(-1)?.replace('.png', '') ?? null;
+            customHead = true as const;
+        } else if (fs.existsSync(guessedPetPath)) {
+            headerPortraitFileName = guessedPetPath.split(path.sep).at(-1)?.replace('.png', '') ?? null;
+            customHead = true as const;
+        } else if (fs.existsSync(customPath) && fs.existsSync(sourceImagePath) && !sourceImagePath.includes('NPCHeadPortraits')) {
+            headerPortraitFileName = itemKey;
+            customHead = true as const;
+        } else if (!fs.existsSync(sourceImagePath) || portraitPath === 'None') {
 
-            const customPath = path.join(...environment.assetPath.split(path.sep).slice(0, -1), 'custom', 'head-portraits', itemKey + '.png');
-
-            if (fs.existsSync(customPath)) {
-                Logger.info(`Found custom header image for ${itemKey}`);
+            if (fs.existsSync(guessedPath)) {
+                headerPortraitFileName = guessedPath.split(path.sep).at(-1)?.replace('.png', '') ?? null;
+                customHead = true as const;
+            } else if (fs.existsSync(customPath)) {
                 headerPortraitFileName = itemKey;
                 customHead = true as const;
-            } else {
-                Logger.warn(`Can't find head portrait source image for ${itemKey}.`, sourceImagePath);
-
             }
 
         } else {
-
             headerPortraitFileName = portraitPath.split('/').pop() ?? null
         }
 

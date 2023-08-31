@@ -57,27 +57,38 @@ export class NpcPortraitsImageProcessor {
 
 
             const portraitPath = npcData.Portrait.AssetPathName.replace('/Game/ProjectCoral/', '/ProjectCoral/Content/ProjectCoral/').split('.')[0];
+            const sourceImagePath = path.join(environment.assetPath, portraitPath + '.png');
+            const customPath = path.join(...environment.assetPath.split(path.sep).slice(0, -1), 'custom', 'head-portraits', npcKey + '.png');
+            const guessedPath = path.join(environment.assetPath, 'ProjectCoral', 'Content', 'ProjectCoral', 'Textures', 'UI', 'NPCHeadPortraits', 'T_Relationship' + npcKey + '.png');
+            const guessedPetPath = path.join(environment.assetPath, 'ProjectCoral', 'Content', 'ProjectCoral', 'Textures', 'UI', 'NPCHeadPortraits', 'Pet', 'T_Relationship' + npcKey + '.png');
 
+            if (fs.existsSync(sourceImagePath) && fs.existsSync(guessedPath) && sourceImagePath !== guessedPath) {
+                Logger.info(`Replaced guessed header image with given one for ${npcKey}`);
+                sourceImagesHeadPortraits.add({npcKey, image: guessedPath})
+            } else if (fs.existsSync(guessedPetPath)) {
+                Logger.info(`Guessed  header image for ${npcKey}`);
+                sourceImagesHeadPortraits.add({npcKey, image: guessedPetPath})
+            } else if (fs.existsSync(customPath) && fs.existsSync(sourceImagePath) && !sourceImagePath.includes('NPCHeadPortraits')) {
+                Logger.warn(`Found custom header image for ${npcKey}. Force overwrite for found source image!`);
+                sourceImagesHeadPortraits.add({npcKey, image: customPath})
+            } else if (!fs.existsSync(sourceImagePath) || portraitPath === "None") {
 
-
-                const sourceImagePath = path.join(environment.assetPath, portraitPath + '.png');
-                if (!fs.existsSync(sourceImagePath) || portraitPath === "None" ) {
-
-                    const customPath = path.join(...environment.assetPath.split(path.sep).slice(0, -1), 'custom', 'head-portraits', npcKey + '.png');
-                    if (fs.existsSync(customPath)) {
-                        Logger.info(`Found custom header image for ${npcKey}`);
-                        sourceImagesHeadPortraits.add({npcKey, image: customPath})
-                    } else {
+                if (fs.existsSync(guessedPath)) {
+                    Logger.info(`Guessed  header image for ${npcKey}`);
+                    sourceImagesHeadPortraits.add({npcKey, image: guessedPath})
+                } else if (fs.existsSync(customPath)) {
+                    Logger.info(`Found custom header image for ${npcKey}`);
+                    sourceImagesHeadPortraits.add({npcKey, image: customPath})
+                } else {
+                    if (portraitPath !== "None")
                         Logger.warn(`Can't find head portrait source image for ${npcKey}.`, sourceImagePath);
 
-                    }
-
-
-                } else {
-                    sourceImagesHeadPortraits.add({npcKey, image: sourceImagePath})
                 }
 
 
+            } else {
+                sourceImagesHeadPortraits.add({npcKey, image: sourceImagePath})
+            }
 
 
             Object.keys(npcAppearances).forEach(npcAppearanceKey => {
@@ -92,7 +103,8 @@ export class NpcPortraitsImageProcessor {
                     const sourceImagePath = path.join(environment.assetPath, assetPath + '.png');
 
                     if (!fs.existsSync(sourceImagePath)) {
-                        Logger.warn('Can\'t find portrait source image.', sourceImagePath);
+                        if (!sourceImagePath.includes('Winter') && !sourceImagePath.includes('Wedding'))
+                            Logger.warn('Can\'t find portrait source image.', sourceImagePath);
                         return;
                     }
 
@@ -136,7 +148,12 @@ export class NpcPortraitsImageProcessor {
 
 
         // [...excludeFromDeletion.values()].forEach(console.log)
+        //this.cleanUpUnusedFiles(excludeFromDeletion);
 
+
+    }
+
+    private cleanUpUnusedFiles(excludeFromDeletion: Set<string>) {
         glob('**/*.png', {cwd: this.sourcePath,}, async (error: Error | null, filesWithJs: string[]) => {
             if (error) {
                 Logger.error(error.message, error);
@@ -157,8 +174,6 @@ export class NpcPortraitsImageProcessor {
             Logger.success('image extraction done');
 
         });
-
-
     }
 
     private async _createImages(npcKey: string, sourceImagePath: string, outputPath: string, trim = true) {
@@ -174,7 +189,7 @@ export class NpcPortraitsImageProcessor {
         targetPathParts.pop()
         const targetPath = targetPathParts.join(path.sep)
         createPathIfNotExists(targetPath)
-        if (this.skipIfExists &&  webpTargetExists) return;
+        if (this.skipIfExists && webpTargetExists) return;
 
 
         let image = sharp(sourceImagePath);
