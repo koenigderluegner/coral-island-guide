@@ -1,14 +1,19 @@
 ## Changelog
 
-### TBD
+### 0.10.0 2023-09-01
 
 #### Added
 
 - Added pet shop
+- Added NPC list
+    - Some images are marked as unofficial. Those images are either official and weren't mapped correctly or are made by
+      me.
+    - Added appearances to NPC detail page. Further information will come at a later point.
 
 #### Changed
 
 - Changed people URL to npcs. A redirection was added for now.
+- Updated beta data to 0.5-111
 
 ### 0.9.4 2023-08-24
 
