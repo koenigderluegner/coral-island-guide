@@ -11,7 +11,7 @@ import { UiIcon } from "../../../shared/enums/ui-icon.enum";
 })
 export class NpcComponent implements OnInit {
 
-    @Input() npcKey!: string
+    @Input() npcKey!: string;
     protected npc?: NPC;
     protected readonly UiIcon = UiIcon;
     private _database: DatabaseService = inject(DatabaseService);
