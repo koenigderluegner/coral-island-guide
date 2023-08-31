@@ -25,6 +25,7 @@ export * from './lib/interfaces/specific-date.interface';
 export * from './lib/interfaces/shop-item-data.interface';
 export * from './lib/interfaces/item-process-shop-data.interface';
 export * from './lib/interfaces/item-upgrade-data.interface';
+export * from './lib/interfaces/pet-shop-adoptions.interface';
 
 
 export * from './lib/enums/quality.enum';

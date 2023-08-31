@@ -30,9 +30,9 @@ export class HeaderComponent {
             path: 'crafting'
         },
         {
-            text: 'People',
+            text: 'NPCs',
             uiIcon: UiIcon.PEOPLE,
-            path: 'people'
+            path: 'npcs'
         },
         {
             text: 'Locations',
@@ -62,7 +62,7 @@ export class HeaderComponent {
 
     constructor(private _router: Router,
                 private readonly _settingsService: SettingsService) {
-        _router.events.pipe(
+        this._router.events.pipe(
             filter((e) => e instanceof NavigationStart)
         ).subscribe(() => {
             this.isOpen = false;

@@ -17,8 +17,8 @@ export interface RawNPC {
         "SubPathString": string,
     },
     "mapIcon": {
-        "ObjectName": string,
-        "ObjectPath": string,
+        "AssetPathName": string,
+        "SubPathString": string,
     },
     "isDateable": boolean,
     "canHaveRelationships": boolean,

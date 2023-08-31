@@ -10,6 +10,7 @@ import { GeneralStoreComponent } from "./components/general-store/general-store.
 import { CarpenterComponent } from "./components/carpenter/carpenter.component";
 import { MerfolkGeneralStoreComponent } from "./components/merfolk-general-store/merfolk-general-store.component";
 import { MerfolkOracleTailStoreComponent } from "./components/merfolk-oracle-tail-store/merfolk-oracle-tail-store.component";
+import { PetShopComponent } from "./components/pet-shop/pet-shop.component";
 
 const routes: Routes = [
     {
@@ -57,6 +58,12 @@ const routes: Routes = [
                 path: 'merfolk-oracle-tail-store',
                 component: MerfolkOracleTailStoreComponent,
                 title: `${ShopDisplayNames['merfolk-oracle-tail-store']} - Locations`,
+                canActivate: [onlyInBetaGuard]
+            },
+            {
+                path: 'pet-shop',
+                component: PetShopComponent,
+                title: `${ShopDisplayNames['pet-shop']} - Locations`,
                 canActivate: [onlyInBetaGuard]
             },
         ]

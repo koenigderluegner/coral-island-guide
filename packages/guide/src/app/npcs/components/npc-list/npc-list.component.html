@@ -1,0 +1,16 @@
+<ng-container *ngIf="npcs$| async as npcs">
+    <div class="grid npc-list-grid gap-x-4 gap-y-10 px-2 xl:px-[50px] w-full pt-2 pb-6 2xl:pt-[60px]">
+        <a *ngFor="let npc of npcs" [routerLink]="['..', npc.key]"
+           class="flex bg-[#F5F1E6] rounded-[30px] npc-list-entry group relative ">
+            <div class="frame absolute inset-0 rounded-[30px] z-10"></div>
+            <div class="basis-2/5 bg-[#F1E1CC] rounded-l-[30px] group-hover:bg-[#F2DBB7]">
+                <app-npc-head-portrait [npcKey]="npc.key" [portraitName]="npc.headerPortraitFileName"
+                                       class="z-20 flex h-full relative rounded-l-[30px]"/>
+            </div>
+            <div class="basis-3/5 p-2 flex flex-col">
+                <div class="text-black font-semibold text-2xl mt-3">{{npc.characterName}}</div>
+                <div *ngIf="npc.customHead" clasS="mt-auto">unofficial head portrait</div>
+            </div>
+        </a>
+    </div>
+</ng-container>

@@ -22,6 +22,9 @@ import { ItemUpgradeDetailsComponent } from './components/item-upgrade-details/i
 import { ItemUpgradeTableComponent } from './components/tables/item-upgrade-table/item-upgrade-table.component';
 import { MerfolkGeneralStoreComponent } from './components/merfolk-general-store/merfolk-general-store.component';
 import { MerfolkOracleTailStoreComponent } from './components/merfolk-oracle-tail-store/merfolk-oracle-tail-store.component';
+import { PetShopComponent } from './components/pet-shop/pet-shop.component';
+import { PetAdoptionDetailsComponent } from './components/pet-adoption-details/pet-adoption-details.component';
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 @NgModule({
     declarations: [
@@ -41,6 +44,8 @@ import { MerfolkOracleTailStoreComponent } from './components/merfolk-oracle-tai
         ItemUpgradeTableComponent,
         MerfolkGeneralStoreComponent,
         MerfolkOracleTailStoreComponent,
+        PetShopComponent,
+        PetAdoptionDetailsComponent,
     ],
     imports: [
         CommonModule,
@@ -51,8 +56,13 @@ import { MerfolkOracleTailStoreComponent } from './components/merfolk-oracle-tai
         MatTableModule,
         MatSortModule,
         CraftingModule,
+        MatTooltipModule,
     ],
-    exports: [OfferingsTableComponent, ShopItemDataTableComponent, ShopItemProcessTableComponent, ItemUpgradeTableComponent],
+    exports: [
+        OfferingsTableComponent,
+        ShopItemDataTableComponent,
+        ShopItemProcessTableComponent,
+        ItemUpgradeTableComponent,
+    ],
 })
-export class LocationsModule {
-}
+export class LocationsModule {}
