@@ -12,14 +12,21 @@ import fs from "fs";
 export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
 
     datatable: Datatable<RawNPC>[];
+    petNPCs: Datatable<RawNPC>[];
 
 
     constructor(protected itemMap: Map<string, Item>, filepath: string) {
         super();
         this.datatable = readAsset(filepath);
+        this.petNPCs = readAsset('ProjectCoral/Content/ProjectCoral/AdoptablePets/NPC/DT_PetNPCs.json');
     }
 
     handleEntry(itemKey: string, dbItem: RawNPC): NPC {
+
+        const petNPC = this.petNPCs[0]?.Rows[itemKey];
+        if (petNPC) {
+            dbItem = petNPC;
+        }
 
         const objectName = dbItem.mapIcon.AssetPathName.split('.').pop() ?? '';
 

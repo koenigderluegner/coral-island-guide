@@ -13,6 +13,8 @@ export class NpcPortraitsImageProcessor {
 
     datatable: Datatable<RawNPC>[] = readAsset('ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.json');
 
+    petNPCs: Datatable<RawNPC>[] = readAsset('ProjectCoral/Content/ProjectCoral/AdoptablePets/NPC/DT_PetNPCs.json');
+
     constructor(protected sourcePath: string, protected portraitOutputPath: string, protected headPortraitOutputPath: string, protected skipIfExists = true) {
     }
 
@@ -42,9 +44,8 @@ export class NpcPortraitsImageProcessor {
             npcAppearanceKey: string
         }[] = []
 
-
         npcKeys.forEach(npcKey => {
-            const npcData = this.datatable[0].Rows[npcKey];
+            const npcData = this.petNPCs[0]?.Rows[npcKey] ?? this.datatable[0].Rows[npcKey];
             const [portaitsPath, index] = npcData.portraitsDT.ObjectPath.split('.');
             let npcAppearances: Record<string, RawNpcAppearances> = {}
             const fileName = path.join(portaitsPath + '.json');
