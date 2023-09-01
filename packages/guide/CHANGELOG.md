@@ -1,5 +1,12 @@
 ## Changelog
 
+### TBD
+
+#### Changed
+
+- Added more guesses to map more images to NPCs.
+- Fixed missing icons of pets in pet shop
+
 ### 0.10.0 2023-09-01
 
 #### Added
