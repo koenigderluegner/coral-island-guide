@@ -85,7 +85,11 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
 
                 const sourceImagePath = path.join(environment.assetPath, assetPath + '.png');
 
-                if (!fs.existsSync(sourceImagePath)) return;
+                if (!fs.existsSync(sourceImagePath)) {
+                    const guessedPath = sourceImagePath.replace('Potrait', 'Potraits');
+
+                    if (!fs.existsSync(guessedPath)) return;
+                }
 
                 if (!appearances[npcAppearanceKey]) {
                     appearances[npcAppearanceKey] = {}
