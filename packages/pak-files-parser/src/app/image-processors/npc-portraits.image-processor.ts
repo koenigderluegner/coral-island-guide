@@ -116,9 +116,7 @@ export class NpcPortraitsImageProcessor {
         await this.extractPortraits(sourceImages, excludeFromDeletion);
         Logger.success('portrait extraction done');
 
-
-        // [...excludeFromDeletion.values()].forEach(console.log)
-        //this.cleanUpUnusedFiles(excludeFromDeletion);
+        this.cleanUpUnusedFiles(excludeFromDeletion);
 
 
     }
@@ -185,16 +183,20 @@ export class NpcPortraitsImageProcessor {
     }
 
     private cleanUpUnusedFiles(excludeFromDeletion: Set<string>) {
+        // console.log([...excludeFromDeletion.values()])
         glob('**/*.png', {cwd: this.sourcePath,}, async (error: Error | null, filesWithJs: string[]) => {
             if (error) {
                 Logger.error(error.message, error);
             }
+
             if (filesWithJs.length === excludeFromDeletion.size) return;
             Logger.log(`checking ${filesWithJs.length} files for deletion`);
             let counter = 0;
             for (const fileBasename of filesWithJs) {
-                const sourceFilePath = path.join(this.sourcePath.replace('\\dist', '').replace('\\assets', '\\src\\assets'), fileBasename)
+                const sourceFilePath = path.join(this.sourcePath.replace('\\dist', '').replace('\\assets', '\\src\\assets'), fileBasename);
+
                 if (!excludeFromDeletion.has(sourceFilePath) && fs.existsSync(sourceFilePath)) {
+                    Logger.error(`delete ${sourceFilePath}`)
                     fs.unlinkSync(sourceFilePath);
                 }
 
