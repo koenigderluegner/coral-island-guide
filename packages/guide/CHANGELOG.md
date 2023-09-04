@@ -5,6 +5,7 @@
 #### Changed
 
 - Fixed stretched icons on mobile
+- Fixed stretched head portraits on mobile
 
 ### 0.10.1 2023-09-04
 

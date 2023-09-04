@@ -3,7 +3,7 @@
         <a *ngFor="let npc of npcs" [routerLink]="['..', npc.key]"
            class="flex bg-[#F5F1E6] rounded-[30px] npc-list-entry group relative ">
             <div class="frame absolute inset-0 rounded-[30px] z-10"></div>
-            <div class="basis-2/5 bg-[#F1E1CC] rounded-l-[30px] group-hover:bg-[#F2DBB7]">
+            <div class="basis-2/5 aspect-square bg-[#F1E1CC] rounded-l-[30px] group-hover:bg-[#F2DBB7]">
                 <app-npc-head-portrait [npcKey]="npc.key" [portraitName]="npc.headerPortraitFileName"
                                        class="z-20 flex h-full relative rounded-l-[30px]"/>
             </div>
