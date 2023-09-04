@@ -1,9 +1,10 @@
 ## Changelog
 
-### TBD
+### 0.10.1 2023-09-04
 
 #### Changed
 
+- Updated beta data to 0.5-120
 - Added more guesses to map more images to NPCs.
 - Fixed missing icons of pets in pet shop
 - Fixed season filter not working for crops. Thanks Snowy Owl on Discord for reporting.
