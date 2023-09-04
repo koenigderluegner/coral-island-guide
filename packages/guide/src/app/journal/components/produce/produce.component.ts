@@ -60,6 +60,19 @@ export class ProduceComponent extends BaseJournalPageComponent<MinimalItem | Cro
         this.activateTabFromRoute(this.tabs.map(tab => tab.title));
     }
 
+    override filterPredicate(foundEntry: MinimalItem | Crop | FruitPlant | FruitTree, filterValues: FormGroup<FilterForm>["value"], index: number): boolean {
+        if (!('growableSeason' in foundEntry)) return true;
+
+        if (!filterValues.season?.length) return false;
+
+        const seasonString = foundEntry.growableSeason.join(' ').toLowerCase();
+        const seasonMatch = filterValues.season?.length === Object.values(Season).length
+            || !!filterValues.season?.some(season => seasonString.includes(('' + season).toLowerCase()));
+
+        return seasonMatch;
+
+    }
+
     protected castToItemArray(array: Array<any>): Item[] {
         return array as Item[]
     }
