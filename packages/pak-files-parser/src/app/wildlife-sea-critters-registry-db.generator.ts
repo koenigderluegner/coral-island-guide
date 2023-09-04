@@ -1,5 +1,5 @@
 import { BaseGenerator } from "./base-generator.class";
-import { RawWildlifeSeaCrittersRegistry } from "../interfaces/raw-wildlife-sea-critters-registry.interface";
+import { RawWildlifeSeaCrittersRegistry } from "../interfaces/raw-data-interfaces/raw-wildlife-sea-critters-registry.interface";
 import { WildlifeSeaCrittersRegistry } from "../interfaces/wildlife-sea-critters-registry.interface";
 import { Datatable } from "../interfaces/datatable.interface";
 import { readAsset } from "../util/functions";

@@ -2,7 +2,7 @@ import { BaseGenerator } from "./base-generator.class";
 import { CookingRecipe, Item, OfferingAltar, Offerings } from "@ci/data-types";
 import { Datatable } from "../interfaces/datatable.interface";
 import { readAsset } from "../util/functions";
-import { RawOfferingAltar } from "../interfaces/raw-offering-altar.interface";
+import { RawOfferingAltar } from "../interfaces/raw-data-interfaces/raw-offering-altar.interface";
 import { OfferingDetailsDbGenerator } from "./offering-details-db.generator";
 import { nonNullable } from "@ci/util";
 

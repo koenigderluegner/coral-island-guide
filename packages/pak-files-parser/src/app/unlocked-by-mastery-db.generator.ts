@@ -1,5 +1,5 @@
 import { Item, UnlockByMastery } from '@ci/data-types';
-import { RawUnlockByMastery } from "../interfaces/raw-unlock-by-mastery.interface";
+import { RawUnlockByMastery } from "../interfaces/raw-data-interfaces/raw-unlock-by-mastery.interface";
 import { Datatable } from "../interfaces/datatable.interface";
 import { getEnumValue } from "@ci/util";
 

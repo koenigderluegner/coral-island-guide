@@ -1,9 +1,10 @@
 import { BaseGenerator } from "./base-generator.class";
-import { Item, ItemUpgradeData, MinimalItem } from "@ci/data-types";
+import { Item, ItemUpgradeData, MinimalItem, Quality } from "@ci/data-types";
 import { minifyItem, readAsset } from "../util/functions";
 import { Datatable } from "../interfaces/datatable.interface";
 import { getEnumValue, nonNullable } from "@ci/util";
-import { RawItemUpgradeData } from "../interfaces/raw-item-upgrade-data.interface";
+import { RawItemUpgradeData } from "../interfaces/raw-data-interfaces/raw-item-upgrade-data.interface";
+import { RawLabUpgradeData } from "../interfaces/raw-data-interfaces/raw-lab-upgrade-data.interface";
 
 export class ItemUpgradeDataGenerator extends BaseGenerator<RawItemUpgradeData, ItemUpgradeData> {
 
@@ -14,7 +15,7 @@ export class ItemUpgradeDataGenerator extends BaseGenerator<RawItemUpgradeData, 
         this.datatable = readAsset<Datatable<RawItemUpgradeData>[]>(datatablePath);
     }
 
-    handleEntry(itemKey: string, dbItem: RawItemUpgradeData): ItemUpgradeData | undefined {
+    handleEntry(itemKey: string, dbItem: RawItemUpgradeData | RawLabUpgradeData): ItemUpgradeData | undefined {
 
 
         const foundItem = this.itemMap.get(dbItem.item.itemID);
@@ -44,7 +45,7 @@ export class ItemUpgradeDataGenerator extends BaseGenerator<RawItemUpgradeData, 
         }).filter(nonNullable)
 
 
-        return {
+        const result: ItemUpgradeData = {
             item,
             price: dbItem.price,
             daysDelay: dbItem.daysDelay,
@@ -61,6 +62,21 @@ export class ItemUpgradeDataGenerator extends BaseGenerator<RawItemUpgradeData, 
             useCategory: dbItem.useCategory,
             useCustomIcon: dbItem.useCustomIcon
         };
+
+        if ('affecting' in dbItem) {
+            result.affecting = getEnumValue(dbItem.affecting);
+            result.level = dbItem.level === 1
+                ? Quality.BRONZE
+                : dbItem.level === 2
+                    ? Quality.SILVER
+                    : dbItem.level === 3
+                        ? Quality.GOLD
+                        : dbItem.level === 4
+                            ? Quality.OSMIUM
+                            : Quality.BASE
+        }
+
+        return result;
     }
 
 }

@@ -1,6 +1,6 @@
 import { BaseGenerator } from "./base-generator.class";
 import { Item, ShopItemData } from "@ci/data-types";
-import { RawShopItemData } from "../interfaces/raw-shop-item-data.interface";
+import { RawShopItemData } from "../interfaces/raw-data-interfaces/raw-shop-item-data.interface";
 import { minifyItem, readAsset } from "../util/functions";
 import { Datatable } from "../interfaces/datatable.interface";
 import { getEnumValue } from "@ci/util";

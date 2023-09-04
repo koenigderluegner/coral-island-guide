@@ -1,6 +1,6 @@
 import { NPC, PetShopAdoptions } from "@ci/data-types";
 import { BaseGenerator } from "./base-generator.class";
-import { RawPetShopData } from "../interfaces/raw-pet-shop-data.interface";
+import { RawPetShopData } from "../interfaces/raw-data-interfaces/raw-pet-shop-data.interface";
 import { Datatable } from "../interfaces/datatable.interface";
 import { readAsset } from "../util/functions";
 

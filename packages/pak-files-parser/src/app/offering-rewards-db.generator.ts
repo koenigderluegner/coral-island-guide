@@ -2,7 +2,7 @@ import { BaseGenerator } from "./base-generator.class";
 import { CookingRecipe, Item, OfferingReward } from "@ci/data-types";
 import { Datatable } from "../interfaces/datatable.interface";
 import { minifyItem, readAsset } from "../util/functions";
-import { RawOfferingReward } from "../interfaces/raw-offering-reward.interface";
+import { RawOfferingReward } from "../interfaces/raw-data-interfaces/raw-offering-reward.interface";
 import {
     OfferingRewardConfig,
     OfferingRewardConfigAddItem,

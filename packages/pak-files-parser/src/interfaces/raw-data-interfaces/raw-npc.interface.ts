@@ -1,4 +1,4 @@
-import { SourceString } from "../types/source-string.type";
+import { SourceString } from "../../types/source-string.type";
 
 export interface RawNPC {
     "characterID": string,

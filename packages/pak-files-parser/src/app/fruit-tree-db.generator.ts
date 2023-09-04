@@ -4,7 +4,7 @@ import { CropRegistry } from '../types/crop-registry.type';
 import { getEnumValue, nonNullable } from '@ci/util';
 import { BaseGenerator } from "./base-generator.class";
 import { Datatable } from "../interfaces/datatable.interface";
-import { RawFruitTree } from "../interfaces/raw-fruit-tree.interface";
+import { RawFruitTree } from "../interfaces/raw-data-interfaces/raw-fruit-tree.interface";
 
 export class FruitTreeDbGenerator extends BaseGenerator<RawFruitTree, FruitTree> {
 

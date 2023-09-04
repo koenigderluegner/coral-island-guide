@@ -1,7 +1,7 @@
 import { addSpacesToPascalCase, getEnumValue, } from '@ci/util';
 import { Fish, Item } from '@ci/data-types';
 import { Fishs } from '../types/fishs.type';
-import { RawFish } from '../interfaces/raw-fish.interface';
+import { RawFish } from '../interfaces/raw-data-interfaces/raw-fish.interface';
 import { readAsset } from '../util/functions';
 
 export class FishDbGenerator {

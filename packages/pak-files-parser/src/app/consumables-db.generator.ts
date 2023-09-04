@@ -1,6 +1,6 @@
 import { BaseGenerator } from "./base-generator.class";
 import { Datatable } from "../interfaces/datatable.interface";
-import { RawConsumable } from "../interfaces/raw-consumable.interface";
+import { RawConsumable } from "../interfaces/raw-data-interfaces/raw-consumable.interface";
 import { readAsset } from "../util/functions";
 import { Consumable } from "@ci/data-types";
 import { getEnumValue } from "@ci/util";

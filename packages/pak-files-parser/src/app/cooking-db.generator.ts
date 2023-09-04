@@ -1,6 +1,6 @@
 import { CookingRecipe, Item, MinimalItem, TagBasedItem, UnlockByMastery } from "@ci/data-types";
 import { minifyItem, readAsset } from "../util/functions";
-import { CookingIngredients, RawCookingRecipe } from "../interfaces/raw-cooking-recipe.interface";
+import { CookingIngredients, RawCookingRecipe } from "../interfaces/raw-data-interfaces/raw-cooking-recipe.interface";
 import { getEnumValue, removeQualityFlag } from "@ci/util";
 import { CookingRecipes } from "../types/cooking-recipes.type";
 

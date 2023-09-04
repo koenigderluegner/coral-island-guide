@@ -1,4 +1,4 @@
-export interface RawItemUpgradeData {
+export interface BaseRawItemUpgradeData {
     "price": number;
     "daysDelay": number;
     "unlockRequirements": {
@@ -31,7 +31,6 @@ export interface RawItemUpgradeData {
     "toolType": string;
     "imagePreview": null,
     "enable": boolean,
-    "isCurrentlyOutOfStock": boolean,
     "townRank": number;
     "item": {
         "data": {
@@ -66,4 +65,5 @@ export interface RawItemUpgradeData {
     "priceOverride": number;
     "tag": string[]
 
+    "isCurrentlyOutOfStock": boolean,
 }

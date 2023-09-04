@@ -1,7 +1,7 @@
 import { BaseGenerator } from "./base-generator.class";
 import { Datatable } from "../interfaces/datatable.interface";
 import { getReferencedString, minifyItem, readAsset } from "../util/functions";
-import { RawOffering } from "../interfaces/raw-offering.interface";
+import { RawOffering } from "../interfaces/raw-data-interfaces/raw-offering.interface";
 import { CookingRecipe, Item, Offerings } from "@ci/data-types";
 import { getQuality, nonNullable, removeQualityFlag } from "@ci/util";
 import { OfferingRewardsDbGenerator } from "./offering-rewards-db.generator";

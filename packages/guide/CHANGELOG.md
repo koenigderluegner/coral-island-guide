@@ -2,8 +2,14 @@
 
 ### TBD
 
+#### Added
+
+- Added lab produce upgrades
+
 #### Changed
 
+- Fixed pet shop data not being loaded when opening database without being at pet shop before
+- Fixed data being cut in tables
 - Fixed stretched icons on mobile
 - Fixed stretched head portraits on mobile
 

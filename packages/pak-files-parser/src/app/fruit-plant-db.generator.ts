@@ -3,7 +3,7 @@ import { minifyItem, readAsset } from '../util/functions';
 import { CropRegistry } from '../types/crop-registry.type';
 import { getEnumValue, nonNullable } from '@ci/util';
 import { BaseGenerator } from "./base-generator.class";
-import { RawFruitPlant } from "../interfaces/raw-fruit-plant.interface";
+import { RawFruitPlant } from "../interfaces/raw-data-interfaces/raw-fruit-plant.interface";
 import { Datatable } from "../interfaces/datatable.interface";
 
 export class FruitPlantDbGenerator extends BaseGenerator<RawFruitPlant, FruitPlant> {

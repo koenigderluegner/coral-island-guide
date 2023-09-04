@@ -1,5 +1,5 @@
 import { BaseGenerator } from './base-generator.class';
-import { RawGiftPreferenceInterface } from '../interfaces/raw-gift-preference.interface';
+import { RawGiftPreferenceInterface } from '../interfaces/raw-data-interfaces/raw-gift-preference.interface';
 import { GiftPreference, GiftPreferences, Item, NPC } from '@ci/data-types';
 import { Datatable } from '../interfaces/datatable.interface';
 import { minifyItem, notEmpty, readAsset } from '../util/functions';

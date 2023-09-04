@@ -2,7 +2,7 @@ import { BaseGenerator } from "./base-generator.class";
 import { Item, ItemProcessShopData } from "@ci/data-types";
 import { Datatable } from "../interfaces/datatable.interface";
 import { minifyItem, readAsset } from "../util/functions";
-import { RawItemProcessShopData } from "../interfaces/raw-item-process-shop-data.interface";
+import { RawItemProcessShopData } from "../interfaces/raw-data-interfaces/raw-item-process-shop-data.interface";
 import { Logger } from "../util/logger.class";
 
 export class ItemProcessShopGenerator extends BaseGenerator<RawItemProcessShopData, ItemProcessShopData> {

@@ -2,6 +2,7 @@
     <ng-container listDetail>
         <app-shop-item-process-data-details *ngIf="selectedProcessEntity" [itemProcessData]="selectedProcessEntity"/>
         <app-shop-item-data-details *ngIf="selectedEntity" [shopItemData]="selectedEntity"/>
+        <app-item-upgrade-details *ngIf="selectedItemUpgrade" [itemUpgradeData]="selectedItemUpgrade"/>
     </ng-container>
 
     <div class="px-2 xl:px-[50px] w-full">
@@ -43,6 +44,24 @@
                 </app-item-icon>
             </div>
             <app-shop-item-process-table *ngIf="showProcessingTable" [dataSource]="shopItemData"/>
+
+        </ng-container>
+
+
+        <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Tool upgrades</h2>
+        <ng-container *ngIf="(itemUpgrade$ |async) as shopItemData">
+
+            <app-data-filter [(showTable)]="showPItemUpgradeTable"/>
+            <div *ngIf="!showPItemUpgradeTable" class="grid gap-4 icon-grid">
+
+                <app-item-icon (click)="showItemUpgradeDetails(shopItem)" *ngFor="let shopItem of shopItemData"
+                               [class.selected-icon]="selectedItemUpgrade?.item?.id === shopItem.item.id"
+                               [itemName]="shopItem.item.iconName"
+                               [quality]="shopItem.level"
+                               class="icon-grid-item">
+                </app-item-icon>
+            </div>
+            <app-item-upgrade-table *ngIf="showPItemUpgradeTable" [dataSource]="shopItemData"/>
 
         </ng-container>
 

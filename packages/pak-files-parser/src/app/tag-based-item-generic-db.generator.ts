@@ -1,6 +1,6 @@
 import { convertToIconName, readAsset } from '../util/functions';
 import { TagBasedItem } from '@ci/data-types';
-import { RawTagBasedItemGeneric } from '../interfaces/raw-tag-based-item-generic.interface';
+import { RawTagBasedItemGeneric } from '../interfaces/raw-data-interfaces/raw-tag-based-item-generic.interface';
 import { BaseGenerator } from './base-generator.class';
 import { Datatable } from '../interfaces/datatable.interface';
 

@@ -1,8 +1,8 @@
 import { createPathIfNotExists, readAsset } from "../../util/functions";
-import { RawNPC } from "../../interfaces/raw-npc.interface";
+import { RawNPC } from "../../interfaces/raw-data-interfaces/raw-npc.interface";
 import { Datatable } from "../../interfaces/datatable.interface";
 import { Logger } from "../../util/logger.class";
-import { RawNpcAppearances } from "../../interfaces/raw-npc-appearances.interface";
+import { RawNpcAppearances } from "../../interfaces/raw-data-interfaces/raw-npc-appearances.interface";
 import path from "path";
 import fs from "fs";
 import { environment } from "../../environments/environment";

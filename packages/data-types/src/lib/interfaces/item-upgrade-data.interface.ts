@@ -1,4 +1,5 @@
 import { MinimalItem } from "../types/minimal-item.type";
+import { Quality } from "../enums/quality.enum";
 
 export interface ItemUpgradeData {
     price: number;
@@ -16,4 +17,6 @@ export interface ItemUpgradeData {
     priority: number;
     priceOverride: number;
     tag: string[]
+    affecting?: string,
+    level?: Quality,
 }
