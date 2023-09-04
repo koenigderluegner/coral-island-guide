@@ -1,5 +1,11 @@
 ## Changelog
 
+### TBD
+
+#### Changed
+
+- Fixed stretched icons on mobile
+
 ### 0.10.1 2023-09-04
 
 #### Changed
