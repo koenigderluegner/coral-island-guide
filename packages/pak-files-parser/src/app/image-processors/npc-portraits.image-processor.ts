@@ -183,7 +183,6 @@ export class NpcPortraitsImageProcessor {
     }
 
     private cleanUpUnusedFiles(excludeFromDeletion: Set<string>) {
-        // console.log([...excludeFromDeletion.values()])
         glob('**/*.png', {cwd: this.sourcePath,}, async (error: Error | null, filesWithJs: string[]) => {
             if (error) {
                 Logger.error(error.message, error);
@@ -196,7 +195,6 @@ export class NpcPortraitsImageProcessor {
                 const sourceFilePath = path.join(this.sourcePath.replace('\\dist', '').replace('\\assets', '\\src\\assets'), fileBasename);
 
                 if (!excludeFromDeletion.has(sourceFilePath) && fs.existsSync(sourceFilePath)) {
-                    Logger.error(`delete ${sourceFilePath}`)
                     fs.unlinkSync(sourceFilePath);
                 }
 

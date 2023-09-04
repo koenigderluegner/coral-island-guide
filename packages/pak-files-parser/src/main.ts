@@ -163,4 +163,5 @@ Object.keys(generators).forEach(generatorName => {
 );
 
 itemIconsImageProcessor.process();
-new NpcPortraitsImageProcessor(config.characterPortraitsPath, config.portaitPath, config.headPortaitPath).process()
+if (environment.isBeta)
+    new NpcPortraitsImageProcessor(config.characterPortraitsPath, config.portaitPath, config.headPortaitPath).process()
