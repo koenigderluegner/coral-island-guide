@@ -3,7 +3,7 @@
         <div class="grid md:grid-cols-3 pb-12 gap-y-10 gap-x-8 border-b border-accent/50 mb-8">
             <div>
                 <h3 class="leading-7 font-bold text-lg">Beta data</h3>
-                <p>Options for latest beta build. Current beta data: Merfolk Update 2023 </p>
+                <p>Options for latest beta build. Current beta code: {{BETA_CODE ?? 'no ongoing beta'}} </p>
             </div>
             <div class="bg-amber-50/70 md:col-span-2 px-4 py-6 sm:p-8 sm:rounded-lg">
 
@@ -12,11 +12,15 @@
                     <div class="flex h-6 items-center">
                         <input formControlName="useBeta" id="useBeta" name="useBeta" type="checkbox">
                     </div>
-                    <div>
+                    <div [class.opacity-50]="!BETA_CODE">
                         <label class="font-bold leading-6" for="useBeta">Use beta data</label>
                         <p class="leading-6">Switches app data to beta data. Change requires reload.</p>
                     </div>
                 </div>
+                <p *ngIf="!BETA_CODE" class="flex gap-2 text-black font-bold leading-6 items-center">
+                    <app-ui-icon [uiIcon]="uiIcon.WARNING" class="!w-6"/>
+                    Currently there's no beta.
+                </p>
 
 
             </div>

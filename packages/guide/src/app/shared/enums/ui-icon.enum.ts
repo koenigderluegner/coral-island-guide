@@ -4,6 +4,7 @@ export enum UiIcon {
     EMPTY_STAR = 'T_Icon_Styles',
     ARROW_RIGHT = 'T_BoxArrowRight',
     CORAL = 'T_Icon_GoldMinimal',
+    WARNING = 'Exclamation_Warning',
 
     // PAUSE MENU TOP
     JOURNAL = 'T_Icon_Journal',
@@ -22,6 +23,8 @@ export enum UiIcon {
     ARTISAN = 'T_Icon_ArtisanM',
     COOKING = 'T_Icon_ConsumablesM',
     OFFERING = 'T_Icon_Offering',
+    BESTIARY = 'T_Icon_Bestiary',
+    ACHIEVEMENT = 'T_Icon_Achievement',
 
     // BUILDINGS
     BLACKSMITH = 'T_Icon_Blacksmith',

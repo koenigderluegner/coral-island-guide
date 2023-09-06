@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule, Optional } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -11,6 +11,9 @@ import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
 import { MAT_TABS_CONFIG } from '@angular/material/tabs';
 import { PageTitleService } from './shared/services/page-title.service';
 import { StartComponent } from './start/start.component';
+import { BETA_CODE } from "./core/injection-tokens/beta-code.injection-token";
+import { SettingsService } from "./shared/services/settings.service";
+import { of } from "rxjs";
 
 const routerOptions: ExtraOptions = {
     scrollPositionRestoration: 'disabled',
@@ -81,6 +84,17 @@ const appRoutes: Route[] = [
         MarkdownModule.forRoot(),
     ],
     providers: [
+        {
+            provide: APP_INITIALIZER,
+            multi: true,
+            useFactory: (BETA_CODE: string | null, settingsService: SettingsService) => {
+                if (!BETA_CODE) {
+                    settingsService.saveSettings({...settingsService.getSettings(), useBeta: false})
+                }
+                return () => of()
+            },
+            deps: [[new Optional(), BETA_CODE], SettingsService]
+        },
         {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: {disabled: true}},
         {provide: MAT_TABS_CONFIG, useValue: {animationDuration: '0'}},
         {provide: TitleStrategy, useClass: PageTitleService},
