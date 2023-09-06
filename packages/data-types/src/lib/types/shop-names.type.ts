@@ -7,7 +7,10 @@ export const ShopNames = [
     'carpenter',
     'merfolk-oracle-tail-store',
     'merfolk-general-store',
-    'pet-shop'
+    'pet-shop',
+    'ranch',
+    'beach-shack'
+
 ] as const;
 
 export type ShopName = typeof ShopNames[number];
@@ -19,7 +22,9 @@ export const ShopDisplayNames = {
     carpenter: 'Carpenter',
     'merfolk-general-store': 'Merfolk general store',
     'merfolk-oracle-tail-store': 'Merfolk tail store',
-    'pet-shop': 'Pet Shop'
+    'pet-shop': 'Pet Shop',
+    ranch: 'Ranch',
+    'beach-shack': 'Beach Shack'
 } as const
 
 type ShopDisplayName = (typeof ShopDisplayNames)[keyof typeof ShopDisplayNames]
@@ -32,5 +37,7 @@ export const ShopIcons = {
     'merfolk-general-store': UiIcon.CORAL,
     'merfolk-oracle-tail-store': UiIcon.CORAL,
     'pet-shop': UiIcon.ANIMAL_SHELTER,
+    ranch: UiIcon.RANCH,
+    'beach-shack': UiIcon.BEACH_SHACK
 } as const
 

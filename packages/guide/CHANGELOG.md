@@ -5,6 +5,7 @@
 #### Added
 
 - Added lab produce upgrades
+- Added ranch (without animals) and beach shack shops
 - Added auto opt-out of beta if no beta is ongoing
 
 #### Changed

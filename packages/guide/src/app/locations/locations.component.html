@@ -2,28 +2,12 @@
     <app-module-sidebar>
         <app-module-sidebar-item [uiIcon]="uiIcon.OFFERING" routerLink="lake-temple">Lake temple
         </app-module-sidebar-item>
-        <app-module-sidebar-item *ngIf="settings.getSettings().useBeta" [uiIcon]="uiIcon.BLACKSMITH"
-                                 routerLink="blacksmith">Blacksmith
-        </app-module-sidebar-item>
-        <app-module-sidebar-item *ngIf="settings.getSettings().useBeta" [uiIcon]="uiIcon.LAB"
-                                 routerLink="lab">Lab
-        </app-module-sidebar-item>
+        <ng-container *ngFor="let shopName of shops">
+            <app-module-sidebar-item *ngIf="settings.getSettings().useBeta" [routerLink]="shopName"
+                                     [uiIcon]="SHOP_ICONS[shopName]">{{SHOP_DISPLAY_NAMES[shopName]}}
+            </app-module-sidebar-item>
+        </ng-container>
 
-        <app-module-sidebar-item *ngIf="settings.getSettings().useBeta" [uiIcon]="uiIcon.STORE"
-                                 routerLink="general-store">Sams general store
-        </app-module-sidebar-item>
-        <app-module-sidebar-item *ngIf="settings.getSettings().useBeta" [uiIcon]="uiIcon.CARPENTER"
-                                 routerLink="carpenter">Carpenter
-        </app-module-sidebar-item>
-        <app-module-sidebar-item *ngIf="settings.getSettings().useBeta" [uiIcon]="uiIcon.CORAL"
-                                 routerLink="merfolk-general-store">Merfolk general store
-        </app-module-sidebar-item>
-        <app-module-sidebar-item *ngIf="settings.getSettings().useBeta" [uiIcon]="uiIcon.CORAL"
-                                 routerLink="merfolk-oracle-tail-store">Merfolk tail store
-        </app-module-sidebar-item>
-        <app-module-sidebar-item *ngIf="settings.getSettings().useBeta" [uiIcon]="uiIcon.ANIMAL_SHELTER"
-                                 routerLink="pet-shop">Pet Shop
-        </app-module-sidebar-item>
     </app-module-sidebar>
     <router-outlet class="hidden"></router-outlet>
 </app-sidebar-container>

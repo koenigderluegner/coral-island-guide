@@ -2,15 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LocationsComponent } from './locations.component';
 import { LakeTempleComponent } from "./components/lake-temple/lake-temple.component";
-import { BlacksmithComponent } from "./components/shops/blacksmith/blacksmith.component";
 import { onlyInBetaGuard } from "../core/guards/only-in-beta.guard";
-import { LabComponent } from "./components/shops/lab/lab.component";
 import { ShopDisplayNames } from "@ci/data-types";
-import { GeneralStoreComponent } from "./components/shops/general-store/general-store.component";
-import { CarpenterComponent } from "./components/shops/carpenter/carpenter.component";
-import { MerfolkGeneralStoreComponent } from "./components/shops/merfolk-general-store/merfolk-general-store.component";
-import { MerfolkOracleTailStoreComponent } from "./components/shops/merfolk-oracle-tail-store/merfolk-oracle-tail-store.component";
-import { PetShopComponent } from "./components/pet-shop/pet-shop.component";
+import { shopRouteConfig } from "./locations-shop-route-config";
+
 
 const routes: Routes = [
     {
@@ -24,48 +19,14 @@ const routes: Routes = [
         children: [
             {path: 'lake-temple', redirectTo: 'lake-temple/', pathMatch: 'full'},
             {path: 'lake-temple/:tabName', component: LakeTempleComponent, title: 'Lake temple - Locations'},
-            {
-                path: 'blacksmith',
-                component: BlacksmithComponent,
-                title: 'Blacksmith - Locations',
-                canActivate: [onlyInBetaGuard]
-            },
-            {
-                path: 'lab',
-                component: LabComponent,
-                title: 'Lab - Locations',
-                canActivate: [onlyInBetaGuard]
-            },
-            {
-                path: 'general-store',
-                component: GeneralStoreComponent,
-                title: `${ShopDisplayNames['general-store']} - Locations`,
-                canActivate: [onlyInBetaGuard]
-            },
-            {
-                path: 'carpenter',
-                component: CarpenterComponent,
-                title: `${ShopDisplayNames['general-store']} - Locations`,
-                canActivate: [onlyInBetaGuard]
-            },
-            {
-                path: 'merfolk-general-store',
-                component: MerfolkGeneralStoreComponent,
-                title: `${ShopDisplayNames['merfolk-general-store']} - Locations`,
-                canActivate: [onlyInBetaGuard]
-            },
-            {
-                path: 'merfolk-oracle-tail-store',
-                component: MerfolkOracleTailStoreComponent,
-                title: `${ShopDisplayNames['merfolk-oracle-tail-store']} - Locations`,
-                canActivate: [onlyInBetaGuard]
-            },
-            {
-                path: 'pet-shop',
-                component: PetShopComponent,
-                title: `${ShopDisplayNames['pet-shop']} - Locations`,
-                canActivate: [onlyInBetaGuard]
-            },
+
+            ...shopRouteConfig.map(config => ({
+                path: config.name,
+                component: config.component,
+                title: `${ShopDisplayNames[config.name]} - Locations`,
+                canActivate: config.betaOnly ? [onlyInBetaGuard] : []
+            })),
+
         ]
     }
 ];

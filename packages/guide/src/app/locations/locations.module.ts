@@ -25,6 +25,8 @@ import { MerfolkOracleTailStoreComponent } from './components/shops/merfolk-orac
 import { PetShopComponent } from './components/pet-shop/pet-shop.component';
 import { PetAdoptionDetailsComponent } from './components/pet-adoption-details/pet-adoption-details.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { RanchComponent } from './components/shops/ranch/ranch.component';
+import { BeachShackComponent } from './components/shops/beach-shack/beach-shack.component';
 
 @NgModule({
     declarations: [
@@ -46,6 +48,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         MerfolkOracleTailStoreComponent,
         PetShopComponent,
         PetAdoptionDetailsComponent,
+        RanchComponent,
+        BeachShackComponent,
     ],
     imports: [
         CommonModule,

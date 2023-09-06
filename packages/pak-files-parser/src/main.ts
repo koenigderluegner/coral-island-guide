@@ -31,6 +31,8 @@ import chalk from "chalk";
 import { ItemIconsImageProcessor } from "./app/image-processors/item-icons.image-processor";
 import { PetShopAdoptionsGenerator } from "./app/pet-shop-adoptions.generator";
 import { NpcPortraitsImageProcessor } from "./app/image-processors/npc-portraits.image-processor";
+import { RanchOpeningHoursGenerator } from "./app/opening-hours-generators/ranch-opening-hours.generator";
+import { BeachShackOpeningHoursGenerator } from "./app/opening-hours-generators/beach-shack-opening-hours.generator";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
@@ -83,6 +85,13 @@ try {
 
             'general-store-opening-hours': new GeneralStoreOpeningHoursGenerator(),
             'general-store-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DT_SamShopItems_AlphaV1.json'),
+
+
+            'ranch-opening-hours': new RanchOpeningHoursGenerator(),
+            'ranch-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_RanchShop.json'),
+
+            'beach-shack-opening-hours': new BeachShackOpeningHoursGenerator(),
+            'beach-shack-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BeachSackShopItems.json'),
 
 
             'pet-shop-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ItemPetShop.json'),
