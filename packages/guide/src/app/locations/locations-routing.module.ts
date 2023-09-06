@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LocationsComponent } from './locations.component';
 import { LakeTempleComponent } from "./components/lake-temple/lake-temple.component";
-import { BlacksmithComponent } from "./components/blacksmith/blacksmith.component";
+import { BlacksmithComponent } from "./components/shops/blacksmith/blacksmith.component";
 import { onlyInBetaGuard } from "../core/guards/only-in-beta.guard";
-import { LabComponent } from "./components/lab/lab.component";
+import { LabComponent } from "./components/shops/lab/lab.component";
 import { ShopDisplayNames } from "@ci/data-types";
-import { GeneralStoreComponent } from "./components/general-store/general-store.component";
-import { CarpenterComponent } from "./components/carpenter/carpenter.component";
-import { MerfolkGeneralStoreComponent } from "./components/merfolk-general-store/merfolk-general-store.component";
-import { MerfolkOracleTailStoreComponent } from "./components/merfolk-oracle-tail-store/merfolk-oracle-tail-store.component";
+import { GeneralStoreComponent } from "./components/shops/general-store/general-store.component";
+import { CarpenterComponent } from "./components/shops/carpenter/carpenter.component";
+import { MerfolkGeneralStoreComponent } from "./components/shops/merfolk-general-store/merfolk-general-store.component";
+import { MerfolkOracleTailStoreComponent } from "./components/shops/merfolk-oracle-tail-store/merfolk-oracle-tail-store.component";
 import { PetShopComponent } from "./components/pet-shop/pet-shop.component";
 
 const routes: Routes = [

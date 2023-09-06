@@ -1,3 +1,5 @@
+import { UiIcon } from "../../../../guide/src/app/shared/enums/ui-icon.enum";
+
 export const ShopNames = [
     'blacksmith',
     'lab',
@@ -21,3 +23,14 @@ export const ShopDisplayNames = {
 } as const
 
 type ShopDisplayName = (typeof ShopDisplayNames)[keyof typeof ShopDisplayNames]
+
+export const ShopIcons = {
+    blacksmith: UiIcon.BLACKSMITH,
+    lab: UiIcon.LAB,
+    'general-store': UiIcon.STORE,
+    carpenter: UiIcon.CARPENTER,
+    'merfolk-general-store': UiIcon.CORAL,
+    'merfolk-oracle-tail-store': UiIcon.CORAL,
+    'pet-shop': UiIcon.ANIMAL_SHELTER,
+} as const
+
