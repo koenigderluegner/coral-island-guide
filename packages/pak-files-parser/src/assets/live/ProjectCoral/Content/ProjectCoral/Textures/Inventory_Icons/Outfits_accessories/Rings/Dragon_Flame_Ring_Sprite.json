@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Dragon_Flame_Ring_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -0.5,
+              "Y": -0.0,
+              "Z": -3.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 115.0,
+            "Y": 10.0,
+            "Z": 112.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "CC0B013E4B519BF6248B8984A1E8EA0E"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Dragon_Flame_Ring_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Dragon_Flame_Ring'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Outfits_accessories/Rings/Rings_textures/Dragon_Flame_Ring.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Dragon_Flame_Ring_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Outfits_accessories/Rings/Dragon_Flame_Ring_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 57.0,
+          "Y": 53.0,
+          "Z": 0.9453125,
+          "W": 0.0859375
+        },
+        {
+          "X": -58.0,
+          "Y": 53.0,
+          "Z": 0.046875,
+          "W": 0.0859375
+        },
+        {
+          "X": -58.0,
+          "Y": -59.0,
+          "Z": 0.046875,
+          "W": 0.9609375
+        },
+        {
+          "X": 57.0,
+          "Y": -59.0,
+          "Z": 0.9453125,
+          "W": 0.9609375
+        },
+        {
+          "X": 57.0,
+          "Y": 53.0,
+          "Z": 0.9453125,
+          "W": 0.0859375
+        },
+        {
+          "X": -58.0,
+          "Y": -59.0,
+          "Z": 0.046875,
+          "W": 0.9609375
+        }
+      ]
+    }
+  }
+]

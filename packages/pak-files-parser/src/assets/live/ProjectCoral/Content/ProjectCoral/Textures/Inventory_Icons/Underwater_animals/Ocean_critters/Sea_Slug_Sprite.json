@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Sea_Slug_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 1.0,
+              "Y": 0.0,
+              "Z": 2.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 124.0,
+            "Y": 10.0,
+            "Z": 91.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "69C32314402993EB9079B091AC890EFD"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Sea_Slug_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Sea_Slug'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Underwater_animals/Ocean_critters/Textures/Sea_Slug.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Sea_Slug_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Underwater_animals/Ocean_critters/Sea_Slug_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 63.0,
+          "Y": 48.0,
+          "Z": 0.9921875,
+          "W": 0.125
+        },
+        {
+          "X": -61.0,
+          "Y": 48.0,
+          "Z": 0.0234375,
+          "W": 0.125
+        },
+        {
+          "X": -61.0,
+          "Y": -43.0,
+          "Z": 0.0234375,
+          "W": 0.8359375
+        },
+        {
+          "X": 63.0,
+          "Y": -43.0,
+          "Z": 0.9921875,
+          "W": 0.8359375
+        },
+        {
+          "X": 63.0,
+          "Y": 48.0,
+          "Z": 0.9921875,
+          "W": 0.125
+        },
+        {
+          "X": -61.0,
+          "Y": -43.0,
+          "Z": 0.0234375,
+          "W": 0.8359375
+        }
+      ]
+    }
+  }
+]

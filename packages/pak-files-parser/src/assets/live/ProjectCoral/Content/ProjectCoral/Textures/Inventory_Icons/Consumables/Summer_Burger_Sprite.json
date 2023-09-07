@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Summer_Burger_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.5,
+              "Y": 0.0,
+              "Z": 2.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 111.0,
+            "Y": 10.0,
+            "Z": 124.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "5FA351F04EF765E0374405B5223D21F8"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Summer_Burger_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Summer_Burger'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Consumables/Consumable_textures/Summer_Burger.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Summer_Burger_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Consumables/Summer_Burger_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 56.0,
+          "Y": 64.0,
+          "Z": 0.9375,
+          "W": 0.0
+        },
+        {
+          "X": -55.0,
+          "Y": 64.0,
+          "Z": 0.0703125,
+          "W": 0.0
+        },
+        {
+          "X": -55.0,
+          "Y": -60.0,
+          "Z": 0.0703125,
+          "W": 0.96875
+        },
+        {
+          "X": 56.0,
+          "Y": -60.0,
+          "Z": 0.9375,
+          "W": 0.96875
+        },
+        {
+          "X": 56.0,
+          "Y": 64.0,
+          "Z": 0.9375,
+          "W": 0.0
+        },
+        {
+          "X": -55.0,
+          "Y": -60.0,
+          "Z": 0.0703125,
+          "W": 0.96875
+        }
+      ]
+    }
+  }
+]

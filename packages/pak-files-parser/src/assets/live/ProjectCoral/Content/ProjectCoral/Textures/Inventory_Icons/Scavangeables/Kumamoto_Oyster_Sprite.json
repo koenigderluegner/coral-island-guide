@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Kumamoto_Oyster_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 118.0,
+            "Y": 10.0,
+            "Z": 120.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "5C12A4B5415753992ECED1B767D386A9"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Kumamoto_Oyster_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Kumamoto_Oyster'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Scavangeables/Scavangeable_textures/Kumamoto_Oyster.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Kumamoto_Oyster_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Scavangeables/Kumamoto_Oyster_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 59.0,
+          "Y": 60.0,
+          "Z": 0.9609375,
+          "W": 0.03125
+        },
+        {
+          "X": -59.0,
+          "Y": 60.0,
+          "Z": 0.0390625,
+          "W": 0.03125
+        },
+        {
+          "X": -59.0,
+          "Y": -60.0,
+          "Z": 0.0390625,
+          "W": 0.96875
+        },
+        {
+          "X": 59.0,
+          "Y": -60.0,
+          "Z": 0.9609375,
+          "W": 0.96875
+        },
+        {
+          "X": 59.0,
+          "Y": 60.0,
+          "Z": 0.9609375,
+          "W": 0.03125
+        },
+        {
+          "X": -59.0,
+          "Y": -60.0,
+          "Z": 0.0390625,
+          "W": 0.96875
+        }
+      ]
+    }
+  }
+]

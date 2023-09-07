@@ -1,0 +1,114 @@
+[
+  {
+    "Type": "C_CountNPCHeartLevelRequirement",
+    "Name": "C_CountNPCHeartLevelRequirement_0",
+    "Outer": "DA_BlacksmithItemRequirement",
+    "Class": "UScriptClass'C_CountNPCHeartLevelRequirement'",
+    "Properties": {
+      "expectedHeartLevel": 8
+    }
+  },
+  {
+    "Type": "C_CountNPCHeartLevelRequirement",
+    "Name": "C_CountNPCHeartLevelRequirement_1",
+    "Outer": "DA_BlacksmithItemRequirement",
+    "Class": "UScriptClass'C_CountNPCHeartLevelRequirement'",
+    "Properties": {
+      "expectedHeartLevel": 10
+    }
+  },
+  {
+    "Type": "C_EditorOnlyRequirement",
+    "Name": "C_EditorOnlyRequirement_0",
+    "Outer": "DA_BlacksmithItemRequirement",
+    "Class": "UScriptClass'C_EditorOnlyRequirement'"
+  },
+  {
+    "Type": "C_EditorOnlyRequirement",
+    "Name": "C_EditorOnlyRequirement_1",
+    "Outer": "DA_BlacksmithItemRequirement",
+    "Class": "UScriptClass'C_EditorOnlyRequirement'"
+  },
+  {
+    "Type": "C_GameplayRequirementsConfig",
+    "Name": "DA_BlacksmithItemRequirement",
+    "Class": "UScriptClass'C_GameplayRequirementsConfig'",
+    "Properties": {
+      "map": [
+        {
+          "Charcoal": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          }
+        },
+        {
+          "BronzeOre": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          }
+        },
+        {
+          "SilverOre": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          }
+        },
+        {
+          "GoldOre": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          }
+        },
+        {
+          "BluntSword": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          }
+        },
+        {
+          "locket": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_CountNPCHeartLevelRequirement'DA_BlacksmithItemRequirement:C_CountNPCHeartLevelRequirement_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DA_BlacksmithItemRequirement.0"
+              },
+              {
+                "ObjectName": "C_EditorOnlyRequirement'DA_BlacksmithItemRequirement:C_EditorOnlyRequirement_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DA_BlacksmithItemRequirement.2"
+              }
+            ]
+          }
+        },
+        {
+          "diamondRing": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_CountNPCHeartLevelRequirement'DA_BlacksmithItemRequirement:C_CountNPCHeartLevelRequirement_1'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DA_BlacksmithItemRequirement.1"
+              },
+              {
+                "ObjectName": "C_MarriageHasProposedRequirement'DA_BlacksmithItemRequirement:C_MarriageHasProposedRequirement_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DA_BlacksmithItemRequirement.5"
+              },
+              {
+                "ObjectName": "C_EditorOnlyRequirement'DA_BlacksmithItemRequirement:C_EditorOnlyRequirement_1'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DA_BlacksmithItemRequirement.3"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_MarriageHasProposedRequirement",
+    "Name": "C_MarriageHasProposedRequirement_0",
+    "Outer": "DA_BlacksmithItemRequirement",
+    "Class": "UScriptClass'C_MarriageHasProposedRequirement'",
+    "Properties": {
+      "invertResult": true
+    }
+  }
+]

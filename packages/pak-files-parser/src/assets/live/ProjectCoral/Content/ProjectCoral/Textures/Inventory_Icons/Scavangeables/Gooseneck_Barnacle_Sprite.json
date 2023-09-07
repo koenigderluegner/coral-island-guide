@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Gooseneck_Barnacle_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -2.0,
+              "Y": -0.0,
+              "Z": -1.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 86.0,
+            "Y": 10.0,
+            "Z": 125.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "665FBCCF4A24343FC7D2C99F1D35F917"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Gooseneck_Barnacle_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Gooseneck_Barnacle'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Scavangeables/Scavangeable_textures/Gooseneck_Barnacle.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Gooseneck_Barnacle_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Scavangeables/Gooseneck_Barnacle_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 41.0,
+          "Y": 61.0,
+          "Z": 0.8203125,
+          "W": 0.0234375
+        },
+        {
+          "X": -45.0,
+          "Y": 61.0,
+          "Z": 0.1484375,
+          "W": 0.0234375
+        },
+        {
+          "X": -45.0,
+          "Y": -64.0,
+          "Z": 0.1484375,
+          "W": 1.0
+        },
+        {
+          "X": 41.0,
+          "Y": -64.0,
+          "Z": 0.8203125,
+          "W": 1.0
+        },
+        {
+          "X": 41.0,
+          "Y": 61.0,
+          "Z": 0.8203125,
+          "W": 0.0234375
+        },
+        {
+          "X": -45.0,
+          "Y": -64.0,
+          "Z": 0.1484375,
+          "W": 1.0
+        }
+      ]
+    }
+  }
+]

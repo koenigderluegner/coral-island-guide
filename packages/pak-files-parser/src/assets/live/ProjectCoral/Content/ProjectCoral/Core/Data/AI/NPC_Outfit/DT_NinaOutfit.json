@@ -2,17 +2,19 @@
   {
     "Type": "DataTable",
     "Name": "DT_NinaOutfit",
+    "Class": "UScriptClass'DataTable'",
     "Properties": {
       "RowStruct": {
-        "ObjectName": "ScriptStruct C_NPCAppearances",
+        "ObjectName": "ScriptStruct'C_NPCAppearances'",
         "ObjectPath": "/Script/ProjectCoral"
       }
     },
     "Rows": {
       "Default": {
+        "enabled": true,
         "Appearances": {
           "DataTable": {
-            "ObjectName": "DataTable DT_NPCOutfitList",
+            "ObjectName": "DataTable'DT_NPCOutfitList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCOutfitList.0"
           },
           "RowName": "Default"
@@ -21,7 +23,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Normal"
@@ -34,7 +36,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Annoyed"
@@ -47,7 +49,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Blushing"
@@ -60,7 +62,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Concerned"
@@ -73,7 +75,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Happy"
@@ -86,7 +88,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Angry"
@@ -99,7 +101,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Sad"
@@ -112,7 +114,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Surprised"
@@ -124,14 +126,87 @@
           }
         ],
         "SkeletalMeshes": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/SK_Nina_v2_1.SK_Nina_v2_1",
+          "SubPathString": ""
+        },
+        "StaticMesh": {
           "AssetPathName": "None",
           "SubPathString": ""
+        },
+        "dialogPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScale": 1.0,
+        "relationshipPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "relationshipPortraitScale": 1.0,
+        "kawaiiPhysicsSetting": {
+          "physicsSettingMap": [
+            {
+              "BackHair": {
+                "physicsSetting": {
+                  "Damping": 0.08,
+                  "WorldDampingLocation": 0.9,
+                  "WorldDampingRotation": 0.9,
+                  "Stiffness": 0.05,
+                  "Radius": 3.0,
+                  "LimitAngle": 10.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -100.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            },
+            {
+              "HairFront": {
+                "physicsSetting": {
+                  "Damping": 0.08,
+                  "WorldDampingLocation": 0.9,
+                  "WorldDampingRotation": 0.9,
+                  "Stiffness": 0.05,
+                  "Radius": 3.0,
+                  "LimitAngle": 10.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -100.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            },
+            {
+              "NinaSkirt": {
+                "physicsSetting": {
+                  "Damping": 0.1,
+                  "WorldDampingLocation": 0.8,
+                  "WorldDampingRotation": 0.8,
+                  "Stiffness": 0.05,
+                  "Radius": 3.0,
+                  "LimitAngle": 0.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -1000.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            }
+          ]
         }
       },
       "Summer": {
+        "enabled": true,
         "Appearances": {
           "DataTable": {
-            "ObjectName": "DataTable DT_NPCOutfitList",
+            "ObjectName": "DataTable'DT_NPCOutfitList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCOutfitList.0"
           },
           "RowName": "Summer"
@@ -140,117 +215,172 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Normal"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Default_Spring.Nina_Default_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Summer/Nina_Default_Summer.Nina_Default_Summer",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Annoyed"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Annoyed_Spring.Nina_Annoyed_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Summer/Nina_Annoyed_Summer.Nina_Annoyed_Summer",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Blushing"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Blushing_Spring.Nina_Blushing_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Summer/Nina_Blushing_Summer.Nina_Blushing_Summer",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Concerned"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Concerned_Spring.Nina_Concerned_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Summer/Nina_Concerned_Summer.Nina_Concerned_Summer",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Happy"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Happy_Spring.Nina_Happy_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Summer/Nina_Happy_Summer.Nina_Happy_Summer",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Angry"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Angry_Spring.Nina_Angry_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Summer/Nina_Angry_Summer.Nina_Angry_Summer",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Sad"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Sad_Spring.Nina_Sad_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Summer/Nina_Sad_Summer.Nina_Sad_Summer",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Surprised"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Surprised_Spring.Nina_Surprised_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Summer/Nina_Surprised_Summer.Nina_Surprised_Summer",
               "SubPathString": ""
             }
           }
         ],
         "SkeletalMeshes": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Optimized/Summer/SK_Nina_Summer_V2_1.SK_Nina_Summer_V2_1",
+          "SubPathString": ""
+        },
+        "StaticMesh": {
           "AssetPathName": "None",
           "SubPathString": ""
+        },
+        "dialogPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScale": 1.0,
+        "relationshipPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "relationshipPortraitScale": 1.0,
+        "kawaiiPhysicsSetting": {
+          "physicsSettingMap": [
+            {
+              "BackHair": {
+                "physicsSetting": {
+                  "Damping": 0.08,
+                  "WorldDampingLocation": 0.9,
+                  "WorldDampingRotation": 0.9,
+                  "Stiffness": 0.05,
+                  "Radius": 3.0,
+                  "LimitAngle": 10.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -100.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            },
+            {
+              "HairFront": {
+                "physicsSetting": {
+                  "Damping": 0.08,
+                  "WorldDampingLocation": 0.9,
+                  "WorldDampingRotation": 0.9,
+                  "Stiffness": 0.05,
+                  "Radius": 3.0,
+                  "LimitAngle": 10.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -100.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            }
+          ]
         }
       },
       "Fall": {
+        "enabled": true,
         "Appearances": {
           "DataTable": {
-            "ObjectName": "DataTable DT_NPCOutfitList",
+            "ObjectName": "DataTable'DT_NPCOutfitList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCOutfitList.0"
           },
           "RowName": "Fall"
@@ -259,117 +389,172 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Normal"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Default_Spring.Nina_Default_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Fall/Nina_Default_Fall.Nina_Default_Fall",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Annoyed"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Annoyed_Spring.Nina_Annoyed_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Fall/Nina_Annoyed_Fall.Nina_Annoyed_Fall",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Blushing"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Blushing_Spring.Nina_Blushing_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Fall/Nina_Blushing_Fall.Nina_Blushing_Fall",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Concerned"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Concerned_Spring.Nina_Concerned_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Fall/Nina_Concerned_Fall.Nina_Concerned_Fall",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Happy"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Happy_Spring.Nina_Happy_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Fall/Nina_Happy_Fall.Nina_Happy_Fall",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Angry"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Angry_Spring.Nina_Angry_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Fall/Nina_Angry_Fall.Nina_Angry_Fall",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Sad"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Sad_Spring.Nina_Sad_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Fall/Nina_Sad_Fall.Nina_Sad_Fall",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Surprised"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Surprised_Spring.Nina_Surprised_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Fall/Nina_Surprised_Fall.Nina_Surprised_Fall",
               "SubPathString": ""
             }
           }
         ],
         "SkeletalMeshes": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Optimized/Fall/SK_Nina_Fall_V2_1.SK_Nina_Fall_V2_1",
+          "SubPathString": ""
+        },
+        "StaticMesh": {
           "AssetPathName": "None",
           "SubPathString": ""
+        },
+        "dialogPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScale": 1.0,
+        "relationshipPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "relationshipPortraitScale": 1.0,
+        "kawaiiPhysicsSetting": {
+          "physicsSettingMap": [
+            {
+              "BackHair": {
+                "physicsSetting": {
+                  "Damping": 0.08,
+                  "WorldDampingLocation": 0.9,
+                  "WorldDampingRotation": 0.9,
+                  "Stiffness": 0.05,
+                  "Radius": 3.0,
+                  "LimitAngle": 10.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -100.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            },
+            {
+              "HairFront": {
+                "physicsSetting": {
+                  "Damping": 0.08,
+                  "WorldDampingLocation": 0.9,
+                  "WorldDampingRotation": 0.9,
+                  "Stiffness": 0.05,
+                  "Radius": 3.0,
+                  "LimitAngle": 10.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -100.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            }
+          ]
         }
       },
       "Winter": {
+        "enabled": false,
         "Appearances": {
           "DataTable": {
-            "ObjectName": "DataTable DT_NPCOutfitList",
+            "ObjectName": "DataTable'DT_NPCOutfitList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCOutfitList.0"
           },
           "RowName": "Winter"
@@ -378,117 +563,172 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Normal"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Default_Spring.Nina_Default_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Winter/Nina_Default_Winter.Nina_Default_Winter",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Annoyed"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Annoyed_Spring.Nina_Annoyed_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Winter/Nina_Annoyed_Winter.Nina_Annoyed_Winter",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Blushing"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Blushing_Spring.Nina_Blushing_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Winter/Nina_Blushing_Winter.Nina_Blushing_Winter",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Concerned"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Concerned_Spring.Nina_Concerned_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Winter/Nina_Concerned_Winter.Nina_Concerned_Winter",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Happy"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Happy_Spring.Nina_Happy_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Winter/Nina_Happy_Winter.Nina_Happy_Winter",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Angry"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Angry_Spring.Nina_Angry_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Winter/Nina_Angry_Winter.Nina_Angry_Winter",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Sad"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Sad_Spring.Nina_Sad_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Winter/Nina_Sad_Winter.Nina_Sad_Winter",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Surprised"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Spring/Nina_Surprised_Spring.Nina_Surprised_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Winter/Nina_Surprised_Winter.Nina_Surprised_Winter",
               "SubPathString": ""
             }
           }
         ],
         "SkeletalMeshes": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Optimized/Winter/SK_Nina_Winter_V2_1.SK_Nina_Winter_V2_1",
+          "SubPathString": ""
+        },
+        "StaticMesh": {
           "AssetPathName": "None",
           "SubPathString": ""
+        },
+        "dialogPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScale": 1.0,
+        "relationshipPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "relationshipPortraitScale": 1.0,
+        "kawaiiPhysicsSetting": {
+          "physicsSettingMap": [
+            {
+              "BackHair": {
+                "physicsSetting": {
+                  "Damping": 0.08,
+                  "WorldDampingLocation": 0.9,
+                  "WorldDampingRotation": 0.9,
+                  "Stiffness": 0.05,
+                  "Radius": 3.0,
+                  "LimitAngle": 10.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -100.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            },
+            {
+              "HairFront": {
+                "physicsSetting": {
+                  "Damping": 0.08,
+                  "WorldDampingLocation": 0.9,
+                  "WorldDampingRotation": 0.9,
+                  "Stiffness": 0.05,
+                  "Radius": 3.0,
+                  "LimitAngle": 10.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -100.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            }
+          ]
         }
       },
       "BathingSuit": {
+        "enabled": true,
         "Appearances": {
           "DataTable": {
-            "ObjectName": "DataTable DT_NPCOutfitList",
+            "ObjectName": "DataTable'DT_NPCOutfitList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCOutfitList.0"
           },
           "RowName": "BathingSuit"
@@ -497,7 +737,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Normal"
@@ -510,7 +750,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Angry"
@@ -523,7 +763,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Annoyed"
@@ -536,7 +776,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Blushing"
@@ -549,7 +789,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Concerned"
@@ -562,7 +802,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Happy"
@@ -575,7 +815,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Sad"
@@ -588,7 +828,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Surprised"
@@ -602,12 +842,67 @@
         "SkeletalMeshes": {
           "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Optimized/Beachwear/SK_Nina_BathSuit_V2_1.SK_Nina_BathSuit_V2_1",
           "SubPathString": ""
+        },
+        "StaticMesh": {
+          "AssetPathName": "None",
+          "SubPathString": ""
+        },
+        "dialogPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScale": 1.0,
+        "relationshipPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "relationshipPortraitScale": 1.0,
+        "kawaiiPhysicsSetting": {
+          "physicsSettingMap": [
+            {
+              "BackHair": {
+                "physicsSetting": {
+                  "Damping": 0.08,
+                  "WorldDampingLocation": 0.9,
+                  "WorldDampingRotation": 0.9,
+                  "Stiffness": 0.05,
+                  "Radius": 3.0,
+                  "LimitAngle": 10.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -100.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            },
+            {
+              "HairFront": {
+                "physicsSetting": {
+                  "Damping": 0.08,
+                  "WorldDampingLocation": 0.9,
+                  "WorldDampingRotation": 0.9,
+                  "Stiffness": 0.05,
+                  "Radius": 3.0,
+                  "LimitAngle": 10.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -100.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            }
+          ]
         }
       },
       "BeachCleanUp": {
+        "enabled": true,
         "Appearances": {
           "DataTable": {
-            "ObjectName": "DataTable DT_NPCOutfitList",
+            "ObjectName": "DataTable'DT_NPCOutfitList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCOutfitList.0"
           },
           "RowName": "BeachCleanUp"
@@ -616,7 +911,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Normal"
@@ -630,6 +925,187 @@
         "SkeletalMeshes": {
           "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Optimized/Beachwear/SK_Nina_BathSuit_V2_1.SK_Nina_BathSuit_V2_1",
           "SubPathString": ""
+        },
+        "StaticMesh": {
+          "AssetPathName": "None",
+          "SubPathString": ""
+        },
+        "dialogPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScale": 1.0,
+        "relationshipPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "relationshipPortraitScale": 1.0,
+        "kawaiiPhysicsSetting": {
+          "physicsSettingMap": [
+            {
+              "BackHair": {
+                "physicsSetting": {
+                  "Damping": 0.08,
+                  "WorldDampingLocation": 0.9,
+                  "WorldDampingRotation": 0.9,
+                  "Stiffness": 0.05,
+                  "Radius": 3.0,
+                  "LimitAngle": 10.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -100.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            },
+            {
+              "HairFront": {
+                "physicsSetting": {
+                  "Damping": 0.08,
+                  "WorldDampingLocation": 0.9,
+                  "WorldDampingRotation": 0.9,
+                  "Stiffness": 0.05,
+                  "Radius": 3.0,
+                  "LimitAngle": 10.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -100.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            }
+          ]
+        }
+      },
+      "Wedding": {
+        "enabled": false,
+        "Appearances": {
+          "DataTable": {
+            "ObjectName": "DataTable'DT_NPCOutfitList'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCOutfitList.0"
+          },
+          "RowName": "Wedding"
+        },
+        "images": [
+          {
+            "EmotionRow": {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_EmotionList'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
+              },
+              "RowName": "Blushing"
+            },
+            "texture": {
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Wedding/Nina_Wedding_blushing.Nina_Wedding_blushing",
+              "SubPathString": ""
+            }
+          },
+          {
+            "EmotionRow": {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_EmotionList'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
+              },
+              "RowName": "Normal"
+            },
+            "texture": {
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Wedding/Nina_Wedding_Default.Nina_Wedding_Default",
+              "SubPathString": ""
+            }
+          },
+          {
+            "EmotionRow": {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_EmotionList'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
+              },
+              "RowName": "Happy"
+            },
+            "texture": {
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Portraits/Wedding/Nina_Wedding_happy.Nina_Wedding_happy",
+              "SubPathString": ""
+            }
+          }
+        ],
+        "SkeletalMeshes": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Nina/Optimized/Wedding/SK_Nina_Wedding_V2_1.SK_Nina_Wedding_V2_1",
+          "SubPathString": ""
+        },
+        "StaticMesh": {
+          "AssetPathName": "None",
+          "SubPathString": ""
+        },
+        "dialogPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScale": 1.0,
+        "relationshipPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "relationshipPortraitScale": 1.0,
+        "kawaiiPhysicsSetting": {
+          "physicsSettingMap": [
+            {
+              "BackHair": {
+                "physicsSetting": {
+                  "Damping": 0.08,
+                  "WorldDampingLocation": 0.09,
+                  "WorldDampingRotation": 0.09,
+                  "Stiffness": 0.05,
+                  "Radius": 3.0,
+                  "LimitAngle": 10.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -100.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            },
+            {
+              "HairFront": {
+                "physicsSetting": {
+                  "Damping": 0.08,
+                  "WorldDampingLocation": 0.09,
+                  "WorldDampingRotation": 0.09,
+                  "Stiffness": 0.05,
+                  "Radius": 3.0,
+                  "LimitAngle": 10.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -100.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            },
+            {
+              "NinaSkirt": {
+                "physicsSetting": {
+                  "Damping": 0.1,
+                  "WorldDampingLocation": 1.0,
+                  "WorldDampingRotation": 1.0,
+                  "Stiffness": 0.05,
+                  "Radius": 3.0,
+                  "LimitAngle": 20.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -1000.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            }
+          ]
         }
       }
     }

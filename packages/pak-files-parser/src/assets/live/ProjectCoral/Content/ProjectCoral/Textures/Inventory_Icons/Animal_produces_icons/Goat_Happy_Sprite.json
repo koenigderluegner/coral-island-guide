@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Goat_Happy_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 5.0,
+              "Y": 0.0,
+              "Z": 0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 244.0,
+            "Y": 10.0,
+            "Z": 251.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "F01E805D4B3564A5E8CE9A915DCD62C2"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Goat_Happy_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 256.0,
+        "Y": 256.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Goat_Happy'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Textures/Goat_Happy.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Goat_Happy_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Goat_Happy_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 127.0,
+          "Y": 126.0,
+          "Z": 0.99609375,
+          "W": 0.0078125
+        },
+        {
+          "X": -117.0,
+          "Y": 126.0,
+          "Z": 0.04296875,
+          "W": 0.0078125
+        },
+        {
+          "X": -117.0,
+          "Y": -125.0,
+          "Z": 0.04296875,
+          "W": 0.98828125
+        },
+        {
+          "X": 127.0,
+          "Y": -125.0,
+          "Z": 0.99609375,
+          "W": 0.98828125
+        },
+        {
+          "X": 127.0,
+          "Y": 126.0,
+          "Z": 0.99609375,
+          "W": 0.0078125
+        },
+        {
+          "X": -117.0,
+          "Y": -125.0,
+          "Z": 0.04296875,
+          "W": 0.98828125
+        }
+      ]
+    }
+  }
+]

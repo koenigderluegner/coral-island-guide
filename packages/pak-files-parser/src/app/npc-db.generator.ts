@@ -18,7 +18,7 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
     constructor(protected itemMap: Map<string, Item>, filepath: string) {
         super();
         this.datatable = readAsset(filepath);
-        this.petNPCs = environment.isBeta ? readAsset('ProjectCoral/Content/ProjectCoral/AdoptablePets/NPC/DT_PetNPCs.json') : [];
+        this.petNPCs = readAsset('ProjectCoral/Content/ProjectCoral/AdoptablePets/NPC/DT_PetNPCs.json');
     }
 
     handleEntry(itemKey: string, dbItem: RawNPC): NPC {
