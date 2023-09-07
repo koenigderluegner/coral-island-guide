@@ -99,25 +99,20 @@ export class DatabaseService {
             this.fetchFruitPlants$(),
             this.fetchGiftingPreferences$(),
             this.fetchOfferings$(),
-            ...(
-                this._settings.getSettings().useBeta
-                    ? [this.fetchShopItemData$("blacksmith"),
-                        this.fetchShopProcessItems$("blacksmith"),
-                        this.fetchShopItemData$("lab"),
-                        this.fetchShopProcessItems$("lab"),
-                        this.fetchShopItemData$("carpenter"),
-                        this.fetchShopItemData$("general-store"),
-                        this.fetchShopItemData$("ranch"),
-                        this.fetchShopItemData$("beach-shack"),
-                        this.fetchShopItemData$("merfolk-general-store"),
-                        this.fetchShopItemData$("merfolk-oracle-tail-store"),
-                        this.fetchShopItemData$("pet-shop"),
-                        this.fetchItemUpgradeData$("blacksmith"),
-                        this.fetchItemUpgradeData$("carpenter"),
-                        this.fetchItemUpgradeData$("lab"),
-                    ]
-                    : []
-            )
+            this.fetchShopItemData$("blacksmith"),
+            this.fetchShopProcessItems$("blacksmith"),
+            this.fetchShopItemData$("lab"),
+            this.fetchShopProcessItems$("lab"),
+            this.fetchShopItemData$("carpenter"),
+            this.fetchShopItemData$("general-store"),
+            this.fetchShopItemData$("ranch"),
+            this.fetchShopItemData$("beach-shack"),
+            this.fetchShopItemData$("merfolk-general-store"),
+            this.fetchShopItemData$("merfolk-oracle-tail-store"),
+            this.fetchShopItemData$("pet-shop"),
+            this.fetchItemUpgradeData$("blacksmith"),
+            this.fetchItemUpgradeData$("carpenter"),
+            this.fetchItemUpgradeData$("lab"),
         ]);
     }
 

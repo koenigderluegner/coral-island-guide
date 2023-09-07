@@ -3,7 +3,7 @@
         <app-module-sidebar-item [uiIcon]="uiIcon.OFFERING" routerLink="lake-temple">Lake temple
         </app-module-sidebar-item>
         <ng-container *ngFor="let shopName of shops">
-            <app-module-sidebar-item *ngIf="settings.getSettings().useBeta" [routerLink]="shopName"
+            <app-module-sidebar-item [routerLink]="shopName"
                                      [uiIcon]="SHOP_ICONS[shopName]">{{SHOP_DISPLAY_NAMES[shopName]}}
             </app-module-sidebar-item>
         </ng-container>

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { UiIcon } from '../shared/enums/ui-icon.enum';
-import { SettingsService } from "../shared/services/settings.service";
 
 @Component({
     selector: 'app-people',
@@ -8,7 +7,4 @@ import { SettingsService } from "../shared/services/settings.service";
 })
 export class NPCsComponent {
     uiIcons = UiIcon;
-
-    constructor(protected settings: SettingsService) {
-    }
 }

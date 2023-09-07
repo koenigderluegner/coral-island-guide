@@ -1,9 +1,11 @@
 ## Changelog
 
-### TBD
+### 0.11.0 2023-09-07
 
 #### Added
 
+- Added live data up to update v0.5-148
+    - Removed all "beta only" locks
 - Added lab produce upgrades
 - Added ranch (without animals) and beach shack shops
 - Added auto opt-out of beta if no beta is ongoing
