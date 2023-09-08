@@ -3,27 +3,24 @@ import { CookingRecipe, Item, OfferingReward } from "@ci/data-types";
 import { Datatable } from "../interfaces/datatable.interface";
 import { minifyItem, readAsset } from "../util/functions";
 import { RawOfferingReward } from "../interfaces/raw-data-interfaces/raw-offering-reward.interface";
-import {
-    OfferingRewardConfig,
-    OfferingRewardConfigAddItem,
-    OfferingRewardConfigCookingRecipe,
-    OfferingRewardsConfigEffects
-} from "../types/offering-reward-config.type";
+import { GameplayEffectsConfig, GameplayEffectsConfigEntry } from "../types/offering-reward-config.type";
 import { OfferingMatch } from "../interfaces/offering-match.interface";
+import { RawAddItemToInventoryEffect } from "../interfaces/raw-data-interfaces/da-file-parse/effects/add-item-to-inventory-effect.type";
+import { RawUnlockCookingRecipeEffect } from "../interfaces/raw-data-interfaces/da-file-parse/effects/unlock-cooking-recipe-effect.type";
 
 export class OfferingRewardsDbGenerator extends BaseGenerator<RawOfferingReward, OfferingMatch> {
 
     datatable: Datatable<RawOfferingReward>[] = readAsset<Datatable<RawOfferingReward>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_OfferingRewardRegistry.json');
-    private rewardsDa: OfferingRewardConfig[];
-    private rewardsConfig: OfferingRewardsConfigEffects;
+    private rewardsDa: GameplayEffectsConfigEntry[];
+    private rewardsConfig: GameplayEffectsConfig;
     private cookingrecipes: CookingRecipe[];
 
     constructor(protected itemMap: Map<string, Item>, protected cookingMap: Map<string, Record<string, CookingRecipe[]>>) {
         super();
 
-        this.rewardsDa = readAsset<OfferingRewardConfig[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DA_OfferingReward.json');
+        this.rewardsDa = readAsset<GameplayEffectsConfigEntry[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DA_OfferingReward.json');
 
-        this.rewardsConfig = this.rewardsDa.find(a => a.Type === "C_GameplayEffectsConfig") as OfferingRewardsConfigEffects;
+        this.rewardsConfig = this.rewardsDa.find((a): a is GameplayEffectsConfig => a.Type === "C_GameplayEffectsConfig")!;
 
         const utensilRecipes = [...this.cookingMap.values()][0];
         this.cookingrecipes = []
@@ -54,7 +51,7 @@ export class OfferingRewardsDbGenerator extends BaseGenerator<RawOfferingReward,
 
                 // need to trim ' as they changed their syntax using ' instead of whitespaces
                 key = key.replace(/^\'+/, '').replace(/\'+$/, '');
-                const reward = this.rewardsDa.find(a => a.Name === key) as OfferingRewardConfigCookingRecipe | OfferingRewardConfigAddItem;
+                const reward = this.rewardsDa.find(a => a.Name === key) as RawUnlockCookingRecipeEffect | RawAddItemToInventoryEffect;
 
                 if ('itemData' in reward.Properties) {
                     const item = this.itemMap.get(reward.Properties.itemData.itemID);

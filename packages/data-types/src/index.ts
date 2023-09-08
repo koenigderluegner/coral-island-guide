@@ -1,3 +1,11 @@
+export * from './lib/types/effects/effect.type';
+export * from './lib/types/effects/add-item-to-inventory-effect.type';
+export * from './lib/types/effects/boost-max-stamina-effect.type';
+export * from './lib/types/effects/set-quest-fact-value-effect.type';
+export * from './lib/types/effects/unlock-cooking-recipe-effect.type';
+export * from './lib/types/effects/unlock-cooking-utensil-effect.type';
+export * from './lib/types/effects/unlock-crafting-recipe-effect.type';
+
 export * from './lib/interfaces/base-crop.interface';
 export * from './lib/interfaces/consumable.interface';
 export * from './lib/interfaces/cooking-recipe.interface';
