@@ -20,8 +20,7 @@ export class AchievementGenerator {
                 id: rawAchievement.achievementId,
                 title: rawAchievement.achievementTitle.LocalizedString,
                 description: rawAchievement.achievementDesc.LocalizedString,
-                iconName: convertToIconName(rawAchievement.icon.AssetPathName).replace('.png', ''),
-
+                iconName: convertToIconName(rawAchievement.icon.AssetPathName.split('.').pop() ?? '').replace('.png', ''),
             }
 
             map.set(rawAchievement.achievementId, achievement)

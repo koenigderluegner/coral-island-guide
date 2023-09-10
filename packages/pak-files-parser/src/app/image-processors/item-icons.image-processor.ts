@@ -11,7 +11,8 @@ import sharp from "sharp";
 export class ItemIconsImageProcessor {
 
 
-    filesToDelete: string[] = []
+    filesToDelete: string[] = [];
+    processedImageNames: Set<string> = new Set<string>();
 
     constructor(protected sourcePath: string, protected outputPath: string, protected skipIfExists = true) {
 
@@ -48,6 +49,12 @@ export class ItemIconsImageProcessor {
             }
 
 
+            glob('**/*.png', {cwd: this.sourcePath,}, async (error: Error | null, images: string[]) => {
+                await this.processUnmappedImages(images, this.skipIfExists);
+
+            })
+
+
         });
     }
 
@@ -68,10 +75,15 @@ export class ItemIconsImageProcessor {
         const webpPath = path.join(this.outputPath, fileName + '.webp');
 
         const webpTargetExists = fs.existsSync(webpPath);
-        if (skipIfExists  && webpTargetExists) return;
 
         const filePath = data.Properties.BakedSourceTexture.ObjectPath.split('.');
         filePath.pop()
+
+        const basename = filePath.join('.').split('/').pop() + '.png';
+        if (basename)
+            this.processedImageNames.add(basename);
+        if (skipIfExists && webpTargetExists) return;
+
 
         const imageMetaData = {
             fileName,
@@ -96,6 +108,34 @@ export class ItemIconsImageProcessor {
             }
 
 
+        }
+    }
+
+    private async processUnmappedImages(images: string[], skipIfExists: boolean) {
+        for (const imagePath of images) {
+            const basename = imagePath.split('/').pop() ?? '';
+            const fullSourcePath = path.join(this.sourcePath, imagePath);
+
+            if (!this.processedImageNames.has(basename) && !imagePath.includes('NPCHeadPortraits')) {
+                const targetBasename = basename.replace('.png', '') + '.webp';
+                const webpPath = path.join(this.outputPath, targetBasename);
+
+                const webpTargetExists = fs.existsSync(webpPath);
+
+                if (skipIfExists && webpTargetExists) continue;
+
+                const image = sharp(fullSourcePath);
+
+                try {
+                    if (!webpTargetExists || !skipIfExists)
+                        await image.webp().toFile(path.join(this.outputPath, targetBasename));
+
+                } catch (e) {
+                    console.log(e);
+                }
+
+
+            }
         }
     }
 
