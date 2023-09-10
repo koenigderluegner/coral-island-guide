@@ -4,6 +4,8 @@ import { RawShopItemData } from "../interfaces/raw-data-interfaces/raw-shop-item
 import { minifyItem, readAsset } from "../util/functions";
 import { Datatable } from "../interfaces/datatable.interface";
 import { getEnumValue } from "@ci/util";
+import { EffectEntry, RequirementEntry } from "./da-files-parser";
+
 
 export class ShopItemDataGenerator extends BaseGenerator<RawShopItemData, ShopItemData> {
 
@@ -20,6 +22,20 @@ export class ShopItemDataGenerator extends BaseGenerator<RawShopItemData, ShopIt
         const foundItem = this.itemMap.get(dbItem.item.itemID);
 
         if (!foundItem) return;
+
+        const effectsAndRequirements: { effects?: EffectEntry, requirements?: RequirementEntry } = {}
+
+        const requirements = this.getRequirements(itemKey);
+
+        if (requirements && requirements.requirements.length) {
+            effectsAndRequirements.requirements = requirements
+        }
+
+        const effects = this.getEffects(itemKey);
+
+        if (effects && effects.effects.length) {
+            effectsAndRequirements.effects = effects
+        }
 
         const item: ShopItemData['item'] = {
             ...minifyItem(foundItem),
@@ -72,7 +88,8 @@ export class ShopItemDataGenerator extends BaseGenerator<RawShopItemData, ShopIt
             priority: dbItem.priority,
             ...sinceDate,
             ...tillDate,
-            ...timeRange
+            ...timeRange,
+            ...effectsAndRequirements
         };
     }
 

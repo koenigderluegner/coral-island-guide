@@ -8,30 +8,55 @@ import { Logger } from "../util/logger.class";
 import {
     AddItemToInventoryEffect,
     BoostMaxStaminaEffect,
+    CountNpcHeartLevelRequirement,
+    EditorOnlyRequirement,
     Effect,
+    IsAchievementCompletedRequirement,
+    IsCutsceneTriggeredRequirement,
+    IsGiantUnlockedRequirement,
     Item,
+    MarriageHasProposedRequirement,
+    MinimalItem,
+    MountAcquiredRequirement,
+    QuestFactRequirement,
+    Requirement,
     SetQuestFactValueEffect,
+    SpecialItemRequirement,
     UnlockCookingRecipeEffect,
     UnlockCookingUtensilEffect,
     UnlockCraftingRecipeEffect
 } from "@ci/data-types";
-import { getEnumValue } from "@ci/util";
+import { getEnumValue, nonNullable } from "@ci/util";
 import path from "path";
 import fs from 'fs';
 import { environment } from "../environments/environment";
-import { GameplayRequirementsConfigEntry } from "../interfaces/raw-data-interfaces/da-file-parse/requirements/gameplay-requirement-config.type";
+import {
+    GameplayRequirementsConfig,
+    GameplayRequirementsConfigEntry,
+    GameplayRequirementsConfigMap
+} from "../interfaces/raw-data-interfaces/da-file-parse/requirements/gameplay-requirement-config.type";
+
+export type EffectEntry = {
+    key: string,
+    effects: Effect[]
+};
+export type EffectMap = Map<string, EffectEntry>;
+
+export type RequirementEntry = {
+    key: string,
+    type: string,
+    requirements: Requirement[]
+};
+export type RequirementMap = Map<string, RequirementEntry>;
 
 export class DaFilesParser {
 
     readAssets: Map<string, GameplayEffectsConfigEntry[] | GameplayRequirementsConfigEntry[]> = new Map<string, GameplayEffectsConfigEntry[] | GameplayRequirementsConfigEntry[]>()
 
     constructor(protected itemMap: Map<string, Item>) {
-        this.parse('ProjectCoral/Content/ProjectCoral/Data/Offering/DA_OfferingReward.json');
-        this.parse('ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_ConcernedMonkeyBuyEffect.json');
-        this.parse('ProjectCoral/Content/ProjectCoral/Core/Data/Shops/CraftShop/DA_CraftingShopEffect.json');
     }
 
-    parse(filePath: string) {
+    parse(filePath: string): EffectMap | RequirementMap | undefined {
         const fullPath = path.join(environment.assetPath, filePath)
         if (!this.readAssets.has(fullPath)) {
 
@@ -44,21 +69,25 @@ export class DaFilesParser {
 
         const readFile = this.readAssets.get(fullPath)!
 
-        let mappingEntry: GameplayRequirementsConfigEntry | GameplayEffectsConfig | undefined = readFile.find((a): a is GameplayEffectsConfig => a.Type === "C_GameplayEffectsConfig");
+        let mappingEntry: GameplayRequirementsConfig | GameplayEffectsConfig | undefined = readFile.find((a): a is GameplayEffectsConfig => a.Type === "C_GameplayEffectsConfig");
 
         if (mappingEntry) {
-            this.parseGameplayEffects(mappingEntry);
+            return this.parseGameplayEffects(mappingEntry);
         }
-        mappingEntry = readFile.find((a): a is GameplayRequirementsConfigEntry => a.Type === "C_GameplayEffectsConfig");
+        mappingEntry = readFile.find((a): a is GameplayRequirementsConfig => a.Type === "C_GameplayRequirementsConfig");
 
         if (mappingEntry) {
-            this.parseGameplayEffects(mappingEntry);
+            return this.parseGameplayRequirements(mappingEntry);
         }
+
+        return undefined
+
 
     }
 
 
-    private parseGameplayEffects(mappingEntry: GameplayEffectsConfig) {
+    private parseGameplayEffects(mappingEntry: GameplayEffectsConfig): EffectMap {
+        const result = new Map<string, EffectEntry>
         const map = mappingEntry.Properties.map;
 
 
@@ -69,13 +98,13 @@ export class DaFilesParser {
         } else {
             conf = map
         }
-        // console.log(conf)
+
 
         const keys = Object.keys(conf);
 
         keys.forEach(key => {
 
-            conf[key].effects.map(effect => {
+            const effects = conf[key].effects.map(effect => {
 
                 const [daPath, index] = effect.ObjectPath.split('.');
 
@@ -170,12 +199,168 @@ export class DaFilesParser {
                     }
                 }
 
-                console.log(daEffect)
+                return daEffect;
+
+            }).filter(nonNullable)
+
+            result.set(key, {key, effects})
+        })
+
+        return result
+    }
+
+    private parseGameplayRequirements(mappingEntry: GameplayRequirementsConfig): RequirementMap {
+        const result: RequirementMap = new Map<string, RequirementEntry>
+        const map = mappingEntry.Properties.map;
 
 
-            })
+        let conf: GameplayRequirementsConfigMap;
 
+        if (Array.isArray(map)) {
+            conf = map.reduce((previousValue, currentValue) => ({...previousValue, ...currentValue}), {})
+        } else {
+            conf = map
+        }
+
+
+        const keys = Object.keys(conf);
+
+        keys.forEach(key => {
+
+
+            const reqs = conf[key].requirements.map(effect => {
+
+                const [daPath, index] = effect.ObjectPath.split('.');
+
+                const daJson = daPath + '.json';
+                const fullDaPath = path.join(environment.assetPath, daJson)
+                if (!this.readAssets.has(fullDaPath)) {
+
+                    // if (fs.existsSync(fullDaPath)) {
+                    //     this.readAssets.set(fullDaPath, readAsset<(GameplayEffectsConfigEntry)[]>(daJson));
+                    // } else {
+                    //     Logger.error(`Da-File does not exist ${fullDaPath}`)
+                    // }
+
+                }
+
+                const foundEffect = (this.readAssets.get(fullDaPath) as GameplayRequirementsConfigEntry[] | undefined)?.[+index];
+
+                if (!foundEffect) {
+                    Logger.error(`Didnt find ${key}.${index}`);
+                    return
+                }
+
+                let daEffect: Requirement | undefined = undefined;
+
+                switch (foundEffect.Type) {
+                    case "C_CountNPCHeartLevelRequirement": {
+                        daEffect = {
+                            type: "CountNPCHeartLevel",
+                            meta: {
+                                expectedHeartLevel: foundEffect.Properties.expectedHeartLevel
+                            }
+                        } satisfies CountNpcHeartLevelRequirement;
+                        break;
+                    }
+
+                    case "C_EditorOnlyRequirement": {
+                        daEffect = {
+                            type: "EditorOnly",
+
+                        } satisfies EditorOnlyRequirement;
+
+                        break;
+                    }
+
+                    case "C_IsAchievementCompletedRequirement": {
+                        daEffect = {
+                            type: "IsAchievementCompleted",
+                            meta: {
+                                achievementId: foundEffect.Properties.achievementId
+                            }
+                        } satisfies IsAchievementCompletedRequirement;
+                        break;
+                    }
+                    case "C_IsCutsceneTriggeredRequirement": {
+                        daEffect = {
+                            type: "IsCutsceneTriggered",
+                            meta: {
+                                cutsceneTopic: foundEffect.Properties.cutsceneTopic
+                            }
+                        } satisfies IsCutsceneTriggeredRequirement;
+                        break;
+                    }
+
+                    case "C_IsGiantUnlockedRequirement": {
+                        daEffect = {
+                            type: "IsGiantUnlocked",
+                            meta: {
+                                types: foundEffect.Properties.types
+                            }
+                        } satisfies IsGiantUnlockedRequirement;
+                        break;
+                    }
+
+
+                    case "C_MarriageHasProposedRequirement": {
+                        daEffect = {
+                            type: "MarriageHasProposed",
+                            meta: {inverted: foundEffect.Properties?.invertResult},
+
+                        } satisfies MarriageHasProposedRequirement;
+                        break;
+                    }
+
+
+                    case "C_MountAcquiredRequirement": {
+                        daEffect = {
+                            type: "MountAcquired",
+                            meta: {}
+
+                        } satisfies MountAcquiredRequirement;
+                        break;
+                    }
+
+
+                    case "C_QuestFactRequirement": {
+                        daEffect = {
+                            type: "QuestFact",
+                            meta: {
+                                factName: foundEffect.Properties.fact.factName.RowName
+                            }
+                        } satisfies QuestFactRequirement;
+                        break;
+                    }
+
+
+                    case "C_SpecialItemRequirement": {
+                        daEffect = {
+                            type: "SpecialItem",
+                            meta: {
+                                item: foundEffect.Properties.item.RowName as unknown as MinimalItem
+                            }
+                        } satisfies SpecialItemRequirement;
+                        break;
+                    }
+
+
+                    default: {
+                        Logger.error(`Cannot find requirement definition for ${foundEffect.Type} in ${fullDaPath}`)
+                    }
+
+                }
+
+
+                return daEffect;
+
+            }).filter(nonNullable)
+
+            result.set(key, {key, type: getEnumValue(conf[key].type), requirements: reqs})
 
         })
+
+        return result;
     }
 }
+

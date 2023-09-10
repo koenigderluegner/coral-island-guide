@@ -1,12 +1,29 @@
 import { Datatable } from '../interfaces/datatable.interface';
+import { DaFilesParser, EffectEntry, EffectMap, RequirementEntry, RequirementMap } from "./da-files-parser";
+import { Item } from "@ci/data-types";
+import { isEffectMap, isRequirementMap } from "../util/functions";
+import { nonNullable } from "@ci/util";
+
+export type GeneratorOptions = { daFiles?: string[] }
+
 
 export abstract class BaseGenerator<DT, R> {
 
     abstract datatable: Datatable<DT>[];
+    options?: GeneratorOptions
+    effectMaps: EffectMap[] = [];
+    requirementMaps: RequirementMap[] = [];
 
     abstract handleEntry(itemKey: string, dbItem: DT): R | undefined;
 
-    generate(): Map<string, R> {
+    generate(options?: { daFiles: string[], itemDbMap: Map<string, Item> }): Map<string, R> {
+        this.options = options;
+
+        if (options) {
+            this.getEffectsAndRequirements(options.daFiles, options.itemDbMap)
+        }
+
+
         const map: Map<string, R> = new Map<string, R>();
 
         Object.keys(this.datatable?.[0]?.Rows).forEach(itemKey => {
@@ -25,4 +42,27 @@ export abstract class BaseGenerator<DT, R> {
         return this.datatable?.[0]?.Rows[itemKey];
     }
 
+    getEffects(itemKey: string): EffectEntry | undefined {
+        return this.effectMaps.map(map => map.get(itemKey)).filter(nonNullable)[0]
+    }
+
+    getRequirements(itemKey: string): RequirementEntry | undefined {
+        return this.requirementMaps.map(map => map.get(itemKey)).filter(nonNullable)[0]
+    }
+
+    private getEffectsAndRequirements(daFiles: string[], itemDbMap: Map<string, Item>) {
+        const parser = new DaFilesParser(itemDbMap);
+
+        daFiles.forEach(filePath => {
+
+            const map = parser.parse(filePath);
+
+            if (isEffectMap(map))
+                this.effectMaps.push(map)
+
+            if (isRequirementMap(map))
+                this.requirementMaps.push(map)
+
+        })
+    }
 }

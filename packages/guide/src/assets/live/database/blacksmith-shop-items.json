@@ -156,7 +156,22 @@
     "priority": 10,
     "availableSinceDate": false,
     "availableTillDate": false,
-    "availableDuringTime": false
+    "availableDuringTime": false,
+    "requirements": {
+      "key": "locket",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "CountNPCHeartLevel",
+          "meta": {
+            "expectedHeartLevel": 8
+          }
+        },
+        {
+          "type": "EditorOnly"
+        }
+      ]
+    }
   },
   {
     "item": {
@@ -178,6 +193,27 @@
     "priority": 11,
     "availableSinceDate": false,
     "availableTillDate": false,
-    "availableDuringTime": false
+    "availableDuringTime": false,
+    "requirements": {
+      "key": "diamondRing",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "CountNPCHeartLevel",
+          "meta": {
+            "expectedHeartLevel": 10
+          }
+        },
+        {
+          "type": "MarriageHasProposed",
+          "meta": {
+            "inverted": true
+          }
+        },
+        {
+          "type": "EditorOnly"
+        }
+      ]
+    }
   }
 ]
