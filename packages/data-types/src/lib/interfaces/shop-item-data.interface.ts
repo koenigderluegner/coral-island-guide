@@ -1,5 +1,5 @@
-import { Item, MinimalItem, SpecificDate, Time } from "@ci/data-types";
-import { EffectEntry, RequirementEntry } from "../../../../pak-files-parser/src/app/da-files-parser";
+import { Effect, Item, MinimalItem, SpecificDate, Time } from "@ci/data-types";
+import { RequirementEntry } from "../../../../pak-files-parser/src/app/da-files-parser";
 
 
 export type ShopItemData = {
@@ -20,6 +20,6 @@ export type ShopItemData = {
     "tillDate"?: SpecificDate,
     "availableDuringTime": boolean,
     "timeRange"?: { "fromTime": Time, "toTime": Time };
-    effects?: EffectEntry,
+    effects?: Effect[],
     requirements?: RequirementEntry
 }

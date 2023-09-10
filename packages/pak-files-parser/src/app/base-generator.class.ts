@@ -1,6 +1,6 @@
 import { Datatable } from '../interfaces/datatable.interface';
-import { DaFilesParser, EffectEntry, EffectMap, RequirementEntry, RequirementMap } from "./da-files-parser";
-import { Item } from "@ci/data-types";
+import { DaFilesParser, EffectMap, RequirementEntry, RequirementMap } from "./da-files-parser";
+import { Effect, Item } from "@ci/data-types";
 import { isEffectMap, isRequirementMap } from "../util/functions";
 import { nonNullable } from "@ci/util";
 
@@ -42,8 +42,8 @@ export abstract class BaseGenerator<DT, R> {
         return this.datatable?.[0]?.Rows[itemKey];
     }
 
-    getEffects(itemKey: string): EffectEntry | undefined {
-        return this.effectMaps.map(map => map.get(itemKey)).filter(nonNullable)[0]
+    getEffects(itemKey: string): Effect[] | undefined {
+        return this.effectMaps.map(map => map.get(itemKey)).filter(nonNullable).map(e => e.effects).flat()
     }
 
     getRequirements(itemKey: string): RequirementEntry | undefined {

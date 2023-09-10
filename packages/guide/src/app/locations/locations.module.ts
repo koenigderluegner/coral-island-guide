@@ -27,6 +27,7 @@ import { PetAdoptionDetailsComponent } from './components/pet-adoption-details/p
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RanchComponent } from './components/shops/ranch/ranch.component';
 import { BeachShackComponent } from './components/shops/beach-shack/beach-shack.component';
+import { ConcernedMonkeyComponent } from "./components/shops/concerned-monkey/concerned-monkey.component";
 
 @NgModule({
     declarations: [
@@ -50,6 +51,7 @@ import { BeachShackComponent } from './components/shops/beach-shack/beach-shack.
         PetAdoptionDetailsComponent,
         RanchComponent,
         BeachShackComponent,
+        ConcernedMonkeyComponent
     ],
     imports: [
         CommonModule,

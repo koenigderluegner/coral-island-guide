@@ -108,6 +108,17 @@ try {
 
         'consumables': new ConsumablesDbGenerator(),
 
+
+        'concerned-monkey-shop-items': {
+            generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopConcernedMonke.json').generate({
+                itemDbMap,
+                daFiles: [
+                    'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_ConcernedMonkeyBuyEffect.json',
+                    'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_ShopConcernedAdvanceRequirement.json'
+                ]
+            })
+        },
+
         'blacksmith-opening-hours': new BlacksmithOpeningHoursGenerator(),
         'blacksmith-shop-items': {
             generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DT_BlacksmithShop_AlphaV1.json').generate({

@@ -1,10 +1,10 @@
 import { BaseGenerator } from "./base-generator.class";
-import { Item, ShopItemData } from "@ci/data-types";
+import { Effect, Item, ShopItemData } from "@ci/data-types";
 import { RawShopItemData } from "../interfaces/raw-data-interfaces/raw-shop-item-data.interface";
 import { minifyItem, readAsset } from "../util/functions";
 import { Datatable } from "../interfaces/datatable.interface";
 import { getEnumValue } from "@ci/util";
-import { EffectEntry, RequirementEntry } from "./da-files-parser";
+import { RequirementEntry } from "./da-files-parser";
 
 
 export class ShopItemDataGenerator extends BaseGenerator<RawShopItemData, ShopItemData> {
@@ -23,7 +23,7 @@ export class ShopItemDataGenerator extends BaseGenerator<RawShopItemData, ShopIt
 
         if (!foundItem) return;
 
-        const effectsAndRequirements: { effects?: EffectEntry, requirements?: RequirementEntry } = {}
+        const effectsAndRequirements: { effects?: Effect[], requirements?: RequirementEntry } = {}
 
         const requirements = this.getRequirements(itemKey);
 
@@ -33,7 +33,7 @@ export class ShopItemDataGenerator extends BaseGenerator<RawShopItemData, ShopIt
 
         const effects = this.getEffects(itemKey);
 
-        if (effects && effects.effects.length) {
+        if (effects && effects.length) {
             effectsAndRequirements.effects = effects
         }
 
