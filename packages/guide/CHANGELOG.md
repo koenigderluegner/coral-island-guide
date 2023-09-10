@@ -2,7 +2,11 @@
 
 ### TBD
 
+#### Added
+
 - Added concerned monkey shop
+- Added requirements and effects to concerned monkey and blacksmith.
+    - Further additions will come at a later point
 
 ### 0.11.0 2023-09-07
 
