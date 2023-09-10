@@ -1,0 +1,29 @@
+<ng-container *ngIf="requirement.type === 'IsAchievementCompleted'">
+    Achievement '{{requirement.meta.achievement.title}}' unlocked
+</ng-container>
+<ng-container *ngIf="requirement.type === 'MountAcquired'">
+    Mount {{requirement.meta.inverted ? 'not ' : ''}} acquired
+</ng-container>
+<ng-container *ngIf="requirement.type === 'EditorOnly'">
+    Game in developer editor
+</ng-container>
+<ng-container *ngIf="requirement.type === 'CountNPCHeartLevel'">
+    Reached {{requirement.meta.expectedHeartLevel}} hearts with any NPC
+</ng-container>
+<ng-container *ngIf="requirement.type === 'IsCutsceneTriggered'">
+    Viewed {{requirement.meta.cutsceneTopic}} cutscene
+</ng-container>
+<ng-container *ngIf="requirement.type === 'MarriageHasProposed'">
+    Marriage {{requirement.meta.inverted ? "hasn't been " : ''}}proposed
+</ng-container>
+<ng-container *ngIf="requirement.type === 'IsGiantUnlocked'">
+    Unlocked {{requirement.meta.types}} giants
+</ng-container>
+<ng-container *ngIf="requirement.type === 'QuestFact'">
+    Quest fact {{requirement.meta.factName}} set
+</ng-container>
+<div *ngIf="requirement.type === 'SpecialItem'" class="inline-flex">
+    Acquired special item
+    <app-item-icon [itemName]="requirement.meta.item.iconName" class="!w-7 ml-1"/>
+    {{requirement.meta.item.displayName}}
+</div>

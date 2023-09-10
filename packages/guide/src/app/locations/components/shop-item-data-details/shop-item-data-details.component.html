@@ -71,5 +71,26 @@
         </span>
     </div>
 
+    <div *ngIf="shopItemData.effects && shopItemData.effects.length" class="my-2">Effects when bought:
+        <div class="flex flex-col text-black">
+            <app-effect *ngFor="let effect of shopItemData.effects" [effect]="effect"/>
+        </div>
+    </div>
+
+    <div *ngIf="shopItemData.requirements && shopItemData.requirements.requirements.length" class="my-2">
+        <ng-container *ngIf="shopItemData.requirements.requirements.length > 1">
+            Unlock requirements ({{shopItemData.requirements.type === 'And' ? 'all' : 'any'}} of them):
+        </ng-container>
+        <ng-container *ngIf="shopItemData.requirements.requirements.length < 2">
+            Unlock requirement:
+        </ng-container>
+
+
+        <div class="flex flex-col  text-black">
+            <app-requirements *ngFor="let requirement of shopItemData.requirements.requirements"
+                              [requirement]="requirement"/>
+        </div>
+    </div>
+
 
 </app-base-item-card>

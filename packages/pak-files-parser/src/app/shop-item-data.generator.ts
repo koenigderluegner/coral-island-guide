@@ -1,10 +1,9 @@
 import { BaseGenerator } from "./base-generator.class";
-import { Effect, Item, ShopItemData } from "@ci/data-types";
+import { Effect, Item, RequirementEntry, ShopItemData } from "@ci/data-types";
 import { RawShopItemData } from "../interfaces/raw-data-interfaces/raw-shop-item-data.interface";
 import { minifyItem, readAsset } from "../util/functions";
 import { Datatable } from "../interfaces/datatable.interface";
 import { getEnumValue } from "@ci/util";
-import { RequirementEntry } from "./da-files-parser";
 
 
 export class ShopItemDataGenerator extends BaseGenerator<RawShopItemData, ShopItemData> {

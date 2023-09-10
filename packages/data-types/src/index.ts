@@ -46,6 +46,8 @@ export * from './lib/interfaces/shop-item-data.interface';
 export * from './lib/interfaces/item-process-shop-data.interface';
 export * from './lib/interfaces/item-upgrade-data.interface';
 export * from './lib/interfaces/pet-shop-adoptions.interface';
+export * from './lib/interfaces/achievement.interface';
+export * from './lib/interfaces/special-item.interface';
 
 
 export * from './lib/enums/quality.enum';
@@ -57,3 +59,4 @@ export * from './lib/types/gift-preference.type';
 export * from './lib/types/generic-entry.type';
 export * from './lib/types/item-entry.type';
 export * from './lib/types/shop-names.type';
+export * from './lib/types/requirement-entry.type';

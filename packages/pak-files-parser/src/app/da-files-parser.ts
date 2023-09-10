@@ -6,6 +6,7 @@ import {
 } from "../types/offering-reward-config.type";
 import { Logger } from "../util/logger.class";
 import {
+    Achievement,
     AddItemToInventoryEffect,
     BoostMaxStaminaEffect,
     CountNpcHeartLevelRequirement,
@@ -16,11 +17,12 @@ import {
     IsGiantUnlockedRequirement,
     Item,
     MarriageHasProposedRequirement,
-    MinimalItem,
     MountAcquiredRequirement,
     QuestFactRequirement,
     Requirement,
+    RequirementEntry,
     SetQuestFactValueEffect,
+    SpecialItem,
     SpecialItemRequirement,
     UnlockCookingRecipeEffect,
     UnlockCookingUtensilEffect,
@@ -42,19 +44,17 @@ export type EffectEntry = {
 };
 export type EffectMap = Map<string, EffectEntry>;
 
-export type RequirementEntry = {
-    key: string,
-    type: string,
-    requirements: Requirement[]
-};
+
 export type RequirementMap = Map<string, RequirementEntry>;
 
 export class DaFilesParser {
 
+    static ItemMap: Map<string, Item>;
+    static SpecialItemMap: Map<string, SpecialItem>;
+    static AchievementMap: Map<string, Achievement>;
+
     readAssets: Map<string, GameplayEffectsConfigEntry[] | GameplayRequirementsConfigEntry[]> = new Map<string, GameplayEffectsConfigEntry[] | GameplayRequirementsConfigEntry[]>()
 
-    constructor(protected itemMap: Map<string, Item>) {
-    }
 
     parse(filePath: string): EffectMap | RequirementMap | undefined {
         const fullPath = path.join(environment.assetPath, filePath)
@@ -137,7 +137,7 @@ export class DaFilesParser {
                     case "C_AddItemToInventoryEffect": {
 
                         const {itemData, ...rest} = foundEffect.Properties
-                        const item = this.itemMap.get(itemData.itemID)
+                        const item = DaFilesParser.ItemMap.get(itemData.itemID)
 
                         if (!item) return;
 
@@ -172,7 +172,7 @@ export class DaFilesParser {
                     }
                     case "C_UnlockCookingRecipeEffect": {
 
-                        const item = this.itemMap.get(foundEffect.Properties.recipe.RowName)
+                        const item = DaFilesParser.ItemMap.get(foundEffect.Properties.recipe.RowName)
 
                         if (!item) return;
 
@@ -186,7 +186,7 @@ export class DaFilesParser {
                     }
                     case "C_UnlockCraftingRecipeEffect": {
 
-                        const item = this.itemMap.get(foundEffect.Properties.recipe.RowName)
+                        const item = DaFilesParser.ItemMap.get(foundEffect.Properties.recipe.RowName)
 
                         if (!item) return;
 
@@ -274,10 +274,16 @@ export class DaFilesParser {
                     }
 
                     case "C_IsAchievementCompletedRequirement": {
+
+                        const achievement = DaFilesParser.AchievementMap.get(foundEffect.Properties.achievementId)
+
+                        if (!achievement) return;
+
+
                         daEffect = {
                             type: "IsAchievementCompleted",
                             meta: {
-                                achievementId: foundEffect.Properties.achievementId
+                                achievement
                             }
                         } satisfies IsAchievementCompletedRequirement;
                         break;
@@ -335,10 +341,16 @@ export class DaFilesParser {
 
 
                     case "C_SpecialItemRequirement": {
+
+                        const item = DaFilesParser.SpecialItemMap.get(foundEffect.Properties.item.RowName)
+
+                        if (!item) return;
+
+
                         daEffect = {
                             type: "SpecialItem",
                             meta: {
-                                item: foundEffect.Properties.item.RowName as unknown as MinimalItem
+                                item: minifyItem(item)
                             }
                         } satisfies SpecialItemRequirement;
                         break;

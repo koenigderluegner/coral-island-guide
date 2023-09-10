@@ -1,5 +1,4 @@
-import { Effect, Item, MinimalItem, SpecificDate, Time } from "@ci/data-types";
-import { RequirementEntry } from "../../../../pak-files-parser/src/app/da-files-parser";
+import { Effect, Item, MinimalItem, RequirementEntry, SpecificDate, Time } from "@ci/data-types";
 
 
 export type ShopItemData = {

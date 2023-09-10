@@ -1,6 +1,8 @@
+import { Achievement } from "../../interfaces/achievement.interface";
+
 export type IsAchievementCompletedRequirement = {
     type: "IsAchievementCompleted",
     meta: {
-        achievementId: string
+        achievement: Achievement
     }
 }

@@ -1,6 +1,6 @@
 import { Datatable } from '../interfaces/datatable.interface';
-import { DaFilesParser, EffectMap, RequirementEntry, RequirementMap } from "./da-files-parser";
-import { Effect, Item } from "@ci/data-types";
+import { DaFilesParser, EffectMap, RequirementMap } from "./da-files-parser";
+import { Effect, RequirementEntry } from "@ci/data-types";
 import { isEffectMap, isRequirementMap } from "../util/functions";
 import { nonNullable } from "@ci/util";
 
@@ -16,11 +16,11 @@ export abstract class BaseGenerator<DT, R> {
 
     abstract handleEntry(itemKey: string, dbItem: DT): R | undefined;
 
-    generate(options?: { daFiles: string[], itemDbMap: Map<string, Item> }): Map<string, R> {
+    generate(options?: GeneratorOptions): Map<string, R> {
         this.options = options;
 
-        if (options) {
-            this.getEffectsAndRequirements(options.daFiles, options.itemDbMap)
+        if (options && options.daFiles) {
+            this.getEffectsAndRequirements(options.daFiles)
         }
 
 
@@ -50,8 +50,8 @@ export abstract class BaseGenerator<DT, R> {
         return this.requirementMaps.map(map => map.get(itemKey)).filter(nonNullable)[0]
     }
 
-    private getEffectsAndRequirements(daFiles: string[], itemDbMap: Map<string, Item>) {
-        const parser = new DaFilesParser(itemDbMap);
+    private getEffectsAndRequirements(daFiles: string[]) {
+        const parser = new DaFilesParser();
 
         daFiles.forEach(filePath => {
 

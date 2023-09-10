@@ -26,13 +26,18 @@ import { ShopItemDataGenerator } from "./app/shop-item-data.generator";
 import { ItemProcessShopGenerator } from "./app/item-process-shop.generator";
 import { ItemUpgradeDataGenerator } from "./app/item-upgrade-data.generator";
 import { LabOpeningHoursGenerator } from "./app/opening-hours-generators/lab-opening-hours.generator";
-import { GeneralStoreOpeningHoursGenerator } from "./app/opening-hours-generators/general-store-opening-hours.generator";
+import {
+    GeneralStoreOpeningHoursGenerator
+} from "./app/opening-hours-generators/general-store-opening-hours.generator";
 import { RanchOpeningHoursGenerator } from "./app/opening-hours-generators/ranch-opening-hours.generator";
 import { BeachShackOpeningHoursGenerator } from "./app/opening-hours-generators/beach-shack-opening-hours.generator";
 import { CarpenterOpeningHoursGenerator } from "./app/opening-hours-generators/carpenter-opening-hours.generator";
 import { PetShopAdoptionsGenerator } from "./app/pet-shop-adoptions.generator";
 import { Logger } from "./util/logger.class";
 import { NpcPortraitsImageProcessor } from "./app/image-processors/npc-portraits.image-processor";
+import { AchievementGenerator } from "./app/achievement.generator";
+import { DaFilesParser } from "./app/da-files-parser";
+import { SpecialItemDbGenerator } from "./app/special-item-db.generator";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
@@ -49,6 +54,8 @@ const readable = !parsedArgs['prepare'] && true;
 
 const itemDbGenerator = new ItemDbGenerator();
 const itemDbMap = itemDbGenerator.generate();
+
+DaFilesParser.ItemMap = itemDbMap;
 
 const npcDbGenerator = new NPCDbGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.json');
 const npcDbMap = npcDbGenerator.generate();
@@ -74,7 +81,30 @@ try {
     if (environment.isBeta) {
         betaGenerators = {}
     } else {
-        liveGenerators = {}
+        const achievementGenerator = new AchievementGenerator();
+        const achievementMap = achievementGenerator.generate();
+
+        DaFilesParser.AchievementMap = achievementMap;
+
+        const specialItemDbGenerator = new SpecialItemDbGenerator();
+        const specialItemDbMap = specialItemDbGenerator.generate();
+
+        DaFilesParser.SpecialItemMap = specialItemDbMap;
+
+        liveGenerators = {
+
+            'concerned-monkey-shop-items': {
+                generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopConcernedMonke.json').generate({
+                    daFiles: [
+                        'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_ConcernedMonkeyBuyEffect.json',
+                        'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_ShopConcernedAdvanceRequirement.json'
+                    ]
+                })
+            },
+
+            'achievements': {generate: () => achievementMap},
+            'special-items': {generate: () => specialItemDbMap},
+        }
     }
 
 
@@ -109,20 +139,9 @@ try {
         'consumables': new ConsumablesDbGenerator(),
 
 
-        'concerned-monkey-shop-items': {
-            generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopConcernedMonke.json').generate({
-                itemDbMap,
-                daFiles: [
-                    'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_ConcernedMonkeyBuyEffect.json',
-                    'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_ShopConcernedAdvanceRequirement.json'
-                ]
-            })
-        },
-
         'blacksmith-opening-hours': new BlacksmithOpeningHoursGenerator(),
         'blacksmith-shop-items': {
             generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DT_BlacksmithShop_AlphaV1.json').generate({
-                itemDbMap,
                 daFiles: ['ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DA_BlacksmithItemRequirement.json']
             })
         },

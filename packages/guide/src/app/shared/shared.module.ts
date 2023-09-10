@@ -27,7 +27,9 @@ import { IsCropPipe } from './pipes/is-crop.pipe';
 import { RefinementsListComponent } from './components/refinements-list/refinements-list.component';
 import { CastToQualityPipe } from './pipes/cast-to-quality.pipe';
 import { ProcessingTimeComponent } from './components/processing-time/processing-time.component';
-import { ProcessingTimePerQualityComponent } from './components/processing-time-per-quality/processing-time-per-quality.component';
+import {
+    ProcessingTimePerQualityComponent
+} from './components/processing-time-per-quality/processing-time-per-quality.component';
 import { TableItemListComponent } from './components/table-item-list/table-item-list.component';
 import { CraftingRecipeIngredientsPipe } from './pipes/crafting-recipe-ingredients.pipe';
 import { CookingRecipeIngredientsPipe } from './pipes/cooking-recipe-ingredients.pipe';
@@ -41,8 +43,12 @@ import { IsItemPipe } from './pipes/is-item.pipe';
 import { NonSpecializedTableComponent } from './components/non-specialized-table/non-specialized-table.component';
 import { MatSortModule } from '@angular/material/sort';
 import { IsBaseCropPipe } from './pipes/is-base-crop.pipe';
-import { BaseSelectableContainerComponent } from './components/base-selectable-container/base-selectable-container.component';
-import { BaseTabbedSelectableContainerComponent } from './components/base-tabbed-selectable-container/base-tabbed-selectable-container.component';
+import {
+    BaseSelectableContainerComponent
+} from './components/base-selectable-container/base-selectable-container.component';
+import {
+    BaseTabbedSelectableContainerComponent
+} from './components/base-tabbed-selectable-container/base-tabbed-selectable-container.component';
 import { IsFishPipe } from './pipes/is-fish.pipe';
 import { IngameDatePipe } from './pipes/ingame-date.pipe';
 import { IngameTimePipe } from './pipes/ingame-time.pipe';
@@ -50,6 +56,8 @@ import { TownrankPipe } from './pipes/townrank.pipe';
 import { IsMinimalItemPipe } from './pipes/is-minimal-item.pipe';
 import { NpcPortraitComponent } from './components/npc-portrait/npc-portrait.component';
 import { NpcHeadPortraitComponent } from './components/npc-head-portrait/npc-head-portrait.component';
+import { EffectComponent } from './components/effect/effect.component';
+import { RequirementsComponent } from './components/requirements/requirements.component';
 
 @NgModule({
     declarations: [
@@ -93,6 +101,8 @@ import { NpcHeadPortraitComponent } from './components/npc-head-portrait/npc-hea
         IsMinimalItemPipe,
         NpcPortraitComponent,
         NpcHeadPortraitComponent,
+        EffectComponent,
+        RequirementsComponent,
     ],
     imports: [
         CommonModule,
@@ -146,6 +156,8 @@ import { NpcHeadPortraitComponent } from './components/npc-head-portrait/npc-hea
         IsMinimalItemPipe,
         NpcPortraitComponent,
         NpcHeadPortraitComponent,
+        EffectComponent,
+        RequirementsComponent,
     ],
 })
 export class SharedModule {}
