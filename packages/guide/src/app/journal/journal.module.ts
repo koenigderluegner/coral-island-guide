@@ -21,6 +21,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CropTableComponent } from './components/tables/crop-table/crop-table.component';
+import { AchievementsComponent } from './components/achievements/achievements.component';
 
 @NgModule({
     declarations: [
@@ -35,6 +36,7 @@ import { CropTableComponent } from './components/tables/crop-table/crop-table.co
         FoundTableComponent,
         ProduceTableComponent,
         CropTableComponent,
+        AchievementsComponent,
     ],
     imports: [
         CommonModule,

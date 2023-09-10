@@ -4,6 +4,7 @@
 
 #### Added
 
+- Added achievements to journal
 - Added concerned monkey shop
 - Added requirements and effects to concerned monkey and blacksmith.
     - Further additions will come at a later point
