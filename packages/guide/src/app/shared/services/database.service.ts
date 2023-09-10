@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { combineLatest, map, Observable, of, shareReplay, tap } from 'rxjs';
 import {
+    Achievement,
     Consumable,
     CookingRecipe,
     CraftingRecipe,
@@ -75,6 +76,7 @@ export class DatabaseService {
     private _PET_SHOP_ADOPTIONS: PetShopAdoptions[] = [];
     private _NPCS: NPC[] = [];
     private _NPCS$?: Observable<NPC[]>;
+    private _ACHHIEVEMENTS$?: Observable<Achievement[]>;
 
 
     constructor(private readonly _http: HttpClient,
@@ -148,6 +150,17 @@ export class DatabaseService {
                 );
         }
         return this._NPCS$;
+    }
+
+
+    fetchAchievements$(): Observable<Achievement[]> {
+        if (!this._ACHHIEVEMENTS$) {
+            this._ACHHIEVEMENTS$ = this._http.get<Achievement[]>(`${this._BASE_PATH}/achievements.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+        return this._ACHHIEVEMENTS$;
     }
 
 

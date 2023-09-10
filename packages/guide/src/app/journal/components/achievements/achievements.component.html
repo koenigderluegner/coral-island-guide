@@ -1,0 +1,11 @@
+<div *ngIf="_database | async as achievements"
+     class="grid gap-4 sm:grid-cols-2 2xl:grid-cols-3  xl:px-[50px] pt-2 pb-6 2xl:pt-[60px]">
+
+    <div *ngFor="let achievement of achievements" class="flex bg-white/30 rounded-[15px] gap-x-4 p-2">
+        <app-item-icon [itemName]="achievement.iconName" class="!w-14"/>
+        <div class="flex flex-col text-black">
+            <div class="font-semibold text-2xl">{{achievement.title}}</div>
+            <div>{{achievement.description}}</div>
+        </div>
+    </div>
+</div>
