@@ -1,3 +1,23 @@
+export * from './lib/types/effects/effect.type';
+export * from './lib/types/effects/add-item-to-inventory-effect.type';
+export * from './lib/types/effects/boost-max-stamina-effect.type';
+export * from './lib/types/effects/set-quest-fact-value-effect.type';
+export * from './lib/types/effects/unlock-cooking-recipe-effect.type';
+export * from './lib/types/effects/unlock-cooking-utensil-effect.type';
+export * from './lib/types/effects/unlock-crafting-recipe-effect.type';
+
+
+export * from './lib/types/requirements/count-npc-heart-level-requirement.type';
+export * from './lib/types/requirements/editor-only-requirement.type';
+export * from './lib/types/requirements/is-achivement-completed-requirement.type';
+export * from './lib/types/requirements/is-cutscene-triggered-requirement.type';
+export * from './lib/types/requirements/is-giant-unlocked-requirement.type';
+export * from './lib/types/requirements/marriage-has-proposed-requirement.type';
+export * from './lib/types/requirements/mount-acquired-requirement.type';
+export * from './lib/types/requirements/quest-fact-requirement.type';
+export * from './lib/types/requirements/requirement.type';
+export * from './lib/types/requirements/special-item-requirements.type';
+
 export * from './lib/interfaces/base-crop.interface';
 export * from './lib/interfaces/consumable.interface';
 export * from './lib/interfaces/cooking-recipe.interface';
@@ -26,6 +46,8 @@ export * from './lib/interfaces/shop-item-data.interface';
 export * from './lib/interfaces/item-process-shop-data.interface';
 export * from './lib/interfaces/item-upgrade-data.interface';
 export * from './lib/interfaces/pet-shop-adoptions.interface';
+export * from './lib/interfaces/achievement.interface';
+export * from './lib/interfaces/special-item.interface';
 
 
 export * from './lib/enums/quality.enum';
@@ -37,3 +59,4 @@ export * from './lib/types/gift-preference.type';
 export * from './lib/types/generic-entry.type';
 export * from './lib/types/item-entry.type';
 export * from './lib/types/shop-names.type';
+export * from './lib/types/requirement-entry.type';

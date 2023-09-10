@@ -1,55 +1,19 @@
-export type OfferingRewardConfigStaminaFruit = {
-    "Type": "C_BoostMaxStaminaEffect",
-    "Name": string;
-    "Outer": "DA_OfferingReward"
-};
-
-export type OfferingRewardConfigAddItem = {
-    "Type": "C_AddItemToInventoryEffect",
-    "Name": string;
-    "Outer": "DA_OfferingReward",
-    "Properties": {
-        "itemData": {
-            "data": {
-                "RowName": string;
-            },
-            "itemID": string;
-        },
-        "quantity"?: number,
-        "isQuestReward"?: boolean
-    }
-};
+import { DaEffects } from "../interfaces/raw-data-interfaces/da-file-parse/effects/da-effects.type";
 
 
-export type OfferingRewardConfigCookingRecipe = {
-    "Type": "C_UnlockCookingRecipeEffect",
-    "Name": string;
-    "Outer": "DA_OfferingReward",
-    "Properties": {
-        "recipe": {
-            "RowName": string;
-        }
-    }
-}
-
-
-export type OfferingRewardsConfigEffects = {
+export type GameplayEffectsConfig = {
     "Type": "C_GameplayEffectsConfig",
-    "Name": "DA_OfferingReward",
+    "Name": string;
     "Properties": {
-        "map": OfferingRewardsConfigEffectsMap | OfferingRewardsConfigEffectsMap[]
+        "map": GameplayEffectsConfigMap | GameplayEffectsConfigMap[]
     }
 }
 
-type OfferingRewardsConfigEffectsMap = Record<string, {
+export type GameplayEffectsConfigMap = Record<string, {
     "effects": {
         "ObjectName": string;
         "ObjectPath": string;
     }            []
 }>
 
-export type OfferingRewardConfig =
-    OfferingRewardConfigStaminaFruit
-    | OfferingRewardsConfigEffects
-    | OfferingRewardConfigCookingRecipe
-    | OfferingRewardConfigAddItem
+export type GameplayEffectsConfigEntry = GameplayEffectsConfig | DaEffects

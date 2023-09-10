@@ -1,4 +1,4 @@
-import { Item, MinimalItem, SpecificDate, Time } from "@ci/data-types";
+import { Effect, Item, MinimalItem, RequirementEntry, SpecificDate, Time } from "@ci/data-types";
 
 
 export type ShopItemData = {
@@ -19,4 +19,6 @@ export type ShopItemData = {
     "tillDate"?: SpecificDate,
     "availableDuringTime": boolean,
     "timeRange"?: { "fromTime": Time, "toTime": Time };
+    effects?: Effect[],
+    requirements?: RequirementEntry
 }

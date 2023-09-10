@@ -1,9 +1,10 @@
 import fs from 'fs';
 import path from 'path';
-import { Item, MinimalItem } from '@ci/data-types';
+import { MinimalItem } from '@ci/data-types';
 import { config } from "../config";
 import { SourceString } from "../types/source-string.type";
 import { environment } from "../environments/environment";
+import { EffectMap, RequirementMap } from "../app/da-files-parser";
 
 export function getParsedArgs(): Record<string, any> {
     return process.argv
@@ -66,7 +67,7 @@ export function convertToIconName(objectName: string): string {
     return sanitizedName;
 }
 
-export function minifyItem(item: Item): MinimalItem {
+export function minifyItem(item: { id: string, displayName: string, iconName: string | null }): MinimalItem {
     return {
         id: item.id,
         displayName: item.displayName,
@@ -88,5 +89,17 @@ export function getReferencedString(a: string): string {
     } else {
         return a.split('\'')[1] ?? '';
     }
+}
+
+export function isEffectMap(value: EffectMap | RequirementMap | undefined): value is EffectMap {
+    if (!notEmpty(value)) return false;
+    const keys = [...value.keys()];
+    return !!keys.length && 'effects' in value.get(keys[0])!
+}
+
+export function isRequirementMap(value: EffectMap | RequirementMap | undefined): value is RequirementMap {
+    if (!notEmpty(value)) return false;
+    const keys = [...value.keys()];
+    return !!keys.length && 'requirements' in value.get(keys[0])!
 }
 

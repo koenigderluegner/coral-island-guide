@@ -107,6 +107,7 @@ export class DatabaseService {
             this.fetchShopItemData$("general-store"),
             this.fetchShopItemData$("ranch"),
             this.fetchShopItemData$("beach-shack"),
+            this.fetchShopItemData$("concerned-monkey"),
             this.fetchShopItemData$("merfolk-general-store"),
             this.fetchShopItemData$("merfolk-oracle-tail-store"),
             this.fetchShopItemData$("pet-shop"),

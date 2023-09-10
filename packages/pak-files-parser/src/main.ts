@@ -1,38 +1,43 @@
 import { generateJson, getParsedArgs } from './util/functions';
 import { ItemDbGenerator } from './app/item-db.generator';
-import { CraftingRecipeDbGenerator } from './app/crafting-recipe-db.generator';
-import { BugsAndInsectsDbGenerator } from './app/bugs-and-insects-db.generator';
-import { OceanCritterDbGenerator } from './app/ocean-critter-db.generator';
-import { FishDbGenerator } from './app/fish-db.generator';
-import { JournalOrderDbGenerator } from './app/journal-order-db.generator';
-import { CropsDbGenerator } from './app/crops-db.generator';
-import { TagBasedItemGenericDbGenerator } from './app/tag-based-item-generic-db.generator';
-import { ItemProcessorDbGenerator } from './app/item-processor-db.generator';
-import { GiftPreferencesDbGenerator } from './app/gift-preferences-db.generator';
-import { NPCDbGenerator } from './app/npc-db.generator';
-import { CraftingRecipeUnlockedByMasteryDbGenerator } from "./app/crafting-recipe-unlocked-by-mastery-db.generator";
-import { config } from "./config";
-import { CookingRecipeUnlockedByMasteryDbGenerator } from "./app/cooking-recipe-unlocked-by-mastery-db.generator";
+import { environment } from "./environments/environment";
+import chalk from "chalk";
 import { CookingDbGenerator } from "./app/cooking-db.generator";
+import { config } from "./config";
+import { ItemIconsImageProcessor } from "./app/image-processors/item-icons.image-processor";
+import { NPCDbGenerator } from "./app/npc-db.generator";
+import { CraftingRecipeUnlockedByMasteryDbGenerator } from "./app/crafting-recipe-unlocked-by-mastery-db.generator";
+import { CookingRecipeUnlockedByMasteryDbGenerator } from "./app/cooking-recipe-unlocked-by-mastery-db.generator";
+import { TagBasedItemGenericDbGenerator } from "./app/tag-based-item-generic-db.generator";
+import { CraftingRecipeDbGenerator } from "./app/crafting-recipe-db.generator";
+import { BugsAndInsectsDbGenerator } from "./app/bugs-and-insects-db.generator";
+import { OceanCritterDbGenerator } from "./app/ocean-critter-db.generator";
+import { FishDbGenerator } from "./app/fish-db.generator";
+import { CropsDbGenerator } from "./app/crops-db.generator";
 import { FruitTreeDbGenerator } from "./app/fruit-tree-db.generator";
 import { FruitPlantDbGenerator } from "./app/fruit-plant-db.generator";
+import { ItemProcessorDbGenerator } from "./app/item-processor-db.generator";
+import { JournalOrderDbGenerator } from "./app/journal-order-db.generator";
 import { OfferingsDbGenerator } from "./app/offerings-db.generator";
+import { GiftPreferencesDbGenerator } from "./app/gift-preferences-db.generator";
 import { ConsumablesDbGenerator } from "./app/consumables-db.generator";
-import { environment } from "./environments/environment";
 import { BlacksmithOpeningHoursGenerator } from "./app/opening-hours-generators/blacksmith-opening-hours.generator";
 import { ShopItemDataGenerator } from "./app/shop-item-data.generator";
 import { ItemProcessShopGenerator } from "./app/item-process-shop.generator";
-import { LabOpeningHoursGenerator } from "./app/opening-hours-generators/lab-opening-hours.generator";
-import { GeneralStoreOpeningHoursGenerator } from "./app/opening-hours-generators/general-store-opening-hours.generator";
-import { CarpenterOpeningHoursGenerator } from "./app/opening-hours-generators/carpenter-opening-hours.generator";
 import { ItemUpgradeDataGenerator } from "./app/item-upgrade-data.generator";
-import { Logger } from "./util/logger.class";
-import chalk from "chalk";
-import { ItemIconsImageProcessor } from "./app/image-processors/item-icons.image-processor";
-import { PetShopAdoptionsGenerator } from "./app/pet-shop-adoptions.generator";
-import { NpcPortraitsImageProcessor } from "./app/image-processors/npc-portraits.image-processor";
+import { LabOpeningHoursGenerator } from "./app/opening-hours-generators/lab-opening-hours.generator";
+import {
+    GeneralStoreOpeningHoursGenerator
+} from "./app/opening-hours-generators/general-store-opening-hours.generator";
 import { RanchOpeningHoursGenerator } from "./app/opening-hours-generators/ranch-opening-hours.generator";
 import { BeachShackOpeningHoursGenerator } from "./app/opening-hours-generators/beach-shack-opening-hours.generator";
+import { CarpenterOpeningHoursGenerator } from "./app/opening-hours-generators/carpenter-opening-hours.generator";
+import { PetShopAdoptionsGenerator } from "./app/pet-shop-adoptions.generator";
+import { Logger } from "./util/logger.class";
+import { NpcPortraitsImageProcessor } from "./app/image-processors/npc-portraits.image-processor";
+import { AchievementGenerator } from "./app/achievement.generator";
+import { DaFilesParser } from "./app/da-files-parser";
+import { SpecialItemDbGenerator } from "./app/special-item-db.generator";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
@@ -49,6 +54,8 @@ const readable = !parsedArgs['prepare'] && true;
 
 const itemDbGenerator = new ItemDbGenerator();
 const itemDbMap = itemDbGenerator.generate();
+
+DaFilesParser.ItemMap = itemDbMap;
 
 const npcDbGenerator = new NPCDbGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.json');
 const npcDbMap = npcDbGenerator.generate();
@@ -74,7 +81,30 @@ try {
     if (environment.isBeta) {
         betaGenerators = {}
     } else {
-        liveGenerators = {}
+        const achievementGenerator = new AchievementGenerator();
+        const achievementMap = achievementGenerator.generate();
+
+        DaFilesParser.AchievementMap = achievementMap;
+
+        const specialItemDbGenerator = new SpecialItemDbGenerator();
+        const specialItemDbMap = specialItemDbGenerator.generate();
+
+        DaFilesParser.SpecialItemMap = specialItemDbMap;
+
+        liveGenerators = {
+
+            'concerned-monkey-shop-items': {
+                generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopConcernedMonke.json').generate({
+                    daFiles: [
+                        'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_ConcernedMonkeyBuyEffect.json',
+                        'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_ShopConcernedAdvanceRequirement.json'
+                    ]
+                })
+            },
+
+            'achievements': {generate: () => achievementMap},
+            'special-items': {generate: () => specialItemDbMap},
+        }
     }
 
 
@@ -108,8 +138,13 @@ try {
 
         'consumables': new ConsumablesDbGenerator(),
 
+
         'blacksmith-opening-hours': new BlacksmithOpeningHoursGenerator(),
-        'blacksmith-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DT_BlacksmithShop_AlphaV1.json'),
+        'blacksmith-shop-items': {
+            generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DT_BlacksmithShop_AlphaV1.json').generate({
+                daFiles: ['ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DA_BlacksmithItemRequirement.json']
+            })
+        },
         'blacksmith-shop-process-items': new ItemProcessShopGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_NodeCofferProcessShopData.json'),
         'blacksmith-item-upgrade': new ItemUpgradeDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BlacksmithToolsUpgrades_Alpha.json'),
 

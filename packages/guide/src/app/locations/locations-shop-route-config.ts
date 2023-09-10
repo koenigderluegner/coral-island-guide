@@ -9,6 +9,7 @@ import { MerfolkOracleTailStoreComponent } from "./components/shops/merfolk-orac
 import { PetShopComponent } from "./components/pet-shop/pet-shop.component";
 import { RanchComponent } from "./components/shops/ranch/ranch.component";
 import { BeachShackComponent } from "./components/shops/beach-shack/beach-shack.component";
+import { ConcernedMonkeyComponent } from "./components/shops/concerned-monkey/concerned-monkey.component";
 
 export const shopRouteConfig: { name: ShopName, component: Type<any>, betaOnly?: true }[] = [
     {
@@ -37,6 +38,10 @@ export const shopRouteConfig: { name: ShopName, component: Type<any>, betaOnly?:
     {
         name: 'beach-shack',
         component: BeachShackComponent,
+    },
+    {
+        name: 'concerned-monkey',
+        component: ConcernedMonkeyComponent,
     },
     {
         name: 'merfolk-general-store',
