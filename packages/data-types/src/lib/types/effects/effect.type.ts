@@ -4,6 +4,7 @@ import { UnlockCookingRecipeEffect } from "./unlock-cooking-recipe-effect.type";
 import { UnlockCraftingRecipeEffect } from "./unlock-crafting-recipe-effect.type";
 import { SetQuestFactValueEffect } from "./set-quest-fact-value-effect.type";
 import { UnlockCookingUtensilEffect } from "./unlock-cooking-utensil-effect.type";
+import { ConsumeMasteryItemEffect } from "./consume-mastery-item-effect.type";
 
 export type Effect =
     AddItemToInventoryEffect
@@ -11,4 +12,5 @@ export type Effect =
     | SetQuestFactValueEffect
     | UnlockCookingRecipeEffect
     | UnlockCookingUtensilEffect
-    | UnlockCraftingRecipeEffect;
+    | UnlockCraftingRecipeEffect
+    | ConsumeMasteryItemEffect;

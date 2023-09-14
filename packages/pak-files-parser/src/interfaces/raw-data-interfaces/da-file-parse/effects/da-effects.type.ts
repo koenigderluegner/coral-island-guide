@@ -4,6 +4,7 @@ import { RawUnlockCookingRecipeEffect } from "./unlock-cooking-recipe-effect.typ
 import { RawUnlockCraftingRecipeEffect } from "./unlock-crafting-recipe-effect.type";
 import { RawSetQuestFactValueEffect } from "./set-quest-fact-value-effect.type";
 import { RawUnlockCookingUtensilEffect } from "./unlock-cooking-utensil-effect.type";
+import { RawConsumeItemMasterEffect } from "./consume-item-master-effect.type";
 
 export type DaEffects =
     RawAddItemToInventoryEffect
@@ -11,4 +12,5 @@ export type DaEffects =
     | RawSetQuestFactValueEffect
     | RawUnlockCookingRecipeEffect
     | RawUnlockCookingUtensilEffect
-    | RawUnlockCraftingRecipeEffect;
+    | RawUnlockCraftingRecipeEffect
+    | RawConsumeItemMasterEffect;

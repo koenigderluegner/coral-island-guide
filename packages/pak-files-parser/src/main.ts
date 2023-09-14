@@ -26,9 +26,7 @@ import { ShopItemDataGenerator } from "./app/shop-item-data.generator";
 import { ItemProcessShopGenerator } from "./app/item-process-shop.generator";
 import { ItemUpgradeDataGenerator } from "./app/item-upgrade-data.generator";
 import { LabOpeningHoursGenerator } from "./app/opening-hours-generators/lab-opening-hours.generator";
-import {
-    GeneralStoreOpeningHoursGenerator
-} from "./app/opening-hours-generators/general-store-opening-hours.generator";
+import { GeneralStoreOpeningHoursGenerator } from "./app/opening-hours-generators/general-store-opening-hours.generator";
 import { RanchOpeningHoursGenerator } from "./app/opening-hours-generators/ranch-opening-hours.generator";
 import { BeachShackOpeningHoursGenerator } from "./app/opening-hours-generators/beach-shack-opening-hours.generator";
 import { CarpenterOpeningHoursGenerator } from "./app/opening-hours-generators/carpenter-opening-hours.generator";
@@ -38,6 +36,7 @@ import { NpcPortraitsImageProcessor } from "./app/image-processors/npc-portraits
 import { AchievementGenerator } from "./app/achievement.generator";
 import { DaFilesParser } from "./app/da-files-parser";
 import { SpecialItemDbGenerator } from "./app/special-item-db.generator";
+import { MeritExchangeShopDataGenerator } from "./app/merit-exchange-shop-data.generator";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
@@ -98,6 +97,14 @@ try {
                     daFiles: [
                         'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_ConcernedMonkeyBuyEffect.json',
                         'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_ShopConcernedAdvanceRequirement.json'
+                    ]
+                })
+            },
+
+            'merit-exchange-shop-items': {
+                generate: () => new MeritExchangeShopDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_MeritShop.json').generate({
+                    daFiles: [
+                        'ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.json',
                     ]
                 })
             },

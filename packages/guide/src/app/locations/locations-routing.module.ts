@@ -5,6 +5,7 @@ import { LakeTempleComponent } from "./components/lake-temple/lake-temple.compon
 import { onlyInBetaGuard } from "../core/guards/only-in-beta.guard";
 import { ShopDisplayNames } from "@ci/data-types";
 import { shopRouteConfig } from "./locations-shop-route-config";
+import { MeritShopComponent } from "./components/merit-shop/merit-shop.component";
 
 
 const routes: Routes = [
@@ -26,6 +27,11 @@ const routes: Routes = [
                 title: `${ShopDisplayNames[config.name]} - Locations`,
                 canActivate: config.betaOnly ? [onlyInBetaGuard] : []
             })),
+            {
+                path: 'merit-exchange',
+                component: MeritShopComponent,
+                title: `Merit Exchange - Locations`
+            }
 
         ]
     }

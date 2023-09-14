@@ -9,6 +9,7 @@ import {
     Achievement,
     AddItemToInventoryEffect,
     BoostMaxStaminaEffect,
+    ConsumeMasteryItemEffect,
     CountNpcHeartLevelRequirement,
     EditorOnlyRequirement,
     Effect,
@@ -191,11 +192,29 @@ export class DaFilesParser {
                         if (!item) return;
 
                         daEffect = {
-                            type: "UnlockCraftingRecipe", meta: {
+                            type: "UnlockCraftingRecipe",
+                            meta: {
                                 item: minifyItem(item)
                             }
                         } satisfies UnlockCraftingRecipeEffect;
                         break;
+
+
+                    }
+                    case "C_ConsumeItemMasteryEffect": {
+
+                        daEffect = {
+                            type: "ConsumeItemMastery",
+                            meta: {
+                                mastery: getEnumValue(foundEffect.Properties.masteryType)
+                            }
+                        } satisfies ConsumeMasteryItemEffect;
+                        break;
+
+
+                    }
+                    default: {
+                        Logger.error(`Cannot find effect definition for ${foundEffect.Type} in ${fullDaPath}`)
                     }
                 }
 

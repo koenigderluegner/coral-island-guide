@@ -1,0 +1,33 @@
+<app-list-detail-container [(openDrawer)]="openDrawer">
+    <ng-container listDetail>
+        <app-merit-shop-details *ngIf="selectedEntity" [meritExchangeData]="selectedEntity"/>
+    </ng-container>
+
+    <div class="px-2 xl:px-[50px] w-full">
+
+        <app-card>
+            <h1 class="mb-4 font-semibold text-3xl text-black flex items-center gap-x-4 ">
+                <app-ui-icon [uiIcon]="uiIcon.STORE"/>
+                Merit Exchange
+            </h1>
+        </app-card>
+
+        <ng-container *ngIf="shopItemData$">
+            <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Stock list</h2>
+            <ng-container *ngIf="(shopItemData$ |async) as shopItemData">
+                <div *ngIf="!showTable" class="grid gap-4 icon-grid">
+
+                    <app-item-icon (click)="showDetails(shopItem)" *ngFor="let shopItem of shopItemData"
+                                   [class.selected-icon]="selectedEntity?.item?.id === shopItem.item.id"
+                                   [itemName]="shopItem.item.iconName"
+                                   class="icon-grid-item">
+                    </app-item-icon>
+                </div>
+
+
+            </ng-container>
+        </ng-container>
+
+
+    </div>
+</app-list-detail-container>

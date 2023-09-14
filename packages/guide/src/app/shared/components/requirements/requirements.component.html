@@ -1,6 +1,6 @@
-<div *ngIf="requirement.type === 'IsAchievementCompleted'" class="inline-flex">
+<div *ngIf="requirement.type === 'IsAchievementCompleted'">
     Achievement
-    <app-item-icon [itemName]="requirement.meta.achievement.iconName" class="!w-7 ml-1 mr-0.5"/>
+    <app-item-icon [itemName]="requirement.meta.achievement.iconName" class="!w-7 ml-1 mr-0.5  !inline-block"/>
     {{requirement.meta.achievement.title}} unlocked
 </div>
 <ng-container *ngIf="requirement.type === 'MountAcquired'">
@@ -24,8 +24,8 @@
 <ng-container *ngIf="requirement.type === 'QuestFact'">
     Quest fact {{requirement.meta.factName}} set
 </ng-container>
-<div *ngIf="requirement.type === 'SpecialItem'" class="inline-flex">
+<div *ngIf="requirement.type === 'SpecialItem'">
     Acquired special item
-    <app-item-icon [itemName]="requirement.meta.item.iconName" class="!w-7 ml-1 mr-0.5"/>
+    <app-item-icon [itemName]="requirement.meta.item.iconName" class="!w-7 ml-1 mr-0.5  !inline-block"/>
     {{requirement.meta.item.displayName}}
 </div>

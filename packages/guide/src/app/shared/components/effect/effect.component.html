@@ -1,17 +1,17 @@
 <ng-container *ngIf="effect.type ==='BoostMaxStamina'">Increases max stamina</ng-container>
 <ng-container *ngIf="effect.type === 'AddItemToInventory'">
     Adds {{(effect.meta.quantity ?? 1) > 1 ? effect.meta.quantity + 'x ' : ''}}
-    <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7"/>
+    <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 !inline-block"/>
     {{effect.meta.item.displayName}}
 </ng-container>
-<div *ngIf="effect.type === 'UnlockCraftingRecipe'" class="inline-flex">
+<div *ngIf="effect.type === 'UnlockCraftingRecipe'">
     Unlocks
-    <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 ml-1"/>
+    <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 ml-1 !inline-block"/>
     {{effect.meta.item.displayName}} crafting recipe
 </div>
-<div *ngIf="effect.type === 'UnlockCookingRecipe'" class="inline-flex">
+<div *ngIf="effect.type === 'UnlockCookingRecipe'">
     Unlocks
-    <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 ml-1"/>
+    <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 ml-1 !inline-block"/>
     {{effect.meta.item.displayName}} cooking recipe
 </div>
 <ng-container *ngIf="effect.type === 'UnlockCookingUtensil'">
@@ -19,5 +19,8 @@
 </ng-container>
 <ng-container *ngIf="effect.type === 'SetQuestFactValue'">
     Sets quests fact '{{effect.meta.factName}}'
+</ng-container>
+<ng-container *ngIf="effect.type === 'ConsumeItemMastery'">
+    Unlocks 1 skill point for {{effect.meta.mastery}} mastery
 </ng-container>
 

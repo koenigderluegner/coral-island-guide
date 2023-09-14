@@ -5,6 +5,7 @@ export * from './lib/types/effects/set-quest-fact-value-effect.type';
 export * from './lib/types/effects/unlock-cooking-recipe-effect.type';
 export * from './lib/types/effects/unlock-cooking-utensil-effect.type';
 export * from './lib/types/effects/unlock-crafting-recipe-effect.type';
+export * from './lib/types/effects/consume-mastery-item-effect.type';
 
 
 export * from './lib/types/requirements/count-npc-heart-level-requirement.type';
@@ -48,6 +49,7 @@ export * from './lib/interfaces/item-upgrade-data.interface';
 export * from './lib/interfaces/pet-shop-adoptions.interface';
 export * from './lib/interfaces/achievement.interface';
 export * from './lib/interfaces/special-item.interface';
+export * from './lib/interfaces/merit-exchange-shop-data.interface';
 
 
 export * from './lib/enums/quality.enum';

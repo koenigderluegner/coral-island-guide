@@ -17,6 +17,7 @@ import {
     ItemProcessShopData,
     ItemUpgradeData,
     JournalOrder,
+    MeritExchangeShopData,
     NPC,
     OfferingAltar,
     OpeningHours,
@@ -77,6 +78,7 @@ export class DatabaseService {
     private _NPCS: NPC[] = [];
     private _NPCS$?: Observable<NPC[]>;
     private _ACHHIEVEMENTS$?: Observable<Achievement[]>;
+    private _MERIT_EXCHANGE_SHOP_DATA$?: Observable<MeritExchangeShopData[]>;
 
 
     constructor(private readonly _http: HttpClient,
@@ -116,6 +118,7 @@ export class DatabaseService {
             this.fetchItemUpgradeData$("blacksmith"),
             this.fetchItemUpgradeData$("carpenter"),
             this.fetchItemUpgradeData$("lab"),
+            this.fetchMeritExchangeShopData$()
         ]);
     }
 
@@ -491,6 +494,19 @@ export class DatabaseService {
         } else {
             return of(this._SHOP_ITEMS.get(shopName)!)
         }
+
+    }
+
+    fetchMeritExchangeShopData$(): Observable<MeritExchangeShopData[]> {
+        if (!this._MERIT_EXCHANGE_SHOP_DATA$) {
+            this._MERIT_EXCHANGE_SHOP_DATA$ = this._http.get<MeritExchangeShopData[]>(`${this._BASE_PATH}/merit-exchange-shop-items.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+
+        return this._MERIT_EXCHANGE_SHOP_DATA$
+
 
     }
 

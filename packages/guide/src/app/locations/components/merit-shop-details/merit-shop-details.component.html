@@ -1,0 +1,42 @@
+<app-base-item-card [item]="meritExchangeData.item">
+    <div>Buy price:
+        <span class="text-black">
+            <app-merit-points
+                    [amount]="meritExchangeData.priceOverride !== 0 ? meritExchangeData.priceOverride : meritExchangeData.item.price"/>
+        </span>
+    </div>
+    <div>Amount Limit:
+        <span class="text-black">
+       {{meritExchangeData.isLimitedItem ? 'x' + meritExchangeData.itemLimit : 'not limited'}}
+         </span>
+    </div>
+    <div>Town rank:
+        <span class="text-black">
+           {{meritExchangeData.townRank | townrank}}
+        </span>
+    </div>
+
+
+    <div *ngIf="meritExchangeData.effects && meritExchangeData.effects.length" class="my-2">Effects when bought:
+        <div class="flex flex-col text-black">
+            <app-effect *ngFor="let effect of meritExchangeData.effects" [effect]="effect"/>
+        </div>
+    </div>
+
+    <div *ngIf="meritExchangeData.requirements && meritExchangeData.requirements.requirements.length" class="my-2">
+        <ng-container *ngIf="meritExchangeData.requirements.requirements.length > 1">
+            Unlock requirements ({{meritExchangeData.requirements.type === 'And' ? 'all' : 'any'}} of them):
+        </ng-container>
+        <ng-container *ngIf="meritExchangeData.requirements.requirements.length < 2">
+            Unlock requirement:
+        </ng-container>
+
+
+        <div class="flex flex-col  text-black">
+            <app-requirements *ngFor="let requirement of meritExchangeData.requirements.requirements"
+                              [requirement]="requirement"/>
+        </div>
+    </div>
+
+
+</app-base-item-card>
