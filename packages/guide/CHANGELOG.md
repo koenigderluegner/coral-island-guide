@@ -1,6 +1,6 @@
 ## Changelog
 
-### TBD
+### 0.11.1 2023-09-14
 
 #### Added
 
@@ -8,6 +8,10 @@
 - Added concerned monkey shop
 - Added requirements and effects to concerned monkey and blacksmith.
     - Further additions will come at a later point
+
+#### Changed
+
+- Updated live data to 0.5-167 except character images
 
 ### 0.11.0 2023-09-07
 
