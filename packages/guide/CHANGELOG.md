@@ -5,6 +5,7 @@
 #### Added
 
 - Added merit exchange
+- Added PWA support
 
 ### 0.11.1 2023-09-14
 
