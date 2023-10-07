@@ -53,6 +53,7 @@ import { NpcHeadPortraitComponent } from './components/npc-head-portrait/npc-hea
 import { EffectComponent } from './components/effect/effect.component';
 import { RequirementsComponent } from './components/requirements/requirements.component';
 import { MeritPointsComponent } from './components/merit-points/merit-points.component';
+import { ExpandableComponent } from './components/expandable/expandable.component';
 
 @NgModule({
     declarations: [
@@ -99,6 +100,7 @@ import { MeritPointsComponent } from './components/merit-points/merit-points.com
         EffectComponent,
         RequirementsComponent,
         MeritPointsComponent,
+        ExpandableComponent,
     ],
     imports: [
         CommonModule,
@@ -155,6 +157,7 @@ import { MeritPointsComponent } from './components/merit-points/merit-points.com
         EffectComponent,
         RequirementsComponent,
         MeritPointsComponent,
+        ExpandableComponent,
     ],
 })
 export class SharedModule {}

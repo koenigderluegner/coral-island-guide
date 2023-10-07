@@ -4,6 +4,7 @@
 
 #### Added
 
+- Added heart event triggers to NPCs
 - Added merit exchange
 - Added PWA support
 

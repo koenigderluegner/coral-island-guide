@@ -6,9 +6,18 @@ import { GiftingComponent } from './components/gifting/gifting.component';
 import { NPCsRoutingModule } from './npcs-routing.module';
 import { NpcListComponent } from './components/npc-list/npc-list.component';
 import { NpcComponent } from './components/npc/npc.component';
+import { HeartEventsComponent } from './components/heart-events/heart-events.component';
+import { HeartEventTriggerComponent } from './components/heart-event-trigger/heart-event-trigger.component';
 
 @NgModule({
-    declarations: [NPCsComponent, GiftingComponent, NpcListComponent, NpcComponent],
+    declarations: [
+        NPCsComponent,
+        GiftingComponent,
+        NpcListComponent,
+        NpcComponent,
+        HeartEventsComponent,
+        HeartEventTriggerComponent,
+    ],
     imports: [CommonModule, NPCsRoutingModule, SharedModule],
 })
 export class NPCsModule {}

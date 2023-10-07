@@ -6,6 +6,10 @@ module.exports = {
     content: [join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html}'), ...createGlobPatternsForDependencies(__dirname)],
     theme: {
         extend: {
+            gridTemplateRows: {
+                '0fr': '0fr',
+                '1fr': '1fr',
+            },
             colors: {
                 accent: '#d89e43',
                 merino: {

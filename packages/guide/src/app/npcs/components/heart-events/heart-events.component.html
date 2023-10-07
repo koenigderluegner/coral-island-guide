@@ -1,0 +1,14 @@
+<app-expandable #expandable *ngFor="let heartEvent of heartEvents"
+                class="bg-amber-50/70 px-4 rounded-lg mb-3 shadow-sm">
+    <h3 (click)="expandable.toggle()"
+        class="text-xl text-black flex items-center justify-between cursor-pointer py-4"
+        expandableHeader>
+        {{heartEvent.heartLevel}} hearts event
+        <i [class.down]="!expandable.open" [class.up]="expandable.open" class="arrow"></i>
+    </h3>
+    <ng-container *ngFor="let trigger of heartEvent.trigger; let last = last">
+        <app-heart-event-trigger [class.mb-3]="last" [heartEventTrigger]="trigger"/>
+        <hr *ngIf="!last" class="my-3">
+    </ng-container>
+
+</app-expandable>

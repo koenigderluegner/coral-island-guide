@@ -12,6 +12,7 @@ import {
     FruitPlant,
     FruitTree,
     GiftPreferences,
+    HeartEvent,
     Item,
     ItemProcessing,
     ItemProcessShopData,
@@ -79,6 +80,9 @@ export class DatabaseService {
     private _NPCS$?: Observable<NPC[]>;
     private _ACHHIEVEMENTS$?: Observable<Achievement[]>;
     private _MERIT_EXCHANGE_SHOP_DATA$?: Observable<MeritExchangeShopData[]>;
+
+    private _HEART_EVENTS: Record<string, HeartEvent[]> = {};
+    private _HEART_EVENTS$?: Observable<Record<string, HeartEvent[]>>;
 
 
     constructor(private readonly _http: HttpClient,
@@ -153,6 +157,24 @@ export class DatabaseService {
                 );
         }
         return this._NPCS$;
+    }
+
+
+    getHeartEvents(): Record<string, HeartEvent[]> {
+        return this._HEART_EVENTS;
+    }
+
+
+    fetchHeartEvents$(): Observable<Record<string, HeartEvent[]>> {
+        if (!this._HEART_EVENTS$) {
+            this._HEART_EVENTS$ = this._http.get<Record<string, HeartEvent[]>[]>(`${this._BASE_PATH}/heart-events.json`)
+                .pipe(
+                    map(events => events[0]),
+                    tap(items => this._HEART_EVENTS = items),
+                    shareReplay(1)
+                );
+        }
+        return this._HEART_EVENTS$;
     }
 
 

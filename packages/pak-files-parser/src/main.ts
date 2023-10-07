@@ -39,6 +39,7 @@ import { SpecialItemDbGenerator } from "./app/special-item-db.generator";
 import { MeritExchangeShopDataGenerator } from "./app/merit-exchange-shop-data.generator";
 import { LocationInfoGenerator } from "./app/location-info.generator";
 import { HeartEventTriggerDataGenerator } from "./app/heart-event-trigger-data.generator";
+import { HeartEventsDbGenerator } from "./app/heart-events-db.generator";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
@@ -96,6 +97,14 @@ try {
         const locationInfoGenerator = new LocationInfoGenerator();
         const locationInfoMap = locationInfoGenerator.generate();
 
+        const heartEventTriggerDataGenerator = new HeartEventTriggerDataGenerator(locationInfoMap);
+        const heartEventTriggerDataMap = heartEventTriggerDataGenerator.generate({
+            daFiles: [
+                'ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneAdvanceRequirement.json',
+                'ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneEffects.json',
+            ]
+        });
+
 
         liveGenerators = {
 
@@ -116,14 +125,7 @@ try {
                 })
             },
 
-            'heart-event-trigger': {
-                generate: () => new HeartEventTriggerDataGenerator(locationInfoMap).generate({
-                    daFiles: [
-                        'ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneAdvanceRequirement.json',
-                        'ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneEffects.json',
-                    ]
-                })
-            },
+            'heart-events': new HeartEventsDbGenerator(heartEventTriggerDataMap),
 
             'achievements': {generate: () => achievementMap},
             'special-items': {generate: () => specialItemDbMap},

@@ -7,6 +7,13 @@
 
     <app-card>
         <h2 class="mb-4 font-semibold text-2xl text-black">
+            Heart events
+        </h2>
+        <app-heart-events [heartEvents]="heartEvents"/>
+    </app-card>
+
+    <app-card>
+        <h2 class="mb-4 font-semibold text-2xl text-black">
             Appearances
         </h2>
         <div *ngFor="let appearancePair of (npc.appearances | keyvalue)" class="font-semibold text-black mb-6">

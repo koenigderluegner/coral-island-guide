@@ -1,0 +1,55 @@
+<header class="flex flex-col text-black mb-1">
+    <h4>{{heartEventTrigger.cutscene}}</h4>
+    <span>Id: {{heartEventTrigger.id}} </span>
+</header>
+
+
+<div>Enabled: <span
+        class="text-black">{{heartEventTrigger.enabled ? 'Yes' : 'No'}}</span>
+</div>
+<div>Location: <span
+        class="text-black">{{heartEventTrigger.location}}</span>
+</div>
+<div>Day Time of day:
+    <span class="text-black">
+    {{heartEventTrigger.time.fromTime | ingameTime}}-{{heartEventTrigger.time.toTime | ingameTime}}
+</span>
+</div>
+<div>Can trigger on the same day: <span
+        class="text-black">{{heartEventTrigger.canTriggerSameDay ? 'Yes' : 'No'}}</span>
+</div>
+<div *ngIf="heartEventTrigger.otherCutscenesState.length">Other cutscenes requirements:
+    <ng-container *ngFor="let otherStates of heartEventTrigger.otherCutscenesState">
+        <div *ngFor="let cutscenes of (otherStates | keyvalue)" class="text-black">{{cutscenes.key}}
+            : {{cutscenes.value ? 'Has to be seen' : 'Has to be unseen'}}</div>
+    </ng-container>
+</div>
+<div *ngIf="heartEventTrigger.specificDay.length">Only on days: <span
+        class="text-black">{{heartEventTrigger.specificDay.join(', ')}}</span>
+</div>
+<div *ngIf="heartEventTrigger.specificMonth.length">Only in seasons: <span
+        class="text-black">{{heartEventTrigger.specificMonth.join(', ')}}</span>
+</div>
+<div *ngIf="heartEventTrigger.specificWeather.length">Only with weather: <span
+        class="text-black">{{heartEventTrigger.specificWeather.join(', ')}}</span>
+</div>
+
+<div *ngIf="heartEventTrigger.effects && heartEventTrigger.effects.length" class="my-2">Effects when seen
+    <div class="flex flex-col text-black">
+        <app-effect *ngFor="let effect of heartEventTrigger.effects" [effect]="effect"/>
+    </div>
+</div>
+<div *ngIf="heartEventTrigger.requirements && heartEventTrigger.requirements.requirements.length" class="my-2">
+    <ng-container *ngIf="heartEventTrigger.requirements.requirements.length > 1">
+        Unlock requirements ({{heartEventTrigger.requirements.type === 'And' ? 'all' : 'any'}} of them):
+    </ng-container>
+    <ng-container *ngIf="heartEventTrigger.requirements.requirements.length < 2">
+        Unlock requirement:
+    </ng-container>
+
+
+    <div class="flex flex-col  text-black">
+        <app-requirements *ngFor="let requirement of heartEventTrigger.requirements.requirements"
+                          [requirement]="requirement"/>
+    </div>
+</div>

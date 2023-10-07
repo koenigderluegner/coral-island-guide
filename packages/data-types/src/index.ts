@@ -65,6 +65,7 @@ export * from './lib/interfaces/special-item.interface';
 export * from './lib/interfaces/merit-exchange-shop-data.interface';
 export * from './lib/interfaces/location-info.interface';
 export * from './lib/interfaces/heart-event-trigger-data.interface';
+export * from './lib/interfaces/heart-event.interface';
 
 
 export * from './lib/enums/quality.enum';
