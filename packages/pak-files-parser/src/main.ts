@@ -37,6 +37,8 @@ import { AchievementGenerator } from "./app/achievement.generator";
 import { DaFilesParser } from "./app/da-files-parser";
 import { SpecialItemDbGenerator } from "./app/special-item-db.generator";
 import { MeritExchangeShopDataGenerator } from "./app/merit-exchange-shop-data.generator";
+import { LocationInfoGenerator } from "./app/location-info.generator";
+import { HeartEventTriggerDataGenerator } from "./app/heart-event-trigger-data.generator";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
@@ -71,6 +73,7 @@ const tagBasedItemsDbMap = tagBasedItemsDbGenerator.generate();
 const cookingDbGenerator = new CookingDbGenerator(itemDbMap, cookingRecipeUnlockedByMasteryDbMap, tagBasedItemsDbMap);
 const cookingDbMap = cookingDbGenerator.generate();
 
+
 let generators: Record<string, { generate: () => Map<string, any> }> = {}
 
 let betaGenerators: Record<string, { generate: () => Map<string, any> }> = {}
@@ -90,6 +93,10 @@ try {
 
         DaFilesParser.SpecialItemMap = specialItemDbMap;
 
+        const locationInfoGenerator = new LocationInfoGenerator();
+        const locationInfoMap = locationInfoGenerator.generate();
+
+
         liveGenerators = {
 
             'concerned-monkey-shop-items': {
@@ -108,6 +115,8 @@ try {
                     ]
                 })
             },
+
+            'heart-event-trigger': new HeartEventTriggerDataGenerator(locationInfoMap),
 
             'achievements': {generate: () => achievementMap},
             'special-items': {generate: () => specialItemDbMap},

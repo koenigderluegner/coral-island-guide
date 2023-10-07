@@ -1,13 +1,14 @@
 import { BaseGenerator } from './base-generator.class';
 import { Item, NPC } from '@ci/data-types';
 import { Datatable } from '../interfaces/datatable.interface';
-import { convertToIconName, getSourceStringResult, readAsset } from '../util/functions';
+import { convertToIconName, readAsset } from '../util/functions';
 import { RawNPC } from '../interfaces/raw-data-interfaces/raw-npc.interface';
 import { addSpacesToPascalCase, getEnumValue } from '@ci/util';
 import { RawNpcAppearances } from "../interfaces/raw-data-interfaces/raw-npc-appearances.interface";
 import path from "path";
 import { environment } from "../environments/environment";
 import fs from "fs";
+import { StringTable } from "../util/string-table.class";
 
 export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
 
@@ -111,9 +112,9 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
             canReceiveGifts: dbItem.canReceiveGifts,
             isDateable: dbItem.isDateable,
             // TODO get name from translation file
-            characterName: addSpacesToPascalCase(getSourceStringResult(dbItem.CharacterName)),
+            characterName: addSpacesToPascalCase(StringTable.getString(dbItem.CharacterName)),
             characterCategory: getEnumValue(dbItem.CharacterCategory),
-            description: getSourceStringResult(dbItem.Description),
+            description: StringTable.getString(dbItem.Description),
             iconName: convertToIconName(objectName).replace('.png', ''),
             appearances,
             headerPortraitFileName,

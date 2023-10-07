@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import { MinimalItem } from '@ci/data-types';
 import { config } from "../config";
-import { SourceString } from "../types/source-string.type";
 import { environment } from "../environments/environment";
 import { EffectMap, RequirementMap } from "../app/da-files-parser";
 
@@ -79,9 +78,6 @@ export function notEmpty<TValue>(value: TValue | null | undefined): value is TVa
     return value !== null && value !== undefined;
 }
 
-export function getSourceStringResult(sourceString: SourceString): string {
-    return 'SourceString' in sourceString ? sourceString.SourceString : sourceString.Key;
-}
 
 export function getReferencedString(a: string): string {
     if (a.includes(' ')) {
