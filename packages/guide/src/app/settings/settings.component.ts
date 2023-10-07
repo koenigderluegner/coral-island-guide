@@ -1,14 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { SettingsService } from "../shared/services/settings.service";
 import { FormControl, FormGroup } from "@angular/forms";
-import { ChecklistService } from "../core/services/checklist.service";
+import { ToDoService } from "../core/services/to-do.service";
 import { BETA_CODE } from "../core/injection-tokens/beta-code.injection-token";
 import { UiIcon } from "../shared/enums/ui-icon.enum";
 
 type SettingsFormGroup = {
     useBeta: FormControl<boolean>;
-    resetLiveChecklist: FormControl<boolean>;
-    resetBetaChecklist: FormControl<boolean>;
+    resetLiveToDo: FormControl<boolean>;
+    resetBetaToDo: FormControl<boolean>;
 };
 
 @Component({
@@ -26,11 +26,11 @@ export class SettingsComponent {
 
     constructor(
         private readonly _settingsService: SettingsService,
-        private _checkList: ChecklistService) {
+        private _toDo: ToDoService) {
         this.settingsForm = new FormGroup<SettingsFormGroup>({
             useBeta: new FormControl<boolean>(false, {nonNullable: true}),
-            resetLiveChecklist: new FormControl<boolean>(false, {nonNullable: true}),
-            resetBetaChecklist: new FormControl<boolean>(false, {nonNullable: true}),
+            resetLiveToDo: new FormControl<boolean>(false, {nonNullable: true}),
+            resetBetaToDo: new FormControl<boolean>(false, {nonNullable: true}),
         });
 
         if (!this.BETA_CODE) {
@@ -50,16 +50,16 @@ export class SettingsComponent {
     saveSettings(): void {
         const settings = {...this.settingsForm.value};
 
-        if (settings.resetLiveChecklist) {
-            this._checkList.resetLiveChecklist()
+        if (settings.resetLiveToDo) {
+            this._toDo.resetLiveToDo()
         }
 
-        if (settings.resetBetaChecklist) {
-            this._checkList.resetBetaChecklist()
+        if (settings.resetBetaToDo) {
+            this._toDo.resetBetaToDo()
         }
 
-        delete settings.resetBetaChecklist;
-        delete settings.resetLiveChecklist;
+        delete settings.resetBetaToDo;
+        delete settings.resetLiveToDo;
 
         this._settingsService.saveSettings(settings);
 

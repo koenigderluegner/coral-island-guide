@@ -1,19 +1,19 @@
 <app-card *ngIf="fetchedItem" class="text-lg font-semibold relative">
     <div class="card-actions h-8 absolute right-[75px] top-[15px]">
-        <ng-container *ngIf="checklistCategory">
-            <button (click)="removeFromCheckList(checklistCategory, item)"
-                    *ngIf="checklistService.alreadyInList(checklistCategory, item)" matTooltip="Remove from checklist">
+        <ng-container *ngIf="toDoCategory">
+            <button (click)="removeFromToDo(toDoCategory, item)"
+                    *ngIf="toDoService.alreadyInList(toDoCategory, item)" matTooltip="Remove from to-do">
                 <app-ui-icon [uiIcon]="UiIcon.TO_DO_ON_LIST"
                              class="!text-green-600 !w-8 !h-8 hover:!text-green-800 focus-visible:!text-green-800"/>
             </button>
-            <span *ngIf="!checklistService.alreadyInList(checklistCategory, item)"
-                  [matTooltip]="addedToChecklist.observed ? 'Add to checklist' :'Checklist is not available for this entry'">
-            <button (click)="addedToChecklist.emit()" [disabled]="!addedToChecklist.observed">
+            <span *ngIf="!toDoService.alreadyInList(toDoCategory, item)"
+                  [matTooltip]="addedToToDo.observed ? 'Add to to-do' :'To-do is not available for this entry'">
+            <button (click)="addedToToDo.emit()" [disabled]="!addedToToDo.observed">
                 <app-ui-icon [uiIcon]="UiIcon.TO_DO" class="!w-8 !h-8 hover:!text-black focus-visible:!text-black"/>
             </button>
         </span>
         </ng-container>
-        <span *ngIf="!checklistCategory || !item" matTooltip="Checklist is not available for this entry">
+        <span *ngIf="!toDoCategory || !item" matTooltip="To-Do is not available for this entry">
             <button disabled>
                 <app-ui-icon [uiIcon]="UiIcon.TO_DO" class="!w-8 !h-8"/>
             </button>

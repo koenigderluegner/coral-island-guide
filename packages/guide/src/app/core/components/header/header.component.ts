@@ -40,9 +40,9 @@ export class HeaderComponent {
             path: 'locations'
         },
         {
-            text: 'Checklist',
-            uiIcon: UiIcon.TO_DO,
-            path: 'checklist'
+            text: 'My Guide',
+            uiIcon: UiIcon.MY_CORAL,
+            path: 'my'
         },
         {
             text: 'Item database',
@@ -57,8 +57,8 @@ export class HeaderComponent {
     ];
     @HostBinding('class.open-menu') isOpen = false;
     protected uiIcon = UiIcon;
-    @HostBinding('class.app-header') private _setClass = true;
     protected isBeta = false;
+    @HostBinding('class.app-header') private _setClass = true;
 
     constructor(private _router: Router,
                 private readonly _settingsService: SettingsService) {

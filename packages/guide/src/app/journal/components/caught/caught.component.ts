@@ -4,7 +4,7 @@ import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page
 import { getTruthyValues } from '@ci/util';
 import { FilterForm } from "../../../shared/types/filter-form.type";
 import { FormControl, FormGroup } from "@angular/forms";
-import { ChecklistCategory } from "../../../core/enums/checklist-category.enum";
+import { ToDoCategory } from "../../../core/enums/todo-category.enum";
 
 @Component({
     selector: 'app-caught',
@@ -21,7 +21,7 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
             weather: new FormControl<string[]>(Object.values(Weather), {nonNullable: true}),
         }));
 
-        this.registerToChecklist = this.registerToChecklist.bind(this)
+        this.registerToToDo = this.registerToToDo.bind(this)
 
 
         this.tabs = [
@@ -53,14 +53,14 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
 
     }
 
-    override registerToChecklist(entry: Fish | Critter) {
+    override registerToToDo(entry: Fish | Critter) {
         if ('fishName' in entry) {
-            this._checklist.add(ChecklistCategory.JOURNAL_FISH, entry)
+            this._todo.add(ToDoCategory.JOURNAL_FISH, entry)
         } else {
             if ((this.matTabGroup?.selectedIndex === this.SEA_CRITTERS_INDEX)) {
-                this._checklist.add(ChecklistCategory.JOURNAL_CRITTER, entry)
+                this._todo.add(ToDoCategory.JOURNAL_CRITTER, entry)
             } else {
-                this._checklist.add(ChecklistCategory.JOURNAL_INSECTS, entry)
+                this._todo.add(ToDoCategory.JOURNAL_INSECTS, entry)
             }
         }
     }

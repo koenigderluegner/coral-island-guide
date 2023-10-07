@@ -1,0 +1,15 @@
+<ng-container *ngIf="data.length && (toDoId === dataToDoId || toDoId === undefined)">
+    <header class="flex justify-between items-center mt-5 mb-2">
+        <h2 class="font-semibold text-xl text-black">{{title}}</h2>
+        <button (click)="completeList()" class="btn-amber">complete list</button>
+    </header>
+    <div [@.disabled]="!(toDoId === dataToDoId || toDoId ===undefined)">
+        <ng-container *ngTemplateOutlet="templateRef; context: {$implicit: data}"></ng-container>
+    </div>
+</ng-container>
+<ng-container *ngIf="!data.length && toDoId === dataToDoId">
+    <h2 class="mb-2 mt-4 font-semibold text-xl text-black">No entries in this category</h2>
+    <p class="text-black">
+        Nothing left to do :)
+    </p>
+</ng-container>

@@ -3,7 +3,7 @@ import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page
 import { Item } from '@ci/data-types';
 import { FormGroup } from "@angular/forms";
 import { FilterForm } from "../../../shared/types/filter-form.type";
-import { ChecklistCategory } from "../../../core/enums/checklist-category.enum";
+import { ToDoCategory } from "../../../core/enums/todo-category.enum";
 
 @Component({
     selector: 'app-found',
@@ -11,7 +11,7 @@ import { ChecklistCategory } from "../../../core/enums/checklist-category.enum";
 })
 export class FoundComponent extends BaseJournalPageComponent<Item> {
 
-    checklistCategory?: ChecklistCategory.JOURNAL_ARTIFACTS | ChecklistCategory.JOURNAL_GEMS | ChecklistCategory.JOURNAL_FOSSILS;
+    toDoCategory?: ToDoCategory.JOURNAL_ARTIFACTS | ToDoCategory.JOURNAL_GEMS | ToDoCategory.JOURNAL_FOSSILS;
 
 
     constructor() {
@@ -55,19 +55,19 @@ export class FoundComponent extends BaseJournalPageComponent<Item> {
 
     override showDetails(selectedEntry?: Item) {
         super.showDetails(selectedEntry);
-        this.checklistCategory = this.selectedTabIndex === 0
-            ? ChecklistCategory.JOURNAL_ARTIFACTS
+        this.toDoCategory = this.selectedTabIndex === 0
+            ? ToDoCategory.JOURNAL_ARTIFACTS
             : this.selectedTabIndex === 1
-                ? ChecklistCategory.JOURNAL_GEMS
+                ? ToDoCategory.JOURNAL_GEMS
                 : this.selectedTabIndex === 2
-                    ? ChecklistCategory.JOURNAL_FOSSILS
+                    ? ToDoCategory.JOURNAL_FOSSILS
                     : undefined;
 
     }
 
-    override registerToChecklist(entry: Item) {
-        const checklistCategory = this.checklistCategory;
-        if (checklistCategory)
-            this._checklist.add(checklistCategory, entry)
+    override registerToToDo(entry: Item) {
+        const toDoCategory = this.toDoCategory;
+        if (toDoCategory)
+            this._todo.add(toDoCategory, entry)
     }
 }

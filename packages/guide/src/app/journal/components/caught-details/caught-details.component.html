@@ -1,5 +1,5 @@
-<app-base-item-card (addedToChecklist)="registerToChecklist && registerToChecklist(critter)" *ngIf="critter"
-                    [checklistCategory]="checklistCategory"
+<app-base-item-card (addedToToDo)="registerToToDo && registerToToDo(critter)" *ngIf="critter"
+                    [toDoCategory]="toDoCategory"
                     [item]="critter.item">
     <div>Rarity: <span class="text-black">{{critter.rarity | spacesToPascalCase}}</span></div>
     <ng-container *ngIf="critter | isFish">

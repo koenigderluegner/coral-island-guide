@@ -16,6 +16,7 @@ export enum UiIcon {
     TO_DO_ON_LIST = 'T_Icon_Checklist_Checked',
     BURGER_MENU = 'T_Icon_BurgerMenu',
     SETTINGS = 'T_Icon_GameSettings',
+    MY_CORAL = 'T_icon_coral',
 
     // PAUSE MENU SIDEBAR
     CATCHING = 'T_Icon_CatchingM',

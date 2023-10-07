@@ -2,7 +2,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 import { Critter, Fish } from '@ci/data-types';
 import { getTruthyValues } from '@ci/util';
 import { CaughtComponent } from "../caught/caught.component";
-import { ChecklistCategory } from "../../../core/enums/checklist-category.enum";
+import { ToDoCategory } from "../../../core/enums/todo-category.enum";
 
 @Component({
     selector: 'app-caught-details',
@@ -10,10 +10,10 @@ import { ChecklistCategory } from "../../../core/enums/checklist-category.enum";
 })
 export class CaughtDetailsComponent implements OnInit, OnChanges {
     @Input({required: true}) critter!: Fish | Critter;
-    @Input() registerToChecklist?: CaughtComponent['registerToChecklist'];
+    @Input() registerToToDo?: CaughtComponent['registerToToDo'];
 
     protected getTruthyValues = getTruthyValues;
-    protected checklistCategory!: ChecklistCategory;
+    protected toDoCategory!: ToDoCategory;
 
     ngOnInit() {
         this._setCategory();
@@ -32,10 +32,10 @@ export class CaughtDetailsComponent implements OnInit, OnChanges {
     }
 
     private _setCategory() {
-        this.checklistCategory = 'fishName' in this.critter
-            ? ChecklistCategory.JOURNAL_FISH
+        this.toDoCategory = 'fishName' in this.critter
+            ? ToDoCategory.JOURNAL_FISH
             : this.critter.item.inventoryCategory.toLocaleLowerCase() === 'bug'
-                ? ChecklistCategory.JOURNAL_INSECTS
-                : ChecklistCategory.JOURNAL_CRITTER
+                ? ToDoCategory.JOURNAL_INSECTS
+                : ToDoCategory.JOURNAL_CRITTER
     }
 }

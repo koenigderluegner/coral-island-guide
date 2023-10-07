@@ -1,7 +1,7 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
-    <app-base-item-card (addedToChecklist)="selectedTabIndex > -1 && selectedTabIndex < 3 && registerToChecklist(selectedEntity)"
+    <app-base-item-card (addedToToDo)="selectedTabIndex > -1 && selectedTabIndex < 3 && registerToToDo(selectedEntity)"
                         *ngIf="selectedEntity"
-                        [checklistCategory]="checklistCategory"
+                        [toDoCategory]="toDoCategory"
                         [item]="selectedEntity"
                         listDetail/>
 

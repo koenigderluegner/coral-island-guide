@@ -12,8 +12,8 @@ import {
 import { Item, MinimalItem } from '@ci/data-types';
 import { DatabaseService } from '../../services/database.service';
 import { UiIcon } from "../../enums/ui-icon.enum";
-import { ChecklistCategory } from "../../../core/enums/checklist-category.enum";
-import { ChecklistService } from "../../../core/services/checklist.service";
+import { ToDoCategory } from "../../../core/enums/todo-category.enum";
+import { ToDoService } from "../../../core/services/to-do.service";
 
 @Component({
     selector: 'app-base-item-card',
@@ -22,14 +22,14 @@ import { ChecklistService } from "../../../core/services/checklist.service";
 export class BaseItemCardComponent implements OnInit, OnChanges {
     @Input({required: true}) item!: Item | MinimalItem;
     @Input() amount?: number;
-    @Input() checklistCategory?: ChecklistCategory | undefined;
+    @Input() toDoCategory?: ToDoCategory | undefined;
     @Output() openDrawerChange: EventEmitter<boolean> = new EventEmitter<boolean>();
-    @Output() addedToChecklist: EventEmitter<void> = new EventEmitter<void>();
+    @Output() addedToToDo: EventEmitter<void> = new EventEmitter<void>();
     @Input({transform: booleanAttribute}) hideQualityGrid = false
     protected uiIcon = UiIcon;
     protected fetchedItem!: Item;
     protected readonly UiIcon = UiIcon;
-    protected readonly checklistService: ChecklistService = inject(ChecklistService)
+    protected readonly toDoService: ToDoService = inject(ToDoService)
     private readonly _database: DatabaseService = inject(DatabaseService);
 
     ngOnInit(): void {
@@ -44,8 +44,8 @@ export class BaseItemCardComponent implements OnInit, OnChanges {
         this._setItem(changes['item'].currentValue);
     }
 
-    removeFromCheckList(checklistCategory: ChecklistCategory, item: Item | MinimalItem) {
-        this.checklistService.updateStatus(checklistCategory, item, true, true)
+    removeFromToDo(toDoCategory: ToDoCategory, item: Item | MinimalItem) {
+        this.toDoService.updateStatus(toDoCategory, item, true, true)
     }
 
     private _setItem(item: Item | MinimalItem): void {

@@ -66,11 +66,19 @@ const appRoutes: Route[] = [
     },
     {
         path: 'checklist',
-        loadChildren: () => import('./checklist/checklist.module').then(m => m.ChecklistModule)
+        pathMatch: "prefix",
+        redirectTo: 'my/to-do',
+        data: {
+            redirected: true
+        }
     },
     {
         path: 'only-in-beta',
         loadComponent: () => import('./only-in-beta/only-in-beta.component').then(c => c.OnlyInBetaComponent)
+    },
+    {
+        path: 'my',
+        loadChildren: () => import('./my-coral-guide/my-coral-guide.module').then(m => m.MyCoralGuideModule)
     }
 ];
 

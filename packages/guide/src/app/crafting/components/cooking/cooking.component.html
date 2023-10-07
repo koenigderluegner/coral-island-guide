@@ -3,8 +3,8 @@
                         [item]="selectedEntity.item"
                         hideQualityGrid
                         listDetail
-                        (addedToChecklist)="registerToChecklist(selectedEntity)"
-                        [checklistCategory]="checklistCategory.COOKING_RECIPES"
+                        (addedToToDo)="registerToToDo(selectedEntity)"
+                        [toDoCategory]="toDoCategory.COOKING_RECIPES"
                         [amount]="selectedEntity.amount">
 
         <ng-container *ngIf="selectedEntityConsumable">

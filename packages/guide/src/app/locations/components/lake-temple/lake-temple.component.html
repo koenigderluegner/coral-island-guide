@@ -1,8 +1,8 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     <app-base-item-card *ngIf="selectedEntity"
                         [item]="selectedEntity"
-                        [checklistCategory]="checklistCategory.OFFERINGS"
-                        (addedToChecklist)="entryForChecklist && registerToChecklist(entryForChecklist)"
+                        (addedToToDo)="entryForToDo && registerToToDo(entryForToDo)"
+                        [toDoCategory]="toDoCategory.OFFERINGS"
                         listDetail/>
     <mat-tab-group (selectedTabChange)="updateUrl($event)" *ngIf="offerings$ | async as offeringAltars"
                    [selectedIndex]="selectedTabIndex"

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MinimalItem, Offering, OfferingAltar, Offerings } from "@ci/data-types";
 import { Observable, tap } from "rxjs";
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
-import { ChecklistCategory } from "../../../core/enums/checklist-category.enum";
+import { ToDoCategory } from "../../../core/enums/todo-category.enum";
 
 @Component({
     selector: 'app-lake-temple',
@@ -11,8 +11,8 @@ import { ChecklistCategory } from "../../../core/enums/checklist-category.enum";
 export class LakeTempleComponent extends BaseTabbedSelectableContainerComponent<MinimalItem> {
     protected activeOffering?: Offerings;
     protected offerings$: Observable<OfferingAltar[]>;
-    protected entryForChecklist?: Offering | MinimalItem;
-    protected checklistCategory = ChecklistCategory;
+    protected entryForToDo?: Offering | MinimalItem;
+    protected toDoCategory = ToDoCategory;
 
 
     constructor() {
@@ -27,14 +27,14 @@ export class LakeTempleComponent extends BaseTabbedSelectableContainerComponent<
 
     }
 
-    override registerToChecklist(entry: MinimalItem | Offering) {
+    override registerToToDo(entry: MinimalItem | Offering) {
         if ('item' in entry) {
-            this._checklist.add(ChecklistCategory.OFFERINGS, entry)
+            this._todo.add(ToDoCategory.OFFERINGS, entry)
         }
     }
 
     override showDetails(selectedEntry?: Offering | MinimalItem) {
-        this.entryForChecklist = selectedEntry;
+        this.entryForToDo = selectedEntry;
 
         if (selectedEntry && 'amount' in selectedEntry) {
             super.showDetails(selectedEntry.item);

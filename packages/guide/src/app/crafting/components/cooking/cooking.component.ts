@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Consumable, CookingRecipe, Quality } from "@ci/data-types";
 import { combineLatest, map, Observable, take, tap } from "rxjs";
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
-import { ChecklistCategory } from "../../../core/enums/checklist-category.enum";
+import { ToDoCategory } from "../../../core/enums/todo-category.enum";
 
 @Component({
     selector: 'app-cooking',
@@ -11,7 +11,7 @@ import { ChecklistCategory } from "../../../core/enums/checklist-category.enum";
 export class CookingComponent extends BaseTabbedSelectableContainerComponent<CookingRecipe> {
 
     utensilNames: string[] = [];
-    protected checklistCategory = ChecklistCategory;
+    protected toDoCategory = ToDoCategory;
     protected quality = Quality;
     protected selectedEntityConsumable: Consumable | undefined;
     private _consumables: Consumable[] = [];
@@ -51,8 +51,8 @@ export class CookingComponent extends BaseTabbedSelectableContainerComponent<Coo
         this.selectedEntityConsumable = this._consumables.find(consumable => consumable.key === selectedEntry?.item?.id)
     }
 
-    override registerToChecklist(entry: CookingRecipe) {
-        this._checklist.add(ChecklistCategory.COOKING_RECIPES, entry)
+    override registerToToDo(entry: CookingRecipe) {
+        this._todo.add(ToDoCategory.COOKING_RECIPES, entry)
     }
 
 }
