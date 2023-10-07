@@ -8,3 +8,14 @@ export enum ToDoCategory {
     JOURNAL_ARTIFACTS = "journal_artifacts",
     COOKING_RECIPES = "cooking_recipes",
 }
+
+export const ToDoCategoryDisplayNames: Record<ToDoCategory, string> = {
+    [ToDoCategory.OFFERINGS]: 'Offerings',
+    [ToDoCategory.JOURNAL_FISH]: 'Fish',
+    [ToDoCategory.JOURNAL_CRITTER]: 'Sea Critter',
+    [ToDoCategory.JOURNAL_INSECTS]: 'Insects',
+    [ToDoCategory.JOURNAL_GEMS]: 'Gems',
+    [ToDoCategory.JOURNAL_FOSSILS]: 'Fossils',
+    [ToDoCategory.JOURNAL_ARTIFACTS]: 'Artifacts',
+    [ToDoCategory.COOKING_RECIPES]: 'Cooking recipes',
+}

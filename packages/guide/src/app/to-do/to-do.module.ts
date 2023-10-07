@@ -12,10 +12,12 @@ import { MatTableModule } from '@angular/material/table';
 import { ToDoPartialComponent } from './components/to-do-partial/to-do-partial.component';
 import { ToDoEntryInsectComponent } from './components/to-do-entry-insect/to-do-entry-insect.component';
 import { ToDoEntrySeaCritterComponent } from './components/to-do-entry-sea-critter/to-do-entry-sea-critter.component';
+import { MatSelectModule } from "@angular/material/select";
+import { ReactiveFormsModule } from "@angular/forms";
 
 const routes: Routes = [
     {path: '', component: ToDoComponent},
-    {path: ':toDoId', component: ToDoComponent},
+    {path: ':toDoId', redirectTo: ''},
 ];
 
 @NgModule({
@@ -34,7 +36,9 @@ const routes: Routes = [
         RouterModule.forChild(routes),
         SharedModule,
         MatCheckboxModule,
-        MatTableModule
+        MatTableModule,
+        MatSelectModule,
+        ReactiveFormsModule
     ],
 })
 export class ToDoModule {

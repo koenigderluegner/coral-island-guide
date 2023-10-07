@@ -1,171 +1,183 @@
-<app-sidebar-container>
-    <app-module-sidebar>
-        <ng-container>
-            <app-module-sidebar-item exact routerLink="/my/to-do">
-                <div class="flex justify-between grow">
-                    <span>All</span>
-                    <span>{{toDoService.currentToDoAmount}}</span>
-                </div>
-            </app-module-sidebar-item>
-            <app-module-sidebar-item routerLink="/my/to-do/offerings">
-                <div class="flex justify-between grow">
-                    <span>Offerings</span>
-                    <span>{{toDo.offerings.length}}</span>
-                </div>
-            </app-module-sidebar-item>
-            <app-module-sidebar-item routerLink="/my/to-do/fish">
-                <div class="flex justify-between grow">
-                    <span>Fish</span>
-                    <span>{{toDo.journal.fish.length}}</span>
-                </div>
-            </app-module-sidebar-item>
-            <app-module-sidebar-item routerLink="/my/to-do/insects">
-                <div class="flex justify-between grow">
-                    <span>Insects</span>
-                    <span>{{toDo.journal.insects.length}}</span>
-                </div>
-            </app-module-sidebar-item>
-            <app-module-sidebar-item routerLink="/my/to-do/sea-critters">
-                <div class="flex justify-between grow">
-                    <span>Sea Critters</span>
-                    <span>{{toDo.journal.critter.length}}</span>
-                </div>
-            </app-module-sidebar-item>
-            <app-module-sidebar-item routerLink="/my/to-do/artifacts">
-                <div class="flex justify-between grow">
-                    <span>Artifacts</span>
-                    <span>{{toDo.journal.artifacts.length}}</span>
-                </div>
-            </app-module-sidebar-item>
-            <app-module-sidebar-item routerLink="/my/to-do/gems">
-                <div class="flex justify-between grow">
-                    <span>Gems</span>
-                    <span>{{toDo.journal.gems.length}}</span>
-                </div>
-            </app-module-sidebar-item>
-            <app-module-sidebar-item routerLink="/my/to-do/fossils">
-                <div class="flex justify-between grow">
-                    <span>Fossils</span>
-                    <span>{{toDo.journal.fossils.length}}</span>
-                </div>
-            </app-module-sidebar-item>
-            <app-module-sidebar-item routerLink="/my/to-do/cooking-recipes">
-                <div class="flex justify-between grow">
-                    <span>Cooking recipes</span>
-                    <span>{{toDo.cookingRecipes.length}}</span>
-                </div>
-            </app-module-sidebar-item>
-
-        </ng-container>
-    </app-module-sidebar>
-    <app-card class="m-2 2xl:mx-16 2xl:mt-16 2xl:mb-10">
+<app-card class="m-2 2xl:mx-16 2xl:mt-16 2xl:mb-10">
+    <div class="flex justify-between">
         <h1 class="mb-4 font-semibold text-2xl text-black">To-Dos{{isBeta ? ' [BETA VERSION]' : ''}}</h1>
+        <mat-form-field class="btn btn-secondary">
+            <mat-select [formControl]="toDoCategoryControl" multiple placeholder="None">
+                <mat-select-trigger>
+                    <ng-container *ngIf="toDoCategoryControl.value.includes('all')">All</ng-container>
+                    <ng-container *ngIf="!toDoCategoryControl.value.includes('all')">
+                        <ng-container *ngIf="toDoCategoryControl.value.length">
+                            {{toDoCategoryControl.value[0] !== 'all' ? toDoCategoryDisplayNames[toDoCategoryControl.value[0]] : ''}}
+                            <span *ngIf="toDoCategoryControl.value.length  > 1" class="text-sm opacity-80">
+                                (+{{toDoCategoryControl.value.length - 1}} {{toDoCategoryControl.value.length === 2 ? 'other' : 'others'}}
+                                )
+                            </span>
+                        </ng-container>
+                    </ng-container>
+                </mat-select-trigger>
 
-        <app-to-do-partial [category]="toDoCategory.OFFERINGS"
-                           [data]="toDo.offerings"
-                           [toDoId]="toDoId"
-                           dataToDoId="offerings"
-                           title="Offerings">
-            <ng-template let-data>
-                <app-to-do-entry-offering *ngFor="let offering of data" @leaveAnimation [entry]="offering"
-                                          class="mb-2 block"/>
-            </ng-template>
-        </app-to-do-partial>
-
-        <app-to-do-partial [category]="toDoCategory.JOURNAL_FISH"
-                           [data]="toDo.journal.fish"
-                           [toDoId]="toDoId"
-                           dataToDoId="fish"
-                           title="Journal fish">
-            <ng-template let-data>
-                <app-to-do-entry-fish *ngFor="let fish of data" @leaveAnimation [entry]="fish"
+                <mat-option value="all">
+                    <div class="flex justify-between">
+                        <span>All</span>
+                        <span>{{toDoService.currentToDoAmount}}</span>
+                    </div>
+                </mat-option>
+                <mat-option [value]="toDoCategory.OFFERINGS">
+                    <div class="flex justify-between">
+                        <span>Offerings</span>
+                        <span>{{toDo.offerings.length}}</span>
+                    </div>
+                </mat-option>
+                <mat-option [value]="toDoCategory.JOURNAL_FISH">
+                    <div class="flex justify-between">
+                        <span>Fish</span>
+                        <span>{{toDo.journal.fish.length}}</span>
+                    </div>
+                </mat-option>
+                <mat-option [value]="toDoCategory.JOURNAL_INSECTS">
+                    <div class="flex justify-between">
+                        <span>Insects</span>
+                        <span>{{toDo.journal.insects.length}}</span>
+                    </div>
+                </mat-option>
+                <mat-option [value]="toDoCategory.JOURNAL_CRITTER">
+                    <div class="flex justify-between">
+                        <span>Sea Critters</span>
+                        <span>{{toDo.journal.critter.length}}</span>
+                    </div>
+                </mat-option>
+                <mat-option [value]="toDoCategory.JOURNAL_ARTIFACTS">
+                    <div class="flex justify-between">
+                        <span>Artifacts</span>
+                        <span>{{toDo.journal.artifacts.length}}</span>
+                    </div>
+                </mat-option>
+                <mat-option [value]="toDoCategory.JOURNAL_GEMS">
+                    <div class="flex justify-between">
+                        <span>Gems</span>
+                        <span>{{toDo.journal.gems.length}}</span>
+                    </div>
+                </mat-option>
+                <mat-option [value]="toDoCategory.JOURNAL_FOSSILS">
+                    <div class="flex justify-between">
+                        <span>Fossils</span>
+                        <span>{{toDo.journal.fossils.length}}</span>
+                    </div>
+                </mat-option>
+                <mat-option [value]="toDoCategory.COOKING_RECIPES">
+                    <div class="flex justify-between">
+                        <span>Cooking recipes</span>
+                        <span>{{toDo.cookingRecipes.length}}</span>
+                    </div>
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <app-to-do-partial [category]="toDoCategory.OFFERINGS"
+                       [data]="toDo.offerings"
+                       [toDoId]="toDoCategoryControl.value"
+                       dataToDoId="offerings"
+                       title="Offerings">
+        <ng-template let-data>
+            <app-to-do-entry-offering *ngFor="let offering of data" @leaveAnimation [entry]="offering"
                                       class="mb-2 block"/>
-            </ng-template>
-        </app-to-do-partial>
+        </ng-template>
+    </app-to-do-partial>
 
-        <app-to-do-partial [category]="toDoCategory.JOURNAL_INSECTS"
-                           [data]="toDo.journal.insects"
-                           [toDoId]="toDoId"
-                           dataToDoId="insects"
-                           title="Journal insects">
-            <ng-template let-data>
-                <app-to-do-entry-insect *ngFor="let insect of data" @leaveAnimation [entry]="insect"
-                                        class="mb-2 block"/>
-            </ng-template>
-        </app-to-do-partial>
+    <app-to-do-partial [category]="toDoCategory.JOURNAL_FISH"
+                       [data]="toDo.journal.fish"
+                       [toDoId]="toDoCategoryControl.value"
+                       dataToDoId="fish"
+                       title="Journal fish">
+        <ng-template let-data>
+            <app-to-do-entry-fish *ngFor="let fish of data" @leaveAnimation [entry]="fish"
+                                  class="mb-2 block"/>
+        </ng-template>
+    </app-to-do-partial>
 
-        <app-to-do-partial [category]="toDoCategory.JOURNAL_CRITTER"
-                           [data]="toDo.journal.critter"
-                           [toDoId]="toDoId"
-                           dataToDoId="sea-critters"
-                           title="Journal sea-critters">
-            <ng-template let-data>
-                <app-to-do-sea-critter *ngFor="let seaCritter of data" @leaveAnimation [entry]="seaCritter"
-                                       class="mb-2 block"/>
-            </ng-template>
-        </app-to-do-partial>
+    <app-to-do-partial [category]="toDoCategory.JOURNAL_INSECTS"
+                       [data]="toDo.journal.insects"
+                       [toDoId]="toDoCategoryControl.value"
+                       dataToDoId="insects"
+                       title="Journal insects">
+        <ng-template let-data>
+            <app-to-do-entry-insect *ngFor="let insect of data" @leaveAnimation [entry]="insect"
+                                    class="mb-2 block"/>
+        </ng-template>
+    </app-to-do-partial>
 
-
-        <app-to-do-partial [category]="toDoCategory.JOURNAL_ARTIFACTS"
-                           [data]="toDo.journal.artifacts"
-                           [toDoId]="toDoId"
-                           dataToDoId="artifacts"
-                           title="Artifacts">
-            <ng-template let-data>
-                <app-to-do-entry-base *ngFor="let artifact of data" @leaveAnimation
-                                      [category]="toDoCategory.JOURNAL_ARTIFACTS"
-                                      [item]="artifact" class="mb-2 block"/>
-            </ng-template>
-        </app-to-do-partial>
-
-        <app-to-do-partial [category]="toDoCategory.JOURNAL_GEMS"
-                           [data]="toDo.journal.gems"
-                           [toDoId]="toDoId"
-                           dataToDoId="gems"
-                           title="Gems">
-            <ng-template let-data>
-                <app-to-do-entry-base *ngFor="let gem of data" @leaveAnimation
-                                      [category]="toDoCategory.JOURNAL_GEMS"
-                                      [item]="gem" class="mb-2 block"/>
-            </ng-template>
-        </app-to-do-partial>
-
-        <app-to-do-partial [category]="toDoCategory.JOURNAL_FOSSILS"
-                           [data]="toDo.journal.fossils"
-                           [toDoId]="toDoId"
-                           dataToDoId="fossils"
-                           title="Fossils">
-            <ng-template let-data>
-                <app-to-do-entry-base *ngFor="let fossil of data" @leaveAnimation
-                                      [category]="toDoCategory.JOURNAL_FOSSILS"
-                                      [item]="fossil" class="mb-2 block"/>
-            </ng-template>
-        </app-to-do-partial>
-
-        <app-to-do-partial [category]="toDoCategory.COOKING_RECIPES"
-                           [data]="toDo.cookingRecipes"
-                           [toDoId]="toDoId"
-                           dataToDoId="cooking-recipes"
-                           title="Cooking recipes">
-            <ng-template let-data>
-                <app-to-do-entry-base *ngFor="let recipe of data" @leaveAnimation
-                                      [category]="toDoCategory.COOKING_RECIPES"
-                                      [item]="recipe.item" class="mb-2 block"/>
-            </ng-template>
-        </app-to-do-partial>
-
-        <ng-container *ngIf="toDoService.currentIsEmpty && !toDoId">
-            <h2 class="mb-2 mt-4 font-semibold text-xl text-black">No entries in to-do list</h2>
-            <p class="text-black">
-                Your current to-do list is empty! Visit the <a class="underline" routerLink="/journal">journal</a>, the
-                <a class="underline" routerLink="/locations/lake-temple">offerings</a> or other places to add entries to
-                your to-do list.
-            </p>
-        </ng-container>
-    </app-card>
-</app-sidebar-container>
+    <app-to-do-partial [category]="toDoCategory.JOURNAL_CRITTER"
+                       [data]="toDo.journal.critter"
+                       [toDoId]="toDoCategoryControl.value"
+                       dataToDoId="sea-critters"
+                       title="Journal sea-critters">
+        <ng-template let-data>
+            <app-to-do-sea-critter *ngFor="let seaCritter of data" @leaveAnimation [entry]="seaCritter"
+                                   class="mb-2 block"/>
+        </ng-template>
+    </app-to-do-partial>
 
 
+    <app-to-do-partial [category]="toDoCategory.JOURNAL_ARTIFACTS"
+                       [data]="toDo.journal.artifacts"
+                       [toDoId]="toDoCategoryControl.value"
+                       dataToDoId="artifacts"
+                       title="Artifacts">
+        <ng-template let-data>
+            <app-to-do-entry-base *ngFor="let artifact of data" @leaveAnimation
+                                  [category]="toDoCategory.JOURNAL_ARTIFACTS"
+                                  [item]="artifact" class="mb-2 block"/>
+        </ng-template>
+    </app-to-do-partial>
 
+    <app-to-do-partial [category]="toDoCategory.JOURNAL_GEMS"
+                       [data]="toDo.journal.gems"
+                       [toDoId]="toDoCategoryControl.value"
+                       dataToDoId="gems"
+                       title="Gems">
+        <ng-template let-data>
+            <app-to-do-entry-base *ngFor="let gem of data" @leaveAnimation
+                                  [category]="toDoCategory.JOURNAL_GEMS"
+                                  [item]="gem" class="mb-2 block"/>
+        </ng-template>
+    </app-to-do-partial>
 
+    <app-to-do-partial [category]="toDoCategory.JOURNAL_FOSSILS"
+                       [data]="toDo.journal.fossils"
+                       [toDoId]="toDoCategoryControl.value"
+                       dataToDoId="fossils"
+                       title="Fossils">
+        <ng-template let-data>
+            <app-to-do-entry-base *ngFor="let fossil of data" @leaveAnimation
+                                  [category]="toDoCategory.JOURNAL_FOSSILS"
+                                  [item]="fossil" class="mb-2 block"/>
+        </ng-template>
+    </app-to-do-partial>
 
+    <app-to-do-partial [category]="toDoCategory.COOKING_RECIPES"
+                       [data]="toDo.cookingRecipes"
+                       [toDoId]="toDoCategoryControl.value"
+                       dataToDoId="cooking-recipes"
+                       title="Cooking recipes">
+        <ng-template let-data>
+            <app-to-do-entry-base *ngFor="let recipe of data" @leaveAnimation
+                                  [category]="toDoCategory.COOKING_RECIPES"
+                                  [item]="recipe.item" class="mb-2 block"/>
+        </ng-template>
+    </app-to-do-partial>
+
+    <div *ngIf="toDoService.currentIsEmpty" class="show-when-none-displayed">
+        <h2 class="mb-2 mt-4 font-semibold text-xl text-black">No entries in to-do list</h2>
+        <p class="text-black">
+            Your current to-do list is empty! Visit the <a class="underline" routerLink="/journal">journal</a>, the
+            <a class="underline" routerLink="/locations/lake-temple">offerings</a> or other places to add entries to
+            your to-do list.
+        </p>
+    </div>
+    <div *ngIf="!toDoService.currentIsEmpty" class="show-when-none-displayed">
+        <h2 class="mb-2 mt-4 font-semibold text-xl text-black">No entries for selection</h2>
+        <p class="text-black">
+            There are no entries for your current filter settings.
+        </p>
+    </div>
+</app-card>
