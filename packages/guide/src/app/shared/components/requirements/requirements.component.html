@@ -29,3 +29,25 @@
     <app-item-icon [itemName]="requirement.meta.item.iconName" class="!w-7 ml-1 mr-0.5  !inline-block"/>
     {{requirement.meta.item.displayName}}
 </div>
+<ng-container *ngIf="requirement.type === 'DateSeasonRange'">
+    Date is {{requirement.meta.inverted ? 'not ' : ''}}between {{requirement.meta.from | ingameDate}}
+    and  {{requirement.meta.to | ingameDate}}
+</ng-container>
+<div *ngIf="requirement.type === 'ItemInInventory'">
+    Has {{requirement.meta.amount}}x
+    <app-item-icon [itemName]="requirement.meta.item.iconName" class="!w-7 ml-1 mr-0.5  !inline-block"/>
+    {{requirement.meta.item.displayName}}{{requirement.meta.requiredQuality ? ' of ' + requirement.meta.requiredQuality + 'quality' : ''}}
+    in inventory
+</div>
+<ng-container *ngIf="requirement.type === 'ItemWithCategoryInInventory'">
+    Has {{requirement.meta.amount}}x items of category {{requirement.meta.categoryName }} in inventory
+</ng-container>
+<ng-container *ngIf="requirement.type === 'ObjectState'">
+    State of '{{requirement.meta.customName ?? requirement.meta.id}}' is '{{requirement.meta.state }}'
+</ng-container>
+<ng-container *ngIf="requirement.type === 'QuestActive'">
+    Quest '{{requirement.meta.questId}}' is active
+</ng-container>
+<ng-container *ngIf="requirement.type === 'TempleLevel'">
+    Temple has reached level {{requirement.meta.level}}
+</ng-container>

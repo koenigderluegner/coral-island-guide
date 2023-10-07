@@ -7,6 +7,12 @@ import { RawMarriageHasProposedRequirement } from "./marriage-has-proposed-requi
 import { RawQuestFactRequirement } from "./quest-fact-requirement.type";
 import { RawSpecialItemRequirement } from "./special-item-requirements.type";
 import { RawMountAcquiredRequirement } from "./mount-acquired-requirement.type";
+import { RawDateSeasonRangeRequirement } from "./date-season-range-requirement.type";
+import { RawQuestActiveRequirement } from "./quest-active-requirement.type";
+import { RawTempleLevelRequirement } from "./temple-level-requirement.type";
+import { RawItemInInventoryRequirement } from "./item-in-inventory-requirement.type";
+import { RawItemWithCategoryInInventoryRequirement } from "./item-with-category-in-inventory-requirement.type";
+import { RawObjectStateRequirement } from "./object-state-requirement.type";
 
 export type DaRequirements = RawIsAchievementCompletedRequirement
     | RawCountNpcHeartLevelRequirement
@@ -17,3 +23,9 @@ export type DaRequirements = RawIsAchievementCompletedRequirement
     | RawQuestFactRequirement
     | RawSpecialItemRequirement
     | RawMountAcquiredRequirement
+    | RawDateSeasonRangeRequirement
+    | RawQuestActiveRequirement
+    | RawTempleLevelRequirement
+    | RawItemInInventoryRequirement
+    | RawItemWithCategoryInInventoryRequirement
+    | RawObjectStateRequirement

@@ -27,7 +27,9 @@ export class HeartEventTriggerDataGenerator extends BaseGenerator<RawHeartEventT
             specificDay: dbItem.specificDay.map(getEnumValue),
             specificMonth: dbItem.specificMonth.map(getEnumValue),
             specificWeather: dbItem.specificWeather.map(getEnumValue),
-            time: dbItem.time
+            time: dbItem.time,
+            effects: this.getEffects(itemKey),
+            requirements: this.getRequirements(itemKey),
         };
     }
 }

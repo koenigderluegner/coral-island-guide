@@ -116,7 +116,14 @@ try {
                 })
             },
 
-            'heart-event-trigger': new HeartEventTriggerDataGenerator(locationInfoMap),
+            'heart-event-trigger': {
+                generate: () => new HeartEventTriggerDataGenerator(locationInfoMap).generate({
+                    daFiles: [
+                        'ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneAdvanceRequirement.json',
+                        'ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneEffects.json',
+                    ]
+                })
+            },
 
             'achievements': {generate: () => achievementMap},
             'special-items': {generate: () => specialItemDbMap},

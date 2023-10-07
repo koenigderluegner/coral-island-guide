@@ -42,7 +42,7 @@ export abstract class BaseGenerator<DT, R> {
         return this.datatable?.[0]?.Rows[itemKey];
     }
 
-    getEffects(itemKey: string): Effect[] | undefined {
+    getEffects(itemKey: string): Effect[] {
         return this.effectMaps.map(map => map.get(itemKey)).filter(nonNullable).map(e => e.effects).flat()
     }
 

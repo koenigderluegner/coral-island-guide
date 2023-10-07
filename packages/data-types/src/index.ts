@@ -6,6 +6,13 @@ export * from './lib/types/effects/unlock-cooking-recipe-effect.type';
 export * from './lib/types/effects/unlock-cooking-utensil-effect.type';
 export * from './lib/types/effects/unlock-crafting-recipe-effect.type';
 export * from './lib/types/effects/consume-mastery-item-effect.type';
+export * from './lib/types/effects/change-object-state-effect.type';
+export * from './lib/types/effects/remove-item-from-inventory-effect.type';
+export * from './lib/types/effects/send-mail-to-player-effect.type';
+export * from './lib/types/effects/set-quest-active-effect.type';
+export * from './lib/types/effects/set-quest-completed-effect.type';
+export * from './lib/types/effects/update-npc-schedule-effect.type';
+export * from './lib/types/effects/vary-money-effect.type';
 
 
 export * from './lib/types/requirements/count-npc-heart-level-requirement.type';
@@ -18,6 +25,12 @@ export * from './lib/types/requirements/mount-acquired-requirement.type';
 export * from './lib/types/requirements/quest-fact-requirement.type';
 export * from './lib/types/requirements/requirement.type';
 export * from './lib/types/requirements/special-item-requirements.type';
+export * from './lib/types/requirements/date-season-range-requirement.type';
+export * from './lib/types/requirements/item-in-inventory-requirement.type';
+export * from './lib/types/requirements/item-with-category-in-inventory-requirement.type';
+export * from './lib/types/requirements/object-state-requirement.type';
+export * from './lib/types/requirements/temple-level-requirement.type';
+export * from './lib/types/requirements/quest-active-requirement.type';
 
 export * from './lib/interfaces/base-crop.interface';
 export * from './lib/interfaces/consumable.interface';

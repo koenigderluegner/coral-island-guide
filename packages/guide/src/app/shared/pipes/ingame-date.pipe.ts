@@ -6,6 +6,6 @@ import { SpecificDate } from "@ci/data-types";
 })
 export class IngameDatePipe implements PipeTransform {
     transform(value: SpecificDate): string {
-        return `${value.day} ${value.season}, Year ${value.year}`;
+        return `${value.day} ${value.season}` + (value.year < 0 ? '' : `, Year ${value.year}`);
     }
 }

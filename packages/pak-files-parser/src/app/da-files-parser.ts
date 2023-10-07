@@ -9,25 +9,38 @@ import {
     Achievement,
     AddItemToInventoryEffect,
     BoostMaxStaminaEffect,
+    ChangeObjectStateEffect,
     ConsumeMasteryItemEffect,
     CountNpcHeartLevelRequirement,
+    DateSeasonRangeRequirement,
     EditorOnlyRequirement,
     Effect,
     IsAchievementCompletedRequirement,
     IsCutsceneTriggeredRequirement,
     IsGiantUnlockedRequirement,
     Item,
+    ItemInInventoryRequirement,
+    ItemWithCategoryInInventoryRequirement,
     MarriageHasProposedRequirement,
     MountAcquiredRequirement,
+    ObjectStateRequirement,
+    QuestActiveRequirement,
     QuestFactRequirement,
+    RemoveItemFromInventoryEffect,
     Requirement,
     RequirementEntry,
+    SendMailToPlayerEffect,
+    SetQuestActiveEffect,
+    SetQuestCompletedEffect,
     SetQuestFactValueEffect,
     SpecialItem,
     SpecialItemRequirement,
+    TempleLevelRequirement,
     UnlockCookingRecipeEffect,
     UnlockCookingUtensilEffect,
-    UnlockCraftingRecipeEffect
+    UnlockCraftingRecipeEffect,
+    UpdateNpcScheduleEffect,
+    VaryMoneyEffect
 } from "@ci/data-types";
 import { getEnumValue, nonNullable } from "@ci/util";
 import path from "path";
@@ -54,8 +67,12 @@ export class DaFilesParser {
     static SpecialItemMap: Map<string, SpecialItem>;
     static AchievementMap: Map<string, Achievement>;
 
-    readAssets: Map<string, GameplayEffectsConfigEntry[] | GameplayRequirementsConfigEntry[]> = new Map<string, GameplayEffectsConfigEntry[] | GameplayRequirementsConfigEntry[]>()
+    readAssets: Map<string, GameplayEffectsConfigEntry[] | GameplayRequirementsConfigEntry[]> = new Map<string, GameplayEffectsConfigEntry[] | GameplayRequirementsConfigEntry[]>();
 
+    private changeObjectEffectsCustomNames: Map<string, string> = new Map<string, string>([
+        ['ComCenLobbyPiano', 'Community Center Piano'],
+        ['museum', 'Museum'],
+    ])
 
     parse(filePath: string): EffectMap | RequirementMap | undefined {
         const fullPath = path.join(environment.assetPath, filePath)
@@ -213,6 +230,116 @@ export class DaFilesParser {
 
 
                     }
+                    case "C_VaryMoneyEffect": {
+
+                        daEffect = {
+                            type: "VaryMoney",
+                            meta: {
+                                amount: foundEffect.Properties.amount
+                            }
+                        } satisfies VaryMoneyEffect;
+                        break;
+
+
+                    }
+                    case "C_ChangeObjectStateEffect": {
+
+                        daEffect = {
+                            type: "ChangeObjectState",
+                            meta: {
+                                id: foundEffect.Properties.id,
+                                state: foundEffect.Properties.state
+                            }
+                        } satisfies ChangeObjectStateEffect;
+
+                        const customName = this.changeObjectEffectsCustomNames.get(foundEffect.Properties.id);
+
+                        if (customName) {
+                            daEffect.meta['customName'] = customName
+                        }
+                        break;
+
+
+                    }
+                    case "C_UpdateNPCScheduleEffect": {
+
+                        daEffect = {
+                            type: "UpdateNpcSchedule",
+                            meta: {
+                                npcIds: foundEffect.Properties.npcIDs
+                            }
+                        } satisfies UpdateNpcScheduleEffect;
+
+                        break;
+
+
+                    }
+                    case "C_SendMailToPlayerEffect": {
+
+                        daEffect = {
+                            type: "SendMailToPlayer",
+                            meta: {
+                                mailId: foundEffect.Properties.mailId,
+                                dayDelay: foundEffect.Properties.dayDelay
+                            }
+                        } satisfies SendMailToPlayerEffect;
+                        break;
+
+
+                    }
+                    case "C_SetQuestActiveEffect": {
+
+                        daEffect = {
+                            type: "SetQuestActive",
+                            meta: {
+                                questId: foundEffect.Properties.questId
+                            }
+                        } satisfies SetQuestActiveEffect;
+                        break;
+
+
+                    }
+                    case "C_SetQuestCompletedEffect": {
+
+                        daEffect = {
+                            type: "SetQuestCompleted",
+                            meta: {
+                                questId: foundEffect.Properties.questId
+                            }
+                        } satisfies SetQuestCompletedEffect;
+                        break;
+
+
+                    }
+
+                    case "C_RemoveItemFromInventoryEffect": {
+
+                        let meta: RemoveItemFromInventoryEffect['meta'];
+
+                        if ('removeByCategory' in foundEffect.Properties) {
+                            //get  GiftCategory
+                            meta = {
+                                category: foundEffect.Properties.itemCategory.data.RowName,
+                                amount: foundEffect.Properties.quantity
+                            }
+                        } else {
+                            const item = DaFilesParser.ItemMap.get(foundEffect.Properties.itemId.itemID)
+
+                            if (!item) return;
+
+                            meta = {item: minifyItem(item), amount: foundEffect.Properties.quantity}
+                        }
+
+
+                        daEffect = {
+                            type: "RemoveItemFromInventory",
+                            meta
+                        } satisfies RemoveItemFromInventoryEffect;
+                        break;
+
+
+                    }
+
                     default: {
                         Logger.error(`Cannot find effect definition for ${foundEffect.Type} in ${fullDaPath}`)
                     }
@@ -358,6 +485,47 @@ export class DaFilesParser {
                         break;
                     }
 
+                    case "C_ObjectStateRequirement": {
+
+                        daEffect = {
+                            type: "ObjectState",
+                            meta: {
+                                id: foundEffect.Properties.id,
+                                state: foundEffect.Properties.requiredState
+                            }
+                        } satisfies ObjectStateRequirement;
+
+                        const customName = this.changeObjectEffectsCustomNames.get(foundEffect.Properties.id);
+
+                        if (customName) {
+                            daEffect.meta['customName'] = customName
+                        }
+                        break;
+
+
+                    }
+
+
+                    case "C_TempleLevelRequirement": {
+                        daEffect = {
+                            type: "TempleLevel",
+                            meta: {
+                                level: foundEffect.Properties.requiredLevel
+                            }
+                        } satisfies TempleLevelRequirement;
+                        break;
+                    }
+
+                    case "C_QuestActiveRequirement": {
+                        daEffect = {
+                            type: "QuestActive",
+                            meta: {
+                                questId: foundEffect.Properties.questId
+                            }
+                        } satisfies QuestActiveRequirement;
+                        break;
+                    }
+
 
                     case "C_SpecialItemRequirement": {
 
@@ -375,6 +543,59 @@ export class DaFilesParser {
                         break;
                     }
 
+                    case "C_ItemInInventoryRequirement": {
+
+                        const item = DaFilesParser.ItemMap.get(foundEffect.Properties.inventoryItem.itemID)
+
+                        if (!item) return;
+
+
+                        daEffect = {
+                            type: "ItemInInventory",
+                            meta: {
+                                item: minifyItem(item),
+                                amount: foundEffect.Properties.expectedAmount ?? 1,
+                            }
+                        } satisfies ItemInInventoryRequirement;
+
+                        if (foundEffect.Properties.qualityRequirement) {
+                            daEffect.meta.requiredQuality = getEnumValue(foundEffect.Properties.qualityRequirement.rules)
+                        }
+                        break;
+                    }
+
+                    case "C_ItemWithCategoryInInventoryRequirement": {
+
+                        daEffect = {
+                            type: "ItemWithCategoryInInventory",
+                            meta: {
+                                categoryName: foundEffect.Properties.category.data.RowName,
+                                amount: foundEffect.Properties.expectedAmount ?? 1,
+                            }
+                        } satisfies ItemWithCategoryInInventoryRequirement;
+
+                        break;
+                    }
+                    case "C_DateSeasonRangeRequirement": {
+
+                        daEffect = {
+                            type: "DateSeasonRange",
+                            meta: {
+                                inverted: foundEffect.Properties.invertResult,
+                                from: {
+                                    day: foundEffect.Properties.expectedDateSeason.from.day,
+                                    season: getEnumValue(foundEffect.Properties.expectedDateSeason.from.season),
+                                    year: -1
+                                },
+                                to: {
+                                    day: foundEffect.Properties.expectedDateSeason.to.day,
+                                    season: getEnumValue(foundEffect.Properties.expectedDateSeason.to.season),
+                                    year: -1
+                                }
+                            }
+                        } satisfies DateSeasonRangeRequirement;
+                        break;
+                    }
 
                     default: {
                         Logger.error(`Cannot find requirement definition for ${foundEffect.Type} in ${fullDaPath}`)

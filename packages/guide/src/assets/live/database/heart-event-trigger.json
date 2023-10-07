@@ -27,7 +27,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "erika_4",
@@ -56,7 +57,8 @@
         "hours": 12,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "alice_4",
@@ -85,6 +87,37 @@
         "hours": 22,
         "minutes": 0
       }
+    },
+    "effects": [
+      {
+        "type": "SendMailToPlayer",
+        "meta": {
+          "mailId": "alice_heart4",
+          "dayDelay": 1
+        }
+      }
+    ],
+    "requirements": {
+      "key": "alice_4",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -108,7 +141,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "bree_2",
@@ -133,7 +167,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "dippa_2",
@@ -156,7 +191,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "emma_2",
@@ -179,7 +215,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "eva_2",
@@ -209,7 +246,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "frank_2",
@@ -232,7 +270,8 @@
         "hours": 21,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "joko_2",
@@ -255,7 +294,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "millie_1",
@@ -280,7 +320,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "sam_2",
@@ -307,7 +348,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "scott_2",
@@ -330,7 +372,8 @@
         "hours": 13,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "suki_2",
@@ -355,6 +398,35 @@
         "hours": 21,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "suki_2",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "QuestActive",
+          "meta": {
+            "questId": "suki_2_helper"
+          }
+        },
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -380,6 +452,29 @@
         "hours": 15,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "zoe_2",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -405,7 +500,8 @@
         "hours": 13,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "surya_2",
@@ -431,7 +527,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "theo_2",
@@ -454,7 +551,8 @@
         "hours": 19,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "yuri_2",
@@ -479,7 +577,8 @@
         "hours": 12,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "luke_2",
@@ -502,7 +601,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "luke_2b",
@@ -529,7 +629,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "luke_2c",
@@ -556,6 +657,38 @@
         "hours": 23,
         "minutes": 0
       }
+    },
+    "effects": [
+      {
+        "type": "UpdateNpcSchedule",
+        "meta": {
+          "npcIds": [
+            "Taco"
+          ]
+        }
+      }
+    ],
+    "requirements": {
+      "key": "luke_2c",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -581,7 +714,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "pablo_2",
@@ -606,7 +740,8 @@
         "hours": 13,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "joko_3",
@@ -635,7 +770,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "noah_3",
@@ -662,6 +798,46 @@
         "hours": 13,
         "minutes": 0
       }
+    },
+    "effects": [
+      {
+        "type": "SetQuestCompleted",
+        "meta": {
+          "questId": "noah_3_helper"
+        }
+      },
+      {
+        "type": "VaryMoney",
+        "meta": {
+          "amount": 50
+        }
+      },
+      {
+        "type": "RemoveItemFromInventory",
+        "meta": {
+          "category": "Flowers",
+          "amount": 2
+        }
+      }
+    ],
+    "requirements": {
+      "key": "noah_3",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "QuestActive",
+          "meta": {
+            "questId": "noah_3_helper"
+          }
+        },
+        {
+          "type": "ItemWithCategoryInInventory",
+          "meta": {
+            "categoryName": "Flowers",
+            "amount": 2
+          }
+        }
+      ]
     }
   },
   {
@@ -691,7 +867,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "connor_2",
@@ -721,7 +898,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "scott_3",
@@ -750,7 +928,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "millie_4",
@@ -777,7 +956,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "leah_2",
@@ -800,7 +980,15 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": [
+      {
+        "type": "SetQuestActive",
+        "meta": {
+          "questId": "sq_leah_2"
+        }
+      }
+    ]
   },
   {
     "id": "walter_4",
@@ -827,7 +1015,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "yuri_3",
@@ -854,7 +1043,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "walter_7",
@@ -881,7 +1071,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "noah_4",
@@ -910,7 +1101,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "noah_5",
@@ -937,7 +1129,8 @@
         "hours": 23,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "noah_6",
@@ -966,6 +1159,55 @@
         "hours": 13,
         "minutes": 0
       }
+    },
+    "effects": [
+      {
+        "type": "SetQuestCompleted",
+        "meta": {
+          "questId": "noah_6_helper"
+        }
+      },
+      {
+        "type": "RemoveItemFromInventory",
+        "meta": {
+          "item": {
+            "id": "item_65003",
+            "displayName": "Wood",
+            "iconName": "Wood_Sprite"
+          },
+          "amount": 4
+        }
+      },
+      {
+        "type": "SendMailToPlayer",
+        "meta": {
+          "mailId": "noah_heart6_reward",
+          "dayDelay": 1
+        }
+      }
+    ],
+    "requirements": {
+      "key": "noah_6",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "ItemInInventory",
+          "meta": {
+            "item": {
+              "id": "item_65003",
+              "displayName": "Wood",
+              "iconName": "Wood_Sprite"
+            },
+            "amount": 4
+          }
+        },
+        {
+          "type": "QuestActive",
+          "meta": {
+            "questId": "noah_6_helper"
+          }
+        }
+      ]
     }
   },
   {
@@ -998,7 +1240,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "charles_2",
@@ -1027,7 +1270,16 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": [
+      {
+        "type": "SendMailToPlayer",
+        "meta": {
+          "mailId": "charles_heart2",
+          "dayDelay": 1
+        }
+      }
+    ]
   },
   {
     "id": "charles_3a",
@@ -1056,7 +1308,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "emily_2",
@@ -1081,7 +1334,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "lily_3",
@@ -1108,6 +1362,29 @@
         "hours": 17,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "lily_3",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -1131,7 +1408,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "luke_3",
@@ -1158,7 +1436,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "luke_3b",
@@ -1185,7 +1464,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "rafael_2",
@@ -1211,7 +1491,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "rafael_3",
@@ -1238,7 +1519,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "rafael_5",
@@ -1267,7 +1549,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "surya_3",
@@ -1294,7 +1577,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "alice_2",
@@ -1317,7 +1601,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "alice_5",
@@ -1344,7 +1629,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "anne_2",
@@ -1369,7 +1655,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "archie_1",
@@ -1394,7 +1681,8 @@
         "hours": 18,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "ben_2",
@@ -1420,6 +1708,29 @@
         "hours": 17,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "ben_2",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 15,
+              "season": "Fall",
+              "year": -1
+            },
+            "to": {
+              "day": 28,
+              "season": "Fall",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -1450,6 +1761,29 @@
         "hours": 17,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "ben_3",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 15,
+              "season": "Fall",
+              "year": -1
+            },
+            "to": {
+              "day": 28,
+              "season": "Fall",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -1480,6 +1814,29 @@
         "hours": 17,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "ben_4",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 15,
+              "season": "Fall",
+              "year": -1
+            },
+            "to": {
+              "day": 28,
+              "season": "Fall",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -1510,6 +1867,29 @@
         "hours": 17,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "ben_5",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 15,
+              "season": "Fall",
+              "year": -1
+            },
+            "to": {
+              "day": 28,
+              "season": "Fall",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -1537,7 +1917,8 @@
         "hours": 12,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "betty_7",
@@ -1564,6 +1945,29 @@
         "hours": 19,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "betty_7",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -1591,7 +1995,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "bree_5",
@@ -1621,7 +2026,8 @@
         "hours": 18,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "charles_1",
@@ -1644,7 +2050,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "charles_5",
@@ -1673,7 +2080,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "connor_5",
@@ -1700,7 +2108,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "dinda_4",
@@ -1727,7 +2136,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "erika_2",
@@ -1750,7 +2160,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "eva_4",
@@ -1777,7 +2188,8 @@
         "hours": 22,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "eva_5",
@@ -1804,7 +2216,8 @@
         "hours": 22,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "jim_5",
@@ -1838,6 +2251,64 @@
         "hours": 20,
         "minutes": 0
       }
+    },
+    "effects": [
+      {
+        "type": "RemoveItemFromInventory",
+        "meta": {
+          "item": {
+            "id": "item_72030",
+            "displayName": "Salmon",
+            "iconName": "Salmon_Sprite"
+          }
+        }
+      },
+      {
+        "type": "SetQuestCompleted",
+        "meta": {
+          "questId": "jim_5_helper"
+        }
+      }
+    ],
+    "requirements": {
+      "key": "jim_5",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "QuestActive",
+          "meta": {
+            "questId": "jim_5_helper"
+          }
+        },
+        {
+          "type": "ItemInInventory",
+          "meta": {
+            "item": {
+              "id": "item_72030",
+              "displayName": "Salmon",
+              "iconName": "Salmon_Sprite"
+            },
+            "amount": 1,
+            "requiredQuality": "Any"
+          }
+        },
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -1863,7 +2334,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "kenny_3",
@@ -1893,7 +2365,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "Macy_2",
@@ -1918,7 +2391,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "Macy_4",
@@ -1947,7 +2421,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "kenny_5",
@@ -1977,7 +2452,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "leah_3",
@@ -2004,6 +2480,29 @@
         "hours": 14,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "leah_3",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -2033,7 +2532,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "scott_5",
@@ -2062,7 +2562,8 @@
         "hours": 13,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "surya_4",
@@ -2089,7 +2590,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "theo_3",
@@ -2118,7 +2620,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "theo_4",
@@ -2147,7 +2650,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "theo_5",
@@ -2176,7 +2680,15 @@
         "hours": 12,
         "minutes": 0
       }
-    }
+    },
+    "effects": [
+      {
+        "type": "SetQuestActive",
+        "meta": {
+          "questId": "theo_5_helper"
+        }
+      }
+    ]
   },
   {
     "id": "yuri_4",
@@ -2210,7 +2722,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "zarah_2",
@@ -2235,7 +2748,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "zarah_4",
@@ -2264,7 +2778,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "zarah_5",
@@ -2293,7 +2808,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "scott_7",
@@ -2320,7 +2836,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "noah_7",
@@ -2347,7 +2864,8 @@
         "hours": 18,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "noah_8",
@@ -2376,7 +2894,8 @@
         "hours": 11,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "noah_9",
@@ -2405,7 +2924,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "noah_10",
@@ -2432,7 +2952,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "millie_5",
@@ -2459,7 +2980,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "millie_6",
@@ -2488,7 +3010,8 @@
         "hours": 12,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "millie_7",
@@ -2515,7 +3038,8 @@
         "hours": 12,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "millie_7b",
@@ -2542,7 +3066,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "millie_8",
@@ -2569,7 +3094,8 @@
         "hours": 12,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "scott_8",
@@ -2599,7 +3125,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "scott_8b",
@@ -2626,7 +3153,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "scott_10",
@@ -2653,7 +3181,8 @@
         "hours": 3,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "scott_10b",
@@ -2680,7 +3209,8 @@
         "hours": 0,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "alice_10",
@@ -2709,6 +3239,29 @@
         "hours": 23,
         "minutes": 59
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "alice_10",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -2739,6 +3292,29 @@
         "hours": 17,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "ben_6",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 15,
+              "season": "Fall",
+              "year": -1
+            },
+            "to": {
+              "day": 28,
+              "season": "Fall",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -2769,7 +3345,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "lily_7",
@@ -2796,6 +3373,21 @@
         "hours": 16,
         "minutes": 50
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "lily_7",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "ObjectState",
+          "meta": {
+            "id": "museum",
+            "state": "level2",
+            "customName": "Museum"
+          }
+        }
+      ]
     }
   },
   {
@@ -2823,6 +3415,29 @@
         "hours": 23,
         "minutes": 59
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "lily_7b",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -2850,7 +3465,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "lily_8b",
@@ -2877,7 +3493,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "wakuu_2",
@@ -2907,6 +3524,29 @@
         "hours": 17,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "wakuu_2",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -2937,7 +3577,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "wakuu_4",
@@ -2964,7 +3605,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "anne_4",
@@ -2991,7 +3633,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "anne_6",
@@ -3018,7 +3661,8 @@
         "hours": 13,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "anne_7",
@@ -3045,7 +3689,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "anne_8",
@@ -3072,7 +3717,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "anne_10",
@@ -3099,7 +3745,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "dinda_3",
@@ -3122,7 +3769,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "dippa_6",
@@ -3149,7 +3797,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "dippa_7",
@@ -3176,7 +3825,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "emma_5",
@@ -3203,7 +3853,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "erika_8",
@@ -3232,7 +3883,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "leah_6",
@@ -3262,7 +3914,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "leah_6b",
@@ -3291,6 +3944,29 @@
         "hours": 15,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "leah_6b",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -3321,7 +3997,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "leah_7b",
@@ -3351,7 +4028,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "leah_8",
@@ -3378,7 +4056,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "ben_7",
@@ -3408,6 +4087,29 @@
         "hours": 17,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "ben_7",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 15,
+              "season": "Fall",
+              "year": -1
+            },
+            "to": {
+              "day": 28,
+              "season": "Fall",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -3438,6 +4140,29 @@
         "hours": 19,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "ben_8",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 15,
+              "season": "Fall",
+              "year": -1
+            },
+            "to": {
+              "day": 28,
+              "season": "Fall",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -3465,7 +4190,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "eva_7",
@@ -3492,7 +4218,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "eva_8a",
@@ -3522,6 +4249,29 @@
         "hours": 14,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "eva_8a",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -3549,6 +4299,19 @@
         "hours": 20,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "eva_8b",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "QuestActive",
+          "meta": {
+            "questId": "eva_8b_helper"
+          }
+        }
+      ]
     }
   },
   {
@@ -3576,7 +4339,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "jack_2",
@@ -3599,7 +4363,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "jim_3",
@@ -3622,7 +4387,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "jim_6",
@@ -3649,6 +4415,29 @@
         "hours": 0,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "jim_6",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -3676,6 +4465,29 @@
         "hours": 0,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "jim_7",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -3703,7 +4515,8 @@
         "hours": 0,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "jim_10",
@@ -3730,6 +4543,29 @@
         "hours": 9,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "jim_10",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -3760,7 +4596,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "kenny_7",
@@ -3789,7 +4626,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "kenny_8",
@@ -3816,7 +4654,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "kenny_8b",
@@ -3843,7 +4682,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "kenny_10",
@@ -3870,7 +4710,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "kenny_10b",
@@ -3897,7 +4738,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "pablo_4",
@@ -3924,7 +4766,8 @@
         "hours": 18,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "pablo_6",
@@ -3951,7 +4794,8 @@
         "hours": 18,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "pablo_7",
@@ -3978,7 +4822,8 @@
         "hours": 18,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "pablo_7b",
@@ -4007,7 +4852,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "pablo_8",
@@ -4034,7 +4880,8 @@
         "hours": 18,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "pablo_10",
@@ -4063,6 +4910,29 @@
         "hours": 21,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "pablo_10",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -4090,7 +4960,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "rafael_7",
@@ -4117,7 +4988,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "rafael_8",
@@ -4144,7 +5016,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "surya_6",
@@ -4171,7 +5044,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "surya_7",
@@ -4198,7 +5072,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "surya_7b",
@@ -4225,7 +5100,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "surya_8",
@@ -4252,7 +5128,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "Kira_2",
@@ -4275,7 +5152,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "Ling_2",
@@ -4298,7 +5176,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "joko_5",
@@ -4325,7 +5204,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "Sunny_1",
@@ -4350,7 +5230,8 @@
         "hours": 18,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "Sunny_5",
@@ -4377,6 +5258,29 @@
         "hours": 21,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "Sunny_5",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -4400,7 +5304,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "Antonio_4",
@@ -4423,7 +5328,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "mark_3",
@@ -4446,7 +5352,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "mark_4",
@@ -4473,7 +5380,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "mark_6",
@@ -4500,7 +5408,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "mark_6b",
@@ -4527,7 +5436,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "mark_7",
@@ -4554,7 +5464,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "mark_8",
@@ -4581,7 +5492,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "paul_2",
@@ -4604,7 +5516,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "paul_4",
@@ -4631,7 +5544,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "paul_6",
@@ -4658,7 +5572,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "paul_7",
@@ -4685,7 +5600,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "paul_8",
@@ -4712,7 +5628,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "paul_10",
@@ -4739,7 +5656,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "Ling_3",
@@ -4766,7 +5684,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "Ling_4",
@@ -4793,7 +5712,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "Ling_6",
@@ -4820,7 +5740,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "Ling_7",
@@ -4847,7 +5768,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "Ling_8",
@@ -4874,6 +5796,29 @@
         "hours": 12,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "Ling_8",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -4901,7 +5846,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "valentina_3",
@@ -4924,7 +5870,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "valentina_6",
@@ -4953,6 +5900,29 @@
         "hours": 15,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "valentina_6",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -4982,6 +5952,29 @@
         "hours": 15,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "valentina_8",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -5009,7 +6002,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "zoe_5",
@@ -5036,7 +6030,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "zoe_6",
@@ -5065,6 +6060,29 @@
         "hours": 15,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "zoe_6",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -5092,7 +6110,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "zoe_9",
@@ -5123,7 +6142,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "zoe_10",
@@ -5150,7 +6170,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "joko_6",
@@ -5179,6 +6200,29 @@
         "hours": 14,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "joko_6",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -5206,7 +6250,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "joko_8",
@@ -5233,7 +6278,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "joko_10",
@@ -5260,7 +6306,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "charles_6",
@@ -5287,7 +6334,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "charles_7",
@@ -5321,6 +6369,29 @@
         "hours": 17,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "charles_7",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -5348,7 +6419,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "wataru_4",
@@ -5371,6 +6443,29 @@
         "hours": 17,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "wataru_4",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -5403,7 +6498,8 @@
         "hours": 13,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "wataru_7",
@@ -5430,7 +6526,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "wataru_8",
@@ -5457,7 +6554,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "wataru_9",
@@ -5484,7 +6582,8 @@
         "hours": 18,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "wataru_10",
@@ -5511,6 +6610,29 @@
         "hours": 17,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "wataru_10",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -5538,7 +6660,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "Macy_6",
@@ -5567,6 +6690,29 @@
         "hours": 17,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "Macy_6",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -5594,7 +6740,8 @@
         "hours": 23,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "Macy_8",
@@ -5623,6 +6770,29 @@
         "hours": 19,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "Macy_8",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -5652,6 +6822,29 @@
         "hours": 19,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "Macy_10",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -5679,7 +6872,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "yuri_6",
@@ -5706,7 +6900,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "yuri_7",
@@ -5733,7 +6928,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "yuri_7b",
@@ -5760,7 +6956,8 @@
         "hours": 23,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "yuri_8a",
@@ -5787,7 +6984,8 @@
         "hours": 23,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "yuri_8b",
@@ -5814,6 +7012,29 @@
         "hours": 23,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "yuri_8b",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -5841,7 +7062,8 @@
         "hours": 0,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "wakuu_5",
@@ -5868,6 +7090,29 @@
         "hours": 17,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "wakuu_5",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -5895,7 +7140,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "wakuu_7",
@@ -5925,7 +7171,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "wakuu_8",
@@ -5952,6 +7199,29 @@
         "hours": 19,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "wakuu_8",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -5979,7 +7249,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "theo_6",
@@ -6008,7 +7279,8 @@
         "hours": 12,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "theo_7",
@@ -6037,7 +7309,8 @@
         "hours": 12,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "theo_8",
@@ -6066,6 +7339,30 @@
         "hours": 12,
         "minutes": 0
       }
+    },
+    "effects": [
+      {
+        "type": "ChangeObjectState",
+        "meta": {
+          "id": "ComCenLobbyPiano",
+          "state": "Fixed",
+          "customName": "Community Center Piano"
+        }
+      }
+    ],
+    "requirements": {
+      "key": "theo_8",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "ObjectState",
+          "meta": {
+            "id": "ComCenLobbyPiano",
+            "state": "Broken",
+            "customName": "Community Center Piano"
+          }
+        }
+      ]
     }
   },
   {
@@ -6093,7 +7390,8 @@
         "hours": 21,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "luke_6",
@@ -6120,7 +7418,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "luke_6b",
@@ -6147,7 +7446,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "luke_7",
@@ -6174,7 +7474,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "luke_7b",
@@ -6201,7 +7502,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "luke_7c",
@@ -6228,7 +7530,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "luke_8",
@@ -6255,7 +7558,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "jack_4",
@@ -6282,7 +7586,8 @@
         "hours": 12,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "jack_6",
@@ -6309,7 +7614,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "jack_7",
@@ -6336,7 +7642,8 @@
         "hours": 13,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "jack_8",
@@ -6363,7 +7670,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "jack_9",
@@ -6390,7 +7698,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "jack_10",
@@ -6417,7 +7726,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "emma_6",
@@ -6444,7 +7754,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "emma_9",
@@ -6471,7 +7782,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "emma_10",
@@ -6498,7 +7810,8 @@
         "hours": 21,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "connor_7",
@@ -6525,6 +7838,29 @@
         "hours": 20,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "connor_7",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -6552,7 +7888,8 @@
         "hours": 21,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "antonio_6",
@@ -6579,7 +7916,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "antonio_8",
@@ -6606,7 +7944,8 @@
         "hours": 21,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "antonio_10",
@@ -6633,7 +7972,8 @@
         "hours": 0,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "aaliyah_3",
@@ -6656,7 +7996,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "aaliyah_5",
@@ -6683,7 +8024,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "aaliyah_6a",
@@ -6710,7 +8052,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "aaliyah_6b",
@@ -6737,7 +8080,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "aaliyah_7a",
@@ -6764,7 +8108,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "aaliyah_7b",
@@ -6791,7 +8136,8 @@
         "hours": 13,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "aaliyah_8a",
@@ -6818,7 +8164,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "nina_3",
@@ -6844,7 +8191,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "nina_5",
@@ -6871,7 +8219,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "nina_6",
@@ -6898,7 +8247,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "nina_7",
@@ -6925,7 +8275,8 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "nina_7b",
@@ -6955,7 +8306,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "nina_8",
@@ -6982,7 +8334,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "raj_2",
@@ -7008,7 +8361,8 @@
         "hours": 18,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "raj_4",
@@ -7035,7 +8389,8 @@
         "hours": 22,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "raj_5",
@@ -7062,7 +8417,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "raj_5b",
@@ -7092,7 +8448,8 @@
         "hours": 18,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "raj_6",
@@ -7122,7 +8479,8 @@
         "hours": 18,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "raj_7",
@@ -7152,7 +8510,8 @@
         "hours": 18,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "raj_8",
@@ -7182,7 +8541,8 @@
         "hours": 18,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "raj_8b",
@@ -7212,7 +8572,8 @@
         "hours": 18,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "chaem_3",
@@ -7241,6 +8602,29 @@
         "hours": 13,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "chaem_3",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -7275,7 +8659,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "chaem_6",
@@ -7306,7 +8691,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "chaem_7",
@@ -7339,6 +8725,29 @@
         "hours": 13,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "chaem_7",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -7370,7 +8779,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "chaem_8",
@@ -7401,7 +8811,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "chaem_8b",
@@ -7432,7 +8843,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "chaem_10",
@@ -7466,7 +8878,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "charles_3b",
@@ -7495,7 +8908,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "charles_8b",
@@ -7522,7 +8936,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "aaliyah_8b",
@@ -7551,6 +8966,19 @@
         "hours": 17,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "aaliyah_8b",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "TempleLevel",
+          "meta": {
+            "level": 5
+          }
+        }
+      ]
     }
   },
   {
@@ -7580,7 +9008,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "alice_7",
@@ -7607,7 +9036,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "alice_8",
@@ -7634,7 +9064,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "charles_10",
@@ -7661,7 +9092,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "charles_10b",
@@ -7688,7 +9120,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "suki_4",
@@ -7719,6 +9152,29 @@
         "hours": 12,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "suki_4",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -7753,6 +9209,29 @@
         "hours": 13,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "suki_6",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -7782,7 +9261,8 @@
         "hours": 22,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "suki_8a",
@@ -7813,6 +9293,29 @@
         "hours": 12,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "suki_8a",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -7847,7 +9350,8 @@
         "hours": 16,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "millie_10",
@@ -7874,6 +9378,29 @@
         "hours": 15,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "millie_10",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -7904,7 +9431,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "aaliyah_10",
@@ -7933,6 +9461,29 @@
         "hours": 15,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "aaliyah_10",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -7962,7 +9513,8 @@
         "hours": 15,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "alice_10b",
@@ -7989,7 +9541,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "rafael_10",
@@ -8022,6 +9575,19 @@
         "hours": 23,
         "minutes": 59
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "rafael_10",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "TempleLevel",
+          "meta": {
+            "level": 3
+          }
+        }
+      ]
     }
   },
   {
@@ -8047,6 +9613,29 @@
         "hours": 23,
         "minutes": 59
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "surya_10",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -8070,7 +9659,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "yuri_8c",
@@ -8097,7 +9687,8 @@
         "hours": 23,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "yuri_10b",
@@ -8124,7 +9715,8 @@
         "hours": 0,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "zarah_6",
@@ -8153,7 +9745,8 @@
         "hours": 17,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "zarah_7",
@@ -8182,7 +9775,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "zarah_8",
@@ -8211,7 +9805,8 @@
         "hours": 23,
         "minutes": 59
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "zarah_10",
@@ -8240,6 +9835,29 @@
         "hours": 23,
         "minutes": 59
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "zarah_10",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -8273,7 +9891,8 @@
         "hours": 14,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "mark_10",
@@ -8306,6 +9925,29 @@
         "hours": 16,
         "minutes": 0
       }
+    },
+    "effects": [],
+    "requirements": {
+      "key": "mark_10",
+      "type": "And",
+      "requirements": [
+        {
+          "type": "DateSeasonRange",
+          "meta": {
+            "inverted": true,
+            "from": {
+              "day": 17,
+              "season": "Winter",
+              "year": -1
+            },
+            "to": {
+              "day": 21,
+              "season": "Winter",
+              "year": -1
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -8333,7 +9975,8 @@
         "hours": 0,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   },
   {
     "id": "lily_10",
@@ -8360,6 +10003,7 @@
         "hours": 20,
         "minutes": 0
       }
-    }
+    },
+    "effects": []
   }
 ]
