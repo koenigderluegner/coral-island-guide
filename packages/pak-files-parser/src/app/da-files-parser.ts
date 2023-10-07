@@ -320,14 +320,14 @@ export class DaFilesParser {
                             //get  GiftCategory
                             meta = {
                                 category: foundEffect.Properties.itemCategory.data.RowName,
-                                amount: foundEffect.Properties.quantity
+                                amount: foundEffect.Properties.quantity ?? 1
                             }
                         } else {
                             const item = DaFilesParser.ItemMap.get(foundEffect.Properties.itemId.itemID)
 
                             if (!item) return;
 
-                            meta = {item: minifyItem(item), amount: foundEffect.Properties.quantity}
+                            meta = {item: minifyItem(item), amount: foundEffect.Properties.quantity ?? 1}
                         }
 
 
