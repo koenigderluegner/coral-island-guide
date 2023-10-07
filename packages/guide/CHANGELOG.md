@@ -4,9 +4,15 @@
 
 #### Added
 
+- Added new section "My Guide"
+    - This section is primarily for user created data, for tracking etc
 - Added heart event triggers to NPCs
 - Added merit exchange
 - Added PWA support
+
+#### Changed
+
+- Renamed checklists to to-dos and moved them to "My Guide"
 
 ### 0.11.1 2023-09-14
 
