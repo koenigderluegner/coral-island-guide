@@ -11,6 +11,7 @@ export class ProcessorComponent extends BaseTabbedSelectableContainerComponent<I
 
     quality = Quality;
     machineNames: string[] = [];
+    protected processorMapping = this._database.getProcessorMapping()
 
     constructor() {
         super();

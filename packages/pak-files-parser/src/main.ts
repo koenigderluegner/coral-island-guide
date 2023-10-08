@@ -41,6 +41,7 @@ import { LocationInfoGenerator } from "./app/location-info.generator";
 import { HeartEventTriggerDataGenerator } from "./app/heart-event-trigger-data.generator";
 import { HeartEventsDbGenerator } from "./app/heart-events-db.generator";
 import { MuseumChecklistGenerator } from "./app/museum-checklist.generator";
+import { ItemProcessorMapGenerator } from "./app/item-processor-map.generator";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
@@ -129,6 +130,8 @@ try {
             'heart-events': new HeartEventsDbGenerator(heartEventTriggerDataMap),
 
             'museum-checklist': new MuseumChecklistGenerator(itemDbMap),
+
+            'processor-mapping': new ItemProcessorMapGenerator(itemDbMap),
 
             'achievements': {generate: () => achievementMap},
             'special-items': {generate: () => specialItemDbMap},

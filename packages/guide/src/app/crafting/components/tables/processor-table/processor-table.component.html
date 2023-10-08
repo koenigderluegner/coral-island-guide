@@ -34,7 +34,19 @@
         <ng-container matColumnDef="processor">
             <th *matHeaderCellDef mat-header-cell>Processor</th>
             <td *matCellDef="let element" class="text-col w-[1%] whitespace-nowrap" mat-cell>
-                {{element.machine | addSpacesToPascalCase | titlecase}}
+                <ng-container *ngIf="processorMapping[element.machine.toLowerCase()] as minimalItem">
+                    <a [routerLink]="['crafting/artisan', element.machine.toLowerCase()]"
+                       class="flex gap-2 items-center">
+                        <app-item-icon [itemName]="minimalItem.iconName" class="!w-7"/>
+                        <span class="ml-1 whitespace-nowrap underline">{{minimalItem.displayName}}</span>
+                    </a>
+
+
+                </ng-container>
+                <ng-container *ngIf="!processorMapping[element.machine.toLowerCase()]">
+                    {{element.machine | addSpacesToPascalCase | titlecase}}
+                </ng-container>
+
             </td>
         </ng-container>
 

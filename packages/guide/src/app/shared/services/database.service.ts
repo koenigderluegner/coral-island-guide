@@ -19,6 +19,7 @@ import {
     ItemUpgradeData,
     JournalOrder,
     MeritExchangeShopData,
+    MinimalItem,
     NPC,
     OfferingAltar,
     OpeningHours,
@@ -84,6 +85,9 @@ export class DatabaseService {
     private _HEART_EVENTS: Record<string, HeartEvent[]> = {};
     private _HEART_EVENTS$?: Observable<Record<string, HeartEvent[]>>;
 
+    private _PROCESSOR_MAPPING: Record<string, MinimalItem> = {};
+    private _PROCESSOR_MAPPING$?: Observable<Record<string, MinimalItem>>;
+
 
     constructor(private readonly _http: HttpClient,
                 private readonly _settings: SettingsService) {
@@ -141,6 +145,23 @@ export class DatabaseService {
                 );
         }
         return this._ITEMS$;
+    }
+
+    getProcessorMapping(): Record<string, MinimalItem> {
+        return this._PROCESSOR_MAPPING;
+    }
+
+
+    fetchProcessorMapping$(): Observable<Record<string, MinimalItem>> {
+        if (!this._PROCESSOR_MAPPING$) {
+            this._PROCESSOR_MAPPING$ = this._http.get<Record<string, MinimalItem>[]>(`${this._BASE_PATH}/processor-mapping.json`)
+                .pipe(
+                    map(s => s[0]),
+                    tap(items => this._PROCESSOR_MAPPING = items),
+                    shareReplay(1)
+                );
+        }
+        return this._PROCESSOR_MAPPING$;
     }
 
     getNPCs(): NPC[] {

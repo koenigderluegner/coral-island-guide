@@ -9,6 +9,7 @@
 - Added heart event triggers to NPCs
 - Added merit exchange
 - Added PWA support
+- Added manual mapping for processors to show in database to reduce confusion about internal names
 
 #### Changed
 

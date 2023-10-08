@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { DatabaseService } from './shared/services/database.service';
-import { Observable } from 'rxjs';
-import { Item } from '@ci/data-types';
+import { combineLatest, Observable } from 'rxjs';
 
 @Component({
     selector: 'app-root',
@@ -10,12 +9,15 @@ import { Item } from '@ci/data-types';
 })
 export class AppComponent {
 
-    items$: Observable<Item[]>;
+    prefetchData$: Observable<any>;
 
     constructor(
         private databaseService: DatabaseService,
     ) {
-        this.items$ = this.databaseService.fetchItems$();
+        this.prefetchData$ = combineLatest([
+            this.databaseService.fetchItems$(),
+            this.databaseService.fetchProcessorMapping$()
+        ]);
     }
 
 }

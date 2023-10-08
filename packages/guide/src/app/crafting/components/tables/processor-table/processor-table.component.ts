@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { booleanAttribute, Component, inject, Input } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { ItemProcessing } from "@ci/data-types";
-import { coerceBooleanProperty } from "@angular/cdk/coercion";
+import { DatabaseService } from "../../../../shared/services/database.service";
 
 @Component({
     selector: 'app-processor-table',
@@ -9,6 +9,7 @@ import { coerceBooleanProperty } from "@angular/cdk/coercion";
 })
 export class ProcessorTableComponent extends BaseTableComponent<ItemProcessing> {
 
+    @Input({transform: booleanAttribute}) showProcessor = false
     protected readonly BASE_DISPLAY_COLUMNS: string[] = [
         'icon',
         'outputName',
@@ -16,17 +17,7 @@ export class ProcessorTableComponent extends BaseTableComponent<ItemProcessing> 
         'processingTime',
         'sellPrice',
     ];
-
-    _showProcessor = false;
-
-    @Input()
-    get showProcessor(): boolean {
-        return this._showProcessor;
-    }
-
-    set showProcessor(size: boolean | number | string | null | undefined) {
-        this._showProcessor = coerceBooleanProperty(size);
-    }
+    protected processorMapping = inject(DatabaseService).getProcessorMapping();
 
     override sortingDataAccessor = (item: ItemProcessing, property: string) => {
 
@@ -48,10 +39,10 @@ export class ProcessorTableComponent extends BaseTableComponent<ItemProcessing> 
         super.setupDataSource(dataSource);
 
         const utensilIndex = this.displayedColumns.indexOf('processor');
-        if (this._showProcessor && utensilIndex === -1) {
+        if (this.showProcessor && utensilIndex === -1) {
             this.displayedColumns.splice(3, 0, 'processor');
             this.displayHeaderColumns = this.displayedColumns.filter(col => col !== 'icon');
-        } else if (!this._showProcessor && utensilIndex !== -1) {
+        } else if (!this.showProcessor && utensilIndex !== -1) {
             this.displayedColumns.splice(utensilIndex, 1);
             this.displayHeaderColumns = this.displayedColumns.filter(col => col !== 'icon');
         }
