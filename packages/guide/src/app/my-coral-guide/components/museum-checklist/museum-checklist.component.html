@@ -1,0 +1,26 @@
+<app-list-detail-container [(openDrawer)]="openDrawer" [removePlaceholder]="showTable">
+    <app-caught-details *ngIf="selectedEntity" [critter]="selectedEntity" [registerToToDo]="registerToToDo"
+                        listDetail></app-caught-details>
+
+    <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex"
+                   class=" px-2 xl:px-[50px] w-full"
+                   dynamicHeight mat-stretch-tabs="false">
+        <mat-tab *ngFor="let tab of (checklistDefinition$ | async | keyvalue)" [formGroup]="checklistForm"
+                 [label]="tab.key">
+
+            <ng-container *ngIf="!showTable">
+                <div class="grid gap-4 icon-grid">
+                    <div *ngFor="let entry of tab.value" [class.checklist-checked]="checklistForm.get(entry.id)?.value"
+                         [class.selected-icon]="selectedEntity?.id === entry.id"
+                         class="icon-grid-item checklist-item  flex flex-col">
+                        <app-item-icon [itemName]="entry.iconName"/>
+                        <label class="text-white flex justify-center" for="entry-{{entry.id}}-input">
+                            <mat-checkbox [formControlName]="entry.id" class="flex" id="entry-{{entry.id}}"
+                                          name="entry-{{entry.id}}"></mat-checkbox>
+                        </label>
+                    </div>
+                </div>
+            </ng-container>
+        </mat-tab>
+    </mat-tab-group>
+</app-list-detail-container>

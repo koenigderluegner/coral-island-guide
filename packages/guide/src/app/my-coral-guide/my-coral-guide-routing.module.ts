@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MyCoralGuideComponent } from './my-coral-guide.component';
 import { IndexComponent } from "./components/index/index.component";
+import { MuseumChecklistComponent } from "./components/museum-checklist/museum-checklist.component";
 
 const routes: Routes = [
     {
@@ -15,6 +16,14 @@ const routes: Routes = [
                 path: 'to-do',
                 loadChildren: () => import('../to-do/to-do.module').then(m => m.ToDoModule)
             },
+
+            {path: 'museum-checklist', redirectTo: 'museum-checklist/', pathMatch: 'full'},
+            {
+                path: 'museum-checklist/:tabName',
+                component: MuseumChecklistComponent,
+                title: 'Museum checklist  - My Guide'
+            },
+
         ]
     }
 

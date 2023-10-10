@@ -27,5 +27,42 @@
     background: #fff;
   }
 
+  &.checklist-item {
+    padding: 0;
+    border: 1px solid rgba(255 255 255 / 0.3);
+    --mdc-checkbox-state-layer-size: 20px;
+
+    /* Wrapped in a label, no need for touch target causing double activation */
+    .mat-mdc-checkbox-touch-target {
+      display: none;
+    }
+
+    .mdc-checkbox__background {
+      width: 20px;
+      height: 20px;
+    }
+
+    .app-item-icon {
+      padding: 10%;
+    }
+
+    label {
+      padding: 5% 10% 10%;
+      border-top: 1px solid rgba(255 255 255 / .3)
+    }
+
+    &.checklist-checked {
+      @apply border-emerald-900 bg-emerald-300/30;
+
+      &:hover {
+        @apply bg-emerald-300/60;
+      }
+
+      label {
+        @apply border-emerald-900 text-emerald-100/90;
+      }
+    }
+  }
+
 
 }

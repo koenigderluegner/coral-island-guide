@@ -88,6 +88,9 @@ export class DatabaseService {
     private _PROCESSOR_MAPPING: Record<string, MinimalItem> = {};
     private _PROCESSOR_MAPPING$?: Observable<Record<string, MinimalItem>>;
 
+    private _MUSEUM_CHECKLIST: Record<string, MinimalItem[]> = {};
+    private _MUSEUM_CHECKLIST$?: Observable<Record<string, MinimalItem[]>>;
+
 
     constructor(private readonly _http: HttpClient,
                 private readonly _settings: SettingsService) {
@@ -196,6 +199,24 @@ export class DatabaseService {
                 );
         }
         return this._HEART_EVENTS$;
+    }
+
+
+    getMuseumChecklist(): Record<string, MinimalItem[]> {
+        return this._MUSEUM_CHECKLIST;
+    }
+
+
+    fetchMuseumChecklist$(): Observable<Record<string, MinimalItem[]>> {
+        if (!this._MUSEUM_CHECKLIST$) {
+            this._MUSEUM_CHECKLIST$ = this._http.get<Record<string, MinimalItem[]>[]>(`${this._BASE_PATH}/museum-checklist.json`)
+                .pipe(
+                    map(events => events[0]),
+                    tap(items => this._MUSEUM_CHECKLIST = items),
+                    shareReplay(1)
+                );
+        }
+        return this._MUSEUM_CHECKLIST$;
     }
 
 
