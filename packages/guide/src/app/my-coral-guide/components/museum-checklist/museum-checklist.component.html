@@ -3,7 +3,7 @@
         <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex"
                        class=" px-2 xl:px-[50px] w-full"
                        dynamicHeight mat-stretch-tabs="false">
-            <mat-tab *ngFor="let tab of (checklistDefinition | keyvalue)"
+            <mat-tab *ngFor="let tab of (checklistDefinition | keyvalue: keyValueNoOrder)"
                      [formGroup]="checklistForm"
 
                      [label]="tab.key">

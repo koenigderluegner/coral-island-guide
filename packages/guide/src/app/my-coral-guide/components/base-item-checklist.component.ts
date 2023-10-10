@@ -48,4 +48,8 @@ export abstract class BaseItemChecklistComponent extends BaseTabbedSelectableCon
         );
     }
 
+    protected keyValueNoOrder(): number {
+        return 0
+    }
+
 }

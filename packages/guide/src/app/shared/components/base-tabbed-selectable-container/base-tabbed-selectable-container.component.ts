@@ -39,6 +39,8 @@ export class BaseTabbedSelectableContainerComponent<T> extends BaseSelectableCon
 
                 const tabName = params.get('tabName');
 
+                console.log(tabName, tabNames)
+
                 if (tabName) {
                     this.selectedTabIndex = tabNames
                         .map(s => s.toLowerCase().replaceAll(' ', ''))
