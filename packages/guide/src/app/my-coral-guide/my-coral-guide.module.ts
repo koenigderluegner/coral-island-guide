@@ -5,14 +5,23 @@ import { IndexComponent } from './components/index/index.component';
 import { MyCoralGuideRoutingModule } from './my-coral-guide-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { MuseumChecklistComponent } from './components/museum-checklist/museum-checklist.component';
-import { JournalModule } from "../journal/journal.module";
-import { MatTabsModule } from "@angular/material/tabs";
-import { MatCheckboxModule } from "@angular/material/checkbox";
-import { ReactiveFormsModule } from "@angular/forms";
+import { JournalModule } from '../journal/journal.module';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CookingRecipesChecklistComponent } from './components/cooking-recipes-checklist/cooking-recipes-checklist.component';
 
 @NgModule({
-    declarations: [MyCoralGuideComponent, IndexComponent, MuseumChecklistComponent],
-    imports: [CommonModule, MyCoralGuideRoutingModule, SharedModule, JournalModule, MatTabsModule, MatCheckboxModule, ReactiveFormsModule],
+    declarations: [MyCoralGuideComponent, IndexComponent, MuseumChecklistComponent, CookingRecipesChecklistComponent],
+    imports: [
+        CommonModule,
+        MyCoralGuideRoutingModule,
+        SharedModule,
+        JournalModule,
+        MatTabsModule,
+        MatCheckboxModule,
+        ReactiveFormsModule,
+    ],
 })
 export class MyCoralGuideModule {
 }

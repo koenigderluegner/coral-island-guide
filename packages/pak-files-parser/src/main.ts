@@ -42,6 +42,7 @@ import { HeartEventTriggerDataGenerator } from "./app/heart-event-trigger-data.g
 import { HeartEventsDbGenerator } from "./app/heart-events-db.generator";
 import { MuseumChecklistGenerator } from "./app/museum-checklist.generator";
 import { ItemProcessorMapGenerator } from "./app/item-processor-map.generator";
+import { CookingRecipesChecklistGenerator } from "./app/cooking-recipes-checklist.generator";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
@@ -130,6 +131,7 @@ try {
             'heart-events': new HeartEventsDbGenerator(heartEventTriggerDataMap),
 
             'museum-checklist': new MuseumChecklistGenerator(itemDbMap),
+            'cooking-recipes-checklist': new CookingRecipesChecklistGenerator(itemDbMap, cookingDbMap),
 
             'processor-mapping': new ItemProcessorMapGenerator(itemDbMap),
 

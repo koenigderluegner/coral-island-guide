@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MyCoralGuideComponent } from './my-coral-guide.component';
 import { IndexComponent } from "./components/index/index.component";
 import { MuseumChecklistComponent } from "./components/museum-checklist/museum-checklist.component";
+import { CookingRecipesChecklistComponent } from "./components/cooking-recipes-checklist/cooking-recipes-checklist.component";
 
 const routes: Routes = [
     {
@@ -17,11 +18,25 @@ const routes: Routes = [
                 loadChildren: () => import('../to-do/to-do.module').then(m => m.ToDoModule)
             },
 
-            {path: 'museum-checklist', redirectTo: 'museum-checklist/', pathMatch: 'full'},
+            {
+                path: 'museum-checklist',
+                redirectTo: 'museum-checklist/',
+                pathMatch: 'full'
+            },
             {
                 path: 'museum-checklist/:tabName',
                 component: MuseumChecklistComponent,
-                title: 'Museum checklist  - My Guide'
+                title: 'Museum checklist - My Guide'
+            },
+            {
+                path: 'cooking-recipes-checklist',
+                redirectTo: 'cooking-recipes-checklist/',
+                pathMatch: 'full'
+            },
+            {
+                path: 'cooking-recipes-checklist/:tabName',
+                component: CookingRecipesChecklistComponent,
+                title: 'Cooking recipes checklist - My Guide'
             },
 
         ]
