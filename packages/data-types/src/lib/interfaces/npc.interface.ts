@@ -1,3 +1,5 @@
+import { SpecificDate } from "./specific-date.interface";
+
 export interface NPC {
     key: string;
     characterName: string;
@@ -9,6 +11,7 @@ export interface NPC {
     characterCategory: string,
     iconName: string;
     appearances: Record<string, Record<string, string>>
-    headerPortraitFileName: string |null;
-    customHead?: true
+    headerPortraitFileName: string | null;
+    customHead?: true,
+    birthday?: SpecificDate
 }

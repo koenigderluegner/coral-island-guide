@@ -43,6 +43,7 @@ import { HeartEventsDbGenerator } from "./app/heart-events-db.generator";
 import { MuseumChecklistGenerator } from "./app/museum-checklist.generator";
 import { ItemProcessorMapGenerator } from "./app/item-processor-map.generator";
 import { CookingRecipesChecklistGenerator } from "./app/cooking-recipes-checklist.generator";
+import { CalendarGenerator } from "./app/calendar.generator";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
@@ -62,7 +63,14 @@ const itemDbMap = itemDbGenerator.generate();
 
 DaFilesParser.ItemMap = itemDbMap;
 
-const npcDbGenerator = new NPCDbGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.json');
+let calendarDbMap;
+
+if (!environment.isBeta) {
+    const calendarDbGenerator = new CalendarGenerator();
+    calendarDbMap = calendarDbGenerator.generate();
+}
+
+const npcDbGenerator = new NPCDbGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.json', calendarDbMap);
 const npcDbMap = npcDbGenerator.generate();
 
 const craftingRecipeUnlockedByMasteryDbGenerator = new CraftingRecipeUnlockedByMasteryDbGenerator(itemDbMap);

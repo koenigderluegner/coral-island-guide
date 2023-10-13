@@ -15,6 +15,7 @@ export * from './lib/types/effects/update-npc-schedule-effect.type';
 export * from './lib/types/effects/vary-money-effect.type';
 
 
+
 export * from './lib/types/requirements/count-npc-heart-level-requirement.type';
 export * from './lib/types/requirements/editor-only-requirement.type';
 export * from './lib/types/requirements/is-achivement-completed-requirement.type';
@@ -78,3 +79,4 @@ export * from './lib/types/generic-entry.type';
 export * from './lib/types/item-entry.type';
 export * from './lib/types/shop-names.type';
 export * from './lib/types/requirement-entry.type';
+export * from './lib/types/calendar-event.type';

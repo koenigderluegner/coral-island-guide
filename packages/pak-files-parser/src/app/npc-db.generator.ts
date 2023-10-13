@@ -1,5 +1,5 @@
 import { BaseGenerator } from './base-generator.class';
-import { Item, NPC } from '@ci/data-types';
+import { CalendarBirthday, CalendarEvent, Item, NPC, SpecificDate } from '@ci/data-types';
 import { Datatable } from '../interfaces/datatable.interface';
 import { convertToIconName, readAsset } from '../util/functions';
 import { RawNPC } from '../interfaces/raw-data-interfaces/raw-npc.interface';
@@ -14,12 +14,16 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
 
     datatable: Datatable<RawNPC>[];
     petNPCs: Datatable<RawNPC>[];
+    birthdays: CalendarBirthday[] = []
 
 
-    constructor(protected itemMap: Map<string, Item>, filepath: string) {
+    constructor(protected itemMap: Map<string, Item>, filepath: string, protected calendarMap?: Map<string, CalendarEvent[]>) {
         super();
         this.datatable = readAsset(filepath);
         this.petNPCs = readAsset('ProjectCoral/Content/ProjectCoral/AdoptablePets/NPC/DT_PetNPCs.json');
+        if (this.calendarMap) {
+            this.birthdays = [...this.calendarMap.values()][0].filter((e): e is CalendarBirthday => e.eventType === "birthday");
+        }
     }
 
     handleEntry(itemKey: string, dbItem: RawNPC): NPC {
@@ -104,6 +108,17 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
 
         })
 
+        let birthday: SpecificDate | undefined;
+
+        const foundBirthday = this.birthdays.find(b => b.npcKey === itemKey.toLowerCase())
+
+        if (foundBirthday) {
+            birthday = {
+                day: foundBirthday.day,
+                season: foundBirthday.season,
+                year: -1
+            }
+        }
 
         return {
             key: itemKey,
@@ -118,7 +133,8 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
             iconName: convertToIconName(objectName).replace('.png', ''),
             appearances,
             headerPortraitFileName,
-            customHead
+            customHead,
+            birthday
         };
 
     }

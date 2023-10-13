@@ -8,6 +8,7 @@ import { NpcListComponent } from './components/npc-list/npc-list.component';
 import { NpcComponent } from './components/npc/npc.component';
 import { HeartEventsComponent } from './components/heart-events/heart-events.component';
 import { HeartEventTriggerComponent } from './components/heart-event-trigger/heart-event-trigger.component';
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 @NgModule({
     declarations: [
@@ -18,6 +19,6 @@ import { HeartEventTriggerComponent } from './components/heart-event-trigger/hea
         HeartEventsComponent,
         HeartEventTriggerComponent,
     ],
-    imports: [CommonModule, NPCsRoutingModule, SharedModule],
+    imports: [CommonModule, NPCsRoutingModule, SharedModule, MatTooltipModule],
 })
 export class NPCsModule {}
