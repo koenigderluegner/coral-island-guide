@@ -49,11 +49,6 @@ export class HeaderComponent {
             uiIcon: UiIcon.DATABASE,
             path: 'database'
         },
-        {
-            text: 'Settings',
-            uiIcon: UiIcon.SETTINGS,
-            path: 'settings'
-        },
     ];
     @HostBinding('class.open-menu') isOpen = false;
     protected uiIcon = UiIcon;

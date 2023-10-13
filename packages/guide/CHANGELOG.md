@@ -5,7 +5,7 @@
 #### Added
 
 - Added new section "My Guide"
-    - This section is primarily for user created data, checklists etc
+    - This section is primarily for user created data, checklists, settings etc
     - Added offering checklist
     - Added museum checklist
     - Added cooking recipe checklist
@@ -20,6 +20,7 @@
 #### Changed
 
 - Renamed checklists to to-dos and moved them to "My Guide"
+- Moved settings to "My Guide"
 - Changed sizes of grid icons, allowing the grid to show more icons in a row
 - Increased visibility of tab arrows, making it easier to see if tabs can be scrolled
 - Slightly darkened background to increase contrast

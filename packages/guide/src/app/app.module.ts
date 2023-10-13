@@ -62,7 +62,11 @@ const appRoutes: Route[] = [
     },
     {
         path: 'settings',
-        loadChildren: () => import('./settings/settings.module').then((m) => m.SettingsModule)
+        pathMatch: "full",
+        redirectTo: 'my/settings',
+        data: {
+            redirected: true
+        }
     },
     {
         path: 'checklist',

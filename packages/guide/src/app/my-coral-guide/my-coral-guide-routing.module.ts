@@ -49,6 +49,11 @@ const routes: Routes = [
                 component: OfferingsChecklistComponent,
                 title: 'Offerings checklist - My Guide'
             },
+            {
+                path: 'settings',
+                loadChildren: () => import('../settings/settings.module').then((m) => m.SettingsModule),
+                title: 'Settings - My Guide'
+            },
 
         ]
     }
