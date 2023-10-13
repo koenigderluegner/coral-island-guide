@@ -26,6 +26,7 @@
 - Slightly darkened background to increase contrast
 - Decreased padding of cards by 25% in higher resolutions
 - Changed default text color with a color of higher contrast to improve readability
+- Fixed settings unintentionally saving when clicking somewhere on the card
 
 ### 0.11.1 2023-09-14
 
