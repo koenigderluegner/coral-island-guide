@@ -18,18 +18,7 @@ type CombinedGiftPreference = {
 })
 export class GiftingComponent {
 
-    preferencesMap: {
-        icon: UiIcon,
-        label: string;
-        preferenceField: string
-    }[] = [
-        {icon: UiIcon.LOVE, label: 'Favorite', preferenceField: 'favoritePreferences'},
-        {icon: UiIcon.LOVE, label: 'Love', preferenceField: 'lovePreferences'},
-        {icon: UiIcon.LIKE, label: 'Like', preferenceField: 'likePreferences'},
-        {icon: UiIcon.NEUTRAL, label: 'Neutral', preferenceField: 'neutralPreferences'},
-        {icon: UiIcon.DISLIKE, label: 'Dislike', preferenceField: 'dislikePreferences'},
-        {icon: UiIcon.HATE, label: 'Hate', preferenceField: 'hatePreferences'},
-    ];
+
     protected uiIcon = UiIcon;
     protected gifting$: Observable<CombinedGiftPreference[]>;
     private _database = inject(DatabaseService)

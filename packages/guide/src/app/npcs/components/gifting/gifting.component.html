@@ -1,6 +1,6 @@
 <app-card *ngIf="gifting$  | async as gifting" class="text-xl gifting-card">
 
-    <div *ngFor="let giftingPreferences of gifting" class="grid grid-cols-1">
+    <div *ngFor="let giftingPreferences of gifting">
         <div class="text-2xl text-black font-semibold flex items-center gifting-portrait">
             <ng-container *ngIf="giftingPreferences.preferences.mapKey !== 'ci_universal'">
                 <app-item-icon class="h-16 mr-3"
@@ -18,22 +18,7 @@
             <ng-container *ngIf="giftingPreferences.preferences.mapKey === 'ci_universal'">Universal</ng-container>
         </div>
 
-        <div class="gifting-preference-grid">
-            <ng-container *ngFor="let prefMap of preferencesMap">
-                <ng-container *ngIf="giftingPreferences.preferences[prefMap.preferenceField].length">
-                    <div class="font-semibold flex items-center sm:flex-col sm:pr-10 mb-1 text-black">
-                        <app-ui-icon [uiIcon]="prefMap.icon" class="gifting-icon mr-1 sm:mr-0 !h-6 !w-6"></app-ui-icon>
-                        {{prefMap.label}}
-                    </div>
-                    <div class="gifting-gifts-grid ">
-                        <ng-container *ngFor="let loved of giftingPreferences.preferences[prefMap.preferenceField]">
-                            <app-inline-minimal-item *ngIf="loved.type === 'item'" [minimalItem]="loved.item"/>
-                            <span *ngIf="loved.type === 'category'">All {{loved.categoryName | addSpacesToPascalCase}}</span>
-                        </ng-container>
-                    </div>
-                </ng-container>
-            </ng-container>
-        </div>
+        <app-gifting-grid [preferences]="giftingPreferences.preferences"/>
 
     </div>
 

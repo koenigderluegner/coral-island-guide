@@ -14,6 +14,8 @@
 - Added PWA support
 - Added manual mapping for processors to show in database to reduce confusion about internal names
 - Added birthdays to NPC gifting
+- Added gifting preferences to NPC details
+- Added more error/empty result messages across the app
 
 #### Changed
 
@@ -21,6 +23,7 @@
 - Changed sizes of grid icons, allowing the grid to show more icons in a row
 - Increased visibility of tab arrows, making it easier to see if tabs can be scrolled
 - Slightly darkened background to increase contrast
+- Decreased padding of cards by 25% in higher resolutions
 
 ### 0.11.1 2023-09-14
 

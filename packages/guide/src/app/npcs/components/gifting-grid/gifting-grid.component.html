@@ -1,0 +1,14 @@
+<ng-container *ngFor="let prefMap of preferencesMap">
+    <ng-container *ngIf="preferences[prefMap.preferenceField].length">
+        <div class="font-semibold flex items-center sm:flex-col sm:pr-10 mb-1 text-black">
+            <app-ui-icon [uiIcon]="prefMap.icon" class="gifting-icon mr-1 sm:mr-0 !h-6 !w-6"></app-ui-icon>
+            {{prefMap.label}}
+        </div>
+        <div class="gifting-gifts-grid ">
+            <ng-container *ngFor="let loved of preferences[prefMap.preferenceField]">
+                <app-inline-minimal-item *ngIf="loved.type === 'item'" [minimalItem]="loved.item"/>
+                <span *ngIf="loved.type === 'category'">All {{loved.categoryName | addSpacesToPascalCase}}</span>
+            </ng-container>
+        </div>
+    </ng-container>
+</ng-container>

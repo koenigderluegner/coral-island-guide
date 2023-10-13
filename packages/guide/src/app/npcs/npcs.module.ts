@@ -8,7 +8,8 @@ import { NpcListComponent } from './components/npc-list/npc-list.component';
 import { NpcComponent } from './components/npc/npc.component';
 import { HeartEventsComponent } from './components/heart-events/heart-events.component';
 import { HeartEventTriggerComponent } from './components/heart-event-trigger/heart-event-trigger.component';
-import { MatTooltipModule } from "@angular/material/tooltip";
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { GiftingGridComponent } from './components/gifting-grid/gifting-grid.component';
 
 @NgModule({
     declarations: [
@@ -18,6 +19,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
         NpcComponent,
         HeartEventsComponent,
         HeartEventTriggerComponent,
+        GiftingGridComponent,
     ],
     imports: [CommonModule, NPCsRoutingModule, SharedModule, MatTooltipModule],
 })
