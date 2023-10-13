@@ -24,6 +24,7 @@
 - Increased visibility of tab arrows, making it easier to see if tabs can be scrolled
 - Slightly darkened background to increase contrast
 - Decreased padding of cards by 25% in higher resolutions
+- Changed default text color with a color of higher contrast to improve readability
 
 ### 0.11.1 2023-09-14
 
