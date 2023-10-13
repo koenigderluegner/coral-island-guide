@@ -1,10 +1,15 @@
 .icon-grid {
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(var(--cg-icon-grid-min-size, 80px), 1fr));
 }
 
+@screen lg {
+  .icon-grid {
+    --cg-icon-grid-min-size: 80px
+  }
+}
 @screen xl {
   .icon-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    --cg-icon-grid-min-size: 90px
   }
 }
 
@@ -47,8 +52,9 @@
     }
 
     label {
-      padding: 5% 10% 10%;
-      border-top: 1px solid rgba(255 255 255 / .3)
+      padding: 6px 0 10px;
+      border-top: 1px solid rgba(255 255 255 / .3);
+      cursor: pointer;
     }
 
     &.checklist-checked {
@@ -60,6 +66,22 @@
 
       label {
         @apply border-emerald-900 text-emerald-100/90;
+      }
+
+      &.selected-icon {
+
+        @apply bg-emerald-300/70;
+
+        label {
+          @apply border-emerald-900 text-emerald-100/90;
+        }
+
+      }
+    }
+
+    &.selected-icon {
+      label {
+        @apply border-black/40 text-black/90;
       }
     }
   }

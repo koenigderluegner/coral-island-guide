@@ -4,7 +4,7 @@
 
 
   .mat-mdc-tab-labels {
-    @apply gap-x-3 justify-center mb-3;
+    @apply gap-x-3 justify-center;
   }
 
   .mdc-tab {
@@ -27,4 +27,19 @@
     display: none;
   }
 
+  .mat-mdc-tab-header {
+    @apply mb-3;
+
+    .mat-mdc-tab-header-pagination-chevron {
+      --mat-tab-header-pagination-icon-color: #fff;
+      border-width: 5px 5px 0 0;
+      height: 13px;
+      width: 13px;
+    }
+  }
+
+}
+
+.mat-mdc-tab-header-pagination-disabled .mat-mdc-tab-header-pagination-chevron {
+  opacity: .3;
 }

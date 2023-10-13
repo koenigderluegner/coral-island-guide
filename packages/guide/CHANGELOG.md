@@ -5,7 +5,10 @@
 #### Added
 
 - Added new section "My Guide"
-    - This section is primarily for user created data, for tracking etc
+    - This section is primarily for user created data, checklists etc
+    - Added offering checklist
+    - Added museum checklist
+    - Added cooking recipe checklist
 - Added heart event triggers to NPCs
 - Added merit exchange
 - Added PWA support
@@ -14,6 +17,9 @@
 #### Changed
 
 - Renamed checklists to to-dos and moved them to "My Guide"
+- Changed sizes of grid icons, allowing the grid to show more icons in a row
+- Increased visibility of tab arrows, making it easier to see if tabs can be scrolled
+- Slightly darkened background to increase contrast
 
 ### 0.11.1 2023-09-14
 

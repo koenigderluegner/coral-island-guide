@@ -4,6 +4,7 @@ import { MyCoralGuideComponent } from './my-coral-guide.component';
 import { IndexComponent } from "./components/index/index.component";
 import { MuseumChecklistComponent } from "./components/museum-checklist/museum-checklist.component";
 import { CookingRecipesChecklistComponent } from "./components/cooking-recipes-checklist/cooking-recipes-checklist.component";
+import { OfferingsChecklistComponent } from "./components/offerings-checklist/offerings-checklist.component";
 
 const routes: Routes = [
     {
@@ -37,6 +38,16 @@ const routes: Routes = [
                 path: 'cooking-recipes-checklist/:tabName',
                 component: CookingRecipesChecklistComponent,
                 title: 'Cooking recipes checklist - My Guide'
+            },
+            {
+                path: 'offerings-checklist',
+                redirectTo: 'offerings-checklist/',
+                pathMatch: 'full'
+            },
+            {
+                path: 'offerings-checklist/:tabName',
+                component: OfferingsChecklistComponent,
+                title: 'Offerings checklist - My Guide'
             },
 
         ]

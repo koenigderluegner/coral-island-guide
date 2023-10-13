@@ -10,9 +10,17 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CookingRecipesChecklistComponent } from './components/cooking-recipes-checklist/cooking-recipes-checklist.component';
+import { OfferingsChecklistComponent } from './components/offerings-checklist/offerings-checklist.component';
+import { LocationsModule } from "../locations/locations.module";
 
 @NgModule({
-    declarations: [MyCoralGuideComponent, IndexComponent, MuseumChecklistComponent, CookingRecipesChecklistComponent],
+    declarations: [
+        MyCoralGuideComponent,
+        IndexComponent,
+        MuseumChecklistComponent,
+        CookingRecipesChecklistComponent,
+        OfferingsChecklistComponent,
+    ],
     imports: [
         CommonModule,
         MyCoralGuideRoutingModule,
@@ -21,6 +29,7 @@ import { CookingRecipesChecklistComponent } from './components/cooking-recipes-c
         MatTabsModule,
         MatCheckboxModule,
         ReactiveFormsModule,
+        LocationsModule,
     ],
 })
 export class MyCoralGuideModule {

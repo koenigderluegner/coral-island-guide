@@ -1,0 +1,58 @@
+<app-list-detail-container [(openDrawer)]="openDrawer">
+    <app-base-item-card (addedToToDo)="entryForToDo && registerToToDo(entryForToDo)"
+                        *ngIf="selectedEntity"
+                        [item]="selectedEntity"
+                        [toDoCategory]="toDoCategory.OFFERINGS"
+                        listDetail/>
+    <mat-tab-group (selectedTabChange)="updateUrl($event)" *ngIf="offerings$ | async as offeringAltars"
+                   [formGroup]="checklistForm"
+                   [selectedIndex]="selectedTabIndex"
+                   class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false">
+        <mat-tab *ngFor="let offeringAltar of offeringAltars"
+                 label="{{offeringAltar.offeringGroupTitle | spacesToPascalCase}}">
+            <div *ngIf="!showTable" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div *ngFor="let offering of offeringAltar.offerings" class="flex flex-col gap-y-2">
+                    <div
+                            [class.bg-merino-300]="activeOffering?.title === offering.title"
+                            class="rounded-lg bg-merino flex  items-center gap-4 p-4 ">
+                        <img alt="{{offering.title}} offering icon" height="64"
+                             src="assets/ui/images/offering/{{offering.imageName}}.png"
+                             width="64"/>
+                        <div class="flex flex-col text-lg font-semibold">
+                            <div>{{offering.title}}</div>
+                            <div>
+                                {{offering.numOfItemRequired === -1 ? 'All' : offering.numOfItemRequired}}
+                                required:
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid gap-4 icon-grid  w-full">
+
+                        <div *ngFor="let offering of offering.requiredItems"
+                             [class.checklist-checked]="checklistForm.get(offering.item.id)?.value"
+                             [class.selected-icon]="selectedEntity?.id === offering.item.id"
+                             class="icon-grid-item checklist-item flex flex-col">
+
+                            <app-item-icon (click)="showDetails(offering)"
+                                           [amount]="offering.amount"
+                                           [itemName]="offering.item.iconName"
+                                           [quality]="offering.quality"/>
+                            <label class="text-white flex justify-center" for="entry-{{offering.item.id}}-input">
+                                <mat-checkbox [formControlName]="offering.item.id" class="flex"
+                                              id="entry-{{offering.item.id}}"
+                                              name="entry-{{offering.item.id}}"></mat-checkbox>
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </mat-tab>
+
+
+    </mat-tab-group>
+
+
+</app-list-detail-container>
