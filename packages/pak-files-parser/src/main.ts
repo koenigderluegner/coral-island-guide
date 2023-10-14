@@ -44,6 +44,7 @@ import { MuseumChecklistGenerator } from "./app/museum-checklist.generator";
 import { ItemProcessorMapGenerator } from "./app/item-processor-map.generator";
 import { CookingRecipesChecklistGenerator } from "./app/cooking-recipes-checklist.generator";
 import { CalendarGenerator } from "./app/calendar.generator";
+import { MailDataGenerator } from "./app/mail-data.generator";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
@@ -85,6 +86,8 @@ const tagBasedItemsDbMap = tagBasedItemsDbGenerator.generate();
 const cookingDbGenerator = new CookingDbGenerator(itemDbMap, cookingRecipeUnlockedByMasteryDbMap, tagBasedItemsDbMap);
 const cookingDbMap = cookingDbGenerator.generate();
 
+DaFilesParser.CookingMap = cookingDbMap;
+
 
 let generators: Record<string, { generate: () => Map<string, any> }> = {}
 
@@ -107,6 +110,15 @@ try {
 
         const locationInfoGenerator = new LocationInfoGenerator();
         const locationInfoMap = locationInfoGenerator.generate();
+
+        const mailDataGenerator = new MailDataGenerator();
+        const mailDataMap = mailDataGenerator.generate({
+            daFiles: [
+                'ProjectCoral/Content/ProjectCoral/Data/Mail/DA_MailEffectsConfig.json'
+            ]
+        });
+
+        DaFilesParser.MailMap = mailDataMap;
 
         const heartEventTriggerDataGenerator = new HeartEventTriggerDataGenerator(locationInfoMap);
         const heartEventTriggerDataMap = heartEventTriggerDataGenerator.generate({
@@ -145,6 +157,7 @@ try {
 
             'achievements': {generate: () => achievementMap},
             'special-items': {generate: () => specialItemDbMap},
+            'mail-data': {generate: () => mailDataMap},
         }
     }
 

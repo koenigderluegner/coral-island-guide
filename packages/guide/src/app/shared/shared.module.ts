@@ -54,6 +54,7 @@ import { EffectComponent } from './components/effect/effect.component';
 import { RequirementsComponent } from './components/requirements/requirements.component';
 import { MeritPointsComponent } from './components/merit-points/merit-points.component';
 import { ExpandableComponent } from './components/expandable/expandable.component';
+import { RemoveTagsPipe } from './pipes/remove-tags.pipe';
 
 @NgModule({
     declarations: [
@@ -101,6 +102,7 @@ import { ExpandableComponent } from './components/expandable/expandable.componen
         RequirementsComponent,
         MeritPointsComponent,
         ExpandableComponent,
+        RemoveTagsPipe,
     ],
     imports: [
         CommonModule,
@@ -158,6 +160,7 @@ import { ExpandableComponent } from './components/expandable/expandable.componen
         RequirementsComponent,
         MeritPointsComponent,
         ExpandableComponent,
+        RemoveTagsPipe,
     ],
 })
 export class SharedModule {}

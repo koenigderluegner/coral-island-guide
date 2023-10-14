@@ -1,0 +1,7 @@
+<app-card>
+    <app-mail [mail]="mail"/>
+    <div *ngIf="mail.effects?.length" class="mt-6">
+        <div class="text-lg font-semibold">Effects:</div>
+        <app-effect *ngFor="let effect of mail.effects" [effect]="effect"/>
+    </div>
+</app-card>

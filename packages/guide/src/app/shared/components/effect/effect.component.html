@@ -1,17 +1,17 @@
 <ng-container *ngIf="effect.type ==='BoostMaxStamina'">Increases max stamina</ng-container>
 <ng-container *ngIf="effect.type === 'AddItemToInventory'">
     Adds {{(effect.meta.quantity ?? 1) > 1 ? effect.meta.quantity + 'x ' : ''}}
-    <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 -my-1 !inline-block"/>
-    {{effect.meta.item.displayName}}
+    <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 -my-1 translate-y-1 !inline-block"/>
+    {{effect.meta.item.displayName}} to inventory
 </ng-container>
 <div *ngIf="effect.type === 'UnlockCraftingRecipe'">
     Unlocks
-    <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 ml-1 -my-1 !inline-block"/>
+    <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
     {{effect.meta.item.displayName}} crafting recipe
 </div>
 <div *ngIf="effect.type === 'UnlockCookingRecipe'">
     Unlocks
-    <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 ml-1 -my-1 !inline-block"/>
+    <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
     {{effect.meta.item.displayName}} cooking recipe
 </div>
 <ng-container *ngIf="effect.type === 'UnlockCookingUtensil'">
@@ -25,12 +25,12 @@
 </ng-container>
 <div *ngIf="effect.type === 'VaryMoney'">
     Adds
-    <app-money [amount]="effect.meta.amount" class="!w-7 -my-1 ml-1 !inline-block"/>
+    <app-money [amount]="effect.meta.amount" class="!w-7 -my-1 translate-y-1 ml-1 !inline-block"/>
 </div>
 <div *ngIf="effect.type === 'RemoveItemFromInventory'">
     Removes {{effect.meta.amount}}x
     <ng-container *ngIf="hasMinimalItem(effect.meta)">
-        <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 ml-1 -my-1 !inline-block"/>
+        <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
         {{effect.meta.item.displayName}}
     </ng-container>
     <ng-container *ngIf="!hasMinimalItem(effect.meta)">
@@ -39,7 +39,10 @@
 
 </div>
 <ng-container *ngIf="effect.type === 'SendMailToPlayer'">
-    Sends mail '{{effect.meta.mailId}}'{{effect.meta.dayDelay > 0 ? ' after ' + effect.meta.dayDelay + ' day(s)' : ''}}
+    Sends mail '<a [queryParams]="{selectedId: effect.meta.mail.mailId}"
+                   [routerLink]="['/journal', 'notes', 'letters']"
+                   class="underline">{{effect.meta.mail.title}}</a>'
+    {{effect.meta.dayDelay > 0 ? ' after ' + effect.meta.dayDelay + ' day(s)' : ''}}
 </ng-container>
 <ng-container *ngIf="effect.type === 'SetQuestActive'">
     Activates quest '{{effect.meta.questId}}'

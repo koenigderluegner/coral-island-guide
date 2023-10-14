@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { BaseSelectableContainerComponent } from "../base-selectable-container/base-selectable-container.component";
 import { MatTabChangeEvent } from "@angular/material/tabs";
-import { ActivatedRoute, Router } from "@angular/router";
+import { Router } from "@angular/router";
 import { Title } from "@angular/platform-browser";
 import { take, tap } from "rxjs";
 
@@ -15,7 +15,6 @@ export class BaseTabbedSelectableContainerComponent<T> extends BaseSelectableCon
     selectedTabIndex = -1;
 
     protected readonly _router: Router = inject(Router);
-    protected readonly _route: ActivatedRoute = inject(ActivatedRoute);
     protected readonly _title: Title = inject(Title);
 
     updateUrl($event: MatTabChangeEvent | string) {

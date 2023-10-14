@@ -1,7 +1,10 @@
 export type SendMailToPlayerEffect = {
     type: 'SendMailToPlayer',
     meta: {
-        mailId: string
+        mail: {
+            mailId: string,
+            title: string
+        }
         dayDelay: number
     }
 }

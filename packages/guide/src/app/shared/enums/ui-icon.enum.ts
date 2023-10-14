@@ -5,6 +5,8 @@ export enum UiIcon {
     ARROW_RIGHT = 'T_BoxArrowRight',
     CORAL = 'T_Icon_GoldMinimal',
     WARNING = 'Exclamation_Warning',
+    FESTIVAL = 'T_Icon_Festivals',
+    BIRTHDAY = 'T_Icon_Birthday',
 
     // PAUSE MENU TOP
     JOURNAL = 'T_Icon_Journal',
@@ -25,6 +27,7 @@ export enum UiIcon {
     COOKING = 'T_Icon_ConsumablesM',
     OFFERING = 'T_Icon_Offering',
     BESTIARY = 'T_Icon_Bestiary',
+    NOTES = 'T_Icon_Notes',
     ACHIEVEMENT = 'T_Icon_Achievement',
 
     // BUILDINGS

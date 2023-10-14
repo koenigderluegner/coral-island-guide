@@ -1,0 +1,27 @@
+<app-list-detail-container [(openDrawer)]="openDrawer">
+    <app-mail-details *ngIf="selectedEntity"
+                      [mail]="selectedEntity"
+                      listDetail/>
+    {{selectedId}}
+    <mat-tab-group (selectedTabChange)="updateUrl($event)" *ngIf="data$ | async"
+                   [selectedIndex]="selectedTabIndex"
+                   class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false">
+        <mat-tab label="Letters">
+            <app-data-filter [(showTable)]="showTable"/>
+            <div *ngIf="!showTable" class="grid gap-4 icon-grid  mt-8">
+                <app-item-icon (click)="showDetails(mail)"
+                               *ngFor="let mail of mails"
+                               [class.selected-icon]="selectedEntity?.key === mail.key"
+                               class="icon-grid-item"
+                               itemName="Torn_page">
+                </app-item-icon>
+            </div>
+            <app-mail-table *ngIf="showTable" [dataSource]="mails"/>
+
+        </mat-tab>
+
+
+    </mat-tab-group>
+
+
+</app-list-detail-container>

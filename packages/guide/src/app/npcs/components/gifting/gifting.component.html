@@ -11,8 +11,11 @@
                                      [uiIcon]="uiIcon.LOVE" class="gifting-icon !h-6 !w-6"
                                      matTooltip="{{giftingPreferences.npc?.characterName}} is dateable"/>
                     </div>
-                    <span *ngIf="giftingPreferences.npc && giftingPreferences.npc.birthday"
-                          class="text-lg">{{ giftingPreferences.npc.birthday | ingameDate }}</span>
+                    <div *ngIf="giftingPreferences.npc && giftingPreferences.npc.birthday"
+                         class="text-lg flex gap-2">
+                        <app-ui-icon [uiIcon]="uiIcon.BIRTHDAY" class="!h-6 !w-6"/>
+                        {{ giftingPreferences.npc.birthday | ingameDate }}
+                    </div>
                 </div>
             </ng-container>
             <ng-container *ngIf="giftingPreferences.preferences.mapKey === 'ci_universal'">Universal</ng-container>

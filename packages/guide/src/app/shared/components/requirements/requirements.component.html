@@ -1,6 +1,7 @@
 <div *ngIf="requirement.type === 'IsAchievementCompleted'">
     Achievement
-    <app-item-icon [itemName]="requirement.meta.achievement.iconName" class="!w-7 -my-1 ml-1 mr-0.5  !inline-block"/>
+    <app-item-icon [itemName]="requirement.meta.achievement.iconName"
+                   class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
     {{requirement.meta.achievement.title}} unlocked
 </div>
 <ng-container *ngIf="requirement.type === 'MountAcquired'">
@@ -26,7 +27,8 @@
 </ng-container>
 <div *ngIf="requirement.type === 'SpecialItem'">
     Acquired special item
-    <app-item-icon [itemName]="requirement.meta.item.iconName" class="!w-7 -my-1 ml-1 mr-0.5  !inline-block"/>
+    <app-item-icon [itemName]="requirement.meta.item.iconName"
+                   class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
     {{requirement.meta.item.displayName}}
 </div>
 <ng-container *ngIf="requirement.type === 'DateSeasonRange'">
@@ -35,7 +37,8 @@
 </ng-container>
 <div *ngIf="requirement.type === 'ItemInInventory'">
     Has {{requirement.meta.amount}}x
-    <app-item-icon [itemName]="requirement.meta.item.iconName" class="!w-7 ml-1 -my-1 mr-0.5  !inline-block"/>
+    <app-item-icon [itemName]="requirement.meta.item.iconName"
+                   class="!w-7 ml-1 -my-1 translate-y-1 mr-0.5  !inline-block"/>
     {{requirement.meta.item.displayName}}{{requirement.meta.requiredQuality ? ' of ' + requirement.meta.requiredQuality + ' quality' : ''}}
     in inventory
 </div>

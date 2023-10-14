@@ -22,6 +22,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CropTableComponent } from './components/tables/crop-table/crop-table.component';
 import { AchievementsComponent } from './components/achievements/achievements.component';
+import { NotesComponent } from './components/notes/notes.component';
+import { MailDetailsComponent } from './components/mail-details/mail-details.component';
+import { MailTableComponent } from './components/tables/mail-table/mail-table.component';
+import { TornPagesTableComponent } from './components/tables/torn-pages-table/torn-pages-table.component';
+import { TornPageDetailsComponent } from './components/torn-page-details/torn-page-details.component';
+import { LocationsModule } from '../locations/locations.module';
+import { MailComponent } from './components/mail/mail.component';
+import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
     declarations: [
@@ -37,6 +45,12 @@ import { AchievementsComponent } from './components/achievements/achievements.co
         ProduceTableComponent,
         CropTableComponent,
         AchievementsComponent,
+        NotesComponent,
+        MailDetailsComponent,
+        MailTableComponent,
+        TornPagesTableComponent,
+        TornPageDetailsComponent,
+        MailComponent,
     ],
     imports: [
         CommonModule,
@@ -50,6 +64,8 @@ import { AchievementsComponent } from './components/achievements/achievements.co
         MatFormFieldModule,
         MatSelectModule,
         ReactiveFormsModule,
+        LocationsModule,
+        MatButtonModule,
     ],
     exports: [CaughtDetailsComponent, CaughtTableComponent, CropTableComponent],
 })

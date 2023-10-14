@@ -1,0 +1,8 @@
+<div class="font-semibold font-coral">
+    <div *ngIf="mail.title" [innerHTML]="mail.title" class="text-2xl mb-4 text-black"></div>
+    <div [innerHTML]="mail.content" class="mb-4 whitespace-break-spaces"></div>
+    <div class="mt-4 flex flex-col items-end">
+        <span *ngIf="mail.greetCloseMessage" [innerHTML]="mail.greetCloseMessage" class="text-accent"></span>
+        <span *ngIf="mail.sender" [innerHTML]="mail.sender" class="text-black"></span>
+    </div>
+</div>

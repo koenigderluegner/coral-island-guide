@@ -18,6 +18,7 @@
 - Added birthdays to NPC gifting
 - Added gifting preferences to NPC details
 - Added more error/empty result messages across the app
+- Added letters to journal
 
 #### Changed
 
@@ -29,6 +30,7 @@
 - Decreased padding of cards by 25% in higher resolutions
 - Changed default text color with a color of higher contrast to improve readability
 - Fixed settings unintentionally saving when clicking somewhere on the card
+- Fixed odd label state when inputs are empty and active
 
 ### 0.11.1 2023-09-14
 

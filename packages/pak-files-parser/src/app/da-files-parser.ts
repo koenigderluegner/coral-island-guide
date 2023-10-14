@@ -11,6 +11,7 @@ import {
     BoostMaxStaminaEffect,
     ChangeObjectStateEffect,
     ConsumeMasteryItemEffect,
+    CookingRecipe,
     CountNpcHeartLevelRequirement,
     DateSeasonRangeRequirement,
     EditorOnlyRequirement,
@@ -21,6 +22,7 @@ import {
     Item,
     ItemInInventoryRequirement,
     ItemWithCategoryInInventoryRequirement,
+    MailData,
     MarriageHasProposedRequirement,
     MountAcquiredRequirement,
     ObjectStateRequirement,
@@ -66,6 +68,8 @@ export class DaFilesParser {
     static ItemMap: Map<string, Item>;
     static SpecialItemMap: Map<string, SpecialItem>;
     static AchievementMap: Map<string, Achievement>;
+    static MailMap: Map<string, MailData>;
+    static CookingMap: Map<string, Record<string, CookingRecipe[]>>;
 
     readAssets: Map<string, GameplayEffectsConfigEntry[] | GameplayRequirementsConfigEntry[]> = new Map<string, GameplayEffectsConfigEntry[] | GameplayRequirementsConfigEntry[]>();
 
@@ -107,7 +111,11 @@ export class DaFilesParser {
     private parseGameplayEffects(mappingEntry: GameplayEffectsConfig): EffectMap {
         const result = new Map<string, EffectEntry>
         const map = mappingEntry.Properties.map;
-
+        const recipeRecord = [...DaFilesParser.CookingMap.values()][0];
+        const recipes = Object.keys(recipeRecord).reduce((previousValue: CookingRecipe[], currentValue) => {
+            previousValue.push(...recipeRecord[currentValue]);
+            return previousValue
+        }, [])
 
         let conf: GameplayEffectsConfigMap;
 
@@ -190,9 +198,12 @@ export class DaFilesParser {
                     }
                     case "C_UnlockCookingRecipeEffect": {
 
-                        const item = DaFilesParser.ItemMap.get(foundEffect.Properties.recipe.RowName)
+                        const item = recipes.find(r => r.cookingKey === foundEffect.Properties.recipe.RowName)?.item
 
-                        if (!item) return;
+                        if (!item) {
+                            Logger.error(`DaFilesParser: Cant find recipe for ${foundEffect.Properties.recipe.RowName}`)
+                            return;
+                        }
 
                         daEffect = {
                             type: "UnlockCookingRecipe",
@@ -275,11 +286,21 @@ export class DaFilesParser {
 
                     }
                     case "C_SendMailToPlayerEffect": {
+                        const mailId = foundEffect.Properties.mailId;
+                        const mail = DaFilesParser.MailMap.get(mailId)
+
+                        if (!mail) {
+                            Logger.error(`DaFilesParser: Can't find mail with mailId ${mailId}`)
+                            return;
+                        }
 
                         daEffect = {
                             type: "SendMailToPlayer",
                             meta: {
-                                mailId: foundEffect.Properties.mailId,
+                                mail: {
+                                    mailId,
+                                    title: mail.title ?? mailId
+                                },
                                 dayDelay: foundEffect.Properties.dayDelay
                             }
                         } satisfies SendMailToPlayerEffect;

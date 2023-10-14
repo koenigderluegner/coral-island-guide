@@ -34,19 +34,21 @@
         class="text-black">{{heartEventTrigger.specificWeather.join(', ')}}</span>
 </div>
 
-<div *ngIf="heartEventTrigger.effects && heartEventTrigger.effects.length" class="my-2">Effects when seen
+<div *ngIf="heartEventTrigger.effects && heartEventTrigger.effects.length" class="my-4">
+    <span class="text-lg text-black">Effects when seen</span>
     <div class="flex flex-col text-black">
         <app-effect *ngFor="let effect of heartEventTrigger.effects" [effect]="effect"/>
     </div>
 </div>
-<div *ngIf="heartEventTrigger.requirements && heartEventTrigger.requirements.requirements.length" class="my-2">
-    <ng-container *ngIf="heartEventTrigger.requirements.requirements.length > 1">
-        Unlock requirements ({{heartEventTrigger.requirements.type === 'And' ? 'all' : 'any'}} of them):
-    </ng-container>
-    <ng-container *ngIf="heartEventTrigger.requirements.requirements.length < 2">
-        Unlock requirement:
-    </ng-container>
-
+<div *ngIf="heartEventTrigger.requirements && heartEventTrigger.requirements.requirements.length" class="my-4">
+    <span class="text-lg text-black">
+        <ng-container *ngIf="heartEventTrigger.requirements.requirements.length > 1">
+            Unlock requirements ({{heartEventTrigger.requirements.type === 'And' ? 'all' : 'any'}} of them):
+        </ng-container>
+        <ng-container *ngIf="heartEventTrigger.requirements.requirements.length < 2">
+            Unlock requirement:
+        </ng-container>
+    </span>
 
     <div class="flex flex-col  text-black">
         <app-requirements *ngFor="let requirement of heartEventTrigger.requirements.requirements"

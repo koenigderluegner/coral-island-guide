@@ -18,6 +18,7 @@ import {
     ItemProcessShopData,
     ItemUpgradeData,
     JournalOrder,
+    MailData,
     MeritExchangeShopData,
     MinimalItem,
     NPC,
@@ -94,6 +95,8 @@ export class DatabaseService {
     private _COOKING_RECIPES_CHECKLIST: Record<string, MinimalItem[]> = {};
     private _COOKING_RECIPES_CHECKLIST$?: Observable<Record<string, MinimalItem[]>>;
 
+    private _MAIL_DATA: MailData[] = [];
+    private _MAIL_DATA$?: Observable<MailData[]>;
 
 
     constructor(private readonly _http: HttpClient,
@@ -152,6 +155,17 @@ export class DatabaseService {
                 );
         }
         return this._ITEMS$;
+    }
+
+    fetchMailData$(): Observable<MailData[]> {
+        if (!this._MAIL_DATA$) {
+            this._MAIL_DATA$ = this._http.get<MailData[]>(`${this._BASE_PATH}/mail-data.json`)
+                .pipe(
+                    tap(items => this._MAIL_DATA = items),
+                    shareReplay(1)
+                );
+        }
+        return this._MAIL_DATA$;
     }
 
     getProcessorMapping(): Record<string, MinimalItem> {
