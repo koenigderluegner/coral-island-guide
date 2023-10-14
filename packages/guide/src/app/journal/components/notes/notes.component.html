@@ -1,12 +1,12 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
-    <app-mail-details *ngIf="selectedEntity"
-                      [mail]="selectedEntity"
-                      listDetail/>
-    {{selectedId}}
+    <ng-container listDetail>
+        <app-mail-details *ngIf="selectedEntity" [mail]="selectedEntity"/>
+        <app-torn-page-details *ngIf="selectedTornPage" [tornPage]="selectedTornPage"/>
+    </ng-container>
     <mat-tab-group (selectedTabChange)="updateUrl($event)" *ngIf="data$ | async"
                    [selectedIndex]="selectedTabIndex"
                    class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false">
-        <mat-tab label="Letters">
+        <mat-tab [label]="tabNames[0]">
             <app-data-filter [(showTable)]="showTable"/>
             <div *ngIf="!showTable" class="grid gap-4 icon-grid  mt-8">
                 <app-item-icon (click)="showDetails(mail)"
@@ -17,6 +17,19 @@
                 </app-item-icon>
             </div>
             <app-mail-table *ngIf="showTable" [dataSource]="mails"/>
+
+        </mat-tab>
+        <mat-tab [label]="tabNames[1]">
+            <app-data-filter [(showTable)]="showTornPagesTable"/>
+            <div *ngIf="!showTornPagesTable" class="grid gap-4 icon-grid  mt-8">
+                <app-item-icon (click)="showTornPageDetails(tornPage)"
+                               *ngFor="let tornPage of tornPages"
+                               [class.selected-icon]="selectedTornPage?.key === tornPage.key"
+                               class="icon-grid-item"
+                               itemName="Torn_page">
+                </app-item-icon>
+            </div>
+            <app-torn-pages-table *ngIf="showTornPagesTable" [dataSource]="tornPages"/>
 
         </mat-tab>
 

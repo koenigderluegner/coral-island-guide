@@ -29,7 +29,8 @@ import { TornPagesTableComponent } from './components/tables/torn-pages-table/to
 import { TornPageDetailsComponent } from './components/torn-page-details/torn-page-details.component';
 import { LocationsModule } from '../locations/locations.module';
 import { MailComponent } from './components/mail/mail.component';
-import { MatButtonModule } from "@angular/material/button";
+import { MatButtonModule } from '@angular/material/button';
+import { TornPageComponent } from './components/torn-page/torn-page.component';
 
 @NgModule({
     declarations: [
@@ -51,6 +52,7 @@ import { MatButtonModule } from "@angular/material/button";
         TornPagesTableComponent,
         TornPageDetailsComponent,
         MailComponent,
+        TornPageComponent,
     ],
     imports: [
         CommonModule,

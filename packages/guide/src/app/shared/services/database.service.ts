@@ -27,7 +27,8 @@ import {
     PetShopAdoptions,
     ShopItemData,
     ShopName,
-    TagBasedItem
+    TagBasedItem,
+    TornPageData
 } from '@ci/data-types';
 import { AvailableJournalOrders } from '../types/available-journal-orders.type';
 import { MapKeyed } from '../types/map-keyed.type';
@@ -98,6 +99,9 @@ export class DatabaseService {
     private _MAIL_DATA: MailData[] = [];
     private _MAIL_DATA$?: Observable<MailData[]>;
 
+    private _TORN_PAGES_DATA: TornPageData[] = [];
+    private _TORN_PAGES_DATA$?: Observable<TornPageData[]>;
+
 
     constructor(private readonly _http: HttpClient,
                 private readonly _settings: SettingsService) {
@@ -166,6 +170,17 @@ export class DatabaseService {
                 );
         }
         return this._MAIL_DATA$;
+    }
+
+    fetchTornPagesData$(): Observable<TornPageData[]> {
+        if (!this._TORN_PAGES_DATA$) {
+            this._TORN_PAGES_DATA$ = this._http.get<TornPageData[]>(`${this._BASE_PATH}/torn-pages.json`)
+                .pipe(
+                    tap(items => this._TORN_PAGES_DATA = items),
+                    shareReplay(1)
+                );
+        }
+        return this._TORN_PAGES_DATA$;
     }
 
     getProcessorMapping(): Record<string, MinimalItem> {

@@ -68,6 +68,7 @@ export * from './lib/interfaces/location-info.interface';
 export * from './lib/interfaces/heart-event-trigger-data.interface';
 export * from './lib/interfaces/heart-event.interface';
 export * from './lib/interfaces/mail-data.interface';
+export * from './lib/interfaces/torn-page-data.interface';
 
 
 export * from './lib/enums/quality.enum';

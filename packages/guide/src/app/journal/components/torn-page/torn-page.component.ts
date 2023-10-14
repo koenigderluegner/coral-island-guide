@@ -2,10 +2,11 @@ import { Component, Input } from '@angular/core';
 import { TornPageData } from "@ci/data-types";
 
 @Component({
-    selector: 'app-torn-page-details',
-    templateUrl: './torn-page-details.component.html',
+    selector: 'app-torn-page',
+    templateUrl: './torn-page.component.html',
 })
-export class TornPageDetailsComponent {
+export class TornPageComponent {
+
     @Input({required: true}) tornPage!: TornPageData
 
 }

@@ -18,7 +18,7 @@
 - Added birthdays to NPC gifting
 - Added gifting preferences to NPC details
 - Added more error/empty result messages across the app
-- Added letters to journal
+- Added letters and torn pages to journal
 
 #### Changed
 

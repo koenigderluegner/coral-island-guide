@@ -1,14 +1,6 @@
 import { SourceString } from "../types/source-string.type";
+import { Color } from "../types/color.type";
 
-type Color = {
-    "R": number
-    "G": number
-    "B": number
-
-
-    "A": number,
-    "Hex": string
-};
 
 export interface RawMailData {
     "sender": SourceString,
