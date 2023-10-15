@@ -79,7 +79,7 @@ import { BestiaryImageComponent } from './components/bestiary-image/bestiary-ima
         MatButtonModule,
         MatTooltipModule,
     ],
-    exports: [CaughtDetailsComponent, CaughtTableComponent, CropTableComponent],
+    exports: [CaughtDetailsComponent, CaughtTableComponent, CropTableComponent, BestiaryTableComponent],
 })
 export class JournalModule {
 }

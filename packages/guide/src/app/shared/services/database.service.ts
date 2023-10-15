@@ -144,7 +144,8 @@ export class DatabaseService {
             this.fetchItemUpgradeData$("blacksmith"),
             this.fetchItemUpgradeData$("carpenter"),
             this.fetchItemUpgradeData$("lab"),
-            this.fetchMeritExchangeShopData$()
+            this.fetchMeritExchangeShopData$(),
+            this.fetchBestiary$()
         ]);
     }
 
@@ -174,6 +175,10 @@ export class DatabaseService {
                 );
         }
         return this._MAIL_DATA$;
+    }
+
+    getBestiary(): Enemy[] {
+        return this._BESTIARY
     }
 
     fetchBestiary$(): Observable<Enemy[]> {

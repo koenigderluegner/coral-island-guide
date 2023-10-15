@@ -19,6 +19,8 @@
 - Added gifting preferences to NPC details
 - Added more error/empty result messages across the app
 - Added letters and torn pages to journal
+- Added bestiary
+    - Added possible drops to database as well
 
 #### Changed
 
