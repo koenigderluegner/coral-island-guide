@@ -2,13 +2,13 @@
 
     <div *ngFor="let giftingPreferences of gifting">
         <div class="text-2xl text-black font-semibold flex items-center gifting-portrait">
-            <ng-container *ngIf="giftingPreferences.preferences.mapKey !== 'ci_universal'">
+            <ng-container *ngIf="giftingPreferences.preferences.npc">
                 <app-item-icon class="h-16 mr-3"
-                               itemName="Icon_{{giftingPreferences.preferences.mapKey | lowercase}}"></app-item-icon>
+                               [itemName]="giftingPreferences.preferences.npc.iconName"></app-item-icon>
                 <div class="flex flex-col">
-                    <div class="flex gap-2 items-center"> {{ giftingPreferences.preferences.mapKey }}
+                    <div class="flex gap-2 items-center"> {{ giftingPreferences.preferences.npc.characterName }}
                         <app-ui-icon *ngIf="giftingPreferences.npc?.isDateable"
-                                     [uiIcon]="uiIcon.LOVE" class="gifting-icon !h-6 !w-6"
+                                     [uiIcon]="uiIcon.LOVE" class="!text-gifting !h-6 !w-6"
                                      matTooltip="{{giftingPreferences.npc?.characterName}} is dateable"/>
                     </div>
                     <div *ngIf="giftingPreferences.npc && giftingPreferences.npc.birthday"

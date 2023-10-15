@@ -17,6 +17,7 @@ module.exports = {
                 '1fr': '1fr',
             },
             colors: {
+                gifting: '#ed7b67',
                 accent: '#d89e43',
                 merino: {
                     DEFAULT: '#f7f2e8',

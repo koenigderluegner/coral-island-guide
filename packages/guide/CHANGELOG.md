@@ -21,6 +21,7 @@
 - Added letters and torn pages to journal
 - Added bestiary
     - Added possible drops to database as well
+- Added npc gifting preferences to database
 - Added collapsable to database details, click on the header to collapse/expand
 
 #### Changed

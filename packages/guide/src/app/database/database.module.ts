@@ -28,6 +28,8 @@ import { DatabaseItemUpgradeComponent } from './components/database-item-upgrade
 import { DatabaseBestiaryComponent } from './components/database-bestiary/database-bestiary.component';
 import { MatButtonModule } from '@angular/material/button';
 import { DatabaseHeaderButtonComponent } from './components/database-header-button/database-header-button.component';
+import { MatSortModule } from "@angular/material/sort";
+import { MatTableModule } from "@angular/material/table";
 
 @NgModule({
     declarations: [
@@ -62,6 +64,8 @@ import { DatabaseHeaderButtonComponent } from './components/database-header-butt
         CraftingModule,
         LocationsModule,
         MatButtonModule,
+        MatSortModule,
+        MatTableModule,
     ],
 })
 export class DatabaseModule {

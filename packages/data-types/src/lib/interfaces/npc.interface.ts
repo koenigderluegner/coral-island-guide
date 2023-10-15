@@ -9,7 +9,7 @@ export interface NPC {
     canReceiveGifts: boolean,
     canInteract: boolean,
     characterCategory: string,
-    iconName: string;
+    iconName: string | null;
     appearances: Record<string, Record<string, string>>
     headerPortraitFileName: string | null;
     customHead?: true,

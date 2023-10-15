@@ -1,8 +1,9 @@
 import { BaseGenerator } from './base-generator.class';
 import { RawGiftPreferenceInterface } from '../interfaces/raw-data-interfaces/raw-gift-preference.interface';
-import { GiftPreference, GiftPreferences, Item, NPC } from '@ci/data-types';
+import { GiftingPreferenceKeys, GiftPreference, GiftPreferences, Item, NPC } from '@ci/data-types';
 import { Datatable } from '../interfaces/datatable.interface';
-import { minifyItem, notEmpty, readAsset } from '../util/functions';
+import { minifyItem, minifyNPC, notEmpty, readAsset } from '../util/functions';
+import { Logger } from "../util/logger.class";
 
 export class GiftPreferencesDbGenerator extends BaseGenerator<RawGiftPreferenceInterface, Record<string, GiftPreferences>> {
 
@@ -17,16 +18,23 @@ export class GiftPreferencesDbGenerator extends BaseGenerator<RawGiftPreferenceI
 
     handleEntry(itemKey: string, dbItem: RawGiftPreferenceInterface): Record<string, GiftPreferences> | undefined {
         const rec: Record<string, GiftPreferences> = {};
-
+        const npc = this.npcMap.get(itemKey);
         if (itemKey !== 'ci_universal') {
-            if (!this.npcMap.get(itemKey)?.canReceiveGifts) {
+
+            if (!npc) {
+                Logger.error(`Cant find NPC ${itemKey} in gift preferences`);
+                return;
+            }
+
+            if (!npc.canReceiveGifts) {
                 return undefined;
             }
         }
 
+        const keys = GiftingPreferenceKeys;
 
         const prefs: Record<keyof GiftPreferences, GiftPreference[]> = {};
-        Object.keys(dbItem).forEach(preferenceType => {
+        keys.forEach(preferenceType => {
             prefs[preferenceType] = dbItem[preferenceType].map(this.transform).filter(notEmpty).filter(rgp => {
 
                 return !this.universalLikes?.[preferenceType].find((t: GiftPreference) => {
@@ -41,7 +49,7 @@ export class GiftPreferencesDbGenerator extends BaseGenerator<RawGiftPreferenceI
             });
         });
 
-        rec[itemKey] = prefs as GiftPreferences;
+        rec[itemKey] = {...prefs, npc: npc ? minifyNPC(npc) : undefined} as GiftPreferences;
         if (itemKey.includes('universal'))
             this.universalLikes = rec[itemKey];
 
