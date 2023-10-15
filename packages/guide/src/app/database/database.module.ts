@@ -26,6 +26,8 @@ import { DatabaseShopDataComponent } from './components/database-shop-data/datab
 import { DatabaseShopItemProcessComponent } from './components/database-shop-item-process/database-shop-item-process.component';
 import { DatabaseItemUpgradeComponent } from './components/database-item-upgrade/database-item-upgrade.component';
 import { DatabaseBestiaryComponent } from './components/database-bestiary/database-bestiary.component';
+import { MatButtonModule } from '@angular/material/button';
+import { DatabaseHeaderButtonComponent } from './components/database-header-button/database-header-button.component';
 
 @NgModule({
     declarations: [
@@ -46,6 +48,7 @@ import { DatabaseBestiaryComponent } from './components/database-bestiary/databa
         DatabaseShopItemProcessComponent,
         DatabaseItemUpgradeComponent,
         DatabaseBestiaryComponent,
+        DatabaseHeaderButtonComponent,
     ],
     imports: [
         CommonModule,
@@ -58,6 +61,7 @@ import { DatabaseBestiaryComponent } from './components/database-bestiary/databa
         JournalModule,
         CraftingModule,
         LocationsModule,
+        MatButtonModule,
     ],
 })
 export class DatabaseModule {

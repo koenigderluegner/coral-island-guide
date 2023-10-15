@@ -1,8 +1,12 @@
-<ng-container *ngIf="usedIn.length">
-    <h3 class="database-header">Usage in processing</h3>
+<app-expandable #expandableComponent *ngIf="usedIn.length" open>
+    <h3 class="database-header" expandableHeader>
+        <app-database-header-button [templateRef]="expandableComponent">Usage in processing</app-database-header-button>
+    </h3>
     <app-processor-table [dataSource]="usedIn" showProcessor/>
-</ng-container>
-<ng-container *ngIf="craftedFrom.length">
-    <h3 class="database-header">Processing</h3>
+</app-expandable>
+<app-expandable #expandableComponent *ngIf="craftedFrom.length" open>
+    <h3 class="database-header" expandableHeader>
+        <app-database-header-button [templateRef]="expandableComponent">Processing</app-database-header-button>
+    </h3>
     <app-processor-table [dataSource]="craftedFrom" showProcessor/>
-</ng-container>
+</app-expandable>

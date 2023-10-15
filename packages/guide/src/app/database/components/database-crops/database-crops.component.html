@@ -1,8 +1,12 @@
-<ng-container *ngIf="comesFromSeed.length">
-    <h3 class="database-header">Seed for</h3>
+<app-expandable #expandableComponent *ngIf="comesFromSeed.length" open>
+    <h3 class="database-header" expandableHeader>
+        <app-database-header-button [templateRef]="expandableComponent">Seed for</app-database-header-button>
+    </h3>
     <app-crop-table [dataSource]="comesFromSeed"/>
-</ng-container>
-<ng-container *ngIf="isSeedFor.length">
-    <h3 class="database-header">From seed</h3>
+</app-expandable>
+<app-expandable #expandableComponent *ngIf="isSeedFor.length" open>
+    <h3 class="database-header" expandableHeader>
+        <app-database-header-button [templateRef]="expandableComponent">From seed</app-database-header-button>
+    </h3>
     <app-crop-table [dataSource]="isSeedFor"/>
-</ng-container>
+</app-expandable>

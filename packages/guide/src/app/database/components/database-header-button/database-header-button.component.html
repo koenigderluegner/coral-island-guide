@@ -1,0 +1,7 @@
+<button (click)="templateRef.toggle()" class="hover:bg-black/10" mat-button>
+    <div class="flex gap-x-2 items-center">
+        <ng-content/>
+        <i [class.down]="!templateRef.open" [class.translate-y-[-3px]]="templateRef.open"
+           [class.up]="templateRef.open" class="arrow"></i>
+    </div>
+</button>

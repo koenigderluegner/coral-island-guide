@@ -1,5 +1,7 @@
-<ng-container *ngIf="enemiesDroppingItem.length">
-    <h3 class="database-header">Can be dropped from enemies</h3>
+<app-expandable #expandableComponent *ngIf="enemiesDroppingItem.length" open>
+    <h3 class="database-header" expandableHeader>
+        <app-database-header-button [templateRef]="expandableComponent">Can be dropped from enemies
+        </app-database-header-button>
+    </h3>
     <app-bestiary-table [dataSource]="enemiesDroppingItem"/>
-</ng-container>
-
+</app-expandable>

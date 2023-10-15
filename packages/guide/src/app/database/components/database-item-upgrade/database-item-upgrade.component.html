@@ -1,8 +1,14 @@
-<ng-container *ngIf="isTheResult.length">
-    <h3 class="database-header">Is result of upgrade</h3>
+<app-expandable #expandableComponent *ngIf="isTheResult.length" open>
+    <h3 class="database-header" expandableHeader>
+        <app-database-header-button [templateRef]="expandableComponent">Is result of upgrade
+        </app-database-header-button>
+    </h3>
     <app-item-upgrade-table [dataSource]="isTheResult"/>
-</ng-container>
-<ng-container *ngIf="isRequirement.length">
-    <h3 class="database-header">Is used as requirement in</h3>
+</app-expandable>
+<app-expandable #expandableComponent *ngIf="isRequirement.length" open>
+    <h3 class="database-header" expandableHeader>
+        <app-database-header-button [templateRef]="expandableComponent">Is used as requirement in
+        </app-database-header-button>
+    </h3>
     <app-item-upgrade-table [dataSource]="isRequirement"/>
-</ng-container>
+</app-expandable>

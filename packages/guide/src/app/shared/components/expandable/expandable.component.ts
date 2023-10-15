@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { booleanAttribute, Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-expandable',
@@ -7,10 +7,11 @@ import { Component } from '@angular/core';
 })
 export class ExpandableComponent {
 
-    open = false;
+    @Input({transform: booleanAttribute}) open = false;
 
     toggle(): void {
         this.open = !this.open;
     }
+
 
 }

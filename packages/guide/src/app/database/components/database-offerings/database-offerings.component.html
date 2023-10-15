@@ -1,8 +1,13 @@
-<ng-container *ngIf="requiredAsOffering.length">
-    <h3 class="database-header">Required for offering</h3>
+<app-expandable #expandableComponent *ngIf="requiredAsOffering.length" open>
+    <h3 class="database-header" expandableHeader>
+        <app-database-header-button [templateRef]="expandableComponent">Required for offering
+        </app-database-header-button>
+    </h3>
     <app-offerings-table [dataSource]="requiredAsOffering" showAltar/>
-</ng-container>
-<ng-container *ngIf="isRewardIn.length">
-    <h3 class="database-header">Offering reward</h3>
+</app-expandable>
+<app-expandable #expandableComponent *ngIf="isRewardIn.length" open>
+    <h3 class="database-header" expandableHeader>
+        <app-database-header-button [templateRef]="expandableComponent">Offering reward</app-database-header-button>
+    </h3>
     <app-offerings-table [dataSource]="isRewardIn" showAltar/>
-</ng-container>
+</app-expandable>

@@ -1,8 +1,13 @@
-<ng-container *ngIf="chancetoBeProcessedFrom.length">
-    <h3 class="database-header">Chance as processing result</h3>
+<app-expandable #expandableComponent *ngIf="chancetoBeProcessedFrom.length" open>
+    <h3 class="database-header" expandableHeader>
+        <app-database-header-button [templateRef]="expandableComponent">Chance as processing result
+        </app-database-header-button>
+    </h3>
     <app-shop-item-process-table [dataSource]="chancetoBeProcessedFrom"/>
-</ng-container>
-<ng-container *ngIf="canBeProcessed.length">
-    <h3 class="database-header">Can be processed at</h3>
+</app-expandable>
+<app-expandable #expandableComponent *ngIf="canBeProcessed.length" open>
+    <h3 class="database-header" expandableHeader>
+        <app-database-header-button [templateRef]="expandableComponent">Can be processed at</app-database-header-button>
+    </h3>
     <app-shop-item-process-table [dataSource]="canBeProcessed"/>
-</ng-container>
+</app-expandable>
