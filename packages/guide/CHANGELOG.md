@@ -1,6 +1,6 @@
 ## Changelog
 
-### TBD
+### 0.12.0 2023-10-15
 
 #### Added
 
@@ -8,23 +8,23 @@
     - This will most likely cause your settings to be lost due to the way how browsers work
 - Added footer and about page
     - There you can find ways to contact me, ways to support Coral Guide and general information
+- Added PWA support
 - Added new section "My Guide"
     - This section is primarily for user created data, checklists, settings etc
     - Added offering checklist
     - Added museum checklist
     - Added cooking recipe checklist
 - Added heart event triggers to NPCs
-- Added merit exchange
-- Added PWA support
-- Added manual mapping for processors to show in database to reduce confusion about internal names
 - Added birthdays to NPC gifting
 - Added gifting preferences to NPC details
-- Added more error/empty result messages across the app
+- Added merit exchange
 - Added letters and torn pages to journal
-- Added bestiary
+- Added bestiary to journal
     - Added possible drops to database as well
 - Added npc gifting preferences to database
+- Added manual mapping for processors to show in database to reduce confusion about internal names
 - Added collapsable to database details, click on the header to collapse/expand
+- Added more error/empty result messages across the app
 
 #### Changed
 
