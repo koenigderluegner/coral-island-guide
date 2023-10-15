@@ -55,6 +55,8 @@ import { RequirementsComponent } from './components/requirements/requirements.co
 import { MeritPointsComponent } from './components/merit-points/merit-points.component';
 import { ExpandableComponent } from './components/expandable/expandable.component';
 import { RemoveTagsPipe } from './pipes/remove-tags.pipe';
+import { ChancePerItemListComponent } from './components/chance-per-item-list/chance-per-item-list.component';
+import { ChancePerItemTableListComponent } from './components/chance-per-item-table-list/chance-per-item-table-list.component';
 
 @NgModule({
     declarations: [
@@ -103,6 +105,8 @@ import { RemoveTagsPipe } from './pipes/remove-tags.pipe';
         MeritPointsComponent,
         ExpandableComponent,
         RemoveTagsPipe,
+        ChancePerItemListComponent,
+        ChancePerItemTableListComponent,
     ],
     imports: [
         CommonModule,
@@ -161,6 +165,8 @@ import { RemoveTagsPipe } from './pipes/remove-tags.pipe';
         MeritPointsComponent,
         ExpandableComponent,
         RemoveTagsPipe,
+        ChancePerItemListComponent,
+        ChancePerItemTableListComponent,
     ],
 })
 export class SharedModule {}

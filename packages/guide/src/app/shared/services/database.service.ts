@@ -8,6 +8,7 @@ import {
     CraftingRecipe,
     Critter,
     Crop,
+    Enemy,
     Fish,
     FruitPlant,
     FruitTree,
@@ -102,6 +103,9 @@ export class DatabaseService {
     private _TORN_PAGES_DATA: TornPageData[] = [];
     private _TORN_PAGES_DATA$?: Observable<TornPageData[]>;
 
+    private _BESTIARY: Enemy[] = [];
+    private _BESTIARY$?: Observable<Enemy[]>;
+
 
     constructor(private readonly _http: HttpClient,
                 private readonly _settings: SettingsService) {
@@ -170,6 +174,17 @@ export class DatabaseService {
                 );
         }
         return this._MAIL_DATA$;
+    }
+
+    fetchBestiary$(): Observable<Enemy[]> {
+        if (!this._BESTIARY$) {
+            this._BESTIARY$ = this._http.get<Enemy[]>(`${this._BASE_PATH}/bestiary.json`)
+                .pipe(
+                    tap(items => this._BESTIARY = items),
+                    shareReplay(1)
+                );
+        }
+        return this._BESTIARY$;
     }
 
     fetchTornPagesData$(): Observable<TornPageData[]> {

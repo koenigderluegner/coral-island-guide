@@ -31,6 +31,11 @@ import { LocationsModule } from '../locations/locations.module';
 import { MailComponent } from './components/mail/mail.component';
 import { MatButtonModule } from '@angular/material/button';
 import { TornPageComponent } from './components/torn-page/torn-page.component';
+import { BestiaryComponent } from './components/bestiary/bestiary.component';
+import { BestiaryDetailsComponent } from './components/bestiary-details/bestiary-details.component';
+import { BestiaryTableComponent } from './components/tables/bestiary-table/bestiary-table.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { BestiaryImageComponent } from './components/bestiary-image/bestiary-image.component';
 
 @NgModule({
     declarations: [
@@ -53,6 +58,10 @@ import { TornPageComponent } from './components/torn-page/torn-page.component';
         TornPageDetailsComponent,
         MailComponent,
         TornPageComponent,
+        BestiaryComponent,
+        BestiaryDetailsComponent,
+        BestiaryTableComponent,
+        BestiaryImageComponent,
     ],
     imports: [
         CommonModule,
@@ -68,6 +77,7 @@ import { TornPageComponent } from './components/torn-page/torn-page.component';
         ReactiveFormsModule,
         LocationsModule,
         MatButtonModule,
+        MatTooltipModule,
     ],
     exports: [CaughtDetailsComponent, CaughtTableComponent, CropTableComponent],
 })

@@ -46,6 +46,7 @@ import { CookingRecipesChecklistGenerator } from "./app/cooking-recipes-checklis
 import { CalendarGenerator } from "./app/calendar.generator";
 import { MailDataGenerator } from "./app/mail-data.generator";
 import { TornPagesGenerator } from "./app/torn-pages.generator";
+import { BestiaryGenerator } from "./app/bestiary.generator";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
@@ -133,6 +134,7 @@ try {
         liveGenerators = {
 
             'torn-pages': new TornPagesGenerator(),
+            'bestiary': new BestiaryGenerator(itemDbMap),
 
             'concerned-monkey-shop-items': {
                 generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopConcernedMonke.json').generate({

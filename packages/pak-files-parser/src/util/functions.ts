@@ -66,6 +66,10 @@ export function convertToIconName(objectName: string): string {
     return sanitizedName;
 }
 
+export function AssetPathNameToIcon(assetPathName: string): string {
+    return convertToIconName(assetPathName.split('.').pop() ?? '').replace('.png', '')
+}
+
 export function minifyItem(item: { id: string, displayName: string, iconName: string | null }): MinimalItem {
     return {
         id: item.id,

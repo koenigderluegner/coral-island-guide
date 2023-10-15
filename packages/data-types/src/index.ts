@@ -15,7 +15,6 @@ export * from './lib/types/effects/update-npc-schedule-effect.type';
 export * from './lib/types/effects/vary-money-effect.type';
 
 
-
 export * from './lib/types/requirements/count-npc-heart-level-requirement.type';
 export * from './lib/types/requirements/editor-only-requirement.type';
 export * from './lib/types/requirements/is-achivement-completed-requirement.type';
@@ -69,6 +68,8 @@ export * from './lib/interfaces/heart-event-trigger-data.interface';
 export * from './lib/interfaces/heart-event.interface';
 export * from './lib/interfaces/mail-data.interface';
 export * from './lib/interfaces/torn-page-data.interface';
+export * from './lib/interfaces/enemy.interface';
+export * from './lib/interfaces/chance-per-item.interface';
 
 
 export * from './lib/enums/quality.enum';

@@ -1,24 +1,12 @@
 <app-base-item-card [item]="itemProcessData.input">
 
     <div *ngIf="itemProcessData.inputAmount > 1">
-        Amount needed for processing: <span class="text-black">selectedProcessEntity.inputAmount</span>
+        Amount needed for processing: <span class="text-black">{{itemProcessData.inputAmount}}}</span>
     </div>
     <div>Cost to process:
         <app-money [amount]="itemProcessData.processingCost"/>
     </div>
     <div class="my-2">
-        <ng-container *ngFor="let itemListItem of itemProcessData.outputChanges">
-            <div class="flex justify-between py-1">
-                <div *ngIf="itemListItem.item" class="flex gap-x-3 items-center">
-                    <app-item-icon [itemName]="itemListItem.item.iconName" class="w-10"></app-item-icon>
-                    <span>{{itemListItem.item.displayName}}</span>
-                    <span>x{{itemListItem.amount}}</span>
-                </div>
-
-                <div class="flex items-center">{{itemListItem.chance}}%</div>
-
-            </div>
-            <hr>
-        </ng-container>
+        <app-chance-per-item-list [chances]="itemProcessData.outputChanges"/>
     </div>
 </app-base-item-card>

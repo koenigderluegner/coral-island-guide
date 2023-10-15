@@ -1,0 +1,20 @@
+<app-list-detail-container [(openDrawer)]="openDrawer">
+    <app-bestiary-details *ngIf="selectedEntity" [enemy]="selectedEntity" listDetail/>
+    <div class="px-2 xl:px-[50px] w-full max-w-full-safe">
+        <app-data-filter [(showTable)]="showTable"/>
+        <ng-container *ngIf="(bestiary$  |async) as syncedData">
+            <ng-container *ngIf="!showTable">
+                <div class="grid gap-4 icon-grid">
+                    <app-item-icon (click)="showDetails(entry)" *ngFor="let entry of syncedData"
+                                   [class.selected-icon]="selectedEntity?.key === entry.key"
+                                   [itemName]="entry.iconName"
+                                   class="icon-grid-item"
+                    />
+                </div>
+            </ng-container>
+            <ng-container *ngIf="showTable">
+                <app-bestiary-table [dataSource]="syncedData"/>
+            </ng-container>
+        </ng-container>
+    </div>
+</app-list-detail-container>

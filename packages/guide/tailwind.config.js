@@ -6,6 +6,9 @@ module.exports = {
     content: [join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html}'), ...createGlobPatternsForDependencies(__dirname)],
     theme: {
         extend: {
+            maxWidth: {
+                'full-safe': 'calc(100vw - (env(safe-area-inset-left) + env(safe-area-inset-right)))'
+            },
             fontFamily: {
                 'coral': '"QTVagaRound", sans-serif'
             },
