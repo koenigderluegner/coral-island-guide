@@ -37,6 +37,7 @@
 - Changed default text color with a color of higher contrast to improve readability
 - Fixed settings unintentionally saving when clicking somewhere on the card
 - Fixed odd label state when inputs are empty and active
+- Fixed missing menu item when viewing NPC details
 
 ### 0.11.1 2023-09-14
 

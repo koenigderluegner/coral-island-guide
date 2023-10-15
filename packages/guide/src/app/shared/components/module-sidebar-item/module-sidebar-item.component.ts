@@ -13,4 +13,5 @@ export class ModuleSidebarItemComponent {
     @Input() uiIcon?: UiIcon;
     @Input() routerLink: RouterLink['routerLink'];
     @Input({transform: booleanAttribute}) exact?: boolean;
+    @Input({transform: booleanAttribute}) active = false
 }

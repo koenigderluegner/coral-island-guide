@@ -9,7 +9,7 @@
 
   padding-right: max(8px, env(safe-area-inset-right));
 
-  .hide-menu .app-module-sidebar-list-item:not(.active) {
+  .hide-menu .app-module-sidebar-list-item:not(.active):not(.custom-active) {
     display: none;
   }
 }
@@ -37,7 +37,7 @@
 
   }
 
-  &.active {
+  &.active, &.custom-active {
     @apply bg-white text-black border-white;
 
     .app-ui-icon {
@@ -46,7 +46,7 @@
 
   }
 
-  &:not(.active) button {
+  &:not(.active):not(.custom-active) button {
     display: none
   }
 
