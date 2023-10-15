@@ -15,6 +15,7 @@ import { BETA_CODE } from "./core/injection-tokens/beta-code.injection-token";
 import { SettingsService } from "./shared/services/settings.service";
 import { of } from "rxjs";
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 const routerOptions: ExtraOptions = {
     scrollPositionRestoration: 'disabled',
@@ -83,7 +84,11 @@ const appRoutes: Route[] = [
     {
         path: 'my',
         loadChildren: () => import('./my-coral-guide/my-coral-guide.module').then(m => m.MyCoralGuideModule)
-    }
+    },
+    {
+        path: 'about',
+        loadComponent: () => import('./about/about.component').then(c => c.AboutComponent)
+    },
 ];
 
 @NgModule({
@@ -101,6 +106,7 @@ const appRoutes: Route[] = [
             // or after 30 seconds (whichever comes first).
             registrationStrategy: 'registerWhenStable:30000'
         }),
+        MatProgressSpinnerModule,
     ],
     providers: [
         {

@@ -1,8 +1,11 @@
-<app-header class="flex-grow-0 flex-shrink-0"></app-header>
-
-<ng-container *ngIf="prefetchData$ |async">
-    <main>
+<app-header class="flex-grow-0 flex-shrink-0"/>
+<main>
+    <ng-container *ngIf="prefetchData$ | async as data; else loading">
         <router-outlet></router-outlet>
-    </main>
+    </ng-container>
+</main>
+<app-footer class="flex-grow-0 flex-shrink-0"/>
 
-</ng-container>
+<ng-template #loading>
+    <mat-spinner class="text-white mx-auto my-5"></mat-spinner>
+</ng-template>

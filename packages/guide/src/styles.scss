@@ -30,9 +30,10 @@
   font-display: swap;
 }
 
-
 :root {
   --cg-icon-grid-min-size: 55px;
+  --cg-min-header-height: 64px;
+  --cg-min-footer-height: calc(56px + env(safe-area-inset-bottom));
 }
 
 html {
@@ -87,7 +88,16 @@ hr {
   }
 }
 
+
+@screen md {
+  :root {
+    --cg-min-header-height: 80px;
+  }
+}
 @screen xl {
+  :root {
+    --cg-min-header-height: 108px;
+  }
 
   .mat-drawer-container {
     height: 100%;

@@ -6,6 +6,8 @@
 
 - Added domain to coral guide called coral.guide.
     - This will most likely cause your settings to be lost due to the way how browsers work
+- Added footer and about page
+    - There you can find ways to contact me, ways to support Coral Guide and general information
 - Added new section "My Guide"
     - This section is primarily for user created data, checklists, settings etc
     - Added offering checklist
