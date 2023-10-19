@@ -1,5 +1,15 @@
 ## Changelog
 
+### TBD
+
+#### Added
+
+- Added B.O.S., Bens Caravan and Socket and Pan shop items
+
+#### Changed
+
+- Fixed Joko and Valentina head image being broken
+
 ### 0.12.0 2023-10-15
 
 #### Added
