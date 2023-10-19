@@ -15,6 +15,7 @@ export class CookingComponent extends BaseTabbedSelectableContainerComponent<Coo
     protected quality = Quality;
     protected selectedEntityConsumable: Consumable | undefined;
     private _consumables: Consumable[] = [];
+    protected cookingUtensilMapping = this._database.getCookingUtensilMapping()
 
     constructor() {
         super();

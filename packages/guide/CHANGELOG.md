@@ -5,6 +5,7 @@
 #### Added
 
 - Added B.O.S., Bens Caravan and Socket and Pan shop items
+- Added manual mapping for cooking utensils to show in database to reduce confusion about internal names
 
 #### Changed
 

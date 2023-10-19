@@ -1,10 +1,11 @@
-import { Item, MinimalItem } from "@ci/data-types";
-import { minifyItem } from "../util/functions";
+import { BaseCustomKeyToItemGenerator } from "./base-custom-key-to-item.generator";
+import { Item } from "@ci/data-types";
 
-export class ItemProcessorMapGenerator {
+export class ItemProcessorMapGenerator extends BaseCustomKeyToItemGenerator {
+
 
     // keys are lowercased because keys don't follow fixed pattern
-    keyToItemId: Record<string, string> = {
+    keyToItemId = {
         barrel: 'item_65022',
         beehouse: 'item_65016',
         cheesepress: 'item_65018',
@@ -26,22 +27,7 @@ export class ItemProcessorMapGenerator {
         yoghurtmachine: 'item_65047',
     }
 
-    constructor(protected itemMap: Map<string, Item>) {
-    }
-
-    generate(): Map<string, Record<string, MinimalItem>> {
-        const result: Record<string, MinimalItem> = {};
-
-        Object.keys(this.keyToItemId).forEach(key => {
-            const item = this.itemMap.get(this.keyToItemId[key]);
-
-            if (!item) return;
-
-            result[key] = minifyItem(item);
-        })
-
-        return new Map<string, Record<string, MinimalItem>>([
-            ['unused', result]
-        ])
+    constructor(itemMap: Map<string, Item>) {
+        super(itemMap);
     }
 }

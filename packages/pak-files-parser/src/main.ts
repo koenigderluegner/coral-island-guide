@@ -47,6 +47,7 @@ import { CalendarGenerator } from "./app/calendar.generator";
 import { MailDataGenerator } from "./app/mail-data.generator";
 import { TornPagesGenerator } from "./app/torn-pages.generator";
 import { BestiaryGenerator } from "./app/bestiary.generator";
+import { CookingUtensilMapGenerator } from "./app/cooking-utensil-map.generator";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
@@ -159,6 +160,7 @@ try {
             'cooking-recipes-checklist': new CookingRecipesChecklistGenerator(itemDbMap, cookingDbMap),
 
             'processor-mapping': new ItemProcessorMapGenerator(itemDbMap),
+            'cooking-utensil-mapping': new CookingUtensilMapGenerator(itemDbMap),
 
             'achievements': {generate: () => achievementMap},
             'special-items': {generate: () => specialItemDbMap},

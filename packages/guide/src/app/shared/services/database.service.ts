@@ -90,6 +90,8 @@ export class DatabaseService {
 
     private _PROCESSOR_MAPPING: Record<string, MinimalItem> = {};
     private _PROCESSOR_MAPPING$?: Observable<Record<string, MinimalItem>>;
+    private _COOKING_UTENSIL_MAPPING: Record<string, MinimalItem> = {};
+    private _COOKING_UTENSIL_MAPPING$?: Observable<Record<string, MinimalItem>>;
 
     private _MUSEUM_CHECKLIST: Record<string, MinimalItem[]> = {};
     private _MUSEUM_CHECKLIST$?: Observable<Record<string, MinimalItem[]>>;
@@ -204,6 +206,23 @@ export class DatabaseService {
                 );
         }
         return this._TORN_PAGES_DATA$;
+    }
+
+    getCookingUtensilMapping(): Record<string, MinimalItem> {
+        return this._COOKING_UTENSIL_MAPPING;
+    }
+
+
+    fetchCookingUtensilMapping$(): Observable<Record<string, MinimalItem>> {
+        if (!this._COOKING_UTENSIL_MAPPING$) {
+            this._COOKING_UTENSIL_MAPPING$ = this._http.get<Record<string, MinimalItem>[]>(`${this._BASE_PATH}/cooking-utensil-mapping.json`)
+                .pipe(
+                    map(s => s[0]),
+                    tap(items => this._COOKING_UTENSIL_MAPPING = items),
+                    shareReplay(1)
+                );
+        }
+        return this._COOKING_UTENSIL_MAPPING$;
     }
 
     getProcessorMapping(): Record<string, MinimalItem> {

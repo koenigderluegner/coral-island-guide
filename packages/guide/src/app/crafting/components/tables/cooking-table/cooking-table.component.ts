@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { CookingRecipe } from "@ci/data-types";
 import { coerceBooleanProperty } from "@angular/cdk/coercion";
+import { DatabaseService } from "../../../../shared/services/database.service";
 
 @Component({
     selector: 'app-cooking-table',
@@ -18,6 +19,7 @@ export class CookingTableComponent extends BaseTableComponent<CookingRecipe> {
     ];
 
     _showUtensil = false;
+    protected cookingUtensilMapping = inject(DatabaseService).getCookingUtensilMapping();
 
     @Input()
     get showUtensil(): boolean {
