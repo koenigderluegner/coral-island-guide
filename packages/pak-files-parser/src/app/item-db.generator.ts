@@ -44,12 +44,12 @@ export class ItemDbGenerator {
 
             const item: Item = {
                 id: itemKey,
-                displayName: StringTable.getString(dbItem.name),
+                displayName: StringTable.getString(dbItem.name) ?? '',
                 price: dbItem.price,
                 sellPrice: dbItem.sellPrice,
                 sellAt: dbItem.sellAt,
                 stackable: dbItem.stackable,
-                inventoryCategory: StringTable.getString(dbItem.inventoryDisplayCategory),
+                inventoryCategory: StringTable.getString(dbItem.inventoryDisplayCategory) ?? '',
                 displayKey: dbItem.displayKey,
                 description: dbItem.description.SourceString,
                 qualities: {},

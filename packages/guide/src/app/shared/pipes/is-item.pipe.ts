@@ -7,7 +7,7 @@ import { Item } from "@ci/data-types";
 export class IsItemPipe implements PipeTransform {
 
     transform(value: any): value is Item {
-        return !!value && 'id' in value && 'displayName' in value && 'price' in value && 'sellPrice' in value;
+        return !!value && 'id' in value && 'displayName' in value && 'price' in value && 'sellPrice' in value && value.id.toLowerCase().startsWith('item_');
     }
 
 }

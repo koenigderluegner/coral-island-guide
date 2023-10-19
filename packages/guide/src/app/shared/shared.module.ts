@@ -57,6 +57,7 @@ import { ExpandableComponent } from './components/expandable/expandable.componen
 import { RemoveTagsPipe } from './pipes/remove-tags.pipe';
 import { ChancePerItemListComponent } from './components/chance-per-item-list/chance-per-item-list.component';
 import { ChancePerItemTableListComponent } from './components/chance-per-item-table-list/chance-per-item-table-list.component';
+import { HasPipe } from './pipes/has.pipe';
 
 @NgModule({
     declarations: [
@@ -107,6 +108,7 @@ import { ChancePerItemTableListComponent } from './components/chance-per-item-ta
         RemoveTagsPipe,
         ChancePerItemListComponent,
         ChancePerItemTableListComponent,
+        HasPipe,
     ],
     imports: [
         CommonModule,

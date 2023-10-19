@@ -37,7 +37,8 @@
 
     <ng-content></ng-content>
 
-    <app-quality-grid *ngIf="(fetchedItem.qualities | keyvalue).length && !hideQualityGrid; else basePrice"
+    <app-quality-grid
+            *ngIf="(fetchedItem | isItem) && (fetchedItem.qualities | keyvalue).length && !hideQualityGrid; else basePrice"
                       [item]="fetchedItem"
                       includePrices
                       class="mt-6"></app-quality-grid>
@@ -48,7 +49,8 @@
 <ng-template #basePrice>
     <div class="flex">
         Sells for:
-        <app-money [amount]="fetchedItem.sellPrice" class="ml-2 text-black"></app-money>
+        <app-money *ngIf="fetchedItem && (fetchedItem | has: 'sellPrice')" [amount]="fetchedItem.sellPrice"
+                   class="ml-2 text-black"></app-money>
     </div>
 
 </ng-template>

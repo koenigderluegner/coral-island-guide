@@ -10,12 +10,16 @@ import {
     AddItemToInventoryEffect,
     BoostMaxStaminaEffect,
     ChangeObjectStateEffect,
+    CompleteMiningRequirement,
     ConsumeMasteryItemEffect,
     CookingRecipe,
     CountNpcHeartLevelRequirement,
     DateSeasonRangeRequirement,
     EditorOnlyRequirement,
     Effect,
+    FarmHouseRequirement,
+    HasCookingUtensilRequirement,
+    HealedCoralRequirement,
     IsAchievementCompletedRequirement,
     IsCutsceneTriggeredRequirement,
     IsGiantUnlockedRequirement,
@@ -24,9 +28,13 @@ import {
     ItemWithCategoryInInventoryRequirement,
     MailData,
     MarriageHasProposedRequirement,
+    MasteryLevelRequirements,
     MountAcquiredRequirement,
+    NpcHeartLevelRequirement,
     ObjectStateRequirement,
     QuestActiveRequirement,
+    QuestFactComparators,
+    QuestFactCompareRequirement,
     QuestFactRequirement,
     RemoveItemFromInventoryEffect,
     Requirement,
@@ -177,11 +185,11 @@ export class DaFilesParser {
                         break;
                     }
                     case "C_UnlockCookingUtelsilEffect": {
-
                         daEffect = {
                             type: "UnlockCookingUtensil",
                             meta: {
-                                utensil: getEnumValue(foundEffect.Properties.utensilToUnlock)
+                                // TODO check if correct?
+                                utensil: foundEffect.Properties?.utensilToUnlock ? getEnumValue(foundEffect.Properties.utensilToUnlock) : 'FryingPan'
                             }
                         } satisfies UnlockCookingUtensilEffect;
                         break;
@@ -397,6 +405,9 @@ export class DaFilesParser {
 
             const reqs = conf[key].requirements.map(effect => {
 
+
+                if (!effect) return;
+
                 const [daPath, index] = effect.ObjectPath.split('.');
 
                 const daJson = daPath + '.json';
@@ -428,6 +439,16 @@ export class DaFilesParser {
                                 expectedHeartLevel: foundEffect.Properties.expectedHeartLevel
                             }
                         } satisfies CountNpcHeartLevelRequirement;
+                        break;
+                    }
+                    case "C_NPCHeartLevelRequirement": {
+                        daEffect = {
+                            type: "NPCHeartLevel",
+                            meta: {
+                                expectedHeartLevel: foundEffect.Properties.expectedHeartLevel,
+                                npcKey: foundEffect.Properties.NPCId
+                            }
+                        } satisfies NpcHeartLevelRequirement;
                         break;
                     }
 
@@ -489,9 +510,23 @@ export class DaFilesParser {
                     case "C_MountAcquiredRequirement": {
                         daEffect = {
                             type: "MountAcquired",
-                            meta: {}
+                            meta: {
+                                inverted: foundEffect.Properties?.invertResult
+                            }
 
                         } satisfies MountAcquiredRequirement;
+                        break;
+                    }
+
+                    case "C_HasCookingUtensilReuirement": {
+                        daEffect = {
+                            type: "HasCookingUtensil",
+                            meta: {
+                                utensil: foundEffect.Properties.requiredUtensil ? getEnumValue(foundEffect.Properties.requiredUtensil) : undefined,
+                                inverted: foundEffect.Properties.invertResult
+                            }
+
+                        } satisfies HasCookingUtensilRequirement;
                         break;
                     }
 
@@ -503,6 +538,23 @@ export class DaFilesParser {
                                 factName: foundEffect.Properties.fact.factName.RowName
                             }
                         } satisfies QuestFactRequirement;
+                        break;
+                    }
+
+                    case "C_QuestFactCompareRequirement": {
+                        const comparator: QuestFactCompareRequirement['meta']['comparator'] = getEnumValue(foundEffect.Properties.factCompare.compareType) as QuestFactCompareRequirement['meta']['comparator'];
+                        if (!QuestFactComparators.includes(comparator)) {
+                            Logger.error(`Unknown comparator for quest fact compare: ${comparator}`)
+                            return;
+                        }
+                        daEffect = {
+                            type: "QuestFactCompare",
+                            meta: {
+                                factName: foundEffect.Properties.fact.factName.RowName,
+                                comparator,
+                                value: foundEffect.Properties.factCompare.comparedInteger
+                            }
+                        } satisfies QuestFactCompareRequirement;
                         break;
                     }
 
@@ -525,6 +577,17 @@ export class DaFilesParser {
 
 
                     }
+                    case "C_HealedCoralRequirement": {
+
+                        daEffect = {
+                            type: "HealedCoral",
+                            meta: {
+                                required: foundEffect.Properties.required,
+                            }
+                        } satisfies HealedCoralRequirement;
+
+                        break;
+                    }
 
 
                     case "C_TempleLevelRequirement": {
@@ -534,6 +597,35 @@ export class DaFilesParser {
                                 level: foundEffect.Properties.requiredLevel
                             }
                         } satisfies TempleLevelRequirement;
+                        break;
+                    }
+                    case "C_MasteryLevelRequirement": {
+                        daEffect = {
+                            type: "MasteryLevel",
+                            meta: {
+                                level: foundEffect.Properties.expectedMasteryLevel,
+                                mastery: getEnumValue(foundEffect.Properties.masteryType)
+                            }
+                        } satisfies MasteryLevelRequirements;
+                        break;
+                    }
+                    case "C_CompleteMiningRequirement": {
+                        daEffect = {
+                            type: "CompleteMining",
+                            meta: {
+                                level: foundEffect.Properties.requiredLevel,
+                                mine: foundEffect.Properties.miningTheme ? getEnumValue(foundEffect.Properties.miningTheme) : 'Earth'
+                            }
+                        } satisfies CompleteMiningRequirement;
+                        break;
+                    }
+                    case "C_FarmHouseRequirement": {
+                        daEffect = {
+                            type: "FarmHouseLevel",
+                            meta: {
+                                level: foundEffect.Properties.requiredLevel
+                            }
+                        } satisfies FarmHouseRequirement;
                         break;
                     }
 

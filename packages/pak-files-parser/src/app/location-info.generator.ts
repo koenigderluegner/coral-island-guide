@@ -15,7 +15,7 @@ export class LocationInfoGenerator extends BaseGenerator<RawLocationInfo, Locati
         const location = StringTable.getString(dbItem.locationText);
         return {
             id: itemKey,
-            location: location !== 'Unknown' ? location : addSpacesToPascalCase(itemKey),
+            location: location ? location : addSpacesToPascalCase(itemKey),
             worldLocation: getEnumValue(dbItem.worldLocation)
         };
     }

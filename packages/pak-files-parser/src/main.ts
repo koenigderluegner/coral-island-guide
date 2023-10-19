@@ -235,6 +235,27 @@ try {
 
         'pet-shop-adoptions': new PetShopAdoptionsGenerator(npcDbMap),
 
+
+        'bos-shop-items': {
+            generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BOSShopItemsProductions.json').generate({
+                daFiles: ['ProjectCoral/Content/ProjectCoral/Core/Data/Shops/BandOfSmile/DA_BOSShopAdvanceRequirement.json']
+            }),
+        },
+        'socket-and-pan-shop-items': {
+            generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/SocketAndPan/DT_ShopSockedAndPan.json').generate({
+                daFiles: [
+                    'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/SocketAndPan/DA_ShopSocketAndPanRequirement.json',
+                    'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/SocketAndPan/DA_ShopSocketAndPanEffect.json',
+
+                ]
+            })
+        },
+        'bens-caravan-shop-items': {
+            generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BenShopItems.json').generate({
+                daFiles: []
+            })
+        },
+
         ...betaGenerators,
         ...liveGenerators,
 
@@ -258,7 +279,7 @@ Object.keys(generators).forEach(generatorName => {
             generateJson(`${generatorName}.json`, [...generatedMap.values()], readable);
         } catch (e) {
             const error = e as Error;
-            console.log('hehe', error.message)
+            Logger.error(error.message, error.stack)
 
         }
 

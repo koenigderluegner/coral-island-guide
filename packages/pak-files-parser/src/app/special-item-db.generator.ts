@@ -13,7 +13,7 @@ export class SpecialItemDbGenerator extends BaseGenerator<RawSpecialItem, Specia
 
         return {
             id: itemKey,
-            displayName: StringTable.getString(dbItem.name),
+            displayName: StringTable.getString(dbItem.name) ?? '',
             description: dbItem.description.SourceString,
             iconName: convertToIconName(getReferencedString(dbItem.icon.ObjectName)).replace('.png', ''),
         };

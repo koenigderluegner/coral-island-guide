@@ -13,6 +13,13 @@ import { RawTempleLevelRequirement } from "./temple-level-requirement.type";
 import { RawItemInInventoryRequirement } from "./item-in-inventory-requirement.type";
 import { RawItemWithCategoryInInventoryRequirement } from "./item-with-category-in-inventory-requirement.type";
 import { RawObjectStateRequirement } from "./object-state-requirement.type";
+import { RawCompleteMiningRequirement } from "./complete-mining-requirement.type";
+import { RawQuestFactCompareRequirement } from "./quest-fact-compare-requirement.type";
+import { RawFarmHouseRequirement } from "./farm-house-requirement.type";
+import { HasCookingUtensilRequirement } from "./has-cooking-utensil-requirement.type";
+import { RawNpcHeartLevelRequirement } from "./npc-heart-level-requirement.type";
+import { RawHealedCoralRequirement } from "./healed-coral-requirement.type";
+import { RawMasteryLevelRequirement } from "./mastery-level-requirement.type";
 
 export type DaRequirements = RawIsAchievementCompletedRequirement
     | RawCountNpcHeartLevelRequirement
@@ -29,3 +36,10 @@ export type DaRequirements = RawIsAchievementCompletedRequirement
     | RawItemInInventoryRequirement
     | RawItemWithCategoryInInventoryRequirement
     | RawObjectStateRequirement
+    | RawCompleteMiningRequirement
+    | RawQuestFactCompareRequirement
+    | RawFarmHouseRequirement
+    | HasCookingUtensilRequirement
+    | RawNpcHeartLevelRequirement
+    | RawHealedCoralRequirement
+    | RawMasteryLevelRequirement

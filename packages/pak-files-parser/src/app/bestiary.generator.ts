@@ -31,7 +31,7 @@ export class BestiaryGenerator extends BaseGenerator<RawBestiary, Enemy> {
 
         return {
             key: itemKey,
-            displayName: StringTable.getString(dbItem.enemyName),
+            displayName: StringTable.getString(dbItem.enemyName) ?? '',
             description: description === 'Unknown' ? null : description,
             experience: enemy.experiencePoint,
             iconName: AssetPathNameToIcon(dbItem.icon.AssetPathName),

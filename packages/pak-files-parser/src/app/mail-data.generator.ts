@@ -24,21 +24,16 @@ export class MailDataGenerator extends BaseGenerator<RawMailData, MailData> {
 
         const mailType: string = getEnumValue(dbItem.mailtype);
 
-        const greetclosemessage = StringTable.getString(dbItem.greetclosemessage);
-        const greetopenmessage = StringTable.getString(dbItem.greetopenmessage);
-        const sender = StringTable.getString(dbItem.sender);
-        const title = StringTable.getString(dbItem.title);
-
         return {
             key: itemKey,
-            sender: sender === 'Unknown' ? null : sender,
-            title: title === 'Unknown' ? null : title,
-            content: StringTable.getString(dbItem.content),
+            sender: StringTable.getString(dbItem.sender),
+            title: StringTable.getString(dbItem.title),
+            content: StringTable.getString(dbItem.content) ?? '',
             isImportant: dbItem.isImportantMail,
             tags: dbItem.tags,
             mailType: mailType === 'None' ? null : mailType,
-            greetCloseMessage: greetclosemessage === 'Unknown' ? null : greetclosemessage,
-            greetOpenMessage: greetopenmessage === 'Unknown' ? null : greetopenmessage,
+            greetCloseMessage: StringTable.getString(dbItem.greetclosemessage),
+            greetOpenMessage: StringTable.getString(dbItem.greetopenmessage),
             ...(effects.length ? {effects} : {})
         };
     }

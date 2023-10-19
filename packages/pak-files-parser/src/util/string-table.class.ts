@@ -7,7 +7,7 @@ export class StringTable {
     private static readonly cachedStringTables: Map<string, RawStringTable> = new Map<string, RawStringTable>()
     private static readonly cachedLocalizationFiles: Map<string, Record<string, Record<string, string>>> = new Map<string, Record<string, Record<string, string>>>()
 
-    public static getString(ref: SourceString, lang: 'de' | 'en' | 'es' | 'fr' | 'id' | 'ja' | 'zh-CN' = 'en'): string | 'Unknown' {
+    public static getString(ref: SourceString, lang: 'de' | 'en' | 'es' | 'fr' | 'id' | 'ja' | 'zh-CN' = 'en'): string | null {
         if ('TableId' in ref) {
             const stringTablePath = ref.TableId.replace('/Game/ProjectCoral/', '/ProjectCoral/Content/ProjectCoral/').split('.')[0] + '.json';
 
@@ -31,7 +31,7 @@ export class StringTable {
 
         }
 
-        return ref.CultureInvariantString ?? 'Unknown'
+        return ref.CultureInvariantString ?? null
 
 
     }
