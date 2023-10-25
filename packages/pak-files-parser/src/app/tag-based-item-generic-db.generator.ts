@@ -3,6 +3,7 @@ import { Item, TagBasedItem } from '@ci/data-types';
 import { RawTagBasedItemGeneric } from '../interfaces/raw-data-interfaces/raw-tag-based-item-generic.interface';
 import { BaseGenerator } from './base-generator.class';
 import { Datatable } from '../interfaces/datatable.interface';
+import { StringTable } from "../util/string-table.class";
 
 export class TagBasedItemGenericDbGenerator extends BaseGenerator<RawTagBasedItemGeneric, TagBasedItem> {
 
@@ -27,7 +28,7 @@ export class TagBasedItemGenericDbGenerator extends BaseGenerator<RawTagBasedIte
             key: itemKey,
             tags,
             iconName: convertToIconName(dbItem.icon.AssetPathName.split('.').pop() ?? '').replace('.png', ''),
-            displayName: dbItem.readableText.SourceString ?? dbItem.tagQuery.UserDescription ?? itemKey,
+            displayName: StringTable.getString(dbItem.readableText) ?? itemKey,
             items: tagBasedItems
         };
     }

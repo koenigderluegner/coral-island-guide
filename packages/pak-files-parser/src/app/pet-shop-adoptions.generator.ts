@@ -3,6 +3,7 @@ import { BaseGenerator } from "./base-generator.class";
 import { RawPetShopData } from "../interfaces/raw-data-interfaces/raw-pet-shop-data.interface";
 import { Datatable } from "../interfaces/datatable.interface";
 import { readAsset } from "../util/functions";
+import { StringTable } from "../util/string-table.class";
 
 export class PetShopAdoptionsGenerator extends BaseGenerator<RawPetShopData, PetShopAdoptions> {
 
@@ -17,7 +18,7 @@ export class PetShopAdoptionsGenerator extends BaseGenerator<RawPetShopData, Pet
         return {
             price: dbItem.price,
             iconName: this.npcMap.get(dbItem.petData.npcData.RowName)?.iconName ?? '',
-            description: dbItem.description.LocalizedString ?? dbItem.description.SourceString,
+            description: StringTable.getString(dbItem.description) ?? '',
             npcData: {
                 npcId: dbItem.petData.npcData.RowName,
                 nickname: dbItem.petData.nickname

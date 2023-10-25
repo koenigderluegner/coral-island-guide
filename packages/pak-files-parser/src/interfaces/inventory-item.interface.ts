@@ -8,9 +8,5 @@ export interface InventoryItem {
     "sellAt": [],
     "inventoryDisplayCategory": SourceString,
     "displayKey": string
-    "description": {
-        "Namespace": string
-        "Key": string
-        "SourceString": string
-    }
+    "description": SourceString
 }

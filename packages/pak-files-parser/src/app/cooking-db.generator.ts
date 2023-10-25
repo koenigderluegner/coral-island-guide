@@ -3,6 +3,7 @@ import { minifyItem, readAsset } from "../util/functions";
 import { CookingIngredients, RawCookingRecipe } from "../interfaces/raw-data-interfaces/raw-cooking-recipe.interface";
 import { getEnumValue, removeQualityFlag } from "@ci/util";
 import { CookingRecipes } from "../types/cooking-recipes.type";
+import { StringTable } from "../util/string-table.class";
 
 export class CookingDbGenerator {
 
@@ -50,7 +51,7 @@ export class CookingDbGenerator {
 
 
             if (ingredient.useCustomName) {
-                const tagName = ingredient.customName.SourceString;
+                const tagName = StringTable.getString(ingredient.customName) ?? '';
 
                 const foundGenericIngredient = genericIngredients.find(genericIngredient => genericIngredient.genericItem?.displayName === tagName);
                 const foundTagBasedItem = [...this.tagBasedItemMap.values()].find(tbi => tbi.displayName === tagName);

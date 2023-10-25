@@ -12,6 +12,7 @@
 
 - Fixed altars and offering checklist showing wrong item instead of tag based item
 - Fixed Joko and Valentina head image being broken
+- Fixed a few descriptions being missing
 
 ### 0.12.0 2023-10-15
 

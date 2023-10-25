@@ -5,6 +5,7 @@ import { readAsset } from "../util/functions";
 import { RawOfferingAltar } from "../interfaces/raw-data-interfaces/raw-offering-altar.interface";
 import { OfferingDetailsDbGenerator } from "./offering-details-db.generator";
 import { nonNullable } from "@ci/util";
+import { StringTable } from "../util/string-table.class";
 
 export class OfferingsDbGenerator extends BaseGenerator<RawOfferingAltar, OfferingAltar> {
 
@@ -35,8 +36,8 @@ export class OfferingsDbGenerator extends BaseGenerator<RawOfferingAltar, Offeri
 
         return {
             key: itemKey,
-            offeringGroupTitle: dbItem.offeringGroupTitle.SourceString,
-            offeringGroupRewardText: dbItem.offeringGroupRewardText.SourceString,
+            offeringGroupTitle: StringTable.getString(dbItem.offeringGroupTitle) ?? '',
+            offeringGroupRewardText: StringTable.getString(dbItem.offeringGroupRewardText) ?? '',
             offerings
 
         };

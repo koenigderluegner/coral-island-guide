@@ -1,3 +1,5 @@
+import { SourceString } from "../../types/source-string.type";
+
 export interface BaseRawItemUpgradeData {
     "price": number;
     "daysDelay": number;
@@ -43,22 +45,16 @@ export interface BaseRawItemUpgradeData {
         "itemID": string;
     },
     "useCustomName": boolean,
-    "shopItemName": {
-        "CultureInvariantString": null
-    },
+    "shopItemName": SourceString,
     "useCustomIcon": boolean,
     "customIcon": {
         "AssetPathName": string;
         "SubPathString": string;
     },
     "useCustomCategory": boolean,
-    "customCategory": {
-        "CultureInvariantString": null
-    },
+    "customCategory": SourceString,
     "useCustomDescription": boolean,
-    "customDescription": {
-        "CultureInvariantString": null
-    },
+    "customDescription": SourceString,
     "useCategory": boolean;
     "category": string;
     "priority": number;

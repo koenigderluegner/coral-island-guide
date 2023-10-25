@@ -1,3 +1,5 @@
+import { SourceString } from "../../types/source-string.type";
+
 export interface RawOfferingReward {
     "offeringId": {
         "DataTable": {
@@ -7,9 +9,7 @@ export interface RawOfferingReward {
         "RowName": string
     },
     "rewardID": string
-    "description": {
-        "CultureInvariantString": null
-    },
+    "description": SourceString,
     "useItemMesh": boolean,
     "scaleItemMesh": boolean,
     "rewardItem": {

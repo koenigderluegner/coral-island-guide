@@ -1,3 +1,5 @@
+import { SourceString } from "../../types/source-string.type";
+
 export interface RawMusuemChecklist {
     "item": {
         "data": {
@@ -10,9 +12,7 @@ export interface RawMusuemChecklist {
         "itemID": string
     },
     "category": string
-    "description": {
-        "CultureInvariantString": null
-    },
+    "description": SourceString,
     "objectMesh": {
         "AssetPathName": string
         "SubPathString": string

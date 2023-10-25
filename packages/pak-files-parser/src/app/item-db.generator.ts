@@ -51,7 +51,7 @@ export class ItemDbGenerator {
                 stackable: dbItem.stackable,
                 inventoryCategory: StringTable.getString(dbItem.inventoryDisplayCategory) ?? '',
                 displayKey: dbItem.displayKey,
-                description: dbItem.description.SourceString,
+                description: StringTable.getString(dbItem.description) ?? '',
                 qualities: {},
                 iconName,
             };
