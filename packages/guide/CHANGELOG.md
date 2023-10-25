@@ -6,6 +6,8 @@
 
 - Added B.O.S., Bens Caravan and Socket and Pan shop items
 - Added manual mapping for cooking utensils to show in database to reduce confusion about internal names
+- Added more images for generic items like "any butter" etc.
+- Fixed altars and offering checklist showing wrong item instead of tag based item
 
 #### Changed
 

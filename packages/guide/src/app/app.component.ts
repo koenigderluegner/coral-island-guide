@@ -16,6 +16,7 @@ export class AppComponent {
     ) {
         this.prefetchData$ = combineLatest([
             this.databaseService.fetchItems$(),
+            this.databaseService.fetchTagBasedItems$(),
             this.databaseService.fetchProcessorMapping$(),
             this.databaseService.fetchCookingUtensilMapping$(),
         ]);

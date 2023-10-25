@@ -93,3 +93,4 @@ export * from './lib/types/requirement-entry.type';
 export * from './lib/types/calendar-event.type';
 export * from './lib/types/minimal-npc.type';
 export * from './lib/types/gifting-preference-keys.type';
+export * from './lib/types/minimal-tag-based-item.type';

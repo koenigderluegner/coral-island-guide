@@ -1,5 +1,5 @@
 import { BaseGenerator } from "./base-generator.class";
-import { CookingRecipe, Item, OfferingAltar, Offerings } from "@ci/data-types";
+import { CookingRecipe, Item, OfferingAltar, Offerings, TagBasedItem } from "@ci/data-types";
 import { Datatable } from "../interfaces/datatable.interface";
 import { readAsset } from "../util/functions";
 import { RawOfferingAltar } from "../interfaces/raw-data-interfaces/raw-offering-altar.interface";
@@ -11,10 +11,9 @@ export class OfferingsDbGenerator extends BaseGenerator<RawOfferingAltar, Offeri
     datatable: Datatable<RawOfferingAltar>[] = readAsset<Datatable<RawOfferingAltar>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_OfferingGroupRegistry.json');
     private offeringDetails: Map<string, Offerings>;
 
-
-    constructor(protected itemMap: Map<string, Item>, protected cookingMap: Map<string, Record<string, CookingRecipe[]>>) {
+    constructor(protected itemMap: Map<string, Item>, protected cookingMap: Map<string, Record<string, CookingRecipe[]>>, protected tagBasedItemsMap: Map<string, TagBasedItem>,) {
         super();
-        const offeringDetailsGenerator = new OfferingDetailsDbGenerator(itemMap, cookingMap)
+        const offeringDetailsGenerator = new OfferingDetailsDbGenerator(itemMap, cookingMap, tagBasedItemsMap)
         this.offeringDetails = offeringDetailsGenerator.generate();
     }
 

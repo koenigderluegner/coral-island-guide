@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MinimalItem, Offering, OfferingAltar, Offerings } from "@ci/data-types";
+import { MinimalItem, MinimalTagBasedItem, Offering, OfferingAltar, Offerings } from "@ci/data-types";
 import { Observable, tap } from "rxjs";
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
 import { ToDoCategory } from "../../../core/enums/todo-category.enum";
@@ -8,10 +8,10 @@ import { ToDoCategory } from "../../../core/enums/todo-category.enum";
     selector: 'app-lake-temple',
     templateUrl: './lake-temple.component.html',
 })
-export class LakeTempleComponent extends BaseTabbedSelectableContainerComponent<MinimalItem> {
+export class LakeTempleComponent extends BaseTabbedSelectableContainerComponent<MinimalItem | MinimalTagBasedItem> {
     protected activeOffering?: Offerings;
     protected offerings$: Observable<OfferingAltar[]>;
-    protected entryForToDo?: Offering | MinimalItem;
+    protected entryForToDo?: Offering | MinimalItem | MinimalTagBasedItem;
     protected toDoCategory = ToDoCategory;
 
 
@@ -27,13 +27,13 @@ export class LakeTempleComponent extends BaseTabbedSelectableContainerComponent<
 
     }
 
-    override registerToToDo(entry: MinimalItem | Offering) {
+    override registerToToDo(entry: MinimalItem | Offering | MinimalTagBasedItem) {
         if ('item' in entry) {
             this._todo.add(ToDoCategory.OFFERINGS, entry)
         }
     }
 
-    override showDetails(selectedEntry?: Offering | MinimalItem) {
+    override showDetails(selectedEntry?: Offering | MinimalItem | MinimalTagBasedItem) {
         this.entryForToDo = selectedEntry;
 
         if (selectedEntry && 'amount' in selectedEntry) {

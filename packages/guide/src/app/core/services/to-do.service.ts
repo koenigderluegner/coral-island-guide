@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { ToDoCategory } from "../enums/todo-category.enum";
-import { CookingRecipe, Critter, Fish, Item, MinimalItem, Offering } from "@ci/data-types";
+import { CookingRecipe, Critter, Fish, Item, MinimalItem, MinimalTagBasedItem, Offering } from "@ci/data-types";
 import { ToDo } from "../interfaces/todo.interface";
 import { SelectionModel } from "@angular/cdk/collections";
 import { SettingsService } from "../../shared/services/settings.service";
 import { Observable, Subject } from "rxjs";
+import { entityKey } from "@ci/util";
 
-type MarkedSelection = { category: ToDoCategory, item: MinimalItem };
+type MarkedSelection = { category: ToDoCategory, item: MinimalItem | MinimalTagBasedItem };
 
 @Injectable({
     providedIn: 'root'
@@ -21,17 +22,14 @@ export class ToDoService {
     private _completedCategory$: Subject<ToDoCategory> = new Subject<ToDoCategory>();
     private currentToDoIndex = 0;
     private _toDos: ToDo[] = [];
-    private _markedAsCompleted: SelectionModel<MarkedSelection> = new SelectionModel<{
-        category: ToDoCategory;
-        item: MinimalItem
-    }>(true, [])
+    private _markedAsCompleted: SelectionModel<MarkedSelection> = new SelectionModel<MarkedSelection>(true, [])
     private readonly versionSuffix: string;
 
     constructor(private readonly _settings: SettingsService) {
         this.versionSuffix = this._settings.getSettings().useBeta ? '_beta' : '_live';
         this.read();
         this._markedAsCompleted.compareWith = (o1, o2) => {
-            return o1.category === o2.category && o1.item.id === o2.item.id
+            return o1.category === o2.category && entityKey(o1.item) === entityKey(o2.item)
         }
     }
 
@@ -94,7 +92,7 @@ export class ToDoService {
         }
     }
 
-    updateStatus(category: ToDoCategory, item: MinimalItem, checked: boolean, skipTimer = false) {
+    updateStatus(category: ToDoCategory, item: MinimalItem | MinimalTagBasedItem, checked: boolean, skipTimer = false) {
         const selection: MarkedSelection = {category, item}
         if (checked) {
             this._markedAsCompleted.select(selection)
@@ -121,24 +119,34 @@ export class ToDoService {
         this.read()
     }
 
-    alreadyInList(type: ToDoCategory, data: { item: MinimalItem } | MinimalItem): boolean {
+    alreadyInList(type: ToDoCategory, data: {
+        item: MinimalItem | MinimalTagBasedItem
+    } | MinimalItem | MinimalTagBasedItem): boolean {
 
 
         const list = this.getCategoryList(type);
 
         if (list.length === 0) return false;
 
-        const dataId = ('item' in data) ? data.item.id : data.id;
+        const dataId = ('item' in data)
+            ? entityKey(data.item)
+            : entityKey(data)
 
         if ('item' in list[0]) {
-            return !!(list as { item: MinimalItem }[]).find(entry => entry.item.id === dataId)
+            return !!(list as {
+                item: MinimalItem | MinimalTagBasedItem
+            }[]).find(entry => entityKey(entry.item) === dataId)
         } else {
-            return !!(list as MinimalItem[]).find(entry => entry.id === dataId)
+            return !!(list as (MinimalItem | MinimalTagBasedItem)[]).find(entry => {
+                return entityKey(entry) === dataId
+            })
         }
 
     }
 
-    getCategoryList(type: ToDoCategory): Array<MinimalItem | { item: MinimalItem }> {
+    getCategoryList(type: ToDoCategory): Array<MinimalItem | MinimalTagBasedItem | {
+        item: MinimalItem | MinimalTagBasedItem
+    }> {
         switch (type) {
             case ToDoCategory.OFFERINGS:
                 return this.getCurrentToDo().offerings;
@@ -210,51 +218,55 @@ export class ToDoService {
         let foundIndex = -1
 
         completedEntries.forEach(entry => {
+            const entryId = entityKey(entry.item);
             switch (entry.category) {
                 case ToDoCategory.OFFERINGS:
-                    foundIndex = this.getCurrentToDo().offerings.findIndex(offering => offering.item.id === entry.item.id)
+                    foundIndex = this.getCurrentToDo().offerings.findIndex(offering => {
+                        const offeringKey = entityKey(offering.item);
+                        return offeringKey === entryId
+                    })
                     if (foundIndex >= 0) {
                         this.getCurrentToDo().offerings.splice(foundIndex, 1);
                     }
                     break;
                 case ToDoCategory.JOURNAL_CRITTER:
-                    foundIndex = this.getCurrentToDo().journal.critter.findIndex(offering => offering.item.id === entry.item.id)
+                    foundIndex = this.getCurrentToDo().journal.critter.findIndex(offering => offering.item.id === entryId)
                     if (foundIndex >= 0) {
                         this.getCurrentToDo().journal.critter.splice(foundIndex, 1);
                     }
                     break;
                 case ToDoCategory.JOURNAL_FISH:
-                    foundIndex = this.getCurrentToDo().journal.fish.findIndex(offering => offering.item.id === entry.item.id)
+                    foundIndex = this.getCurrentToDo().journal.fish.findIndex(offering => offering.item.id === entryId)
                     if (foundIndex >= 0) {
                         this.getCurrentToDo().journal.fish.splice(foundIndex, 1);
                     }
                     break;
                 case ToDoCategory.JOURNAL_INSECTS:
-                    foundIndex = this.getCurrentToDo().journal.insects.findIndex(offering => offering.item.id === entry.item.id)
+                    foundIndex = this.getCurrentToDo().journal.insects.findIndex(offering => offering.item.id === entryId)
                     if (foundIndex >= 0) {
                         this.getCurrentToDo().journal.insects.splice(foundIndex, 1);
                     }
                     break;
                 case ToDoCategory.JOURNAL_GEMS:
-                    foundIndex = this.getCurrentToDo().journal.gems.findIndex(offering => offering.id === entry.item.id)
+                    foundIndex = this.getCurrentToDo().journal.gems.findIndex(offering => offering.id === entryId)
                     if (foundIndex >= 0) {
                         this.getCurrentToDo().journal.gems.splice(foundIndex, 1);
                     }
                     break;
                 case ToDoCategory.JOURNAL_FOSSILS:
-                    foundIndex = this.getCurrentToDo().journal.fossils.findIndex(offering => offering.id === entry.item.id)
+                    foundIndex = this.getCurrentToDo().journal.fossils.findIndex(offering => offering.id === entryId)
                     if (foundIndex >= 0) {
                         this.getCurrentToDo().journal.fossils.splice(foundIndex, 1);
                     }
                     break;
                 case ToDoCategory.JOURNAL_ARTIFACTS:
-                    foundIndex = this.getCurrentToDo().journal.artifacts.findIndex(offering => offering.id === entry.item.id)
+                    foundIndex = this.getCurrentToDo().journal.artifacts.findIndex(offering => offering.id === entryId)
                     if (foundIndex >= 0) {
                         this.getCurrentToDo().journal.artifacts.splice(foundIndex, 1);
                     }
                     break;
                 case ToDoCategory.COOKING_RECIPES:
-                    foundIndex = this.getCurrentToDo().cookingRecipes.findIndex(offering => offering.item.id === entry.item.id)
+                    foundIndex = this.getCurrentToDo().cookingRecipes.findIndex(offering => offering.item.id === entryId)
                     if (foundIndex >= 0) {
                         this.getCurrentToDo().cookingRecipes.splice(foundIndex, 1);
                     }

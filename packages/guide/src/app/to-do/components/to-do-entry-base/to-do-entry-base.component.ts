@@ -9,7 +9,7 @@ import {
     Output,
     ViewChild
 } from '@angular/core';
-import { MinimalItem, Quality } from "@ci/data-types";
+import { MinimalItem, MinimalTagBasedItem, Quality } from "@ci/data-types";
 import { ToDoService } from "../../../core/services/to-do.service";
 import { ToDoCategory } from "../../../core/enums/todo-category.enum";
 import { filter } from "rxjs";
@@ -25,9 +25,9 @@ export class ToDoEntryBaseComponent implements OnInit {
 
     @Input() amount?: number;
     @Input() quality?: Quality | undefined;
-    @Input({required: true}) item!: MinimalItem;
+    @Input({required: true}) item!: MinimalItem | MinimalTagBasedItem;
     @Input({required: true}) category!: ToDoCategory;
-    @Output() markedAsComplete: EventEmitter<MinimalItem> = new EventEmitter<MinimalItem>();
+    @Output() markedAsComplete: EventEmitter<MinimalItem | MinimalTagBasedItem> = new EventEmitter<MinimalItem | MinimalTagBasedItem>();
     @ViewChild(MatCheckbox, {static: true}) checkbox?: MatCheckbox;
     todoService: ToDoService = inject(ToDoService)
     protected qualities = Quality;

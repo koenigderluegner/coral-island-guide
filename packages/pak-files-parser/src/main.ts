@@ -83,7 +83,7 @@ const craftingRecipeUnlockedByMasteryDbMap = craftingRecipeUnlockedByMasteryDbGe
 const cookingRecipeUnlockedByMasteryDbGenerator = new CookingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
 const cookingRecipeUnlockedByMasteryDbMap = cookingRecipeUnlockedByMasteryDbGenerator.generate();
 
-const tagBasedItemsDbGenerator = new TagBasedItemGenericDbGenerator();
+const tagBasedItemsDbGenerator = new TagBasedItemGenericDbGenerator(itemDbMap);
 const tagBasedItemsDbMap = tagBasedItemsDbGenerator.generate();
 
 const cookingDbGenerator = new CookingDbGenerator(itemDbMap, cookingRecipeUnlockedByMasteryDbMap, tagBasedItemsDbMap);
@@ -193,7 +193,7 @@ try {
         'journal-artisan-products': new JournalOrderDbGenerator('Produce/DT_JournalArtisanProducts.json'),
         'journal-crops': new JournalOrderDbGenerator('Produce/DT_JournalCrops.json'),
 
-        'offerings': new OfferingsDbGenerator(itemDbMap, cookingDbMap),
+        'offerings': new OfferingsDbGenerator(itemDbMap, cookingDbMap, tagBasedItemsDbMap),
 
         'gift-preferences': new GiftPreferencesDbGenerator(itemDbMap, npcDbMap),
 

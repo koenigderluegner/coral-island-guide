@@ -1,7 +1,7 @@
-import { MinimalItem, Quality } from "@ci/data-types";
+import { MinimalItem, MinimalTagBasedItem, Quality } from "@ci/data-types";
 
 export interface Offering {
-    item: MinimalItem,
+    item: MinimalItem | MinimalTagBasedItem,
     amount: number,
     quality?: Quality
 }

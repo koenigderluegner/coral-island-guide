@@ -27,9 +27,15 @@ export class CookingDbGenerator {
         const eitherOrIngredients: CookingRecipe["eitherOrIngredients"] = [];
 
         const genericIngredients = dbItem.genericIngredients.map(genericIngredient => {
+            let foundGenericItem = this.tagBasedItemMap.get(genericIngredient.genericItem.RowName);
+            let genericItem: Omit<TagBasedItem, 'items'> & { items?: MinimalItem[] } | undefined = undefined;
+            if (foundGenericItem) {
+                genericItem = {...foundGenericItem}
+                delete genericItem.items
+            }
             return {
                 amount: genericIngredient.amount,
-                genericItem: this.tagBasedItemMap.get(genericIngredient.genericItem.RowName),
+                genericItem: genericItem,
                 key: genericIngredient.genericItem.RowName,
             }
         });
@@ -156,13 +162,16 @@ export class CookingDbGenerator {
     private _addGenericIngredient(genericIngredients: {
         amount: number;
         key: string;
-        genericItem: TagBasedItem | undefined
+        genericItem: Omit<TagBasedItem, 'items'> | undefined
     }[], foundTagBasedItem: TagBasedItem, nonMatchingIngredients: { item: Item; amount: number }[], ingredientList: {
         item: Item;
         amount: number
     }[]) {
+
+        const {items: [], ...genericItem} = foundTagBasedItem;
+
         genericIngredients.push({
-            genericItem: foundTagBasedItem,
+            genericItem,
             amount: nonMatchingIngredients[0].amount,
             key: foundTagBasedItem.key
         });

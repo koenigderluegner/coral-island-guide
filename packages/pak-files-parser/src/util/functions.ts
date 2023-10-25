@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { MinimalItem, MinimalNPC } from '@ci/data-types';
+import { MinimalItem, MinimalNPC, MinimalTagBasedItem } from '@ci/data-types';
 import { config } from "../config";
 import { environment } from "../environments/environment";
 import { EffectMap, RequirementMap } from "../app/da-files-parser";
@@ -73,6 +73,14 @@ export function AssetPathNameToIcon(assetPathName: string): string {
 export function minifyItem(item: { id: string, displayName: string, iconName: string | null }): MinimalItem {
     return {
         id: item.id,
+        displayName: item.displayName,
+        iconName: item.iconName
+    };
+}
+
+export function minifyTagBasedItem(item: { key: string, displayName: string, iconName: string }): MinimalTagBasedItem {
+    return {
+        key: item.key,
         displayName: item.displayName,
         iconName: item.iconName
     };
