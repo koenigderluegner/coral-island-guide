@@ -7,10 +7,10 @@
 - Added B.O.S., Bens Caravan and Socket and Pan shop items
 - Added manual mapping for cooking utensils to show in database to reduce confusion about internal names
 - Added more images for generic items like "any butter" etc.
-- Fixed altars and offering checklist showing wrong item instead of tag based item
 
 #### Changed
 
+- Fixed altars and offering checklist showing wrong item instead of tag based item
 - Fixed Joko and Valentina head image being broken
 
 ### 0.12.0 2023-10-15
