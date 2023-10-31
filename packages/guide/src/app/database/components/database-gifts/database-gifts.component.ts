@@ -65,7 +65,6 @@ export class DatabaseGiftsComponent extends BaseDatabaseDetailPartComponent impl
 
         })
 
-        console.log(this);
     }
 
 
