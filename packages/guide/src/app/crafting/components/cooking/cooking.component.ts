@@ -15,6 +15,7 @@ export class CookingComponent extends BaseTabbedSelectableContainerComponent<Coo
     protected quality = Quality;
     protected selectedEntityConsumable: Consumable | undefined;
     private _consumables: Consumable[] = [];
+    protected cookingUtensilMapping = this._database.getCookingUtensilMapping()
 
     constructor() {
         super();
@@ -44,6 +45,16 @@ export class CookingComponent extends BaseTabbedSelectableContainerComponent<Coo
                 this.reusedImages = this.getMultipleIconNames(items.map(i => i.item?.iconName ?? ''));
             })
         );
+    }
+
+    override urlPathFromLabel = (label: string) => {
+
+        const foundKey = Object.keys(this.cookingUtensilMapping).find(key => this.cookingUtensilMapping[key].displayName === label);
+        if (foundKey) {
+            return foundKey
+        }
+
+        return label.toLowerCase().replaceAll(' ', '')
     }
 
     override showDetails(selectedEntry?: CookingRecipe) {

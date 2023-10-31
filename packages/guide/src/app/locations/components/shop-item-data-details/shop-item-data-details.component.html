@@ -1,4 +1,6 @@
 <app-base-item-card [item]="shopItemData.item">
+    <div *ngIf="!shopItemData.enabled" class="mb-3">Enabled: <span class="text-black">NO</span></div>
+
     <div>Buy price:
         <span class="text-black">
             <app-money

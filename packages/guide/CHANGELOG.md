@@ -1,5 +1,24 @@
 ## Changelog
 
+### TBD
+
+#### Added
+
+- WIP: Added translation of in-game data. Text added by Coral Guide won't be translated in this version.
+    - Go to "my guide" -> "settings" to change your language.
+- Added B.O.S., Bens caravan and Socket and Pan shop items
+- Added manual mapping for cooking utensils to show in database to reduce confusion about internal names
+- Added more images for generic items like "any butter" etc.
+
+#### Changed
+
+- Fixed database not showing selected item if filter doesn't match (for example via direct url access).
+    - This should help sharing links for users with different language settings.
+- Fixed checklist tab names being from in some cases
+- Fixed altars and offering checklist showing wrong item instead of tag based item
+- Fixed Joko and Valentina head image being broken
+- Fixed a few descriptions being missing
+
 ### 0.12.0 2023-10-15
 
 #### Added

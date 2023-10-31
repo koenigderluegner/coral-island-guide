@@ -24,6 +24,16 @@ export class ProcessorComponent extends BaseTabbedSelectableContainerComponent<I
 
     }
 
+    override urlPathFromLabel = (label: string) => {
+
+        const foundKey = Object.keys(this.processorMapping).find(key => this.processorMapping[key].displayName === label);
+        if (foundKey) {
+            return foundKey
+        }
+
+        return label.toLowerCase().replaceAll(' ', '')
+    }
+
     filteredData$(maschineName: string): Observable<ItemProcessing[]> {
         return this._database.fetchItemProcessingRecipes$().pipe(
             map(records => {

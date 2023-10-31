@@ -10,6 +10,9 @@ import { PetShopComponent } from "./components/pet-shop/pet-shop.component";
 import { RanchComponent } from "./components/shops/ranch/ranch.component";
 import { BeachShackComponent } from "./components/shops/beach-shack/beach-shack.component";
 import { ConcernedMonkeyComponent } from "./components/shops/concerned-monkey/concerned-monkey.component";
+import { BosComponent } from "./components/shops/bos/bos.component";
+import { BensCaravanComponent } from "./components/shops/bens-caravan/bens-caravan.component";
+import { SocketAndPanComponent } from "./components/shops/socket-and-pan/socket-and-pan.component";
 
 export const shopRouteConfig: { name: ShopName, component: Type<any>, betaOnly?: true }[] = [
     {
@@ -28,12 +31,24 @@ export const shopRouteConfig: { name: ShopName, component: Type<any>, betaOnly?:
         component: CarpenterComponent,
     },
     {
+        name: 'bos',
+        component: BosComponent,
+    },
+    {
         name: 'ranch',
         component: RanchComponent,
     },
     {
         name: 'pet-shop',
         component: PetShopComponent,
+    },
+    {
+        name: 'bens-caravan',
+        component: BensCaravanComponent,
+    },
+    {
+        name: 'socket-and-pan',
+        component: SocketAndPanComponent,
     },
     {
         name: 'beach-shack',

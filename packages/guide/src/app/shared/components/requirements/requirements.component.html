@@ -54,3 +54,24 @@
 <ng-container *ngIf="requirement.type === 'TempleLevel'">
     Temple has reached level {{requirement.meta.level}}
 </ng-container>
+<ng-container *ngIf="requirement.type === 'CompleteMining'">
+    Has reached level {{requirement.meta.level}} in {{requirement.meta.mine}} mine
+</ng-container>
+<ng-container *ngIf="requirement.type === 'FarmHouseLevel'">
+    Has upgraded farm house to level {{requirement.meta.level}}
+</ng-container>
+<ng-container *ngIf="requirement.type === 'HasCookingUtensil'">
+    Has<span *ngIf="requirement.meta.inverted" class="font-bold"> not</span> unlocked cooking
+    utensil {{requirement.meta.utensil}}
+</ng-container>
+<ng-container *ngIf="requirement.type === 'MasteryLevel'">
+    Has reached level {{requirement.meta.level}} in {{requirement.meta.mastery}} mastery
+</ng-container>
+<ng-container *ngIf="requirement.type === 'NPCHeartLevel'">
+    Has reached {{requirement.meta.expectedHeartLevel}} hearts with {{requirement.meta.npcKey}}
+</ng-container>
+<ng-container *ngIf="requirement.type === 'QuestFactCompare'">
+    Quest fact '{{requirement.meta.factName}}' has
+    <ng-container *ngIf="requirement.meta.comparator === 'MoreEqual'">at least</ng-container>
+    a value of {{requirement.meta.value}}
+</ng-container>

@@ -1,4 +1,4 @@
-import { Quality } from "@ci/data-types";
+import { CustomEntry, Item, MinimalItem, MinimalNPC, MinimalTagBasedItem, NPC, Quality } from "@ci/data-types";
 
 export function getEnumValue(EnumString: string): string {
     let strings = EnumString.split('::');
@@ -52,4 +52,10 @@ export function getQuality(itemKey: string): Quality {
 
 export function nonNullable<T>(value: T): value is NonNullable<T> {
     return value !== null && value !== undefined;
+}
+
+export function entityKey(entity: Item | MinimalItem | MinimalTagBasedItem | CustomEntry | NPC | MinimalNPC): string {
+    return 'id' in entity
+        ? entity.id
+        : entity.key
 }

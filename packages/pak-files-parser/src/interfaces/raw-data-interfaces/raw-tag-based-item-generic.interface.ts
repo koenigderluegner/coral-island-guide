@@ -1,3 +1,5 @@
+import { SourceString } from "../../types/source-string.type";
+
 export interface RawTagBasedItemGeneric {
     "tagQuery": {
         "TokenStreamVersion": 0,
@@ -14,9 +16,5 @@ export interface RawTagBasedItemGeneric {
         "AssetPathName": "/Game/ProjectCoral/Textures/AtlasImport/Frames/Spring_Offerings_png.Spring_Offerings_png",
         "SubPathString": string
     },
-    "readableText": {
-        "Namespace": string,
-        "Key": string
-        "SourceString": string
-    }
+    "readableText": SourceString
 }

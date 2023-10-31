@@ -10,8 +10,10 @@ export const ShopNames = [
     'pet-shop',
     'ranch',
     'beach-shack',
-    'concerned-monkey'
-
+    'concerned-monkey',
+    'bens-caravan',
+    'bos',
+    'socket-and-pan'
 ] as const;
 
 export type ShopName = typeof ShopNames[number];
@@ -26,7 +28,10 @@ export const ShopDisplayNames = {
     'pet-shop': 'Pet Shop',
     ranch: 'Ranch',
     'beach-shack': 'Beach Shack',
-    'concerned-monkey': 'Concerned Monkey'
+    'concerned-monkey': 'Concerned Monkey',
+    'bens-caravan': 'Bens Caravan',
+    'bos': 'Band of Smiles',
+    'socket-and-pan': 'Socket & Pan'
 } as const
 
 type ShopDisplayName = (typeof ShopDisplayNames)[keyof typeof ShopDisplayNames]
@@ -42,5 +47,8 @@ export const ShopIcons = {
     ranch: UiIcon.RANCH,
     'beach-shack': UiIcon.BEACH_SHACK,
     'concerned-monkey': UiIcon.ACHIEVEMENT,
+    'bens-caravan': UiIcon.CARAVAN,
+    'bos': UiIcon.BESTIARY,
+    'socket-and-pan': UiIcon.COOKING,
 } as const
 

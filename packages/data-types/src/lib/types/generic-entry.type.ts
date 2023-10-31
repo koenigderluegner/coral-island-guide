@@ -1,7 +1,7 @@
-import { TagBasedItem } from "../interfaces/tag-based-item.interface";
+import { MinimalTagBasedItem } from "./minimal-tag-based-item.type";
 
 export type GenericEntry = {
     shouldBeSameItem: boolean,
     amount: number;
-    genericItem?: TagBasedItem
+    genericItem?: MinimalTagBasedItem
 };

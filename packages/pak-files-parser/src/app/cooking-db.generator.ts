@@ -3,6 +3,7 @@ import { minifyItem, readAsset } from "../util/functions";
 import { CookingIngredients, RawCookingRecipe } from "../interfaces/raw-data-interfaces/raw-cooking-recipe.interface";
 import { getEnumValue, removeQualityFlag } from "@ci/util";
 import { CookingRecipes } from "../types/cooking-recipes.type";
+import { StringTable } from "../util/string-table.class";
 
 export class CookingDbGenerator {
 
@@ -27,9 +28,15 @@ export class CookingDbGenerator {
         const eitherOrIngredients: CookingRecipe["eitherOrIngredients"] = [];
 
         const genericIngredients = dbItem.genericIngredients.map(genericIngredient => {
+            let foundGenericItem = this.tagBasedItemMap.get(genericIngredient.genericItem.RowName);
+            let genericItem: Omit<TagBasedItem, 'items'> & { items?: MinimalItem[] } | undefined = undefined;
+            if (foundGenericItem) {
+                genericItem = {...foundGenericItem}
+                delete genericItem.items
+            }
             return {
                 amount: genericIngredient.amount,
-                genericItem: this.tagBasedItemMap.get(genericIngredient.genericItem.RowName),
+                genericItem: genericItem,
                 key: genericIngredient.genericItem.RowName,
             }
         });
@@ -44,7 +51,7 @@ export class CookingDbGenerator {
 
 
             if (ingredient.useCustomName) {
-                const tagName = ingredient.customName.SourceString;
+                const tagName = StringTable.getString(ingredient.customName) ?? '';
 
                 const foundGenericIngredient = genericIngredients.find(genericIngredient => genericIngredient.genericItem?.displayName === tagName);
                 const foundTagBasedItem = [...this.tagBasedItemMap.values()].find(tbi => tbi.displayName === tagName);
@@ -156,13 +163,16 @@ export class CookingDbGenerator {
     private _addGenericIngredient(genericIngredients: {
         amount: number;
         key: string;
-        genericItem: TagBasedItem | undefined
+        genericItem: Omit<TagBasedItem, 'items'> | undefined
     }[], foundTagBasedItem: TagBasedItem, nonMatchingIngredients: { item: Item; amount: number }[], ingredientList: {
         item: Item;
         amount: number
     }[]) {
+
+        const {items: [], ...genericItem} = foundTagBasedItem;
+
         genericIngredients.push({
-            genericItem: foundTagBasedItem,
+            genericItem,
             amount: nonMatchingIngredients[0].amount,
             key: foundTagBasedItem.key
         });

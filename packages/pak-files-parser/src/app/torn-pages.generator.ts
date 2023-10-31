@@ -17,12 +17,10 @@ export class TornPagesGenerator extends BaseGenerator<RawTornPage, TornPageData>
 
     handleEntry(itemKey: string, dbItem: RawTornPage): TornPageData | undefined {
 
-        const title = StringTable.getString(dbItem.titleText);
-
         return {
             key: itemKey,
-            title: title === 'Unknown' ? null : title,
-            content: StringTable.getString(dbItem.contentText),
+            title: StringTable.getString(dbItem.titleText),
+            content: StringTable.getString(dbItem.contentText) ?? '',
             pageType: dbItem.type
 
         };

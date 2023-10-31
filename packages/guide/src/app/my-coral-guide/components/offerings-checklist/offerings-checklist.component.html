@@ -27,23 +27,24 @@
                         </div>
                     </div>
                     <div class="grid gap-4 icon-grid  w-full">
+                        <ng-container *ngFor="let offering of offering.requiredItems">
+                            <div *ngIf="(offering.item | entityKey) as entryId"
+                                 [class.checklist-checked]="checklistForm.get(entryId)?.value"
+                                 [class.selected-icon]="selectedEntity && (selectedEntity | entityKey) === entryId"
+                                 class="icon-grid-item checklist-item flex flex-col">
 
-                        <div *ngFor="let offering of offering.requiredItems"
-                             [class.checklist-checked]="checklistForm.get(offering.item.id)?.value"
-                             [class.selected-icon]="selectedEntity?.id === offering.item.id"
-                             class="icon-grid-item checklist-item flex flex-col">
+                                <app-item-icon (click)="showDetails(offering)"
+                                               [amount]="offering.amount"
+                                               [itemName]="offering.item.iconName"
+                                               [quality]="offering.quality"/>
+                                <label class="text-white flex justify-center" for="entry-{{entryId}}-input">
+                                    <mat-checkbox [formControlName]="entryId" class="flex"
+                                                  id="entry-{{entryId}}"
+                                                  name="entry-{{entryId}}"></mat-checkbox>
+                                </label>
 
-                            <app-item-icon (click)="showDetails(offering)"
-                                           [amount]="offering.amount"
-                                           [itemName]="offering.item.iconName"
-                                           [quality]="offering.quality"/>
-                            <label class="text-white flex justify-center" for="entry-{{offering.item.id}}-input">
-                                <mat-checkbox [formControlName]="offering.item.id" class="flex"
-                                              id="entry-{{offering.item.id}}"
-                                              name="entry-{{offering.item.id}}"></mat-checkbox>
-                            </label>
-
-                        </div>
+                            </div>
+                        </ng-container>
                     </div>
                 </div>
 

@@ -1,13 +1,7 @@
+import { SourceString } from "../../types/source-string.type";
+
 export interface RawOfferingAltar {
-    "offeringGroupTitle": {
-        "Namespace": string
-        "Key": string
-        "SourceString": string
-    },
-    "offeringGroupRewardText": {
-        "Namespace": string
-        "Key": string
-        "SourceString": string
-    },
+    "offeringGroupTitle": SourceString,
+    "offeringGroupRewardText": SourceString,
     "offeringId": string [ ]
 }

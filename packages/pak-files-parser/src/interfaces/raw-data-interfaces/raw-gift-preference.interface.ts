@@ -1,3 +1,5 @@
+import { SourceString } from "../../types/source-string.type";
+
 export interface RawGiftPreferenceInterface {
     favoritePreferences: RawPreferecne[],
     lovePreferences: RawPreferecne[],
@@ -31,12 +33,8 @@ interface RawPreferecne {
             }
         },
         "tags": string[],
-        "dialogueText": {
-            "CultureInvariantString": null
-        },
-        "dialogueBirthdayText": {
-            "CultureInvariantString": null
-        },
+        "dialogueText": SourceString,
+        "dialogueBirthdayText": SourceString,
         "emoji": {
             "DataTable": null,
             "RowName": "None"

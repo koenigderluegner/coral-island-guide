@@ -31,6 +31,13 @@ export * from './lib/types/requirements/item-with-category-in-inventory-requirem
 export * from './lib/types/requirements/object-state-requirement.type';
 export * from './lib/types/requirements/temple-level-requirement.type';
 export * from './lib/types/requirements/quest-active-requirement.type';
+export * from './lib/types/requirements/complete-mining-requirement.type';
+export * from './lib/types/requirements/quest-fact-compare-requirement.type';
+export * from './lib/types/requirements/farm-house-requirement.type';
+export * from './lib/types/requirements/has-cooking-utensil-requirement.type';
+export * from './lib/types/requirements/npc-heart-level-requirement.type';
+export * from './lib/types/requirements/healed-coral-requirement.type';
+export * from './lib/types/requirements/mastery-level-requirements.type';
 
 export * from './lib/interfaces/base-crop.interface';
 export * from './lib/interfaces/consumable.interface';
@@ -70,6 +77,7 @@ export * from './lib/interfaces/mail-data.interface';
 export * from './lib/interfaces/torn-page-data.interface';
 export * from './lib/interfaces/enemy.interface';
 export * from './lib/interfaces/chance-per-item.interface';
+export * from './lib/interfaces/custom-entry.interface';
 
 
 export * from './lib/enums/quality.enum';
@@ -85,3 +93,5 @@ export * from './lib/types/requirement-entry.type';
 export * from './lib/types/calendar-event.type';
 export * from './lib/types/minimal-npc.type';
 export * from './lib/types/gifting-preference-keys.type';
+export * from './lib/types/minimal-tag-based-item.type';
+export * from './lib/types/available-languages.type';

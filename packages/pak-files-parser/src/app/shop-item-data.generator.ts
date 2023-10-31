@@ -1,16 +1,18 @@
 import { BaseGenerator } from "./base-generator.class";
-import { Effect, Item, RequirementEntry, ShopItemData } from "@ci/data-types";
+import { CustomEntry, Effect, Item, RequirementEntry, ShopItemData } from "@ci/data-types";
 import { RawShopItemData } from "../interfaces/raw-data-interfaces/raw-shop-item-data.interface";
-import { minifyItem, readAsset } from "../util/functions";
+import { AssetPathNameToIcon, minifyItem, readAsset } from "../util/functions";
 import { Datatable } from "../interfaces/datatable.interface";
 import { getEnumValue } from "@ci/util";
+import { StringTable } from "../util/string-table.class";
+import { Logger } from "../util/logger.class";
 
 
 export class ShopItemDataGenerator extends BaseGenerator<RawShopItemData, ShopItemData> {
 
     datatable: Datatable<RawShopItemData>[];
 
-    constructor(protected itemMap: Map<string, Item>, datatablePath: string) {
+    constructor(protected itemMap: Map<string, Item>, protected datatablePath: string) {
         super();
         this.datatable = readAsset<Datatable<RawShopItemData>[]>(datatablePath);
     }
@@ -20,7 +22,19 @@ export class ShopItemDataGenerator extends BaseGenerator<RawShopItemData, ShopIt
 
         const foundItem = this.itemMap.get(dbItem.item.itemID);
 
-        if (!foundItem) return;
+        const displayName = StringTable.getString(dbItem.shopItemName);
+        const customEntry: CustomEntry = {
+            id: itemKey,
+            displayName: displayName ?? '',
+            iconName: AssetPathNameToIcon(dbItem.customIcon.AssetPathName),
+            description: StringTable.getString(dbItem.customDescription),
+            displayKey: StringTable.getString(dbItem.customCategory)
+        }
+
+        if (!foundItem && !customEntry.displayName) {
+            Logger.error(`Cant find shop items ${itemKey} in ${this.datatablePath}`)
+            return;
+        }
 
         const effectsAndRequirements: { effects?: Effect[], requirements?: RequirementEntry } = {}
 
@@ -36,11 +50,21 @@ export class ShopItemDataGenerator extends BaseGenerator<RawShopItemData, ShopIt
             effectsAndRequirements.effects = effects
         }
 
-        const item: ShopItemData['item'] = {
-            ...minifyItem(foundItem),
-            price: foundItem.price,
-            sellPrice: foundItem.sellPrice
-        };
+        let item: ShopItemData['item'];
+
+        if (foundItem) {
+            item = {
+                ...minifyItem(foundItem),
+                price: foundItem.price,
+                sellPrice: foundItem.sellPrice
+            };
+        } else {
+            item = {
+                ...customEntry,
+                price: dbItem.priceOverride,
+                sellPrice: 0
+            }
+        }
 
         const tillDate: Pick<ShopItemData, 'availableTillDate' | 'tillDate'> = {
             availableTillDate: dbItem.availableTillDate,
@@ -85,6 +109,7 @@ export class ShopItemDataGenerator extends BaseGenerator<RawShopItemData, ShopIt
             tag: dbItem.tag,
             priceOverride: dbItem.priceOverride,
             priority: dbItem.priority,
+            enabled: dbItem.enable,
             ...sinceDate,
             ...tillDate,
             ...timeRange,

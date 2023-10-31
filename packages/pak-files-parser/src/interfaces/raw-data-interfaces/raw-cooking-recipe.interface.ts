@@ -1,15 +1,11 @@
+import { SourceString } from "../../types/source-string.type";
+
 export type CookingIngredients = ({
     "useCustomName": false,
-    "customName": {
-        "CultureInvariantString": null
-    },
+    "customName": SourceString,
 } | {
     "useCustomName": true,
-    "customName": {
-        "Namespace": string;
-        "Key": string;
-        "SourceString": string;
-    }
+    "customName": SourceString
 }) & {
     "listIngredients":
         {
@@ -40,16 +36,8 @@ export type CookingIngredients = ({
 }
 
 export interface RawCookingRecipe {
-    "name": {
-        "Namespace": string;
-        "Key": string;
-        "SourceString": string;
-    },
-    "description": {
-        "Namespace": string;
-        "Key": string;
-        "SourceString": string;
-    },
+    "name": SourceString,
+    "description": SourceString,
     "ingredients": CookingIngredients[],
     "genericIngredients": {
         "genericItem": {

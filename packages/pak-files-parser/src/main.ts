@@ -47,6 +47,9 @@ import { CalendarGenerator } from "./app/calendar.generator";
 import { MailDataGenerator } from "./app/mail-data.generator";
 import { TornPagesGenerator } from "./app/torn-pages.generator";
 import { BestiaryGenerator } from "./app/bestiary.generator";
+import { CookingUtensilMapGenerator } from "./app/cooking-utensil-map.generator";
+import { StringTable } from "./util/string-table.class";
+import { AvailableLanguages } from "@ci/data-types";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
@@ -61,209 +64,237 @@ const itemIconsImageProcessor: ItemIconsImageProcessor = new ItemIconsImageProce
 
 const readable = !parsedArgs['prepare'] && true;
 
-const itemDbGenerator = new ItemDbGenerator();
-const itemDbMap = itemDbGenerator.generate();
 
-DaFilesParser.ItemMap = itemDbMap;
+AvailableLanguages.forEach(lang => {
+    Logger.info(`Generators for "${lang}" starting...`);
+    StringTable.defaultLang = lang;
 
-let calendarDbMap;
+    const itemDbGenerator = new ItemDbGenerator();
+    const itemDbMap = itemDbGenerator.generate();
 
-if (!environment.isBeta) {
-    const calendarDbGenerator = new CalendarGenerator();
-    calendarDbMap = calendarDbGenerator.generate();
-}
+    DaFilesParser.ItemMap = itemDbMap;
 
-const npcDbGenerator = new NPCDbGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.json', calendarDbMap);
-const npcDbMap = npcDbGenerator.generate();
+    let calendarDbMap;
 
-const craftingRecipeUnlockedByMasteryDbGenerator = new CraftingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
-const craftingRecipeUnlockedByMasteryDbMap = craftingRecipeUnlockedByMasteryDbGenerator.generate();
-
-const cookingRecipeUnlockedByMasteryDbGenerator = new CookingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
-const cookingRecipeUnlockedByMasteryDbMap = cookingRecipeUnlockedByMasteryDbGenerator.generate();
-
-const tagBasedItemsDbGenerator = new TagBasedItemGenericDbGenerator();
-const tagBasedItemsDbMap = tagBasedItemsDbGenerator.generate();
-
-const cookingDbGenerator = new CookingDbGenerator(itemDbMap, cookingRecipeUnlockedByMasteryDbMap, tagBasedItemsDbMap);
-const cookingDbMap = cookingDbGenerator.generate();
-
-DaFilesParser.CookingMap = cookingDbMap;
-
-
-let generators: Record<string, { generate: () => Map<string, any> }> = {}
-
-let betaGenerators: Record<string, { generate: () => Map<string, any> }> = {}
-let liveGenerators: Record<string, { generate: () => Map<string, any> }> = {}
-try {
-
-    if (environment.isBeta) {
-        betaGenerators = {}
-    } else {
-        const achievementGenerator = new AchievementGenerator();
-        const achievementMap = achievementGenerator.generate();
-
-        DaFilesParser.AchievementMap = achievementMap;
-
-        const specialItemDbGenerator = new SpecialItemDbGenerator();
-        const specialItemDbMap = specialItemDbGenerator.generate();
-
-        DaFilesParser.SpecialItemMap = specialItemDbMap;
-
-        const locationInfoGenerator = new LocationInfoGenerator();
-        const locationInfoMap = locationInfoGenerator.generate();
-
-        const mailDataGenerator = new MailDataGenerator();
-        const mailDataMap = mailDataGenerator.generate({
-            daFiles: [
-                'ProjectCoral/Content/ProjectCoral/Data/Mail/DA_MailEffectsConfig.json'
-            ]
-        });
-
-        DaFilesParser.MailMap = mailDataMap;
-
-        const heartEventTriggerDataGenerator = new HeartEventTriggerDataGenerator(locationInfoMap);
-        const heartEventTriggerDataMap = heartEventTriggerDataGenerator.generate({
-            daFiles: [
-                'ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneAdvanceRequirement.json',
-                'ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneEffects.json',
-            ]
-        });
-
-
-        liveGenerators = {
-
-            'torn-pages': new TornPagesGenerator(),
-            'bestiary': new BestiaryGenerator(itemDbMap),
-
-            'concerned-monkey-shop-items': {
-                generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopConcernedMonke.json').generate({
-                    daFiles: [
-                        'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_ConcernedMonkeyBuyEffect.json',
-                        'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_ShopConcernedAdvanceRequirement.json'
-                    ]
-                })
-            },
-
-            'merit-exchange-shop-items': {
-                generate: () => new MeritExchangeShopDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_MeritShop.json').generate({
-                    daFiles: [
-                        'ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.json',
-                    ]
-                })
-            },
-
-            'heart-events': new HeartEventsDbGenerator(heartEventTriggerDataMap),
-
-            'museum-checklist': new MuseumChecklistGenerator(itemDbMap),
-            'cooking-recipes-checklist': new CookingRecipesChecklistGenerator(itemDbMap, cookingDbMap),
-
-            'processor-mapping': new ItemProcessorMapGenerator(itemDbMap),
-
-            'achievements': {generate: () => achievementMap},
-            'special-items': {generate: () => specialItemDbMap},
-            'mail-data': {generate: () => mailDataMap},
-        }
+    if (!environment.isBeta) {
+        const calendarDbGenerator = new CalendarGenerator();
+        calendarDbMap = calendarDbGenerator.generate();
     }
 
+    const npcDbGenerator = new NPCDbGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.json', calendarDbMap);
+    const npcDbMap = npcDbGenerator.generate();
 
-    generators = {
-        'crafting-recipes': new CraftingRecipeDbGenerator(itemDbMap, craftingRecipeUnlockedByMasteryDbMap),
-        'bugs-and-insects': new BugsAndInsectsDbGenerator(itemDbMap),
-        'ocean-critters': new OceanCritterDbGenerator(itemDbMap),
-        'fish': new FishDbGenerator(itemDbMap),
-        'crops': new CropsDbGenerator(itemDbMap),
-        'fruit-trees': new FruitTreeDbGenerator(itemDbMap),
-        'fruit-plants': new FruitPlantDbGenerator(itemDbMap),
-        'item-processing': new ItemProcessorDbGenerator(itemDbMap),
+    const craftingRecipeUnlockedByMasteryDbGenerator = new CraftingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
+    const craftingRecipeUnlockedByMasteryDbMap = craftingRecipeUnlockedByMasteryDbGenerator.generate();
 
-        'journal-fish': new JournalOrderDbGenerator('Caught/DT_JournalFish.json'),
-        'journal-insects': new JournalOrderDbGenerator('Caught/DT_JournalInsects.json'),
-        'journal-sea-critters': new JournalOrderDbGenerator('Caught/DT_JournalSeaCritters.json'),
+    const cookingRecipeUnlockedByMasteryDbGenerator = new CookingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
+    const cookingRecipeUnlockedByMasteryDbMap = cookingRecipeUnlockedByMasteryDbGenerator.generate();
 
-        'journal-artifacts': new JournalOrderDbGenerator('Found/DT_JournalArtifact.json'),
-        'journal-fossils': new JournalOrderDbGenerator('Found/DT_JournalFossils.json'),
-        'journal-gems': new JournalOrderDbGenerator('Found/DT_JournalGems.json'),
-        'journal-scavangable': new JournalOrderDbGenerator('Found/DT_JournalScavangable.json'),
+    const tagBasedItemsDbGenerator = new TagBasedItemGenericDbGenerator(itemDbMap);
+    const tagBasedItemsDbMap = tagBasedItemsDbGenerator.generate();
+
+    const cookingDbGenerator = new CookingDbGenerator(itemDbMap, cookingRecipeUnlockedByMasteryDbMap, tagBasedItemsDbMap);
+    const cookingDbMap = cookingDbGenerator.generate();
+
+    DaFilesParser.CookingMap = cookingDbMap;
 
 
-        'journal-animal-products': new JournalOrderDbGenerator('Produce/DT_JournalAnimalProducts.json'),
-        'journal-artisan-products': new JournalOrderDbGenerator('Produce/DT_JournalArtisanProducts.json'),
-        'journal-crops': new JournalOrderDbGenerator('Produce/DT_JournalCrops.json'),
+    let generators: Record<string, { generate: () => Map<string, any> }> = {}
 
-        'offerings': new OfferingsDbGenerator(itemDbMap, cookingDbMap),
+    let betaGenerators: Record<string, { generate: () => Map<string, any> }> = {}
+    let liveGenerators: Record<string, { generate: () => Map<string, any> }> = {}
+    try {
 
-        'gift-preferences': new GiftPreferencesDbGenerator(itemDbMap, npcDbMap),
+        if (environment.isBeta) {
+            betaGenerators = {}
+        } else {
+            const achievementGenerator = new AchievementGenerator();
+            const achievementMap = achievementGenerator.generate();
 
-        'consumables': new ConsumablesDbGenerator(),
+            DaFilesParser.AchievementMap = achievementMap;
 
+            const specialItemDbGenerator = new SpecialItemDbGenerator();
+            const specialItemDbMap = specialItemDbGenerator.generate();
 
-        'blacksmith-opening-hours': new BlacksmithOpeningHoursGenerator(),
-        'blacksmith-shop-items': {
-            generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DT_BlacksmithShop_AlphaV1.json').generate({
-                daFiles: ['ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DA_BlacksmithItemRequirement.json']
-            })
-        },
-        'blacksmith-shop-process-items': new ItemProcessShopGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_NodeCofferProcessShopData.json'),
-        'blacksmith-item-upgrade': new ItemUpgradeDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BlacksmithToolsUpgrades_Alpha.json'),
+            DaFilesParser.SpecialItemMap = specialItemDbMap;
 
-        'lab-opening-hours': new LabOpeningHoursGenerator(),
-        'lab-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_LabShop.json'),
-        'lab-shop-process-items': new ItemProcessShopGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_FossilProcessShopData.json'),
-        'lab-item-upgrade': new ItemUpgradeDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_LabUpgrade.json'),
+            const locationInfoGenerator = new LocationInfoGenerator();
+            const locationInfoMap = locationInfoGenerator.generate();
 
-        'general-store-opening-hours': new GeneralStoreOpeningHoursGenerator(),
-        'general-store-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DT_SamShopItems_AlphaV1.json'),
+            const mailDataGenerator = new MailDataGenerator();
+            const mailDataMap = mailDataGenerator.generate({
+                daFiles: [
+                    'ProjectCoral/Content/ProjectCoral/Data/Mail/DA_MailEffectsConfig.json'
+                ]
+            });
 
+            DaFilesParser.MailMap = mailDataMap;
 
-        'ranch-opening-hours': new RanchOpeningHoursGenerator(),
-        'ranch-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_RanchShop.json'),
-
-        'beach-shack-opening-hours': new BeachShackOpeningHoursGenerator(),
-        'beach-shack-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BeachSackShopItems.json'),
-
-
-        'pet-shop-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ItemPetShop.json'),
-
-        'carpenter-opening-hours': new CarpenterOpeningHoursGenerator(),
-        'carpenter-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DT_Carpenter_AlphaV1.json'),
-        'carpenter-item-upgrade': new ItemUpgradeDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_CarpenterBuldingUpgrades.json'),
+            const heartEventTriggerDataGenerator = new HeartEventTriggerDataGenerator(locationInfoMap);
+            const heartEventTriggerDataMap = heartEventTriggerDataGenerator.generate({
+                daFiles: [
+                    'ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneAdvanceRequirement.json',
+                    'ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneEffects.json',
+                ]
+            });
 
 
-        'merfolk-general-store-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopMerfolkGeneralStore.json'),
-        'merfolk-oracle-tail-store-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopMerfolkOracleTailStore.json'),
+            liveGenerators = {
 
-        'pet-shop-adoptions': new PetShopAdoptionsGenerator(npcDbMap),
+                'torn-pages': new TornPagesGenerator(),
+                'bestiary': new BestiaryGenerator(itemDbMap),
 
-        ...betaGenerators,
-        ...liveGenerators,
+                'concerned-monkey-shop-items': {
+                    generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopConcernedMonke.json').generate({
+                        daFiles: [
+                            'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_ConcernedMonkeyBuyEffect.json',
+                            'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_ShopConcernedAdvanceRequirement.json'
+                        ]
+                    })
+                },
 
-        'npcs': {generate: () => npcDbMap},
-        'tag-based-items': {generate: () => tagBasedItemsDbMap},
-        'crafting-unlocks-by-mastery': {generate: () => craftingRecipeUnlockedByMasteryDbMap},
-        'cooking-unlocks-by-mastery': {generate: () => cookingRecipeUnlockedByMasteryDbMap},
-        'cooking-recipes': {generate: () => cookingDbMap},
+                'merit-exchange-shop-items': {
+                    generate: () => new MeritExchangeShopDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_MeritShop.json').generate({
+                        daFiles: [
+                            'ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.json',
+                        ]
+                    })
+                },
 
-        // last so applied changed will be written as well
-        items: {generate: () => itemDbMap},
-    };
-} catch (e) {
-    // @ts-ignore
-    Logger.error('Generators couldn\'t be executed', e.message)
-}
+                'heart-events': new HeartEventsDbGenerator(heartEventTriggerDataMap),
 
-Object.keys(generators).forEach(generatorName => {
+                'museum-checklist': new MuseumChecklistGenerator(itemDbMap),
+                'cooking-recipes-checklist': new CookingRecipesChecklistGenerator(itemDbMap, cookingDbMap),
+
+                'processor-mapping': new ItemProcessorMapGenerator(itemDbMap),
+                'cooking-utensil-mapping': new CookingUtensilMapGenerator(itemDbMap),
+
+                'achievements': {generate: () => achievementMap},
+                'special-items': {generate: () => specialItemDbMap},
+                'mail-data': {generate: () => mailDataMap},
+            }
+        }
+
+
+        generators = {
+            'crafting-recipes': new CraftingRecipeDbGenerator(itemDbMap, craftingRecipeUnlockedByMasteryDbMap),
+            'bugs-and-insects': new BugsAndInsectsDbGenerator(itemDbMap),
+            'ocean-critters': new OceanCritterDbGenerator(itemDbMap),
+            'fish': new FishDbGenerator(itemDbMap),
+            'crops': new CropsDbGenerator(itemDbMap),
+            'fruit-trees': new FruitTreeDbGenerator(itemDbMap),
+            'fruit-plants': new FruitPlantDbGenerator(itemDbMap),
+            'item-processing': new ItemProcessorDbGenerator(itemDbMap),
+
+            'journal-fish': new JournalOrderDbGenerator('Caught/DT_JournalFish.json'),
+            'journal-insects': new JournalOrderDbGenerator('Caught/DT_JournalInsects.json'),
+            'journal-sea-critters': new JournalOrderDbGenerator('Caught/DT_JournalSeaCritters.json'),
+
+            'journal-artifacts': new JournalOrderDbGenerator('Found/DT_JournalArtifact.json'),
+            'journal-fossils': new JournalOrderDbGenerator('Found/DT_JournalFossils.json'),
+            'journal-gems': new JournalOrderDbGenerator('Found/DT_JournalGems.json'),
+            'journal-scavangable': new JournalOrderDbGenerator('Found/DT_JournalScavangable.json'),
+
+
+            'journal-animal-products': new JournalOrderDbGenerator('Produce/DT_JournalAnimalProducts.json'),
+            'journal-artisan-products': new JournalOrderDbGenerator('Produce/DT_JournalArtisanProducts.json'),
+            'journal-crops': new JournalOrderDbGenerator('Produce/DT_JournalCrops.json'),
+
+            'offerings': new OfferingsDbGenerator(itemDbMap, cookingDbMap, tagBasedItemsDbMap),
+
+            'gift-preferences': new GiftPreferencesDbGenerator(itemDbMap, npcDbMap),
+
+            'consumables': new ConsumablesDbGenerator(),
+
+
+            'blacksmith-opening-hours': new BlacksmithOpeningHoursGenerator(),
+            'blacksmith-shop-items': {
+                generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DT_BlacksmithShop_AlphaV1.json').generate({
+                    daFiles: ['ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DA_BlacksmithItemRequirement.json']
+                })
+            },
+            'blacksmith-shop-process-items': new ItemProcessShopGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_NodeCofferProcessShopData.json'),
+            'blacksmith-item-upgrade': new ItemUpgradeDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BlacksmithToolsUpgrades_Alpha.json'),
+
+            'lab-opening-hours': new LabOpeningHoursGenerator(),
+            'lab-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_LabShop.json'),
+            'lab-shop-process-items': new ItemProcessShopGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_FossilProcessShopData.json'),
+            'lab-item-upgrade': new ItemUpgradeDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_LabUpgrade.json'),
+
+            'general-store-opening-hours': new GeneralStoreOpeningHoursGenerator(),
+            'general-store-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DT_SamShopItems_AlphaV1.json'),
+
+
+            'ranch-opening-hours': new RanchOpeningHoursGenerator(),
+            'ranch-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_RanchShop.json'),
+
+            'beach-shack-opening-hours': new BeachShackOpeningHoursGenerator(),
+            'beach-shack-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BeachSackShopItems.json'),
+
+
+            'pet-shop-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ItemPetShop.json'),
+
+            'carpenter-opening-hours': new CarpenterOpeningHoursGenerator(),
+            'carpenter-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DT_Carpenter_AlphaV1.json'),
+            'carpenter-item-upgrade': new ItemUpgradeDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_CarpenterBuldingUpgrades.json'),
+
+
+            'merfolk-general-store-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopMerfolkGeneralStore.json'),
+            'merfolk-oracle-tail-store-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopMerfolkOracleTailStore.json'),
+
+            'pet-shop-adoptions': new PetShopAdoptionsGenerator(npcDbMap),
+
+
+            'bos-shop-items': {
+                generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BOSShopItemsProductions.json').generate({
+                    daFiles: ['ProjectCoral/Content/ProjectCoral/Core/Data/Shops/BandOfSmile/DA_BOSShopAdvanceRequirement.json']
+                }),
+            },
+            'socket-and-pan-shop-items': {
+                generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/SocketAndPan/DT_ShopSockedAndPan.json').generate({
+                    daFiles: [
+                        'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/SocketAndPan/DA_ShopSocketAndPanRequirement.json',
+                        'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/SocketAndPan/DA_ShopSocketAndPanEffect.json',
+
+                    ]
+                })
+            },
+            'bens-caravan-shop-items': {
+                generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BenShopItems.json').generate({
+                    daFiles: []
+                })
+            },
+
+            ...betaGenerators,
+            ...liveGenerators,
+
+            'npcs': {generate: () => npcDbMap},
+            'tag-based-items': {generate: () => tagBasedItemsDbMap},
+            'crafting-unlocks-by-mastery': {generate: () => craftingRecipeUnlockedByMasteryDbMap},
+            'cooking-unlocks-by-mastery': {generate: () => cookingRecipeUnlockedByMasteryDbMap},
+            'cooking-recipes': {generate: () => cookingDbMap},
+
+            // last so applied changed will be written as well
+            items: {generate: () => itemDbMap},
+        };
+    } catch (e) {
+        // @ts-ignore
+        Logger.error('Generators couldn\'t be executed', e.message)
+    }
+
+    Object.keys(generators).forEach(generatorName => {
+
+
         try {
             const generatedMap = generators[generatorName].generate();
-            generateJson(`${generatorName}.json`, [...generatedMap.values()], readable);
+            generateJson(`${generatorName}.json`, [...generatedMap.values()], readable, lang);
         } catch (e) {
             const error = e as Error;
-            console.log('hehe', error.message)
+            Logger.error(error.message, error.stack)
 
         }
 
-    }
-);
-
+    });
+})
 itemIconsImageProcessor.process();
 new NpcPortraitsImageProcessor(config.characterPortraitsPath, config.portaitPath, config.headPortaitPath).process()

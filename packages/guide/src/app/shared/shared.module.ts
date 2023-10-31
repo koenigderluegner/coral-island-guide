@@ -57,6 +57,11 @@ import { ExpandableComponent } from './components/expandable/expandable.componen
 import { RemoveTagsPipe } from './pipes/remove-tags.pipe';
 import { ChancePerItemListComponent } from './components/chance-per-item-list/chance-per-item-list.component';
 import { ChancePerItemTableListComponent } from './components/chance-per-item-table-list/chance-per-item-table-list.component';
+import { HasPipe } from './pipes/has.pipe';
+import { EntityKeyPipe } from './pipes/entity-key.pipe';
+import { IsMinimalTagBasedItemPipe } from './pipes/is-minimal-tag-based-item.pipe';
+import { IsTagBasedItemPipe } from './pipes/is-tag-based-item.pipe';
+import { ToItemListEntriesPipe } from './pipes/to-item-list-entries.pipe';
 
 @NgModule({
     declarations: [
@@ -107,6 +112,11 @@ import { ChancePerItemTableListComponent } from './components/chance-per-item-ta
         RemoveTagsPipe,
         ChancePerItemListComponent,
         ChancePerItemTableListComponent,
+        HasPipe,
+        EntityKeyPipe,
+        IsMinimalTagBasedItemPipe,
+        IsTagBasedItemPipe,
+        ToItemListEntriesPipe,
     ],
     imports: [
         CommonModule,
@@ -167,6 +177,10 @@ import { ChancePerItemTableListComponent } from './components/chance-per-item-ta
         RemoveTagsPipe,
         ChancePerItemListComponent,
         ChancePerItemTableListComponent,
+        HasPipe,
+        EntityKeyPipe,
+        IsMinimalTagBasedItemPipe,
+        IsTagBasedItemPipe,
     ],
 })
 export class SharedModule {}

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { combineLatest, map, Observable, of, shareReplay, tap } from 'rxjs';
 import {
@@ -90,6 +90,8 @@ export class DatabaseService {
 
     private _PROCESSOR_MAPPING: Record<string, MinimalItem> = {};
     private _PROCESSOR_MAPPING$?: Observable<Record<string, MinimalItem>>;
+    private _COOKING_UTENSIL_MAPPING: Record<string, MinimalItem> = {};
+    private _COOKING_UTENSIL_MAPPING$?: Observable<Record<string, MinimalItem>>;
 
     private _MUSEUM_CHECKLIST: Record<string, MinimalItem[]> = {};
     private _MUSEUM_CHECKLIST$?: Observable<Record<string, MinimalItem[]>>;
@@ -106,12 +108,13 @@ export class DatabaseService {
     private _BESTIARY: Enemy[] = [];
     private _BESTIARY$?: Observable<Enemy[]>;
 
+    private readonly _settings = inject(SettingsService).getSettings();
 
-    constructor(private readonly _http: HttpClient,
-                private readonly _settings: SettingsService) {
-        const version = this._settings.getSettings().useBeta ? 'beta' : 'live';
+    constructor(private readonly _http: HttpClient) {
+        const version = this._settings.useBeta ? 'beta' : 'live';
+        const lang = this._settings.language ?? 'en'
 
-        this._BASE_PATH = `assets/${version}/database`;
+        this._BASE_PATH = `assets/${version}/database/${lang}`;
     }
 
 
@@ -141,6 +144,9 @@ export class DatabaseService {
             this.fetchShopItemData$("merfolk-general-store"),
             this.fetchShopItemData$("merfolk-oracle-tail-store"),
             this.fetchShopItemData$("pet-shop"),
+            this.fetchShopItemData$("bos"),
+            this.fetchShopItemData$("bens-caravan"),
+            this.fetchShopItemData$("socket-and-pan"),
             this.fetchItemUpgradeData$("blacksmith"),
             this.fetchItemUpgradeData$("carpenter"),
             this.fetchItemUpgradeData$("lab"),
@@ -201,6 +207,23 @@ export class DatabaseService {
                 );
         }
         return this._TORN_PAGES_DATA$;
+    }
+
+    getCookingUtensilMapping(): Record<string, MinimalItem> {
+        return this._COOKING_UTENSIL_MAPPING;
+    }
+
+
+    fetchCookingUtensilMapping$(): Observable<Record<string, MinimalItem>> {
+        if (!this._COOKING_UTENSIL_MAPPING$) {
+            this._COOKING_UTENSIL_MAPPING$ = this._http.get<Record<string, MinimalItem>[]>(`${this._BASE_PATH}/cooking-utensil-mapping.json`)
+                .pipe(
+                    map(s => s[0]),
+                    tap(items => this._COOKING_UTENSIL_MAPPING = items),
+                    shareReplay(1)
+                );
+        }
+        return this._COOKING_UTENSIL_MAPPING$;
     }
 
     getProcessorMapping(): Record<string, MinimalItem> {

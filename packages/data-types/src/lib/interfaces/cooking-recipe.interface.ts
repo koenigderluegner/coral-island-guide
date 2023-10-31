@@ -1,4 +1,4 @@
-import { Item, MinimalItem, TagBasedItem, UnlockByMastery } from "@ci/data-types";
+import { Item, MinimalItem, MinimalTagBasedItem, UnlockByMastery } from "@ci/data-types";
 
 export interface CookingRecipe {
     key: string;
@@ -8,7 +8,7 @@ export interface CookingRecipe {
     genericIngredients: {
         key: string;
         amount: number;
-        genericItem?: TagBasedItem
+        genericItem?: MinimalTagBasedItem
     }[],
     craftingUnlock?: UnlockByMastery
     item: Item

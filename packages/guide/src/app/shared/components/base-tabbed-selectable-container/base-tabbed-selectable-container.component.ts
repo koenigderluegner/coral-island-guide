@@ -5,6 +5,10 @@ import { Router } from "@angular/router";
 import { Title } from "@angular/platform-browser";
 import { take, tap } from "rxjs";
 
+export interface BaseTabbedSelectableContainerComponent<T> {
+    urlPathFromLabel?: (label: string) => string;
+}
+
 @Component({
     template: '',
 })
@@ -24,7 +28,8 @@ export class BaseTabbedSelectableContainerComponent<T> extends BaseSelectableCon
         }
 
         const tabName = typeof $event === "string" ? $event : $event.tab.textLabel;
-        const formattedTabName = tabName.toLowerCase().replaceAll(' ', '');
+
+        const formattedTabName = this.urlPathFromLabel?.(tabName) ?? tabName.toLowerCase().replaceAll(' ', '');
 
         this._router.navigate(['..', formattedTabName], {relativeTo: this._route}).then(() => {
             this.updateTitle(tabName);

@@ -174,15 +174,30 @@ export class DatabaseComponent {
                 const itemId = params['itemId'];
                 this._didInitialLoad = true;
                 if (!itemId) return;
-                const indexOfItem = this.filteredItems.findIndex(item => item.id === itemId);
+                const indexOfFilteredItem = this.filteredItems.findIndex(item => item.id === itemId);
 
-                if (indexOfItem > -1) {
-                    this.showDetails(this.filteredItems[indexOfItem], indexOfItem, true);
+                if (indexOfFilteredItem > -1) {
+                    this.showDetails(this.filteredItems[indexOfFilteredItem], indexOfFilteredItem, true);
+                } else if (this.filteredItems.length === 0) {
+                    const indexOfItem = this.items.findIndex(item => item.id === itemId);
+                    if (indexOfItem > -1) {
+                        const item = this.items[indexOfItem];
+                        this._setGridContent(item);
+
+                    }
+
                 }
 
             }),
             take(1)
         ).subscribe()
+    }
+
+    private _setGridContent(item: Item) {
+        const component = this.createComponent(item);
+        document.getElementById('grid')?.appendChild(component.location.nativeElement)
+        this._appRef.attachView(component.hostView);
+        this.selectedItem = item;
     }
 
     trackById<T extends { id: string }>(index: number, item: T): string {

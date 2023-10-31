@@ -30,6 +30,9 @@ import { BeachShackComponent } from './components/shops/beach-shack/beach-shack.
 import { ConcernedMonkeyComponent } from './components/shops/concerned-monkey/concerned-monkey.component';
 import { MeritShopComponent } from './components/merit-shop/merit-shop.component';
 import { MeritShopDetailsComponent } from './components/merit-shop-details/merit-shop-details.component';
+import { BosComponent } from './components/shops/bos/bos.component';
+import { BensCaravanComponent } from './components/shops/bens-caravan/bens-caravan.component';
+import { SocketAndPanComponent } from './components/shops/socket-and-pan/socket-and-pan.component';
 
 @NgModule({
     declarations: [
@@ -56,6 +59,9 @@ import { MeritShopDetailsComponent } from './components/merit-shop-details/merit
         ConcernedMonkeyComponent,
         MeritShopComponent,
         MeritShopDetailsComponent,
+        BosComponent,
+        BensCaravanComponent,
+        SocketAndPanComponent,
     ],
     imports: [
         CommonModule,

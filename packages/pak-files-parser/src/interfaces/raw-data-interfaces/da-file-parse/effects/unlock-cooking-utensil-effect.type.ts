@@ -3,7 +3,7 @@ export type RawUnlockCookingUtensilEffect = {
     "Name": string
     "Outer": string
     "Class": "UScriptClass'C_UnlockCookingUtelsilEffect'",
-    "Properties": {
+    "Properties"?: {
         "utensilToUnlock": string
     }
 }

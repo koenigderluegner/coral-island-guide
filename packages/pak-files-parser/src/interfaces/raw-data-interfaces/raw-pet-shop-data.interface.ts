@@ -1,3 +1,5 @@
+import { SourceString } from "../../types/source-string.type";
+
 export interface RawPetShopData {
     "petData": {
         "npcData": {
@@ -16,10 +18,5 @@ export interface RawPetShopData {
         "portraitFullRenderScale": number
     },
     "price": number,
-    "description": {
-        "Namespace": string;
-        "Key": string;
-        "SourceString": string;
-        "LocalizedString": string;
-    }
+    "description": SourceString
 }

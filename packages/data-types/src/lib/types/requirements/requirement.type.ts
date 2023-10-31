@@ -13,6 +13,13 @@ import { TempleLevelRequirement } from "./temple-level-requirement.type";
 import { ItemInInventoryRequirement } from "./item-in-inventory-requirement.type";
 import { ItemWithCategoryInInventoryRequirement } from "./item-with-category-in-inventory-requirement.type";
 import { ObjectStateRequirement } from "./object-state-requirement.type";
+import { CompleteMiningRequirement } from "./complete-mining-requirement.type";
+import { QuestFactCompareRequirement } from "./quest-fact-compare-requirement.type";
+import { FarmHouseRequirement } from "./farm-house-requirement.type";
+import { HasCookingUtensilRequirement } from "./has-cooking-utensil-requirement.type";
+import { NpcHeartLevelRequirement } from "./npc-heart-level-requirement.type";
+import { HealedCoralRequirement } from "./healed-coral-requirement.type";
+import { MasteryLevelRequirements } from "./mastery-level-requirements.type";
 
 export type Requirement = CountNpcHeartLevelRequirement
     | EditorOnlyRequirement
@@ -29,4 +36,11 @@ export type Requirement = CountNpcHeartLevelRequirement
     | ItemInInventoryRequirement
     | ItemWithCategoryInInventoryRequirement
     | ObjectStateRequirement
+    | CompleteMiningRequirement
+    | QuestFactCompareRequirement
+    | FarmHouseRequirement
+    | HasCookingUtensilRequirement
+    | NpcHeartLevelRequirement
+    | HealedCoralRequirement
+    | MasteryLevelRequirements
 
