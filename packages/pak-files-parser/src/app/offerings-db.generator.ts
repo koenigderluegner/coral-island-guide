@@ -37,6 +37,7 @@ export class OfferingsDbGenerator extends BaseGenerator<RawOfferingAltar, Offeri
         return {
             key: itemKey,
             offeringGroupTitle: StringTable.getString(dbItem.offeringGroupTitle) ?? '',
+            urlPath: (StringTable.getString(dbItem.offeringGroupTitle, "en") ?? '').toLowerCase().replaceAll(' ', ''),
             offeringGroupRewardText: StringTable.getString(dbItem.offeringGroupRewardText) ?? '',
             offerings
 

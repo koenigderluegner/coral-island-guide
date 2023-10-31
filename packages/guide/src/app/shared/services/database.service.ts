@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { combineLatest, map, Observable, of, shareReplay, tap } from 'rxjs';
 import {
@@ -108,12 +108,13 @@ export class DatabaseService {
     private _BESTIARY: Enemy[] = [];
     private _BESTIARY$?: Observable<Enemy[]>;
 
+    private readonly _settings = inject(SettingsService).getSettings();
 
-    constructor(private readonly _http: HttpClient,
-                private readonly _settings: SettingsService) {
-        const version = this._settings.getSettings().useBeta ? 'beta' : 'live';
+    constructor(private readonly _http: HttpClient) {
+        const version = this._settings.useBeta ? 'beta' : 'live';
+        const lang = this._settings.language ?? 'en'
 
-        this._BASE_PATH = `assets/${version}/database`;
+        this._BASE_PATH = `assets/${version}/database/${lang}`;
     }
 
 

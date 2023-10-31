@@ -47,6 +47,16 @@ export class CookingComponent extends BaseTabbedSelectableContainerComponent<Coo
         );
     }
 
+    override urlPathFromLabel = (label: string) => {
+
+        const foundKey = Object.keys(this.cookingUtensilMapping).find(key => this.cookingUtensilMapping[key].displayName === label);
+        if (foundKey) {
+            return foundKey
+        }
+
+        return label.toLowerCase().replaceAll(' ', '')
+    }
+
     override showDetails(selectedEntry?: CookingRecipe) {
         super.showDetails(selectedEntry);
         this.selectedEntityConsumable = this._consumables.find(consumable => consumable.key === selectedEntry?.item?.id)

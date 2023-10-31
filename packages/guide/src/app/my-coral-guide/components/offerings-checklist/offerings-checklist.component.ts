@@ -19,6 +19,7 @@ export class OfferingsChecklistComponent extends BaseTabbedSelectableContainerCo
     protected offerings$: Observable<OfferingAltar[]>;
     protected entryForToDo?: Offering | MinimalItem | MinimalTagBasedItem;
     protected toDoCategory = ToDoCategory;
+    private _altars: OfferingAltar[] = [];
 
     constructor() {
         super()
@@ -37,8 +38,9 @@ export class OfferingsChecklistComponent extends BaseTabbedSelectableContainerCo
         })
         this.offerings$ = this._database.fetchOfferings$().pipe(
             tap((records) => {
-                    const altarNames = records.map(altar => altar.offeringGroupTitle);
 
+                const altarNames = records.map(altar => altar.urlPath);
+                this._altars = records;
                     records.forEach(checklist => {
                         const keys = Object.keys(checklist);
                         checklist.offerings.forEach(key => {
@@ -70,6 +72,18 @@ export class OfferingsChecklistComponent extends BaseTabbedSelectableContainerCo
             super.showDetails(selectedEntry);
         }
 
+    }
+
+    override urlPathFromLabel = (label: string) => {
+
+        const sanitizedLabel = label.toLowerCase().replaceAll(' ', '');
+        const offeringAltar = this._altars.find(altar => altar.offeringGroupTitle.toLowerCase().replaceAll(' ', '') === sanitizedLabel);
+
+        if (offeringAltar) {
+            return offeringAltar.urlPath
+        }
+
+        return label.toLowerCase().replaceAll(' ', '')
     }
 
 

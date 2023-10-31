@@ -5,7 +5,7 @@
                    dynamicHeight mat-stretch-tabs="false">
         <mat-tab *ngFor="let tab of (checklistDefinition$ | async | keyvalue: keyValueNoOrder)"
                  [formGroup]="checklistForm"
-                 [label]="tab.key">
+                 [label]="cookingUtensilMapping[tab.key.toLowerCase()] ? cookingUtensilMapping[tab.key.toLowerCase()].displayName : tab.key | spacesToPascalCase | titlecase">
 
             <ng-container *ngIf="!showTable">
                 <div class="grid gap-4 icon-grid">

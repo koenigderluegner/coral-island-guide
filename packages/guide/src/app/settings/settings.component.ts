@@ -4,11 +4,13 @@ import { FormControl, FormGroup } from "@angular/forms";
 import { ToDoService } from "../core/services/to-do.service";
 import { BETA_CODE } from "../core/injection-tokens/beta-code.injection-token";
 import { UiIcon } from "../shared/enums/ui-icon.enum";
+import { AvailableLanguage, AvailableLanguageDisplayName, AvailableLanguages } from "@ci/data-types";
 
 type SettingsFormGroup = {
     useBeta: FormControl<boolean>;
     resetLiveToDo: FormControl<boolean>;
     resetBetaToDo: FormControl<boolean>;
+    language: FormControl<AvailableLanguage>
 };
 
 @Component({
@@ -21,6 +23,9 @@ export class SettingsComponent {
     protected reloadRequired = false;
     protected uiIcon = UiIcon;
 
+    protected availableLanguages = AvailableLanguages;
+    protected availableLanguageDisplayName = AvailableLanguageDisplayName;
+
     protected readonly BETA_CODE = inject(BETA_CODE, {optional: true});
 
 
@@ -31,6 +36,7 @@ export class SettingsComponent {
             useBeta: new FormControl<boolean>(false, {nonNullable: true}),
             resetLiveToDo: new FormControl<boolean>(false, {nonNullable: true}),
             resetBetaToDo: new FormControl<boolean>(false, {nonNullable: true}),
+            language: new FormControl<AvailableLanguage>('en', {nonNullable: true}),
         });
 
         if (!this.BETA_CODE) {
@@ -42,7 +48,7 @@ export class SettingsComponent {
 
         this.settingsForm.valueChanges.subscribe({
             next: formValues => {
-                this.reloadRequired = settings.useBeta !== formValues.useBeta
+                this.reloadRequired = settings.useBeta !== formValues.useBeta || settings.language !== formValues.language
             }
         })
     }

@@ -13,13 +13,15 @@ export class LakeTempleComponent extends BaseTabbedSelectableContainerComponent<
     protected offerings$: Observable<OfferingAltar[]>;
     protected entryForToDo?: Offering | MinimalItem | MinimalTagBasedItem;
     protected toDoCategory = ToDoCategory;
+    private _altars: OfferingAltar[] = [];
 
 
     constructor() {
         super()
         this.offerings$ = this._database.fetchOfferings$().pipe(
             tap((records) => {
-                    const altarNames = records.map(altar => altar.offeringGroupTitle);
+                this._altars = records;
+                const altarNames = records.map(altar => altar.urlPath);
                     this.activateTabFromRoute(altarNames);
                 }
             )
@@ -42,6 +44,18 @@ export class LakeTempleComponent extends BaseTabbedSelectableContainerComponent<
             super.showDetails(selectedEntry);
         }
 
+    }
+
+    override urlPathFromLabel = (label: string) => {
+
+        const sanitizedLabel = label.toLowerCase().replaceAll(' ', '');
+        const offeringAltar = this._altars.find(altar => altar.offeringGroupTitle.toLowerCase().replaceAll(' ', '') === sanitizedLabel);
+
+        if (offeringAltar) {
+            return offeringAltar.urlPath
+        }
+
+        return label.toLowerCase().replaceAll(' ', '')
     }
 
 

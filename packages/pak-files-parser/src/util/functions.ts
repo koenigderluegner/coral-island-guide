@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { MinimalItem, MinimalNPC, MinimalTagBasedItem } from '@ci/data-types';
+import { AvailableLanguage, MinimalItem, MinimalNPC, MinimalTagBasedItem } from '@ci/data-types';
 import { config } from "../config";
 import { environment } from "../environments/environment";
 import { EffectMap, RequirementMap } from "../app/da-files-parser";
@@ -25,8 +25,8 @@ export function readAsset<T = any>(fileName: string): T {
     return JSON.parse(fs.readFileSync(path.join(environment.assetPath, fileName), {encoding: 'utf8', flag: 'r'}));
 }
 
-export function generateJson(fileName: string, jsonContent: any, readable = false) {
-    const databasePath = config.databasePath
+export function generateJson(fileName: string, jsonContent: any, readable = false, lang: AvailableLanguage = "en") {
+    const databasePath = path.join(config.databasePath, lang)
 
     createPathIfNotExists(databasePath);
 

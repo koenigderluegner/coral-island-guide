@@ -2,6 +2,32 @@
     <form (submit)="saveSettings()" [formGroup]="settingsForm">
         <div class="grid md:grid-cols-3 pb-12 gap-y-10 gap-x-8 border-b border-accent/50 mb-8">
             <div>
+                <h3 class="leading-7 font-bold text-lg">Language</h3>
+                <p>Change the language of Coral Guide</p>
+            </div>
+            <div class="bg-amber-50/70 md:col-span-2 px-4 py-6 sm:p-8 sm:rounded-lg">
+
+                <div class="flex flex-col gap-1 items-start">
+                    <label class="font-bold leading-6" for="language">Language</label>
+                    <mat-form-field class="btn btn-secondary">
+                        <mat-select formControlName="language" id="language">
+                            <mat-option *ngFor="let language of availableLanguages"
+                                        [value]="language">{{availableLanguageDisplayName[language]}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <p class="flex gap-2 text-black font-bold leading-6 items-center mt-2">
+                    <app-ui-icon [uiIcon]="uiIcon.WARNING" class="!w-6 shrink-0"/>
+                    Work in progress: Currently only in-game data has translations, the app itself will stay in english.
+                    Translations are pulled from game files and will be shown as is.
+                </p>
+
+
+            </div>
+        </div>
+        <div class="grid md:grid-cols-3 pb-12 gap-y-10 gap-x-8 border-b border-accent/50 mb-8">
+            <div>
                 <h3 class="leading-7 font-bold text-lg">Beta data</h3>
                 <p>Options for latest beta build. Current beta code: {{BETA_CODE ?? 'no ongoing beta'}} </p>
             </div>
@@ -18,7 +44,7 @@
                     </div>
                 </div>
                 <p *ngIf="!BETA_CODE" class="flex gap-2 text-black font-bold leading-6 items-center">
-                    <app-ui-icon [uiIcon]="uiIcon.WARNING" class="!w-6"/>
+                    <app-ui-icon [uiIcon]="uiIcon.WARNING" class="!w-6 shrink-0"/>
                     Currently there's no beta.
                 </p>
 

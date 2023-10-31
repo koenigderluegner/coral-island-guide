@@ -6,15 +6,19 @@ import { Settings } from "../interfaces/settings.interface";
 })
 export class SettingsService {
 
+    private readonly CURRENT_SETTINGS_VERSION = 1
     private readonly SETTINGS_STORAGE_KEY = 'coral-guide-settings';
     private readonly DEFAULT_SETTINGS: Settings = {
-        useBeta: false
+        version: this.CURRENT_SETTINGS_VERSION,
+        useBeta: false,
+        language: "en"
     }
 
     private _settings?: Settings
 
     saveSettings(partialSettings: Partial<Settings>): void {
         const settings = {...this.DEFAULT_SETTINGS, ...partialSettings};
+
         localStorage.setItem(this.SETTINGS_STORAGE_KEY, JSON.stringify(settings));
 
         this._settings = settings;
@@ -27,11 +31,21 @@ export class SettingsService {
         if (!settings) {
             this.saveSettings(this.DEFAULT_SETTINGS)
         } else if (!this._settings) {
-            this._settings = JSON.parse(settings)
+            const parsedSettings = JSON.parse(settings);
+
+            this._settings = this._migrate(parsedSettings);
         }
 
         return this._settings!;
     }
 
 
+    private _migrate(parsedSettings: Partial<Settings> | Settings): Settings {
+        if (!parsedSettings['version']) {
+            const migrated = {...this.DEFAULT_SETTINGS, useBeta: !!parsedSettings.useBeta};
+            this.saveSettings(migrated);
+            return migrated
+        }
+        return parsedSettings as Settings;
+    }
 }
