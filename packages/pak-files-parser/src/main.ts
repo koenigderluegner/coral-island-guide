@@ -50,6 +50,7 @@ import { BestiaryGenerator } from "./app/bestiary.generator";
 import { CookingUtensilMapGenerator } from "./app/cooking-utensil-map.generator";
 import { StringTable } from "./util/string-table.class";
 import { AvailableLanguages } from "@ci/data-types";
+import { AnimalMoodSizeGenerator } from "./app/animal-mood-size.generator";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
@@ -141,6 +142,7 @@ AvailableLanguages.forEach(lang => {
 
             liveGenerators = {
 
+                'animal-mood-size': new AnimalMoodSizeGenerator(),
                 'torn-pages': new TornPagesGenerator(),
                 'bestiary': new BestiaryGenerator(itemDbMap),
 

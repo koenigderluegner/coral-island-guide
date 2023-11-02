@@ -78,6 +78,7 @@ export * from './lib/interfaces/torn-page-data.interface';
 export * from './lib/interfaces/enemy.interface';
 export * from './lib/interfaces/chance-per-item.interface';
 export * from './lib/interfaces/custom-entry.interface';
+export * from './lib/interfaces/product-size-by-mood.interface';
 
 
 export * from './lib/enums/quality.enum';

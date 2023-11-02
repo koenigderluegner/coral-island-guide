@@ -33,7 +33,7 @@ export function generateJson(fileName: string, jsonContent: any, readable = fals
 
     fs.writeFileSync(
         path.join(databasePath, fileName),
-        JSON.stringify(jsonContent, null, readable ? 2 : undefined),
+        JSON.stringify(jsonContent, null, readable ? 2 : undefined).replace(/\n/g, "\r\n"),
         {
             encoding: 'utf8',
             flag: 'w+',
