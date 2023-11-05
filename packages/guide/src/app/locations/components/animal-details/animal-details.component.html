@@ -1,0 +1,92 @@
+<app-card class="text-lg font-semibold relative">
+    <app-item-icon [itemName]="mappedAnimalShopData.animal?.variants?.[0]?.icons?.adult" cardIcon/>
+
+
+    <div class="flex justify-between items-center">
+        <div class="flex flex-col">
+            <div class="text-black text-2xl">{{mappedAnimalShopData.readableName}}</div>
+            <span *ngIf="!mappedAnimalShopData.readableCategory"
+                  class="text-accent text-2xl">   {{mappedAnimalShopData.readableCategory}}</span>
+        </div>
+    </div>
+    <hr class="my-5"/>
+    <span *ngIf="mappedAnimalShopData.description" class="text-lg mb-6">{{mappedAnimalShopData.description}}</span>
+
+    <div class="flex">Price:
+        <app-money [amount]="mappedAnimalShopData.price" class="ml-2 text-black"/>
+    </div>
+    <div>Amount on purchase:
+        <span class="text-black">
+{{mappedAnimalShopData.amountOnPurchase}}
+        </span>
+    </div>
+    <div>Town rank:
+        <span class="text-black">
+{{mappedAnimalShopData.townRank | townrank}}
+        </span>
+    </div>
+    <div *ngIf="mappedAnimalShopData.itemLimit >= 0">Limited amount:
+        <span class="text-black">
+{{mappedAnimalShopData.itemLimit}}
+        </span>
+    </div>
+    <div *ngIf="mappedAnimalShopData.animal as animal" class="mt-4">
+
+        <div>Variants:
+            <span class="text-black">
+                <ng-container *ngFor="let variant of animal.variants; let last = last">
+                    {{variant.variant}}{{!last ? ', ' : ''}}
+                </ng-container>
+            </span>
+        </div>
+        <div>Building:
+            <span class="text-black">
+              {{animal.building  | addSpacesToPascalCase}}
+            </span>
+        </div>
+        <ng-container *ngIf="animal.animalProduceType !== 'None'">
+            <div *ngIf="animal.produceDropLocation !== 'None'">Drop location:
+                <span class="text-black">
+              {{animal.produceDropLocation  | addSpacesToPascalCase}}
+            </span>
+            </div>
+            <div>Type of producing:
+                <span class="text-black">
+                {{animal.animalProduceType | addSpacesToPascalCase}}
+            </span>
+            </div>
+            <div *ngIf="animal.itemHarvestTool">Tool for harvesting:
+                <span class="text-black">
+               <app-item-icon [itemName]="animal.itemHarvestTool.iconName"
+                              class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
+                    {{animal.itemHarvestTool.displayName}}
+            </span>
+            </div>
+            <div>Harvest cooldown:
+                <span class="text-black">
+                    {{animal.harvestCooldown}} day{{animal.harvestCooldown > 1 ? 's' : ''}}
+            </span>
+            </div>
+            <div class="my-3">Produces:
+                <ng-container *ngFor="let produce of animal.produces">
+                    <ng-container *ngFor="let keValuePair of produce | keyvalue: keyValueNoOrder ">
+                        <div *ngIf="keValuePair.value | isMinimalItem"
+                             class="text-black">
+                            {{keValuePair.key | addSpacesToPascalCase | titlecase}}:
+                            <app-item-icon [itemName]="keValuePair.value.iconName"
+                                           class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
+                            {{keValuePair.value.displayName}}</div>
+                    </ng-container>
+                </ng-container>
+            </div>
+        </ng-container>
+    </div>
+
+
+    <app-requirements-list [requirements]="mappedAnimalShopData.requirements"/>
+
+    <div class="flex">
+        Sells for:
+        <app-money [amount]="mappedAnimalShopData.sellPrice" class="ml-2 text-black"/>
+    </div>
+</app-card>

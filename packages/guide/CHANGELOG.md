@@ -1,5 +1,11 @@
 ## Changelog
 
+### TBD
+
+#### Added
+
+- Added animals to ranch shop
+
 ### 0.13.0 2023-11-01
 
 #### Added

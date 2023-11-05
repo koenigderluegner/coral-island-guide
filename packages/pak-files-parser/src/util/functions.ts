@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { AvailableLanguage, MinimalItem, MinimalNPC, MinimalTagBasedItem } from '@ci/data-types';
+import { AvailableLanguage, Item, MinimalItem, MinimalNPC, MinimalTagBasedItem } from '@ci/data-types';
 import { config } from "../config";
 import { environment } from "../environments/environment";
 import { EffectMap, RequirementMap } from "../app/da-files-parser";
@@ -70,7 +70,21 @@ export function AssetPathNameToIcon(assetPathName: string): string {
     return convertToIconName(assetPathName.split('.').pop() ?? '').replace('.png', '')
 }
 
-export function minifyItem(item: { id: string, displayName: string, iconName: string | null }): MinimalItem {
+export function minifyItem(item: undefined): undefined ;
+export function minifyItem(item: null): null ;
+export function minifyItem(item: Item | MinimalItem): MinimalItem;
+export function minifyItem(item: {
+    id: string,
+    displayName: string,
+    iconName: string | null
+} | undefined): MinimalItem | undefined;
+export function minifyItem(item: {
+    id: string,
+    displayName: string,
+    iconName: string | null
+} | Item | MinimalItem | null | undefined): MinimalItem | null | undefined {
+    if (!item) return item;
+
     return {
         id: item.id,
         displayName: item.displayName,

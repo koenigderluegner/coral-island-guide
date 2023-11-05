@@ -62,6 +62,7 @@ import { EntityKeyPipe } from './pipes/entity-key.pipe';
 import { IsMinimalTagBasedItemPipe } from './pipes/is-minimal-tag-based-item.pipe';
 import { IsTagBasedItemPipe } from './pipes/is-tag-based-item.pipe';
 import { ToItemListEntriesPipe } from './pipes/to-item-list-entries.pipe';
+import { RequirementsListComponent } from './components/requirements-list/requirements-list.component';
 
 @NgModule({
     declarations: [
@@ -117,6 +118,7 @@ import { ToItemListEntriesPipe } from './pipes/to-item-list-entries.pipe';
         IsMinimalTagBasedItemPipe,
         IsTagBasedItemPipe,
         ToItemListEntriesPipe,
+        RequirementsListComponent,
     ],
     imports: [
         CommonModule,
@@ -181,6 +183,7 @@ import { ToItemListEntriesPipe } from './pipes/to-item-list-entries.pipe';
         EntityKeyPipe,
         IsMinimalTagBasedItemPipe,
         IsTagBasedItemPipe,
+        RequirementsListComponent,
     ],
 })
 export class SharedModule {}

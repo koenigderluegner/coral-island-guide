@@ -7,7 +7,7 @@ import { CarpenterComponent } from "./components/shops/carpenter/carpenter.compo
 import { MerfolkGeneralStoreComponent } from "./components/shops/merfolk-general-store/merfolk-general-store.component";
 import { MerfolkOracleTailStoreComponent } from "./components/shops/merfolk-oracle-tail-store/merfolk-oracle-tail-store.component";
 import { PetShopComponent } from "./components/pet-shop/pet-shop.component";
-import { RanchComponent } from "./components/shops/ranch/ranch.component";
+import { RanchComponent } from "./components/ranch/ranch.component";
 import { BeachShackComponent } from "./components/shops/beach-shack/beach-shack.component";
 import { ConcernedMonkeyComponent } from "./components/shops/concerned-monkey/concerned-monkey.component";
 import { BosComponent } from "./components/shops/bos/bos.component";

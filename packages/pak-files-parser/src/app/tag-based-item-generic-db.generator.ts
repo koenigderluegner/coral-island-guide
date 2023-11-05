@@ -4,6 +4,7 @@ import { RawTagBasedItemGeneric } from '../interfaces/raw-data-interfaces/raw-ta
 import { BaseGenerator } from './base-generator.class';
 import { Datatable } from '../interfaces/datatable.interface';
 import { StringTable } from "../util/string-table.class";
+import { nonNullable } from "@ci/util";
 
 export class TagBasedItemGenericDbGenerator extends BaseGenerator<RawTagBasedItemGeneric, TagBasedItem> {
 
@@ -23,6 +24,7 @@ export class TagBasedItemGenericDbGenerator extends BaseGenerator<RawTagBasedIte
         const tagBasedItems = this.items
             .filter(i => tags.some(t => (i.tags?.indexOf(t) ?? -1) >= 0))
             .map(minifyItem)
+            .filter(nonNullable)
 
         return {
             key: itemKey,

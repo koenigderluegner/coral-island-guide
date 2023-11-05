@@ -51,6 +51,8 @@ import { CookingUtensilMapGenerator } from "./app/cooking-utensil-map.generator"
 import { StringTable } from "./util/string-table.class";
 import { AvailableLanguages } from "@ci/data-types";
 import { AnimalMoodSizeGenerator } from "./app/animal-mood-size.generator";
+import { AnimalDataGenerator } from "./app/animal-data.generator";
+import { AnimalShopDataGenerator } from "./app/animal-shop-data.generator";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
@@ -142,6 +144,7 @@ AvailableLanguages.forEach(lang => {
 
             liveGenerators = {
 
+                'animal-data': new AnimalDataGenerator(itemDbMap),
                 'animal-mood-size': new AnimalMoodSizeGenerator(),
                 'torn-pages': new TornPagesGenerator(),
                 'bestiary': new BestiaryGenerator(itemDbMap),
@@ -229,6 +232,14 @@ AvailableLanguages.forEach(lang => {
 
             'ranch-opening-hours': new RanchOpeningHoursGenerator(),
             'ranch-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_RanchShop.json'),
+            'animal-shop-data': {
+                generate: () => new AnimalShopDataGenerator().generate({
+                    daFiles: [
+                        'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_AnimalShopAdvanceRequirement.json',
+
+                    ]
+                })
+            },
 
             'beach-shack-opening-hours': new BeachShackOpeningHoursGenerator(),
             'beach-shack-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BeachSackShopItems.json'),

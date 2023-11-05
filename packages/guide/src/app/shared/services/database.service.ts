@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { combineLatest, map, Observable, of, shareReplay, tap } from 'rxjs';
 import {
     Achievement,
+    AnimalData,
+    AnimalShopData,
     Consumable,
     CookingRecipe,
     CraftingRecipe,
@@ -109,6 +111,8 @@ export class DatabaseService {
     private _BESTIARY$?: Observable<Enemy[]>;
 
     private readonly _settings = inject(SettingsService).getSettings();
+    private _ANIMAL_DATA$?: Observable<AnimalData[]>;
+    private _ANIMAL_SHOP_DATA$?: Observable<AnimalShopData[]>;
 
     constructor(private readonly _http: HttpClient) {
         const version = this._settings.useBeta ? 'beta' : 'live';
@@ -196,6 +200,26 @@ export class DatabaseService {
                 );
         }
         return this._BESTIARY$;
+    }
+
+    fetchAnimals$(): Observable<AnimalData[]> {
+        if (!this._ANIMAL_DATA$) {
+            this._ANIMAL_DATA$ = this._http.get<AnimalData[]>(`${this._BASE_PATH}/animal-data.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+        return this._ANIMAL_DATA$;
+    }
+
+    fetchAnimalShopData$(): Observable<AnimalShopData[]> {
+        if (!this._ANIMAL_SHOP_DATA$) {
+            this._ANIMAL_SHOP_DATA$ = this._http.get<AnimalShopData[]>(`${this._BASE_PATH}/animal-shop-data.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+        return this._ANIMAL_SHOP_DATA$;
     }
 
     fetchTornPagesData$(): Observable<TornPageData[]> {
