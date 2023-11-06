@@ -1,6 +1,6 @@
 import { InventoryItems } from '../types/inventory-items.type';
 import { InventoryItemsEngineInterface } from '../interfaces/inventory-items-engine.interface';
-import { convertToIconName, getReferencedString, readAsset } from '../util/functions';
+import { AssetPathNameToIcon, readAsset } from '../util/functions';
 import { InventoryItem } from '../interfaces/inventory-item.interface';
 import { Item } from '@ci/data-types';
 import { getQuality, removeQualityFlag } from "@ci/util";
@@ -68,9 +68,9 @@ export class ItemDbGenerator {
             if (engineData) {
                 item.tags = engineData.tags ?? [];
 
-                const objectName = engineData.icon?.ObjectName;
+                const objectName = engineData.icon?.AssetPathName;
                 if (!!objectName) {
-                    item.iconName = convertToIconName(getReferencedString(objectName)).replace('.png', '');
+                    item.iconName = AssetPathNameToIcon(objectName);
                 }
 
             }

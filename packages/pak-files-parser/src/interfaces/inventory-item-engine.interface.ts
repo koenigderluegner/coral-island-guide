@@ -1,31 +1,16 @@
+import { AssetPath } from "../types/asset-path.type";
+import { DatatableRef } from "../types/datatable-ref.type";
+
 export interface InventoryItemEngineInterface {
     "usage": string;
     "toolType": string;
     "category": {
-        "data": {
-            "DataTable": {
-                "ObjectName": string;
-                "ObjectPath": string;
-            },
-            "RowName": string;
-        }
+        "data": DatatableRef
     },
     "tags": string[],
-    "icon": {
-        "ObjectName": string;
-        "ObjectPath": string;
-    },
-    "mesh": {
-        "AssetPathName": string;
-        "SubPathString": string;
-    },
+    "icon": AssetPath,
+    "mesh": AssetPath
     "soundEventOnPickup": null,
-    "categoryFloatiesDropClass": {
-        "AssetPathName": string;
-        "SubPathString": string;
-    },
-    "overrideFloatiesDropClass": {
-        "AssetPathName": string;
-        "SubPathString": string;
-    }
+    "categoryFloatiesDropClass": AssetPath
+    "overrideFloatiesDropClass": AssetPath
 }
