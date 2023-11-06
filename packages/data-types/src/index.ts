@@ -38,6 +38,7 @@ export * from './lib/types/requirements/has-cooking-utensil-requirement.type';
 export * from './lib/types/requirements/npc-heart-level-requirement.type';
 export * from './lib/types/requirements/healed-coral-requirement.type';
 export * from './lib/types/requirements/mastery-level-requirements.type';
+export * from './lib/types/requirements/is-mail-read-requirement.type';
 
 export * from './lib/interfaces/base-crop.interface';
 export * from './lib/interfaces/consumable.interface';

@@ -292,7 +292,7 @@ AvailableLanguages.forEach(lang => {
         };
     } catch (e) {
         // @ts-ignore
-        Logger.error('Generators couldn\'t be executed', e.message)
+        Logger.error('Generators couldn\'t be executed', e.message, e.stack)
     }
 
     Object.keys(generators).forEach(generatorName => {

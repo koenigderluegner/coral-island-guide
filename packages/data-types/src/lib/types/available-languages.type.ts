@@ -1,4 +1,4 @@
-export const AvailableLanguages = ['de', 'en', 'es', 'fr', 'id', 'ja', 'zh-CN'] as const;
+export const AvailableLanguages = ['de', 'en', 'es', 'fr', 'id', 'ja', 'zh-CN', 'ko', 'pt-BR'] as const;
 
 export type AvailableLanguage = typeof AvailableLanguages[number];
 
@@ -10,4 +10,6 @@ export const AvailableLanguageDisplayName: Record<AvailableLanguage, string> = {
     es: 'spanish',
     ja: 'japanese',
     "zh-CN": 'chinese simplified',
+    ko: 'korean',
+    "pt-BR": 'brazilian portuguese',
 } as const

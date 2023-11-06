@@ -5,6 +5,7 @@
 #### Added
 
 - Added animals to ranch shop
+- Added support for korean and brazilian portuguese
 
 ### 0.13.0 2023-11-01
 

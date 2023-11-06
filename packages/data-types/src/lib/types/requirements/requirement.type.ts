@@ -20,6 +20,7 @@ import { HasCookingUtensilRequirement } from "./has-cooking-utensil-requirement.
 import { NpcHeartLevelRequirement } from "./npc-heart-level-requirement.type";
 import { HealedCoralRequirement } from "./healed-coral-requirement.type";
 import { MasteryLevelRequirements } from "./mastery-level-requirements.type";
+import { IsMailReadRequirement } from "./is-mail-read-requirement.type";
 
 export type Requirement = CountNpcHeartLevelRequirement
     | EditorOnlyRequirement
@@ -43,4 +44,5 @@ export type Requirement = CountNpcHeartLevelRequirement
     | NpcHeartLevelRequirement
     | HealedCoralRequirement
     | MasteryLevelRequirements
+    | IsMailReadRequirement
 

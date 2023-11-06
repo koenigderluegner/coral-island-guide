@@ -17,11 +17,10 @@ export class PetShopAdoptionsGenerator extends BaseGenerator<RawPetShopData, Pet
     handleEntry(itemKey: string, dbItem: RawPetShopData): PetShopAdoptions | undefined {
         return {
             price: dbItem.price,
-            iconName: this.npcMap.get(dbItem.petData.npcData.RowName)?.iconName ?? '',
+            iconName: this.npcMap.get(dbItem.npcData.RowName)?.iconName ?? '',
             description: StringTable.getString(dbItem.description) ?? '',
             npcData: {
-                npcId: dbItem.petData.npcData.RowName,
-                nickname: dbItem.petData.nickname
+                npcId: dbItem.npcData.RowName,
             }
         };
     }
