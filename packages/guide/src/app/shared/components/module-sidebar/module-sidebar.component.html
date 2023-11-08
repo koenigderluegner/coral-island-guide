@@ -2,7 +2,7 @@
     <nav>
         <ul [class.hide-menu]="!showMenu">
             <ng-container *ngFor="let child of (viewChildren?.toArray() ?? []); let i = index; let last = last">
-                <li>
+                <li *ngIf="child.routerLink">
                     <a [routerLink]="child.routerLink" class="app-module-sidebar-list-item"
                        [routerLinkActive]="'active'"
                        [routerLinkActiveOptions]="{exact: !!child.exact}"
@@ -14,6 +14,10 @@
                                 (click)="toggleMenu($event)">Menu
                         </button>
                     </a>
+                </li>
+                <li *ngIf="!child.routerLink"
+                    class="module-sidebar-list-divider mb-3 mt-9 text-xl text-white/70 font-semibold">
+                    <ng-template [ngTemplateOutlet]="child.innerTemplate"></ng-template>
                 </li>
             </ng-container>
         </ul>

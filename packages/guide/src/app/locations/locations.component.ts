@@ -12,6 +12,7 @@ export class LocationsComponent {
     protected readonly SHOP_DISPLAY_NAMES = ShopDisplayNames;
     protected readonly SHOP_ICONS = ShopIcons;
 
-    protected shops: ShopName[] = shopRouteConfig.map(c => c.name)
-
+    protected shops: ShopName[] = shopRouteConfig
+        .map(c => c.name)
+        .sort((a, b) => ShopDisplayNames[a].localeCompare(ShopDisplayNames[b]))
 }
