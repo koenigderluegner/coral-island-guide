@@ -33,5 +33,6 @@ export class DatabaseCookingComponent extends BaseDatabaseDetailPartComponent im
         const tags = this.getGenericItems(item);
 
         return recipe.ingredients.some(ingredient => ingredient.item?.id === item?.id) || recipe.genericIngredients.some(genericIngredient => tags.find(tag => tag.key === genericIngredient.key))
+            || recipe.eitherOrIngredients.some(ingredients => ingredients.some(ingredient => ingredient.item?.id === item.id))
     }
 }

@@ -7,6 +7,11 @@
 - Added animals to ranch shop
 - Added support for korean and brazilian portuguese
 - Added separator to locations and sorted shops alphabetically
+- Added new type of generic cooking ingredients
+
+#### Changed
+
+- Added missing recipes in database, when an item was in the list of "either or" ingredients
 
 ### 0.13.0 2023-11-01
 
