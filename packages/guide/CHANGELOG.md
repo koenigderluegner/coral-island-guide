@@ -9,6 +9,7 @@
 - Added separator to locations and sorted shops alphabetically
 - Added new type of generic cooking ingredients
 - Added all known festival shops to locations
+- Added Raj's Coffee Corner and White Flamingo to shops
 
 #### Changed
 

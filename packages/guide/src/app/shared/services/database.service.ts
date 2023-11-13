@@ -154,6 +154,8 @@ export class DatabaseService {
             this.fetchShopItemData$("bos"),
             this.fetchShopItemData$("bens-caravan"),
             this.fetchShopItemData$("socket-and-pan"),
+            this.fetchShopItemData$("white-flamingo"),
+            this.fetchShopItemData$("coffee"),
             this.fetchItemUpgradeData$("blacksmith"),
             this.fetchItemUpgradeData$("beach-shack"),
             this.fetchItemUpgradeData$("carpenter"),

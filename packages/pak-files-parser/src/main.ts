@@ -327,6 +327,11 @@ AvailableLanguages.forEach(lang => {
                 })
             },
 
+            'white-flamingo-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ClothShop.json'),
+
+
+            'coffee-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_RajCoffeeShop.json'),
+
             'beach-shack-opening-hours': new BeachShackOpeningHoursGenerator(),
             'beach-shack-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BeachSackShopItems.json'),
             'beach-shack-item-upgrade': new ItemUpgradeDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BeachShacksToolsUpgrades_Alpha.json'),

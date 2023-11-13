@@ -13,7 +13,9 @@ export const ShopNames = [
     'concerned-monkey',
     'bens-caravan',
     'bos',
-    'socket-and-pan'
+    'socket-and-pan',
+    'coffee',
+    'white-flamingo'
 ] as const;
 
 export type ShopName = typeof ShopNames[number];
@@ -31,7 +33,10 @@ export const ShopDisplayNames = {
     'concerned-monkey': 'Concerned Monkey',
     'bens-caravan': 'Bens Caravan',
     'bos': 'Band of Smiles',
-    'socket-and-pan': 'Socket & Pan'
+    'socket-and-pan': 'Socket & Pan',
+
+    'coffee': 'Raj\'s Coffee Corner',
+    'white-flamingo': 'White Flamingo'
 } as const
 
 type ShopDisplayName = (typeof ShopDisplayNames)[keyof typeof ShopDisplayNames]
@@ -50,5 +55,7 @@ export const ShopIcons = {
     'bens-caravan': UiIcon.CARAVAN,
     'bos': UiIcon.BESTIARY,
     'socket-and-pan': UiIcon.COOKING,
+    'coffee': UiIcon.COFFEE,
+    'white-flamingo': UiIcon.CLOTHING_STORE
 } as const
 
