@@ -17,6 +17,8 @@
 
 - Added missing recipes in database, when an item was in the list of "either or" ingredients
 - Reduced height of sidebar items on bigger screens
+- NPC overview is now the entry page for NPC category instead of gifting
+    - Also swapped positions of sub navi entries
 
 ### 0.13.0 2023-11-01
 

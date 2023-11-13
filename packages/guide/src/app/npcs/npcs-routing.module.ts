@@ -9,7 +9,7 @@ const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'gifting'
+        redirectTo: 'overview'
     },
     {
 
