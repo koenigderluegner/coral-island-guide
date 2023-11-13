@@ -3,8 +3,25 @@
 
     <div>Buy price:
         <span class="text-black">
-            <app-money
-                    [amount]="festivalShopItemData.priceOverride !== 0 ? festivalShopItemData.priceOverride : festivalShopItemData.item.price"/>
+         <span *ngIf="festivalShopItemData.festivalSetting.hasDiscount"
+               class="line-through mr-3">{{festivalShopItemData.item.price}}</span>
+                <app-money
+                        [amount]="festivalShopItemData.item.price * (1 - (festivalShopItemData.festivalSetting.hasDiscount ? festivalShopItemData.festivalSetting.discount : 0))"/>
+        </span>
+    </div>
+    <div *ngIf="festivalShopItemData.festivalSetting.hasDiscount">Discount:
+        <span class="text-black">
+        {{festivalShopItemData.festivalSetting.discount | percent}}
+        </span>
+    </div>
+    <div *ngIf="festivalShopItemData.festivalSetting.isLimitedItem">Item limit (all time):
+        <span class="text-black">
+           {{festivalShopItemData.festivalSetting.itemLimit}}
+        </span>
+    </div>
+    <div *ngIf="festivalShopItemData.festivalSetting.hasYearlyLimit">Yearly limit:
+        <span class="text-black">
+           {{festivalShopItemData.festivalSetting.itemLimitPerYear}}
         </span>
     </div>
     <div>Town rank:
