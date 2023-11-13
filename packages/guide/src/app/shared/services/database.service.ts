@@ -30,6 +30,7 @@ import {
     OfferingAltar,
     OpeningHours,
     PetShopAdoptions,
+    ProductSizeByMood,
     ShopItemData,
     ShopName,
     TagBasedItem,
@@ -115,6 +116,7 @@ export class DatabaseService {
 
     private readonly _settings = inject(SettingsService).getSettings();
     private _ANIMAL_DATA$?: Observable<AnimalData[]>;
+    private _ANIMAL_MOOD_DATA$?: Observable<ProductSizeByMood[]>;
     private _ANIMAL_SHOP_DATA$?: Observable<AnimalShopData[]>;
 
     constructor(private readonly _http: HttpClient) {
@@ -224,6 +226,16 @@ export class DatabaseService {
                 );
         }
         return this._ANIMAL_DATA$;
+    }
+
+    fetchAnimalMoodData$(): Observable<ProductSizeByMood[]> {
+        if (!this._ANIMAL_MOOD_DATA$) {
+            this._ANIMAL_MOOD_DATA$ = this._http.get<ProductSizeByMood[]>(`${this._BASE_PATH}/animal-mood-size.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+        return this._ANIMAL_MOOD_DATA$;
     }
 
     fetchAnimalShopData$(): Observable<AnimalShopData[]> {

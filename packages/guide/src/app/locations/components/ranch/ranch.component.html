@@ -52,5 +52,10 @@
         </ng-container>
 
 
+        <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Animal product size per mood and hearts</h2>
+        <app-animal-mood-table *ngIf="sizeByMood$ | async as sizeByMoods" [productSizeByMood]="sizeByMoods"/>
+
+
+
     </div>
 </app-list-detail-container>

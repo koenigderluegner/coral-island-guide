@@ -39,8 +39,9 @@ import { GenericShopComponent } from './components/shops/generic-shop/generic-sh
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FestivalShopItemDetailsComponent } from './components/festival-shop-item-details/festival-shop-item-details.component';
 import { FestivalShopItemTableComponent } from './components/tables/festival-shop-item-table/festival-shop-item-table.component';
-import { CoffeeComponent } from "./components/shops/coffee/coffee.component";
-import { WhiteFlamingoComponent } from "./components/shops/white-flamingo/white-flamingo.component";
+import { CoffeeComponent } from './components/shops/coffee/coffee.component';
+import { WhiteFlamingoComponent } from './components/shops/white-flamingo/white-flamingo.component';
+import { AnimalMoodTableComponent } from './components/tables/animal-mood-table/animal-mood-table.component';
 
 @NgModule({
     declarations: [
@@ -76,7 +77,8 @@ import { WhiteFlamingoComponent } from "./components/shops/white-flamingo/white-
         FestivalShopItemDetailsComponent,
         FestivalShopItemTableComponent,
         CoffeeComponent,
-        WhiteFlamingoComponent
+        WhiteFlamingoComponent,
+        AnimalMoodTableComponent,
     ],
     imports: [
         CommonModule,

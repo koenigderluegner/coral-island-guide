@@ -5,6 +5,7 @@
 #### Added
 
 - Added animals to ranch shop
+- Added product size per mood per hearts to ranch as well
 - Added support for korean and brazilian portuguese
 - Added separator to locations and sorted shops alphabetically
 - Added new type of generic cooking ingredients
