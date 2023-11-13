@@ -8,10 +8,12 @@
 - Added support for korean and brazilian portuguese
 - Added separator to locations and sorted shops alphabetically
 - Added new type of generic cooking ingredients
+- Added all known festival shops to locations
 
 #### Changed
 
 - Added missing recipes in database, when an item was in the list of "either or" ingredients
+- Reduced height of sidebar items on bigger screens
 
 ### 0.13.0 2023-11-01
 

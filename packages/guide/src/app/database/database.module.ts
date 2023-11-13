@@ -28,8 +28,9 @@ import { DatabaseItemUpgradeComponent } from './components/database-item-upgrade
 import { DatabaseBestiaryComponent } from './components/database-bestiary/database-bestiary.component';
 import { MatButtonModule } from '@angular/material/button';
 import { DatabaseHeaderButtonComponent } from './components/database-header-button/database-header-button.component';
-import { MatSortModule } from "@angular/material/sort";
-import { MatTableModule } from "@angular/material/table";
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { DatabaseFestivalShopDataComponent } from './components/database-festival-shop-data/database-festival-shop-data.component';
 
 @NgModule({
     declarations: [
@@ -51,6 +52,7 @@ import { MatTableModule } from "@angular/material/table";
         DatabaseItemUpgradeComponent,
         DatabaseBestiaryComponent,
         DatabaseHeaderButtonComponent,
+        DatabaseFestivalShopDataComponent,
     ],
     imports: [
         CommonModule,

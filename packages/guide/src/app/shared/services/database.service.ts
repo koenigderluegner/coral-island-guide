@@ -11,6 +11,8 @@ import {
     Critter,
     Crop,
     Enemy,
+    FestivalData,
+    FestivalName,
     Fish,
     FruitPlant,
     FruitTree,
@@ -77,6 +79,7 @@ export class DatabaseService {
     private _OFFERINGS: OfferingAltar[] = [];
 
     private _SHOP_ITEMS: Map<string, ShopItemData[]> = new Map<string, ShopItemData[]>();
+    private _FESTIVAL_DATA: Map<string, FestivalData> = new Map<string, FestivalData>();
     private _SHOP_PROCESS_ITEMS: Map<string, ItemProcessShopData[]> = new Map<string, ItemProcessShopData[]>();
     private _OPENING_HOURS: Map<string, Record<string, OpeningHours>> = new Map<string, Record<string, OpeningHours>>();
     private _ITEM_UPGRADE: Map<string, ItemUpgradeData[]> = new Map<string, ItemUpgradeData[]>();
@@ -155,6 +158,14 @@ export class DatabaseService {
             this.fetchItemUpgradeData$("beach-shack"),
             this.fetchItemUpgradeData$("carpenter"),
             this.fetchItemUpgradeData$("lab"),
+            this.fetchFestivalData$('cherry-blossom'),
+            this.fetchFestivalData$('animal'),
+            this.fetchFestivalData$('beach-clean-up'),
+            this.fetchFestivalData$('harvest'),
+            this.fetchFestivalData$('spooky'),
+            this.fetchFestivalData$('tree-planting'),
+            this.fetchFestivalData$('new-year-eve'),
+            this.fetchFestivalData$('winter-fair'),
             this.fetchMeritExchangeShopData$(),
             this.fetchBestiary$()
         ]);
@@ -653,6 +664,10 @@ export class DatabaseService {
         return this._SHOP_ITEMS.get(shopName) ?? [];
     }
 
+    getFestivalData(shopName: FestivalName): FestivalData | null {
+        return this._FESTIVAL_DATA.get(shopName) ?? null;
+    }
+
     getItemUpgradeData(shopName: ShopName): ItemUpgradeData[] {
         return this._ITEM_UPGRADE.get(shopName) ?? [];
     }
@@ -670,6 +685,21 @@ export class DatabaseService {
                 );
         } else {
             return of(this._SHOP_ITEMS.get(shopName)!)
+        }
+
+    }
+
+
+    fetchFestivalData$(festivalName: FestivalName): Observable<FestivalData> {
+        if (!this._FESTIVAL_DATA.has(festivalName)) {
+            return this._http.get<FestivalData[]>(`${this._BASE_PATH}/${festivalName}-festival-data.json`)
+                .pipe(
+                    map(data => data[0]),
+                    tap(items => this._FESTIVAL_DATA.set(festivalName, items)),
+                    shareReplay(1)
+                );
+        } else {
+            return of(this._FESTIVAL_DATA.get(festivalName)!)
         }
 
     }

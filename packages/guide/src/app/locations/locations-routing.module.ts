@@ -3,9 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { LocationsComponent } from './locations.component';
 import { LakeTempleComponent } from "./components/lake-temple/lake-temple.component";
 import { onlyInBetaGuard } from "../core/guards/only-in-beta.guard";
-import { ShopDisplayNames } from "@ci/data-types";
+import { FestivalDisplayNames, ShopDisplayNames } from "@ci/data-types";
 import { shopRouteConfig } from "./locations-shop-route-config";
 import { MeritShopComponent } from "./components/merit-shop/merit-shop.component";
+import { festivalRouteConfig } from "./locations-festival-route-config";
 
 
 const routes: Routes = [
@@ -26,7 +27,16 @@ const routes: Routes = [
                 component: config.component,
                 title: `${ShopDisplayNames[config.name]} - Locations`,
                 canActivate: config.betaOnly ? [onlyInBetaGuard] : []
-            })),
+                })
+            ),
+            ...festivalRouteConfig.map(config => ({
+                    path: config.data.name,
+                    component: config.component,
+                    title: `${FestivalDisplayNames[config.data.name]} - Locations`,
+                    canActivate: config.betaOnly ? [onlyInBetaGuard] : [],
+                    data: config.data
+                })
+            ),
             {
                 path: 'merit-exchange',
                 component: MeritShopComponent,

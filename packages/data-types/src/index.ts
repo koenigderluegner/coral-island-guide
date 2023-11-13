@@ -82,6 +82,9 @@ export * from './lib/interfaces/custom-entry.interface';
 export * from './lib/interfaces/product-size-by-mood.interface';
 export * from './lib/interfaces/animal-data.interface';
 export * from './lib/interfaces/animal-shop-data.interface';
+export * from './lib/interfaces/festival.interface';
+export * from './lib/interfaces/festival-shop-item-data.interface';
+export * from './lib/interfaces/festival-data.interface';
 
 
 export * from './lib/enums/quality.enum';
@@ -99,3 +102,4 @@ export * from './lib/types/minimal-npc.type';
 export * from './lib/types/gifting-preference-keys.type';
 export * from './lib/types/minimal-tag-based-item.type';
 export * from './lib/types/available-languages.type';
+export * from './lib/types/festival-names.type';

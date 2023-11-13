@@ -49,10 +49,13 @@ import { TornPagesGenerator } from "./app/torn-pages.generator";
 import { BestiaryGenerator } from "./app/bestiary.generator";
 import { CookingUtensilMapGenerator } from "./app/cooking-utensil-map.generator";
 import { StringTable } from "./util/string-table.class";
-import { AvailableLanguages } from "@ci/data-types";
+import { AvailableLanguages, FestivalEventIds } from "@ci/data-types";
 import { AnimalMoodSizeGenerator } from "./app/animal-mood-size.generator";
 import { AnimalDataGenerator } from "./app/animal-data.generator";
 import { AnimalShopDataGenerator } from "./app/animal-shop-data.generator";
+import { FestivalDbGenerator } from "./app/festival-db.generator";
+import { FestivalShopItemDataGenerator } from "./app/festival-shop-item-data.generator";
+import { FestivalDataGenerator } from "./app/festival-data.generator";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
@@ -111,30 +114,29 @@ AvailableLanguages.forEach(lang => {
         if (environment.isBeta) {
             betaGenerators = {}
         } else {
-            const achievementGenerator = new AchievementGenerator();
-            const achievementMap = achievementGenerator.generate();
+            const festivalDbMap = new FestivalDbGenerator().generate();
+            const festivalDbValues = [...festivalDbMap.values()];
+
+            const achievementMap = new AchievementGenerator().generate();
 
             DaFilesParser.AchievementMap = achievementMap;
 
-            const specialItemDbGenerator = new SpecialItemDbGenerator();
-            const specialItemDbMap = specialItemDbGenerator.generate();
+            const specialItemDbMap = new SpecialItemDbGenerator().generate();
 
             DaFilesParser.SpecialItemMap = specialItemDbMap;
 
-            const locationInfoGenerator = new LocationInfoGenerator();
-            const locationInfoMap = locationInfoGenerator.generate();
+            const locationInfoMap = new LocationInfoGenerator().generate();
 
-            const mailDataGenerator = new MailDataGenerator();
-            const mailDataMap = mailDataGenerator.generate({
+            const mailDataMap = new MailDataGenerator().generate({
                 daFiles: [
                     'ProjectCoral/Content/ProjectCoral/Data/Mail/DA_MailEffectsConfig.json'
                 ]
             });
 
+
             DaFilesParser.MailMap = mailDataMap;
 
-            const heartEventTriggerDataGenerator = new HeartEventTriggerDataGenerator(locationInfoMap);
-            const heartEventTriggerDataMap = heartEventTriggerDataGenerator.generate({
+            const heartEventTriggerDataMap = new HeartEventTriggerDataGenerator(locationInfoMap).generate({
                 daFiles: [
                     'ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneAdvanceRequirement.json',
                     'ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneEffects.json',
@@ -148,6 +150,90 @@ AvailableLanguages.forEach(lang => {
                 'animal-mood-size': new AnimalMoodSizeGenerator(),
                 'torn-pages': new TornPagesGenerator(),
                 'bestiary': new BestiaryGenerator(itemDbMap),
+
+
+                'winter-fair-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["winter-fair"])!, [
+                    {
+                        title: 'Clothing Shop',
+                        shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_WinterFairClothingFestivalShop.json').generate()
+                    },
+                    {
+                        title: 'Food Shop',
+                        shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_WinterFairFoodFestivalShop.json').generate()
+                    },
+                    {
+                        title: 'Gift Shop',
+                        shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_WinterFairGiftFestivalShop.json').generate()
+                    },
+                ]),
+
+                'cherry-blossom-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["cherry-blossom"])!, [
+                    {
+                        title: 'Booth',
+                        shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_CherryBlossomFestivalShop.json').generate()
+                    }
+                ]),
+
+                'tree-planting-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["tree-planting"])!, [
+                    {
+                        title: 'Shop',
+                        shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_TreePlantingFestivalShop.json').generate()
+                    }
+                ]),
+                'animal-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["animal"])!, [
+                    {
+                        title: 'Shop',
+                        shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_AnimalFestivalShop.json').generate()
+                    }
+                ]),
+                'beach-clean-up-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["beach-clean-up"])!, [
+                    {
+                        title: 'Shop',
+                        shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_BeachCleanupFestivalShop.json').generate(
+                            {
+                                daFiles: [
+                                    'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_FestivalShopBuyEffect.json'
+                                ]
+                            }
+                        )
+                    }
+                ]),
+                'harvest-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["harvest"])!, [
+                    {
+                        title: 'Shop',
+                        shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_HarvestFestivalShop.json').generate(
+                            {
+                                daFiles: [
+                                    'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_FestivalShopBuyEffect.json'
+                                ]
+                            }
+                        )
+                    }
+                ]),
+                'spooky-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["spooky"])!, [
+                    {
+                        title: 'Shop',
+                        shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_SpookyDayFestivalShop.json').generate(
+                            {
+                                daFiles: [
+                                    'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_FestivalShopBuyEffect.json'
+                                ]
+                            }
+                        )
+                    }
+                ]),
+                'new-year-eve-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["new-year-eve"])!, [
+                    {
+                        title: 'Shop',
+                        shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_NewYearFestivalShop.json').generate(
+                            {
+                                daFiles: [
+                                    'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_FestivalShopBuyEffect.json'
+                                ]
+                            }
+                        )
+                    }
+                ]),
 
                 'concerned-monkey-shop-items': {
                     generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopConcernedMonke.json').generate({

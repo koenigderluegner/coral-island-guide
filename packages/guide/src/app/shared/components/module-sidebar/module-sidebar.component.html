@@ -8,7 +8,7 @@
                        [routerLinkActiveOptions]="{exact: !!child.exact}"
                        [class.custom-active]="child.active"
                        [class.mb-4]="!last" (click)="showMenu = false">
-                        <app-ui-icon *ngIf="child.uiIcon" [uiIcon]="child.uiIcon" class="!h-8"></app-ui-icon>
+                        <app-ui-icon *ngIf="child.uiIcon" [uiIcon]="child.uiIcon" class="!h-6"></app-ui-icon>
                         <ng-template [ngTemplateOutlet]="child.innerTemplate"></ng-template>
                         <button class=" xl:hidden block ml-auto m-[-18px] border-l-2 px-5 h-[45px]"
                                 (click)="toggleMenu($event)">Menu

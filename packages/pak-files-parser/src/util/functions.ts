@@ -4,6 +4,8 @@ import { AvailableLanguage, Item, MinimalItem, MinimalNPC, MinimalTagBasedItem }
 import { config } from "../config";
 import { environment } from "../environments/environment";
 import { EffectMap, RequirementMap } from "../app/da-files-parser";
+import { AssetPath } from "../types/asset-path.type";
+import { ObjectPath } from "../types/object-path.type";
 
 export function getParsedArgs(): Record<string, any> {
     return process.argv
@@ -66,8 +68,16 @@ export function convertToIconName(objectName: string): string {
     return sanitizedName;
 }
 
-export function AssetPathNameToIcon(assetPathName: string): string {
-    return convertToIconName(assetPathName.split('.').pop() ?? '').replace('.png', '')
+export function AssetPathNameToIcon(assetPathName: string | AssetPath | ObjectPath): string {
+    if (typeof assetPathName === 'string') {
+        return convertToIconName(assetPathName.split('.').pop() ?? '').replace('.png', '')
+    } else if ('ObjectPath' in assetPathName) {
+        return convertToIconName(getReferencedString(assetPathName.ObjectName)).replace('.png', '')
+    }
+
+    return convertToIconName(assetPathName.AssetPathName.split('.').pop() ?? '').replace('.png', '')
+
+
 }
 
 export function minifyItem(item: undefined): undefined ;

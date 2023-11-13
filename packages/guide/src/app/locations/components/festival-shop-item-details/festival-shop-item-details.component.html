@@ -1,0 +1,100 @@
+<app-base-item-card [item]="festivalShopItemData.item">
+    <div *ngIf="!festivalShopItemData.enabled" class="mb-3">Enabled: <span class="text-black">NO</span></div>
+
+    <div>Buy price:
+        <span class="text-black">
+            <app-money
+                    [amount]="festivalShopItemData.priceOverride !== 0 ? festivalShopItemData.priceOverride : festivalShopItemData.item.price"/>
+        </span>
+    </div>
+    <div>Town rank:
+        <span class="text-black">
+           {{festivalShopItemData.townRank | townrank}}
+        </span>
+    </div>
+    <div *ngIf="festivalShopItemData.availableDuringTime && festivalShopItemData.timeRange">Only at times:
+        <span class="inline-flex">
+            {{(festivalShopItemData.timeRange.fromTime.hours | number: '2.0') + ':' + (festivalShopItemData.timeRange.fromTime.minutes | number: '2.0')}}
+            -
+            {{(festivalShopItemData.timeRange.toTime.hours | number: '2.0') + ':' + (festivalShopItemData.timeRange.toTime.minutes | number: '2.0')}}
+        </span>
+    </div>
+
+
+    <div *ngIf="festivalShopItemData.availableSinceDate && festivalShopItemData.sinceDate">Available since:
+        <span
+                class="text-black">{{festivalShopItemData.sinceDate | ingameDate}}
+        </span>
+    </div>
+
+    <div *ngIf="festivalShopItemData.availableTillDate && festivalShopItemData.tillDate">Available until:
+        <span
+                class="text-black">{{festivalShopItemData.tillDate | ingameDate}}
+        </span>
+    </div>
+
+    <div *ngIf="festivalShopItemData.forbiddenDays.length">Except on days:
+        <span
+                class="text-black">{{festivalShopItemData.forbiddenDays.join(', ')}}
+        </span>
+    </div>
+
+    <div *ngIf="festivalShopItemData.allowedDays.length && festivalShopItemData.allowedDays.length !== 7">Only on days:
+        <span
+                class="text-black">{{festivalShopItemData.allowedDays.join(', ')}}
+        </span>
+    </div>
+    <div *ngIf="festivalShopItemData.forbiddenDays.length">Except on days:
+        <span
+                class="text-black">{{festivalShopItemData.forbiddenDays.join(', ')}}
+        </span>
+    </div>
+
+    <div *ngIf="festivalShopItemData.allowedWeather.length">Only at weather:
+        <span
+                class="text-black">{{festivalShopItemData.allowedWeather.join(', ')}}
+        </span>
+    </div>
+    <div *ngIf="festivalShopItemData.forbiddenWeather.length">Except at weather:
+        <span
+                class="text-black">{{festivalShopItemData.forbiddenWeather.join(', ')}}
+        </span>
+    </div>
+
+
+    <div *ngIf="festivalShopItemData.allowedSeasons.length && festivalShopItemData.allowedSeasons.length !== 4">Only at
+        seasons:
+        <span
+                class="text-black">{{festivalShopItemData.allowedSeasons.join(', ')}}
+        </span>
+    </div>
+    <div *ngIf="festivalShopItemData.forbiddenSeasons.length">Except at seasons:
+        <span
+                class="text-black">{{festivalShopItemData.forbiddenSeasons.join(', ')}}
+        </span>
+    </div>
+
+    <div *ngIf="festivalShopItemData.effects && festivalShopItemData.effects.length" class="my-2">Effects when bought:
+        <div class="flex flex-col text-black">
+            <app-effect *ngFor="let effect of festivalShopItemData.effects" [effect]="effect"/>
+        </div>
+    </div>
+
+    <div *ngIf="festivalShopItemData.requirements && festivalShopItemData.requirements.requirements.length"
+         class="my-2">
+        <ng-container *ngIf="festivalShopItemData.requirements.requirements.length > 1">
+            Unlock requirements ({{festivalShopItemData.requirements.type === 'And' ? 'all' : 'any'}} of them):
+        </ng-container>
+        <ng-container *ngIf="festivalShopItemData.requirements.requirements.length < 2">
+            Unlock requirement:
+        </ng-container>
+
+
+        <div class="flex flex-col  text-black">
+            <app-requirements *ngFor="let requirement of festivalShopItemData.requirements.requirements"
+                              [requirement]="requirement"/>
+        </div>
+    </div>
+
+
+</app-base-item-card>

@@ -55,4 +55,14 @@ export enum UiIcon {
     NEUTRAL = 'T_Icon_Expression',
     DISLIKE = 'T_Icon_Dislike',
     HATE = 'T_Icon_Hate',
+
+    // Festivals
+    ANIMAL_DAY = 'T_Icon_AnimalDay',
+    CHERRY_BLOSSOM = 'T_Icon_CherryBlossom',
+    OCEAN_CLEAN_UP = 'T_Icon_Cleanup',
+    EARTH = 'T_Icon_Earth',
+    MOONCAKE = 'T_Icon_Mooncake',
+    NEW_YEAR = 'T_Icon_NewYear',
+    SPOOKY = 'T_Icon_Spooky',
+    WINTER_FAIR = 'T_Icon_WinterFair'
 }

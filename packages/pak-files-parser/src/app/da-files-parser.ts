@@ -224,7 +224,7 @@ export class DaFilesParser {
                     }
                     case "C_UnlockCraftingRecipeEffect": {
 
-                        const item = DaFilesParser.ItemMap.get(foundEffect.Properties.recipe.RowName)
+                        const item = DaFilesParser.ItemMap.get(foundEffect.Properties.recipe.RowName.toLowerCase())
 
                         if (!item) return;
 

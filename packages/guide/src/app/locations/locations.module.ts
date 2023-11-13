@@ -34,6 +34,11 @@ import { BosComponent } from './components/shops/bos/bos.component';
 import { BensCaravanComponent } from './components/shops/bens-caravan/bens-caravan.component';
 import { SocketAndPanComponent } from './components/shops/socket-and-pan/socket-and-pan.component';
 import { AnimalDetailsComponent } from './components/animal-details/animal-details.component';
+import { GenericFestivalComponent } from './components/generic-festival/generic-festival.component';
+import { GenericShopComponent } from './components/shops/generic-shop/generic-shop.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { FestivalShopItemDetailsComponent } from './components/festival-shop-item-details/festival-shop-item-details.component';
+import { FestivalShopItemTableComponent } from './components/tables/festival-shop-item-table/festival-shop-item-table.component';
 
 @NgModule({
     declarations: [
@@ -64,6 +69,10 @@ import { AnimalDetailsComponent } from './components/animal-details/animal-detai
         BensCaravanComponent,
         SocketAndPanComponent,
         AnimalDetailsComponent,
+        GenericFestivalComponent,
+        GenericShopComponent,
+        FestivalShopItemDetailsComponent,
+        FestivalShopItemTableComponent,
     ],
     imports: [
         CommonModule,
@@ -75,12 +84,14 @@ import { AnimalDetailsComponent } from './components/animal-details/animal-detai
         MatSortModule,
         CraftingModule,
         MatTooltipModule,
+        MatProgressSpinnerModule,
     ],
     exports: [
         OfferingsTableComponent,
         ShopItemDataTableComponent,
         ShopItemProcessTableComponent,
         ItemUpgradeTableComponent,
+        FestivalShopItemTableComponent,
     ],
 })
 export class LocationsModule {}
