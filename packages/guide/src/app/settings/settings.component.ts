@@ -5,11 +5,16 @@ import { ToDoService } from "../core/services/to-do.service";
 import { BETA_CODE } from "../core/injection-tokens/beta-code.injection-token";
 import { UiIcon } from "../shared/enums/ui-icon.enum";
 import { AvailableLanguage, AvailableLanguageDisplayName, AvailableLanguages } from "@ci/data-types";
+import { OfferingChecklistService } from "../core/services/checklists/offering-checklist.service";
+import { CookingRecipesChecklistService } from "../core/services/checklists/cooking-recipes-checklist.service";
+import { MuseumChecklistService } from "../core/services/checklists/museum-checklist.service";
 
 type SettingsFormGroup = {
     useBeta: FormControl<boolean>;
     resetLiveToDo: FormControl<boolean>;
     resetBetaToDo: FormControl<boolean>;
+    resetLiveChecklists: FormControl<boolean>;
+    resetBetaChecklists: FormControl<boolean>;
     language: FormControl<AvailableLanguage>
 };
 
@@ -27,7 +32,9 @@ export class SettingsComponent {
     protected availableLanguageDisplayName = AvailableLanguageDisplayName;
 
     protected readonly BETA_CODE = inject(BETA_CODE, {optional: true});
-
+    private readonly _checklistOfferings = inject(OfferingChecklistService)
+    private readonly _checklistCooking = inject(CookingRecipesChecklistService)
+    private readonly _checklistMuseum = inject(MuseumChecklistService)
 
     constructor(
         private readonly _settingsService: SettingsService,
@@ -36,6 +43,8 @@ export class SettingsComponent {
             useBeta: new FormControl<boolean>(false, {nonNullable: true}),
             resetLiveToDo: new FormControl<boolean>(false, {nonNullable: true}),
             resetBetaToDo: new FormControl<boolean>(false, {nonNullable: true}),
+            resetLiveChecklists: new FormControl<boolean>(false, {nonNullable: true}),
+            resetBetaChecklists: new FormControl<boolean>(false, {nonNullable: true}),
             language: new FormControl<AvailableLanguage>('en', {nonNullable: true}),
         });
 
@@ -56,6 +65,18 @@ export class SettingsComponent {
     saveSettings(): void {
         const settings = {...this.settingsForm.value};
 
+        if (settings.resetLiveChecklists) {
+            this._checklistMuseum.resetLiveChecklist()
+            this._checklistOfferings.resetLiveChecklist()
+            this._checklistCooking.resetLiveChecklist()
+        }
+
+        if (settings.resetBetaChecklists) {
+            this._checklistMuseum.resetBetaChecklist()
+            this._checklistOfferings.resetBetaChecklist()
+            this._checklistCooking.resetBetaChecklist()
+        }
+
         if (settings.resetLiveToDo) {
             this._toDo.resetLiveToDo()
         }
@@ -66,6 +87,8 @@ export class SettingsComponent {
 
         delete settings.resetBetaToDo;
         delete settings.resetLiveToDo;
+        delete settings.resetBetaChecklists;
+        delete settings.resetLiveChecklists;
 
         this._settingsService.saveSettings(settings);
 
