@@ -15,7 +15,8 @@ export const ShopNames = [
     'bos',
     'socket-and-pan',
     'coffee',
-    'white-flamingo'
+    'white-flamingo',
+    'tavern'
 ] as const;
 
 export type ShopName = typeof ShopNames[number];
@@ -34,7 +35,7 @@ export const ShopDisplayNames = {
     'bens-caravan': 'Bens Caravan',
     'bos': 'Band of Smiles',
     'socket-and-pan': 'Socket & Pan',
-
+    'tavern': 'Fishensips',
     'coffee': 'Raj\'s Coffee Corner',
     'white-flamingo': 'White Flamingo'
 } as const
@@ -56,6 +57,7 @@ export const ShopIcons = {
     'bos': UiIcon.BESTIARY,
     'socket-and-pan': UiIcon.COOKING,
     'coffee': UiIcon.COFFEE,
-    'white-flamingo': UiIcon.CLOTHING_STORE
+    'white-flamingo': UiIcon.CLOTHING_STORE,
+    'tavern': UiIcon.TAVERN
 } as const
 

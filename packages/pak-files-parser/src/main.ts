@@ -369,6 +369,11 @@ AvailableLanguages.forEach(lang => {
                     daFiles: []
                 })
             },
+            'tavern-shop-items': {
+                generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_TavernShop.json').generate({
+                    daFiles: []
+                })
+            },
 
             ...betaGenerators,
             ...liveGenerators,

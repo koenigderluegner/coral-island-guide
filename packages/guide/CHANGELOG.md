@@ -10,7 +10,8 @@
 - Added separator to locations and sorted shops alphabetically
 - Added new type of generic cooking ingredients
 - Added all known festival shops to locations
-- Added Raj's Coffee Corner and White Flamingo to shops
+- Added Raj's Coffee Corner, Fishensips and White Flamingo to shops
+    - Additional info like open hours will be added later
 - Added settings to delete checklists
 
 #### Changed

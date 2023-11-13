@@ -42,6 +42,7 @@ import { FestivalShopItemTableComponent } from './components/tables/festival-sho
 import { CoffeeComponent } from './components/shops/coffee/coffee.component';
 import { WhiteFlamingoComponent } from './components/shops/white-flamingo/white-flamingo.component';
 import { AnimalMoodTableComponent } from './components/tables/animal-mood-table/animal-mood-table.component';
+import { TavernComponent } from "./components/shops/tavern/tavern.component";
 
 @NgModule({
     declarations: [
@@ -79,6 +80,7 @@ import { AnimalMoodTableComponent } from './components/tables/animal-mood-table/
         CoffeeComponent,
         WhiteFlamingoComponent,
         AnimalMoodTableComponent,
+        TavernComponent,
     ],
     imports: [
         CommonModule,

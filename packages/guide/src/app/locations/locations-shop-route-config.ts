@@ -15,6 +15,7 @@ import { BensCaravanComponent } from "./components/shops/bens-caravan/bens-carav
 import { SocketAndPanComponent } from "./components/shops/socket-and-pan/socket-and-pan.component";
 import { WhiteFlamingoComponent } from "./components/shops/white-flamingo/white-flamingo.component";
 import { CoffeeComponent } from "./components/shops/coffee/coffee.component";
+import { TavernComponent } from "./components/shops/tavern/tavern.component";
 
 export const shopRouteConfig: { name: ShopName, component: Type<any>, betaOnly?: true }[] = [
     {
@@ -71,6 +72,10 @@ export const shopRouteConfig: { name: ShopName, component: Type<any>, betaOnly?:
     {
         name: 'white-flamingo',
         component: WhiteFlamingoComponent,
+    },
+    {
+        name: 'tavern',
+        component: TavernComponent,
     },
     {
         name: 'coffee',
