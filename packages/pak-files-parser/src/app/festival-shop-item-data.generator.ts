@@ -10,10 +10,6 @@ export class FestivalShopItemDataGenerator extends ShopItemDataGenerator<RawFest
     override handleEntry(itemKey: string, dbItem: RawFestivalShopItemData): FestivalShopItemData | undefined {
 
         const shopEntry = super.handleEntry(itemKey, dbItem)
-        if (itemKey.toLowerCase().includes('scare')) {
-            console.log(shopEntry);
-            console.log((itemKey))
-        }
         if (!shopEntry) return undefined;
         return {
             festivalSetting: dbItem.festivalSetting,
@@ -23,11 +19,10 @@ export class FestivalShopItemDataGenerator extends ShopItemDataGenerator<RawFest
 
     override generate(options?: GeneratorOptions): Map<string, FestivalShopItemData> {
         this.options = options;
-        console.log(options);
+
         if (options && options.daFiles) {
             this.getEffectsAndRequirements(options.daFiles)
-            console.log(this.effectMaps)
-        }
+               }
 
 
         const map: Map<string, FestivalShopItemData> = new Map<string, FestivalShopItemData>();
