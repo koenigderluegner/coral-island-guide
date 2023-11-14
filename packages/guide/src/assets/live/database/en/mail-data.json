@@ -58,7 +58,7 @@
     "key": "clothingStoreInvitation",
     "sender": "<NPCName>Antonio</>",
     "title": "Fulfill your fashion needs!",
-    "content": "White Flamingo boutique will be opening an outdoor shop in the heart of Starlet Town in a few days!\nLet us help you find your next outfit.",
+    "content": "White Flamingo will be opening an indoor boutique the heart of Starlet Town in a few days!\r\n\r\nLet us help you find your next outfit.",
     "isImportant": true,
     "tags": [],
     "mailType": null,
@@ -299,7 +299,7 @@
       {
         "type": "SetQuestActive",
         "meta": {
-          "questId": "sq016"
+          "questId": "sq016-v2"
         }
       }
     ]
@@ -495,9 +495,9 @@
   },
   {
     "key": "InventoryFullTemplate",
-    "sender": "<NPCName>Developers</>",
-    "title": "Inventory is full",
-    "content": "You're receiving this mail because your inventory was full earlier.",
+    "sender": "<NPCName>Mayor Connor</>",
+    "title": "Oops, Your Inventory Was Full!",
+    "content": "It looks like your inventory was full earlier.",
     "isImportant": false,
     "tags": [],
     "mailType": "Gift",
@@ -908,8 +908,8 @@
   {
     "key": "FaintTimeLate",
     "sender": "<NPCName>Sunny</>",
-    "title": "Faint By Time",
-    "content": "You passed out last night lying face down. Thought it was a dead body. Scared the heck out of me!\n\nI found you pretty late, hope you weren’t staying up past midnight. Not good for ya. I had Yuri carry you home and make sure you’re okay. Your medical bill should be attached.",
+    "title": "Take Care of Yourself!",
+    "content": "Last night, I spotted you lying face down and got pretty worried! It was dark out, and I thought something serious had happened. Anyway, don't stay up past midnight; it's not good for your health. I asked Yuri to check on you and ensure you're okay. The medical bill is attached.",
     "isImportant": false,
     "tags": [
       "mail.type.faint"
@@ -921,8 +921,8 @@
   {
     "key": "FaintStamina",
     "sender": "<NPCName>Dr. Yuri</>",
-    "title": "Faint By Stamina",
-    "content": "You passed out last night from exhaustion. Attached is your medical bill. Please don't overwork yourself. Remember to take a break and never miss a meal. I hope you feel better!",
+    "title": "Take Care of Yourself!",
+    "content": "You passed out last night due to exhaustion. Please don't push yourself too hard. You've got to remember to take breaks and never skip a meal. Here's the medical bill. I hope you start feeling better soon.",
     "isImportant": true,
     "tags": [
       "mail.type.faint"
@@ -992,9 +992,9 @@
         "type": "UnlockCookingRecipe",
         "meta": {
           "item": {
-            "id": "item_80074",
-            "displayName": "Minced jackfruit pie",
-            "iconName": "Minced_Jackfruit_Pie_Sprite"
+            "id": "item_80047",
+            "displayName": "Jackfruit casserole",
+            "iconName": "Jackfruit_casserole_Sprite"
           }
         }
       }
@@ -1101,7 +1101,19 @@
     "tags": [],
     "mailType": "Gift",
     "greetCloseMessage": "Good luck,",
-    "greetOpenMessage": "Hey, <PlayerName>$player</>,"
+    "greetOpenMessage": "Hey, <PlayerName>$player</>,",
+    "effects": [
+      {
+        "type": "UnlockCookingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_80023",
+            "displayName": "Hawaiian pizza",
+            "iconName": "Hawaiian_Pizza_Sprite"
+          }
+        }
+      }
+    ]
   },
   {
     "key": "EmilyHeart4MailRecipe",
@@ -1112,7 +1124,19 @@
     "tags": [],
     "mailType": "Gift",
     "greetCloseMessage": "Take care,",
-    "greetOpenMessage": "Dearest,"
+    "greetOpenMessage": "Dearest,",
+    "effects": [
+      {
+        "type": "UnlockCookingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_80024",
+            "displayName": "Assorted grilled platter",
+            "iconName": "Assorted_Grilled_Platter_Sprite"
+          }
+        }
+      }
+    ]
   },
   {
     "key": "EmmaHeart2MailRecipe",
@@ -1169,7 +1193,19 @@
     "tags": [],
     "mailType": "Gift",
     "greetCloseMessage": "Your friend, ",
-    "greetOpenMessage": "<PlayerName>$player</>!"
+    "greetOpenMessage": "<PlayerName>$player</>!",
+    "effects": [
+      {
+        "type": "UnlockCookingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_80021",
+            "displayName": "Pepper and mushroom flatbread",
+            "iconName": "Pepper_and_Mushroom_Flatbread_Sprite"
+          }
+        }
+      }
+    ]
   },
   {
     "key": "EvaHeart2MailRecipe",
@@ -1490,7 +1526,19 @@
     "tags": [],
     "mailType": "Gift",
     "greetCloseMessage": null,
-    "greetOpenMessage": "<PlayerName>$Player</>,"
+    "greetOpenMessage": "<PlayerName>$Player</>,",
+    "effects": [
+      {
+        "type": "UnlockCookingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_80040",
+            "displayName": "Fried rice",
+            "iconName": "Fried_Rice_Sprite"
+          }
+        }
+      }
+    ]
   },
   {
     "key": "KennyHeart5MailRecipe",
@@ -1593,7 +1641,19 @@
     "tags": [],
     "mailType": "Gift",
     "greetCloseMessage": "Good luck,",
-    "greetOpenMessage": "Hiiiii there!"
+    "greetOpenMessage": "Hiiiii there!",
+    "effects": [
+      {
+        "type": "UnlockCookingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_80074",
+            "displayName": "Minced jackfruit pie",
+            "iconName": "Minced_Jackfruit_Pie_Sprite"
+          }
+        }
+      }
+    ]
   },
   {
     "key": "AnneHeart4MailRecipe",
@@ -1604,13 +1664,25 @@
     "tags": [],
     "mailType": "Gift",
     "greetCloseMessage": "Stay healthy, <PlayerName>$player</>,",
-    "greetOpenMessage": "Greetings!"
+    "greetOpenMessage": "Greetings!",
+    "effects": [
+      {
+        "type": "UnlockCookingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_41030",
+            "displayName": "Hummus",
+            "iconName": "Hummus_Sprite"
+          }
+        }
+      }
+    ]
   },
   {
     "key": "ItemMailTemplate",
-    "sender": "<NPCName>Developers</>",
-    "title": "Gift Item",
-    "content": "Here is a gift for you.",
+    "sender": "<NPCName>Mayor Connor</>",
+    "title": "A Little Something for You",
+    "content": "I found something I thought you might like. Consider it a little gift from me to you.",
     "isImportant": true,
     "tags": [],
     "mailType": "Gift",
@@ -1879,7 +1951,7 @@
           "item": {
             "id": "item_65013",
             "displayName": "Sprinkler I",
-            "iconName": "Sprinkler_1"
+            "iconName": "Sprinkler_I_Sprite"
           },
           "isQuestReward": true
         }
@@ -1950,7 +2022,19 @@
     "tags": [],
     "mailType": "Gift",
     "greetCloseMessage": "Sincerely,",
-    "greetOpenMessage": "<PlayerName>$player</>,"
+    "greetOpenMessage": "<PlayerName>$player</>,",
+    "effects": [
+      {
+        "type": "UnlockCookingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_80042",
+            "displayName": "Spring frittata",
+            "iconName": "Spring_Frittata_Sprite"
+          }
+        }
+      }
+    ]
   },
   {
     "key": "LukeDuckornsHeart2MailRecipe",
@@ -1961,7 +2045,19 @@
     "tags": [],
     "mailType": "Gift",
     "greetCloseMessage": "Please enjoy,",
-    "greetOpenMessage": "My friend <PlayerName>$player</>,"
+    "greetOpenMessage": "My friend <PlayerName>$player</>,",
+    "effects": [
+      {
+        "type": "UnlockCookingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_80027",
+            "displayName": "Butter croissant",
+            "iconName": "Butter_Croissant_Sprite"
+          }
+        }
+      }
+    ]
   },
   {
     "key": "MacyHeart3MailRecipe",
@@ -1972,7 +2068,19 @@
     "tags": [],
     "mailType": null,
     "greetCloseMessage": null,
-    "greetOpenMessage": "HEY, <PlayerName>$PLAYER</>,"
+    "greetOpenMessage": "HEY, <PlayerName>$PLAYER</>,",
+    "effects": [
+      {
+        "type": "UnlockCookingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_41033",
+            "displayName": "Guacamole",
+            "iconName": "Guacamole_Sprite"
+          }
+        }
+      }
+    ]
   },
   {
     "key": "MillieHeart5MailRecipe",
@@ -1983,7 +2091,19 @@
     "tags": [],
     "mailType": null,
     "greetCloseMessage": "Best,",
-    "greetOpenMessage": "Dear <PlayerName>$player</>, our brilliant cockatoo,"
+    "greetOpenMessage": "Dear <PlayerName>$player</>, our brilliant cockatoo,",
+    "effects": [
+      {
+        "type": "UnlockCookingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_80016",
+            "displayName": "Veggie ramen",
+            "iconName": "Veggie_Ramen_Sprite"
+          }
+        }
+      }
+    ]
   },
   {
     "key": "NinaHeart6MailRecipe",
@@ -1994,7 +2114,19 @@
     "tags": [],
     "mailType": "Gift",
     "greetCloseMessage": "xoxo,",
-    "greetOpenMessage": "Darling <PlayerName>$player</>,"
+    "greetOpenMessage": "Darling <PlayerName>$player</>,",
+    "effects": [
+      {
+        "type": "UnlockCookingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_80034",
+            "displayName": "Eggplant lasagna",
+            "iconName": "Eggplant_Lasagna_Sprite"
+          }
+        }
+      }
+    ]
   },
   {
     "key": "NoahHeart2MailRecipe",
@@ -2005,7 +2137,19 @@
     "tags": [],
     "mailType": null,
     "greetCloseMessage": "Cheers,",
-    "greetOpenMessage": "Dear <PlayerName>$player</>,"
+    "greetOpenMessage": "Dear <PlayerName>$player</>,",
+    "effects": [
+      {
+        "type": "UnlockCookingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_80029",
+            "displayName": "Clam chowder",
+            "iconName": "Clam_Chowder_Sprite"
+          }
+        }
+      }
+    ]
   },
   {
     "key": "OliverHeart4MailRecipe",
@@ -2016,7 +2160,19 @@
     "tags": [],
     "mailType": "Gift",
     "greetCloseMessage": null,
-    "greetOpenMessage": "Hello, <PlayerName>$honorifics $player</>,"
+    "greetOpenMessage": "Hello, <PlayerName>$honorifics $player</>,",
+    "effects": [
+      {
+        "type": "UnlockCookingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_80006",
+            "displayName": "Basil pesto pasta",
+            "iconName": "Basil_Pesto_Pasta_Sprite"
+          }
+        }
+      }
+    ]
   },
   {
     "key": "PabloSanchezHeart5MailRecipe",
@@ -2027,7 +2183,19 @@
     "tags": [],
     "mailType": null,
     "greetCloseMessage": null,
-    "greetOpenMessage": "<PlayerName>$player</>,"
+    "greetOpenMessage": "<PlayerName>$player</>,",
+    "effects": [
+      {
+        "type": "UnlockCookingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_80052",
+            "displayName": "Sweet potato poutine",
+            "iconName": "Sweet_Potato_Poutine_Sprite"
+          }
+        }
+      }
+    ]
   },
   {
     "key": "RafaelSanchezHeart1MailRecipe",
@@ -2038,7 +2206,19 @@
     "tags": [],
     "mailType": null,
     "greetCloseMessage": null,
-    "greetOpenMessage": "<PlayerName>$player</>,"
+    "greetOpenMessage": "<PlayerName>$player</>,",
+    "effects": [
+      {
+        "type": "UnlockCookingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_80009",
+            "displayName": "Sashimi",
+            "iconName": "Sashimi_Sprite"
+          }
+        }
+      }
+    ]
   },
   {
     "key": "JeffSmith_Challenge_3",
@@ -2184,7 +2364,7 @@
     "key": "marriageStarterMail",
     "sender": "Blacksmith",
     "title": "Marriage life",
-    "content": "Hey there, <PlayerName>$player,\r\n\r\nSeems like you're making some really special connections.\r\n\r\nIf things are getting serious and you're considering marriage, we also have an islandtradition for that. You'll want to propose to your special someone with a <items>Diamond Ring</>.\r\n\r\nDoes this sounds like you? If so, drop by our shop and grab one!",
+    "content": "Hey there, <PlayerName>$player</>,\r\n\r\nSeems like you're making some really special connections.\r\n\r\nIf things are getting serious and you're considering marriage, we also have an islandtradition for that. You'll want to propose to your special someone with a <items>Diamond Ring</>.\r\n\r\nDoes this sounds like you? If so, drop by our shop and grab one!",
     "isImportant": false,
     "tags": [],
     "mailType": null,
@@ -2344,7 +2524,7 @@
     "key": "winter_fair_reminder",
     "sender": "<NPCName>Mayor Connor</>",
     "title": "Winter Fair Begins Tomorrow!",
-    "content": "The Winter Fair starts tomorrow and runs for three days, from Winter 21–24. Join us at the beach from 1 pm until late. There will be shops, games, and the best Winter festivities.",
+    "content": "The Winter Fair starts tomorrow and runs for three days, from Winter 17–21. Join us at the beach from 5 pm until late. There will be shops, games, and the best Winter festivities.",
     "isImportant": false,
     "tags": [],
     "mailType": null,
@@ -2364,9 +2544,9 @@
   },
   {
     "key": "onlineshop",
-    "sender": "Online Shop Delivery",
-    "title": "Your item has been delivered",
-    "content": "The item you order from online shop has arrived.",
+    "sender": "<NPCName>Mayor Connor</>",
+    "title": "Your Item Has Arrived",
+    "content": "Good news! Your online shop order is here.",
     "isImportant": false,
     "tags": [],
     "mailType": "OnlineShop",
@@ -3056,7 +3236,7 @@
     "key": "dlc_4",
     "sender": "Stairway Games",
     "title": "Kickstarter Exclusive \"Backer Outfit\"",
-    "content": "We have three things for you today:\r\n\r\n- Backer Pirate Outfit\r\n- Backer Coral Yukata\r\n- Backer Bat Wing\r\n- Backer Butterfly Wing\r\n- Backer Angel Wing\r\n- Backer Crown\r\n\r\nThank you for supporting us and we hope you enjoy this premium backer outfit. ",
+    "content": "We have six things for you today:\r\n\r\n- Backer Pirate Outfit\r\n- Backer Coral Yukata\r\n- Backer Bat Wing\r\n- Backer Butterfly Wing\r\n- Backer Angel Wing\r\n- Backer Crown\r\n\r\nThank you for supporting us and we hope you enjoy this premium backer outfit. ",
     "isImportant": false,
     "tags": [],
     "mailType": "Gift",
@@ -3147,5 +3327,110 @@
     "mailType": null,
     "greetCloseMessage": "See ya,",
     "greetOpenMessage": "Dear <PlayerName>$player</>,"
+  },
+  {
+    "key": "millie_heart10",
+    "sender": "<NPCName>Millie</>-grams",
+    "title": "Sailing at sea",
+    "content": "Would you go on a date with me? Please meet me at beach at noon.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": null,
+    "greetCloseMessage": "With love,",
+    "greetOpenMessage": "Sparkly Sunstone!"
+  },
+  {
+    "key": "nina_heart10",
+    "sender": "<NPCName>Nina</>",
+    "title": "Afternoon Picnic",
+    "content": "Fancy a picnic this afternoon? Let's meet up near Millie's place at 3.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": null,
+    "greetCloseMessage": "xoxo,",
+    "greetOpenMessage": "Darling,"
+  },
+  {
+    "key": "zarah_heart8",
+    "sender": "<NPCName>Zarah</>",
+    "title": "The Treasure",
+    "content": "Meet me in the Community Center. Let’s tell the Mayor together.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": null,
+    "greetCloseMessage": null,
+    "greetOpenMessage": "Hey!"
+  },
+  {
+    "key": "zarah_heart10",
+    "sender": "<NPCName>Zarah</>",
+    "title": "Watch Movies",
+    "content": "I set us up a date at the beach for tonight. Hope you’re free!",
+    "isImportant": true,
+    "tags": [],
+    "mailType": null,
+    "greetCloseMessage": null,
+    "greetOpenMessage": "Dear <PlayerName>$player</>,"
+  },
+  {
+    "key": "dlc_5",
+    "sender": "Stairway Games",
+    "title": "Kickstarter Exclusive \"Mythical Pet\"",
+    "content": "We're thrilled to introduce two mythical pets to the Coral Island world: Dragon and Lembus! \r\nEnclosed is a special transformation kit that holds the power to unlock these mythical companions in-game.\r\n\r\nHere's how it works: \r\n\r\nOnce you have a pet, simply give this item to your regular pet, and witness the enchantment as they magically transform into either a Dragon or a Lembus. And don't forget, if you ever want to revert them to their original form, you can easily remove the outfit.",
+    "isImportant": false,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "Best Regards,",
+    "greetOpenMessage": "Greetings Player,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_10009",
+            "displayName": "Dragon",
+            "iconName": "Dragon_Sprite"
+          },
+          "playAnimationTrigger": true,
+          "isQuestReward": true
+        }
+      },
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_10010",
+            "displayName": "Lembus",
+            "iconName": "Lembus_Sprite"
+          },
+          "playAnimationTrigger": true,
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "connor_heart9",
+    "sender": "<NPCName>Connor</>",
+    "title": "Thank you",
+    "content": "Please accept this sake.\r\n\r\nThank you for your help with packing the other day.\r\n\r\nWe truly gained a personality the day that you decided to move here.",
+    "isImportant": false,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "Cheers,",
+    "greetOpenMessage": "Dear <PlayerName>$player</>,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_41025",
+            "displayName": "Sake",
+            "iconName": "Sake_Sprite"
+          },
+          "isQuestReward": true
+        }
+      }
+    ]
   }
 ]

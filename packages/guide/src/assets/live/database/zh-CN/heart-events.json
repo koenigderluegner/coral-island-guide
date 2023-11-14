@@ -243,6 +243,12 @@
                   "meta": {
                     "level": 5
                   }
+                },
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "aaliyah_8b_helper"
+                  }
                 }
               ]
             }
@@ -298,6 +304,12 @@
                       "season": "Winter",
                       "year": -1
                     }
+                  }
+                },
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "aaliyah_10_helper"
                   }
                 }
               ]
@@ -622,10 +634,10 @@
         "trigger": [
           {
             "id": "anne_2",
-            "location": "Town Upper Area",
+            "location": "Lake Area",
             "canTriggerSameDay": true,
             "cutscene": "HS_Anne_Heart_2",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [],
             "specificDay": [],
             "specificMonth": [],
@@ -655,7 +667,7 @@
             "location": "Zoe Anne Paul House",
             "canTriggerSameDay": false,
             "cutscene": "HS_Anne_Heart_4",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Anne_Heart_2": true
@@ -684,10 +696,10 @@
         "trigger": [
           {
             "id": "anne_6",
-            "location": "Forest Area",
+            "location": "ForestFarm",
             "canTriggerSameDay": false,
             "cutscene": "HS_Anne_Heart_6",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Anne_Heart_4": true
@@ -702,7 +714,7 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 13,
+                "hours": 12,
                 "minutes": 0
               }
             },
@@ -719,7 +731,7 @@
             "location": "Garden Lane Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Anne_Heart_7",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Anne_Heart_6": true
@@ -751,7 +763,7 @@
             "location": "Town Upper Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Anne_Heart_8",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Anne_Heart_7": true
@@ -780,10 +792,10 @@
         "trigger": [
           {
             "id": "anne_10",
-            "location": "ForestMiddle",
+            "location": "Garden Lane Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Anne_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Anne_Heart_8": true
@@ -794,11 +806,11 @@
             "specificWeather": [],
             "time": {
               "fromTime": {
-                "hours": 10,
+                "hours": 12,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 15,
+                "hours": 17,
                 "minutes": 0
               }
             },
@@ -845,7 +857,7 @@
             "location": "Coral Inn",
             "canTriggerSameDay": false,
             "cutscene": "HS_Antonio_Heart_6",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Antonio_Heart_4": true
@@ -853,7 +865,9 @@
             ],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [],
+            "specificWeather": [
+              "Sunny"
+            ],
             "time": {
               "fromTime": {
                 "hours": 8,
@@ -870,6 +884,41 @@
       },
       {
         "npc": "Antonio",
+        "heartLevel": 7,
+        "trigger": [
+          {
+            "id": "antonio_7",
+            "location": "农场",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Antonio_Heart_7",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Antonio_Heart_6": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 6,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 23,
+                "minutes": 59
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Antonio",
         "heartLevel": 8,
         "trigger": [
           {
@@ -877,10 +926,10 @@
             "location": "Local Tavern",
             "canTriggerSameDay": false,
             "cutscene": "HS_Antonio_Heart_8",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
-                "HS_Antonio_Heart_6": true
+                "HS_Antonio_Heart_7": true
               }
             ],
             "specificDay": [],
@@ -892,8 +941,8 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 21,
-                "minutes": 0
+                "hours": 23,
+                "minutes": 59
               }
             },
             "effects": []
@@ -906,10 +955,10 @@
         "trigger": [
           {
             "id": "antonio_10",
-            "location": "None",
+            "location": "WhiteFlamingo",
             "canTriggerSameDay": false,
             "cutscene": "HS_Antonio_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Antonio_Heart_8": true
@@ -920,11 +969,11 @@
             "specificWeather": [],
             "time": {
               "fromTime": {
-                "hours": 0,
+                "hours": 9,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 0,
+                "hours": 20,
                 "minutes": 0
               }
             },
@@ -1464,7 +1513,35 @@
                 "minutes": 59
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "ben_10",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "ben_10_helper"
+                  }
+                },
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       }
@@ -1539,7 +1616,7 @@
             "location": "Beach Pier Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Betty_Heart_7",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Betty_Heart_5": true
@@ -1583,6 +1660,70 @@
             }
           }
         ]
+      },
+      {
+        "npc": "Betty",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "betty_8",
+            "location": "Community Center Library",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Betty_Heart_8",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Betty_Heart_7": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 13,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 18,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Betty",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "betty_10",
+            "location": "Local Tavern",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Betty_Heart_10",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Betty_Heart_8": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 10,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 18,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
       }
     ],
     "bree": [
@@ -1600,7 +1741,8 @@
             "specificDay": [],
             "specificMonth": [],
             "specificWeather": [
-              "Sunny"
+              "Sunny",
+              "Windy"
             ],
             "time": {
               "fromTime": {
@@ -1633,7 +1775,10 @@
             ],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
             "time": {
               "fromTime": {
                 "hours": 10,
@@ -1676,6 +1821,182 @@
               },
               "toTime": {
                 "hours": 18,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Bree",
+        "heartLevel": 6,
+        "trigger": [
+          {
+            "id": "bree_6",
+            "location": "DumpArea",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Bree_Heart_6",
+            "enabled": false,
+            "otherCutscenesState": [
+              {
+                "HS_Bree_Heart_5": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 18,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 21,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Bree",
+        "heartLevel": 7,
+        "trigger": [
+          {
+            "id": "bree_7",
+            "location": "Coral Inn",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Bree_Heart_7",
+            "enabled": false,
+            "otherCutscenesState": [
+              {
+                "HS_Bree_Heart_6": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Bree",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "bree_8",
+            "location": "Caravan Area",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Bree_Heart_8",
+            "enabled": false,
+            "otherCutscenesState": [
+              {
+                "HS_Bree_Heart_7": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 6,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Bree",
+        "heartLevel": 9,
+        "trigger": [
+          {
+            "id": "bree_9",
+            "location": "Beach Shack",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Bree_Heart_9",
+            "enabled": false,
+            "otherCutscenesState": [
+              {
+                "HS_Bree_Heart_8": true
+              }
+            ],
+            "specificDay": [
+              "Monday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 18,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Bree",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "bree_10",
+            "location": "Hillside Manor Vineyard",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Bree_Heart_10",
+            "enabled": false,
+            "otherCutscenesState": [
+              {
+                "HS_Bree_Heart_9": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 8,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 15,
                 "minutes": 0
               }
             },
@@ -1870,6 +2191,12 @@
                       "year": -1
                     }
                   }
+                },
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "chaem_7_helper"
+                  }
                 }
               ]
             }
@@ -1994,8 +2321,7 @@
               "Fall"
             ],
             "specificWeather": [
-              "Sunny",
-              "Windy"
+              "Sunny"
             ],
             "time": {
               "fromTime": {
@@ -2007,7 +2333,19 @@
                 "minutes": 59
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "chaem_10",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "chaem_10_helper"
+                  }
+                }
+              ]
+            }
           }
         ]
       }
@@ -2366,7 +2704,7 @@
           {
             "id": "charles_10b",
             "location": "EmmaDippaHouseOutside",
-            "canTriggerSameDay": false,
+            "canTriggerSameDay": true,
             "cutscene": "HS_Charles_Heart_10B",
             "enabled": true,
             "otherCutscenesState": [
@@ -2432,7 +2770,7 @@
             "location": "SocketElectronicsFurnitureShopFront",
             "canTriggerSameDay": false,
             "cutscene": "HS_Connor_Heart_2",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Connor_Heart_1": true
@@ -2460,13 +2798,13 @@
       },
       {
         "npc": "Connor",
-        "heartLevel": 5,
+        "heartLevel": 3,
         "trigger": [
           {
-            "id": "connor_5",
-            "location": "Local Tavern Front",
+            "id": "connor_3",
+            "location": "Socket Electronics",
             "canTriggerSameDay": false,
-            "cutscene": "HS_Connor_Heart_5",
+            "cutscene": "HS_Connor_Heart_3",
             "enabled": true,
             "otherCutscenesState": [
               {
@@ -2478,11 +2816,11 @@
             "specificWeather": [],
             "time": {
               "fromTime": {
-                "hours": 10,
+                "hours": 9,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 15,
+                "hours": 17,
                 "minutes": 0
               }
             },
@@ -2492,14 +2830,46 @@
       },
       {
         "npc": "Connor",
-        "heartLevel": 7,
+        "heartLevel": 5,
         "trigger": [
           {
-            "id": "connor_7",
-            "location": "Beach Pier Area",
+            "id": "connor_5",
+            "location": "OceanDockPier",
             "canTriggerSameDay": false,
-            "cutscene": "HS_Connor_Heart_7",
-            "enabled": false,
+            "cutscene": "HS_Connor_Heart_5",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Connor_Heart_3": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 14,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 18,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Connor",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "connor_8",
+            "location": "Connor House",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Connor_Heart_8",
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Connor_Heart_5": true
@@ -2510,7 +2880,7 @@
             "specificWeather": [],
             "time": {
               "fromTime": {
-                "hours": 17,
+                "hours": 9,
                 "minutes": 0
               },
               "toTime": {
@@ -2518,29 +2888,41 @@
                 "minutes": 0
               }
             },
-            "effects": [],
-            "requirements": {
-              "key": "connor_7",
-              "type": "And",
-              "requirements": [
-                {
-                  "type": "DateSeasonRange",
-                  "meta": {
-                    "inverted": true,
-                    "from": {
-                      "day": 17,
-                      "season": "Winter",
-                      "year": -1
-                    },
-                    "to": {
-                      "day": 21,
-                      "season": "Winter",
-                      "year": -1
-                    }
-                  }
-                }
-              ]
-            }
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Connor",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "connor_10",
+            "location": "Connor House Creek",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Connor_Heart_10",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Connor_Heart_8": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 11,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 17,
+                "minutes": 0
+              }
+            },
+            "effects": []
           }
         ]
       }
@@ -2594,11 +2976,171 @@
             "specificWeather": [],
             "time": {
               "fromTime": {
-                "hours": 14,
+                "hours": 9,
                 "minutes": 0
               },
               "toTime": {
                 "hours": 17,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Dinda",
+        "heartLevel": 6,
+        "trigger": [
+          {
+            "id": "dinda_6",
+            "location": "Carpenter Store",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Dinda_Heart_6",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Dinda_Heart_4": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 17,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Dinda",
+        "heartLevel": 7,
+        "trigger": [
+          {
+            "id": "dinda_7",
+            "location": "Carpenter Store",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Dinda_Heart_7",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Dinda_Heart_6": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 17,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Dinda",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "dinda_8",
+            "location": "Carpenter Store",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Dinda_Heart_8",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Dinda_Heart_7": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 17,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 20,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Dinda",
+        "heartLevel": 9,
+        "trigger": [
+          {
+            "id": "dinda_9",
+            "location": "ForestMonkeyTree",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Dinda_Heart_9",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Dinda_Heart_8": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 15,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Dinda",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "dinda_10",
+            "location": "Carpenter Yard",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Dinda_Heart_10",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Dinda_Heart_9": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 15,
                 "minutes": 0
               }
             },
@@ -2660,7 +3202,7 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 17,
+                "hours": 20,
                 "minutes": 0
               }
             },
@@ -2692,7 +3234,157 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 17,
+                "hours": 20,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Dippa",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "dippa_8",
+            "location": "Emma Dippa House",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Dippa_Heart_8",
+            "enabled": false,
+            "otherCutscenesState": [
+              {
+                "HS_Dippa_Heart_7": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 20,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Dippa",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "dippa_10",
+            "location": "Emma Dippa House",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Dippa_Heart_10",
+            "enabled": false,
+            "otherCutscenesState": [
+              {
+                "HS_Dippa_Heart_8": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 20,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      }
+    ],
+    "eleanor": [
+      {
+        "npc": "Eleanor",
+        "heartLevel": 4,
+        "trigger": [
+          {
+            "id": "eleanor_4",
+            "location": "Garden Lane Area",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Eleanor_Heart_4",
+            "enabled": false,
+            "otherCutscenesState": [],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 0,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 0,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Eleanor",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "eleanor_8",
+            "location": "Beach Area",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Eleanor_Heart_8",
+            "enabled": false,
+            "otherCutscenesState": [],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 0,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 0,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Eleanor",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "eleanor_10",
+            "location": "Garden Lane Area",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Eleanor_Heart_10",
+            "enabled": false,
+            "otherCutscenesState": [],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 0,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 0,
                 "minutes": 0
               }
             },
@@ -2750,7 +3442,7 @@
             "specificWeather": [],
             "time": {
               "fromTime": {
-                "hours": 11,
+                "hours": 9,
                 "minutes": 0
               },
               "toTime": {
@@ -2803,7 +3495,7 @@
             "location": "Taco Truck Emma Outside",
             "canTriggerSameDay": false,
             "cutscene": "HS_Emma_Heart_6",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Emma_Heart_5": true
@@ -2811,7 +3503,9 @@
             ],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [],
+            "specificWeather": [
+              "Sunny"
+            ],
             "time": {
               "fromTime": {
                 "hours": 11,
@@ -2835,7 +3529,7 @@
             "location": "农场",
             "canTriggerSameDay": false,
             "cutscene": "HS_Emma_Heart_9",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Emma_Heart_6": true
@@ -2843,7 +3537,9 @@
             ],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [],
+            "specificWeather": [
+              "Sunny"
+            ],
             "time": {
               "fromTime": {
                 "hours": 6,
@@ -2867,7 +3563,7 @@
             "location": "Emma Dippa House",
             "canTriggerSameDay": false,
             "cutscene": "HS_Emma_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Emma_Heart_9": true
@@ -2878,11 +3574,11 @@
             "specificWeather": [],
             "time": {
               "fromTime": {
-                "hours": 18,
+                "hours": 17,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 21,
+                "hours": 20,
                 "minutes": 0
               }
             },
@@ -2926,7 +3622,7 @@
         "trigger": [
           {
             "id": "erika_4",
-            "location": "Town Center Area",
+            "location": "Local Tavern Front",
             "canTriggerSameDay": false,
             "cutscene": "HS_Erika_Heart_4",
             "enabled": true,
@@ -2955,7 +3651,7 @@
           {
             "id": "erika_4b",
             "location": "Hillside Manor Vineyard",
-            "canTriggerSameDay": false,
+            "canTriggerSameDay": true,
             "cutscene": "HS_Erika_Heart_4B",
             "enabled": true,
             "otherCutscenesState": [
@@ -2988,10 +3684,10 @@
         "trigger": [
           {
             "id": "erika_8",
-            "location": "Community Center",
+            "location": "Frank Erika House",
             "canTriggerSameDay": false,
             "cutscene": "HS_Erika_Heart_8",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Erika_Heart_4B": true
@@ -2999,9 +3695,33 @@
             ],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [
-              "Sunny"
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 14,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          },
+          {
+            "id": "erika_8b",
+            "location": "Community Center Library",
+            "canTriggerSameDay": true,
+            "cutscene": "HS_Erika_Heart_8B",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Erika_Heart_8": true
+              }
             ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
             "time": {
               "fromTime": {
                 "hours": 11,
@@ -3025,10 +3745,10 @@
             "location": "Frank Erika House",
             "canTriggerSameDay": false,
             "cutscene": "HS_Erika_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
-                "HS_Erika_Heart_8": true
+                "HS_Erika_Heart_8B": true
               }
             ],
             "specificDay": [],
@@ -3040,7 +3760,7 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 20,
+                "hours": 14,
                 "minutes": 0
               }
             },
@@ -3424,7 +4144,7 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 12,
+                "hours": 15,
                 "minutes": 0
               }
             },
@@ -3441,7 +4161,7 @@
             "location": "Local Tavern",
             "canTriggerSameDay": false,
             "cutscene": "HS_Jack_Heart_6",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Jack_Heart_4": true
@@ -3456,7 +4176,7 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 16,
+                "hours": 17,
                 "minutes": 0
               }
             },
@@ -3473,7 +4193,7 @@
             "location": "Ranch Outside",
             "canTriggerSameDay": false,
             "cutscene": "HS_Jack_Heart_7",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Jack_Heart_6": true
@@ -3484,7 +4204,7 @@
             "specificWeather": [],
             "time": {
               "fromTime": {
-                "hours": 8,
+                "hours": 7,
                 "minutes": 0
               },
               "toTime": {
@@ -3492,7 +4212,29 @@
                 "minutes": 0
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "jack_7",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -3505,7 +4247,7 @@
             "location": "Ranch",
             "canTriggerSameDay": false,
             "cutscene": "HS_Jack_Heart_8",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Jack_Heart_7": true
@@ -3537,7 +4279,7 @@
             "location": "Ranch",
             "canTriggerSameDay": false,
             "cutscene": "HS_Jack_Heart_9",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Jack_Heart_8": true
@@ -3556,7 +4298,29 @@
                 "minutes": 0
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "jack_9",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -3569,7 +4333,7 @@
             "location": "Jack Kira Kenny House",
             "canTriggerSameDay": false,
             "cutscene": "HS_Jack_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Jack_Heart_9": true
@@ -3584,7 +4348,7 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 15,
+                "hours": 16,
                 "minutes": 0
               }
             },
@@ -3744,16 +4508,23 @@
                 "HS_Jim_Heart_5": true
               }
             ],
-            "specificDay": [],
+            "specificDay": [
+              "Monday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
             "specificMonth": [],
             "specificWeather": [],
             "time": {
               "fromTime": {
-                "hours": 0,
+                "hours": 9,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 0,
+                "hours": 12,
                 "minutes": 0
               }
             },
@@ -3945,7 +4716,7 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 16,
+                "hours": 17,
                 "minutes": 0
               }
             },
@@ -3965,7 +4736,7 @@
             "enabled": true,
             "otherCutscenesState": [
               {
-                "NoneHS_Joko_Heart_2": true
+                "HS_Joko_Heart_2": true
               }
             ],
             "specificDay": [],
@@ -4011,7 +4782,7 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 14,
+                "hours": 17,
                 "minutes": 0
               }
             },
@@ -4099,7 +4870,7 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 16,
+                "hours": 17,
                 "minutes": 0
               }
             },
@@ -4163,7 +4934,7 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 16,
+                "hours": 17,
                 "minutes": 0
               }
             },
@@ -4417,7 +5188,9 @@
             ],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [],
+            "specificWeather": [
+              "Sunny"
+            ],
             "time": {
               "fromTime": {
                 "hours": 6,
@@ -4443,7 +5216,9 @@
             ],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [],
+            "specificWeather": [
+              "Sunny"
+            ],
             "time": {
               "fromTime": {
                 "hours": 6,
@@ -4724,6 +5499,22 @@
                       "year": -1
                     }
                   }
+                },
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
+                      "year": -1
+                    }
+                  }
                 }
               ]
             }
@@ -4832,13 +5623,13 @@
         "trigger": [
           {
             "id": "leah_10",
-            "location": "Forest Area",
+            "location": "ForestPath",
             "canTriggerSameDay": false,
             "cutscene": "HS_Leah_Heart_10",
             "enabled": true,
             "otherCutscenesState": [
               {
-                "HS_Leah_Heart_7B": true
+                "HS_Leah_Heart_8": true
               }
             ],
             "specificDay": [],
@@ -4860,7 +5651,19 @@
                 "minutes": 0
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "leah_10",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "leah_10_helper"
+                  }
+                }
+              ]
+            }
           }
         ]
       }
@@ -4909,7 +5712,14 @@
                 "HS_Lily_Heart_2": true
               }
             ],
-            "specificDay": [],
+            "specificDay": [
+              "Monday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
             "specificMonth": [],
             "specificWeather": [],
             "time": {
@@ -5115,7 +5925,7 @@
             "enabled": true,
             "otherCutscenesState": [
               {
-                "HS_Lily_Heart_8": true
+                "HS_Lily_Heart_8A": true
               }
             ],
             "specificDay": [],
@@ -5185,7 +5995,7 @@
             "specificWeather": [],
             "time": {
               "fromTime": {
-                "hours": 9,
+                "hours": 16,
                 "minutes": 0
               },
               "toTime": {
@@ -5206,7 +6016,7 @@
             "location": "Lab",
             "canTriggerSameDay": false,
             "cutscene": "HS_Ling_Heart_3",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Ling_Heart_2": true
@@ -5238,7 +6048,7 @@
             "location": "Local Tavern",
             "canTriggerSameDay": false,
             "cutscene": "HS_Ling_Heart_4",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Ling_Heart_3": true
@@ -5270,7 +6080,7 @@
             "location": "Lab",
             "canTriggerSameDay": false,
             "cutscene": "HS_Ling_Heart_6",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Ling_Heart_4": true
@@ -5302,7 +6112,7 @@
             "location": "Leah Ling Randy House Kitchen",
             "canTriggerSameDay": false,
             "cutscene": "HS_Ling_Heart_7",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Ling_Heart_6": true
@@ -5334,7 +6144,7 @@
             "location": "Beach West Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Ling_Heart_8",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Ling_Heart_7": true
@@ -5385,10 +6195,10 @@
         "trigger": [
           {
             "id": "Ling_10",
-            "location": "Leah Ling Randy House Kitchen",
+            "location": "Leah Ling Randy House",
             "canTriggerSameDay": false,
             "cutscene": "HS_Ling_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Ling_Heart_8": true
@@ -5399,11 +6209,11 @@
             "specificWeather": [],
             "time": {
               "fromTime": {
-                "hours": 9,
+                "hours": 8,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 14,
+                "hours": 20,
                 "minutes": 0
               }
             },
@@ -5455,11 +6265,11 @@
             "specificWeather": [],
             "time": {
               "fromTime": {
-                "hours": 11,
+                "hours": 6,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 16,
+                "hours": 17,
                 "minutes": 0
               }
             },
@@ -5482,7 +6292,7 @@
             "time": {
               "fromTime": {
                 "hours": 6,
-                "minutes": 1
+                "minutes": 0
               },
               "toTime": {
                 "hours": 23,
@@ -5794,29 +6604,47 @@
         "trigger": [
           {
             "id": "luke_10",
-            "location": "None",
+            "location": "Lake Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Luke_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
-                "HS_Luke_Heart_7C": true
+                "HS_Luke_Heart_8": true
               }
             ],
             "specificDay": [],
-            "specificMonth": [],
-            "specificWeather": [],
+            "specificMonth": [
+              "Spring",
+              "Summer",
+              "Fall"
+            ],
+            "specificWeather": [
+              "Sunny"
+            ],
             "time": {
               "fromTime": {
-                "hours": 0,
+                "hours": 18,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 0,
+                "hours": 21,
                 "minutes": 0
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "luke_10",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "luke_10_helper"
+                  }
+                }
+              ]
+            }
           }
         ]
       }
@@ -6024,6 +6852,12 @@
                       "year": -1
                     }
                   }
+                },
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "macy_8_helper"
+                  }
                 }
               ]
             }
@@ -6039,7 +6873,7 @@
             "location": "Beach West Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Macy_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Macy_Heart_8": true
@@ -6079,6 +6913,12 @@
                       "season": "Winter",
                       "year": -1
                     }
+                  }
+                },
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "macy_10_helper"
                   }
                 }
               ]
@@ -6255,7 +7095,9 @@
             ],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [],
+            "specificWeather": [
+              "Sunny"
+            ],
             "time": {
               "fromTime": {
                 "hours": 8,
@@ -6279,7 +7121,7 @@
             "location": "Beach Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Mark_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Mark_Heart_8": true
@@ -6323,6 +7165,12 @@
                       "season": "Winter",
                       "year": -1
                     }
+                  }
+                },
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "mark_10_helper"
                   }
                 }
               ]
@@ -6456,7 +7304,29 @@
                 "minutes": 0
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "millie_6",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -6556,25 +7426,31 @@
         "trigger": [
           {
             "id": "millie_10",
-            "location": "Beach Pier Area",
+            "location": "Beach Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Millie_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Millie_Heart_8": true
               }
             ],
             "specificDay": [],
-            "specificMonth": [],
-            "specificWeather": [],
+            "specificMonth": [
+              "Spring",
+              "Summer",
+              "Fall"
+            ],
+            "specificWeather": [
+              "Sunny"
+            ],
             "time": {
               "fromTime": {
-                "hours": 7,
+                "hours": 11,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 15,
+                "hours": 13,
                 "minutes": 0
               }
             },
@@ -6597,6 +7473,12 @@
                       "season": "Winter",
                       "year": -1
                     }
+                  }
+                },
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "millie_10_helper"
                   }
                 }
               ]
@@ -6665,7 +7547,19 @@
                 "minutes": 0
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "nina_5",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "nina_5_helper"
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -6790,7 +7684,69 @@
                 "minutes": 59
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "nina_8",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "nina_8_helper"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "Nina",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "nina_10",
+            "location": "Garden Lane Area",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Nina_Heart_10",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Nina_Heart_8": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [
+              "Spring",
+              "Summer",
+              "Fall"
+            ],
+            "specificWeather": [
+              "Sunny"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 15,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 17,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "nina_10",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "nina_10_helper"
+                  }
+                }
+              ]
+            }
           }
         ]
       }
@@ -7123,7 +8079,7 @@
             "location": "农场",
             "canTriggerSameDay": false,
             "cutscene": "HS_Noah_Heart_9",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Noah_Heart_8": true
@@ -7157,7 +8113,7 @@
             "location": "Local Tavern",
             "canTriggerSameDay": false,
             "cutscene": "HS_Noah_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Noah_Heart_9": true
@@ -7172,11 +8128,23 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 20,
+                "hours": 22,
                 "minutes": 0
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "noah_10",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "noah_10_helper"
+                  }
+                }
+              ]
+            }
           }
         ]
       }
@@ -7377,7 +8345,7 @@
             "location": "Beach Pier Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Pablo_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Pablo_Heart_8": true
@@ -7417,6 +8385,12 @@
                       "season": "Winter",
                       "year": -1
                     }
+                  }
+                },
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "pablo_10_helper"
                   }
                 }
               ]
@@ -7546,7 +8520,29 @@
                 "minutes": 0
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "paul_7",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -7818,7 +8814,7 @@
             "location": "农场",
             "canTriggerSameDay": false,
             "cutscene": "HS_Rafael_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Rafael_Heart_8": true
@@ -7839,8 +8835,8 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 23,
-                "minutes": 59
+                "hours": 11,
+                "minutes": 0
               }
             },
             "effects": [],
@@ -7849,9 +8845,9 @@
               "type": "And",
               "requirements": [
                 {
-                  "type": "TempleLevel",
+                  "type": "QuestActive",
                   "meta": {
-                    "level": 3
+                    "questId": "rafael_10_helper"
                   }
                 }
               ]
@@ -8118,6 +9114,64 @@
             "effects": []
           }
         ]
+      },
+      {
+        "npc": "Raj",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "raj_10a",
+            "location": "农场",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Raj_Heart_10a",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Raj_Heart_8b": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 6,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 23,
+                "minutes": 59
+              }
+            },
+            "effects": []
+          },
+          {
+            "id": "raj_10b",
+            "location": "Local Tavern",
+            "canTriggerSameDay": true,
+            "cutscene": "HS_Raj_Heart_10b",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Raj_Heart_10a": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 18,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 23,
+                "minutes": 59
+              }
+            },
+            "effects": []
+          }
+        ]
       }
     ],
     "sam": [
@@ -8149,7 +9203,28 @@
                 "minutes": 0
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "sam_2",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       }
@@ -8223,7 +9298,7 @@
         "trigger": [
           {
             "id": "scott_5",
-            "location": "GardenLabFront",
+            "location": "Town Center Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Scott_Heart_5",
             "enabled": true,
@@ -8260,7 +9335,7 @@
             "location": "Local Tavern",
             "canTriggerSameDay": false,
             "cutscene": "HS_Scott_Heart_7",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Scott_Heart_5": true
@@ -8279,7 +9354,19 @@
                 "minutes": 59
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "scott_7",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "scott_7_helper"
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -8314,12 +9401,17 @@
                 "minutes": 0
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "scott_8",
+              "type": "And",
+              "requirements": []
+            }
           },
           {
             "id": "scott_8b",
             "location": "Scott Charles House",
-            "canTriggerSameDay": true,
+            "canTriggerSameDay": false,
             "cutscene": "HS_Scott_Heart_8B",
             "enabled": true,
             "otherCutscenesState": [
@@ -8340,7 +9432,19 @@
                 "minutes": 59
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "scott_8b",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "scott_8_helper"
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -8353,7 +9457,7 @@
             "location": "Museum",
             "canTriggerSameDay": false,
             "cutscene": "HS_Scott_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Scott_Heart_8B": true
@@ -8372,33 +9476,19 @@
                 "minutes": 0
               }
             },
-            "effects": []
-          },
-          {
-            "id": "scott_10b",
-            "location": "None",
-            "canTriggerSameDay": false,
-            "cutscene": "HS_Scott_Heart_10B",
-            "enabled": false,
-            "otherCutscenesState": [
-              {
-                "HS_Scott_Heart_10": true
-              }
-            ],
-            "specificDay": [],
-            "specificMonth": [],
-            "specificWeather": [],
-            "time": {
-              "fromTime": {
-                "hours": 0,
-                "minutes": 0
-              },
-              "toTime": {
-                "hours": 0,
-                "minutes": 0
-              }
-            },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "scott_10",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "scott_10b_helper"
+                  }
+                }
+              ]
+            }
           }
         ]
       }
@@ -8453,6 +9543,22 @@
                     "to": {
                       "day": 21,
                       "season": "Winter",
+                      "year": -1
+                    }
+                  }
+                },
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
                       "year": -1
                     }
                   }
@@ -8715,7 +9821,7 @@
             "location": "Alun Alun Square",
             "canTriggerSameDay": false,
             "cutscene": "HS_Suki_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Suki_Heart_8b": true
@@ -9052,12 +10158,20 @@
           {
             "id": "surya_10",
             "location": "Beach Area",
-            "canTriggerSameDay": true,
+            "canTriggerSameDay": false,
             "cutscene": "HS_Surya_Heart_10",
-            "enabled": false,
-            "otherCutscenesState": [],
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Surya_Heart_8": true
+              }
+            ],
             "specificDay": [],
-            "specificMonth": [],
+            "specificMonth": [
+              "Spring",
+              "Summer",
+              "Fall"
+            ],
             "specificWeather": [
               "Sunny"
             ],
@@ -9090,6 +10204,12 @@
                       "season": "Winter",
                       "year": -1
                     }
+                  }
+                },
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "surya_10_helper"
                   }
                 }
               ]
@@ -9157,7 +10277,29 @@
                 "minutes": 0
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "theo_3",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -9245,7 +10387,7 @@
             "location": "Lily Jim Theo House Bonsai",
             "canTriggerSameDay": false,
             "cutscene": "HS_Theo_Heart_6",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Theo_Heart_5": true
@@ -9279,7 +10421,7 @@
             "location": "Lily Jim Theo House Bonsai",
             "canTriggerSameDay": false,
             "cutscene": "HS_Theo_Heart_7",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Theo_Heart_6": true
@@ -9313,7 +10455,7 @@
             "location": "Lily Jim Theo House Bonsai",
             "canTriggerSameDay": false,
             "cutscene": "HS_Theo_Heart_8",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Theo_Heart_7": true
@@ -9355,6 +10497,22 @@
                     "state": "Broken",
                     "customName": "Community Center Piano"
                   }
+                },
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
+                      "year": -1
+                    }
+                  }
                 }
               ]
             }
@@ -9363,8 +10521,8 @@
             "id": "theo_8b",
             "location": "Community Center",
             "canTriggerSameDay": true,
-            "cutscene": "HS_Theo_Heart_8b",
-            "enabled": false,
+            "cutscene": "HS_Theo_Heart_8B",
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Theo_Heart_8": true
@@ -9394,16 +10552,46 @@
           {
             "id": "theo_10a",
             "location": "农场",
-            "canTriggerSameDay": true,
-            "cutscene": "HS_Theo_Heart_10a",
-            "enabled": false,
-            "otherCutscenesState": [],
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Theo_Heart_10A",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Theo_Heart_8B": true
+              }
+            ],
             "specificDay": [],
             "specificMonth": [],
             "specificWeather": [],
             "time": {
               "fromTime": {
                 "hours": 6,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 23,
+                "minutes": 59
+              }
+            },
+            "effects": []
+          },
+          {
+            "id": "theo_10b",
+            "location": "Lily Jim Theo House",
+            "canTriggerSameDay": true,
+            "cutscene": "HS_Theo_Heart_10B",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Theo_Heart_10A": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 18,
                 "minutes": 0
               },
               "toTime": {
@@ -9668,14 +10856,17 @@
             ],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
             "time": {
               "fromTime": {
-                "hours": 9,
+                "hours": 18,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 17,
+                "hours": 22,
                 "minutes": 0
               }
             },
@@ -9700,7 +10891,10 @@
             ],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
             "time": {
               "fromTime": {
                 "hours": 11,
@@ -9752,9 +10946,18 @@
                 "HS_Wakuu_Heart_5": true
               }
             ],
-            "specificDay": [],
+            "specificDay": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
             "specificMonth": [],
-            "specificWeather": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
             "time": {
               "fromTime": {
                 "hours": 9,
@@ -9778,7 +10981,7 @@
             "location": "ObservatoryOutside",
             "canTriggerSameDay": false,
             "cutscene": "HS_Wakuu_Heart_7",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Wakuu_Heart_6": true
@@ -9813,7 +11016,7 @@
             "location": "Beach Pier Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Wakuu_Heart_8",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Wakuu_Heart_7": true
@@ -9821,7 +11024,10 @@
             ],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
             "time": {
               "fromTime": {
                 "hours": 16,
@@ -9867,7 +11073,7 @@
             "location": "Observatory Interior",
             "canTriggerSameDay": false,
             "cutscene": "HS_Wakuu_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Wakuu_Heart_8": true
@@ -9980,7 +11186,28 @@
                 "minutes": 0
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "walter_7",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -10012,7 +11239,28 @@
                 "minutes": 0
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "walter_10",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       }
@@ -10027,9 +11275,16 @@
             "location": "Beach Shack",
             "canTriggerSameDay": false,
             "cutscene": "HS_Wataru_Heart_4",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [],
-            "specificDay": [],
+            "specificDay": [
+              "Monday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
             "specificMonth": [],
             "specificWeather": [],
             "time": {
@@ -10074,10 +11329,10 @@
         "trigger": [
           {
             "id": "wataru_5",
-            "location": "Community Center",
+            "location": "CommunityCenterYoga",
             "canTriggerSameDay": false,
             "cutscene": "HS_Wataru_Heart_5",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Wataru_Heart_4": true
@@ -10114,7 +11369,7 @@
             "location": "农场",
             "canTriggerSameDay": false,
             "cutscene": "HS_Wataru_Heart_7",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Wataru_Heart_5": true
@@ -10122,7 +11377,9 @@
             ],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [],
+            "specificWeather": [
+              "Sunny"
+            ],
             "time": {
               "fromTime": {
                 "hours": 5,
@@ -10146,7 +11403,7 @@
             "location": "Local Tavern",
             "canTriggerSameDay": false,
             "cutscene": "HS_Wataru_Heart_8",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Wataru_Heart_7": true
@@ -10174,14 +11431,117 @@
         "heartLevel": 9,
         "trigger": [
           {
-            "id": "wataru_9",
-            "location": "Local Tavern Front",
+            "id": "wataru_9a",
+            "location": "RajaCoffeeShopArea",
             "canTriggerSameDay": false,
-            "cutscene": "HS_Wataru_Heart_9",
-            "enabled": false,
+            "cutscene": "HS_Wataru_Heart_9a",
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Wataru_Heart_8": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 8,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 18,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          },
+          {
+            "id": "wataru_9b",
+            "location": "Beach Shack",
+            "canTriggerSameDay": true,
+            "cutscene": "HS_Wataru_Heart_9b",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Wataru_Heart_9a": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 18,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "wataru_9b",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 17,
+                      "season": "Winter",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 21,
+                      "season": "Winter",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "wataru_9c",
+            "location": "Coral Inn",
+            "canTriggerSameDay": true,
+            "cutscene": "HS_Wataru_Heart_9c",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Wataru_Heart_9a": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 18,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          },
+          {
+            "id": "wataru_9d",
+            "location": "CommunityCenterYoga",
+            "canTriggerSameDay": true,
+            "cutscene": "HS_Wataru_Heart_9d",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Wataru_Heart_9a": true
               }
             ],
             "specificDay": [],
@@ -10190,6 +11550,38 @@
             "time": {
               "fromTime": {
                 "hours": 8,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 13,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          },
+          {
+            "id": "wataru_9e",
+            "location": "Town Center Area",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Wataru_Heart_9e",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Wataru_Heart_9b": true
+              },
+              {
+                "HS_Wataru_Heart_9c": true
+              },
+              {
+                "HS_Wataru_Heart_9d": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 6,
                 "minutes": 0
               },
               "toTime": {
@@ -10207,13 +11599,13 @@
         "trigger": [
           {
             "id": "wataru_10",
-            "location": "Beach Shack",
+            "location": "Local Tavern",
             "canTriggerSameDay": false,
             "cutscene": "HS_Wataru_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
-                "HS_Wataru_Heart_9": true
+                "HS_Wataru_Heart_9e": true
               }
             ],
             "specificDay": [],
@@ -10221,12 +11613,12 @@
             "specificWeather": [],
             "time": {
               "fromTime": {
-                "hours": 9,
+                "hours": 18,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 17,
-                "minutes": 0
+                "hours": 23,
+                "minutes": 59
               }
             },
             "effects": [],
@@ -10354,7 +11746,19 @@
                 "minutes": 0
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "yuri_4",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "yuri_4_helper"
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -10367,13 +11771,20 @@
             "location": "Clinic",
             "canTriggerSameDay": false,
             "cutscene": "HS_Yuri_Heart_6",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Yuri_Heart_4": true
               }
             ],
-            "specificDay": [],
+            "specificDay": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+            ],
             "specificMonth": [],
             "specificWeather": [],
             "time": {
@@ -10399,7 +11810,7 @@
             "location": "Garden Lane Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Yuri_Heart_7",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Yuri_Heart_6": true
@@ -10424,8 +11835,8 @@
             "id": "yuri_7b",
             "location": "Coral Inn",
             "canTriggerSameDay": true,
-            "cutscene": "HS_Yuri_Heart_7B",
-            "enabled": false,
+            "cutscene": "HS_Yuri_Heart_7b",
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Yuri_Heart_7": true
@@ -10436,7 +11847,7 @@
             "specificWeather": [],
             "time": {
               "fromTime": {
-                "hours": 6,
+                "hours": 10,
                 "minutes": 0
               },
               "toTime": {
@@ -10457,10 +11868,10 @@
             "location": "Town Center Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Yuri_Heart_8",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
-                "HS_Yuri_Heart_7B": true
+                "HS_Yuri_Heart_7b": true
               }
             ],
             "specificDay": [],
@@ -10483,7 +11894,7 @@
             "location": "Beach Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Yuri_Heart_8b-1",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Yuri_Heart_8": true
@@ -10494,11 +11905,11 @@
             "specificWeather": [],
             "time": {
               "fromTime": {
-                "hours": 6,
+                "hours": 17,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 23,
+                "hours": 21,
                 "minutes": 0
               }
             },
@@ -10522,6 +11933,12 @@
                       "year": -1
                     }
                   }
+                },
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "yuri_8_helper"
+                  }
                 }
               ]
             }
@@ -10531,7 +11948,7 @@
             "location": "Millie Yuri House",
             "canTriggerSameDay": false,
             "cutscene": "HS_Yuri_Heart_8b-2",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Yuri_Heart_8b-1": true
@@ -10550,7 +11967,19 @@
                 "minutes": 0
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "yuri_8c",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "yuri_8c_helper"
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -10563,7 +11992,7 @@
             "location": "Lake Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Yuri_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Yuri_Heart_8b-2": true
@@ -10574,41 +12003,60 @@
             "specificWeather": [],
             "time": {
               "fromTime": {
-                "hours": 0,
+                "hours": 6,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 0,
-                "minutes": 0
+                "hours": 14,
+                "minutes": 59
               }
             },
             "effects": []
           },
           {
             "id": "yuri_10b",
-            "location": "Clinic",
+            "location": "ClinicFront",
             "canTriggerSameDay": false,
             "cutscene": "HS_Yuri_Heart_10b",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
-                "HS_Yuri_Heart_8b-2": true
+                "HS_Yuri_Heart_10": true
               }
             ],
-            "specificDay": [],
+            "specificDay": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+            ],
             "specificMonth": [],
             "specificWeather": [],
             "time": {
               "fromTime": {
-                "hours": 0,
+                "hours": 18,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 0,
+                "hours": 22,
                 "minutes": 0
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "yuri_10b",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "yuri_10b_helper"
+                  }
+                }
+              ]
+            }
           }
         ]
       }
@@ -10623,7 +12071,7 @@
             "location": "Mine Area Outside",
             "canTriggerSameDay": true,
             "cutscene": "HS_Zarah_Heart_2",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [],
             "specificDay": [],
             "specificMonth": [],
@@ -10632,7 +12080,7 @@
             ],
             "time": {
               "fromTime": {
-                "hours": 6,
+                "hours": 7,
                 "minutes": 0
               },
               "toTime": {
@@ -10650,10 +12098,10 @@
         "trigger": [
           {
             "id": "zarah_4",
-            "location": "Forest Area",
+            "location": "ForestPath",
             "canTriggerSameDay": false,
             "cutscene": "HS_Zarah_Heart_4",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Zarah_Heart_2": true
@@ -10666,41 +12114,7 @@
             ],
             "time": {
               "fromTime": {
-                "hours": 6,
-                "minutes": 0
-              },
-              "toTime": {
-                "hours": 17,
-                "minutes": 0
-              }
-            },
-            "effects": []
-          }
-        ]
-      },
-      {
-        "npc": "Zarah",
-        "heartLevel": 5,
-        "trigger": [
-          {
-            "id": "zarah_5",
-            "location": "Mine Area Outside",
-            "canTriggerSameDay": false,
-            "cutscene": "HS_Zarah_Heart_5",
-            "enabled": false,
-            "otherCutscenesState": [
-              {
-                "HS_Zarah_Heart_4": true
-              }
-            ],
-            "specificDay": [],
-            "specificMonth": [],
-            "specificWeather": [
-              "Sunny"
-            ],
-            "time": {
-              "fromTime": {
-                "hours": 6,
+                "hours": 7,
                 "minutes": 0
               },
               "toTime": {
@@ -10717,11 +12131,11 @@
         "heartLevel": 6,
         "trigger": [
           {
-            "id": "zarah_6",
-            "location": "Zarah Boat Pier",
+            "id": "zarah_6A",
+            "location": "Mine Area Outside",
             "canTriggerSameDay": false,
-            "cutscene": "HS_Zarah_Heart_6",
-            "enabled": false,
+            "cutscene": "HS_Zarah_Heart_6A",
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Zarah_Heart_4": true
@@ -10734,7 +12148,7 @@
             ],
             "time": {
               "fromTime": {
-                "hours": 6,
+                "hours": 7,
                 "minutes": 0
               },
               "toTime": {
@@ -10743,6 +12157,64 @@
               }
             },
             "effects": []
+          },
+          {
+            "id": "zarah_6B",
+            "location": "Zarah Boat Pier",
+            "canTriggerSameDay": true,
+            "cutscene": "HS_Zarah_Heart_6B",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Zarah_Heart_6A": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 17,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "zarah_6B",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "ItemInInventory",
+                  "meta": {
+                    "item": {
+                      "id": "item_10008",
+                      "displayName": "藏宝图之碎片三",
+                      "iconName": "Treasure_map_third_piece_Sprite"
+                    },
+                    "amount": 1,
+                    "requiredQuality": "Any"
+                  }
+                },
+                {
+                  "type": "ItemInInventory",
+                  "meta": {
+                    "item": {
+                      "id": "item_10007",
+                      "displayName": "藏宝图之碎片二",
+                      "iconName": "Treasure_map_second_piece_Sprite"
+                    },
+                    "amount": 1,
+                    "requiredQuality": "Any"
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -10755,10 +12227,10 @@
             "location": "农场",
             "canTriggerSameDay": false,
             "cutscene": "HS_Zarah_Heart_7",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
-                "HS_Zarah_Heart_4": true
+                "HS_Zarah_Heart_6B": true
               }
             ],
             "specificDay": [],
@@ -10789,20 +12261,18 @@
             "location": "Community Center",
             "canTriggerSameDay": false,
             "cutscene": "HS_Zarah_Heart_8",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
-                "HS_Zarah_Heart_4": true
+                "HS_Zarah_Heart_7": true
               }
             ],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [
-              "Sunny"
-            ],
+            "specificWeather": [],
             "time": {
               "fromTime": {
-                "hours": 6,
+                "hours": 7,
                 "minutes": 0
               },
               "toTime": {
@@ -10810,7 +12280,19 @@
                 "minutes": 59
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "zarah_8",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "zarah_8_helper"
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -10823,10 +12305,10 @@
             "location": "Beach Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Zarah_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
-                "HS_Zarah_Heart_4": true
+                "HS_Zarah_Heart_8": true
               }
             ],
             "specificDay": [],
@@ -10836,7 +12318,7 @@
             ],
             "time": {
               "fromTime": {
-                "hours": 6,
+                "hours": 18,
                 "minutes": 0
               },
               "toTime": {
@@ -10863,6 +12345,12 @@
                       "season": "Winter",
                       "year": -1
                     }
+                  }
+                },
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "zarah_10_helper"
                   }
                 }
               ]

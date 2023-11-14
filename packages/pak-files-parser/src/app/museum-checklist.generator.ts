@@ -31,8 +31,8 @@ export class MuseumChecklistGenerator {
             const itemList = Object.keys(entries.Rows)
                 .map(rowName => entries.Rows[rowName].item.itemID)
                 .map(itemId => this.itemMap.get(itemId))
-                .filter(nonNullable)
                 .map(minifyItem)
+                .filter(nonNullable)
 
             resObject[listName] = itemList;
 

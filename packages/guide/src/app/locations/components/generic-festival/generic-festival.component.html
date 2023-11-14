@@ -1,0 +1,43 @@
+<app-list-detail-container [(openDrawer)]="openDrawer">
+    <ng-container listDetail>
+        <app-festival-shop-item-details *ngIf="selectedEntity" [festivalShopItemData]="selectedEntity"/>
+    </ng-container>
+
+    <div class="px-2 xl:px-[50px] w-full">
+        <ng-container *ngIf="festivalData$ | async as festivalData">
+            <ng-container *ngIf="festivalData !== null && festivalName">
+                <app-card>
+                    <h1 class="mb-4 font-semibold text-3xl text-black flex items-center gap-x-4 ">
+                        <app-ui-icon [uiIcon]="FESTIVAL_ICONS[festivalName]"/>
+                        {{FESTIVAL_DISPLAY_NAMES[festivalName]}}
+                    </h1>
+                </app-card>
+
+                <ng-container *ngIf="festivalData.shops">
+                    <ng-container *ngFor="let shop of festivalData.shops">
+                        <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">{{shop.title}}</h2>
+
+                        <app-data-filter [(showTable)]="showTable"/>
+                        <div *ngIf="!showTable" class="grid gap-4 icon-grid">
+
+                            <app-item-icon (click)="showDetails(shopItem)"
+                                           *ngFor="let shopItem of shop.shop"
+                                           [amount]="shopItem.festivalSetting.hasYearlyLimit ? shopItem.festivalSetting.itemLimitPerYear : undefined"
+                                           [class.selected-icon]="selectedEntity?.item?.id === shopItem.item.id"
+                                           [itemName]="shopItem.item.iconName"
+                                           class="icon-grid-item">
+                            </app-item-icon>
+                        </div>
+                        <app-festival-shop-item-table *ngIf="showTable" [dataSource]="shop.shop"/>
+
+                    </ng-container>
+                </ng-container>
+
+
+            </ng-container>
+            <mat-spinner *ngIf="festivalData === null" class="mx-auto"></mat-spinner>
+        </ng-container>
+
+
+    </div>
+</app-list-detail-container>

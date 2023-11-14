@@ -75,3 +75,8 @@
     <ng-container *ngIf="requirement.meta.comparator === 'MoreEqual'">at least</ng-container>
     a value of {{requirement.meta.value}}
 </ng-container>
+<ng-container *ngIf="requirement.type === 'IsMailRead'">
+    Player has read '<a [queryParams]="{selectedId: requirement.meta.mailId}"
+                        [routerLink]="['/journal', 'notes', 'letters']"
+                        class="underline">{{requirement.meta.title}}</a>'
+</ng-container>

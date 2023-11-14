@@ -50,7 +50,7 @@ export abstract class BaseGenerator<DT, R> {
         return this.requirementMaps.map(map => map.get(itemKey)).filter(nonNullable)[0]
     }
 
-    private getEffectsAndRequirements(daFiles: string[]) {
+    protected getEffectsAndRequirements(daFiles: string[]) {
         const parser = new DaFilesParser();
 
         daFiles.forEach(filePath => {

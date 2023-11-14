@@ -1,5 +1,6 @@
 import { CookingRecipe, Item, MinimalItem } from "@ci/data-types";
 import { minifyItem } from "../util/functions";
+import { nonNullable } from "@ci/util";
 
 export class CookingRecipesChecklistGenerator {
     private assets: Record<string, CookingRecipe[]>;
@@ -18,7 +19,8 @@ export class CookingRecipesChecklistGenerator {
             const entries = this.assets[listName]!;
 
             resObject[listName] = entries.map(entry => entry.item)
-                .map(minifyItem);
+                .map(minifyItem)
+                .filter(nonNullable);
 
         })
 

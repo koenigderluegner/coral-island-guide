@@ -1,5 +1,28 @@
 ## Changelog
 
+### 0.14.0 2023-11-14
+
+#### Added
+
+- Added 1.0 assets and data
+- Added animals to ranch shop
+- Added product size per mood per hearts to ranch as well
+- Added support for korean and brazilian portuguese
+- Added separator to locations and sorted shops alphabetically
+- Added new type of generic cooking ingredients
+- Added all known festival shops to locations
+- Added Raj's Coffee Corner, Fishensips and White Flamingo to shops
+    - Additional info like open hours will be added later
+- Added settings to delete checklists
+
+#### Changed
+
+- Added missing recipes in database, when an item was in the list of "either or" ingredients
+- Reduced height of sidebar items on bigger screens
+- NPC overview is now the entry page for NPC category instead of gifting
+    - Also swapped positions of sub navi entries
+      -Renamed achievements to badges to match in-game
+
 ### 0.13.0 2023-11-01
 
 #### Added

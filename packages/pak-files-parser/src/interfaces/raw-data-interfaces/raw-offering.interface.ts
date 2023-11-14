@@ -1,11 +1,9 @@
 import { SourceString } from "../../types/source-string.type";
+import { AssetPath } from "../../types/asset-path.type";
 
 export interface RawOffering {
     "offeringTitleText": SourceString,
-    "offeringImage": {
-        "ObjectName": string
-        "ObjectPath": string
-    },
+    "offeringImage": AssetPath,
     "requiredItems": [
         {
             "useGenericItem": boolean,

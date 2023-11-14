@@ -1,9 +1,11 @@
 import fs from 'fs';
 import path from 'path';
-import { AvailableLanguage, MinimalItem, MinimalNPC, MinimalTagBasedItem } from '@ci/data-types';
+import { AvailableLanguage, Item, MinimalItem, MinimalNPC, MinimalTagBasedItem } from '@ci/data-types';
 import { config } from "../config";
 import { environment } from "../environments/environment";
 import { EffectMap, RequirementMap } from "../app/da-files-parser";
+import { AssetPath } from "../types/asset-path.type";
+import { ObjectPath } from "../types/object-path.type";
 
 export function getParsedArgs(): Record<string, any> {
     return process.argv
@@ -33,7 +35,7 @@ export function generateJson(fileName: string, jsonContent: any, readable = fals
 
     fs.writeFileSync(
         path.join(databasePath, fileName),
-        JSON.stringify(jsonContent, null, readable ? 2 : undefined),
+        JSON.stringify(jsonContent, null, readable ? 2 : undefined).replace(/\n/g, "\r\n"),
         {
             encoding: 'utf8',
             flag: 'w+',
@@ -66,11 +68,33 @@ export function convertToIconName(objectName: string): string {
     return sanitizedName;
 }
 
-export function AssetPathNameToIcon(assetPathName: string): string {
-    return convertToIconName(assetPathName.split('.').pop() ?? '').replace('.png', '')
+export function AssetPathNameToIcon(assetPathName: string | AssetPath | ObjectPath): string {
+    if (typeof assetPathName === 'string') {
+        return convertToIconName(assetPathName.split('.').pop() ?? '').replace('.png', '')
+    } else if ('ObjectPath' in assetPathName) {
+        return convertToIconName(getReferencedString(assetPathName.ObjectName)).replace('.png', '')
+    }
+
+    return convertToIconName(assetPathName.AssetPathName.split('.').pop() ?? '').replace('.png', '')
+
+
 }
 
-export function minifyItem(item: { id: string, displayName: string, iconName: string | null }): MinimalItem {
+export function minifyItem(item: undefined): undefined ;
+export function minifyItem(item: null): null ;
+export function minifyItem(item: Item | MinimalItem): MinimalItem;
+export function minifyItem(item: {
+    id: string,
+    displayName: string,
+    iconName: string | null
+} | undefined): MinimalItem | undefined;
+export function minifyItem(item: {
+    id: string,
+    displayName: string,
+    iconName: string | null
+} | Item | MinimalItem | null | undefined): MinimalItem | null | undefined {
+    if (!item) return item;
+
     return {
         id: item.id,
         displayName: item.displayName,

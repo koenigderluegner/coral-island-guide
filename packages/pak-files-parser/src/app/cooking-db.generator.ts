@@ -1,13 +1,16 @@
 import { CookingRecipe, Item, MinimalItem, TagBasedItem, UnlockByMastery } from "@ci/data-types";
-import { minifyItem, readAsset } from "../util/functions";
+import { AssetPathNameToIcon, minifyItem, readAsset } from "../util/functions";
 import { CookingIngredients, RawCookingRecipe } from "../interfaces/raw-data-interfaces/raw-cooking-recipe.interface";
 import { getEnumValue, removeQualityFlag } from "@ci/util";
 import { CookingRecipes } from "../types/cooking-recipes.type";
 import { StringTable } from "../util/string-table.class";
+import { Datatable } from "../interfaces/datatable.interface";
+import { RawTagBasedCookingGeneric } from "../interfaces/raw-data-interfaces/raw-tag-based-cooking-generic.interface";
 
 export class CookingDbGenerator {
 
     datatable: CookingRecipes = readAsset('ProjectCoral/Content/ProjectCoral/Data/Cooking/DT_CookingRecipes.json');
+    tagBasedCookingGenerics: Record<string, RawTagBasedCookingGeneric> = readAsset<Datatable<RawTagBasedCookingGeneric>[]>('ProjectCoral/Content/ProjectCoral/Core/Data/DT_TagBasedCookingGeneric.json')[0].Rows;
 
     constructor(
         protected itemMap: Map<string, Item>,
@@ -28,10 +31,17 @@ export class CookingDbGenerator {
         const eitherOrIngredients: CookingRecipe["eitherOrIngredients"] = [];
 
         const genericIngredients = dbItem.genericIngredients.map(genericIngredient => {
-            let foundGenericItem = this.tagBasedItemMap.get(genericIngredient.genericItem.RowName);
+            let foundGenericItem: RawTagBasedCookingGeneric | TagBasedItem | undefined = this.tagBasedCookingGenerics[genericIngredient.genericItem.RowName] ?? this.tagBasedItemMap.get(genericIngredient.genericItem.RowName);
             let genericItem: Omit<TagBasedItem, 'items'> & { items?: MinimalItem[] } | undefined = undefined;
-            if (foundGenericItem) {
-                genericItem = {...foundGenericItem}
+            if ('tagQuery' in foundGenericItem) {
+                genericItem = {
+                    key: genericIngredient.genericItem.RowName,
+                    displayName: StringTable.getString(foundGenericItem.readableText) ?? '',
+                    tags: [],
+                    iconName: AssetPathNameToIcon(foundGenericItem.icon.AssetPathName)
+                }
+            } else if (foundGenericItem) {
+                genericItem = {...foundGenericItem as TagBasedItem}
                 delete genericItem.items
             }
             return {

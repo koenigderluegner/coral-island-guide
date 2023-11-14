@@ -20,6 +20,7 @@ import { HasCookingUtensilRequirement } from "./has-cooking-utensil-requirement.
 import { RawNpcHeartLevelRequirement } from "./npc-heart-level-requirement.type";
 import { RawHealedCoralRequirement } from "./healed-coral-requirement.type";
 import { RawMasteryLevelRequirement } from "./mastery-level-requirement.type";
+import { RawIsMailReadRequirement } from "./is-mail-read.requirement.type";
 
 export type DaRequirements = RawIsAchievementCompletedRequirement
     | RawCountNpcHeartLevelRequirement
@@ -43,3 +44,4 @@ export type DaRequirements = RawIsAchievementCompletedRequirement
     | RawNpcHeartLevelRequirement
     | RawHealedCoralRequirement
     | RawMasteryLevelRequirement
+    | RawIsMailReadRequirement

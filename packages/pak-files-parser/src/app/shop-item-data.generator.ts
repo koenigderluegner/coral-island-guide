@@ -8,16 +8,16 @@ import { StringTable } from "../util/string-table.class";
 import { Logger } from "../util/logger.class";
 
 
-export class ShopItemDataGenerator extends BaseGenerator<RawShopItemData, ShopItemData> {
+export class ShopItemDataGenerator<T extends RawShopItemData = RawShopItemData> extends BaseGenerator<T, ShopItemData> {
 
-    datatable: Datatable<RawShopItemData>[];
+    datatable: Datatable<T>[];
 
     constructor(protected itemMap: Map<string, Item>, protected datatablePath: string) {
         super();
-        this.datatable = readAsset<Datatable<RawShopItemData>[]>(datatablePath);
+        this.datatable = readAsset<Datatable<T>[]>(datatablePath);
     }
 
-    handleEntry(itemKey: string, dbItem: RawShopItemData): ShopItemData | undefined {
+    handleEntry(itemKey: string, dbItem: T): ShopItemData | undefined {
 
 
         const foundItem = this.itemMap.get(dbItem.item.itemID);

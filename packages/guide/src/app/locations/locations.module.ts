@@ -25,7 +25,7 @@ import { MerfolkOracleTailStoreComponent } from './components/shops/merfolk-orac
 import { PetShopComponent } from './components/pet-shop/pet-shop.component';
 import { PetAdoptionDetailsComponent } from './components/pet-adoption-details/pet-adoption-details.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { RanchComponent } from './components/shops/ranch/ranch.component';
+import { RanchComponent } from './components/ranch/ranch.component';
 import { BeachShackComponent } from './components/shops/beach-shack/beach-shack.component';
 import { ConcernedMonkeyComponent } from './components/shops/concerned-monkey/concerned-monkey.component';
 import { MeritShopComponent } from './components/merit-shop/merit-shop.component';
@@ -33,6 +33,16 @@ import { MeritShopDetailsComponent } from './components/merit-shop-details/merit
 import { BosComponent } from './components/shops/bos/bos.component';
 import { BensCaravanComponent } from './components/shops/bens-caravan/bens-caravan.component';
 import { SocketAndPanComponent } from './components/shops/socket-and-pan/socket-and-pan.component';
+import { AnimalDetailsComponent } from './components/animal-details/animal-details.component';
+import { GenericFestivalComponent } from './components/generic-festival/generic-festival.component';
+import { GenericShopComponent } from './components/shops/generic-shop/generic-shop.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { FestivalShopItemDetailsComponent } from './components/festival-shop-item-details/festival-shop-item-details.component';
+import { FestivalShopItemTableComponent } from './components/tables/festival-shop-item-table/festival-shop-item-table.component';
+import { CoffeeComponent } from './components/shops/coffee/coffee.component';
+import { WhiteFlamingoComponent } from './components/shops/white-flamingo/white-flamingo.component';
+import { AnimalMoodTableComponent } from './components/tables/animal-mood-table/animal-mood-table.component';
+import { TavernComponent } from "./components/shops/tavern/tavern.component";
 
 @NgModule({
     declarations: [
@@ -62,6 +72,15 @@ import { SocketAndPanComponent } from './components/shops/socket-and-pan/socket-
         BosComponent,
         BensCaravanComponent,
         SocketAndPanComponent,
+        AnimalDetailsComponent,
+        GenericFestivalComponent,
+        GenericShopComponent,
+        FestivalShopItemDetailsComponent,
+        FestivalShopItemTableComponent,
+        CoffeeComponent,
+        WhiteFlamingoComponent,
+        AnimalMoodTableComponent,
+        TavernComponent,
     ],
     imports: [
         CommonModule,
@@ -73,12 +92,14 @@ import { SocketAndPanComponent } from './components/shops/socket-and-pan/socket-
         MatSortModule,
         CraftingModule,
         MatTooltipModule,
+        MatProgressSpinnerModule,
     ],
     exports: [
         OfferingsTableComponent,
         ShopItemDataTableComponent,
         ShopItemProcessTableComponent,
         ItemUpgradeTableComponent,
+        FestivalShopItemTableComponent,
     ],
 })
 export class LocationsModule {}

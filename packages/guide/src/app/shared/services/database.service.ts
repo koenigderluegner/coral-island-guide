@@ -3,12 +3,16 @@ import { HttpClient } from '@angular/common/http';
 import { combineLatest, map, Observable, of, shareReplay, tap } from 'rxjs';
 import {
     Achievement,
+    AnimalData,
+    AnimalShopData,
     Consumable,
     CookingRecipe,
     CraftingRecipe,
     Critter,
     Crop,
     Enemy,
+    FestivalData,
+    FestivalName,
     Fish,
     FruitPlant,
     FruitTree,
@@ -26,6 +30,7 @@ import {
     OfferingAltar,
     OpeningHours,
     PetShopAdoptions,
+    ProductSizeByMood,
     ShopItemData,
     ShopName,
     TagBasedItem,
@@ -75,6 +80,7 @@ export class DatabaseService {
     private _OFFERINGS: OfferingAltar[] = [];
 
     private _SHOP_ITEMS: Map<string, ShopItemData[]> = new Map<string, ShopItemData[]>();
+    private _FESTIVAL_DATA: Map<string, FestivalData> = new Map<string, FestivalData>();
     private _SHOP_PROCESS_ITEMS: Map<string, ItemProcessShopData[]> = new Map<string, ItemProcessShopData[]>();
     private _OPENING_HOURS: Map<string, Record<string, OpeningHours>> = new Map<string, Record<string, OpeningHours>>();
     private _ITEM_UPGRADE: Map<string, ItemUpgradeData[]> = new Map<string, ItemUpgradeData[]>();
@@ -109,6 +115,9 @@ export class DatabaseService {
     private _BESTIARY$?: Observable<Enemy[]>;
 
     private readonly _settings = inject(SettingsService).getSettings();
+    private _ANIMAL_DATA$?: Observable<AnimalData[]>;
+    private _ANIMAL_MOOD_DATA$?: Observable<ProductSizeByMood[]>;
+    private _ANIMAL_SHOP_DATA$?: Observable<AnimalShopData[]>;
 
     constructor(private readonly _http: HttpClient) {
         const version = this._settings.useBeta ? 'beta' : 'live';
@@ -147,9 +156,21 @@ export class DatabaseService {
             this.fetchShopItemData$("bos"),
             this.fetchShopItemData$("bens-caravan"),
             this.fetchShopItemData$("socket-and-pan"),
+            this.fetchShopItemData$("white-flamingo"),
+            this.fetchShopItemData$("coffee"),
+            this.fetchShopItemData$("tavern"),
             this.fetchItemUpgradeData$("blacksmith"),
+            this.fetchItemUpgradeData$("beach-shack"),
             this.fetchItemUpgradeData$("carpenter"),
             this.fetchItemUpgradeData$("lab"),
+            this.fetchFestivalData$('cherry-blossom'),
+            this.fetchFestivalData$('animal'),
+            this.fetchFestivalData$('beach-clean-up'),
+            this.fetchFestivalData$('harvest'),
+            this.fetchFestivalData$('spooky'),
+            this.fetchFestivalData$('tree-planting'),
+            this.fetchFestivalData$('new-year-eve'),
+            this.fetchFestivalData$('winter-fair'),
             this.fetchMeritExchangeShopData$(),
             this.fetchBestiary$()
         ]);
@@ -196,6 +217,36 @@ export class DatabaseService {
                 );
         }
         return this._BESTIARY$;
+    }
+
+    fetchAnimals$(): Observable<AnimalData[]> {
+        if (!this._ANIMAL_DATA$) {
+            this._ANIMAL_DATA$ = this._http.get<AnimalData[]>(`${this._BASE_PATH}/animal-data.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+        return this._ANIMAL_DATA$;
+    }
+
+    fetchAnimalMoodData$(): Observable<ProductSizeByMood[]> {
+        if (!this._ANIMAL_MOOD_DATA$) {
+            this._ANIMAL_MOOD_DATA$ = this._http.get<ProductSizeByMood[]>(`${this._BASE_PATH}/animal-mood-size.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+        return this._ANIMAL_MOOD_DATA$;
+    }
+
+    fetchAnimalShopData$(): Observable<AnimalShopData[]> {
+        if (!this._ANIMAL_SHOP_DATA$) {
+            this._ANIMAL_SHOP_DATA$ = this._http.get<AnimalShopData[]>(`${this._BASE_PATH}/animal-shop-data.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+        return this._ANIMAL_SHOP_DATA$;
     }
 
     fetchTornPagesData$(): Observable<TornPageData[]> {
@@ -628,6 +679,10 @@ export class DatabaseService {
         return this._SHOP_ITEMS.get(shopName) ?? [];
     }
 
+    getFestivalData(shopName: FestivalName): FestivalData | null {
+        return this._FESTIVAL_DATA.get(shopName) ?? null;
+    }
+
     getItemUpgradeData(shopName: ShopName): ItemUpgradeData[] {
         return this._ITEM_UPGRADE.get(shopName) ?? [];
     }
@@ -645,6 +700,21 @@ export class DatabaseService {
                 );
         } else {
             return of(this._SHOP_ITEMS.get(shopName)!)
+        }
+
+    }
+
+
+    fetchFestivalData$(festivalName: FestivalName): Observable<FestivalData> {
+        if (!this._FESTIVAL_DATA.has(festivalName)) {
+            return this._http.get<FestivalData[]>(`${this._BASE_PATH}/${festivalName}-festival-data.json`)
+                .pipe(
+                    map(data => data[0]),
+                    tap(items => this._FESTIVAL_DATA.set(festivalName, items)),
+                    shareReplay(1)
+                );
+        } else {
+            return of(this._FESTIVAL_DATA.get(festivalName)!)
         }
 
     }

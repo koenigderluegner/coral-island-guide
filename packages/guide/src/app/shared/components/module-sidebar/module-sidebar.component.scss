@@ -9,8 +9,16 @@
 
   padding-right: max(8px, env(safe-area-inset-right));
 
-  .hide-menu .app-module-sidebar-list-item:not(.active):not(.custom-active) {
+  .hide-menu .app-module-sidebar-list-item:not(.active):not(.custom-active),
+  .hide-menu .module-sidebar-list-divider {
     display: none;
+  }
+}
+
+.module-sidebar-list-divider {
+  @screen xl {
+    display: block !important;
+
   }
 }
 
@@ -21,7 +29,7 @@
 }
 
 .app-module-sidebar-list-item {
-  padding: 15px;
+  padding: 8px;
   border-radius: 30px;
   height: 46px;
   border: 3px solid #191919;
@@ -53,7 +61,7 @@
   @screen xl {
     display: flex !important;
     & {
-      height: 80px;;
+      height: 50px;
     }
   }
 

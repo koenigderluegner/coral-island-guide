@@ -1,6 +1,6 @@
 import { BaseGenerator } from "./base-generator.class";
 import { Datatable } from "../interfaces/datatable.interface";
-import { getReferencedString, minifyItem, minifyTagBasedItem, readAsset } from "../util/functions";
+import { AssetPathNameToIcon, minifyItem, minifyTagBasedItem, readAsset } from "../util/functions";
 import { RawOffering } from "../interfaces/raw-data-interfaces/raw-offering.interface";
 import { CookingRecipe, Item, Offerings, TagBasedItem } from "@ci/data-types";
 import { getQuality, nonNullable, removeQualityFlag } from "@ci/util";
@@ -32,7 +32,7 @@ export class OfferingDetailsDbGenerator extends BaseGenerator<RawOffering, Offer
         const title = StringTable.getString(dbItem.offeringTitleText);
         return {
             title: title ?? '',
-            imageName: getReferencedString(dbItem.offeringImage.ObjectName),
+            imageName: AssetPathNameToIcon(dbItem.offeringImage.AssetPathName),
             numOfItemRequired: dbItem.numOfItemRequired,
             rewards: offeringMatch?.rewards ?? {
                 items: [],

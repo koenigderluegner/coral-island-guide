@@ -5,7 +5,6 @@ import { RouterLink } from '@angular/router';
 @Component({
     selector: 'app-module-sidebar-item',
     templateUrl: './module-sidebar-item.component.html',
-    styleUrls: ['./module-sidebar-item.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
 export class ModuleSidebarItemComponent {

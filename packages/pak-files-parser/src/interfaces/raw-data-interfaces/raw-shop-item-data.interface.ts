@@ -1,7 +1,12 @@
 import { SpecificDate, Time } from "@ci/data-types";
 import { SourceString } from "../../types/source-string.type";
+import { AssetPath } from "../../types/asset-path.type";
+import { DatatableRef } from "../../types/datatable-ref.type";
 
 export interface RawShopItemData {
+    "isLimitedItemQty": boolean,
+    "itemLimitQty": number,
+    "restockDays": string[],
     "allowedSeasons": string[],
     "forbiddenSeasons": string[],
     "allowedDays": string[],
@@ -18,25 +23,15 @@ export interface RawShopItemData {
     "allowedWeather": string[],
     "forbiddenWeather": string[],
     "enable": boolean,
-    "isCurrentlyOutOfStock": boolean,
     "townRank": number,
     "item": {
-        "data": {
-            "DataTable": {
-                "ObjectName": string
-                "ObjectPath": string
-            },
-            "RowName": string
-        },
+        "data": DatatableRef,
         "itemID": string
     },
     "useCustomName": boolean,
     "shopItemName": SourceString,
     "useCustomIcon": boolean,
-    "customIcon": {
-        "AssetPathName": string,
-        "SubPathString": string
-    },
+    "customIcon": AssetPath,
     "useCustomCategory": boolean,
     "customCategory": SourceString,
     "useCustomDescription": boolean,

@@ -1,0 +1,7 @@
+<app-expandable #expandableComponent *ngIf="toBuyAt.length" open>
+    <h3 class="database-header" expandableHeader>
+        <app-database-header-button [templateRef]="expandableComponent">Buy at festival</app-database-header-button>
+    </h3>
+    <app-festival-shop-item-table [dataSource]="toBuyAt"/>
+</app-expandable>
+

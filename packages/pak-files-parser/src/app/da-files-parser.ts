@@ -23,6 +23,7 @@ import {
     IsAchievementCompletedRequirement,
     IsCutsceneTriggeredRequirement,
     IsGiantUnlockedRequirement,
+    IsMailReadRequirement,
     Item,
     ItemInInventoryRequirement,
     ItemWithCategoryInInventoryRequirement,
@@ -223,7 +224,7 @@ export class DaFilesParser {
                     }
                     case "C_UnlockCraftingRecipeEffect": {
 
-                        const item = DaFilesParser.ItemMap.get(foundEffect.Properties.recipe.RowName)
+                        const item = DaFilesParser.ItemMap.get(foundEffect.Properties.recipe.RowName.toLowerCase())
 
                         if (!item) return;
 
@@ -432,6 +433,23 @@ export class DaFilesParser {
                 let daEffect: Requirement | undefined = undefined;
 
                 switch (foundEffect.Type) {
+                    case "C_IsMailReadRequirement":
+                        const mailId = foundEffect.Properties.mailId;
+                        const mail = DaFilesParser.MailMap.get(mailId)
+
+                        if (!mail) {
+                            Logger.error(`DaFilesParser: Can't find mail with mailId ${mailId}`)
+                            return;
+                        }
+
+                        daEffect = {
+                            type: "IsMailRead",
+                            meta: {
+                                mailId,
+                                title: mail.title ?? mailId
+                            }
+                        } satisfies IsMailReadRequirement;
+                        break;
                     case "C_CountNPCHeartLevelRequirement": {
                         daEffect = {
                             type: "CountNPCHeartLevel",
