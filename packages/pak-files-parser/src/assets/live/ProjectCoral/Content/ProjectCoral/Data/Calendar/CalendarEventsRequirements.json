@@ -1,0 +1,61 @@
+[
+  {
+    "Type": "C_GameplayRequirementsConfig",
+    "Name": "CalendarEventsRequirements",
+    "Class": "UScriptClass'C_GameplayRequirementsConfig'",
+    "Properties": {
+      "map": [
+        {
+          "weekly_religious_event": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_QuestFactRequirement'CalendarEventsRequirements:C_QuestFactRequirement_1'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Calendar/CalendarEventsRequirements.2"
+              }
+            ]
+          }
+        },
+        {
+          "earthDay": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_IsFestivalActiveRequirement'CalendarEventsRequirements:C_IsFestivalActiveRequirement_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Calendar/CalendarEventsRequirements.1"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_IsFestivalActiveRequirement",
+    "Name": "C_IsFestivalActiveRequirement_0",
+    "Outer": "CalendarEventsRequirements",
+    "Class": "UScriptClass'C_IsFestivalActiveRequirement'",
+    "Properties": {
+      "festivalId": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_FestivalRegistry'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Festival/DT_FestivalRegistry.0"
+        },
+        "RowName": "TreePlanting"
+      }
+    }
+  },
+  {
+    "Type": "C_QuestFactRequirement",
+    "Name": "C_QuestFactRequirement_1",
+    "Outer": "CalendarEventsRequirements",
+    "Class": "UScriptClass'C_QuestFactRequirement'",
+    "Properties": {
+      "fact": {
+        "factName": {
+          "RowName": "religion_adopted"
+        }
+      }
+    }
+  }
+]
