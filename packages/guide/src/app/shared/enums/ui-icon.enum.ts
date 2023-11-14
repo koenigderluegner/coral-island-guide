@@ -29,6 +29,7 @@ export enum UiIcon {
     BESTIARY = 'T_Icon_Bestiary',
     NOTES = 'T_Icon_Notes',
     ACHIEVEMENT = 'T_Icon_Achievement',
+    BADGES = 'T_Icon_Badges',
 
     // BUILDINGS
     BLACKSMITH = 'T_Icon_Blacksmith',
