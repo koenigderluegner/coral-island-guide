@@ -1,9 +1,10 @@
 ## Changelog
 
-### TBD
+### 0.14.0 2023-11-14
 
 #### Added
 
+- Added 1.0 assets and data
 - Added animals to ranch shop
 - Added product size per mood per hearts to ranch as well
 - Added support for korean and brazilian portuguese
