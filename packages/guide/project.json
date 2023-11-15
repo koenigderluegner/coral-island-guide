@@ -7,9 +7,7 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "baseHref": "/",
         "outputPath": "dist/packages/guide",
@@ -24,17 +22,11 @@
           "packages/guide/src/manifest.webmanifest",
           "packages/guide/src/CNAME"
         ],
-        "styles": [
-          "packages/guide/src/styles.scss"
-        ],
+        "styles": ["packages/guide/src/styles.scss"],
         "stylePreprocessorOptions": {
-          "includePaths": [
-            "packages/guide/src/styles"
-          ]
+          "includePaths": ["packages/guide/src/styles"]
         },
-        "scripts": [
-          "node_modules/marked/marked.min.js"
-        ],
+        "scripts": ["node_modules/marked/marked.min.js"],
         "serviceWorker": true,
         "ngswConfigPath": "packages/guide/ngsw-config.json"
       },
@@ -75,10 +67,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "guide:build:production"
+          "buildTarget": "guide:build:production"
         },
         "development": {
-          "browserTarget": "guide:build:development"
+          "buildTarget": "guide:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -86,26 +78,20 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "guide:build"
+        "buildTarget": "guide:build"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": [
-          "packages/guide/**/*.ts",
-          "packages/guide/**/*.html"
-        ]
+        "lintFilePatterns": ["packages/guide/**/*.ts", "packages/guide/**/*.html"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "packages/guide/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "packages/guide/jest.config.ts"
       }
     }
   },
