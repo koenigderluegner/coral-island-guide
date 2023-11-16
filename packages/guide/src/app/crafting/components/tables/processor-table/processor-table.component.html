@@ -1,5 +1,6 @@
 <app-responsive-table>
-    <table *ngIf="matDataSource" [dataSource]="matDataSource" mat-table matSort>
+    @if (matDataSource) {
+<table [dataSource]="matDataSource" mat-table matSort>
         <ng-container matColumnDef="icon" sticky>
             <td *matCellDef="let element" class="!pl-2 !pr-0  w-10 text-center icon-col " mat-cell>
                 <app-item-icon [itemName]="element.output.item?.iconName"></app-item-icon>
@@ -34,7 +35,8 @@
         <ng-container matColumnDef="processor">
             <th *matHeaderCellDef mat-header-cell>Processor</th>
             <td *matCellDef="let element" class="text-col w-[1%] whitespace-nowrap" mat-cell>
-                <ng-container *ngIf="processorMapping[element.machine.toLowerCase()] as minimalItem">
+                @if (processorMapping[element.machine.toLowerCase()]; as minimalItem) {
+
                     <a [routerLink]="['crafting/artisan', element.machine.toLowerCase()]"
                        class="flex gap-2 items-center">
                         <app-item-icon [itemName]="minimalItem.iconName" class="!w-7"/>
@@ -42,10 +44,13 @@
                     </a>
 
 
-                </ng-container>
-                <ng-container *ngIf="!processorMapping[element.machine.toLowerCase()]">
+                
+}
+                @if (!processorMapping[element.machine.toLowerCase()]) {
+
                     {{element.machine | addSpacesToPascalCase | titlecase}}
-                </ng-container>
+                
+}
 
             </td>
         </ng-container>
@@ -61,4 +66,5 @@
         <tr *matHeaderRowDef="displayHeaderColumns; sticky: true" mat-header-row></tr>
         <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
     </table>
+}
 </app-responsive-table>

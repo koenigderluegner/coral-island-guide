@@ -1,40 +1,58 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     <ng-container listDetail>
-        <app-mail-details *ngIf="selectedEntity" [mail]="selectedEntity"/>
-        <app-torn-page-details *ngIf="selectedTornPage" [tornPage]="selectedTornPage"/>
+        @if (selectedEntity) {
+<app-mail-details [mail]="selectedEntity"/>
+}
+        @if (selectedTornPage) {
+<app-torn-page-details [tornPage]="selectedTornPage"/>
+}
     </ng-container>
-    <mat-tab-group (selectedTabChange)="updateUrl($event)" *ngIf="data$ | async"
+    @if (data$ | async) {
+<mat-tab-group (selectedTabChange)="updateUrl($event)"
                    [selectedIndex]="selectedTabIndex"
                    class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false">
         <mat-tab [label]="tabNames[0]">
             <app-data-filter [(showTable)]="showTable"/>
-            <div *ngIf="!showTable" class="grid gap-4 icon-grid  mt-8">
-                <app-item-icon (click)="showDetails(mail)"
-                               *ngFor="let mail of mails"
+            @if (!showTable) {
+<div class="grid gap-4 icon-grid  mt-8">
+                @for (mail of mails; track mail) {
+  <app-item-icon (click)="showDetails(mail)"
+                              
                                [class.selected-icon]="selectedEntity?.key === mail.key"
                                class="icon-grid-item"
                                itemName="Torn_page">
                 </app-item-icon>
+}
             </div>
-            <app-mail-table *ngIf="showTable" [dataSource]="mails"/>
+}
+            @if (showTable) {
+<app-mail-table [dataSource]="mails"/>
+}
 
         </mat-tab>
         <mat-tab [label]="tabNames[1]">
             <app-data-filter [(showTable)]="showTornPagesTable"/>
-            <div *ngIf="!showTornPagesTable" class="grid gap-4 icon-grid  mt-8">
-                <app-item-icon (click)="showTornPageDetails(tornPage)"
-                               *ngFor="let tornPage of tornPages"
+            @if (!showTornPagesTable) {
+<div class="grid gap-4 icon-grid  mt-8">
+                @for (tornPage of tornPages; track tornPage) {
+  <app-item-icon (click)="showTornPageDetails(tornPage)"
+                              
                                [class.selected-icon]="selectedTornPage?.key === tornPage.key"
                                class="icon-grid-item"
                                itemName="Torn_page">
                 </app-item-icon>
+}
             </div>
-            <app-torn-pages-table *ngIf="showTornPagesTable" [dataSource]="tornPages"/>
+}
+            @if (showTornPagesTable) {
+<app-torn-pages-table [dataSource]="tornPages"/>
+}
 
         </mat-tab>
 
 
     </mat-tab-group>
+}
 
 
 </app-list-detail-container>

@@ -1,21 +1,33 @@
-<ng-container *ngFor="let itemListItem of itemList">
+@for (itemListItem of itemList; track itemListItem) {
+  
     <div class="flex justify-between py-1">
-        <ng-container *ngIf="!isGenericEntry(itemListItem)">
-            <div class="flex gap-x-3 items-center" *ngIf="itemListItem.item">
+        @if (!isGenericEntry(itemListItem)) {
+
+            @if (itemListItem.item) {
+<div class="flex gap-x-3 items-center">
                 <app-item-icon class="w-10" [itemName]="itemListItem.item.iconName"></app-item-icon>
                 <span>{{itemListItem.item.displayName}}</span>
             </div>
-        </ng-container>
-        <ng-container *ngIf="isGenericEntry(itemListItem)">
-            <div class="flex gap-x-3 items-center" *ngIf="itemListItem.genericItem">
+}
+        
+}
+        @if (isGenericEntry(itemListItem)) {
+
+            @if (itemListItem.genericItem) {
+<div class="flex gap-x-3 items-center">
                 <app-item-icon class="w-10" [itemName]="itemListItem.genericItem.iconName"></app-item-icon>
                 <span>{{itemListItem.genericItem.displayName}}
-                    <ng-container *ngIf="itemListItem.shouldBeSameItem"> (all the same)</ng-container>
+                    @if (itemListItem.shouldBeSameItem) {
+ (all the same)
+}
                 </span>
             </div>
-        </ng-container>
+}
+        
+}
         <div class="flex items-center">{{itemListItem.amount}}</div>
 
     </div>
     <hr>
-</ng-container>
+
+}

@@ -1,13 +1,17 @@
-<app-expandable #expandableComponent *ngIf="chancetoBeProcessedFrom.length" open>
+@if (chancetoBeProcessedFrom.length) {
+<app-expandable #expandableComponent open>
     <h3 class="database-header" expandableHeader>
         <app-database-header-button [templateRef]="expandableComponent">Chance as processing result
         </app-database-header-button>
     </h3>
     <app-shop-item-process-table [dataSource]="chancetoBeProcessedFrom"/>
 </app-expandable>
-<app-expandable #expandableComponent *ngIf="canBeProcessed.length" open>
+}
+@if (canBeProcessed.length) {
+<app-expandable #expandableComponent open>
     <h3 class="database-header" expandableHeader>
         <app-database-header-button [templateRef]="expandableComponent">Can be processed at</app-database-header-button>
     </h3>
     <app-shop-item-process-table [dataSource]="canBeProcessed"/>
 </app-expandable>
+}

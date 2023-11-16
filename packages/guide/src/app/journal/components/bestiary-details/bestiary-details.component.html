@@ -1,7 +1,11 @@
 <app-card class="text-lg font-semibold relative">
 
-    <app-item-icon *ngIf="!enemy.image" cardIcon itemName="{{enemy.iconName}}"/>
-    <app-bestiary-image *ngIf="enemy.image" [imageName]="enemy.image"/>
+    @if (!enemy.image) {
+<app-item-icon cardIcon itemName="{{enemy.iconName}}"/>
+}
+    @if (enemy.image) {
+<app-bestiary-image [imageName]="enemy.image"/>
+}
     <div class="flex justify-between items-center">
         <div class="flex flex-col">
             <div class="text-black text-2xl">{{enemy.displayName}}</div>
@@ -9,7 +13,9 @@
 
     </div>
     <hr class="my-5"/>
-    <span *ngIf="enemy.description" class="text-lg mb-6">{{enemy.description}}</span>
+    @if (enemy.description) {
+<span class="text-lg mb-6">{{enemy.description}}</span>
+}
 
     <div>
         Experience: <span class="text-black">{{enemy.experience}}</span>

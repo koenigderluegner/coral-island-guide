@@ -1,8 +1,14 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     <ng-container listDetail>
-        <app-shop-item-process-data-details *ngIf="selectedProcessEntity" [itemProcessData]="selectedProcessEntity"/>
-        <app-shop-item-data-details *ngIf="selectedEntity" [shopItemData]="selectedEntity"/>
-        <app-item-upgrade-details *ngIf="selectedItemUpgrade" [itemUpgradeData]="selectedItemUpgrade"/>
+        @if (selectedProcessEntity) {
+<app-shop-item-process-data-details [itemProcessData]="selectedProcessEntity"/>
+}
+        @if (selectedEntity) {
+<app-shop-item-data-details [shopItemData]="selectedEntity"/>
+}
+        @if (selectedItemUpgrade) {
+<app-item-upgrade-details [itemUpgradeData]="selectedItemUpgrade"/>
+}
     </ng-container>
 
     <div class="px-2 xl:px-[50px] w-full">
@@ -12,63 +18,97 @@
                 <app-ui-icon [uiIcon]="SHOP_ICONS[shopName]"/>
                 {{SHOP_DISPLAY_NAMES[shopName]}}
             </h1>
-            <ng-container *ngIf="openingHours$">
-                <app-opening-hours *ngIf="(openingHours$ |async) as openingHours" [openingHours]="openingHours"/>
-            </ng-container>
+            @if (openingHours$) {
+
+                @if ((openingHours$ |async); as openingHours) {
+<app-opening-hours [openingHours]="openingHours"/>
+}
+            
+}
         </app-card>
 
-        <ng-container *ngIf="shopItemData$">
-            <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Stock list</h2>
-            <ng-container *ngIf="(shopItemData$ |async) as shopItemData">
-                <app-data-filter [(showTable)]="showTable"/>
-                <div *ngIf="!showTable" class="grid gap-4 icon-grid">
+        @if (shopItemData$) {
 
-                    <app-item-icon (click)="showDetails(shopItem)" *ngFor="let shopItem of shopItemData"
+            <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Stock list</h2>
+            @if ((shopItemData$ |async); as shopItemData) {
+
+                <app-data-filter [(showTable)]="showTable"/>
+                @if (!showTable) {
+<div class="grid gap-4 icon-grid">
+
+                    @for (shopItem of shopItemData; track shopItem) {
+  <app-item-icon (click)="showDetails(shopItem)"
                                    [class.selected-icon]="selectedEntity?.item?.id === shopItem.item.id"
                                    [itemName]="shopItem.item.iconName"
                                    class="icon-grid-item">
                     </app-item-icon>
+}
                 </div>
-                <app-shop-item-data-table *ngIf="showTable" [dataSource]="shopItemData"/>
+}
+                @if (showTable) {
+<app-shop-item-data-table [dataSource]="shopItemData"/>
+}
 
-            </ng-container>
-        </ng-container>
+            
+}
+        
+}
 
-        <ng-container *ngIf="itemProcessing$">
+        @if (itemProcessing$) {
+
             <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Item processing</h2>
-            <ng-container *ngIf="(itemProcessing$ |async) as shopItemData">
+            @if ((itemProcessing$ |async); as shopItemData) {
+
 
                 <app-data-filter [(showTable)]="showProcessingTable"/>
-                <div *ngIf="!showProcessingTable" class="grid gap-4 icon-grid">
+                @if (!showProcessingTable) {
+<div class="grid gap-4 icon-grid">
 
-                    <app-item-icon (click)="showProcessDetails(shopItem)" *ngFor="let shopItem of shopItemData"
+                    @for (shopItem of shopItemData; track shopItem) {
+  <app-item-icon (click)="showProcessDetails(shopItem)"
                                    [class.selected-icon]="selectedProcessEntity?.input?.id === shopItem.input.id"
                                    [itemName]="shopItem.input.iconName"
                                    class="icon-grid-item">
                     </app-item-icon>
+}
                 </div>
-                <app-shop-item-process-table *ngIf="showProcessingTable" [dataSource]="shopItemData"/>
+}
+                @if (showProcessingTable) {
+<app-shop-item-process-table [dataSource]="shopItemData"/>
+}
 
-            </ng-container>
-        </ng-container>
+            
+}
+        
+}
 
-        <ng-container *ngIf="itemUpgrade$">
+        @if (itemUpgrade$) {
+
             <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">{{upgradeHeaderText ?? 'Upgrades'}}</h2>
-            <ng-container *ngIf="(itemUpgrade$ |async) as shopItemData">
+            @if ((itemUpgrade$ |async); as shopItemData) {
+
 
                 <app-data-filter [(showTable)]="showPItemUpgradeTable"/>
-                <div *ngIf="!showPItemUpgradeTable" class="grid gap-4 icon-grid">
+                @if (!showPItemUpgradeTable) {
+<div class="grid gap-4 icon-grid">
 
-                    <app-item-icon (click)="showItemUpgradeDetails(shopItem)" *ngFor="let shopItem of shopItemData"
+                    @for (shopItem of shopItemData; track shopItem) {
+  <app-item-icon (click)="showItemUpgradeDetails(shopItem)"
                                    [class.selected-icon]="selectedItemUpgrade?.item?.id === shopItem.item.id"
                                    [itemName]="shopItem.item.iconName"
                                    [quality]="shopItem.level"
                                    class="icon-grid-item">
                     </app-item-icon>
+}
                 </div>
-                <app-item-upgrade-table *ngIf="showPItemUpgradeTable" [dataSource]="shopItemData"/>
-            </ng-container>
-        </ng-container>
+}
+                @if (showPItemUpgradeTable) {
+<app-item-upgrade-table [dataSource]="shopItemData"/>
+}
+            
+}
+        
+}
 
     </div>
 </app-list-detail-container>

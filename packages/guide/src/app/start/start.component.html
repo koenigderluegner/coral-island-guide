@@ -20,7 +20,11 @@
             &dash; Koenig
         </p>
 
-        <app-changelog></app-changelog>
+        @if (markdown$ | async;as markdown) {
+            <app-changelog [markdown]="markdown"/>
+        }
+
+
     </div>
 
 </app-card>

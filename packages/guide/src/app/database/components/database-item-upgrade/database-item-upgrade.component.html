@@ -1,14 +1,18 @@
-<app-expandable #expandableComponent *ngIf="isTheResult.length" open>
+@if (isTheResult.length) {
+<app-expandable #expandableComponent open>
     <h3 class="database-header" expandableHeader>
         <app-database-header-button [templateRef]="expandableComponent">Is result of upgrade
         </app-database-header-button>
     </h3>
     <app-item-upgrade-table [dataSource]="isTheResult"/>
 </app-expandable>
-<app-expandable #expandableComponent *ngIf="isRequirement.length" open>
+}
+@if (isRequirement.length) {
+<app-expandable #expandableComponent open>
     <h3 class="database-header" expandableHeader>
         <app-database-header-button [templateRef]="expandableComponent">Is used as requirement in
         </app-database-header-button>
     </h3>
     <app-item-upgrade-table [dataSource]="isRequirement"/>
 </app-expandable>
+}

@@ -1,11 +1,15 @@
-<ng-container *ngFor="let itemListItem of chances; let last = last">
+@for (itemListItem of chances; track itemListItem; let last = $last) {
+  
     <div class="flex justify-between mb-1">
 
-        <div *ngIf="itemListItem.item" class="flex gap-2 items-center">
+        @if (itemListItem.item) {
+<div class="flex gap-2 items-center">
             <app-item-icon [itemName]="itemListItem.item.iconName" class="!w-7"/>
             <span class="ml-1 whitespace-nowrap">{{itemListItem.item.displayName}}&nbsp;x{{itemListItem.amount}}</span>
         </div>
+}
 
         <div class="ml-2 flex items-center">{{itemListItem.chance}}%</div>
     </div>
-</ng-container>
+
+}

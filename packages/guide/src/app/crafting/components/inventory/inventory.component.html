@@ -1,21 +1,31 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
-    <app-inventory-details *ngIf="selectedEntity" [craftingRecipe]="selectedEntity" listDetail/>
+    @if (selectedEntity) {
+<app-inventory-details [craftingRecipe]="selectedEntity" listDetail/>
+}
     <mat-tab-group class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false">
         <mat-tab label="All">
             <app-data-filter [(showTable)]="showTable"/>
-            <ng-container *ngIf="(recipes$ |async) as recipes">
-                <div *ngIf="!showTable" class="grid gap-4 icon-grid">
+            @if ((recipes$ |async); as recipes) {
 
-                    <app-item-icon (click)="showDetails(recipe)" *ngFor="let recipe of recipes"
+                @if (!showTable) {
+<div class="grid gap-4 icon-grid">
+
+                    @for (recipe of recipes; track recipe) {
+  <app-item-icon (click)="showDetails(recipe)"
                                    [amount]="recipe.amount"
                                    [class.selected-icon]="selectedEntity?.item?.id === recipe.item?.id"
                                    [itemName]="recipe.item?.iconName"
                                    class="icon-grid-item"
                     >
                     </app-item-icon>
+}
                 </div>
-                <app-inventory-table *ngIf="showTable" [dataSource]="recipes"/>
-            </ng-container>
+}
+                @if (showTable) {
+<app-inventory-table [dataSource]="recipes"/>
+}
+            
+}
 
         </mat-tab>
     </mat-tab-group>

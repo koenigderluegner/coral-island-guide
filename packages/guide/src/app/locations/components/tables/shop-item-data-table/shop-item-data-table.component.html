@@ -1,5 +1,6 @@
 <app-responsive-table>
-    <table *ngIf="matDataSource" [dataSource]="matDataSource" mat-table matSort>
+    @if (matDataSource) {
+<table [dataSource]="matDataSource" mat-table matSort>
         <ng-container matColumnDef="icon" sticky>
             <td *matCellDef="let element" class="!pl-2 !pr-0 w-10 text-center icon-col " mat-cell>
                 <app-item-icon [itemName]="element.item.iconName"/>
@@ -49,4 +50,5 @@
         <tr *matHeaderRowDef="displayHeaderColumns; sticky: true" mat-header-row></tr>
         <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
     </table>
+}
 </app-responsive-table>

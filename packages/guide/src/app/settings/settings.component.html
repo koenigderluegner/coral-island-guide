@@ -11,8 +11,10 @@
                     <label class="font-bold leading-6" for="language">Language</label>
                     <mat-form-field class="btn btn-secondary">
                         <mat-select formControlName="language" id="language">
-                            <mat-option *ngFor="let language of availableLanguages"
+                            @for (language of availableLanguages; track language) {
+  <mat-option
                                         [value]="language">{{availableLanguageDisplayName[language]}}</mat-option>
+}
                         </mat-select>
                     </mat-form-field>
                 </div>
@@ -43,10 +45,12 @@
                         <p class="leading-6">Switches app data to beta data. Change requires reload.</p>
                     </div>
                 </div>
-                <p *ngIf="!BETA_CODE" class="flex gap-2 text-black font-bold leading-6 items-center">
+                @if (!BETA_CODE) {
+<p class="flex gap-2 text-black font-bold leading-6 items-center">
                     <app-ui-icon [uiIcon]="uiIcon.WARNING" class="!w-6 shrink-0"/>
                     Currently there's no beta.
                 </p>
+}
 
 
             </div>
@@ -121,8 +125,10 @@
             </div>
         </div>
         <div class="mt-6 sm:mt-8 flex justify-between items-center">
-            <p *ngIf="reloadRequired" class="font-bold">Changes that require a reload were made. Saving will reload
+            @if (reloadRequired) {
+<p class="font-bold">Changes that require a reload were made. Saving will reload
                 automatically.</p>
+}
             <button class="btn-amber ml-auto" type="submit">Save</button>
         </div>
     </form>

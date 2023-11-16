@@ -1,25 +1,33 @@
 <aside>
     <nav>
         <ul [class.hide-menu]="!showMenu">
-            <ng-container *ngFor="let child of (viewChildren?.toArray() ?? []); let i = index; let last = last">
-                <li *ngIf="child.routerLink">
+            @for (child of (viewChildren?.toArray() ?? []); track child; let i = $index; let last = $last) {
+  
+                @if (child.routerLink) {
+<li>
                     <a [routerLink]="child.routerLink" class="app-module-sidebar-list-item"
                        [routerLinkActive]="'active'"
                        [routerLinkActiveOptions]="{exact: !!child.exact}"
                        [class.custom-active]="child.active"
                        [class.mb-4]="!last" (click)="showMenu = false">
-                        <app-ui-icon *ngIf="child.uiIcon" [uiIcon]="child.uiIcon" class="!h-6"></app-ui-icon>
+                        @if (child.uiIcon) {
+<app-ui-icon [uiIcon]="child.uiIcon" class="!h-6"></app-ui-icon>
+}
                         <ng-template [ngTemplateOutlet]="child.innerTemplate"></ng-template>
                         <button class=" xl:hidden block ml-auto m-[-18px] border-l-2 px-5 h-[45px]"
                                 (click)="toggleMenu($event)">Menu
                         </button>
                     </a>
                 </li>
-                <li *ngIf="!child.routerLink"
+}
+                @if (!child.routerLink) {
+<li
                     class="module-sidebar-list-divider mb-3 mt-9 text-xl text-white/70 font-semibold">
                     <ng-template [ngTemplateOutlet]="child.innerTemplate"></ng-template>
                 </li>
-            </ng-container>
+}
+            
+}
         </ul>
     </nav>
 </aside>

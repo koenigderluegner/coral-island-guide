@@ -1,58 +1,90 @@
-<ng-container *ngIf="effect.type ==='BoostMaxStamina'">Increases max stamina</ng-container>
-<ng-container *ngIf="effect.type === 'AddItemToInventory'">
+@if (effect.type ==='BoostMaxStamina') {
+Increases max stamina
+}
+@if (effect.type === 'AddItemToInventory') {
+
     Adds {{(effect.meta.quantity ?? 1) > 1 ? effect.meta.quantity + 'x ' : ''}}
     <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 -my-1 translate-y-1 !inline-block"/>
     {{effect.meta.item.displayName}} to inventory
-</ng-container>
-<div *ngIf="effect.type === 'UnlockCraftingRecipe'">
+
+}
+@if (effect.type === 'UnlockCraftingRecipe') {
+<div>
     Unlocks
     <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
     {{effect.meta.item.displayName}} crafting recipe
 </div>
-<div *ngIf="effect.type === 'UnlockCookingRecipe'">
+}
+@if (effect.type === 'UnlockCookingRecipe') {
+<div>
     Unlocks
     <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
     {{effect.meta.item.displayName}} cooking recipe
 </div>
-<ng-container *ngIf="effect.type === 'UnlockCookingUtensil'">
+}
+@if (effect.type === 'UnlockCookingUtensil') {
+
     Unlocks {{effect.meta.utensil}} utensil
-</ng-container>
-<ng-container *ngIf="effect.type === 'SetQuestFactValue'">
+
+}
+@if (effect.type === 'SetQuestFactValue') {
+
     Sets quests fact '{{effect.meta.factName}}'
-</ng-container>
-<ng-container *ngIf="effect.type === 'ConsumeItemMastery'">
+
+}
+@if (effect.type === 'ConsumeItemMastery') {
+
     Unlocks 1 skill point for {{effect.meta.mastery}} mastery
-</ng-container>
-<div *ngIf="effect.type === 'VaryMoney'">
+
+}
+@if (effect.type === 'VaryMoney') {
+<div>
     Adds
     <app-money [amount]="effect.meta.amount" class="!w-7 -my-1 translate-y-1 ml-1 !inline-block"/>
 </div>
-<div *ngIf="effect.type === 'RemoveItemFromInventory'">
+}
+@if (effect.type === 'RemoveItemFromInventory') {
+<div>
     Removes {{effect.meta.amount}}x
-    <ng-container *ngIf="hasMinimalItem(effect.meta)">
+    @if (hasMinimalItem(effect.meta)) {
+
         <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
         {{effect.meta.item.displayName}}
-    </ng-container>
-    <ng-container *ngIf="!hasMinimalItem(effect.meta)">
+    
+}
+    @if (!hasMinimalItem(effect.meta)) {
+
         items of category {{effect.meta.category}}
-    </ng-container>
+    
+}
 
 </div>
-<ng-container *ngIf="effect.type === 'SendMailToPlayer'">
+}
+@if (effect.type === 'SendMailToPlayer') {
+
     Sends mail '<a [queryParams]="{selectedId: effect.meta.mail.mailId}"
                    [routerLink]="['/journal', 'notes', 'letters']"
                    class="underline">{{effect.meta.mail.title}}</a>'
     {{effect.meta.dayDelay > 0 ? ' after ' + effect.meta.dayDelay + ' day(s)' : ''}}
-</ng-container>
-<ng-container *ngIf="effect.type === 'SetQuestActive'">
+
+}
+@if (effect.type === 'SetQuestActive') {
+
     Activates quest '{{effect.meta.questId}}'
-</ng-container>
-<ng-container *ngIf="effect.type === 'SetQuestCompleted'">
+
+}
+@if (effect.type === 'SetQuestCompleted') {
+
     Completes quest '{{effect.meta.questId}}'
-</ng-container>
-<ng-container *ngIf="effect.type === 'UpdateNpcSchedule'">
+
+}
+@if (effect.type === 'UpdateNpcSchedule') {
+
     Updates schedules of NPCs: '{{effect.meta.npcIds.join(', ')}}'
-</ng-container>
-<ng-container *ngIf="effect.type === 'ChangeObjectState'">
+
+}
+@if (effect.type === 'ChangeObjectState') {
+
     Sets state of '{{effect.meta.customName ?? effect.meta.id}}' to '{{effect.meta.state}}'
-</ng-container>
+
+}

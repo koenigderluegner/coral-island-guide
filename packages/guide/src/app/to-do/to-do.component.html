@@ -4,16 +4,24 @@
         <mat-form-field class="btn btn-secondary">
             <mat-select [formControl]="toDoCategoryControl" multiple placeholder="None">
                 <mat-select-trigger>
-                    <ng-container *ngIf="toDoCategoryControl.value.includes('all')">All</ng-container>
-                    <ng-container *ngIf="!toDoCategoryControl.value.includes('all')">
-                        <ng-container *ngIf="toDoCategoryControl.value.length">
+                    @if (toDoCategoryControl.value.includes('all')) {
+All
+}
+                    @if (!toDoCategoryControl.value.includes('all')) {
+
+                        @if (toDoCategoryControl.value.length) {
+
                             {{toDoCategoryControl.value[0] !== 'all' ? toDoCategoryDisplayNames[toDoCategoryControl.value[0]] : ''}}
-                            <span *ngIf="toDoCategoryControl.value.length  > 1" class="text-sm opacity-80">
+                            @if (toDoCategoryControl.value.length  > 1) {
+<span class="text-sm opacity-80">
                                 (+{{toDoCategoryControl.value.length - 1}} {{toDoCategoryControl.value.length === 2 ? 'other' : 'others'}}
                                 )
                             </span>
-                        </ng-container>
-                    </ng-container>
+}
+                        
+}
+                    
+}
                 </mat-select-trigger>
 
                 <mat-option value="all">
@@ -79,8 +87,10 @@
                        dataToDoId="offerings"
                        title="Offerings">
         <ng-template let-data>
-            <app-to-do-entry-offering *ngFor="let offering of data" @leaveAnimation [entry]="offering"
+            @for (offering of data; track offering) {
+  <app-to-do-entry-offering @leaveAnimation [entry]="offering"
                                       class="mb-2 block"/>
+}
         </ng-template>
     </app-to-do-partial>
 
@@ -90,8 +100,10 @@
                        dataToDoId="fish"
                        title="Journal fish">
         <ng-template let-data>
-            <app-to-do-entry-fish *ngFor="let fish of data" @leaveAnimation [entry]="fish"
+            @for (fish of data; track fish) {
+  <app-to-do-entry-fish @leaveAnimation [entry]="fish"
                                   class="mb-2 block"/>
+}
         </ng-template>
     </app-to-do-partial>
 
@@ -101,8 +113,10 @@
                        dataToDoId="insects"
                        title="Journal insects">
         <ng-template let-data>
-            <app-to-do-entry-insect *ngFor="let insect of data" @leaveAnimation [entry]="insect"
+            @for (insect of data; track insect) {
+  <app-to-do-entry-insect @leaveAnimation [entry]="insect"
                                     class="mb-2 block"/>
+}
         </ng-template>
     </app-to-do-partial>
 
@@ -112,8 +126,10 @@
                        dataToDoId="sea-critters"
                        title="Journal sea-critters">
         <ng-template let-data>
-            <app-to-do-sea-critter *ngFor="let seaCritter of data" @leaveAnimation [entry]="seaCritter"
+            @for (seaCritter of data; track seaCritter) {
+  <app-to-do-sea-critter @leaveAnimation [entry]="seaCritter"
                                    class="mb-2 block"/>
+}
         </ng-template>
     </app-to-do-partial>
 
@@ -124,9 +140,11 @@
                        dataToDoId="artifacts"
                        title="Artifacts">
         <ng-template let-data>
-            <app-to-do-entry-base *ngFor="let artifact of data" @leaveAnimation
+            @for (artifact of data; track artifact) {
+  <app-to-do-entry-base @leaveAnimation
                                   [category]="toDoCategory.JOURNAL_ARTIFACTS"
                                   [item]="artifact" class="mb-2 block"/>
+}
         </ng-template>
     </app-to-do-partial>
 
@@ -136,9 +154,11 @@
                        dataToDoId="gems"
                        title="Gems">
         <ng-template let-data>
-            <app-to-do-entry-base *ngFor="let gem of data" @leaveAnimation
+            @for (gem of data; track gem) {
+  <app-to-do-entry-base @leaveAnimation
                                   [category]="toDoCategory.JOURNAL_GEMS"
                                   [item]="gem" class="mb-2 block"/>
+}
         </ng-template>
     </app-to-do-partial>
 
@@ -148,9 +168,11 @@
                        dataToDoId="fossils"
                        title="Fossils">
         <ng-template let-data>
-            <app-to-do-entry-base *ngFor="let fossil of data" @leaveAnimation
+            @for (fossil of data; track fossil) {
+  <app-to-do-entry-base @leaveAnimation
                                   [category]="toDoCategory.JOURNAL_FOSSILS"
                                   [item]="fossil" class="mb-2 block"/>
+}
         </ng-template>
     </app-to-do-partial>
 
@@ -160,13 +182,16 @@
                        dataToDoId="cooking-recipes"
                        title="Cooking recipes">
         <ng-template let-data>
-            <app-to-do-entry-base *ngFor="let recipe of data" @leaveAnimation
+            @for (recipe of data; track recipe) {
+  <app-to-do-entry-base @leaveAnimation
                                   [category]="toDoCategory.COOKING_RECIPES"
                                   [item]="recipe.item" class="mb-2 block"/>
+}
         </ng-template>
     </app-to-do-partial>
 
-    <div *ngIf="toDoService.currentIsEmpty" class="show-when-none-displayed">
+    @if (toDoService.currentIsEmpty) {
+<div class="show-when-none-displayed">
         <h2 class="mb-2 mt-4 font-semibold text-xl text-black">No entries in to-do list</h2>
         <p class="text-black">
             Your current to-do list is empty! Visit the <a class="underline" routerLink="/journal">journal</a>, the
@@ -174,10 +199,13 @@
             your to-do list.
         </p>
     </div>
-    <div *ngIf="!toDoService.currentIsEmpty" class="show-when-none-displayed">
+}
+    @if (!toDoService.currentIsEmpty) {
+<div class="show-when-none-displayed">
         <h2 class="mb-2 mt-4 font-semibold text-xl text-black">No entries for selection</h2>
         <p class="text-black">
             There are no entries for your current filter settings.
         </p>
     </div>
+}
 </app-card>

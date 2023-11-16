@@ -65,7 +65,7 @@
       "defaultConfiguration": "dev"
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/pak-files-parser/**/*.ts"]
@@ -75,8 +75,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "packages/pak-files-parser/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "packages/pak-files-parser/jest.config.ts"
       }
     }
   },

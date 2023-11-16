@@ -1,31 +1,47 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
-    <app-produce-details *ngIf="selectedEntity" [item]="selectedEntity" listDetail/>
+    @if (selectedEntity) {
+<app-produce-details [item]="selectedEntity" listDetail/>
+}
 
     <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex"
                    class=" px-2 xl:px-[50px] w-full"
                    mat-stretch-tabs="false">
-        <mat-tab [label]="tab.title" *ngFor="let tab of tabs">
+        @for (tab of tabs; track tab) {
+  <mat-tab [label]="tab.title">
 
             <app-data-filter [(showTable)]="showTable" [parentFormGroup]="formControl"/>
-            <ng-container *ngIf="(tab.data |async) as syncedData">
-                <div *ngIf="!showTable" class="grid gap-4 icon-grid">
-                    <ng-container *ngFor="let entry of syncedData">
+            @if ((tab.data |async); as syncedData) {
+
+                @if (!showTable) {
+<div class="grid gap-4 icon-grid">
+                    @for (entry of syncedData; track entry) {
+  
                         <app-item-icon (click)="showDetails(entry)"
                                        [class.selected-icon]="((selectedEntity | isMinimalItem) ? selectedEntity.id : selectedEntity?.dropData?.[0]?.item?.id) === ((entry | isMinimalItem) ? entry.id : entry.dropData[0].item.id)"
                                        [itemName]="(entry | isMinimalItem) ? entry.iconName : entry.dropData[0].item.iconName"
                                        class="icon-grid-item"
                         />
-                    </ng-container>
+                    
+}
                 </div>
+}
 
-                <ng-container *ngIf="showTable">
+                @if (showTable) {
 
-                    <app-non-specialized-table *ngIf="tab.title !== tabs[0].title"
+
+                    @if (tab.title !== tabs[0].title) {
+<app-non-specialized-table
                                                [dataSource]="castToItemArray(syncedData)"/>
-                    <app-crop-table *ngIf="tab.title === tabs[0].title" [dataSource]="castToBaseCropArray(syncedData)"/>
-                </ng-container>
-            </ng-container>
+}
+                    @if (tab.title === tabs[0].title) {
+<app-crop-table [dataSource]="castToBaseCropArray(syncedData)"/>
+}
+                
+}
+            
+}
 
         </mat-tab>
+}
     </mat-tab-group>
 </app-list-detail-container>

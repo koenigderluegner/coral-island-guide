@@ -1,11 +1,15 @@
 <app-header class="flex-grow-0 flex-shrink-0"/>
 <main>
-    <ng-container *ngIf="prefetchData$ | async as data; else loading">
+    @if (prefetchData$ | async; as data) {
+
         <router-outlet></router-outlet>
-    </ng-container>
+    
+} @else {
+
+    <mat-spinner class="text-white mx-auto my-5"></mat-spinner>
+
+}
 </main>
 <app-footer class="flex-grow-0 flex-shrink-0"/>
 
-<ng-template #loading>
-    <mat-spinner class="text-white mx-auto my-5"></mat-spinner>
-</ng-template>
+

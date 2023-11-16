@@ -1,7 +1,11 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     <ng-container listDetail>
-        <app-shop-item-data-details *ngIf="selectedEntity" [shopItemData]="selectedEntity"/>
-        <app-pet-adoption-details *ngIf="selectedAdoption" [adoption]="selectedAdoption"/>
+        @if (selectedEntity) {
+<app-shop-item-data-details [shopItemData]="selectedEntity"/>
+}
+        @if (selectedAdoption) {
+<app-pet-adoption-details [adoption]="selectedAdoption"/>
+}
     </ng-container>
 
     <div class="px-2 xl:px-[50px] w-full">
@@ -15,33 +19,47 @@
         </app-card>
 
         <h2 class="mb-3 font-semibold text-2xl text-white">Stock list</h2>
-        <ng-container *ngIf="(shopItemData$ |async) as shopItemData">
-            <app-data-filter [(showTable)]="showTable"/>
-            <div *ngIf="!showTable" class="grid gap-4 icon-grid">
+        @if ((shopItemData$ |async); as shopItemData) {
 
-                <app-item-icon (click)="showDetails(shopItem)" *ngFor="let shopItem of shopItemData"
+            <app-data-filter [(showTable)]="showTable"/>
+            @if (!showTable) {
+<div class="grid gap-4 icon-grid">
+
+                @for (shopItem of shopItemData; track shopItem) {
+  <app-item-icon (click)="showDetails(shopItem)"
                                [class.selected-icon]="selectedEntity?.item?.id === shopItem.item.id"
                                [itemName]="shopItem.item.iconName"
                                class="icon-grid-item">
                 </app-item-icon>
+}
             </div>
-            <app-shop-item-data-table *ngIf="showTable" [dataSource]="shopItemData"/>
+}
+            @if (showTable) {
+<app-shop-item-data-table [dataSource]="shopItemData"/>
+}
 
-        </ng-container>
+        
+}
 
         <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Adoptions</h2>
-        <ng-container *ngIf="(petShopAdoptions$ |async) as petShopAdoptions">
-            <app-data-filter [(showTable)]="showTable"/>
-            <div *ngIf="!showTable" class="grid gap-4 icon-grid">
+        @if ((petShopAdoptions$ |async); as petShopAdoptions) {
 
-                <app-item-icon (click)="showAdoptionDetails(petShopAdoption)"
-                               *ngFor="let petShopAdoption of petShopAdoptions"
+            <app-data-filter [(showTable)]="showTable"/>
+            @if (!showTable) {
+<div class="grid gap-4 icon-grid">
+
+                @for (petShopAdoption of petShopAdoptions; track petShopAdoption) {
+  <app-item-icon (click)="showAdoptionDetails(petShopAdoption)"
+                              
                                [itemName]="petShopAdoption.iconName"
                                class="icon-grid-item">
                 </app-item-icon>
+}
             </div>
+}
 
-        </ng-container>
+        
+}
 
     </div>
 </app-list-detail-container>

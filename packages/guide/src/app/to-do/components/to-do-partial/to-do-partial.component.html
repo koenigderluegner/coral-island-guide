@@ -1,4 +1,5 @@
-<ng-container *ngIf="data.length && (toDoId?.includes(category) || toDoId === undefined)">
+@if (data.length && (toDoId?.includes(category) || toDoId === undefined)) {
+
     <header class="flex justify-between items-center mt-5 mb-2">
         <h2 class="font-semibold text-xl text-black">{{title}}</h2>
         <button (click)="completeList()" class="btn-amber">complete list</button>
@@ -6,5 +7,6 @@
     <div [@.disabled]="!(toDoId?.includes(category) || toDoId === undefined)">
         <ng-container *ngTemplateOutlet="templateRef; context: {$implicit: data}"></ng-container>
     </div>
-</ng-container>
+
+}
 

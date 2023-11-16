@@ -17,26 +17,38 @@
     </div>
 
 
-    <div *ngIf="meritExchangeData.effects && meritExchangeData.effects.length" class="my-2">Effects when bought:
+    @if (meritExchangeData.effects && meritExchangeData.effects.length) {
+<div class="my-2">Effects when bought:
         <div class="flex flex-col text-black">
-            <app-effect *ngFor="let effect of meritExchangeData.effects" [effect]="effect"/>
+            @for (effect of meritExchangeData.effects; track effect) {
+  <app-effect [effect]="effect"/>
+}
         </div>
     </div>
+}
 
-    <div *ngIf="meritExchangeData.requirements && meritExchangeData.requirements.requirements.length" class="my-2">
-        <ng-container *ngIf="meritExchangeData.requirements.requirements.length > 1">
+    @if (meritExchangeData.requirements && meritExchangeData.requirements.requirements.length) {
+<div class="my-2">
+        @if (meritExchangeData.requirements.requirements.length > 1) {
+
             Unlock requirements ({{meritExchangeData.requirements.type === 'And' ? 'all' : 'any'}} of them):
-        </ng-container>
-        <ng-container *ngIf="meritExchangeData.requirements.requirements.length < 2">
+        
+}
+        @if (meritExchangeData.requirements.requirements.length < 2) {
+
             Unlock requirement:
-        </ng-container>
+        
+}
 
 
         <div class="flex flex-col  text-black">
-            <app-requirements *ngFor="let requirement of meritExchangeData.requirements.requirements"
+            @for (requirement of meritExchangeData.requirements.requirements; track requirement) {
+  <app-requirements
                               [requirement]="requirement"/>
+}
         </div>
     </div>
+}
 
 
 </app-base-item-card>

@@ -18,40 +18,64 @@
 <div>Can trigger on the same day: <span
         class="text-black">{{heartEventTrigger.canTriggerSameDay ? 'Yes' : 'No'}}</span>
 </div>
-<div *ngIf="heartEventTrigger.otherCutscenesState.length">Other cutscenes requirements:
-    <ng-container *ngFor="let otherStates of heartEventTrigger.otherCutscenesState">
-        <div *ngFor="let cutscenes of (otherStates | keyvalue)" class="text-black">{{cutscenes.key}}
+@if (heartEventTrigger.otherCutscenesState.length) {
+<div>Other cutscenes requirements:
+    @for (otherStates of heartEventTrigger.otherCutscenesState; track otherStates) {
+  
+        @for (cutscenes of (otherStates | keyvalue); track cutscenes) {
+  <div class="text-black">{{cutscenes.key}}
             : {{cutscenes.value ? 'Has to be seen' : 'Has to be unseen'}}</div>
-    </ng-container>
+}
+    
+}
 </div>
-<div *ngIf="heartEventTrigger.specificDay.length">Only on days: <span
+}
+@if (heartEventTrigger.specificDay.length) {
+<div>Only on days: <span
         class="text-black">{{heartEventTrigger.specificDay.join(', ')}}</span>
 </div>
-<div *ngIf="heartEventTrigger.specificMonth.length">Only in seasons: <span
+}
+@if (heartEventTrigger.specificMonth.length) {
+<div>Only in seasons: <span
         class="text-black">{{heartEventTrigger.specificMonth.join(', ')}}</span>
 </div>
-<div *ngIf="heartEventTrigger.specificWeather.length">Only with weather: <span
+}
+@if (heartEventTrigger.specificWeather.length) {
+<div>Only with weather: <span
         class="text-black">{{heartEventTrigger.specificWeather.join(', ')}}</span>
 </div>
+}
 
-<div *ngIf="heartEventTrigger.effects && heartEventTrigger.effects.length" class="my-4">
+@if (heartEventTrigger.effects && heartEventTrigger.effects.length) {
+<div class="my-4">
     <span class="text-lg text-black">Effects when seen</span>
     <div class="flex flex-col text-black">
-        <app-effect *ngFor="let effect of heartEventTrigger.effects" [effect]="effect"/>
+        @for (effect of heartEventTrigger.effects; track effect) {
+  <app-effect [effect]="effect"/>
+}
     </div>
 </div>
-<div *ngIf="heartEventTrigger.requirements && heartEventTrigger.requirements.requirements.length" class="my-4">
+}
+@if (heartEventTrigger.requirements && heartEventTrigger.requirements.requirements.length) {
+<div class="my-4">
     <span class="text-lg text-black">
-        <ng-container *ngIf="heartEventTrigger.requirements.requirements.length > 1">
+        @if (heartEventTrigger.requirements.requirements.length > 1) {
+
             Unlock requirements ({{heartEventTrigger.requirements.type === 'And' ? 'all' : 'any'}} of them):
-        </ng-container>
-        <ng-container *ngIf="heartEventTrigger.requirements.requirements.length < 2">
+        
+}
+        @if (heartEventTrigger.requirements.requirements.length < 2) {
+
             Unlock requirement:
-        </ng-container>
+        
+}
     </span>
 
     <div class="flex flex-col  text-black">
-        <app-requirements *ngFor="let requirement of heartEventTrigger.requirements.requirements"
+        @for (requirement of heartEventTrigger.requirements.requirements; track requirement) {
+  <app-requirements
                           [requirement]="requirement"/>
+}
     </div>
 </div>
+}

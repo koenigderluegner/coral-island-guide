@@ -1,5 +1,6 @@
 <app-responsive-table>
-    <table *ngIf="matDataSource" [dataSource]="matDataSource" class="can-expand" mat-table matSort
+    @if (matDataSource) {
+<table [dataSource]="matDataSource" class="can-expand" mat-table matSort
            multiTemplateDataRows>
 
         <ng-container matColumnDef="title">
@@ -21,9 +22,13 @@
         <ng-container matColumnDef="effects">
             <th *matHeaderCellDef mat-header-cell>Effects</th>
             <td *matCellDef="let element" mat-cell>
-                <div *ngIf="element.effects?.length" class="flex flex-col py-3 gap-1">
-                    <app-effect *ngFor="let effect of element.effects" [effect]="effect" class="whitespace-nowrap"/>
+                @if (element.effects?.length) {
+<div class="flex flex-col py-3 gap-1">
+                    @for (effect of element.effects; track effect) {
+  <app-effect [effect]="effect" class="whitespace-nowrap"/>
+}
                 </div>
+}
             </td>
         </ng-container>
 
@@ -55,4 +60,5 @@
         <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
         <tr *matRowDef="let row; columns: ['expandedDetail']" class="expand-row" mat-row></tr>
     </table>
+}
 </app-responsive-table>
