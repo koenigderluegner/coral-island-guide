@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { default as pageMarkdown } from 'raw-loader!../../../CHANGELOG.md';
 import { MarkdownModule, MarkdownService } from 'ngx-markdown';
 
 
@@ -9,10 +8,10 @@ import { MarkdownModule, MarkdownService } from 'ngx-markdown';
     standalone: true,
     imports: [CommonModule, MarkdownModule],
     providers: [MarkdownService],
-    template: '<markdown [data]="markdown"></markdown>',
+    template: '<markdown [data]="markdown" />',
 })
 export class ChangelogComponent {
 
-    markdown = pageMarkdown;
+    @Input({required: true}) markdown!: string;
 
 }

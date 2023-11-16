@@ -1,13 +1,16 @@
-import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
+import { Component, HostBinding, inject, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChangelogComponent } from '../changelog/changelog.component';
 import { SharedModule } from '../shared/shared.module';
+import { HttpClient } from "@angular/common/http";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { delay } from "rxjs";
 
 @Component({
     selector: 'app-start',
     templateUrl: './start.component.html',
     standalone: true,
-    imports: [CommonModule, ChangelogComponent, SharedModule],
+    imports: [CommonModule, ChangelogComponent, SharedModule, MatProgressSpinnerModule],
 
     styles: [`
         .app-start {
@@ -18,6 +21,7 @@ import { SharedModule } from '../shared/shared.module';
 })
 export class StartComponent {
 
+    markdown$ = inject(HttpClient).get('CHANGELOG.md', {responseType: 'text'}).pipe(delay(20000))
     @HostBinding('class.app-start') private _setCssClass = true;
 
 }

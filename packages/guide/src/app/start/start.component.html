@@ -20,7 +20,9 @@
             &dash; Koenig
         </p>
 
-        <app-changelog></app-changelog>
+        <app-changelog [markdown]="markdown" *ngIf="markdown$ | async as markdown"/>
+
+
     </div>
 
 </app-card>
