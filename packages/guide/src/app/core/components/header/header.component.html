@@ -6,12 +6,15 @@
             <span class="text-4xl font-semibold hidden xl:block">Coral Guide</span>
             <span class="text-4xl font-semibold block xl:hidden">CG</span>
         </a>
-        <span *ngIf="isBeta"
+        @if (isBeta) {
+<span
               class="beta-badge xl:!top-5 leading-none font-bold text-black absolute px-1.5 py-1 rounded-sm right-0">BETA</span>
+}
     </div>
     <nav class="hidden md:block">
         <ul class="flex gap-x-6">
-            <li *ngFor="let naviLink of naviLinks">
+            @for (naviLink of naviLinks; track naviLink) {
+  <li>
                 <a [routerLink]="naviLink.path"
                    class=" flex flex-col py-3 px-2 text-neutral-400 hover:text-neutral-300 items-center text-center"
                    [routerLinkActive]="['text-white', 'active']">
@@ -20,6 +23,7 @@
                 </a>
 
             </li>
+}
         </ul>
     </nav>
     <div class="block md:hidden">
@@ -45,7 +49,8 @@
 
 >
     <ul class="py-4">
-        <li *ngFor="let naviLink of naviLinks" class="my-2">
+        @for (naviLink of naviLinks; track naviLink) {
+  <li class="my-2">
             <a [routerLinkActive]="['text-white', 'active']"
                [routerLink]="naviLink.path"
                class=" flex py-3 px-4 text-neutral-400 hover:text-neutral-300 items-center">
@@ -54,5 +59,6 @@
             </a>
 
         </li>
+}
     </ul>
 </ng-template>

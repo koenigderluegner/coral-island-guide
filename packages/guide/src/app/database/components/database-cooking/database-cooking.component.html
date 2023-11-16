@@ -1,12 +1,16 @@
-<app-expandable #expandableComponent *ngIf="usedIn.length" open>
+@if (usedIn.length) {
+<app-expandable #expandableComponent open>
     <h3 class="database-header" expandableHeader>
         <app-database-header-button [templateRef]="expandableComponent">Usage in cooking</app-database-header-button>
     </h3>
     <app-cooking-table [dataSource]="usedIn" showUtensil/>
 </app-expandable>
-<app-expandable #expandableComponent *ngIf="craftedFrom.length" open>
+}
+@if (craftedFrom.length) {
+<app-expandable #expandableComponent open>
     <h3 class="database-header" expandableHeader>
         <app-database-header-button [templateRef]="expandableComponent">Cooking recipe</app-database-header-button>
     </h3>
     <app-cooking-table [dataSource]="craftedFrom" showUtensil/>
 </app-expandable>
+}

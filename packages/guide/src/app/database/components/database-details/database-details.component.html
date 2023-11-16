@@ -1,4 +1,5 @@
-<app-card *ngIf="item">
+@if (item) {
+<app-card>
 
     <header class="flex items-center flex-wrap mb-5">
         <app-item-icon [itemName]="item.iconName" class="mr-3 w-14"/>
@@ -37,3 +38,4 @@
     <app-database-item-upgrade [item]="item"/>
     <app-database-bestiary [item]="item"/>
 </app-card>
+}

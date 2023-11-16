@@ -5,17 +5,21 @@
         <app-module-sidebar-item [uiIcon]="uiIcon.STORE" routerLink="merit-exchange">Merit Exchange
         </app-module-sidebar-item>
         <app-module-sidebar-item>Shops</app-module-sidebar-item>
-        <ng-container *ngFor="let shopName of shops">
+        @for (shopName of shops; track shopName) {
+  
             <app-module-sidebar-item [routerLink]="shopName"
                                      [uiIcon]="SHOP_ICONS[shopName]">{{SHOP_DISPLAY_NAMES[shopName]}}
             </app-module-sidebar-item>
-        </ng-container>
+        
+}
         <app-module-sidebar-item>Festivals</app-module-sidebar-item>
-        <ng-container *ngFor="let festivalName of festivals">
+        @for (festivalName of festivals; track festivalName) {
+  
             <app-module-sidebar-item [routerLink]="festivalName"
                                      [uiIcon]="FESTIVAL_ICONS[festivalName]">{{FESTIVAL_DISPLAY_NAMES[festivalName]}}
             </app-module-sidebar-item>
-        </ng-container>
+        
+}
 
     </app-module-sidebar>
     <router-outlet class="hidden"></router-outlet>

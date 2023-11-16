@@ -1,5 +1,7 @@
 <app-base-item-card [item]="shopItemData.item">
-    <div *ngIf="!shopItemData.enabled" class="mb-3">Enabled: <span class="text-black">NO</span></div>
+    @if (!shopItemData.enabled) {
+<div class="mb-3">Enabled: <span class="text-black">NO</span></div>
+}
 
     <div>Buy price:
         <span class="text-black">
@@ -12,87 +14,119 @@
            {{shopItemData.townRank | townrank}}
         </span>
     </div>
-    <div *ngIf="shopItemData.availableDuringTime && shopItemData.timeRange">Only at times:
+    @if (shopItemData.availableDuringTime && shopItemData.timeRange) {
+<div>Only at times:
         <span class="inline-flex">
             {{(shopItemData.timeRange.fromTime.hours | number: '2.0') + ':' + (shopItemData.timeRange.fromTime.minutes | number: '2.0')}}
             -
             {{(shopItemData.timeRange.toTime.hours | number: '2.0') + ':' + (shopItemData.timeRange.toTime.minutes | number: '2.0')}}
         </span>
     </div>
+}
 
 
-    <div *ngIf="shopItemData.availableSinceDate && shopItemData.sinceDate">Available since:
+    @if (shopItemData.availableSinceDate && shopItemData.sinceDate) {
+<div>Available since:
         <span
                 class="text-black">{{shopItemData.sinceDate | ingameDate}}
         </span>
     </div>
+}
 
-    <div *ngIf="shopItemData.availableTillDate && shopItemData.tillDate">Available until:
+    @if (shopItemData.availableTillDate && shopItemData.tillDate) {
+<div>Available until:
         <span
                 class="text-black">{{shopItemData.tillDate | ingameDate}}
         </span>
     </div>
+}
 
-    <div *ngIf="shopItemData.forbiddenDays.length">Except on days:
+    @if (shopItemData.forbiddenDays.length) {
+<div>Except on days:
         <span
                 class="text-black">{{shopItemData.forbiddenDays.join(', ')}}
         </span>
     </div>
+}
 
-    <div *ngIf="shopItemData.allowedDays.length && shopItemData.allowedDays.length !== 7">Only on days:
+    @if (shopItemData.allowedDays.length && shopItemData.allowedDays.length !== 7) {
+<div>Only on days:
         <span
                 class="text-black">{{shopItemData.allowedDays.join(', ')}}
         </span>
     </div>
-    <div *ngIf="shopItemData.forbiddenDays.length">Except on days:
+}
+    @if (shopItemData.forbiddenDays.length) {
+<div>Except on days:
         <span
                 class="text-black">{{shopItemData.forbiddenDays.join(', ')}}
         </span>
     </div>
+}
 
-    <div *ngIf="shopItemData.allowedWeather.length">Only at weather:
+    @if (shopItemData.allowedWeather.length) {
+<div>Only at weather:
         <span
                 class="text-black">{{shopItemData.allowedWeather.join(', ')}}
         </span>
     </div>
-    <div *ngIf="shopItemData.forbiddenWeather.length">Except at weather:
+}
+    @if (shopItemData.forbiddenWeather.length) {
+<div>Except at weather:
         <span
                 class="text-black">{{shopItemData.forbiddenWeather.join(', ')}}
         </span>
     </div>
+}
 
 
-    <div *ngIf="shopItemData.allowedSeasons.length && shopItemData.allowedSeasons.length !== 4">Only at seasons:
+    @if (shopItemData.allowedSeasons.length && shopItemData.allowedSeasons.length !== 4) {
+<div>Only at seasons:
         <span
                 class="text-black">{{shopItemData.allowedSeasons.join(', ')}}
         </span>
     </div>
-    <div *ngIf="shopItemData.forbiddenSeasons.length">Except at seasons:
+}
+    @if (shopItemData.forbiddenSeasons.length) {
+<div>Except at seasons:
         <span
                 class="text-black">{{shopItemData.forbiddenSeasons.join(', ')}}
         </span>
     </div>
+}
 
-    <div *ngIf="shopItemData.effects && shopItemData.effects.length" class="my-2">Effects when bought:
+    @if (shopItemData.effects && shopItemData.effects.length) {
+<div class="my-2">Effects when bought:
         <div class="flex flex-col text-black">
-            <app-effect *ngFor="let effect of shopItemData.effects" [effect]="effect"/>
+            @for (effect of shopItemData.effects; track effect) {
+  <app-effect [effect]="effect"/>
+}
         </div>
     </div>
+}
 
-    <div *ngIf="shopItemData.requirements && shopItemData.requirements.requirements.length" class="my-2">
-        <ng-container *ngIf="shopItemData.requirements.requirements.length > 1">
+    @if (shopItemData.requirements && shopItemData.requirements.requirements.length) {
+<div class="my-2">
+        @if (shopItemData.requirements.requirements.length > 1) {
+
             Unlock requirements ({{shopItemData.requirements.type === 'And' ? 'all' : 'any'}} of them):
-        </ng-container>
-        <ng-container *ngIf="shopItemData.requirements.requirements.length < 2">
+        
+}
+        @if (shopItemData.requirements.requirements.length < 2) {
+
             Unlock requirement:
-        </ng-container>
+        
+}
 
 
         <div class="flex flex-col  text-black">
-            <app-requirements *ngFor="let requirement of shopItemData.requirements.requirements"
+            @for (requirement of shopItemData.requirements.requirements; track requirement) {
+  <app-requirements
                               [requirement]="requirement"/>
+}
         </div>
     </div>
+}
 
 
 </app-base-item-card>

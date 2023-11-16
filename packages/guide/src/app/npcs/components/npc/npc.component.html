@@ -1,4 +1,5 @@
-<div *ngIf="npc" class="npc-wrapper">
+@if (npc) {
+<div class="npc-wrapper">
 
     <h1 class="mb-4 font-semibold text-3xl text-white">
         {{npc.characterName}}
@@ -9,53 +10,74 @@
         <h2 class="mb-4 font-semibold text-2xl text-black">
             Gifting
         </h2>
-        <app-gifting-grid *ngIf="giftingPreferences" [preferences]="giftingPreferences"/>
-        <p *ngIf="!giftingPreferences" class="text-black text-lg">
+        @if (giftingPreferences) {
+<app-gifting-grid [preferences]="giftingPreferences"/>
+}
+        @if (!giftingPreferences) {
+<p class="text-black text-lg">
             {{npc.characterName}} has no specialized preferences.
         </p>
+}
     </app-card>
 
     <app-card class="mt-6">
         <h2 class="mb-4 font-semibold text-2xl text-black">
             Heart events
         </h2>
-        <app-heart-events *ngIf="heartEvents.length" [heartEvents]="heartEvents"/>
-        <p *ngIf="!heartEvents.length" class="text-black text-lg">
+        @if (heartEvents.length) {
+<app-heart-events [heartEvents]="heartEvents"/>
+}
+        @if (!heartEvents.length) {
+<p class="text-black text-lg">
             {{npc.characterName}} has no heart events.
         </p>
+}
     </app-card>
 
     <app-card class="mt-6">
         <h2 class="mb-4 font-semibold text-2xl text-black">
             Appearances
         </h2>
-        <ng-container *ngIf="(npc.appearances | keyvalue) as appearancePairs">
-            <ng-container *ngIf="appearancePairs.length">
-                <div *ngFor="let appearancePair of appearancePairs" class="font-semibold text-black mb-6">
+        @if ((npc.appearances | keyvalue); as appearancePairs) {
+
+            @if (appearancePairs.length) {
+
+                @for (appearancePair of appearancePairs; track appearancePair) {
+  <div class="font-semibold text-black mb-6">
                     <h3 class="text-xl">{{appearancePair.key}}</h3>
                     <div class="grid portrait-grid gap-4">
-                        <div *ngFor="let emotionPair of (appearancePair.value | keyvalue)"
+                        @for (emotionPair of (appearancePair.value | keyvalue); track emotionPair) {
+  <div
                              class="flex flex-col shadow-lg p-2">
                             <app-npc-portrait [npcKey]="npc.key" [portraitName]="emotionPair.value"
                                               class="h-[400px] flex items-end justify-center"/>
                             <span class="">{{emotionPair.key}}</span>
                         </div>
+}
                     </div>
                 </div>
-            </ng-container>
+}
+            
+}
 
-            <p *ngIf="!appearancePairs.length" class="text-black text-lg">
+            @if (!appearancePairs.length) {
+<p class="text-black text-lg">
                 {{npc.characterName}} has no appearances.
             </p>
+}
 
-        </ng-container>
+        
+}
     </app-card>
 
 </div>
-<ng-container *ngIf="!npc">
+}
+@if (!npc) {
+
     <app-card class="npc-wrapper">
         <h1 class="mb-4 font-semibold text-3xl text-black flex items-center gap-x-4 ">
             NPC not found.
         </h1>
     </app-card>
-</ng-container>
+
+}

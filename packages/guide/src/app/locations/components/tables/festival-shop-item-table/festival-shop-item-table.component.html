@@ -1,5 +1,6 @@
 <app-responsive-table>
-    <table *ngIf="matDataSource" [dataSource]="matDataSource" mat-table matSort>
+    @if (matDataSource) {
+<table [dataSource]="matDataSource" mat-table matSort>
         <ng-container matColumnDef="icon" sticky>
             <td *matCellDef="let element" class="!pl-2 !pr-0 w-10 text-center icon-col " mat-cell>
                 <app-item-icon [itemName]="element.item.iconName"/>
@@ -36,9 +37,15 @@
                 limit
             </th>
             <td *matCellDef="let element" class="text-col !text-right w-[1%]" mat-cell>
-                <span *ngIf="element.festivalSetting.isLimitedItem">{{element.festivalSetting.itemLimit}}</span>
-                <span *ngIf="element.festivalSetting.hasYearlyLimit">{{element.festivalSetting.itemLimitPerYear}} per year</span>
-                <span *ngIf="!element.festivalSetting.isLimitedItem && !element.festivalSetting.hasYearlyLimit">-</span>
+                @if (element.festivalSetting.isLimitedItem) {
+<span>{{element.festivalSetting.itemLimit}}</span>
+}
+                @if (element.festivalSetting.hasYearlyLimit) {
+<span>{{element.festivalSetting.itemLimitPerYear}} per year</span>
+}
+                @if (!element.festivalSetting.isLimitedItem && !element.festivalSetting.hasYearlyLimit) {
+<span>-</span>
+}
 
             </td>
         </ng-container>
@@ -46,8 +53,12 @@
             <th *matHeaderCellDef class="backdrop-blur-xl whitespace-nowrap" mat-header-cell mat-sort-header>Discount
             </th>
             <td *matCellDef="let element" class="text-col !text-right w-[1%]" mat-cell>
-                <span *ngIf="element.festivalSetting.hasDiscount">{{(element.festivalSetting.discount) | percent}}</span>
-                <span *ngIf="!element.festivalSetting.hasDiscount">-</span>
+                @if (element.festivalSetting.hasDiscount) {
+<span>{{(element.festivalSetting.discount) | percent}}</span>
+}
+                @if (!element.festivalSetting.hasDiscount) {
+<span>-</span>
+}
 
             </td>
         </ng-container>
@@ -55,8 +66,10 @@
             <th *matHeaderCellDef class="backdrop-blur-xl whitespace-nowrap" mat-header-cell mat-sort-header>Price
             </th>
             <td *matCellDef="let element" class="text-col !text-right w-[1%]" mat-cell>
-                <span *ngIf="element.festivalSetting.hasDiscount"
+                @if (element.festivalSetting.hasDiscount) {
+<span
                       class="line-through mr-3">{{element.item.price}}</span>
+}
                 <app-money
                         [amount]="element.item.price * (1 - (element.festivalSetting.hasDiscount ? element.festivalSetting.discount : 0))"/>
             </td>
@@ -73,4 +86,5 @@
         <tr *matHeaderRowDef="displayHeaderColumns; sticky: true" mat-header-row></tr>
         <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
     </table>
+}
 </app-responsive-table>

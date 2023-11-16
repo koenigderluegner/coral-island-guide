@@ -1,5 +1,6 @@
 <app-responsive-table>
-    <table *ngIf="matDataSource" [dataSource]="matDataSource" class="can-expand" mat-table matSort
+    @if (matDataSource) {
+<table [dataSource]="matDataSource" class="can-expand" mat-table matSort
            multiTemplateDataRows>
 
         <ng-container matColumnDef="title">
@@ -35,4 +36,5 @@
         <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
         <tr *matRowDef="let row; columns: ['expandedDetail']" class="expand-row" mat-row></tr>
     </table>
+}
 </app-responsive-table>

@@ -1,14 +1,22 @@
-<div *ngIf="requirements && requirements.requirements.length" class="my-2">
-    <ng-container *ngIf="requirements.requirements.length > 1">
+@if (requirements && requirements.requirements.length) {
+<div class="my-2">
+    @if (requirements.requirements.length > 1) {
+
         Unlock requirements ({{requirements.type === 'And' ? 'all' : 'any'}} of them):
-    </ng-container>
-    <ng-container *ngIf="requirements.requirements.length < 2">
+    
+}
+    @if (requirements.requirements.length < 2) {
+
         Unlock requirement:
-    </ng-container>
+    
+}
 
 
     <div class="flex flex-col  text-black">
-        <app-requirements *ngFor="let requirement of requirements.requirements"
+        @for (requirement of requirements.requirements; track requirement) {
+  <app-requirements
                           [requirement]="requirement"/>
+}
     </div>
 </div>
+}

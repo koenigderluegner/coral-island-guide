@@ -1,3 +1,7 @@
-<ng-container [ngSwitch]="type">
-    <app-to-do-entry-offering *ngSwitchCase="toDoCategory.OFFERINGS" [entry]="entry"/>
-</ng-container>
+
+@switch (type) {
+    @case (toDoCategory.OFFERINGS) {
+  <app-to-do-entry-offering [entry]="entry"/>
+}
+}
+

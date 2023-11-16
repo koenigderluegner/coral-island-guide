@@ -1,40 +1,58 @@
 <div class="mb-3 flex gap-x-3">
     <button (click)="setShowTable(!showTable)" class="btn"
             type="button">{{showTable ? 'Show grid' : 'Show table'}}</button>
-    <ng-container *ngIf="parentFormGroup" [formGroup]="parentFormGroup">
-        <mat-form-field *ngIf="parentFormGroup.contains('season')" class="btn">
-            <mat-label *ngIf="!parentFormGroup.value?.season?.length">Season</mat-label>
+    @if (parentFormGroup) {
+<ng-container [formGroup]="parentFormGroup">
+        @if (parentFormGroup.contains('season')) {
+<mat-form-field class="btn">
+            @if (!parentFormGroup.value?.season?.length) {
+<mat-label>Season</mat-label>
+}
             <mat-select disableOptionCentering formControlName="season" multiple>
                 <mat-select-trigger>
                     {{parentFormGroup.value.season?.[0] || 'Filter'}}
-                    <span *ngIf="(parentFormGroup.value.season?.length || 0) > 1" class="text-sm opacity-80">
+                    @if ((parentFormGroup.value.season?.length || 0) > 1) {
+<span class="text-sm opacity-80">
         (+{{(parentFormGroup.value.season?.length || 0) - 1}} {{parentFormGroup.value.season?.length === 2 ? 'other' : 'others'}}
                         )
       </span>
+}
                 </mat-select-trigger>
-                <mat-option
-                        *ngFor="let seasonOption of [season.SPRING, season.SUMMER, season.FALL, season.WINTER]"
+                @for (seasonOption of [season.SPRING, season.SUMMER, season.FALL, season.WINTER]; track seasonOption) {
+  <mat-option
+                       
                         [value]="seasonOption">{{seasonOption}}</mat-option>
+}
 
             </mat-select>
         </mat-form-field>
+}
 
-        <mat-form-field *ngIf="parentFormGroup.contains('weather')" class="btn">
-            <mat-label *ngIf="!parentFormGroup.value.weather?.length">Weather</mat-label>
+        @if (parentFormGroup.contains('weather')) {
+<mat-form-field class="btn">
+            @if (!parentFormGroup.value.weather?.length) {
+<mat-label>Weather</mat-label>
+}
             <mat-select disableOptionCentering formControlName="weather" multiple>
                 <mat-select-trigger>
                     {{parentFormGroup.value.weather?.[0] || 'Filter'}}
-                    <span *ngIf="(parentFormGroup.value.weather?.length || 0) > 1" class="text-sm opacity-80">
+                    @if ((parentFormGroup.value.weather?.length || 0) > 1) {
+<span class="text-sm opacity-80">
         (+{{(parentFormGroup.value.weather?.length || 0) - 1}} {{parentFormGroup.value.weather?.length === 2 ? 'other' : 'others'}}
                         )
       </span>
+}
 
                 </mat-select-trigger>
-                <mat-option
-                        *ngFor="let weatherOption of [weather.SUNNY, weather.RAIN, weather.SNOW, weather.WINDY, weather.STORM, weather.BLIZZARD]"
+                @for (weatherOption of [weather.SUNNY, weather.RAIN, weather.SNOW, weather.WINDY, weather.STORM, weather.BLIZZARD]; track weatherOption) {
+  <mat-option
+                       
                         [value]="weatherOption">{{weatherOption}}</mat-option>
+}
 
             </mat-select>
         </mat-form-field>
+}
     </ng-container>
+}
 </div>

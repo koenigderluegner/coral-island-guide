@@ -1,5 +1,6 @@
 <app-responsive-table>
-    <table mat-table *ngIf="matDataSource" [dataSource]="matDataSource" matSort>
+    @if (matDataSource) {
+<table mat-table [dataSource]="matDataSource" matSort>
         <ng-container matColumnDef="icon" sticky>
             <td mat-cell *matCellDef="let element" class="!px-2 ">
                 <app-item-icon class="mx-2" [itemName]="element.item.iconName"></app-item-icon>
@@ -28,13 +29,18 @@
         <ng-container matColumnDef="season">
             <th mat-header-cell *matHeaderCellDef> Season</th>
             <td mat-cell *matCellDef="let element">
-                <ng-container
-                        *ngIf="!element.isUsingSpecificDate">{{getTruthyValues(element.spawnSeason)}}</ng-container>
-                <ng-container *ngIf="element.isUsingSpecificDate">
-                    <div class="whitespace-nowrap"
-                         *ngFor="let rage of dateRangesToString(element.dateRangeList); let last = last ">{{rage}}{{!last ? ', ' : ''}}
+                @if (!element.isUsingSpecificDate) {
+{{getTruthyValues(element.spawnSeason)}}
+}
+                @if (element.isUsingSpecificDate) {
+
+                    @for (rage of dateRangesToString(element.dateRangeList); track rage; let last = $last) {
+  <div class="whitespace-nowrap"
+                        >{{rage}}{{!last ? ', ' : ''}}
                     </div>
-                </ng-container>
+}
+                
+}
 
             </td>
         </ng-container>
@@ -52,4 +58,5 @@
         <tr *matHeaderRowDef="displayHeaderColumns; sticky: true" mat-header-row></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+}
 </app-responsive-table>

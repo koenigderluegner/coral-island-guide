@@ -1,6 +1,8 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     <ng-container listDetail>
-        <app-merit-shop-details *ngIf="selectedEntity" [meritExchangeData]="selectedEntity"/>
+        @if (selectedEntity) {
+<app-merit-shop-details [meritExchangeData]="selectedEntity"/>
+}
     </ng-container>
 
     <div class="px-2 xl:px-[50px] w-full">
@@ -12,21 +14,29 @@
             </h1>
         </app-card>
 
-        <ng-container *ngIf="shopItemData$">
-            <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Stock list</h2>
-            <ng-container *ngIf="(shopItemData$ |async) as shopItemData">
-                <div *ngIf="!showTable" class="grid gap-4 icon-grid">
+        @if (shopItemData$) {
 
-                    <app-item-icon (click)="showDetails(shopItem)" *ngFor="let shopItem of shopItemData"
+            <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Stock list</h2>
+            @if ((shopItemData$ |async); as shopItemData) {
+
+                @if (!showTable) {
+<div class="grid gap-4 icon-grid">
+
+                    @for (shopItem of shopItemData; track shopItem) {
+  <app-item-icon (click)="showDetails(shopItem)"
                                    [class.selected-icon]="selectedEntity?.item?.id === shopItem.item.id"
                                    [itemName]="shopItem.item.iconName"
                                    class="icon-grid-item">
                     </app-item-icon>
+}
                 </div>
+}
 
 
-            </ng-container>
-        </ng-container>
+            
+}
+        
+}
 
 
     </div>

@@ -1,39 +1,55 @@
-<app-base-item-card (addedToToDo)="registerToToDo && registerToToDo(critter)" *ngIf="critter"
+@if (critter) {
+<app-base-item-card (addedToToDo)="registerToToDo && registerToToDo(critter)"
                     [toDoCategory]="toDoCategory"
                     [item]="critter.item">
     <div>Rarity: <span class="text-black">{{critter.rarity | spacesToPascalCase}}</span></div>
-    <ng-container *ngIf="critter | isFish">
+    @if (critter | isFish) {
+
         <div>Size: <span class="text-black">{{critter.fishSize}}</span></div>
-    </ng-container>
+    
+}
     <div>Time: <span class="text-black">{{getTruthyValues(critter.spawnTime)}}</span></div>
-    <ng-container *ngIf="critter | isFish">
+    @if (critter | isFish) {
+
         <div>
             Season: <span
                 class="text-black">{{!critter.isUsingSpecificDate ? getTruthyValues(critter.spawnSeason) : dateRangesToString(critter.dateRangeList)}}</span>
         </div>
-    </ng-container>
-    <ng-container *ngIf="!(critter | isFish)">
+    
+}
+    @if (!(critter | isFish)) {
+
         <div>
             Season: <span
                 class="text-black">{{getTruthyValues(critter.spawnSeason)}}</span>
         </div>
-    </ng-container>
+    
+}
 
-    <div *ngIf="getTruthyValues(critter.spawnWeather) as weather">Weather: <span class="text-black">{{weather}}</span>
+    @if (getTruthyValues(critter.spawnWeather); as weather) {
+<div>Weather: <span class="text-black">{{weather}}</span>
     </div>
+}
     <div>
         Location: <span
             class="text-black">{{ critter.spawnLocation.join(', ')}}</span>
     </div>
 
-    <ng-container *ngIf="!(critter | isFish)">
-        <div *ngIf="critter.spawnAmountModifiers && critter.spawnAmountModifiers.length">Spawn amount modifiers
-            <div *ngFor="let modifier of critter.spawnAmountModifiers" class="flex justify-between">
+    @if (!(critter | isFish)) {
+
+        @if (critter.spawnAmountModifiers && critter.spawnAmountModifiers.length) {
+<div>Spawn amount modifiers
+            @for (modifier of critter.spawnAmountModifiers; track modifier) {
+  <div class="flex justify-between">
                 <span>{{modifier[0]}}</span>
                 <span class="text-black">{{modifier[1]}}</span>
             </div>
+}
             <hr>
         </div>
-    </ng-container>
+}
+    
+}
 
 </app-base-item-card>
+}
