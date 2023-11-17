@@ -14,7 +14,7 @@ import { MapKeyed } from "../../../shared/types/map-keyed.type";
 export class NpcComponent implements OnInit {
 
     @Input() npcKey!: string;
-    protected npc?: NPC;
+    protected npc?: NPC | null = null;
     protected heartEvents: HeartEvent[] = []
     protected readonly UiIcon = UiIcon;
     protected giftingPreferences?: MapKeyed<GiftPreferences>;
