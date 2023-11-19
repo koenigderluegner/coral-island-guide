@@ -2,17 +2,34 @@ import { FestivalShopItemData } from "@ci/data-types";
 import { ShopItemDataGenerator } from "./shop-item-data.generator";
 import { RawFestivalShopItemData } from "../interfaces/raw-data-interfaces/raw-festival-shop-item-data.interface";
 import { GeneratorOptions } from "./base-generator.class";
+import { RawShopItemData } from "../interfaces/raw-data-interfaces/raw-shop-item-data.interface";
 
 
 export class FestivalShopItemDataGenerator extends ShopItemDataGenerator<RawFestivalShopItemData> {
 
 
-    override handleEntry(itemKey: string, dbItem: RawFestivalShopItemData): FestivalShopItemData | undefined {
+    _DEFAULT_FESTIVAL_SETTING: FestivalShopItemData['festivalSetting'] = {
+        discount: 0,
+        itemLimit: 0,
+        isLimitedItem: false,
+        itemLimitPerYear: 0,
+        hasYearlyLimit: false,
+        hasDiscount: false
+    }
 
-        const shopEntry = super.handleEntry(itemKey, dbItem)
+    override handleEntry(itemKey: string, dbItem: RawFestivalShopItemData | RawShopItemData): FestivalShopItemData | undefined {
+
+        let festivalData: RawFestivalShopItemData;
+        if (!('festivalSetting' in dbItem)) {
+            festivalData = {...dbItem, festivalSetting: this._DEFAULT_FESTIVAL_SETTING}
+        } else {
+            festivalData = dbItem
+        }
+
+        const shopEntry = super.handleEntry(itemKey, festivalData)
         if (!shopEntry) return undefined;
         return {
-            festivalSetting: dbItem.festivalSetting,
+            festivalSetting: festivalData.festivalSetting,
             ...shopEntry
         };
     }

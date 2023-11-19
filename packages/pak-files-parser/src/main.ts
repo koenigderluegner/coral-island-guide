@@ -196,6 +196,16 @@ AvailableLanguages.forEach(lang => {
                                 ]
                             }
                         )
+                    },
+                    {
+                        title: 'Pufferfish Shop',
+                        shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BeachCleanupPufferfishShop.json').generate(
+                            {
+                                daFiles: [
+                                    'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_FestivalShopBuyEffect.json'
+                                ]
+                            }
+                        )
                     }
                 ]),
                 'harvest-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["harvest"])!, [

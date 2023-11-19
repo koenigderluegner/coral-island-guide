@@ -2,6 +2,10 @@
 
 ### TBD
 
+#### Added
+
+- Added Pufferfish shop to beach clean up festival
+
 #### Changed
 
 - Fixed clicking on 'Reset beta checklists' label activating the wrong checkbox
