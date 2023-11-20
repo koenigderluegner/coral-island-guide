@@ -49,7 +49,7 @@ import { TornPagesGenerator } from "./app/torn-pages.generator";
 import { BestiaryGenerator } from "./app/bestiary.generator";
 import { CookingUtensilMapGenerator } from "./app/cooking-utensil-map.generator";
 import { StringTable } from "./util/string-table.class";
-import { AvailableLanguages, DatabaseItem, FestivalEventIds } from "@ci/data-types";
+import { AvailableLanguages, DatabaseItem, FestivalEventIds, Item, ItemProcessing } from "@ci/data-types";
 import { AnimalMoodSizeGenerator } from "./app/animal-mood-size.generator";
 import { AnimalDataGenerator } from "./app/animal-data.generator";
 import { AnimalShopDataGenerator } from "./app/animal-shop-data.generator";
@@ -427,14 +427,38 @@ AvailableLanguages.forEach(lang => {
 
         const generatorValues: GeneratorValues = generatorResults as GeneratorValues;
 
+        const getGenericItems = (item: Item) => {
+            return generatorValues['tag-based-items'].filter(tbi => tbi.tags.some(tag => item.tags?.includes(tag)))
+        }
 
         generatorValues.items.forEach(item => {
 
+
             const fish = generatorValues.fish.find(f => f.item.id === item.id);
+
+            const recipes = generatorValues["item-processing"];
+
+
+            const craftedFrom: ItemProcessing[] = [];
+            const usedIn: ItemProcessing[] = [];
+
+            Object.keys(recipes[0]).forEach(utensil => {
+                const utensilRecipes: ItemProcessing[] = recipes[0][utensil];
+                craftedFrom.push(...utensilRecipes.filter(recipe => recipe.output.item.id === item.id));
+                usedIn.push(...utensilRecipes.filter(recipe => {
+                    const tags = getGenericItems(item);
+
+                    return recipe.input.item.id === item.id || recipe.additionalInput.some(input => input.item.id === item.id) || !!tags.find(tag => tag.key === recipe.genericInput?.genericItem?.key)
+
+                }));
+            })
+
 
             const dbItem: DatabaseItem = {
                 ...item,
-                fish: fish ? omitFields(fish, 'item') : undefined
+                fish: fish ? omitFields(fish, 'item') : undefined,
+                artisanResult: craftedFrom.length ? craftedFrom : undefined,
+                artisanIngredient: usedIn.length ? usedIn : undefined
             }
 
             generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, lang);
