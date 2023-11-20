@@ -59,3 +59,12 @@ export function entityKey(entity: Item | MinimalItem | MinimalTagBasedItem | Cus
         ? entity.id
         : entity.key
 }
+
+export function omitFields<T extends Object, K extends Array<keyof T>>(
+    record: T, ...props: K): Omit<T, K[number]> {
+    const newRecord: Omit<T, K[number]> = Object.assign({}, record);
+    for (let prop of props) {
+        delete (newRecord as any)[prop];
+    }
+    return newRecord;
+}

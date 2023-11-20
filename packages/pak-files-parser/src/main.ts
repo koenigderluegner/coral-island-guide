@@ -49,13 +49,15 @@ import { TornPagesGenerator } from "./app/torn-pages.generator";
 import { BestiaryGenerator } from "./app/bestiary.generator";
 import { CookingUtensilMapGenerator } from "./app/cooking-utensil-map.generator";
 import { StringTable } from "./util/string-table.class";
-import { AvailableLanguages, FestivalEventIds } from "@ci/data-types";
+import { AvailableLanguages, DatabaseItem, FestivalEventIds } from "@ci/data-types";
 import { AnimalMoodSizeGenerator } from "./app/animal-mood-size.generator";
 import { AnimalDataGenerator } from "./app/animal-data.generator";
 import { AnimalShopDataGenerator } from "./app/animal-shop-data.generator";
 import { FestivalDbGenerator } from "./app/festival-db.generator";
 import { FestivalShopItemDataGenerator } from "./app/festival-shop-item-data.generator";
 import { FestivalDataGenerator } from "./app/festival-data.generator";
+import path from "path";
+import { omitFields } from "@ci/util";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
@@ -69,6 +71,7 @@ const itemIconsImageProcessor: ItemIconsImageProcessor = new ItemIconsImageProce
 
 
 const readable = !parsedArgs['prepare'] && true;
+
 
 
 AvailableLanguages.forEach(lang => {
@@ -104,8 +107,6 @@ AvailableLanguages.forEach(lang => {
 
     DaFilesParser.CookingMap = cookingDbMap;
 
-
-    let generators: Record<string, { generate: () => Map<string, any> }> = {}
 
     let betaGenerators: Record<string, { generate: () => Map<string, any> }> = {}
     let liveGenerators: Record<string, { generate: () => Map<string, any> }> = {}
@@ -277,7 +278,7 @@ AvailableLanguages.forEach(lang => {
         }
 
 
-        generators = {
+        const generators = {
             'crafting-recipes': new CraftingRecipeDbGenerator(itemDbMap, craftingRecipeUnlockedByMasteryDbMap),
             'bugs-and-insects': new BugsAndInsectsDbGenerator(itemDbMap),
             'ocean-critters': new OceanCritterDbGenerator(itemDbMap),
@@ -396,25 +397,57 @@ AvailableLanguages.forEach(lang => {
 
             // last so applied changed will be written as well
             items: {generate: () => itemDbMap},
-        };
+        } as const;
+
+
+        // TODO clean up / extract
+        type Generators = typeof generators;
+        type GeneratorKey = keyof Generators;
+        type GeneratedMapValue<K extends GeneratorKey> = ReturnType<Generators[K]['generate']> extends Map<string, infer R> ? R[] : never;
+        type GeneratorValues = { [k in GeneratorKey]: GeneratedMapValue<k> }
+
+        const generatorResults: Partial<GeneratorValues> = {};
+
+        (Object.keys(generators) as unknown as GeneratorKey[]).forEach(generatorName => {
+
+
+            try {
+                const generatorValues: GeneratedMapValue<typeof generatorName> = [...generators[generatorName].generate().values()];
+
+                // @ts-ignore
+                generatorResults[generatorName] = generatorValues
+                generateJson(`${generatorName}.json`, generatorValues, readable, lang);
+            } catch (e) {
+                const error = e as Error;
+                Logger.error(error.message, error.stack)
+
+            }
+
+        });
+
+        const generatorValues: GeneratorValues = generatorResults as GeneratorValues;
+
+
+        generatorValues.items.forEach(item => {
+
+            const fish = generatorValues.fish.find(f => f.item.id === item.id);
+
+            const dbItem: DatabaseItem = {
+                ...item,
+                fish: fish ? omitFields(fish, 'item') : undefined
+            }
+
+            generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, lang);
+
+
+        })
+
+
     } catch (e) {
         // @ts-ignore
         Logger.error('Generators couldn\'t be executed', e.message, e.stack)
     }
 
-    Object.keys(generators).forEach(generatorName => {
-
-
-        try {
-            const generatedMap = generators[generatorName].generate();
-            generateJson(`${generatorName}.json`, [...generatedMap.values()], readable, lang);
-        } catch (e) {
-            const error = e as Error;
-            Logger.error(error.message, error.stack)
-
-        }
-
-    });
 })
 itemIconsImageProcessor.process();
 new NpcPortraitsImageProcessor(config.characterPortraitsPath, config.portaitPath, config.headPortaitPath).process()

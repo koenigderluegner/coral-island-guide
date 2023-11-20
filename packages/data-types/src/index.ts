@@ -85,6 +85,7 @@ export * from './lib/interfaces/animal-shop-data.interface';
 export * from './lib/interfaces/festival.interface';
 export * from './lib/interfaces/festival-shop-item-data.interface';
 export * from './lib/interfaces/festival-data.interface';
+export * from './lib/interfaces/database-item.interface';
 
 
 export * from './lib/enums/quality.enum';
