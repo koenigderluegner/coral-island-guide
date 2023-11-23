@@ -52,6 +52,7 @@ import { StringTable } from "./util/string-table.class";
 import {
     AvailableLanguages,
     CookingRecipe,
+    CraftingRecipe,
     DatabaseItem,
     FestivalEventIds,
     Item,
@@ -446,6 +447,12 @@ AvailableLanguages.forEach(lang => {
                 || recipe.eitherOrIngredients.some(ingredients => ingredients.some(ingredient => ingredient.item?.id === item.id))
         }
 
+        const isCraftingIngredient = (item: Item, recipe: CraftingRecipe): boolean => {
+            const tags = getGenericItems(item);
+
+            return recipe.ingredients.some(ingredient => ingredient.item?.id === item?.id) || recipe.genericIngredients.some(genericIngredient => tags.find(tag => tag.key === genericIngredient.key))
+        }
+
 
         generatorValues.items.forEach(item => {
 
@@ -469,13 +476,13 @@ AvailableLanguages.forEach(lang => {
                 usedToCook.push(...cookingRecipes[utensil].filter(recipe => isIngredient(item, recipe)));
             })
 
-            const craftedFrom: ItemProcessing[] = [];
-            const usedIn: ItemProcessing[] = [];
+            const artisanResult: ItemProcessing[] = [];
+            const artisanIngredient: ItemProcessing[] = [];
 
             Object.keys(recipes[0]).forEach(utensil => {
                 const utensilRecipes: ItemProcessing[] = recipes[0][utensil];
-                craftedFrom.push(...utensilRecipes.filter(recipe => recipe.output.item.id === item.id));
-                usedIn.push(...utensilRecipes.filter(recipe => {
+                artisanResult.push(...utensilRecipes.filter(recipe => recipe.output.item.id === item.id));
+                artisanIngredient.push(...utensilRecipes.filter(recipe => {
                     const tags = getGenericItems(item);
 
                     return recipe.input.item.id === item.id || recipe.additionalInput.some(input => input.item.id === item.id) || !!tags.find(tag => tag.key === recipe.genericInput?.genericItem?.key)
@@ -483,15 +490,23 @@ AvailableLanguages.forEach(lang => {
                 }));
             })
 
+            const craftingRecipes = generatorValues['crafting-recipes'];
+
+            const craftedFrom = craftingRecipes.filter(recipe => recipe.item?.id === item.id);
+            const usedToCraft = craftingRecipes.filter(recipe => item && isCraftingIngredient(item, recipe));
+
+
 
             const dbItem: DatabaseItem = {
                 ...item,
                 fish: fish ? omitFields(fish, 'item') : undefined,
-                artisanResult: craftedFrom.length ? craftedFrom : undefined,
-                artisanIngredient: usedIn.length ? usedIn : undefined,
+                artisanResult: artisanResult.length ? artisanResult : undefined,
+                artisanIngredient: artisanIngredient.length ? artisanIngredient : undefined,
                 fromEnemies: enemiesDroppingItem.length ? enemiesDroppingItem : undefined,
                 usedToCook: usedToCook.length ? usedToCook : undefined,
                 cookedFrom: cookedFrom.length ? cookedFrom : undefined,
+                craftedFrom: craftedFrom.length ? craftedFrom : undefined,
+                usedToCraft: usedToCraft.length ? usedToCraft : undefined,
             }
 
             generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, lang);
