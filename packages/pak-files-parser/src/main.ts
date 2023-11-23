@@ -49,7 +49,14 @@ import { TornPagesGenerator } from "./app/torn-pages.generator";
 import { BestiaryGenerator } from "./app/bestiary.generator";
 import { CookingUtensilMapGenerator } from "./app/cooking-utensil-map.generator";
 import { StringTable } from "./util/string-table.class";
-import { AvailableLanguages, DatabaseItem, FestivalEventIds, Item, ItemProcessing } from "@ci/data-types";
+import {
+    AvailableLanguages,
+    CookingRecipe,
+    DatabaseItem,
+    FestivalEventIds,
+    Item,
+    ItemProcessing
+} from "@ci/data-types";
 import { AnimalMoodSizeGenerator } from "./app/animal-mood-size.generator";
 import { AnimalDataGenerator } from "./app/animal-data.generator";
 import { AnimalShopDataGenerator } from "./app/animal-shop-data.generator";
@@ -432,6 +439,14 @@ AvailableLanguages.forEach(lang => {
             return generatorValues['tag-based-items'].filter(tbi => tbi.tags.some(tag => item.tags?.includes(tag)))
         }
 
+        const isIngredient = (item: Item, recipe: CookingRecipe): boolean => {
+            const tags = getGenericItems(item);
+
+            return recipe.ingredients.some(ingredient => ingredient.item?.id === item?.id) || recipe.genericIngredients.some(genericIngredient => tags.find(tag => tag.key === genericIngredient.key))
+                || recipe.eitherOrIngredients.some(ingredients => ingredients.some(ingredient => ingredient.item?.id === item.id))
+        }
+
+
         generatorValues.items.forEach(item => {
 
 
@@ -442,6 +457,17 @@ AvailableLanguages.forEach(lang => {
                 ...sd,
                 dropRates: sd.dropRates.filter(dr => dr.item.id === item.id)
             })).filter(sd => sd.dropRates.length)
+
+            const cookingRecipes = generatorValues['cooking-recipes'][0];
+
+
+            const cookedFrom: CookingRecipe[] = [];
+            const usedToCook: CookingRecipe[] = [];
+
+            Object.keys(cookingRecipes).forEach(utensil => {
+                cookedFrom.push(...cookingRecipes[utensil].filter(recipe => recipe.item?.id === item.id));
+                usedToCook.push(...cookingRecipes[utensil].filter(recipe => isIngredient(item, recipe)));
+            })
 
             const craftedFrom: ItemProcessing[] = [];
             const usedIn: ItemProcessing[] = [];
@@ -464,6 +490,8 @@ AvailableLanguages.forEach(lang => {
                 artisanResult: craftedFrom.length ? craftedFrom : undefined,
                 artisanIngredient: usedIn.length ? usedIn : undefined,
                 fromEnemies: enemiesDroppingItem.length ? enemiesDroppingItem : undefined,
+                usedToCook: usedToCook.length ? usedToCook : undefined,
+                cookedFrom: cookedFrom.length ? cookedFrom : undefined,
             }
 
             generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, lang);
