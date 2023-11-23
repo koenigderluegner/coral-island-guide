@@ -495,6 +495,10 @@ AvailableLanguages.forEach(lang => {
             const craftedFrom = craftingRecipes.filter(recipe => recipe.item?.id === item.id);
             const usedToCraft = craftingRecipes.filter(recipe => item && isCraftingIngredient(item, recipe));
 
+            const cropsAndPlants = [...generatorValues['crops'], ...generatorValues['fruit-plants'], ...generatorValues['fruit-trees']]
+
+            const isSeedFor = cropsAndPlants.filter(recipe => recipe.dropData.some(ingredient => ingredient.item?.id === item.id));
+            const comesFromSeed = cropsAndPlants.filter(recipe => recipe.item?.id === item.id);
 
 
             const dbItem: DatabaseItem = {
@@ -507,6 +511,8 @@ AvailableLanguages.forEach(lang => {
                 cookedFrom: cookedFrom.length ? cookedFrom : undefined,
                 craftedFrom: craftedFrom.length ? craftedFrom : undefined,
                 usedToCraft: usedToCraft.length ? usedToCraft : undefined,
+                isSeedFor: isSeedFor.length ? isSeedFor : undefined,
+                comesFromSeed: comesFromSeed.length ? comesFromSeed : undefined,
             }
 
             generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, lang);

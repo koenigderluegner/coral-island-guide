@@ -1,4 +1,4 @@
-import { CookingRecipe, CraftingRecipe, Enemy, Fish, Item, ItemProcessing } from "@ci/data-types";
+import { BaseCrop, CookingRecipe, CraftingRecipe, Enemy, Fish, Item, ItemProcessing } from "@ci/data-types";
 
 export interface DatabaseItem extends Item{
     fish?: Omit<Fish, 'item'>;
@@ -9,4 +9,6 @@ export interface DatabaseItem extends Item{
     cookedFrom?: CookingRecipe[]
     craftedFrom?: CraftingRecipe[]
     usedToCraft?: CraftingRecipe[]
+    isSeedFor?: BaseCrop[];
+    comesFromSeed?: BaseCrop[];
 }
