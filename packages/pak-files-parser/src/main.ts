@@ -666,7 +666,7 @@ AvailableLanguages.forEach(lang => {
 
 
             const dbItem: DatabaseItem = {
-                ...item,
+                item,
                 fish: fish ? omitFields(fish, 'item') : undefined,
                 artisanResult: artisanResult.length ? artisanResult : undefined,
                 artisanIngredient: artisanIngredient.length ? artisanIngredient : undefined,

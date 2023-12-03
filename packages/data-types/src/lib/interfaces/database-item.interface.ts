@@ -17,7 +17,8 @@ import {
 } from "@ci/data-types";
 import { UiIcon } from "../enums/ui-icon.enum";
 
-export interface DatabaseItem extends Item{
+export interface DatabaseItem{
+    item: Item;
     fish?: Omit<Fish, 'item'>;
     artisanResult?: ItemProcessing[];
     artisanIngredient?: ItemProcessing[];
