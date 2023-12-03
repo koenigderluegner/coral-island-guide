@@ -5,7 +5,6 @@ import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.co
 @Component({
     selector: 'app-database-insects',
     templateUrl: './database-insects.component.html',
-    styleUrls: ['./database-insects.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
 export class DatabaseInsectsComponent extends BaseDatabaseDetailPartComponent implements OnInit {

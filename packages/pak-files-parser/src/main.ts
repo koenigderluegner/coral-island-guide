@@ -587,7 +587,9 @@ AvailableLanguages.forEach(lang => {
                 isSeedFor: isSeedFor.length ? isSeedFor : undefined,
                 comesFromSeed: comesFromSeed.length ? comesFromSeed : undefined,
                 buyAtFestivalShop: buyAtFestivalShop.length ? buyAtFestivalShop : undefined,
-                asGift: dataSource.length ? dataSource : undefined
+                asGift: dataSource.length ? dataSource : undefined,
+                insect: generatorValues["bugs-and-insects"].find(critter => critter.item.id === item.id),
+                oceanCritter: generatorValues["ocean-critters"].find(critter => critter.item.id === item.id)
             }
 
             generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, lang);

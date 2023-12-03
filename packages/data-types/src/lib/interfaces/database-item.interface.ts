@@ -1,7 +1,7 @@
 import {
     BaseCrop,
     CookingRecipe,
-    CraftingRecipe,
+    CraftingRecipe, Critter,
     Enemy,
     FestivalShopItemData,
     Fish,
@@ -26,5 +26,7 @@ export interface DatabaseItem extends Item{
     buyAtFestivalShop?: (FestivalShopItemData & {
         festival: { url: string; displayName: string }
     })[];
-    asGift?: { pref: { icon: UiIcon, label: string, preferenceField: GiftingPreferenceKey }, npcs: MinimalNPC[] }[]
+    asGift?: { pref: { icon: UiIcon, label: string, preferenceField: GiftingPreferenceKey }, npcs: MinimalNPC[] }[];
+    insect?: Critter;
+    oceanCritter?: Critter;
 }
