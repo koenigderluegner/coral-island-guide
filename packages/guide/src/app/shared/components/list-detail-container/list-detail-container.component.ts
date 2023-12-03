@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, EventEmitter, inject, Input, Output, ViewChild } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { UiIcon } from '../../enums/ui-icon.enum';
+import { UiIcon } from '@ci/data-types';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { MatDrawer } from '@angular/material/sidenav';
 

@@ -68,3 +68,14 @@ export function omitFields<T extends Object, K extends Array<keyof T>>(
     }
     return newRecord;
 }
+
+export function     flatObjectMap<T>(objectMap: { [key: string]: T }[]): (T & { mapKey: string })[] {
+
+    return objectMap.map(entry => {
+        const mapKey = Object.keys(entry)[0];
+
+        return {...entry[mapKey], mapKey};
+    });
+
+
+}

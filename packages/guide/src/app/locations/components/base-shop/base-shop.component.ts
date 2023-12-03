@@ -12,7 +12,7 @@ import {
     ShopName
 } from "@ci/data-types";
 import { Observable } from "rxjs";
-import { UiIcon } from "../../../shared/enums/ui-icon.enum";
+import { UiIcon } from "@ci/data-types";
 
 @Component({
     template: '',

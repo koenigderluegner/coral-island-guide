@@ -3,7 +3,7 @@ import { SettingsService } from "../shared/services/settings.service";
 import { FormControl, FormGroup } from "@angular/forms";
 import { ToDoService } from "../core/services/to-do.service";
 import { BETA_CODE } from "../core/injection-tokens/beta-code.injection-token";
-import { UiIcon } from "../shared/enums/ui-icon.enum";
+import { UiIcon } from "@ci/data-types";
 import { AvailableLanguage, AvailableLanguageDisplayName, AvailableLanguages } from "@ci/data-types";
 import { OfferingChecklistService } from "../core/services/checklists/offering-checklist.service";
 import { CookingRecipesChecklistService } from "../core/services/checklists/cooking-recipes-checklist.service";

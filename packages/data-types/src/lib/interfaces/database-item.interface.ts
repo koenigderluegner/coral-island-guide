@@ -5,9 +5,12 @@ import {
     Enemy,
     FestivalShopItemData,
     Fish,
+    GiftingPreferenceKey,
     Item,
-    ItemProcessing
+    ItemProcessing,
+    MinimalNPC
 } from "@ci/data-types";
+import { UiIcon } from "../enums/ui-icon.enum";
 
 export interface DatabaseItem extends Item{
     fish?: Omit<Fish, 'item'>;
@@ -22,5 +25,6 @@ export interface DatabaseItem extends Item{
     comesFromSeed?: BaseCrop[];
     buyAtFestivalShop?: (FestivalShopItemData & {
         festival: { url: string; displayName: string }
-    })[]
+    })[];
+    asGift?: { pref: { icon: UiIcon, label: string, preferenceField: GiftingPreferenceKey }, npcs: MinimalNPC[] }[]
 }

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { UiIcon } from '../../../shared/enums/ui-icon.enum';
+import { UiIcon } from '@ci/data-types';
 import { MappedAnimalShopData } from "../../types/mapped-animal-shop-data.type";
 
 @Component({

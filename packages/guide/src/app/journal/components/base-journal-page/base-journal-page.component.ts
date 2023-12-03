@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, inject, ViewChild } from '@angular/core';
 import { BaseCrop, JournalOrder, MinimalItem, Season } from '@ci/data-types';
 import { combineLatest, map, Observable, of, startWith } from 'rxjs';
-import { UiIcon } from '../../../shared/enums/ui-icon.enum';
+import { UiIcon } from '@ci/data-types';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { FormGroup } from '@angular/forms';
 import { FilterForm } from "../../../shared/types/filter-form.type";

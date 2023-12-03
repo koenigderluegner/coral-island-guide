@@ -1,7 +1,7 @@
 import { Component, inject, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { NPC, PetShopAdoptions } from "@ci/data-types";
 import { DatabaseService } from "../../../shared/services/database.service";
-import { UiIcon } from "../../../shared/enums/ui-icon.enum";
+import { UiIcon } from "@ci/data-types";
 
 @Component({
     selector: 'app-pet-adoption-details',

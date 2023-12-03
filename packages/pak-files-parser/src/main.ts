@@ -58,7 +58,8 @@ import {
     FestivalEventIds,
     FestivalNames,
     Item,
-    ItemProcessing
+    ItemProcessing,
+    MinimalNPC
 } from "@ci/data-types";
 import { AnimalMoodSizeGenerator } from "./app/animal-mood-size.generator";
 import { AnimalDataGenerator } from "./app/animal-data.generator";
@@ -67,7 +68,8 @@ import { FestivalDbGenerator } from "./app/festival-db.generator";
 import { FestivalShopItemDataGenerator } from "./app/festival-shop-item-data.generator";
 import { FestivalDataGenerator } from "./app/festival-data.generator";
 import path from "path";
-import { omitFields } from "@ci/util";
+import { flatObjectMap, omitFields } from "@ci/util";
+import { preferencesMap } from "../../guide/src/app/shared/constants/preference-map.const";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
 
@@ -524,6 +526,54 @@ AvailableLanguages.forEach(lang => {
 
             })
 
+            const preferences = flatObjectMap(generatorValues["gift-preferences"]);
+            const dataSource: { pref: typeof preferencesMap[0], npcs: MinimalNPC[] }[] = [];
+
+
+            const prefMap: {
+                favoritePreferences: MinimalNPC[];
+                lovePreferences: MinimalNPC[];
+                likePreferences: MinimalNPC[];
+                neutralPreferences: MinimalNPC[];
+                dislikePreferences: MinimalNPC[];
+                hatePreferences: MinimalNPC[];
+            } = {
+                favoritePreferences: [],
+                lovePreferences: [],
+                likePreferences: [],
+                neutralPreferences: [],
+                dislikePreferences: [],
+                hatePreferences: [],
+            }
+
+
+            const keys = [
+                'favoritePreferences',
+                'lovePreferences',
+                'likePreferences',
+                'neutralPreferences',
+                'dislikePreferences',
+                'hatePreferences'
+            ] as const
+
+            preferences.forEach(prefs => {
+                keys.forEach(key => {
+                    const preferenceIndex = prefs[key].findIndex(pref => pref.type === "item" && item.id === pref.item.id);
+                    if (preferenceIndex !== -1 && prefs.npc) {
+                        prefMap[key].push(prefs.npc);
+                    }
+                })
+
+            })
+
+            keys.forEach(key => {
+                const npcs = prefMap[key];
+                if (npcs.length) {
+                    dataSource.push({pref: preferencesMap.find(p => p.preferenceField === key)!, npcs})
+                }
+
+            })
+
             const dbItem: DatabaseItem = {
                 ...item,
                 fish: fish ? omitFields(fish, 'item') : undefined,
@@ -537,6 +587,7 @@ AvailableLanguages.forEach(lang => {
                 isSeedFor: isSeedFor.length ? isSeedFor : undefined,
                 comesFromSeed: comesFromSeed.length ? comesFromSeed : undefined,
                 buyAtFestivalShop: buyAtFestivalShop.length ? buyAtFestivalShop : undefined,
+                asGift: dataSource.length ? dataSource : undefined
             }
 
             generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, lang);

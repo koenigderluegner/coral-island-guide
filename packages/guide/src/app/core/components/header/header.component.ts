@@ -1,5 +1,5 @@
 import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
-import { UiIcon } from '../../../shared/enums/ui-icon.enum';
+import { UiIcon } from '@ci/data-types';
 import { NavigationStart, Router, RouterLink } from '@angular/router';
 import { filter } from "rxjs";
 import { SettingsService } from "../../../shared/services/settings.service";

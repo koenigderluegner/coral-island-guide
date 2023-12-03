@@ -1,4 +1,4 @@
-import { UiIcon } from "../../../../guide/src/app/shared/enums/ui-icon.enum";
+import { UiIcon } from "../enums/ui-icon.enum";
 
 export const ShopNames = [
     'blacksmith',

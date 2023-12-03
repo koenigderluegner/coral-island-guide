@@ -1,5 +1,5 @@
 import { booleanAttribute, Component, Input, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
-import { UiIcon } from '../../enums/ui-icon.enum';
+import { UiIcon } from '@ci/data-types';
 import { RouterLink } from '@angular/router';
 
 @Component({
