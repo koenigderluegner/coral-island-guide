@@ -59,3 +59,23 @@ export function entityKey(entity: Item | MinimalItem | MinimalTagBasedItem | Cus
         ? entity.id
         : entity.key
 }
+
+export function omitFields<T extends Object, K extends Array<keyof T>>(
+    record: T, ...props: K): Omit<T, K[number]> {
+    const newRecord: Omit<T, K[number]> = Object.assign({}, record);
+    for (let prop of props) {
+        delete (newRecord as any)[prop];
+    }
+    return newRecord;
+}
+
+export function     flatObjectMap<T>(objectMap: { [key: string]: T }[]): (T & { mapKey: string })[] {
+
+    return objectMap.map(entry => {
+        const mapKey = Object.keys(entry)[0];
+
+        return {...entry[mapKey], mapKey};
+    });
+
+
+}

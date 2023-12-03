@@ -1,0 +1,435 @@
+{
+  "item": {
+    "id": "item_41019",
+    "displayName": "コーヒー",
+    "price": 165,
+    "sellPrice": 100,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Artisan product",
+    "displayKey": "ArtisanProduct",
+    "description": "飲んだ直後に活力がみなぎります。",
+    "qualities": {
+      "bronze": {
+        "price": 190,
+        "sellPrice": 115
+      },
+      "silver": {
+        "price": 215,
+        "sellPrice": 130
+      },
+      "gold": {
+        "price": 250,
+        "sellPrice": 150
+      },
+      "osmium": {
+        "price": 335,
+        "sellPrice": 200
+      }
+    },
+    "iconName": "Coffee_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.Keg",
+      "Item.Consumable.Drink",
+      "item.artisan"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_22012",
+          "displayName": "コーヒー豆",
+          "iconName": "Coffee_Beans"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41019",
+          "displayName": "コーヒー",
+          "iconName": "Coffee_Sprite"
+        }
+      },
+      "genericInput": null
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 1,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41019",
+          "displayName": "コーヒー",
+          "iconName": "Coffee_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41279",
+          "displayName": "熟成コーヒー",
+          "iconName": "Aged_coffee_Sprite"
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 0,
+          "time": {
+            "hours": 21,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 0,
+          "time": {
+            "hours": 19,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 16,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        }
+      ]
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "ストーンスープ",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "食用とは思えません。食べるなら自己責任で。",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "食用食材すべて"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "石材",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "食用食材すべて": [
+          {
+            "id": "item_41180",
+            "displayName": "ヤギのヨーグルト",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "大きなヤギのヨーグルト",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_80065",
+            "displayName": "花束",
+            "iconName": "Flower_Bouquet_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "buyAtFestivalShop": [
+    {
+      "festivalSetting": {
+        "hasDiscount": false,
+        "discount": 0,
+        "isLimitedItem": false,
+        "itemLimit": 0,
+        "hasYearlyLimit": false,
+        "itemLimitPerYear": 0
+      },
+      "item": {
+        "id": "item_41019",
+        "displayName": "コーヒー",
+        "iconName": "Coffee_Sprite",
+        "price": 165,
+        "sellPrice": 100
+      },
+      "allowedDays": [],
+      "allowedSeasons": [],
+      "allowedWeather": [],
+      "forbiddenDays": [],
+      "forbiddenSeasons": [],
+      "forbiddenWeather": [],
+      "townRank": 0,
+      "tag": [],
+      "priceOverride": 0,
+      "priority": 1,
+      "enabled": true,
+      "availableSinceDate": false,
+      "availableTillDate": false,
+      "availableDuringTime": false,
+      "festival": {
+        "url": "winter-fair",
+        "displayName": "Winter Fair"
+      }
+    }
+  ],
+  "asGift": [
+    {
+      "pref": {
+        "icon": "T_Icon_Love",
+        "label": "Love",
+        "preferenceField": "lovePreferences"
+      },
+      "npcs": [
+        {
+          "key": "Antonio",
+          "characterName": "Antonio",
+          "iconName": "Icon_antonio"
+        },
+        {
+          "key": "Emma",
+          "characterName": "Emma",
+          "iconName": "Icon_emma"
+        },
+        {
+          "key": "Joko",
+          "characterName": "Joko",
+          "iconName": "Icon_joko"
+        },
+        {
+          "key": "Raj",
+          "characterName": "Raj",
+          "iconName": "Icon_raj"
+        },
+        {
+          "key": "Randy",
+          "characterName": "Randy",
+          "iconName": "Icon_rendy"
+        },
+        {
+          "key": "Groo",
+          "characterName": "Groo",
+          "iconName": "Icon_groo"
+        },
+        {
+          "key": "Giu",
+          "characterName": "Giu",
+          "iconName": "Icon_giu"
+        }
+      ]
+    },
+    {
+      "pref": {
+        "icon": "T_Icon_Like",
+        "label": "Like",
+        "preferenceField": "likePreferences"
+      },
+      "npcs": [
+        {
+          "key": "Aaliyah",
+          "characterName": "Aaliyah",
+          "iconName": "Icon_aaliyah"
+        }
+      ]
+    },
+    {
+      "pref": {
+        "icon": "T_Icon_Hate",
+        "label": "Hate",
+        "preferenceField": "hatePreferences"
+      },
+      "npcs": [
+        {
+          "key": "Leah",
+          "characterName": "Leah",
+          "iconName": "Icon_leah"
+        }
+      ]
+    }
+  ],
+  "buyAt": [
+    {
+      "item": {
+        "id": "item_41019",
+        "displayName": "コーヒー",
+        "iconName": "Coffee_Sprite",
+        "price": 165,
+        "sellPrice": 100
+      },
+      "allowedDays": [
+        "Saturday",
+        "Sunday"
+      ],
+      "allowedSeasons": [],
+      "allowedWeather": [],
+      "forbiddenDays": [],
+      "forbiddenSeasons": [
+        "Fall"
+      ],
+      "forbiddenWeather": [],
+      "townRank": 0,
+      "tag": [],
+      "priceOverride": 0,
+      "priority": 0,
+      "enabled": true,
+      "availableSinceDate": false,
+      "availableTillDate": false,
+      "availableDuringTime": true,
+      "timeRange": {
+        "fromTime": {
+          "hours": 8,
+          "minutes": 0
+        },
+        "toTime": {
+          "hours": 21,
+          "minutes": 0
+        }
+      },
+      "shop": {
+        "url": "bens-caravan",
+        "displayName": "Bens Caravan"
+      }
+    },
+    {
+      "item": {
+        "id": "item_41019",
+        "displayName": "コーヒー",
+        "iconName": "Coffee_Sprite",
+        "price": 165,
+        "sellPrice": 100
+      },
+      "allowedDays": [],
+      "allowedSeasons": [],
+      "allowedWeather": [],
+      "forbiddenDays": [],
+      "forbiddenSeasons": [],
+      "forbiddenWeather": [],
+      "townRank": 0,
+      "tag": [],
+      "priceOverride": 0,
+      "priority": 1,
+      "enabled": true,
+      "availableSinceDate": false,
+      "availableTillDate": false,
+      "availableDuringTime": false,
+      "shop": {
+        "url": "coffee",
+        "displayName": "Raj's Coffee Corner"
+      }
+    },
+    {
+      "item": {
+        "id": "item_41019",
+        "displayName": "コーヒー",
+        "iconName": "Coffee_Sprite",
+        "price": 165,
+        "sellPrice": 100
+      },
+      "allowedDays": [],
+      "allowedSeasons": [],
+      "allowedWeather": [],
+      "forbiddenDays": [],
+      "forbiddenSeasons": [],
+      "forbiddenWeather": [],
+      "townRank": 0,
+      "tag": [],
+      "priceOverride": 0,
+      "priority": 2,
+      "enabled": true,
+      "availableSinceDate": false,
+      "availableTillDate": false,
+      "availableDuringTime": false,
+      "shop": {
+        "url": "tavern",
+        "displayName": "Fishensips"
+      }
+    }
+  ]
+}

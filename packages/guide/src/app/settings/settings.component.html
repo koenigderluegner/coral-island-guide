@@ -11,10 +11,9 @@
                     <label class="font-bold leading-6" for="language">Language</label>
                     <mat-form-field class="btn btn-secondary">
                         <mat-select formControlName="language" id="language">
-                            @for (language of availableLanguages; track language) {
-  <mat-option
-                                        [value]="language">{{availableLanguageDisplayName[language]}}</mat-option>
-}
+                            @for (language of availableLanguages;track language) {
+                                <mat-option [value]="language">{{ availableLanguageDisplayName[language] }}</mat-option>
+                            }
                         </mat-select>
                     </mat-form-field>
                 </div>
@@ -31,7 +30,7 @@
         <div class="grid md:grid-cols-3 pb-12 gap-y-10 gap-x-8 border-b border-accent/50 mb-8">
             <div>
                 <h3 class="leading-7 font-bold text-lg">Beta data</h3>
-                <p>Options for latest beta build. Current beta code: {{BETA_CODE ?? 'no ongoing beta'}} </p>
+                <p>Options for latest beta build. Current beta code: {{ BETA_CODE ?? 'no ongoing beta' }} </p>
             </div>
             <div class="bg-amber-50/70 md:col-span-2 px-4 py-6 sm:p-8 sm:rounded-lg">
 
@@ -46,11 +45,11 @@
                     </div>
                 </div>
                 @if (!BETA_CODE) {
-<p class="flex gap-2 text-black font-bold leading-6 items-center">
-                    <app-ui-icon [uiIcon]="uiIcon.WARNING" class="!w-6 shrink-0"/>
-                    Currently there's no beta.
-                </p>
-}
+                    <p class="flex gap-2 text-black font-bold leading-6 items-center">
+                        <app-ui-icon [uiIcon]="uiIcon.WARNING" class="!w-6 shrink-0"/>
+                        Currently there's no beta.
+                    </p>
+                }
 
 
             </div>
@@ -116,7 +115,7 @@
                                type="checkbox">
                     </div>
                     <div>
-                        <label class="font-bold leading-6" for="resetBetaToDo">Reset beta checklists</label>
+                        <label class="font-bold leading-6" for="resetBetaChecklists">Reset beta checklists</label>
                         <p class="leading-6">Reset all checklists which were created while using beta data.</p>
                     </div>
                 </div>
@@ -126,9 +125,9 @@
         </div>
         <div class="mt-6 sm:mt-8 flex justify-between items-center">
             @if (reloadRequired) {
-<p class="font-bold">Changes that require a reload were made. Saving will reload
-                automatically.</p>
-}
+                <p class="font-bold">Changes that require a reload were made. Saving will reload
+                    automatically.</p>
+            }
             <button class="btn-amber ml-auto" type="submit">Save</button>
         </div>
     </form>

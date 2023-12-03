@@ -1,8 +1,7 @@
-import { UiIcon } from "../../../../guide/src/app/shared/enums/ui-icon.enum";
+import { UiIcon } from "../enums/ui-icon.enum";
 
 export const FestivalNames = [
     'cherry-blossom',
-    'earth-day',
     'tree-planting',
     'animal',
     'beach-clean-up',
@@ -30,7 +29,6 @@ type FestivalDisplayName = (typeof FestivalDisplayNames)[keyof typeof FestivalDi
 
 export const FestivalIcons = {
     'winter-fair': UiIcon.WINTER_FAIR,
-    'earth-day': UiIcon.EARTH,
     'tree-planting': UiIcon.EARTH,
     'animal': UiIcon.ANIMAL_DAY,
     'beach-clean-up': UiIcon.OCEAN_CLEAN_UP,
@@ -43,7 +41,6 @@ export const FestivalIcons = {
 
 export const FestivalEventIds = {
     'cherry-blossom': 'cherryBlossom',
-    'earth-day': 'earthDay',
     'tree-planting': 'treePlanting',
     'animal': 'AnimalFestival',
     'beach-clean-up': 'beach-clean-up',

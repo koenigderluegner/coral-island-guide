@@ -85,11 +85,13 @@ export * from './lib/interfaces/animal-shop-data.interface';
 export * from './lib/interfaces/festival.interface';
 export * from './lib/interfaces/festival-shop-item-data.interface';
 export * from './lib/interfaces/festival-data.interface';
+export * from './lib/interfaces/database-item.interface';
 
 
 export * from './lib/enums/quality.enum';
 export * from './lib/enums/season.enum';
 export * from './lib/enums/weather.enum';
+export * from './lib/enums/ui-icon.enum';
 
 export * from './lib/types/minimal-item.type';
 export * from './lib/types/gift-preference.type';

@@ -1,5 +1,16 @@
 ## Changelog
 
+### TBD
+
+#### Added
+
+- Added Pufferfish shop to beach clean up festival
+
+#### Changed
+
+- Fixed clicking on 'Reset beta checklists' label activating the wrong checkbox
+- Fixed NPC details showing "No NPC found" while still loading
+
 ### 0.14.0 2023-11-14
 
 #### Added

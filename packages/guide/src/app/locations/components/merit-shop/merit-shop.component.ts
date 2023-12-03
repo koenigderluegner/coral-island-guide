@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BaseSelectableContainerComponent } from "../../../shared/components/base-selectable-container/base-selectable-container.component";
 import { MeritExchangeShopData } from "@ci/data-types";
 import { Observable } from "rxjs";
-import { UiIcon } from "../../../shared/enums/ui-icon.enum";
+import { UiIcon } from "@ci/data-types";
 
 @Component({
     selector: 'app-merit-shop',

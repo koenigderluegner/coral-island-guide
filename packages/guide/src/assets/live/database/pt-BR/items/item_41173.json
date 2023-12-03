@@ -1,0 +1,263 @@
+{
+  "item": {
+    "id": "item_41173",
+    "displayName": "Cerveja de cevada",
+    "price": 435,
+    "sellPrice": 260,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Artisan product",
+    "displayKey": "ArtisanProduct",
+    "description": "Beba com moderação.",
+    "qualities": {
+      "bronze": {
+        "price": 500,
+        "sellPrice": 300
+      },
+      "silver": {
+        "price": 560,
+        "sellPrice": 335
+      },
+      "gold": {
+        "price": 650,
+        "sellPrice": 390
+      },
+      "osmium": {
+        "price": 865,
+        "sellPrice": 520
+      }
+    },
+    "iconName": "Barley_Beer_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.Keg",
+      "Item.Consumable.Drink",
+      "item.artisan"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_23002",
+          "displayName": "Cevada",
+          "iconName": "Barley_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41173",
+          "displayName": "Cerveja de cevada",
+          "iconName": "Barley_Beer_Sprite"
+        }
+      },
+      "genericInput": null
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 3,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41173",
+          "displayName": "Cerveja de cevada",
+          "iconName": "Barley_Beer_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41277",
+          "displayName": "Cerveja de cevada envelhecida",
+          "iconName": "Aged_Barley_Beer_Sprite"
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 2,
+          "time": {
+            "hours": 15,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 2,
+          "time": {
+            "hours": 7,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 2,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 1,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        }
+      ]
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "Sopa de pedra",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Não parece comestível. Consuma sob sua própria responsabilidade.",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "Qualquer Ingrediente Comestível"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "Pedra",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "Qualquer Ingrediente Comestível": [
+          {
+            "id": "item_41180",
+            "displayName": "Iogurte de cabra",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "Iogurte de cabra grande",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_80065",
+            "displayName": "Buquê de flores",
+            "iconName": "Flower_Bouquet_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "buyAtFestivalShop": [
+    {
+      "festivalSetting": {
+        "hasDiscount": false,
+        "discount": 0,
+        "isLimitedItem": false,
+        "itemLimit": 0,
+        "hasYearlyLimit": false,
+        "itemLimitPerYear": 0
+      },
+      "item": {
+        "id": "item_41173",
+        "displayName": "Cerveja de cevada",
+        "iconName": "Barley_Beer_Sprite",
+        "price": 435,
+        "sellPrice": 260
+      },
+      "allowedDays": [],
+      "allowedSeasons": [],
+      "allowedWeather": [],
+      "forbiddenDays": [],
+      "forbiddenSeasons": [],
+      "forbiddenWeather": [],
+      "townRank": 0,
+      "tag": [],
+      "priceOverride": 0,
+      "priority": 1,
+      "enabled": true,
+      "availableSinceDate": false,
+      "availableTillDate": false,
+      "availableDuringTime": false,
+      "festival": {
+        "url": "winter-fair",
+        "displayName": "Winter Fair"
+      }
+    }
+  ]
+}

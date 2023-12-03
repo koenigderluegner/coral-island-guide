@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UiIcon } from "../../../shared/enums/ui-icon.enum";
+import { UiIcon } from "@ci/data-types";
 import { combineLatest, map, Observable } from "rxjs";
 import { PetShopAdoptions, ShopItemData } from "@ci/data-types";
 import { BaseSelectableContainerComponent } from "../../../shared/components/base-selectable-container/base-selectable-container.component";

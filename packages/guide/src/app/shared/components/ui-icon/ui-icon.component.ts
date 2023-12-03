@@ -1,5 +1,5 @@
 import { Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
-import { UiIcon } from '../../enums/ui-icon.enum';
+import { UiIcon } from '@ci/data-types';
 
 @Component({
     selector: 'app-ui-icon',

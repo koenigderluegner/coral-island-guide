@@ -39,6 +39,7 @@ import {
 import { AvailableJournalOrders } from '../types/available-journal-orders.type';
 import { MapKeyed } from '../types/map-keyed.type';
 import { SettingsService } from "./settings.service";
+import { flatObjectMap } from "@ci/util";
 
 @Injectable({
     providedIn: 'root'
@@ -597,7 +598,7 @@ export class DatabaseService {
                 [person: string]: GiftPreferences
             }[]>(`${this._BASE_PATH}/gift-preferences.json`)
                 .pipe(
-                    map(prefs => this.flatObjectMap(prefs)),
+                    map(prefs => flatObjectMap(prefs)),
                     tap(prefs => this._GIFT_PREFERENCES = prefs),
                     shareReplay(1)
                 );
@@ -609,16 +610,6 @@ export class DatabaseService {
         return this._GIFT_PREFERENCES;
     }
 
-    flatObjectMap<T>(objectMap: { [key: string]: T }[]): (T & { mapKey: string })[] {
-
-        return objectMap.map(entry => {
-            const mapKey = Object.keys(entry)[0];
-
-            return {...entry[mapKey], mapKey};
-        });
-
-
-    }
 
     fetchPetShopAdoptions$(): Observable<PetShopAdoptions[]> {
         if (!this._PET_SHOP_ADOPTIONS$) {

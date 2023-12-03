@@ -3,7 +3,7 @@ import { DatabaseService } from '../../../shared/services/database.service';
 import { forkJoin, Observable, of, switchMap } from 'rxjs';
 import { GiftPreferences, NPC } from '@ci/data-types';
 import { MapKeyed } from '../../../shared/types/map-keyed.type';
-import { UiIcon } from '../../../shared/enums/ui-icon.enum';
+import { UiIcon } from '@ci/data-types';
 
 type CombinedGiftPreference = {
     preferences: MapKeyed<GiftPreferences>,

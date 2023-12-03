@@ -1,0 +1,215 @@
+{
+  "item": {
+    "id": "item_50312",
+    "displayName": "Meersalz",
+    "price": 30,
+    "sellPrice": 20,
+    "sellAt": [
+      "BeachShack"
+    ],
+    "stackable": true,
+    "inventoryCategory": "Scavengeable",
+    "displayKey": "Scavengeable",
+    "description": "Kann zu Gourmet-Salz verarbeitet werden.",
+    "qualities": {
+      "bronze": {
+        "price": 35,
+        "sellPrice": 23
+      },
+      "silver": {
+        "price": 40,
+        "sellPrice": 26
+      },
+      "gold": {
+        "price": 50,
+        "sellPrice": 30
+      },
+      "osmium": {
+        "price": 65,
+        "sellPrice": 40
+      }
+    },
+    "iconName": "Sea_Salt_Sprite",
+    "tags": [
+      "income.diving"
+    ]
+  },
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 3,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_50312",
+          "displayName": "Meersalz",
+          "iconName": "Sea_Salt_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_42008",
+          "displayName": "Gourmet-Salz",
+          "iconName": "Gourmet_Salt_Sprite"
+        }
+      },
+      "genericInput": null
+    }
+  ],
+  "usedToCraft": [
+    {
+      "key": "item_94067",
+      "displayName": "Dehydrator",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65107",
+            "displayName": "Schrott",
+            "iconName": "Scrap_Sprite"
+          },
+          "amount": 30
+        },
+        {
+          "item": {
+            "id": "item_62007",
+            "displayName": "Silberne Seetang-Essenz",
+            "iconName": "Silver_Kelp_Essence_Sprite"
+          },
+          "amount": 2
+        },
+        {
+          "item": {
+            "id": "item_50312",
+            "displayName": "Meersalz",
+            "iconName": "Sea_Salt_Sprite"
+          },
+          "amount": 5
+        },
+        {
+          "item": {
+            "id": "item_61044",
+            "displayName": "Silberbarren",
+            "iconName": "Silver_Bar_Sprite"
+          },
+          "amount": 2
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Artisan",
+      "craftingUnlock": {
+        "key": "item_94067",
+        "masteryLevel": 4,
+        "masteryType": "Diving"
+      }
+    },
+    {
+      "key": "item_64008",
+      "displayName": "Floating critter scent",
+      "amount": 2,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_50312",
+            "displayName": "Meersalz",
+            "iconName": "Sea_Salt_Sprite"
+          },
+          "amount": 2
+        }
+      ],
+      "genericIngredients": [
+        {
+          "key": "Generic_Flower",
+          "amount": 1
+        }
+      ],
+      "category": "Misc",
+      "craftingUnlock": {
+        "key": "item_64008",
+        "masteryLevel": 9,
+        "masteryType": "Catching"
+      }
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "CropBased",
+      "offeringGroupTitle": "Feldfruchtaltar",
+      "urlPath": "cropaltar",
+      "offeringGroupRewardText": "Schaltet das Gewächshaus frei",
+      "offerings": [
+        {
+          "title": "Ozean-Beute",
+          "imageName": "Ocean_Offerings",
+          "numOfItemRequired": -1,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_94067",
+                  "displayName": "Dehydrator",
+                  "iconName": "Dehydrator_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "id": "item_50312",
+                "displayName": "Meersalz",
+                "iconName": "Sea_Salt_Sprite"
+              },
+              "amount": 5,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_50344",
+                "displayName": "Königsmuschel",
+                "iconName": "King_Scallop_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_50326",
+                "displayName": "Amerikanische Auster",
+                "iconName": "Eastern_Oyster_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_50308",
+                "displayName": "Miesmuschel",
+                "iconName": "Blue_Mussel_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_50338",
+                "displayName": "Grüner Seeigel",
+                "iconName": "Green_Sea_Urchin_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

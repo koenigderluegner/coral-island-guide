@@ -1,0 +1,281 @@
+{
+  "item": {
+    "id": "item_80045",
+    "displayName": "Smoothie",
+    "price": 55,
+    "sellPrice": 8,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Consumable",
+    "displayKey": "Consumable",
+    "description": "Repas rafraîchissant que l'on peut boire.",
+    "qualities": {
+      "bronze": {
+        "price": 63,
+        "sellPrice": 9
+      },
+      "silver": {
+        "price": 69,
+        "sellPrice": 10
+      },
+      "gold": {
+        "price": 83,
+        "sellPrice": 12
+      },
+      "osmium": {
+        "price": 110,
+        "sellPrice": 16
+      }
+    },
+    "iconName": "Smoothie_Sprite",
+    "tags": [
+      "income.other",
+      "Item.Consumable.Drink"
+    ]
+  },
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "Soupe aux pierres",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Ça n'a pas l'air comestible. À consommer à tes risques et périls.",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "Ingrédients comestibles"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "Pierre",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "Ingrédients comestibles": [
+          {
+            "id": "item_41180",
+            "displayName": "Yaourt de chèvre",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "Grand yaourt de chèvre",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_80065",
+            "displayName": "Bouquet de fleurs",
+            "iconName": "Flower_Bouquet_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "cookedFrom": [
+    {
+      "key": "item_80045",
+      "amount": 1,
+      "cookingKey": "Smoothies",
+      "item": {
+        "id": "item_80045",
+        "displayName": "Smoothie",
+        "price": 55,
+        "sellPrice": 8,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Repas rafraîchissant que l'on peut boire.",
+        "qualities": {
+          "bronze": {
+            "price": 63,
+            "sellPrice": 9
+          },
+          "silver": {
+            "price": 69,
+            "sellPrice": 10
+          },
+          "gold": {
+            "price": 83,
+            "sellPrice": 12
+          },
+          "osmium": {
+            "price": 110,
+            "sellPrice": 16
+          }
+        },
+        "iconName": "Smoothie_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Drink"
+        ]
+      },
+      "utensils": [
+        "Blender"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Fruit",
+            "tags": [
+              "item.fruit"
+            ],
+            "iconName": "Any_Fruit_Sprite",
+            "displayName": "Tout fruit"
+          },
+          "key": "Any_Fruit"
+        }
+      ],
+      "ingredients": [],
+      "eitherOrIngredients": []
+    }
+  ],
+  "asGift": [
+    {
+      "pref": {
+        "icon": "T_Icon_Love",
+        "label": "Love",
+        "preferenceField": "lovePreferences"
+      },
+      "npcs": [
+        {
+          "key": "Leah",
+          "characterName": "Leah",
+          "iconName": "Icon_leah"
+        }
+      ]
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "SpecialityBased",
+      "offeringGroupTitle": "Autel avancé",
+      "urlPath": "advancedaltar",
+      "offeringGroupRewardText": "Débloque les téléporteurs d'offrandes",
+      "offerings": [
+        {
+          "title": "Cuisine de base",
+          "imageName": "Basic_Cooking_Offerings",
+          "numOfItemRequired": -1,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_65021",
+                  "displayName": "Presse à huile",
+                  "iconName": "Oil_press_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "id": "item_80045",
+                "displayName": "Smoothie",
+                "iconName": "Smoothie_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_80058",
+                "displayName": "Poisson grillé",
+                "iconName": "Grilled_Fish_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_80033",
+                "displayName": "Œufs sur le plat",
+                "iconName": "Sunny-side-up_eggs_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_80026",
+                "displayName": "Soupe à la tomate",
+                "iconName": "Tomato_Soup_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_80038",
+                "displayName": "Onigiri",
+                "iconName": "Onigiri_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

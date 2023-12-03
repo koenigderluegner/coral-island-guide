@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { CustomEntry, Item, MinimalItem, MinimalTagBasedItem, TagBasedItem } from '@ci/data-types';
 import { DatabaseService } from '../../services/database.service';
-import { UiIcon } from "../../enums/ui-icon.enum";
+import { UiIcon } from "@ci/data-types";
 import { ToDoCategory } from "../../../core/enums/todo-category.enum";
 import { ToDoService } from "../../../core/services/to-do.service";
 import { entityKey } from "@ci/util";

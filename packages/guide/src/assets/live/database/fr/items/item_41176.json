@@ -1,0 +1,200 @@
+{
+  "item": {
+    "id": "item_41176",
+    "displayName": "Meule de fromage fermenté",
+    "price": 1950,
+    "sellPrice": 780,
+    "sellAt": [
+      "Sam"
+    ],
+    "stackable": true,
+    "inventoryCategory": "Artisan product",
+    "displayKey": "ArtisanProduct",
+    "description": "Fromage très fort.",
+    "qualities": {
+      "bronze": {
+        "price": 2250,
+        "sellPrice": 900
+      },
+      "silver": {
+        "price": 2550,
+        "sellPrice": 1020
+      },
+      "gold": {
+        "price": 2925,
+        "sellPrice": 1170
+      },
+      "osmium": {
+        "price": 3900,
+        "sellPrice": 1560
+      }
+    },
+    "iconName": "Fermented_Cheese_Wheel_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.AgingBarrel",
+      "item.artisan.cheese",
+      "Item.Consumable.Food"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 2,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41041",
+          "displayName": "Meule de fromage",
+          "iconName": "Cheese_Wheel_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41176",
+          "displayName": "Meule de fromage fermenté",
+          "iconName": "Fermented_Cheese_Wheel_Sprite"
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 1,
+          "time": {
+            "hours": 18,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 1,
+          "time": {
+            "hours": 13,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 1,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 1,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ]
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "Soupe aux pierres",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Ça n'a pas l'air comestible. À consommer à tes risques et périls.",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "Ingrédients comestibles"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "Pierre",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "Ingrédients comestibles": [
+          {
+            "id": "item_41180",
+            "displayName": "Yaourt de chèvre",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "Grand yaourt de chèvre",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_80065",
+            "displayName": "Bouquet de fleurs",
+            "iconName": "Flower_Bouquet_Sprite"
+          }
+        ]
+      }
+    }
+  ]
+}

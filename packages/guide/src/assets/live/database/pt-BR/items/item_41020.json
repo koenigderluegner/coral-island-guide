@@ -1,0 +1,276 @@
+{
+  "item": {
+    "id": "item_41020",
+    "displayName": "Café Gesha",
+    "price": 1435,
+    "sellPrice": 860,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Consumable",
+    "displayKey": "Consumable",
+    "description": "Uma bebida gourmet que dá um reforço de energia poderoso.",
+    "qualities": {
+      "bronze": {
+        "price": 1650,
+        "sellPrice": 990
+      },
+      "silver": {
+        "price": 1865,
+        "sellPrice": 1120
+      },
+      "gold": {
+        "price": 2150,
+        "sellPrice": 1290
+      },
+      "osmium": {
+        "price": 2865,
+        "sellPrice": 1720
+      }
+    },
+    "iconName": "Gesha_coffee_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.Keg",
+      "Item.Consumable.Drink",
+      "item.artisan"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_32003",
+          "displayName": "Grão de Café Gesha",
+          "iconName": "Gesha_coffee_bean_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41020",
+          "displayName": "Café Gesha",
+          "iconName": "Gesha_coffee_Sprite"
+        }
+      },
+      "genericInput": null
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 2,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41020",
+          "displayName": "Café Gesha",
+          "iconName": "Gesha_coffee_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41280",
+          "displayName": "Café Gesha envelhecido",
+          "iconName": "Aged_Gesha_Coffee_Sprite"
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 1,
+          "time": {
+            "hours": 18,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 1,
+          "time": {
+            "hours": 13,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 1,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 1,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ]
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "Sopa de pedra",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Não parece comestível. Consuma sob sua própria responsabilidade.",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "Qualquer Ingrediente Comestível"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "Pedra",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "Qualquer Ingrediente Comestível": [
+          {
+            "id": "item_41180",
+            "displayName": "Iogurte de cabra",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "Iogurte de cabra grande",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_80065",
+            "displayName": "Buquê de flores",
+            "iconName": "Flower_Bouquet_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "asGift": [
+    {
+      "pref": {
+        "icon": "T_Icon_Love",
+        "label": "Love",
+        "preferenceField": "lovePreferences"
+      },
+      "npcs": [
+        {
+          "key": "Aaliyah",
+          "characterName": "Aaliyah",
+          "iconName": "Icon_aaliyah"
+        },
+        {
+          "key": "Raj",
+          "characterName": "Raj",
+          "iconName": "Icon_raj"
+        }
+      ]
+    }
+  ],
+  "buyAt": [
+    {
+      "item": {
+        "id": "item_41020",
+        "displayName": "Café Gesha",
+        "iconName": "Gesha_coffee_Sprite",
+        "price": 1435,
+        "sellPrice": 860
+      },
+      "allowedDays": [],
+      "allowedSeasons": [],
+      "allowedWeather": [],
+      "forbiddenDays": [],
+      "forbiddenSeasons": [],
+      "forbiddenWeather": [],
+      "townRank": 1,
+      "tag": [],
+      "priceOverride": 0,
+      "priority": 2,
+      "enabled": true,
+      "availableSinceDate": false,
+      "availableTillDate": false,
+      "availableDuringTime": false,
+      "shop": {
+        "url": "coffee",
+        "displayName": "Raj's Coffee Corner"
+      }
+    }
+  ]
+}

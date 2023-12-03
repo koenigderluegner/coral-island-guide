@@ -14,10 +14,10 @@ export class DatabaseCraftingComponent extends BaseDatabaseDetailPartComponent i
 
     ngOnInit(): void {
         if (!this.item) return;
-        const recipes = this.database.getCraftingRecipes();
+        const craftingRecipes = this.database.getCraftingRecipes();
 
-        this.craftedFrom = recipes.filter(recipe => recipe.item?.id === this.item?.id);
-        this.usedIn = recipes.filter(recipe => this.item && this.isIngredient(this.item, recipe));
+        this.craftedFrom = craftingRecipes.filter(recipe => recipe.item?.id === this.item?.id);
+        this.usedIn = craftingRecipes.filter(recipe => this.item && this.isIngredient(this.item, recipe));
 
     }
 

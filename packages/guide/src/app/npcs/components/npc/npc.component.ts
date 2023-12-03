@@ -1,7 +1,7 @@
 import { Component, inject, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { DatabaseService } from "../../../shared/services/database.service";
 import { GiftPreferences, HeartEvent, NPC } from "@ci/data-types";
-import { UiIcon } from "../../../shared/enums/ui-icon.enum";
+import { UiIcon } from "@ci/data-types";
 import { combineLatest } from "rxjs";
 import { MapKeyed } from "../../../shared/types/map-keyed.type";
 
@@ -14,7 +14,7 @@ import { MapKeyed } from "../../../shared/types/map-keyed.type";
 export class NpcComponent implements OnInit {
 
     @Input() npcKey!: string;
-    protected npc?: NPC;
+    protected npc?: NPC | null = null;
     protected heartEvents: HeartEvent[] = []
     protected readonly UiIcon = UiIcon;
     protected giftingPreferences?: MapKeyed<GiftPreferences>;
