@@ -10,7 +10,7 @@ import {
     Item,
     ItemProcessing,
     ItemUpgradeData,
-    MinimalNPC
+    MinimalNPC, Offering, OfferingAltar, Offerings
 } from "@ci/data-types";
 import { UiIcon } from "../enums/ui-icon.enum";
 
@@ -42,5 +42,8 @@ export interface DatabaseItem extends Item{
             url: string;
             displayName: string
         }
-    })[]
+    })[],
+    requiredAsOffering?: (OfferingAltar & {offerings: Offerings[]})[];
+    isBundleRewardIn?: (OfferingAltar & {offerings: Offerings[]})[];
+
 }

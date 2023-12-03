@@ -593,6 +593,31 @@ AvailableLanguages.forEach(lang => {
             const isUpgradeRequirement = itemUpgrades.filter(sd => sd.requirements.some(req => req.item.id === item.id))
 
 
+            const offeringAltars = generatorValues.offerings;
+
+            const isBundleRewardIn = offeringAltars.map(altar => {
+                const offerings = altar.offerings.filter(offering => offering.rewards.items.find(reward => reward.item.id === item.id) || offering.rewards.recipes.find(reward => reward.item.id === item.id));
+                if (!offerings.length) return null;
+                return {...altar, offerings}
+            }).filter(nonNullable);
+
+            const requiredAsOffering = offeringAltars.map(altar => {
+                const offerings = altar.offerings.filter(offering => offering.requiredItems.find(reward => {
+                    if ('id' in reward.item) {
+                        return reward.item.id === item.id;
+                    } else {
+                        const key = reward.item.key;
+                        const items = generatorValues['tag-based-items'].find(t => key === t.key)?.items;
+
+                        return items?.find(t => t.id === item.id)
+                    }
+                }));
+                if (!offerings.length) return null;
+                return {...altar, offerings}
+            }).filter(nonNullable);
+
+
+
             const dbItem: DatabaseItem = {
                 ...item,
                 fish: fish ? omitFields(fish, 'item') : undefined,
@@ -611,6 +636,8 @@ AvailableLanguages.forEach(lang => {
                 oceanCritter: generatorValues["ocean-critters"].find(critter => critter.item.id === item.id),
                 isUpgradeResult: isUpgradeResult.length ? isUpgradeResult: undefined,
                 isUpgradeRequirement: isUpgradeRequirement.length ? isUpgradeRequirement: undefined,
+                requiredAsOffering: requiredAsOffering.length ? requiredAsOffering: undefined,
+                isBundleRewardIn: isBundleRewardIn.length ? isBundleRewardIn: undefined,
             }
 
             generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, lang);

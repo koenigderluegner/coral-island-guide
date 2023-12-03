@@ -13,16 +13,15 @@ export class DatabaseOfferingsComponent extends BaseDatabaseDetailPartComponent 
 
     ngOnInit(): void {
         if (!this.item) return;
-        const recipes = this.database.getOfferings();
-        const tagBasedItems = this.database.getTagBasedItems();
+        const offeringAltars = this.database.getOfferings();
 
-        this.isRewardIn = recipes.map(altar => {
+        const isBundleRewardIn = offeringAltars.map(altar => {
             const offerings = altar.offerings.filter(offering => offering.rewards.items.find(reward => reward.item.id === this.item?.id) || offering.rewards.recipes.find(reward => reward.item.id === this.item?.id));
             if (!offerings.length) return null;
             return {...altar, offerings}
         }).filter(nonNullable);
 
-        this.requiredAsOffering = recipes.map(altar => {
+        const requiredAsOffering = offeringAltars.map(altar => {
             const offerings = altar.offerings.filter(offering => offering.requiredItems.find(reward => {
                 if ('id' in reward.item) {
                     return reward.item.id === this.item?.id;
