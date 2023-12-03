@@ -1,5 +1,13 @@
 ## Changelog
 
+### TBD 
+
+In the last update, I added the groundwork for a new way to retrieve item data. This update focuses a lot on those new changes, please let me know if you encounter any issues.
+
+#### Changed
+
+- Database now uses new item system, drastically reducing initial loading time and bandwidth.
+
 ### 0.15.0 2023-12-03
 
 Note: This update is primarily for technical reasons. If you encounter any issues, please send me a message.

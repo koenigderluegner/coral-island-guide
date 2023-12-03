@@ -10,6 +10,7 @@ import {
     CraftingRecipe,
     Critter,
     Crop,
+    DatabaseItem,
     Enemy,
     FestivalData,
     FestivalName,
@@ -80,6 +81,7 @@ export class DatabaseService {
     private _OFFERINGS$?: Observable<OfferingAltar[]>;
     private _OFFERINGS: OfferingAltar[] = [];
 
+
     private _SHOP_ITEMS: Map<string, ShopItemData[]> = new Map<string, ShopItemData[]>();
     private _FESTIVAL_DATA: Map<string, FestivalData> = new Map<string, FestivalData>();
     private _SHOP_PROCESS_ITEMS: Map<string, ItemProcessShopData[]> = new Map<string, ItemProcessShopData[]>();
@@ -120,6 +122,8 @@ export class DatabaseService {
     private _ANIMAL_MOOD_DATA$?: Observable<ProductSizeByMood[]>;
     private _ANIMAL_SHOP_DATA$?: Observable<AnimalShopData[]>;
 
+    private _DATABASE_ITEMS: Map<string, DatabaseItem> = new Map<string, DatabaseItem>();
+
     constructor(private readonly _http: HttpClient) {
         const version = this._settings.useBeta ? 'beta' : 'live';
         const lang = this._settings.language ?? 'en'
@@ -127,54 +131,16 @@ export class DatabaseService {
         this._BASE_PATH = `assets/${version}/database/${lang}`;
     }
 
-
-    getDatabaseDetails(): Observable<unknown> {
-        return combineLatest([
-            this.fetchFish$(),
-            this.fetchCraftingRecipes$(),
-            this.fetchItemProcessingRecipes$(),
-            this.fetchCookingRecipes$(),
-            this.fetchTagBasedItems$(),
-            this.fetchOceanCritters$(),
-            this.fetchBugsAndInsects$(),
-            this.fetchCrops$(),
-            this.fetchFruitTrees$(),
-            this.fetchFruitPlants$(),
-            this.fetchGiftingPreferences$(),
-            this.fetchOfferings$(),
-            this.fetchShopItemData$("blacksmith"),
-            this.fetchShopProcessItems$("blacksmith"),
-            this.fetchShopItemData$("lab"),
-            this.fetchShopProcessItems$("lab"),
-            this.fetchShopItemData$("carpenter"),
-            this.fetchShopItemData$("general-store"),
-            this.fetchShopItemData$("ranch"),
-            this.fetchShopItemData$("beach-shack"),
-            this.fetchShopItemData$("concerned-monkey"),
-            this.fetchShopItemData$("merfolk-general-store"),
-            this.fetchShopItemData$("merfolk-oracle-tail-store"),
-            this.fetchShopItemData$("pet-shop"),
-            this.fetchShopItemData$("bos"),
-            this.fetchShopItemData$("bens-caravan"),
-            this.fetchShopItemData$("socket-and-pan"),
-            this.fetchShopItemData$("white-flamingo"),
-            this.fetchShopItemData$("coffee"),
-            this.fetchShopItemData$("tavern"),
-            this.fetchItemUpgradeData$("blacksmith"),
-            this.fetchItemUpgradeData$("beach-shack"),
-            this.fetchItemUpgradeData$("carpenter"),
-            this.fetchItemUpgradeData$("lab"),
-            this.fetchFestivalData$('cherry-blossom'),
-            this.fetchFestivalData$('animal'),
-            this.fetchFestivalData$('beach-clean-up'),
-            this.fetchFestivalData$('harvest'),
-            this.fetchFestivalData$('spooky'),
-            this.fetchFestivalData$('tree-planting'),
-            this.fetchFestivalData$('new-year-eve'),
-            this.fetchFestivalData$('winter-fair'),
-            this.fetchMeritExchangeShopData$(),
-            this.fetchBestiary$()
-        ]);
+    fetchDatabaseItem$(id: string): Observable<DatabaseItem> {
+        if (!this._DATABASE_ITEMS.has(id)) {
+            return this._http.get<DatabaseItem>(`${this._BASE_PATH}/items/${id}.json`)
+                .pipe(
+                    tap(items => this._DATABASE_ITEMS.set(id, items)),
+                    shareReplay(1)
+                );
+        } else {
+            return of(this._DATABASE_ITEMS.get(id)!)
+        }
     }
 
 

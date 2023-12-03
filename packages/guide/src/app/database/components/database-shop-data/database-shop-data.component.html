@@ -1,8 +1,8 @@
-@if (toBuyAt.length) {
+@if (databaseItem.buyAt && databaseItem.buyAt.length) {
 <app-expandable #expandableComponent open>
     <h3 class="database-header" expandableHeader>
         <app-database-header-button [templateRef]="expandableComponent">Buy at</app-database-header-button>
     </h3>
-    <app-shop-item-data-table [dataSource]="toBuyAt"/>
+    <app-shop-item-data-table [dataSource]="databaseItem.buyAt"/>
 </app-expandable>
 }

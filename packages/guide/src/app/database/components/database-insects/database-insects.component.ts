@@ -7,15 +7,4 @@ import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.co
     templateUrl: './database-insects.component.html',
     encapsulation: ViewEncapsulation.None
 })
-export class DatabaseInsectsComponent extends BaseDatabaseDetailPartComponent implements OnInit {
-
-    protected critter?: Critter;
-
-    ngOnInit(): void {
-        if (!this.item) return;
-
-        this.critter = this.database.getBugsAndInsects().find(critter => critter.item.id === this.item?.id);
-    }
-
-
-}
+export class DatabaseInsectsComponent extends BaseDatabaseDetailPartComponent{}

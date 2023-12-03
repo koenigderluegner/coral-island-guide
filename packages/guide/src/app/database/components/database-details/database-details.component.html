@@ -1,41 +1,47 @@
-@if (item) {
-<app-card>
+@if (databaseItem$) {
+    @if (databaseItem$ | async; as databaseItem) {
+        <app-card>
 
-    <header class="flex items-center flex-wrap mb-5">
-        <app-item-icon [itemName]="item.iconName" class="mr-3 w-14"/>
-        <div class="flex flex-col gap-0.5">
-            <h2 class="!my-0 font-semibold text-xl text-black">{{item.displayName}}</h2>
-            <span>{{item.id}}</span>
-        </div>
-        <div class="h-0 w-full md:hidden"></div>
-        <app-quality-grid [showOnlyBase]="!item.qualities.bronze"
-                          [item]="item"
-                          class="md:ml-auto mt-4 md:mt-0 quality-grid inline-block w-fit"
-                          includePrices
-        />
-    </header>
+            <header class="flex items-center flex-wrap mb-5">
+                <app-item-icon [itemName]="databaseItem.item.iconName" class="mr-3 w-14"/>
+                <div class="flex flex-col gap-0.5">
+                    <h2 class="!my-0 font-semibold text-xl text-black">{{ databaseItem.item.displayName }}</h2>
+                    <span>{{ databaseItem.item.id }}</span>
+                </div>
+                <div class="h-0 w-full md:hidden"></div>
+                <app-quality-grid [showOnlyBase]="!item.qualities.bronze"
+                                  [item]="databaseItem.item"
+                                  class="md:ml-auto mt-4 md:mt-0 quality-grid inline-block w-fit"
+                                  includePrices
+                />
+            </header>
 
-    <p class="text-lg">{{item.description}}</p>
+            <p class="text-lg">{{ databaseItem.item.description }}</p>
 
-    <div class="empty-details text-black my-5 text-lg">There's currently no data for this item. :(</div>
+            <div class="empty-details text-black my-5 text-lg">There's currently no data for this item. :(</div>
 
-    <app-database-shop-item-process [item]="item"/>
-    <app-database-shop-data [item]="item"/>
-    <app-database-offerings [item]="item"/>
-    <app-database-crops [item]="item"/>
+            <app-database-shop-item-process [databaseItem]="databaseItem"/>
+            <app-database-shop-data [databaseItem]="databaseItem"/>
+            <app-database-offerings [databaseItem]="databaseItem"/>
+            <app-database-crops [databaseItem]="databaseItem"/>
 
-    <app-database-fishing [item]="item"/>
-    <app-database-insects [item]="item"/>
-    <app-database-sea-critters [item]="item"/>
+            <app-database-fishing [databaseItem]="databaseItem"/>
+            <app-database-insects [databaseItem]="databaseItem"/>
+            <app-database-sea-critters [databaseItem]="databaseItem"/>
 
-    <app-database-artisan [item]="item"/>
-    <app-database-cooking [item]="item"/>
-    <app-database-crafting [item]="item"/>
+            <app-database-artisan [databaseItem]="databaseItem"/>
+            <app-database-cooking [databaseItem]="databaseItem"/>
+            <app-database-crafting [databaseItem]="databaseItem"/>
 
-    <app-database-festival-shop-data [item]="item"/>
-    <app-database-gifts [item]="item"/>
+            <app-database-festival-shop-data [databaseItem]="databaseItem"/>
+            <app-database-gifts [databaseItem]="databaseItem"/>
 
-    <app-database-item-upgrade [item]="item"/>
-    <app-database-bestiary [item]="item"/>
-</app-card>
+            <app-database-item-upgrade [databaseItem]="databaseItem"/>
+            <app-database-bestiary [databaseItem]="databaseItem"/>
+        </app-card>
+    } @else {
+        <app-card>
+            <mat-spinner class="mx-auto"></mat-spinner>
+        </app-card>
+    }
 }

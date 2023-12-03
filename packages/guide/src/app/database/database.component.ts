@@ -20,7 +20,6 @@ export class DatabaseComponent {
     protected filteredItems$: Observable<Item[]>;
     protected shouldHideImportantNote = false;
     protected filteredItems: Item[] = [];
-    protected allPrefetched = false;
     protected selectedItem?: Item;
     private _localStorageHideNoteKey = 'databaseHideImportantNote';
     private _didInitialLoad = false;
@@ -33,10 +32,7 @@ export class DatabaseComponent {
         private _injector: EnvironmentInjector,
         private _title: Title,
     ) {
-        this._database.getDatabaseDetails().pipe(
-            tap(() => this.allPrefetched = true),
-            take(1)
-        ).subscribe();
+
         this.shouldHideImportantNote = coerceBooleanProperty(localStorage.getItem(this._localStorageHideNoteKey));
 
         this.items = _database.getItems().filter(item => getQuality(item.id) === Quality.BASE);
@@ -209,5 +205,9 @@ export class DatabaseComponent {
         if (title) {
             this._title.setTitle(`${itemName} - ${title}`)
         }
+    }
+
+    prefetchItem(item: Item) {
+        this._database.fetchDatabaseItem$(item.id).pipe(take(1)).subscribe();
     }
 }

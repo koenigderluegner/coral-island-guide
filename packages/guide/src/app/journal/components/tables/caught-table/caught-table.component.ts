@@ -36,49 +36,49 @@ export class CaughtTableComponent extends BaseTableComponent<(Critter | Fish)> {
         });
     }
 
-    override sortingDataAccessor = (item: CaughtTableComponent['dataSource'][0], property: string) => {
+    override sortingDataAccessor = (critter: CaughtTableComponent['dataSource'][0], property: string) => {
 
         switch (property) {
             case 'rarity': {
-                return rarityMap.get(item[property]) ?? 0;
+                return rarityMap.get(critter[property]) ?? 0;
             }
             case 'key': {
-                return item[property];
+                return critter[property];
             }
             case 'time': {
 
-                const allTrue = getTruthyValues(item.spawnTime);
+                const allTrue = getTruthyValues(critter.spawnTime);
 
                 if (allTrue === 'Any') return 1;
 
-                return item.spawnTime.morning
+                return critter.spawnTime.morning
                     ? 10
-                    : item.spawnTime.afternoon
+                    : critter.spawnTime.afternoon
                         ? 20
-                        : item.spawnTime.evening
+                        : critter.spawnTime.evening
                             ? 30
-                            : item.spawnTime.night
+                            : critter.spawnTime.night
                                 ? 40
                                 : 0;
 
             }
             case 'weather': {
 
-                const allTrue = getTruthyValues(item.spawnWeather);
+                const allTrue = getTruthyValues(critter.spawnWeather);
 
                 if (allTrue === 'Any') return 1;
 
-                return item.spawnWeather.sunny
+                return critter.spawnWeather.sunny
                     ? 10
-                    : item.spawnWeather.rain
+                    : critter.spawnWeather.rain
                         ? 20
-                        : item.spawnWeather.snow
+                        : critter.spawnWeather.snow
                             ? 30
-                            : item.spawnWeather.blizzard
+                            : critter.spawnWeather.blizzard
                                 ? 40
-                                : item.spawnWeather.windy
+                                : critter.spawnWeather.windy
                                     ? 50
-                                    : item.spawnWeather.storm
+                                    : critter.spawnWeather.storm
                                         ? 60
                                         : 0;
 
@@ -86,10 +86,10 @@ export class CaughtTableComponent extends BaseTableComponent<(Critter | Fish)> {
 
         }
 
-        if (this._isFish(item)) {
+        if (this._isFish(critter)) {
             switch (property) {
                 case 'fishSize': {
-                    return critterSizeMap.get(item['fishSize']) ?? 0;
+                    return critterSizeMap.get(critter['fishSize']) ?? 0;
                 }
 
                 default: {
