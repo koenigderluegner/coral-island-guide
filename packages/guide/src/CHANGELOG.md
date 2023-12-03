@@ -4,6 +4,10 @@
 
 In the last update, I added the groundwork for a new way to retrieve item data. This update focuses a lot on those new changes, please let me know if you encounter any issues.
 
+#### Added
+
+- Added game version of shown data to footer.
+
 #### Changed
 
 - Database now uses new item system, drastically reducing initial loading time and bandwidth.
@@ -43,8 +47,8 @@ All your feedback and requests (thanks for them!) are still being worked on.
 - Added missing recipes in database, when an item was in the list of "either or" ingredients
 - Reduced height of sidebar items on bigger screens
 - NPC overview is now the entry page for NPC category instead of gifting
-    - Also swapped positions of sub navi entries
-      -Renamed achievements to badges to match in-game
+  - Also swapped positions of sub navi entries
+- Renamed achievements to badges to match in-game
 
 ### 0.13.0 2023-11-01
 

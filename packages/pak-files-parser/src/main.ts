@@ -74,9 +74,15 @@ import { FestivalDataGenerator } from "./app/festival-data.generator";
 import path from "path";
 import { flatObjectMap, nonNullable, omitFields } from "@ci/util";
 import { preferencesMap } from "../../guide/src/app/shared/constants/preference-map.const";
+import fs from "fs";
+
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
-
+const versionFile = path.join(config.sourceContentPath, 'Version', 'Config.json');
+if (fs.existsSync(versionFile)) {
+    const version = fs.readFileSync(versionFile, {encoding: 'utf8', flag: 'r'}).trim();
+    fs.writeFileSync(path.join(config.assetsPath, 'version.json'), JSON.stringify({version}));
+}
 const parsedArgs = getParsedArgs()
 
 
@@ -716,4 +722,4 @@ AvailableLanguages.forEach(lang => {
 
 })
 itemIconsImageProcessor.process();
-new NpcPortraitsImageProcessor(config.characterPortraitsPath, config.portaitPath, config.headPortaitPath).process()
+new NpcPortraitsImageProcessor(config.characterPortraitsPath, config.portraitPath, config.headPortraitPath).process()
