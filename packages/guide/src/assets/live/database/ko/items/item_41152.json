@@ -57,10 +57,12 @@
         "item": {
           "id": "item_41152",
           "displayName": "해바라기 꿀",
-          "iconName": "Honey_Sprite"
+          "iconName": "Honey_Sprite",
+          "sellPrice": 210
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "BeeHouse"
     }
   ],
   "artisanIngredient": [
@@ -85,7 +87,8 @@
         "item": {
           "id": "item_41276",
           "displayName": "해바라기 벌꿀술",
-          "iconName": "Mead_Sprite"
+          "iconName": "Mead_Sprite",
+          "sellPrice": 945
         }
       },
       "genericInput": null,
@@ -126,7 +129,8 @@
             "minutes": 0
           }
         }
-      ]
+      ],
+      "machine": "Barrel"
     }
   ],
   "usedToCook": [
@@ -519,7 +523,137 @@
       "genericIngredients": [
         {
           "key": "Any_Honey",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Honey",
+            "tags": [
+              "item.artisan.honey"
+            ],
+            "iconName": "T_AnyHoney_Sprite",
+            "displayName": "아무 꿀",
+            "items": [
+              {
+                "id": "item_41076",
+                "displayName": "선인장 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41148",
+                "displayName": "데이지 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41149",
+                "displayName": "작약 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41150",
+                "displayName": "양귀비 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41151",
+                "displayName": "스노드롭 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41152",
+                "displayName": "해바라기 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41153",
+                "displayName": "치자 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41154",
+                "displayName": "장미 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41155",
+                "displayName": "백합 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41156",
+                "displayName": "붓꽃 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41157",
+                "displayName": "난초 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41158",
+                "displayName": "블루 달리아 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41159",
+                "displayName": "튤립 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41160",
+                "displayName": "제비꽃 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41161",
+                "displayName": "수선화 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41162",
+                "displayName": "카놀라 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41163",
+                "displayName": "흰색 히비스커스 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41164",
+                "displayName": "참제비고깔 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41165",
+                "displayName": "코스모스 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41166",
+                "displayName": "히비스커스 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41167",
+                "displayName": "연꽃 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41170",
+                "displayName": "즈뿐 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41171",
+                "displayName": "팬지 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41184",
+                "displayName": "페어리 로즈 꿀",
+                "iconName": "Honey_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -527,6 +661,20 @@
         "key": "item_63040",
         "masteryLevel": 6,
         "masteryType": "Catching"
+      },
+      "item": {
+        "id": "item_63040",
+        "displayName": "날벌레 덫",
+        "price": 1060,
+        "sellPrice": 305,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Trap",
+        "displayKey": "Trap",
+        "description": "덫.",
+        "qualities": {},
+        "iconName": "Flying_insect_trap_Sprite",
+        "tags": []
       }
     },
     {
@@ -537,11 +685,181 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "아무 괴물 정수",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "불 정수",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "다크 정수",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "괴물 정수",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "흙 정수",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "물 정수",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "바람 정수",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         },
         {
           "key": "Any_Honey",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Honey",
+            "tags": [
+              "item.artisan.honey"
+            ],
+            "iconName": "T_AnyHoney_Sprite",
+            "displayName": "아무 꿀",
+            "items": [
+              {
+                "id": "item_41076",
+                "displayName": "선인장 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41148",
+                "displayName": "데이지 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41149",
+                "displayName": "작약 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41150",
+                "displayName": "양귀비 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41151",
+                "displayName": "스노드롭 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41152",
+                "displayName": "해바라기 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41153",
+                "displayName": "치자 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41154",
+                "displayName": "장미 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41155",
+                "displayName": "백합 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41156",
+                "displayName": "붓꽃 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41157",
+                "displayName": "난초 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41158",
+                "displayName": "블루 달리아 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41159",
+                "displayName": "튤립 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41160",
+                "displayName": "제비꽃 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41161",
+                "displayName": "수선화 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41162",
+                "displayName": "카놀라 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41163",
+                "displayName": "흰색 히비스커스 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41164",
+                "displayName": "참제비고깔 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41165",
+                "displayName": "코스모스 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41166",
+                "displayName": "히비스커스 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41167",
+                "displayName": "연꽃 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41170",
+                "displayName": "즈뿐 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41171",
+                "displayName": "팬지 꿀",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41184",
+                "displayName": "페어리 로즈 꿀",
+                "iconName": "Honey_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -549,6 +867,22 @@
         "key": "item_64012",
         "masteryLevel": 9,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64012",
+        "displayName": "괴물 유인 향 II",
+        "price": 140,
+        "sellPrice": 35,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "출현을 증가시키는 향",
+        "qualities": {},
+        "iconName": "Increase_spawn_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     }
   ]

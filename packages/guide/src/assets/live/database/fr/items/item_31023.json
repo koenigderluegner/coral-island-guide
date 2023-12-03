@@ -59,10 +59,12 @@
         "item": {
           "id": "item_41003",
           "displayName": "Mayonnaise",
-          "iconName": "Mayonnaise_Sprite"
+          "iconName": "Mayonnaise_Sprite",
+          "sellPrice": 100
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "MayoniseMachine"
     }
   ],
   "usedToCook": [
@@ -1124,11 +1126,101 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "Toute essence de monstre",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "Essence de flamme",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "Essence noire",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "Essence de monstre",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "Essence de la terre",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "Essence de l'eau",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "Essence du vent",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         },
         {
           "key": "Any_Egg",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Egg",
+            "tags": [
+              "item.animalproduct.egg"
+            ],
+            "iconName": "T_AnyEgg_Sprite",
+            "displayName": "Œuf",
+            "items": [
+              {
+                "id": "item_31002",
+                "displayName": "Œuf",
+                "iconName": "Egg_Sprite_"
+              },
+              {
+                "id": "item_31003",
+                "displayName": "Œuf de canard",
+                "iconName": "Duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31012",
+                "displayName": "Gros œuf",
+                "iconName": "Large_egg_Sprite_"
+              },
+              {
+                "id": "item_31014",
+                "displayName": "Gros œuf de canard",
+                "iconName": "Large_duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31021",
+                "displayName": "Gros œuf doré",
+                "iconName": "Large_golden_egg_Sprite"
+              },
+              {
+                "id": "item_31023",
+                "displayName": "Œuf doré",
+                "iconName": "Golden_egg_Sprite"
+              },
+              {
+                "id": "item_32016",
+                "displayName": "Œuf de caille",
+                "iconName": "Quail_egg_Sprite"
+              },
+              {
+                "id": "item_32018",
+                "displayName": "Gros œuf de caille.",
+                "iconName": "Large_quail_egg_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -1136,6 +1228,22 @@
         "key": "item_64010",
         "masteryLevel": 6,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64010",
+        "displayName": "Odeur de leurre de monstre",
+        "price": 140,
+        "sellPrice": 35,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Increase aggro scent",
+        "qualities": {},
+        "iconName": "Increase_aggro_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     },
     {
@@ -1171,10 +1279,74 @@
       "genericIngredients": [
         {
           "key": "Any_Egg",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Egg",
+            "tags": [
+              "item.animalproduct.egg"
+            ],
+            "iconName": "T_AnyEgg_Sprite",
+            "displayName": "Œuf",
+            "items": [
+              {
+                "id": "item_31002",
+                "displayName": "Œuf",
+                "iconName": "Egg_Sprite_"
+              },
+              {
+                "id": "item_31003",
+                "displayName": "Œuf de canard",
+                "iconName": "Duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31012",
+                "displayName": "Gros œuf",
+                "iconName": "Large_egg_Sprite_"
+              },
+              {
+                "id": "item_31014",
+                "displayName": "Gros œuf de canard",
+                "iconName": "Large_duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31021",
+                "displayName": "Gros œuf doré",
+                "iconName": "Large_golden_egg_Sprite"
+              },
+              {
+                "id": "item_31023",
+                "displayName": "Œuf doré",
+                "iconName": "Golden_egg_Sprite"
+              },
+              {
+                "id": "item_32016",
+                "displayName": "Œuf de caille",
+                "iconName": "Quail_egg_Sprite"
+              },
+              {
+                "id": "item_32018",
+                "displayName": "Gros œuf de caille.",
+                "iconName": "Large_quail_egg_Sprite"
+              }
+            ]
+          }
         }
       ],
-      "category": "Scarecrow"
+      "category": "Scarecrow",
+      "item": {
+        "id": "item_65604",
+        "displayName": "Epouvantail pain d'épice",
+        "price": 950,
+        "sellPrice": 380,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Dissuade les corbeaux de s'attaquer aux cultures. Protège une zone de 11x11.",
+        "qualities": {},
+        "iconName": "Gingerbread_Scarecrow_Sprite",
+        "tags": []
+      }
     }
   ]
 }

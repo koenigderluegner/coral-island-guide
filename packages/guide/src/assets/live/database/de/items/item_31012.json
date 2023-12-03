@@ -59,10 +59,12 @@
         "item": {
           "id": "item_41043",
           "displayName": "Große Mayonnaise",
-          "iconName": "Large_Mayonnaise_Sprite"
+          "iconName": "Large_Mayonnaise_Sprite",
+          "sellPrice": 150
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "MayoniseMachine"
     },
     {
       "useCategory": false,
@@ -85,10 +87,12 @@
         "item": {
           "id": "item_41290",
           "displayName": "Großes gesalzenes Ei",
-          "iconName": "Large_Salted_Egg_Sprite"
+          "iconName": "Large_Salted_Egg_Sprite",
+          "sellPrice": 115
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "PreserveJar"
     }
   ],
   "usedToCook": [
@@ -1225,11 +1229,101 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "Beliebige Monsteressenz",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "Flammenessenz",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "Dunkelessenz",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "Monsteressenz",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "Erdessenz",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "Wasseressenz",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "Windessenz",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         },
         {
           "key": "Any_Egg",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Egg",
+            "tags": [
+              "item.animalproduct.egg"
+            ],
+            "iconName": "T_AnyEgg_Sprite",
+            "displayName": "Beliebiges Ei",
+            "items": [
+              {
+                "id": "item_31002",
+                "displayName": "Ei",
+                "iconName": "Egg_Sprite_"
+              },
+              {
+                "id": "item_31003",
+                "displayName": "Entenei",
+                "iconName": "Duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31012",
+                "displayName": "Großes Ei",
+                "iconName": "Large_egg_Sprite_"
+              },
+              {
+                "id": "item_31014",
+                "displayName": "Großes Entenei",
+                "iconName": "Large_duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31021",
+                "displayName": "Großes goldenes Ei",
+                "iconName": "Large_golden_egg_Sprite"
+              },
+              {
+                "id": "item_31023",
+                "displayName": "Goldenes Ei",
+                "iconName": "Golden_egg_Sprite"
+              },
+              {
+                "id": "item_32016",
+                "displayName": "Wachtelei",
+                "iconName": "Quail_egg_Sprite"
+              },
+              {
+                "id": "item_32018",
+                "displayName": "Großes Wachtelei",
+                "iconName": "Large_quail_egg_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -1237,6 +1331,22 @@
         "key": "item_64010",
         "masteryLevel": 6,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64010",
+        "displayName": "Monsterködergeruch",
+        "price": 140,
+        "sellPrice": 35,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Aggressionsduft erhöhen",
+        "qualities": {},
+        "iconName": "Increase_aggro_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     },
     {
@@ -1270,7 +1380,21 @@
         }
       ],
       "genericIngredients": [],
-      "category": "Scarecrow"
+      "category": "Scarecrow",
+      "item": {
+        "id": "item_65595",
+        "displayName": "Humpty-Vogelscheuche",
+        "price": 700,
+        "sellPrice": 280,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Discourages crows from disturbing crops. Protects an 11x11 area.",
+        "qualities": {},
+        "iconName": "Humpty_Scarecrow_Sprite",
+        "tags": []
+      }
     },
     {
       "key": "item_65604",
@@ -1305,10 +1429,74 @@
       "genericIngredients": [
         {
           "key": "Any_Egg",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Egg",
+            "tags": [
+              "item.animalproduct.egg"
+            ],
+            "iconName": "T_AnyEgg_Sprite",
+            "displayName": "Beliebiges Ei",
+            "items": [
+              {
+                "id": "item_31002",
+                "displayName": "Ei",
+                "iconName": "Egg_Sprite_"
+              },
+              {
+                "id": "item_31003",
+                "displayName": "Entenei",
+                "iconName": "Duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31012",
+                "displayName": "Großes Ei",
+                "iconName": "Large_egg_Sprite_"
+              },
+              {
+                "id": "item_31014",
+                "displayName": "Großes Entenei",
+                "iconName": "Large_duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31021",
+                "displayName": "Großes goldenes Ei",
+                "iconName": "Large_golden_egg_Sprite"
+              },
+              {
+                "id": "item_31023",
+                "displayName": "Goldenes Ei",
+                "iconName": "Golden_egg_Sprite"
+              },
+              {
+                "id": "item_32016",
+                "displayName": "Wachtelei",
+                "iconName": "Quail_egg_Sprite"
+              },
+              {
+                "id": "item_32018",
+                "displayName": "Großes Wachtelei",
+                "iconName": "Large_quail_egg_Sprite"
+              }
+            ]
+          }
         }
       ],
-      "category": "Scarecrow"
+      "category": "Scarecrow",
+      "item": {
+        "id": "item_65604",
+        "displayName": "Lebkuchen-Vogelscheuche",
+        "price": 950,
+        "sellPrice": 380,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Discourages crows from disturbing crops. Protects an 11x11 area.",
+        "qualities": {},
+        "iconName": "Gingerbread_Scarecrow_Sprite",
+        "tags": []
+      }
     }
   ],
   "requiredAsOffering": [

@@ -489,6 +489,14 @@ AvailableLanguages.forEach(lang => {
 
             Object.keys(recipes[0]).forEach(utensil => {
                 const utensilRecipes: ItemProcessing[] = recipes[0][utensil];
+
+                utensilRecipes.forEach(item => {
+                    item.machine = utensil;
+                    if (item.genericInput) {
+                        item.genericInput.genericItem = generatorValues['tag-based-items'].find(tbi => tbi.key === item.genericInput?.key)
+                    }
+                    item.output.item.sellPrice = generatorValues.items.find(i => i.id === item.output.item.id)?.sellPrice
+                })
                 artisanResult.push(...utensilRecipes.filter(recipe => recipe.output.item.id === item.id));
                 artisanIngredient.push(...utensilRecipes.filter(recipe => {
                     const tags = getGenericItems(item);
@@ -499,6 +507,11 @@ AvailableLanguages.forEach(lang => {
             })
 
             const craftingRecipes = generatorValues['crafting-recipes'];
+            craftingRecipes.forEach(recipe => {
+                recipe.item = generatorValues.items.find(item => item.id === recipe.key.toLowerCase());
+                recipe.genericIngredients.forEach(gi => gi.genericItem = generatorValues["tag-based-items"].find(item => item.key === gi.key));
+            });
+
 
             const craftedFrom = craftingRecipes.filter(recipe => recipe.item?.id === item.id);
             const usedToCraft = craftingRecipes.filter(recipe => item && isCraftingIngredient(item, recipe));

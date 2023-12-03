@@ -40,10 +40,12 @@
         "item": {
           "id": "item_61001",
           "displayName": "ブロンズ鉱石",
-          "iconName": "Bronze_Ore_Sprite"
+          "iconName": "Bronze_Ore_Sprite",
+          "sellPrice": 5
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "SlimeOfReplicator"
     }
   ],
   "artisanIngredient": [
@@ -77,10 +79,12 @@
         "item": {
           "id": "item_61005",
           "displayName": "ブロンズのインゴット",
-          "iconName": "Bronze_Bar_Sprite"
+          "iconName": "Bronze_Bar_Sprite",
+          "sellPrice": 25
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "furnace"
     },
     {
       "useCategory": false,
@@ -103,10 +107,12 @@
         "item": {
           "id": "item_61001",
           "displayName": "ブロンズ鉱石",
-          "iconName": "Bronze_Ore_Sprite"
+          "iconName": "Bronze_Ore_Sprite",
+          "sellPrice": 5
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "SlimeOfReplicator"
     },
     {
       "useCategory": false,
@@ -129,10 +135,12 @@
         "item": {
           "id": "item_61045",
           "displayName": "銀鉱石",
-          "iconName": "Silver_Ore_Sprite"
+          "iconName": "Silver_Ore_Sprite",
+          "sellPrice": 15
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "fromEnemies": [
@@ -180,7 +188,21 @@
         }
       ],
       "genericIngredients": [],
-      "category": "Artisan"
+      "category": "Artisan",
+      "item": {
+        "id": "item_65034",
+        "displayName": "炉",
+        "price": 500,
+        "sellPrice": 140,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Resource equipment",
+        "displayKey": "ResourceEquipment",
+        "description": "金属のインゴットを作ることができます。",
+        "qualities": {},
+        "iconName": "Furnace_Sprite",
+        "tags": []
+      }
     },
     {
       "key": "item_65203",
@@ -210,6 +232,20 @@
         "key": "item_65203",
         "masteryLevel": 2,
         "masteryType": "Foraging"
+      },
+      "item": {
+        "id": "item_65203",
+        "displayName": "窯",
+        "price": 400,
+        "sellPrice": 125,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Resource equipment",
+        "displayKey": "ResourceEquipment",
+        "description": "木材から木炭を、スクラップや石からガラスを作ります。",
+        "qualities": {},
+        "iconName": "Kiln_Sprite",
+        "tags": []
       }
     },
     {
@@ -240,6 +276,20 @@
         "key": "item_65016",
         "masteryLevel": 6,
         "masteryType": "Catching"
+      },
+      "item": {
+        "id": "item_65016",
+        "displayName": "ハチの家",
+        "price": 1000,
+        "sellPrice": 175,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Artisan equipment",
+        "displayKey": "ArtisanEquipment",
+        "description": "ハチのためのホテル。ハチミツを作るには、花を入れてください。",
+        "qualities": {},
+        "iconName": "Beehouse_Sprite",
+        "tags": []
       }
     },
     {
@@ -270,6 +320,22 @@
         "key": "item_63001",
         "masteryLevel": 1,
         "masteryType": "Mining"
+      },
+      "item": {
+        "id": "item_63001",
+        "displayName": "爆薬1",
+        "price": 50,
+        "sellPrice": 14,
+        "sellAt": [
+          "BandOfSmile"
+        ],
+        "stackable": true,
+        "inventoryCategory": "Bombs",
+        "displayKey": "Bombs",
+        "description": "小規模の爆発を起こします。戦闘で役に立ちますが、取り扱いに注意！",
+        "qualities": {},
+        "iconName": "Explosive_I_Sprite",
+        "tags": []
       }
     },
     {
@@ -280,10 +346,54 @@
       "genericIngredients": [
         {
           "key": "Generic_Ore",
-          "amount": 10
+          "amount": 10,
+          "genericItem": {
+            "key": "Generic_Ore",
+            "tags": [
+              "item.ore"
+            ],
+            "iconName": "T_AnyOre_Sprite",
+            "displayName": "鉱石すべて",
+            "items": [
+              {
+                "id": "item_61001",
+                "displayName": "ブロンズ鉱石",
+                "iconName": "Bronze_Ore_Sprite"
+              },
+              {
+                "id": "item_61002",
+                "displayName": "金鉱石",
+                "iconName": "Gold_Ore_Sprite"
+              },
+              {
+                "id": "item_61004",
+                "displayName": "オスミウム鉱石",
+                "iconName": "Osmium_Ore_Sprite"
+              },
+              {
+                "id": "item_61045",
+                "displayName": "銀鉱石",
+                "iconName": "Silver_Ore_Sprite"
+              }
+            ]
+          }
         }
       ],
-      "category": "Misc"
+      "category": "Misc",
+      "item": {
+        "id": "item_63029",
+        "displayName": "スパイク",
+        "price": 200,
+        "sellPrice": 50,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Trap",
+        "displayKey": "Trap",
+        "description": "敵にダメージを与えることができる罠です。",
+        "qualities": {},
+        "iconName": "Spikes_Sprite",
+        "tags": []
+      }
     },
     {
       "key": "Item_63030",
@@ -302,10 +412,54 @@
       "genericIngredients": [
         {
           "key": "Generic_Ore",
-          "amount": 2
+          "amount": 2,
+          "genericItem": {
+            "key": "Generic_Ore",
+            "tags": [
+              "item.ore"
+            ],
+            "iconName": "T_AnyOre_Sprite",
+            "displayName": "鉱石すべて",
+            "items": [
+              {
+                "id": "item_61001",
+                "displayName": "ブロンズ鉱石",
+                "iconName": "Bronze_Ore_Sprite"
+              },
+              {
+                "id": "item_61002",
+                "displayName": "金鉱石",
+                "iconName": "Gold_Ore_Sprite"
+              },
+              {
+                "id": "item_61004",
+                "displayName": "オスミウム鉱石",
+                "iconName": "Osmium_Ore_Sprite"
+              },
+              {
+                "id": "item_61045",
+                "displayName": "銀鉱石",
+                "iconName": "Silver_Ore_Sprite"
+              }
+            ]
+          }
         }
       ],
-      "category": "Misc"
+      "category": "Misc",
+      "item": {
+        "id": "item_63030",
+        "displayName": "スライムトラップ",
+        "price": 70,
+        "sellPrice": 20,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Trap",
+        "displayKey": "Trap",
+        "description": "敵の動きを遅くすることができる罠です。",
+        "qualities": {},
+        "iconName": "Slime_trap_Sprite",
+        "tags": []
+      }
     },
     {
       "key": "Item_63031",
@@ -324,10 +478,54 @@
       "genericIngredients": [
         {
           "key": "Generic_Ore",
-          "amount": 2
+          "amount": 2,
+          "genericItem": {
+            "key": "Generic_Ore",
+            "tags": [
+              "item.ore"
+            ],
+            "iconName": "T_AnyOre_Sprite",
+            "displayName": "鉱石すべて",
+            "items": [
+              {
+                "id": "item_61001",
+                "displayName": "ブロンズ鉱石",
+                "iconName": "Bronze_Ore_Sprite"
+              },
+              {
+                "id": "item_61002",
+                "displayName": "金鉱石",
+                "iconName": "Gold_Ore_Sprite"
+              },
+              {
+                "id": "item_61004",
+                "displayName": "オスミウム鉱石",
+                "iconName": "Osmium_Ore_Sprite"
+              },
+              {
+                "id": "item_61045",
+                "displayName": "銀鉱石",
+                "iconName": "Silver_Ore_Sprite"
+              }
+            ]
+          }
         }
       ],
-      "category": "Misc"
+      "category": "Misc",
+      "item": {
+        "id": "item_63031",
+        "displayName": "スプリングトラップ",
+        "price": 50,
+        "sellPrice": 15,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Trap",
+        "displayKey": "Trap",
+        "description": "敵を押し戻すことができる罠です。",
+        "qualities": {},
+        "iconName": "Spring_trap_Sprite",
+        "tags": []
+      }
     },
     {
       "key": "Item_63032",
@@ -354,10 +552,54 @@
       "genericIngredients": [
         {
           "key": "Generic_Ore",
-          "amount": 2
+          "amount": 2,
+          "genericItem": {
+            "key": "Generic_Ore",
+            "tags": [
+              "item.ore"
+            ],
+            "iconName": "T_AnyOre_Sprite",
+            "displayName": "鉱石すべて",
+            "items": [
+              {
+                "id": "item_61001",
+                "displayName": "ブロンズ鉱石",
+                "iconName": "Bronze_Ore_Sprite"
+              },
+              {
+                "id": "item_61002",
+                "displayName": "金鉱石",
+                "iconName": "Gold_Ore_Sprite"
+              },
+              {
+                "id": "item_61004",
+                "displayName": "オスミウム鉱石",
+                "iconName": "Osmium_Ore_Sprite"
+              },
+              {
+                "id": "item_61045",
+                "displayName": "銀鉱石",
+                "iconName": "Silver_Ore_Sprite"
+              }
+            ]
+          }
         }
       ],
-      "category": "Misc"
+      "category": "Misc",
+      "item": {
+        "id": "item_63032",
+        "displayName": "粘着トラップ",
+        "price": 80,
+        "sellPrice": 25,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Trap",
+        "displayKey": "Trap",
+        "description": "敵を捕まえることができる罠です。",
+        "qualities": {},
+        "iconName": "Glue_trap_Sprite",
+        "tags": []
+      }
     },
     {
       "key": "Item_63033",
@@ -376,10 +618,54 @@
       "genericIngredients": [
         {
           "key": "Generic_Ore",
-          "amount": 2
+          "amount": 2,
+          "genericItem": {
+            "key": "Generic_Ore",
+            "tags": [
+              "item.ore"
+            ],
+            "iconName": "T_AnyOre_Sprite",
+            "displayName": "鉱石すべて",
+            "items": [
+              {
+                "id": "item_61001",
+                "displayName": "ブロンズ鉱石",
+                "iconName": "Bronze_Ore_Sprite"
+              },
+              {
+                "id": "item_61002",
+                "displayName": "金鉱石",
+                "iconName": "Gold_Ore_Sprite"
+              },
+              {
+                "id": "item_61004",
+                "displayName": "オスミウム鉱石",
+                "iconName": "Osmium_Ore_Sprite"
+              },
+              {
+                "id": "item_61045",
+                "displayName": "銀鉱石",
+                "iconName": "Silver_Ore_Sprite"
+              }
+            ]
+          }
         }
       ],
-      "category": "Misc"
+      "category": "Misc",
+      "item": {
+        "id": "item_63033",
+        "displayName": "ショックトラップ",
+        "price": 190,
+        "sellPrice": 57,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Trap",
+        "displayKey": "Trap",
+        "description": "強力な罠です。敵を一時的に行動不能にします。",
+        "qualities": {},
+        "iconName": "Shock_trap_Sprite",
+        "tags": []
+      }
     },
     {
       "key": "Item_63034",
@@ -406,10 +692,54 @@
       "genericIngredients": [
         {
           "key": "Generic_Ore",
-          "amount": 2
+          "amount": 2,
+          "genericItem": {
+            "key": "Generic_Ore",
+            "tags": [
+              "item.ore"
+            ],
+            "iconName": "T_AnyOre_Sprite",
+            "displayName": "鉱石すべて",
+            "items": [
+              {
+                "id": "item_61001",
+                "displayName": "ブロンズ鉱石",
+                "iconName": "Bronze_Ore_Sprite"
+              },
+              {
+                "id": "item_61002",
+                "displayName": "金鉱石",
+                "iconName": "Gold_Ore_Sprite"
+              },
+              {
+                "id": "item_61004",
+                "displayName": "オスミウム鉱石",
+                "iconName": "Osmium_Ore_Sprite"
+              },
+              {
+                "id": "item_61045",
+                "displayName": "銀鉱石",
+                "iconName": "Silver_Ore_Sprite"
+              }
+            ]
+          }
         }
       ],
-      "category": "Misc"
+      "category": "Misc",
+      "item": {
+        "id": "item_63034",
+        "displayName": "デコイ",
+        "price": 170,
+        "sellPrice": 50,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Decoy",
+        "displayKey": "Decoy",
+        "description": "これを敵に投げつけると、おとりになって敵の攻撃を引き寄せてくれます。",
+        "qualities": {},
+        "iconName": "Decoy_Sprite",
+        "tags": []
+      }
     },
     {
       "key": "item_65527",
@@ -450,7 +780,21 @@
         }
       ],
       "genericIngredients": [],
-      "category": "Decor"
+      "category": "Decor",
+      "item": {
+        "id": "item_65527",
+        "displayName": "頑丈なコンピューター",
+        "price": 7000,
+        "sellPrice": 2135,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "農場に設置します。",
+        "qualities": {},
+        "iconName": "Sturdy_Computer_Sprite",
+        "tags": []
+      }
     },
     {
       "key": "item_65533",
@@ -467,7 +811,21 @@
         }
       ],
       "genericIngredients": [],
-      "category": "Farming"
+      "category": "Farming",
+      "item": {
+        "id": "item_65533",
+        "displayName": "スカウトの宝箱",
+        "price": 380,
+        "sellPrice": 150,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "全種類のアイテムを最大40個まで保管できます。農場の各所に設置できます。",
+        "qualities": {},
+        "iconName": "Scout_chest_Sprite",
+        "tags": []
+      }
     }
   ],
   "buyAt": [

@@ -59,10 +59,12 @@
         "item": {
           "id": "item_41003",
           "displayName": "Mayonnaise",
-          "iconName": "Mayonnaise_Sprite"
+          "iconName": "Mayonnaise_Sprite",
+          "sellPrice": 100
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "MayoniseMachine"
     }
   ],
   "usedToCook": [
@@ -1124,11 +1126,101 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "Cualquier extracto de monstruo",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "Esencia de fuego",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "Esencia oscura",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "Esencia de monstruo",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "Esencia de tierra",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "Esencia de agua",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "Esencia de viento",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         },
         {
           "key": "Any_Egg",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Egg",
+            "tags": [
+              "item.animalproduct.egg"
+            ],
+            "iconName": "T_AnyEgg_Sprite",
+            "displayName": "Cualquier huevo",
+            "items": [
+              {
+                "id": "item_31002",
+                "displayName": "Huevo",
+                "iconName": "Egg_Sprite_"
+              },
+              {
+                "id": "item_31003",
+                "displayName": "Huevo de pato",
+                "iconName": "Duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31012",
+                "displayName": "Huevo grande",
+                "iconName": "Large_egg_Sprite_"
+              },
+              {
+                "id": "item_31014",
+                "displayName": "Huevo de pato grande.",
+                "iconName": "Large_duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31021",
+                "displayName": "Huevo dorado grande",
+                "iconName": "Large_golden_egg_Sprite"
+              },
+              {
+                "id": "item_31023",
+                "displayName": "Huevo dorado",
+                "iconName": "Golden_egg_Sprite"
+              },
+              {
+                "id": "item_32016",
+                "displayName": "Huevo de codorniz",
+                "iconName": "Quail_egg_Sprite"
+              },
+              {
+                "id": "item_32018",
+                "displayName": "Un huevo de codorniz grande.",
+                "iconName": "Large_quail_egg_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -1136,6 +1228,22 @@
         "key": "item_64010",
         "masteryLevel": 6,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64010",
+        "displayName": "Cebo para monstruos",
+        "price": 140,
+        "sellPrice": 35,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Feromonas que aumentan la agresividad de los monstruos.",
+        "qualities": {},
+        "iconName": "Increase_aggro_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     },
     {
@@ -1171,10 +1279,74 @@
       "genericIngredients": [
         {
           "key": "Any_Egg",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Egg",
+            "tags": [
+              "item.animalproduct.egg"
+            ],
+            "iconName": "T_AnyEgg_Sprite",
+            "displayName": "Cualquier huevo",
+            "items": [
+              {
+                "id": "item_31002",
+                "displayName": "Huevo",
+                "iconName": "Egg_Sprite_"
+              },
+              {
+                "id": "item_31003",
+                "displayName": "Huevo de pato",
+                "iconName": "Duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31012",
+                "displayName": "Huevo grande",
+                "iconName": "Large_egg_Sprite_"
+              },
+              {
+                "id": "item_31014",
+                "displayName": "Huevo de pato grande.",
+                "iconName": "Large_duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31021",
+                "displayName": "Huevo dorado grande",
+                "iconName": "Large_golden_egg_Sprite"
+              },
+              {
+                "id": "item_31023",
+                "displayName": "Huevo dorado",
+                "iconName": "Golden_egg_Sprite"
+              },
+              {
+                "id": "item_32016",
+                "displayName": "Huevo de codorniz",
+                "iconName": "Quail_egg_Sprite"
+              },
+              {
+                "id": "item_32018",
+                "displayName": "Un huevo de codorniz grande.",
+                "iconName": "Large_quail_egg_Sprite"
+              }
+            ]
+          }
         }
       ],
-      "category": "Scarecrow"
+      "category": "Scarecrow",
+      "item": {
+        "id": "item_65604",
+        "displayName": "Espantapájaros de jengibre",
+        "price": 950,
+        "sellPrice": 380,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Evita que los cuervos se acerquen a los cultivos. Protege una área de 11x11 casillas.",
+        "qualities": {},
+        "iconName": "Gingerbread_Scarecrow_Sprite",
+        "tags": []
+      }
     }
   ]
 }

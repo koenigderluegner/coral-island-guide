@@ -39,10 +39,12 @@
         "item": {
           "id": "item_50505",
           "displayName": "黑暗精华",
-          "iconName": "Dark_Essence_Sprite"
+          "iconName": "Dark_Essence_Sprite",
+          "sellPrice": 25
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "SlimeOfReplicator"
     }
   ],
   "artisanIngredient": [
@@ -67,10 +69,12 @@
         "item": {
           "id": "item_50505",
           "displayName": "黑暗精华",
-          "iconName": "Dark_Essence_Sprite"
+          "iconName": "Dark_Essence_Sprite",
+          "sellPrice": 25
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "SlimeOfReplicator"
     }
   ],
   "fromEnemies": [
@@ -221,7 +225,21 @@
         }
       ],
       "genericIngredients": [],
-      "category": "Scarecrow"
+      "category": "Scarecrow",
+      "item": {
+        "id": "item_65120",
+        "displayName": "昆提女鬼稻草人",
+        "price": 1000,
+        "sellPrice": 310,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "阻止乌鸦扰乱庄稼。保护一个11x11的区域。",
+        "qualities": {},
+        "iconName": "Kunti_ghost_scarecrow_Sprite",
+        "tags": []
+      }
     },
     {
       "key": "Item_63032",
@@ -248,10 +266,54 @@
       "genericIngredients": [
         {
           "key": "Generic_Ore",
-          "amount": 2
+          "amount": 2,
+          "genericItem": {
+            "key": "Generic_Ore",
+            "tags": [
+              "item.ore"
+            ],
+            "iconName": "T_AnyOre_Sprite",
+            "displayName": "任何矿石",
+            "items": [
+              {
+                "id": "item_61001",
+                "displayName": "铜矿石",
+                "iconName": "Bronze_Ore_Sprite"
+              },
+              {
+                "id": "item_61002",
+                "displayName": "金矿石",
+                "iconName": "Gold_Ore_Sprite"
+              },
+              {
+                "id": "item_61004",
+                "displayName": "锇矿石",
+                "iconName": "Osmium_Ore_Sprite"
+              },
+              {
+                "id": "item_61045",
+                "displayName": "银矿石",
+                "iconName": "Silver_Ore_Sprite"
+              }
+            ]
+          }
         }
       ],
-      "category": "Misc"
+      "category": "Misc",
+      "item": {
+        "id": "item_63032",
+        "displayName": "胶水陷阱",
+        "price": 80,
+        "sellPrice": 25,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Trap",
+        "displayKey": "Trap",
+        "description": "一种陷阱，可以将敌人黏住。",
+        "qualities": {},
+        "iconName": "Glue_trap_Sprite",
+        "tags": []
+      }
     },
     {
       "key": "item_64011",
@@ -270,7 +332,47 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "任何怪物精华",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "火焰精华",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "黑暗精华",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "怪物精华",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "地精华",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "水精华",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "风精华",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -278,6 +380,22 @@
         "key": "item_64011",
         "masteryLevel": 4,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64011",
+        "displayName": "怪物气味",
+        "price": 70,
+        "sellPrice": 18,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "减少攻击性的气味",
+        "qualities": {},
+        "iconName": "Decrease_aggro_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     },
     {
@@ -288,11 +406,101 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "任何怪物精华",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "火焰精华",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "黑暗精华",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "怪物精华",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "地精华",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "水精华",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "风精华",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         },
         {
           "key": "Any_Egg",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Egg",
+            "tags": [
+              "item.animalproduct.egg"
+            ],
+            "iconName": "T_AnyEgg_Sprite",
+            "displayName": "任何鸡蛋",
+            "items": [
+              {
+                "id": "item_31002",
+                "displayName": "鸡蛋",
+                "iconName": "Egg_Sprite_"
+              },
+              {
+                "id": "item_31003",
+                "displayName": "鸭蛋",
+                "iconName": "Duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31012",
+                "displayName": "鸡蛋（大）",
+                "iconName": "Large_egg_Sprite_"
+              },
+              {
+                "id": "item_31014",
+                "displayName": "鸭蛋（大）",
+                "iconName": "Large_duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31021",
+                "displayName": "金蛋（大）",
+                "iconName": "Large_golden_egg_Sprite"
+              },
+              {
+                "id": "item_31023",
+                "displayName": "金蛋",
+                "iconName": "Golden_egg_Sprite"
+              },
+              {
+                "id": "item_32016",
+                "displayName": "鹌鹑蛋",
+                "iconName": "Quail_egg_Sprite"
+              },
+              {
+                "id": "item_32018",
+                "displayName": "鹌鹑蛋（大）",
+                "iconName": "Large_quail_egg_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -300,6 +508,22 @@
         "key": "item_64010",
         "masteryLevel": 6,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64010",
+        "displayName": "怪物诱饵的香味",
+        "price": 140,
+        "sellPrice": 35,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "增加攻击性的气味",
+        "qualities": {},
+        "iconName": "Increase_aggro_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     },
     {
@@ -319,7 +543,47 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "任何怪物精华",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "火焰精华",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "黑暗精华",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "怪物精华",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "地精华",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "水精华",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "风精华",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -327,6 +591,22 @@
         "key": "item_64013",
         "masteryLevel": 7,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64013",
+        "displayName": "怪物气味II",
+        "price": 100,
+        "sellPrice": 25,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "减少产卵的气味",
+        "qualities": {},
+        "iconName": "Decrease_spawn_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     },
     {
@@ -337,11 +617,181 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "任何怪物精华",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "火焰精华",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "黑暗精华",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "怪物精华",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "地精华",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "水精华",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "风精华",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         },
         {
           "key": "Any_Honey",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Honey",
+            "tags": [
+              "item.artisan.honey"
+            ],
+            "iconName": "T_AnyHoney_Sprite",
+            "displayName": "任何蜂蜜",
+            "items": [
+              {
+                "id": "item_41076",
+                "displayName": "仙人掌蜂蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41148",
+                "displayName": "雏菊花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41149",
+                "displayName": "牡丹花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41150",
+                "displayName": "罂粟花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41151",
+                "displayName": "雪滴花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41152",
+                "displayName": "向日葵花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41153",
+                "displayName": "栀子花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41154",
+                "displayName": "玫瑰花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41155",
+                "displayName": "百合花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41156",
+                "displayName": "鸢尾花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41157",
+                "displayName": "兰花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41158",
+                "displayName": "蓝色大丽花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41159",
+                "displayName": "郁金香花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41160",
+                "displayName": "紫罗兰花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41161",
+                "displayName": "洋水仙花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41162",
+                "displayName": "油菜花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41163",
+                "displayName": "白色木槿花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41164",
+                "displayName": "飞燕草花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41165",
+                "displayName": "波斯菊花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41166",
+                "displayName": "木槿花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41167",
+                "displayName": "荷花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41170",
+                "displayName": "鸡蛋花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41171",
+                "displayName": "三色堇花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41184",
+                "displayName": "仙女月季花蜜",
+                "iconName": "Honey_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -349,6 +799,22 @@
         "key": "item_64012",
         "masteryLevel": 9,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64012",
+        "displayName": "怪物诱饵的气味II",
+        "price": 140,
+        "sellPrice": 35,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "增加产卵的气味",
+        "qualities": {},
+        "iconName": "Increase_spawn_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     }
   ],

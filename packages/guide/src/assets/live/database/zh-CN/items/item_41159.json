@@ -57,10 +57,12 @@
         "item": {
           "id": "item_41159",
           "displayName": "郁金香花蜜",
-          "iconName": "Honey_Sprite"
+          "iconName": "Honey_Sprite",
+          "sellPrice": 20
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "BeeHouse"
     }
   ],
   "artisanIngredient": [
@@ -85,7 +87,8 @@
         "item": {
           "id": "item_41262",
           "displayName": "郁金香蜂蜜酒",
-          "iconName": "Mead_Sprite"
+          "iconName": "Mead_Sprite",
+          "sellPrice": 90
         }
       },
       "genericInput": null,
@@ -126,7 +129,8 @@
             "minutes": 0
           }
         }
-      ]
+      ],
+      "machine": "Barrel"
     }
   ],
   "usedToCook": [
@@ -519,7 +523,137 @@
       "genericIngredients": [
         {
           "key": "Any_Honey",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Honey",
+            "tags": [
+              "item.artisan.honey"
+            ],
+            "iconName": "T_AnyHoney_Sprite",
+            "displayName": "任何蜂蜜",
+            "items": [
+              {
+                "id": "item_41076",
+                "displayName": "仙人掌蜂蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41148",
+                "displayName": "雏菊花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41149",
+                "displayName": "牡丹花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41150",
+                "displayName": "罂粟花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41151",
+                "displayName": "雪滴花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41152",
+                "displayName": "向日葵花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41153",
+                "displayName": "栀子花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41154",
+                "displayName": "玫瑰花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41155",
+                "displayName": "百合花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41156",
+                "displayName": "鸢尾花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41157",
+                "displayName": "兰花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41158",
+                "displayName": "蓝色大丽花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41159",
+                "displayName": "郁金香花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41160",
+                "displayName": "紫罗兰花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41161",
+                "displayName": "洋水仙花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41162",
+                "displayName": "油菜花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41163",
+                "displayName": "白色木槿花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41164",
+                "displayName": "飞燕草花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41165",
+                "displayName": "波斯菊花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41166",
+                "displayName": "木槿花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41167",
+                "displayName": "荷花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41170",
+                "displayName": "鸡蛋花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41171",
+                "displayName": "三色堇花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41184",
+                "displayName": "仙女月季花蜜",
+                "iconName": "Honey_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -527,6 +661,20 @@
         "key": "item_63040",
         "masteryLevel": 6,
         "masteryType": "Catching"
+      },
+      "item": {
+        "id": "item_63040",
+        "displayName": "飞虫陷阱",
+        "price": 1060,
+        "sellPrice": 305,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Trap",
+        "displayKey": "Trap",
+        "description": "一个陷阱。",
+        "qualities": {},
+        "iconName": "Flying_insect_trap_Sprite",
+        "tags": []
       }
     },
     {
@@ -537,11 +685,181 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "任何怪物精华",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "火焰精华",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "黑暗精华",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "怪物精华",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "地精华",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "水精华",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "风精华",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         },
         {
           "key": "Any_Honey",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Honey",
+            "tags": [
+              "item.artisan.honey"
+            ],
+            "iconName": "T_AnyHoney_Sprite",
+            "displayName": "任何蜂蜜",
+            "items": [
+              {
+                "id": "item_41076",
+                "displayName": "仙人掌蜂蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41148",
+                "displayName": "雏菊花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41149",
+                "displayName": "牡丹花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41150",
+                "displayName": "罂粟花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41151",
+                "displayName": "雪滴花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41152",
+                "displayName": "向日葵花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41153",
+                "displayName": "栀子花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41154",
+                "displayName": "玫瑰花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41155",
+                "displayName": "百合花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41156",
+                "displayName": "鸢尾花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41157",
+                "displayName": "兰花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41158",
+                "displayName": "蓝色大丽花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41159",
+                "displayName": "郁金香花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41160",
+                "displayName": "紫罗兰花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41161",
+                "displayName": "洋水仙花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41162",
+                "displayName": "油菜花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41163",
+                "displayName": "白色木槿花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41164",
+                "displayName": "飞燕草花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41165",
+                "displayName": "波斯菊花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41166",
+                "displayName": "木槿花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41167",
+                "displayName": "荷花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41170",
+                "displayName": "鸡蛋花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41171",
+                "displayName": "三色堇花蜜",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41184",
+                "displayName": "仙女月季花蜜",
+                "iconName": "Honey_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -549,6 +867,22 @@
         "key": "item_64012",
         "masteryLevel": 9,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64012",
+        "displayName": "怪物诱饵的气味II",
+        "price": 140,
+        "sellPrice": 35,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "增加产卵的气味",
+        "qualities": {},
+        "iconName": "Increase_spawn_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     }
   ]
