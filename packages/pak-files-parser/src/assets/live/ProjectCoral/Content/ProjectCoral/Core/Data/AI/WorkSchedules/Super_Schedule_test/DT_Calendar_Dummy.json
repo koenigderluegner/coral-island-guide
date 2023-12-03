@@ -2,9 +2,10 @@
   {
     "Type": "DataTable",
     "Name": "DT_Calendar_Dummy",
+    "Class": "UScriptClass'DataTable'",
     "Properties": {
       "RowStruct": {
-        "ObjectName": "ScriptStruct C_WorkCalendarEntry",
+        "ObjectName": "ScriptStruct'C_WorkCalendarEntry'",
         "ObjectPath": "/Script/ProjectCoral"
       }
     },
@@ -19,16 +20,21 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Spring": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Tuesday",
-              "EC_DayOfTheWeek::Wednesday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
         "conditions": null

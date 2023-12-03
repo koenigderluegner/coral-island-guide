@@ -2,14 +2,15 @@
   {
     "Type": "DataTable",
     "Name": "DT_Calendar_KiraNew",
+    "Class": "UScriptClass'DataTable'",
     "Properties": {
       "RowStruct": {
-        "ObjectName": "ScriptStruct C_WorkCalendarEntry",
+        "ObjectName": "ScriptStruct'C_WorkCalendarEntry'",
         "ObjectPath": "/Script/ProjectCoral"
       }
     },
     "Rows": {
-      "SpringSummerFallWinter_SNMWTR": {
+      "SpringSummerFall_SNMWTR": {
         "dateOverrides": [],
         "validFrom": {
           "day": 1,
@@ -19,46 +20,47 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Spring": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Sunday",
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Wednesday",
-              "EC_DayOfTheWeek::Thursday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Sunday",
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday"
+              ]
+            }
           },
-          "EC_Season::Summer": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Sunday",
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Wednesday",
-              "EC_DayOfTheWeek::Thursday"
-            ]
+          {
+            "EC_Season::Summer": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Sunday",
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday"
+              ]
+            }
           },
-          "EC_Season::Fall": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Sunday",
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Wednesday",
-              "EC_DayOfTheWeek::Thursday"
-            ]
-          },
-          "EC_Season::Winter": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Sunday",
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Wednesday",
-              "EC_DayOfTheWeek::Thursday"
-            ]
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Sunday",
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
         "conditions": null
       },
-      "SpringSummerFallWinter_F-SpringFall_T": {
+      "SpringSummerFall_F-SpringFall_T": {
         "dateOverrides": [],
         "validFrom": {
           "day": 1,
@@ -68,31 +70,42 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Spring": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Tuesday",
-              "EC_DayOfTheWeek::Friday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Friday"
+              ]
+            }
           },
-          "EC_Season::Summer": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Friday"
-            ]
+          {
+            "EC_Season::Summer": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Friday"
+              ]
+            }
           },
-          "EC_Season::Fall": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Tuesday",
-              "EC_DayOfTheWeek::Friday"
-            ]
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Friday"
+              ]
+            }
           },
-          "EC_Season::Winter": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Friday"
-            ]
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Friday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
         "conditions": null
@@ -107,29 +120,40 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Spring": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Saturday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
           },
-          "EC_Season::Summer": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Saturday"
-            ]
+          {
+            "EC_Season::Summer": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
           },
-          "EC_Season::Fall": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Saturday"
-            ]
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
           },
-          "EC_Season::Winter": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Saturday"
-            ]
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
         "conditions": null
@@ -144,19 +168,26 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Summer": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Tuesday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Summer": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Tuesday"
+              ]
+            }
           },
-          "EC_Season::Winter": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Tuesday"
-            ]
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Tuesday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
         "conditions": null
@@ -171,36 +202,45 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {
-          "EC_Weather::Rain": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Tuesday",
-              "EC_DayOfTheWeek::Wednesday",
-              "EC_DayOfTheWeek::Thursday",
-              "EC_DayOfTheWeek::Friday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [
+          {
+            "EC_Weather::Rain": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday"
+              ]
+            }
           },
-          "EC_Weather::Storm": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Tuesday",
-              "EC_DayOfTheWeek::Wednesday",
-              "EC_DayOfTheWeek::Thursday",
-              "EC_DayOfTheWeek::Friday"
-            ]
+          {
+            "EC_Weather::Storm": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday"
+              ]
+            }
           },
-          "EC_Weather::Snow": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Tuesday",
-              "EC_DayOfTheWeek::Wednesday",
-              "EC_DayOfTheWeek::Thursday",
-              "EC_DayOfTheWeek::Friday"
-            ]
+          {
+            "EC_Weather::Snow": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday"
+              ]
+            }
           }
-        },
-        "seasonOverrides": {},
+        ],
+        "seasonOverrides": [],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
         "conditions": null
@@ -215,24 +255,33 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {
-          "EC_Weather::Rain": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Saturday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [
+          {
+            "EC_Weather::Rain": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
           },
-          "EC_Weather::Storm": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Saturday"
-            ]
+          {
+            "EC_Weather::Storm": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
           },
-          "EC_Weather::Snow": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Saturday"
-            ]
+          {
+            "EC_Weather::Snow": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
           }
-        },
-        "seasonOverrides": {},
+        ],
+        "seasonOverrides": [],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
         "conditions": null
@@ -247,24 +296,33 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {
-          "EC_Weather::Rain": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Sunday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [
+          {
+            "EC_Weather::Rain": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
           },
-          "EC_Weather::Storm": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Sunday"
-            ]
+          {
+            "EC_Weather::Storm": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
           },
-          "EC_Weather::Snow": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Sunday"
-            ]
+          {
+            "EC_Weather::Snow": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
           }
-        },
-        "seasonOverrides": {},
+        ],
+        "seasonOverrides": [],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
         "conditions": null
@@ -279,8 +337,11 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {},
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
         "festivalOverrides": [
           "CherryBlossom"
         ],
@@ -299,8 +360,11 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {},
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
         "festivalOverrides": [
           "BeachCleanUp"
         ],
@@ -319,8 +383,11 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {},
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
         "festivalOverrides": [
           "MooncakeFestival"
         ],
@@ -339,8 +406,11 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {},
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
         "festivalOverrides": [
           "NewYearFeast"
         ],
@@ -359,8 +429,11 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {},
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
         "festivalOverrides": [
           "TreePlanting"
         ],
@@ -395,8 +468,11 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {},
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
         "conditions": null
@@ -411,14 +487,129 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {},
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
         "festivalOverrides": [
           "TreePlanting"
         ],
         "festivalStatesAllowed": [
           "EC_FestivalState::RunningFestival"
         ],
+        "conditions": null
+      },
+      "AnimalFestivalRunning": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
+        "festivalOverrides": [
+          "AnimalFestival"
+        ],
+        "festivalStatesAllowed": [
+          "EC_FestivalState::RunningFestival"
+        ],
+        "conditions": null
+      },
+      "WinterSNMWTRF": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Sunday",
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday"
+              ]
+            }
+          }
+        ],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": null
+      },
+      "SpookyDayRunning": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
+        "festivalOverrides": [
+          "SpookyDay"
+        ],
+        "festivalStatesAllowed": [
+          "EC_FestivalState::RunningFestival"
+        ],
+        "conditions": null
+      },
+      "Winter_17-21": {
+        "dateOverrides": [
+          {
+            "isValidOnSpecificDate": false,
+            "isValidIndefinitelyOnceStarted": false,
+            "random": false,
+            "startsFrom": {
+              "day": 17,
+              "season": "EC_Season::Winter",
+              "year": 1
+            },
+            "lastsTill": {
+              "day": 21,
+              "season": "EC_Season::Winter",
+              "year": 1
+            }
+          }
+        ],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
         "conditions": null
       }
     }

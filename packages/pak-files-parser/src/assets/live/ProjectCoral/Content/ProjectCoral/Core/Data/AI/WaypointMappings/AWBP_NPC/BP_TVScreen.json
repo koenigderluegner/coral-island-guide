@@ -3,18 +3,19 @@
     "Type": "Function",
     "Name": "ExecuteUbergraph_BP_TVScreen",
     "Outer": "BP_TVScreen_C",
+    "Class": "UScriptClass'Function'",
     "ChildProperties": [
       {
         "Type": "IntProperty",
         "Name": "EntryPoint",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 4,
-        "PropertyFlags": 148
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
       },
       {
         "Type": "BoolProperty",
         "Name": "K2Node_CustomEvent_TV_On",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
         "FieldSize": 1,
         "ByteOffset": 0,
@@ -24,19 +25,20 @@
         "bIsNativeBool": true
       }
     ],
-    "FunctionFlags": 32769
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
   },
   {
     "Type": "Function",
     "Name": "Trigger",
     "Outer": "BP_TVScreen_C",
+    "Class": "UScriptClass'Function'",
     "ChildProperties": [
       {
         "Type": "BoolProperty",
         "Name": "TV_On",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
-        "PropertyFlags": 148,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
         "FieldSize": 1,
         "ByteOffset": 0,
         "ByteMask": 1,
@@ -45,19 +47,20 @@
         "bIsNativeBool": true
       }
     ],
-    "FunctionFlags": 201326592
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
   },
   {
     "Type": "Function",
     "Name": "Turn ON_Off",
     "Outer": "BP_TVScreen_C",
+    "Class": "UScriptClass'Function'",
     "ChildProperties": [
       {
         "Type": "BoolProperty",
         "Name": "TV_On",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
-        "PropertyFlags": 148,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
         "FieldSize": 1,
         "ByteOffset": 0,
         "ByteMask": 1,
@@ -66,36 +69,37 @@
         "bIsNativeBool": true
       }
     ],
-    "FunctionFlags": 201457664
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
   },
   {
     "Type": "BlueprintGeneratedClass",
     "Name": "BP_TVScreen_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
     "Properties": {
       "SimpleConstructionScript": {
-        "ObjectName": "SimpleConstructionScript BP_TVScreen_C:SimpleConstructionScript_0",
+        "ObjectName": "SimpleConstructionScript'BP_TVScreen_C:SimpleConstructionScript_0'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_TVScreen.8"
       },
       "UberGraphFunction": {
-        "ObjectName": "Function BP_TVScreen_C:ExecuteUbergraph_BP_TVScreen",
+        "ObjectName": "Function'BP_TVScreen_C:ExecuteUbergraph_BP_TVScreen'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_TVScreen.0"
       }
     },
     "SuperStruct": {
-      "ObjectName": "Class Actor",
+      "ObjectName": "Class'Actor'",
       "ObjectPath": "/Script/Engine"
     },
     "Children": [
       {
-        "ObjectName": "Function BP_TVScreen_C:Turn ON_Off",
+        "ObjectName": "Function'BP_TVScreen_C:Turn ON_Off'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_TVScreen.2"
       },
       {
-        "ObjectName": "Function BP_TVScreen_C:Trigger",
+        "ObjectName": "Function'BP_TVScreen_C:Trigger'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_TVScreen.1"
       },
       {
-        "ObjectName": "Function BP_TVScreen_C:ExecuteUbergraph_BP_TVScreen",
+        "ObjectName": "Function'BP_TVScreen_C:ExecuteUbergraph_BP_TVScreen'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_TVScreen.0"
       }
     ],
@@ -103,91 +107,97 @@
       {
         "Type": "StructProperty",
         "Name": "UberGraphFrame",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 16,
-        "PropertyFlags": 2105344,
+        "PropertyFlags": "Transient | DuplicateTransient",
         "Struct": {
-          "ObjectName": "ScriptStruct PointerToUberGraphFrame",
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "TV Screen",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 17180393476,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
         "PropertyClass": {
-          "ObjectName": "Class StaticMeshComponent",
+          "ObjectName": "Class'StaticMeshComponent'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "DefaultSceneRoot",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 17180393476,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
         "PropertyClass": {
-          "ObjectName": "Class SceneComponent",
+          "ObjectName": "Class'SceneComponent'",
           "ObjectPath": "/Script/Engine"
         }
       }
     ],
     "FuncMap": {
       "ExecuteUbergraph_BP_TVScreen": {
-        "ObjectName": "Function BP_TVScreen_C:ExecuteUbergraph_BP_TVScreen",
+        "ObjectName": "Function'BP_TVScreen_C:ExecuteUbergraph_BP_TVScreen'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_TVScreen.0"
       },
       "Trigger": {
-        "ObjectName": "Function BP_TVScreen_C:Trigger",
+        "ObjectName": "Function'BP_TVScreen_C:Trigger'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_TVScreen.1"
       },
       "Turn ON_Off": {
-        "ObjectName": "Function BP_TVScreen_C:Turn ON_Off",
+        "ObjectName": "Function'BP_TVScreen_C:Turn ON_Off'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_TVScreen.2"
       }
     },
-    "ClassFlags": 8652820,
+    "ClassFlags": "CLASS_Config | CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
     "ClassWithin": {
-      "ObjectName": "Class Object",
+      "ObjectName": "Class'Object'",
       "ObjectPath": "/Script/CoreUObject"
     },
     "ClassConfigName": "Engine",
     "bCooked": true,
     "ClassDefaultObject": {
-      "ObjectName": "BP_TVScreen_C Default__BP_TVScreen_C",
+      "ObjectName": "BP_TVScreen_C'Default__BP_TVScreen_C'",
       "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_TVScreen.4"
     }
   },
   {
     "Type": "BP_TVScreen_C",
     "Name": "Default__BP_TVScreen_C",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_TVScreen.BP_TVScreen_C'",
     "Properties": {
-      "UberGraphFrame": {}
+      "UberGraphFrame": {},
+      "PrimaryActorTick": {
+        "TickInterval": 0.2
+      }
     }
   },
   {
     "Type": "SceneComponent",
     "Name": "DefaultSceneRoot_GEN_VARIABLE",
-    "Outer": "BP_TVScreen_C"
+    "Outer": "BP_TVScreen_C",
+    "Class": "UScriptClass'SceneComponent'"
   },
   {
     "Type": "SCS_Node",
     "Name": "SCS_Node_0",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class SceneComponent",
+        "ObjectName": "Class'SceneComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "SceneComponent BP_TVScreen_C:DefaultSceneRoot_GEN_VARIABLE",
+        "ObjectName": "SceneComponent'BP_TVScreen_C:DefaultSceneRoot_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_TVScreen.5"
       },
       "ChildNodes": [
         {
-          "ObjectName": "SCS_Node BP_TVScreen_C:SimpleConstructionScript_0.SCS_Node_1",
+          "ObjectName": "SCS_Node'BP_TVScreen_C:SimpleConstructionScript_0.SCS_Node_1'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_TVScreen.7"
         }
       ],
@@ -199,13 +209,14 @@
     "Type": "SCS_Node",
     "Name": "SCS_Node_1",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class StaticMeshComponent",
+        "ObjectName": "Class'StaticMeshComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "StaticMeshComponent BP_TVScreen_C:TV Screen_GEN_VARIABLE",
+        "ObjectName": "StaticMeshComponent'BP_TVScreen_C:TV Screen_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_TVScreen.9"
       },
       "VariableGuid": "99781131-4A87F0B3-5ED845A0-21364BDB",
@@ -216,25 +227,26 @@
     "Type": "SimpleConstructionScript",
     "Name": "SimpleConstructionScript_0",
     "Outer": "BP_TVScreen_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
     "Properties": {
       "RootNodes": [
         {
-          "ObjectName": "SCS_Node BP_TVScreen_C:SimpleConstructionScript_0.SCS_Node_0",
+          "ObjectName": "SCS_Node'BP_TVScreen_C:SimpleConstructionScript_0.SCS_Node_0'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_TVScreen.6"
         }
       ],
       "AllNodes": [
         {
-          "ObjectName": "SCS_Node BP_TVScreen_C:SimpleConstructionScript_0.SCS_Node_0",
+          "ObjectName": "SCS_Node'BP_TVScreen_C:SimpleConstructionScript_0.SCS_Node_0'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_TVScreen.6"
         },
         {
-          "ObjectName": "SCS_Node BP_TVScreen_C:SimpleConstructionScript_0.SCS_Node_1",
+          "ObjectName": "SCS_Node'BP_TVScreen_C:SimpleConstructionScript_0.SCS_Node_1'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_TVScreen.7"
         }
       ],
       "DefaultSceneRootNode": {
-        "ObjectName": "SCS_Node BP_TVScreen_C:SimpleConstructionScript_0.SCS_Node_0",
+        "ObjectName": "SCS_Node'BP_TVScreen_C:SimpleConstructionScript_0.SCS_Node_0'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_TVScreen.6"
       }
     }
@@ -243,9 +255,10 @@
     "Type": "StaticMeshComponent",
     "Name": "TV Screen_GEN_VARIABLE",
     "Outer": "BP_TVScreen_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
     "Properties": {
       "StaticMesh": {
-        "ObjectName": "StaticMesh HouseInterior_Basic_TV_Screen",
+        "ObjectName": "StaticMesh'HouseInterior_Basic_TV_Screen'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Meshes/HouseInterior/HouseInterior_Basic_TV_Screen.2"
       }
     }

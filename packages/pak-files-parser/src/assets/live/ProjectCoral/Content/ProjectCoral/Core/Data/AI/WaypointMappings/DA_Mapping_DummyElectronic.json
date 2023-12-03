@@ -2,34 +2,42 @@
   {
     "Type": "C_WaypointMapping",
     "Name": "DA_Mapping_DummyElectronic",
+    "Class": "UScriptClass'C_WaypointMapping'",
     "Properties": {
-      "mapping": {
-        "SpringSummerFallWinter_all": {
-          "startingPoint": {
-            "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_DummyNPC.CI_DummyNPC",
-            "SubPathString": "PersistentLevel.C_AnimationWaypoint_1"
-          },
-          "waypoints": [
-            {
-              "id": "Dummies Test",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_DummyNPC.CI_DummyNPC",
-                "SubPathString": "PersistentLevel.C_AnimationWaypoint_1"
-              },
-              "leavingHour": 6,
-              "leavingMinutes": 30,
-              "isTransitional": false,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
-              },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            }
-          ]
+      "mapping": [
+        {
+          "SpringSummerFallWinter_all": {
+            "startingPoint": {
+              "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_DummyNPC.CI_DummyNPC",
+              "SubPathString": "PersistentLevel.C_AnimationWaypoint_1"
+            },
+            "waypoints": [
+              {
+                "id": "Dummies Test",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_DummyNPC.CI_DummyNPC",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_1"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 30,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              }
+            ]
+          }
         }
-      }
+      ]
     }
   }
 ]

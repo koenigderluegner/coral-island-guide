@@ -683,7 +683,7 @@
           "stackable": true,
           "inventoryCategory": "Consumable",
           "displayKey": "Consumable",
-          "description": "Um pão de forma leve e com bordas crocantes.",
+          "description": "Um pão leve e com casca crocante.",
           "qualities": {
             "bronze": {
               "price": 58,
@@ -1858,7 +1858,7 @@
           "stackable": true,
           "inventoryCategory": "Consumable",
           "displayKey": "Consumable",
-          "description": "Um molho salgado.",
+          "description": "Um creme saboroso.",
           "qualities": {
             "bronze": {
               "price": 351,
@@ -2592,14 +2592,14 @@
           {
             "amount": 1,
             "genericItem": {
-              "key": "Any_Fish",
+              "key": "Any_Vegetable",
               "tags": [
-                "item.fish"
+                "item.vegetable"
               ],
-              "iconName": "T_AnyFish_Sprite",
-              "displayName": "Qualquer Peixe"
+              "iconName": "Any_vegetable_Sprite",
+              "displayName": "Qualquer Vegetal"
             },
-            "key": "Any_Fish"
+            "key": "Any_Vegetable"
           },
           {
             "amount": 1,
@@ -2632,7 +2632,16 @@
             "amount": 1
           }
         ],
-        "eitherOrIngredients": []
+        "eitherOrIngredients": [],
+        "additionsToGenerics": {
+          "Qualquer Vegetal": [
+            {
+              "id": "item_22005",
+              "displayName": "Tomate",
+              "iconName": "Tomato_Sprite"
+            }
+          ]
+        }
       },
       {
         "key": "item_80081",
@@ -5280,19 +5289,6 @@
           {
             "amount": 1,
             "genericItem": {
-              "key": "Any_Mushroom",
-              "tags": [
-                "item.animalproduct.mushroom",
-                "item.mushroom"
-              ],
-              "iconName": "Any_Mushroom_Sprite",
-              "displayName": "Qualquer Cogumelo"
-            },
-            "key": "Any_Mushroom"
-          },
-          {
-            "amount": 1,
-            "genericItem": {
               "key": "Any_Cheese",
               "tags": [
                 "Artisan.CheesePress"
@@ -5317,6 +5313,14 @@
               "id": "item_22009",
               "displayName": "Abacaxi",
               "iconName": "Pineapple_Sprite"
+            },
+            "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_52102",
+              "displayName": "Chalota",
+              "iconName": "Shallot_Sprite"
             },
             "amount": 1
           }

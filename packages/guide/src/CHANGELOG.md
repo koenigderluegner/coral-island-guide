@@ -1,6 +1,9 @@
 ## Changelog
 
-### TBD
+### 0.15.0 2023-12-03
+
+Note: This update is primarily for technical reasons. If you encounter any issues, please send me a message.
+All your feedback and requests (thanks for them!) are still being worked on.
 
 #### Added
 
@@ -8,6 +11,7 @@
 
 #### Changed
 
+- Updated live data to v1-176 except character images (Steam version)
 - Fixed clicking on 'Reset beta checklists' label activating the wrong checkbox
 - Fixed NPC details showing "No NPC found" while still loading
 
