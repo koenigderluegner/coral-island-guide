@@ -54,7 +54,9 @@ import {
     CookingRecipe,
     CraftingRecipe,
     DatabaseItem,
+    FestivalDisplayNames,
     FestivalEventIds,
+    FestivalNames,
     Item,
     ItemProcessing
 } from "@ci/data-types";
@@ -501,6 +503,27 @@ AvailableLanguages.forEach(lang => {
             const comesFromSeed = cropsAndPlants.filter(recipe => recipe.item?.id === item.id);
 
 
+            const buyAtFestivalShop = FestivalNames.map(shopName => {
+                const key = `${shopName}-festival-data` as const;
+                return (
+                    (generatorValues[key][0])?.shops
+                        .map(s => s.shop)
+                        .flat() ?? []
+                )
+                    .map(sd => {
+                        return {
+                            ...sd,
+                            festival: {
+                                url: shopName,
+                                displayName: FestivalDisplayNames[shopName]
+                            }
+                        }
+                    })
+            }).flat().filter(altar => {
+                return item.id === altar.item.id
+
+            })
+
             const dbItem: DatabaseItem = {
                 ...item,
                 fish: fish ? omitFields(fish, 'item') : undefined,
@@ -513,6 +536,7 @@ AvailableLanguages.forEach(lang => {
                 usedToCraft: usedToCraft.length ? usedToCraft : undefined,
                 isSeedFor: isSeedFor.length ? isSeedFor : undefined,
                 comesFromSeed: comesFromSeed.length ? comesFromSeed : undefined,
+                buyAtFestivalShop: buyAtFestivalShop.length ? buyAtFestivalShop : undefined,
             }
 
             generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, lang);
