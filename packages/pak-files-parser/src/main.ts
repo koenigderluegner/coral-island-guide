@@ -58,8 +58,12 @@ import {
     FestivalEventIds,
     FestivalNames,
     Item,
-    ItemProcessing, ItemUpgradeData,
-    MinimalNPC, ShopDisplayNames, ShopNames
+    ItemProcessing,
+    ItemProcessShopData,
+    ItemUpgradeData,
+    MinimalNPC,
+    ShopDisplayNames,
+    ShopNames
 } from "@ci/data-types";
 import { AnimalMoodSizeGenerator } from "./app/animal-mood-size.generator";
 import { AnimalDataGenerator } from "./app/animal-data.generator";
@@ -617,6 +621,49 @@ AvailableLanguages.forEach(lang => {
             }).filter(nonNullable);
 
 
+            const buyAt = ShopNames.map(shopName => {
+                return generatorValues[`${shopName}-shop-items`].map(sd => {
+                    return {
+                        ...sd,
+                        shop: {
+                            url: shopName,
+                            displayName: ShopDisplayNames[shopName]
+                        }
+                    }
+                })
+            }).flat().filter(altar => {
+                return item.id === altar.item.id
+            });
+
+
+            const itemProcessShopData = ShopNames.map(shopName => {
+
+                // @ts-ignore
+                const shopProcessItems: ItemProcessShopData[] = generatorValues[`${shopName}-shop-process-items`] ?? [];
+
+                return shopProcessItems.map(sd => {
+                    return {
+                        ...sd,
+                        shop: {
+                            url: shopName,
+                            displayName: ShopDisplayNames[shopName]
+                        }
+                    }
+                })
+            }).flat();
+
+            const chanceAsProcessResult = itemProcessShopData.map(sd => {
+                const foundItemWithChance = sd.outputChanges.find(output => output.item.id === item?.id)
+                if (!foundItemWithChance) return undefined;
+                return {
+                    ...sd,
+                    outputChanges: [foundItemWithChance],
+
+                }
+            }).filter(nonNullable);
+
+            const asProcessInput = itemProcessShopData.filter(sd => sd.input.id === item.id)
+
 
             const dbItem: DatabaseItem = {
                 ...item,
@@ -638,6 +685,9 @@ AvailableLanguages.forEach(lang => {
                 isUpgradeRequirement: isUpgradeRequirement.length ? isUpgradeRequirement: undefined,
                 requiredAsOffering: requiredAsOffering.length ? requiredAsOffering: undefined,
                 isBundleRewardIn: isBundleRewardIn.length ? isBundleRewardIn: undefined,
+                buyAt: buyAt.length ? buyAt : undefined,
+                asProcessInput: asProcessInput.length ? asProcessInput : undefined,
+                chanceAsProcessResult: chanceAsProcessResult.length ? chanceAsProcessResult : undefined,
             }
 
             generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, lang);

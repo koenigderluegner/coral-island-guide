@@ -8,9 +8,12 @@ import {
     Fish,
     GiftingPreferenceKey,
     Item,
-    ItemProcessing,
+    ItemProcessing, ItemProcessShopData,
     ItemUpgradeData,
-    MinimalNPC, Offering, OfferingAltar, Offerings
+    MinimalNPC,
+    OfferingAltar,
+    Offerings,
+    ShopItemData
 } from "@ci/data-types";
 import { UiIcon } from "../enums/ui-icon.enum";
 
@@ -45,5 +48,19 @@ export interface DatabaseItem extends Item{
     })[],
     requiredAsOffering?: (OfferingAltar & {offerings: Offerings[]})[];
     isBundleRewardIn?: (OfferingAltar & {offerings: Offerings[]})[];
-
+    buyAt?: (ShopItemData & {
+        shop: { url: string; displayName: string }
+    })[];
+    chanceAsProcessResult?: (ItemProcessShopData & {
+        shop: {
+            url: string;
+            displayName: string
+        }
+    })[]
+    asProcessInput?: (ItemProcessShopData & {
+        shop: {
+            url: string;
+            displayName: string
+        }
+    })[]
 }

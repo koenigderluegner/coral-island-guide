@@ -10,5 +10,58 @@
   "description": "作物に危害を加えるカラスを追い払います。効果は11x11エリアまで及びます。",
   "qualities": {},
   "iconName": "Alien_Scarecrow_Sprite",
-  "tags": []
+  "tags": [],
+  "buyAt": [
+    {
+      "item": {
+        "id": "item_65602",
+        "displayName": "エイリアンのかかし",
+        "iconName": "Alien_Scarecrow_Sprite",
+        "price": 3000,
+        "sellPrice": 255
+      },
+      "allowedDays": [],
+      "allowedSeasons": [],
+      "allowedWeather": [],
+      "forbiddenDays": [],
+      "forbiddenSeasons": [],
+      "forbiddenWeather": [],
+      "townRank": 0,
+      "tag": [],
+      "priceOverride": 0,
+      "priority": 0,
+      "enabled": true,
+      "availableSinceDate": false,
+      "availableTillDate": false,
+      "availableDuringTime": false,
+      "requirements": {
+        "key": "AlienScarecrow",
+        "type": "And",
+        "requirements": [
+          {
+            "type": "QuestFact",
+            "meta": {
+              "factName": "haveSeenMeteorOrSatelliteCrash"
+            }
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "UnlockCraftingRecipe",
+          "meta": {
+            "item": {
+              "id": "item_65602",
+              "displayName": "エイリアンのかかし",
+              "iconName": "Alien_Scarecrow_Sprite"
+            }
+          }
+        }
+      ],
+      "shop": {
+        "url": "concerned-monkey",
+        "displayName": "Concerned Monkey"
+      }
+    }
+  ]
 }
