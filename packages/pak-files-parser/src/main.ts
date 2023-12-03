@@ -58,8 +58,8 @@ import {
     FestivalEventIds,
     FestivalNames,
     Item,
-    ItemProcessing,
-    MinimalNPC
+    ItemProcessing, ItemUpgradeData,
+    MinimalNPC, ShopDisplayNames, ShopNames
 } from "@ci/data-types";
 import { AnimalMoodSizeGenerator } from "./app/animal-mood-size.generator";
 import { AnimalDataGenerator } from "./app/animal-data.generator";
@@ -68,7 +68,7 @@ import { FestivalDbGenerator } from "./app/festival-db.generator";
 import { FestivalShopItemDataGenerator } from "./app/festival-shop-item-data.generator";
 import { FestivalDataGenerator } from "./app/festival-data.generator";
 import path from "path";
-import { flatObjectMap, omitFields } from "@ci/util";
+import { flatObjectMap, nonNullable, omitFields } from "@ci/util";
 import { preferencesMap } from "../../guide/src/app/shared/constants/preference-map.const";
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
@@ -574,6 +574,25 @@ AvailableLanguages.forEach(lang => {
 
             })
 
+            const itemUpgrades = ShopNames.map(shopName => {
+                // @ts-ignore
+                const itemUpgradeData: ItemUpgradeData[] = generatorValues[`${shopName}-item-upgrade`] ?? [] ;
+                return itemUpgradeData.map(sd => {
+                    return {
+                        ...sd,
+                        shop: {
+                            url: shopName,
+                            displayName: ShopDisplayNames[shopName]
+                        }
+                    }
+                })
+            }).flat();
+
+            const isUpgradeResult = itemUpgrades.filter(sd => sd.item.id === item.id).filter(nonNullable);
+
+            const isUpgradeRequirement = itemUpgrades.filter(sd => sd.requirements.some(req => req.item.id === item.id))
+
+
             const dbItem: DatabaseItem = {
                 ...item,
                 fish: fish ? omitFields(fish, 'item') : undefined,
@@ -589,7 +608,9 @@ AvailableLanguages.forEach(lang => {
                 buyAtFestivalShop: buyAtFestivalShop.length ? buyAtFestivalShop : undefined,
                 asGift: dataSource.length ? dataSource : undefined,
                 insect: generatorValues["bugs-and-insects"].find(critter => critter.item.id === item.id),
-                oceanCritter: generatorValues["ocean-critters"].find(critter => critter.item.id === item.id)
+                oceanCritter: generatorValues["ocean-critters"].find(critter => critter.item.id === item.id),
+                isUpgradeResult: isUpgradeResult.length ? isUpgradeResult: undefined,
+                isUpgradeRequirement: isUpgradeRequirement.length ? isUpgradeRequirement: undefined,
             }
 
             generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, lang);

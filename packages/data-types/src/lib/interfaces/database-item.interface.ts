@@ -1,13 +1,15 @@
 import {
     BaseCrop,
     CookingRecipe,
-    CraftingRecipe, Critter,
+    CraftingRecipe,
+    Critter,
     Enemy,
     FestivalShopItemData,
     Fish,
     GiftingPreferenceKey,
     Item,
     ItemProcessing,
+    ItemUpgradeData,
     MinimalNPC
 } from "@ci/data-types";
 import { UiIcon } from "../enums/ui-icon.enum";
@@ -29,4 +31,16 @@ export interface DatabaseItem extends Item{
     asGift?: { pref: { icon: UiIcon, label: string, preferenceField: GiftingPreferenceKey }, npcs: MinimalNPC[] }[];
     insect?: Critter;
     oceanCritter?: Critter;
+    isUpgradeResult?: (ItemUpgradeData & {
+        shop: {
+            url: string;
+            displayName: string
+        }
+    })[],
+    isUpgradeRequirement?: (ItemUpgradeData & {
+        shop: {
+            url: string;
+            displayName: string
+        }
+    })[]
 }
