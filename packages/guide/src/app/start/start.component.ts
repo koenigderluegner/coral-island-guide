@@ -21,7 +21,7 @@ import { delay } from "rxjs";
 })
 export class StartComponent {
 
-    markdown$ = inject(HttpClient).get('CHANGELOG.md', {responseType: 'text'}).pipe(delay(20000))
+    markdown$ = inject(HttpClient).get('CHANGELOG.md', {responseType: 'text'})
     @HostBinding('class.app-start') private _setCssClass = true;
 
 }
