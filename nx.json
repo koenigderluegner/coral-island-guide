@@ -5,6 +5,10 @@
     "defaultBase": "master"
   },
   "generators": {
+    "@schematics/angular:component": {
+      "style": "none",
+      "skipTests": true
+    },
     "@nx/angular:application": {
       "style": "none",
       "linter": "eslint",
@@ -16,7 +20,8 @@
       "unitTestRunner": "jest"
     },
     "@nx/angular:component": {
-      "style": "none"
+      "style": "none",
+      "skipTests": true
     }
   },
   "targetDefaults": {
