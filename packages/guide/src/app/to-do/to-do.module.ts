@@ -14,6 +14,7 @@ import { ToDoEntryInsectComponent } from './components/to-do-entry-insect/to-do-
 import { ToDoEntrySeaCritterComponent } from './components/to-do-entry-sea-critter/to-do-entry-sea-critter.component';
 import { MatSelectModule } from "@angular/material/select";
 import { ReactiveFormsModule } from "@angular/forms";
+import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-case.pipe";
 
 const routes: Routes = [
     {path: '', component: ToDoComponent},
@@ -38,7 +39,8 @@ const routes: Routes = [
         MatCheckboxModule,
         MatTableModule,
         MatSelectModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        AddSpacesToPascalCasePipe
     ],
 })
 export class ToDoModule {

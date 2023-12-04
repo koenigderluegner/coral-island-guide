@@ -13,7 +13,7 @@
                    class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false">
         @for (offeringAltar of offeringAltars; track offeringAltar) {
   <mat-tab
-                 label="{{offeringAltar.offeringGroupTitle | spacesToPascalCase}}">
+                 label="{{offeringAltar.offeringGroupTitle | addSpacesToPascalCase}}">
             @if (!showTable) {
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 @for (offering of offeringAltar.offerings; track offering) {

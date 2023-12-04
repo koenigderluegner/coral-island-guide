@@ -43,6 +43,7 @@ import { CoffeeComponent } from './components/shops/coffee/coffee.component';
 import { WhiteFlamingoComponent } from './components/shops/white-flamingo/white-flamingo.component';
 import { AnimalMoodTableComponent } from './components/tables/animal-mood-table/animal-mood-table.component';
 import { TavernComponent } from "./components/shops/tavern/tavern.component";
+import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-case.pipe";
 
 @NgModule({
     declarations: [
@@ -93,6 +94,7 @@ import { TavernComponent } from "./components/shops/tavern/tavern.component";
         CraftingModule,
         MatTooltipModule,
         MatProgressSpinnerModule,
+        AddSpacesToPascalCasePipe,
     ],
     exports: [
         OfferingsTableComponent,

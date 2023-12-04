@@ -6,7 +6,7 @@
         @for (tab of (checklistDefinition$ | async | keyvalue: keyValueNoOrder); track tab) {
   <mat-tab
                  [formGroup]="checklistForm"
-                 [label]="cookingUtensilMapping[tab.key.toLowerCase()] ? cookingUtensilMapping[tab.key.toLowerCase()].displayName : tab.key | spacesToPascalCase | titlecase">
+                 [label]="cookingUtensilMapping[tab.key.toLowerCase()] ? cookingUtensilMapping[tab.key.toLowerCase()].displayName : tab.key | addSpacesToPascalCase | titlecase">
 
             @if (!showTable) {
 

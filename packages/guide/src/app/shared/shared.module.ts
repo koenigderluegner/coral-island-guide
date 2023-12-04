@@ -22,7 +22,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { InlineMinimalItemComponent } from './components/inline-minimal-item/inline-minimal-item.component';
 import { ResponsiveTableComponent } from './components/responsive-table/responsive-table.component';
 import { MatTableModule } from '@angular/material/table';
-import { SpacesToPascalCasePipe } from './pipes/spaces-to-pascal-case.pipe';
 import { IsCropPipe } from './pipes/is-crop.pipe';
 import { RefinementsListComponent } from './components/refinements-list/refinements-list.component';
 import { CastToQualityPipe } from './pipes/cast-to-quality.pipe';
@@ -34,7 +33,6 @@ import { CookingRecipeIngredientsPipe } from './pipes/cooking-recipe-ingredients
 import { CastToMinimalItemArrayPipe } from './pipes/cast-to-minimal-item-array.pipe';
 import { ItemProcessingIngredientsPipe } from './pipes/item-processing-ingredients.pipe';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { AddSpacesToPascalCasePipe } from './pipes/add-spaces-to-pascal-case.pipe';
 import { DataFilterComponent } from './components/data-filter/data-filter.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IsItemPipe } from './pipes/is-item.pipe';
@@ -63,6 +61,7 @@ import { IsMinimalTagBasedItemPipe } from './pipes/is-minimal-tag-based-item.pip
 import { IsTagBasedItemPipe } from './pipes/is-tag-based-item.pipe';
 import { ToItemListEntriesPipe } from './pipes/to-item-list-entries.pipe';
 import { RequirementsListComponent } from './components/requirements-list/requirements-list.component';
+import { AddSpacesToPascalCasePipe } from "./pipes/add-spaces-to-pascal-case.pipe";
 
 @NgModule({
     declarations: [
@@ -81,7 +80,6 @@ import { RequirementsListComponent } from './components/requirements-list/requir
         ListDetailContainerComponent,
         InlineMinimalItemComponent,
         ResponsiveTableComponent,
-        SpacesToPascalCasePipe,
         IsCropPipe,
         RefinementsListComponent,
         CastToQualityPipe,
@@ -92,7 +90,6 @@ import { RequirementsListComponent } from './components/requirements-list/requir
         CookingRecipeIngredientsPipe,
         CastToMinimalItemArrayPipe,
         ItemProcessingIngredientsPipe,
-        AddSpacesToPascalCasePipe,
         DataFilterComponent,
         IsItemPipe,
         NonSpecializedTableComponent,
@@ -132,6 +129,7 @@ import { RequirementsListComponent } from './components/requirements-list/requir
         MatTooltipModule,
         ReactiveFormsModule,
         MatSortModule,
+        AddSpacesToPascalCasePipe,
     ],
     exports: [
         UiIconComponent,
@@ -148,7 +146,6 @@ import { RequirementsListComponent } from './components/requirements-list/requir
         ListDetailContainerComponent,
         InlineMinimalItemComponent,
         ResponsiveTableComponent,
-        SpacesToPascalCasePipe,
         IsCropPipe,
         RefinementsListComponent,
         RarityIconComponent,
@@ -160,7 +157,6 @@ import { RequirementsListComponent } from './components/requirements-list/requir
         CookingRecipeIngredientsPipe,
         CastToMinimalItemArrayPipe,
         ItemProcessingIngredientsPipe,
-        AddSpacesToPascalCasePipe,
         DataFilterComponent,
         IsItemPipe,
         NonSpecializedTableComponent,

@@ -85,7 +85,7 @@
                    [selectedIndex]="selectedTabIndex">
         @for (utensilName of utensilNames; track utensilName) {
   <mat-tab
-                 [label]="cookingUtensilMapping[utensilName.toLowerCase()] ? cookingUtensilMapping[utensilName.toLowerCase()].displayName : utensilName | spacesToPascalCase | titlecase">
+                 [label]="cookingUtensilMapping[utensilName.toLowerCase()] ? cookingUtensilMapping[utensilName.toLowerCase()].displayName : utensilName | addSpacesToPascalCase | titlecase">
             <app-data-filter [(showTable)]="showTable"/>
             @if ((filteredData$(utensilName) | async); as processorItems) {
 

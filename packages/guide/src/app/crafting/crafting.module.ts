@@ -13,6 +13,7 @@ import { ProcessorTableComponent } from './components/tables/processor-table/pro
 import { InventoryTableComponent } from './components/tables/inventory-table/inventory-table.component';
 import { MatTableModule } from "@angular/material/table";
 import { MatSortModule } from "@angular/material/sort";
+import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-case.pipe";
 
 @NgModule({
     declarations: [
@@ -25,7 +26,7 @@ import { MatSortModule } from "@angular/material/sort";
         ProcessorTableComponent,
         InventoryTableComponent,
     ],
-    imports: [CommonModule, CraftingRoutingModule, SharedModule, MatTabsModule, MatTableModule, MatSortModule],
+    imports: [CommonModule, CraftingRoutingModule, SharedModule, MatTabsModule, MatTableModule, MatSortModule, AddSpacesToPascalCasePipe],
     exports: [
         InventoryTableComponent,
         CookingTableComponent,

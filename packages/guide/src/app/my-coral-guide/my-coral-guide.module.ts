@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CookingRecipesChecklistComponent } from './components/cooking-recipes-checklist/cooking-recipes-checklist.component';
 import { OfferingsChecklistComponent } from './components/offerings-checklist/offerings-checklist.component';
 import { LocationsModule } from "../locations/locations.module";
+import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-case.pipe";
 
 @NgModule({
     declarations: [
@@ -30,6 +31,7 @@ import { LocationsModule } from "../locations/locations.module";
         MatCheckboxModule,
         ReactiveFormsModule,
         LocationsModule,
+        AddSpacesToPascalCasePipe,
     ],
 })
 export class MyCoralGuideModule {
