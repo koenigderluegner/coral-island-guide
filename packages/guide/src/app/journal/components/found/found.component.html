@@ -1,37 +1,39 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     @if (selectedEntity) {
-<app-base-item-card (addedToToDo)="selectedTabIndex > -1 && selectedTabIndex < 3 && registerToToDo(selectedEntity)"
-                       
-                        [toDoCategory]="toDoCategory"
-                        [item]="selectedEntity"
-                        listDetail/>
-}
+        <app-database-item-details [itemId]="selectedEntity.id" listDetail>
+            <ng-template let-details appDatabaseItemDetails>
+                @if (details.chanceAsProcessResult) {
+                    <app-shop-processing-result class="mb-4" [itemProcessData]="details.chanceAsProcessResult"/>
+                }
+            </ng-template>
+        </app-database-item-details>
+    }
 
     <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex"
                    class=" px-2 xl:px-[50px] w-full"
                    mat-stretch-tabs="false">
-        @for (tab of tabs; track tab) {
-  <mat-tab [label]="tab.title">
-            <app-data-filter [(showTable)]="showTable" [parentFormGroup]="formControl"/>
-            @if ((tab.data |async); as syncedData) {
+        @for (tab of tabs;track tab) {
+            <mat-tab [label]="tab.title">
+                <app-data-filter [(showTable)]="showTable" [parentFormGroup]="formControl"/>
+                @if ((tab.data |async);as syncedData) {
 
-                @if (!showTable) {
-<div class="grid gap-4 icon-grid">
-                    @for (entry of syncedData; track entry) {
-  <app-item-icon (click)="showDetails(entry)"
-                                   [class.selected-icon]="selectedEntity?.id === entry.id"
-                                   [itemName]="entry.iconName"
-                                   class="icon-grid-item"
-                    />
-}
-                </div>
-}
-                @if (showTable) {
-<app-non-specialized-table [dataSource]="syncedData"/>
-}
-            
-}
-        </mat-tab>
-}
+                    @if (!showTable) {
+                        <div class="grid gap-4 icon-grid">
+                            @for (entry of syncedData;track entry) {
+                                <app-item-icon (click)="showDetails(entry)"
+                                               [class.selected-icon]="selectedEntity?.id === entry.id"
+                                               [itemName]="entry.iconName"
+                                               class="icon-grid-item"
+                                />
+                            }
+                        </div>
+                    }
+                    @if (showTable) {
+                        <app-non-specialized-table [dataSource]="syncedData"/>
+                    }
+
+                }
+            </mat-tab>
+        }
     </mat-tab-group>
 </app-list-detail-container>

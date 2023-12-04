@@ -36,6 +36,14 @@ import { BestiaryDetailsComponent } from './components/bestiary-details/bestiary
 import { BestiaryTableComponent } from './components/tables/bestiary-table/bestiary-table.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { BestiaryImageComponent } from './components/bestiary-image/bestiary-image.component';
+import {
+    DatabaseItemDetailsComponent
+} from "../shared/components/database-item-details/database-item-details.component";
+import { FishComponent } from "../shared/components/database-item-details/fish/fish.component";
+import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-case.pipe";
+import { InsectComponent } from "../shared/components/database-item-details/insect/insect.component";
+import { DatabaseItemDetailsDirective } from "../shared/directives/database-item-details.directive";
+import { ShopProcessingResultComponent } from "../shared/components/database-item-details/shop-processing-result/shop-processing-result.component";
 
 @NgModule({
     declarations: [
@@ -78,6 +86,12 @@ import { BestiaryImageComponent } from './components/bestiary-image/bestiary-ima
         LocationsModule,
         MatButtonModule,
         MatTooltipModule,
+        DatabaseItemDetailsComponent,
+        FishComponent,
+        AddSpacesToPascalCasePipe,
+        InsectComponent,
+        DatabaseItemDetailsDirective,
+        ShopProcessingResultComponent,
     ],
     exports: [CaughtDetailsComponent, CaughtTableComponent, CropTableComponent, BestiaryTableComponent],
 })
