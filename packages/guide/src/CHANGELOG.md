@@ -12,6 +12,7 @@ In the last update, I added the groundwork for a new way to retrieve item data. 
 #### Changed
 
 - Database now uses new item system, drastically reducing initial loading time and bandwidth.
+- Fixed fish with multiple locations per time slot not showing all spawn configurations
 
 ### 0.15.0 2023-12-03
 

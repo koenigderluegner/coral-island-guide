@@ -1,10 +1,29 @@
 import { BaseCatchableInterface } from "./base-catchable.interface";
 import { SpecificDate } from "./specific-date.interface";
 
-export interface Fish extends BaseCatchableInterface {
-    isEnabled: boolean;
-    fishName: string;
-    fishSize: string;
+export  type FishSpawnSettings = {
+    key: string
+    spawnSeason: {
+        spring: boolean,
+        summer: boolean,
+        fall: boolean,
+        winter: boolean
+    },
+    spawnWeather: {
+        sunny: boolean,
+        rain: boolean,
+        storm: boolean,
+        windy: boolean,
+        snow: boolean,
+        blizzard: boolean
+    }
+    spawnLocation: string[],
+    spawnTime: {
+        morning: boolean,
+        afternoon: boolean,
+        evening: boolean,
+        night: boolean
+    },
     spawnArea: {
         canBeCatchOnLake: boolean,
         canBeCatchOnRiver: boolean,
@@ -20,5 +39,13 @@ export interface Fish extends BaseCatchableInterface {
         startsFrom: SpecificDate,
         lastsTill: SpecificDate
     }[],
+}
+
+export interface Fish extends Omit<BaseCatchableInterface, 'spawnLocation' | 'spawnTime' | 'spawnSeason' | 'spawnWeather'> {
+    isEnabled: boolean;
+    fishName: string;
+    fishSize: string;
+    spawnSettings: FishSpawnSettings[]
+
     experienceGrantedWhenCaught: number
 }
