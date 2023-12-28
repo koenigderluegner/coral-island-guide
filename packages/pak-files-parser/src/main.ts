@@ -707,6 +707,15 @@ AvailableLanguages.forEach(lang => {
                 }
             )
 
+            const producedByAnimal: DatabaseItem['producedByAnimal'] = generatorValues["animal-data"].find(a => {
+                return a.produces.some(p =>
+                    p.small?.id === item.id || p.medium?.id === item.id || p.large?.id === item.id
+                    || p.smallGolden?.id === item.id || p.mediumGolden?.id === item.id || p.largeGolden?.id === item.id
+                )
+            })
+            if (producedByAnimal)
+                producedByAnimal.displayName = generatorValues["animal-shop-data"].find(a => a.animalKey === producedByAnimal.key)?.readableName ?? undefined
+
 
             const dbItem: DatabaseItem = {
                 item,
@@ -731,7 +740,8 @@ AvailableLanguages.forEach(lang => {
                 buyAt: buyAt.length ? buyAt : undefined,
                 asProcessInput: asProcessInput.length ? asProcessInput : undefined,
                 chanceAsProcessResult: chanceAsProcessResult.length ? chanceAsProcessResult : undefined,
-                consumables: Object.keys(consumables).length ? consumables : undefined
+                consumables: Object.keys(consumables).length ? consumables : undefined,
+                producedByAnimal
             }
 
             generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, lang);

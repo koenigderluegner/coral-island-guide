@@ -11,6 +11,7 @@ In the last update, I added the groundwork for a new way to retrieve item data. 
 - Added cooking recipes to checklist
 - Added catching and found-data to museum checklist
 - Added artisan details to journal produce
+- Added animal produce to journal produce
 
 #### Changed
 

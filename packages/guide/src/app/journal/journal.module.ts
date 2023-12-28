@@ -46,6 +46,7 @@ import { DatabaseItemDetailsDirective } from "../shared/directives/database-item
 import { ShopProcessingResultComponent } from "../shared/components/database-item-details/shop-processing-result/shop-processing-result.component";
 import { CropComponent } from "../shared/components/database-item-details/crop/crop.component";
 import { ProcessingComponent } from "../shared/components/database-item-details/processing/processing.component";
+import { AnimalProduceComponent } from "../shared/components/database-item-details/animal-produce/animal-produce.component";
 
 @NgModule({
     declarations: [
@@ -96,6 +97,7 @@ import { ProcessingComponent } from "../shared/components/database-item-details/
         ShopProcessingResultComponent,
         CropComponent,
         ProcessingComponent,
+        AnimalProduceComponent,
     ],
     exports: [CaughtDetailsComponent, CaughtTableComponent, CropTableComponent, BestiaryTableComponent],
 })
