@@ -44,6 +44,8 @@ import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-
 import { InsectComponent } from "../shared/components/database-item-details/insect/insect.component";
 import { DatabaseItemDetailsDirective } from "../shared/directives/database-item-details.directive";
 import { ShopProcessingResultComponent } from "../shared/components/database-item-details/shop-processing-result/shop-processing-result.component";
+import { CropComponent } from "../shared/components/database-item-details/crop/crop.component";
+import { ProcessingComponent } from "../shared/components/database-item-details/processing/processing.component";
 
 @NgModule({
     declarations: [
@@ -92,6 +94,8 @@ import { ShopProcessingResultComponent } from "../shared/components/database-ite
         InsectComponent,
         DatabaseItemDetailsDirective,
         ShopProcessingResultComponent,
+        CropComponent,
+        ProcessingComponent,
     ],
     exports: [CaughtDetailsComponent, CaughtTableComponent, CropTableComponent, BestiaryTableComponent],
 })
