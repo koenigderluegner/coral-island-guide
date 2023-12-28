@@ -20,6 +20,10 @@ import {
     DatabaseItemDetailsComponent
 } from "../shared/components/database-item-details/database-item-details.component";
 import { DatabaseItemDetailsDirective } from "../shared/directives/database-item-details.directive";
+import { ConsumableComponent } from "../shared/components/database-item-details/consumable/consumable.component";
+import { ShopProcessingResultComponent } from "../shared/components/database-item-details/shop-processing-result/shop-processing-result.component";
+import { FishComponent } from "../shared/components/database-item-details/fish/fish.component";
+import { InsectComponent } from "../shared/components/database-item-details/insect/insect.component";
 
 @NgModule({
     declarations: [
@@ -42,6 +46,10 @@ import { DatabaseItemDetailsDirective } from "../shared/directives/database-item
         CookingRecipeComponent,
         DatabaseItemDetailsComponent,
         DatabaseItemDetailsDirective,
+        ConsumableComponent,
+        ShopProcessingResultComponent,
+        FishComponent,
+        InsectComponent,
     ],
 })
 export class MyCoralGuideModule {
