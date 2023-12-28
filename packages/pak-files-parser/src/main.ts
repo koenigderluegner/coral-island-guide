@@ -62,6 +62,7 @@ import {
     ItemProcessShopData,
     ItemUpgradeData,
     MinimalNPC,
+    Quality,
     ShopDisplayNames,
     ShopNames
 } from "@ci/data-types";
@@ -72,7 +73,7 @@ import { FestivalDbGenerator } from "./app/festival-db.generator";
 import { FestivalShopItemDataGenerator } from "./app/festival-shop-item-data.generator";
 import { FestivalDataGenerator } from "./app/festival-data.generator";
 import path from "path";
-import { flatObjectMap, nonNullable, omitFields } from "@ci/util";
+import { flatObjectMap, getQuality, nonNullable, omitFields, removeQualityFlag } from "@ci/util";
 import { preferencesMap } from "../../guide/src/app/shared/constants/preference-map.const";
 import fs from "fs";
 
@@ -95,7 +96,6 @@ const itemIconsImageProcessor: ItemIconsImageProcessor = new ItemIconsImageProce
 const readable = !parsedArgs['prepare'] && true;
 
 
-
 AvailableLanguages.forEach(lang => {
     Logger.info(`Generators for "${lang}" starting...`);
     StringTable.defaultLang = lang;
@@ -108,8 +108,8 @@ AvailableLanguages.forEach(lang => {
     let calendarDbMap;
 
 
-        const calendarDbGenerator = new CalendarGenerator();
-        calendarDbMap = calendarDbGenerator.generate();
+    const calendarDbGenerator = new CalendarGenerator();
+    calendarDbMap = calendarDbGenerator.generate();
 
 
     const npcDbGenerator = new NPCDbGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.json', calendarDbMap);
@@ -139,7 +139,7 @@ AvailableLanguages.forEach(lang => {
         } else {
 
 
-            liveGenerators = {            }
+            liveGenerators = {}
         }
 
         const festivalDbMap = new FestivalDbGenerator().generate();
@@ -599,7 +599,7 @@ AvailableLanguages.forEach(lang => {
 
             const itemUpgrades = ShopNames.map(shopName => {
                 // @ts-ignore
-                const itemUpgradeData: ItemUpgradeData[] = generatorValues[`${shopName}-item-upgrade`] ?? [] ;
+                const itemUpgradeData: ItemUpgradeData[] = generatorValues[`${shopName}-item-upgrade`] ?? [];
                 return itemUpgradeData.map(sd => {
                     return {
                         ...sd,
@@ -683,6 +683,30 @@ AvailableLanguages.forEach(lang => {
 
             const asProcessInput = itemProcessShopData.filter(sd => sd.input.id === item.id)
 
+            const consumables: DatabaseItem['consumables'] = {}
+
+            generatorValues.consumables.filter(c => removeQualityFlag(c.key) === item.id).forEach(c => {
+                    const q = getQuality(c.key);
+                    switch (q) {
+                        case Quality.BASE:
+                            consumables.base = c;
+                            break;
+                        case Quality.BRONZE:
+                            consumables.bronze = c;
+                            break;
+                        case Quality.SILVER:
+                            consumables.silver = c;
+                            break;
+                        case Quality.GOLD:
+                            consumables.gold = c;
+                            break;
+                        case Quality.OSMIUM:
+                            consumables.osmium = c;
+                            break;
+                    }
+                }
+            )
+
 
             const dbItem: DatabaseItem = {
                 item,
@@ -700,13 +724,14 @@ AvailableLanguages.forEach(lang => {
                 asGift: dataSource.length ? dataSource : undefined,
                 insect: generatorValues["bugs-and-insects"].find(critter => critter.item.id === item.id),
                 oceanCritter: generatorValues["ocean-critters"].find(critter => critter.item.id === item.id),
-                isUpgradeResult: isUpgradeResult.length ? isUpgradeResult: undefined,
-                isUpgradeRequirement: isUpgradeRequirement.length ? isUpgradeRequirement: undefined,
-                requiredAsOffering: requiredAsOffering.length ? requiredAsOffering: undefined,
-                isBundleRewardIn: isBundleRewardIn.length ? isBundleRewardIn: undefined,
+                isUpgradeResult: isUpgradeResult.length ? isUpgradeResult : undefined,
+                isUpgradeRequirement: isUpgradeRequirement.length ? isUpgradeRequirement : undefined,
+                requiredAsOffering: requiredAsOffering.length ? requiredAsOffering : undefined,
+                isBundleRewardIn: isBundleRewardIn.length ? isBundleRewardIn : undefined,
                 buyAt: buyAt.length ? buyAt : undefined,
                 asProcessInput: asProcessInput.length ? asProcessInput : undefined,
                 chanceAsProcessResult: chanceAsProcessResult.length ? chanceAsProcessResult : undefined,
+                consumables: Object.keys(consumables).length ? consumables : undefined
             }
 
             generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, lang);

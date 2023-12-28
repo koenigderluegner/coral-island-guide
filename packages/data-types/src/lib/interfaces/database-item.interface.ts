@@ -1,5 +1,5 @@
 import {
-    BaseCrop,
+    BaseCrop, Consumable,
     CookingRecipe,
     CraftingRecipe,
     Critter,
@@ -64,4 +64,11 @@ export interface DatabaseItem{
             displayName: string
         }
     })[]
+    consumables?:      {
+        base?: Consumable;
+        bronze?: Consumable;
+        silver?: Consumable;
+        gold?: Consumable;
+        osmium?: Consumable;
+    }
 }

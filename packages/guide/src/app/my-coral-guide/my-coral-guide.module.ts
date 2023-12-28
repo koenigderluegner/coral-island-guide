@@ -13,6 +13,13 @@ import { CookingRecipesChecklistComponent } from './components/cooking-recipes-c
 import { OfferingsChecklistComponent } from './components/offerings-checklist/offerings-checklist.component';
 import { LocationsModule } from "../locations/locations.module";
 import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-case.pipe";
+import {
+    CookingRecipeComponent
+} from "../shared/components/database-item-details/cooking-recipe/cooking-recipe.component";
+import {
+    DatabaseItemDetailsComponent
+} from "../shared/components/database-item-details/database-item-details.component";
+import { DatabaseItemDetailsDirective } from "../shared/directives/database-item-details.directive";
 
 @NgModule({
     declarations: [
@@ -32,6 +39,9 @@ import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-
         ReactiveFormsModule,
         LocationsModule,
         AddSpacesToPascalCasePipe,
+        CookingRecipeComponent,
+        DatabaseItemDetailsComponent,
+        DatabaseItemDetailsDirective,
     ],
 })
 export class MyCoralGuideModule {

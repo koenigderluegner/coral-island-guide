@@ -14,6 +14,12 @@ import { InventoryTableComponent } from './components/tables/inventory-table/inv
 import { MatTableModule } from "@angular/material/table";
 import { MatSortModule } from "@angular/material/sort";
 import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-case.pipe";
+import {
+    DatabaseItemDetailsComponent
+} from "../shared/components/database-item-details/database-item-details.component";
+import { DatabaseItemDetailsDirective } from "../shared/directives/database-item-details.directive";
+import { CookingRecipeComponent } from "../shared/components/database-item-details/cooking-recipe/cooking-recipe.component";
+import { ConsumableComponent } from "../shared/components/database-item-details/consumable/consumable.component";
 
 @NgModule({
     declarations: [
@@ -26,7 +32,17 @@ import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-
         ProcessorTableComponent,
         InventoryTableComponent,
     ],
-    imports: [CommonModule, CraftingRoutingModule, SharedModule, MatTabsModule, MatTableModule, MatSortModule, AddSpacesToPascalCasePipe],
+    imports: [CommonModule,
+        CraftingRoutingModule,
+        SharedModule,
+        MatTabsModule,
+        MatTableModule,
+        MatSortModule,
+        AddSpacesToPascalCasePipe,
+        DatabaseItemDetailsComponent,
+        DatabaseItemDetailsDirective,
+        CookingRecipeComponent, ConsumableComponent
+    ],
     exports: [
         InventoryTableComponent,
         CookingTableComponent,

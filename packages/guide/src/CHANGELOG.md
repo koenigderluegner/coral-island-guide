@@ -8,6 +8,7 @@ In the last update, I added the groundwork for a new way to retrieve item data. 
 
 - Added game version of shown data to footer.
 - Added sources (geodes, coffer etc) to "found" items in journal
+- Added cooking recipes to checklist 
 
 #### Changed
 

@@ -1,0 +1,53 @@
+@if (cookingRecipe.craftingUnlock) {
+    <div class="mb-3">
+        Unlocked: <span
+            class="text-black">Level {{cookingRecipe.craftingUnlock.masteryLevel}}
+        in {{cookingRecipe.craftingUnlock.masteryType}}</span>
+    </div>
+}
+
+<app-item-list [itemList]="cookingRecipe | cookingRecipeIngredients" class="mb-3"></app-item-list>
+@if (cookingRecipe.eitherOrIngredients.length) {
+
+    <span class="text-black"> Either of the following</span>
+
+    @for (ingredients of cookingRecipe.eitherOrIngredients; track ingredients; let last = $last) {
+
+        <app-item-list [itemList]="ingredients" class="mb-3"></app-item-list>
+        @if (!last) {
+            <hr class="my-5"/>
+        }
+
+    }
+
+
+}
+@if (cookingRecipe.additionsToGenerics) {
+
+    <span class="text-black"> The following counting as</span>
+
+    @for (itemListItem of (cookingRecipe.additionsToGenerics | keyvalue); track itemListItem) {
+        <div class="mb-3">
+            @for (item of (itemListItem.value | castToMinimalItemArray); track item) {
+
+                <div class="flex justify-between py-1">
+
+                    @if (item) {
+                        <div class="flex gap-x-3 items-center">
+                            <app-item-icon class="w-10" [itemName]="item.iconName"></app-item-icon>
+                            <span>{{item.displayName}}</span>
+                        </div>
+                    }
+
+
+                    <div class="flex items-center">as {{itemListItem.key}}</div>
+
+                </div>
+                <hr>
+
+            }
+        </div>
+    }
+
+
+}
