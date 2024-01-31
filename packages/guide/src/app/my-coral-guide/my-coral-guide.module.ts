@@ -24,6 +24,11 @@ import { ConsumableComponent } from "../shared/components/database-item-details/
 import { ShopProcessingResultComponent } from "../shared/components/database-item-details/shop-processing-result/shop-processing-result.component";
 import { FishComponent } from "../shared/components/database-item-details/fish/fish.component";
 import { InsectComponent } from "../shared/components/database-item-details/insect/insect.component";
+import { ItemCardSwitchComponent } from "../shared/components/item-card-switch/item-card-switch.component";
+import { CropComponent } from "../shared/components/database-item-details/crop/crop.component";
+import { AnimalProduceComponent } from "../shared/components/database-item-details/animal-produce/animal-produce.component";
+import { ProcessingComponent } from "../shared/components/database-item-details/processing/processing.component";
+import { OfferingComponent } from "../shared/components/database-item-details/offering/offering.component";
 
 @NgModule({
     declarations: [
@@ -50,6 +55,11 @@ import { InsectComponent } from "../shared/components/database-item-details/inse
         ShopProcessingResultComponent,
         FishComponent,
         InsectComponent,
+        ItemCardSwitchComponent,
+        CropComponent,
+        AnimalProduceComponent,
+        ProcessingComponent,
+        OfferingComponent,
     ],
 })
 export class MyCoralGuideModule {

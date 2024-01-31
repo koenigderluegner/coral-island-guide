@@ -44,6 +44,9 @@ import { WhiteFlamingoComponent } from './components/shops/white-flamingo/white-
 import { AnimalMoodTableComponent } from './components/tables/animal-mood-table/animal-mood-table.component';
 import { TavernComponent } from "./components/shops/tavern/tavern.component";
 import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-case.pipe";
+import { DatabaseItemDetailsDirective } from "../shared/directives/database-item-details.directive";
+import { ItemCardSwitchComponent } from "../shared/components/item-card-switch/item-card-switch.component";
+import { OfferingComponent } from "../shared/components/database-item-details/offering/offering.component";
 
 @NgModule({
     declarations: [
@@ -95,6 +98,9 @@ import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-
         MatTooltipModule,
         MatProgressSpinnerModule,
         AddSpacesToPascalCasePipe,
+        DatabaseItemDetailsDirective,
+        ItemCardSwitchComponent,
+        OfferingComponent,
     ],
     exports: [
         OfferingsTableComponent,

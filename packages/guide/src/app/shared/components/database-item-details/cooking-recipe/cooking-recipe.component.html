@@ -1,8 +1,32 @@
+@if (showUtensil) {
+    <div class="mb-3 inline-flex gap-2 items-center">Utensil(s):
+        <span class="text-black">
+            @for (utensil of cookingRecipe.utensils; track utensil) {
+                <div class="whitespace-nowrap">
+                    @if (cookingUtensilMapping[utensil.toLowerCase()]; as minimalItem) {
+                        <a [routerLink]="['crafting/cooking', utensil.toLowerCase()]"
+                           class="flex gap-2 items-center">
+                            <app-item-icon [itemName]="minimalItem.iconName" class="!w-7"/>
+                            <span class="ml-1 whitespace-nowrap underline">{{ minimalItem.displayName }}</span>
+                        </a>
+                    }
+
+                    @if (!cookingUtensilMapping[utensil.toLowerCase()]) {
+                        {{ utensil | addSpacesToPascalCase | titlecase }}
+                    }
+
+                </div>
+            }
+        </span>
+    </div>
+
+}
+
 @if (cookingRecipe.craftingUnlock) {
     <div class="mb-3">
         Unlocked: <span
-            class="text-black">Level {{cookingRecipe.craftingUnlock.masteryLevel}}
-        in {{cookingRecipe.craftingUnlock.masteryType}}</span>
+            class="text-black">Level {{ cookingRecipe.craftingUnlock.masteryLevel }}
+        in {{ cookingRecipe.craftingUnlock.masteryType }}</span>
     </div>
 }
 
@@ -35,12 +59,12 @@
                     @if (item) {
                         <div class="flex gap-x-3 items-center">
                             <app-item-icon class="w-10" [itemName]="item.iconName"></app-item-icon>
-                            <span>{{item.displayName}}</span>
+                            <span>{{ item.displayName }}</span>
                         </div>
                     }
 
 
-                    <div class="flex items-center">as {{itemListItem.key}}</div>
+                    <div class="flex items-center">as {{ itemListItem.key }}</div>
 
                 </div>
                 <hr>

@@ -12,6 +12,7 @@ In the last update, I added the groundwork for a new way to retrieve item data. 
 - Added catching and found-data to museum checklist
 - Added artisan details to journal produce
 - Added animal produce to journal produce
+- Offering checklist and lake temple/altars now show lots more info like fish location etc.
 
 #### Changed
 

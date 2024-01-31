@@ -7,48 +7,48 @@
     </div>
     <div>Amount Limit:
         <span class="text-black">
-       {{meritExchangeData.isLimitedItem ? 'x' + meritExchangeData.itemLimit : 'not limited'}}
+       {{ meritExchangeData.isLimitedItem ? 'x' + meritExchangeData.itemLimit : 'not limited' }}
          </span>
     </div>
     <div>Town rank:
         <span class="text-black">
-           {{meritExchangeData.townRank | townrank}}
+           {{ meritExchangeData.townRank | townrank }}
         </span>
     </div>
 
 
     @if (meritExchangeData.effects && meritExchangeData.effects.length) {
-<div class="my-2">Effects when bought:
-        <div class="flex flex-col text-black">
-            @for (effect of meritExchangeData.effects; track effect) {
-  <app-effect [effect]="effect"/>
-}
+        <div class="my-2">Effects when bought:
+            <div class="flex flex-col text-black">
+                @for (effect of meritExchangeData.effects; track effect) {
+                    <app-effect [effect]="effect"/>
+                }
+            </div>
         </div>
-    </div>
-}
+    }
 
     @if (meritExchangeData.requirements && meritExchangeData.requirements.requirements.length) {
-<div class="my-2">
-        @if (meritExchangeData.requirements.requirements.length > 1) {
+        <div class="my-2">
+            @if (meritExchangeData.requirements.requirements.length > 1) {
 
-            Unlock requirements ({{meritExchangeData.requirements.type === 'And' ? 'all' : 'any'}} of them):
-        
-}
-        @if (meritExchangeData.requirements.requirements.length < 2) {
+                Unlock requirements ({{ meritExchangeData.requirements.type === 'And' ? 'all' : 'any' }} of them):
 
-            Unlock requirement:
-        
-}
+            }
+            @if (meritExchangeData.requirements.requirements.length < 2) {
+
+                Unlock requirement:
+
+            }
 
 
-        <div class="flex flex-col  text-black">
-            @for (requirement of meritExchangeData.requirements.requirements; track requirement) {
-  <app-requirements
-                              [requirement]="requirement"/>
-}
+            <div class="flex flex-col  text-black">
+                @for (requirement of meritExchangeData.requirements.requirements; track requirement) {
+                    <app-requirements
+                            [requirement]="requirement"/>
+                }
+            </div>
         </div>
-    </div>
-}
+    }
 
 
 </app-base-item-card>

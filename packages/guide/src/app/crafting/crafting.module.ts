@@ -46,7 +46,8 @@ import { ConsumableComponent } from "../shared/components/database-item-details/
     exports: [
         InventoryTableComponent,
         CookingTableComponent,
-        ProcessorTableComponent
+        ProcessorTableComponent,
+        ProcessorComponent
     ]
 })
 export class CraftingModule {
