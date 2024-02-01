@@ -89,7 +89,7 @@ const parsedArgs = getParsedArgs()
 
 const itemIconPath = config.itemIconPath
 const itemIconsTexturesPath = config.texturesPath;
-const skipIfExists = !parsedArgs['prepare'] && false;
+const skipIfExists = !parsedArgs['prepare'] && true;
 const itemIconsImageProcessor: ItemIconsImageProcessor = new ItemIconsImageProcessor(itemIconsTexturesPath, itemIconPath, skipIfExists);
 
 
