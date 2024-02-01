@@ -6,6 +6,8 @@ In the last update, I added the groundwork for a new way to retrieve item data. 
 
 #### Added
 
+- Added latest changelog, which shows up once per update per device.
+  - You can disable them via the changelog dialog or dis-/enable them under My Guide -> Settings
 - Added game version of shown data to footer.
 - Added sources (geodes, coffer etc) to "found" items in journal
 - Added cooking recipes to checklist
@@ -18,6 +20,10 @@ In the last update, I added the groundwork for a new way to retrieve item data. 
 
 - Database now uses new item system, drastically reducing initial loading time and bandwidth.
 - Fixed fish with multiple locations per time slot not showing all spawn configurations
+
+#### Known issues
+
+- To-Dos are mostly disabled due to the changes to item data handling. Fix planned for next update.
 
 ### 0.15.0 2023-12-03
 
