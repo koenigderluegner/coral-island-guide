@@ -1,6 +1,6 @@
 ## Changelog
 
-### TBD 
+### 0.16.0 2024-02-01 
 
 In the last update, I added the groundwork for a new way to retrieve item data. This update focuses a lot on those new changes, please let me know if you encounter any issues.
 
@@ -18,6 +18,7 @@ In the last update, I added the groundwork for a new way to retrieve item data. 
 
 #### Changed
 
+- Updated live data to v1-310 except character images (Steam version)
 - Database now uses new item system, drastically reducing initial loading time and bandwidth.
 - Fixed fish with multiple locations per time slot not showing all spawn configurations
 
