@@ -5657,9 +5657,10 @@
               "type": "And",
               "requirements": [
                 {
-                  "type": "QuestActive",
+                  "type": "IsMailRead",
                   "meta": {
-                    "questId": "leah_10_helper"
+                    "mailId": "leah_heart10",
+                    "title": "和我一起治疗"
                   }
                 }
               ]
@@ -6638,9 +6639,10 @@
               "type": "And",
               "requirements": [
                 {
-                  "type": "QuestActive",
+                  "type": "IsMailRead",
                   "meta": {
-                    "questId": "luke_10_helper"
+                    "mailId": "luke_heart10",
+                    "title": "私人晚餐"
                   }
                 }
               ]
@@ -7168,9 +7170,10 @@
                   }
                 },
                 {
-                  "type": "QuestActive",
+                  "type": "IsMailRead",
                   "meta": {
-                    "questId": "mark_10_helper"
+                    "mailId": "mark_heart10",
+                    "title": "..."
                   }
                 }
               ]
@@ -7478,7 +7481,7 @@
                 {
                   "type": "QuestActive",
                   "meta": {
-                    "questId": "millie_10_helper"
+                    "questId": "millie_10_helper_v1"
                   }
                 }
               ]
@@ -8028,7 +8031,7 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 18,
+                "hours": 17,
                 "minutes": 0
               }
             },
@@ -8058,11 +8061,11 @@
             ],
             "time": {
               "fromTime": {
-                "hours": 6,
+                "hours": 18,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 11,
+                "hours": 21,
                 "minutes": 0
               }
             },
@@ -10215,9 +10218,10 @@
                   }
                 },
                 {
-                  "type": "QuestActive",
+                  "type": "IsMailRead",
                   "meta": {
-                    "questId": "surya_10_helper"
+                    "mailId": "surya_heart10",
+                    "title": "..."
                   }
                 }
               ]
@@ -11100,7 +11104,19 @@
                 "minutes": 59
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "wakuu_10",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "wakuu_10_helper_v2"
+                  }
+                }
+              ]
+            }
           }
         ]
       }
@@ -12196,32 +12212,7 @@
             "requirements": {
               "key": "zarah_6B",
               "type": "And",
-              "requirements": [
-                {
-                  "type": "ItemInInventory",
-                  "meta": {
-                    "item": {
-                      "id": "item_10008",
-                      "displayName": "藏宝图之碎片三",
-                      "iconName": "Treasure_map_third_piece_Sprite"
-                    },
-                    "amount": 1,
-                    "requiredQuality": "Any"
-                  }
-                },
-                {
-                  "type": "ItemInInventory",
-                  "meta": {
-                    "item": {
-                      "id": "item_10007",
-                      "displayName": "藏宝图之碎片二",
-                      "iconName": "Treasure_map_second_piece_Sprite"
-                    },
-                    "amount": 1,
-                    "requiredQuality": "Any"
-                  }
-                }
-              ]
+              "requirements": []
             }
           }
         ]
@@ -12356,9 +12347,10 @@
                   }
                 },
                 {
-                  "type": "QuestActive",
+                  "type": "IsMailRead",
                   "meta": {
-                    "questId": "zarah_10_helper"
+                    "mailId": "zarah_heart10",
+                    "title": "看电影"
                   }
                 }
               ]

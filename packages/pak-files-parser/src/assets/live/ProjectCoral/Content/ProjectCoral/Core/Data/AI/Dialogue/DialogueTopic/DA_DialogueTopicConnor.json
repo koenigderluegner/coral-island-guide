@@ -1,0 +1,124 @@
+[
+  {
+    "Type": "C_DialogueTopicConfig",
+    "Name": "DA_DialogueTopicConnor",
+    "Class": "UScriptClass'C_DialogueTopicConfig'",
+    "Properties": {
+      "dialogueTopicSettings": [
+        {
+          "topicTag": {
+            "TagName": "Dialogue.Topic.FestivalPet.BringPet"
+          },
+          "requirementType": "EC_RequirementCollectionType::And",
+          "requirements": {
+            "type": "EC_RequirementCollectionType::Or",
+            "requirements": [
+              {
+                "ObjectName": "C_HasAdoptPetRequirement'DA_DialogueTopicConnor:C_HasAdoptPetRequirement_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DialogueTopic/DA_DialogueTopicConnor.1"
+              },
+              {
+                "ObjectName": "C_PlayerHasAnimalRequirement'DA_DialogueTopicConnor:C_PlayerHasAnimalRequirement_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DialogueTopic/DA_DialogueTopicConnor.3"
+              },
+              {
+                "ObjectName": "C_PlayerHasAnimalRequirement'DA_DialogueTopicConnor:C_PlayerHasAnimalRequirement_1'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DialogueTopic/DA_DialogueTopicConnor.4"
+              }
+            ]
+          },
+          "npcRequirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "priority": 20,
+          "cooldown": 3,
+          "samePriorityAsBefore": false
+        },
+        {
+          "topicTag": {
+            "TagName": "Dialogue.Topic.FestivalPet.NoPet"
+          },
+          "requirementType": "EC_RequirementCollectionType::And",
+          "requirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_HasAdoptPetRequirement'DA_DialogueTopicConnor:C_HasAdoptPetRequirement_1'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DialogueTopic/DA_DialogueTopicConnor.2"
+              },
+              {
+                "ObjectName": "C_PlayerHasAnimalRequirement'DA_DialogueTopicConnor:C_PlayerHasAnimalRequirement_2'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DialogueTopic/DA_DialogueTopicConnor.5"
+              },
+              {
+                "ObjectName": "C_PlayerHasAnimalRequirement'DA_DialogueTopicConnor:C_PlayerHasAnimalRequirement_3'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DialogueTopic/DA_DialogueTopicConnor.6"
+              }
+            ]
+          },
+          "npcRequirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "priority": 10,
+          "cooldown": 3,
+          "samePriorityAsBefore": false
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_HasAdoptPetRequirement",
+    "Name": "C_HasAdoptPetRequirement_0",
+    "Outer": "DA_DialogueTopicConnor",
+    "Class": "UScriptClass'C_HasAdoptPetRequirement'"
+  },
+  {
+    "Type": "C_HasAdoptPetRequirement",
+    "Name": "C_HasAdoptPetRequirement_1",
+    "Outer": "DA_DialogueTopicConnor",
+    "Class": "UScriptClass'C_HasAdoptPetRequirement'",
+    "Properties": {
+      "invertResult": true
+    }
+  },
+  {
+    "Type": "C_PlayerHasAnimalRequirement",
+    "Name": "C_PlayerHasAnimalRequirement_0",
+    "Outer": "DA_DialogueTopicConnor",
+    "Class": "UScriptClass'C_PlayerHasAnimalRequirement'",
+    "Properties": {
+      "animalSpecies": "Cow"
+    }
+  },
+  {
+    "Type": "C_PlayerHasAnimalRequirement",
+    "Name": "C_PlayerHasAnimalRequirement_1",
+    "Outer": "DA_DialogueTopicConnor",
+    "Class": "UScriptClass'C_PlayerHasAnimalRequirement'",
+    "Properties": {
+      "animalSpecies": "Chicken"
+    }
+  },
+  {
+    "Type": "C_PlayerHasAnimalRequirement",
+    "Name": "C_PlayerHasAnimalRequirement_2",
+    "Outer": "DA_DialogueTopicConnor",
+    "Class": "UScriptClass'C_PlayerHasAnimalRequirement'",
+    "Properties": {
+      "animalSpecies": "Cow",
+      "invertResult": true
+    }
+  },
+  {
+    "Type": "C_PlayerHasAnimalRequirement",
+    "Name": "C_PlayerHasAnimalRequirement_3",
+    "Outer": "DA_DialogueTopicConnor",
+    "Class": "UScriptClass'C_PlayerHasAnimalRequirement'",
+    "Properties": {
+      "animalSpecies": "Chicken",
+      "invertResult": true
+    }
+  }
+]
