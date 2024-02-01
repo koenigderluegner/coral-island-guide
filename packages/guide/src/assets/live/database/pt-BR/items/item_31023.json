@@ -59,10 +59,12 @@
         "item": {
           "id": "item_41003",
           "displayName": "Mayonnaise",
-          "iconName": "Mayonnaise_Sprite"
+          "iconName": "Mayonnaise_Sprite",
+          "sellPrice": 100
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "MayoniseMachine"
     }
   ],
   "usedToCook": [
@@ -1124,11 +1126,101 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "Qualquer Essência de Monstro",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "Essência do Fogo",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "Essência da Escuridão",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "Essência de monstro",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "Essência da Terra",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "Essência da Água",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "Essência do Vento",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         },
         {
           "key": "Any_Egg",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Egg",
+            "tags": [
+              "item.animalproduct.egg"
+            ],
+            "iconName": "T_AnyEgg_Sprite",
+            "displayName": "Qualquer Ovo",
+            "items": [
+              {
+                "id": "item_31002",
+                "displayName": "Ovo",
+                "iconName": "Egg_Sprite_"
+              },
+              {
+                "id": "item_31003",
+                "displayName": "Ovo de pato",
+                "iconName": "Duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31012",
+                "displayName": "Ovo grande",
+                "iconName": "Large_egg_Sprite_"
+              },
+              {
+                "id": "item_31014",
+                "displayName": "Ovo de pato grande",
+                "iconName": "Large_duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31021",
+                "displayName": "Ovo grande dourado",
+                "iconName": "Large_golden_egg_Sprite"
+              },
+              {
+                "id": "item_31023",
+                "displayName": "Ovo dourado",
+                "iconName": "Golden_egg_Sprite"
+              },
+              {
+                "id": "item_32016",
+                "displayName": "Ovo de codorna",
+                "iconName": "Quail_egg_Sprite"
+              },
+              {
+                "id": "item_32018",
+                "displayName": "Ovo de codorna grande",
+                "iconName": "Large_quail_egg_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -1136,6 +1228,22 @@
         "key": "item_64010",
         "masteryLevel": 6,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64010",
+        "displayName": "Aroma chamariz de monstro",
+        "price": 140,
+        "sellPrice": 35,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Aroma de aumento de agressividade",
+        "qualities": {},
+        "iconName": "Increase_aggro_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     },
     {
@@ -1171,10 +1279,186 @@
       "genericIngredients": [
         {
           "key": "Any_Egg",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Egg",
+            "tags": [
+              "item.animalproduct.egg"
+            ],
+            "iconName": "T_AnyEgg_Sprite",
+            "displayName": "Qualquer Ovo",
+            "items": [
+              {
+                "id": "item_31002",
+                "displayName": "Ovo",
+                "iconName": "Egg_Sprite_"
+              },
+              {
+                "id": "item_31003",
+                "displayName": "Ovo de pato",
+                "iconName": "Duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31012",
+                "displayName": "Ovo grande",
+                "iconName": "Large_egg_Sprite_"
+              },
+              {
+                "id": "item_31014",
+                "displayName": "Ovo de pato grande",
+                "iconName": "Large_duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31021",
+                "displayName": "Ovo grande dourado",
+                "iconName": "Large_golden_egg_Sprite"
+              },
+              {
+                "id": "item_31023",
+                "displayName": "Ovo dourado",
+                "iconName": "Golden_egg_Sprite"
+              },
+              {
+                "id": "item_32016",
+                "displayName": "Ovo de codorna",
+                "iconName": "Quail_egg_Sprite"
+              },
+              {
+                "id": "item_32018",
+                "displayName": "Ovo de codorna grande",
+                "iconName": "Large_quail_egg_Sprite"
+              }
+            ]
+          }
         }
       ],
-      "category": "Scarecrow"
+      "category": "Scarecrow",
+      "item": {
+        "id": "item_65604",
+        "displayName": "Espantalho de bolacha de gengibre",
+        "price": 950,
+        "sellPrice": 380,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Desencoraja os corvos de perturbarem as plantações. Protege uma área de 11x11.",
+        "qualities": {},
+        "iconName": "Gingerbread_Scarecrow_Sprite",
+        "tags": []
+      }
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_31023",
+      "bVaryHealthToMax": false,
+      "healthDelta": 28,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 50,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_31023-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 32,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 58,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_31023-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 35,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 63,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_31023-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 42,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 75,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_31023-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 56,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 100,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Chicken",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Chicken_White_Sprite"
+        }
+      },
+      {
+        "variant": "Brown",
+        "icons": {
+          "adult": "Chicken_Brown_Sprite"
+        }
+      }
+    ],
+    "building": "Coop",
+    "daysToGrow": 7,
+    "harvestCooldown": 1,
+    "animalProduceType": "DropAtDayBegin",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31002",
+          "displayName": "Ovo",
+          "iconName": "Egg_Sprite_"
+        },
+        "large": {
+          "id": "item_31012",
+          "displayName": "Ovo grande",
+          "iconName": "Large_egg_Sprite_"
+        },
+        "smallGolden": {
+          "id": "item_31023",
+          "displayName": "Ovo dourado",
+          "iconName": "Golden_egg_Sprite"
+        },
+        "largeGolden": {
+          "id": "item_31021",
+          "displayName": "Ovo grande dourado",
+          "iconName": "Large_golden_egg_Sprite"
+        }
+      }
+    ],
+    "displayName": "Galinha"
+  }
 }

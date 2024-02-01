@@ -59,10 +59,12 @@
         "item": {
           "id": "item_41020",
           "displayName": "Gesha coffee",
-          "iconName": "Gesha_coffee_Sprite"
+          "iconName": "Gesha_coffee_Sprite",
+          "sellPrice": 860
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "Keg"
     }
   ],
   "usedToCook": [
@@ -174,5 +176,101 @@
         }
       ]
     }
-  ]
+  ],
+  "consumables": {
+    "silver": {
+      "key": "item_32003-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": -20,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 50,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_32003-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 0,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 80,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_32003-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": -17,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 60,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_32003-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": -23,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 46,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "base": {
+      "key": "item_32003",
+      "bVaryHealthToMax": false,
+      "healthDelta": -30,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 40,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Luwak",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Luwak_Sprite"
+        }
+      }
+    ],
+    "building": "BarnLvl2",
+    "daysToGrow": 43,
+    "harvestCooldown": 2,
+    "animalProduceType": "DropInAllDay",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "produceDropLocation": "OutsideBuildingOnly",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_32003",
+          "displayName": "Gesha Coffee Bean",
+          "iconName": "Gesha_coffee_bean_Sprite"
+        },
+        "large": {
+          "id": "item_32013",
+          "displayName": "Large Gesha Coffee Bean",
+          "iconName": "Large_gesha_coffee_bean_Sprite"
+        }
+      }
+    ],
+    "displayName": "Luwak"
+  }
 }

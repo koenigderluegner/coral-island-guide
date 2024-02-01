@@ -39,10 +39,12 @@
         "item": {
           "id": "item_50505",
           "displayName": "Dunkelessenz",
-          "iconName": "Dark_Essence_Sprite"
+          "iconName": "Dark_Essence_Sprite",
+          "sellPrice": 25
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "SlimeOfReplicator"
     }
   ],
   "artisanIngredient": [
@@ -67,10 +69,12 @@
         "item": {
           "id": "item_50505",
           "displayName": "Dunkelessenz",
-          "iconName": "Dark_Essence_Sprite"
+          "iconName": "Dark_Essence_Sprite",
+          "sellPrice": 25
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "SlimeOfReplicator"
     }
   ],
   "fromEnemies": [
@@ -221,7 +225,21 @@
         }
       ],
       "genericIngredients": [],
-      "category": "Scarecrow"
+      "category": "Scarecrow",
+      "item": {
+        "id": "item_65120",
+        "displayName": "Kunti-Geister-Vogelscheuche",
+        "price": 1000,
+        "sellPrice": 310,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Hält Krähen davon ab, Feldfrüchte zu zerstören. Beschützt ein 11x11 Felder großes Gebiet.",
+        "qualities": {},
+        "iconName": "Kunti_ghost_scarecrow_Sprite",
+        "tags": []
+      }
     },
     {
       "key": "Item_63032",
@@ -248,10 +266,54 @@
       "genericIngredients": [
         {
           "key": "Generic_Ore",
-          "amount": 2
+          "amount": 2,
+          "genericItem": {
+            "key": "Generic_Ore",
+            "tags": [
+              "item.ore"
+            ],
+            "iconName": "T_AnyOre_Sprite",
+            "displayName": "Jedes Erz",
+            "items": [
+              {
+                "id": "item_61001",
+                "displayName": "Bronzeerz",
+                "iconName": "Bronze_Ore_Sprite"
+              },
+              {
+                "id": "item_61002",
+                "displayName": "Golderz",
+                "iconName": "Gold_Ore_Sprite"
+              },
+              {
+                "id": "item_61004",
+                "displayName": "Osmiumerz",
+                "iconName": "Osmium_Ore_Sprite"
+              },
+              {
+                "id": "item_61045",
+                "displayName": "Silbererz",
+                "iconName": "Silver_Ore_Sprite"
+              }
+            ]
+          }
         }
       ],
-      "category": "Misc"
+      "category": "Misc",
+      "item": {
+        "id": "item_63032",
+        "displayName": "Klebefalle",
+        "price": 80,
+        "sellPrice": 25,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Trap",
+        "displayKey": "Trap",
+        "description": "Eine Falle. Fängt Gegner ein.",
+        "qualities": {},
+        "iconName": "Glue_trap_Sprite",
+        "tags": []
+      }
     },
     {
       "key": "item_64011",
@@ -270,7 +332,47 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "Beliebige Monsteressenz",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "Flammenessenz",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "Dunkelessenz",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "Monsteressenz",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "Erdessenz",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "Wasseressenz",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "Windessenz",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -278,6 +380,22 @@
         "key": "item_64011",
         "masteryLevel": 4,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64011",
+        "displayName": "Monstergeruch",
+        "price": 70,
+        "sellPrice": 18,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Aggressionsduft reduzieren",
+        "qualities": {},
+        "iconName": "Decrease_aggro_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     },
     {
@@ -288,11 +406,101 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "Beliebige Monsteressenz",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "Flammenessenz",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "Dunkelessenz",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "Monsteressenz",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "Erdessenz",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "Wasseressenz",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "Windessenz",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         },
         {
           "key": "Any_Egg",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Egg",
+            "tags": [
+              "item.animalproduct.egg"
+            ],
+            "iconName": "T_AnyEgg_Sprite",
+            "displayName": "Beliebiges Ei",
+            "items": [
+              {
+                "id": "item_31002",
+                "displayName": "Ei",
+                "iconName": "Egg_Sprite_"
+              },
+              {
+                "id": "item_31003",
+                "displayName": "Entenei",
+                "iconName": "Duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31012",
+                "displayName": "Großes Ei",
+                "iconName": "Large_egg_Sprite_"
+              },
+              {
+                "id": "item_31014",
+                "displayName": "Großes Entenei",
+                "iconName": "Large_duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31021",
+                "displayName": "Großes goldenes Ei",
+                "iconName": "Large_golden_egg_Sprite"
+              },
+              {
+                "id": "item_31023",
+                "displayName": "Goldenes Ei",
+                "iconName": "Golden_egg_Sprite"
+              },
+              {
+                "id": "item_32016",
+                "displayName": "Wachtelei",
+                "iconName": "Quail_egg_Sprite"
+              },
+              {
+                "id": "item_32018",
+                "displayName": "Großes Wachtelei",
+                "iconName": "Large_quail_egg_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -300,6 +508,22 @@
         "key": "item_64010",
         "masteryLevel": 6,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64010",
+        "displayName": "Monsterködergeruch",
+        "price": 140,
+        "sellPrice": 35,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Aggressionsduft erhöhen",
+        "qualities": {},
+        "iconName": "Increase_aggro_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     },
     {
@@ -319,7 +543,47 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "Beliebige Monsteressenz",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "Flammenessenz",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "Dunkelessenz",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "Monsteressenz",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "Erdessenz",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "Wasseressenz",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "Windessenz",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -327,6 +591,22 @@
         "key": "item_64013",
         "masteryLevel": 7,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64013",
+        "displayName": "Monstergeruch II",
+        "price": 100,
+        "sellPrice": 25,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Spawn-Duft reduzieren",
+        "qualities": {},
+        "iconName": "Decrease_spawn_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     },
     {
@@ -337,11 +617,181 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "Beliebige Monsteressenz",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "Flammenessenz",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "Dunkelessenz",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "Monsteressenz",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "Erdessenz",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "Wasseressenz",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "Windessenz",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         },
         {
           "key": "Any_Honey",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Honey",
+            "tags": [
+              "item.artisan.honey"
+            ],
+            "iconName": "T_AnyHoney_Sprite",
+            "displayName": "Beliebiger Honig",
+            "items": [
+              {
+                "id": "item_41076",
+                "displayName": "Kaktushonig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41148",
+                "displayName": "Gänseblümchen-Honig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41149",
+                "displayName": "Pfingstrosen-Honig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41150",
+                "displayName": "Mohnblumen-Honig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41151",
+                "displayName": "Schneeglöckchen-Honig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41152",
+                "displayName": "Sonnenblumen-Honig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41153",
+                "displayName": "Gardenien-Honig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41154",
+                "displayName": "Rosenhonig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41155",
+                "displayName": "Lilienhonig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41156",
+                "displayName": "Irishonig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41157",
+                "displayName": "Orchideenhonig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41158",
+                "displayName": "Blaue-Dahlien-Honig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41159",
+                "displayName": "Tulpenhonig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41160",
+                "displayName": "Veilchenhonig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41161",
+                "displayName": "Narzissenhonig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41162",
+                "displayName": "Rapshonig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41163",
+                "displayName": "Weißer-Hibiskus-Honig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41164",
+                "displayName": "Rittersporn-Honig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41165",
+                "displayName": "Cosmo-Honig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41166",
+                "displayName": "Hibiskushonig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41167",
+                "displayName": "Lotushonig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41170",
+                "displayName": "Jepunhonig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41171",
+                "displayName": "Stiefmütterchen-Honig",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41184",
+                "displayName": "Bodendecker-Rosenhonig",
+                "iconName": "Honey_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -349,6 +799,22 @@
         "key": "item_64012",
         "masteryLevel": 9,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64012",
+        "displayName": "Monsterködergeruch II",
+        "price": 140,
+        "sellPrice": 35,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Spawn-Duft erhöhen",
+        "qualities": {},
+        "iconName": "Increase_spawn_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     }
   ],

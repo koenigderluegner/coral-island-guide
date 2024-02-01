@@ -59,10 +59,12 @@
         "item": {
           "id": "item_41003",
           "displayName": "Mayonnaise",
-          "iconName": "Mayonnaise_Sprite"
+          "iconName": "Mayonnaise_Sprite",
+          "sellPrice": 100
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "MayoniseMachine"
     },
     {
       "useCategory": false,
@@ -85,10 +87,12 @@
         "item": {
           "id": "item_41293",
           "displayName": "함압단",
-          "iconName": "Salted_Egg_Sprite"
+          "iconName": "Salted_Egg_Sprite",
+          "sellPrice": 75
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "PreserveJar"
     }
   ],
   "usedToCook": [
@@ -1225,11 +1229,101 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "아무 괴물 정수",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "불 정수",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "다크 정수",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "괴물 정수",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "흙 정수",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "물 정수",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "바람 정수",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         },
         {
           "key": "Any_Egg",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Egg",
+            "tags": [
+              "item.animalproduct.egg"
+            ],
+            "iconName": "T_AnyEgg_Sprite",
+            "displayName": "아무 달걀",
+            "items": [
+              {
+                "id": "item_31002",
+                "displayName": "달걀",
+                "iconName": "Egg_Sprite_"
+              },
+              {
+                "id": "item_31003",
+                "displayName": "오리알",
+                "iconName": "Duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31012",
+                "displayName": "큰 알",
+                "iconName": "Large_egg_Sprite_"
+              },
+              {
+                "id": "item_31014",
+                "displayName": "큰 오리알",
+                "iconName": "Large_duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31021",
+                "displayName": "큰 황금 알",
+                "iconName": "Large_golden_egg_Sprite"
+              },
+              {
+                "id": "item_31023",
+                "displayName": "황금 알",
+                "iconName": "Golden_egg_Sprite"
+              },
+              {
+                "id": "item_32016",
+                "displayName": "메추리알",
+                "iconName": "Quail_egg_Sprite"
+              },
+              {
+                "id": "item_32018",
+                "displayName": "큰 메추리알",
+                "iconName": "Large_quail_egg_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -1237,6 +1331,22 @@
         "key": "item_64010",
         "masteryLevel": 6,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64010",
+        "displayName": "괴물 유인 향",
+        "price": 140,
+        "sellPrice": 35,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "유인력을 증가시키는 향.",
+        "qualities": {},
+        "iconName": "Increase_aggro_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     },
     {
@@ -1272,10 +1382,74 @@
       "genericIngredients": [
         {
           "key": "Any_Egg",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Egg",
+            "tags": [
+              "item.animalproduct.egg"
+            ],
+            "iconName": "T_AnyEgg_Sprite",
+            "displayName": "아무 달걀",
+            "items": [
+              {
+                "id": "item_31002",
+                "displayName": "달걀",
+                "iconName": "Egg_Sprite_"
+              },
+              {
+                "id": "item_31003",
+                "displayName": "오리알",
+                "iconName": "Duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31012",
+                "displayName": "큰 알",
+                "iconName": "Large_egg_Sprite_"
+              },
+              {
+                "id": "item_31014",
+                "displayName": "큰 오리알",
+                "iconName": "Large_duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31021",
+                "displayName": "큰 황금 알",
+                "iconName": "Large_golden_egg_Sprite"
+              },
+              {
+                "id": "item_31023",
+                "displayName": "황금 알",
+                "iconName": "Golden_egg_Sprite"
+              },
+              {
+                "id": "item_32016",
+                "displayName": "메추리알",
+                "iconName": "Quail_egg_Sprite"
+              },
+              {
+                "id": "item_32018",
+                "displayName": "큰 메추리알",
+                "iconName": "Large_quail_egg_Sprite"
+              }
+            ]
+          }
         }
       ],
-      "category": "Scarecrow"
+      "category": "Scarecrow",
+      "item": {
+        "id": "item_65604",
+        "displayName": "진저브레드 허수아비",
+        "price": 950,
+        "sellPrice": 380,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "까마귀가 농작물을 망치지 못하게 막는다. 보호하는 면적은 11x11이다.",
+        "qualities": {},
+        "iconName": "Gingerbread_Scarecrow_Sprite",
+        "tags": []
+      }
     }
   ],
   "requiredAsOffering": [
@@ -1343,5 +1517,117 @@
         }
       ]
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_31002",
+      "bVaryHealthToMax": false,
+      "healthDelta": 14,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 20,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_31002-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 16,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 23,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_31002-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 18,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 25,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_31002-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 21,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 30,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_31002-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 28,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 40,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Chicken",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Chicken_White_Sprite"
+        }
+      },
+      {
+        "variant": "Brown",
+        "icons": {
+          "adult": "Chicken_Brown_Sprite"
+        }
+      }
+    ],
+    "building": "Coop",
+    "daysToGrow": 7,
+    "harvestCooldown": 1,
+    "animalProduceType": "DropAtDayBegin",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31002",
+          "displayName": "달걀",
+          "iconName": "Egg_Sprite_"
+        },
+        "large": {
+          "id": "item_31012",
+          "displayName": "큰 알",
+          "iconName": "Large_egg_Sprite_"
+        },
+        "smallGolden": {
+          "id": "item_31023",
+          "displayName": "황금 알",
+          "iconName": "Golden_egg_Sprite"
+        },
+        "largeGolden": {
+          "id": "item_31021",
+          "displayName": "큰 황금 알",
+          "iconName": "Large_golden_egg_Sprite"
+        }
+      }
+    ],
+    "displayName": "닭"
+  }
 }

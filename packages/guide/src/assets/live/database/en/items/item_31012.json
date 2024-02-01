@@ -59,10 +59,12 @@
         "item": {
           "id": "item_41043",
           "displayName": "Large mayonnaise",
-          "iconName": "Large_Mayonnaise_Sprite"
+          "iconName": "Large_Mayonnaise_Sprite",
+          "sellPrice": 150
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "MayoniseMachine"
     },
     {
       "useCategory": false,
@@ -85,10 +87,12 @@
         "item": {
           "id": "item_41290",
           "displayName": "Large salted egg",
-          "iconName": "Large_Salted_Egg_Sprite"
+          "iconName": "Large_Salted_Egg_Sprite",
+          "sellPrice": 115
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "PreserveJar"
     }
   ],
   "usedToCook": [
@@ -1225,11 +1229,101 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "Any Monster Essence",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "Flame essence",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "Dark essence",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "Monster essence",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "Earth essence",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "Water essence",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "Wind essence",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         },
         {
           "key": "Any_Egg",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Egg",
+            "tags": [
+              "item.animalproduct.egg"
+            ],
+            "iconName": "T_AnyEgg_Sprite",
+            "displayName": "Any Egg",
+            "items": [
+              {
+                "id": "item_31002",
+                "displayName": "Egg",
+                "iconName": "Egg_Sprite_"
+              },
+              {
+                "id": "item_31003",
+                "displayName": "Duck egg",
+                "iconName": "Duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31012",
+                "displayName": "Large egg",
+                "iconName": "Large_egg_Sprite_"
+              },
+              {
+                "id": "item_31014",
+                "displayName": "Large duck egg",
+                "iconName": "Large_duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31021",
+                "displayName": "Large golden egg",
+                "iconName": "Large_golden_egg_Sprite"
+              },
+              {
+                "id": "item_31023",
+                "displayName": "Golden egg",
+                "iconName": "Golden_egg_Sprite"
+              },
+              {
+                "id": "item_32016",
+                "displayName": "Quail egg",
+                "iconName": "Quail_egg_Sprite"
+              },
+              {
+                "id": "item_32018",
+                "displayName": "Large quail egg",
+                "iconName": "Large_quail_egg_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -1237,6 +1331,22 @@
         "key": "item_64010",
         "masteryLevel": 6,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64010",
+        "displayName": "Monster Lure Scent",
+        "price": 140,
+        "sellPrice": 35,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Increase aggro scent",
+        "qualities": {},
+        "iconName": "Increase_aggro_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     },
     {
@@ -1270,7 +1380,21 @@
         }
       ],
       "genericIngredients": [],
-      "category": "Scarecrow"
+      "category": "Scarecrow",
+      "item": {
+        "id": "item_65595",
+        "displayName": "Humpty scarecrow",
+        "price": 700,
+        "sellPrice": 280,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Discourages crows from disturbing crops. Protects an 11x11 area.",
+        "qualities": {},
+        "iconName": "Humpty_Scarecrow_Sprite",
+        "tags": []
+      }
     },
     {
       "key": "item_65604",
@@ -1305,10 +1429,74 @@
       "genericIngredients": [
         {
           "key": "Any_Egg",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Egg",
+            "tags": [
+              "item.animalproduct.egg"
+            ],
+            "iconName": "T_AnyEgg_Sprite",
+            "displayName": "Any Egg",
+            "items": [
+              {
+                "id": "item_31002",
+                "displayName": "Egg",
+                "iconName": "Egg_Sprite_"
+              },
+              {
+                "id": "item_31003",
+                "displayName": "Duck egg",
+                "iconName": "Duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31012",
+                "displayName": "Large egg",
+                "iconName": "Large_egg_Sprite_"
+              },
+              {
+                "id": "item_31014",
+                "displayName": "Large duck egg",
+                "iconName": "Large_duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31021",
+                "displayName": "Large golden egg",
+                "iconName": "Large_golden_egg_Sprite"
+              },
+              {
+                "id": "item_31023",
+                "displayName": "Golden egg",
+                "iconName": "Golden_egg_Sprite"
+              },
+              {
+                "id": "item_32016",
+                "displayName": "Quail egg",
+                "iconName": "Quail_egg_Sprite"
+              },
+              {
+                "id": "item_32018",
+                "displayName": "Large quail egg",
+                "iconName": "Large_quail_egg_Sprite"
+              }
+            ]
+          }
         }
       ],
-      "category": "Scarecrow"
+      "category": "Scarecrow",
+      "item": {
+        "id": "item_65604",
+        "displayName": "Gingerbread scarecrow",
+        "price": 950,
+        "sellPrice": 380,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Discourages crows from disturbing crops. Protects an 11x11 area.",
+        "qualities": {},
+        "iconName": "Gingerbread_Scarecrow_Sprite",
+        "tags": []
+      }
     }
   ],
   "requiredAsOffering": [
@@ -1376,5 +1564,117 @@
         }
       ]
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_31012",
+      "bVaryHealthToMax": false,
+      "healthDelta": 14,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 40,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_31012-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 16,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 46,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_31012-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 18,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 50,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_31012-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 21,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 60,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_31012-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 28,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 80,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Chicken",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Chicken_White_Sprite"
+        }
+      },
+      {
+        "variant": "Brown",
+        "icons": {
+          "adult": "Chicken_Brown_Sprite"
+        }
+      }
+    ],
+    "building": "Coop",
+    "daysToGrow": 7,
+    "harvestCooldown": 1,
+    "animalProduceType": "DropAtDayBegin",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31002",
+          "displayName": "Egg",
+          "iconName": "Egg_Sprite_"
+        },
+        "large": {
+          "id": "item_31012",
+          "displayName": "Large egg",
+          "iconName": "Large_egg_Sprite_"
+        },
+        "smallGolden": {
+          "id": "item_31023",
+          "displayName": "Golden egg",
+          "iconName": "Golden_egg_Sprite"
+        },
+        "largeGolden": {
+          "id": "item_31021",
+          "displayName": "Large golden egg",
+          "iconName": "Large_golden_egg_Sprite"
+        }
+      }
+    ],
+    "displayName": "Chicken"
+  }
 }

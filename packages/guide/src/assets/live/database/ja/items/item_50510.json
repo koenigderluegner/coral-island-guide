@@ -39,10 +39,12 @@
         "item": {
           "id": "item_50510",
           "displayName": "モンスターのエッセンス",
-          "iconName": "Monster_Essence_Sprite"
+          "iconName": "Monster_Essence_Sprite",
+          "sellPrice": 25
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "SlimeOfReplicator"
     }
   ],
   "artisanIngredient": [
@@ -67,10 +69,12 @@
         "item": {
           "id": "item_50510",
           "displayName": "モンスターのエッセンス",
-          "iconName": "Monster_Essence_Sprite"
+          "iconName": "Monster_Essence_Sprite",
+          "sellPrice": 25
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "SlimeOfReplicator"
     }
   ],
   "fromEnemies": [
@@ -943,7 +947,21 @@
         }
       ],
       "genericIngredients": [],
-      "category": "Scarecrow"
+      "category": "Scarecrow",
+      "item": {
+        "id": "item_65057",
+        "displayName": "モンスターのかかし",
+        "price": 10000,
+        "sellPrice": 455,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "作物に危害を加えるカラスを追い払います。効果は11x11エリアまで及びます。",
+        "qualities": {},
+        "iconName": "Monster_Scarecrow_Sprite",
+        "tags": []
+      }
     },
     {
       "key": "item_64011",
@@ -962,7 +980,47 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "モンスターのエッセンスすべて",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "炎のエッセンス",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "闇のエッセンス",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "モンスターのエッセンス",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "土のエッセンス",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "水のエッセンス",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "風のエッセンス",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -970,6 +1028,22 @@
         "key": "item_64011",
         "masteryLevel": 4,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64011",
+        "displayName": "モンスターの香料",
+        "price": 70,
+        "sellPrice": 18,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "攻撃性が減少",
+        "qualities": {},
+        "iconName": "Decrease_aggro_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     },
     {
@@ -980,11 +1054,101 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "モンスターのエッセンスすべて",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "炎のエッセンス",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "闇のエッセンス",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "モンスターのエッセンス",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "土のエッセンス",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "水のエッセンス",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "風のエッセンス",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         },
         {
           "key": "Any_Egg",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Egg",
+            "tags": [
+              "item.animalproduct.egg"
+            ],
+            "iconName": "T_AnyEgg_Sprite",
+            "displayName": "タマゴすべて",
+            "items": [
+              {
+                "id": "item_31002",
+                "displayName": "タマゴ",
+                "iconName": "Egg_Sprite_"
+              },
+              {
+                "id": "item_31003",
+                "displayName": "アヒルのタマゴ",
+                "iconName": "Duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31012",
+                "displayName": "大きなタマゴ",
+                "iconName": "Large_egg_Sprite_"
+              },
+              {
+                "id": "item_31014",
+                "displayName": "アヒルの大きなタマゴ",
+                "iconName": "Large_duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31021",
+                "displayName": "大きな金のタマゴ",
+                "iconName": "Large_golden_egg_Sprite"
+              },
+              {
+                "id": "item_31023",
+                "displayName": "金色のタマゴ",
+                "iconName": "Golden_egg_Sprite"
+              },
+              {
+                "id": "item_32016",
+                "displayName": "ウズラのタマゴ",
+                "iconName": "Quail_egg_Sprite"
+              },
+              {
+                "id": "item_32018",
+                "displayName": "大きなウズラのタマゴ",
+                "iconName": "Large_quail_egg_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -992,6 +1156,22 @@
         "key": "item_64010",
         "masteryLevel": 6,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64010",
+        "displayName": "モンスターのルアー香料",
+        "price": 140,
+        "sellPrice": 35,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "攻撃性が上昇",
+        "qualities": {},
+        "iconName": "Increase_aggro_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     },
     {
@@ -1011,7 +1191,47 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "モンスターのエッセンスすべて",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "炎のエッセンス",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "闇のエッセンス",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "モンスターのエッセンス",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "土のエッセンス",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "水のエッセンス",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "風のエッセンス",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -1019,6 +1239,22 @@
         "key": "item_64013",
         "masteryLevel": 7,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64013",
+        "displayName": "モンスターの香料2",
+        "price": 100,
+        "sellPrice": 25,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "スポーンが減少",
+        "qualities": {},
+        "iconName": "Decrease_spawn_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     },
     {
@@ -1029,11 +1265,181 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "モンスターのエッセンスすべて",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "炎のエッセンス",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "闇のエッセンス",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "モンスターのエッセンス",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "土のエッセンス",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "水のエッセンス",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "風のエッセンス",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         },
         {
           "key": "Any_Honey",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Honey",
+            "tags": [
+              "item.artisan.honey"
+            ],
+            "iconName": "T_AnyHoney_Sprite",
+            "displayName": "ハチミツすべて",
+            "items": [
+              {
+                "id": "item_41076",
+                "displayName": "サボテンハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41148",
+                "displayName": "ヒナギクハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41149",
+                "displayName": "シャクヤクハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41150",
+                "displayName": "ポピーハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41151",
+                "displayName": "スノードロップハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41152",
+                "displayName": "ヒマワリハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41153",
+                "displayName": "クチナシハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41154",
+                "displayName": "バラハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41155",
+                "displayName": "ユリハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41156",
+                "displayName": "アヤメハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41157",
+                "displayName": "ランハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41158",
+                "displayName": "ブルーダリアハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41159",
+                "displayName": "チューリップハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41160",
+                "displayName": "スミレハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41161",
+                "displayName": "ラッパズイセンハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41162",
+                "displayName": "キャノーラハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41163",
+                "displayName": "ホワイトハイビスカスハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41164",
+                "displayName": "ヒエンソウハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41165",
+                "displayName": "コスモスハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41166",
+                "displayName": "ハイビスカスハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41167",
+                "displayName": "ハスハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41170",
+                "displayName": "プルメリアハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41171",
+                "displayName": "パンジーハニー",
+                "iconName": "Honey_Sprite"
+              },
+              {
+                "id": "item_41184",
+                "displayName": "フェアリーローズハニー",
+                "iconName": "Honey_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -1041,6 +1447,22 @@
         "key": "item_64012",
         "masteryLevel": 9,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64012",
+        "displayName": "モンスターのルアー香料2",
+        "price": 140,
+        "sellPrice": 35,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "スポーンが上昇",
+        "qualities": {},
+        "iconName": "Increase_spawn_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     }
   ],

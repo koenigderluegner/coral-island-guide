@@ -41,7 +41,7 @@ export class DatabaseGiftsComponent extends BaseDatabaseDetailPartComponent impl
     ] as const
 
     ngOnInit(): void {
-        const item = this.item
+        const item = this.databaseItem.item
 
         if (!item) return;
 

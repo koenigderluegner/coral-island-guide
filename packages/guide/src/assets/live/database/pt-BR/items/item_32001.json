@@ -58,10 +58,12 @@
         "item": {
           "id": "item_42011",
           "displayName": "Tecido de lã",
-          "iconName": "Wool_Cloth_Sprite"
+          "iconName": "Wool_Cloth_Sprite",
+          "sellPrice": 375
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "Loom"
     }
   ],
   "requiredAsOffering": [
@@ -147,5 +149,44 @@
         }
       ]
     }
-  ]
+  ],
+  "producedByAnimal": {
+    "key": "Sheep",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Sheep_Sprite"
+        }
+      }
+    ],
+    "building": "Barn",
+    "daysToGrow": 10,
+    "harvestCooldown": 2,
+    "animalProduceType": "UsingTools",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65043",
+      "displayName": "Tesoura de Tosquia",
+      "iconName": "Shears_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_32001",
+          "displayName": "Lã",
+          "iconName": "Wool_Sprite"
+        },
+        "large": {
+          "id": "item_32009",
+          "displayName": "Lã grande",
+          "iconName": "Large_wool_Sprite"
+        }
+      }
+    ],
+    "displayName": "Ovelha"
+  }
 }

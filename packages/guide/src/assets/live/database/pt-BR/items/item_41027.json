@@ -59,10 +59,12 @@
         "item": {
           "id": "item_41027",
           "displayName": "Açúcar",
-          "iconName": "Sugar_Sprite"
+          "iconName": "Sugar_Sprite",
+          "sellPrice": 45
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "Mill"
     }
   ],
   "usedToCook": [
@@ -978,10 +980,74 @@
       "genericIngredients": [
         {
           "key": "Any_Egg",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Egg",
+            "tags": [
+              "item.animalproduct.egg"
+            ],
+            "iconName": "T_AnyEgg_Sprite",
+            "displayName": "Qualquer Ovo",
+            "items": [
+              {
+                "id": "item_31002",
+                "displayName": "Ovo",
+                "iconName": "Egg_Sprite_"
+              },
+              {
+                "id": "item_31003",
+                "displayName": "Ovo de pato",
+                "iconName": "Duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31012",
+                "displayName": "Ovo grande",
+                "iconName": "Large_egg_Sprite_"
+              },
+              {
+                "id": "item_31014",
+                "displayName": "Ovo de pato grande",
+                "iconName": "Large_duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31021",
+                "displayName": "Ovo grande dourado",
+                "iconName": "Large_golden_egg_Sprite"
+              },
+              {
+                "id": "item_31023",
+                "displayName": "Ovo dourado",
+                "iconName": "Golden_egg_Sprite"
+              },
+              {
+                "id": "item_32016",
+                "displayName": "Ovo de codorna",
+                "iconName": "Quail_egg_Sprite"
+              },
+              {
+                "id": "item_32018",
+                "displayName": "Ovo de codorna grande",
+                "iconName": "Large_quail_egg_Sprite"
+              }
+            ]
+          }
         }
       ],
-      "category": "Scarecrow"
+      "category": "Scarecrow",
+      "item": {
+        "id": "item_65604",
+        "displayName": "Espantalho de bolacha de gengibre",
+        "price": 950,
+        "sellPrice": 380,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Desencoraja os corvos de perturbarem as plantações. Protege uma área de 11x11.",
+        "qualities": {},
+        "iconName": "Gingerbread_Scarecrow_Sprite",
+        "tags": []
+      }
     }
   ],
   "buyAt": [
@@ -1012,5 +1078,67 @@
         "displayName": "Sams general store"
       }
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41027",
+      "bVaryHealthToMax": false,
+      "healthDelta": 35,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 60,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 120,
+      "buff": "GoFast",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_41027-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 40,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 65,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 138,
+      "buff": "GoFast",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_41027-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 45,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 75,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 156,
+      "buff": "GoFast",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_41027-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 55,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 90,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 180,
+      "buff": "GoFast",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_41027-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 70,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 120,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 240,
+      "buff": "GoFast",
+      "itemType": "Food"
+    }
+  }
 }

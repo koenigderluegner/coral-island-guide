@@ -59,10 +59,12 @@
         "item": {
           "id": "item_41042",
           "displayName": "山羊奶酪饼",
-          "iconName": "Goat_Cheese_Wheel_Sprite"
+          "iconName": "Goat_Cheese_Wheel_Sprite",
+          "sellPrice": 700
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "CheesePress"
     },
     {
       "useCategory": false,
@@ -85,10 +87,12 @@
         "item": {
           "id": "item_41050",
           "displayName": "山羊黄油（大）",
-          "iconName": "Large_Goat_Butter_Sprite"
+          "iconName": "Large_Goat_Butter_Sprite",
+          "sellPrice": 540
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "PreserveJar"
     },
     {
       "useCategory": false,
@@ -111,10 +115,12 @@
         "item": {
           "id": "item_41181",
           "displayName": "山羊酸奶（大）",
-          "iconName": "Large_Goat_Yoghurt_Sprite"
+          "iconName": "Large_Goat_Yoghurt_Sprite",
+          "sellPrice": 1050
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "YogurtMachine"
     }
   ],
   "usedToCook": [
@@ -890,5 +896,106 @@
         }
       ]
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_31018",
+      "bVaryHealthToMax": false,
+      "healthDelta": 14,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 45,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "bronze": {
+      "key": "item_31018-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 16,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 52,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "silver": {
+      "key": "item_31018-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 18,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 56,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "gold": {
+      "key": "item_31018-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 21,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 68,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "osmium": {
+      "key": "item_31018-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 28,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 90,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Goat",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Goat_Sprite"
+        }
+      }
+    ],
+    "building": "BarnLvl2",
+    "daysToGrow": 24,
+    "harvestCooldown": 2,
+    "animalProduceType": "UsingTools",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65042",
+      "displayName": "挤奶桶",
+      "iconName": "Milk_Pail_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31005",
+          "displayName": "山羊奶",
+          "iconName": "Goat_milk_Sprite_"
+        },
+        "large": {
+          "id": "item_31018",
+          "displayName": "山羊奶（大）",
+          "iconName": "Large_goat_milk_Sprite_"
+        }
+      }
+    ],
+    "displayName": "山羊"
+  }
 }

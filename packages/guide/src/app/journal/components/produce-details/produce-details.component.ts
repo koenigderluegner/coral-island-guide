@@ -6,6 +6,6 @@ import { Crop, FruitPlant, FruitTree, MinimalItem } from '@ci/data-types';
     templateUrl: './produce-details.component.html',
 })
 export class ProduceDetailsComponent {
-    @Input() item?: MinimalItem | Crop | FruitPlant | FruitTree;
+    @Input({required: true}) item!: MinimalItem | Crop | FruitPlant | FruitTree;
 
 }

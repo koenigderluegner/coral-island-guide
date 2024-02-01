@@ -39,7 +39,7 @@
                    [selectedIndex]="selectedTabIndex">
         @for (machineName of machineNames; track machineName) {
   <mat-tab
-                 [label]="processorMapping[machineName.toLowerCase()] ? processorMapping[machineName.toLowerCase()].displayName : machineName | spacesToPascalCase | titlecase">
+                 [label]="processorMapping[machineName.toLowerCase()] ? processorMapping[machineName.toLowerCase()].displayName : machineName |  addSpacesToPascalCase | titlecase">
             <app-data-filter [(showTable)]="showTable"/>
             @if ((filteredData$(machineName) | async); as processorItems) {
 

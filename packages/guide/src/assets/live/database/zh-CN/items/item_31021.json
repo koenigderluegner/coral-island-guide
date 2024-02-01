@@ -59,10 +59,12 @@
         "item": {
           "id": "item_41043",
           "displayName": "蛋黄酱（大）",
-          "iconName": "Large_Mayonnaise_Sprite"
+          "iconName": "Large_Mayonnaise_Sprite",
+          "sellPrice": 150
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "MayoniseMachine"
     }
   ],
   "usedToCook": [
@@ -1124,11 +1126,101 @@
       "genericIngredients": [
         {
           "key": "Any_MonsterEssence",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "任何怪物精华",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "火焰精华",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "黑暗精华",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "怪物精华",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "地精华",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "水精华",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "风精华",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
         },
         {
           "key": "Any_Egg",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Egg",
+            "tags": [
+              "item.animalproduct.egg"
+            ],
+            "iconName": "T_AnyEgg_Sprite",
+            "displayName": "任何鸡蛋",
+            "items": [
+              {
+                "id": "item_31002",
+                "displayName": "鸡蛋",
+                "iconName": "Egg_Sprite_"
+              },
+              {
+                "id": "item_31003",
+                "displayName": "鸭蛋",
+                "iconName": "Duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31012",
+                "displayName": "鸡蛋（大）",
+                "iconName": "Large_egg_Sprite_"
+              },
+              {
+                "id": "item_31014",
+                "displayName": "鸭蛋（大）",
+                "iconName": "Large_duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31021",
+                "displayName": "金蛋（大）",
+                "iconName": "Large_golden_egg_Sprite"
+              },
+              {
+                "id": "item_31023",
+                "displayName": "金蛋",
+                "iconName": "Golden_egg_Sprite"
+              },
+              {
+                "id": "item_32016",
+                "displayName": "鹌鹑蛋",
+                "iconName": "Quail_egg_Sprite"
+              },
+              {
+                "id": "item_32018",
+                "displayName": "鹌鹑蛋（大）",
+                "iconName": "Large_quail_egg_Sprite"
+              }
+            ]
+          }
         }
       ],
       "category": "Misc",
@@ -1136,6 +1228,22 @@
         "key": "item_64010",
         "masteryLevel": 6,
         "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64010",
+        "displayName": "怪物诱饵的香味",
+        "price": 140,
+        "sellPrice": 35,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "增加攻击性的气味",
+        "qualities": {},
+        "iconName": "Increase_aggro_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food"
+        ]
       }
     },
     {
@@ -1171,10 +1279,186 @@
       "genericIngredients": [
         {
           "key": "Any_Egg",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Egg",
+            "tags": [
+              "item.animalproduct.egg"
+            ],
+            "iconName": "T_AnyEgg_Sprite",
+            "displayName": "任何鸡蛋",
+            "items": [
+              {
+                "id": "item_31002",
+                "displayName": "鸡蛋",
+                "iconName": "Egg_Sprite_"
+              },
+              {
+                "id": "item_31003",
+                "displayName": "鸭蛋",
+                "iconName": "Duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31012",
+                "displayName": "鸡蛋（大）",
+                "iconName": "Large_egg_Sprite_"
+              },
+              {
+                "id": "item_31014",
+                "displayName": "鸭蛋（大）",
+                "iconName": "Large_duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31021",
+                "displayName": "金蛋（大）",
+                "iconName": "Large_golden_egg_Sprite"
+              },
+              {
+                "id": "item_31023",
+                "displayName": "金蛋",
+                "iconName": "Golden_egg_Sprite"
+              },
+              {
+                "id": "item_32016",
+                "displayName": "鹌鹑蛋",
+                "iconName": "Quail_egg_Sprite"
+              },
+              {
+                "id": "item_32018",
+                "displayName": "鹌鹑蛋（大）",
+                "iconName": "Large_quail_egg_Sprite"
+              }
+            ]
+          }
         }
       ],
-      "category": "Scarecrow"
+      "category": "Scarecrow",
+      "item": {
+        "id": "item_65604",
+        "displayName": "姜饼稻草人",
+        "price": 950,
+        "sellPrice": 380,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "阻止乌鸦扰乱庄稼。保护一个11x11的区域。",
+        "qualities": {},
+        "iconName": "Gingerbread_Scarecrow_Sprite",
+        "tags": []
+      }
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_31021",
+      "bVaryHealthToMax": false,
+      "healthDelta": 28,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 90,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_31021-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 32,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 104,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_31021-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 35,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 113,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_31021-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 42,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 135,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_31021-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 56,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 180,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Chicken",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Chicken_White_Sprite"
+        }
+      },
+      {
+        "variant": "Brown",
+        "icons": {
+          "adult": "Chicken_Brown_Sprite"
+        }
+      }
+    ],
+    "building": "Coop",
+    "daysToGrow": 7,
+    "harvestCooldown": 1,
+    "animalProduceType": "DropAtDayBegin",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31002",
+          "displayName": "鸡蛋",
+          "iconName": "Egg_Sprite_"
+        },
+        "large": {
+          "id": "item_31012",
+          "displayName": "鸡蛋（大）",
+          "iconName": "Large_egg_Sprite_"
+        },
+        "smallGolden": {
+          "id": "item_31023",
+          "displayName": "金蛋",
+          "iconName": "Golden_egg_Sprite"
+        },
+        "largeGolden": {
+          "id": "item_31021",
+          "displayName": "金蛋（大）",
+          "iconName": "Large_golden_egg_Sprite"
+        }
+      }
+    ],
+    "displayName": "鸡"
+  }
 }

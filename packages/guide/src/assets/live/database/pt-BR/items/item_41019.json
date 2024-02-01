@@ -57,10 +57,12 @@
         "item": {
           "id": "item_41019",
           "displayName": "Café",
-          "iconName": "Coffee_Sprite"
+          "iconName": "Coffee_Sprite",
+          "sellPrice": 100
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "Keg"
     }
   ],
   "artisanIngredient": [
@@ -85,7 +87,8 @@
         "item": {
           "id": "item_41279",
           "displayName": "Café envelhecido",
-          "iconName": "Aged_coffee_Sprite"
+          "iconName": "Aged_coffee_Sprite",
+          "sellPrice": 200
         }
       },
       "genericInput": null,
@@ -126,7 +129,8 @@
             "minutes": 0
           }
         }
-      ]
+      ],
+      "machine": "Barrel"
     }
   ],
   "usedToCook": [
@@ -431,5 +435,67 @@
         "displayName": "Fishensips"
       }
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41019",
+      "bVaryHealthToMax": false,
+      "healthDelta": -40,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 50,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 120,
+      "buff": "GoFast",
+      "itemType": "Drink"
+    },
+    "bronze": {
+      "key": "item_41019-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": -30,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 90,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 138,
+      "buff": "GoFast",
+      "itemType": "Drink"
+    },
+    "silver": {
+      "key": "item_41019-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": -26,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 95,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 156,
+      "buff": "GoFast",
+      "itemType": "Drink"
+    },
+    "gold": {
+      "key": "item_41019-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": -23,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 115,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 180,
+      "buff": "GoFast",
+      "itemType": "Drink"
+    },
+    "osmium": {
+      "key": "item_41019-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": -20,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 155,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 240,
+      "buff": "GoFast",
+      "itemType": "Drink"
+    }
+  }
 }

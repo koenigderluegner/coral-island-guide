@@ -1,5 +1,7 @@
 import {
+    AnimalData,
     BaseCrop,
+    Consumable,
     CookingRecipe,
     CraftingRecipe,
     Critter,
@@ -8,7 +10,8 @@ import {
     Fish,
     GiftingPreferenceKey,
     Item,
-    ItemProcessing, ItemProcessShopData,
+    ItemProcessing,
+    ItemProcessShopData,
     ItemUpgradeData,
     MinimalNPC,
     OfferingAltar,
@@ -17,7 +20,7 @@ import {
 } from "@ci/data-types";
 import { UiIcon } from "../enums/ui-icon.enum";
 
-export interface DatabaseItem{
+export interface DatabaseItem {
     item: Item;
     fish?: Omit<Fish, 'item'>;
     artisanResult?: ItemProcessing[];
@@ -47,8 +50,8 @@ export interface DatabaseItem{
             displayName: string
         }
     })[],
-    requiredAsOffering?: (OfferingAltar & {offerings: Offerings[]})[];
-    isBundleRewardIn?: (OfferingAltar & {offerings: Offerings[]})[];
+    requiredAsOffering?: (OfferingAltar & { offerings: Offerings[] })[];
+    isBundleRewardIn?: (OfferingAltar & { offerings: Offerings[] })[];
     buyAt?: (ShopItemData & {
         shop: { url: string; displayName: string }
     })[];
@@ -64,4 +67,12 @@ export interface DatabaseItem{
             displayName: string
         }
     })[]
+    consumables?: {
+        base?: Consumable;
+        bronze?: Consumable;
+        silver?: Consumable;
+        gold?: Consumable;
+        osmium?: Consumable;
+    }
+    producedByAnimal?: AnimalData & { displayName?: string; }
 }

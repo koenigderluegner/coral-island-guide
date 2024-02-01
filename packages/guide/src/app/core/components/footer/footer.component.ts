@@ -1,5 +1,6 @@
-import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
+import { Component, HostBinding, inject, ViewEncapsulation } from '@angular/core';
 import { UiIcon } from "@ci/data-types";
+import { VersionService } from "../../services/version.service";
 
 @Component({
     selector: 'app-footer',
@@ -15,4 +16,5 @@ import { UiIcon } from "@ci/data-types";
 export class FooterComponent {
     protected uiIcon = UiIcon;
     @HostBinding('class.app-footer') private _setCssClass = true;
+    protected version$ = inject(VersionService).get()
 }

@@ -59,10 +59,12 @@
         "item": {
           "id": "item_41002",
           "displayName": "Goat cheese",
-          "iconName": "Goat_Cheese_Sprite"
+          "iconName": "Goat_Cheese_Sprite",
+          "sellPrice": 420
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "CheesePress"
     },
     {
       "useCategory": false,
@@ -85,10 +87,12 @@
         "item": {
           "id": "item_41040",
           "displayName": "Goat butter",
-          "iconName": "Goat_Butter_Sprite"
+          "iconName": "Goat_Butter_Sprite",
+          "sellPrice": 330
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "PreserveJar"
     },
     {
       "useCategory": false,
@@ -111,10 +115,12 @@
         "item": {
           "id": "item_41180",
           "displayName": "Goat yogurt",
-          "iconName": "Goat_Yoghurt_Sprite"
+          "iconName": "Goat_Yoghurt_Sprite",
+          "sellPrice": 630
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "YogurtMachine"
     }
   ],
   "usedToCook": [
@@ -890,5 +896,106 @@
         }
       ]
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_31005",
+      "bVaryHealthToMax": false,
+      "healthDelta": 14,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 25,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "bronze": {
+      "key": "item_31005-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 16,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 29,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "silver": {
+      "key": "item_31005-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 18,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 31,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "gold": {
+      "key": "item_31005-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 21,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 38,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "osmium": {
+      "key": "item_31005-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 28,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 50,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Goat",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Goat_Sprite"
+        }
+      }
+    ],
+    "building": "BarnLvl2",
+    "daysToGrow": 24,
+    "harvestCooldown": 2,
+    "animalProduceType": "UsingTools",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65042",
+      "displayName": "Milk pail",
+      "iconName": "Milk_Pail_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31005",
+          "displayName": "Goat milk",
+          "iconName": "Goat_milk_Sprite_"
+        },
+        "large": {
+          "id": "item_31018",
+          "displayName": "Large goat milk",
+          "iconName": "Large_goat_milk_Sprite_"
+        }
+      }
+    ],
+    "displayName": "Goat"
+  }
 }

@@ -12,17 +12,10 @@ export class CaughtDetailsComponent implements OnInit, OnChanges {
     @Input({required: true}) critter!: Fish | Critter;
     @Input() registerToToDo?: CaughtComponent['registerToToDo'];
 
-    protected getTruthyValues = getTruthyValues;
     protected toDoCategory!: ToDoCategory;
 
     ngOnInit() {
         this._setCategory();
-    }
-
-    dateRangesToString(dateRanges: Fish['dateRangeList']): string {
-        return dateRanges.map(range => {
-            return `From ${(range.startsFrom.season)} ${range.startsFrom.day} to ${(range.lastsTill.season)} ${range.lastsTill.day}`;
-        }).join(', ');
     }
 
     ngOnChanges(changes: SimpleChanges) {

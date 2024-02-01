@@ -57,10 +57,12 @@
         "item": {
           "id": "item_41023",
           "displayName": "Cerveza",
-          "iconName": "Beer_Sprite"
+          "iconName": "Beer_Sprite",
+          "sellPrice": 165
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "Keg"
     }
   ],
   "artisanIngredient": [
@@ -85,7 +87,8 @@
         "item": {
           "id": "item_41278",
           "displayName": "Cerveza añeja",
-          "iconName": "Aged_Beer_Sprite"
+          "iconName": "Aged_Beer_Sprite",
+          "sellPrice": 495
         }
       },
       "genericInput": null,
@@ -126,7 +129,8 @@
             "minutes": 0
           }
         }
-      ]
+      ],
+      "machine": "Barrel"
     }
   ],
   "usedToCook": [
@@ -348,5 +352,67 @@
         "displayName": "Fishensips"
       }
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41023",
+      "bVaryHealthToMax": false,
+      "healthDelta": 35,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 45,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 120,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "bronze": {
+      "key": "item_41023-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 40,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 50,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 138,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "silver": {
+      "key": "item_41023-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 45,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 55,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 156,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "gold": {
+      "key": "item_41023-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 55,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 70,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 180,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "osmium": {
+      "key": "item_41023-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 70,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 90,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 240,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    }
+  }
 }

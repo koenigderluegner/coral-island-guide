@@ -70,16 +70,28 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
         if (!filterValues.weather?.length) return false;
 
 
-        const seasonString = getTruthyValues(foundEntry.spawnSeason).toLowerCase();
-        const seasonMatch = seasonString === 'any'
+        const spawnSeason = 'spawnSettings' in foundEntry ? foundEntry.spawnSettings.map(s => s.spawnSeason) : [foundEntry.spawnSeason];
+        const spawnWeather = 'spawnSettings' in foundEntry ? foundEntry.spawnSettings.map(s => s.spawnWeather) : [foundEntry.spawnWeather];
+
+
+        const seasonMatch = spawnSeason.reduce((previousValue, currentValue) => {
+            const seasonString = getTruthyValues(currentValue).toLowerCase();
+            const match = seasonString === 'any'
             || filterValues.season?.length === Object.values(Season).length
             || !!filterValues.season?.some(season => seasonString.includes(('' + season).toLowerCase()));
 
-        const weatherString = getTruthyValues(foundEntry.spawnWeather).toLowerCase();
-        const weatherMatch = (index === this.SEA_CRITTERS_INDEX)
-            || weatherString === 'any'
-            || filterValues.weather?.length === Object.values(Weather).length
-            || !!filterValues.weather?.some(weather => weatherString.includes(('' + weather).toLowerCase()));
+            return previousValue || match
+        }, false)
+
+        const weatherMatch = spawnWeather.reduce((previousValue, currentValue) => {
+            const weatherString = getTruthyValues(currentValue).toLowerCase();
+            const match = (index === this.SEA_CRITTERS_INDEX)
+                || weatherString === 'any'
+                || filterValues.weather?.length === Object.values(Weather).length
+                || !!filterValues.weather?.some(weather => weatherString.includes(('' + weather).toLowerCase()));
+            return previousValue || match
+        }, false);
+
         return seasonMatch && weatherMatch;
 
     }

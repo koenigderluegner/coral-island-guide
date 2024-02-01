@@ -59,10 +59,12 @@
         "item": {
           "id": "item_41191",
           "displayName": "생강 절임",
-          "iconName": "Yellow_Pickles_Sprite"
+          "iconName": "Yellow_Pickles_Sprite",
+          "sellPrice": 85
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "PreserveJar"
     }
   ],
   "usedToCook": [
@@ -268,10 +270,136 @@
       "genericIngredients": [
         {
           "key": "Any_Egg",
-          "amount": 1
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Egg",
+            "tags": [
+              "item.animalproduct.egg"
+            ],
+            "iconName": "T_AnyEgg_Sprite",
+            "displayName": "아무 달걀",
+            "items": [
+              {
+                "id": "item_31002",
+                "displayName": "달걀",
+                "iconName": "Egg_Sprite_"
+              },
+              {
+                "id": "item_31003",
+                "displayName": "오리알",
+                "iconName": "Duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31012",
+                "displayName": "큰 알",
+                "iconName": "Large_egg_Sprite_"
+              },
+              {
+                "id": "item_31014",
+                "displayName": "큰 오리알",
+                "iconName": "Large_duck_egg_Sprite_"
+              },
+              {
+                "id": "item_31021",
+                "displayName": "큰 황금 알",
+                "iconName": "Large_golden_egg_Sprite"
+              },
+              {
+                "id": "item_31023",
+                "displayName": "황금 알",
+                "iconName": "Golden_egg_Sprite"
+              },
+              {
+                "id": "item_32016",
+                "displayName": "메추리알",
+                "iconName": "Quail_egg_Sprite"
+              },
+              {
+                "id": "item_32018",
+                "displayName": "큰 메추리알",
+                "iconName": "Large_quail_egg_Sprite"
+              }
+            ]
+          }
         }
       ],
-      "category": "Scarecrow"
+      "category": "Scarecrow",
+      "item": {
+        "id": "item_65604",
+        "displayName": "진저브레드 허수아비",
+        "price": 950,
+        "sellPrice": 380,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "까마귀가 농작물을 망치지 못하게 막는다. 보호하는 면적은 11x11이다.",
+        "qualities": {},
+        "iconName": "Gingerbread_Scarecrow_Sprite",
+        "tags": []
+      }
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_61043",
+      "bVaryHealthToMax": false,
+      "healthDelta": 22,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 61,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 120,
+      "buff": "ExtraStamina",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_61043-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 25,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 70,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 138,
+      "buff": "ExtraStamina",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_61043-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 28,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 76,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 156,
+      "buff": "ExtraStamina",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_61043-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 33,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 92,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 180,
+      "buff": "ExtraStamina",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_61043-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 44,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 122,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 240,
+      "buff": "ExtraStamina",
+      "itemType": "Food"
+    }
+  }
 }

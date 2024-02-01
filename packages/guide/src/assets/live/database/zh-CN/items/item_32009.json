@@ -58,10 +58,12 @@
         "item": {
           "id": "item_42021",
           "displayName": "羊毛布（大）",
-          "iconName": "Large_Wool_Cloth_Sprite"
+          "iconName": "Large_Wool_Cloth_Sprite",
+          "sellPrice": 625
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "Loom"
     }
   ],
   "usedToCraft": [
@@ -104,7 +106,21 @@
         }
       ],
       "genericIngredients": [],
-      "category": "Farming"
+      "category": "Farming",
+      "item": {
+        "id": "item_65509",
+        "displayName": "自动收集器",
+        "price": 4670,
+        "sellPrice": 2800,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "放在农场里。",
+        "qualities": {},
+        "iconName": "Auto_Petter_Sprite",
+        "tags": []
+      }
     },
     {
       "key": "item_65603",
@@ -137,7 +153,21 @@
         }
       ],
       "genericIngredients": [],
-      "category": "Scarecrow"
+      "category": "Scarecrow",
+      "item": {
+        "id": "item_65603",
+        "displayName": "欢乐茎稻草人",
+        "price": 1010,
+        "sellPrice": 405,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "阻止乌鸦扰乱庄稼。保护一个11x11的区域。",
+        "qualities": {},
+        "iconName": "Jolly_Stalk_Scarecrow_Sprite",
+        "tags": []
+      }
     }
   ],
   "requiredAsOffering": [
@@ -223,5 +253,44 @@
         }
       ]
     }
-  ]
+  ],
+  "producedByAnimal": {
+    "key": "Sheep",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Sheep_Sprite"
+        }
+      }
+    ],
+    "building": "Barn",
+    "daysToGrow": 10,
+    "harvestCooldown": 2,
+    "animalProduceType": "UsingTools",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65043",
+      "displayName": "羊毛剪",
+      "iconName": "Shears_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_32001",
+          "displayName": "羊毛",
+          "iconName": "Wool_Sprite"
+        },
+        "large": {
+          "id": "item_32009",
+          "displayName": "羊毛（大）",
+          "iconName": "Large_wool_Sprite"
+        }
+      }
+    ],
+    "displayName": "绵羊"
+  }
 }

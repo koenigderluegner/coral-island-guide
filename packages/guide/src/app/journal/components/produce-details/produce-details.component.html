@@ -1,37 +1,13 @@
-@if (item) {
-<app-base-item-card [item]="(item | isBaseCrop) ? item.dropData[0].item : item">
-
-    @if ((item | isBaseCrop)) {
-
-        <div class="flex items-center mb-2">
-            <app-item-icon [itemName]="item.item.iconName" class="h-10 w-10 mr-1"/>
-            <span class="text-black mr-3">{{item.readableName}}</span>
-            <app-money [amount]="item.item.price"/>
-        </div>
-
-        <div>Season: <span class="text-black">{{(item.growableSeason.join(', '))}}</span></div>
-        <div>Time to mature: <span class="text-black">{{item.growTime}} days</span></div>
-        @if (item.isRegrowable) {
-<div>Regrows: <span class="text-black">{{[1, item.regrowableLength] | max}}
-            days</span></div>
-}
-        @if (item |isCrop) {
-
-            @if (item.canCombine) {
-<div>Can combine: <span class="text-black">{{item.chanceToCombine.chance}}%</span>
-            </div>
-}
-            @if (item.isScytheRequired) {
-<div class="text-black">Scythe required</div>
-}
-            @if (item.isTrellisCrop) {
-<div class="text-black">Is trellis crop</div>
-}
-        
-}
-        <div>Size (WxL): <span class="text-black">{{item.size.width}}x{{item.size.length}}</span></div>
-    
-}
-
-</app-base-item-card>
-}
+<app-database-item-details [itemId]="((item | isBaseCrop) ? item.dropData[0].item : item).id">
+    <ng-template let-details appDatabaseItemDetails>
+        @for (crop of details.isSeedFor; track crop) {
+            <app-crop class="mb-4" [item]="crop"/>
+        }
+        @if (details.producedByAnimal) {
+            <app-animal-produce [animal]="details.producedByAnimal" [shownItemId]="details.item.id"/>
+        }
+        @for (product of details.artisanResult; track product) {
+            <app-processor [class.mt-3]="!$first" [itemProcessing]="product"/>
+        }
+    </ng-template>
+</app-database-item-details>

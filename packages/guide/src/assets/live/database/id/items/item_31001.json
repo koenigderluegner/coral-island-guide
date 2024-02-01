@@ -59,10 +59,12 @@
         "item": {
           "id": "item_41005",
           "displayName": "Minyak truffle hitam",
-          "iconName": "Black_Truffle_Oil_Sprite"
+          "iconName": "Black_Truffle_Oil_Sprite",
+          "sellPrice": 1365
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "OilPress"
     }
   ],
   "usedToCook": [
@@ -962,5 +964,101 @@
         }
       ]
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_31001",
+      "bVaryHealthToMax": false,
+      "healthDelta": 40,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 23,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_31001-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 46,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 26,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_31001-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 50,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 29,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_31001-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 60,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 35,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_31001-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 80,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 46,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Pig",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Pig_Sprite"
+        }
+      }
+    ],
+    "building": "BarnLvl2",
+    "daysToGrow": 20,
+    "harvestCooldown": 3,
+    "animalProduceType": "DropInAllDay",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "produceDropLocation": "OutsideBuildingOnly",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31001",
+          "displayName": "Truffle hitam",
+          "iconName": "Black_Truffle_Sprite"
+        },
+        "large": {
+          "id": "item_31020",
+          "displayName": "Truffle putih",
+          "iconName": "White_Truffle_Sprite"
+        }
+      }
+    ],
+    "displayName": "Babi"
+  }
 }

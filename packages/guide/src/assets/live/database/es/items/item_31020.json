@@ -59,10 +59,12 @@
         "item": {
           "id": "item_41174",
           "displayName": "Aceite de trufa blanca",
-          "iconName": "White_truffle_oil_Sprite"
+          "iconName": "White_truffle_oil_Sprite",
+          "sellPrice": 2135
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "OilPress"
     }
   ],
   "usedToCook": [
@@ -887,5 +889,101 @@
         }
       ]
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_31020",
+      "bVaryHealthToMax": false,
+      "healthDelta": 40,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 23,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_31020-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 46,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 26,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_31020-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 50,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 29,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_31020-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 60,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 35,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_31020-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 80,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 46,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Pig",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Pig_Sprite"
+        }
+      }
+    ],
+    "building": "BarnLvl2",
+    "daysToGrow": 20,
+    "harvestCooldown": 3,
+    "animalProduceType": "DropInAllDay",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "produceDropLocation": "OutsideBuildingOnly",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31001",
+          "displayName": "Trufa negra",
+          "iconName": "Black_Truffle_Sprite"
+        },
+        "large": {
+          "id": "item_31020",
+          "displayName": "Trufa blanca",
+          "iconName": "White_Truffle_Sprite"
+        }
+      }
+    ],
+    "displayName": "Cerdo"
+  }
 }

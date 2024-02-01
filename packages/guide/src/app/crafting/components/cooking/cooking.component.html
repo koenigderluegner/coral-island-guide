@@ -1,115 +1,47 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     @if (selectedEntity) {
-<app-base-item-card
-                        [item]="selectedEntity.item"
-                        hideQualityGrid
-                        listDetail
-                        (addedToToDo)="registerToToDo(selectedEntity)"
-                        [toDoCategory]="toDoCategory.COOKING_RECIPES"
-                        [amount]="selectedEntity.amount">
-
-        @if (selectedEntityConsumable) {
-
-            <div>Health: <span class="text-black">{{selectedEntityConsumable.healthDelta}}</span></div>
-            <div [class.mb-3]="selectedEntityConsumable.buff === 'None'">Energy: <span
-                    class="text-black">{{selectedEntityConsumable.staminaDelta}}</span></div>
-            @if (selectedEntityConsumable.buff !== 'None') {
-<div class="mb-3">Buff:
-                <span class="text-black">
-                  {{selectedEntityConsumable.buff | addSpacesToPascalCase}},
-                  Level {{selectedEntityConsumable.level}} for {{selectedEntityConsumable.duration}} seconds
-                </span>
-            </div>
-}
-        
-}
-
-        @if (selectedEntity.craftingUnlock) {
-<div class="mb-3">
-            Unlocked: <span
-                class="text-black">Level {{selectedEntity.craftingUnlock.masteryLevel}}
-            in {{selectedEntity.craftingUnlock.masteryType}}</span>
-        </div>
-}
-
-        <app-item-list [itemList]="selectedEntity | cookingRecipeIngredients" class="mb-3"></app-item-list>
-        @if (selectedEntity.eitherOrIngredients.length) {
-
-            <span class="text-black"> Either of the following</span>
-
-            @for (ingredients of selectedEntity.eitherOrIngredients; track ingredients; let last = $last) {
-  
-                <app-item-list [itemList]="ingredients" class="mb-3"></app-item-list>
-                @if (!last) {
-<hr class="my-5"/>
-}
-            
-}
-
-        
-}
-        @if (selectedEntity.additionsToGenerics) {
-
-            <span class="text-black"> The following counting as</span>
-
-            @for (itemListItem of (selectedEntity.additionsToGenerics | keyvalue); track itemListItem) {
-  <div class="mb-3">
-                @for (item of (itemListItem.value | castToMinimalItemArray); track item) {
-  
-                    <div class="flex justify-between py-1">
-
-                        @if (item) {
-<div class="flex gap-x-3 items-center">
-                            <app-item-icon class="w-10" [itemName]="item.iconName"></app-item-icon>
-                            <span>{{item.displayName}}</span>
-                        </div>
-}
-
-
-                        <div class="flex items-center">as {{itemListItem.key}}</div>
-
-                    </div>
-                    <hr>
-                
-}
-            </div>
-}
-
-        
-}
-    </app-base-item-card>
-}
+        <app-database-item-details [itemId]="selectedEntity.item.id" listDetail>
+            <ng-template let-details appDatabaseItemDetails>
+                @if (details.consumables?.base; as consumable) {
+                    <app-consumable [consumable]="consumable"/>
+                }
+                @for (recipe of details.cookedFrom; track recipe.key) {
+                    <app-cooking-recipe class="mb-4" [cookingRecipe]="recipe"/>
+                }
+            </ng-template>
+        </app-database-item-details>
+    }
 
 
     <mat-tab-group class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false" (selectedTabChange)="updateUrl($event)"
                    [selectedIndex]="selectedTabIndex">
         @for (utensilName of utensilNames; track utensilName) {
-  <mat-tab
-                 [label]="cookingUtensilMapping[utensilName.toLowerCase()] ? cookingUtensilMapping[utensilName.toLowerCase()].displayName : utensilName | spacesToPascalCase | titlecase">
-            <app-data-filter [(showTable)]="showTable"/>
-            @if ((filteredData$(utensilName) | async); as processorItems) {
+            <mat-tab
+                    [label]="cookingUtensilMapping[utensilName.toLowerCase()] ? cookingUtensilMapping[utensilName.toLowerCase()].displayName : utensilName | addSpacesToPascalCase | titlecase">
+                <app-data-filter [(showTable)]="showTable"/>
+                @if ((filteredData$(utensilName) | async); as processorItems) {
 
-                @if (!showTable) {
-<div class="grid gap-4 icon-grid">
+                    @if (!showTable) {
+                        <div class="grid gap-4 icon-grid">
 
-                    @for (itemProcess of processorItems; track itemProcess) {
-  <app-item-icon (click)="showDetails(itemProcess)"
-                                  
-                                   [amount]="itemProcess.amount"
-                                   [class.selected-icon]="selectedEntity?.item?.id === itemProcess.item.id"
-                                   [itemName]="itemProcess.item.iconName"
-                                   class="icon-grid-item">
-                    </app-item-icon>
-}
-                </div>
-}
-                @if (showTable) {
-<app-cooking-table [dataSource]="processorItems"/>
-}
-            
-}
-        </mat-tab>
-}
+                            @for (itemProcess of processorItems; track itemProcess) {
+                                <app-item-icon (click)="showDetails(itemProcess)"
+
+                                               [amount]="itemProcess.amount"
+                                               [class.selected-icon]="selectedEntity?.item?.id === itemProcess.item.id"
+                                               [itemName]="itemProcess.item.iconName"
+                                               class="icon-grid-item">
+                                </app-item-icon>
+                            }
+                        </div>
+                    }
+                    @if (showTable) {
+                        <app-cooking-table [dataSource]="processorItems"/>
+                    }
+
+                }
+            </mat-tab>
+        }
     </mat-tab-group>
 
 </app-list-detail-container>

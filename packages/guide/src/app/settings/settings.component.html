@@ -11,7 +11,7 @@
                     <label class="font-bold leading-6" for="language">Language</label>
                     <mat-form-field class="btn btn-secondary">
                         <mat-select formControlName="language" id="language">
-                            @for (language of availableLanguages;track language) {
+                            @for (language of availableLanguages; track language) {
                                 <mat-option [value]="language">{{ availableLanguageDisplayName[language] }}</mat-option>
                             }
                         </mat-select>
@@ -83,6 +83,28 @@
                     <div>
                         <label class="font-bold leading-6" for="resetBetaToDo">Reset beta to-dos</label>
                         <p class="leading-6">Reset all to-dos which were created while using beta data.</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="grid md:grid-cols-3 pb-12 gap-y-10 gap-x-8 border-b border-accent/50 mb-8">
+            <div>
+                <h3 class="leading-7 font-bold text-lg">Changelogs</h3>
+                <p>Options for latest changelogs. If you disabled them you can reactivate them here. </p>
+            </div>
+            <div class="bg-amber-50/70 md:col-span-2 px-4 py-6 sm:p-8 sm:rounded-lg flex flex-col gap-6">
+
+
+                <div class="flex gap-x-3">
+                    <div class="flex h-6 items-center">
+                        <input formControlName="disableChangelogs" id="disableChangelogs" name="disableChangelogs"
+                               type="checkbox">
+                    </div>
+                    <div>
+                        <label class="font-bold leading-6" for="disableChangelogs">Disable latest changelogs</label>
+                        <p class="leading-6">When disabled, latest changes will not be displayed once per update.</p>
                     </div>
                 </div>
 

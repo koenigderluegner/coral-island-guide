@@ -1,17 +1,17 @@
-@if (requiredAsOffering.length) {
+@if (databaseItem.requiredAsOffering && databaseItem.requiredAsOffering.length) {
 <app-expandable #expandableComponent open>
     <h3 class="database-header" expandableHeader>
         <app-database-header-button [templateRef]="expandableComponent">Required for offering
         </app-database-header-button>
     </h3>
-    <app-offerings-table [dataSource]="requiredAsOffering" showAltar/>
+    <app-offerings-table [dataSource]="databaseItem.requiredAsOffering" showAltar/>
 </app-expandable>
 }
-@if (isRewardIn.length) {
+@if (databaseItem.isBundleRewardIn && databaseItem.isBundleRewardIn.length) {
 <app-expandable #expandableComponent open>
     <h3 class="database-header" expandableHeader>
         <app-database-header-button [templateRef]="expandableComponent">Offering reward</app-database-header-button>
     </h3>
-    <app-offerings-table [dataSource]="isRewardIn" showAltar/>
+    <app-offerings-table [dataSource]="databaseItem.isBundleRewardIn" showAltar/>
 </app-expandable>
 }

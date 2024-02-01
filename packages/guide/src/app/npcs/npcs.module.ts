@@ -11,6 +11,7 @@ import { HeartEventTriggerComponent } from './components/heart-event-trigger/hea
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { GiftingGridComponent } from './components/gifting-grid/gifting-grid.component';
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-case.pipe";
 
 @NgModule({
     declarations: [
@@ -22,6 +23,6 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
         HeartEventTriggerComponent,
         GiftingGridComponent,
     ],
-    imports: [CommonModule, NPCsRoutingModule, SharedModule, MatTooltipModule, MatProgressSpinnerModule],
+    imports: [CommonModule, NPCsRoutingModule, SharedModule, MatTooltipModule, MatProgressSpinnerModule, AddSpacesToPascalCasePipe],
 })
 export class NPCsModule {}

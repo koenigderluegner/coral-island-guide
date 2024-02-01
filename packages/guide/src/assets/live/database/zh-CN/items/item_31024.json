@@ -59,10 +59,12 @@
         "item": {
           "id": "item_41039",
           "displayName": "Butter",
-          "iconName": "Butter_Sprite"
+          "iconName": "Butter_Sprite",
+          "sellPrice": 135
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "PreserveJar"
     }
   ],
   "usedToCook": [
@@ -754,5 +756,122 @@
       "ingredients": [],
       "eitherOrIngredients": []
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_31024",
+      "bVaryHealthToMax": false,
+      "healthDelta": 28,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 30,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_31024-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 32,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 35,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_31024-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 35,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 38,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_31024-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 42,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 45,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_31024-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 56,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 60,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Cow",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Cow_White_Sprite"
+        }
+      },
+      {
+        "variant": "Brown",
+        "icons": {
+          "adult": "Cow_Brown_Sprite"
+        }
+      }
+    ],
+    "building": "Barn",
+    "daysToGrow": 15,
+    "harvestCooldown": 1,
+    "animalProduceType": "UsingTools",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65042",
+      "displayName": "挤奶桶",
+      "iconName": "Milk_Pail_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31004",
+          "displayName": "牛奶",
+          "iconName": "Milk_Sprite_"
+        },
+        "large": {
+          "id": "item_31016",
+          "displayName": "牛奶（大）",
+          "iconName": "Large_milk_Sprite_"
+        },
+        "smallGolden": {
+          "id": "item_31024",
+          "displayName": "金奶",
+          "iconName": "Golden_milk_Sprite"
+        },
+        "largeGolden": {
+          "id": "item_31022",
+          "displayName": "金奶（大）",
+          "iconName": "Large_golden_milk_Sprite"
+        }
+      }
+    ],
+    "displayName": "牛"
+  }
 }

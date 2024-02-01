@@ -59,7 +59,8 @@
         "item": {
           "id": "item_41041",
           "displayName": "Roda keju",
-          "iconName": "Cheese_Wheel_Sprite"
+          "iconName": "Cheese_Wheel_Sprite",
+          "sellPrice": 260
         }
       },
       "genericInput": null,
@@ -99,7 +100,8 @@
             "minutes": 0
           }
         }
-      }
+      },
+      "machine": "CheesePress"
     },
     {
       "useCategory": false,
@@ -122,10 +124,12 @@
         "item": {
           "id": "item_41049",
           "displayName": "Mentega besar",
-          "iconName": "Large_Butter_Sprite"
+          "iconName": "Large_Butter_Sprite",
+          "sellPrice": 210
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "PreserveJar"
     },
     {
       "useCategory": false,
@@ -148,10 +152,12 @@
         "item": {
           "id": "item_41179",
           "displayName": "Yogurt besar",
-          "iconName": "Large_Yoghurt_Sprite"
+          "iconName": "Large_Yoghurt_Sprite",
+          "sellPrice": 390
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "YogurtMachine"
     }
   ],
   "usedToCook": [
@@ -1115,5 +1121,122 @@
         }
       ]
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_31016",
+      "bVaryHealthToMax": false,
+      "healthDelta": 14,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 30,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "bronze": {
+      "key": "item_31016-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 16,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 35,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "silver": {
+      "key": "item_31016-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 18,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 38,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "gold": {
+      "key": "item_31016-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 21,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 45,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "osmium": {
+      "key": "item_31016-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 28,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 60,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Cow",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Cow_White_Sprite"
+        }
+      },
+      {
+        "variant": "Brown",
+        "icons": {
+          "adult": "Cow_Brown_Sprite"
+        }
+      }
+    ],
+    "building": "Barn",
+    "daysToGrow": 15,
+    "harvestCooldown": 1,
+    "animalProduceType": "UsingTools",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65042",
+      "displayName": "Ember susu",
+      "iconName": "Milk_Pail_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31004",
+          "displayName": "Susu",
+          "iconName": "Milk_Sprite_"
+        },
+        "large": {
+          "id": "item_31016",
+          "displayName": "Susu besar",
+          "iconName": "Large_milk_Sprite_"
+        },
+        "smallGolden": {
+          "id": "item_31024",
+          "displayName": "Susu emas",
+          "iconName": "Golden_milk_Sprite"
+        },
+        "largeGolden": {
+          "id": "item_31022",
+          "displayName": "Susu emas besar",
+          "iconName": "Large_golden_milk_Sprite"
+        }
+      }
+    ],
+    "displayName": "Sapi"
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { Critter, Fish } from '@ci/data-types';
+import { Critter, Fish, FishSpawnSettings } from '@ci/data-types';
 
 import { addSpacesToPascalCase, getTruthyValues } from '@ci/util';
 import { critterSizeMap, rarityMap } from '../../../../../../../util/src/lib/maps/sort-helper.map';
@@ -30,55 +30,57 @@ export class CaughtTableComponent extends BaseTableComponent<(Critter | Fish)> {
     }
 
 
-    dateRangesToString(dateRanges: Fish['dateRangeList']): string[] {
+    dateRangesToString(dateRanges: FishSpawnSettings['dateRangeList']): string[] {
         return dateRanges.map(range => {
             return `From ${(range.startsFrom.season)} ${range.startsFrom.day} to ${(range.lastsTill.season)} ${range.lastsTill.day}`;
         });
     }
 
-    override sortingDataAccessor = (item: CaughtTableComponent['dataSource'][0], property: string) => {
+    override sortingDataAccessor = (critter: CaughtTableComponent['dataSource'][0], property: string) => {
 
         switch (property) {
             case 'rarity': {
-                return rarityMap.get(item[property]) ?? 0;
+                return rarityMap.get(critter[property]) ?? 0;
             }
             case 'key': {
-                return item[property];
+                return critter[property];
             }
             case 'time': {
 
-                const allTrue = getTruthyValues(item.spawnTime);
+                const spawnTime = this._isFish(critter) ? critter.spawnSettings[0].spawnTime : critter.spawnTime;
+                const allTrue = getTruthyValues(spawnTime);
 
                 if (allTrue === 'Any') return 1;
 
-                return item.spawnTime.morning
+                return spawnTime.morning
                     ? 10
-                    : item.spawnTime.afternoon
+                    : spawnTime.afternoon
                         ? 20
-                        : item.spawnTime.evening
+                        : spawnTime.evening
                             ? 30
-                            : item.spawnTime.night
+                            : spawnTime.night
                                 ? 40
                                 : 0;
 
             }
             case 'weather': {
 
-                const allTrue = getTruthyValues(item.spawnWeather);
+                const spawnWeather = this._isFish(critter) ? critter.spawnSettings[0].spawnWeather : critter.spawnWeather;
+                const allTrue = getTruthyValues(spawnWeather);
 
                 if (allTrue === 'Any') return 1;
 
-                return item.spawnWeather.sunny
+                return spawnWeather.sunny
                     ? 10
-                    : item.spawnWeather.rain
+                    : spawnWeather.rain
                         ? 20
-                        : item.spawnWeather.snow
+                        : spawnWeather.snow
                             ? 30
-                            : item.spawnWeather.blizzard
+                            : spawnWeather.blizzard
                                 ? 40
-                                : item.spawnWeather.windy
+                                : spawnWeather.windy
                                     ? 50
-                                    : item.spawnWeather.storm
+                                    : spawnWeather.storm
                                         ? 60
                                         : 0;
 
@@ -86,10 +88,10 @@ export class CaughtTableComponent extends BaseTableComponent<(Critter | Fish)> {
 
         }
 
-        if (this._isFish(item)) {
+        if (this._isFish(critter)) {
             switch (property) {
                 case 'fishSize': {
-                    return critterSizeMap.get(item['fishSize']) ?? 0;
+                    return critterSizeMap.get(critter['fishSize']) ?? 0;
                 }
 
                 default: {
@@ -103,7 +105,12 @@ export class CaughtTableComponent extends BaseTableComponent<(Critter | Fish)> {
     };
 
     override setupDataSource(dataSource: (Critter | Fish)[]) {
-        super.setupDataSource(dataSource);
+        let data = dataSource;
+        if (CaughtTableComponent._isFishArray(dataSource)) {
+            data = dataSource.map(f => f.spawnSettings.map(s => ({...f, spawnSettings: [s]}))).flat()
+        }
+
+        super.setupDataSource(data);
         if (CaughtTableComponent._isFishArray(this.dataSource)) {
             this.displayedColumns.splice(3, 0, 'fishSize');
             this.displayHeaderColumns.splice(2, 0, 'fishSize');

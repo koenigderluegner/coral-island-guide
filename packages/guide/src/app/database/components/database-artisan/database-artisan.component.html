@@ -1,16 +1,16 @@
-@if (usedIn.length) {
+@if (databaseItem.artisanIngredient && databaseItem.artisanIngredient.length) {
 <app-expandable #expandableComponent open>
     <h3 class="database-header" expandableHeader>
         <app-database-header-button [templateRef]="expandableComponent">Usage in processing</app-database-header-button>
     </h3>
-    <app-processor-table [dataSource]="usedIn" showProcessor/>
+    <app-processor-table [dataSource]="databaseItem.artisanIngredient" showProcessor/>
 </app-expandable>
 }
-@if (craftedFrom.length) {
+@if (databaseItem.artisanResult && databaseItem.artisanResult.length) {
 <app-expandable #expandableComponent open>
     <h3 class="database-header" expandableHeader>
         <app-database-header-button [templateRef]="expandableComponent">Processing</app-database-header-button>
     </h3>
-    <app-processor-table [dataSource]="craftedFrom" showProcessor/>
+    <app-processor-table [dataSource]="databaseItem.artisanResult" showProcessor/>
 </app-expandable>
 }

@@ -58,10 +58,12 @@
         "item": {
           "id": "item_42021",
           "displayName": "Grand tissu en laine",
-          "iconName": "Large_Wool_Cloth_Sprite"
+          "iconName": "Large_Wool_Cloth_Sprite",
+          "sellPrice": 625
         }
       },
-      "genericInput": null
+      "genericInput": null,
+      "machine": "Loom"
     }
   ],
   "usedToCraft": [
@@ -104,7 +106,21 @@
         }
       ],
       "genericIngredients": [],
-      "category": "Farming"
+      "category": "Farming",
+      "item": {
+        "id": "item_65509",
+        "displayName": "Caresse automatique",
+        "price": 4670,
+        "sellPrice": 2800,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "A placer dans la ferme.",
+        "qualities": {},
+        "iconName": "Auto_Petter_Sprite",
+        "tags": []
+      }
     },
     {
       "key": "item_65603",
@@ -137,7 +153,21 @@
         }
       ],
       "genericIngredients": [],
-      "category": "Scarecrow"
+      "category": "Scarecrow",
+      "item": {
+        "id": "item_65603",
+        "displayName": "Epouvantail Ho ho ho",
+        "price": 1010,
+        "sellPrice": 405,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Dissuade les corbeaux de s'attaquer aux cultures. Protège une zone de 11x11.",
+        "qualities": {},
+        "iconName": "Jolly_Stalk_Scarecrow_Sprite",
+        "tags": []
+      }
     }
   ],
   "requiredAsOffering": [
@@ -223,5 +253,44 @@
         }
       ]
     }
-  ]
+  ],
+  "producedByAnimal": {
+    "key": "Sheep",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Sheep_Sprite"
+        }
+      }
+    ],
+    "building": "Barn",
+    "daysToGrow": 10,
+    "harvestCooldown": 2,
+    "animalProduceType": "UsingTools",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65043",
+      "displayName": "Ciseaux",
+      "iconName": "Shears_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_32001",
+          "displayName": "Laine",
+          "iconName": "Wool_Sprite"
+        },
+        "large": {
+          "id": "item_32009",
+          "displayName": "Grande laine",
+          "iconName": "Large_wool_Sprite"
+        }
+      }
+    ],
+    "displayName": "Mouton"
+  }
 }

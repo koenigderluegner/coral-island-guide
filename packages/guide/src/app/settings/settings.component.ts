@@ -15,7 +15,8 @@ type SettingsFormGroup = {
     resetBetaToDo: FormControl<boolean>;
     resetLiveChecklists: FormControl<boolean>;
     resetBetaChecklists: FormControl<boolean>;
-    language: FormControl<AvailableLanguage>
+    language: FormControl<AvailableLanguage>;
+    disableChangelogs: FormControl<boolean>;
 };
 
 @Component({
@@ -46,6 +47,7 @@ export class SettingsComponent {
             resetLiveChecklists: new FormControl<boolean>(false, {nonNullable: true}),
             resetBetaChecklists: new FormControl<boolean>(false, {nonNullable: true}),
             language: new FormControl<AvailableLanguage>('en', {nonNullable: true}),
+            disableChangelogs: new FormControl<boolean>(false, {nonNullable: true}),
         });
 
         if (!this.BETA_CODE) {

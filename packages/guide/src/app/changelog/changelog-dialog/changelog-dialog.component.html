@@ -1,0 +1,15 @@
+<h1 mat-dialog-title class="font-xl font-bold">Changelog</h1>
+<mat-dialog-content class="prose max-w-full">
+    <div class="flex gap-3 font-bold">
+        <span>{{ dialogData.changelog.version }}</span>
+        @if (dialogData.changelog.date) {
+            -            <span>{{ dialogData.changelog.date }}</span>
+        }
+    </div>
+    <markdown [data]="dialogData.changelog.body"/>
+</mat-dialog-content>
+
+<mat-dialog-actions class="!justify-between">
+    <mat-checkbox (change)="toggleDisableChangelog($event)">Don't show changelogs</mat-checkbox>
+    <button matDialogClose class="btn-amber">Close</button>
+</mat-dialog-actions>
