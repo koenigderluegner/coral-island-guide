@@ -9475,8 +9475,8 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 3,
-                "minutes": 0
+                "hours": 23,
+                "minutes": 50
               }
             },
             "effects": [],
@@ -9485,17 +9485,18 @@
               "type": "And",
               "requirements": [
                 {
-                  "type": "QuestActive",
-                  "meta": {
-                    "questId": "scott_10b_helper"
-                  }
-                },
-                {
                   "type": "ObjectState",
                   "meta": {
                     "id": "museum",
                     "state": "level2",
                     "customName": "Museum"
+                  }
+                },
+                {
+                  "type": "IsMailRead",
+                  "meta": {
+                    "mailId": "scott_heart10",
+                    "title": "Something special at the museum"
                   }
                 }
               ]

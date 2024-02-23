@@ -1,5 +1,11 @@
 ## Changelog
 
+### 0.16.1 2024-02-23 
+
+#### Changed 
+
+- Updated live data to v1-945 except character images (Steam version)
+
 ### 0.16.0 2024-02-01 
 
 In the last update, I added the groundwork for a new way to retrieve item data. This update focuses a lot on those new changes, please let me know if you encounter any issues.
