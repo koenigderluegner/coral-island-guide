@@ -7,7 +7,7 @@ export interface RawNPC {
     "portraitsDT": {
         "ObjectName": string,
         "ObjectPath": string,
-    },
+    } | null,
     "Portrait": {
         "AssetPathName": string,
         "SubPathString": string,

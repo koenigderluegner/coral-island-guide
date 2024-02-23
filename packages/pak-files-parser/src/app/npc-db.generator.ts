@@ -35,15 +35,16 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
 
         const objectName = dbItem.mapIcon.AssetPathName.split('.').pop() ?? '';
 
-
-        const [portaitsPath, index] = dbItem.portraitsDT.ObjectPath.split('.');
         let npcAppearances: Record<string, RawNpcAppearances> = {}
-        const fileName = path.join(portaitsPath + '.json');
-        try {
-            npcAppearances = readAsset<Datatable<RawNpcAppearances>[]>(fileName)[+index].Rows;
-        } catch (e) {
-        }
+        if (dbItem.portraitsDT) {
+            const [portaitsPath, index] = dbItem.portraitsDT.ObjectPath.split('.');
 
+            const fileName = path.join(portaitsPath + '.json');
+            try {
+                npcAppearances = readAsset<Datatable<RawNpcAppearances>[]>(fileName)[+index].Rows;
+            } catch (e) {
+            }
+        }
 
         const portraitPath = dbItem.Portrait.AssetPathName.replace('/Game/ProjectCoral/', '/ProjectCoral/Content/ProjectCoral/').split('.')[0];
         let headerPortraitFileName: string | null = null

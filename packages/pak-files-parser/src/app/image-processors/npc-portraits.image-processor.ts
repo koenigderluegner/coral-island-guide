@@ -46,14 +46,17 @@ export class NpcPortraitsImageProcessor {
 
         npcKeys.forEach(npcKey => {
             const npcData = this.petNPCs[0]?.Rows[npcKey] ?? this.datatable[0].Rows[npcKey];
-            const [portaitsPath, index] = npcData.portraitsDT.ObjectPath.split('.');
             let npcAppearances: Record<string, RawNpcAppearances> = {}
-            const fileName = path.join(portaitsPath + '.json');
-            try {
-                npcAppearances = readAsset<Datatable<RawNpcAppearances>[]>(fileName)[+index].Rows;
-            } catch (e) {
-                Logger.error(e)
-                Logger.warn(`Can't find NPC appearances for ${npcKey} at path ${fileName}`)
+            if (npcData.portraitsDT) {
+                const [portaitsPath, index] = npcData.portraitsDT.ObjectPath.split('.');
+
+                const fileName = path.join(portaitsPath + '.json');
+                try {
+                    npcAppearances = readAsset<Datatable<RawNpcAppearances>[]>(fileName)[+index].Rows;
+                } catch (e) {
+                    Logger.error(e)
+                    Logger.warn(`Can't find NPC appearances for ${npcKey} at path ${fileName}`)
+                }
             }
 
 
