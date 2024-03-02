@@ -32,7 +32,7 @@ export class FruitTreeDbGenerator extends BaseGenerator<RawFruitTree, FruitTree>
             key: itemKey,
             item,
             size: dbItem.size,
-            growableSeason: [getEnumValue(dbItem.producingSeason) as Season],
+            growableSeason: [getEnumValue(dbItem.producingSeason)],
             growTime: dbItem.stages.map(s => s.length).reduce((p, v) => p + v, 0),
             isRegrowable: true,
             regrowableLength: 1,

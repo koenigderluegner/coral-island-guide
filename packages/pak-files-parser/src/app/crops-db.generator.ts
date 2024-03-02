@@ -34,7 +34,7 @@ export class CropsDbGenerator {
                     size: dbItem.size,
                     canCombine: dbItem.canCombine,
                     chanceToCombine: dbItem.chanceToCombine,
-                    growableSeason: dbItem.growableSeason.map(getEnumValue) as Season[],
+                    growableSeason: dbItem.growableSeason.map(getEnumValue),
                     growTime: dbItem.stages.map(s => s.length).reduce((p, v) => p + v, 0),
                     isRegrowable: dbItem.isRegrowable,
                     regrowableLength: dbItem.regrowableLength,

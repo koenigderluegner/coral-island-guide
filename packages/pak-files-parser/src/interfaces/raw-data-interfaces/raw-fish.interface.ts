@@ -1,3 +1,5 @@
+import { EnumString, Season } from "@ci/data-types";
+
 export interface RawFish {
     isEnabled: boolean,
     FishSKU: {
@@ -54,12 +56,12 @@ export interface RawFish {
         random: boolean,
         startsFrom: {
             day: number,
-            season: string,
+            season: EnumString<Season>,
             year: number
         },
         lastsTill: {
             day: number,
-            season: string,
+            season: EnumString<Season>,
             year: number
         }
     }[],

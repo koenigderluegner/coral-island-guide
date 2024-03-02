@@ -1,4 +1,4 @@
-import { createPathIfNotExists, readAsset } from "../../util/functions";
+import { createPathIfNotExists, extractOutfitPortraitsLocation, readAsset } from "../../util/functions";
 import { RawNPC } from "../../interfaces/raw-data-interfaces/raw-npc.interface";
 import { Datatable } from "../../interfaces/datatable.interface";
 import { Logger } from "../../util/logger.class";
@@ -47,18 +47,14 @@ export class NpcPortraitsImageProcessor {
         npcKeys.forEach(npcKey => {
             const npcData = this.petNPCs[0]?.Rows[npcKey] ?? this.datatable[0].Rows[npcKey];
             let npcAppearances: Record<string, RawNpcAppearances> = {}
-            if (npcData.portraitsDT) {
-                const [portaitsPath, index] = npcData.portraitsDT.ObjectPath.split('.');
+            let {index, fileName} = extractOutfitPortraitsLocation(npcData, npcKey);
 
-                const fileName = path.join(portaitsPath + '.json');
-                try {
-                    npcAppearances = readAsset<Datatable<RawNpcAppearances>[]>(fileName)[+index].Rows;
-                } catch (e) {
-                    Logger.error(e)
-                    Logger.warn(`Can't find NPC appearances for ${npcKey} at path ${fileName}`)
-                }
+            try {
+                npcAppearances = readAsset<Datatable<RawNpcAppearances>[]>(fileName)[+index].Rows;
+            } catch (e) {
+                Logger.error(e)
+                Logger.warn(`Can't find NPC appearances for ${npcKey} at path ${fileName}`)
             }
-
 
             this.detectHeadImage(npcData, npcKey, sourceImagesHeadPortraits);
 
@@ -194,16 +190,28 @@ export class NpcPortraitsImageProcessor {
             if (filesWithJs.length === excludeFromDeletion.size) return;
             Logger.log(`checking ${filesWithJs.length} files for deletion`);
             let counter = 0;
+            const portraitsMarkedForDeletetion = [];
             for (const fileBasename of filesWithJs) {
                 const sourceFilePath = path.join(this.sourcePath.replace('\\dist', '').replace('\\assets', '\\src\\assets'), fileBasename);
 
                 if (!excludeFromDeletion.has(sourceFilePath) && fs.existsSync(sourceFilePath)) {
-                    fs.unlinkSync(sourceFilePath);
+                    if (sourceFilePath.toLowerCase().includes('potrait') || sourceFilePath.toLowerCase().includes('portrait')) {
+                        portraitsMarkedForDeletetion.push(sourceFilePath)
+                    } else {
+                        fs.unlinkSync(sourceFilePath);
+                    }
+
                 }
 
                 counter++;
                 Logger.progress((counter / filesWithJs.length) * 100);
 
+            }
+            if (portraitsMarkedForDeletetion.length) {
+                Logger.warn(`Tried to delete ${portraitsMarkedForDeletetion.length} portraits`)
+                portraitsMarkedForDeletetion.forEach(s => {
+                    Logger.warn(`\t${s}`)
+                })
             }
             Logger.success('image extraction done');
 

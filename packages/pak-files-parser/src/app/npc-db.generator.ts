@@ -1,7 +1,7 @@
 import { BaseGenerator } from './base-generator.class';
 import { CalendarBirthday, CalendarEvent, Item, NPC, SpecificDate } from '@ci/data-types';
 import { Datatable } from '../interfaces/datatable.interface';
-import { convertToIconName, readAsset } from '../util/functions';
+import { convertToIconName, extractOutfitPortraitsLocation, readAsset } from '../util/functions';
 import { RawNPC } from '../interfaces/raw-data-interfaces/raw-npc.interface';
 import { addSpacesToPascalCase, getEnumValue } from '@ci/util';
 import { RawNpcAppearances } from "../interfaces/raw-data-interfaces/raw-npc-appearances.interface";
@@ -9,6 +9,7 @@ import path from "path";
 import { environment } from "../environments/environment";
 import fs from "fs";
 import { StringTable } from "../util/string-table.class";
+import { Logger } from "../util/logger.class";
 
 export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
 
@@ -36,14 +37,12 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
         const objectName = dbItem.mapIcon.AssetPathName.split('.').pop() ?? '';
 
         let npcAppearances: Record<string, RawNpcAppearances> = {}
-        if (dbItem.portraitsDT) {
-            const [portaitsPath, index] = dbItem.portraitsDT.ObjectPath.split('.');
+        let {index, fileName} = extractOutfitPortraitsLocation(dbItem, itemKey);
 
-            const fileName = path.join(portaitsPath + '.json');
-            try {
-                npcAppearances = readAsset<Datatable<RawNpcAppearances>[]>(fileName)[+index].Rows;
-            } catch (e) {
-            }
+        try {
+            npcAppearances = readAsset<Datatable<RawNpcAppearances>[]>(fileName)[+index].Rows;
+        } catch (e) {
+            Logger.error(`Can't open character outfit file for ${dbItem.characterID}`)
         }
 
         const portraitPath = dbItem.Portrait.AssetPathName.replace('/Game/ProjectCoral/', '/ProjectCoral/Content/ProjectCoral/').split('.')[0];

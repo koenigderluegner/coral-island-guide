@@ -1,9 +1,19 @@
-import { CustomEntry, Item, MinimalItem, MinimalNPC, MinimalTagBasedItem, NPC, Quality } from "@ci/data-types";
+import {
+    CustomEntry,
+    EnumString,
+    Item,
+    MinimalItem,
+    MinimalNPC,
+    MinimalTagBasedItem,
+    NPC,
+    Quality
+} from "@ci/data-types";
 
-export function getEnumValue(EnumString: string): string {
-    let strings = EnumString.split('::');
+export function getEnumValue<T extends string, D = T extends `${T}::${infer U}` ? U : T extends EnumString<infer R> ? R : T extends string ? T : never>(EnumString: T): D {
 
-    return strings[1] ?? EnumString[0];
+    let strings = EnumString.split('::')
+
+    return (strings[1] ?? strings[0]) as D;
 }
 
 
@@ -69,7 +79,7 @@ export function omitFields<T extends Object, K extends Array<keyof T>>(
     return newRecord;
 }
 
-export function     flatObjectMap<T>(objectMap: { [key: string]: T }[]): (T & { mapKey: string })[] {
+export function flatObjectMap<T>(objectMap: { [key: string]: T }[]): (T & { mapKey: string })[] {
 
     return objectMap.map(entry => {
         const mapKey = Object.keys(entry)[0];

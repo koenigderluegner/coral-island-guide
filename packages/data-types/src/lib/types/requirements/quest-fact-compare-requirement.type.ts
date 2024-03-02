@@ -1,4 +1,4 @@
-export const QuestFactComparators = ['MoreEqual'] as const
+export const QuestFactComparators = ['MoreEqual', 'Equal'] as const
 
 export type  QuestFactCompareRequirement = {
     type: 'QuestFactCompare',

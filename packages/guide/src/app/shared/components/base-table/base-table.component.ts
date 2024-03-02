@@ -66,10 +66,10 @@ export abstract class BaseTableComponent<T> implements OnInit, OnChanges, AfterV
         if (!item) return null;
 
         if (Array.isArray(item)) {
-            if (item.includes(Season.SPRING)) return 1;
-            if (item.includes(Season.SUMMER)) return 2;
-            if (item.includes(Season.FALL)) return 3;
-            if (item.includes(Season.WINTER)) return 4;
+            if (item.includes("Spring")) return 1;
+            if (item.includes("Summer")) return 2;
+            if (item.includes("Fall")) return 3;
+            if (item.includes("Fall")) return 4;
             return 5;
         }
 

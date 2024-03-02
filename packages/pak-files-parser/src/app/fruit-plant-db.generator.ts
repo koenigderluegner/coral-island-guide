@@ -1,4 +1,4 @@
-import { FruitPlant, Item, Season } from '@ci/data-types';
+import { FruitPlant, Item } from '@ci/data-types';
 import { minifyItem, readAsset } from '../util/functions';
 import { CropRegistry } from '../types/crop-registry.type';
 import { getEnumValue, nonNullable } from '@ci/util';
@@ -31,7 +31,7 @@ export class FruitPlantDbGenerator extends BaseGenerator<RawFruitPlant, FruitPla
             key: itemKey,
             item,
             size: dbItem.size,
-            growableSeason: dbItem.growableSeason.map(getEnumValue) as Season[],
+            growableSeason: dbItem.growableSeason.map(getEnumValue),
             growTime: dbItem.stages.map(s => s.length).reduce((p, v) => p + v, 0),
             isRegrowable: true,
             regrowableLength: dbItem.regrowingStageData.length,

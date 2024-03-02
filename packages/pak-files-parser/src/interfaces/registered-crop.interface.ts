@@ -1,5 +1,7 @@
+import { EnumString, Season } from "@ci/data-types";
+
 export interface RegisteredCrop {
-    "growableSeason": string[    ],
+    "growableSeason": EnumString<Season>[],
     "isTrellisCrop": boolean,
     "scytheRequirement": string,
     "isRegrowable": boolean,

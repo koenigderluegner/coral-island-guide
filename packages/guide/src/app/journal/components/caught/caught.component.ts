@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Critter, Fish, Season, Weather } from '@ci/data-types';
+import { Critter, Fish, Season, Seasons, Weather } from '@ci/data-types';
 import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page.component';
 import { getTruthyValues } from '@ci/util';
 import { FilterForm } from "../../../shared/types/filter-form.type";
@@ -17,7 +17,7 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
 
     constructor() {
         super(new FormGroup<FilterForm>({
-            season: new FormControl<Season[]>(Object.values(Season), {nonNullable: true}),
+            season: new FormControl<Season[]>([...Seasons], {nonNullable: true}),
             weather: new FormControl<string[]>(Object.values(Weather), {nonNullable: true}),
         }));
 
@@ -77,7 +77,7 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
         const seasonMatch = spawnSeason.reduce((previousValue, currentValue) => {
             const seasonString = getTruthyValues(currentValue).toLowerCase();
             const match = seasonString === 'any'
-                || filterValues.season?.length === Object.values(Season).length
+                || filterValues.season?.length === Seasons.length
                 || !!filterValues.season?.some(season => seasonString.includes(('' + season).toLowerCase()));
 
             return previousValue || match
