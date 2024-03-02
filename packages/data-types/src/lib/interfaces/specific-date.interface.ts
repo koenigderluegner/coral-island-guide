@@ -1,5 +1,5 @@
 export interface SpecificDate {
     day: number,
-    season: string,
+    season: 'Spring' | 'Summer' | 'Fall' | 'Winter',
     year: number
 }

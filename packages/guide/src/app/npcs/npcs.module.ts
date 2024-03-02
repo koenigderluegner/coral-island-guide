@@ -12,6 +12,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { GiftingGridComponent } from './components/gifting-grid/gifting-grid.component';
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-case.pipe";
+import { MatFormField, MatLabel } from "@angular/material/form-field";
+import { ReactiveFormsModule } from "@angular/forms";
+import { MatInput } from "@angular/material/input";
+import { MatOption } from "@angular/material/autocomplete";
+import { MatSelect } from "@angular/material/select";
 
 @NgModule({
     declarations: [
@@ -23,6 +28,7 @@ import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-
         HeartEventTriggerComponent,
         GiftingGridComponent,
     ],
-    imports: [CommonModule, NPCsRoutingModule, SharedModule, MatTooltipModule, MatProgressSpinnerModule, AddSpacesToPascalCasePipe],
+    imports: [CommonModule, NPCsRoutingModule, SharedModule, MatTooltipModule, MatProgressSpinnerModule, AddSpacesToPascalCasePipe, MatFormField, ReactiveFormsModule, MatInput, MatLabel, MatOption, MatSelect],
 })
-export class NPCsModule {}
+export class NPCsModule {
+}

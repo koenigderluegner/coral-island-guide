@@ -1,22 +1,54 @@
-@if (npcs$| async; as npcs) {
+<div class="px-2 xl:px-[50px] w-full pt-2 pb-6 2xl:pt-[60px]">
+    <div class="mb-5 flex gap-x-3">
+        <mat-form-field class="btn">
+            <input [formControl]="searchControl" class="placeholder:text-white" matInput placeholder="Search term"/>
+        </mat-form-field>
 
-    <div class="grid npc-list-grid gap-x-4 gap-y-10 px-2 xl:px-[50px] w-full pt-2 pb-6 2xl:pt-[60px]">
-        @for (npc of npcs; track npc) {
-  <a [routerLink]="['..', npc.key]"
-           class="flex bg-[#F5F1E6] rounded-[30px] npc-list-entry group relative ">
-            <div class="frame absolute inset-0 rounded-[30px] z-10"></div>
-            <div class="basis-2/5 aspect-square bg-[#F1E1CC] rounded-l-[30px] group-hover:bg-[#F2DBB7]">
-                <app-npc-head-portrait [npcKey]="npc.key" [portraitName]="npc.headerPortraitFileName"
-                                       class="z-20 flex h-full relative rounded-l-[30px]"/>
-            </div>
-            <div class="basis-3/5 p-2 flex flex-col">
-                <div class="text-black font-semibold text-2xl mt-3">{{npc.characterName}}</div>
-                @if (npc.customHead) {
-<div clasS="mt-auto">unofficial head portrait</div>
-}
-            </div>
-        </a>
-}
+        <mat-form-field class="btn">
+            <mat-select disableOptionCentering [formControl]="sortControl">
+                @for (seasonOption of npcSortOptions; track seasonOption) {
+                    <mat-option [value]="seasonOption.value">{{ seasonOption.displayName }}</mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
     </div>
+    @if (filteredAndSortedNpcs(); as npcs) {
 
-}
+        <div class="grid npc-list-grid gap-x-4 gap-y-10 ">
+            @for (npc of npcs; track npc) {
+                <a [routerLink]="['..', npc.key]"
+                   class="flex bg-[#F5F1E6] rounded-[30px] npc-list-entry group relative">
+                    <div class="frame absolute inset-0 rounded-[30px] z-10 pointer-events-none"></div>
+                    <div class="basis-2/5 aspect-square bg-[#F1E1CC] rounded-l-[30px] group-hover:bg-[#F2DBB7]">
+                        <app-npc-head-portrait [npcKey]="npc.key" [portraitName]="npc.headerPortraitFileName"
+                                               class="z-20 flex h-full relative rounded-l-[30px]"/>
+                    </div>
+                    <div class="basis-3/5 p-2 flex flex-col">
+                        <div class="inline-flex gap-2 mt-3 items-center">
+                            <span class="text-black font-semibold text-2xl">{{ npc.characterName }}</span>
+                            @if (npc.isDateable) {
+                                <app-ui-icon
+                                        [uiIcon]="uiIcon.LOVE" class="!text-gifting !h-6 !w-6"
+                                        matTooltip="{{npc.characterName}} is dateable"/>
+                            }
+                        </div>
+                        @if (npc.birthday) {
+                            <div class="text-lg flex gap-2 items-center">
+                                <app-ui-icon [uiIcon]="uiIcon.BIRTHDAY" class="!w-5 !h-5"/>
+                                {{ npc.birthday | ingameDate }}
+                            </div>
+                        }
+                        <div [ngClass]="{'line-clamp-2': !npc.customHead, 'line-clamp-1': npc.customHead}">{{ npc.description }}</div>
+
+                        @if (npc.customHead) {
+                            <div clasS="mt-auto">unofficial head portrait</div>
+                        }
+                    </div>
+                </a>
+            }
+        </div>
+
+    } @else {
+        <mat-spinner class="mx-auto"/>
+    }
+</div>
