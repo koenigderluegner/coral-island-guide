@@ -11,6 +11,7 @@ export class CookingRecipesChecklistComponent extends BaseItemChecklistComponent
     checklistDefinition$ = this._database.fetchCookingRecipesChecklist$();
 
     protected cookingUtensilMapping = this._database.getCookingUtensilMapping()
+
     constructor() {
         super();
     }

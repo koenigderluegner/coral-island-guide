@@ -1,24 +1,24 @@
 @for (qualityValue of qualityValues; track qualityValue) {
-  
+
     @if (qualityValue === quality.BASE && baseProcessingTime) {
 
         <app-ui-icon [uiIcon]="uiIcon.EMPTY_STAR"
                      class="!w-6 !h-6 !flex"/>
         <span class="text-black text-right"><app-processing-time [processingTime]="baseProcessingTime"/></span>
-    
-}
+
+    }
     @if (qualityValue !== quality.BASE && baseProcessingTime && !processingTimePerQualities?.[qualityValue]) {
 
         <app-rarity-icon [quality]="qualityValue" class="!w-6 !h-6"/>
         <span class="text-black text-right"><app-processing-time [processingTime]="baseProcessingTime"/></span>
-    
-}
+
+    }
     @if (processingTimePerQualities?.[qualityValue]; as processingTime) {
 
         <app-rarity-icon [quality]="qualityValue" class="!w-6 !h-6"/>
         <span class="text-black text-right"><app-processing-time [processingTime]="processingTime"/></span>
-    
-}
+
+    }
 
 
 }

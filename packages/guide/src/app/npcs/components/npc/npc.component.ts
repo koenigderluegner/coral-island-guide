@@ -1,7 +1,6 @@
 import { Component, inject, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { DatabaseService } from "../../../shared/services/database.service";
-import { GiftPreferences, HeartEvent, NPC } from "@ci/data-types";
-import { UiIcon } from "@ci/data-types";
+import { GiftPreferences, HeartEvent, NPC, UiIcon } from "@ci/data-types";
 import { combineLatest } from "rxjs";
 import { MapKeyed } from "../../../shared/types/map-keyed.type";
 

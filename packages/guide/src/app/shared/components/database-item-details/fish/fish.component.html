@@ -1,8 +1,8 @@
 <div>Rarity: <span class="text-black">{{ fish.rarity | addSpacesToPascalCase }}</span></div>
 
-    <div>Size: <span class="text-black">{{ fish.fishSize }}</span></div>
+<div>Size: <span class="text-black">{{ fish.fishSize }}</span></div>
 
-@for (spawnSettings of fish.spawnSettings;track spawnSettings.key) {
+@for (spawnSettings of fish.spawnSettings; track spawnSettings.key) {
     <hr/>
     <div>Time: <span class="text-black">{{ getTruthyValues(spawnSettings.spawnTime) }}</span></div>
 
@@ -14,7 +14,7 @@
         }}</span>
     </div>
 
-    @if (getTruthyValues(spawnSettings.spawnWeather);as weather) {
+    @if (getTruthyValues(spawnSettings.spawnWeather); as weather) {
         <div>Weather: <span class="text-black">{{ weather }}</span></div>
     }
     <div> Location: <span class="text-black">{{ spawnSettings.spawnLocation.join(', ') }}</span></div>

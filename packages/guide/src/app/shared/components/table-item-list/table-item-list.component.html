@@ -1,34 +1,34 @@
 @for (itemListItem of itemList; track itemListItem; let last = $last) {
-  
+
     <div class="flex justify-between mb-1">
         @if (!isGenericEntry(itemListItem)) {
 
             @if (itemListItem.item) {
-<div class="flex gap-2 items-center">
-                <app-item-icon [itemName]="itemListItem.item.iconName" class="!w-7"/>
-                <span class="ml-1 whitespace-nowrap">{{itemListItem.item.displayName}}</span>
-                @if (itemListItem.quality) {
-<app-rarity-icon [quality]="itemListItem.quality" class="!w-4"/>
-}
-            </div>
-}
-        
-}
+                <div class="flex gap-2 items-center">
+                    <app-item-icon [itemName]="itemListItem.item.iconName" class="!w-7"/>
+                    <span class="ml-1 whitespace-nowrap">{{ itemListItem.item.displayName }}</span>
+                    @if (itemListItem.quality) {
+                        <app-rarity-icon [quality]="itemListItem.quality" class="!w-4"/>
+                    }
+                </div>
+            }
+
+        }
         @if (isGenericEntry(itemListItem)) {
 
             @if (itemListItem.genericItem) {
-<div class="flex gap-x-3 items-center">
-                <app-item-icon [itemName]="itemListItem.genericItem.iconName" class="!w-7"/>
-                <span class="whitespace-nowrap">{{itemListItem.genericItem.displayName}}
-                    @if (itemListItem.shouldBeSameItem) {
- (all the same)
-}
+                <div class="flex gap-x-3 items-center">
+                    <app-item-icon [itemName]="itemListItem.genericItem.iconName" class="!w-7"/>
+                    <span class="whitespace-nowrap">{{ itemListItem.genericItem.displayName }}
+                        @if (itemListItem.shouldBeSameItem) {
+                            (all the same)
+                        }
                 </span>
-            </div>
-}
-        
-}
-        <div class="ml-2 flex items-center">{{itemListItem.amount}}</div>
+                </div>
+            }
+
+        }
+        <div class="ml-2 flex items-center">{{ itemListItem.amount }}</div>
     </div>
 
 }

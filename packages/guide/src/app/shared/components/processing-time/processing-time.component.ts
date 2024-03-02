@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
 })
 export class ProcessingTimeComponent {
 
-    @Input() processingTime?: { day: number; time: { minutes: number; hours: number } };
+    @Input({required: true}) processingTime!: { day: number; time: { minutes: number; hours: number } };
 
 }

@@ -23,10 +23,10 @@ const routes: Routes = [
             {path: 'lake-temple/:tabName', component: LakeTempleComponent, title: 'Lake temple - Locations'},
 
             ...shopRouteConfig.map(config => ({
-                path: config.name,
-                component: config.component,
-                title: `${ShopDisplayNames[config.name]} - Locations`,
-                canActivate: config.betaOnly ? [onlyInBetaGuard] : []
+                    path: config.name,
+                    component: config.component,
+                    title: `${ShopDisplayNames[config.name]} - Locations`,
+                    canActivate: config.betaOnly ? [onlyInBetaGuard] : []
                 })
             ),
             ...festivalRouteConfig.map(config => ({

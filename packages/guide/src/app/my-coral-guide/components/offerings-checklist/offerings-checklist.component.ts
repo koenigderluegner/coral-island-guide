@@ -39,8 +39,8 @@ export class OfferingsChecklistComponent extends BaseTabbedSelectableContainerCo
         this.offerings$ = this._database.fetchOfferings$().pipe(
             tap((records) => {
 
-                const altarNames = records.map(altar => altar.urlPath);
-                this._altars = records;
+                    const altarNames = records.map(altar => altar.urlPath);
+                    this._altars = records;
                     records.forEach(checklist => {
                         const keys = Object.keys(checklist);
                         checklist.offerings.forEach(key => {

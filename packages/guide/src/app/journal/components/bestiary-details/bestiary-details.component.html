@@ -1,24 +1,24 @@
 <app-card class="text-lg font-semibold relative">
 
     @if (!enemy.image) {
-<app-item-icon cardIcon itemName="{{enemy.iconName}}"/>
-}
+        <app-item-icon cardIcon itemName="{{enemy.iconName}}"/>
+    }
     @if (enemy.image) {
-<app-bestiary-image [imageName]="enemy.image"/>
-}
+        <app-bestiary-image [imageName]="enemy.image"/>
+    }
     <div class="flex justify-between items-center">
         <div class="flex flex-col">
-            <div class="text-black text-2xl">{{enemy.displayName}}</div>
+            <div class="text-black text-2xl">{{ enemy.displayName }}</div>
         </div>
 
     </div>
     <hr class="my-5"/>
     @if (enemy.description) {
-<span class="text-lg mb-6">{{enemy.description}}</span>
-}
+        <span class="text-lg mb-6">{{ enemy.description }}</span>
+    }
 
     <div>
-        Experience: <span class="text-black">{{enemy.experience}}</span>
+        Experience: <span class="text-black">{{ enemy.experience }}</span>
     </div>
     Drops:
     <app-chance-per-item-list

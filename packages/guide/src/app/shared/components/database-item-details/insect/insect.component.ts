@@ -5,10 +5,10 @@ import { Critter } from "@ci/data-types";
 import { AddSpacesToPascalCasePipe } from "../../../pipes/add-spaces-to-pascal-case.pipe";
 
 @Component({
-  selector: 'app-insect',
-  standalone: true,
+    selector: 'app-insect',
+    standalone: true,
     imports: [CommonModule, AddSpacesToPascalCasePipe],
-  templateUrl: './insect.component.html'
+    templateUrl: './insect.component.html'
 })
 export class InsectComponent {
 

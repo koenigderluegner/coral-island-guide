@@ -1,5 +1,12 @@
 ## Changelog
 
+### TBD
+
+#### Added 
+
+- Added filter and sort options to NPC overview
+- Added description, birthday and datable status to NPC overview
+
 ### 0.16.1 2024-02-23 
 
 #### Changed 

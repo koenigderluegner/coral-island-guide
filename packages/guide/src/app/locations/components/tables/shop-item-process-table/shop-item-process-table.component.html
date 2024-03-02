@@ -1,38 +1,39 @@
 <app-responsive-table>
     @if (matDataSource) {
-<table [dataSource]="matDataSource" mat-table matSort>
-        <ng-container matColumnDef="icon" sticky>
-            <td *matCellDef="let element" class="!pl-2 !pr-0 w-10 text-center icon-col " mat-cell>
-                <app-item-icon [itemName]="element.input.iconName"/>
-            </td>
-        </ng-container>
+        <table [dataSource]="matDataSource" mat-table matSort>
+            <ng-container matColumnDef="icon" sticky>
+                <td *matCellDef="let element" class="!pl-2 !pr-0 w-10 text-center icon-col " mat-cell>
+                    <app-item-icon [itemName]="element.input.iconName"/>
+                </td>
+            </ng-container>
 
-        <ng-container matColumnDef="displayName">
-            <th *matHeaderCellDef [attr.colspan]="2" class="backdrop-blur-xl" mat-header-cell mat-sort-header>Item
-            </th>
-            <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
-                {{element.input.displayName}}
-            </td>
-        </ng-container>
-        <ng-container matColumnDef="shop">
-            <th *matHeaderCellDef class="backdrop-blur-xl" mat-header-cell mat-sort-header>Shop
-            </th>
-            <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
-                <a [routerLink]="['/locations', element.shop.url]" class="underline">{{element.shop.displayName}}</a>
-            </td>
-        </ng-container>
-
-
-        <ng-container matColumnDef="outputChances">
-            <th *matHeaderCellDef class="backdrop-blur-xl" mat-header-cell mat-sort-header>Output chances</th>
-            <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
-                <app-chance-per-item-table-list [chances]="element.outputChanges"/>
-            </td>
-        </ng-container>
+            <ng-container matColumnDef="displayName">
+                <th *matHeaderCellDef [attr.colspan]="2" class="backdrop-blur-xl" mat-header-cell mat-sort-header>Item
+                </th>
+                <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
+                    {{ element.input.displayName }}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="shop">
+                <th *matHeaderCellDef class="backdrop-blur-xl" mat-header-cell mat-sort-header>Shop
+                </th>
+                <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
+                    <a [routerLink]="['/locations', element.shop.url]"
+                       class="underline">{{ element.shop.displayName }}</a>
+                </td>
+            </ng-container>
 
 
-        <tr *matHeaderRowDef="displayHeaderColumns; sticky: true" mat-header-row></tr>
-        <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
-    </table>
-}
+            <ng-container matColumnDef="outputChances">
+                <th *matHeaderCellDef class="backdrop-blur-xl" mat-header-cell mat-sort-header>Output chances</th>
+                <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
+                    <app-chance-per-item-table-list [chances]="element.outputChanges"/>
+                </td>
+            </ng-container>
+
+
+            <tr *matHeaderRowDef="displayHeaderColumns; sticky: true" mat-header-row></tr>
+            <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+        </table>
+    }
 </app-responsive-table>

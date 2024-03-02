@@ -23,7 +23,7 @@ export class NotesComponent extends BaseTabbedSelectableContainerComponent<MailD
         ]).pipe(
             tap(([mails, tornPages]) => {
                     this.mails = mails;
-                this.tornPages = tornPages;
+                    this.tornPages = tornPages;
 
                     const selectedId = this.selectedId;
                     if (selectedId) {
@@ -38,7 +38,7 @@ export class NotesComponent extends BaseTabbedSelectableContainerComponent<MailD
                         }
                     }
 
-                this.activateTabFromRoute(this.tabNames)
+                    this.activateTabFromRoute(this.tabNames)
 
                 }
             )

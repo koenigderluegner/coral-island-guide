@@ -1,14 +1,14 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     <ng-container listDetail>
         @if (selectedProcessEntity) {
-<app-shop-item-process-data-details [itemProcessData]="selectedProcessEntity"/>
-}
+            <app-shop-item-process-data-details [itemProcessData]="selectedProcessEntity"/>
+        }
         @if (selectedEntity) {
-<app-shop-item-data-details [shopItemData]="selectedEntity"/>
-}
+            <app-shop-item-data-details [shopItemData]="selectedEntity"/>
+        }
         @if (selectedItemUpgrade) {
-<app-item-upgrade-details [itemUpgradeData]="selectedItemUpgrade"/>
-}
+            <app-item-upgrade-details [itemUpgradeData]="selectedItemUpgrade"/>
+        }
     </ng-container>
 
     <div class="px-2 xl:px-[50px] w-full">
@@ -16,15 +16,15 @@
         <app-card>
             <h1 class="mb-4 font-semibold text-3xl text-black flex items-center gap-x-4 ">
                 <app-ui-icon [uiIcon]="SHOP_ICONS[shopName]"/>
-                {{SHOP_DISPLAY_NAMES[shopName]}}
+                {{ SHOP_DISPLAY_NAMES[shopName] }}
             </h1>
             @if (openingHours$) {
 
                 @if ((openingHours$ |async); as openingHours) {
-<app-opening-hours [openingHours]="openingHours"/>
-}
-            
-}
+                    <app-opening-hours [openingHours]="openingHours"/>
+                }
+
+            }
         </app-card>
 
         @if (shopItemData$) {
@@ -34,25 +34,25 @@
 
                 <app-data-filter [(showTable)]="showTable"/>
                 @if (!showTable) {
-<div class="grid gap-4 icon-grid">
+                    <div class="grid gap-4 icon-grid">
 
-                    @for (shopItem of shopItemData; track shopItem) {
-  <app-item-icon (click)="showDetails(shopItem)"
-                                   [class.selected-icon]="selectedEntity?.item?.id === shopItem.item.id"
-                                   [itemName]="shopItem.item.iconName"
-                                   class="icon-grid-item">
-                    </app-item-icon>
-}
-                </div>
-}
+                        @for (shopItem of shopItemData; track shopItem) {
+                            <app-item-icon (click)="showDetails(shopItem)"
+                                           [class.selected-icon]="selectedEntity?.item?.id === shopItem.item.id"
+                                           [itemName]="shopItem.item.iconName"
+                                           class="icon-grid-item">
+                            </app-item-icon>
+                        }
+                    </div>
+                }
                 @if (showTable) {
-<app-shop-item-data-table [dataSource]="shopItemData"/>
-}
+                    <app-shop-item-data-table [dataSource]="shopItemData"/>
+                }
 
-            
-}
-        
-}
+
+            }
+
+        }
 
         @if (itemProcessing$) {
 
@@ -62,53 +62,53 @@
 
                 <app-data-filter [(showTable)]="showProcessingTable"/>
                 @if (!showProcessingTable) {
-<div class="grid gap-4 icon-grid">
+                    <div class="grid gap-4 icon-grid">
 
-                    @for (shopItem of shopItemData; track shopItem) {
-  <app-item-icon (click)="showProcessDetails(shopItem)"
-                                   [class.selected-icon]="selectedProcessEntity?.input?.id === shopItem.input.id"
-                                   [itemName]="shopItem.input.iconName"
-                                   class="icon-grid-item">
-                    </app-item-icon>
-}
-                </div>
-}
+                        @for (shopItem of shopItemData; track shopItem) {
+                            <app-item-icon (click)="showProcessDetails(shopItem)"
+                                           [class.selected-icon]="selectedProcessEntity?.input?.id === shopItem.input.id"
+                                           [itemName]="shopItem.input.iconName"
+                                           class="icon-grid-item">
+                            </app-item-icon>
+                        }
+                    </div>
+                }
                 @if (showProcessingTable) {
-<app-shop-item-process-table [dataSource]="shopItemData"/>
-}
+                    <app-shop-item-process-table [dataSource]="shopItemData"/>
+                }
 
-            
-}
-        
-}
+
+            }
+
+        }
 
         @if (itemUpgrade$) {
 
-            <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">{{upgradeHeaderText ?? 'Upgrades'}}</h2>
+            <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">{{ upgradeHeaderText ?? 'Upgrades' }}</h2>
             @if ((itemUpgrade$ |async); as shopItemData) {
 
 
                 <app-data-filter [(showTable)]="showPItemUpgradeTable"/>
                 @if (!showPItemUpgradeTable) {
-<div class="grid gap-4 icon-grid">
+                    <div class="grid gap-4 icon-grid">
 
-                    @for (shopItem of shopItemData; track shopItem) {
-  <app-item-icon (click)="showItemUpgradeDetails(shopItem)"
-                                   [class.selected-icon]="selectedItemUpgrade?.item?.id === shopItem.item.id"
-                                   [itemName]="shopItem.item.iconName"
-                                   [quality]="shopItem.level"
-                                   class="icon-grid-item">
-                    </app-item-icon>
-}
-                </div>
-}
+                        @for (shopItem of shopItemData; track shopItem) {
+                            <app-item-icon (click)="showItemUpgradeDetails(shopItem)"
+                                           [class.selected-icon]="selectedItemUpgrade?.item?.id === shopItem.item.id"
+                                           [itemName]="shopItem.item.iconName"
+                                           [quality]="shopItem.level"
+                                           class="icon-grid-item">
+                            </app-item-icon>
+                        }
+                    </div>
+                }
                 @if (showPItemUpgradeTable) {
-<app-item-upgrade-table [dataSource]="shopItemData"/>
-}
-            
-}
-        
-}
+                    <app-item-upgrade-table [dataSource]="shopItemData"/>
+                }
+
+            }
+
+        }
 
     </div>
 </app-list-detail-container>

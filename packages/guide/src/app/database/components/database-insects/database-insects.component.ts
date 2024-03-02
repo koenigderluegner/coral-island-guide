@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Critter } from "@ci/data-types";
+import { Component, ViewEncapsulation } from '@angular/core';
 import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.component";
 
 @Component({
@@ -7,4 +6,5 @@ import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.co
     templateUrl: './database-insects.component.html',
     encapsulation: ViewEncapsulation.None
 })
-export class DatabaseInsectsComponent extends BaseDatabaseDetailPartComponent{}
+export class DatabaseInsectsComponent extends BaseDatabaseDetailPartComponent {
+}

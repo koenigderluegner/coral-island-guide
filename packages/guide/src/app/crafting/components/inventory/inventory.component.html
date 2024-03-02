@@ -1,31 +1,31 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     @if (selectedEntity) {
-<app-inventory-details [craftingRecipe]="selectedEntity" listDetail/>
-}
+        <app-inventory-details [craftingRecipe]="selectedEntity" listDetail/>
+    }
     <mat-tab-group class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false">
         <mat-tab label="All">
             <app-data-filter [(showTable)]="showTable"/>
             @if ((recipes$ |async); as recipes) {
 
                 @if (!showTable) {
-<div class="grid gap-4 icon-grid">
+                    <div class="grid gap-4 icon-grid">
 
-                    @for (recipe of recipes; track recipe) {
-  <app-item-icon (click)="showDetails(recipe)"
-                                   [amount]="recipe.amount"
-                                   [class.selected-icon]="selectedEntity?.item?.id === recipe.item?.id"
-                                   [itemName]="recipe.item?.iconName"
-                                   class="icon-grid-item"
-                    >
-                    </app-item-icon>
-}
-                </div>
-}
+                        @for (recipe of recipes; track recipe) {
+                            <app-item-icon (click)="showDetails(recipe)"
+                                           [amount]="recipe.amount"
+                                           [class.selected-icon]="selectedEntity?.item?.id === recipe.item?.id"
+                                           [itemName]="recipe.item?.iconName"
+                                           class="icon-grid-item"
+                            >
+                            </app-item-icon>
+                        }
+                    </div>
+                }
                 @if (showTable) {
-<app-inventory-table [dataSource]="recipes"/>
-}
-            
-}
+                    <app-inventory-table [dataSource]="recipes"/>
+                }
+
+            }
 
         </mat-tab>
     </mat-tab-group>

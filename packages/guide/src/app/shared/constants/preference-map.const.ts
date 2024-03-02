@@ -1,5 +1,4 @@
-import { UiIcon } from "@ci/data-types";
-import { GiftingPreferenceKey } from "@ci/data-types";
+import { GiftingPreferenceKey, UiIcon } from "@ci/data-types";
 
 export const preferencesMap: {
     icon: UiIcon,

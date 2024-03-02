@@ -1,8 +1,8 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     <ng-container listDetail>
         @if (selectedEntity) {
-<app-merit-shop-details [meritExchangeData]="selectedEntity"/>
-}
+            <app-merit-shop-details [meritExchangeData]="selectedEntity"/>
+        }
     </ng-container>
 
     <div class="px-2 xl:px-[50px] w-full">
@@ -20,23 +20,22 @@
             @if ((shopItemData$ |async); as shopItemData) {
 
                 @if (!showTable) {
-<div class="grid gap-4 icon-grid">
+                    <div class="grid gap-4 icon-grid">
 
-                    @for (shopItem of shopItemData; track shopItem) {
-  <app-item-icon (click)="showDetails(shopItem)"
-                                   [class.selected-icon]="selectedEntity?.item?.id === shopItem.item.id"
-                                   [itemName]="shopItem.item.iconName"
-                                   class="icon-grid-item">
-                    </app-item-icon>
-}
-                </div>
-}
+                        @for (shopItem of shopItemData; track shopItem) {
+                            <app-item-icon (click)="showDetails(shopItem)"
+                                           [class.selected-icon]="selectedEntity?.item?.id === shopItem.item.id"
+                                           [itemName]="shopItem.item.iconName"
+                                           class="icon-grid-item">
+                            </app-item-icon>
+                        }
+                    </div>
+                }
 
 
-            
-}
-        
-}
+            }
+
+        }
 
 
     </div>

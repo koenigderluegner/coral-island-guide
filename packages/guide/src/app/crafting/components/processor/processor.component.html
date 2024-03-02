@@ -1,71 +1,71 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     @if (selectedEntity) {
-<app-base-item-card listDetail [item]="selectedEntity.output.item"
-                        [amount]="selectedEntity.output.amount">
+        <app-base-item-card listDetail [item]="selectedEntity.output.item"
+                            [amount]="selectedEntity.output.amount">
 
-        @if (!selectedEntity.qualities) {
-<div class="mb-3">Processing time:
-            <span class="text-black">
+            @if (!selectedEntity.qualities) {
+                <div class="mb-3">Processing time:
+                    <span class="text-black">
               <app-processing-time [processingTime]="selectedEntity"/>
                 </span>
-        </div>
-}
+                </div>
+            }
 
-        <app-item-list [itemList]="selectedEntity | itemProcessingIngredients" class="mb-3"/>
-
-
-        @if (selectedEntity.qualities) {
-
-            <div class="mb-3">Time per input quality
-                <app-processing-time-per-quality [baseProcessingTime]="selectedEntity"
-                                                 [processingTimePerQualities]="selectedEntity.qualities"/>
-            </div>
-        
-}
+            <app-item-list [itemList]="selectedEntity | itemProcessingIngredients" class="mb-3"/>
 
 
-        @if (selectedEntity.refinements) {
+            @if (selectedEntity.qualities) {
 
-            <div class="mb-3">Time to improve quality
-                <app-refinements-list [refinements]="selectedEntity.refinements"/>
-            </div>
-        
-}
-    </app-base-item-card>
-}
+                <div class="mb-3">Time per input quality
+                    <app-processing-time-per-quality [baseProcessingTime]="selectedEntity"
+                                                     [processingTimePerQualities]="selectedEntity.qualities"/>
+                </div>
+
+            }
+
+
+            @if (selectedEntity.refinements) {
+
+                <div class="mb-3">Time to improve quality
+                    <app-refinements-list [refinements]="selectedEntity.refinements"/>
+                </div>
+
+            }
+        </app-base-item-card>
+    }
 
 
     <mat-tab-group (selectedTabChange)="updateUrl($event)" class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false"
                    [selectedIndex]="selectedTabIndex">
         @for (machineName of machineNames; track machineName) {
-  <mat-tab
-                 [label]="processorMapping[machineName.toLowerCase()] ? processorMapping[machineName.toLowerCase()].displayName : machineName |  addSpacesToPascalCase | titlecase">
-            <app-data-filter [(showTable)]="showTable"/>
-            @if ((filteredData$(machineName) | async); as processorItems) {
+            <mat-tab
+                    [label]="processorMapping[machineName.toLowerCase()] ? processorMapping[machineName.toLowerCase()].displayName : machineName |  addSpacesToPascalCase | titlecase">
+                <app-data-filter [(showTable)]="showTable"/>
+                @if ((filteredData$(machineName) | async); as processorItems) {
 
-                @if (!showTable) {
-<div class="grid gap-4 icon-grid">
+                    @if (!showTable) {
+                        <div class="grid gap-4 icon-grid">
 
-                    @for (itemProcess of processorItems; track itemProcess) {
-  <app-item-icon (click)="showDetails(itemProcess)"
-                                  
-                                   [amount]="itemProcess.output.amount"
-                                   [itemName]="itemProcess.output.item.iconName"
-                                   [subIconName]="reusedImages.includes(itemProcess.output.item.iconName ?? '') ? itemProcess.input.item.iconName
+                            @for (itemProcess of processorItems; track itemProcess) {
+                                <app-item-icon (click)="showDetails(itemProcess)"
+
+                                               [amount]="itemProcess.output.amount"
+                                               [itemName]="itemProcess.output.item.iconName"
+                                               [subIconName]="reusedImages.includes(itemProcess.output.item.iconName ?? '') ? itemProcess.input.item.iconName
                                 : undefined"
-                                   [class.selected-icon]="selectedEntity?.output?.item?.id === itemProcess.output.item.id"
-                                   class="icon-grid-item">
-                    </app-item-icon>
-}
-                </div>
-}
-                @if (showTable) {
-<app-processor-table [dataSource]="processorItems"/>
-}
-            
-}
-        </mat-tab>
-}
+                                               [class.selected-icon]="selectedEntity?.output?.item?.id === itemProcess.output.item.id"
+                                               class="icon-grid-item">
+                                </app-item-icon>
+                            }
+                        </div>
+                    }
+                    @if (showTable) {
+                        <app-processor-table [dataSource]="processorItems"/>
+                    }
+
+                }
+            </mat-tab>
+        }
     </mat-tab-group>
 
 </app-list-detail-container>

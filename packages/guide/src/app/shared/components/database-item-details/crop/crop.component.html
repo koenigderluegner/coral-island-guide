@@ -1,33 +1,32 @@
+@if ((item | isBaseCrop)) {
 
-        @if ((item | isBaseCrop)) {
+    <div class="flex items-center mb-2">
+        <app-item-icon [itemName]="item.item.iconName" class="h-10 w-10 mr-1"/>
+        <span class="text-black mr-3">{{ item.readableName }}</span>
+        <app-money [amount]="item.item.price"/>
+    </div>
 
-            <div class="flex items-center mb-2">
-                <app-item-icon [itemName]="item.item.iconName" class="h-10 w-10 mr-1"/>
-                <span class="text-black mr-3">{{ item.readableName }}</span>
-                <app-money [amount]="item.item.price"/>
+    <div>Season: <span class="text-black">{{ (item.growableSeason.join(', ')) }}</span></div>
+    <div>Time to mature: <span class="text-black">{{ item.growTime }} days</span></div>
+    @if (item.isRegrowable) {
+        <div>Regrows: <span class="text-black">{{ [1, item.regrowableLength] | max }}
+            days</span></div>
+    }
+    @if (item |isCrop) {
+
+        @if (item.canCombine) {
+            <div>Can combine: <span class="text-black">{{ item.chanceToCombine.chance }}%</span>
             </div>
-
-            <div>Season: <span class="text-black">{{ (item.growableSeason.join(', ')) }}</span></div>
-            <div>Time to mature: <span class="text-black">{{ item.growTime }} days</span></div>
-            @if (item.isRegrowable) {
-                <div>Regrows: <span class="text-black">{{ [1, item.regrowableLength] | max }}
-                    days</span></div>
-            }
-            @if (item |isCrop) {
-
-                @if (item.canCombine) {
-                    <div>Can combine: <span class="text-black">{{ item.chanceToCombine.chance }}%</span>
-                    </div>
-                }
-                @if (item.isScytheRequired) {
-                    <div class="text-black">Scythe required</div>
-                }
-                @if (item.isTrellisCrop) {
-                    <div class="text-black">Is trellis crop</div>
-                }
-
-            }
-            <div>Size (WxL): <span class="text-black">{{ item.size.width }}x{{ item.size.length }}</span></div>
-
         }
+        @if (item.isScytheRequired) {
+            <div class="text-black">Scythe required</div>
+        }
+        @if (item.isTrellisCrop) {
+            <div class="text-black">Is trellis crop</div>
+        }
+
+    }
+    <div>Size (WxL): <span class="text-black">{{ item.size.width }}x{{ item.size.length }}</span></div>
+
+}
 

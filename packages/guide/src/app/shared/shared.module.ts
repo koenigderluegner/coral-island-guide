@@ -182,4 +182,5 @@ import { AddSpacesToPascalCasePipe } from "./pipes/add-spaces-to-pascal-case.pip
         RequirementsListComponent,
     ],
 })
-export class SharedModule {}
+export class SharedModule {
+}
