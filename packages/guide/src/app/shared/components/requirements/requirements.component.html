@@ -1,14 +1,14 @@
 @if (requirement.type === 'IsAchievementCompleted') {
-<div>
-    Achievement
-    <app-item-icon [itemName]="requirement.meta.achievement.iconName"
-                   class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
-    {{requirement.meta.achievement.title}} unlocked
-</div>
+    <div>
+        Achievement
+        <app-item-icon [itemName]="requirement.meta.achievement.iconName"
+                       class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
+        {{ requirement.meta.achievement.title }} unlocked
+    </div>
 }
 @if (requirement.type === 'MountAcquired') {
 
-    Mount {{requirement.meta.inverted ? 'not ' : ''}} acquired
+    Mount {{ requirement.meta.inverted ? 'not ' : '' }} acquired
 
 }
 @if (requirement.type === 'EditorOnly') {
@@ -18,113 +18,113 @@
 }
 @if (requirement.type === 'CountNPCHeartLevel') {
 
-    Reached {{requirement.meta.expectedHeartLevel}} hearts with any NPC
+    Reached {{ requirement.meta.expectedHeartLevel }} hearts with any NPC
 
 }
 @if (requirement.type === 'IsCutsceneTriggered') {
 
-    Viewed {{requirement.meta.cutsceneTopic}} cutscene
+    Viewed {{ requirement.meta.cutsceneTopic }} cutscene
 
 }
 @if (requirement.type === 'MarriageHasProposed') {
 
-    Marriage {{requirement.meta.inverted ? "hasn't been " : ''}}proposed
+    Marriage {{ requirement.meta.inverted ? "hasn't been " : '' }}proposed
 
 }
 @if (requirement.type === 'IsGiantUnlocked') {
 
-    Unlocked {{requirement.meta.types}} giants
+    Unlocked {{ requirement.meta.types }} giants
 
 }
 @if (requirement.type === 'QuestFact') {
 
-    Quest fact {{requirement.meta.factName}} set
+    Quest fact {{ requirement.meta.factName }} set
 
 }
 @if (requirement.type === 'SpecialItem') {
-<div>
-    Acquired special item
-    <app-item-icon [itemName]="requirement.meta.item.iconName"
-                   class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
-    {{requirement.meta.item.displayName}}
-</div>
+    <div>
+        Acquired special item
+        <app-item-icon [itemName]="requirement.meta.item.iconName"
+                       class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
+        {{ requirement.meta.item.displayName }}
+    </div>
 }
 @if (requirement.type === 'DateSeasonRange') {
 
-    Date is {{requirement.meta.inverted ? 'not ' : ''}}between {{requirement.meta.from | ingameDate}}
-    and  {{requirement.meta.to | ingameDate}}
+    Date is {{ requirement.meta.inverted ? 'not ' : '' }}between {{ requirement.meta.from | ingameDate }}
+    and  {{ requirement.meta.to | ingameDate }}
 
 }
 @if (requirement.type === 'ItemInInventory') {
-<div>
-    Has {{requirement.meta.amount}}x
-    <app-item-icon [itemName]="requirement.meta.item.iconName"
-                   class="!w-7 ml-1 -my-1 translate-y-1 mr-0.5  !inline-block"/>
-    {{requirement.meta.item.displayName}}{{requirement.meta.requiredQuality ? ' of ' + requirement.meta.requiredQuality + ' quality' : ''}}
-    in inventory
-</div>
+    <div>
+        Has {{ requirement.meta.amount }}x
+        <app-item-icon [itemName]="requirement.meta.item.iconName"
+                       class="!w-7 ml-1 -my-1 translate-y-1 mr-0.5  !inline-block"/>
+        {{ requirement.meta.item.displayName }}{{ requirement.meta.requiredQuality ? ' of ' + requirement.meta.requiredQuality + ' quality' : '' }}
+        in inventory
+    </div>
 }
 @if (requirement.type === 'ItemWithCategoryInInventory') {
 
-    Has {{requirement.meta.amount}}x items of category {{requirement.meta.categoryName }} in inventory
+    Has {{ requirement.meta.amount }}x items of category {{ requirement.meta.categoryName }} in inventory
 
 }
 @if (requirement.type === 'ObjectState') {
 
-    State of '{{requirement.meta.customName ?? requirement.meta.id}}' is '{{requirement.meta.state }}'
+    State of '{{ requirement.meta.customName ?? requirement.meta.id }}' is '{{ requirement.meta.state }}'
 
 }
 @if (requirement.type === 'QuestActive') {
 
-    Quest '{{requirement.meta.questId}}' is active
+    Quest '{{ requirement.meta.questId }}' is active
 
 }
 @if (requirement.type === 'TempleLevel') {
 
-    Temple has reached level {{requirement.meta.level}}
+    Temple has reached level {{ requirement.meta.level }}
 
 }
 @if (requirement.type === 'CompleteMining') {
 
-    Has reached level {{requirement.meta.level}} in {{requirement.meta.mine}} mine
+    Has reached level {{ requirement.meta.level }} in {{ requirement.meta.mine }} mine
 
 }
 @if (requirement.type === 'FarmHouseLevel') {
 
-    Has upgraded farm house to level {{requirement.meta.level}}
+    Has upgraded farm house to level {{ requirement.meta.level }}
 
 }
 @if (requirement.type === 'HasCookingUtensil') {
 
     Has@if (requirement.meta.inverted) {
-<span class="font-bold"> not</span>
-} unlocked cooking
-    utensil {{requirement.meta.utensil}}
+        <span class="font-bold"> not</span>
+    } unlocked cooking
+            utensil {{ requirement.meta.utensil }}
 
 }
 @if (requirement.type === 'MasteryLevel') {
 
-    Has reached level {{requirement.meta.level}} in {{requirement.meta.mastery}} mastery
+    Has reached level {{ requirement.meta.level }} in {{ requirement.meta.mastery }} mastery
 
 }
 @if (requirement.type === 'NPCHeartLevel') {
 
-    Has reached {{requirement.meta.expectedHeartLevel}} hearts with {{requirement.meta.npcKey}}
+    Has reached {{ requirement.meta.expectedHeartLevel }} hearts with {{ requirement.meta.npcKey }}
 
 }
 @if (requirement.type === 'QuestFactCompare') {
 
-    Quest fact '{{requirement.meta.factName}}' has
+    Quest fact '{{ requirement.meta.factName }}' has
     @if (requirement.meta.comparator === 'MoreEqual') {
-at least
-}
-    a value of {{requirement.meta.value}}
+        at least
+    }
+    a value of {{ requirement.meta.value }}
 
 }
 @if (requirement.type === 'IsMailRead') {
 
     Player has read '<a [queryParams]="{selectedId: requirement.meta.mailId}"
                         [routerLink]="['/journal', 'notes', 'letters']"
-                        class="underline">{{requirement.meta.title}}</a>'
+                        class="underline">{{ requirement.meta.title }}</a>'
 
 }

@@ -7,23 +7,23 @@
             <span class="text-4xl font-semibold block xl:hidden">CG</span>
         </a>
         @if (isBeta) {
-<span
-              class="beta-badge xl:!top-5 leading-none font-bold text-black absolute px-1.5 py-1 rounded-sm right-0">BETA</span>
-}
+            <span
+                    class="beta-badge xl:!top-5 leading-none font-bold text-black absolute px-1.5 py-1 rounded-sm right-0">BETA</span>
+        }
     </div>
     <nav class="hidden md:block">
         <ul class="flex gap-x-6">
             @for (naviLink of naviLinks; track naviLink) {
-  <li>
-                <a [routerLink]="naviLink.path"
-                   class=" flex flex-col py-3 px-2 text-neutral-400 hover:text-neutral-300 items-center text-center"
-                   [routerLinkActive]="['text-white', 'active']">
-                    <app-ui-icon [uiIcon]="naviLink.uiIcon" class="!h-6 !w-6 xl:!h-12 xl:!w-12 mb-2 max-xl"/>
-                    <span class="xl:text-lg font-semibold">{{naviLink.text}}</span>
-                </a>
+                <li>
+                    <a [routerLink]="naviLink.path"
+                       class=" flex flex-col py-3 px-2 text-neutral-400 hover:text-neutral-300 items-center text-center"
+                       [routerLinkActive]="['text-white', 'active']">
+                        <app-ui-icon [uiIcon]="naviLink.uiIcon" class="!h-6 !w-6 xl:!h-12 xl:!w-12 mb-2 max-xl"/>
+                        <span class="xl:text-lg font-semibold">{{ naviLink.text }}</span>
+                    </a>
 
-            </li>
-}
+                </li>
+            }
         </ul>
     </nav>
     <div class="block md:hidden">
@@ -50,15 +50,15 @@
 >
     <ul class="py-4">
         @for (naviLink of naviLinks; track naviLink) {
-  <li class="my-2">
-            <a [routerLinkActive]="['text-white', 'active']"
-               [routerLink]="naviLink.path"
-               class=" flex py-3 px-4 text-neutral-400 hover:text-neutral-300 items-center">
-                <app-ui-icon [uiIcon]="naviLink.uiIcon" class="!h-6 !w-6 mr-3 max-xl"/>
-                <span class="font-semibold">{{naviLink.text}}</span>
-            </a>
+            <li class="my-2">
+                <a [routerLinkActive]="['text-white', 'active']"
+                   [routerLink]="naviLink.path"
+                   class=" flex py-3 px-4 text-neutral-400 hover:text-neutral-300 items-center">
+                    <app-ui-icon [uiIcon]="naviLink.uiIcon" class="!h-6 !w-6 mr-3 max-xl"/>
+                    <span class="font-semibold">{{ naviLink.text }}</span>
+                </a>
 
-        </li>
-}
+            </li>
+        }
     </ul>
 </ng-template>

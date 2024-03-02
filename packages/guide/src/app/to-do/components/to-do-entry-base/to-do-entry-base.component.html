@@ -1,12 +1,12 @@
 @if (item) {
-<div class="flex gap-2 items-center">
-    <app-item-icon [itemName]="item.iconName" class="!w-7"/>
-    <span [class.line-through]="isChecked" class="ml-1 whitespace-nowrap">{{item.displayName}}</span>
-    @if (quality) {
-<app-rarity-icon [quality]="quality" class="!w-4"/>
-}
-</div>
+    <div class="flex gap-2 items-center">
+        <app-item-icon [itemName]="item.iconName" class="!w-7"/>
+        <span [class.line-through]="isChecked" class="ml-1 whitespace-nowrap">{{ item.displayName }}</span>
+        @if (quality) {
+            <app-rarity-icon [quality]="quality" class="!w-4"/>
+        }
+    </div>
 }
 <ng-content/>
-<span class="ml-auto font-semibold mr-4">{{amount ? 'x' + amount : ''}}</span>
+<span class="ml-auto font-semibold mr-4">{{ amount ? 'x' + amount : '' }}</span>
 <mat-checkbox (change)="toggleCompletionStatus($event.checked)"></mat-checkbox>

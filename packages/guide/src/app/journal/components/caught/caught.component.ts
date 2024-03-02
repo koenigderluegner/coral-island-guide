@@ -77,8 +77,8 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
         const seasonMatch = spawnSeason.reduce((previousValue, currentValue) => {
             const seasonString = getTruthyValues(currentValue).toLowerCase();
             const match = seasonString === 'any'
-            || filterValues.season?.length === Object.values(Season).length
-            || !!filterValues.season?.some(season => seasonString.includes(('' + season).toLowerCase()));
+                || filterValues.season?.length === Object.values(Season).length
+                || !!filterValues.season?.some(season => seasonString.includes(('' + season).toLowerCase()));
 
             return previousValue || match
         }, false)

@@ -20,8 +20,8 @@ export class LakeTempleComponent extends BaseTabbedSelectableContainerComponent<
         super()
         this.offerings$ = this._database.fetchOfferings$().pipe(
             tap((records) => {
-                this._altars = records;
-                const altarNames = records.map(altar => altar.urlPath);
+                    this._altars = records;
+                    const altarNames = records.map(altar => altar.urlPath);
                     this.activateTabFromRoute(altarNames);
                 }
             )

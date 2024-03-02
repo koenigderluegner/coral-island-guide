@@ -1,81 +1,81 @@
 <app-card class="m-2 2xl:mx-16 2xl:mt-16 2xl:mb-10">
     <div class="flex justify-between">
-        <h1 class="mb-4 font-semibold text-2xl text-black">To-Dos{{isBeta ? ' [BETA VERSION]' : ''}}</h1>
+        <h1 class="mb-4 font-semibold text-2xl text-black">To-Dos{{ isBeta ? ' [BETA VERSION]' : '' }}</h1>
         <mat-form-field class="btn btn-secondary">
             <mat-select [formControl]="toDoCategoryControl" multiple placeholder="None">
                 <mat-select-trigger>
                     @if (toDoCategoryControl.value.includes('all')) {
-All
-}
+                        All
+                    }
                     @if (!toDoCategoryControl.value.includes('all')) {
 
                         @if (toDoCategoryControl.value.length) {
 
-                            {{toDoCategoryControl.value[0] !== 'all' ? toDoCategoryDisplayNames[toDoCategoryControl.value[0]] : ''}}
-                            @if (toDoCategoryControl.value.length  > 1) {
-<span class="text-sm opacity-80">
-                                (+{{toDoCategoryControl.value.length - 1}} {{toDoCategoryControl.value.length === 2 ? 'other' : 'others'}}
-                                )
+                            {{ toDoCategoryControl.value[0] !== 'all' ? toDoCategoryDisplayNames[toDoCategoryControl.value[0]] : '' }}
+                            @if (toDoCategoryControl.value.length > 1) {
+                                <span class="text-sm opacity-80">
+                                (+{{ toDoCategoryControl.value.length - 1 }} {{ toDoCategoryControl.value.length === 2 ? 'other' : 'others' }}
+                                    )
                             </span>
-}
-                        
-}
-                    
-}
+                            }
+
+                        }
+
+                    }
                 </mat-select-trigger>
 
                 <mat-option value="all">
                     <div class="flex justify-between">
                         <span>All</span>
-                        <span>{{toDoService.currentToDoAmount}}</span>
+                        <span>{{ toDoService.currentToDoAmount }}</span>
                     </div>
                 </mat-option>
                 <mat-option [value]="toDoCategory.OFFERINGS">
                     <div class="flex justify-between">
                         <span>Offerings</span>
-                        <span>{{toDo.offerings.length}}</span>
+                        <span>{{ toDo.offerings.length }}</span>
                     </div>
                 </mat-option>
                 <mat-option [value]="toDoCategory.JOURNAL_FISH">
                     <div class="flex justify-between">
                         <span>Fish</span>
-                        <span>{{toDo.journal.fish.length}}</span>
+                        <span>{{ toDo.journal.fish.length }}</span>
                     </div>
                 </mat-option>
                 <mat-option [value]="toDoCategory.JOURNAL_INSECTS">
                     <div class="flex justify-between">
                         <span>Insects</span>
-                        <span>{{toDo.journal.insects.length}}</span>
+                        <span>{{ toDo.journal.insects.length }}</span>
                     </div>
                 </mat-option>
                 <mat-option [value]="toDoCategory.JOURNAL_CRITTER">
                     <div class="flex justify-between">
                         <span>Sea Critters</span>
-                        <span>{{toDo.journal.critter.length}}</span>
+                        <span>{{ toDo.journal.critter.length }}</span>
                     </div>
                 </mat-option>
                 <mat-option [value]="toDoCategory.JOURNAL_ARTIFACTS">
                     <div class="flex justify-between">
                         <span>Artifacts</span>
-                        <span>{{toDo.journal.artifacts.length}}</span>
+                        <span>{{ toDo.journal.artifacts.length }}</span>
                     </div>
                 </mat-option>
                 <mat-option [value]="toDoCategory.JOURNAL_GEMS">
                     <div class="flex justify-between">
                         <span>Gems</span>
-                        <span>{{toDo.journal.gems.length}}</span>
+                        <span>{{ toDo.journal.gems.length }}</span>
                     </div>
                 </mat-option>
                 <mat-option [value]="toDoCategory.JOURNAL_FOSSILS">
                     <div class="flex justify-between">
                         <span>Fossils</span>
-                        <span>{{toDo.journal.fossils.length}}</span>
+                        <span>{{ toDo.journal.fossils.length }}</span>
                     </div>
                 </mat-option>
                 <mat-option [value]="toDoCategory.COOKING_RECIPES">
                     <div class="flex justify-between">
                         <span>Cooking recipes</span>
-                        <span>{{toDo.cookingRecipes.length}}</span>
+                        <span>{{ toDo.cookingRecipes.length }}</span>
                     </div>
                 </mat-option>
             </mat-select>
@@ -88,9 +88,9 @@ All
                        title="Offerings">
         <ng-template let-data>
             @for (offering of data; track offering) {
-  <app-to-do-entry-offering @leaveAnimation [entry]="offering"
-                                      class="mb-2 block"/>
-}
+                <app-to-do-entry-offering @leaveAnimation [entry]="offering"
+                                          class="mb-2 block"/>
+            }
         </ng-template>
     </app-to-do-partial>
 
@@ -101,9 +101,9 @@ All
                        title="Journal fish">
         <ng-template let-data>
             @for (fish of data; track fish) {
-  <app-to-do-entry-fish @leaveAnimation [entry]="fish"
-                                  class="mb-2 block"/>
-}
+                <app-to-do-entry-fish @leaveAnimation [entry]="fish"
+                                      class="mb-2 block"/>
+            }
         </ng-template>
     </app-to-do-partial>
 
@@ -114,9 +114,9 @@ All
                        title="Journal insects">
         <ng-template let-data>
             @for (insect of data; track insect) {
-  <app-to-do-entry-insect @leaveAnimation [entry]="insect"
-                                    class="mb-2 block"/>
-}
+                <app-to-do-entry-insect @leaveAnimation [entry]="insect"
+                                        class="mb-2 block"/>
+            }
         </ng-template>
     </app-to-do-partial>
 
@@ -127,9 +127,9 @@ All
                        title="Journal sea-critters">
         <ng-template let-data>
             @for (seaCritter of data; track seaCritter) {
-  <app-to-do-sea-critter @leaveAnimation [entry]="seaCritter"
-                                   class="mb-2 block"/>
-}
+                <app-to-do-sea-critter @leaveAnimation [entry]="seaCritter"
+                                       class="mb-2 block"/>
+            }
         </ng-template>
     </app-to-do-partial>
 
@@ -141,10 +141,10 @@ All
                        title="Artifacts">
         <ng-template let-data>
             @for (artifact of data; track artifact) {
-  <app-to-do-entry-base @leaveAnimation
-                                  [category]="toDoCategory.JOURNAL_ARTIFACTS"
-                                  [item]="artifact" class="mb-2 block"/>
-}
+                <app-to-do-entry-base @leaveAnimation
+                                      [category]="toDoCategory.JOURNAL_ARTIFACTS"
+                                      [item]="artifact" class="mb-2 block"/>
+            }
         </ng-template>
     </app-to-do-partial>
 
@@ -155,10 +155,10 @@ All
                        title="Gems">
         <ng-template let-data>
             @for (gem of data; track gem) {
-  <app-to-do-entry-base @leaveAnimation
-                                  [category]="toDoCategory.JOURNAL_GEMS"
-                                  [item]="gem" class="mb-2 block"/>
-}
+                <app-to-do-entry-base @leaveAnimation
+                                      [category]="toDoCategory.JOURNAL_GEMS"
+                                      [item]="gem" class="mb-2 block"/>
+            }
         </ng-template>
     </app-to-do-partial>
 
@@ -169,10 +169,10 @@ All
                        title="Fossils">
         <ng-template let-data>
             @for (fossil of data; track fossil) {
-  <app-to-do-entry-base @leaveAnimation
-                                  [category]="toDoCategory.JOURNAL_FOSSILS"
-                                  [item]="fossil" class="mb-2 block"/>
-}
+                <app-to-do-entry-base @leaveAnimation
+                                      [category]="toDoCategory.JOURNAL_FOSSILS"
+                                      [item]="fossil" class="mb-2 block"/>
+            }
         </ng-template>
     </app-to-do-partial>
 
@@ -183,29 +183,29 @@ All
                        title="Cooking recipes">
         <ng-template let-data>
             @for (recipe of data; track recipe) {
-  <app-to-do-entry-base @leaveAnimation
-                                  [category]="toDoCategory.COOKING_RECIPES"
-                                  [item]="recipe.item" class="mb-2 block"/>
-}
+                <app-to-do-entry-base @leaveAnimation
+                                      [category]="toDoCategory.COOKING_RECIPES"
+                                      [item]="recipe.item" class="mb-2 block"/>
+            }
         </ng-template>
     </app-to-do-partial>
 
     @if (toDoService.currentIsEmpty) {
-<div class="show-when-none-displayed">
-        <h2 class="mb-2 mt-4 font-semibold text-xl text-black">No entries in to-do list</h2>
-        <p class="text-black">
-            Your current to-do list is empty! Visit the <a class="underline" routerLink="/journal">journal</a>, the
-            <a class="underline" routerLink="/locations/lake-temple">offerings</a> or other places to add entries to
-            your to-do list.
-        </p>
-    </div>
-}
+        <div class="show-when-none-displayed">
+            <h2 class="mb-2 mt-4 font-semibold text-xl text-black">No entries in to-do list</h2>
+            <p class="text-black">
+                Your current to-do list is empty! Visit the <a class="underline" routerLink="/journal">journal</a>, the
+                <a class="underline" routerLink="/locations/lake-temple">offerings</a> or other places to add entries to
+                your to-do list.
+            </p>
+        </div>
+    }
     @if (!toDoService.currentIsEmpty) {
-<div class="show-when-none-displayed">
-        <h2 class="mb-2 mt-4 font-semibold text-xl text-black">No entries for selection</h2>
-        <p class="text-black">
-            There are no entries for your current filter settings.
-        </p>
-    </div>
-}
+        <div class="show-when-none-displayed">
+            <h2 class="mb-2 mt-4 font-semibold text-xl text-black">No entries for selection</h2>
+            <p class="text-black">
+                There are no entries for your current filter settings.
+            </p>
+        </div>
+    }
 </app-card>

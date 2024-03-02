@@ -1,6 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Critter, Fish } from '@ci/data-types';
-import { getTruthyValues } from '@ci/util';
 import { CaughtComponent } from "../caught/caught.component";
 import { ToDoCategory } from "../../../core/enums/todo-category.enum";
 

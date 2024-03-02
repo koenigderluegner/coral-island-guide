@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { UiIcon } from "@ci/data-types";
 import {
     FestivalDisplayNames,
     FestivalIcons,
     FestivalName,
     ShopDisplayNames,
     ShopIcons,
-    ShopName
+    ShopName,
+    UiIcon
 } from "@ci/data-types";
 import { shopRouteConfig } from "./locations-shop-route-config";
 import { festivalRouteConfig } from "./locations-festival-route-config";

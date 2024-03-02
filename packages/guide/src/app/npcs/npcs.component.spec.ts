@@ -3,20 +3,20 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NPCsComponent } from './npcs.component';
 
 describe('PeopleComponent', () => {
-  let component: NPCsComponent;
-  let fixture: ComponentFixture<NPCsComponent>;
+    let component: NPCsComponent;
+    let fixture: ComponentFixture<NPCsComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [NPCsComponent],
-    }).compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [NPCsComponent],
+        }).compileComponents();
 
-    fixture = TestBed.createComponent(NPCsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(NPCsComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

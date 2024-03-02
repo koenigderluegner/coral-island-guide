@@ -21,7 +21,7 @@ export class AppComponent {
 
     constructor() {
 
-        if(!this.#settingsService.getSettings().disableChangelogs) {
+        if (!this.#settingsService.getSettings().disableChangelogs) {
             this.#changelogService.getLatestChangelog().subscribe({
                 next: changelog => {
 

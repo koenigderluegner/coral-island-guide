@@ -12,15 +12,15 @@
         <app-money [amount]="item.qualities.silver?.sellPrice" class="text-black"></app-money>
         <app-money [amount]="item.qualities.gold?.sellPrice" class="text-black"></app-money>
         <app-money [amount]="item.qualities.osmium?.sellPrice" class="text-black"></app-money>
-    
-}
+
+    }
 
 }
 @if (showOnlyBase) {
 
     <app-item-icon [itemName]="item.iconName" [quality]="QUALITY.BASE"></app-item-icon>
     @if (includePrices) {
-<app-money [amount]="item.sellPrice" class="text-black"></app-money>
-}
+        <app-money [amount]="item.sellPrice" class="text-black"></app-money>
+    }
 
 }

@@ -4,105 +4,106 @@
 
     <div class="flex justify-between items-center">
         <div class="flex flex-col">
-            <div class="text-black text-2xl">{{mappedAnimalShopData.readableName}}</div>
+            <div class="text-black text-2xl">{{ mappedAnimalShopData.readableName }}</div>
             @if (!mappedAnimalShopData.readableCategory) {
-<span
-                  class="text-accent text-2xl">   {{mappedAnimalShopData.readableCategory}}</span>
-}
+                <span
+                        class="text-accent text-2xl">   {{ mappedAnimalShopData.readableCategory }}</span>
+            }
         </div>
     </div>
     <hr class="my-5"/>
     @if (mappedAnimalShopData.description) {
-<span class="text-lg mb-6">{{mappedAnimalShopData.description}}</span>
-}
+        <span class="text-lg mb-6">{{ mappedAnimalShopData.description }}</span>
+    }
 
     <div class="flex">Price:
         <app-money [amount]="mappedAnimalShopData.price" class="ml-2 text-black"/>
     </div>
     <div>Amount on purchase:
         <span class="text-black">
-{{mappedAnimalShopData.amountOnPurchase}}
+{{ mappedAnimalShopData.amountOnPurchase }}
         </span>
     </div>
     <div>Town rank:
         <span class="text-black">
-{{mappedAnimalShopData.townRank | townrank}}
+{{ mappedAnimalShopData.townRank | townrank }}
         </span>
     </div>
     @if (mappedAnimalShopData.itemLimit >= 0) {
-<div>Limited amount:
-        <span class="text-black">
-{{mappedAnimalShopData.itemLimit}}
+        <div>Limited amount:
+            <span class="text-black">
+{{ mappedAnimalShopData.itemLimit }}
         </span>
-    </div>
-}
+        </div>
+    }
     @if (mappedAnimalShopData.animal; as animal) {
-<div class="mt-4">
+        <div class="mt-4">
 
-        <div>Variants:
-            <span class="text-black">
+            <div>Variants:
+                <span class="text-black">
                 @for (variant of animal.variants; track variant; let last = $last) {
-  
-                    {{variant.variant}}{{!last ? ', ' : ''}}
-                
-}
-            </span>
-        </div>
-        <div>Building:
-            <span class="text-black">
-              {{animal.building  | addSpacesToPascalCase}}
-            </span>
-        </div>
-        @if (animal.animalProduceType !== 'None') {
 
-            @if (animal.produceDropLocation !== 'None') {
-<div>Drop location:
-                <span class="text-black">
-              {{animal.produceDropLocation  | addSpacesToPascalCase}}
+                    {{ variant.variant }}{{ !last ? ', ' : '' }}
+
+                }
             </span>
             </div>
-}
-            <div>Type of producing:
+            <div>Building:
                 <span class="text-black">
-                {{animal.animalProduceType | addSpacesToPascalCase}}
+              {{ animal.building  | addSpacesToPascalCase }}
             </span>
             </div>
-            @if (animal.itemHarvestTool) {
-<div>Tool for harvesting:
-                <span class="text-black">
+            @if (animal.animalProduceType !== 'None') {
+
+                @if (animal.produceDropLocation !== 'None') {
+                    <div>Drop location:
+                        <span class="text-black">
+              {{ animal.produceDropLocation  | addSpacesToPascalCase }}
+            </span>
+                    </div>
+                }
+                <div>Type of producing:
+                    <span class="text-black">
+                {{ animal.animalProduceType | addSpacesToPascalCase }}
+            </span>
+                </div>
+                @if (animal.itemHarvestTool) {
+                    <div>Tool for harvesting:
+                        <span class="text-black">
                <app-item-icon [itemName]="animal.itemHarvestTool.iconName"
                               class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
-                    {{animal.itemHarvestTool.displayName}}
+                            {{ animal.itemHarvestTool.displayName }}
             </span>
-            </div>
-}
-            <div>Harvest cooldown:
-                <span class="text-black">
-                    {{animal.harvestCooldown}} day{{animal.harvestCooldown > 1 ? 's' : ''}}
+                    </div>
+                }
+                <div>Harvest cooldown:
+                    <span class="text-black">
+                    {{ animal.harvestCooldown }} day{{ animal.harvestCooldown > 1 ? 's' : '' }}
             </span>
-            </div>
-            <div class="my-3">Produces:
-                @for (produce of animal.produces; track produce) {
-  
-                    @for (keValuePair of produce | keyvalue: keyValueNoOrder ; track keValuePair) {
-  
-                        @if (keValuePair.value | isMinimalItem) {
-<div
-                             class="text-black">
-                            {{keValuePair.key | addSpacesToPascalCase | titlecase}}:
-                            <app-item-icon [itemName]="keValuePair.value.iconName"
-                                           class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
-                            {{keValuePair.value.displayName}}</div>
-}
-                    
-}
-                
-}
-            </div>
-        
-}
-    </div>
-}
+                </div>
+                <div class="my-3">Produces:
+                    @for (produce of animal.produces; track produce) {
+
+                        @for (keValuePair of produce | keyvalue: keyValueNoOrder; track keValuePair) {
+
+                            @if (keValuePair.value | isMinimalItem) {
+                                <div
+                                        class="text-black">
+                                    {{ keValuePair.key | addSpacesToPascalCase | titlecase }}:
+                                    <app-item-icon [itemName]="keValuePair.value.iconName"
+                                                   class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
+                                    {{ keValuePair.value.displayName }}
+                                </div>
+                            }
+
+                        }
+
+                    }
+                </div>
+
+            }
+        </div>
+    }
 
 
     <app-requirements-list [requirements]="mappedAnimalShopData.requirements"/>

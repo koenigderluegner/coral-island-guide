@@ -1,16 +1,17 @@
 @if (databaseItem.usedToCook && databaseItem.usedToCook.length) {
-<app-expandable #expandableComponent open>
-    <h3 class="database-header" expandableHeader>
-        <app-database-header-button [templateRef]="expandableComponent">Usage in cooking</app-database-header-button>
-    </h3>
-    <app-cooking-table [dataSource]="databaseItem.usedToCook" showUtensil/>
-</app-expandable>
+    <app-expandable #expandableComponent open>
+        <h3 class="database-header" expandableHeader>
+            <app-database-header-button [templateRef]="expandableComponent">Usage in cooking
+            </app-database-header-button>
+        </h3>
+        <app-cooking-table [dataSource]="databaseItem.usedToCook" showUtensil/>
+    </app-expandable>
 }
 @if (databaseItem.cookedFrom && databaseItem.cookedFrom.length) {
-<app-expandable #expandableComponent open>
-    <h3 class="database-header" expandableHeader>
-        <app-database-header-button [templateRef]="expandableComponent">Cooking recipe</app-database-header-button>
-    </h3>
-    <app-cooking-table [dataSource]="databaseItem.cookedFrom" showUtensil/>
-</app-expandable>
+    <app-expandable #expandableComponent open>
+        <h3 class="database-header" expandableHeader>
+            <app-database-header-button [templateRef]="expandableComponent">Cooking recipe</app-database-header-button>
+        </h3>
+        <app-cooking-table [dataSource]="databaseItem.cookedFrom" showUtensil/>
+    </app-expandable>
 }

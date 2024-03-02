@@ -4,5 +4,9 @@
     by Koenig.
     <a class="text-accent" routerLink="/about">About Coral Guide</a> -
     <a class="text-accent" fragment="support" routerLink="/about">Support Coral Guide</a> -
-    Data from game version (steam): @if (version$ | async; as versions) { {{versions.version}} } @else {loading}
+    Data from game version (steam): @if (version$ | async; as versions) {
+    {{ versions.version }}
+} @else {
+    loading
+}
 </footer>

@@ -1,16 +1,16 @@
 @if (databaseItem.usedToCraft && databaseItem.usedToCraft.length) {
-<app-expandable #expandableComponent open>
-    <h3 class="database-header" expandableHeader>
-        <app-database-header-button [templateRef]="expandableComponent">Used to craft</app-database-header-button>
-    </h3>
-    <app-inventory-table [dataSource]="databaseItem.usedToCraft"/>
-</app-expandable>
+    <app-expandable #expandableComponent open>
+        <h3 class="database-header" expandableHeader>
+            <app-database-header-button [templateRef]="expandableComponent">Used to craft</app-database-header-button>
+        </h3>
+        <app-inventory-table [dataSource]="databaseItem.usedToCraft"/>
+    </app-expandable>
 }
 @if (databaseItem.craftedFrom && databaseItem.craftedFrom.length) {
-<app-expandable #expandableComponent open>
-    <h3 class="database-header" expandableHeader>
-        <app-database-header-button [templateRef]="expandableComponent">Crafting recipe</app-database-header-button>
-    </h3>
-    <app-inventory-table [dataSource]="databaseItem.craftedFrom"/>
-</app-expandable>
+    <app-expandable #expandableComponent open>
+        <h3 class="database-header" expandableHeader>
+            <app-database-header-button [templateRef]="expandableComponent">Crafting recipe</app-database-header-button>
+        </h3>
+        <app-inventory-table [dataSource]="databaseItem.craftedFrom"/>
+    </app-expandable>
 }

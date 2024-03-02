@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import {
-    BaseSelectableContainerComponent
-} from "../../../shared/components/base-selectable-container/base-selectable-container.component";
+import { BaseSelectableContainerComponent } from "../../../shared/components/base-selectable-container/base-selectable-container.component";
 import {
     ItemProcessShopData,
     ItemUpgradeData,
@@ -9,10 +7,10 @@ import {
     ShopDisplayNames,
     ShopIcons,
     ShopItemData,
-    ShopName
+    ShopName,
+    UiIcon
 } from "@ci/data-types";
 import { Observable } from "rxjs";
-import { UiIcon } from "@ci/data-types";
 
 @Component({
     template: '',

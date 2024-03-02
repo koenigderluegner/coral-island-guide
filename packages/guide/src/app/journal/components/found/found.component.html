@@ -12,14 +12,14 @@
     <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex"
                    class=" px-2 xl:px-[50px] w-full"
                    mat-stretch-tabs="false">
-        @for (tab of tabs;track tab) {
+        @for (tab of tabs; track tab) {
             <mat-tab [label]="tab.title">
                 <app-data-filter [(showTable)]="showTable" [parentFormGroup]="formControl"/>
-                @if ((tab.data |async);as syncedData) {
+                @if ((tab.data |async); as syncedData) {
 
                     @if (!showTable) {
                         <div class="grid gap-4 icon-grid">
-                            @for (entry of syncedData;track entry) {
+                            @for (entry of syncedData; track entry) {
                                 <app-item-icon (click)="showDetails(entry)"
                                                [class.selected-icon]="selectedEntity?.id === entry.id"
                                                [itemName]="entry.iconName"

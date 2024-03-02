@@ -1,6 +1,6 @@
 <app-responsive-table>
     @if (matDataSource) {
-        <table mat-table [dataSource]="matDataSource"  matSort>
+        <table mat-table [dataSource]="matDataSource" matSort>
             <ng-container matColumnDef="icon" sticky>
                 <td mat-cell *matCellDef="let element" class="!px-2 ">
                     <app-item-icon class="mx-2" [itemName]="element.item.iconName"></app-item-icon>
@@ -38,7 +38,7 @@
                     }
                     @if (((element | isFish) ? element.spawnSettings[0] : element).isUsingSpecificDate) {
 
-                        @for (rage of dateRangesToString(((element | isFish) ? element.spawnSettings[0] : element).dateRangeList);track rage;let last = $last) {
+                        @for (rage of dateRangesToString(((element | isFish) ? element.spawnSettings[0] : element).dateRangeList); track rage; let last = $last) {
                             <div class="whitespace-nowrap"
                             >{{ rage }}{{ !last ? ', ' : '' }}
                             </div>

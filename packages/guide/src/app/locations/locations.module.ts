@@ -110,4 +110,5 @@ import { OfferingComponent } from "../shared/components/database-item-details/of
         FestivalShopItemTableComponent,
     ],
 })
-export class LocationsModule {}
+export class LocationsModule {
+}

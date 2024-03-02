@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { UiIcon } from '@ci/data-types';
+import { ItemProcessing, UiIcon } from '@ci/data-types';
 import { DatabaseService } from '../shared/services/database.service';
-import { ItemProcessing } from '@ci/data-types';
 import { Observable } from 'rxjs';
 import { addSpacesToPascalCase } from '@ci/util';
 

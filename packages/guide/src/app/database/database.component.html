@@ -21,7 +21,7 @@
     <div class="grid gap-4 icon-grid" id="grid">
         @if ((filteredItems$ | async)) {
 
-            @for (item of filteredItems;track trackById(index, item);let index = $index) {
+            @for (item of filteredItems; track trackById(index, item); let index = $index) {
                 <app-item-icon (mouseenter)="prefetchItem(item)" (click)="showDetails(item, index)"
 
                                [class.selected-icon]="selectedItem?.id === item.id"

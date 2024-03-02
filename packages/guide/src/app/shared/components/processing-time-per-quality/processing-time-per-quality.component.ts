@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Quality } from "@ci/data-types";
-import { UiIcon } from "@ci/data-types";
+import { Quality, UiIcon } from "@ci/data-types";
 
 @Component({
     selector: 'app-processing-time-per-quality',
@@ -10,7 +9,10 @@ import { UiIcon } from "@ci/data-types";
 export class ProcessingTimePerQualityComponent {
 
     @Input() baseProcessingTime?: { day: number; time: { hours: number, minutes: number } };
-    @Input() processingTimePerQualities?: Record<string | Quality, { day: number; time: { hours: number, minutes: number } }>
+    @Input() processingTimePerQualities?: Record<string | Quality, {
+        day: number;
+        time: { hours: number, minutes: number }
+    }>
 
     protected qualityValues: Quality[] = Object.values(Quality);
     protected quality = Quality;

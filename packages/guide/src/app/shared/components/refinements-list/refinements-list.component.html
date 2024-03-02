@@ -2,14 +2,14 @@
 
     <div class="refinement-list">
         @for (refinement of refinements; track refinement) {
-  
+
             @if (refinement.from !== quality.BASE) {
-<app-rarity-icon [quality]="refinement.from" class=" w-6"/>
-}
+                <app-rarity-icon [quality]="refinement.from" class=" w-6"/>
+            }
             @if (refinement.from === quality.BASE) {
-<app-ui-icon [uiIcon]="uiIcon.EMPTY_STAR"
-                         class="!w-6 !h-6 !flex"/>
-}
+                <app-ui-icon [uiIcon]="uiIcon.EMPTY_STAR"
+                             class="!w-6 !h-6 !flex"/>
+            }
             <app-ui-icon [uiIcon]="uiIcon.ARROW_RIGHT" class="!w-4 !h-4 !flex my-1 mx-2"/>
             <app-rarity-icon [quality]="refinement.to" class="w-6"/>
             <div class="text-right">
@@ -17,8 +17,8 @@
                <app-processing-time [processingTime]="refinement"/>
                 </span>
             </div>
-        
-}
+
+        }
     </div>
 
 }

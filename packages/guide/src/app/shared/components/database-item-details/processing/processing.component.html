@@ -4,7 +4,8 @@
                             @if (processorMapping[itemProcessing.machine.toLowerCase()]; as minimalItem) {
 
                                 <a [routerLink]="['/crafting/artisan', itemProcessing.machine.toLowerCase()]">
-                        <app-item-icon [itemName]="minimalItem.iconName" class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
+                        <app-item-icon [itemName]="minimalItem.iconName"
+                                       class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
                         <span class="ml-1 whitespace-nowrap underline">{{ minimalItem.displayName }}</span>
                     </a>
 

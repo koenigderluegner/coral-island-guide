@@ -1,70 +1,70 @@
 <app-responsive-table>
     @if (matDataSource) {
-<table [dataSource]="matDataSource" mat-table matSort>
-        <ng-container matColumnDef="icon" sticky>
-            <td *matCellDef="let element" class="!pl-2 !pr-0  w-10 text-center icon-col " mat-cell>
-                <app-item-icon [itemName]="element.output.item?.iconName"></app-item-icon>
-            </td>
-        </ng-container>
+        <table [dataSource]="matDataSource" mat-table matSort>
+            <ng-container matColumnDef="icon" sticky>
+                <td *matCellDef="let element" class="!pl-2 !pr-0  w-10 text-center icon-col " mat-cell>
+                    <app-item-icon [itemName]="element.output.item?.iconName"></app-item-icon>
+                </td>
+            </ng-container>
 
-        <ng-container matColumnDef="outputName">
-            <th *matHeaderCellDef [attr.colspan]="2" class="backdrop-blur-xl" mat-header-cell mat-sort-header> Output
-            </th>
-            <td *matCellDef="let element" class="text-col whitespace-nowrap"
-                mat-cell>{{element.output.item?.displayName}}
-                ({{element.output.amount}})
-            </td>
-        </ng-container>
-
-
-        <ng-container matColumnDef="ingredients">
-            <th *matHeaderCellDef mat-header-cell> Ingredients</th>
-            <td *matCellDef="let element" class="list-col" mat-cell>
-                <app-table-item-list [itemList]="element | itemProcessingIngredients" class="mb-3"/>
-            </td>
-        </ng-container>
+            <ng-container matColumnDef="outputName">
+                <th *matHeaderCellDef [attr.colspan]="2" class="backdrop-blur-xl" mat-header-cell mat-sort-header>
+                    Output
+                </th>
+                <td *matCellDef="let element" class="text-col whitespace-nowrap"
+                    mat-cell>{{ element.output.item?.displayName }}
+                    ({{ element.output.amount }})
+                </td>
+            </ng-container>
 
 
-        <ng-container matColumnDef="sellPrice">
-            <th *matHeaderCellDef class="whitespace-nowrap" mat-header-cell mat-sort-header> Sell price</th>
-            <td *matCellDef="let element" class="text-col !text-right w-[1%]" mat-cell>
-                <app-money [amount]="element.output.item.sellPrice"/>
-            </td>
-        </ng-container>
-
-        <ng-container matColumnDef="processor">
-            <th *matHeaderCellDef mat-header-cell>Processor</th>
-            <td *matCellDef="let element" class="text-col w-[1%] whitespace-nowrap" mat-cell>
-                @if (processorMapping[element.machine.toLowerCase()]; as minimalItem) {
-
-                    <a [routerLink]="['crafting/artisan', element.machine.toLowerCase()]"
-                       class="flex gap-2 items-center">
-                        <app-item-icon [itemName]="minimalItem.iconName" class="!w-7"/>
-                        <span class="ml-1 whitespace-nowrap underline">{{minimalItem.displayName}}</span>
-                    </a>
+            <ng-container matColumnDef="ingredients">
+                <th *matHeaderCellDef mat-header-cell> Ingredients</th>
+                <td *matCellDef="let element" class="list-col" mat-cell>
+                    <app-table-item-list [itemList]="element | itemProcessingIngredients" class="mb-3"/>
+                </td>
+            </ng-container>
 
 
-                
-}
-                @if (!processorMapping[element.machine.toLowerCase()]) {
+            <ng-container matColumnDef="sellPrice">
+                <th *matHeaderCellDef class="whitespace-nowrap" mat-header-cell mat-sort-header> Sell price</th>
+                <td *matCellDef="let element" class="text-col !text-right w-[1%]" mat-cell>
+                    <app-money [amount]="element.output.item.sellPrice"/>
+                </td>
+            </ng-container>
 
-                    {{element.machine | addSpacesToPascalCase | titlecase}}
-                
-}
+            <ng-container matColumnDef="processor">
+                <th *matHeaderCellDef mat-header-cell>Processor</th>
+                <td *matCellDef="let element" class="text-col w-[1%] whitespace-nowrap" mat-cell>
+                    @if (processorMapping[element.machine.toLowerCase()]; as minimalItem) {
 
-            </td>
-        </ng-container>
-
-        <ng-container matColumnDef="processingTime">
-            <th *matHeaderCellDef mat-header-cell mat-sort-header> Time</th>
-            <td *matCellDef="let element" class="text-col w-[1%] whitespace-nowrap" mat-cell>
-                <app-processing-time [processingTime]="element"/>
-            </td>
-        </ng-container>
+                        <a [routerLink]="['crafting/artisan', element.machine.toLowerCase()]"
+                           class="flex gap-2 items-center">
+                            <app-item-icon [itemName]="minimalItem.iconName" class="!w-7"/>
+                            <span class="ml-1 whitespace-nowrap underline">{{ minimalItem.displayName }}</span>
+                        </a>
 
 
-        <tr *matHeaderRowDef="displayHeaderColumns; sticky: true" mat-header-row></tr>
-        <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
-    </table>
-}
+                    }
+                    @if (!processorMapping[element.machine.toLowerCase()]) {
+
+                        {{ element.machine | addSpacesToPascalCase | titlecase }}
+
+                    }
+
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="processingTime">
+                <th *matHeaderCellDef mat-header-cell mat-sort-header> Time</th>
+                <td *matCellDef="let element" class="text-col w-[1%] whitespace-nowrap" mat-cell>
+                    <app-processing-time [processingTime]="element"/>
+                </td>
+            </ng-container>
+
+
+            <tr *matHeaderRowDef="displayHeaderColumns; sticky: true" mat-header-row></tr>
+            <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+        </table>
+    }
 </app-responsive-table>

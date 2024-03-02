@@ -1,6 +1,6 @@
 import { booleanAttribute, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AnimalData, DatabaseItem } from "@ci/data-types";
+import { DatabaseItem } from "@ci/data-types";
 import { AddSpacesToPascalCasePipe } from "../../../pipes/add-spaces-to-pascal-case.pipe";
 import { SharedModule } from "../../../shared.module";
 

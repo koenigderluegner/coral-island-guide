@@ -13,12 +13,8 @@ import { CookingRecipesChecklistComponent } from './components/cooking-recipes-c
 import { OfferingsChecklistComponent } from './components/offerings-checklist/offerings-checklist.component';
 import { LocationsModule } from "../locations/locations.module";
 import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-case.pipe";
-import {
-    CookingRecipeComponent
-} from "../shared/components/database-item-details/cooking-recipe/cooking-recipe.component";
-import {
-    DatabaseItemDetailsComponent
-} from "../shared/components/database-item-details/database-item-details.component";
+import { CookingRecipeComponent } from "../shared/components/database-item-details/cooking-recipe/cooking-recipe.component";
+import { DatabaseItemDetailsComponent } from "../shared/components/database-item-details/database-item-details.component";
 import { DatabaseItemDetailsDirective } from "../shared/directives/database-item-details.directive";
 import { ConsumableComponent } from "../shared/components/database-item-details/consumable/consumable.component";
 import { ShopProcessingResultComponent } from "../shared/components/database-item-details/shop-processing-result/shop-processing-result.component";

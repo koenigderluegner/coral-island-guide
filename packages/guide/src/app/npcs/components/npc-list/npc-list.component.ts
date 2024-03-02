@@ -34,7 +34,7 @@ export class NpcListComponent {
 
     filteredAndSortedNpcs = computed(() => {
 
-        const searchValue =this.searchValueChanges().toLowerCase()
+        const searchValue = this.searchValueChanges().toLowerCase()
         const sortValue = this.sortValueChanges()
         let npcs = this.#npcList() ?? [];
 

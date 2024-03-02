@@ -1,41 +1,41 @@
 @if (gifting$  | async; as gifting) {
-<app-card class="text-xl gifting-card">
+    <app-card class="text-xl gifting-card">
 
-    @for (giftingPreferences of gifting; track giftingPreferences) {
-  <div>
-        <div class="text-2xl text-black font-semibold flex items-center gifting-portrait">
-            @if (giftingPreferences.preferences.npc) {
+        @for (giftingPreferences of gifting; track giftingPreferences) {
+            <div>
+                <div class="text-2xl text-black font-semibold flex items-center gifting-portrait">
+                    @if (giftingPreferences.preferences.npc) {
 
-                <app-item-icon class="h-16 mr-3"
-                               [itemName]="giftingPreferences.preferences.npc.iconName"></app-item-icon>
-                <div class="flex flex-col">
-                    <div class="flex gap-2 items-center"> {{ giftingPreferences.preferences.npc.characterName }}
-                        @if (giftingPreferences.npc?.isDateable) {
-<app-ui-icon
-                                     [uiIcon]="uiIcon.LOVE" class="!text-gifting !h-6 !w-6"
-                                     matTooltip="{{giftingPreferences.npc?.characterName}} is dateable"/>
-}
-                    </div>
-                    @if (giftingPreferences.npc && giftingPreferences.npc.birthday) {
-<div
-                         class="text-lg flex gap-2">
-                        <app-ui-icon [uiIcon]="uiIcon.BIRTHDAY" class="!h-6 !w-6"/>
-                        {{ giftingPreferences.npc.birthday | ingameDate }}
-                    </div>
-}
+                        <app-item-icon class="h-16 mr-3"
+                                       [itemName]="giftingPreferences.preferences.npc.iconName"></app-item-icon>
+                        <div class="flex flex-col">
+                            <div class="flex gap-2 items-center"> {{ giftingPreferences.preferences.npc.characterName }}
+                                @if (giftingPreferences.npc?.isDateable) {
+                                    <app-ui-icon
+                                            [uiIcon]="uiIcon.LOVE" class="!text-gifting !h-6 !w-6"
+                                            matTooltip="{{giftingPreferences.npc?.characterName}} is dateable"/>
+                                }
+                            </div>
+                            @if (giftingPreferences.npc && giftingPreferences.npc.birthday) {
+                                <div
+                                        class="text-lg flex gap-2">
+                                    <app-ui-icon [uiIcon]="uiIcon.BIRTHDAY" class="!h-6 !w-6"/>
+                                    {{ giftingPreferences.npc.birthday | ingameDate }}
+                                </div>
+                            }
+                        </div>
+
+                    }
+                    @if (giftingPreferences.preferences.mapKey === 'ci_universal') {
+                        Universal
+                    }
                 </div>
-            
-}
-            @if (giftingPreferences.preferences.mapKey === 'ci_universal') {
-Universal
-}
-        </div>
 
-        <app-gifting-grid [preferences]="giftingPreferences.preferences"/>
+                <app-gifting-grid [preferences]="giftingPreferences.preferences"/>
 
-    </div>
-}
+            </div>
+        }
 
 
-</app-card>
+    </app-card>
 }

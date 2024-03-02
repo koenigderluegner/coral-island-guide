@@ -1,6 +1,4 @@
-import { numberAttribute } from "@angular/core";
-
-export const  sortOptions = [
+export const sortOptions = [
     {
         displayName: 'Default',
         value: 'default'
