@@ -25,10 +25,6 @@
     }
   },
   "targetDefaults": {
-    "lint": {
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
-      "cache": true
-    },
     "build": {
       "cache": true
     },
@@ -44,6 +40,10 @@
           "codeCoverage": true
         }
       }
+    },
+    "@nx/eslint:lint": {
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
+      "cache": true
     }
   },
   "defaultProject": "guide"
