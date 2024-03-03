@@ -6,7 +6,7 @@
         <ng-container [formGroup]="parentFormGroup">
             @if (parentFormGroup.contains('season')) {
                 <mat-form-field class="btn">
-                    @if (!parentFormGroup.value?.season?.length) {
+                    @if (!parentFormGroup.value.season?.length) {
                         <mat-label>Season</mat-label>
                     }
                     <mat-select disableOptionCentering formControlName="season" multiple>

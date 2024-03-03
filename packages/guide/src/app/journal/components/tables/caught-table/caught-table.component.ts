@@ -1,8 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Critter, Fish, FishSpawnSettings } from '@ci/data-types';
 
-import { addSpacesToPascalCase, getTruthyValues } from '@ci/util';
-import { critterSizeMap, rarityMap } from '../../../../../../../util/src/lib/maps/sort-helper.map';
+import { addSpacesToPascalCase, critterSizeMap, getTruthyValues, rarityMap } from '@ci/util';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 
 @Component({
@@ -96,11 +95,6 @@ export class CaughtTableComponent extends BaseTableComponent<(Critter | Fish)> {
                 case 'pattern':
                 case 'difficulty': {
                     return critter[property];
-                }
-
-                default: {
-
-
                 }
             }
         }

@@ -51,7 +51,7 @@
 
         <ng-container *ngTemplateOutlet="databaseItemDetails; context: {$implicit: dbItem}"></ng-container>
 
-        @if (((dbItem.item.qualities ?? {}) | keyvalue).length && !hideQualityGrid) {
+        @if (((dbItem.item.qualities) | keyvalue).length && !hideQualityGrid) {
             <app-quality-grid
                     [item]="dbItem.item"
                     class="mt-6"
