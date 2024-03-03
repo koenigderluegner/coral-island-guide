@@ -1,7 +1,6 @@
 import { ChangeDetectorRef, Component, inject, ViewChild } from '@angular/core';
-import { BaseCrop, Item, JournalOrder, Season } from '@ci/data-types';
+import { BaseCrop, JournalOrder, MinimalItem, Season, UiIcon } from '@ci/data-types';
 import { combineLatest, map, Observable, of, startWith } from 'rxjs';
-import { UiIcon } from '../../../shared/enums/ui-icon.enum';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { FormGroup } from '@angular/forms';
 import { FilterForm } from "../../../shared/types/filter-form.type";
@@ -16,14 +15,15 @@ export interface BaseJournalPageComponent<D> {
 @Component({
     template: ''
 })
-export class BaseJournalPageComponent<D extends ({ item: Item } | Item)> extends BaseTabbedSelectableContainerComponent<D> {
+export class BaseJournalPageComponent<D extends ({
+    item: MinimalItem
+} | MinimalItem)> extends BaseTabbedSelectableContainerComponent<D> {
 
     @ViewChild(MatTabGroup) matTabGroup?: MatTabGroup
 
     uiIcon = UiIcon;
     tabs: { title: string; data: Observable<D[]> }[] = [];
 
-    season = Season;
     formControl: FormGroup<FilterForm>;
     mobileQuery: MediaQueryList;
     media: MediaMatcher = inject(MediaMatcher);

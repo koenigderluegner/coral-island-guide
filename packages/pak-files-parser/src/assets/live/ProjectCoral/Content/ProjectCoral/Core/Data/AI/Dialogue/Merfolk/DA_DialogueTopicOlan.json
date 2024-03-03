@@ -1,0 +1,110 @@
+[
+  {
+    "Type": "C_DialogueTopicConfig",
+    "Name": "DA_DialogueTopicOlan",
+    "Class": "UScriptClass'C_DialogueTopicConfig'",
+    "Properties": {
+      "dialogueTopicSettings": [
+        {
+          "topicTag": {
+            "TagName": "Dialogue.Topic.CommentDarkSlime"
+          },
+          "requirementType": "EC_RequirementCollectionType::And",
+          "requirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "npcRequirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "priority": 50,
+          "cooldown": 7,
+          "samePriorityAsBefore": true
+        },
+        {
+          "topicTag": {
+            "TagName": "Dialogue.Topic.ShowGoLuckyAttitude"
+          },
+          "requirementType": "EC_RequirementCollectionType::And",
+          "requirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "npcRequirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "priority": 50,
+          "cooldown": 7,
+          "samePriorityAsBefore": true
+        },
+        {
+          "topicTag": {
+            "TagName": "Dialogue.Topic.CommentArrangement"
+          },
+          "requirementType": "EC_RequirementCollectionType::And",
+          "requirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "npcRequirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "priority": 50,
+          "cooldown": 7,
+          "samePriorityAsBefore": true
+        },
+        {
+          "topicTag": {
+            "TagName": "Dialogue.Topic.CommentPlayer"
+          },
+          "requirementType": "EC_RequirementCollectionType::And",
+          "requirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "npcRequirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "priority": 50,
+          "cooldown": 7,
+          "samePriorityAsBefore": true
+        },
+        {
+          "topicTag": {
+            "TagName": "Dialogue.Topic.40mCleared"
+          },
+          "requirementType": "EC_RequirementCollectionType::And",
+          "requirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_IsCutsceneTriggeredRequirement'DA_DialogueTopicOlan:C_IsCutsceneTriggeredRequirement_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/Merfolk/DA_DialogueTopicOlan.1"
+              }
+            ]
+          },
+          "npcRequirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "priority": 50,
+          "cooldown": 7,
+          "samePriorityAsBefore": true
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_IsCutsceneTriggeredRequirement",
+    "Name": "C_IsCutsceneTriggeredRequirement_0",
+    "Outer": "DA_DialogueTopicOlan",
+    "Class": "UScriptClass'C_IsCutsceneTriggeredRequirement'",
+    "Properties": {
+      "cutsceneTopic": "GS_Naga_Freed"
+    }
+  }
+]

@@ -22,7 +22,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { InlineMinimalItemComponent } from './components/inline-minimal-item/inline-minimal-item.component';
 import { ResponsiveTableComponent } from './components/responsive-table/responsive-table.component';
 import { MatTableModule } from '@angular/material/table';
-import { SpacesToPascalCasePipe } from './pipes/spaces-to-pascal-case.pipe';
 import { IsCropPipe } from './pipes/is-crop.pipe';
 import { RefinementsListComponent } from './components/refinements-list/refinements-list.component';
 import { CastToQualityPipe } from './pipes/cast-to-quality.pipe';
@@ -34,7 +33,6 @@ import { CookingRecipeIngredientsPipe } from './pipes/cooking-recipe-ingredients
 import { CastToMinimalItemArrayPipe } from './pipes/cast-to-minimal-item-array.pipe';
 import { ItemProcessingIngredientsPipe } from './pipes/item-processing-ingredients.pipe';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { AddSpacesToPascalCasePipe } from './pipes/add-spaces-to-pascal-case.pipe';
 import { DataFilterComponent } from './components/data-filter/data-filter.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IsItemPipe } from './pipes/is-item.pipe';
@@ -46,6 +44,24 @@ import { BaseTabbedSelectableContainerComponent } from './components/base-tabbed
 import { IsFishPipe } from './pipes/is-fish.pipe';
 import { IngameDatePipe } from './pipes/ingame-date.pipe';
 import { IngameTimePipe } from './pipes/ingame-time.pipe';
+import { TownrankPipe } from './pipes/townrank.pipe';
+import { IsMinimalItemPipe } from './pipes/is-minimal-item.pipe';
+import { NpcPortraitComponent } from './components/npc-portrait/npc-portrait.component';
+import { NpcHeadPortraitComponent } from './components/npc-head-portrait/npc-head-portrait.component';
+import { EffectComponent } from './components/effect/effect.component';
+import { RequirementsComponent } from './components/requirements/requirements.component';
+import { MeritPointsComponent } from './components/merit-points/merit-points.component';
+import { ExpandableComponent } from './components/expandable/expandable.component';
+import { RemoveTagsPipe } from './pipes/remove-tags.pipe';
+import { ChancePerItemListComponent } from './components/chance-per-item-list/chance-per-item-list.component';
+import { ChancePerItemTableListComponent } from './components/chance-per-item-table-list/chance-per-item-table-list.component';
+import { HasPipe } from './pipes/has.pipe';
+import { EntityKeyPipe } from './pipes/entity-key.pipe';
+import { IsMinimalTagBasedItemPipe } from './pipes/is-minimal-tag-based-item.pipe';
+import { IsTagBasedItemPipe } from './pipes/is-tag-based-item.pipe';
+import { ToItemListEntriesPipe } from './pipes/to-item-list-entries.pipe';
+import { RequirementsListComponent } from './components/requirements-list/requirements-list.component';
+import { AddSpacesToPascalCasePipe } from "./pipes/add-spaces-to-pascal-case.pipe";
 
 @NgModule({
     declarations: [
@@ -64,7 +80,6 @@ import { IngameTimePipe } from './pipes/ingame-time.pipe';
         ListDetailContainerComponent,
         InlineMinimalItemComponent,
         ResponsiveTableComponent,
-        SpacesToPascalCasePipe,
         IsCropPipe,
         RefinementsListComponent,
         CastToQualityPipe,
@@ -75,7 +90,6 @@ import { IngameTimePipe } from './pipes/ingame-time.pipe';
         CookingRecipeIngredientsPipe,
         CastToMinimalItemArrayPipe,
         ItemProcessingIngredientsPipe,
-        AddSpacesToPascalCasePipe,
         DataFilterComponent,
         IsItemPipe,
         NonSpecializedTableComponent,
@@ -85,6 +99,23 @@ import { IngameTimePipe } from './pipes/ingame-time.pipe';
         IsFishPipe,
         IngameDatePipe,
         IngameTimePipe,
+        TownrankPipe,
+        IsMinimalItemPipe,
+        NpcPortraitComponent,
+        NpcHeadPortraitComponent,
+        EffectComponent,
+        RequirementsComponent,
+        MeritPointsComponent,
+        ExpandableComponent,
+        RemoveTagsPipe,
+        ChancePerItemListComponent,
+        ChancePerItemTableListComponent,
+        HasPipe,
+        EntityKeyPipe,
+        IsMinimalTagBasedItemPipe,
+        IsTagBasedItemPipe,
+        ToItemListEntriesPipe,
+        RequirementsListComponent,
     ],
     imports: [
         CommonModule,
@@ -98,6 +129,7 @@ import { IngameTimePipe } from './pipes/ingame-time.pipe';
         MatTooltipModule,
         ReactiveFormsModule,
         MatSortModule,
+        AddSpacesToPascalCasePipe,
     ],
     exports: [
         UiIconComponent,
@@ -114,7 +146,6 @@ import { IngameTimePipe } from './pipes/ingame-time.pipe';
         ListDetailContainerComponent,
         InlineMinimalItemComponent,
         ResponsiveTableComponent,
-        SpacesToPascalCasePipe,
         IsCropPipe,
         RefinementsListComponent,
         RarityIconComponent,
@@ -126,7 +157,6 @@ import { IngameTimePipe } from './pipes/ingame-time.pipe';
         CookingRecipeIngredientsPipe,
         CastToMinimalItemArrayPipe,
         ItemProcessingIngredientsPipe,
-        AddSpacesToPascalCasePipe,
         DataFilterComponent,
         IsItemPipe,
         NonSpecializedTableComponent,
@@ -134,6 +164,22 @@ import { IngameTimePipe } from './pipes/ingame-time.pipe';
         IsFishPipe,
         IngameDatePipe,
         IngameTimePipe,
+        TownrankPipe,
+        IsMinimalItemPipe,
+        NpcPortraitComponent,
+        NpcHeadPortraitComponent,
+        EffectComponent,
+        RequirementsComponent,
+        MeritPointsComponent,
+        ExpandableComponent,
+        RemoveTagsPipe,
+        ChancePerItemListComponent,
+        ChancePerItemTableListComponent,
+        HasPipe,
+        EntityKeyPipe,
+        IsMinimalTagBasedItemPipe,
+        IsTagBasedItemPipe,
+        RequirementsListComponent,
     ],
 })
 export class SharedModule {

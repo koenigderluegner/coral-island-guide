@@ -1,0 +1,22 @@
+@if (requirements && requirements.requirements.length) {
+    <div class="my-2">
+        @if (requirements.requirements.length > 1) {
+
+            Unlock requirements ({{ requirements.type === 'And' ? 'all' : 'any' }} of them):
+
+        }
+        @if (requirements.requirements.length < 2) {
+
+            Unlock requirement:
+
+        }
+
+
+        <div class="flex flex-col  text-black">
+            @for (requirement of requirements.requirements; track requirement) {
+                <app-requirements
+                        [requirement]="requirement"/>
+            }
+        </div>
+    </div>
+}

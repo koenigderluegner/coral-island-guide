@@ -1,0 +1,20 @@
+@for (heartEvent of heartEvents; track heartEvent) {
+    <app-expandable #expandable
+                    class="bg-amber-50/70 px-4 rounded-lg mb-3 shadow-sm">
+        <h3 (click)="expandable.toggle()"
+            class="text-xl text-black flex items-center justify-between cursor-pointer py-4"
+            expandableHeader>
+            {{ heartEvent.heartLevel }} hearts event
+            <i [class.down]="!expandable.open" [class.up]="expandable.open" class="arrow"></i>
+        </h3>
+        @for (trigger of heartEvent.trigger; track trigger; let last = $last) {
+
+            <app-heart-event-trigger [class.mb-3]="last" [heartEventTrigger]="trigger"/>
+            @if (!last) {
+                <hr class="my-3">
+            }
+
+        }
+
+    </app-expandable>
+}

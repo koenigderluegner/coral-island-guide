@@ -1,10 +1,10 @@
 import { FruitTree, Item, Season } from '@ci/data-types';
-import { readAsset } from '../util/functions';
+import { minifyItem, readAsset } from '../util/functions';
 import { CropRegistry } from '../types/crop-registry.type';
-import { getEnumValue } from '@ci/util';
+import { getEnumValue, nonNullable } from '@ci/util';
 import { BaseGenerator } from "./base-generator.class";
 import { Datatable } from "../interfaces/datatable.interface";
-import { RawFruitTree } from "../interfaces/raw-fruit-tree.interface";
+import { RawFruitTree } from "../interfaces/raw-data-interfaces/raw-fruit-tree.interface";
 
 export class FruitTreeDbGenerator extends BaseGenerator<RawFruitTree, FruitTree> {
 
@@ -25,11 +25,14 @@ export class FruitTreeDbGenerator extends BaseGenerator<RawFruitTree, FruitTree>
 
         if (!seed) return undefined;
 
+        const item: FruitTree['item'] = {...minifyItem(seed), price: seed.price}
+
+
         const crop: FruitTree = {
             key: itemKey,
-            item: seed,
+            item,
             size: dbItem.size,
-            growableSeason: [getEnumValue(dbItem.producingSeason) as Season],
+            growableSeason: [getEnumValue(dbItem.producingSeason)],
             growTime: dbItem.stages.map(s => s.length).reduce((p, v) => p + v, 0),
             isRegrowable: true,
             regrowableLength: 1,
@@ -37,20 +40,27 @@ export class FruitTreeDbGenerator extends BaseGenerator<RawFruitTree, FruitTree>
             maxDroppedItems: dbItem.fruitsFloaties.maxDroppedItems,
             overrideExperience: dbItem.overrideExperience,
             overrideExperienceOnHarvest: dbItem.overrideExperienceOnHarvest,
-            dropData: dbItem.fruitsFloaties.dropData.map(dd => {
-                return {
-                    itemId: dd.itemId.itemID,
-                    dropChance: dd.dropChance,
-                    dropRange: dd.dropRange,
-                    item: this.itemMap.get(dd.itemId.itemID)
-                };
-            })
+            dropData: dbItem.fruitsFloaties.dropData
+                .map(dd => {
+
+                    const ddItem = this.itemMap.get(dd.itemId.itemID);
+
+                    if (!ddItem) return;
+
+                    return {
+                        itemId: dd.itemId.itemID,
+                        dropChance: dd.dropChance,
+                        dropRange: dd.dropRange,
+                        item: {...minifyItem(ddItem), sellPrice: ddItem.sellPrice}
+                    };
+                })
+                .filter(nonNullable)
 
 
         };
 
-        crop.item.description = (crop.item.description ?? '').replace('{cropGrowLength}', '' + crop.growTime);
-        crop.item.description = crop.item.description.replace('{cropRegrowLength}', '' + crop.regrowableLength);
+        seed.description = (seed.description ?? '').replace('{cropGrowLength}', '' + crop.growTime);
+        seed.description = seed.description.replace('{cropRegrowLength}', '' + crop.regrowableLength);
 
         return crop;
 

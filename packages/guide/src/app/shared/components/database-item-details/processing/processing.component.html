@@ -1,0 +1,49 @@
+@if (!hideMaschine && itemProcessing.machine) {
+    <div class="mb-3 inline-flex gap-2 items-center">Processor:
+        <span class="text-black">
+                            @if (processorMapping[itemProcessing.machine.toLowerCase()]; as minimalItem) {
+
+                                <a [routerLink]="['/crafting/artisan', itemProcessing.machine.toLowerCase()]">
+                        <app-item-icon [itemName]="minimalItem.iconName"
+                                       class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
+                        <span class="ml-1 whitespace-nowrap underline">{{ minimalItem.displayName }}</span>
+                    </a>
+
+
+                            }
+            @if (!processorMapping[itemProcessing.machine.toLowerCase()]) {
+
+                {{ itemProcessing.machine | addSpacesToPascalCase | titlecase }}
+
+            }
+                </span>
+    </div>
+}
+@if (!itemProcessing.qualities) {
+    <div class="mb-3">Processing time:
+        <span class="text-black">
+              <app-processing-time [processingTime]="itemProcessing"/>
+                </span>
+    </div>
+}
+
+<app-item-list [itemList]="itemProcessing | itemProcessingIngredients" class="mb-3"/>
+
+
+@if (itemProcessing.qualities) {
+
+    <div class="mb-3">Time per input quality
+        <app-processing-time-per-quality [baseProcessingTime]="itemProcessing"
+                                         [processingTimePerQualities]="itemProcessing.qualities"/>
+    </div>
+
+}
+
+
+@if (itemProcessing.refinements) {
+
+    <div class="mb-3">Time to improve quality
+        <app-refinements-list [refinements]="itemProcessing.refinements"/>
+    </div>
+
+}

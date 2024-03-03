@@ -1,0 +1,58 @@
+<app-list-detail-container [(openDrawer)]="openDrawer">
+    <ng-container listDetail>
+        @if (selectedEntity) {
+            <app-mail-details [mail]="selectedEntity"/>
+        }
+        @if (selectedTornPage) {
+            <app-torn-page-details [tornPage]="selectedTornPage"/>
+        }
+    </ng-container>
+    @if (data$ | async) {
+        <mat-tab-group (selectedTabChange)="updateUrl($event)"
+                       [selectedIndex]="selectedTabIndex"
+                       class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false">
+            <mat-tab [label]="tabNames[0]">
+                <app-data-filter [(showTable)]="showTable"/>
+                @if (!showTable) {
+                    <div class="grid gap-4 icon-grid  mt-8">
+                        @for (mail of mails; track mail) {
+                            <app-item-icon (click)="showDetails(mail)"
+
+                                           [class.selected-icon]="selectedEntity?.key === mail.key"
+                                           class="icon-grid-item"
+                                           itemName="Torn_page">
+                            </app-item-icon>
+                        }
+                    </div>
+                }
+                @if (showTable) {
+                    <app-mail-table [dataSource]="mails"/>
+                }
+
+            </mat-tab>
+            <mat-tab [label]="tabNames[1]">
+                <app-data-filter [(showTable)]="showTornPagesTable"/>
+                @if (!showTornPagesTable) {
+                    <div class="grid gap-4 icon-grid  mt-8">
+                        @for (tornPage of tornPages; track tornPage) {
+                            <app-item-icon (click)="showTornPageDetails(tornPage)"
+
+                                           [class.selected-icon]="selectedTornPage?.key === tornPage.key"
+                                           class="icon-grid-item"
+                                           itemName="Torn_page">
+                            </app-item-icon>
+                        }
+                    </div>
+                }
+                @if (showTornPagesTable) {
+                    <app-torn-pages-table [dataSource]="tornPages"/>
+                }
+
+            </mat-tab>
+
+
+        </mat-tab-group>
+    }
+
+
+</app-list-detail-container>

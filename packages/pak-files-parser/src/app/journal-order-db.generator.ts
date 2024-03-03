@@ -1,6 +1,6 @@
 import { readAsset } from '../util/functions';
 import { JournalOrder } from '@ci/data-types';
-import { RawJournalOrder } from '../interfaces/raw-journal-order.interface';
+import { RawJournalOrder } from '../interfaces/raw-data-interfaces/raw-journal-order.interface';
 import { JournalOrders } from '../types/journal-orders.type';
 
 export class JournalOrderDbGenerator {

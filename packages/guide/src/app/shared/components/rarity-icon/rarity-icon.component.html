@@ -1,4 +1,6 @@
-<img *ngIf="quality && quality !== QUALITY.BASE"
-     src="assets/ui/images/icons/quality-stars/T_Icon_Star{{quality|titlecase}}B.png"
-     onerror="this.onerror=null;this.src='/assets/ui/images/spacer.gif'"
-     alt="">
+@if (quality && quality !== QUALITY.BASE) {
+    <img
+            src="assets/ui/images/icons/quality-stars/T_Icon_Star{{quality|titlecase}}B.png"
+            onerror="this.onerror=null;this.src='/assets/ui/images/spacer.gif'"
+            alt="">
+}

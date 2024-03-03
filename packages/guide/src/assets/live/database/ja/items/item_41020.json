@@ -1,0 +1,352 @@
+{
+  "item": {
+    "id": "item_41020",
+    "displayName": "ゲイシャコーヒー",
+    "price": 1435,
+    "sellPrice": 860,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Consumable",
+    "displayKey": "Consumable",
+    "description": "エネルギーを大きくアップさせるグルメな飲み物です。",
+    "qualities": {
+      "bronze": {
+        "price": 1650,
+        "sellPrice": 990
+      },
+      "silver": {
+        "price": 1865,
+        "sellPrice": 1120
+      },
+      "gold": {
+        "price": 2150,
+        "sellPrice": 1290
+      },
+      "osmium": {
+        "price": 2865,
+        "sellPrice": 1720
+      }
+    },
+    "iconName": "Gesha_coffee_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.Keg",
+      "Item.Consumable.Drink",
+      "item.artisan"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_32003",
+          "displayName": "ゲイシャコーヒーの豆",
+          "iconName": "Gesha_coffee_bean_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41020",
+          "displayName": "ゲイシャコーヒー",
+          "iconName": "Gesha_coffee_Sprite",
+          "sellPrice": 860
+        }
+      },
+      "genericInput": null,
+      "machine": "Keg"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 2,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41020",
+          "displayName": "ゲイシャコーヒー",
+          "iconName": "Gesha_coffee_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41280",
+          "displayName": "熟成ゲイシャコーヒー",
+          "iconName": "Aged_Gesha_Coffee_Sprite",
+          "sellPrice": 1720
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 1,
+          "time": {
+            "hours": 18,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 1,
+          "time": {
+            "hours": 13,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 1,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 1,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "ストーンスープ",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "食用とは思えません。食べるなら自己責任で。",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "食用食材すべて"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "石材",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "食用食材すべて": [
+          {
+            "id": "item_41180",
+            "displayName": "ヤギのヨーグルト",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "大きなヤギのヨーグルト",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50307",
+            "displayName": "オオシャコガイ",
+            "iconName": "Giant_Clam_Sprite"
+          },
+          {
+            "id": "item_50314",
+            "displayName": "ワカメ",
+            "iconName": "Wakame_weed_Sprite"
+          },
+          {
+            "id": "item_80065",
+            "displayName": "花束",
+            "iconName": "Flower_Bouquet_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "asGift": [
+    {
+      "pref": {
+        "icon": "T_Icon_Love",
+        "label": "Love",
+        "preferenceField": "lovePreferences"
+      },
+      "npcs": [
+        {
+          "key": "Aaliyah",
+          "characterName": "Aaliyah",
+          "iconName": "Icon_aaliyah"
+        },
+        {
+          "key": "Raj",
+          "characterName": "Raj",
+          "iconName": "Icon_raj"
+        }
+      ]
+    }
+  ],
+  "buyAt": [
+    {
+      "item": {
+        "id": "item_41020",
+        "displayName": "ゲイシャコーヒー",
+        "iconName": "Gesha_coffee_Sprite",
+        "price": 1435,
+        "sellPrice": 860
+      },
+      "allowedDays": [],
+      "allowedSeasons": [],
+      "allowedWeather": [],
+      "forbiddenDays": [],
+      "forbiddenSeasons": [],
+      "forbiddenWeather": [],
+      "townRank": 1,
+      "tag": [],
+      "priceOverride": 0,
+      "priority": 2,
+      "enabled": true,
+      "availableSinceDate": false,
+      "availableTillDate": false,
+      "availableDuringTime": false,
+      "shop": {
+        "url": "coffee",
+        "displayName": "Raj's Coffee Corner"
+      }
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41020",
+      "bVaryHealthToMax": false,
+      "healthDelta": -50,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 55,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 120,
+      "buff": "GoFast",
+      "itemType": "Drink"
+    },
+    "bronze": {
+      "key": "item_41020-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": -45,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 60,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 138,
+      "buff": "GoFast",
+      "itemType": "Drink"
+    },
+    "silver": {
+      "key": "item_41020-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": -39,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 70,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 156,
+      "buff": "GoFast",
+      "itemType": "Drink"
+    },
+    "gold": {
+      "key": "item_41020-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": -34,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 80,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 180,
+      "buff": "GoFast",
+      "itemType": "Drink"
+    },
+    "osmium": {
+      "key": "item_41020-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": -30,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 110,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 240,
+      "buff": "GoFast",
+      "itemType": "Drink"
+    }
+  }
+}

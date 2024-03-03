@@ -4,6 +4,7 @@
 
 @import "styles/material-theme";
 
+@import "styles/dialogs";
 @import "styles/tabs";
 @import "styles/grid";
 @import "styles/mixins";
@@ -30,16 +31,21 @@
   font-display: swap;
 }
 
+:root {
+  --cg-icon-grid-min-size: 55px;
+  --cg-min-header-height: 64px;
+  --cg-min-footer-height: calc(56px + env(safe-area-inset-bottom));
+}
 
 html {
   @apply w-full h-full;
 }
 
 body {
-  color: #8a7c67;
+  color: #5a4627;
   font-family: 'QTVagaRound', sans-serif;
   @apply min-h-full;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) fixed,
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)) fixed,
   url('assets/bg.jpg') center no-repeat fixed;
   background-size: cover, cover;
 }
@@ -73,13 +79,26 @@ hr {
   z-index: 1;
 }
 
+.mat-sidenav.mat-drawer {
+  box-shadow: none
+}
+
 @layer components {
   .btn-amber {
     @apply inline-flex justify-center py-2 px-4 border border-transparent shadow-sm font-medium rounded-md text-white bg-amber-700 hover:bg-amber-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-700;
   }
 }
 
+
+@screen md {
+  :root {
+    --cg-min-header-height: 80px;
+  }
+}
 @screen xl {
+  :root {
+    --cg-min-header-height: 108px;
+  }
 
   .mat-drawer-container {
     height: 100%;
@@ -93,6 +112,54 @@ hr {
     right: 45px;
     top: 75px;
 
+  }
+
+  .placeholder-padding {
+    padding-right: 600px;
+  }
+
+}
+
+td.mdc-data-table__cell {
+  overflow: unset;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+
+  &.right {
+    transform: rotate(-45deg);
+  }
+
+  &.left {
+    transform: rotate(135deg);
+  }
+
+  &.up {
+    transform: rotate(-135deg);
+  }
+
+  &.down {
+    translate: 0 -3px;
+    transform: rotate(45deg);
+  }
+}
+
+.mat-mdc-option .mdc-list-item__primary-text {
+  flex-grow: 1;
+}
+
+
+.mat-mdc-form-field.btn {
+  &.mat-form-field-appearance-fill .mat-mdc-select-arrow-wrapper {
+    transform: none;
+  }
+
+  .mdc-text-field--filled .mdc-floating-label--float-above {
+    transform: translateY(-50%)
   }
 }
 

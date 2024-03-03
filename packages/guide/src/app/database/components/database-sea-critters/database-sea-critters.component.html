@@ -1,4 +1,8 @@
-<ng-container *ngIf="critter">
-    <h3 class="database-header">Ocean critters</h3>
-    <app-caught-table [dataSource]="[critter]"/>
-</ng-container>
+@if (databaseItem.oceanCritter) {
+    <app-expandable #expandableComponent open>
+        <h3 class="database-header" expandableHeader>
+            <app-database-header-button [templateRef]="expandableComponent">Ocean critters</app-database-header-button>
+        </h3>
+        <app-caught-table [dataSource]="[databaseItem.oceanCritter]"/>
+    </app-expandable>
+}

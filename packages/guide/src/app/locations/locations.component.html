@@ -2,9 +2,25 @@
     <app-module-sidebar>
         <app-module-sidebar-item [uiIcon]="uiIcon.OFFERING" routerLink="lake-temple">Lake temple
         </app-module-sidebar-item>
-        <app-module-sidebar-item *ngIf="settings.getSettings().useBeta" [uiIcon]="uiIcon.BLACKSMITH"
-                                 routerLink="blacksmith">Blacksmith
+        <app-module-sidebar-item [uiIcon]="uiIcon.STORE" routerLink="merit-exchange">Merit Exchange
         </app-module-sidebar-item>
+        <app-module-sidebar-item>Shops</app-module-sidebar-item>
+        @for (shopName of shops; track shopName) {
+
+            <app-module-sidebar-item [routerLink]="shopName"
+                                     [uiIcon]="SHOP_ICONS[shopName]">{{ SHOP_DISPLAY_NAMES[shopName] }}
+            </app-module-sidebar-item>
+
+        }
+        <app-module-sidebar-item>Festivals</app-module-sidebar-item>
+        @for (festivalName of festivals; track festivalName) {
+
+            <app-module-sidebar-item [routerLink]="festivalName"
+                                     [uiIcon]="FESTIVAL_ICONS[festivalName]">{{ FESTIVAL_DISPLAY_NAMES[festivalName] }}
+            </app-module-sidebar-item>
+
+        }
+
     </app-module-sidebar>
     <router-outlet class="hidden"></router-outlet>
 </app-sidebar-container>

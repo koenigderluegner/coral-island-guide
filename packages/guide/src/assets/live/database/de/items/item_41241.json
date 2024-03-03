@@ -1,0 +1,345 @@
+{
+  "item": {
+    "id": "item_41241",
+    "displayName": "Auberginen-Kimchi",
+    "price": 875,
+    "sellPrice": 350,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Artisan product",
+    "displayKey": "ArtisanProduct",
+    "description": "Sauer und pikant. Lecker!",
+    "qualities": {
+      "bronze": {
+        "price": 940,
+        "sellPrice": 375
+      },
+      "silver": {
+        "price": 1065,
+        "sellPrice": 425
+      },
+      "gold": {
+        "price": 1190,
+        "sellPrice": 475
+      },
+      "osmium": {
+        "price": 1565,
+        "sellPrice": 625
+      }
+    },
+    "iconName": "Kimchi_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.AgingBarrel",
+      "Item.Consumable.Food",
+      "item.artisan.Kimchi"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 4,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41084",
+          "displayName": "Eingelegte Aubergine",
+          "iconName": "White_Pickles_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41241",
+          "displayName": "Auberginen-Kimchi",
+          "iconName": "Kimchi_Sprite",
+          "sellPrice": 350
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 3,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 3,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 2,
+          "time": {
+            "hours": 16,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 2,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "Steinsuppe",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Sieht ungenießbar aus. Verzehr auf eigene Gefahr.",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "Alle essbaren Zutaten"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "Stein",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "Alle essbaren Zutaten": [
+          {
+            "id": "item_41180",
+            "displayName": "Ziegenjoghurt",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "Großer Ziegenjoghurt",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50307",
+            "displayName": "Riesenmuschel",
+            "iconName": "Giant_Clam_Sprite"
+          },
+          {
+            "id": "item_50314",
+            "displayName": "Wakame-Alge",
+            "iconName": "Wakame_weed_Sprite"
+          },
+          {
+            "id": "item_80065",
+            "displayName": "Blumenstrauß",
+            "iconName": "Flower_Bouquet_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "RareBased",
+      "offeringGroupTitle": "Seltener Altar",
+      "urlPath": "rarealtar",
+      "offeringGroupRewardText": "Schaltet Zugriff auf die Savanne frei",
+      "offerings": [
+        {
+          "title": "Seltener Kunsthandwerker",
+          "imageName": "Rare_Artisan_Offerings",
+          "numOfItemRequired": -1,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_65022",
+                  "displayName": "Alterungsfass",
+                  "iconName": "Aging_Barrel_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "id": "item_41169",
+                "displayName": "Schwarzer Titanenwurz-Honig",
+                "iconName": "Black_Honey_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "key": "Any_Kimchi",
+                "displayName": "Jeden Kimchi",
+                "iconName": "Kimchi"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_Wine",
+                "displayName": "Beliebiger Wein",
+                "iconName": "Wine"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "id": "item_41178",
+                "displayName": "Fermentiertes Ziegenkäse-Rad",
+                "iconName": "Fermented_Goat_Cheese_Wheel_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_41174",
+                "displayName": "Weißes Trüffelöl",
+                "iconName": "White_truffle_oil_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41241",
+      "bVaryHealthToMax": false,
+      "healthDelta": 105,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 70,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_41241-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 120,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 85,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_41241-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 135,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 90,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_41241-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 160,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 110,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_41241-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 210,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 150,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  }
+}

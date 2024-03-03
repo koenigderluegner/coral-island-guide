@@ -3,27 +3,28 @@
     "Type": "Function",
     "Name": "ExecuteUbergraph_AWBP_FishingNPC",
     "Outer": "AWBP_FishingNPC_C",
+    "Class": "UScriptClass'Function'",
     "ChildProperties": [
       {
         "Type": "IntProperty",
         "Name": "EntryPoint",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 4,
-        "PropertyFlags": 148
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
       },
       {
         "Type": "EnumProperty",
         "Name": "K2Node_Event_context",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
         "Enum": {
-          "ObjectName": "Enum EC_AnimationContext",
+          "ObjectName": "Enum'EC_AnimationContext'",
           "ObjectPath": "/Script/ProjectCoral"
         },
         "UnderlyingProp": {
           "Type": "ByteProperty",
           "Name": "UnderlyingType",
-          "Flags": 1,
+          "Flags": "RF_Public",
           "ElementSize": 1,
           "Enum": null
         }
@@ -31,39 +32,40 @@
       {
         "Type": "ObjectProperty",
         "Name": "K2Node_Event_npc",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 8,
         "PropertyClass": {
-          "ObjectName": "Class C_NpcCharacter",
+          "ObjectName": "Class'C_NpcCharacter'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       }
     ],
-    "FunctionFlags": 32769
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
   },
   {
     "Type": "Function",
     "Name": "OnAnimationContextChanged",
     "Outer": "AWBP_FishingNPC_C",
+    "Class": "UScriptClass'Function'",
     "SuperStruct": {
-      "ObjectName": "Function C_WorldWaypoint:OnAnimationContextChanged",
+      "ObjectName": "Function'C_WorldWaypoint:OnAnimationContextChanged'",
       "ObjectPath": "/Script/ProjectCoral"
     },
     "ChildProperties": [
       {
         "Type": "EnumProperty",
         "Name": "context",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
-        "PropertyFlags": 148,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
         "Enum": {
-          "ObjectName": "Enum EC_AnimationContext",
+          "ObjectName": "Enum'EC_AnimationContext'",
           "ObjectPath": "/Script/ProjectCoral"
         },
         "UnderlyingProp": {
           "Type": "ByteProperty",
           "Name": "UnderlyingType",
-          "Flags": 1,
+          "Flags": "RF_Public",
           "ElementSize": 1,
           "Enum": null
         }
@@ -71,41 +73,42 @@
       {
         "Type": "ObjectProperty",
         "Name": "npc",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 8,
-        "PropertyFlags": 148,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
         "PropertyClass": {
-          "ObjectName": "Class C_NpcCharacter",
+          "ObjectName": "Class'C_NpcCharacter'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       }
     ],
-    "FunctionFlags": 134744064
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
   },
   {
     "Type": "BlueprintGeneratedClass",
     "Name": "AWBP_FishingNPC_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
     "Properties": {
       "SimpleConstructionScript": {
-        "ObjectName": "SimpleConstructionScript AWBP_FishingNPC_C:SimpleConstructionScript_0",
+        "ObjectName": "SimpleConstructionScript'AWBP_FishingNPC_C:SimpleConstructionScript_0'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_FishingNPC.10"
       },
       "UberGraphFunction": {
-        "ObjectName": "Function AWBP_FishingNPC_C:ExecuteUbergraph_AWBP_FishingNPC",
+        "ObjectName": "Function'AWBP_FishingNPC_C:ExecuteUbergraph_AWBP_FishingNPC'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_FishingNPC.0"
       }
     },
     "SuperStruct": {
-      "ObjectName": "Class C_AnimationWaypoint",
+      "ObjectName": "Class'C_AnimationWaypoint'",
       "ObjectPath": "/Script/ProjectCoral"
     },
     "Children": [
       {
-        "ObjectName": "Function AWBP_FishingNPC_C:OnAnimationContextChanged",
+        "ObjectName": "Function'AWBP_FishingNPC_C:OnAnimationContextChanged'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_FishingNPC.1"
       },
       {
-        "ObjectName": "Function AWBP_FishingNPC_C:ExecuteUbergraph_AWBP_FishingNPC",
+        "ObjectName": "Function'AWBP_FishingNPC_C:ExecuteUbergraph_AWBP_FishingNPC'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_FishingNPC.0"
       }
     ],
@@ -113,71 +116,72 @@
       {
         "Type": "StructProperty",
         "Name": "UberGraphFrame",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 16,
-        "PropertyFlags": 2105344,
+        "PropertyFlags": "Transient | DuplicateTransient",
         "Struct": {
-          "ObjectName": "ScriptStruct PointerToUberGraphFrame",
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "StationMesh1",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 17180393476,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
         "PropertyClass": {
-          "ObjectName": "Class StaticMeshComponent",
+          "ObjectName": "Class'StaticMeshComponent'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "PositionComponent1",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 17180393476,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
         "PropertyClass": {
-          "ObjectName": "Class SceneComponent",
+          "ObjectName": "Class'SceneComponent'",
           "ObjectPath": "/Script/Engine"
         }
       }
     ],
     "FuncMap": {
       "ExecuteUbergraph_AWBP_FishingNPC": {
-        "ObjectName": "Function AWBP_FishingNPC_C:ExecuteUbergraph_AWBP_FishingNPC",
+        "ObjectName": "Function'AWBP_FishingNPC_C:ExecuteUbergraph_AWBP_FishingNPC'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_FishingNPC.0"
       },
       "OnAnimationContextChanged": {
-        "ObjectName": "Function AWBP_FishingNPC_C:OnAnimationContextChanged",
+        "ObjectName": "Function'AWBP_FishingNPC_C:OnAnimationContextChanged'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_FishingNPC.1"
       }
     },
-    "ClassFlags": 8652820,
+    "ClassFlags": "CLASS_Config | CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
     "ClassWithin": {
-      "ObjectName": "Class Object",
+      "ObjectName": "Class'Object'",
       "ObjectPath": "/Script/CoreUObject"
     },
     "ClassConfigName": "Engine",
     "bCooked": true,
     "ClassDefaultObject": {
-      "ObjectName": "AWBP_FishingNPC_C Default__AWBP_FishingNPC_C",
+      "ObjectName": "AWBP_FishingNPC_C'Default__AWBP_FishingNPC_C'",
       "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_FishingNPC.3"
     }
   },
   {
     "Type": "AWBP_FishingNPC_C",
     "Name": "Default__AWBP_FishingNPC_C",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_FishingNPC.AWBP_FishingNPC_C'",
     "Properties": {
       "UberGraphFrame": {},
       "linkedState": "EC_WaypointLinkedState::NotLinked",
       "stationMeshComponent": {
-        "ObjectName": "StaticMeshComponent Default__AWBP_FishingNPC_C:StationMesh",
+        "ObjectName": "StaticMeshComponent'Default__AWBP_FishingNPC_C:StationMesh'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_FishingNPC.12"
       },
       "RootComponent": {
-        "ObjectName": "SceneComponent Default__AWBP_FishingNPC_C:PositionComponent",
+        "ObjectName": "SceneComponent'Default__AWBP_FishingNPC_C:PositionComponent'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_FishingNPC.6"
       }
     }
@@ -185,12 +189,14 @@
   {
     "Type": "SceneComponent",
     "Name": "DefaultSceneRoot_GEN_VARIABLE",
-    "Outer": "AWBP_FishingNPC_C"
+    "Outer": "AWBP_FishingNPC_C",
+    "Class": "UScriptClass'SceneComponent'"
   },
   {
     "Type": "SceneComponent",
     "Name": "PositionComponent1_GEN_VARIABLE",
     "Outer": "AWBP_FishingNPC_C",
+    "Class": "UScriptClass'SceneComponent'",
     "Properties": {
       "RelativeRotation": {
         "Pitch": 0.0,
@@ -202,19 +208,21 @@
   {
     "Type": "SceneComponent",
     "Name": "PositionComponent",
-    "Outer": "Default__AWBP_FishingNPC_C"
+    "Outer": "Default__AWBP_FishingNPC_C",
+    "Class": "UScriptClass'SceneComponent'"
   },
   {
     "Type": "SCS_Node",
     "Name": "SCS_Node_0",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class SceneComponent",
+        "ObjectName": "Class'SceneComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "SceneComponent AWBP_FishingNPC_C:DefaultSceneRoot_GEN_VARIABLE",
+        "ObjectName": "SceneComponent'AWBP_FishingNPC_C:DefaultSceneRoot_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_FishingNPC.4"
       },
       "VariableGuid": "011CA77E-4BD18100-9E621BAB-A1AC4E1D",
@@ -225,20 +233,21 @@
     "Type": "SCS_Node",
     "Name": "SCS_Node_1",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class SceneComponent",
+        "ObjectName": "Class'SceneComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "SceneComponent AWBP_FishingNPC_C:PositionComponent1_GEN_VARIABLE",
+        "ObjectName": "SceneComponent'AWBP_FishingNPC_C:PositionComponent1_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_FishingNPC.5"
       },
       "ParentComponentOrVariableName": "PositionComponent",
       "bIsParentComponentNative": true,
       "ChildNodes": [
         {
-          "ObjectName": "SCS_Node AWBP_FishingNPC_C:SimpleConstructionScript_0.SCS_Node_2",
+          "ObjectName": "SCS_Node'AWBP_FishingNPC_C:SimpleConstructionScript_0.SCS_Node_2'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_FishingNPC.9"
         }
       ],
@@ -250,13 +259,14 @@
     "Type": "SCS_Node",
     "Name": "SCS_Node_2",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class StaticMeshComponent",
+        "ObjectName": "Class'StaticMeshComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "StaticMeshComponent AWBP_FishingNPC_C:StationMesh1_GEN_VARIABLE",
+        "ObjectName": "StaticMeshComponent'AWBP_FishingNPC_C:StationMesh1_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_FishingNPC.11"
       },
       "VariableGuid": "BCE8ECFD-4D896143-C29C05AF-FBA265E5",
@@ -267,25 +277,26 @@
     "Type": "SimpleConstructionScript",
     "Name": "SimpleConstructionScript_0",
     "Outer": "AWBP_FishingNPC_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
     "Properties": {
       "RootNodes": [
         {
-          "ObjectName": "SCS_Node AWBP_FishingNPC_C:SimpleConstructionScript_0.SCS_Node_1",
+          "ObjectName": "SCS_Node'AWBP_FishingNPC_C:SimpleConstructionScript_0.SCS_Node_1'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_FishingNPC.8"
         }
       ],
       "AllNodes": [
         {
-          "ObjectName": "SCS_Node AWBP_FishingNPC_C:SimpleConstructionScript_0.SCS_Node_1",
+          "ObjectName": "SCS_Node'AWBP_FishingNPC_C:SimpleConstructionScript_0.SCS_Node_1'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_FishingNPC.8"
         },
         {
-          "ObjectName": "SCS_Node AWBP_FishingNPC_C:SimpleConstructionScript_0.SCS_Node_2",
+          "ObjectName": "SCS_Node'AWBP_FishingNPC_C:SimpleConstructionScript_0.SCS_Node_2'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_FishingNPC.9"
         }
       ],
       "DefaultSceneRootNode": {
-        "ObjectName": "SCS_Node AWBP_FishingNPC_C:SimpleConstructionScript_0.SCS_Node_0",
+        "ObjectName": "SCS_Node'AWBP_FishingNPC_C:SimpleConstructionScript_0.SCS_Node_0'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_FishingNPC.7"
       }
     }
@@ -294,6 +305,7 @@
     "Type": "StaticMeshComponent",
     "Name": "StationMesh1_GEN_VARIABLE",
     "Outer": "AWBP_FishingNPC_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
     "Properties": {
       "bUseDefaultCollision": true,
       "bGenerateOverlapEvents": false,
@@ -308,9 +320,10 @@
     "Type": "StaticMeshComponent",
     "Name": "StationMesh",
     "Outer": "Default__AWBP_FishingNPC_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
     "Properties": {
       "AttachParent": {
-        "ObjectName": "SceneComponent Default__AWBP_FishingNPC_C:PositionComponent",
+        "ObjectName": "SceneComponent'Default__AWBP_FishingNPC_C:PositionComponent'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_FishingNPC.6"
       }
     }

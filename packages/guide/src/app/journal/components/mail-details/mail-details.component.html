@@ -1,0 +1,11 @@
+<app-card>
+    <app-mail [mail]="mail"/>
+    @if (mail.effects?.length) {
+        <div class="mt-6">
+            <div class="text-lg font-semibold">Effects:</div>
+            @for (effect of mail.effects; track effect) {
+                <app-effect [effect]="effect"/>
+            }
+        </div>
+    }
+</app-card>

@@ -1,5 +1,5 @@
 import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
-import { UiIcon } from '../../../shared/enums/ui-icon.enum';
+import { UiIcon } from '@ci/data-types';
 import { NavigationStart, Router, RouterLink } from '@angular/router';
 import { filter } from "rxjs";
 import { SettingsService } from "../../../shared/services/settings.service";
@@ -30,9 +30,9 @@ export class HeaderComponent {
             path: 'crafting'
         },
         {
-            text: 'People',
+            text: 'NPCs',
             uiIcon: UiIcon.PEOPLE,
-            path: 'people'
+            path: 'npcs'
         },
         {
             text: 'Locations',
@@ -40,29 +40,24 @@ export class HeaderComponent {
             path: 'locations'
         },
         {
-            text: 'Checklist',
-            uiIcon: UiIcon.TO_DO,
-            path: 'checklist'
+            text: 'My Guide',
+            uiIcon: UiIcon.MY_CORAL,
+            path: 'my'
         },
         {
             text: 'Item database',
             uiIcon: UiIcon.DATABASE,
             path: 'database'
         },
-        {
-            text: 'Settings',
-            uiIcon: UiIcon.SETTINGS,
-            path: 'settings'
-        },
     ];
     @HostBinding('class.open-menu') isOpen = false;
     protected uiIcon = UiIcon;
-    @HostBinding('class.app-header') private _setClass = true;
     protected isBeta = false;
+    @HostBinding('class.app-header') private _setClass = true;
 
     constructor(private _router: Router,
                 private readonly _settingsService: SettingsService) {
-        _router.events.pipe(
+        this._router.events.pipe(
             filter((e) => e instanceof NavigationStart)
         ).subscribe(() => {
             this.isOpen = false;

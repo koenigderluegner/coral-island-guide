@@ -2,14 +2,15 @@
   {
     "Type": "DataTable",
     "Name": "DT_Calendar_Aaliyah",
+    "Class": "UScriptClass'DataTable'",
     "Properties": {
       "RowStruct": {
-        "ObjectName": "ScriptStruct C_WorkCalendarEntry",
+        "ObjectName": "ScriptStruct'C_WorkCalendarEntry'",
         "ObjectPath": "/Script/ProjectCoral"
       }
     },
     "Rows": {
-      "SpringFallWinter_MF_SpringWinterTh": {
+      "SpringFallWinter_MF_SpringFallWinterTh": {
         "dateOverrides": [],
         "validFrom": {
           "day": 1,
@@ -19,32 +20,45 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Spring": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Thursday",
-              "EC_DayOfTheWeek::Friday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday"
+              ]
+            }
           },
-          "EC_Season::Fall": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Friday"
-            ]
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Thursday"
+              ]
+            }
           },
-          "EC_Season::Winter": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Friday",
-              "EC_DayOfTheWeek::Thursday"
-            ]
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Thursday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "SpringFall_T": {
         "dateOverrides": [],
@@ -56,22 +70,32 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Spring": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Tuesday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Tuesday"
+              ]
+            }
           },
-          "EC_Season::Fall": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Tuesday"
-            ]
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Tuesday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "Winter_T": {
         "dateOverrides": [],
@@ -83,17 +107,25 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Winter": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Tuesday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Tuesday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "SpringSummerFall_W": {
         "dateOverrides": [],
@@ -105,27 +137,39 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Spring": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Wednesday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Wednesday"
+              ]
+            }
           },
-          "EC_Season::Summer": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Wednesday"
-            ]
+          {
+            "EC_Season::Summer": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Wednesday"
+              ]
+            }
           },
-          "EC_Season::Fall": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Wednesday"
-            ]
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Wednesday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "Winter_W": {
         "dateOverrides": [],
@@ -137,17 +181,25 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Winter": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Wednesday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Wednesday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "Summer_MTThF": {
         "dateOverrides": [],
@@ -159,20 +211,28 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Summer": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Tuesday",
-              "EC_DayOfTheWeek::Thursday",
-              "EC_DayOfTheWeek::Friday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Summer": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "SpringSummerFallWinter_Sat": {
         "dateOverrides": [],
@@ -184,32 +244,46 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Spring": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Saturday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
           },
-          "EC_Season::Summer": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Saturday"
-            ]
+          {
+            "EC_Season::Summer": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
           },
-          "EC_Season::Fall": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Saturday"
-            ]
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
           },
-          "EC_Season::Winter": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Saturday"
-            ]
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "Weather_everyday": {
         "dateOverrides": [],
@@ -221,45 +295,57 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {
-          "EC_Weather::Rain": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Tuesday",
-              "EC_DayOfTheWeek::Wednesday",
-              "EC_DayOfTheWeek::Thursday",
-              "EC_DayOfTheWeek::Friday",
-              "EC_DayOfTheWeek::Saturday",
-              "EC_DayOfTheWeek::Sunday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [
+          {
+            "EC_Weather::Rain": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
           },
-          "EC_Weather::Snow": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Tuesday",
-              "EC_DayOfTheWeek::Wednesday",
-              "EC_DayOfTheWeek::Thursday",
-              "EC_DayOfTheWeek::Friday",
-              "EC_DayOfTheWeek::Saturday",
-              "EC_DayOfTheWeek::Sunday"
-            ]
+          {
+            "EC_Weather::Snow": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
           },
-          "EC_Weather::Storm": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Tuesday",
-              "EC_DayOfTheWeek::Wednesday",
-              "EC_DayOfTheWeek::Thursday",
-              "EC_DayOfTheWeek::Friday",
-              "EC_DayOfTheWeek::Saturday",
-              "EC_DayOfTheWeek::Sunday"
-            ]
+          {
+            "EC_Weather::Storm": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
           }
-        },
-        "seasonOverrides": {},
+        ],
+        "seasonOverrides": [],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "BeachCleaningRunning": {
         "dateOverrides": [],
@@ -271,15 +357,21 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {},
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
         "festivalOverrides": [
           "BeachCleanUp"
         ],
         "festivalStatesAllowed": [
           "EC_FestivalState::RunningFestival"
         ],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "MooncakeRunning": {
         "dateOverrides": [],
@@ -291,15 +383,21 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {},
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
         "festivalOverrides": [
           "MooncakeFestival"
         ],
         "festivalStatesAllowed": [
           "EC_FestivalState::RunningFestival"
         ],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "NewYearFeastRunning": {
         "dateOverrides": [],
@@ -311,15 +409,21 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {},
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
         "festivalOverrides": [
           "NewYearFeast"
         ],
         "festivalStatesAllowed": [
           "EC_FestivalState::RunningFestival"
         ],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "SpringSummerFallWinter_Sun": {
         "dateOverrides": [],
@@ -331,32 +435,46 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Spring": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Sunday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
           },
-          "EC_Season::Summer": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Sunday"
-            ]
+          {
+            "EC_Season::Summer": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
           },
-          "EC_Season::Fall": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Sunday"
-            ]
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
           },
-          "EC_Season::Winter": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Sunday"
-            ]
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "CherryBlossomRunning": {
         "dateOverrides": [],
@@ -368,15 +486,21 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {},
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
         "festivalOverrides": [
           "CherryBlossom"
         ],
         "festivalStatesAllowed": [
           "EC_FestivalState::RunningFestival"
         ],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "TreePlantingRunning": {
         "dateOverrides": [],
@@ -388,17 +512,23 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": false,
         "relationshipRequirement": "EC_RelationshipStatus::NONE",
-        "weatherOverrides": {},
-        "seasonOverrides": {},
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
         "festivalOverrides": [
           "TreePlanting"
         ],
         "festivalStatesAllowed": [
           "EC_FestivalState::RunningFestival"
         ],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
-      "MARRIAGE_SpringFallWinter_MF": {
+      "MARRIAGE_SpringFallWinter_MF_SpringFallWinterTh": {
         "dateOverrides": [],
         "validFrom": {
           "day": 1,
@@ -408,30 +538,45 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": true,
         "relationshipRequirement": "EC_RelationshipStatus::SPOUSE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Spring": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Friday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Thursday"
+              ]
+            }
           },
-          "EC_Season::Fall": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Friday"
-            ]
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Thursday"
+              ]
+            }
           },
-          "EC_Season::Winter": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Friday"
-            ]
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Thursday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "MARRIAGE_SpringFall_T": {
         "dateOverrides": [],
@@ -443,22 +588,32 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": true,
         "relationshipRequirement": "EC_RelationshipStatus::SPOUSE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Spring": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Tuesday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Tuesday"
+              ]
+            }
           },
-          "EC_Season::Fall": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Tuesday"
-            ]
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Tuesday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "MARRIAGE_Winter_T": {
         "dateOverrides": [],
@@ -470,17 +625,25 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": true,
         "relationshipRequirement": "EC_RelationshipStatus::SPOUSE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Winter": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Tuesday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Tuesday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "MARRIAGE_SpringSummerFall_W": {
         "dateOverrides": [],
@@ -492,27 +655,39 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": true,
         "relationshipRequirement": "EC_RelationshipStatus::SPOUSE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Spring": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Wednesday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Wednesday"
+              ]
+            }
           },
-          "EC_Season::Summer": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Wednesday"
-            ]
+          {
+            "EC_Season::Summer": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Wednesday"
+              ]
+            }
           },
-          "EC_Season::Fall": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Tuesday"
-            ]
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Wednesday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "MARRIAGE_Winter_W": {
         "dateOverrides": [],
@@ -524,17 +699,25 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": true,
         "relationshipRequirement": "EC_RelationshipStatus::SPOUSE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Winter": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Wednesday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Wednesday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "MARRIAGE_Summer_MTThF": {
         "dateOverrides": [],
@@ -546,20 +729,28 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": true,
         "relationshipRequirement": "EC_RelationshipStatus::SPOUSE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Summer": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Tuesday",
-              "EC_DayOfTheWeek::Thursday",
-              "EC_DayOfTheWeek::Friday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Summer": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "MARRIAGE_SpringSummerFallWinter_Sat": {
         "dateOverrides": [],
@@ -571,32 +762,46 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": true,
         "relationshipRequirement": "EC_RelationshipStatus::SPOUSE",
-        "weatherOverrides": {},
-        "seasonOverrides": {
-          "EC_Season::Spring": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Saturday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
           },
-          "EC_Season::Summer": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Saturday"
-            ]
+          {
+            "EC_Season::Summer": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
           },
-          "EC_Season::Fall": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Saturday"
-            ]
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
           },
-          "EC_Season::Winter": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Saturday"
-            ]
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
           }
-        },
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       },
       "MARRIAGE_Weather_everyday": {
         "dateOverrides": [],
@@ -608,45 +813,468 @@
         "repeatType": "EC_DateRecurranceType::None",
         "useRelationshipRequirement": true,
         "relationshipRequirement": "EC_RelationshipStatus::SPOUSE",
-        "weatherOverrides": {
-          "EC_Weather::Rain": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Tuesday",
-              "EC_DayOfTheWeek::Wednesday",
-              "EC_DayOfTheWeek::Thursday",
-              "EC_DayOfTheWeek::Friday",
-              "EC_DayOfTheWeek::Saturday",
-              "EC_DayOfTheWeek::Sunday"
-            ]
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [
+          {
+            "EC_Weather::Rain": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
           },
-          "EC_Weather::Snow": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Tuesday",
-              "EC_DayOfTheWeek::Wednesday",
-              "EC_DayOfTheWeek::Thursday",
-              "EC_DayOfTheWeek::Friday",
-              "EC_DayOfTheWeek::Saturday",
-              "EC_DayOfTheWeek::Sunday"
-            ]
+          {
+            "EC_Weather::Snow": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
           },
-          "EC_Weather::Storm": {
-            "daysOfTheWeek": [
-              "EC_DayOfTheWeek::Monday",
-              "EC_DayOfTheWeek::Tuesday",
-              "EC_DayOfTheWeek::Wednesday",
-              "EC_DayOfTheWeek::Thursday",
-              "EC_DayOfTheWeek::Friday",
-              "EC_DayOfTheWeek::Saturday",
-              "EC_DayOfTheWeek::Sunday"
-            ]
+          {
+            "EC_Weather::Storm": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
           }
-        },
-        "seasonOverrides": {},
+        ],
+        "seasonOverrides": [],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
+      },
+      "AnimalFestivalRunning": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
+        "festivalOverrides": [
+          "AnimalFestival"
+        ],
+        "festivalStatesAllowed": [
+          "EC_FestivalState::RunningFestival"
+        ],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
+      },
+      "SpookyDayRunning": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
+        "festivalOverrides": [
+          "SpookyDay"
+        ],
+        "festivalStatesAllowed": [
+          "EC_FestivalState::RunningFestival"
+        ],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
+      },
+      "Winter_17-21": {
+        "dateOverrides": [
+          {
+            "isValidOnSpecificDate": false,
+            "isValidIndefinitelyOnceStarted": false,
+            "random": false,
+            "startsFrom": {
+              "day": 17,
+              "season": "EC_Season::Winter",
+              "year": 1
+            },
+            "lastsTill": {
+              "day": 21,
+              "season": "EC_Season::Winter",
+              "year": 1
+            }
+          }
+        ],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::Annually",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::None": {
+              "daysOfTheWeek": []
+            }
+          }
+        ],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
+      },
+      "CHILD_Weather_everyday": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": true,
+        "relationshipRequirement": "EC_RelationshipStatus::SPOUSE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": true,
+        "weatherOverrides": [
+          {
+            "EC_Weather::Rain": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
+          },
+          {
+            "EC_Weather::Snow": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
+          },
+          {
+            "EC_Weather::Storm": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
+          }
+        ],
+        "seasonOverrides": [],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
+      },
+      "CHILD_SpringFallWinter_MF_SpringFallWinterTh": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": true,
+        "relationshipRequirement": "EC_RelationshipStatus::SPOUSE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": true,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Thursday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Thursday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Thursday"
+              ]
+            }
+          }
+        ],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
+      },
+      "CHILD_Summer_MTThF": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": true,
+        "relationshipRequirement": "EC_RelationshipStatus::SPOUSE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": true,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Summer": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday"
+              ]
+            }
+          }
+        ],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
+      },
+      "MARRIAGE_SpringSummerFallWinter_Sun": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": true,
+        "relationshipRequirement": "EC_RelationshipStatus::SPOUSE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Summer": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
+          }
+        ],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
+      },
+      "AaliyahIsInSpace": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Summer": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
+          }
+        ],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahIsInSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahIsInSpace.1"
+        }
+      },
+      "MARRIAGE_Winter_17-21": {
+        "dateOverrides": [
+          {
+            "isValidOnSpecificDate": false,
+            "isValidIndefinitelyOnceStarted": false,
+            "random": false,
+            "startsFrom": {
+              "day": 17,
+              "season": "EC_Season::Winter",
+              "year": 1
+            },
+            "lastsTill": {
+              "day": 21,
+              "season": "EC_Season::Winter",
+              "year": 1
+            }
+          }
+        ],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::Annually",
+        "useRelationshipRequirement": true,
+        "relationshipRequirement": "EC_RelationshipStatus::SPOUSE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::None": {
+              "daysOfTheWeek": []
+            }
+          }
+        ],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'AaliyahNotOnSpace'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/AaliyahNotOnSpace.1"
+        }
       }
     }
   }

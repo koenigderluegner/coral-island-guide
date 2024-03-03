@@ -1,11 +1,10 @@
 import { booleanAttribute, Component, Input, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
-import { UiIcon } from '../../enums/ui-icon.enum';
+import { UiIcon } from '@ci/data-types';
 import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-module-sidebar-item',
     templateUrl: './module-sidebar-item.component.html',
-    styleUrls: ['./module-sidebar-item.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
 export class ModuleSidebarItemComponent {
@@ -13,4 +12,5 @@ export class ModuleSidebarItemComponent {
     @Input() uiIcon?: UiIcon;
     @Input() routerLink: RouterLink['routerLink'];
     @Input({transform: booleanAttribute}) exact?: boolean;
+    @Input({transform: booleanAttribute}) active = false
 }

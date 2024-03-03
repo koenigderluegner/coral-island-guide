@@ -1,0 +1,41 @@
+<app-list-detail-container [(openDrawer)]="openDrawer" [removePlaceholder]="showTable">
+
+    @if (selectedEntity) {
+        <app-database-item-details [itemId]="selectedEntity.id" listDetail hideQualityGrid>
+            <ng-template let-details appDatabaseItemDetails>
+                @for (recipe of details.cookedFrom; track recipe.key) {
+                    <app-cooking-recipe class="mb-4" [cookingRecipe]="recipe"/>
+                }
+            </ng-template>
+        </app-database-item-details>
+    }
+    <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex"
+                   class=" px-2 xl:px-[50px] w-full"
+                   dynamicHeight mat-stretch-tabs="false">
+        @for (tab of (checklistDefinition$ | async | keyvalue: keyValueNoOrder); track tab) {
+            <mat-tab
+                    [formGroup]="checklistForm"
+                    [label]="cookingUtensilMapping[tab.key.toLowerCase()] ? cookingUtensilMapping[tab.key.toLowerCase()].displayName : tab.key | addSpacesToPascalCase | titlecase">
+
+                @if (!showTable) {
+
+                    <div class="grid gap-4 icon-grid">
+                        @for (entry of tab.value; track entry) {
+                            <div [class.checklist-checked]="checklistForm.get(entry.id)?.value"
+                                 [class.selected-icon]="selectedEntity?.id === entry.id"
+                                 class="icon-grid-item checklist-item  flex flex-col">
+                                <app-item-icon (click)="showDetails(entry)"
+                                               [itemName]="entry.iconName"/>
+                                <label class="text-white flex justify-center" for="entry-{{entry.id}}-input">
+                                    <mat-checkbox [formControlName]="entry.id" class="flex" id="entry-{{entry.id}}"
+                                                  name="entry-{{entry.id}}"></mat-checkbox>
+                                </label>
+                            </div>
+                        }
+                    </div>
+
+                }
+            </mat-tab>
+        }
+    </mat-tab-group>
+</app-list-detail-container>

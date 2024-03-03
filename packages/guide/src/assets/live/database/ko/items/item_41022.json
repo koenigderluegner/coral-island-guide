@@ -1,0 +1,356 @@
+{
+  "item": {
+    "id": "item_41022",
+    "displayName": "Kombucha",
+    "price": 450,
+    "sellPrice": 270,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Artisan product",
+    "displayKey": "ArtisanProduct",
+    "description": "발효시킨 찻잎으로 만든 음료. 많이 마시면 안 된다.",
+    "qualities": {
+      "bronze": {
+        "price": 515,
+        "sellPrice": 310
+      },
+      "silver": {
+        "price": 585,
+        "sellPrice": 350
+      },
+      "gold": {
+        "price": 685,
+        "sellPrice": 410
+      },
+      "osmium": {
+        "price": 900,
+        "sellPrice": 540
+      }
+    },
+    "iconName": "Kombucha_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.AgingBarrel",
+      "Item.Consumable.Drink",
+      "item.artisan"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 1,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41021",
+          "displayName": "녹차",
+          "iconName": "Green_Tea_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41022",
+          "displayName": "Kombucha",
+          "iconName": "Kombucha_Sprite",
+          "sellPrice": 270
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 0,
+          "time": {
+            "hours": 21,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 0,
+          "time": {
+            "hours": 19,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 16,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "돌 수프",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "먹는 게 불가능해 보이는 음식. 위험 부담은 본인 몫.",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "아무 식용 재료"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "돌",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "아무 식용 재료": [
+          {
+            "id": "item_41180",
+            "displayName": "염소 요구르트",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "대용량 염소 요구르트",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50307",
+            "displayName": "대왕조개",
+            "iconName": "Giant_Clam_Sprite"
+          },
+          {
+            "id": "item_50314",
+            "displayName": "미역",
+            "iconName": "Wakame_weed_Sprite"
+          },
+          {
+            "id": "item_80065",
+            "displayName": "꽃다발",
+            "iconName": "Flower_Bouquet_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "asGift": [
+    {
+      "pref": {
+        "icon": "T_Icon_Love",
+        "label": "Love",
+        "preferenceField": "lovePreferences"
+      },
+      "npcs": [
+        {
+          "key": "Kenny",
+          "characterName": "Kenny",
+          "iconName": "Icon_kenny"
+        }
+      ]
+    },
+    {
+      "pref": {
+        "icon": "T_Icon_Hate",
+        "label": "Hate",
+        "preferenceField": "hatePreferences"
+      },
+      "npcs": [
+        {
+          "key": "Archie",
+          "characterName": "Archie",
+          "iconName": "Icon_archie"
+        },
+        {
+          "key": "Jim",
+          "characterName": "Jim",
+          "iconName": "Icon_jim"
+        },
+        {
+          "key": "Oliver",
+          "characterName": "Oliver",
+          "iconName": "Icon_oliver"
+        },
+        {
+          "key": "Pablo",
+          "characterName": "Pablo",
+          "iconName": "Icon_pablo"
+        },
+        {
+          "key": "Valentina",
+          "characterName": "Valentina",
+          "iconName": "Icon_valentina"
+        },
+        {
+          "key": "Zoe",
+          "characterName": "Zoe",
+          "iconName": "Icon_zoe"
+        }
+      ]
+    }
+  ],
+  "buyAt": [
+    {
+      "item": {
+        "id": "item_41022",
+        "displayName": "Kombucha",
+        "iconName": "Kombucha_Sprite",
+        "price": 450,
+        "sellPrice": 270
+      },
+      "allowedDays": [],
+      "allowedSeasons": [],
+      "allowedWeather": [],
+      "forbiddenDays": [],
+      "forbiddenSeasons": [],
+      "forbiddenWeather": [],
+      "townRank": 0,
+      "tag": [],
+      "priceOverride": 0,
+      "priority": 6,
+      "enabled": true,
+      "availableSinceDate": false,
+      "availableTillDate": false,
+      "availableDuringTime": false,
+      "shop": {
+        "url": "tavern",
+        "displayName": "Fishensips"
+      }
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41022",
+      "bVaryHealthToMax": false,
+      "healthDelta": 110,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 85,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "bronze": {
+      "key": "item_41022-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 125,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 95,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "silver": {
+      "key": "item_41022-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 140,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 105,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "gold": {
+      "key": "item_41022-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 170,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 125,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "osmium": {
+      "key": "item_41022-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 225,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 165,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    }
+  }
+}

@@ -1,10 +1,11 @@
 import { BaseGenerator } from "./base-generator.class";
-import { RawWildlifeSeaCrittersRegistry } from "../interfaces/raw-wildlife-sea-critters-registry.interface";
+import { RawWildlifeSeaCrittersRegistry } from "../interfaces/raw-data-interfaces/raw-wildlife-sea-critters-registry.interface";
 import { WildlifeSeaCrittersRegistry } from "../interfaces/wildlife-sea-critters-registry.interface";
 import { Datatable } from "../interfaces/datatable.interface";
 import { readAsset } from "../util/functions";
 import { addSpacesToPascalCase, getEnumValue } from "@ci/util";
 import { GridZonesDbGenerator } from "./grid-zones-db.generator";
+import { Logger } from "../util/logger.class";
 
 export class WildlifeSeaCrittersRegistryDbGenerator extends BaseGenerator<RawWildlifeSeaCrittersRegistry, WildlifeSeaCrittersRegistry> {
 
@@ -38,7 +39,7 @@ export class WildlifeSeaCrittersRegistryDbGenerator extends BaseGenerator<RawWil
                 if (modifier === 'raintoday') {
                     spawnAmountConditionModifier.push(['Rain', dbItem.spawnOptions.spawnAmountConditionModifier[spawnAmountConditionModifierKey]])
                 } else {
-                    console.log('unkknown spawn modification:', spawnAmountConditionModifierKey, itemKey)
+                    Logger.warn('Unknown spawn modification:', modifier, spawnAmountConditionModifierKey, itemKey)
                 }
             })
         }

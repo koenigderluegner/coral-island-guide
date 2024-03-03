@@ -1,52 +1,71 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
-    <app-base-item-card *ngIf="selectedEntity" listDetail [item]="selectedEntity.output.item"
-                        [amount]="selectedEntity.output.amount">
+    @if (selectedEntity) {
+        <app-base-item-card listDetail [item]="selectedEntity.output.item"
+                            [amount]="selectedEntity.output.amount">
 
-        <div *ngIf="!selectedEntity.qualities" class="mb-3">Processing time:
-            <span class="text-black">
+            @if (!selectedEntity.qualities) {
+                <div class="mb-3">Processing time:
+                    <span class="text-black">
               <app-processing-time [processingTime]="selectedEntity"/>
                 </span>
-        </div>
+                </div>
+            }
 
-        <app-item-list [itemList]="selectedEntity | itemProcessingIngredients" class="mb-3"/>
-
-
-        <ng-container *ngIf="selectedEntity.qualities">
-            <div class="mb-3">Time per input quality
-                <app-processing-time-per-quality [baseProcessingTime]="selectedEntity"
-                                                 [processingTimePerQualities]="selectedEntity.qualities"/>
-            </div>
-        </ng-container>
+            <app-item-list [itemList]="selectedEntity | itemProcessingIngredients" class="mb-3"/>
 
 
-        <ng-container *ngIf="selectedEntity.refinements">
-            <div class="mb-3">Time to improve quality
-                <app-refinements-list [refinements]="selectedEntity.refinements"/>
-            </div>
-        </ng-container>
-    </app-base-item-card>
+            @if (selectedEntity.qualities) {
+
+                <div class="mb-3">Time per input quality
+                    <app-processing-time-per-quality [baseProcessingTime]="selectedEntity"
+                                                     [processingTimePerQualities]="selectedEntity.qualities"/>
+                </div>
+
+            }
+
+
+            @if (selectedEntity.refinements) {
+
+                <div class="mb-3">Time to improve quality
+                    <app-refinements-list [refinements]="selectedEntity.refinements"/>
+                </div>
+
+            }
+        </app-base-item-card>
+    }
 
 
     <mat-tab-group (selectedTabChange)="updateUrl($event)" class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false"
                    [selectedIndex]="selectedTabIndex">
-        <mat-tab *ngFor="let machineName of machineNames" label="{{machineName | spacesToPascalCase | titlecase}}">
-            <app-data-filter [(showTable)]="showTable"/>
-            <ng-container *ngIf="(filteredData$(machineName) | async) as processorItems">
-                <div *ngIf="!showTable" class="grid gap-4 icon-grid">
+        @for (machineName of machineNames; track machineName) {
+            <mat-tab
+                    [label]="processorMapping[machineName.toLowerCase()] ? processorMapping[machineName.toLowerCase()].displayName : machineName |  addSpacesToPascalCase | titlecase">
+                <app-data-filter [(showTable)]="showTable"/>
+                @if ((filteredData$(machineName) | async); as processorItems) {
 
-                    <app-item-icon (click)="showDetails(itemProcess)"
-                                   *ngFor="let itemProcess of processorItems"
-                                   [amount]="itemProcess.output.amount"
-                                   [itemName]="itemProcess.output.item.iconName"
-                                   [subIconName]="reusedImages.includes(itemProcess.output.item.iconName ?? '') ? itemProcess.input.item.iconName
+                    @if (!showTable) {
+                        <div class="grid gap-4 icon-grid">
+
+                            @for (itemProcess of processorItems; track itemProcess) {
+                                <app-item-icon (click)="showDetails(itemProcess)"
+
+                                               [amount]="itemProcess.output.amount"
+                                               [itemName]="itemProcess.output.item.iconName"
+                                               [subIconName]="reusedImages.includes(itemProcess.output.item.iconName ?? '') ? itemProcess.input.item.iconName
                                 : undefined"
-                                   [class.selected-icon]="selectedEntity?.output?.item?.id === itemProcess.output.item.id"
-                                   class="icon-grid-item">
-                    </app-item-icon>
-                </div>
-                <app-processor-table *ngIf="showTable" [dataSource]="processorItems"/>
-            </ng-container>
-        </mat-tab>
+                                               [class.selected-icon]="selectedEntity?.output?.item?.id === itemProcess.output.item.id"
+                                               class="icon-grid-item">
+                                </app-item-icon>
+                            }
+                        </div>
+                    }
+                    @if (showTable) {
+                        <app-processor-table [dataSource]="processorItems"/>
+                    }
+
+                }
+            </mat-tab>
+        }
     </mat-tab-group>
 
 </app-list-detail-container>

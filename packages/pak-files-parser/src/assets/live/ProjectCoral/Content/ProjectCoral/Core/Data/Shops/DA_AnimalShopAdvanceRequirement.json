@@ -1,0 +1,31 @@
+[
+  {
+    "Type": "C_GameplayRequirementsConfig",
+    "Name": "DA_AnimalShopAdvanceRequirement",
+    "Class": "UScriptClass'C_GameplayRequirementsConfig'",
+    "Properties": {
+      "map": [
+        {
+          "Horse": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_MountAcquiredRequirement'DA_AnimalShopAdvanceRequirement:C_MountAcquiredRequirement_1'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_AnimalShopAdvanceRequirement.1"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_MountAcquiredRequirement",
+    "Name": "C_MountAcquiredRequirement_1",
+    "Outer": "DA_AnimalShopAdvanceRequirement",
+    "Class": "UScriptClass'C_MountAcquiredRequirement'",
+    "Properties": {
+      "invertResult": true
+    }
+  }
+]

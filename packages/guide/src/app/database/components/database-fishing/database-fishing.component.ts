@@ -5,18 +5,13 @@ import { Fish } from "@ci/data-types";
 @Component({
     selector: 'app-database-fishing',
     templateUrl: './database-fishing.component.html',
-    styleUrls: ['./database-fishing.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
 export class DatabaseFishingComponent extends BaseDatabaseDetailPartComponent implements OnInit {
-
     protected fish?: Fish;
 
     ngOnInit(): void {
-        if (!this.item) return;
-
-        this.fish = this.database.getFish().find(fish => fish.item.id === this.item?.id);
+        if (this.databaseItem.fish)
+            this.fish = {...this.databaseItem.fish, item: this.databaseItem.item}
     }
-
-
 }

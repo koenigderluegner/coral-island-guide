@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, isDevMode, NgModule, Optional } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -11,6 +11,11 @@ import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
 import { MAT_TABS_CONFIG } from '@angular/material/tabs';
 import { PageTitleService } from './shared/services/page-title.service';
 import { StartComponent } from './start/start.component';
+import { BETA_CODE } from "./core/injection-tokens/beta-code.injection-token";
+import { SettingsService } from "./shared/services/settings.service";
+import { of } from "rxjs";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 const routerOptions: ExtraOptions = {
     scrollPositionRestoration: 'disabled',
@@ -44,12 +49,13 @@ const appRoutes: Route[] = [
         loadChildren: () => import('./crafting/crafting.module').then((m) => m.CraftingModule),
     },
     {
-        path: 'shops',
-        loadChildren: () => import('./shops/shops.module').then((m) => m.ShopsModule),
+        path: 'people',
+        pathMatch: 'prefix',
+        redirectTo: 'npcs',
     },
     {
-        path: 'people',
-        loadChildren: () => import('./people/people.module').then((m) => m.PeopleModule),
+        path: 'npcs',
+        loadChildren: () => import('./npcs/npcs.module').then((m) => m.NPCsModule),
     },
     {
         path: 'locations',
@@ -57,15 +63,31 @@ const appRoutes: Route[] = [
     },
     {
         path: 'settings',
-        loadChildren: () => import('./settings/settings.module').then((m) => m.SettingsModule)
+        pathMatch: "full",
+        redirectTo: 'my/settings',
+        data: {
+            redirected: true
+        }
     },
     {
         path: 'checklist',
-        loadChildren: () => import('./checklist/checklist.module').then(m => m.ChecklistModule)
+        pathMatch: "prefix",
+        redirectTo: 'my/to-do',
+        data: {
+            redirected: true
+        }
     },
     {
         path: 'only-in-beta',
         loadComponent: () => import('./only-in-beta/only-in-beta.component').then(c => c.OnlyInBetaComponent)
+    },
+    {
+        path: 'my',
+        loadChildren: () => import('./my-coral-guide/my-coral-guide.module').then(m => m.MyCoralGuideModule)
+    },
+    {
+        path: 'about',
+        loadComponent: () => import('./about/about.component').then(c => c.AboutComponent)
     },
     {
         path: 'planner',
@@ -83,8 +105,26 @@ const appRoutes: Route[] = [
         CoreModule,
         SharedModule,
         MarkdownModule.forRoot(),
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: !isDevMode(),
+            // Register the ServiceWorker as soon as the application is stable
+            // or after 30 seconds (whichever comes first).
+            registrationStrategy: 'registerWhenStable:30000'
+        }),
+        MatProgressSpinnerModule,
     ],
     providers: [
+        {
+            provide: APP_INITIALIZER,
+            multi: true,
+            useFactory: (BETA_CODE: string | null, settingsService: SettingsService) => {
+                if (!BETA_CODE) {
+                    settingsService.saveSettings({...settingsService.getSettings(), useBeta: false})
+                }
+                return () => of()
+            },
+            deps: [[new Optional(), BETA_CODE], SettingsService]
+        },
         {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: {disabled: true}},
         {provide: MAT_TABS_CONFIG, useValue: {animationDuration: '0'}},
         {provide: TitleStrategy, useClass: PageTitleService},

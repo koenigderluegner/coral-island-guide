@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "White_Duck_Sick_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 1.5,
+              "Y": 0.0,
+              "Z": -0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 235.0,
+            "Y": 10.0,
+            "Z": 239.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "1A1CFB1C4DE811A6D5DACCADDBBC9F84"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "White_Duck_Sick_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 256.0,
+        "Y": 256.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'White_Duck_Sick'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Textures/White_Duck_Sick.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'White_Duck_Sick_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/White_Duck_Sick_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 119.0,
+          "Y": 119.0,
+          "Z": 0.96484375,
+          "W": 0.03515625
+        },
+        {
+          "X": -116.0,
+          "Y": 119.0,
+          "Z": 0.046875,
+          "W": 0.03515625
+        },
+        {
+          "X": -116.0,
+          "Y": -120.0,
+          "Z": 0.046875,
+          "W": 0.96875
+        },
+        {
+          "X": 119.0,
+          "Y": -120.0,
+          "Z": 0.96484375,
+          "W": 0.96875
+        },
+        {
+          "X": 119.0,
+          "Y": 119.0,
+          "Z": 0.96484375,
+          "W": 0.03515625
+        },
+        {
+          "X": -116.0,
+          "Y": -120.0,
+          "Z": 0.046875,
+          "W": 0.96875
+        }
+      ]
+    }
+  }
+]

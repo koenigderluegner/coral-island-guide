@@ -2,17 +2,19 @@
   {
     "Type": "DataTable",
     "Name": "DT_DenaliOutfit",
+    "Class": "UScriptClass'DataTable'",
     "Properties": {
       "RowStruct": {
-        "ObjectName": "ScriptStruct C_NPCAppearances",
+        "ObjectName": "ScriptStruct'C_NPCAppearances'",
         "ObjectPath": "/Script/ProjectCoral"
       }
     },
     "Rows": {
       "Default": {
+        "enabled": true,
         "Appearances": {
           "DataTable": {
-            "ObjectName": "DataTable DT_NPCOutfitList",
+            "ObjectName": "DataTable'DT_NPCOutfitList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCOutfitList.0"
           },
           "RowName": "Default"
@@ -21,7 +23,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Normal"
@@ -34,7 +36,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Annoyed"
@@ -47,7 +49,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Blushing"
@@ -60,7 +62,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Concerned"
@@ -73,7 +75,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Happy"
@@ -86,7 +88,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Angry"
@@ -99,7 +101,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Sad"
@@ -112,7 +114,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Surprised"
@@ -124,14 +126,92 @@
           }
         ],
         "SkeletalMeshes": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Denali/SK_Denali_V2_1.SK_Denali_V2_1",
+          "SubPathString": ""
+        },
+        "StaticMesh": {
           "AssetPathName": "None",
           "SubPathString": ""
+        },
+        "dialogPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScale": 1.0,
+        "dialogPortraitPositionForPortraitMode": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScaleForPortraitMode": 1.0,
+        "relationshipPortraitPosition": {
+          "X": 0.0,
+          "Y": -50.0
+        },
+        "relationshipPortraitScale": 1.05,
+        "kawaiiPhysicsSetting": {
+          "physicsSettingMap": [
+            {
+              "BackHair": {
+                "physicsSetting": {
+                  "Damping": 0.1,
+                  "WorldDampingLocation": 0.8,
+                  "WorldDampingRotation": 0.8,
+                  "Stiffness": 0.05,
+                  "Radius": 3.0,
+                  "LimitAngle": 0.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": 0.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            },
+            {
+              "Cloak": {
+                "physicsSetting": {
+                  "Damping": 0.1,
+                  "WorldDampingLocation": 0.8,
+                  "WorldDampingRotation": 0.8,
+                  "Stiffness": 0.05,
+                  "Radius": 3.0,
+                  "LimitAngle": 0.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": 0.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            },
+            {
+              "Tails": {
+                "physicsSetting": {
+                  "Damping": 0.01,
+                  "WorldDampingLocation": 0.8,
+                  "WorldDampingRotation": 0.8,
+                  "Stiffness": 0.05,
+                  "Radius": 3.0,
+                  "LimitAngle": 0.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": 0.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            }
+          ]
         }
       },
       "Summer": {
+        "enabled": false,
         "Appearances": {
           "DataTable": {
-            "ObjectName": "DataTable DT_NPCOutfitList",
+            "ObjectName": "DataTable'DT_NPCOutfitList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCOutfitList.0"
           },
           "RowName": "Summer"
@@ -140,7 +220,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Normal"
@@ -153,7 +233,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Annoyed"
@@ -166,7 +246,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Blushing"
@@ -179,7 +259,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Concerned"
@@ -192,7 +272,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Happy"
@@ -205,7 +285,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Angry"
@@ -218,7 +298,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Sad"
@@ -231,7 +311,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Surprised"
@@ -245,12 +325,35 @@
         "SkeletalMeshes": {
           "AssetPathName": "None",
           "SubPathString": ""
+        },
+        "StaticMesh": {
+          "AssetPathName": "None",
+          "SubPathString": ""
+        },
+        "dialogPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScale": 1.0,
+        "dialogPortraitPositionForPortraitMode": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScaleForPortraitMode": 1.0,
+        "relationshipPortraitPosition": {
+          "X": 0.0,
+          "Y": -50.0
+        },
+        "relationshipPortraitScale": 1.05,
+        "kawaiiPhysicsSetting": {
+          "physicsSettingMap": []
         }
       },
       "Fall": {
+        "enabled": false,
         "Appearances": {
           "DataTable": {
-            "ObjectName": "DataTable DT_NPCOutfitList",
+            "ObjectName": "DataTable'DT_NPCOutfitList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCOutfitList.0"
           },
           "RowName": "Fall"
@@ -259,7 +362,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Normal"
@@ -272,7 +375,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Annoyed"
@@ -285,7 +388,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Blushing"
@@ -298,7 +401,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Concerned"
@@ -311,7 +414,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Happy"
@@ -324,7 +427,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Angry"
@@ -337,7 +440,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Sad"
@@ -350,7 +453,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Surprised"
@@ -364,12 +467,35 @@
         "SkeletalMeshes": {
           "AssetPathName": "None",
           "SubPathString": ""
+        },
+        "StaticMesh": {
+          "AssetPathName": "None",
+          "SubPathString": ""
+        },
+        "dialogPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScale": 1.0,
+        "dialogPortraitPositionForPortraitMode": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScaleForPortraitMode": 1.0,
+        "relationshipPortraitPosition": {
+          "X": 0.0,
+          "Y": -50.0
+        },
+        "relationshipPortraitScale": 1.05,
+        "kawaiiPhysicsSetting": {
+          "physicsSettingMap": []
         }
       },
       "Winter": {
+        "enabled": false,
         "Appearances": {
           "DataTable": {
-            "ObjectName": "DataTable DT_NPCOutfitList",
+            "ObjectName": "DataTable'DT_NPCOutfitList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCOutfitList.0"
           },
           "RowName": "Winter"
@@ -378,7 +504,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Normal"
@@ -391,7 +517,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Annoyed"
@@ -404,7 +530,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Blushing"
@@ -417,7 +543,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Concerned"
@@ -430,7 +556,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Happy"
@@ -443,7 +569,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Angry"
@@ -456,7 +582,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Sad"
@@ -469,7 +595,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Surprised"
@@ -483,6 +609,28 @@
         "SkeletalMeshes": {
           "AssetPathName": "None",
           "SubPathString": ""
+        },
+        "StaticMesh": {
+          "AssetPathName": "None",
+          "SubPathString": ""
+        },
+        "dialogPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScale": 1.0,
+        "dialogPortraitPositionForPortraitMode": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScaleForPortraitMode": 1.0,
+        "relationshipPortraitPosition": {
+          "X": 0.0,
+          "Y": -50.0
+        },
+        "relationshipPortraitScale": 1.05,
+        "kawaiiPhysicsSetting": {
+          "physicsSettingMap": []
         }
       }
     }

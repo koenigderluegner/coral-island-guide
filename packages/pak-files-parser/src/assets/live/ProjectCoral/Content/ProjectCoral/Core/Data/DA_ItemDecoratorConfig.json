@@ -1,0 +1,68 @@
+[
+  {
+    "Type": "C_FruitPlantGrowTextDecorator",
+    "Name": "C_FruitPlantGrowTextDecorator_0",
+    "Outer": "DA_ItemDecoratorConfig",
+    "Class": "UScriptClass'C_FruitPlantGrowTextDecorator'",
+    "Properties": {
+      "fruitPlantRegistry": {
+        "ObjectName": "DataTable'DT_FruitPlantRegistry'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/HismcManagers/FruitPlant/DT_FruitPlantRegistry.0"
+      },
+      "itemUsages": [
+        "EC_ItemUsageType::FruitPlantPlanter"
+      ]
+    }
+  },
+  {
+    "Type": "C_ItemCropGrowLengthTextDecorator",
+    "Name": "C_ItemCropGrowLengthTextDecorator_0",
+    "Outer": "DA_ItemDecoratorConfig",
+    "Class": "UScriptClass'C_ItemCropGrowLengthTextDecorator'",
+    "Properties": {
+      "cropRegistry": {
+        "ObjectName": "DataTable'DT_CropRegistry'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/HismcManagers/Crop/DT_CropRegistry.0"
+      },
+      "itemUsages": [
+        "EC_ItemUsageType::CropPlanter"
+      ]
+    }
+  },
+  {
+    "Type": "C_ItemDecoratorConfig",
+    "Name": "DA_ItemDecoratorConfig",
+    "Class": "UScriptClass'C_ItemDecoratorConfig'",
+    "Properties": {
+      "descriptionDecorators": [
+        {
+          "ObjectName": "C_ItemCropGrowLengthTextDecorator'DA_ItemDecoratorConfig:C_ItemCropGrowLengthTextDecorator_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DA_ItemDecoratorConfig.1"
+        },
+        {
+          "ObjectName": "C_ItemRegrowableCropLengthTextDecorator'DA_ItemDecoratorConfig:C_ItemRegrowableCropLengthTextDecorator_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DA_ItemDecoratorConfig.3"
+        },
+        {
+          "ObjectName": "C_FruitPlantGrowTextDecorator'DA_ItemDecoratorConfig:C_FruitPlantGrowTextDecorator_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DA_ItemDecoratorConfig.0"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_ItemRegrowableCropLengthTextDecorator",
+    "Name": "C_ItemRegrowableCropLengthTextDecorator_0",
+    "Outer": "DA_ItemDecoratorConfig",
+    "Class": "UScriptClass'C_ItemRegrowableCropLengthTextDecorator'",
+    "Properties": {
+      "cropRegistry": {
+        "ObjectName": "DataTable'DT_CropRegistry'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/HismcManagers/Crop/DT_CropRegistry.0"
+      },
+      "itemUsages": [
+        "EC_ItemUsageType::CropPlanter"
+      ]
+    }
+  }
+]

@@ -1,9 +1,15 @@
-<ng-container *ngIf="refinements">
+@if (refinements) {
+
     <div class="refinement-list">
-        <ng-container *ngFor="let refinement of refinements">
-            <app-rarity-icon *ngIf="refinement.from !== quality.BASE" [quality]="refinement.from" class=" w-6"/>
-            <app-ui-icon *ngIf="refinement.from === quality.BASE" [uiIcon]="uiIcon.EMPTY_STAR"
-                         class="!w-6 !h-6 !flex"/>
+        @for (refinement of refinements; track refinement) {
+
+            @if (refinement.from !== quality.BASE) {
+                <app-rarity-icon [quality]="refinement.from" class=" w-6"/>
+            }
+            @if (refinement.from === quality.BASE) {
+                <app-ui-icon [uiIcon]="uiIcon.EMPTY_STAR"
+                             class="!w-6 !h-6 !flex"/>
+            }
             <app-ui-icon [uiIcon]="uiIcon.ARROW_RIGHT" class="!w-4 !h-4 !flex my-1 mx-2"/>
             <app-rarity-icon [quality]="refinement.to" class="w-6"/>
             <div class="text-right">
@@ -11,6 +17,8 @@
                <app-processing-time [processingTime]="refinement"/>
                 </span>
             </div>
-        </ng-container>
+
+        }
     </div>
-</ng-container>
+
+}

@@ -1,1 +1,50 @@
-<p>database-gifts works!</p>
+@if (databaseItem.asGift && databaseItem.asGift.length) {
+    <app-expandable #expandableComponent open>
+        <h3 class="database-header" expandableHeader>
+            <app-database-header-button [templateRef]="expandableComponent">Gifting</app-database-header-button>
+        </h3>
+
+        <app-responsive-table>
+
+            <table [dataSource]="databaseItem.asGift" mat-table>
+                <ng-container matColumnDef="icon" sticky>
+                    <td *matCellDef="let element" class="!pl-2 !pr-0 !pt-3 w-10 text-center icon-col " mat-cell>
+                        <app-ui-icon [uiIcon]="element.pref.icon"
+                                     class="!text-gifting mr-1 sm:mr-0 !h-6 !w-6"></app-ui-icon>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="preference">
+                    <th *matHeaderCellDef [attr.colspan]="2" class="backdrop-blur-xl" mat-header-cell>Preference</th>
+                    <td *matCellDef="let element" class="text-col !pl-0 whitespace-nowrap" mat-cell>
+                        {{ element.pref.label }}
+                    </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="npcs">
+                    <th *matHeaderCellDef class="backdrop-blur-xl" mat-header-cell>NPCs</th>
+                    <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
+                        <div class="whitespace-nowrap">
+                            @for (npc of element.npcs; track npc; let last = $last) {
+                                <div [class.mr-4]="!last"
+                                     class="inline-flex shrink-0 items-center">
+                                    <app-item-icon [itemName]="npc.iconName"
+                                                   class="h-12 mr-2 !flex items-center shrink-0"/>
+                                    {{ npc.characterName }}
+                                </div>
+                            }
+                        </div>
+                    </td>
+                </ng-container>
+
+
+                <tr *matHeaderRowDef="displayedHeaderColumns; sticky: true" mat-header-row></tr>
+                <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+            </table>
+
+        </app-responsive-table>
+
+    </app-expandable>
+}
+

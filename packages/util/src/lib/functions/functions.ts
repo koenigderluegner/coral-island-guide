@@ -1,9 +1,19 @@
-import { Quality } from "@ci/data-types";
+import {
+    CustomEntry,
+    EnumString,
+    Item,
+    MinimalItem,
+    MinimalNPC,
+    MinimalTagBasedItem,
+    NPC,
+    Quality
+} from "@ci/data-types";
 
-export function getEnumValue(EnumString: string): string {
-    let strings = EnumString.split('::');
+export function getEnumValue<T extends string, D = T extends `${T}::${infer U}` ? U : T extends EnumString<infer R> ? R : T extends string ? T : never>(EnumString: T): D {
 
-    return strings[1] ?? EnumString[0];
+    let strings = EnumString.split('::')
+
+    return (strings[1] ?? strings[0]) as D;
 }
 
 
@@ -52,4 +62,30 @@ export function getQuality(itemKey: string): Quality {
 
 export function nonNullable<T>(value: T): value is NonNullable<T> {
     return value !== null && value !== undefined;
+}
+
+export function entityKey(entity: Item | MinimalItem | MinimalTagBasedItem | CustomEntry | NPC | MinimalNPC): string {
+    return 'id' in entity
+        ? entity.id
+        : entity.key
+}
+
+export function omitFields<T extends Object, K extends Array<keyof T>>(
+    record: T, ...props: K): Omit<T, K[number]> {
+    const newRecord: Omit<T, K[number]> = Object.assign({}, record);
+    for (let prop of props) {
+        delete (newRecord as any)[prop];
+    }
+    return newRecord;
+}
+
+export function flatObjectMap<T>(objectMap: { [key: string]: T }[]): (T & { mapKey: string })[] {
+
+    return objectMap.map(entry => {
+        const mapKey = Object.keys(entry)[0];
+
+        return {...entry[mapKey], mapKey};
+    });
+
+
 }

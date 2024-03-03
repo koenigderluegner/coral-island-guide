@@ -1,0 +1,1 @@
+{"version":"0.16.1","date":"2024-02-23","body":"\r\n#### Changed \r\n\r\n- Updated live data to v1-945 except character images (Steam version)\r\n\r"}

@@ -1,0 +1,40 @@
+<app-responsive-table>
+    @if (matDataSource) {
+        <table [dataSource]="matDataSource" class="can-expand" mat-table matSort
+               multiTemplateDataRows>
+
+            <ng-container matColumnDef="title">
+                <th *matHeaderCellDef mat-header-cell mat-sort-header> Title</th>
+                <td *matCellDef="let element" class="text-col" mat-cell>{{ element.title }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="expand">
+                <th *matHeaderCellDef mat-header-cell></th>
+                <td *matCellDef="let element" class="w-fit align-top !pt-2" mat-cell>
+                    <button (click)="expandedRows.toggle(element.key)" mat-button>
+                        <i [class.down]="!expandedRows.isSelected(element.key)"
+                           [class.up]="expandedRows.isSelected(element.key)"
+                           class="arrow"></i>
+                    </button>
+                </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="expandedDetail">
+                <td *matCellDef="let element" [attr.colspan]="displayedColumns.length" mat-cell>
+                    <div [class.grid-rows-0fr]="!expandedRows.isSelected(element.key)"
+                         [class.grid-rows-1fr]="expandedRows.isSelected(element.key)"
+                         class="expandable-body grid transition-all duration-200 ease-in-out">
+                        <div class="overflow-hidden ">
+                            <app-mail [mail]="element" class="py-4 max-w-prose"/>
+                        </div>
+                    </div>
+                </td>
+            </ng-container>
+
+            <tr *matHeaderRowDef="displayHeaderColumns; sticky: true" mat-header-row></tr>
+            <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+            <tr *matRowDef="let row; columns: ['expandedDetail']" class="expand-row" mat-row></tr>
+        </table>
+    }
+</app-responsive-table>

@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Cassete_Player_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -2.5,
+              "Y": -0.0,
+              "Z": -0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 75.0,
+            "Y": 10.0,
+            "Z": 123.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "7A96B12D4BD6FC42264C54B271EF9851"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Cassete_Player_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Cassete_Player'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Gem_Artifacts_Fossils/Artifacts/Artifact_textures/Cassete_Player.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Cassete_Player_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Gem_Artifacts_Fossils/Artifacts/Cassete_Player_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 35.0,
+          "Y": 61.0,
+          "Z": 0.7734375,
+          "W": 0.0234375
+        },
+        {
+          "X": -40.0,
+          "Y": 61.0,
+          "Z": 0.1875,
+          "W": 0.0234375
+        },
+        {
+          "X": -40.0,
+          "Y": -62.0,
+          "Z": 0.1875,
+          "W": 0.984375
+        },
+        {
+          "X": 35.0,
+          "Y": -62.0,
+          "Z": 0.7734375,
+          "W": 0.984375
+        },
+        {
+          "X": 35.0,
+          "Y": 61.0,
+          "Z": 0.7734375,
+          "W": 0.0234375
+        },
+        {
+          "X": -40.0,
+          "Y": -62.0,
+          "Z": 0.1875,
+          "W": 0.984375
+        }
+      ]
+    }
+  }
+]

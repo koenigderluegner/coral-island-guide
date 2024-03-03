@@ -1,9 +1,10 @@
 import { InventoryItems } from '../types/inventory-items.type';
 import { InventoryItemsEngineInterface } from '../interfaces/inventory-items-engine.interface';
-import { convertToIconName, getReferencedString, getSourceStringResult, readAsset } from '../util/functions';
+import { AssetPathNameToIcon, readAsset } from '../util/functions';
 import { InventoryItem } from '../interfaces/inventory-item.interface';
 import { Item } from '@ci/data-types';
 import { getQuality, removeQualityFlag } from "@ci/util";
+import { StringTable } from "../util/string-table.class";
 
 export class ItemDbGenerator {
 
@@ -43,14 +44,14 @@ export class ItemDbGenerator {
 
             const item: Item = {
                 id: itemKey,
-                displayName: getSourceStringResult(dbItem.name),
+                displayName: StringTable.getString(dbItem.name) ?? '',
                 price: dbItem.price,
                 sellPrice: dbItem.sellPrice,
                 sellAt: dbItem.sellAt,
                 stackable: dbItem.stackable,
-                inventoryCategory: getSourceStringResult(dbItem.inventoryDisplayCategory),
+                inventoryCategory: StringTable.getString(dbItem.inventoryDisplayCategory) ?? '',
                 displayKey: dbItem.displayKey,
-                description: dbItem.description.SourceString,
+                description: StringTable.getString(dbItem.description) ?? '',
                 qualities: {},
                 iconName,
             };
@@ -66,11 +67,10 @@ export class ItemDbGenerator {
 
             if (engineData) {
                 item.tags = engineData.tags ?? [];
-                item.iconMeta = engineData.icon ?? null;
 
-                const objectName = item.iconMeta?.ObjectName;
+                const objectName = engineData.icon?.AssetPathName;
                 if (!!objectName) {
-                    item.iconName = convertToIconName(getReferencedString(objectName));
+                    item.iconName = AssetPathNameToIcon(objectName);
                 }
 
             }

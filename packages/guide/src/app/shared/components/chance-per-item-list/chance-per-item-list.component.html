@@ -1,0 +1,16 @@
+@for (itemListItem of chances; track itemListItem) {
+
+    <div class="flex justify-between py-1">
+        @if (itemListItem.item) {
+            <div class="flex gap-x-3 items-center">
+                <app-item-icon [itemName]="itemListItem.item.iconName" class="w-10"></app-item-icon>
+                <span>{{ itemListItem.item.displayName }}</span>
+                <span>x{{ itemListItem.amount }}</span>
+            </div>
+        }
+
+        <div class="flex items-center">{{ itemListItem.chance }}%</div>
+    </div>
+    <hr>
+
+}

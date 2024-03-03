@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ItemProcessingRefinement, Quality } from "@ci/data-types";
-import { UiIcon } from "../../enums/ui-icon.enum";
+import { ItemProcessingRefinement, Quality, UiIcon } from "@ci/data-types";
 
 @Component({
     selector: 'app-refinements-list',

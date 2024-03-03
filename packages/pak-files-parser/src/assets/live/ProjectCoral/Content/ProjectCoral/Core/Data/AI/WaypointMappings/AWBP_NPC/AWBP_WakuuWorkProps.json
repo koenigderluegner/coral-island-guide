@@ -3,27 +3,28 @@
     "Type": "Function",
     "Name": "ExecuteUbergraph_AWBP_WakuuWorkProps",
     "Outer": "AWBP_WakuuWorkProps_C",
+    "Class": "UScriptClass'Function'",
     "ChildProperties": [
       {
         "Type": "IntProperty",
         "Name": "EntryPoint",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 4,
-        "PropertyFlags": 148
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
       },
       {
         "Type": "EnumProperty",
         "Name": "K2Node_Event_context",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
         "Enum": {
-          "ObjectName": "Enum EC_AnimationContext",
+          "ObjectName": "Enum'EC_AnimationContext'",
           "ObjectPath": "/Script/ProjectCoral"
         },
         "UnderlyingProp": {
           "Type": "ByteProperty",
           "Name": "UnderlyingType",
-          "Flags": 1,
+          "Flags": "RF_Public",
           "ElementSize": 1,
           "Enum": null
         }
@@ -31,17 +32,17 @@
       {
         "Type": "ObjectProperty",
         "Name": "K2Node_Event_npc",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 8,
         "PropertyClass": {
-          "ObjectName": "Class C_NpcCharacter",
+          "ObjectName": "Class'C_NpcCharacter'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       },
       {
         "Type": "BoolProperty",
         "Name": "K2Node_SwitchEnum_CmpSuccess",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
         "FieldSize": 1,
         "ByteOffset": 0,
@@ -51,31 +52,32 @@
         "bIsNativeBool": true
       }
     ],
-    "FunctionFlags": 32769
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
   },
   {
     "Type": "Function",
     "Name": "OnAnimationContextChanged",
     "Outer": "AWBP_WakuuWorkProps_C",
+    "Class": "UScriptClass'Function'",
     "SuperStruct": {
-      "ObjectName": "Function C_WorldWaypoint:OnAnimationContextChanged",
+      "ObjectName": "Function'C_WorldWaypoint:OnAnimationContextChanged'",
       "ObjectPath": "/Script/ProjectCoral"
     },
     "ChildProperties": [
       {
         "Type": "EnumProperty",
         "Name": "context",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
-        "PropertyFlags": 148,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
         "Enum": {
-          "ObjectName": "Enum EC_AnimationContext",
+          "ObjectName": "Enum'EC_AnimationContext'",
           "ObjectPath": "/Script/ProjectCoral"
         },
         "UnderlyingProp": {
           "Type": "ByteProperty",
           "Name": "UnderlyingType",
-          "Flags": 1,
+          "Flags": "RF_Public",
           "ElementSize": 1,
           "Enum": null
         }
@@ -83,67 +85,70 @@
       {
         "Type": "ObjectProperty",
         "Name": "npc",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 8,
-        "PropertyFlags": 148,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
         "PropertyClass": {
-          "ObjectName": "Class C_NpcCharacter",
+          "ObjectName": "Class'C_NpcCharacter'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       }
     ],
-    "FunctionFlags": 134744064
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
   },
   {
     "Type": "Function",
     "Name": "Tick_Emmisive__UpdateFunc",
     "Outer": "AWBP_WakuuWorkProps_C",
-    "FunctionFlags": 134217728
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintEvent"
   },
   {
     "Type": "Function",
     "Name": "Tick_Emmisive__FinishedFunc",
     "Outer": "AWBP_WakuuWorkProps_C",
-    "FunctionFlags": 134217728
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintEvent"
   },
   {
     "Type": "BlueprintGeneratedClass",
     "Name": "AWBP_WakuuWorkProps_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
     "Properties": {
       "Timelines": [
         {
-          "ObjectName": "TimelineTemplate AWBP_WakuuWorkProps_C:Tick_Emmisive_Template",
+          "ObjectName": "TimelineTemplate'AWBP_WakuuWorkProps_C:Tick_Emmisive_Template'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.20"
         }
       ],
       "SimpleConstructionScript": {
-        "ObjectName": "SimpleConstructionScript AWBP_WakuuWorkProps_C:SimpleConstructionScript_0",
+        "ObjectName": "SimpleConstructionScript'AWBP_WakuuWorkProps_C:SimpleConstructionScript_0'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.16"
       },
       "UberGraphFunction": {
-        "ObjectName": "Function AWBP_WakuuWorkProps_C:ExecuteUbergraph_AWBP_WakuuWorkProps",
+        "ObjectName": "Function'AWBP_WakuuWorkProps_C:ExecuteUbergraph_AWBP_WakuuWorkProps'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.0"
       }
     },
     "SuperStruct": {
-      "ObjectName": "Class C_AnimationWaypoint",
+      "ObjectName": "Class'C_AnimationWaypoint'",
       "ObjectPath": "/Script/ProjectCoral"
     },
     "Children": [
       {
-        "ObjectName": "Function AWBP_WakuuWorkProps_C:Tick_Emmisive__FinishedFunc",
+        "ObjectName": "Function'AWBP_WakuuWorkProps_C:Tick_Emmisive__FinishedFunc'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.3"
       },
       {
-        "ObjectName": "Function AWBP_WakuuWorkProps_C:Tick_Emmisive__UpdateFunc",
+        "ObjectName": "Function'AWBP_WakuuWorkProps_C:Tick_Emmisive__UpdateFunc'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.2"
       },
       {
-        "ObjectName": "Function AWBP_WakuuWorkProps_C:OnAnimationContextChanged",
+        "ObjectName": "Function'AWBP_WakuuWorkProps_C:OnAnimationContextChanged'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.1"
       },
       {
-        "ObjectName": "Function AWBP_WakuuWorkProps_C:ExecuteUbergraph_AWBP_WakuuWorkProps",
+        "ObjectName": "Function'AWBP_WakuuWorkProps_C:ExecuteUbergraph_AWBP_WakuuWorkProps'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.0"
       }
     ],
@@ -151,128 +156,129 @@
       {
         "Type": "StructProperty",
         "Name": "UberGraphFrame",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 16,
-        "PropertyFlags": 2105344,
+        "PropertyFlags": "Transient | DuplicateTransient",
         "Struct": {
-          "ObjectName": "ScriptStruct PointerToUberGraphFrame",
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "StaticMesh",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 17180393476,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
         "PropertyClass": {
-          "ObjectName": "Class StaticMeshComponent",
+          "ObjectName": "Class'StaticMeshComponent'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "Ak",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 17180393476,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
         "PropertyClass": {
-          "ObjectName": "Class AkComponent",
+          "ObjectName": "Class'AkComponent'",
           "ObjectPath": "/Script/AkAudio"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "StationMesh1",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 17180393476,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
         "PropertyClass": {
-          "ObjectName": "Class StaticMeshComponent",
+          "ObjectName": "Class'StaticMeshComponent'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "PositionComponent1",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 17180393476,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
         "PropertyClass": {
-          "ObjectName": "Class SceneComponent",
+          "ObjectName": "Class'SceneComponent'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "FloatProperty",
         "Name": "Tick_Emmisive_Emmisive_FF7035F64237D84E0ED322A7546A781C",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 4
       },
       {
         "Type": "ByteProperty",
         "Name": "Tick_Emmisive__Direction_FF7035F64237D84E0ED322A7546A781C",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 1,
         "Enum": {
-          "ObjectName": "Enum ETimelineDirection",
+          "ObjectName": "Enum'ETimelineDirection'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "Tick_Emmisive",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 524292,
+        "PropertyFlags": "BlueprintVisible | InstancedReference",
         "PropertyClass": {
-          "ObjectName": "Class TimelineComponent",
+          "ObjectName": "Class'TimelineComponent'",
           "ObjectPath": "/Script/Engine"
         }
       }
     ],
     "FuncMap": {
       "ExecuteUbergraph_AWBP_WakuuWorkProps": {
-        "ObjectName": "Function AWBP_WakuuWorkProps_C:ExecuteUbergraph_AWBP_WakuuWorkProps",
+        "ObjectName": "Function'AWBP_WakuuWorkProps_C:ExecuteUbergraph_AWBP_WakuuWorkProps'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.0"
       },
       "OnAnimationContextChanged": {
-        "ObjectName": "Function AWBP_WakuuWorkProps_C:OnAnimationContextChanged",
+        "ObjectName": "Function'AWBP_WakuuWorkProps_C:OnAnimationContextChanged'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.1"
       },
       "Tick_Emmisive__UpdateFunc": {
-        "ObjectName": "Function AWBP_WakuuWorkProps_C:Tick_Emmisive__UpdateFunc",
+        "ObjectName": "Function'AWBP_WakuuWorkProps_C:Tick_Emmisive__UpdateFunc'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.2"
       },
       "Tick_Emmisive__FinishedFunc": {
-        "ObjectName": "Function AWBP_WakuuWorkProps_C:Tick_Emmisive__FinishedFunc",
+        "ObjectName": "Function'AWBP_WakuuWorkProps_C:Tick_Emmisive__FinishedFunc'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.3"
       }
     },
-    "ClassFlags": 8652820,
+    "ClassFlags": "CLASS_Config | CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
     "ClassWithin": {
-      "ObjectName": "Class Object",
+      "ObjectName": "Class'Object'",
       "ObjectPath": "/Script/CoreUObject"
     },
     "ClassConfigName": "Engine",
     "bCooked": true,
     "ClassDefaultObject": {
-      "ObjectName": "AWBP_WakuuWorkProps_C Default__AWBP_WakuuWorkProps_C",
+      "ObjectName": "AWBP_WakuuWorkProps_C'Default__AWBP_WakuuWorkProps_C'",
       "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.5"
     }
   },
   {
     "Type": "AWBP_WakuuWorkProps_C",
     "Name": "Default__AWBP_WakuuWorkProps_C",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.AWBP_WakuuWorkProps_C'",
     "Properties": {
       "UberGraphFrame": {},
       "linkedState": "EC_WaypointLinkedState::NotLinked",
       "stationMeshComponent": {
-        "ObjectName": "StaticMeshComponent Default__AWBP_WakuuWorkProps_C:StationMesh",
+        "ObjectName": "StaticMeshComponent'Default__AWBP_WakuuWorkProps_C:StationMesh'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.19"
       },
       "RootComponent": {
-        "ObjectName": "SceneComponent Default__AWBP_WakuuWorkProps_C:PositionComponent",
+        "ObjectName": "SceneComponent'Default__AWBP_WakuuWorkProps_C:PositionComponent'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.10"
       }
     }
@@ -281,6 +287,7 @@
     "Type": "AkComponent",
     "Name": "Ak_GEN_VARIABLE",
     "Outer": "AWBP_WakuuWorkProps_C",
+    "Class": "UScriptClass'AkComponent'",
     "Properties": {
       "OcclusionCollisionChannel": "ECC_GameTraceChannel18",
       "StopWhenOwnerDestroyed": false
@@ -290,6 +297,7 @@
     "Type": "CurveFloat",
     "Name": "CurveFloat_0",
     "Outer": "AWBP_WakuuWorkProps_C",
+    "Class": "UScriptClass'CurveFloat'",
     "Properties": {
       "FloatCurve": {
         "Keys": [
@@ -377,12 +385,14 @@
   {
     "Type": "SceneComponent",
     "Name": "DefaultSceneRoot_GEN_VARIABLE",
-    "Outer": "AWBP_WakuuWorkProps_C"
+    "Outer": "AWBP_WakuuWorkProps_C",
+    "Class": "UScriptClass'SceneComponent'"
   },
   {
     "Type": "SceneComponent",
     "Name": "PositionComponent1_GEN_VARIABLE",
     "Outer": "AWBP_WakuuWorkProps_C",
+    "Class": "UScriptClass'SceneComponent'",
     "Properties": {
       "RelativeRotation": {
         "Pitch": 0.0,
@@ -394,19 +404,21 @@
   {
     "Type": "SceneComponent",
     "Name": "PositionComponent",
-    "Outer": "Default__AWBP_WakuuWorkProps_C"
+    "Outer": "Default__AWBP_WakuuWorkProps_C",
+    "Class": "UScriptClass'SceneComponent'"
   },
   {
     "Type": "SCS_Node",
     "Name": "SCS_Node_0",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class SceneComponent",
+        "ObjectName": "Class'SceneComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "SceneComponent AWBP_WakuuWorkProps_C:DefaultSceneRoot_GEN_VARIABLE",
+        "ObjectName": "SceneComponent'AWBP_WakuuWorkProps_C:DefaultSceneRoot_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.8"
       },
       "VariableGuid": "99B93183-4211A0CC-FD4C37AF-190A17FE",
@@ -417,24 +429,25 @@
     "Type": "SCS_Node",
     "Name": "SCS_Node_1",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class SceneComponent",
+        "ObjectName": "Class'SceneComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "SceneComponent AWBP_WakuuWorkProps_C:PositionComponent1_GEN_VARIABLE",
+        "ObjectName": "SceneComponent'AWBP_WakuuWorkProps_C:PositionComponent1_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.9"
       },
       "ParentComponentOrVariableName": "PositionComponent",
       "bIsParentComponentNative": true,
       "ChildNodes": [
         {
-          "ObjectName": "SCS_Node AWBP_WakuuWorkProps_C:SimpleConstructionScript_0.SCS_Node_2",
+          "ObjectName": "SCS_Node'AWBP_WakuuWorkProps_C:SimpleConstructionScript_0.SCS_Node_2'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.13"
         },
         {
-          "ObjectName": "SCS_Node AWBP_WakuuWorkProps_C:SimpleConstructionScript_0.SCS_Node_3",
+          "ObjectName": "SCS_Node'AWBP_WakuuWorkProps_C:SimpleConstructionScript_0.SCS_Node_3'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.14"
         }
       ],
@@ -446,13 +459,14 @@
     "Type": "SCS_Node",
     "Name": "SCS_Node_2",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class StaticMeshComponent",
+        "ObjectName": "Class'StaticMeshComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "StaticMeshComponent AWBP_WakuuWorkProps_C:StationMesh1_GEN_VARIABLE",
+        "ObjectName": "StaticMeshComponent'AWBP_WakuuWorkProps_C:StationMesh1_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.18"
       },
       "VariableGuid": "5AD8DDEF-44958723-5A0B7D8A-E5681663",
@@ -463,13 +477,14 @@
     "Type": "SCS_Node",
     "Name": "SCS_Node_3",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class AkComponent",
+        "ObjectName": "Class'AkComponent'",
         "ObjectPath": "/Script/AkAudio"
       },
       "ComponentTemplate": {
-        "ObjectName": "AkComponent AWBP_WakuuWorkProps_C:Ak_GEN_VARIABLE",
+        "ObjectName": "AkComponent'AWBP_WakuuWorkProps_C:Ak_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.6"
       },
       "VariableGuid": "AF8CFAF4-45BE9CF4-D1DDF684-5A2F9800",
@@ -480,13 +495,14 @@
     "Type": "SCS_Node",
     "Name": "SCS_Node_4",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class StaticMeshComponent",
+        "ObjectName": "Class'StaticMeshComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "StaticMeshComponent AWBP_WakuuWorkProps_C:StaticMesh_GEN_VARIABLE",
+        "ObjectName": "StaticMeshComponent'AWBP_WakuuWorkProps_C:StaticMesh_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.17"
       },
       "ParentComponentOrVariableName": "PositionComponent",
@@ -499,37 +515,38 @@
     "Type": "SimpleConstructionScript",
     "Name": "SimpleConstructionScript_0",
     "Outer": "AWBP_WakuuWorkProps_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
     "Properties": {
       "RootNodes": [
         {
-          "ObjectName": "SCS_Node AWBP_WakuuWorkProps_C:SimpleConstructionScript_0.SCS_Node_1",
+          "ObjectName": "SCS_Node'AWBP_WakuuWorkProps_C:SimpleConstructionScript_0.SCS_Node_1'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.12"
         },
         {
-          "ObjectName": "SCS_Node AWBP_WakuuWorkProps_C:SimpleConstructionScript_0.SCS_Node_4",
+          "ObjectName": "SCS_Node'AWBP_WakuuWorkProps_C:SimpleConstructionScript_0.SCS_Node_4'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.15"
         }
       ],
       "AllNodes": [
         {
-          "ObjectName": "SCS_Node AWBP_WakuuWorkProps_C:SimpleConstructionScript_0.SCS_Node_1",
+          "ObjectName": "SCS_Node'AWBP_WakuuWorkProps_C:SimpleConstructionScript_0.SCS_Node_1'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.12"
         },
         {
-          "ObjectName": "SCS_Node AWBP_WakuuWorkProps_C:SimpleConstructionScript_0.SCS_Node_2",
+          "ObjectName": "SCS_Node'AWBP_WakuuWorkProps_C:SimpleConstructionScript_0.SCS_Node_2'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.13"
         },
         {
-          "ObjectName": "SCS_Node AWBP_WakuuWorkProps_C:SimpleConstructionScript_0.SCS_Node_3",
+          "ObjectName": "SCS_Node'AWBP_WakuuWorkProps_C:SimpleConstructionScript_0.SCS_Node_3'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.14"
         },
         {
-          "ObjectName": "SCS_Node AWBP_WakuuWorkProps_C:SimpleConstructionScript_0.SCS_Node_4",
+          "ObjectName": "SCS_Node'AWBP_WakuuWorkProps_C:SimpleConstructionScript_0.SCS_Node_4'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.15"
         }
       ],
       "DefaultSceneRootNode": {
-        "ObjectName": "SCS_Node AWBP_WakuuWorkProps_C:SimpleConstructionScript_0.SCS_Node_0",
+        "ObjectName": "SCS_Node'AWBP_WakuuWorkProps_C:SimpleConstructionScript_0.SCS_Node_0'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.11"
       }
     }
@@ -538,9 +555,10 @@
     "Type": "StaticMeshComponent",
     "Name": "StaticMesh_GEN_VARIABLE",
     "Outer": "AWBP_WakuuWorkProps_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
     "Properties": {
       "StaticMesh": {
-        "ObjectName": "StaticMesh SM_WakuProp_01",
+        "ObjectName": "StaticMesh'SM_WakuProp_01'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Art/Props/AnimProp/SM_WakuProp_01.2"
       },
       "bVisible": false
@@ -550,6 +568,7 @@
     "Type": "StaticMeshComponent",
     "Name": "StationMesh1_GEN_VARIABLE",
     "Outer": "AWBP_WakuuWorkProps_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
     "Properties": {
       "bUseDefaultCollision": true,
       "bGenerateOverlapEvents": false,
@@ -564,9 +583,10 @@
     "Type": "StaticMeshComponent",
     "Name": "StationMesh",
     "Outer": "Default__AWBP_WakuuWorkProps_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
     "Properties": {
       "AttachParent": {
-        "ObjectName": "SceneComponent Default__AWBP_WakuuWorkProps_C:PositionComponent",
+        "ObjectName": "SceneComponent'Default__AWBP_WakuuWorkProps_C:PositionComponent'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.10"
       }
     }
@@ -575,13 +595,14 @@
     "Type": "TimelineTemplate",
     "Name": "Tick_Emmisive_Template",
     "Outer": "AWBP_WakuuWorkProps_C",
+    "Class": "UScriptClass'TimelineTemplate'",
     "Properties": {
       "TimelineLength": 6.0,
       "bLoop": true,
       "FloatTracks": [
         {
           "CurveFloat": {
-            "ObjectName": "CurveFloat AWBP_WakuuWorkProps_C:CurveFloat_0",
+            "ObjectName": "CurveFloat'AWBP_WakuuWorkProps_C:CurveFloat_0'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_WakuuWorkProps.7"
           },
           "PropertyName": "Tick_Emmisive_Emmisive_FF7035F64237D84E0ED322A7546A781C",

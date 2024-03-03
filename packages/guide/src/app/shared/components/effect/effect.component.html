@@ -1,0 +1,90 @@
+@if (effect.type === 'BoostMaxStamina') {
+    Increases max stamina
+}
+@if (effect.type === 'AddItemToInventory') {
+
+    Adds {{ (effect.meta.quantity ?? 1) > 1 ? effect.meta.quantity + 'x ' : '' }}
+    <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 -my-1 translate-y-1 !inline-block"/>
+    {{ effect.meta.item.displayName }} to inventory
+
+}
+@if (effect.type === 'UnlockCraftingRecipe') {
+    <div>
+        Unlocks
+        <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
+        {{ effect.meta.item.displayName }} crafting recipe
+    </div>
+}
+@if (effect.type === 'UnlockCookingRecipe') {
+    <div>
+        Unlocks
+        <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
+        {{ effect.meta.item.displayName }} cooking recipe
+    </div>
+}
+@if (effect.type === 'UnlockCookingUtensil') {
+
+    Unlocks {{ effect.meta.utensil }} utensil
+
+}
+@if (effect.type === 'SetQuestFactValue') {
+
+    Sets quests fact '{{ effect.meta.factName }}'
+
+}
+@if (effect.type === 'ConsumeItemMastery') {
+
+    Unlocks 1 skill point for {{ effect.meta.mastery }} mastery
+
+}
+@if (effect.type === 'VaryMoney') {
+    <div>
+        Adds
+        <app-money [amount]="effect.meta.amount" class="!w-7 -my-1 translate-y-1 ml-1 !inline-block"/>
+    </div>
+}
+@if (effect.type === 'RemoveItemFromInventory') {
+    <div>
+        Removes {{ effect.meta.amount }}x
+        @if (hasMinimalItem(effect.meta)) {
+
+            <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
+            {{ effect.meta.item.displayName }}
+
+        }
+        @if (!hasMinimalItem(effect.meta)) {
+
+            items of category {{ effect.meta.category }}
+
+        }
+
+    </div>
+}
+@if (effect.type === 'SendMailToPlayer') {
+
+    Sends mail '<a [queryParams]="{selectedId: effect.meta.mail.mailId}"
+                   [routerLink]="['/journal', 'notes', 'letters']"
+                   class="underline">{{ effect.meta.mail.title }}</a>'
+    {{ effect.meta.dayDelay > 0 ? ' after ' + effect.meta.dayDelay + ' day(s)' : '' }}
+
+}
+@if (effect.type === 'SetQuestActive') {
+
+    Activates quest '{{ effect.meta.questId }}'
+
+}
+@if (effect.type === 'SetQuestCompleted') {
+
+    Completes quest '{{ effect.meta.questId }}'
+
+}
+@if (effect.type === 'UpdateNpcSchedule') {
+
+    Updates schedules of NPCs: '{{ effect.meta.npcIds.join(', ') }}'
+
+}
+@if (effect.type === 'ChangeObjectState') {
+
+    Sets state of '{{ effect.meta.customName ?? effect.meta.id }}' to '{{ effect.meta.state }}'
+
+}

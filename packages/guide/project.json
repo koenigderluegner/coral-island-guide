@@ -6,41 +6,44 @@
   "prefix": "app",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "build-changelog"
+        }
       ],
       "options": {
-        "baseHref": "/coral-guide/",
+        "baseHref": "/",
         "outputPath": "dist/packages/guide",
         "index": "packages/guide/src/index.html",
-        "main": "packages/guide/src/main.ts",
-        "polyfills": "packages/guide/src/polyfills.ts",
+        "browser": "packages/guide/src/main.ts",
+        "polyfills": ["packages/guide/src/polyfills.ts"],
         "tsConfig": "packages/guide/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "packages/guide/src/favicon.ico",
-          "packages/guide/src/assets"
+          "packages/guide/src/assets",
+          "packages/guide/src/manifest.webmanifest",
+          "packages/guide/src/CNAME",
+          "packages/guide/src/CHANGELOG.md",
+          "packages/guide/src/assets/latest-changelog.md"
         ],
-        "styles": [
-          "packages/guide/src/styles.scss"
-        ],
+        "styles": ["packages/guide/src/styles.scss"],
         "stylePreprocessorOptions": {
-          "includePaths": [
-            "packages/guide/src/styles"
-          ]
+          "includePaths": ["packages/guide/src/styles"]
         },
-        "scripts": [
-          "node_modules/marked/marked.min.js"
-        ]
+        "scripts": ["node_modules/marked/marked.min.js"],
+        "serviceWorker": "packages/guide/ngsw-config.json"
       },
       "configurations": {
         "production": {
           "budgets": [
             {
               "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumWarning": "1mb",
+              "maximumError": "2mb"
             },
             {
               "type": "anyComponentStyle",
@@ -57,9 +60,7 @@
           "outputHashing": "all"
         },
         "development": {
-          "buildOptimizer": false,
           "optimization": false,
-          "vendorChunk": true,
           "extractLicenses": false,
           "sourceMap": true,
           "namedChunks": true
@@ -71,10 +72,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "guide:build:production"
+          "buildTarget": "guide:build:production"
         },
         "development": {
-          "browserTarget": "guide:build:development"
+          "buildTarget": "guide:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -82,27 +83,27 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "guide:build"
+        "buildTarget": "guide:build"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "packages/guide/**/*.ts",
-          "packages/guide/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "packages/guide/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "packages/guide/jest.config.ts"
       }
+    },
+    "build-changelog": {
+      "executor": "nx:run-commands",
+      "configurations": {
+        "extract": {
+          "commands": ["ts-node changelog-extractor.ts"]
+        }
+      },
+      "defaultConfiguration": "extract"
     }
   },
   "tags": []

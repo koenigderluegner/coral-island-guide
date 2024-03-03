@@ -3,6 +3,7 @@
     "Type": "C_DateSeasonRangeRequirement",
     "Name": "C_DateSeasonRangeRequirement_1",
     "Outer": "BenFall15-28",
+    "Class": "UScriptClass'C_DateSeasonRangeRequirement'",
     "Properties": {
       "expectedDateSeason": {
         "from": {
@@ -17,14 +18,57 @@
     }
   },
   {
+    "Type": "C_MarriageHasProposedRequirement",
+    "Name": "C_MarriageHasProposedRequirement_0",
+    "Outer": "BenFall15-28",
+    "Class": "UScriptClass'C_MarriageHasProposedRequirement'",
+    "Properties": {
+      "checkNPC": true,
+      "npcId": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_NPCs'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.0"
+        },
+        "RowName": "Ben"
+      },
+      "invertResult": true
+    }
+  },
+  {
+    "Type": "C_MarriedRequirement",
+    "Name": "C_MarriedRequirement_0",
+    "Outer": "BenFall15-28",
+    "Class": "UScriptClass'C_MarriedRequirement'",
+    "Properties": {
+      "checkNPC": true,
+      "npcId": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_NPCs'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.0"
+        },
+        "RowName": "Ben"
+      },
+      "invertResult": true
+    }
+  },
+  {
     "Type": "C_RequirementsConfig",
     "Name": "BenFall15-28",
+    "Class": "UScriptClass'C_RequirementsConfig'",
     "Properties": {
       "requirements": {
         "requirements": [
           {
-            "ObjectName": "C_DateSeasonRangeRequirement BenFall15-28:C_DateSeasonRangeRequirement_1",
+            "ObjectName": "C_DateSeasonRangeRequirement'BenFall15-28:C_DateSeasonRangeRequirement_1'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/BenFall15-28.0"
+          },
+          {
+            "ObjectName": "C_MarriedRequirement'BenFall15-28:C_MarriedRequirement_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/BenFall15-28.2"
+          },
+          {
+            "ObjectName": "C_MarriageHasProposedRequirement'BenFall15-28:C_MarriageHasProposedRequirement_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/BenFall15-28.1"
           }
         ]
       }

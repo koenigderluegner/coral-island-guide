@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
 import { DatabaseService } from './shared/services/database.service';
-import { Observable } from 'rxjs';
-import { Item } from '@ci/data-types';
+import { combineLatest, Observable } from 'rxjs';
+import { ChangelogService } from "./changelog/changelog.service";
+import { MatDialog } from "@angular/material/dialog";
+import { ChangelogDialogComponent } from "./changelog/changelog-dialog/changelog-dialog.component";
+import { SettingsService } from "./shared/services/settings.service";
 
 @Component({
     selector: 'app-root',
@@ -11,12 +13,41 @@ import { Item } from '@ci/data-types';
 })
 export class AppComponent {
 
-    items$: Observable<Item[]>;
+    prefetchData$: Observable<any>;
+    #databaseService = inject(DatabaseService)
+    #changelogService = inject(ChangelogService)
+    #dialog = inject(MatDialog);
+    #settingsService = inject(SettingsService)
 
-    constructor(private readonly _http: HttpClient,
-                private databaseService: DatabaseService,
-    ) {
-        this.items$ = this.databaseService.fetchItems$();
+    constructor() {
+
+        if (!this.#settingsService.getSettings().disableChangelogs) {
+            this.#changelogService.getLatestChangelog().subscribe({
+                next: changelog => {
+
+                    if (changelog.version === this.#changelogService.getLatestSeen()) return;
+
+                    const dialogRef = this.#dialog.open(ChangelogDialogComponent, {
+                        data: {changelog},
+                        hasBackdrop: true,
+                        width: '800px'
+                    });
+
+                    dialogRef.afterClosed().subscribe({
+                        next: () => {
+                            this.#changelogService.setLatestSeen(changelog)
+                        }
+                    })
+                }
+            })
+        }
+
+        this.prefetchData$ = combineLatest([
+            this.#databaseService.fetchItems$(),
+            this.#databaseService.fetchTagBasedItems$(),
+            this.#databaseService.fetchProcessorMapping$(),
+            this.#databaseService.fetchCookingUtensilMapping$(),
+        ]);
     }
 
 }

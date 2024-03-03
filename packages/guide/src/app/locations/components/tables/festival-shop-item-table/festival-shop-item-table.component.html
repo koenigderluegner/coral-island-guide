@@ -1,0 +1,93 @@
+<app-responsive-table>
+    @if (matDataSource) {
+        <table [dataSource]="matDataSource" mat-table matSort>
+            <ng-container matColumnDef="icon" sticky>
+                <td *matCellDef="let element" class="!pl-2 !pr-0 w-10 text-center icon-col " mat-cell>
+                    <app-item-icon [itemName]="element.item.iconName"/>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="displayName">
+                <th *matHeaderCellDef [attr.colspan]="2" class="backdrop-blur-xl" mat-header-cell mat-sort-header>Item
+                </th>
+                <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
+                    {{ element.item.displayName }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="shop">
+                <th *matHeaderCellDef class="backdrop-blur-xl" mat-header-cell mat-sort-header>Shop
+                </th>
+                <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
+                    <a [routerLink]="['/locations', element.festival.url]"
+                       class="underline">{{ element.festival.displayName }}</a>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="townRank">
+                <th *matHeaderCellDef class="backdrop-blur-xl whitespace-nowrap" mat-header-cell mat-sort-header>Town
+                    Rank
+                </th>
+                <td *matCellDef="let element" class="text-col w-[1%]" mat-cell>
+                    {{ element.townRank | townrank }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="limit">
+                <th *matHeaderCellDef class="backdrop-blur-xl whitespace-nowrap" mat-header-cell mat-sort-header>Amount
+                    limit
+                </th>
+                <td *matCellDef="let element" class="text-col !text-right w-[1%]" mat-cell>
+                    @if (element.festivalSetting.isLimitedItem) {
+                        <span>{{ element.festivalSetting.itemLimit }}</span>
+                    }
+                    @if (element.festivalSetting.hasYearlyLimit) {
+                        <span>{{ element.festivalSetting.itemLimitPerYear }} per year</span>
+                    }
+                    @if (!element.festivalSetting.isLimitedItem && !element.festivalSetting.hasYearlyLimit) {
+                        <span>-</span>
+                    }
+
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="discount">
+                <th *matHeaderCellDef class="backdrop-blur-xl whitespace-nowrap" mat-header-cell mat-sort-header>
+                    Discount
+                </th>
+                <td *matCellDef="let element" class="text-col !text-right w-[1%]" mat-cell>
+                    @if (element.festivalSetting.hasDiscount) {
+                        <span>{{ (element.festivalSetting.discount) | percent }}</span>
+                    }
+                    @if (!element.festivalSetting.hasDiscount) {
+                        <span>-</span>
+                    }
+
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="price">
+                <th *matHeaderCellDef class="backdrop-blur-xl whitespace-nowrap" mat-header-cell mat-sort-header>Price
+                </th>
+                <td *matCellDef="let element" class="text-col !text-right w-[1%]" mat-cell>
+                    @if (element.festivalSetting.hasDiscount) {
+                        <span
+                                class="line-through mr-3">{{ element.item.price }}</span>
+                    }
+                    <app-money
+                            [amount]="element.item.price * (1 - (element.festivalSetting.hasDiscount ? element.festivalSetting.discount : 0))"/>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="sellPrice">
+                <th *matHeaderCellDef class="backdrop-blur-xl whitespace-nowrap" mat-header-cell mat-sort-header>Sell
+                    price
+                </th>
+                <td *matCellDef="let element" class="text-col !text-right w-[1%]" mat-cell>
+                    <app-money [amount]="element.item.sellPrice"/>
+                </td>
+            </ng-container>
+
+            <tr *matHeaderRowDef="displayHeaderColumns; sticky: true" mat-header-row></tr>
+            <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+        </table>
+    }
+</app-responsive-table>

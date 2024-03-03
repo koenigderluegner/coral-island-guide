@@ -6,7 +6,18 @@ module.exports = {
     content: [join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html}'), ...createGlobPatternsForDependencies(__dirname)],
     theme: {
         extend: {
+            maxWidth: {
+                'full-safe': 'calc(100vw - (env(safe-area-inset-left) + env(safe-area-inset-right)))'
+            },
+            fontFamily: {
+                'coral': '"QTVagaRound", sans-serif'
+            },
+            gridTemplateRows: {
+                '0fr': '0fr',
+                '1fr': '1fr',
+            },
             colors: {
+                gifting: '#ed7b67',
                 accent: '#d89e43',
                 merino: {
                     DEFAULT: '#f7f2e8',

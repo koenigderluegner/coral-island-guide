@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Radiator_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 120.0,
+            "Y": 10.0,
+            "Z": 118.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "35EFD36E44B5C7C3AA2C869EC6953B93"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Radiator_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Radiator'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Misc_Icons/Others/Textures/Radiator.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Radiator_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Misc_Icons/Others/Radiator_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 60.0,
+          "Y": 59.0,
+          "Z": 0.96875,
+          "W": 0.0390625
+        },
+        {
+          "X": -60.0,
+          "Y": 59.0,
+          "Z": 0.03125,
+          "W": 0.0390625
+        },
+        {
+          "X": -60.0,
+          "Y": -59.0,
+          "Z": 0.03125,
+          "W": 0.9609375
+        },
+        {
+          "X": 60.0,
+          "Y": -59.0,
+          "Z": 0.96875,
+          "W": 0.9609375
+        },
+        {
+          "X": 60.0,
+          "Y": 59.0,
+          "Z": 0.96875,
+          "W": 0.0390625
+        },
+        {
+          "X": -60.0,
+          "Y": -59.0,
+          "Z": 0.03125,
+          "W": 0.9609375
+        }
+      ]
+    }
+  }
+]

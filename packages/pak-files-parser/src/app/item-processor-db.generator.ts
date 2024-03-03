@@ -2,7 +2,7 @@ import glob from 'glob';
 import path from 'path';
 import { Datatable } from '../interfaces/datatable.interface';
 import fs from 'fs';
-import { RawItemProcessing } from '../interfaces/raw-item-processing.interface';
+import { RawItemProcessing } from '../interfaces/raw-data-interfaces/raw-item-processing.interface';
 import { Item, ItemProcessing } from '@ci/data-types';
 import { minifyItem } from '../util/functions';
 import { getQuality, removeQualityFlag } from "@ci/util";

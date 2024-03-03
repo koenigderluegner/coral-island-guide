@@ -1,26 +1,38 @@
 <app-list-detail-container [(openDrawer)]="openDrawer" [removePlaceholder]="showTable">
-    <app-caught-details *ngIf="selectedEntity" [critter]="selectedEntity" [registerToChecklist]="registerToChecklist"
-                        listDetail></app-caught-details>
+    @if (selectedEntity) {
+        <app-caught-details [critter]="selectedEntity" [registerToToDo]="registerToToDo"
+                            listDetail></app-caught-details>
+    }
 
     <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex"
                    class=" px-2 xl:px-[50px] w-full"
                    mat-stretch-tabs="false">
-        <mat-tab [label]="tab.title" *ngFor="let tab of tabs">
-            <app-data-filter [(showTable)]="showTable" [parentFormGroup]="formControl"/>
-            <ng-container *ngIf="(tab.data |async) as syncedData">
-                <ng-container *ngIf="!showTable">
-                    <div class="grid gap-4 icon-grid">
-                        <app-item-icon *ngFor="let entry of syncedData" [itemName]="entry.item.iconName"
-                                       (click)="showDetails(entry)"
-                                       [class.selected-icon]="selectedEntity?.item?.id === entry.item.id"
-                                       class="icon-grid-item"
-                        />
-                    </div>
-                </ng-container>
-                <ng-container *ngIf="showTable">
-                    <app-caught-table [dataSource]="syncedData"></app-caught-table>
-                </ng-container>
-            </ng-container>
-        </mat-tab>
+        @for (tab of tabs; track tab) {
+            <mat-tab [label]="tab.title">
+                <app-data-filter [(showTable)]="showTable" [parentFormGroup]="formControl"/>
+                @if ((tab.data |async); as syncedData) {
+
+                    @if (!showTable) {
+
+                        <div class="grid gap-4 icon-grid">
+                            @for (entry of syncedData; track entry) {
+                                <app-item-icon [itemName]="entry.item.iconName"
+                                               (click)="showDetails(entry)"
+                                               [class.selected-icon]="selectedEntity?.item?.id === entry.item.id"
+                                               class="icon-grid-item"
+                                />
+                            }
+                        </div>
+
+                    }
+                    @if (showTable) {
+
+                        <app-caught-table [dataSource]="syncedData"></app-caught-table>
+
+                    }
+
+                }
+            </mat-tab>
+        }
     </mat-tab-group>
 </app-list-detail-container>

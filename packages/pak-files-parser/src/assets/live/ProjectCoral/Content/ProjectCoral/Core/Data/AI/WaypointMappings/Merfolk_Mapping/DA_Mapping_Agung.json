@@ -2,212 +2,710 @@
   {
     "Type": "C_WaypointMapping",
     "Name": "DA_Mapping_Agung",
+    "Class": "UScriptClass'C_WaypointMapping'",
     "Properties": {
-      "mapping": {
-        "SpringSummerFallWinter_MTWTRF": {
-          "startingPoint": {
-            "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
-            "SubPathString": "PersistentLevel.C_AnimationWaypoint_1"
-          },
-          "waypoints": [
-            {
-              "id": "teleport out",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
-                "SubPathString": "PersistentLevel.C_WorldWarpingPortal_5_trigger_B_waypoint"
-              },
-              "leavingHour": 6,
-              "leavingMinutes": 0,
-              "isTransitional": true,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
-              },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
+      "mapping": [
+        {
+          "SpringSummerFallWinter_TWTRF": {
+            "startingPoint": {
+              "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+              "SubPathString": "PersistentLevel.C_AnimationWaypoint_1"
             },
-            {
-              "id": "Guarding 20 meter gate",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
-                "SubPathString": "PersistentLevel.C_AnimationWaypoint_2"
+            "waypoints": [
+              {
+                "id": "Transition to the world",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_5_trigger_B_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 8,
-              "leavingMinutes": 0,
-              "isTransitional": false,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
+              {
+                "id": "Patrol near to the colosseum",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_2"
+                },
+                "leavingHour": 9,
+                "leavingMinutes": 0,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            },
-            {
-              "id": "teleport in",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
-                "SubPathString": "PersistentLevel.C_WorldWarpingPortal_5_trigger_A_waypoint"
+              {
+                "id": "Patrol near the gate",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint150"
+                },
+                "leavingHour": 13,
+                "leavingMinutes": 0,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 6,
-              "leavingMinutes": 0,
-              "isTransitional": true,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
+              {
+                "id": "Transition to the tavern",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_30_trigger_B_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            },
-            {
-              "id": "Go to sleep",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
-                "SubPathString": "PersistentLevel.C_AnimationWaypoint_3"
+              {
+                "id": "Dinner at tavern",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+                  "SubPathString": "PersistentLevel.C_WaypointGroup45_2"
+                },
+                "leavingHour": 18,
+                "leavingMinutes": 0,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 17,
-              "leavingMinutes": 0,
-              "isTransitional": false,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
+              {
+                "id": "Transition to the world",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_30_trigger_A_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            }
-          ]
+              {
+                "id": "Transition to the house",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_5_trigger_A_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              },
+              {
+                "id": "Sleep",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_3"
+                },
+                "leavingHour": 21,
+                "leavingMinutes": 0,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              }
+            ]
+          }
         },
-        "SpringSummerFallWinter_STSN": {
-          "startingPoint": {
-            "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
-            "SubPathString": "PersistentLevel.C_AnimationWaypoint_1"
-          },
-          "waypoints": [
-            {
-              "id": "teleport out",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
-                "SubPathString": "PersistentLevel.C_WorldWarpingPortal_5_trigger_B_waypoint"
-              },
-              "leavingHour": 6,
-              "leavingMinutes": 0,
-              "isTransitional": true,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
-              },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
+        {
+          "SpringSummerFallWinter_STSN": {
+            "startingPoint": {
+              "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+              "SubPathString": "PersistentLevel.C_AnimationWaypoint_1"
             },
-            {
-              "id": "hang out",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
-                "SubPathString": "PersistentLevel.C_AnimationWaypoint_5"
+            "waypoints": [
+              {
+                "id": "Meditation",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_669"
+                },
+                "leavingHour": 8,
+                "leavingMinutes": 0,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 8,
-              "leavingMinutes": 0,
-              "isTransitional": false,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
+              {
+                "id": "Transition to world",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_5_trigger_B_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
+              {
+                "id": "Transition to tattoo shop",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_34_trigger_A_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              },
+              {
+                "id": "Visit tattoo shop",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_13"
+                },
+                "leavingHour": 12,
+                "leavingMinutes": 0,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              },
+              {
+                "id": "Transition to world",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_34_trigger_B_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              },
+              {
+                "id": "Transition to the tavern",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_30_trigger_B_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              },
+              {
+                "id": "Dinner at tavern",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+                  "SubPathString": "PersistentLevel.C_WaypointGroup45_2"
+                },
+                "leavingHour": 18,
+                "leavingMinutes": 0,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              },
+              {
+                "id": "Transition to the world",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_30_trigger_A_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              },
+              {
+                "id": "Transition to the house",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_5_trigger_A_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              },
+              {
+                "id": "Sleep",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_3"
+                },
+                "leavingHour": 21,
+                "leavingMinutes": 0,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              }
+            ]
+          }
+        },
+        {
+          "Weather_MtoSN": {
+            "startingPoint": {
+              "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+              "SubPathString": "PersistentLevel.C_AnimationWaypoint_1"
             },
-            {
-              "id": "teleport in main shop",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
-                "SubPathString": "PersistentLevel.C_WorldWarpingPortal_32_trigger_A_waypoint"
+            "waypoints": [
+              {
+                "id": "Meditation",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_669"
+                },
+                "leavingHour": 9,
+                "leavingMinutes": 0,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 6,
-              "leavingMinutes": 0,
-              "isTransitional": true,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
+              {
+                "id": "Clean the weapon",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_671"
+                },
+                "leavingHour": 11,
+                "leavingMinutes": 0,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
+              {
+                "id": "Dinner at home",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_673"
+                },
+                "leavingHour": 18,
+                "leavingMinutes": 0,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              },
+              {
+                "id": "Sleep",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_3"
+                },
+                "leavingHour": 21,
+                "leavingMinutes": 0,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              }
+            ]
+          }
+        },
+        {
+          "SpringSummerFallWinter_M": {
+            "startingPoint": {
+              "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+              "SubPathString": "PersistentLevel.C_AnimationWaypoint_1"
             },
-            {
-              "id": "shopping",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
-                "SubPathString": "PersistentLevel.C_AnimationWaypoint_7"
+            "waypoints": [
+              {
+                "id": "Transition to world",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_5_trigger_B_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 13,
-              "leavingMinutes": 30,
-              "isTransitional": false,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
+              {
+                "id": "Visit the coral tree (pray)",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint183"
+                },
+                "leavingHour": 9,
+                "leavingMinutes": 0,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            },
-            {
-              "id": "teleport out",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
-                "SubPathString": "PersistentLevel.C_WorldWarpingPortal_32_trigger_B_waypoint"
+              {
+                "id": "Transition to the castle",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal5_trigger_A_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 6,
-              "leavingMinutes": 0,
-              "isTransitional": true,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
+              {
+                "id": "Request the audience",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint184"
+                },
+                "leavingHour": 13,
+                "leavingMinutes": 0,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            },
-            {
-              "id": "teleport to home",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
-                "SubPathString": "PersistentLevel.C_WorldWarpingPortal_5_trigger_A_waypoint"
+              {
+                "id": "Transition to world",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal5_trigger_B_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 6,
-              "leavingMinutes": 0,
-              "isTransitional": true,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
+              {
+                "id": "Transition to the house",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_5_trigger_A_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            },
-            {
-              "id": "Go Home",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
-                "SubPathString": "PersistentLevel.C_AnimationWaypoint_3"
+              {
+                "id": "Clean the weapon",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_671"
+                },
+                "leavingHour": 17,
+                "leavingMinutes": 0,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 16,
-              "leavingMinutes": 30,
-              "isTransitional": false,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
-              },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            }
-          ]
+              {
+                "id": "Sleep",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/Agung_Waypoints.Agung_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_3"
+                },
+                "leavingHour": 22,
+                "leavingMinutes": 0,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              }
+            ]
+          }
         }
-      }
+      ]
     }
   }
 ]

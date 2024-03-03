@@ -1,0 +1,74 @@
+<app-list-detail-container [(openDrawer)]="openDrawer">
+    @if (selectedEntity) {
+        <app-item-card-switch [item]="selectedEntity" listDetail>
+            <ng-template let-details appDatabaseItemDetails>
+                <app-offering [details]="details"/>
+            </ng-template>
+        </app-item-card-switch>
+    }
+    @if (offerings$ | async; as offeringAltars) {
+        <mat-tab-group (selectedTabChange)="updateUrl($event)"
+                       [formGroup]="checklistForm"
+                       [selectedIndex]="selectedTabIndex"
+                       class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false">
+            @for (offeringAltar of offeringAltars; track offeringAltar) {
+                <mat-tab
+                        label="{{offeringAltar.offeringGroupTitle | addSpacesToPascalCase}}">
+                    @if (!showTable) {
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            @for (offering of offeringAltar.offerings; track offering) {
+                                <div class="flex flex-col gap-y-2">
+                                    <div
+                                            [class.bg-merino-300]="activeOffering?.title === offering.title"
+                                            class="rounded-lg bg-merino flex  items-center gap-4 p-4 ">
+                                        <img alt="{{offering.title}} offering icon" height="64"
+                                             src="assets/ui/images/offering/{{offering.imageName}}.png"
+                                             width="64"/>
+                                        <div class="flex flex-col text-lg font-semibold">
+                                            <div>{{ offering.title }}</div>
+                                            <div>
+                                                {{ offering.numOfItemRequired === -1 ? 'All' : offering.numOfItemRequired }}
+                                                required:
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-4 icon-grid  w-full">
+                                        @for (offering of offering.requiredItems; track offering) {
+
+                                            @if ((offering.item | entityKey); as entryId) {
+                                                <div
+                                                        [class.checklist-checked]="checklistForm.get(entryId)?.value"
+                                                        [class.selected-icon]="selectedEntity && (selectedEntity | entityKey) === entryId"
+                                                        class="icon-grid-item checklist-item flex flex-col">
+
+                                                    <app-item-icon (click)="showDetails(offering)"
+                                                                   [amount]="offering.amount"
+                                                                   [itemName]="offering.item.iconName"
+                                                                   [quality]="offering.quality"/>
+                                                    <label class="text-white flex justify-center"
+                                                           for="entry-{{entryId}}-input">
+                                                        <mat-checkbox [formControlName]="entryId" class="flex"
+                                                                      id="entry-{{entryId}}"
+                                                                      name="entry-{{entryId}}"></mat-checkbox>
+                                                    </label>
+
+                                                </div>
+                                            }
+
+                                        }
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    }
+
+                </mat-tab>
+            }
+
+
+        </mat-tab-group>
+    }
+
+
+</app-list-detail-container>

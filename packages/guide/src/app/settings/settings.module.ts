@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { SettingsComponent } from './settings.component';
 import { SharedModule } from "../shared/shared.module";
 import { ReactiveFormsModule } from "@angular/forms";
+import { MatIconModule } from "@angular/material/icon";
+import { MatSelectModule } from "@angular/material/select";
 
 const routes: Routes = [{path: '', component: SettingsComponent}];
 
@@ -13,7 +15,9 @@ const routes: Routes = [{path: '', component: SettingsComponent}];
         CommonModule,
         RouterModule.forChild(routes),
         SharedModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatIconModule,
+        MatSelectModule
     ],
 })
 export class SettingsModule {

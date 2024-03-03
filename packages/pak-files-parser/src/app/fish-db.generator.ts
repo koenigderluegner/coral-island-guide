@@ -1,33 +1,38 @@
 import { addSpacesToPascalCase, getEnumValue, } from '@ci/util';
-import { Fish, Item } from '@ci/data-types';
+import { Fish, FishSpawnSettings, Item } from '@ci/data-types';
 import { Fishs } from '../types/fishs.type';
-import { RawFish } from '../interfaces/raw-fish.interface';
+import { RawFish } from '../interfaces/raw-data-interfaces/raw-fish.interface';
 import { readAsset } from '../util/functions';
+import { Datatable } from "../interfaces/datatable.interface";
+import { RawFishingMinigame } from "../interfaces/raw-data-interfaces/raw-fishing-minigame.interface";
 
 export class FishDbGenerator {
 
     critterDb: Fishs[];
+    minigame: Datatable<RawFishingMinigame>[];
 
     constructor(protected itemMap: Map<string, Item>) {
         this.critterDb = readAsset<Fishs[]>('ProjectCoral/Content/ProjectCoral/Data/Fish/DT_Fish.json');
+        this.minigame = readAsset<Datatable<RawFishingMinigame>[]>('ProjectCoral/Content/ProjectCoral/Data/Fish/DT_FishMinigame.json');
 
     }
 
     generate(): Map<string, Fish> {
         const map: Map<string, Fish> = new Map<string, Fish>();
 
-        Object.keys(this.critterDb[0]?.Rows).forEach(itemKey => {
+        const critterRows = this.critterDb[0]?.Rows;
+        const minigameRows = this.minigame[0]?.Rows;
+        Object.keys(critterRows).forEach(itemKey => {
 
-            const dbItem: RawFish = this.critterDb[0]?.Rows[itemKey];
+            const dbItem: RawFish = critterRows?.[itemKey];
 
             const item: Item | undefined = this.itemMap.get(dbItem.FishSKU.itemID);
 
+            const minigame = minigameRows[itemKey];
+
             if (item) {
-                const fish: Fish = {
+                const spawnSettings: FishSpawnSettings = {
                     key: itemKey,
-                    isEnabled: dbItem.isEnabled,
-                    fishName: dbItem.FishName,
-                    fishSize: getEnumValue(dbItem.fishSize),
                     spawnArea: {
                         canBeCatchOnCave: dbItem.SpawnArea.CanBeCatchOnCave,
                         canBeCatchOnLake: dbItem.SpawnArea.CanBeCatchOnLake,
@@ -56,10 +61,6 @@ export class FishDbGenerator {
                         fall: dbItem.SpawnSeason.Fall,
                         winter: dbItem.SpawnSeason.Winter,
                     },
-                    rarity: getEnumValue(dbItem.Rarity),
-                    minCaughtSize: dbItem.minCaughtSize,
-                    maxCaughtSize: dbItem.maxCaughtSize,
-                    experienceGrantedWhenCaught: dbItem.experienceGrantedWhenCaught,
                     isUsingSpecificDate: dbItem.isUsingSpecificDate,
                     dateRangeList: dbItem.dateRangeList.map(dr => {
                         return {
@@ -78,6 +79,28 @@ export class FishDbGenerator {
                             },
                         };
                     }),
+                };
+
+                const existingFish = [...map.values()].find(f => f.item.id === item.id);
+
+                if (existingFish) {
+                    existingFish.spawnSettings.push(spawnSettings);
+                    return;
+                }
+
+
+                const fish: Fish = {
+                    key: itemKey,
+                    isEnabled: dbItem.isEnabled,
+                    fishName: dbItem.FishName,
+                    fishSize: getEnumValue(dbItem.fishSize),
+                    rarity: getEnumValue(dbItem.Rarity),
+                    minCaughtSize: dbItem.minCaughtSize,
+                    maxCaughtSize: dbItem.maxCaughtSize,
+                    experienceGrantedWhenCaught: dbItem.experienceGrantedWhenCaught,
+                    spawnSettings: [spawnSettings],
+                    pattern: getEnumValue(minigame.fishPattern),
+                    difficulty: getEnumValue(minigame.fishDifficultyCategory),
                     item
                 };
 

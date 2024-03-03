@@ -3,18 +3,19 @@
     "Type": "Function",
     "Name": "ExecuteUbergraph_AWBP_Arcade_ElectricStore",
     "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'Function'",
     "ChildProperties": [
       {
         "Type": "IntProperty",
         "Name": "EntryPoint",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 4,
-        "PropertyFlags": 148
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
       },
       {
         "Type": "BoolProperty",
         "Name": "CallFunc_SetStaticMesh_ReturnValue",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
         "FieldSize": 1,
         "ByteOffset": 0,
@@ -26,7 +27,7 @@
       {
         "Type": "BoolProperty",
         "Name": "CallFunc_SetStaticMesh_ReturnValue_1",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
         "FieldSize": 1,
         "ByteOffset": 0,
@@ -38,36 +39,36 @@
       {
         "Type": "ObjectProperty",
         "Name": "CallFunc_GetGameInstanceSubsystem_ReturnValue",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 8,
         "PropertyClass": {
-          "ObjectName": "Class C_FestivalManager",
+          "ObjectName": "Class'C_FestivalManager'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       },
       {
         "Type": "DelegateProperty",
         "Name": "K2Node_CreateDelegate_OutputDelegate",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 20,
         "SignatureFunction": {
-          "ObjectName": "DelegateFunction C_TimeManager:DelegateOnTimeStateChanged__DelegateSignature",
+          "ObjectName": "DelegateFunction'C_TimeManager:DelegateOnTimeStateChanged__DelegateSignature'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       },
       {
         "Type": "EnumProperty",
         "Name": "K2Node_Event_context",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
         "Enum": {
-          "ObjectName": "Enum EC_AnimationContext",
+          "ObjectName": "Enum'EC_AnimationContext'",
           "ObjectPath": "/Script/ProjectCoral"
         },
         "UnderlyingProp": {
           "Type": "ByteProperty",
           "Name": "UnderlyingType",
-          "Flags": 1,
+          "Flags": "RF_Public",
           "ElementSize": 1,
           "Enum": null
         }
@@ -75,17 +76,17 @@
       {
         "Type": "ObjectProperty",
         "Name": "K2Node_Event_npc",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 8,
         "PropertyClass": {
-          "ObjectName": "Class C_NpcCharacter",
+          "ObjectName": "Class'C_NpcCharacter'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       },
       {
         "Type": "BoolProperty",
         "Name": "K2Node_SwitchEnum_CmpSuccess",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
         "FieldSize": 1,
         "ByteOffset": 0,
@@ -97,27 +98,27 @@
       {
         "Type": "ObjectProperty",
         "Name": "CallFunc_GetGameState_ReturnValue",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 8,
         "PropertyClass": {
-          "ObjectName": "Class GameStateBase",
+          "ObjectName": "Class'GameStateBase'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "K2Node_DynamicCast_AsC_Game_State",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 8,
         "PropertyClass": {
-          "ObjectName": "Class C_GameState",
+          "ObjectName": "Class'C_GameState'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       },
       {
         "Type": "BoolProperty",
         "Name": "K2Node_DynamicCast_bSuccess",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
         "FieldSize": 1,
         "ByteOffset": 0,
@@ -129,17 +130,17 @@
       {
         "Type": "ObjectProperty",
         "Name": "CallFunc_GetTimeManager_ReturnValue",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 8,
         "PropertyClass": {
-          "ObjectName": "Class C_TimeManager",
+          "ObjectName": "Class'C_TimeManager'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       },
       {
         "Type": "BoolProperty",
         "Name": "K2Node_Event_newState",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
         "FieldSize": 1,
         "ByteOffset": 0,
@@ -149,23 +150,24 @@
         "bIsNativeBool": true
       }
     ],
-    "FunctionFlags": 32769
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
   },
   {
     "Type": "Function",
     "Name": "OnOccupiedStateChanged",
     "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'Function'",
     "SuperStruct": {
-      "ObjectName": "Function C_WorldWaypoint:OnOccupiedStateChanged",
+      "ObjectName": "Function'C_WorldWaypoint:OnOccupiedStateChanged'",
       "ObjectPath": "/Script/ProjectCoral"
     },
     "ChildProperties": [
       {
         "Type": "BoolProperty",
         "Name": "newState",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
-        "PropertyFlags": 148,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
         "FieldSize": 1,
         "ByteOffset": 0,
         "ByteMask": 1,
@@ -174,37 +176,39 @@
         "bIsNativeBool": true
       }
     ],
-    "FunctionFlags": 134744064
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
   },
   {
     "Type": "Function",
     "Name": "CustomEvent_0",
     "Outer": "AWBP_Arcade_ElectricStore_C",
-    "FunctionFlags": 201326592
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
   },
   {
     "Type": "Function",
     "Name": "OnAnimationContextChanged",
     "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'Function'",
     "SuperStruct": {
-      "ObjectName": "Function C_WorldWaypoint:OnAnimationContextChanged",
+      "ObjectName": "Function'C_WorldWaypoint:OnAnimationContextChanged'",
       "ObjectPath": "/Script/ProjectCoral"
     },
     "ChildProperties": [
       {
         "Type": "EnumProperty",
         "Name": "context",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
-        "PropertyFlags": 148,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
         "Enum": {
-          "ObjectName": "Enum EC_AnimationContext",
+          "ObjectName": "Enum'EC_AnimationContext'",
           "ObjectPath": "/Script/ProjectCoral"
         },
         "UnderlyingProp": {
           "Type": "ByteProperty",
           "Name": "UnderlyingType",
-          "Flags": 1,
+          "Flags": "RF_Public",
           "ElementSize": 1,
           "Enum": null
         }
@@ -212,89 +216,93 @@
       {
         "Type": "ObjectProperty",
         "Name": "npc",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 8,
-        "PropertyFlags": 148,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
         "PropertyClass": {
-          "ObjectName": "Class C_NpcCharacter",
+          "ObjectName": "Class'C_NpcCharacter'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       }
     ],
-    "FunctionFlags": 134744064
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
   },
   {
     "Type": "Function",
     "Name": "ReceiveBeginPlay",
     "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'Function'",
     "SuperStruct": {
-      "ObjectName": "Function Actor:ReceiveBeginPlay",
+      "ObjectName": "Function'Actor:ReceiveBeginPlay'",
       "ObjectPath": "/Script/Engine"
     },
-    "FunctionFlags": 134744064
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
   },
   {
     "Type": "Function",
     "Name": "TV_ONOFF__UpdateFunc",
     "Outer": "AWBP_Arcade_ElectricStore_C",
-    "FunctionFlags": 134217728
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintEvent"
   },
   {
     "Type": "Function",
     "Name": "TV_ONOFF__FinishedFunc",
     "Outer": "AWBP_Arcade_ElectricStore_C",
-    "FunctionFlags": 134217728
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintEvent"
   },
   {
     "Type": "BlueprintGeneratedClass",
     "Name": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
     "Properties": {
       "Timelines": [
         {
-          "ObjectName": "TimelineTemplate AWBP_Arcade_ElectricStore_C:TV_ONOFF_Template",
+          "ObjectName": "TimelineTemplate'AWBP_Arcade_ElectricStore_C:TV_ONOFF_Template'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.35"
         }
       ],
       "SimpleConstructionScript": {
-        "ObjectName": "SimpleConstructionScript AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0",
+        "ObjectName": "SimpleConstructionScript'AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.26"
       },
       "UberGraphFunction": {
-        "ObjectName": "Function AWBP_Arcade_ElectricStore_C:ExecuteUbergraph_AWBP_Arcade_ElectricStore",
+        "ObjectName": "Function'AWBP_Arcade_ElectricStore_C:ExecuteUbergraph_AWBP_Arcade_ElectricStore'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.0"
       }
     },
     "SuperStruct": {
-      "ObjectName": "Class C_AnimationWaypoint",
+      "ObjectName": "Class'C_AnimationWaypoint'",
       "ObjectPath": "/Script/ProjectCoral"
     },
     "Children": [
       {
-        "ObjectName": "Function AWBP_Arcade_ElectricStore_C:TV_ONOFF__FinishedFunc",
+        "ObjectName": "Function'AWBP_Arcade_ElectricStore_C:TV_ONOFF__FinishedFunc'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.6"
       },
       {
-        "ObjectName": "Function AWBP_Arcade_ElectricStore_C:TV_ONOFF__UpdateFunc",
+        "ObjectName": "Function'AWBP_Arcade_ElectricStore_C:TV_ONOFF__UpdateFunc'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.5"
       },
       {
-        "ObjectName": "Function AWBP_Arcade_ElectricStore_C:ReceiveBeginPlay",
+        "ObjectName": "Function'AWBP_Arcade_ElectricStore_C:ReceiveBeginPlay'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.4"
       },
       {
-        "ObjectName": "Function AWBP_Arcade_ElectricStore_C:OnAnimationContextChanged",
+        "ObjectName": "Function'AWBP_Arcade_ElectricStore_C:OnAnimationContextChanged'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.3"
       },
       {
-        "ObjectName": "Function AWBP_Arcade_ElectricStore_C:CustomEvent_0",
+        "ObjectName": "Function'AWBP_Arcade_ElectricStore_C:CustomEvent_0'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.2"
       },
       {
-        "ObjectName": "Function AWBP_Arcade_ElectricStore_C:OnOccupiedStateChanged",
+        "ObjectName": "Function'AWBP_Arcade_ElectricStore_C:OnOccupiedStateChanged'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.1"
       },
       {
-        "ObjectName": "Function AWBP_Arcade_ElectricStore_C:ExecuteUbergraph_AWBP_Arcade_ElectricStore",
+        "ObjectName": "Function'AWBP_Arcade_ElectricStore_C:ExecuteUbergraph_AWBP_Arcade_ElectricStore'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.0"
       }
     ],
@@ -302,217 +310,218 @@
       {
         "Type": "StructProperty",
         "Name": "UberGraphFrame",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 16,
-        "PropertyFlags": 2105344,
+        "PropertyFlags": "Transient | DuplicateTransient",
         "Struct": {
-          "ObjectName": "ScriptStruct PointerToUberGraphFrame",
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "arcade_machine",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 17180393476,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
         "PropertyClass": {
-          "ObjectName": "Class StaticMeshComponent",
+          "ObjectName": "Class'StaticMeshComponent'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "Tv5",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 17180393476,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
         "PropertyClass": {
-          "ObjectName": "Class StaticMeshComponent",
+          "ObjectName": "Class'StaticMeshComponent'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "Tv4",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 17180393476,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
         "PropertyClass": {
-          "ObjectName": "Class StaticMeshComponent",
+          "ObjectName": "Class'StaticMeshComponent'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "Tv3",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 17180393476,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
         "PropertyClass": {
-          "ObjectName": "Class StaticMeshComponent",
+          "ObjectName": "Class'StaticMeshComponent'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "Tv2",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 17180393476,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
         "PropertyClass": {
-          "ObjectName": "Class StaticMeshComponent",
+          "ObjectName": "Class'StaticMeshComponent'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "Tv1",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 17180393476,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
         "PropertyClass": {
-          "ObjectName": "Class StaticMeshComponent",
+          "ObjectName": "Class'StaticMeshComponent'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "StationMesh1",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 17180393476,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
         "PropertyClass": {
-          "ObjectName": "Class StaticMeshComponent",
+          "ObjectName": "Class'StaticMeshComponent'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "PositionComponent1",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 17180393476,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
         "PropertyClass": {
-          "ObjectName": "Class SceneComponent",
+          "ObjectName": "Class'SceneComponent'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "FloatProperty",
         "Name": "TV_ONOFF_Tv5_A307D25F438AA33D8E071CBC7F47D331",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 4
       },
       {
         "Type": "FloatProperty",
         "Name": "TV_ONOFF_Tv4_A307D25F438AA33D8E071CBC7F47D331",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 4
       },
       {
         "Type": "FloatProperty",
         "Name": "TV_ONOFF_Tv3_A307D25F438AA33D8E071CBC7F47D331",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 4
       },
       {
         "Type": "FloatProperty",
         "Name": "TV_ONOFF_Tv2_A307D25F438AA33D8E071CBC7F47D331",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 4
       },
       {
         "Type": "FloatProperty",
         "Name": "TV_ONOFF_Tv1_A307D25F438AA33D8E071CBC7F47D331",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 4
       },
       {
         "Type": "ByteProperty",
         "Name": "TV_ONOFF__Direction_A307D25F438AA33D8E071CBC7F47D331",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 1,
         "Enum": {
-          "ObjectName": "Enum ETimelineDirection",
+          "ObjectName": "Enum'ETimelineDirection'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "TV_ONOFF",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 524292,
+        "PropertyFlags": "BlueprintVisible | InstancedReference",
         "PropertyClass": {
-          "ObjectName": "Class TimelineComponent",
+          "ObjectName": "Class'TimelineComponent'",
           "ObjectPath": "/Script/Engine"
         }
       }
     ],
     "FuncMap": {
       "ExecuteUbergraph_AWBP_Arcade_ElectricStore": {
-        "ObjectName": "Function AWBP_Arcade_ElectricStore_C:ExecuteUbergraph_AWBP_Arcade_ElectricStore",
+        "ObjectName": "Function'AWBP_Arcade_ElectricStore_C:ExecuteUbergraph_AWBP_Arcade_ElectricStore'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.0"
       },
       "OnOccupiedStateChanged": {
-        "ObjectName": "Function AWBP_Arcade_ElectricStore_C:OnOccupiedStateChanged",
+        "ObjectName": "Function'AWBP_Arcade_ElectricStore_C:OnOccupiedStateChanged'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.1"
       },
       "CustomEvent_0": {
-        "ObjectName": "Function AWBP_Arcade_ElectricStore_C:CustomEvent_0",
+        "ObjectName": "Function'AWBP_Arcade_ElectricStore_C:CustomEvent_0'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.2"
       },
       "OnAnimationContextChanged": {
-        "ObjectName": "Function AWBP_Arcade_ElectricStore_C:OnAnimationContextChanged",
+        "ObjectName": "Function'AWBP_Arcade_ElectricStore_C:OnAnimationContextChanged'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.3"
       },
       "ReceiveBeginPlay": {
-        "ObjectName": "Function AWBP_Arcade_ElectricStore_C:ReceiveBeginPlay",
+        "ObjectName": "Function'AWBP_Arcade_ElectricStore_C:ReceiveBeginPlay'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.4"
       },
       "TV_ONOFF__UpdateFunc": {
-        "ObjectName": "Function AWBP_Arcade_ElectricStore_C:TV_ONOFF__UpdateFunc",
+        "ObjectName": "Function'AWBP_Arcade_ElectricStore_C:TV_ONOFF__UpdateFunc'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.5"
       },
       "TV_ONOFF__FinishedFunc": {
-        "ObjectName": "Function AWBP_Arcade_ElectricStore_C:TV_ONOFF__FinishedFunc",
+        "ObjectName": "Function'AWBP_Arcade_ElectricStore_C:TV_ONOFF__FinishedFunc'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.6"
       }
     },
-    "ClassFlags": 8652820,
+    "ClassFlags": "CLASS_Config | CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
     "ClassWithin": {
-      "ObjectName": "Class Object",
+      "ObjectName": "Class'Object'",
       "ObjectPath": "/Script/CoreUObject"
     },
     "ClassConfigName": "Engine",
     "bCooked": true,
     "ClassDefaultObject": {
-      "ObjectName": "AWBP_Arcade_ElectricStore_C Default__AWBP_Arcade_ElectricStore_C",
+      "ObjectName": "AWBP_Arcade_ElectricStore_C'Default__AWBP_Arcade_ElectricStore_C'",
       "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.8"
     }
   },
   {
     "Type": "AWBP_Arcade_ElectricStore_C",
     "Name": "Default__AWBP_Arcade_ElectricStore_C",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.AWBP_Arcade_ElectricStore_C'",
     "Properties": {
       "UberGraphFrame": {},
       "animset": {
-        "ObjectName": "C_Animset Animset_CheckData",
+        "ObjectName": "C_Animset'Animset_CheckData'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Animation/Animsets_v2/Animset_CheckData.0"
       },
       "linkedState": "EC_WaypointLinkedState::NotLinked",
       "stationMeshComponent": {
-        "ObjectName": "StaticMeshComponent Default__AWBP_Arcade_ElectricStore_C:StationMesh",
+        "ObjectName": "StaticMeshComponent'Default__AWBP_Arcade_ElectricStore_C:StationMesh'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.34"
       },
       "previewMesh": {
-        "ObjectName": "SkeletalMesh SK_Luke_V2_1",
+        "ObjectName": "SkeletalMesh'SK_Luke_V2_1'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Luke/SK_Luke_V2_1.1"
       },
       "useDefaultMaterials": true,
       "RootComponent": {
-        "ObjectName": "SceneComponent Default__AWBP_Arcade_ElectricStore_C:PositionComponent",
+        "ObjectName": "SceneComponent'Default__AWBP_Arcade_ElectricStore_C:PositionComponent'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.16"
       }
     }
@@ -521,6 +530,7 @@
     "Type": "CurveFloat",
     "Name": "CurveFloat_0",
     "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'CurveFloat'",
     "Properties": {
       "FloatCurve": {
         "Keys": [
@@ -653,6 +663,7 @@
     "Type": "CurveFloat",
     "Name": "CurveFloat_1",
     "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'CurveFloat'",
     "Properties": {
       "FloatCurve": {
         "Keys": [
@@ -785,6 +796,7 @@
     "Type": "CurveFloat",
     "Name": "CurveFloat_2",
     "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'CurveFloat'",
     "Properties": {
       "FloatCurve": {
         "Keys": [
@@ -917,6 +929,7 @@
     "Type": "CurveFloat",
     "Name": "CurveFloat_3",
     "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'CurveFloat'",
     "Properties": {
       "FloatCurve": {
         "Keys": [
@@ -1082,6 +1095,7 @@
     "Type": "CurveFloat",
     "Name": "CurveFloat_4",
     "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'CurveFloat'",
     "Properties": {
       "FloatCurve": {
         "Keys": [
@@ -1202,29 +1216,33 @@
   {
     "Type": "SceneComponent",
     "Name": "DefaultSceneRoot_GEN_VARIABLE",
-    "Outer": "AWBP_Arcade_ElectricStore_C"
+    "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'SceneComponent'"
   },
   {
     "Type": "SceneComponent",
     "Name": "PositionComponent1_GEN_VARIABLE",
-    "Outer": "AWBP_Arcade_ElectricStore_C"
+    "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'SceneComponent'"
   },
   {
     "Type": "SceneComponent",
     "Name": "PositionComponent",
-    "Outer": "Default__AWBP_Arcade_ElectricStore_C"
+    "Outer": "Default__AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'SceneComponent'"
   },
   {
     "Type": "SCS_Node",
     "Name": "SCS_Node_0",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class SceneComponent",
+        "ObjectName": "Class'SceneComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "SceneComponent AWBP_Arcade_ElectricStore_C:DefaultSceneRoot_GEN_VARIABLE",
+        "ObjectName": "SceneComponent'AWBP_Arcade_ElectricStore_C:DefaultSceneRoot_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.14"
       },
       "VariableGuid": "6AA8085F-450E7DC9-143B73AA-80E0EFE9",
@@ -1235,20 +1253,21 @@
     "Type": "SCS_Node",
     "Name": "SCS_Node_1",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class SceneComponent",
+        "ObjectName": "Class'SceneComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "SceneComponent AWBP_Arcade_ElectricStore_C:PositionComponent1_GEN_VARIABLE",
+        "ObjectName": "SceneComponent'AWBP_Arcade_ElectricStore_C:PositionComponent1_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.15"
       },
       "ParentComponentOrVariableName": "PositionComponent",
       "bIsParentComponentNative": true,
       "ChildNodes": [
         {
-          "ObjectName": "SCS_Node AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_2",
+          "ObjectName": "SCS_Node'AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_2'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.19"
         }
       ],
@@ -1260,13 +1279,14 @@
     "Type": "SCS_Node",
     "Name": "SCS_Node_2",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class StaticMeshComponent",
+        "ObjectName": "Class'StaticMeshComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "StaticMeshComponent AWBP_Arcade_ElectricStore_C:StationMesh1_GEN_VARIABLE",
+        "ObjectName": "StaticMeshComponent'AWBP_Arcade_ElectricStore_C:StationMesh1_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.28"
       },
       "VariableGuid": "B1C0B0F0-4158ADDF-4E111E81-4F1EC1D6",
@@ -1277,13 +1297,14 @@
     "Type": "SCS_Node",
     "Name": "SCS_Node_3",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class StaticMeshComponent",
+        "ObjectName": "Class'StaticMeshComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "StaticMeshComponent AWBP_Arcade_ElectricStore_C:Tv1_GEN_VARIABLE",
+        "ObjectName": "StaticMeshComponent'AWBP_Arcade_ElectricStore_C:Tv1_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.29"
       },
       "ParentComponentOrVariableName": "PositionComponent",
@@ -1296,13 +1317,14 @@
     "Type": "SCS_Node",
     "Name": "SCS_Node_4",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class StaticMeshComponent",
+        "ObjectName": "Class'StaticMeshComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "StaticMeshComponent AWBP_Arcade_ElectricStore_C:Tv2_GEN_VARIABLE",
+        "ObjectName": "StaticMeshComponent'AWBP_Arcade_ElectricStore_C:Tv2_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.30"
       },
       "ParentComponentOrVariableName": "PositionComponent",
@@ -1315,13 +1337,14 @@
     "Type": "SCS_Node",
     "Name": "SCS_Node_5",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class StaticMeshComponent",
+        "ObjectName": "Class'StaticMeshComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "StaticMeshComponent AWBP_Arcade_ElectricStore_C:Tv3_GEN_VARIABLE",
+        "ObjectName": "StaticMeshComponent'AWBP_Arcade_ElectricStore_C:Tv3_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.31"
       },
       "ParentComponentOrVariableName": "PositionComponent",
@@ -1334,13 +1357,14 @@
     "Type": "SCS_Node",
     "Name": "SCS_Node_6",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class StaticMeshComponent",
+        "ObjectName": "Class'StaticMeshComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "StaticMeshComponent AWBP_Arcade_ElectricStore_C:Tv4_GEN_VARIABLE",
+        "ObjectName": "StaticMeshComponent'AWBP_Arcade_ElectricStore_C:Tv4_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.32"
       },
       "ParentComponentOrVariableName": "PositionComponent",
@@ -1353,13 +1377,14 @@
     "Type": "SCS_Node",
     "Name": "SCS_Node_7",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class StaticMeshComponent",
+        "ObjectName": "Class'StaticMeshComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "StaticMeshComponent AWBP_Arcade_ElectricStore_C:Tv5_GEN_VARIABLE",
+        "ObjectName": "StaticMeshComponent'AWBP_Arcade_ElectricStore_C:Tv5_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.33"
       },
       "ParentComponentOrVariableName": "PositionComponent",
@@ -1372,13 +1397,14 @@
     "Type": "SCS_Node",
     "Name": "SCS_Node_8",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class StaticMeshComponent",
+        "ObjectName": "Class'StaticMeshComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "StaticMeshComponent AWBP_Arcade_ElectricStore_C:arcade_machine_GEN_VARIABLE",
+        "ObjectName": "StaticMeshComponent'AWBP_Arcade_ElectricStore_C:arcade_machine_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.27"
       },
       "ParentComponentOrVariableName": "PositionComponent",
@@ -1391,73 +1417,74 @@
     "Type": "SimpleConstructionScript",
     "Name": "SimpleConstructionScript_0",
     "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
     "Properties": {
       "RootNodes": [
         {
-          "ObjectName": "SCS_Node AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_1",
+          "ObjectName": "SCS_Node'AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_1'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.18"
         },
         {
-          "ObjectName": "SCS_Node AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_3",
+          "ObjectName": "SCS_Node'AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_3'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.20"
         },
         {
-          "ObjectName": "SCS_Node AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_4",
+          "ObjectName": "SCS_Node'AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_4'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.21"
         },
         {
-          "ObjectName": "SCS_Node AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_5",
+          "ObjectName": "SCS_Node'AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_5'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.22"
         },
         {
-          "ObjectName": "SCS_Node AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_6",
+          "ObjectName": "SCS_Node'AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_6'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.23"
         },
         {
-          "ObjectName": "SCS_Node AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_7",
+          "ObjectName": "SCS_Node'AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_7'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.24"
         },
         {
-          "ObjectName": "SCS_Node AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_8",
+          "ObjectName": "SCS_Node'AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_8'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.25"
         }
       ],
       "AllNodes": [
         {
-          "ObjectName": "SCS_Node AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_1",
+          "ObjectName": "SCS_Node'AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_1'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.18"
         },
         {
-          "ObjectName": "SCS_Node AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_2",
+          "ObjectName": "SCS_Node'AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_2'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.19"
         },
         {
-          "ObjectName": "SCS_Node AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_3",
+          "ObjectName": "SCS_Node'AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_3'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.20"
         },
         {
-          "ObjectName": "SCS_Node AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_4",
+          "ObjectName": "SCS_Node'AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_4'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.21"
         },
         {
-          "ObjectName": "SCS_Node AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_5",
+          "ObjectName": "SCS_Node'AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_5'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.22"
         },
         {
-          "ObjectName": "SCS_Node AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_6",
+          "ObjectName": "SCS_Node'AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_6'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.23"
         },
         {
-          "ObjectName": "SCS_Node AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_7",
+          "ObjectName": "SCS_Node'AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_7'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.24"
         },
         {
-          "ObjectName": "SCS_Node AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_8",
+          "ObjectName": "SCS_Node'AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_8'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.25"
         }
       ],
       "DefaultSceneRootNode": {
-        "ObjectName": "SCS_Node AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_0",
+        "ObjectName": "SCS_Node'AWBP_Arcade_ElectricStore_C:SimpleConstructionScript_0.SCS_Node_0'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.17"
       }
     }
@@ -1466,9 +1493,10 @@
     "Type": "StaticMeshComponent",
     "Name": "arcade_machine_GEN_VARIABLE",
     "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
     "Properties": {
       "StaticMesh": {
-        "ObjectName": "StaticMesh SM_ElectronicStoreArcade_Int01",
+        "ObjectName": "StaticMesh'SM_ElectronicStoreArcade_Int01'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Art/Interior/Electronic/Props_New/SM_ElectronicStoreArcade_Int01.2"
       }
     }
@@ -1477,6 +1505,7 @@
     "Type": "StaticMeshComponent",
     "Name": "StationMesh1_GEN_VARIABLE",
     "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
     "Properties": {
       "bUseDefaultCollision": true,
       "bGenerateOverlapEvents": false,
@@ -1491,14 +1520,15 @@
     "Type": "StaticMeshComponent",
     "Name": "Tv1_GEN_VARIABLE",
     "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
     "Properties": {
       "StaticMesh": {
-        "ObjectName": "StaticMesh SM_GenLivTVScreen_Int00",
+        "ObjectName": "StaticMesh'SM_GenLivTVScreen_Int00'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Art/Interior/GeneralStore/LivingRoomProps/SM_GenLivTVScreen_Int00.2"
       },
       "OverrideMaterials": [
         {
-          "ObjectName": "MaterialInstanceConstant MI_ScreenFlat_Int01",
+          "ObjectName": "MaterialInstanceConstant'MI_ScreenFlat_Int01'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Art/Interior/Materials/MI_ScreenFlat_Int01.0"
         }
       ]
@@ -1508,14 +1538,15 @@
     "Type": "StaticMeshComponent",
     "Name": "Tv2_GEN_VARIABLE",
     "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
     "Properties": {
       "StaticMesh": {
-        "ObjectName": "StaticMesh SM_GenLivTVScreen_Int00",
+        "ObjectName": "StaticMesh'SM_GenLivTVScreen_Int00'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Art/Interior/GeneralStore/LivingRoomProps/SM_GenLivTVScreen_Int00.2"
       },
       "OverrideMaterials": [
         {
-          "ObjectName": "MaterialInstanceConstant MI_ScreenFlat_Int01",
+          "ObjectName": "MaterialInstanceConstant'MI_ScreenFlat_Int01'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Art/Interior/Materials/MI_ScreenFlat_Int01.0"
         }
       ]
@@ -1525,14 +1556,15 @@
     "Type": "StaticMeshComponent",
     "Name": "Tv3_GEN_VARIABLE",
     "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
     "Properties": {
       "StaticMesh": {
-        "ObjectName": "StaticMesh SM_GenLivTVScreen_Int00",
+        "ObjectName": "StaticMesh'SM_GenLivTVScreen_Int00'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Art/Interior/GeneralStore/LivingRoomProps/SM_GenLivTVScreen_Int00.2"
       },
       "OverrideMaterials": [
         {
-          "ObjectName": "MaterialInstanceConstant MI_ScreenFlat_Int01",
+          "ObjectName": "MaterialInstanceConstant'MI_ScreenFlat_Int01'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Art/Interior/Materials/MI_ScreenFlat_Int01.0"
         }
       ]
@@ -1542,14 +1574,15 @@
     "Type": "StaticMeshComponent",
     "Name": "Tv4_GEN_VARIABLE",
     "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
     "Properties": {
       "StaticMesh": {
-        "ObjectName": "StaticMesh SM_GenLivTVScreen_Int00",
+        "ObjectName": "StaticMesh'SM_GenLivTVScreen_Int00'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Art/Interior/GeneralStore/LivingRoomProps/SM_GenLivTVScreen_Int00.2"
       },
       "OverrideMaterials": [
         {
-          "ObjectName": "MaterialInstanceConstant MI_ScreenFlat_Int01",
+          "ObjectName": "MaterialInstanceConstant'MI_ScreenFlat_Int01'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Art/Interior/Materials/MI_ScreenFlat_Int01.0"
         }
       ]
@@ -1559,14 +1592,15 @@
     "Type": "StaticMeshComponent",
     "Name": "Tv5_GEN_VARIABLE",
     "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
     "Properties": {
       "StaticMesh": {
-        "ObjectName": "StaticMesh SM_GenLivTVScreen_Int00",
+        "ObjectName": "StaticMesh'SM_GenLivTVScreen_Int00'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Art/Interior/GeneralStore/LivingRoomProps/SM_GenLivTVScreen_Int00.2"
       },
       "OverrideMaterials": [
         {
-          "ObjectName": "MaterialInstanceConstant MI_ScreenFlat_Int01",
+          "ObjectName": "MaterialInstanceConstant'MI_ScreenFlat_Int01'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Art/Interior/Materials/MI_ScreenFlat_Int01.0"
         }
       ]
@@ -1576,9 +1610,10 @@
     "Type": "StaticMeshComponent",
     "Name": "StationMesh",
     "Outer": "Default__AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
     "Properties": {
       "AttachParent": {
-        "ObjectName": "SceneComponent Default__AWBP_Arcade_ElectricStore_C:PositionComponent",
+        "ObjectName": "SceneComponent'Default__AWBP_Arcade_ElectricStore_C:PositionComponent'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.16"
       }
     }
@@ -1587,13 +1622,14 @@
     "Type": "TimelineTemplate",
     "Name": "TV_ONOFF_Template",
     "Outer": "AWBP_Arcade_ElectricStore_C",
+    "Class": "UScriptClass'TimelineTemplate'",
     "Properties": {
       "TimelineLength": 2.0,
       "bLoop": true,
       "FloatTracks": [
         {
           "CurveFloat": {
-            "ObjectName": "CurveFloat AWBP_Arcade_ElectricStore_C:CurveFloat_0",
+            "ObjectName": "CurveFloat'AWBP_Arcade_ElectricStore_C:CurveFloat_0'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.9"
           },
           "PropertyName": "TV_ONOFF_Tv1_A307D25F438AA33D8E071CBC7F47D331",
@@ -1602,7 +1638,7 @@
         },
         {
           "CurveFloat": {
-            "ObjectName": "CurveFloat AWBP_Arcade_ElectricStore_C:CurveFloat_1",
+            "ObjectName": "CurveFloat'AWBP_Arcade_ElectricStore_C:CurveFloat_1'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.10"
           },
           "PropertyName": "TV_ONOFF_Tv2_A307D25F438AA33D8E071CBC7F47D331",
@@ -1611,7 +1647,7 @@
         },
         {
           "CurveFloat": {
-            "ObjectName": "CurveFloat AWBP_Arcade_ElectricStore_C:CurveFloat_2",
+            "ObjectName": "CurveFloat'AWBP_Arcade_ElectricStore_C:CurveFloat_2'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.11"
           },
           "PropertyName": "TV_ONOFF_Tv3_A307D25F438AA33D8E071CBC7F47D331",
@@ -1620,7 +1656,7 @@
         },
         {
           "CurveFloat": {
-            "ObjectName": "CurveFloat AWBP_Arcade_ElectricStore_C:CurveFloat_3",
+            "ObjectName": "CurveFloat'AWBP_Arcade_ElectricStore_C:CurveFloat_3'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.12"
           },
           "PropertyName": "TV_ONOFF_Tv4_A307D25F438AA33D8E071CBC7F47D331",
@@ -1629,7 +1665,7 @@
         },
         {
           "CurveFloat": {
-            "ObjectName": "CurveFloat AWBP_Arcade_ElectricStore_C:CurveFloat_4",
+            "ObjectName": "CurveFloat'AWBP_Arcade_ElectricStore_C:CurveFloat_4'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Arcade_ElectricStore.13"
           },
           "PropertyName": "TV_ONOFF_Tv5_A307D25F438AA33D8E071CBC7F47D331",

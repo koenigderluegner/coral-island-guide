@@ -1,4 +1,4 @@
 import { Datatable } from '../interfaces/datatable.interface';
-import { RawJournalOrder } from '../interfaces/raw-journal-order.interface';
+import { RawJournalOrder } from '../interfaces/raw-data-interfaces/raw-journal-order.interface';
 
 export type JournalOrders = Datatable<RawJournalOrder>;

@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "Auto_trash_collector_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -15.5,
+              "Y": 0.0,
+              "Z": 0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 397.0,
+            "Y": 10.0,
+            "Z": 497.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "D56C56B84A575551A97BFD9B5053A0C4"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Auto_trash_collector_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 512.0,
+        "Y": 512.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Auto_trash_collector'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/FarmingTools_Icons/Textures/Auto_trash_collector.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Auto_trash_collector_Sprite:BodySetup_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/FarmingTools_Icons/Auto_trash_collector_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 183.0,
+          "Y": 249.0,
+          "Z": 0.8574219,
+          "W": 0.013671875
+        },
+        {
+          "X": -214.0,
+          "Y": 249.0,
+          "Z": 0.08203125,
+          "W": 0.013671875
+        },
+        {
+          "X": -214.0,
+          "Y": -248.0,
+          "Z": 0.08203125,
+          "W": 0.984375
+        },
+        {
+          "X": 183.0,
+          "Y": -248.0,
+          "Z": 0.8574219,
+          "W": 0.984375
+        },
+        {
+          "X": 183.0,
+          "Y": 249.0,
+          "Z": 0.8574219,
+          "W": 0.013671875
+        },
+        {
+          "X": -214.0,
+          "Y": -248.0,
+          "Z": 0.08203125,
+          "W": 0.984375
+        }
+      ]
+    }
+  }
+]

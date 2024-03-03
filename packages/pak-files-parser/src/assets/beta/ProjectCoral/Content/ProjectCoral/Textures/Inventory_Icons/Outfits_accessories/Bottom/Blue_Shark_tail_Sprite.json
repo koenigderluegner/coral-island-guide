@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Blue_Shark_tail_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -1.0,
+              "Y": -0.0,
+              "Z": -3.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 94.0,
+            "Y": 10.0,
+            "Z": 109.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "B317F9714651C4C0A06AB8B6E8A5FC9D"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Blue_Shark_tail_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Blue_Shark_tail'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Outfits_accessories/Bottom/Bottom_textures/Blue_Shark_tail.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Blue_Shark_tail_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Outfits_accessories/Bottom/Blue_Shark_tail_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 46.0,
+          "Y": 51.0,
+          "Z": 0.859375,
+          "W": 0.1015625
+        },
+        {
+          "X": -48.0,
+          "Y": 51.0,
+          "Z": 0.125,
+          "W": 0.1015625
+        },
+        {
+          "X": -48.0,
+          "Y": -58.0,
+          "Z": 0.125,
+          "W": 0.953125
+        },
+        {
+          "X": 46.0,
+          "Y": -58.0,
+          "Z": 0.859375,
+          "W": 0.953125
+        },
+        {
+          "X": 46.0,
+          "Y": 51.0,
+          "Z": 0.859375,
+          "W": 0.1015625
+        },
+        {
+          "X": -48.0,
+          "Y": -58.0,
+          "Z": 0.125,
+          "W": 0.953125
+        }
+      ]
+    }
+  }
+]

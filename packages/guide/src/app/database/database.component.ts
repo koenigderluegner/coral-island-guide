@@ -20,7 +20,6 @@ export class DatabaseComponent {
     protected filteredItems$: Observable<Item[]>;
     protected shouldHideImportantNote = false;
     protected filteredItems: Item[] = [];
-    protected allPrefetched = false;
     protected selectedItem?: Item;
     private _localStorageHideNoteKey = 'databaseHideImportantNote';
     private _didInitialLoad = false;
@@ -33,10 +32,7 @@ export class DatabaseComponent {
         private _injector: EnvironmentInjector,
         private _title: Title,
     ) {
-        this._database.getDatabaseDetails().pipe(
-            tap(() => this.allPrefetched = true),
-            take(1)
-        ).subscribe();
+
         this.shouldHideImportantNote = coerceBooleanProperty(localStorage.getItem(this._localStorageHideNoteKey));
 
         this.items = _database.getItems().filter(item => getQuality(item.id) === Quality.BASE);
@@ -174,15 +170,30 @@ export class DatabaseComponent {
                 const itemId = params['itemId'];
                 this._didInitialLoad = true;
                 if (!itemId) return;
-                const indexOfItem = this.filteredItems.findIndex(item => item.id === itemId);
+                const indexOfFilteredItem = this.filteredItems.findIndex(item => item.id === itemId);
 
-                if (indexOfItem > -1) {
-                    this.showDetails(this.filteredItems[indexOfItem], indexOfItem, true);
+                if (indexOfFilteredItem > -1) {
+                    this.showDetails(this.filteredItems[indexOfFilteredItem], indexOfFilteredItem, true);
+                } else if (this.filteredItems.length === 0) {
+                    const indexOfItem = this.items.findIndex(item => item.id === itemId);
+                    if (indexOfItem > -1) {
+                        const item = this.items[indexOfItem];
+                        this._setGridContent(item);
+
+                    }
+
                 }
 
             }),
             take(1)
         ).subscribe()
+    }
+
+    private _setGridContent(item: Item) {
+        const component = this.createComponent(item);
+        document.getElementById('grid')?.appendChild(component.location.nativeElement)
+        this._appRef.attachView(component.hostView);
+        this.selectedItem = item;
     }
 
     trackById<T extends { id: string }>(index: number, item: T): string {
@@ -194,5 +205,9 @@ export class DatabaseComponent {
         if (title) {
             this._title.setTitle(`${itemName} - ${title}`)
         }
+    }
+
+    prefetchItem(item: Item) {
+        this._database.fetchDatabaseItem$(item.id).pipe(take(1)).subscribe();
     }
 }

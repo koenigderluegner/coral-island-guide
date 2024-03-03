@@ -1,8 +1,16 @@
-<ng-container *ngIf="usedIn.length">
-    <h3 class="database-header">Used to craft</h3>
-    <app-inventory-table [dataSource]="usedIn"/>
-</ng-container>
-<ng-container *ngIf="craftedFrom.length">
-    <h3 class="database-header">Crafting recipe</h3>
-    <app-inventory-table [dataSource]="craftedFrom"/>
-</ng-container>
+@if (databaseItem.usedToCraft && databaseItem.usedToCraft.length) {
+    <app-expandable #expandableComponent open>
+        <h3 class="database-header" expandableHeader>
+            <app-database-header-button [templateRef]="expandableComponent">Used to craft</app-database-header-button>
+        </h3>
+        <app-inventory-table [dataSource]="databaseItem.usedToCraft"/>
+    </app-expandable>
+}
+@if (databaseItem.craftedFrom && databaseItem.craftedFrom.length) {
+    <app-expandable #expandableComponent open>
+        <h3 class="database-header" expandableHeader>
+            <app-database-header-button [templateRef]="expandableComponent">Crafting recipe</app-database-header-button>
+        </h3>
+        <app-inventory-table [dataSource]="databaseItem.craftedFrom"/>
+    </app-expandable>
+}

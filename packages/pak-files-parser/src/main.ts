@@ -1,209 +1,778 @@
-import { convertToIconName, createPathIfNotExists, generateJson } from './util/functions';
+import { generateJson, getParsedArgs, readAsset } from './util/functions';
 import { ItemDbGenerator } from './app/item-db.generator';
-import { CraftingRecipeDbGenerator } from './app/crafting-recipe-db.generator';
-import glob from 'glob';
-import sharp from 'sharp';
-import path from 'path';
-import fs from 'fs';
-import { BugsAndInsectsDbGenerator } from './app/bugs-and-insects-db.generator';
-import { OceanCritterDbGenerator } from './app/ocean-critter-db.generator';
-import { FishDbGenerator } from './app/fish-db.generator';
-import { JournalOrderDbGenerator } from './app/journal-order-db.generator';
-import { CropsDbGenerator } from './app/crops-db.generator';
-import { TagBasedItemGenericDbGenerator } from './app/tag-based-item-generic-db.generator';
-import { ItemProcessorDbGenerator } from './app/item-processor-db.generator';
-import { GiftPreferencesDbGenerator } from './app/gift-preferences-db.generator';
-import { NPCDbGenerator } from './app/npc-db.generator';
-import { CraftingRecipeUnlockedByMasteryDbGenerator } from "./app/crafting-recipe-unlocked-by-mastery-db.generator";
-import { config } from "./config";
-import { CookingRecipeUnlockedByMasteryDbGenerator } from "./app/cooking-recipe-unlocked-by-mastery-db.generator";
+import { environment } from "./environments/environment";
+import chalk from "chalk";
 import { CookingDbGenerator } from "./app/cooking-db.generator";
+import { config } from "./config";
+import { ItemIconsImageProcessor } from "./app/image-processors/item-icons.image-processor";
+import { NPCDbGenerator } from "./app/npc-db.generator";
+import { CraftingRecipeUnlockedByMasteryDbGenerator } from "./app/crafting-recipe-unlocked-by-mastery-db.generator";
+import { CookingRecipeUnlockedByMasteryDbGenerator } from "./app/cooking-recipe-unlocked-by-mastery-db.generator";
+import { TagBasedItemGenericDbGenerator } from "./app/tag-based-item-generic-db.generator";
+import { CraftingRecipeDbGenerator } from "./app/crafting-recipe-db.generator";
+import { BugsAndInsectsDbGenerator } from "./app/bugs-and-insects-db.generator";
+import { OceanCritterDbGenerator } from "./app/ocean-critter-db.generator";
+import { FishDbGenerator } from "./app/fish-db.generator";
+import { CropsDbGenerator } from "./app/crops-db.generator";
 import { FruitTreeDbGenerator } from "./app/fruit-tree-db.generator";
 import { FruitPlantDbGenerator } from "./app/fruit-plant-db.generator";
+import { ItemProcessorDbGenerator } from "./app/item-processor-db.generator";
+import { JournalOrderDbGenerator } from "./app/journal-order-db.generator";
 import { OfferingsDbGenerator } from "./app/offerings-db.generator";
+import { GiftPreferencesDbGenerator } from "./app/gift-preferences-db.generator";
 import { ConsumablesDbGenerator } from "./app/consumables-db.generator";
-import { environment } from "./environments/environment";
 import { BlacksmithOpeningHoursGenerator } from "./app/opening-hours-generators/blacksmith-opening-hours.generator";
 import { ShopItemDataGenerator } from "./app/shop-item-data.generator";
 import { ItemProcessShopGenerator } from "./app/item-process-shop.generator";
+import { ItemUpgradeDataGenerator } from "./app/item-upgrade-data.generator";
+import { LabOpeningHoursGenerator } from "./app/opening-hours-generators/lab-opening-hours.generator";
+import { GeneralStoreOpeningHoursGenerator } from "./app/opening-hours-generators/general-store-opening-hours.generator";
+import { RanchOpeningHoursGenerator } from "./app/opening-hours-generators/ranch-opening-hours.generator";
+import { BeachShackOpeningHoursGenerator } from "./app/opening-hours-generators/beach-shack-opening-hours.generator";
+import { CarpenterOpeningHoursGenerator } from "./app/opening-hours-generators/carpenter-opening-hours.generator";
+import { PetShopAdoptionsGenerator } from "./app/pet-shop-adoptions.generator";
+import { Logger } from "./util/logger.class";
+import { NpcPortraitsImageProcessor } from "./app/image-processors/npc-portraits.image-processor";
+import { AchievementGenerator } from "./app/achievement.generator";
+import { DaFilesParser } from "./app/da-files-parser";
+import { SpecialItemDbGenerator } from "./app/special-item-db.generator";
+import { MeritExchangeShopDataGenerator } from "./app/merit-exchange-shop-data.generator";
+import { LocationInfoGenerator } from "./app/location-info.generator";
+import { HeartEventTriggerDataGenerator } from "./app/heart-event-trigger-data.generator";
+import { HeartEventsDbGenerator } from "./app/heart-events-db.generator";
+import { MuseumChecklistGenerator } from "./app/museum-checklist.generator";
+import { ItemProcessorMapGenerator } from "./app/item-processor-map.generator";
+import { CookingRecipesChecklistGenerator } from "./app/cooking-recipes-checklist.generator";
+import { CalendarGenerator } from "./app/calendar.generator";
+import { MailDataGenerator } from "./app/mail-data.generator";
+import { TornPagesGenerator } from "./app/torn-pages.generator";
+import { BestiaryGenerator } from "./app/bestiary.generator";
+import { CookingUtensilMapGenerator } from "./app/cooking-utensil-map.generator";
+import { StringTable } from "./util/string-table.class";
+import {
+    AvailableLanguages,
+    CookingRecipe,
+    CraftingRecipe,
+    DatabaseItem,
+    FestivalDisplayNames,
+    FestivalEventIds,
+    FestivalNames,
+    Item,
+    ItemProcessing,
+    ItemProcessShopData,
+    ItemUpgradeData,
+    MinimalNPC,
+    Quality,
+    ShopDisplayNames,
+    ShopNames
+} from "@ci/data-types";
+import { AnimalMoodSizeGenerator } from "./app/animal-mood-size.generator";
+import { AnimalDataGenerator } from "./app/animal-data.generator";
+import { AnimalShopDataGenerator } from "./app/animal-shop-data.generator";
+import { FestivalDbGenerator } from "./app/festival-db.generator";
+import { FestivalShopItemDataGenerator } from "./app/festival-shop-item-data.generator";
+import { FestivalDataGenerator } from "./app/festival-data.generator";
+import path from "path";
+import { flatObjectMap, getQuality, nonNullable, omitFields, removeQualityFlag } from "@ci/util";
+import { preferencesMap } from "../../guide/src/app/shared/constants/preference-map.const";
+import fs from "fs";
+import { Datatable } from "./interfaces/datatable.interface";
 
-console.log('CURRENT ENVIRONMENT SET TO ' + (environment.isBeta ? 'BETA' : 'LIVE'));
+
+console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
+const versionFile = path.join(config.sourceContentPath, 'Version', 'Config.json');
+if (fs.existsSync(versionFile)) {
+    const version = fs.readFileSync(versionFile, {encoding: 'utf8', flag: 'r'}).trim();
+    fs.writeFileSync(path.join(config.assetsPath, 'version.json'), JSON.stringify({version}));
+}
+const parsedArgs = getParsedArgs()
 
 
 const itemIconPath = config.itemIconPath
-const texturesPath = config.texturesPath;
-
-const itemDbGenerator = new ItemDbGenerator();
-const itemDbMap = itemDbGenerator.generate();
-
-const npcDbGenerator = new NPCDbGenerator(itemDbMap);
-const npcDbMap = npcDbGenerator.generate();
-
-const craftingRecipeUnlockedByMasteryDbGenerator = new CraftingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
-const craftingRecipeUnlockedByMasteryDbMap = craftingRecipeUnlockedByMasteryDbGenerator.generate();
-
-const cookingRecipeUnlockedByMasteryDbGenerator = new CookingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
-const cookingRecipeUnlockedByMasteryDbMap = cookingRecipeUnlockedByMasteryDbGenerator.generate();
-
-const tagBasedItemsDbGenerator = new TagBasedItemGenericDbGenerator();
-const tagBasedItemsDbMap = tagBasedItemsDbGenerator.generate();
-
-const cookingDbGenerator = new CookingDbGenerator(itemDbMap, cookingRecipeUnlockedByMasteryDbMap, tagBasedItemsDbMap);
-const cookingDbMap = cookingDbGenerator.generate();
-
-const generators: Record<string, { generate: () => Map<string, any> }> = {
-    'crafting-recipes': new CraftingRecipeDbGenerator(itemDbMap, craftingRecipeUnlockedByMasteryDbMap),
-    'bugs-and-insects': new BugsAndInsectsDbGenerator(itemDbMap),
-    'ocean-critters': new OceanCritterDbGenerator(itemDbMap),
-    'fish': new FishDbGenerator(itemDbMap),
-    'crops': new CropsDbGenerator(itemDbMap),
-    'fruit-trees': new FruitTreeDbGenerator(itemDbMap),
-    'fruit-plants': new FruitPlantDbGenerator(itemDbMap),
-    'item-processing': new ItemProcessorDbGenerator(itemDbMap),
-
-    'journal-fish': new JournalOrderDbGenerator('Caught/DT_JournalFish.json'),
-    'journal-insects': new JournalOrderDbGenerator('Caught/DT_JournalInsects.json'),
-    'journal-sea-critters': new JournalOrderDbGenerator('Caught/DT_JournalSeaCritters.json'),
-
-    'journal-artifacts': new JournalOrderDbGenerator('Found/DT_JournalArtifact.json'),
-    'journal-fossils': new JournalOrderDbGenerator('Found/DT_JournalFossils.json'),
-    'journal-gems': new JournalOrderDbGenerator('Found/DT_JournalGems.json'),
-    'journal-scavangable': new JournalOrderDbGenerator('Found/DT_JournalScavangable.json'),
+const itemIconsTexturesPath = config.texturesPath;
+const skipIfExists = !parsedArgs['prepare'] && true;
+const itemIconsImageProcessor: ItemIconsImageProcessor = new ItemIconsImageProcessor(itemIconsTexturesPath, itemIconPath, skipIfExists);
 
 
-    'journal-animal-products': new JournalOrderDbGenerator('Produce/DT_JournalAnimalProducts.json'),
-    'journal-artisan-products': new JournalOrderDbGenerator('Produce/DT_JournalArtisanProducts.json'),
-    'journal-crops': new JournalOrderDbGenerator('Produce/DT_JournalCrops.json'),
-
-    'offerings': new OfferingsDbGenerator(itemDbMap, cookingDbMap),
-
-    'gift-preferences': new GiftPreferencesDbGenerator(itemDbMap, npcDbMap),
-    'npcs': new NPCDbGenerator(itemDbMap),
-
-    'consumables': new ConsumablesDbGenerator(),
-
-    'blacksmith-opening-hours': new BlacksmithOpeningHoursGenerator(),
-    'blacksmith-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DT_BlacksmithShop_AlphaV1.json'),
-    'blacksmith-shop-process-items': new ItemProcessShopGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_NodeCofferProcessShopData.json'),
-
-    'tag-based-items': {generate: () => tagBasedItemsDbMap},
-    'crafting-unlocks-by-mastery': {generate: () => craftingRecipeUnlockedByMasteryDbMap},
-    'cooking-unlocks-by-mastery': {generate: () => cookingRecipeUnlockedByMasteryDbMap},
-    'cooking-recipes': {generate: () => cookingDbMap},
-
-    // last so applied changed will be written as well
-    items: {generate: () => itemDbMap},
-};
+const readable = !parsedArgs['prepare'] && true;
 
 
-// manually added generic seed icon from PC Content PC Core Data TemporaryIcon
+AvailableLanguages.forEach(lang => {
+    Logger.info(`Generators for "${lang}" starting...`);
+    StringTable.defaultLang = lang;
+
+    const itemDbGenerator = new ItemDbGenerator();
+    const itemDbMap = itemDbGenerator.generate();
+
+    DaFilesParser.ItemMap = itemDbMap;
+
+    let calendarDbMap;
 
 
-interface Frame {
-    "Type": string;
-    "Name": string;
-    "Properties": {
-        "BakedSourceUV": {
-            "X": number
-            "Y": number
-        },
-        "BakedSourceDimension": {
-            "X": number
-            "Y": number
-        },
-        "BakedSourceTexture": {
-            "ObjectName": string
-            "ObjectPath": string
-        },
-    };
-}
-
-async function createImages(fileBasename: string, skipIfExists = true) {
-    const data: Frame = JSON.parse(fs.readFileSync(path.join(texturesPath, fileBasename), {
-        encoding: 'utf8',
-        flag: 'r'
-    })).filter((a: Frame) => a.Type === 'PaperSprite')[0];
-
-    if (!data) return;
+    const calendarDbGenerator = new CalendarGenerator();
+    calendarDbMap = calendarDbGenerator.generate();
 
 
-    const fileName = convertToIconName(data.Name);
-    if (skipIfExists && fs.existsSync(path.join(itemIconPath, fileName))) return;
+    const npcDbGenerator = new NPCDbGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.json', calendarDbMap);
+    const npcDbMap = npcDbGenerator.generate();
 
-    const filePath = data.Properties.BakedSourceTexture.ObjectPath.split('.');
-    filePath.pop()
+    const craftingRecipeUnlockedByMasteryDbGenerator = new CraftingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
+    const craftingRecipeUnlockedByMasteryDbMap = craftingRecipeUnlockedByMasteryDbGenerator.generate();
 
-    const imageMetaData = {
-        fileName,
-        width: data.Properties.BakedSourceDimension.X,
-        height: data.Properties.BakedSourceDimension.Y,
-        top: data.Properties.BakedSourceUV?.Y ?? 0,
-        left: data.Properties.BakedSourceUV?.X ?? 0,
-        sourceImage: filePath.join('.'),
-    };
+    const cookingRecipeUnlockedByMasteryDbGenerator = new CookingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
+    const cookingRecipeUnlockedByMasteryDbMap = cookingRecipeUnlockedByMasteryDbGenerator.generate();
 
-    const sourceImagePath = path.join(environment.assetPath, imageMetaData.sourceImage + '.png');
+    const tagBasedItemsDbGenerator = new TagBasedItemGenericDbGenerator(itemDbMap);
+    const tagBasedItemsDbMap = tagBasedItemsDbGenerator.generate();
 
-    const image = sharp(sourceImagePath);
+    const cookingDbGenerator = new CookingDbGenerator(itemDbMap, cookingRecipeUnlockedByMasteryDbMap, tagBasedItemsDbMap);
+    const cookingDbMap = cookingDbGenerator.generate();
 
-    if (imageMetaData.fileName) {
-        try {
-            await image.extract(imageMetaData).png().toFile(path.join(itemIconPath, imageMetaData.fileName));
-        } catch (e) {
-            console.log(e);
+    DaFilesParser.CookingMap = cookingDbMap;
+
+
+    let betaGenerators: Record<string, { generate: () => Map<string, any> }> = {}
+    let liveGenerators: Record<string, { generate: () => Map<string, any> }> = {}
+    try {
+
+        if (environment.isBeta) {
+            betaGenerators = {}
+        } else {
+
+
+            liveGenerators = {}
         }
 
+        const festivalDbMap = new FestivalDbGenerator().generate();
+        const festivalDbValues = [...festivalDbMap.values()];
 
-    }
-}
+        const achievementMap = new AchievementGenerator().generate();
 
-async function extractImages() {
+        DaFilesParser.AchievementMap = achievementMap;
 
+        const specialItemDbMap = new SpecialItemDbGenerator().generate();
 
-    createPathIfNotExists(itemIconPath);
+        DaFilesParser.SpecialItemMap = specialItemDbMap;
 
+        const locationInfoMap = new LocationInfoGenerator().generate();
 
-    glob('**/*.json', {cwd: texturesPath,}, async (error: Error | null, filesWithJs: string[]) => {
-        if (error) {
-            console.log(error);
-        }
-        console.log(`checking ${filesWithJs.length} frames`);
-        let counter = 0;
-        for (const fileBasename of filesWithJs) {
-
-            await createImages(fileBasename, true);
+        const mailDataMap = new MailDataGenerator().generate({
+            daFiles: [
+                'ProjectCoral/Content/ProjectCoral/Data/Mail/DA_MailEffectsConfig.json'
+            ]
+        });
 
 
-            counter++;
-            if (counter % 500 === 0) {
-                console.log(`processed ${counter} images...`);
+        DaFilesParser.MailMap = mailDataMap;
+
+        const heartEventTriggerDataMap = new HeartEventTriggerDataGenerator(locationInfoMap).generate({
+            daFiles: [
+                'ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneAdvanceRequirement.json',
+                'ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneEffects.json',
+            ]
+        });
+
+
+        const generators = {
+            'crafting-recipes': new CraftingRecipeDbGenerator(itemDbMap, craftingRecipeUnlockedByMasteryDbMap),
+            'bugs-and-insects': new BugsAndInsectsDbGenerator(itemDbMap),
+            'ocean-critters': new OceanCritterDbGenerator(itemDbMap),
+            'fish': new FishDbGenerator(itemDbMap),
+            'crops': new CropsDbGenerator(itemDbMap),
+            'fruit-trees': new FruitTreeDbGenerator(itemDbMap),
+            'fruit-plants': new FruitPlantDbGenerator(itemDbMap),
+            'item-processing': new ItemProcessorDbGenerator(itemDbMap),
+
+            'journal-fish': new JournalOrderDbGenerator('Caught/DT_JournalFish.json'),
+            'journal-insects': new JournalOrderDbGenerator('Caught/DT_JournalInsects.json'),
+            'journal-sea-critters': new JournalOrderDbGenerator('Caught/DT_JournalSeaCritters.json'),
+
+            'journal-artifacts': new JournalOrderDbGenerator('Found/DT_JournalArtifact.json'),
+            'journal-fossils': new JournalOrderDbGenerator('Found/DT_JournalFossils.json'),
+            'journal-gems': new JournalOrderDbGenerator('Found/DT_JournalGems.json'),
+            'journal-scavangable': new JournalOrderDbGenerator('Found/DT_JournalScavangable.json'),
+
+
+            'journal-animal-products': new JournalOrderDbGenerator('Produce/DT_JournalAnimalProducts.json'),
+            'journal-artisan-products': new JournalOrderDbGenerator('Produce/DT_JournalArtisanProducts.json'),
+            'journal-crops': new JournalOrderDbGenerator('Produce/DT_JournalCrops.json'),
+
+            'offerings': new OfferingsDbGenerator(itemDbMap, cookingDbMap, tagBasedItemsDbMap),
+
+            'gift-preferences': new GiftPreferencesDbGenerator(itemDbMap, npcDbMap),
+
+            'consumables': new ConsumablesDbGenerator(),
+
+
+            'blacksmith-opening-hours': new BlacksmithOpeningHoursGenerator(),
+            'blacksmith-shop-items': {
+                generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DT_BlacksmithShop_AlphaV1.json').generate({
+                    daFiles: ['ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DA_BlacksmithItemRequirement.json']
+                })
+            },
+            'blacksmith-shop-process-items': new ItemProcessShopGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_NodeCofferProcessShopData.json'),
+            'blacksmith-item-upgrade': new ItemUpgradeDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BlacksmithToolsUpgrades_Alpha.json'),
+
+            'lab-opening-hours': new LabOpeningHoursGenerator(),
+            'lab-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_LabShop.json'),
+            'lab-shop-process-items': new ItemProcessShopGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_FossilProcessShopData.json'),
+            'lab-item-upgrade': new ItemUpgradeDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_LabUpgrade.json'),
+
+            'general-store-opening-hours': new GeneralStoreOpeningHoursGenerator(),
+            'general-store-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DT_SamShopItems_AlphaV1.json'),
+
+
+            'ranch-opening-hours': new RanchOpeningHoursGenerator(),
+            'ranch-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_RanchShop.json'),
+            'animal-shop-data': {
+                generate: () => new AnimalShopDataGenerator().generate({
+                    daFiles: [
+                        'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_AnimalShopAdvanceRequirement.json',
+
+                    ]
+                })
+            },
+
+            'white-flamingo-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ClothShop.json'),
+
+
+            'coffee-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_RajCoffeeShop.json'),
+
+            'beach-shack-opening-hours': new BeachShackOpeningHoursGenerator(),
+            'beach-shack-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BeachSackShopItems.json'),
+            'beach-shack-item-upgrade': new ItemUpgradeDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BeachShacksToolsUpgrades_Alpha.json'),
+
+
+            'pet-shop-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ItemPetShop.json'),
+
+            'carpenter-opening-hours': new CarpenterOpeningHoursGenerator(),
+            'carpenter-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DT_Carpenter_AlphaV1.json'),
+            'carpenter-item-upgrade': new ItemUpgradeDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_CarpenterBuldingUpgrades.json'),
+
+
+            'merfolk-general-store-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopMerfolkGeneralStore.json'),
+            'merfolk-oracle-tail-store-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopMerfolkOracleTailStore.json'),
+
+            'pet-shop-adoptions': new PetShopAdoptionsGenerator(npcDbMap),
+
+
+            'bos-shop-items': {
+                generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BOSShopItemsProductions.json').generate({
+                    daFiles: ['ProjectCoral/Content/ProjectCoral/Core/Data/Shops/BandOfSmile/DA_BOSShopAdvanceRequirement.json']
+                }),
+            },
+            'socket-and-pan-shop-items': {
+                generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/SocketAndPan/DT_ShopSockedAndPan.json').generate({
+                    daFiles: [
+                        'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/SocketAndPan/DA_ShopSocketAndPanRequirement.json',
+                        'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/SocketAndPan/DA_ShopSocketAndPanEffect.json',
+
+                    ]
+                })
+            },
+            'bens-caravan-shop-items': {
+                generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BenShopItems.json').generate({
+                    daFiles: []
+                })
+            },
+            'tavern-shop-items': {
+                generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_TavernShop.json').generate({
+                    daFiles: []
+                })
+            },
+
+            ...betaGenerators,
+            ...liveGenerators,
+
+
+            'animal-data': new AnimalDataGenerator(itemDbMap),
+            'animal-mood-size': new AnimalMoodSizeGenerator(),
+            'torn-pages': new TornPagesGenerator(),
+            'bestiary': new BestiaryGenerator(itemDbMap),
+
+
+            'winter-fair-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["winter-fair"])!, [
+                {
+                    title: 'Clothing Shop',
+                    shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_WinterFairClothingFestivalShop.json').generate()
+                },
+                {
+                    title: 'Food Shop',
+                    shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_WinterFairFoodFestivalShop.json').generate()
+                },
+                {
+                    title: 'Gift Shop',
+                    shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_WinterFairGiftFestivalShop.json').generate()
+                },
+            ]),
+
+            'cherry-blossom-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["cherry-blossom"])!, [
+                {
+                    title: 'Booth',
+                    shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_CherryBlossomFestivalShop.json').generate()
+                }
+            ]),
+
+            'tree-planting-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["tree-planting"])!, [
+                {
+                    title: 'Shop',
+                    shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_TreePlantingFestivalShop.json').generate()
+                }
+            ]),
+            'animal-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["animal"])!, [
+                {
+                    title: 'Shop',
+                    shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_AnimalFestivalShop.json').generate()
+                }
+            ]),
+            'beach-clean-up-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["beach-clean-up"])!, [
+                {
+                    title: 'Shop',
+                    shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_BeachCleanupFestivalShop.json').generate(
+                        {
+                            daFiles: [
+                                'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_FestivalShopBuyEffect.json'
+                            ]
+                        }
+                    )
+                },
+                {
+                    title: 'Pufferfish Shop',
+                    shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_BeachCleanupPufferfishShop.json').generate(
+                        {
+                            daFiles: [
+                                'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_FestivalShopBuyEffect.json'
+                            ]
+                        }
+                    )
+                }
+            ]),
+            'harvest-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["harvest"])!, [
+                {
+                    title: 'Shop',
+                    shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_HarvestFestivalShop.json').generate(
+                        {
+                            daFiles: [
+                                'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_FestivalShopBuyEffect.json'
+                            ]
+                        }
+                    )
+                }
+            ]),
+            'spooky-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["spooky"])!, [
+                {
+                    title: 'Shop',
+                    shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_SpookyDayFestivalShop.json').generate(
+                        {
+                            daFiles: [
+                                'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_FestivalShopBuyEffect.json'
+                            ]
+                        }
+                    )
+                }
+            ]),
+            'new-year-eve-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["new-year-eve"])!, [
+                {
+                    title: 'Shop',
+                    shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_NewYearFestivalShop.json').generate(
+                        {
+                            daFiles: [
+                                'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_FestivalShopBuyEffect.json'
+                            ]
+                        }
+                    )
+                }
+            ]),
+
+            'concerned-monkey-shop-items': {
+                generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopConcernedMonke.json').generate({
+                    daFiles: [
+                        'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_ConcernedMonkeyBuyEffect.json',
+                        'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_ShopConcernedAdvanceRequirement.json'
+                    ]
+                })
+            },
+
+            'merit-exchange-shop-items': {
+                generate: () => new MeritExchangeShopDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_MeritShop.json').generate({
+                    daFiles: [
+                        'ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.json',
+                    ]
+                })
+            },
+
+            'heart-events': new HeartEventsDbGenerator(heartEventTriggerDataMap),
+
+            'museum-checklist': new MuseumChecklistGenerator(itemDbMap),
+            'cooking-recipes-checklist': new CookingRecipesChecklistGenerator(itemDbMap, cookingDbMap),
+
+            'processor-mapping': new ItemProcessorMapGenerator(itemDbMap),
+            'cooking-utensil-mapping': new CookingUtensilMapGenerator(itemDbMap),
+
+            'achievements': {generate: () => achievementMap},
+            'special-items': {generate: () => specialItemDbMap},
+            'mail-data': {generate: () => mailDataMap},
+
+            'npcs': {generate: () => npcDbMap},
+            'tag-based-items': {generate: () => tagBasedItemsDbMap},
+            'crafting-unlocks-by-mastery': {generate: () => craftingRecipeUnlockedByMasteryDbMap},
+            'cooking-unlocks-by-mastery': {generate: () => cookingRecipeUnlockedByMasteryDbMap},
+            'cooking-recipes': {generate: () => cookingDbMap},
+
+            // last so applied changed will be written as well
+            items: {generate: () => itemDbMap},
+        } as const;
+
+
+        // TODO clean up / extract
+        type Generators = typeof generators;
+        type GeneratorKey = keyof Generators;
+        type GeneratedMapValue<K extends GeneratorKey> = ReturnType<Generators[K]['generate']> extends Map<string, infer R> ? R[] : never;
+        type GeneratorValues = { [k in GeneratorKey]: GeneratedMapValue<k> }
+
+        const generatorResults: Partial<GeneratorValues> = {};
+
+        (Object.keys(generators) as unknown as GeneratorKey[]).forEach(generatorName => {
+
+
+            try {
+                const generatorValues: GeneratedMapValue<typeof generatorName> = [...generators[generatorName].generate().values()];
+
+                // @ts-ignore
+                generatorResults[generatorName] = generatorValues
+                generateJson(`${generatorName}.json`, generatorValues, readable, lang);
+            } catch (e) {
+                const error = e as Error;
+                Logger.error(error.message, error.stack)
+
             }
 
+        });
+
+        const generatorValues: GeneratorValues = generatorResults as GeneratorValues;
+
+        const entchantmentLevelTable = readAsset<Datatable<{
+            "itemRarityTag": {
+                "TagName": string
+            },
+            "point": number
+        }>[]>('ProjectCoral/Content/ProjectCoral/Data/Enchantment/DT_ItemEnhancementMaterialRarityData.json')[0].Rows;
+
+        const entchantmentLevel = new Map(Object
+            .keys(entchantmentLevelTable)
+            .map(key => entchantmentLevelTable[key])
+            .map(k => ([k.itemRarityTag.TagName, k.point])))
+
+        const getGenericItems = (item: Item) => {
+            return generatorValues['tag-based-items'].filter(tbi => tbi.tags.some(tag => item.tags?.includes(tag)))
         }
 
-        console.log('extracting done');
+        const isIngredient = (item: Item, recipe: CookingRecipe): boolean => {
+            const tags = getGenericItems(item);
 
-    });
-}
+            return recipe.ingredients.some(ingredient => ingredient.item?.id === item?.id) || recipe.genericIngredients.some(genericIngredient => tags.find(tag => tag.key === genericIngredient.key))
+                || recipe.eitherOrIngredients.some(ingredients => ingredients.some(ingredient => ingredient.item?.id === item.id))
+        }
 
-extractImages();
+        const isCraftingIngredient = (item: Item, recipe: CraftingRecipe): boolean => {
+            const tags = getGenericItems(item);
+
+            return recipe.ingredients.some(ingredient => ingredient.item?.id === item?.id) || recipe.genericIngredients.some(genericIngredient => tags.find(tag => tag.key === genericIngredient.key))
+        }
 
 
-Object.keys(generators).forEach(generatorName => {
-        const generatedMap = generators[generatorName].generate();
+        generatorValues.items.forEach(item => {
 
-        // if(generatorName === 'consumables')
-        // {
-        //     // @ts-ignore
-        //     console.log(generators['consumables'].buff);
-        //     // @ts-ignore
-        //     console.log(generators['consumables'].level);
-        //     // @ts-ignore
-        //     console.log(generators['consumables'].duration);
-        //     // @ts-ignore
-        //     console.log(generators['consumables'].itemType);
-        // }
 
-        generateJson(`${generatorName}.json`, [...generatedMap.values()], true);
+            const fish = generatorValues.fish.find(f => f.item.id === item.id);
+
+            const recipes = generatorValues["item-processing"];
+            const enemiesDroppingItem = generatorValues["bestiary"].map(sd => ({
+                ...sd,
+                dropRates: sd.dropRates.filter(dr => dr.item.id === item.id)
+            })).filter(sd => sd.dropRates.length)
+
+            const cookingRecipes = generatorValues['cooking-recipes'][0];
+
+
+            const cookedFrom: CookingRecipe[] = [];
+            const usedToCook: CookingRecipe[] = [];
+
+            Object.keys(cookingRecipes).forEach(utensil => {
+                cookedFrom.push(...cookingRecipes[utensil].filter(recipe => recipe.item?.id === item.id));
+                usedToCook.push(...cookingRecipes[utensil].filter(recipe => isIngredient(item, recipe)));
+            })
+
+            const artisanResult: ItemProcessing[] = [];
+            const artisanIngredient: ItemProcessing[] = [];
+
+            Object.keys(recipes[0]).forEach(utensil => {
+                const utensilRecipes: ItemProcessing[] = recipes[0][utensil];
+
+                utensilRecipes.forEach(item => {
+                    item.machine = utensil;
+                    if (item.genericInput) {
+                        item.genericInput.genericItem = generatorValues['tag-based-items'].find(tbi => tbi.key === item.genericInput?.key)
+                    }
+                    item.output.item.sellPrice = generatorValues.items.find(i => i.id === item.output.item.id)?.sellPrice
+                })
+                artisanResult.push(...utensilRecipes.filter(recipe => recipe.output.item.id === item.id));
+                artisanIngredient.push(...utensilRecipes.filter(recipe => {
+                    const tags = getGenericItems(item);
+
+                    return recipe.input.item.id === item.id || recipe.additionalInput.some(input => input.item.id === item.id) || !!tags.find(tag => tag.key === recipe.genericInput?.genericItem?.key)
+
+                }));
+            })
+
+            const craftingRecipes = generatorValues['crafting-recipes'];
+            craftingRecipes.forEach(recipe => {
+                recipe.item = generatorValues.items.find(item => item.id === recipe.key.toLowerCase());
+                recipe.genericIngredients.forEach(gi => gi.genericItem = generatorValues["tag-based-items"].find(item => item.key === gi.key));
+            });
+
+
+            const craftedFrom = craftingRecipes.filter(recipe => recipe.item?.id === item.id);
+            const usedToCraft = craftingRecipes.filter(recipe => item && isCraftingIngredient(item, recipe));
+
+            const cropsAndPlants = [...generatorValues['crops'], ...generatorValues['fruit-plants'], ...generatorValues['fruit-trees']]
+
+            const isSeedFor = cropsAndPlants.filter(recipe => recipe.dropData.some(ingredient => ingredient.item?.id === item.id));
+            const comesFromSeed = cropsAndPlants.filter(recipe => recipe.item?.id === item.id);
+
+
+            const buyAtFestivalShop = FestivalNames.map(shopName => {
+                const key = `${shopName}-festival-data` as const;
+                return (
+                    (generatorValues[key][0])?.shops
+                        .map(s => s.shop)
+                        .flat() ?? []
+                )
+                    .map(sd => {
+                        return {
+                            ...sd,
+                            festival: {
+                                url: shopName,
+                                displayName: FestivalDisplayNames[shopName]
+                            }
+                        }
+                    })
+            }).flat().filter(altar => {
+                return item.id === altar.item.id
+
+            })
+
+            const preferences = flatObjectMap(generatorValues["gift-preferences"]);
+            const dataSource: { pref: typeof preferencesMap[0], npcs: MinimalNPC[] }[] = [];
+
+
+            const prefMap: {
+                favoritePreferences: MinimalNPC[];
+                lovePreferences: MinimalNPC[];
+                likePreferences: MinimalNPC[];
+                neutralPreferences: MinimalNPC[];
+                dislikePreferences: MinimalNPC[];
+                hatePreferences: MinimalNPC[];
+            } = {
+                favoritePreferences: [],
+                lovePreferences: [],
+                likePreferences: [],
+                neutralPreferences: [],
+                dislikePreferences: [],
+                hatePreferences: [],
+            }
+
+
+            const keys = [
+                'favoritePreferences',
+                'lovePreferences',
+                'likePreferences',
+                'neutralPreferences',
+                'dislikePreferences',
+                'hatePreferences'
+            ] as const
+
+            preferences.forEach(prefs => {
+                keys.forEach(key => {
+                    const preferenceIndex = prefs[key].findIndex(pref => pref.type === "item" && item.id === pref.item.id);
+                    if (preferenceIndex !== -1 && prefs.npc) {
+                        prefMap[key].push(prefs.npc);
+                    }
+                })
+
+            })
+
+            keys.forEach(key => {
+                const npcs = prefMap[key];
+                if (npcs.length) {
+                    dataSource.push({pref: preferencesMap.find(p => p.preferenceField === key)!, npcs})
+                }
+
+            })
+
+            const itemUpgrades = ShopNames.map(shopName => {
+                // @ts-ignore
+                const itemUpgradeData: ItemUpgradeData[] = generatorValues[`${shopName}-item-upgrade`] ?? [];
+                return itemUpgradeData.map(sd => {
+                    return {
+                        ...sd,
+                        shop: {
+                            url: shopName,
+                            displayName: ShopDisplayNames[shopName]
+                        }
+                    }
+                })
+            }).flat();
+
+            const isUpgradeResult = itemUpgrades.filter(sd => sd.item.id === item.id).filter(nonNullable);
+
+            const isUpgradeRequirement = itemUpgrades.filter(sd => sd.requirements.some(req => req.item.id === item.id))
+
+
+            const offeringAltars = generatorValues.offerings;
+
+            const isBundleRewardIn = offeringAltars.map(altar => {
+                const offerings = altar.offerings.filter(offering => offering.rewards.items.find(reward => reward.item.id === item.id) || offering.rewards.recipes.find(reward => reward.item.id === item.id));
+                if (!offerings.length) return null;
+                return {...altar, offerings}
+            }).filter(nonNullable);
+
+            const requiredAsOffering = offeringAltars.map(altar => {
+                const offerings = altar.offerings.filter(offering => offering.requiredItems.find(reward => {
+                    if ('id' in reward.item) {
+                        return reward.item.id === item.id;
+                    } else {
+                        const key = reward.item.key;
+                        const items = generatorValues['tag-based-items'].find(t => key === t.key)?.items;
+
+                        return items?.find(t => t.id === item.id)
+                    }
+                }));
+                if (!offerings.length) return null;
+                return {...altar, offerings}
+            }).filter(nonNullable);
+
+
+            const buyAt = ShopNames.map(shopName => {
+                return generatorValues[`${shopName}-shop-items`].map(sd => {
+                    return {
+                        ...sd,
+                        shop: {
+                            url: shopName,
+                            displayName: ShopDisplayNames[shopName]
+                        }
+                    }
+                })
+            }).flat().filter(altar => {
+                return item.id === altar.item.id
+            });
+
+
+            const itemProcessShopData = ShopNames.map(shopName => {
+
+                // @ts-ignore
+                const shopProcessItems: ItemProcessShopData[] = generatorValues[`${shopName}-shop-process-items`] ?? [];
+
+                return shopProcessItems.map(sd => {
+                    return {
+                        ...sd,
+                        shop: {
+                            url: shopName,
+                            displayName: ShopDisplayNames[shopName]
+                        }
+                    }
+                })
+            }).flat();
+
+            const chanceAsProcessResult = itemProcessShopData.map(sd => {
+                const foundItemWithChance = sd.outputChanges.find(output => output.item.id === item?.id)
+                if (!foundItemWithChance) return undefined;
+                return {
+                    ...sd,
+                    outputChanges: [foundItemWithChance],
+
+                }
+            }).filter(nonNullable);
+
+            const asProcessInput = itemProcessShopData.filter(sd => sd.input.id === item.id)
+
+            const consumables: DatabaseItem['consumables'] = {}
+
+            generatorValues.consumables.filter(c => removeQualityFlag(c.key) === item.id).forEach(c => {
+                    const q = getQuality(c.key);
+                    switch (q) {
+                        case Quality.BASE:
+                            consumables.base = c;
+                            break;
+                        case Quality.BRONZE:
+                            consumables.bronze = c;
+                            break;
+                        case Quality.SILVER:
+                            consumables.silver = c;
+                            break;
+                        case Quality.GOLD:
+                            consumables.gold = c;
+                            break;
+                        case Quality.OSMIUM:
+                            consumables.osmium = c;
+                            break;
+                    }
+                }
+            )
+
+            const producedByAnimal: DatabaseItem['producedByAnimal'] = generatorValues["animal-data"].find(a => {
+                return a.produces.some(p =>
+                    p.small?.id === item.id || p.medium?.id === item.id || p.large?.id === item.id
+                    || p.smallGolden?.id === item.id || p.mediumGolden?.id === item.id || p.largeGolden?.id === item.id
+                )
+            })
+            if (producedByAnimal)
+                producedByAnimal.displayName = generatorValues["animal-shop-data"].find(a => a.animalKey === producedByAnimal.key)?.readableName ?? undefined
+
+
+            let enchantmentPoints: undefined | number;
+
+            item.tags?.forEach(tag => entchantmentLevel.has(tag) ? enchantmentPoints = entchantmentLevel.get(tag) : '');
+
+            const dbItem: DatabaseItem = {
+                item,
+                fish: fish ? omitFields(fish, 'item') : undefined,
+                artisanResult: artisanResult.length ? artisanResult : undefined,
+                artisanIngredient: artisanIngredient.length ? artisanIngredient : undefined,
+                fromEnemies: enemiesDroppingItem.length ? enemiesDroppingItem : undefined,
+                usedToCook: usedToCook.length ? usedToCook : undefined,
+                cookedFrom: cookedFrom.length ? cookedFrom : undefined,
+                craftedFrom: craftedFrom.length ? craftedFrom : undefined,
+                usedToCraft: usedToCraft.length ? usedToCraft : undefined,
+                isSeedFor: isSeedFor.length ? isSeedFor : undefined,
+                comesFromSeed: comesFromSeed.length ? comesFromSeed : undefined,
+                buyAtFestivalShop: buyAtFestivalShop.length ? buyAtFestivalShop : undefined,
+                asGift: dataSource.length ? dataSource : undefined,
+                insect: generatorValues["bugs-and-insects"].find(critter => critter.item.id === item.id),
+                oceanCritter: generatorValues["ocean-critters"].find(critter => critter.item.id === item.id),
+                isUpgradeResult: isUpgradeResult.length ? isUpgradeResult : undefined,
+                isUpgradeRequirement: isUpgradeRequirement.length ? isUpgradeRequirement : undefined,
+                requiredAsOffering: requiredAsOffering.length ? requiredAsOffering : undefined,
+                isBundleRewardIn: isBundleRewardIn.length ? isBundleRewardIn : undefined,
+                buyAt: buyAt.length ? buyAt : undefined,
+                asProcessInput: asProcessInput.length ? asProcessInput : undefined,
+                chanceAsProcessResult: chanceAsProcessResult.length ? chanceAsProcessResult : undefined,
+                consumables: Object.keys(consumables).length ? consumables : undefined,
+                producedByAnimal,
+                enchantmentPoints
+            }
+
+            generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, lang);
+
+
+        })
+
+
+    } catch (e) {
+        // @ts-ignore
+        Logger.error('Generators couldn\'t be executed', e.message, e.stack)
     }
-);
+
+})
+itemIconsImageProcessor.process();
+new NpcPortraitsImageProcessor(config.characterPortraitsPath, config.portraitPath, config.headPortraitPath).process()

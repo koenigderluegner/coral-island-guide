@@ -1,28 +1,46 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { combineLatest, map, Observable, shareReplay, tap } from 'rxjs';
+import { combineLatest, map, Observable, of, shareReplay, tap } from 'rxjs';
 import {
+    Achievement,
+    AnimalData,
+    AnimalShopData,
     Consumable,
     CookingRecipe,
     CraftingRecipe,
     Critter,
     Crop,
+    DatabaseItem,
+    Enemy,
+    FestivalData,
+    FestivalName,
     Fish,
     FruitPlant,
     FruitTree,
     GiftPreferences,
+    HeartEvent,
     Item,
     ItemProcessing,
     ItemProcessShopData,
+    ItemUpgradeData,
     JournalOrder,
+    MailData,
+    MeritExchangeShopData,
+    MinimalItem,
+    NPC,
     OfferingAltar,
     OpeningHours,
+    PetShopAdoptions,
+    ProductSizeByMood,
     ShopItemData,
-    TagBasedItem
+    ShopName,
+    TagBasedItem,
+    TornPageData
 } from '@ci/data-types';
 import { AvailableJournalOrders } from '../types/available-journal-orders.type';
 import { MapKeyed } from '../types/map-keyed.type';
 import { SettingsService } from "./settings.service";
+import { flatObjectMap } from "@ci/util";
 
 @Injectable({
     providedIn: 'root'
@@ -63,39 +81,66 @@ export class DatabaseService {
     private _OFFERINGS$?: Observable<OfferingAltar[]>;
     private _OFFERINGS: OfferingAltar[] = [];
 
-    private _SHOP_ITEMS_BLACKSMITH$?: Observable<ShopItemData[]>;
-    private _SHOP_ITEMS_BLACKSMITH: ShopItemData[] = [];
 
-    private _SHOP_PROCESS_ITEMS_BLACKSMITH$?: Observable<ItemProcessShopData[]>;
-    private _SHOP_PROCESS_ITEMS_BLACKSMITH: ItemProcessShopData[] = [];
+    private _SHOP_ITEMS: Map<string, ShopItemData[]> = new Map<string, ShopItemData[]>();
+    private _FESTIVAL_DATA: Map<string, FestivalData> = new Map<string, FestivalData>();
+    private _SHOP_PROCESS_ITEMS: Map<string, ItemProcessShopData[]> = new Map<string, ItemProcessShopData[]>();
+    private _OPENING_HOURS: Map<string, Record<string, OpeningHours>> = new Map<string, Record<string, OpeningHours>>();
+    private _ITEM_UPGRADE: Map<string, ItemUpgradeData[]> = new Map<string, ItemUpgradeData[]>();
+    private _PET_SHOP_ADOPTIONS$?: Observable<PetShopAdoptions[]>;
+    private _PET_SHOP_ADOPTIONS: PetShopAdoptions[] = [];
+    private _NPCS: NPC[] = [];
+    private _NPCS$?: Observable<NPC[]>;
+    private _ACHHIEVEMENTS$?: Observable<Achievement[]>;
+    private _MERIT_EXCHANGE_SHOP_DATA$?: Observable<MeritExchangeShopData[]>;
 
-    private _OPENING_HOURS_BLACKSMITH$?: Observable<Record<string, OpeningHours>>;
-    private _OPENING_HOURS_BLACKSMITH: Record<string, OpeningHours> = {};
+    private _HEART_EVENTS: Record<string, HeartEvent[]> = {};
+    private _HEART_EVENTS$?: Observable<Record<string, HeartEvent[]>>;
 
-    constructor(private readonly _http: HttpClient,
-                private readonly _settings: SettingsService) {
-        const version = this._settings.getSettings().useBeta ? 'beta' : 'live';
+    private _PROCESSOR_MAPPING: Record<string, MinimalItem> = {};
+    private _PROCESSOR_MAPPING$?: Observable<Record<string, MinimalItem>>;
+    private _COOKING_UTENSIL_MAPPING: Record<string, MinimalItem> = {};
+    private _COOKING_UTENSIL_MAPPING$?: Observable<Record<string, MinimalItem>>;
 
-        this._BASE_PATH = `assets/${version}/database`;
+    private _MUSEUM_CHECKLIST: Record<string, MinimalItem[]> = {};
+    private _MUSEUM_CHECKLIST$?: Observable<Record<string, MinimalItem[]>>;
+
+    private _COOKING_RECIPES_CHECKLIST: Record<string, MinimalItem[]> = {};
+    private _COOKING_RECIPES_CHECKLIST$?: Observable<Record<string, MinimalItem[]>>;
+
+    private _MAIL_DATA: MailData[] = [];
+    private _MAIL_DATA$?: Observable<MailData[]>;
+
+    private _TORN_PAGES_DATA: TornPageData[] = [];
+    private _TORN_PAGES_DATA$?: Observable<TornPageData[]>;
+
+    private _BESTIARY: Enemy[] = [];
+    private _BESTIARY$?: Observable<Enemy[]>;
+
+    private readonly _settings = inject(SettingsService).getSettings();
+    private _ANIMAL_DATA$?: Observable<AnimalData[]>;
+    private _ANIMAL_MOOD_DATA$?: Observable<ProductSizeByMood[]>;
+    private _ANIMAL_SHOP_DATA$?: Observable<AnimalShopData[]>;
+
+    private _DATABASE_ITEMS: Map<string, DatabaseItem> = new Map<string, DatabaseItem>();
+
+    constructor(private readonly _http: HttpClient) {
+        const version = this._settings.useBeta ? 'beta' : 'live';
+        const lang = this._settings.language ?? 'en'
+
+        this._BASE_PATH = `assets/${version}/database/${lang}`;
     }
 
-
-    getDatabaseDetails(): Observable<unknown> {
-        return combineLatest([
-            this.fetchFish$(),
-            this.fetchCraftingRecipes$(),
-            this.fetchItemProcessingRecipes$(),
-            this.fetchCookingRecipes$(),
-            this.fetchTagBasedItems$(),
-            this.fetchOceanCritters$(),
-            this.fetchBugsAndInsects$(),
-            this.fetchCrops$(),
-            this.fetchFruitTrees$(),
-            this.fetchFruitPlants$(),
-            this.fetchGiftingPreferences$(),
-            this.fetchOfferings$(),
-            this.fetchShopItemDataBlacksmith$(),
-        ]);
+    fetchDatabaseItem$(id: string): Observable<DatabaseItem> {
+        if (!this._DATABASE_ITEMS.has(id)) {
+            return this._http.get<DatabaseItem>(`${this._BASE_PATH}/items/${id}.json`)
+                .pipe(
+                    tap(items => this._DATABASE_ITEMS.set(id, items)),
+                    shareReplay(1)
+                );
+        } else {
+            return of(this._DATABASE_ITEMS.get(id)!)
+        }
     }
 
 
@@ -115,6 +160,182 @@ export class DatabaseService {
         return this._ITEMS$;
     }
 
+    fetchMailData$(): Observable<MailData[]> {
+        if (!this._MAIL_DATA$) {
+            this._MAIL_DATA$ = this._http.get<MailData[]>(`${this._BASE_PATH}/mail-data.json`)
+                .pipe(
+                    tap(items => this._MAIL_DATA = items),
+                    shareReplay(1)
+                );
+        }
+        return this._MAIL_DATA$;
+    }
+
+    getBestiary(): Enemy[] {
+        return this._BESTIARY
+    }
+
+    fetchBestiary$(): Observable<Enemy[]> {
+        if (!this._BESTIARY$) {
+            this._BESTIARY$ = this._http.get<Enemy[]>(`${this._BASE_PATH}/bestiary.json`)
+                .pipe(
+                    tap(items => this._BESTIARY = items),
+                    shareReplay(1)
+                );
+        }
+        return this._BESTIARY$;
+    }
+
+    fetchAnimals$(): Observable<AnimalData[]> {
+        if (!this._ANIMAL_DATA$) {
+            this._ANIMAL_DATA$ = this._http.get<AnimalData[]>(`${this._BASE_PATH}/animal-data.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+        return this._ANIMAL_DATA$;
+    }
+
+    fetchAnimalMoodData$(): Observable<ProductSizeByMood[]> {
+        if (!this._ANIMAL_MOOD_DATA$) {
+            this._ANIMAL_MOOD_DATA$ = this._http.get<ProductSizeByMood[]>(`${this._BASE_PATH}/animal-mood-size.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+        return this._ANIMAL_MOOD_DATA$;
+    }
+
+    fetchAnimalShopData$(): Observable<AnimalShopData[]> {
+        if (!this._ANIMAL_SHOP_DATA$) {
+            this._ANIMAL_SHOP_DATA$ = this._http.get<AnimalShopData[]>(`${this._BASE_PATH}/animal-shop-data.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+        return this._ANIMAL_SHOP_DATA$;
+    }
+
+    fetchTornPagesData$(): Observable<TornPageData[]> {
+        if (!this._TORN_PAGES_DATA$) {
+            this._TORN_PAGES_DATA$ = this._http.get<TornPageData[]>(`${this._BASE_PATH}/torn-pages.json`)
+                .pipe(
+                    tap(items => this._TORN_PAGES_DATA = items),
+                    shareReplay(1)
+                );
+        }
+        return this._TORN_PAGES_DATA$;
+    }
+
+    getCookingUtensilMapping(): Record<string, MinimalItem> {
+        return this._COOKING_UTENSIL_MAPPING;
+    }
+
+
+    fetchCookingUtensilMapping$(): Observable<Record<string, MinimalItem>> {
+        if (!this._COOKING_UTENSIL_MAPPING$) {
+            this._COOKING_UTENSIL_MAPPING$ = this._http.get<Record<string, MinimalItem>[]>(`${this._BASE_PATH}/cooking-utensil-mapping.json`)
+                .pipe(
+                    map(s => s[0]),
+                    tap(items => this._COOKING_UTENSIL_MAPPING = items),
+                    shareReplay(1)
+                );
+        }
+        return this._COOKING_UTENSIL_MAPPING$;
+    }
+
+    getProcessorMapping(): Record<string, MinimalItem> {
+        return this._PROCESSOR_MAPPING;
+    }
+
+
+    fetchProcessorMapping$(): Observable<Record<string, MinimalItem>> {
+        if (!this._PROCESSOR_MAPPING$) {
+            this._PROCESSOR_MAPPING$ = this._http.get<Record<string, MinimalItem>[]>(`${this._BASE_PATH}/processor-mapping.json`)
+                .pipe(
+                    map(s => s[0]),
+                    tap(items => this._PROCESSOR_MAPPING = items),
+                    shareReplay(1)
+                );
+        }
+        return this._PROCESSOR_MAPPING$;
+    }
+
+    getNPCs(): NPC[] {
+        return this._NPCS;
+    }
+
+
+    fetchNPCs$(): Observable<NPC[]> {
+        if (!this._NPCS$) {
+            this._NPCS$ = this._http.get<NPC[]>(`${this._BASE_PATH}/npcs.json`)
+                .pipe(
+                    tap(items => this._NPCS = items),
+                    shareReplay(1)
+                );
+        }
+        return this._NPCS$;
+    }
+
+
+    getHeartEvents(): Record<string, HeartEvent[]> {
+        return this._HEART_EVENTS;
+    }
+
+
+    fetchHeartEvents$(): Observable<Record<string, HeartEvent[]>> {
+        if (!this._HEART_EVENTS$) {
+            this._HEART_EVENTS$ = this._http.get<Record<string, HeartEvent[]>[]>(`${this._BASE_PATH}/heart-events.json`)
+                .pipe(
+                    map(events => events[0]),
+                    tap(items => this._HEART_EVENTS = items),
+                    shareReplay(1)
+                );
+        }
+        return this._HEART_EVENTS$;
+    }
+
+
+    getMuseumChecklist(): Record<string, MinimalItem[]> {
+        return this._MUSEUM_CHECKLIST;
+    }
+
+
+    fetchMuseumChecklist$(): Observable<Record<string, MinimalItem[]>> {
+        if (!this._MUSEUM_CHECKLIST$) {
+            this._MUSEUM_CHECKLIST$ = this._http.get<Record<string, MinimalItem[]>[]>(`${this._BASE_PATH}/museum-checklist.json`)
+                .pipe(
+                    map(events => events[0]),
+                    tap(items => this._MUSEUM_CHECKLIST = items),
+                    shareReplay(1)
+                );
+        }
+        return this._MUSEUM_CHECKLIST$;
+    }
+
+    fetchCookingRecipesChecklist$(): Observable<Record<string, MinimalItem[]>> {
+        if (!this._COOKING_RECIPES_CHECKLIST$) {
+            this._COOKING_RECIPES_CHECKLIST$ = this._http.get<Record<string, MinimalItem[]>[]>(`${this._BASE_PATH}/cooking-recipes-checklist.json`)
+                .pipe(
+                    map(events => events[0]),
+                    tap(items => this._COOKING_RECIPES_CHECKLIST = items),
+                    shareReplay(1)
+                );
+        }
+        return this._COOKING_RECIPES_CHECKLIST$;
+    }
+
+
+    fetchAchievements$(): Observable<Achievement[]> {
+        if (!this._ACHHIEVEMENTS$) {
+            this._ACHHIEVEMENTS$ = this._http.get<Achievement[]>(`${this._BASE_PATH}/achievements.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+        return this._ACHHIEVEMENTS$;
+    }
+
 
     getOfferings(): OfferingAltar[] {
         return this._OFFERINGS;
@@ -131,46 +352,6 @@ export class DatabaseService {
         }
         return this._OFFERINGS$;
     }
-
-    fetchShopItemDataBlacksmith$(): Observable<ShopItemData[]> {
-        if (!this._SHOP_ITEMS_BLACKSMITH$) {
-            this._SHOP_ITEMS_BLACKSMITH$ = this._http.get<ShopItemData[]>(`${this._BASE_PATH}/blacksmith-shop-items.json`)
-                .pipe(
-                    tap(items => this._SHOP_ITEMS_BLACKSMITH = items),
-                    shareReplay(1)
-                );
-        }
-        return this._SHOP_ITEMS_BLACKSMITH$;
-    }
-
-    fetchShopProcessItemsBlacksmith$(): Observable<ItemProcessShopData[]> {
-        if (!this._SHOP_PROCESS_ITEMS_BLACKSMITH$) {
-            this._SHOP_PROCESS_ITEMS_BLACKSMITH$ = this._http.get<ItemProcessShopData[]>(`${this._BASE_PATH}/blacksmith-shop-process-items.json`)
-                .pipe(
-                    tap(items => this._SHOP_PROCESS_ITEMS_BLACKSMITH = items),
-                    shareReplay(1)
-                );
-        }
-        return this._SHOP_PROCESS_ITEMS_BLACKSMITH$;
-    }
-
-    fetchOpeningHoursBlacksmith$(): Observable<Record<string, OpeningHours>> {
-        if (!this._OPENING_HOURS_BLACKSMITH$) {
-            this._OPENING_HOURS_BLACKSMITH$ = this._http.get<Record<string, OpeningHours>[]>(`${this._BASE_PATH}/blacksmith-opening-hours.json`)
-                .pipe(
-                    map(items => items[0]),
-                    tap(items => this._OPENING_HOURS_BLACKSMITH = items),
-                    shareReplay(1)
-                );
-        }
-        return this._OPENING_HOURS_BLACKSMITH$;
-    }
-
-
-    getConsumables(): Consumable[] {
-        return this._CONSUMABLES;
-    }
-
 
     fetchConsumables$(): Observable<Consumable[]> {
         if (!this._CONSUMABLES$) {
@@ -198,7 +379,6 @@ export class DatabaseService {
         return this._FISH;
     }
 
-
     fetchCraftingRecipes$(): Observable<CraftingRecipe[]> {
         if (!this._CRAFTING_RECIPE$) {
             this._CRAFTING_RECIPE$ = combineLatest([
@@ -222,7 +402,6 @@ export class DatabaseService {
         }
         return this._CRAFTING_RECIPE$;
     }
-
 
     getCraftingRecipes(): CraftingRecipe[] {
         return this._CRAFTING_RECIPE;
@@ -262,7 +441,6 @@ export class DatabaseService {
         return this._ITEM_PROCESSING_RECIPE;
     }
 
-
     fetchCookingRecipes$(): Observable<Record<string, CookingRecipe[]>> {
         if (!this._COOKING_RECIPE$) {
             this._COOKING_RECIPE$ = this._http.get<Record<string, CookingRecipe[]>[]>(`${this._BASE_PATH}/cooking-recipes.json`)
@@ -294,7 +472,6 @@ export class DatabaseService {
         return this._TAG_BASED_ITEMS;
     }
 
-
     fetchOceanCritters$(): Observable<Critter[]> {
         if (!this._OCEAN_CRITTERS$) {
             this._OCEAN_CRITTERS$ = this._http.get<Critter[]>(`${this._BASE_PATH}/ocean-critters.json`)
@@ -310,7 +487,6 @@ export class DatabaseService {
         return this._OCEAN_CRITTERS;
     }
 
-
     fetchBugsAndInsects$(): Observable<Critter[]> {
         if (!this._BUGS_AND_INSECTS$) {
             this._BUGS_AND_INSECTS$ = this._http.get<Critter[]>(`${this._BASE_PATH}/bugs-and-insects.json`)
@@ -322,11 +498,9 @@ export class DatabaseService {
         return this._BUGS_AND_INSECTS$;
     }
 
-
     getBugsAndInsects(): Critter[] {
         return this._BUGS_AND_INSECTS;
     }
-
 
     fetchCrops$(): Observable<Crop[]> {
         if (!this._CROPS$) {
@@ -343,7 +517,6 @@ export class DatabaseService {
         return this._CROPS;
     }
 
-
     fetchFruitTrees$(): Observable<FruitTree[]> {
         if (!this._FRUIT_TREES$) {
             this._FRUIT_TREES$ = this._http.get<Crop[]>(`${this._BASE_PATH}/fruit-trees.json`)
@@ -358,7 +531,6 @@ export class DatabaseService {
     getFruitTrees(): FruitTree[] {
         return this._FRUIT_TREES;
     }
-
 
     fetchFruitPlants$(): Observable<FruitPlant[]> {
         if (!this._FRUIT_PLANTS$) {
@@ -392,7 +564,7 @@ export class DatabaseService {
                 [person: string]: GiftPreferences
             }[]>(`${this._BASE_PATH}/gift-preferences.json`)
                 .pipe(
-                    map(prefs => this.flatObjectMap(prefs)),
+                    map(prefs => flatObjectMap(prefs)),
                     tap(prefs => this._GIFT_PREFERENCES = prefs),
                     shareReplay(1)
                 );
@@ -404,13 +576,115 @@ export class DatabaseService {
         return this._GIFT_PREFERENCES;
     }
 
-    flatObjectMap<T>(objectMap: { [key: string]: T }[]): (T & { mapKey: string })[] {
 
-        return objectMap.map(entry => {
-            const mapKey = Object.keys(entry)[0];
+    fetchPetShopAdoptions$(): Observable<PetShopAdoptions[]> {
+        if (!this._PET_SHOP_ADOPTIONS$) {
+            this._PET_SHOP_ADOPTIONS$ = this._http.get<PetShopAdoptions[]>(`${this._BASE_PATH}/pet-shop-adoptions.json`)
+                .pipe(
+                    tap(prefs => this._PET_SHOP_ADOPTIONS = prefs),
+                    shareReplay(1)
+                );
+        }
+        return this._PET_SHOP_ADOPTIONS$;
+    }
 
-            return {...entry[mapKey], mapKey};
-        });
+    fetchShopProcessItems$(shopName: ShopName): Observable<ItemProcessShopData[]> {
+        if (!this._SHOP_PROCESS_ITEMS.has(shopName)) {
+            return this._http.get<ItemProcessShopData[]>(`${this._BASE_PATH}/${shopName}-shop-process-items.json`)
+                .pipe(
+                    tap(items => this._SHOP_PROCESS_ITEMS.set(shopName, items)),
+                    shareReplay(1)
+                );
+        } else {
+            return of(this._SHOP_PROCESS_ITEMS.get(shopName)!)
+        }
+
+    }
+
+    fetchItemUpgradeData$(shopName: ShopName): Observable<ItemUpgradeData[]> {
+        if (!this._ITEM_UPGRADE.has(shopName)) {
+            return this._http.get<ItemUpgradeData[]>(`${this._BASE_PATH}/${shopName}-item-upgrade.json`)
+                .pipe(
+                    tap(items => this._ITEM_UPGRADE.set(shopName, items)),
+                    shareReplay(1)
+                );
+        } else {
+            return of(this._ITEM_UPGRADE.get(shopName)!)
+        }
+
+    }
+
+    fetchOpeningHours$(shopName: ShopName): Observable<Record<string, OpeningHours>> {
+        if (!this._OPENING_HOURS.has(shopName)) {
+            return this._http.get<Record<string, OpeningHours>[]>(`${this._BASE_PATH}/${shopName}-opening-hours.json`)
+                .pipe(
+                    map(items => items[0]),
+                    tap(items => this._OPENING_HOURS.set(shopName, items)),
+                    shareReplay(1)
+                );
+        } else {
+            return of(this._OPENING_HOURS.get(shopName)!)
+        }
+
+    }
+
+    getShopProcessItems(shopName: ShopName): ItemProcessShopData[] {
+        return this._SHOP_PROCESS_ITEMS.get(shopName) ?? [];
+    }
+
+    getShopData(shopName: ShopName): ShopItemData[] {
+        return this._SHOP_ITEMS.get(shopName) ?? [];
+    }
+
+    getFestivalData(shopName: FestivalName): FestivalData | null {
+        return this._FESTIVAL_DATA.get(shopName) ?? null;
+    }
+
+    getItemUpgradeData(shopName: ShopName): ItemUpgradeData[] {
+        return this._ITEM_UPGRADE.get(shopName) ?? [];
+    }
+
+    getOpeningHours(shopName: ShopName): Record<string, OpeningHours> {
+        return this._OPENING_HOURS.get(shopName) ?? {};
+    }
+
+    fetchShopItemData$(shopName: ShopName): Observable<ShopItemData[]> {
+        if (!this._SHOP_ITEMS.has(shopName)) {
+            return this._http.get<ShopItemData[]>(`${this._BASE_PATH}/${shopName}-shop-items.json`)
+                .pipe(
+                    tap(items => this._SHOP_ITEMS.set(shopName, items)),
+                    shareReplay(1)
+                );
+        } else {
+            return of(this._SHOP_ITEMS.get(shopName)!)
+        }
+
+    }
+
+
+    fetchFestivalData$(festivalName: FestivalName): Observable<FestivalData> {
+        if (!this._FESTIVAL_DATA.has(festivalName)) {
+            return this._http.get<FestivalData[]>(`${this._BASE_PATH}/${festivalName}-festival-data.json`)
+                .pipe(
+                    map(data => data[0]),
+                    tap(items => this._FESTIVAL_DATA.set(festivalName, items)),
+                    shareReplay(1)
+                );
+        } else {
+            return of(this._FESTIVAL_DATA.get(festivalName)!)
+        }
+
+    }
+
+    fetchMeritExchangeShopData$(): Observable<MeritExchangeShopData[]> {
+        if (!this._MERIT_EXCHANGE_SHOP_DATA$) {
+            this._MERIT_EXCHANGE_SHOP_DATA$ = this._http.get<MeritExchangeShopData[]>(`${this._BASE_PATH}/merit-exchange-shop-items.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+
+        return this._MERIT_EXCHANGE_SHOP_DATA$
 
 
     }

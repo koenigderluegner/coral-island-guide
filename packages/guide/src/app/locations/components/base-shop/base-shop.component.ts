@@ -1,0 +1,55 @@
+import { Component } from '@angular/core';
+import { BaseSelectableContainerComponent } from "../../../shared/components/base-selectable-container/base-selectable-container.component";
+import {
+    ItemProcessShopData,
+    ItemUpgradeData,
+    OpeningHours,
+    ShopDisplayNames,
+    ShopIcons,
+    ShopItemData,
+    ShopName,
+    UiIcon
+} from "@ci/data-types";
+import { Observable } from "rxjs";
+
+@Component({
+    template: '',
+})
+export abstract class BaseShopComponent extends BaseSelectableContainerComponent<ShopItemData> {
+
+    protected abstract shopName: ShopName;
+    protected readonly SHOP_DISPLAY_NAMES = ShopDisplayNames
+    protected readonly SHOP_ICONS = ShopIcons
+
+    protected upgradeHeaderText?: string;
+
+    protected shopItemData$?: Observable<ShopItemData[]>;
+    protected uiIcon = UiIcon;
+    protected openingHours$?: Observable<Record<string, OpeningHours>>;
+    protected itemProcessing$?: Observable<ItemProcessShopData[]>;
+    protected selectedProcessEntity: ItemProcessShopData | undefined;
+    protected showProcessingTable = false
+    protected showPItemUpgradeTable = false;
+    protected itemUpgrade$?: Observable<ItemUpgradeData[]>;
+    protected selectedItemUpgrade: ItemUpgradeData | undefined;
+
+    override showDetails(selectedEntry?: ShopItemData) {
+        this.selectedProcessEntity = undefined;
+        this.selectedItemUpgrade = undefined;
+        super.showDetails(selectedEntry);
+    }
+
+    showProcessDetails(selectedEntry?: ItemProcessShopData) {
+        this.selectedEntity = undefined;
+        this.selectedItemUpgrade = undefined;
+        this.selectedProcessEntity = selectedEntry;
+        this.openDrawer = true;
+    }
+
+    showItemUpgradeDetails(selectedEntry?: ItemUpgradeData) {
+        this.selectedEntity = undefined;
+        this.selectedItemUpgrade = selectedEntry;
+        this.selectedProcessEntity = undefined;
+        this.openDrawer = true;
+    }
+}

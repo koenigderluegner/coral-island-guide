@@ -2,314 +2,634 @@
   {
     "Type": "C_WaypointMapping",
     "Name": "DA_Mapping_MerfolkCookPartner",
+    "Class": "UScriptClass'C_WaypointMapping'",
     "Properties": {
-      "mapping": {
-        "SpringSummerFallWinter_MTTRFSTSN": {
-          "startingPoint": {
-            "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
-            "SubPathString": "PersistentLevel.C_AnimationWaypoint_5"
-          },
-          "waypoints": [
-            {
-              "id": "teleport out",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
-                "SubPathString": "PersistentLevel.C_WorldWarpingPortal_28_trigger_B_waypoint"
-              },
-              "leavingHour": 7,
-              "leavingMinutes": 30,
-              "isTransitional": true,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
-              },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
+      "mapping": [
+        {
+          "SpringSummerFallWinter_MTTRFSTSN": {
+            "startingPoint": {
+              "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
+              "SubPathString": "PersistentLevel.C_AnimationWaypoint_5"
             },
-            {
-              "id": "teleport to castle",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
-                "SubPathString": "PersistentLevel.C_WorldWarpingPortal5_trigger_A_waypoint"
+            "waypoints": [
+              {
+                "id": "Teleport Out",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_28_trigger_B_waypoint"
+                },
+                "leavingHour": 7,
+                "leavingMinutes": 30,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 6,
-              "leavingMinutes": 0,
-              "isTransitional": true,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
+              {
+                "id": "Teleport to Castle",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal5_trigger_A_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            },
-            {
-              "id": "kitchen",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
-                "SubPathString": "PersistentLevel.C_AnimationWaypoint_1"
+              {
+                "id": "Cooking",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_1"
+                },
+                "leavingHour": 8,
+                "leavingMinutes": 10,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 8,
-              "leavingMinutes": 10,
-              "isTransitional": false,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
+              {
+                "id": "Serve Lunch",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_3"
+                },
+                "leavingHour": 11,
+                "leavingMinutes": 30,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            },
-            {
-              "id": "serve lunch",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
-                "SubPathString": "PersistentLevel.C_AnimationWaypoint_3"
+              {
+                "id": "Cooking",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_1"
+                },
+                "leavingHour": 12,
+                "leavingMinutes": 50,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 11,
-              "leavingMinutes": 30,
-              "isTransitional": false,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
+              {
+                "id": "Serve Dinner",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_3"
+                },
+                "leavingHour": 17,
+                "leavingMinutes": 30,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            },
-            {
-              "id": "go back to kitchen",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
-                "SubPathString": "PersistentLevel.C_AnimationWaypoint_1"
+              {
+                "id": "Break",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint187"
+                },
+                "leavingHour": 18,
+                "leavingMinutes": 50,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 12,
-              "leavingMinutes": 50,
-              "isTransitional": false,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
+              {
+                "id": "Teleport Out Castle",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal5_trigger_B_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            },
-            {
-              "id": "serve dinner",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
-                "SubPathString": "PersistentLevel.C_AnimationWaypoint_3"
+              {
+                "id": "Teleport to Home",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_28_trigger_A_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 17,
-              "leavingMinutes": 30,
-              "isTransitional": false,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
-              },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            },
-            {
-              "id": "go back to kitchen",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
-                "SubPathString": "PersistentLevel.C_AnimationWaypoint_1"
-              },
-              "leavingHour": 18,
-              "leavingMinutes": 50,
-              "isTransitional": false,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
-              },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            },
-            {
-              "id": "teleport out",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
-                "SubPathString": "PersistentLevel.C_WorldWarpingPortal5_trigger_B_waypoint"
-              },
-              "leavingHour": 6,
-              "leavingMinutes": 0,
-              "isTransitional": true,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
-              },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            },
-            {
-              "id": "teleport to home",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
-                "SubPathString": "PersistentLevel.C_WorldWarpingPortal_28_trigger_A_waypoint"
-              },
-              "leavingHour": 6,
-              "leavingMinutes": 0,
-              "isTransitional": true,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
-              },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            },
-            {
-              "id": "go to bed",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
-                "SubPathString": "PersistentLevel.C_AnimationWaypoint_7"
-              },
-              "leavingHour": 20,
-              "leavingMinutes": 30,
-              "isTransitional": false,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
-              },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            }
-          ]
+              {
+                "id": "Sleep",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_7"
+                },
+                "leavingHour": 20,
+                "leavingMinutes": 30,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              }
+            ]
+          }
         },
-        "SpringSummerFallWinter_Wednesday": {
-          "startingPoint": {
-            "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
-            "SubPathString": "PersistentLevel.C_AnimationWaypoint_5"
-          },
-          "waypoints": [
-            {
-              "id": "teleport out",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
-                "SubPathString": "PersistentLevel.C_WorldWarpingPortal_28_trigger_B_waypoint"
-              },
-              "leavingHour": 6,
-              "leavingMinutes": 0,
-              "isTransitional": true,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
-              },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
+        {
+          "SpringSummerFallWinter_Wednesday": {
+            "startingPoint": {
+              "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
+              "SubPathString": "PersistentLevel.C_AnimationWaypoint_5"
             },
-            {
-              "id": "teleport to tattoo shop",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
-                "SubPathString": "PersistentLevel.C_WorldWarpingPortal_34_trigger_A_waypoint"
+            "waypoints": [
+              {
+                "id": "Teleport Out",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_28_trigger_B_waypoint"
+                },
+                "leavingHour": 7,
+                "leavingMinutes": 30,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 6,
-              "leavingMinutes": 0,
-              "isTransitional": true,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
+              {
+                "id": "Teleport to Tattoo Shop",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_34_trigger_A_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
+              {
+                "id": "Tattoo Shop",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_11"
+                },
+                "leavingHour": 9,
+                "leavingMinutes": 0,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              },
+              {
+                "id": "Teleport Out Tattoo Shop",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_34_trigger_B_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              },
+              {
+                "id": "Pray at Coral Tree",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_13"
+                },
+                "leavingHour": 15,
+                "leavingMinutes": 0,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              },
+              {
+                "id": "Teleport to Home",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_28_trigger_A_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              },
+              {
+                "id": "Sleep",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_7"
+                },
+                "leavingHour": 20,
+                "leavingMinutes": 30,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              }
+            ]
+          }
+        },
+        {
+          "Weather_MtoSN": {
+            "startingPoint": {
+              "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
+              "SubPathString": "PersistentLevel.C_AnimationWaypoint_5"
             },
-            {
-              "id": "tattoo shop",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
-                "SubPathString": "PersistentLevel.C_AnimationWaypoint_11"
+            "waypoints": [
+              {
+                "id": "Teleport Out",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_28_trigger_B_waypoint"
+                },
+                "leavingHour": 7,
+                "leavingMinutes": 30,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 9,
-              "leavingMinutes": 0,
-              "isTransitional": false,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
+              {
+                "id": "Teleport to Castle",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal5_trigger_A_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            },
-            {
-              "id": "teleport out",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
-                "SubPathString": "PersistentLevel.C_WorldWarpingPortal_34_trigger_B_waypoint"
+              {
+                "id": "Cooking",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_1"
+                },
+                "leavingHour": 8,
+                "leavingMinutes": 10,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 15,
-              "leavingMinutes": 0,
-              "isTransitional": true,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
+              {
+                "id": "Serve Lunch",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_3"
+                },
+                "leavingHour": 11,
+                "leavingMinutes": 30,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            },
-            {
-              "id": "coral tree",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
-                "SubPathString": "PersistentLevel.C_AnimationWaypoint_13"
+              {
+                "id": "Cooking",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_1"
+                },
+                "leavingHour": 12,
+                "leavingMinutes": 50,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 15,
-              "leavingMinutes": 0,
-              "isTransitional": false,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
+              {
+                "id": "Serve Dinner",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_3"
+                },
+                "leavingHour": 17,
+                "leavingMinutes": 30,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            },
-            {
-              "id": "teleport in",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
-                "SubPathString": "PersistentLevel.C_WorldWarpingPortal_28_trigger_A_waypoint"
+              {
+                "id": "Break",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint187"
+                },
+                "leavingHour": 18,
+                "leavingMinutes": 50,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 6,
-              "leavingMinutes": 0,
-              "isTransitional": true,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
+              {
+                "id": "Teleport Out Castle",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal5_trigger_B_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            },
-            {
-              "id": "go to bed",
-              "workPoint": {
-                "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
-                "SubPathString": "PersistentLevel.C_AnimationWaypoint_7"
+              {
+                "id": "Teleport to Home",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/NPC_WayPoints/CI_Schedule.CI_Schedule",
+                  "SubPathString": "PersistentLevel.C_WorldWarpingPortal_28_trigger_A_waypoint"
+                },
+                "leavingHour": 6,
+                "leavingMinutes": 0,
+                "isTransitional": true,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
               },
-              "leavingHour": 18,
-              "leavingMinutes": 0,
-              "isTransitional": false,
-              "isChangeSK": false,
-              "Appearances": {
-                "DataTable": null,
-                "RowName": "None"
-              },
-              "isBackToLastAppearances": false,
-              "isBackToCurrentOutfit": false
-            }
-          ]
+              {
+                "id": "Sleep",
+                "workPoint": {
+                  "AssetPathName": "/Game/ProjectCoral/Maps/Character_Waypoints/OceanCharacters/Merfolk/MerfolkCookPartner_Waypoints.MerfolkCookPartner_Waypoints",
+                  "SubPathString": "PersistentLevel.C_AnimationWaypoint_7"
+                },
+                "leavingHour": 20,
+                "leavingMinutes": 30,
+                "isTransitional": false,
+                "markAsPortal": false,
+                "pairingWaypointPortal": {
+                  "AssetPathName": "None",
+                  "SubPathString": ""
+                },
+                "isChangeSK": false,
+                "Appearances": {
+                  "DataTable": null,
+                  "RowName": "None"
+                },
+                "isBackToLastAppearances": false,
+                "isBackToCurrentOutfit": false
+              }
+            ]
+          }
         }
-      }
+      ]
     }
   }
 ]

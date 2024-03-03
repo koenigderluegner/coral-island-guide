@@ -1,5 +1,5 @@
 import { readAsset } from "../../util/functions";
-import { RawOpeningHours } from "../../interfaces/raw-opening-hours.interface";
+import { RawOpeningHours } from "../../interfaces/raw-data-interfaces/raw-opening-hours.interface";
 import { OpeningHours, Time } from "@ci/data-types";
 import { getEnumValue } from "@ci/util";
 

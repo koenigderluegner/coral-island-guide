@@ -1,4 +1,6 @@
+
 .app-header {
+  --header-text-color: #8a7c67;
   @apply block backdrop-blur-xl px-safe pt-safe;
   background-color: rgba(0, 0, 0, .75);
 
@@ -24,8 +26,12 @@
   }
 }
 
+.text-header {
+  color: var(--header-text-color)
+}
+
 .beta-badge {
-  background-color: #8a7c67;
+  background-color: var(--header-text-color);
   padding: 3px;
   font-size: 80%;
   transform: translateX(60%);

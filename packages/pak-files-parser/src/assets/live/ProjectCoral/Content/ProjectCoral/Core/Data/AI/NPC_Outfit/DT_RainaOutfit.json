@@ -2,17 +2,19 @@
   {
     "Type": "DataTable",
     "Name": "DT_RainaOutfit",
+    "Class": "UScriptClass'DataTable'",
     "Properties": {
       "RowStruct": {
-        "ObjectName": "ScriptStruct C_NPCAppearances",
+        "ObjectName": "ScriptStruct'C_NPCAppearances'",
         "ObjectPath": "/Script/ProjectCoral"
       }
     },
     "Rows": {
       "Default": {
+        "enabled": true,
         "Appearances": {
           "DataTable": {
-            "ObjectName": "DataTable DT_NPCOutfitList",
+            "ObjectName": "DataTable'DT_NPCOutfitList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCOutfitList.0"
           },
           "RowName": "Default"
@@ -21,7 +23,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Normal"
@@ -34,7 +36,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Annoyed"
@@ -47,7 +49,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Concerned"
@@ -60,7 +62,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Happy"
@@ -73,7 +75,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Surprised"
@@ -85,14 +87,74 @@
           }
         ],
         "SkeletalMeshes": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/SK_Raina_V2_1.SK_Raina_V2_1",
+          "SubPathString": ""
+        },
+        "StaticMesh": {
           "AssetPathName": "None",
           "SubPathString": ""
+        },
+        "dialogPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScale": 1.0,
+        "dialogPortraitPositionForPortraitMode": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScaleForPortraitMode": 1.0,
+        "relationshipPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "relationshipPortraitScale": 1.0,
+        "kawaiiPhysicsSetting": {
+          "physicsSettingMap": [
+            {
+              "BackHair": {
+                "physicsSetting": {
+                  "Damping": 0.1,
+                  "WorldDampingLocation": 0.8,
+                  "WorldDampingRotation": 0.8,
+                  "Stiffness": 0.2,
+                  "Radius": 3.0,
+                  "LimitAngle": 30.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -1000.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            },
+            {
+              "HairFront": {
+                "physicsSetting": {
+                  "Damping": 0.1,
+                  "WorldDampingLocation": 0.8,
+                  "WorldDampingRotation": 0.8,
+                  "Stiffness": 0.2,
+                  "Radius": 3.0,
+                  "LimitAngle": 15.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -1000.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            }
+          ]
         }
       },
       "Summer": {
+        "enabled": false,
         "Appearances": {
           "DataTable": {
-            "ObjectName": "DataTable DT_NPCOutfitList",
+            "ObjectName": "DataTable'DT_NPCOutfitList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCOutfitList.0"
           },
           "RowName": "Summer"
@@ -101,78 +163,138 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Normal"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Spring/Raina_Default_Spring.Raina_Default_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Summer/Raina_Default_Summer.Raina_Default_Summer",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Annoyed"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Spring/Raina_Annoyed_Spring.Raina_Annoyed_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Summer/Raina_Annoyed_Summer.Raina_Annoyed_Summer",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Concerned"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Spring/Raina_Concerned_Spring.Raina_Concerned_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Summer/Raina_Concerned_Summer.Raina_Concerned_Summer",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Happy"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Spring/Raina_Happy_Spring.Raina_Happy_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Summer/Raina_Happy_Summer.Raina_Happy_Summer",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Surprised"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Spring/Raina_Surprised_Spring.Raina_Surprised_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Summer/Raina_Surprised_Summer.Raina_Surprised_Summer",
               "SubPathString": ""
             }
           }
         ],
         "SkeletalMeshes": {
-          "AssetPathName": "None",
+          "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Optimized/SpringSummer/SK_Raina_SpringSummer_V2_1.SK_Raina_SpringSummer_V2_1",
           "SubPathString": ""
+        },
+        "StaticMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Optimized/SpringSummer/SM_Raina_SpringSummer.SM_Raina_SpringSummer",
+          "SubPathString": ""
+        },
+        "dialogPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScale": 1.0,
+        "dialogPortraitPositionForPortraitMode": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScaleForPortraitMode": 1.0,
+        "relationshipPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "relationshipPortraitScale": 1.0,
+        "kawaiiPhysicsSetting": {
+          "physicsSettingMap": [
+            {
+              "BackHair": {
+                "physicsSetting": {
+                  "Damping": 0.1,
+                  "WorldDampingLocation": 0.8,
+                  "WorldDampingRotation": 0.8,
+                  "Stiffness": 0.2,
+                  "Radius": 3.0,
+                  "LimitAngle": 30.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -1000.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            },
+            {
+              "HairFront": {
+                "physicsSetting": {
+                  "Damping": 0.1,
+                  "WorldDampingLocation": 0.8,
+                  "WorldDampingRotation": 0.8,
+                  "Stiffness": 0.2,
+                  "Radius": 3.0,
+                  "LimitAngle": 15.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -1000.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            }
+          ]
         }
       },
       "Fall": {
+        "enabled": false,
         "Appearances": {
           "DataTable": {
-            "ObjectName": "DataTable DT_NPCOutfitList",
+            "ObjectName": "DataTable'DT_NPCOutfitList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCOutfitList.0"
           },
           "RowName": "Fall"
@@ -181,78 +303,138 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Normal"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Spring/Raina_Default_Spring.Raina_Default_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Fall/Raina_Default_Fall.Raina_Default_Fall",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Annoyed"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Spring/Raina_Annoyed_Spring.Raina_Annoyed_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Fall/Raina_Annoyed_Fall.Raina_Annoyed_Fall",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Concerned"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Spring/Raina_Concerned_Spring.Raina_Concerned_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Fall/Raina_Concerned_Fall.Raina_Concerned_Fall",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Happy"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Spring/Raina_Happy_Spring.Raina_Happy_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Fall/Raina_Happy_Fall.Raina_Happy_Fall",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Surprised"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Spring/Raina_Surprised_Spring.Raina_Surprised_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Fall/Raina_Surprised_Fall.Raina_Surprised_Fall",
               "SubPathString": ""
             }
           }
         ],
         "SkeletalMeshes": {
-          "AssetPathName": "None",
+          "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Optimized/FallWinter/SK_Raina_FallWinter_V2_1.SK_Raina_FallWinter_V2_1",
           "SubPathString": ""
+        },
+        "StaticMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Optimized/FallWinter/SM_Raina_FallWinter.SM_Raina_FallWinter",
+          "SubPathString": ""
+        },
+        "dialogPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScale": 1.0,
+        "dialogPortraitPositionForPortraitMode": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScaleForPortraitMode": 1.0,
+        "relationshipPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "relationshipPortraitScale": 1.0,
+        "kawaiiPhysicsSetting": {
+          "physicsSettingMap": [
+            {
+              "BackHair": {
+                "physicsSetting": {
+                  "Damping": 0.1,
+                  "WorldDampingLocation": 0.8,
+                  "WorldDampingRotation": 0.8,
+                  "Stiffness": 0.2,
+                  "Radius": 3.0,
+                  "LimitAngle": 30.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -1000.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            },
+            {
+              "HairFront": {
+                "physicsSetting": {
+                  "Damping": 0.1,
+                  "WorldDampingLocation": 0.8,
+                  "WorldDampingRotation": 0.8,
+                  "Stiffness": 0.2,
+                  "Radius": 3.0,
+                  "LimitAngle": 15.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -1000.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            }
+          ]
         }
       },
       "Winter": {
+        "enabled": false,
         "Appearances": {
           "DataTable": {
-            "ObjectName": "DataTable DT_NPCOutfitList",
+            "ObjectName": "DataTable'DT_NPCOutfitList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCOutfitList.0"
           },
           "RowName": "Winter"
@@ -261,78 +443,138 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Normal"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Spring/Raina_Default_Spring.Raina_Default_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Winter/Raina_Default_Winter.Raina_Default_Winter",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Annoyed"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Spring/Raina_Annoyed_Spring.Raina_Annoyed_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Winter/Raina_Annoyed_Winter.Raina_Annoyed_Winter",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Concerned"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Spring/Raina_Concerned_Spring.Raina_Concerned_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Winter/Raina_Concerned_Winter.Raina_Concerned_Winter",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Happy"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Spring/Raina_Happy_Spring.Raina_Happy_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Winter/Raina_Happy_Winter.Raina_Happy_Winter",
               "SubPathString": ""
             }
           },
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Surprised"
             },
             "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Spring/Raina_Surprised_Spring.Raina_Surprised_Spring",
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Portraits/Winter/Raina_Surprised_Winter.Raina_Surprised_Winter",
               "SubPathString": ""
             }
           }
         ],
         "SkeletalMeshes": {
-          "AssetPathName": "None",
+          "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Optimized/FallWinter/SK_Raina_FallWinter_V2_1.SK_Raina_FallWinter_V2_1",
           "SubPathString": ""
+        },
+        "StaticMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Raina/Optimized/FallWinter/SM_Raina_FallWinter.SM_Raina_FallWinter",
+          "SubPathString": ""
+        },
+        "dialogPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScale": 1.0,
+        "dialogPortraitPositionForPortraitMode": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScaleForPortraitMode": 1.0,
+        "relationshipPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "relationshipPortraitScale": 1.0,
+        "kawaiiPhysicsSetting": {
+          "physicsSettingMap": [
+            {
+              "BackHair": {
+                "physicsSetting": {
+                  "Damping": 0.1,
+                  "WorldDampingLocation": 0.8,
+                  "WorldDampingRotation": 0.8,
+                  "Stiffness": 0.2,
+                  "Radius": 3.0,
+                  "LimitAngle": 30.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -1000.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            },
+            {
+              "HairFront": {
+                "physicsSetting": {
+                  "Damping": 0.1,
+                  "WorldDampingLocation": 0.8,
+                  "WorldDampingRotation": 0.8,
+                  "Stiffness": 0.2,
+                  "Radius": 3.0,
+                  "LimitAngle": 15.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -1000.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            }
+          ]
         }
       },
       "BathingSuit": {
+        "enabled": false,
         "Appearances": {
           "DataTable": {
-            "ObjectName": "DataTable DT_NPCOutfitList",
+            "ObjectName": "DataTable'DT_NPCOutfitList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCOutfitList.0"
           },
           "RowName": "BathingSuit"
@@ -341,7 +583,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Normal"
@@ -354,7 +596,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Annoyed"
@@ -367,7 +609,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Blushing"
@@ -380,7 +622,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Concerned"
@@ -393,7 +635,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Happy"
@@ -406,7 +648,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Angry"
@@ -419,7 +661,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Sad"
@@ -432,7 +674,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Surprised"
@@ -446,12 +688,35 @@
         "SkeletalMeshes": {
           "AssetPathName": "None",
           "SubPathString": ""
+        },
+        "StaticMesh": {
+          "AssetPathName": "None",
+          "SubPathString": ""
+        },
+        "dialogPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScale": 1.0,
+        "dialogPortraitPositionForPortraitMode": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScaleForPortraitMode": 1.0,
+        "relationshipPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "relationshipPortraitScale": 1.0,
+        "kawaiiPhysicsSetting": {
+          "physicsSettingMap": []
         }
       },
       "BeachCleanUp": {
+        "enabled": false,
         "Appearances": {
           "DataTable": {
-            "ObjectName": "DataTable DT_NPCOutfitList",
+            "ObjectName": "DataTable'DT_NPCOutfitList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCOutfitList.0"
           },
           "RowName": "BeachCleanUp"
@@ -460,7 +725,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Normal"
@@ -473,7 +738,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Annoyed"
@@ -486,7 +751,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Blushing"
@@ -499,7 +764,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Concerned"
@@ -512,7 +777,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Happy"
@@ -525,7 +790,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Angry"
@@ -538,7 +803,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Sad"
@@ -551,7 +816,7 @@
           {
             "EmotionRow": {
               "DataTable": {
-                "ObjectName": "DataTable DT_EmotionList",
+                "ObjectName": "DataTable'DT_EmotionList'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
               },
               "RowName": "Surprised"
@@ -565,6 +830,28 @@
         "SkeletalMeshes": {
           "AssetPathName": "None",
           "SubPathString": ""
+        },
+        "StaticMesh": {
+          "AssetPathName": "None",
+          "SubPathString": ""
+        },
+        "dialogPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScale": 1.0,
+        "dialogPortraitPositionForPortraitMode": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScaleForPortraitMode": 1.0,
+        "relationshipPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "relationshipPortraitScale": 1.0,
+        "kawaiiPhysicsSetting": {
+          "physicsSettingMap": []
         }
       }
     }

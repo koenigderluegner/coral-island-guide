@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "Ultimate_Scarecrow_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -3.5,
+              "Y": 0.0,
+              "Z": 1.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 365.0,
+            "Y": 10.0,
+            "Z": 509.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "3A7406C2435BF465A7E360BFD541E43D"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Ultimate_Scarecrow_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 512.0,
+        "Y": 512.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Ultimate_Scarecrow'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/Misc/Decor_Outdoor_Misc_Textures/Ultimate_Scarecrow.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Ultimate_Scarecrow_Sprite:BodySetup_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/Misc/Ultimate_Scarecrow_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 179.0,
+          "Y": 256.0,
+          "Z": 0.8496094,
+          "W": 0.0
+        },
+        {
+          "X": -186.0,
+          "Y": 256.0,
+          "Z": 0.13671875,
+          "W": 0.0
+        },
+        {
+          "X": -186.0,
+          "Y": -253.0,
+          "Z": 0.13671875,
+          "W": 0.9941406
+        },
+        {
+          "X": 179.0,
+          "Y": -253.0,
+          "Z": 0.8496094,
+          "W": 0.9941406
+        },
+        {
+          "X": 179.0,
+          "Y": 256.0,
+          "Z": 0.8496094,
+          "W": 0.0
+        },
+        {
+          "X": -186.0,
+          "Y": -253.0,
+          "Z": 0.13671875,
+          "W": 0.9941406
+        }
+      ]
+    }
+  }
+]

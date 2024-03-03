@@ -1,0 +1,192 @@
+{
+  "item": {
+    "id": "item_32001",
+    "displayName": "羊毛",
+    "price": 240,
+    "sellPrice": 170,
+    "sellAt": [
+      "Sam"
+    ],
+    "stackable": true,
+    "inventoryCategory": "Animal product",
+    "displayKey": "AnimalProduct",
+    "description": "一绺绵羊的羊毛。带有绵羊油，摸起来柔软又细腻。",
+    "qualities": {
+      "bronze": {
+        "price": 280,
+        "sellPrice": 196
+      },
+      "silver": {
+        "price": 310,
+        "sellPrice": 221
+      },
+      "gold": {
+        "price": 360,
+        "sellPrice": 255
+      },
+      "osmium": {
+        "price": 480,
+        "sellPrice": 340
+      }
+    },
+    "iconName": "Wool_Sprite",
+    "tags": [
+      "income.ranching",
+      "item.townrank.1",
+      "item.animalproduct.wool"
+    ]
+  },
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_32001",
+          "displayName": "羊毛",
+          "iconName": "Wool_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_42011",
+          "displayName": "羊毛布",
+          "iconName": "Wool_Cloth_Sprite",
+          "sellPrice": 375
+        }
+      },
+      "genericInput": null,
+      "machine": "Loom"
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "SpecialityBased",
+      "offeringGroupTitle": "依赖专业技术",
+      "urlPath": "advancedaltar",
+      "offeringGroupRewardText": "解锁鲜花运输",
+      "offerings": [
+        {
+          "title": "畜棚动物",
+          "imageName": "Barn_Animals_Offerings",
+          "numOfItemRequired": -1,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_65018",
+                  "displayName": "压酪机",
+                  "iconName": "Cheese_Press_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "id": "item_31004",
+                "displayName": "牛奶",
+                "iconName": "Milk_Sprite_"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_31005",
+                "displayName": "山羊奶",
+                "iconName": "Goat_milk_Sprite_"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_32001",
+                "displayName": "羊毛",
+                "iconName": "Wool_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_31018",
+                "displayName": "山羊奶（大）",
+                "iconName": "Large_goat_milk_Sprite_"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_32009",
+                "displayName": "羊毛（大）",
+                "iconName": "Large_wool_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_31016",
+                "displayName": "牛奶（大）",
+                "iconName": "Large_milk_Sprite_"
+              },
+              "amount": 1,
+              "quality": "silver"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "producedByAnimal": {
+    "key": "Sheep",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Sheep_Sprite"
+        }
+      }
+    ],
+    "building": "Barn",
+    "daysToGrow": 10,
+    "harvestCooldown": 2,
+    "animalProduceType": "UsingTools",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65043",
+      "displayName": "羊毛剪",
+      "iconName": "Shears_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_32001",
+          "displayName": "羊毛",
+          "iconName": "Wool_Sprite"
+        },
+        "large": {
+          "id": "item_32009",
+          "displayName": "羊毛（大）",
+          "iconName": "Large_wool_Sprite"
+        }
+      }
+    ],
+    "displayName": "绵羊"
+  }
+}

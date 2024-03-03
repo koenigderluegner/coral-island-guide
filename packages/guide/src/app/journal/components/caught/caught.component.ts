@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { Critter, Fish, Season, Weather } from '@ci/data-types';
+import { Critter, Fish, Season, Seasons, Weather } from '@ci/data-types';
 import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page.component';
 import { getTruthyValues } from '@ci/util';
 import { FilterForm } from "../../../shared/types/filter-form.type";
 import { FormControl, FormGroup } from "@angular/forms";
-import { ChecklistCategory } from "../../../core/enums/checklist-category.enum";
+import { ToDoCategory } from "../../../core/enums/todo-category.enum";
 
 @Component({
     selector: 'app-caught',
@@ -17,11 +17,11 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
 
     constructor() {
         super(new FormGroup<FilterForm>({
-            season: new FormControl<Season[]>(Object.values(Season), {nonNullable: true}),
+            season: new FormControl<Season[]>([...Seasons], {nonNullable: true}),
             weather: new FormControl<string[]>(Object.values(Weather), {nonNullable: true}),
         }));
 
-        this.registerToChecklist = this.registerToChecklist.bind(this)
+        this.registerToToDo = this.registerToToDo.bind(this)
 
 
         this.tabs = [
@@ -53,14 +53,14 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
 
     }
 
-    override registerToChecklist(entry: Fish | Critter) {
+    override registerToToDo(entry: Fish | Critter) {
         if ('fishName' in entry) {
-            this._checklist.add(ChecklistCategory.JOURNAL_FISH, entry)
+            this._todo.add(ToDoCategory.JOURNAL_FISH, entry)
         } else {
             if ((this.matTabGroup?.selectedIndex === this.SEA_CRITTERS_INDEX)) {
-                this._checklist.add(ChecklistCategory.JOURNAL_CRITTER, entry)
+                this._todo.add(ToDoCategory.JOURNAL_CRITTER, entry)
             } else {
-                this._checklist.add(ChecklistCategory.JOURNAL_INSECTS, entry)
+                this._todo.add(ToDoCategory.JOURNAL_INSECTS, entry)
             }
         }
     }
@@ -70,16 +70,28 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
         if (!filterValues.weather?.length) return false;
 
 
-        const seasonString = getTruthyValues(foundEntry.spawnSeason).toLowerCase();
-        const seasonMatch = seasonString === 'any'
-            || filterValues.season?.length === Object.values(Season).length
-            || !!filterValues.season?.some(season => seasonString.includes(('' + season).toLowerCase()));
+        const spawnSeason = 'spawnSettings' in foundEntry ? foundEntry.spawnSettings.map(s => s.spawnSeason) : [foundEntry.spawnSeason];
+        const spawnWeather = 'spawnSettings' in foundEntry ? foundEntry.spawnSettings.map(s => s.spawnWeather) : [foundEntry.spawnWeather];
 
-        const weatherString = getTruthyValues(foundEntry.spawnWeather).toLowerCase();
-        const weatherMatch = (index === this.SEA_CRITTERS_INDEX)
-            || weatherString === 'any'
-            || filterValues.weather?.length === Object.values(Weather).length
-            || !!filterValues.weather?.some(weather => weatherString.includes(('' + weather).toLowerCase()));
+
+        const seasonMatch = spawnSeason.reduce((previousValue, currentValue) => {
+            const seasonString = getTruthyValues(currentValue).toLowerCase();
+            const match = seasonString === 'any'
+                || filterValues.season?.length === Seasons.length
+                || !!filterValues.season?.some(season => seasonString.includes(('' + season).toLowerCase()));
+
+            return previousValue || match
+        }, false)
+
+        const weatherMatch = spawnWeather.reduce((previousValue, currentValue) => {
+            const weatherString = getTruthyValues(currentValue).toLowerCase();
+            const match = (index === this.SEA_CRITTERS_INDEX)
+                || weatherString === 'any'
+                || filterValues.weather?.length === Object.values(Weather).length
+                || !!filterValues.weather?.some(weather => weatherString.includes(('' + weather).toLowerCase()));
+            return previousValue || match
+        }, false);
+
         return seasonMatch && weatherMatch;
 
     }

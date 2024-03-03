@@ -21,7 +21,16 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { JournalModule } from '../journal/journal.module';
 import { CraftingModule } from '../crafting/crafting.module';
 import { DatabaseOfferingsComponent } from './components/database-offerings/database-offerings.component';
-import { LocationsModule } from "../locations/locations.module";
+import { LocationsModule } from '../locations/locations.module';
+import { DatabaseShopDataComponent } from './components/database-shop-data/database-shop-data.component';
+import { DatabaseShopItemProcessComponent } from './components/database-shop-item-process/database-shop-item-process.component';
+import { DatabaseItemUpgradeComponent } from './components/database-item-upgrade/database-item-upgrade.component';
+import { DatabaseBestiaryComponent } from './components/database-bestiary/database-bestiary.component';
+import { MatButtonModule } from '@angular/material/button';
+import { DatabaseHeaderButtonComponent } from './components/database-header-button/database-header-button.component';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { DatabaseFestivalShopDataComponent } from './components/database-festival-shop-data/database-festival-shop-data.component';
 
 @NgModule({
     declarations: [
@@ -38,6 +47,12 @@ import { LocationsModule } from "../locations/locations.module";
         DatabaseGiftsComponent,
         BaseDatabaseDetailPartComponent,
         DatabaseOfferingsComponent,
+        DatabaseShopDataComponent,
+        DatabaseShopItemProcessComponent,
+        DatabaseItemUpgradeComponent,
+        DatabaseBestiaryComponent,
+        DatabaseHeaderButtonComponent,
+        DatabaseFestivalShopDataComponent,
     ],
     imports: [
         CommonModule,
@@ -50,6 +65,9 @@ import { LocationsModule } from "../locations/locations.module";
         JournalModule,
         CraftingModule,
         LocationsModule,
+        MatButtonModule,
+        MatSortModule,
+        MatTableModule,
     ],
 })
 export class DatabaseModule {

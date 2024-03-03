@@ -1,14 +1,14 @@
-import { Item } from "@ci/data-types";
-import { Season } from "../enums/season.enum";
+import { MinimalItem } from "@ci/data-types";
+import { Season } from "../types/season.type";
 
 export interface BaseCrop {
     key: string;
-    item: Item;
+    item: MinimalItem & { price: number };
     growableSeason: Season[],
     dropData:
         {
             itemId: string;
-            item?: Item;
+            item: MinimalItem & { sellPrice: number };
             dropChance: number,
             dropRange: {
                 min: number,

@@ -1,0 +1,60 @@
+<app-list-detail-container [(openDrawer)]="openDrawer">
+    <ng-container listDetail>
+        @if (selectedEntity) {
+            <app-festival-shop-item-details [festivalShopItemData]="selectedEntity"/>
+        }
+    </ng-container>
+
+    <div class="px-2 xl:px-[50px] w-full">
+        @if (festivalData$ | async; as festivalData) {
+
+            @if (festivalData !== null && festivalName) {
+
+                <app-card>
+                    <h1 class="mb-4 font-semibold text-3xl text-black flex items-center gap-x-4 ">
+                        <app-ui-icon [uiIcon]="FESTIVAL_ICONS[festivalName]"/>
+                        {{ FESTIVAL_DISPLAY_NAMES[festivalName] }}
+                    </h1>
+                </app-card>
+
+                @if (festivalData.shops) {
+
+                    @for (shop of festivalData.shops; track shop) {
+
+                        <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">{{ shop.title }}</h2>
+
+                        <app-data-filter [(showTable)]="showTable"/>
+                        @if (!showTable) {
+                            <div class="grid gap-4 icon-grid">
+
+                                @for (shopItem of shop.shop; track shopItem) {
+                                    <app-item-icon (click)="showDetails(shopItem)"
+
+                                                   [amount]="shopItem.festivalSetting.hasYearlyLimit ? shopItem.festivalSetting.itemLimitPerYear : undefined"
+                                                   [class.selected-icon]="selectedEntity?.item?.id === shopItem.item.id"
+                                                   [itemName]="shopItem.item.iconName"
+                                                   class="icon-grid-item">
+                                    </app-item-icon>
+                                }
+                            </div>
+                        }
+                        @if (showTable) {
+                            <app-festival-shop-item-table [dataSource]="shop.shop"/>
+                        }
+
+
+                    }
+
+                }
+
+
+            }
+            @if (festivalData === null) {
+                <mat-spinner class="mx-auto"></mat-spinner>
+            }
+
+        }
+
+
+    </div>
+</app-list-detail-container>

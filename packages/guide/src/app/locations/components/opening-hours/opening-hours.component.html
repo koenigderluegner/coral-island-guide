@@ -1,0 +1,38 @@
+@for (keyValuePair of openingHours | keyvalue; track keyValuePair) {
+    <div>
+        <div class="font-semibold text-xl">{{ keyValuePair.key }}</div>
+        <div class="grid grid-cols-2 gap-2">
+            @if (keyValuePair.value.isCoreOnlyWeekdays || keyValuePair.value.isCoreEveryDay) {
+
+                <div> {{ keyValuePair.value.isCoreEveryDay ? 'Every day' : 'Weekdays' }}:</div>
+                <div>{{ keyValuePair.value.coreOpeningHours.from | ingameTime }}-{{
+                        keyValuePair.value.coreOpeningHours.to | ingameTime
+                    }}
+                </div>
+
+            }
+            @if (!keyValuePair.value.isCoreOnlyWeekdays && !keyValuePair.value.isCoreEveryDay) {
+
+                <div> {{ shortenWeekdays(keyValuePair.value.coreOpeningDays).join(', ') }}:</div>
+                <div> {{ keyValuePair.value.coreOpeningHours.from | ingameTime }}-{{
+                        keyValuePair.value.coreOpeningHours.to | ingameTime
+                    }}
+                </div>
+
+            }
+            @if (keyValuePair.value.dayOfTheWeekSpecificOpeningHours) {
+
+                @for (specificKeyValuePair of keyValuePair.value.dayOfTheWeekSpecificOpeningHours | keyvalue; track specificKeyValuePair) {
+
+                    <div> {{ specificKeyValuePair.key }}:</div>
+                    <div> {{ specificKeyValuePair.value.from | ingameTime }}-{{
+                            specificKeyValuePair.value.to | ingameTime
+                        }}
+                    </div>
+
+                }
+
+            }
+        </div>
+    </div>
+}

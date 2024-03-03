@@ -11,6 +11,7 @@ export class ProcessorComponent extends BaseTabbedSelectableContainerComponent<I
 
     quality = Quality;
     machineNames: string[] = [];
+    protected processorMapping = this._database.getProcessorMapping()
 
     constructor() {
         super();
@@ -21,6 +22,16 @@ export class ProcessorComponent extends BaseTabbedSelectableContainerComponent<I
             }
         });
 
+    }
+
+    override urlPathFromLabel = (label: string) => {
+
+        const foundKey = Object.keys(this.processorMapping).find(key => this.processorMapping[key].displayName === label);
+        if (foundKey) {
+            return foundKey
+        }
+
+        return label.toLowerCase().replaceAll(' ', '')
     }
 
     filteredData$(maschineName: string): Observable<ItemProcessing[]> {

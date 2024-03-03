@@ -21,6 +21,31 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CropTableComponent } from './components/tables/crop-table/crop-table.component';
+import { AchievementsComponent } from './components/achievements/achievements.component';
+import { NotesComponent } from './components/notes/notes.component';
+import { MailDetailsComponent } from './components/mail-details/mail-details.component';
+import { MailTableComponent } from './components/tables/mail-table/mail-table.component';
+import { TornPagesTableComponent } from './components/tables/torn-pages-table/torn-pages-table.component';
+import { TornPageDetailsComponent } from './components/torn-page-details/torn-page-details.component';
+import { LocationsModule } from '../locations/locations.module';
+import { MailComponent } from './components/mail/mail.component';
+import { MatButtonModule } from '@angular/material/button';
+import { TornPageComponent } from './components/torn-page/torn-page.component';
+import { BestiaryComponent } from './components/bestiary/bestiary.component';
+import { BestiaryDetailsComponent } from './components/bestiary-details/bestiary-details.component';
+import { BestiaryTableComponent } from './components/tables/bestiary-table/bestiary-table.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { BestiaryImageComponent } from './components/bestiary-image/bestiary-image.component';
+import { DatabaseItemDetailsComponent } from "../shared/components/database-item-details/database-item-details.component";
+import { FishComponent } from "../shared/components/database-item-details/fish/fish.component";
+import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-case.pipe";
+import { InsectComponent } from "../shared/components/database-item-details/insect/insect.component";
+import { DatabaseItemDetailsDirective } from "../shared/directives/database-item-details.directive";
+import { ShopProcessingResultComponent } from "../shared/components/database-item-details/shop-processing-result/shop-processing-result.component";
+import { CropComponent } from "../shared/components/database-item-details/crop/crop.component";
+import { ProcessingComponent } from "../shared/components/database-item-details/processing/processing.component";
+import { AnimalProduceComponent } from "../shared/components/database-item-details/animal-produce/animal-produce.component";
+import { FoundComponent as DbItemFound } from "../shared/components/database-item-details/found/found.component";
 
 @NgModule({
     declarations: [
@@ -35,6 +60,18 @@ import { CropTableComponent } from './components/tables/crop-table/crop-table.co
         FoundTableComponent,
         ProduceTableComponent,
         CropTableComponent,
+        AchievementsComponent,
+        NotesComponent,
+        MailDetailsComponent,
+        MailTableComponent,
+        TornPagesTableComponent,
+        TornPageDetailsComponent,
+        MailComponent,
+        TornPageComponent,
+        BestiaryComponent,
+        BestiaryDetailsComponent,
+        BestiaryTableComponent,
+        BestiaryImageComponent,
     ],
     imports: [
         CommonModule,
@@ -48,8 +85,21 @@ import { CropTableComponent } from './components/tables/crop-table/crop-table.co
         MatFormFieldModule,
         MatSelectModule,
         ReactiveFormsModule,
+        LocationsModule,
+        MatButtonModule,
+        MatTooltipModule,
+        DatabaseItemDetailsComponent,
+        FishComponent,
+        AddSpacesToPascalCasePipe,
+        InsectComponent,
+        DatabaseItemDetailsDirective,
+        ShopProcessingResultComponent,
+        CropComponent,
+        ProcessingComponent,
+        AnimalProduceComponent,
+        DbItemFound,
     ],
-    exports: [CaughtDetailsComponent, CaughtTableComponent, CropTableComponent],
+    exports: [CaughtDetailsComponent, CaughtTableComponent, CropTableComponent, BestiaryTableComponent],
 })
 export class JournalModule {
 }

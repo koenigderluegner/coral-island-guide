@@ -1,0 +1,11 @@
+@for (i of itemProcessData; track i.input.id) {
+    <div class="flex justify-between py-1">
+        <div class="flex gap-x-3 items-center">
+            <app-item-icon [itemName]="i.input.iconName" class="w-10"/>
+            <span>{{ i.input.displayName }}</span>
+        </div>
+
+        <div class="flex items-center">{{ i.outputChanges[0]?.chance }}%</div>
+    </div>
+    <hr>
+}

@@ -1,0 +1,78 @@
+<app-responsive-table>
+    <table [dataSource]="productSizeByMood" mat-table multiTemplateDataRows>
+
+        <ng-container matColumnDef="hearts">
+            <th *matHeaderCellDef [attr.rowspan]="2" class="backdrop-blur-xl" mat-header-cell>Hearts /
+                size per mood
+            </th>
+            <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
+                {{ element.heartLevel }} heart(s)
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="bad">
+            <th *matHeaderCellDef [attr.colspan]="2" class="backdrop-blur-xl justify-center" mat-header-cell
+            >Bad
+            </th>
+        </ng-container>
+
+        <ng-container matColumnDef="neutral">
+            <th *matHeaderCellDef [attr.colspan]="2" class="backdrop-blur-xl justify-center" mat-header-cell
+            >Neutral
+            </th>
+        </ng-container>
+
+        <ng-container matColumnDef="happy">
+            <th *matHeaderCellDef [attr.colspan]="2" class="backdrop-blur-xl justify-center" mat-header-cell
+            >Happy
+            </th>
+        </ng-container>
+
+        <ng-container matColumnDef="badSmall">
+
+            <th *matHeaderCellDef class="backdrop-blur-xl" mat-header-cell>Small</th>
+            <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
+                {{ element.bad.small }} %
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="badLarge">
+            <th *matHeaderCellDef class="backdrop-blur-xl" mat-header-cell>Large</th>
+            <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
+                {{ element.bad.large }} %
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="neutralSmall">
+            <th *matHeaderCellDef class="backdrop-blur-xl" mat-header-cell>Small</th>
+            <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
+                {{ element.neutral.small }} %
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="neutralLarge">
+            <th *matHeaderCellDef class="backdrop-blur-xl" mat-header-cell>Large</th>
+            <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
+                {{ element.neutral.large }} %
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="happySmall">
+            <th *matHeaderCellDef class="backdrop-blur-xl" mat-header-cell>Small</th>
+            <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
+                {{ element.happy.small }} %
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="happyLarge">
+            <th *matHeaderCellDef class="backdrop-blur-xl" mat-header-cell>Large</th>
+            <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
+                {{ element.happy.large }} %
+            </td>
+        </ng-container>
+
+        <tr *matHeaderRowDef="['hearts', 'bad' ,'neutral' , 'happy']; sticky: true" mat-header-row></tr>
+        <tr *matHeaderRowDef="displayHeaderColumns | slice: 1; sticky: true" mat-header-row></tr>
+        <tr *matRowDef="let row; columns: displayHeaderColumns;" mat-row></tr>
+    </table>
+</app-responsive-table>

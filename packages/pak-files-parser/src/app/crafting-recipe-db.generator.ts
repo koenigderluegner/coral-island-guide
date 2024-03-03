@@ -1,7 +1,8 @@
-import { readAsset } from '../util/functions';
+import { minifyItem, readAsset } from '../util/functions';
 import { CraftingRecipes } from '../types/crafting-recipes.type';
 import { RawCraftingRecipe } from '../interfaces/crafting-recipe.interface';
 import { CraftingRecipe, Item, UnlockByMastery } from '@ci/data-types';
+import { nonNullable } from "@ci/util";
 
 export class CraftingRecipeDbGenerator {
 
@@ -23,10 +24,16 @@ export class CraftingRecipeDbGenerator {
                 key: itemKey,
                 displayName: dbItem.readableName,
                 amount: dbItem.amount,
-                ingredients: dbItem.ingredients.map(ingredient => {
-                    const item = this.itemMap.get(ingredient.item.itemID);
-                    return {item, amount: ingredient.amount};
-                }),
+                ingredients: dbItem.ingredients
+                    .map(ingredient => {
+                        const item = this.itemMap.get(ingredient.item.itemID);
+                        if (!item) {
+                            console.log(`Cant find ingredient ${ingredient.item.itemID} for crafting recipe ${itemKey}`)
+                            return;
+                        }
+                        return {item: minifyItem(item), amount: ingredient.amount};
+                    })
+                    .filter(nonNullable),
                 genericIngredients: dbItem.genericIngredients.map(gi => {
                     return {key: gi.genericItem.RowName, amount: gi.amount, shouldBeSameItem: gi.shouldBeSameItem};
                 }),

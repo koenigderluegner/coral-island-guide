@@ -20,10 +20,9 @@ export abstract class BaseTableComponent<T> implements OnInit, OnChanges, AfterV
         this.sortHelper = this.sortHelper.bind(this);
     }
 
-    private _dataSource: T[] = [];
+    protected _dataSource: T[] = [];
 
-    @Input()
-
+    @Input({required: true})
     public get dataSource(): T[] {
         return this._dataSource;
     }
@@ -56,20 +55,21 @@ export abstract class BaseTableComponent<T> implements OnInit, OnChanges, AfterV
     protected setupDataSource(dataSource: T[]) {
         this.matDataSource = new MatTableDataSource(dataSource);
         this.displayedColumns = [...this.BASE_DISPLAY_COLUMNS];
-        this.displayedColumns = [...this.BASE_DISPLAY_COLUMNS];
 
         this.displayHeaderColumns = this.displayedColumns.filter(column => column !== 'icon')
     }
 
-    protected sortHelper<T extends MinimalItem & { sellPrice?: number }>(item: T | undefined | Season[], property?: string): string | number | null {
+    protected sortHelper<T extends MinimalItem & {
+        sellPrice?: number
+    }>(item: T | undefined | Season[], property?: string): string | number | null {
 
         if (!item) return null;
 
         if (Array.isArray(item)) {
-            if (item.includes(Season.SPRING)) return 1;
-            if (item.includes(Season.SUMMER)) return 2;
-            if (item.includes(Season.FALL)) return 3;
-            if (item.includes(Season.WINTER)) return 4;
+            if (item.includes("Spring")) return 1;
+            if (item.includes("Summer")) return 2;
+            if (item.includes("Fall")) return 3;
+            if (item.includes("Fall")) return 4;
             return 5;
         }
 

@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Baby_Goat_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 3.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 126.0,
+            "Y": 10.0,
+            "Z": 86.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "DE3F1AF141EC653A1EE879A50679F8A5"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Baby_Goat_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Baby_Goat'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Textures/Baby_Goat.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Baby_Goat_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Baby_Goat_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 63.0,
+          "Y": 46.0,
+          "Z": 0.9921875,
+          "W": 0.140625
+        },
+        {
+          "X": -63.0,
+          "Y": 46.0,
+          "Z": 0.0078125,
+          "W": 0.140625
+        },
+        {
+          "X": -63.0,
+          "Y": -40.0,
+          "Z": 0.0078125,
+          "W": 0.8125
+        },
+        {
+          "X": 63.0,
+          "Y": -40.0,
+          "Z": 0.9921875,
+          "W": 0.8125
+        },
+        {
+          "X": 63.0,
+          "Y": 46.0,
+          "Z": 0.9921875,
+          "W": 0.140625
+        },
+        {
+          "X": -63.0,
+          "Y": -40.0,
+          "Z": 0.0078125,
+          "W": 0.8125
+        }
+      ]
+    }
+  }
+]

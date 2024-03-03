@@ -1,0 +1,34 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NPCsComponent } from './npcs.component';
+import { SharedModule } from '../shared/shared.module';
+import { GiftingComponent } from './components/gifting/gifting.component';
+import { NPCsRoutingModule } from './npcs-routing.module';
+import { NpcListComponent } from './components/npc-list/npc-list.component';
+import { NpcComponent } from './components/npc/npc.component';
+import { HeartEventsComponent } from './components/heart-events/heart-events.component';
+import { HeartEventTriggerComponent } from './components/heart-event-trigger/heart-event-trigger.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { GiftingGridComponent } from './components/gifting-grid/gifting-grid.component';
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-case.pipe";
+import { MatFormField, MatLabel } from "@angular/material/form-field";
+import { ReactiveFormsModule } from "@angular/forms";
+import { MatInput } from "@angular/material/input";
+import { MatOption } from "@angular/material/autocomplete";
+import { MatSelect } from "@angular/material/select";
+
+@NgModule({
+    declarations: [
+        NPCsComponent,
+        GiftingComponent,
+        NpcListComponent,
+        NpcComponent,
+        HeartEventsComponent,
+        HeartEventTriggerComponent,
+        GiftingGridComponent,
+    ],
+    imports: [CommonModule, NPCsRoutingModule, SharedModule, MatTooltipModule, MatProgressSpinnerModule, AddSpacesToPascalCasePipe, MatFormField, ReactiveFormsModule, MatInput, MatLabel, MatOption, MatSelect],
+})
+export class NPCsModule {
+}

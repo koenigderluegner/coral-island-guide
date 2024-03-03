@@ -1,11 +1,13 @@
 import { BaseGenerator } from "./base-generator.class";
 import { Datatable } from "../interfaces/datatable.interface";
-import { getReferencedString, minifyItem, readAsset } from "../util/functions";
-import { RawOffering } from "../interfaces/raw-offering.interface";
-import { CookingRecipe, Item, Offerings } from "@ci/data-types";
+import { AssetPathNameToIcon, minifyItem, minifyTagBasedItem, readAsset } from "../util/functions";
+import { RawOffering } from "../interfaces/raw-data-interfaces/raw-offering.interface";
+import { CookingRecipe, Item, Offerings, TagBasedItem } from "@ci/data-types";
 import { getQuality, nonNullable, removeQualityFlag } from "@ci/util";
 import { OfferingRewardsDbGenerator } from "./offering-rewards-db.generator";
 import { OfferingMatch } from "../interfaces/offering-match.interface";
+import { StringTable } from "../util/string-table.class";
+import { Logger } from "../util/logger.class";
 
 export class OfferingDetailsDbGenerator extends BaseGenerator<RawOffering, Offerings> {
 
@@ -13,7 +15,7 @@ export class OfferingDetailsDbGenerator extends BaseGenerator<RawOffering, Offer
     private offeringMatches: OfferingMatch[];
 
 
-    constructor(protected itemMap: Map<string, Item>, protected cookingMap: Map<string, Record<string, CookingRecipe[]>>) {
+    constructor(protected itemMap: Map<string, Item>, protected cookingMap: Map<string, Record<string, CookingRecipe[]>>, protected tagBasedItems: Map<string, TagBasedItem>) {
         super();
         const offeringRewardsDbGenerator = new OfferingRewardsDbGenerator(itemMap, cookingMap);
         this.offeringMatches = [...offeringRewardsDbGenerator.generate().values()];
@@ -27,9 +29,10 @@ export class OfferingDetailsDbGenerator extends BaseGenerator<RawOffering, Offer
             offeringMatch = this.offeringMatches.find(ab => ab.key === itemKey);
         }
 
+        const title = StringTable.getString(dbItem.offeringTitleText);
         return {
-            title: dbItem.offeringTitleText.SourceString,
-            imageName: getReferencedString(dbItem.offeringImage.ObjectName),
+            title: title ?? '',
+            imageName: AssetPathNameToIcon(dbItem.offeringImage.AssetPathName),
             numOfItemRequired: dbItem.numOfItemRequired,
             rewards: offeringMatch?.rewards ?? {
                 items: [],
@@ -37,14 +40,32 @@ export class OfferingDetailsDbGenerator extends BaseGenerator<RawOffering, Offer
             },
             requiredItems: dbItem.requiredItems
                 .map(requiredItem => {
-                    const itemKey = requiredItem.itemData.itemID;
-                    const item = this.itemMap.get(removeQualityFlag(itemKey));
-                    if (!item) return;
-                    const quality = getQuality(itemKey);
-                    return {
-                        item: minifyItem(item),
-                        amount: requiredItem.itemQuantity,
-                        quality
+
+                    if (requiredItem.useGenericItem) {
+                        const tagBasedItemKey = requiredItem.genericItem.genericItem.RowName;
+                        const tagBasedItem = this.tagBasedItems.get(tagBasedItemKey);
+                        if (!tagBasedItem) {
+                            Logger.error(`Can't find tag based item ${tagBasedItemKey} for offering ${title}`)
+                            return;
+                        }
+                        return {
+                            item: minifyTagBasedItem(tagBasedItem),
+                            amount: requiredItem.genericItem.amount
+                        }
+                    } else {
+
+                        const itemKey = requiredItem.itemData.itemID;
+                        const item = this.itemMap.get(removeQualityFlag(itemKey));
+                        if (!item) {
+                            Logger.error(`Can't find  item ${itemKey} for offering ${title}`)
+                            return;
+                        }
+                        const quality = getQuality(itemKey);
+                        return {
+                            item: minifyItem(item),
+                            amount: requiredItem.itemQuantity,
+                            quality
+                        }
                     }
                 })
                 .filter(nonNullable),

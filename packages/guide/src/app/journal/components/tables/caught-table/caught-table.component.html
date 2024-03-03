@@ -1,55 +1,78 @@
 <app-responsive-table>
-    <table mat-table *ngIf="matDataSource" [dataSource]="matDataSource" matSort>
-        <ng-container matColumnDef="icon" sticky>
-            <td mat-cell *matCellDef="let element" class="!px-2 ">
-                <app-item-icon class="mx-2" [itemName]="element.item.iconName"></app-item-icon>
-            </td>
-        </ng-container>
+    @if (matDataSource) {
+        <table mat-table [dataSource]="matDataSource" matSort>
+            <ng-container matColumnDef="icon" sticky>
+                <td mat-cell *matCellDef="let element" class="!px-2 ">
+                    <app-item-icon class="mx-2" [itemName]="element.item.iconName"></app-item-icon>
+                </td>
+            </ng-container>
 
-        <ng-container matColumnDef="key">
-            <th *matHeaderCellDef [attr.colspan]="2" mat-header-cell mat-sort-header> Name</th>
-            <td mat-cell *matCellDef="let element">{{element.item.displayName}} </td>
-        </ng-container>
+            <ng-container matColumnDef="key">
+                <th *matHeaderCellDef [attr.colspan]="2" mat-header-cell mat-sort-header> Name</th>
+                <td mat-cell *matCellDef="let element">{{ element.item.displayName }}</td>
+            </ng-container>
 
-        <ng-container matColumnDef="rarity">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Rarity</th>
-            <td mat-cell *matCellDef="let element">{{addSpacesToPascalCase(element.rarity)}} </td>
-        </ng-container>
-        <ng-container matColumnDef="location">
-            <th mat-header-cell *matHeaderCellDef> Location</th>
-            <td mat-cell *matCellDef="let element">{{element.spawnLocation.join(', ')}} </td>
-        </ng-container>
+            <ng-container matColumnDef="rarity">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Rarity</th>
+                <td mat-cell *matCellDef="let element">{{ addSpacesToPascalCase(element.rarity) }}</td>
+            </ng-container>
+            <ng-container matColumnDef="location">
+                <th mat-header-cell *matHeaderCellDef> Location</th>
+                <td mat-cell
+                    *matCellDef="let element">{{ ((element | isFish) ? element.spawnSettings[0] : element).spawnLocation.join(', ') }}
+                </td>
+            </ng-container>
 
-        <ng-container matColumnDef="weather">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Weather</th>
-            <td mat-cell *matCellDef="let element">{{getTruthyValues(element.spawnWeather)}} </td>
-        </ng-container>
+            <ng-container matColumnDef="weather">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Weather</th>
+                <td mat-cell
+                    *matCellDef="let element">{{ getTruthyValues(((element | isFish) ? element.spawnSettings[0] : element).spawnWeather) }}
+                </td>
+            </ng-container>
 
-        <ng-container matColumnDef="season">
-            <th mat-header-cell *matHeaderCellDef> Season</th>
-            <td mat-cell *matCellDef="let element">
-                <ng-container
-                        *ngIf="!element.isUsingSpecificDate">{{getTruthyValues(element.spawnSeason)}}</ng-container>
-                <ng-container *ngIf="element.isUsingSpecificDate">
-                    <div class="whitespace-nowrap"
-                         *ngFor="let rage of dateRangesToString(element.dateRangeList); let last = last ">{{rage}}{{!last ? ', ' : ''}}
-                    </div>
-                </ng-container>
+            <ng-container matColumnDef="season">
+                <th mat-header-cell *matHeaderCellDef> Season</th>
+                <td mat-cell *matCellDef="let element">
+                    @if (!((element | isFish) ? element.spawnSettings[0] : element).isUsingSpecificDate) {
+                        {{ getTruthyValues(((element | isFish) ? element.spawnSettings[0] : element).spawnSeason) }}
+                    }
+                    @if (((element | isFish) ? element.spawnSettings[0] : element).isUsingSpecificDate) {
 
-            </td>
-        </ng-container>
+                        @for (rage of dateRangesToString(((element | isFish) ? element.spawnSettings[0] : element).dateRangeList); track rage; let last = $last) {
+                            <div class="whitespace-nowrap"
+                            >{{ rage }}{{ !last ? ', ' : '' }}
+                            </div>
+                        }
 
-        <ng-container matColumnDef="time">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Time</th>
-            <td mat-cell *matCellDef="let element">{{getTruthyValues(element.spawnTime)}} </td>
-        </ng-container>
+                    }
 
-        <ng-container matColumnDef="fishSize">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Size</th>
-            <td mat-cell *matCellDef="let element">{{element.fishSize}} </td>
-        </ng-container>
+                </td>
+            </ng-container>
 
-        <tr *matHeaderRowDef="displayHeaderColumns; sticky: true" mat-header-row></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+            <ng-container matColumnDef="time">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Time</th>
+                <td mat-cell
+                    *matCellDef="let element">{{ getTruthyValues(((element | isFish) ? element.spawnSettings[0] : element).spawnTime) }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="fishSize">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Size</th>
+                <td mat-cell *matCellDef="let element">{{ element.fishSize }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="pattern">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Pattern</th>
+                <td mat-cell *matCellDef="let element">{{ element.pattern }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="difficulty">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Difficulty</th>
+                <td mat-cell *matCellDef="let element">{{ element.difficulty | addSpacesToPascalCase }}</td>
+            </ng-container>
+
+            <tr *matHeaderRowDef="displayHeaderColumns; sticky: true" mat-header-row></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    }
 </app-responsive-table>

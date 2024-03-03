@@ -1,0 +1,73 @@
+[
+  {
+    "Type": "C_GiftOfferingItemSpecificSelector",
+    "Name": "C_GiftOfferingItemSpecificSelector_0",
+    "Outer": "DA_OceanNPCGiftOffering_Seal",
+    "Class": "UScriptClass'C_GiftOfferingItemSpecificSelector'",
+    "Properties": {
+      "giftData": {
+        "item": {
+          "data": {
+            "RowName": "item_42009"
+          },
+          "itemID": "item_42009"
+        },
+        "quantity": 3,
+        "indefinitely": true,
+        "dialogueRequest": {
+          "useDialogData": true,
+          "dialogData": {
+            "AssetPathName": "/Game/ProjectCoral/Data/Dialog/Quest/DA_DQ_GenericGiftingItem.DA_DQ_GenericGiftingItem",
+            "SubPathString": ""
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "C_GiftOfferingRollConfig",
+    "Name": "DA_OceanNPCGiftOffering_Seal",
+    "Class": "UScriptClass'C_GiftOfferingRollConfig'",
+    "Properties": {
+      "offeringRolls": [
+        {
+          "rollId": "RewardFree",
+          "itemSelector": {
+            "ObjectName": "C_GiftOfferingItemSpecificSelector'DA_OceanNPCGiftOffering_Seal:C_GiftOfferingItemSpecificSelector_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/GiftOffering/OceanAnimalNPC/DA_OceanNPCGiftOffering_Seal.0"
+          },
+          "npcRequirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "gameplayRequirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_ObjectStateRequirement'DA_OceanNPCGiftOffering_Seal:C_ObjectStateRequirement_6'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/GiftOffering/OceanAnimalNPC/DA_OceanNPCGiftOffering_Seal.2"
+              }
+            ]
+          },
+          "evaluationFrequency": "EC_ConditionEvaluationFrequency::EveryMinute",
+          "oneTime": true
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_ObjectStateRequirement",
+    "Name": "C_ObjectStateRequirement_6",
+    "Outer": "DA_OceanNPCGiftOffering_Seal",
+    "Class": "UScriptClass'C_ObjectStateRequirement'",
+    "Properties": {
+      "actorRef": {
+        "AssetPathName": "/Game/ProjectCoral/Maps/Diving/DivingPuzzle20m.DivingPuzzle20m",
+        "SubPathString": "PersistentLevel.BP_CoralHealer_C_8"
+      },
+      "id": "BP_DivingPuzzleManager_20m_Area8_healer",
+      "requiredState": "finishHealing",
+      "requiredStateInput": "finishHealing"
+    }
+  }
+]

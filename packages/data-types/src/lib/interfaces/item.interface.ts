@@ -16,10 +16,6 @@ export interface Item {
         [key: string]: QualityPrices | undefined;
     },
     tags?: string[];
-    iconMeta?: {
-        "ObjectName": string;
-        "ObjectPath": string;
-    };
     iconName: string | null;
 }
 

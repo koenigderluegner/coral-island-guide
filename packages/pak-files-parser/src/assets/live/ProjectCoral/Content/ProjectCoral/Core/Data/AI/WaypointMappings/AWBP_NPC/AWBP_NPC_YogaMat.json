@@ -3,18 +3,19 @@
     "Type": "Function",
     "Name": "ExecuteUbergraph_AWBP_NPC_YogaMat",
     "Outer": "AWBP_NPC_YogaMat_C",
+    "Class": "UScriptClass'Function'",
     "ChildProperties": [
       {
         "Type": "IntProperty",
         "Name": "EntryPoint",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 4,
-        "PropertyFlags": 148
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
       },
       {
         "Type": "BoolProperty",
         "Name": "K2Node_Event_newState",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
         "FieldSize": 1,
         "ByteOffset": 0,
@@ -26,26 +27,26 @@
       {
         "Type": "ObjectProperty",
         "Name": "K2Node_Event_OtherActor",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 8,
         "PropertyClass": {
-          "ObjectName": "Class Actor",
+          "ObjectName": "Class'Actor'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "EnumProperty",
         "Name": "K2Node_Event_context",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
         "Enum": {
-          "ObjectName": "Enum EC_AnimationContext",
+          "ObjectName": "Enum'EC_AnimationContext'",
           "ObjectPath": "/Script/ProjectCoral"
         },
         "UnderlyingProp": {
           "Type": "ByteProperty",
           "Name": "UnderlyingType",
-          "Flags": 1,
+          "Flags": "RF_Public",
           "ElementSize": 1,
           "Enum": null
         }
@@ -53,17 +54,17 @@
       {
         "Type": "ObjectProperty",
         "Name": "K2Node_Event_npc",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 8,
         "PropertyClass": {
-          "ObjectName": "Class C_NpcCharacter",
+          "ObjectName": "Class'C_NpcCharacter'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       },
       {
         "Type": "BoolProperty",
         "Name": "K2Node_SwitchEnum_CmpSuccess",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
         "FieldSize": 1,
         "ByteOffset": 0,
@@ -75,17 +76,17 @@
       {
         "Type": "ObjectProperty",
         "Name": "CallFunc_GetGameState_ReturnValue",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 8,
         "PropertyClass": {
-          "ObjectName": "Class GameStateBase",
+          "ObjectName": "Class'GameStateBase'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "BoolProperty",
         "Name": "CallFunc_IsValid_ReturnValue",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
         "FieldSize": 1,
         "ByteOffset": 0,
@@ -97,17 +98,17 @@
       {
         "Type": "ObjectProperty",
         "Name": "K2Node_DynamicCast_AsC_Game_State",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 8,
         "PropertyClass": {
-          "ObjectName": "Class C_GameState",
+          "ObjectName": "Class'C_GameState'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       },
       {
         "Type": "BoolProperty",
         "Name": "K2Node_DynamicCast_bSuccess",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
         "FieldSize": 1,
         "ByteOffset": 0,
@@ -119,28 +120,28 @@
       {
         "Type": "ObjectProperty",
         "Name": "CallFunc_GetTimeManager_ReturnValue",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 8,
         "PropertyClass": {
-          "ObjectName": "Class C_TimeManager",
+          "ObjectName": "Class'C_TimeManager'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       },
       {
         "Type": "StructProperty",
         "Name": "CallFunc_K2_SetRelativeLocationAndRotation_SweepHitResult",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 144,
-        "PropertyFlags": 549755813888,
+        "PropertyFlags": "ContainsInstancedReference",
         "Struct": {
-          "ObjectName": "ScriptStruct HitResult",
+          "ObjectName": "ScriptStruct'HitResult'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "BoolProperty",
         "Name": "CallFunc_SetStaticMesh_ReturnValue",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
         "FieldSize": 1,
         "ByteOffset": 0,
@@ -152,7 +153,7 @@
       {
         "Type": "BoolProperty",
         "Name": "CallFunc_IsValid_ReturnValue_1",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
         "FieldSize": 1,
         "ByteOffset": 0,
@@ -164,41 +165,42 @@
       {
         "Type": "DelegateProperty",
         "Name": "K2Node_CreateDelegate_OutputDelegate",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 20,
         "SignatureFunction": {
-          "ObjectName": "DelegateFunction C_TimeManager:DelegateOnTimeStateChanged__DelegateSignature",
+          "ObjectName": "DelegateFunction'C_TimeManager:DelegateOnTimeStateChanged__DelegateSignature'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "CallFunc_GetGameInstanceSubsystem_ReturnValue",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 8,
         "PropertyClass": {
-          "ObjectName": "Class C_FestivalManager",
+          "ObjectName": "Class'C_FestivalManager'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       }
     ],
-    "FunctionFlags": 8421377
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
   },
   {
     "Type": "Function",
     "Name": "OnOccupiedStateChanged",
     "Outer": "AWBP_NPC_YogaMat_C",
+    "Class": "UScriptClass'Function'",
     "SuperStruct": {
-      "ObjectName": "Function C_WorldWaypoint:OnOccupiedStateChanged",
+      "ObjectName": "Function'C_WorldWaypoint:OnOccupiedStateChanged'",
       "ObjectPath": "/Script/ProjectCoral"
     },
     "ChildProperties": [
       {
         "Type": "BoolProperty",
         "Name": "newState",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
-        "PropertyFlags": 148,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
         "FieldSize": 1,
         "ByteOffset": 0,
         "ByteMask": 1,
@@ -207,47 +209,50 @@
         "bIsNativeBool": true
       }
     ],
-    "FunctionFlags": 134744064
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
   },
   {
     "Type": "Function",
     "Name": "ReceiveBeginPlay",
     "Outer": "AWBP_NPC_YogaMat_C",
+    "Class": "UScriptClass'Function'",
     "SuperStruct": {
-      "ObjectName": "Function Actor:ReceiveBeginPlay",
+      "ObjectName": "Function'Actor:ReceiveBeginPlay'",
       "ObjectPath": "/Script/Engine"
     },
-    "FunctionFlags": 134744064
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
   },
   {
     "Type": "Function",
     "Name": "DayInitDelegate_Event_0",
     "Outer": "AWBP_NPC_YogaMat_C",
-    "FunctionFlags": 201326592
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
   },
   {
     "Type": "Function",
     "Name": "OnAnimationContextChanged",
     "Outer": "AWBP_NPC_YogaMat_C",
+    "Class": "UScriptClass'Function'",
     "SuperStruct": {
-      "ObjectName": "Function C_WorldWaypoint:OnAnimationContextChanged",
+      "ObjectName": "Function'C_WorldWaypoint:OnAnimationContextChanged'",
       "ObjectPath": "/Script/ProjectCoral"
     },
     "ChildProperties": [
       {
         "Type": "EnumProperty",
         "Name": "context",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 1,
-        "PropertyFlags": 148,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
         "Enum": {
-          "ObjectName": "Enum EC_AnimationContext",
+          "ObjectName": "Enum'EC_AnimationContext'",
           "ObjectPath": "/Script/ProjectCoral"
         },
         "UnderlyingProp": {
           "Type": "ByteProperty",
           "Name": "UnderlyingType",
-          "Flags": 1,
+          "Flags": "RF_Public",
           "ElementSize": 1,
           "Enum": null
         }
@@ -255,100 +260,104 @@
       {
         "Type": "ObjectProperty",
         "Name": "npc",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 8,
-        "PropertyFlags": 148,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
         "PropertyClass": {
-          "ObjectName": "Class C_NpcCharacter",
+          "ObjectName": "Class'C_NpcCharacter'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       }
     ],
-    "FunctionFlags": 134744064
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
   },
   {
     "Type": "Function",
     "Name": "ReceiveActorBeginOverlap",
     "Outer": "AWBP_NPC_YogaMat_C",
+    "Class": "UScriptClass'Function'",
     "SuperStruct": {
-      "ObjectName": "Function Actor:ReceiveActorBeginOverlap",
+      "ObjectName": "Function'Actor:ReceiveActorBeginOverlap'",
       "ObjectPath": "/Script/Engine"
     },
     "ChildProperties": [
       {
         "Type": "ObjectProperty",
         "Name": "OtherActor",
-        "Flags": 1,
+        "Flags": "RF_Public",
         "ElementSize": 8,
-        "PropertyFlags": 148,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
         "PropertyClass": {
-          "ObjectName": "Class Actor",
+          "ObjectName": "Class'Actor'",
           "ObjectPath": "/Script/Engine"
         }
       }
     ],
-    "FunctionFlags": 134350848
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
   },
   {
     "Type": "Function",
-    "Name": "On ",
+    "Name": "On",
     "Outer": "AWBP_NPC_YogaMat_C",
-    "FunctionFlags": 201457664
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
   },
   {
     "Type": "Function",
     "Name": "Off",
     "Outer": "AWBP_NPC_YogaMat_C",
-    "FunctionFlags": 201457664
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
   },
   {
     "Type": "BlueprintGeneratedClass",
     "Name": "AWBP_NPC_YogaMat_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
     "Properties": {
       "SimpleConstructionScript": {
-        "ObjectName": "SimpleConstructionScript AWBP_NPC_YogaMat_C:SimpleConstructionScript_0",
+        "ObjectName": "SimpleConstructionScript'AWBP_NPC_YogaMat_C:SimpleConstructionScript_0'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.17"
       },
       "UberGraphFunction": {
-        "ObjectName": "Function AWBP_NPC_YogaMat_C:ExecuteUbergraph_AWBP_NPC_YogaMat",
+        "ObjectName": "Function'AWBP_NPC_YogaMat_C:ExecuteUbergraph_AWBP_NPC_YogaMat'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.0"
       }
     },
     "SuperStruct": {
-      "ObjectName": "Class C_AnimationWaypoint",
+      "ObjectName": "Class'C_AnimationWaypoint'",
       "ObjectPath": "/Script/ProjectCoral"
     },
     "Children": [
       {
-        "ObjectName": "Function AWBP_NPC_YogaMat_C:Off",
+        "ObjectName": "Function'AWBP_NPC_YogaMat_C:Off'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.7"
       },
       {
-        "ObjectName": "Function AWBP_NPC_YogaMat_C:On ",
+        "ObjectName": "Function'AWBP_NPC_YogaMat_C:On'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.6"
       },
       {
-        "ObjectName": "Function AWBP_NPC_YogaMat_C:ReceiveActorBeginOverlap",
+        "ObjectName": "Function'AWBP_NPC_YogaMat_C:ReceiveActorBeginOverlap'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.5"
       },
       {
-        "ObjectName": "Function AWBP_NPC_YogaMat_C:OnAnimationContextChanged",
+        "ObjectName": "Function'AWBP_NPC_YogaMat_C:OnAnimationContextChanged'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.4"
       },
       {
-        "ObjectName": "Function AWBP_NPC_YogaMat_C:DayInitDelegate_Event_0",
+        "ObjectName": "Function'AWBP_NPC_YogaMat_C:DayInitDelegate_Event_0'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.3"
       },
       {
-        "ObjectName": "Function AWBP_NPC_YogaMat_C:ReceiveBeginPlay",
+        "ObjectName": "Function'AWBP_NPC_YogaMat_C:ReceiveBeginPlay'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.2"
       },
       {
-        "ObjectName": "Function AWBP_NPC_YogaMat_C:OnOccupiedStateChanged",
+        "ObjectName": "Function'AWBP_NPC_YogaMat_C:OnOccupiedStateChanged'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.1"
       },
       {
-        "ObjectName": "Function AWBP_NPC_YogaMat_C:ExecuteUbergraph_AWBP_NPC_YogaMat",
+        "ObjectName": "Function'AWBP_NPC_YogaMat_C:ExecuteUbergraph_AWBP_NPC_YogaMat'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.0"
       }
     ],
@@ -356,152 +365,153 @@
       {
         "Type": "StructProperty",
         "Name": "UberGraphFrame",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 16,
-        "PropertyFlags": 2105344,
+        "PropertyFlags": "Transient | DuplicateTransient",
         "Struct": {
-          "ObjectName": "ScriptStruct PointerToUberGraphFrame",
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "StaticMesh",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 17180393476,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
         "PropertyClass": {
-          "ObjectName": "Class StaticMeshComponent",
+          "ObjectName": "Class'StaticMeshComponent'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "StationMesh1",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 17180393476,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
         "PropertyClass": {
-          "ObjectName": "Class StaticMeshComponent",
+          "ObjectName": "Class'StaticMeshComponent'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "PositionComponent1",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 17180393476,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
         "PropertyClass": {
-          "ObjectName": "Class SceneComponent",
+          "ObjectName": "Class'SceneComponent'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "StructProperty",
         "Name": "Offset_Location",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 12,
-        "PropertyFlags": 5,
+        "PropertyFlags": "Edit | BlueprintVisible",
         "Struct": {
-          "ObjectName": "ScriptStruct Vector",
+          "ObjectName": "ScriptStruct'Vector'",
           "ObjectPath": "/Script/CoreUObject"
         }
       },
       {
         "Type": "StructProperty",
         "Name": "Offset_Rotation",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 12,
-        "PropertyFlags": 5,
+        "PropertyFlags": "Edit | BlueprintVisible",
         "Struct": {
-          "ObjectName": "ScriptStruct Rotator",
+          "ObjectName": "ScriptStruct'Rotator'",
           "ObjectPath": "/Script/CoreUObject"
         }
       },
       {
         "Type": "StructProperty",
         "Name": "Offset_Scale",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 12,
-        "PropertyFlags": 5,
+        "PropertyFlags": "Edit | BlueprintVisible",
         "Struct": {
-          "ObjectName": "ScriptStruct Vector",
+          "ObjectName": "ScriptStruct'Vector'",
           "ObjectPath": "/Script/CoreUObject"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "SM_Attachment",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 5,
+        "PropertyFlags": "Edit | BlueprintVisible",
         "PropertyClass": {
-          "ObjectName": "Class StaticMesh",
+          "ObjectName": "Class'StaticMesh'",
           "ObjectPath": "/Script/Engine"
         }
       },
       {
         "Type": "ObjectProperty",
         "Name": "NPC_Referrence",
-        "Flags": 2097153,
+        "Flags": "RF_Public | RF_LoadCompleted",
         "ElementSize": 8,
-        "PropertyFlags": 67589,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnTemplate | DisableEditOnInstance",
         "PropertyClass": {
-          "ObjectName": "BlueprintGeneratedClass BP_NpcCharacter_C",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/_Characters/NPCs/BP_NpcCharacter.27"
+          "ObjectName": "BlueprintGeneratedClass'BP_NpcCharacter_C'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/_Characters/NPCs/BP_NpcCharacter.37"
         }
       }
     ],
     "FuncMap": {
       "ExecuteUbergraph_AWBP_NPC_YogaMat": {
-        "ObjectName": "Function AWBP_NPC_YogaMat_C:ExecuteUbergraph_AWBP_NPC_YogaMat",
+        "ObjectName": "Function'AWBP_NPC_YogaMat_C:ExecuteUbergraph_AWBP_NPC_YogaMat'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.0"
       },
       "OnOccupiedStateChanged": {
-        "ObjectName": "Function AWBP_NPC_YogaMat_C:OnOccupiedStateChanged",
+        "ObjectName": "Function'AWBP_NPC_YogaMat_C:OnOccupiedStateChanged'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.1"
       },
       "ReceiveBeginPlay": {
-        "ObjectName": "Function AWBP_NPC_YogaMat_C:ReceiveBeginPlay",
+        "ObjectName": "Function'AWBP_NPC_YogaMat_C:ReceiveBeginPlay'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.2"
       },
       "DayInitDelegate_Event_0": {
-        "ObjectName": "Function AWBP_NPC_YogaMat_C:DayInitDelegate_Event_0",
+        "ObjectName": "Function'AWBP_NPC_YogaMat_C:DayInitDelegate_Event_0'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.3"
       },
       "OnAnimationContextChanged": {
-        "ObjectName": "Function AWBP_NPC_YogaMat_C:OnAnimationContextChanged",
+        "ObjectName": "Function'AWBP_NPC_YogaMat_C:OnAnimationContextChanged'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.4"
       },
       "ReceiveActorBeginOverlap": {
-        "ObjectName": "Function AWBP_NPC_YogaMat_C:ReceiveActorBeginOverlap",
+        "ObjectName": "Function'AWBP_NPC_YogaMat_C:ReceiveActorBeginOverlap'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.5"
       },
-      "On ": {
-        "ObjectName": "Function AWBP_NPC_YogaMat_C:On ",
+      "On": {
+        "ObjectName": "Function'AWBP_NPC_YogaMat_C:On'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.6"
       },
       "Off": {
-        "ObjectName": "Function AWBP_NPC_YogaMat_C:Off",
+        "ObjectName": "Function'AWBP_NPC_YogaMat_C:Off'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.7"
       }
     },
-    "ClassFlags": 8652820,
+    "ClassFlags": "CLASS_Config | CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
     "ClassWithin": {
-      "ObjectName": "Class Object",
+      "ObjectName": "Class'Object'",
       "ObjectPath": "/Script/CoreUObject"
     },
     "ClassConfigName": "Engine",
     "bCooked": true,
     "ClassDefaultObject": {
-      "ObjectName": "AWBP_NPC_YogaMat_C Default__AWBP_NPC_YogaMat_C",
+      "ObjectName": "AWBP_NPC_YogaMat_C'Default__AWBP_NPC_YogaMat_C'",
       "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.9"
     }
   },
   {
     "Type": "AWBP_NPC_YogaMat_C",
     "Name": "Default__AWBP_NPC_YogaMat_C",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.AWBP_NPC_YogaMat_C'",
     "Properties": {
       "UberGraphFrame": {},
       "Offset_Location": {
@@ -521,11 +531,11 @@
       },
       "linkedState": "EC_WaypointLinkedState::NotLinked",
       "stationMeshComponent": {
-        "ObjectName": "StaticMeshComponent Default__AWBP_NPC_YogaMat_C:StationMesh",
+        "ObjectName": "StaticMeshComponent'Default__AWBP_NPC_YogaMat_C:StationMesh'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.20"
       },
       "RootComponent": {
-        "ObjectName": "SceneComponent Default__AWBP_NPC_YogaMat_C:PositionComponent",
+        "ObjectName": "SceneComponent'Default__AWBP_NPC_YogaMat_C:PositionComponent'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.12"
       }
     }
@@ -533,12 +543,14 @@
   {
     "Type": "SceneComponent",
     "Name": "DefaultSceneRoot_GEN_VARIABLE",
-    "Outer": "AWBP_NPC_YogaMat_C"
+    "Outer": "AWBP_NPC_YogaMat_C",
+    "Class": "UScriptClass'SceneComponent'"
   },
   {
     "Type": "SceneComponent",
     "Name": "PositionComponent1_GEN_VARIABLE",
     "Outer": "AWBP_NPC_YogaMat_C",
+    "Class": "UScriptClass'SceneComponent'",
     "Properties": {
       "RelativeRotation": {
         "Pitch": 0.0,
@@ -550,19 +562,21 @@
   {
     "Type": "SceneComponent",
     "Name": "PositionComponent",
-    "Outer": "Default__AWBP_NPC_YogaMat_C"
+    "Outer": "Default__AWBP_NPC_YogaMat_C",
+    "Class": "UScriptClass'SceneComponent'"
   },
   {
     "Type": "SCS_Node",
     "Name": "SCS_Node_0",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class SceneComponent",
+        "ObjectName": "Class'SceneComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "SceneComponent AWBP_NPC_YogaMat_C:DefaultSceneRoot_GEN_VARIABLE",
+        "ObjectName": "SceneComponent'AWBP_NPC_YogaMat_C:DefaultSceneRoot_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.10"
       },
       "VariableGuid": "D8105881-40B4562E-0EFE428B-DA753469",
@@ -573,20 +587,21 @@
     "Type": "SCS_Node",
     "Name": "SCS_Node_1",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class SceneComponent",
+        "ObjectName": "Class'SceneComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "SceneComponent AWBP_NPC_YogaMat_C:PositionComponent1_GEN_VARIABLE",
+        "ObjectName": "SceneComponent'AWBP_NPC_YogaMat_C:PositionComponent1_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.11"
       },
       "ParentComponentOrVariableName": "PositionComponent",
       "bIsParentComponentNative": true,
       "ChildNodes": [
         {
-          "ObjectName": "SCS_Node AWBP_NPC_YogaMat_C:SimpleConstructionScript_0.SCS_Node_2",
+          "ObjectName": "SCS_Node'AWBP_NPC_YogaMat_C:SimpleConstructionScript_0.SCS_Node_2'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.15"
         }
       ],
@@ -598,13 +613,14 @@
     "Type": "SCS_Node",
     "Name": "SCS_Node_2",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class StaticMeshComponent",
+        "ObjectName": "Class'StaticMeshComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "StaticMeshComponent AWBP_NPC_YogaMat_C:StationMesh1_GEN_VARIABLE",
+        "ObjectName": "StaticMeshComponent'AWBP_NPC_YogaMat_C:StationMesh1_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.19"
       },
       "VariableGuid": "46D54D94-4C3138BB-524D4F9D-CA78A025",
@@ -615,13 +631,14 @@
     "Type": "SCS_Node",
     "Name": "SCS_Node_4",
     "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
     "Properties": {
       "ComponentClass": {
-        "ObjectName": "Class StaticMeshComponent",
+        "ObjectName": "Class'StaticMeshComponent'",
         "ObjectPath": "/Script/Engine"
       },
       "ComponentTemplate": {
-        "ObjectName": "StaticMeshComponent AWBP_NPC_YogaMat_C:StaticMesh_GEN_VARIABLE",
+        "ObjectName": "StaticMeshComponent'AWBP_NPC_YogaMat_C:StaticMesh_GEN_VARIABLE'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.18"
       },
       "ParentComponentOrVariableName": "PositionComponent",
@@ -634,33 +651,34 @@
     "Type": "SimpleConstructionScript",
     "Name": "SimpleConstructionScript_0",
     "Outer": "AWBP_NPC_YogaMat_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
     "Properties": {
       "RootNodes": [
         {
-          "ObjectName": "SCS_Node AWBP_NPC_YogaMat_C:SimpleConstructionScript_0.SCS_Node_1",
+          "ObjectName": "SCS_Node'AWBP_NPC_YogaMat_C:SimpleConstructionScript_0.SCS_Node_1'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.14"
         },
         {
-          "ObjectName": "SCS_Node AWBP_NPC_YogaMat_C:SimpleConstructionScript_0.SCS_Node_4",
+          "ObjectName": "SCS_Node'AWBP_NPC_YogaMat_C:SimpleConstructionScript_0.SCS_Node_4'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.16"
         }
       ],
       "AllNodes": [
         {
-          "ObjectName": "SCS_Node AWBP_NPC_YogaMat_C:SimpleConstructionScript_0.SCS_Node_1",
+          "ObjectName": "SCS_Node'AWBP_NPC_YogaMat_C:SimpleConstructionScript_0.SCS_Node_1'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.14"
         },
         {
-          "ObjectName": "SCS_Node AWBP_NPC_YogaMat_C:SimpleConstructionScript_0.SCS_Node_2",
+          "ObjectName": "SCS_Node'AWBP_NPC_YogaMat_C:SimpleConstructionScript_0.SCS_Node_2'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.15"
         },
         {
-          "ObjectName": "SCS_Node AWBP_NPC_YogaMat_C:SimpleConstructionScript_0.SCS_Node_4",
+          "ObjectName": "SCS_Node'AWBP_NPC_YogaMat_C:SimpleConstructionScript_0.SCS_Node_4'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.16"
         }
       ],
       "DefaultSceneRootNode": {
-        "ObjectName": "SCS_Node AWBP_NPC_YogaMat_C:SimpleConstructionScript_0.SCS_Node_0",
+        "ObjectName": "SCS_Node'AWBP_NPC_YogaMat_C:SimpleConstructionScript_0.SCS_Node_0'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.13"
       }
     }
@@ -669,6 +687,7 @@
     "Type": "StaticMeshComponent",
     "Name": "StaticMesh_GEN_VARIABLE",
     "Outer": "AWBP_NPC_YogaMat_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
     "Properties": {
       "bVisible": false
     }
@@ -677,6 +696,7 @@
     "Type": "StaticMeshComponent",
     "Name": "StationMesh1_GEN_VARIABLE",
     "Outer": "AWBP_NPC_YogaMat_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
     "Properties": {
       "bUseDefaultCollision": true,
       "bGenerateOverlapEvents": false,
@@ -691,9 +711,10 @@
     "Type": "StaticMeshComponent",
     "Name": "StationMesh",
     "Outer": "Default__AWBP_NPC_YogaMat_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
     "Properties": {
       "AttachParent": {
-        "ObjectName": "SceneComponent Default__AWBP_NPC_YogaMat_C:PositionComponent",
+        "ObjectName": "SceneComponent'Default__AWBP_NPC_YogaMat_C:PositionComponent'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_NPC_YogaMat.12"
       }
     }

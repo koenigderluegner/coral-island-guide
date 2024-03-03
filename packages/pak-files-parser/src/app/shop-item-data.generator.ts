@@ -1,27 +1,70 @@
 import { BaseGenerator } from "./base-generator.class";
-import { Item, ShopItemData } from "@ci/data-types";
-import { RawShopItemData } from "../interfaces/raw-shop-item-data.interface";
-import { minifyItem, readAsset } from "../util/functions";
+import { CustomEntry, Effect, Item, RequirementEntry, ShopItemData } from "@ci/data-types";
+import { RawShopItemData } from "../interfaces/raw-data-interfaces/raw-shop-item-data.interface";
+import { AssetPathNameToIcon, minifyItem, readAsset } from "../util/functions";
 import { Datatable } from "../interfaces/datatable.interface";
 import { getEnumValue } from "@ci/util";
+import { StringTable } from "../util/string-table.class";
+import { Logger } from "../util/logger.class";
 
-export class ShopItemDataGenerator extends BaseGenerator<RawShopItemData, ShopItemData> {
 
-    datatable: Datatable<RawShopItemData>[];
+export class ShopItemDataGenerator<T extends RawShopItemData = RawShopItemData> extends BaseGenerator<T, ShopItemData> {
 
-    constructor(protected itemMap: Map<string, Item>, datatablePath: string) {
+    datatable: Datatable<T>[];
+
+    constructor(protected itemMap: Map<string, Item>, protected datatablePath: string) {
         super();
-        this.datatable = readAsset<Datatable<RawShopItemData>[]>(datatablePath);
+        this.datatable = readAsset<Datatable<T>[]>(datatablePath);
     }
 
-    handleEntry(itemKey: string, dbItem: RawShopItemData): ShopItemData | undefined {
+    handleEntry(itemKey: string, dbItem: T): ShopItemData | undefined {
 
 
         const foundItem = this.itemMap.get(dbItem.item.itemID);
 
-        if (!foundItem) return;
+        const displayName = StringTable.getString(dbItem.shopItemName);
+        const customEntry: CustomEntry = {
+            id: itemKey,
+            displayName: displayName ?? '',
+            iconName: AssetPathNameToIcon(dbItem.customIcon.AssetPathName),
+            description: StringTable.getString(dbItem.customDescription),
+            displayKey: StringTable.getString(dbItem.customCategory)
+        }
 
-        const item = {...minifyItem(foundItem), price: foundItem.price};
+        if (!foundItem && !customEntry.displayName) {
+            Logger.error(`Cant find shop items ${itemKey} in ${this.datatablePath}`)
+            return;
+        }
+
+        const effectsAndRequirements: { effects?: Effect[], requirements?: RequirementEntry } = {}
+
+        const requirements = this.getRequirements(itemKey);
+
+        if (requirements && requirements.requirements.length) {
+            effectsAndRequirements.requirements = requirements
+        }
+
+        const effects = this.getEffects(itemKey);
+
+        if (effects && effects.length) {
+            effectsAndRequirements.effects = effects
+        }
+
+        let item: ShopItemData['item'];
+
+        if (foundItem) {
+            item = {
+                ...minifyItem(foundItem),
+                price: foundItem.price,
+                sellPrice: foundItem.sellPrice
+            };
+        } else {
+            item = {
+                ...customEntry,
+                price: dbItem.priceOverride,
+                sellPrice: 0
+            }
+        }
 
         const tillDate: Pick<ShopItemData, 'availableTillDate' | 'tillDate'> = {
             availableTillDate: dbItem.availableTillDate,
@@ -66,9 +109,11 @@ export class ShopItemDataGenerator extends BaseGenerator<RawShopItemData, ShopIt
             tag: dbItem.tag,
             priceOverride: dbItem.priceOverride,
             priority: dbItem.priority,
+            enabled: dbItem.enable,
             ...sinceDate,
             ...tillDate,
-            ...timeRange
+            ...timeRange,
+            ...effectsAndRequirements
         };
     }
 

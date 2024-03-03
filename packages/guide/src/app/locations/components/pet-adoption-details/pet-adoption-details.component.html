@@ -1,0 +1,14 @@
+<app-card class="text-lg font-semibold relative">
+    @if (npc) {
+        <app-npc-portrait [npcKey]="npc.key" [portraitName]="npc.appearances['Default']['Normal']" cardIcon/>
+    }
+
+    <div class="text-black text-2xl">{{ npc?.characterName }}</div>
+    <hr class="my-5"/>
+    <span class="text-lg mb-6">{{ adoption.description }}</span>
+    <div>Price:
+        <span class="text-black">
+         <app-money [amount]="adoption.price"/>
+        </span>
+    </div>
+</app-card>

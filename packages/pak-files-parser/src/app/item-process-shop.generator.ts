@@ -2,7 +2,8 @@ import { BaseGenerator } from "./base-generator.class";
 import { Item, ItemProcessShopData } from "@ci/data-types";
 import { Datatable } from "../interfaces/datatable.interface";
 import { minifyItem, readAsset } from "../util/functions";
-import { RawItemProcessShopData } from "../interfaces/raw-item-process-shop-data.interface";
+import { RawItemProcessShopData } from "../interfaces/raw-data-interfaces/raw-item-process-shop-data.interface";
+import { Logger } from "../util/logger.class";
 
 export class ItemProcessShopGenerator extends BaseGenerator<RawItemProcessShopData, ItemProcessShopData> {
 
@@ -24,7 +25,10 @@ export class ItemProcessShopGenerator extends BaseGenerator<RawItemProcessShopDa
         }
 
 
-        console.log(dbItem.outputChance.reduce((a, b) => a + b.chance, 0))
+        const outputChancesSum = dbItem.outputChance.reduce((a, b) => a + b.chance, 0);
+        if (Math.abs(outputChancesSum - 100) > 1.5){
+            Logger.warn(`Percentage sum for ${input.displayName} (${input.id}) deviates more than 1.5%:`, outputChancesSum)
+        }
         return {
             input: minifyItem(input),
             inputAmount: dbItem.input.amount,

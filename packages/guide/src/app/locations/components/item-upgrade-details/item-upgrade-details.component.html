@@ -1,0 +1,39 @@
+<app-base-item-card [item]="itemUpgradeData.item">
+
+    <div class="mb-3">Town rank:
+        <span class="text-black">
+           {{ itemUpgradeData.townRank | townrank }}
+        </span>
+    </div>
+
+    @if (itemUpgradeData.unlockRequirements.length) {
+
+        <div>Unlock requirements:</div>
+        <app-item-list [itemList]="itemUpgradeData.unlockRequirements" class="mb-6"/>
+
+    }
+    <div class="mb-3">Upgrade time:
+        <span class="text-black">
+           {{ itemUpgradeData.daysDelay }} days
+        </span>
+    </div>
+
+    @if (itemUpgradeData.requirements.length || itemUpgradeData.priceOverride || itemUpgradeData.price) {
+
+        <div>Upgrade requirements:</div>
+        @if (itemUpgradeData.priceOverride || itemUpgradeData.price) {
+            <div>Cost:
+                <span class="text-black">
+            <app-money
+                    [amount]="itemUpgradeData.priceOverride !== 0 ? itemUpgradeData.priceOverride : itemUpgradeData.price"/>
+        </span>
+            </div>
+        }
+        @if (itemUpgradeData.requirements.length) {
+            <app-item-list [itemList]="itemUpgradeData.requirements"
+                           class="mb-3"/>
+        }
+
+    }
+
+</app-base-item-card>

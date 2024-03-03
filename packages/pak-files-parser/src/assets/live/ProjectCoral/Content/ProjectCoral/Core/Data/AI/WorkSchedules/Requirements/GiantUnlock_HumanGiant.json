@@ -1,38 +1,27 @@
 [
   {
-    "Type": "C_IsGiantUnlockedRequirement",
-    "Name": "C_IsGiantUnlockedRequirement_0",
-    "Outer": "GiantUnlock_HumanGiant",
-    "Properties": {
-      "types": 3
-    }
-  },
-  {
     "Type": "C_QuestStateRequirement",
     "Name": "C_QuestStateRequirement_0",
     "Outer": "GiantUnlock_HumanGiant",
+    "Class": "UScriptClass'C_QuestStateRequirement'",
     "Properties": {
       "quest": {
         "AssetPathName": "/Game/ProjectCoral/Quest/QuestProduction/MainQuest/sq000_HumanGiantSideQuest.sq000_HumanGiantSideQuest",
         "SubPathString": ""
       },
-      "questId": "sq000_HumanGiantSideQuest",
       "state": "EC_QuestState::Completed"
     }
   },
   {
     "Type": "C_RequirementsConfig",
     "Name": "GiantUnlock_HumanGiant",
+    "Class": "UScriptClass'C_RequirementsConfig'",
     "Properties": {
       "requirements": {
         "requirements": [
           {
-            "ObjectName": "C_IsGiantUnlockedRequirement GiantUnlock_HumanGiant:C_IsGiantUnlockedRequirement_0",
+            "ObjectName": "C_QuestStateRequirement'GiantUnlock_HumanGiant:C_QuestStateRequirement_0'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/GiantUnlock_HumanGiant.0"
-          },
-          {
-            "ObjectName": "C_QuestStateRequirement GiantUnlock_HumanGiant:C_QuestStateRequirement_0",
-            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/GiantUnlock_HumanGiant.1"
           }
         ]
       }

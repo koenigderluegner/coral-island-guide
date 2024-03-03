@@ -1,8 +1,8 @@
 import { Crop, Item, Season } from '@ci/data-types';
-import { readAsset } from '../util/functions';
+import { minifyItem, readAsset } from '../util/functions';
 import { RegisteredCrop } from '../interfaces/registered-crop.interface';
 import { CropRegistry } from '../types/crop-registry.type';
-import { getEnumValue } from '@ci/util';
+import { getEnumValue, nonNullable } from '@ci/util';
 
 export class CropsDbGenerator {
 
@@ -25,38 +25,46 @@ export class CropsDbGenerator {
             const seed: Item | undefined = this.itemMap.get(itemKey);
 
             if (seed) {
+                const item: Crop['item'] = {...minifyItem(seed), price: seed.price}
+
+                const pickupableItem = this.itemMap.get(dbItem.pickupableItem.itemID);
                 const crop: Crop = {
                     key: itemKey,
-                    item: seed,
+                    item,
                     size: dbItem.size,
                     canCombine: dbItem.canCombine,
                     chanceToCombine: dbItem.chanceToCombine,
-                    growableSeason: dbItem.growableSeason.map(getEnumValue) as Season[],
+                    growableSeason: dbItem.growableSeason.map(getEnumValue),
                     growTime: dbItem.stages.map(s => s.length).reduce((p, v) => p + v, 0),
                     isRegrowable: dbItem.isRegrowable,
                     regrowableLength: dbItem.regrowableLength,
                     readableName: dbItem.readableName,
                     isTrellisCrop: dbItem.isTrellisCrop,
                     pickupableItemId: dbItem.pickupableItem.itemID,
-                    pickupableItem: this.itemMap.get(dbItem.pickupableItem.itemID),
+                    pickupableItem: pickupableItem ? minifyItem(pickupableItem) : undefined,
                     isScytheRequired: getEnumValue(dbItem.scytheRequirement) === 'RequiredToUse',
                     maxDroppedItems: dbItem.floatiesConfig.maxDroppedItems,
                     overrideExperience: dbItem.overrideExperience,
                     overrideExperienceOnHarvest: dbItem.overrideExperienceOnHarvest,
                     dropData: dbItem.floatiesConfig.dropData.map(dd => {
+
+                        const ddItem = this.itemMap.get(dd.itemId.itemID);
+
+                        if(!ddItem) return;
+
                         return {
                             itemId: dd.itemId.itemID,
                             dropChance: dd.dropChance,
                             dropRange: dd.dropRange,
-                            item: this.itemMap.get(dd.itemId.itemID)
+                            item: {...minifyItem(ddItem), sellPrice: ddItem.sellPrice}
                         };
-                    })
+                    }).filter(nonNullable)
 
 
                 };
 
-                crop.item.description = crop.item.description.replace('{cropGrowLength}', '' + crop.growTime);
-                crop.item.description = crop.item.description.replace('{cropRegrowLength}', '' + crop.regrowableLength);
+                seed.description = seed.description.replace('{cropGrowLength}', '' + crop.growTime);
+                seed.description = seed.description.replace('{cropRegrowLength}', '' + crop.regrowableLength);
 
                 map.set(crop.key, crop);
             }
