@@ -1,6 +1,8 @@
 <div>Rarity: <span class="text-black">{{ fish.rarity | addSpacesToPascalCase }}</span></div>
 
 <div>Size: <span class="text-black">{{ fish.fishSize }}</span></div>
+<div>Pattern: <span class="text-black">{{ fish.pattern }}</span></div>
+<div>Difficulty: <span class="text-black">{{ fish.difficulty | addSpacesToPascalCase }}</span></div>
 
 @for (spawnSettings of fish.spawnSettings; track spawnSettings.key) {
     <hr/>

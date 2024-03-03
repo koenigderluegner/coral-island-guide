@@ -45,6 +45,8 @@ export interface Fish extends Omit<BaseCatchableInterface, 'spawnLocation' | 'sp
     isEnabled: boolean;
     fishName: string;
     fishSize: string;
+    pattern: string;
+    difficulty: string;
     spawnSettings: FishSpawnSettings[]
 
     experienceGrantedWhenCaught: number
