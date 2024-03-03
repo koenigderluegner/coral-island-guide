@@ -215,16 +215,16 @@ export class PlannerToolbarComponent {
                 label,
                 children: []
             };
-            if (crop.growableSeason.includes(Season.SPRING)) {
+            if (crop.growableSeason.includes("Spring")) {
                 springCropsNode.children.push(treeNode)
             }
-            if (crop.growableSeason.includes(Season.SUMMER)) {
+            if (crop.growableSeason.includes("Summer")) {
                 summerCropsNode.children.push(treeNode)
             }
-            if (crop.growableSeason.includes(Season.FALL)) {
+            if (crop.growableSeason.includes("Fall")) {
                 fallCropsNode.children.push(treeNode)
             }
-            if (crop.growableSeason.includes(Season.WINTER)) {
+            if (crop.growableSeason.includes("Winter")) {
                 winterCropsNode.children.push(treeNode)
             }
 
