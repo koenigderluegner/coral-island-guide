@@ -1,4 +1,4 @@
-import { generateJson, getParsedArgs } from './util/functions';
+import { generateJson, getParsedArgs, readAsset } from './util/functions';
 import { ItemDbGenerator } from './app/item-db.generator';
 import { environment } from "./environments/environment";
 import chalk from "chalk";
@@ -76,6 +76,7 @@ import path from "path";
 import { flatObjectMap, getQuality, nonNullable, omitFields, removeQualityFlag } from "@ci/util";
 import { preferencesMap } from "../../guide/src/app/shared/constants/preference-map.const";
 import fs from "fs";
+import { Datatable } from "./interfaces/datatable.interface";
 
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
@@ -450,6 +451,18 @@ AvailableLanguages.forEach(lang => {
 
         const generatorValues: GeneratorValues = generatorResults as GeneratorValues;
 
+        const entchantmentLevelTable = readAsset<Datatable<{
+            "itemRarityTag": {
+                "TagName": string
+            },
+            "point": number
+        }>[]>('ProjectCoral/Content/ProjectCoral/Data/Enchantment/DT_ItemEnhancementMaterialRarityData.json')[0].Rows;
+
+        const entchantmentLevel = new Map(Object
+            .keys(entchantmentLevelTable)
+            .map(key => entchantmentLevelTable[key])
+            .map(k => ([k.itemRarityTag.TagName, k.point])))
+
         const getGenericItems = (item: Item) => {
             return generatorValues['tag-based-items'].filter(tbi => tbi.tags.some(tag => item.tags?.includes(tag)))
         }
@@ -717,6 +730,10 @@ AvailableLanguages.forEach(lang => {
                 producedByAnimal.displayName = generatorValues["animal-shop-data"].find(a => a.animalKey === producedByAnimal.key)?.readableName ?? undefined
 
 
+            let enchantmentPoints: undefined | number;
+
+            item.tags?.forEach(tag => entchantmentLevel.has(tag) ? enchantmentPoints = entchantmentLevel.get(tag) : '');
+
             const dbItem: DatabaseItem = {
                 item,
                 fish: fish ? omitFields(fish, 'item') : undefined,
@@ -741,7 +758,8 @@ AvailableLanguages.forEach(lang => {
                 asProcessInput: asProcessInput.length ? asProcessInput : undefined,
                 chanceAsProcessResult: chanceAsProcessResult.length ? chanceAsProcessResult : undefined,
                 consumables: Object.keys(consumables).length ? consumables : undefined,
-                producedByAnimal
+                producedByAnimal,
+                enchantmentPoints
             }
 
             generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, lang);

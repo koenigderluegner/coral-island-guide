@@ -6,6 +6,7 @@
 
 - Added filter and sort options to NPC overview
 - Added description, birthday and datable status to NPC overview
+- Added enchantment points to found items in journal
 
 #### Changed
 

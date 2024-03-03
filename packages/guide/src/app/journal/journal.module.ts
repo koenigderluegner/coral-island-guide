@@ -45,6 +45,7 @@ import { ShopProcessingResultComponent } from "../shared/components/database-ite
 import { CropComponent } from "../shared/components/database-item-details/crop/crop.component";
 import { ProcessingComponent } from "../shared/components/database-item-details/processing/processing.component";
 import { AnimalProduceComponent } from "../shared/components/database-item-details/animal-produce/animal-produce.component";
+import { FoundComponent as DbItemFound } from "../shared/components/database-item-details/found/found.component";
 
 @NgModule({
     declarations: [
@@ -96,6 +97,7 @@ import { AnimalProduceComponent } from "../shared/components/database-item-detai
         CropComponent,
         ProcessingComponent,
         AnimalProduceComponent,
+        DbItemFound,
     ],
     exports: [CaughtDetailsComponent, CaughtTableComponent, CropTableComponent, BestiaryTableComponent],
 })
