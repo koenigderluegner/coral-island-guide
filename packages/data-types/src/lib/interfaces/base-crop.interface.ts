@@ -1,5 +1,5 @@
 import { MinimalItem } from "@ci/data-types";
-import { Season } from "../enums/season.enum";
+import { Season } from "../types/season.type";
 
 export interface BaseCrop {
     key: string;

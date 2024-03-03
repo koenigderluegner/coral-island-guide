@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page.component';
-import { BaseCrop, Crop, FruitPlant, FruitTree, Item, MinimalItem, Season } from '@ci/data-types';
+import { BaseCrop, Crop, FruitPlant, FruitTree, Item, MinimalItem, Season, Seasons } from '@ci/data-types';
 import { combineLatest, of, switchMap } from 'rxjs';
 import { FormControl, FormGroup } from "@angular/forms";
 import { FilterForm } from "../../../shared/types/filter-form.type";
@@ -14,7 +14,7 @@ export class ProduceComponent extends BaseJournalPageComponent<MinimalItem | Cro
 
     constructor() {
         super(new FormGroup<FilterForm>({
-            season: new FormControl<Season[]>(Object.values(Season), {nonNullable: true}),
+            season: new FormControl<Season[]>([...Seasons], {nonNullable: true}),
         }));
 
         this.tabs = [
@@ -66,7 +66,7 @@ export class ProduceComponent extends BaseJournalPageComponent<MinimalItem | Cro
         if (!filterValues.season?.length) return false;
 
         const seasonString = foundEntry.growableSeason.join(' ').toLowerCase();
-        const seasonMatch = filterValues.season?.length === Object.values(Season).length
+        const seasonMatch = filterValues.season?.length === Seasons.length
             || !!filterValues.season?.some(season => seasonString.includes(('' + season).toLowerCase()));
 
         return seasonMatch;

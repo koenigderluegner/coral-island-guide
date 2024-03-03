@@ -1,5 +1,7 @@
+import { EnumString, Season } from "@ci/data-types";
+
 export interface RawFruitPlant {
-    "growableSeason": string[],
+    "growableSeason": EnumString<Season>[],
     "stages":
         {
             "length": number,

@@ -74,5 +74,6 @@ export interface DatabaseItem {
         gold?: Consumable;
         osmium?: Consumable;
     }
-    producedByAnimal?: AnimalData & { displayName?: string; }
+    producedByAnimal?: AnimalData & { displayName?: string; },
+    enchantmentPoints?: number;
 }

@@ -2,9 +2,7 @@
     @if (selectedEntity) {
         <app-database-item-details [itemId]="selectedEntity.id" listDetail>
             <ng-template let-details appDatabaseItemDetails>
-                @if (details.chanceAsProcessResult) {
-                    <app-shop-processing-result class="mb-4" [itemProcessData]="details.chanceAsProcessResult"/>
-                }
+                <app-db-item-found [details]="details"/>
             </ng-template>
         </app-database-item-details>
     }

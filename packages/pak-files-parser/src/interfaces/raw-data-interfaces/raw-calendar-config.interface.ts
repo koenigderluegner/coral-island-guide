@@ -1,4 +1,5 @@
 import { SourceString } from "../../types/source-string.type";
+import { Season } from "../../../../data-types/src/lib/types/season.type";
 
 export interface RawCalendarConfig {
     "Type": "C_TownCalendarConfig",
@@ -9,7 +10,7 @@ export interface RawCalendarConfig {
             "map": {
                 "Key": {
                     "day": number,
-                    "season": string,
+                    "season": Season,
                     "year": number
                 },
                 "Value": {
@@ -18,7 +19,7 @@ export interface RawCalendarConfig {
                         "repeatType": string
                         "eventName": SourceString,
                         "eventId": string,
-                        "relatedNPCs": string[         ],
+                        "relatedNPCs": string[],
                         "eventTimeRange": {
                             "fromTime": {
                                 "hours": number,

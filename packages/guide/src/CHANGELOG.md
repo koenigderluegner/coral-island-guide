@@ -6,6 +6,13 @@
 
 - Added filter and sort options to NPC overview
 - Added description, birthday and datable status to NPC overview
+- Added enchantment points to found items in journal
+- Added fish pattern and difficulty to journal and details
+
+#### Changed
+
+- Fixed portrait for npc missing after try to hide spoilers
+- Fixed Zarahs 6b heart event requirements not being parsed correctly
 
 ### 0.16.1 2024-02-23 
 

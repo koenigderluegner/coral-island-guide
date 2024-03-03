@@ -93,6 +93,10 @@ export class CaughtTableComponent extends BaseTableComponent<(Critter | Fish)> {
                 case 'fishSize': {
                     return critterSizeMap.get(critter['fishSize']) ?? 0;
                 }
+                case 'pattern':
+                case 'difficulty': {
+                    return critter[property];
+                }
 
                 default: {
 
@@ -114,6 +118,12 @@ export class CaughtTableComponent extends BaseTableComponent<(Critter | Fish)> {
         if (CaughtTableComponent._isFishArray(this.dataSource)) {
             this.displayedColumns.splice(3, 0, 'fishSize');
             this.displayHeaderColumns.splice(2, 0, 'fishSize');
+
+            this.displayedColumns.splice(4, 0, 'pattern');
+            this.displayHeaderColumns.splice(3, 0, 'pattern');
+
+            this.displayedColumns.splice(5, 0, 'difficulty');
+            this.displayHeaderColumns.splice(4, 0, 'difficulty');
         }
 
 

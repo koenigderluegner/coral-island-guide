@@ -6,6 +6,7 @@ import { environment } from "../environments/environment";
 import { EffectMap, RequirementMap } from "../app/da-files-parser";
 import { AssetPath } from "../types/asset-path.type";
 import { ObjectPath } from "../types/object-path.type";
+import { RawNPC } from "../interfaces/raw-data-interfaces/raw-npc.interface";
 
 export function getParsedArgs(): Record<string, any> {
     return process.argv
@@ -144,3 +145,17 @@ export function isRequirementMap(value: EffectMap | RequirementMap | undefined):
     return !!keys.length && 'requirements' in value.get(keys[0])!
 }
 
+
+export function extractOutfitPortraitsLocation(dbItem: RawNPC, itemKey: string) {
+    let index = 0;
+    let fileName = ''
+    if (dbItem.portraitsDT) {
+        const [portaitsPath, foundIndex] = dbItem.portraitsDT.ObjectPath.split('.');
+
+        fileName = path.join(portaitsPath + '.json');
+        index = +foundIndex;
+    } else {
+        fileName = path.join('ProjectCoral', 'Content', 'ProjectCoral', 'Core', 'Data', 'AI', 'NPC_Outfit', `DT_${itemKey}Outfit.json`)
+    }
+    return {index, fileName};
+}

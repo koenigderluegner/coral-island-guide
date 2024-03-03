@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup } from "@angular/forms";
-import { Season, Weather } from "@ci/data-types";
+import { Seasons, Weather } from "@ci/data-types";
 import { FilterForm } from "../../types/filter-form.type";
 
 @Component({
@@ -14,13 +14,11 @@ export class DataFilterComponent {
     @Input() showTable!: boolean;
     @Output() showTableChange = new EventEmitter<boolean>();
 
-    protected season = Season;
     protected weather = Weather;
+    protected readonly Seasons = Seasons;
 
     setShowTable(showTable: boolean): void {
         this.showTable = showTable;
         this.showTableChange.emit(this.showTable);
     }
-
-
 }

@@ -24,7 +24,6 @@ export class BaseJournalPageComponent<D extends ({
     uiIcon = UiIcon;
     tabs: { title: string; data: Observable<D[]> }[] = [];
 
-    season = Season;
     formControl: FormGroup<FilterForm>;
     mobileQuery: MediaQueryList;
     media: MediaMatcher = inject(MediaMatcher);
