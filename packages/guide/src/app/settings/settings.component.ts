@@ -7,6 +7,7 @@ import { AvailableLanguage, AvailableLanguageDisplayName, AvailableLanguages, Ui
 import { OfferingChecklistService } from "../core/services/checklists/offering-checklist.service";
 import { CookingRecipesChecklistService } from "../core/services/checklists/cooking-recipes-checklist.service";
 import { MuseumChecklistService } from "../core/services/checklists/museum-checklist.service";
+import { HeartEventsChecklistService } from "../core/services/checklists/heart-events-checklist.service";
 
 type SettingsFormGroup = {
     useBeta: FormControl<boolean>;
@@ -35,6 +36,7 @@ export class SettingsComponent {
     private readonly _checklistOfferings = inject(OfferingChecklistService)
     private readonly _checklistCooking = inject(CookingRecipesChecklistService)
     private readonly _checklistMuseum = inject(MuseumChecklistService)
+    private readonly _checklistHeartEvents = inject(HeartEventsChecklistService)
 
     constructor(
         private readonly _settingsService: SettingsService,
@@ -70,12 +72,14 @@ export class SettingsComponent {
             this._checklistMuseum.resetLiveChecklist()
             this._checklistOfferings.resetLiveChecklist()
             this._checklistCooking.resetLiveChecklist()
+            this._checklistHeartEvents.resetLiveChecklist()
         }
 
         if (settings.resetBetaChecklists) {
             this._checklistMuseum.resetBetaChecklist()
             this._checklistOfferings.resetBetaChecklist()
             this._checklistCooking.resetBetaChecklist()
+            this._checklistHeartEvents.resetBetaChecklist()
         }
 
         if (settings.resetLiveToDo) {

@@ -10,6 +10,7 @@
 - Added fish pattern and difficulty to journal and details
 - Added permanently visible label for inputs to show what they represent
 - Added museum fish to My Coral Guide dashboard
+- Added checklist to NPC heart event details
 
 #### Changed
 
