@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { HeartEvent } from "@ci/data-types";
+import { HeartEventsChecklistService } from "../../../core/services/checklists/heart-events-checklist.service";
 
 @Component({
     selector: 'app-heart-event-trigger',
@@ -9,5 +10,13 @@ import { HeartEvent } from "@ci/data-types";
 export class HeartEventTriggerComponent {
 
     @Input({required: true}) heartEventTrigger!: HeartEvent["trigger"][0];
+    heartEventChecklist = inject(HeartEventsChecklistService)
 
+    toggleHeartEvent(checked: boolean) {
+        if (checked) {
+            this.heartEventChecklist.add(this.heartEventTrigger.cutscene)
+        } else {
+            this.heartEventChecklist.remove(this.heartEventTrigger.cutscene)
+        }
+    }
 }
