@@ -1,5 +1,11 @@
 ## Changelog
 
+### 0.17.1 2024-03-24
+
+#### Changed
+
+- Fixed npc filter on mobile causing broken layouts
+
 ### 0.17.0 2024-03-24
 
 #### Added 
