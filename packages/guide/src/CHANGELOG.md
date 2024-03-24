@@ -7,11 +7,12 @@
 - Added filter and sort options to NPC overview
 - Added filter and sort options to NPC gifting
 - Added description, birthday and datable status to NPC overview
+- Added checklist to NPC heart event details
+- Made NPC entry in gifting page collapsible
 - Added enchantment points to found items in journal
 - Added fish pattern and difficulty to journal and details
 - Added permanently visible label for inputs to show what they represent
 - Added museum fish to My Coral Guide dashboard
-- Added checklist to NPC heart event details
 - Added location filter to caught journal
 
 #### Changed
