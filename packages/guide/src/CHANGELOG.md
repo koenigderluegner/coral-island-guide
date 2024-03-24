@@ -9,7 +9,7 @@
 - Added enchantment points to found items in journal
 - Added fish pattern and difficulty to journal and details
 - Added permanently visible label for inputs to show what they represent
-- Added fish to My Coral Guide dashboard
+- Added museum fish to My Coral Guide dashboard
 
 #### Changed
 
