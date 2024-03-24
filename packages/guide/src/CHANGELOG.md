@@ -5,6 +5,7 @@
 #### Added 
 
 - Added filter and sort options to NPC overview
+- Added filter and sort options to NPC gifting
 - Added description, birthday and datable status to NPC overview
 - Added enchantment points to found items in journal
 - Added fish pattern and difficulty to journal and details
