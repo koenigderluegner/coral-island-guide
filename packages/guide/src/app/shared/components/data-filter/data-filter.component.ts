@@ -10,12 +10,13 @@ import { FilterForm } from "../../types/filter-form.type";
 export class DataFilterComponent {
 
     @Input() parentFormGroup?: FormGroup<FilterForm>;
+    @Input() locations: string[] = []
 
     @Input() showTable!: boolean;
     @Output() showTableChange = new EventEmitter<boolean>();
     protected readonly Seasons = Seasons;
     protected readonly Weathers = Weathers;
-    @HostBinding('class') private readonly classes = 'my-3 flex gap-x-3'
+    @HostBinding('class') private readonly classes = 'my-3 flex gap-x-3 gap-y-4 flex-wrap'
 
     setShowTable(showTable: boolean): void {
         this.showTable = showTable;

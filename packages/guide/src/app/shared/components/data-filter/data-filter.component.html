@@ -4,7 +4,7 @@
 @if (parentFormGroup) {
     <ng-container [formGroup]="parentFormGroup">
         @if (parentFormGroup.contains('season')) {
-            <mat-form-field class="semi-transparent-form-field">
+            <mat-form-field class="semi-transparent-form-field grow lg:grow-0 shrink-0 basis-auto">
                 <mat-label>Season</mat-label>
                 <mat-select disableOptionCentering formControlName="season" multiple>
                     <mat-select-trigger>
@@ -19,7 +19,7 @@
         }
 
         @if (parentFormGroup.contains('weather')) {
-            <mat-form-field class="semi-transparent-form-field">
+            <mat-form-field class="semi-transparent-form-field grow lg:grow-0 shrink-0 basis-auto">
                 <mat-label>Weather</mat-label>
                 <mat-select disableOptionCentering formControlName="weather" multiple>
                     <mat-select-trigger>
@@ -27,6 +27,17 @@
                     </mat-select-trigger>
                     @for (weatherOption of Weathers; track weatherOption) {
                         <mat-option [value]="weatherOption">{{ weatherOption }}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+        }
+        @if (parentFormGroup.contains('location') && locations.length) {
+            <mat-form-field class="semi-transparent-form-field grow lg:grow-0 shrink-0 basis-auto">
+                <mat-label>Location</mat-label>
+                <mat-select disableOptionCentering formControlName="location">
+                    <mat-option [value]="null">No filter</mat-option>
+                    @for (location of locations; track location) {
+                        <mat-option [value]="location">{{ location }}</mat-option>
                     }
                 </mat-select>
             </mat-form-field>
