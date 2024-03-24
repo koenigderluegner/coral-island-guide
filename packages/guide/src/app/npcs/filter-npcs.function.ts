@@ -16,11 +16,21 @@ export function filterNPCs<T extends NPC | {
             npcs = [...npcs].sort((a, b) => {
                 const aCharacterName = 'characterName' in a ? a.characterName : a.npc?.characterName ?? ''
                 const bCharacterName = 'characterName' in b ? b.characterName : b.npc?.characterName ?? ''
+
+                if (aCharacterName.toLowerCase() === 'universal') return 1;
+                if (bCharacterName.toLowerCase() === 'universal') return -1;
                 return aCharacterName.localeCompare(bCharacterName)
             })
             break;
         case "birthdate":
             npcs = [...npcs].sort((a, b) => {
+
+                const aCharacterName = 'characterName' in a ? a.characterName : a.npc?.characterName ?? ''
+                const bCharacterName = 'characterName' in b ? b.characterName : b.npc?.characterName ?? ''
+
+                if (aCharacterName.toLowerCase() === 'universal') return 1;
+                if (bCharacterName.toLowerCase() === 'universal') return -1;
+
 
                 let aBirthday = 'npc' in a ? a.npc?.birthday : a.birthday
                 let bBirthday = 'npc' in b ? b.npc?.birthday : b.birthday
