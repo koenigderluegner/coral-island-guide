@@ -7,6 +7,7 @@ import { MatDrawer } from '@angular/material/sidenav';
 @Component({
     selector: 'app-list-detail-container',
     templateUrl: './list-detail-container.component.html',
+    styleUrl: './list-detail-container.component.scss'
 })
 export class ListDetailContainerComponent implements OnDestroy{
     @ViewChild('drawer') drawer?: MatDrawer;
