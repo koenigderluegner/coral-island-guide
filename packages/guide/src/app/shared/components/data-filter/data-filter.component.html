@@ -1,61 +1,35 @@
-<div class="mb-3 flex gap-x-3">
-    <button (click)="setShowTable(!showTable)" class="btn"
-            type="button">{{ showTable ? 'Show grid' : 'Show table' }}
-    </button>
-    @if (parentFormGroup) {
-        <ng-container [formGroup]="parentFormGroup">
-            @if (parentFormGroup.contains('season')) {
-                <mat-form-field class="btn">
-                    @if (!parentFormGroup.value.season?.length) {
-                        <mat-label>Season</mat-label>
+<button (click)="setShowTable(!showTable)" class="btn"
+        type="button">{{ showTable ? 'Show grid' : 'Show table' }}
+</button>
+@if (parentFormGroup) {
+    <ng-container [formGroup]="parentFormGroup">
+        @if (parentFormGroup.contains('season')) {
+            <mat-form-field class="semi-transparent-form-field">
+                <mat-label>Season</mat-label>
+                <mat-select disableOptionCentering formControlName="season" multiple>
+                    <mat-select-trigger>
+                        <app-multi-select-trigger [values]="parentFormGroup.value.season ?? []"/>
+                    </mat-select-trigger>
+                    @for (seasonOption of Seasons; track seasonOption) {
+                        <mat-option [value]="seasonOption">{{ seasonOption }}</mat-option>
                     }
-                    <mat-select disableOptionCentering formControlName="season" multiple>
-                        <mat-select-trigger>
-                            {{ parentFormGroup.value.season?.[0] || 'Filter' }}
-                            @if ((parentFormGroup.value.season?.length || 0) > 1) {
-                                <span class="text-sm opacity-80">
-        (+{{ (parentFormGroup.value.season?.length || 0) - 1 }} {{ parentFormGroup.value.season?.length === 2 ? 'other' : 'others' }}
-                                    )
-      </span>
-                            }
-                        </mat-select-trigger>
-                        @for (seasonOption of Seasons; track seasonOption) {
-                            <mat-option
 
-                                    [value]="seasonOption">{{ seasonOption }}
-                            </mat-option>
-                        }
+                </mat-select>
+            </mat-form-field>
+        }
 
-                    </mat-select>
-                </mat-form-field>
-            }
-
-            @if (parentFormGroup.contains('weather')) {
-                <mat-form-field class="btn">
-                    @if (!parentFormGroup.value.weather?.length) {
-                        <mat-label>Weather</mat-label>
+        @if (parentFormGroup.contains('weather')) {
+            <mat-form-field class="semi-transparent-form-field">
+                <mat-label>Weather</mat-label>
+                <mat-select disableOptionCentering formControlName="weather" multiple>
+                    <mat-select-trigger>
+                        <app-multi-select-trigger [values]="parentFormGroup.value.weather ?? []"/>
+                    </mat-select-trigger>
+                    @for (weatherOption of Weathers; track weatherOption) {
+                        <mat-option [value]="weatherOption">{{ weatherOption }}</mat-option>
                     }
-                    <mat-select disableOptionCentering formControlName="weather" multiple>
-                        <mat-select-trigger>
-                            {{ parentFormGroup.value.weather?.[0] || 'Filter' }}
-                            @if ((parentFormGroup.value.weather?.length || 0) > 1) {
-                                <span class="text-sm opacity-80">
-        (+{{ (parentFormGroup.value.weather?.length || 0) - 1 }} {{ parentFormGroup.value.weather?.length === 2 ? 'other' : 'others' }}
-                                    )
-      </span>
-                            }
-
-                        </mat-select-trigger>
-                        @for (weatherOption of [weather.SUNNY, weather.RAIN, weather.SNOW, weather.WINDY, weather.STORM, weather.BLIZZARD]; track weatherOption) {
-                            <mat-option
-
-                                    [value]="weatherOption">{{ weatherOption }}
-                            </mat-option>
-                        }
-
-                    </mat-select>
-                </mat-form-field>
-            }
-        </ng-container>
-    }
-</div>
+                </mat-select>
+            </mat-form-field>
+        }
+    </ng-container>
+}

@@ -1,8 +1,97 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject, Signal, signal } from '@angular/core';
+import { DashboardService } from "../../services/dashboard.service";
+import { forkJoin, map, Observable, tap } from "rxjs";
+import { FishDashboardEntry, MinimalItem, MinimalTagBasedItem, Season, Weather } from "@ci/data-types";
+import { MuseumChecklistService } from "../../../core/services/checklists/museum-checklist.service";
+import { DatabaseService } from "../../../shared/services/database.service";
+import { BaseSelectableContainerComponent } from "../../../shared/components/base-selectable-container/base-selectable-container.component";
+import { FormControl, FormGroup } from "@angular/forms";
+import { DashboardFilter } from "../../types/dashboard-filter.type";
+import { toSignal } from "@angular/core/rxjs-interop";
+import { ChecklistContext } from "../../types/checklist-context.type";
+import { MatCheckboxChange } from "@angular/material/checkbox";
 
 @Component({
     selector: 'app-index',
     templateUrl: './index.component.html',
 })
-export class IndexComponent {
+export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem | MinimalTagBasedItem> {
+
+    dashboards = inject(DashboardService)
+    museumChecklistService = inject(MuseumChecklistService);
+    filterFormGroup: FormGroup<DashboardFilter>
+    protected requests$: Observable<any>;
+    protected fish: Signal<{
+        context: ChecklistContext,
+        entry: FishDashboardEntry,
+        completed: boolean
+    }[]>;
+    #database = inject(DatabaseService)
+    museumChecklistDefinition$ = this.#database.fetchMuseumChecklist$();
+
+    private museuemDef = signal<Record<string, MinimalItem[]>>({});
+
+    constructor() {
+        super();
+        this.requests$ = forkJoin({
+            museumDefinition: this.museumChecklistDefinition$.pipe(tap(d => this.museuemDef.set(d))),
+            fish: this.dashboards.getFish$()
+        });
+
+        this.filterFormGroup = new FormGroup<DashboardFilter>({
+            season: new FormControl<Season>("Spring", {nonNullable: true}),
+            weather: new FormControl<Weather>("Sunny", {nonNullable: true}),
+            day: new FormControl<number>(1, {nonNullable: true}),
+            year: new FormControl<number>(1, {nonNullable: true}),
+            hideCompleted: new FormControl<boolean>(true, {nonNullable: true}),
+
+        })
+
+        const filterValues = toSignal(
+            this.filterFormGroup.valueChanges.pipe(
+                map(() => this.filterFormGroup.getRawValue())
+            ),
+            {initialValue: this.filterFormGroup.getRawValue()}
+        )
+
+        this.fish = computed(() => {
+            const fish = this.dashboards.getFish();
+            const season: Season = filterValues().season;
+            const weather: Weather = filterValues().weather;
+            const hideCompleted = filterValues().hideCompleted;
+
+            const baseList = fish().filter(f => {
+                return f.seasons.includes(season) && f.weathers.includes(weather);
+            });
+
+            const musuemFish: {
+                context: ChecklistContext,
+                entry: FishDashboardEntry,
+                completed: boolean
+            }[] = [];
+
+            this.museuemDef()['Fish'].forEach(key => {
+
+                const fish = baseList.find(f => f.id === key.id)
+                if (fish) {
+                    const completed = this.museumChecklistService.isChecked(fish.id);
+                    if (!(completed && hideCompleted))
+                        musuemFish.push({
+                            completed: completed,
+                            context: "museum",
+                            entry: fish
+                        })
+                }
+            })
+
+
+            return musuemFish;
+
+
+        })
+    }
+
+    updateChecklist($event: MatCheckboxChange, id: string, context: ChecklistContext) {
+        this.museumChecklistService.isChecked(id) ? this.museumChecklistService.remove(id) : this.museumChecklistService.add(id)
+    }
 }

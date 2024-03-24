@@ -77,6 +77,7 @@ import { flatObjectMap, getQuality, nonNullable, omitFields, removeQualityFlag }
 import { preferencesMap } from "../../guide/src/app/shared/constants/preference-map.const";
 import fs from "fs";
 import { Datatable } from "./interfaces/datatable.interface";
+import { DashboardFilesCreation } from "./app/dashboard-files-creation.function";
 
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
@@ -481,6 +482,7 @@ AvailableLanguages.forEach(lang => {
         }
 
 
+        const dbItems: DatabaseItem[] = [];
         generatorValues.items.forEach(item => {
 
 
@@ -763,10 +765,12 @@ AvailableLanguages.forEach(lang => {
             }
 
             generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, lang);
-
+            dbItems.push(dbItem);
 
         })
-
+        Logger.info('Create dashboard files')
+        DashboardFilesCreation(dbItems);
+        Logger.info('Creating dashboard files done')
 
     } catch (e) {
         // @ts-ignore

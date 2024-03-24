@@ -1,5 +1,7 @@
+import { Season } from "../types/season.type";
+
 export interface SpecificDate {
     day: number,
-    season: 'Spring' | 'Summer' | 'Fall' | 'Winter',
+    season: Season,
     year: number
 }

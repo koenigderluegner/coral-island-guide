@@ -1,3 +1,5 @@
+import { Season } from "@ci/data-types";
+
 export const rarityMap: Map<string, number> = new Map<string, number>([
     ['Common', 10],
     ['Uncommon', 20],
@@ -12,4 +14,11 @@ export const critterSizeMap: Map<string, number> = new Map<string, number>([
     ['Medium', 20],
     ['Large', 30],
     ['Gigantic', 40],
+]);
+
+export const seasonMap: Map<Season, number> = new Map<Season, number>([
+    ['Spring', 1],
+    ['Summer', 2],
+    ['Fall', 3],
+    ['Winter', 4],
 ]);
