@@ -15,6 +15,7 @@
 
 - Fixed portrait for npc missing after try to hide spoilers
 - Fixed Zarahs 6b heart event requirements not being parsed correctly
+- Fixed cheese press not showing recipe for gold milk input
 
 ### 0.16.1 2024-02-23 
 

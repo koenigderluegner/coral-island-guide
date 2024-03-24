@@ -79,11 +79,10 @@ export class ItemProcessorDbGenerator {
                     } : null,
                 };
 
-                if (exisitingItem) {
+                                if (exisitingItem) {
 
                     let {qualities, ...qualitylessExistingItem} = exisitingItem;
                     let {qualities: _, ...qualitylessNewItem} = newRecipe;
-
 
                     if (JSON.stringify(qualitylessExistingItem) === JSON.stringify(qualitylessNewItem))
                         return;
@@ -96,7 +95,7 @@ export class ItemProcessorDbGenerator {
 
                     const isProcessingTimeMismatching = newRecipe.day !== exisitingItem.day || newRecipe.time.hours !== exisitingItem.time.hours || newRecipe.time.minutes !== exisitingItem.time.minutes;
 
-                    if (isProcessingTimeMismatching && inputQualityMatchesOutputQuality && genericInputMatches) {
+                    if (isProcessingTimeMismatching && inputQualityMatchesOutputQuality && genericInputMatches && inputItem.id === outputItem.id) {
 
                         if (exisitingItem.qualities === undefined) {
                             exisitingItem.qualities = {}
