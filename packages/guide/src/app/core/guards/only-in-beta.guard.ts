@@ -1,18 +1,8 @@
-import {
-    ActivatedRouteSnapshot,
-    CanActivateFn,
-    createUrlTreeFromSnapshot,
-    Router,
-    RouterStateSnapshot
-} from "@angular/router";
+import { ActivatedRouteSnapshot, CanActivateFn, createUrlTreeFromSnapshot } from "@angular/router";
 import { inject } from "@angular/core";
 import { SettingsService } from "../../shared/services/settings.service";
 
-export const onlyInBetaGuard: CanActivateFn = (
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-) => {
-    const router = inject(Router);
+export const onlyInBetaGuard: CanActivateFn = (route: ActivatedRouteSnapshot,) => {
     const settings = inject(SettingsService);
 
     if (settings.getSettings().useBeta) {

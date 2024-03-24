@@ -42,7 +42,7 @@ export class OfferingsChecklistComponent extends BaseTabbedSelectableContainerCo
                     const altarNames = records.map(altar => altar.urlPath);
                     this._altars = records;
                     records.forEach(checklist => {
-                        const keys = Object.keys(checklist);
+
                         checklist.offerings.forEach(key => {
                             key.requiredItems.forEach(item => {
                                 const key = entityKey(item.item);

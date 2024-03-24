@@ -89,7 +89,6 @@ export * from './lib/interfaces/database-item.interface';
 
 
 export * from './lib/enums/quality.enum';
-export * from './lib/enums/weather.enum';
 export * from './lib/enums/ui-icon.enum';
 
 export * from './lib/types/minimal-item.type';
@@ -106,3 +105,6 @@ export * from './lib/types/available-languages.type';
 export * from './lib/types/festival-names.type';
 export * from './lib/types/season.type';
 export * from './lib/types/enum-string.type';
+export * from './lib/types/weather.type';
+
+export * from './lib/dashboard/fish-dashboard-entry.type';

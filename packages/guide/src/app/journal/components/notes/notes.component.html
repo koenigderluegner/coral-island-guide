@@ -14,7 +14,7 @@
             <mat-tab [label]="tabNames[0]">
                 <app-data-filter [(showTable)]="showTable"/>
                 @if (!showTable) {
-                    <div class="grid gap-4 icon-grid  mt-8">
+                    <div class="grid gap-4 icon-grid mt-3">
                         @for (mail of mails; track mail) {
                             <app-item-icon (click)="showDetails(mail)"
 
@@ -33,7 +33,7 @@
             <mat-tab [label]="tabNames[1]">
                 <app-data-filter [(showTable)]="showTornPagesTable"/>
                 @if (!showTornPagesTable) {
-                    <div class="grid gap-4 icon-grid  mt-8">
+                    <div class="grid gap-4 icon-grid mt-3">
                         @for (tornPage of tornPages; track tornPage) {
                             <app-item-icon (click)="showTornPageDetails(tornPage)"
 

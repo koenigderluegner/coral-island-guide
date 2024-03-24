@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { ItemUpgradeData } from "@ci/data-types";
 
@@ -8,7 +8,7 @@ import { ItemUpgradeData } from "@ci/data-types";
 })
 export class ItemUpgradeTableComponent extends BaseTableComponent<ItemUpgradeData & {
     shop?: { url: string; displayName: string }
-}> {
+}> implements OnInit {
     protected readonly BASE_DISPLAY_COLUMNS: string[] = [
         'icon',
         'displayName',

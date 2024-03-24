@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, EventEmitter, inject, Input, Output, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, inject, Input, OnDestroy, Output, ViewChild } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { UiIcon } from '@ci/data-types';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
@@ -8,7 +8,7 @@ import { MatDrawer } from '@angular/material/sidenav';
     selector: 'app-list-detail-container',
     templateUrl: './list-detail-container.component.html',
 })
-export class ListDetailContainerComponent {
+export class ListDetailContainerComponent implements OnDestroy{
     @ViewChild('drawer') drawer?: MatDrawer;
 
     @Input()

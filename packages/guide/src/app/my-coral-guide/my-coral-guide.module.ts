@@ -25,6 +25,8 @@ import { CropComponent } from "../shared/components/database-item-details/crop/c
 import { AnimalProduceComponent } from "../shared/components/database-item-details/animal-produce/animal-produce.component";
 import { ProcessingComponent } from "../shared/components/database-item-details/processing/processing.component";
 import { OfferingComponent } from "../shared/components/database-item-details/offering/offering.component";
+import { MatProgressSpinner } from "@angular/material/progress-spinner";
+import { DashboardFilterComponent } from "./components/dashboard-filter/dashboard-filter.component";
 
 @NgModule({
     declarations: [
@@ -56,6 +58,8 @@ import { OfferingComponent } from "../shared/components/database-item-details/of
         AnimalProduceComponent,
         ProcessingComponent,
         OfferingComponent,
+        MatProgressSpinner,
+        DashboardFilterComponent
     ],
 })
 export class MyCoralGuideModule {

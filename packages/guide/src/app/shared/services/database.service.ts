@@ -1,5 +1,4 @@
-import { inject, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { combineLatest, map, Observable, of, shareReplay, tap } from 'rxjs';
 import {
     Achievement,
@@ -39,15 +38,14 @@ import {
 } from '@ci/data-types';
 import { AvailableJournalOrders } from '../types/available-journal-orders.type';
 import { MapKeyed } from '../types/map-keyed.type';
-import { SettingsService } from "./settings.service";
 import { flatObjectMap } from "@ci/util";
+import { BaseDbService } from "./base-db.service";
 
 @Injectable({
     providedIn: 'root'
 })
-export class DatabaseService {
+export class DatabaseService extends BaseDbService {
 
-    private readonly _BASE_PATH: string;
     private _ITEMS$?: Observable<Item[]>;
     private _ITEMS: Item[] = [];
     private _FISH$?: Observable<Fish[]>;
@@ -117,23 +115,16 @@ export class DatabaseService {
     private _BESTIARY: Enemy[] = [];
     private _BESTIARY$?: Observable<Enemy[]>;
 
-    private readonly _settings = inject(SettingsService).getSettings();
     private _ANIMAL_DATA$?: Observable<AnimalData[]>;
     private _ANIMAL_MOOD_DATA$?: Observable<ProductSizeByMood[]>;
     private _ANIMAL_SHOP_DATA$?: Observable<AnimalShopData[]>;
 
     private _DATABASE_ITEMS: Map<string, DatabaseItem> = new Map<string, DatabaseItem>();
 
-    constructor(private readonly _http: HttpClient) {
-        const version = this._settings.useBeta ? 'beta' : 'live';
-        const lang = this._settings.language ?? 'en'
-
-        this._BASE_PATH = `assets/${version}/database/${lang}`;
-    }
 
     fetchDatabaseItem$(id: string): Observable<DatabaseItem> {
         if (!this._DATABASE_ITEMS.has(id)) {
-            return this._http.get<DatabaseItem>(`${this._BASE_PATH}/items/${id}.json`)
+            return this.http.get<DatabaseItem>(`${this.BASE_PATH}/items/${id}.json`)
                 .pipe(
                     tap(items => this._DATABASE_ITEMS.set(id, items)),
                     shareReplay(1)
@@ -151,7 +142,7 @@ export class DatabaseService {
 
     fetchItems$(): Observable<Item[]> {
         if (!this._ITEMS$) {
-            this._ITEMS$ = this._http.get<Item[]>(`${this._BASE_PATH}/items.json`)
+            this._ITEMS$ = this.http.get<Item[]>(`${this.BASE_PATH}/items.json`)
                 .pipe(
                     tap(items => this._ITEMS = items),
                     shareReplay(1)
@@ -162,7 +153,7 @@ export class DatabaseService {
 
     fetchMailData$(): Observable<MailData[]> {
         if (!this._MAIL_DATA$) {
-            this._MAIL_DATA$ = this._http.get<MailData[]>(`${this._BASE_PATH}/mail-data.json`)
+            this._MAIL_DATA$ = this.http.get<MailData[]>(`${this.BASE_PATH}/mail-data.json`)
                 .pipe(
                     tap(items => this._MAIL_DATA = items),
                     shareReplay(1)
@@ -177,7 +168,7 @@ export class DatabaseService {
 
     fetchBestiary$(): Observable<Enemy[]> {
         if (!this._BESTIARY$) {
-            this._BESTIARY$ = this._http.get<Enemy[]>(`${this._BASE_PATH}/bestiary.json`)
+            this._BESTIARY$ = this.http.get<Enemy[]>(`${this.BASE_PATH}/bestiary.json`)
                 .pipe(
                     tap(items => this._BESTIARY = items),
                     shareReplay(1)
@@ -188,7 +179,7 @@ export class DatabaseService {
 
     fetchAnimals$(): Observable<AnimalData[]> {
         if (!this._ANIMAL_DATA$) {
-            this._ANIMAL_DATA$ = this._http.get<AnimalData[]>(`${this._BASE_PATH}/animal-data.json`)
+            this._ANIMAL_DATA$ = this.http.get<AnimalData[]>(`${this.BASE_PATH}/animal-data.json`)
                 .pipe(
                     shareReplay(1)
                 );
@@ -198,7 +189,7 @@ export class DatabaseService {
 
     fetchAnimalMoodData$(): Observable<ProductSizeByMood[]> {
         if (!this._ANIMAL_MOOD_DATA$) {
-            this._ANIMAL_MOOD_DATA$ = this._http.get<ProductSizeByMood[]>(`${this._BASE_PATH}/animal-mood-size.json`)
+            this._ANIMAL_MOOD_DATA$ = this.http.get<ProductSizeByMood[]>(`${this.BASE_PATH}/animal-mood-size.json`)
                 .pipe(
                     shareReplay(1)
                 );
@@ -208,7 +199,7 @@ export class DatabaseService {
 
     fetchAnimalShopData$(): Observable<AnimalShopData[]> {
         if (!this._ANIMAL_SHOP_DATA$) {
-            this._ANIMAL_SHOP_DATA$ = this._http.get<AnimalShopData[]>(`${this._BASE_PATH}/animal-shop-data.json`)
+            this._ANIMAL_SHOP_DATA$ = this.http.get<AnimalShopData[]>(`${this.BASE_PATH}/animal-shop-data.json`)
                 .pipe(
                     shareReplay(1)
                 );
@@ -218,7 +209,7 @@ export class DatabaseService {
 
     fetchTornPagesData$(): Observable<TornPageData[]> {
         if (!this._TORN_PAGES_DATA$) {
-            this._TORN_PAGES_DATA$ = this._http.get<TornPageData[]>(`${this._BASE_PATH}/torn-pages.json`)
+            this._TORN_PAGES_DATA$ = this.http.get<TornPageData[]>(`${this.BASE_PATH}/torn-pages.json`)
                 .pipe(
                     tap(items => this._TORN_PAGES_DATA = items),
                     shareReplay(1)
@@ -234,7 +225,7 @@ export class DatabaseService {
 
     fetchCookingUtensilMapping$(): Observable<Record<string, MinimalItem>> {
         if (!this._COOKING_UTENSIL_MAPPING$) {
-            this._COOKING_UTENSIL_MAPPING$ = this._http.get<Record<string, MinimalItem>[]>(`${this._BASE_PATH}/cooking-utensil-mapping.json`)
+            this._COOKING_UTENSIL_MAPPING$ = this.http.get<Record<string, MinimalItem>[]>(`${this.BASE_PATH}/cooking-utensil-mapping.json`)
                 .pipe(
                     map(s => s[0]),
                     tap(items => this._COOKING_UTENSIL_MAPPING = items),
@@ -251,7 +242,7 @@ export class DatabaseService {
 
     fetchProcessorMapping$(): Observable<Record<string, MinimalItem>> {
         if (!this._PROCESSOR_MAPPING$) {
-            this._PROCESSOR_MAPPING$ = this._http.get<Record<string, MinimalItem>[]>(`${this._BASE_PATH}/processor-mapping.json`)
+            this._PROCESSOR_MAPPING$ = this.http.get<Record<string, MinimalItem>[]>(`${this.BASE_PATH}/processor-mapping.json`)
                 .pipe(
                     map(s => s[0]),
                     tap(items => this._PROCESSOR_MAPPING = items),
@@ -268,7 +259,7 @@ export class DatabaseService {
 
     fetchNPCs$(): Observable<NPC[]> {
         if (!this._NPCS$) {
-            this._NPCS$ = this._http.get<NPC[]>(`${this._BASE_PATH}/npcs.json`)
+            this._NPCS$ = this.http.get<NPC[]>(`${this.BASE_PATH}/npcs.json`)
                 .pipe(
                     tap(items => this._NPCS = items),
                     shareReplay(1)
@@ -285,7 +276,7 @@ export class DatabaseService {
 
     fetchHeartEvents$(): Observable<Record<string, HeartEvent[]>> {
         if (!this._HEART_EVENTS$) {
-            this._HEART_EVENTS$ = this._http.get<Record<string, HeartEvent[]>[]>(`${this._BASE_PATH}/heart-events.json`)
+            this._HEART_EVENTS$ = this.http.get<Record<string, HeartEvent[]>[]>(`${this.BASE_PATH}/heart-events.json`)
                 .pipe(
                     map(events => events[0]),
                     tap(items => this._HEART_EVENTS = items),
@@ -303,7 +294,7 @@ export class DatabaseService {
 
     fetchMuseumChecklist$(): Observable<Record<string, MinimalItem[]>> {
         if (!this._MUSEUM_CHECKLIST$) {
-            this._MUSEUM_CHECKLIST$ = this._http.get<Record<string, MinimalItem[]>[]>(`${this._BASE_PATH}/museum-checklist.json`)
+            this._MUSEUM_CHECKLIST$ = this.http.get<Record<string, MinimalItem[]>[]>(`${this.BASE_PATH}/museum-checklist.json`)
                 .pipe(
                     map(events => events[0]),
                     tap(items => this._MUSEUM_CHECKLIST = items),
@@ -315,7 +306,7 @@ export class DatabaseService {
 
     fetchCookingRecipesChecklist$(): Observable<Record<string, MinimalItem[]>> {
         if (!this._COOKING_RECIPES_CHECKLIST$) {
-            this._COOKING_RECIPES_CHECKLIST$ = this._http.get<Record<string, MinimalItem[]>[]>(`${this._BASE_PATH}/cooking-recipes-checklist.json`)
+            this._COOKING_RECIPES_CHECKLIST$ = this.http.get<Record<string, MinimalItem[]>[]>(`${this.BASE_PATH}/cooking-recipes-checklist.json`)
                 .pipe(
                     map(events => events[0]),
                     tap(items => this._COOKING_RECIPES_CHECKLIST = items),
@@ -328,7 +319,7 @@ export class DatabaseService {
 
     fetchAchievements$(): Observable<Achievement[]> {
         if (!this._ACHHIEVEMENTS$) {
-            this._ACHHIEVEMENTS$ = this._http.get<Achievement[]>(`${this._BASE_PATH}/achievements.json`)
+            this._ACHHIEVEMENTS$ = this.http.get<Achievement[]>(`${this.BASE_PATH}/achievements.json`)
                 .pipe(
                     shareReplay(1)
                 );
@@ -344,7 +335,7 @@ export class DatabaseService {
 
     fetchOfferings$(): Observable<OfferingAltar[]> {
         if (!this._OFFERINGS$) {
-            this._OFFERINGS$ = this._http.get<OfferingAltar[]>(`${this._BASE_PATH}/offerings.json`)
+            this._OFFERINGS$ = this.http.get<OfferingAltar[]>(`${this.BASE_PATH}/offerings.json`)
                 .pipe(
                     tap(items => this._OFFERINGS = items),
                     shareReplay(1)
@@ -355,7 +346,7 @@ export class DatabaseService {
 
     fetchConsumables$(): Observable<Consumable[]> {
         if (!this._CONSUMABLES$) {
-            this._CONSUMABLES$ = this._http.get<Consumable[]>(`${this._BASE_PATH}/consumables.json`)
+            this._CONSUMABLES$ = this.http.get<Consumable[]>(`${this.BASE_PATH}/consumables.json`)
                 .pipe(
                     tap(items => this._CONSUMABLES = items),
                     shareReplay(1)
@@ -366,7 +357,7 @@ export class DatabaseService {
 
     fetchFish$(): Observable<Fish[]> {
         if (!this._FISH$) {
-            this._FISH$ = this._http.get<Fish[]>(`${this._BASE_PATH}/fish.json`)
+            this._FISH$ = this.http.get<Fish[]>(`${this.BASE_PATH}/fish.json`)
                 .pipe(
                     tap(fish => this._FISH = fish),
                     shareReplay(1)
@@ -382,7 +373,7 @@ export class DatabaseService {
     fetchCraftingRecipes$(): Observable<CraftingRecipe[]> {
         if (!this._CRAFTING_RECIPE$) {
             this._CRAFTING_RECIPE$ = combineLatest([
-                this._http.get<CraftingRecipe[]>(`${this._BASE_PATH}/crafting-recipes.json`),
+                this.http.get<CraftingRecipe[]>(`${this.BASE_PATH}/crafting-recipes.json`),
                 this.fetchItems$(),
                 this.fetchTagBasedItems$()
             ]).pipe(
@@ -410,7 +401,7 @@ export class DatabaseService {
     fetchItemProcessingRecipes$(): Observable<Record<string, ItemProcessing[]>> {
         if (!this._ITEM_PROCESSING_RECIPE$) {
             this._ITEM_PROCESSING_RECIPE$ = combineLatest([
-                this._http.get<Record<string, ItemProcessing[]>[]>(`${this._BASE_PATH}/item-processing.json`),
+                this.http.get<Record<string, ItemProcessing[]>[]>(`${this.BASE_PATH}/item-processing.json`),
                 this.fetchTagBasedItems$(),
                 this.fetchItems$()
             ])
@@ -443,7 +434,7 @@ export class DatabaseService {
 
     fetchCookingRecipes$(): Observable<Record<string, CookingRecipe[]>> {
         if (!this._COOKING_RECIPE$) {
-            this._COOKING_RECIPE$ = this._http.get<Record<string, CookingRecipe[]>[]>(`${this._BASE_PATH}/cooking-recipes.json`)
+            this._COOKING_RECIPE$ = this.http.get<Record<string, CookingRecipe[]>[]>(`${this.BASE_PATH}/cooking-recipes.json`)
                 .pipe(
                     map(cooking => cooking[0]),
                     tap(cooking => this._COOKING_RECIPE = cooking),
@@ -459,7 +450,7 @@ export class DatabaseService {
 
     fetchTagBasedItems$(): Observable<TagBasedItem[]> {
         if (!this._TAG_BASED_ITEMS$) {
-            this._TAG_BASED_ITEMS$ = this._http.get<TagBasedItem[]>(`${this._BASE_PATH}/tag-based-items.json`)
+            this._TAG_BASED_ITEMS$ = this.http.get<TagBasedItem[]>(`${this.BASE_PATH}/tag-based-items.json`)
                 .pipe(
                     tap(tagBasedItems => this._TAG_BASED_ITEMS = tagBasedItems),
                     shareReplay(1)
@@ -474,7 +465,7 @@ export class DatabaseService {
 
     fetchOceanCritters$(): Observable<Critter[]> {
         if (!this._OCEAN_CRITTERS$) {
-            this._OCEAN_CRITTERS$ = this._http.get<Critter[]>(`${this._BASE_PATH}/ocean-critters.json`)
+            this._OCEAN_CRITTERS$ = this.http.get<Critter[]>(`${this.BASE_PATH}/ocean-critters.json`)
                 .pipe(
                     tap(oceanCritters => this._OCEAN_CRITTERS = oceanCritters),
                     shareReplay(1)
@@ -489,7 +480,7 @@ export class DatabaseService {
 
     fetchBugsAndInsects$(): Observable<Critter[]> {
         if (!this._BUGS_AND_INSECTS$) {
-            this._BUGS_AND_INSECTS$ = this._http.get<Critter[]>(`${this._BASE_PATH}/bugs-and-insects.json`)
+            this._BUGS_AND_INSECTS$ = this.http.get<Critter[]>(`${this.BASE_PATH}/bugs-and-insects.json`)
                 .pipe(
                     tap(bugs => this._BUGS_AND_INSECTS = bugs),
                     shareReplay(1)
@@ -504,7 +495,7 @@ export class DatabaseService {
 
     fetchCrops$(): Observable<Crop[]> {
         if (!this._CROPS$) {
-            this._CROPS$ = this._http.get<Crop[]>(`${this._BASE_PATH}/crops.json`)
+            this._CROPS$ = this.http.get<Crop[]>(`${this.BASE_PATH}/crops.json`)
                 .pipe(
                     tap(crops => this._CROPS = crops),
                     shareReplay(1)
@@ -519,7 +510,7 @@ export class DatabaseService {
 
     fetchFruitTrees$(): Observable<FruitTree[]> {
         if (!this._FRUIT_TREES$) {
-            this._FRUIT_TREES$ = this._http.get<Crop[]>(`${this._BASE_PATH}/fruit-trees.json`)
+            this._FRUIT_TREES$ = this.http.get<Crop[]>(`${this.BASE_PATH}/fruit-trees.json`)
                 .pipe(
                     tap(fruitTrees => this._FRUIT_TREES = fruitTrees),
                     shareReplay(1)
@@ -534,7 +525,7 @@ export class DatabaseService {
 
     fetchFruitPlants$(): Observable<FruitPlant[]> {
         if (!this._FRUIT_PLANTS$) {
-            this._FRUIT_PLANTS$ = this._http.get<Crop[]>(`${this._BASE_PATH}/fruit-plants.json`)
+            this._FRUIT_PLANTS$ = this.http.get<Crop[]>(`${this.BASE_PATH}/fruit-plants.json`)
                 .pipe(
                     tap(fruitPlants => this._FRUIT_PLANTS = fruitPlants),
                     shareReplay(1)
@@ -549,7 +540,7 @@ export class DatabaseService {
 
     fetchJournalOrder$(listName: AvailableJournalOrders): Observable<JournalOrder[]> {
         if (!this._JOURNAL_ORDERS.get(listName)) {
-            this._JOURNAL_ORDERS.set(listName, this._http.get<JournalOrder[]>(`${this._BASE_PATH}/${listName}.json`)
+            this._JOURNAL_ORDERS.set(listName, this.http.get<JournalOrder[]>(`${this.BASE_PATH}/${listName}.json`)
                 .pipe(
                     shareReplay(1)
                 )
@@ -560,9 +551,9 @@ export class DatabaseService {
 
     fetchGiftingPreferences$(): Observable<MapKeyed<GiftPreferences>[]> {
         if (!this._GIFT_PREFERENCES$) {
-            this._GIFT_PREFERENCES$ = this._http.get<{
+            this._GIFT_PREFERENCES$ = this.http.get<{
                 [person: string]: GiftPreferences
-            }[]>(`${this._BASE_PATH}/gift-preferences.json`)
+            }[]>(`${this.BASE_PATH}/gift-preferences.json`)
                 .pipe(
                     map(prefs => flatObjectMap(prefs)),
                     tap(prefs => this._GIFT_PREFERENCES = prefs),
@@ -579,7 +570,7 @@ export class DatabaseService {
 
     fetchPetShopAdoptions$(): Observable<PetShopAdoptions[]> {
         if (!this._PET_SHOP_ADOPTIONS$) {
-            this._PET_SHOP_ADOPTIONS$ = this._http.get<PetShopAdoptions[]>(`${this._BASE_PATH}/pet-shop-adoptions.json`)
+            this._PET_SHOP_ADOPTIONS$ = this.http.get<PetShopAdoptions[]>(`${this.BASE_PATH}/pet-shop-adoptions.json`)
                 .pipe(
                     tap(prefs => this._PET_SHOP_ADOPTIONS = prefs),
                     shareReplay(1)
@@ -590,7 +581,7 @@ export class DatabaseService {
 
     fetchShopProcessItems$(shopName: ShopName): Observable<ItemProcessShopData[]> {
         if (!this._SHOP_PROCESS_ITEMS.has(shopName)) {
-            return this._http.get<ItemProcessShopData[]>(`${this._BASE_PATH}/${shopName}-shop-process-items.json`)
+            return this.http.get<ItemProcessShopData[]>(`${this.BASE_PATH}/${shopName}-shop-process-items.json`)
                 .pipe(
                     tap(items => this._SHOP_PROCESS_ITEMS.set(shopName, items)),
                     shareReplay(1)
@@ -603,7 +594,7 @@ export class DatabaseService {
 
     fetchItemUpgradeData$(shopName: ShopName): Observable<ItemUpgradeData[]> {
         if (!this._ITEM_UPGRADE.has(shopName)) {
-            return this._http.get<ItemUpgradeData[]>(`${this._BASE_PATH}/${shopName}-item-upgrade.json`)
+            return this.http.get<ItemUpgradeData[]>(`${this.BASE_PATH}/${shopName}-item-upgrade.json`)
                 .pipe(
                     tap(items => this._ITEM_UPGRADE.set(shopName, items)),
                     shareReplay(1)
@@ -616,7 +607,7 @@ export class DatabaseService {
 
     fetchOpeningHours$(shopName: ShopName): Observable<Record<string, OpeningHours>> {
         if (!this._OPENING_HOURS.has(shopName)) {
-            return this._http.get<Record<string, OpeningHours>[]>(`${this._BASE_PATH}/${shopName}-opening-hours.json`)
+            return this.http.get<Record<string, OpeningHours>[]>(`${this.BASE_PATH}/${shopName}-opening-hours.json`)
                 .pipe(
                     map(items => items[0]),
                     tap(items => this._OPENING_HOURS.set(shopName, items)),
@@ -650,7 +641,7 @@ export class DatabaseService {
 
     fetchShopItemData$(shopName: ShopName): Observable<ShopItemData[]> {
         if (!this._SHOP_ITEMS.has(shopName)) {
-            return this._http.get<ShopItemData[]>(`${this._BASE_PATH}/${shopName}-shop-items.json`)
+            return this.http.get<ShopItemData[]>(`${this.BASE_PATH}/${shopName}-shop-items.json`)
                 .pipe(
                     tap(items => this._SHOP_ITEMS.set(shopName, items)),
                     shareReplay(1)
@@ -664,7 +655,7 @@ export class DatabaseService {
 
     fetchFestivalData$(festivalName: FestivalName): Observable<FestivalData> {
         if (!this._FESTIVAL_DATA.has(festivalName)) {
-            return this._http.get<FestivalData[]>(`${this._BASE_PATH}/${festivalName}-festival-data.json`)
+            return this.http.get<FestivalData[]>(`${this.BASE_PATH}/${festivalName}-festival-data.json`)
                 .pipe(
                     map(data => data[0]),
                     tap(items => this._FESTIVAL_DATA.set(festivalName, items)),
@@ -678,7 +669,7 @@ export class DatabaseService {
 
     fetchMeritExchangeShopData$(): Observable<MeritExchangeShopData[]> {
         if (!this._MERIT_EXCHANGE_SHOP_DATA$) {
-            this._MERIT_EXCHANGE_SHOP_DATA$ = this._http.get<MeritExchangeShopData[]>(`${this._BASE_PATH}/merit-exchange-shop-items.json`)
+            this._MERIT_EXCHANGE_SHOP_DATA$ = this.http.get<MeritExchangeShopData[]>(`${this.BASE_PATH}/merit-exchange-shop-items.json`)
                 .pipe(
                     shareReplay(1)
                 );

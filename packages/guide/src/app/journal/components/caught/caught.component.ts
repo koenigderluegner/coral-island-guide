@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Critter, Fish, Season, Seasons, Weather } from '@ci/data-types';
+import { Critter, Fish, Season, Seasons, Weather, Weathers } from '@ci/data-types';
 import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page.component';
 import { getTruthyValues } from '@ci/util';
 import { FilterForm } from "../../../shared/types/filter-form.type";
@@ -18,7 +18,7 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
     constructor() {
         super(new FormGroup<FilterForm>({
             season: new FormControl<Season[]>([...Seasons], {nonNullable: true}),
-            weather: new FormControl<string[]>(Object.values(Weather), {nonNullable: true}),
+            weather: new FormControl<Weather[]>([...Weathers], {nonNullable: true}),
         }));
 
         this.registerToToDo = this.registerToToDo.bind(this)
@@ -87,7 +87,7 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
             const weatherString = getTruthyValues(currentValue).toLowerCase();
             const match = (index === this.SEA_CRITTERS_INDEX)
                 || weatherString === 'any'
-                || filterValues.weather?.length === Object.values(Weather).length
+                || filterValues.weather?.length === Weathers.length
                 || !!filterValues.weather?.some(weather => weatherString.includes(('' + weather).toLowerCase()));
             return previousValue || match
         }, false);
