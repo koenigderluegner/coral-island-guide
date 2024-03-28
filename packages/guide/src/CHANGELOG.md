@@ -1,18 +1,38 @@
 ## Changelog
 
-### TBD
+### 0.17.2 2024-03-28
+
+#### Changed
+
+- Fixed incomplete recipes for Lodeh, Fried Rice and Rainbow Sandwich
+
+### 0.17.1 2024-03-24
+
+#### Changed
+
+- Fixed npc filter on mobile causing broken layouts
+
+### 0.17.0 2024-03-24
 
 #### Added 
 
 - Added filter and sort options to NPC overview
+- Added filter and sort options to NPC gifting
 - Added description, birthday and datable status to NPC overview
+- Added checklist to NPC heart event details
+- Made NPC entry in gifting page collapsible
 - Added enchantment points to found items in journal
 - Added fish pattern and difficulty to journal and details
+- Added permanently visible label for inputs to show what they represent
+- Added museum fish to My Coral Guide dashboard
+- Added location filter to caught journal
 
 #### Changed
 
 - Fixed portrait for npc missing after try to hide spoilers
 - Fixed Zarahs 6b heart event requirements not being parsed correctly
+- Fixed cheese press not showing recipe for gold milk input
+- Fixed journal filter on mobile/smaller devices being cut off
 
 ### 0.16.1 2024-02-23 
 

@@ -1,8 +1,10 @@
-import { Component, inject, ViewEncapsulation } from '@angular/core';
+import { Component, computed, inject, signal, viewChild, ViewEncapsulation } from '@angular/core';
 import { DatabaseService } from '../../../shared/services/database.service';
 import { forkJoin, Observable, of, switchMap } from 'rxjs';
 import { GiftPreferences, NPC, UiIcon } from '@ci/data-types';
 import { MapKeyed } from '../../../shared/types/map-keyed.type';
+import { NpcFilterComponent } from "../../npc-filter/npc-filter.component";
+import { filterNPCs } from '../../filter-npcs.function';
 
 type CombinedGiftPreference = {
     preferences: MapKeyed<GiftPreferences>,
@@ -17,15 +19,30 @@ type CombinedGiftPreference = {
 })
 export class GiftingComponent {
 
-
     protected uiIcon = UiIcon;
     protected gifting$: Observable<CombinedGiftPreference[]>;
-    private _database = inject(DatabaseService)
+    npcFilter = viewChild(NpcFilterComponent);
+    #searchValueChanges = computed(() => this.npcFilter()?.searchValueChanges() ?? '')
+    #sortValueChanges = computed(() => this.npcFilter()?.sortValueChanges() ?? 'default')
+    #filterNPCs = filterNPCs
+    readonly #npcList = signal<CombinedGiftPreference[] | undefined>(undefined);
+    protected filteredAndSortedNpcs = computed(() => {
+
+        let npcs = this.#npcList() ?? [];
+        if (!this.#searchValueChanges || !this.#sortValueChanges) return npcs;
+        const searchValue = this.#searchValueChanges().toLowerCase()
+        const sortValue = this.#sortValueChanges()
+
+        return this.#filterNPCs(npcs, searchValue, sortValue);
+
+
+    })
+    #database = inject(DatabaseService)
 
     constructor() {
         this.gifting$ = forkJoin({
-            gifts: this._database.fetchGiftingPreferences$(),
-            npcs: this._database.fetchNPCs$(),
+            gifts: this.#database.fetchGiftingPreferences$(),
+            npcs: this.#database.fetchNPCs$(),
         }).pipe(
             switchMap(({gifts, npcs}) => {
 
@@ -35,6 +52,8 @@ export class GiftingComponent {
                         npc: npcs.find(npc => npc.key === gift.mapKey)
                     } satisfies CombinedGiftPreference
                 })
+
+                this.#npcList?.set(mappedGifts)
                 return of(mappedGifts)
             })
         )

@@ -62,6 +62,7 @@ import { IsTagBasedItemPipe } from './pipes/is-tag-based-item.pipe';
 import { ToItemListEntriesPipe } from './pipes/to-item-list-entries.pipe';
 import { RequirementsListComponent } from './components/requirements-list/requirements-list.component';
 import { AddSpacesToPascalCasePipe } from "./pipes/add-spaces-to-pascal-case.pipe";
+import { MultiSelectTriggerComponent } from "./components/multi-select-trigger/multi-select-trigger.component";
 
 @NgModule({
     declarations: [
@@ -130,6 +131,7 @@ import { AddSpacesToPascalCasePipe } from "./pipes/add-spaces-to-pascal-case.pip
         ReactiveFormsModule,
         MatSortModule,
         AddSpacesToPascalCasePipe,
+        MultiSelectTriggerComponent,
     ],
     exports: [
         UiIconComponent,

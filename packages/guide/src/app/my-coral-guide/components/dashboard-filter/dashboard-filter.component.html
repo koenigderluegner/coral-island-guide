@@ -1,0 +1,37 @@
+<div class="flex flex-wrap gap-x-3 gap-y-4" [formGroup]="parentFormGroup">
+
+    <mat-form-field class="semi-transparent-form-field" style="--mat-form-field-infix-width: 3rem">
+        <mat-label>Day</mat-label>
+        <input formControlName="day" min="1" max="28" inputmode="number" type="number" pattern="[0-9]" matInput/>
+    </mat-form-field>
+
+    <button class="btn -ml-2 touch-manipulation" (click)="increaseDay(1)">+</button>
+
+    <mat-form-field class="semi-transparent-form-field" style="--mat-form-field-infix-width: 5rem">
+        <mat-label>Season</mat-label>
+        <mat-select disableOptionCentering formControlName="season">
+            @for (seasonOption of Seasons; track seasonOption) {
+                <mat-option [value]="seasonOption">{{ seasonOption }}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="semi-transparent-form-field" style="--mat-form-field-infix-width: 3rem">
+        <mat-label>Year</mat-label>
+        <input formControlName="year" min="1" inputmode="number" type="number" pattern="[0-9]" matInput/>
+    </mat-form-field>
+
+
+    <mat-form-field class="semi-transparent-form-field" style="--mat-form-field-infix-width: 5rem">
+        <mat-label>Weather</mat-label>
+        <mat-select disableOptionCentering formControlName="weather">
+            @for (weatherOption of Weathers; track weatherOption) {
+                <mat-option [value]="weatherOption">{{ weatherOption }}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
+
+    <mat-checkbox class="text-white self-center" formControlName="hideCompleted">Hide completed</mat-checkbox>
+
+
+</div>

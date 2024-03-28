@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Critter, Fish, Season, Seasons, Weather } from '@ci/data-types';
+import { Critter, Fish, Season, Seasons, Weather, Weathers } from '@ci/data-types';
 import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page.component';
 import { getTruthyValues } from '@ci/util';
 import { FilterForm } from "../../../shared/types/filter-form.type";
@@ -18,7 +18,8 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
     constructor() {
         super(new FormGroup<FilterForm>({
             season: new FormControl<Season[]>([...Seasons], {nonNullable: true}),
-            weather: new FormControl<string[]>(Object.values(Weather), {nonNullable: true}),
+            weather: new FormControl<Weather[]>([...Weathers], {nonNullable: true}),
+            location: new FormControl<string | null>(null),
         }));
 
         this.registerToToDo = this.registerToToDo.bind(this)
@@ -70,9 +71,21 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
         if (!filterValues.weather?.length) return false;
 
 
-        const spawnSeason = 'spawnSettings' in foundEntry ? foundEntry.spawnSettings.map(s => s.spawnSeason) : [foundEntry.spawnSeason];
-        const spawnWeather = 'spawnSettings' in foundEntry ? foundEntry.spawnSettings.map(s => s.spawnWeather) : [foundEntry.spawnWeather];
+        const spawnSeason = 'spawnSettings' in foundEntry
+            ? foundEntry.spawnSettings.map(s => s.spawnSeason)
+            : [foundEntry.spawnSeason];
 
+        const spawnWeather = 'spawnSettings' in foundEntry
+            ? foundEntry.spawnSettings.map(s => s.spawnWeather)
+            : [foundEntry.spawnWeather];
+
+        const locations = 'spawnSettings' in foundEntry
+            ? foundEntry.spawnSettings.map(s => s.spawnLocation).flat()
+            : foundEntry.spawnLocation
+
+        const locationMatch = !filterValues.location || locations.includes(filterValues.location)
+
+        if (!locationMatch) return false;
 
         const seasonMatch = spawnSeason.reduce((previousValue, currentValue) => {
             const seasonString = getTruthyValues(currentValue).toLowerCase();
@@ -83,17 +96,40 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
             return previousValue || match
         }, false)
 
+        if (!seasonMatch) return false;
+
         const weatherMatch = spawnWeather.reduce((previousValue, currentValue) => {
             const weatherString = getTruthyValues(currentValue).toLowerCase();
             const match = (index === this.SEA_CRITTERS_INDEX)
                 || weatherString === 'any'
-                || filterValues.weather?.length === Object.values(Weather).length
+                || filterValues.weather?.length === Weathers.length
                 || !!filterValues.weather?.some(weather => weatherString.includes(('' + weather).toLowerCase()));
             return previousValue || match
         }, false);
 
-        return seasonMatch && weatherMatch;
+        return weatherMatch;
 
     }
 
+    getLocations(entries: (Fish | Critter)[]): string[] {
+        if (!entries.length) return [];
+
+        return [...new Set(
+            entries
+                .map(entry => {
+                    if ('fishName' in entry) {
+                        return entry.spawnSettings.map(spawnSettings => spawnSettings.spawnLocation)
+                    } else {
+                        return entry.spawnLocation
+                    }
+                })
+                .flat(2))
+        ].sort()
+
+
+    }
+
+    resetLocationFilter() {
+        this.formControl.get('location')?.setValue(null)
+    }
 }

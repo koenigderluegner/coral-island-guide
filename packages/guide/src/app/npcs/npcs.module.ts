@@ -17,6 +17,9 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { MatInput } from "@angular/material/input";
 import { MatOption } from "@angular/material/autocomplete";
 import { MatSelect } from "@angular/material/select";
+import { MatCheckbox } from "@angular/material/checkbox";
+import { NpcFilterComponent } from "./npc-filter/npc-filter.component";
+import { JournalModule } from "../journal/journal.module";
 
 @NgModule({
     declarations: [
@@ -28,7 +31,7 @@ import { MatSelect } from "@angular/material/select";
         HeartEventTriggerComponent,
         GiftingGridComponent,
     ],
-    imports: [CommonModule, NPCsRoutingModule, SharedModule, MatTooltipModule, MatProgressSpinnerModule, AddSpacesToPascalCasePipe, MatFormField, ReactiveFormsModule, MatInput, MatLabel, MatOption, MatSelect],
+    imports: [CommonModule, NPCsRoutingModule, SharedModule, MatTooltipModule, MatProgressSpinnerModule, AddSpacesToPascalCasePipe, MatFormField, ReactiveFormsModule, MatInput, MatLabel, MatOption, MatSelect, MatCheckbox, NpcFilterComponent, JournalModule],
 })
 export class NPCsModule {
 }

@@ -21,7 +21,7 @@ export abstract class BaseShopComponent extends BaseSelectableContainerComponent
     protected readonly SHOP_DISPLAY_NAMES = ShopDisplayNames
     protected readonly SHOP_ICONS = ShopIcons
 
-    protected upgradeHeaderText?: string;
+    protected upgradeHeaderText = 'Upgrades';
 
     protected shopItemData$?: Observable<ShopItemData[]>;
     protected uiIcon = UiIcon;

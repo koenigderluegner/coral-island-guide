@@ -1,1 +1,1 @@
-{"version":"0.16.1","date":"2024-02-23","body":"\r\n#### Changed \r\n\r\n- Updated live data to v1-945 except character images (Steam version)\r\n\r"}
+{"version":"0.17.2","date":"2024-03-28","body":"\r\n#### Changed\r\n\r\n- Fixed incomplete recipes for Lodeh, Fried Rice and Rainbow Sandwich\r\n\r"}

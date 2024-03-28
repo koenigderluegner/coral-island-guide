@@ -1,6 +1,11 @@
-<header class="flex flex-col text-black mb-1">
-    <h4>{{ heartEventTrigger.cutscene }}</h4>
-    <span>Id: {{ heartEventTrigger.id }} </span>
+<header class="flex justify-between text-black mb-1">
+    <div class="flex flex-col">
+        <h4>{{ heartEventTrigger.cutscene }}</h4>
+        <span>Id: {{ heartEventTrigger.id }} </span>
+    </div>
+    <mat-checkbox [checked]="heartEventChecklist.isChecked(heartEventTrigger.cutscene)"
+                  (change)="toggleHeartEvent($event.checked)">Cutscene seen
+    </mat-checkbox>
 </header>
 
 
@@ -61,21 +66,16 @@
     <div class="my-4">
     <span class="text-lg text-black">
         @if (heartEventTrigger.requirements.requirements.length > 1) {
-
             Unlock requirements ({{ heartEventTrigger.requirements.type === 'And' ? 'all' : 'any' }} of them):
-
         }
         @if (heartEventTrigger.requirements.requirements.length < 2) {
-
             Unlock requirement:
-
         }
     </span>
 
         <div class="flex flex-col  text-black">
             @for (requirement of heartEventTrigger.requirements.requirements; track requirement) {
-                <app-requirements
-                        [requirement]="requirement"/>
+                <app-requirements [requirement]="requirement"/>
             }
         </div>
     </div>

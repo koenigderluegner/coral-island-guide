@@ -1,0 +1,15 @@
+<div class="mb-5 flex gap-x-3 gap-y-4 flex-wrap">
+    <mat-form-field class="semi-transparent-form-field grow lg:grow-0 shrink-0 basis-auto">
+        <mat-label>Search term</mat-label>
+        <input [formControl]="searchControl" matInput/>
+    </mat-form-field>
+
+    <mat-form-field class="semi-transparent-form-field grow lg:grow-0 shrink-0 basis-auto">
+        <mat-label>Sorting</mat-label>
+        <mat-select disableOptionCentering [formControl]="sortControl">
+            @for (seasonOption of npcSortOptions; track seasonOption) {
+                <mat-option [value]="seasonOption.value">{{ seasonOption.displayName }}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
+</div>

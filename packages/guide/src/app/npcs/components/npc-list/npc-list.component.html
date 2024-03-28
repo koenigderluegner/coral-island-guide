@@ -1,17 +1,5 @@
 <div class="px-2 xl:px-[50px] w-full pt-2 pb-6 2xl:pt-[60px]">
-    <div class="mb-5 flex gap-x-3">
-        <mat-form-field class="btn">
-            <input [formControl]="searchControl" class="placeholder:text-white" matInput placeholder="Search term"/>
-        </mat-form-field>
-
-        <mat-form-field class="btn">
-            <mat-select disableOptionCentering [formControl]="sortControl">
-                @for (seasonOption of npcSortOptions; track seasonOption) {
-                    <mat-option [value]="seasonOption.value">{{ seasonOption.displayName }}</mat-option>
-                }
-            </mat-select>
-        </mat-form-field>
-    </div>
+    <app-npc-filter class="z-30 relative"/>
     @if (filteredAndSortedNpcs(); as npcs) {
 
         <div class="grid npc-list-grid gap-x-4 gap-y-10 ">

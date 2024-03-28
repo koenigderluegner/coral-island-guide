@@ -102,7 +102,7 @@ export class DatabaseComponent {
 
         const insertAfterElement = document.querySelector(`#grid app-item-icon:nth-of-type(${insertAfter})`) as HTMLElement | null;
         if (!insertAfterElement) return;
-        let component = this.createComponent(item)
+        const component = this.createComponent(item)
 
         this.insertAfter(component, insertAfterElement);
 
@@ -125,7 +125,7 @@ export class DatabaseComponent {
         });
 
         componentRef.setInput('item', value)
-        let nativeElement = componentRef.location.nativeElement;
+        const nativeElement = componentRef.location.nativeElement;
 
         nativeElement.id = 'database-details';
 
