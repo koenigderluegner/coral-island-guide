@@ -1,6 +1,9 @@
 import { CookingRecipe, Item, MinimalItem, TagBasedItem, UnlockByMastery } from "@ci/data-types";
 import { AssetPathNameToIcon, minifyItem, readAsset } from "../../util/functions";
-import { CookingIngredients, RawCookingRecipe } from "../../interfaces/raw-data-interfaces/raw-cooking-recipe.interface";
+import {
+    CookingIngredients,
+    RawCookingRecipe
+} from "../../interfaces/raw-data-interfaces/raw-cooking-recipe.interface";
 import { getEnumValue, removeQualityFlag } from "@ci/util";
 import { CookingRecipes } from "../../types/cooking-recipes.type";
 import { StringTable } from "../../util/string-table.class";
@@ -195,16 +198,28 @@ export class CookingDbGenerator {
     }[] {
         const ingredientList: { item: Item; amount: number }[] = []
 
-        ingredient.listIngredients.forEach(lIngredient => {
-            const item = this.itemMap.get(removeQualityFlag(lIngredient.itemData.itemID));
 
-            const hasTagFromGeneric = item?.tags?.some(tag => genericTags.includes(tag));
-            const alreadyInList = ingredientList.find(ingredient => ingredient.item?.id === item?.id);
+        const itemKeys = [...new Set(ingredient.listIngredients.map(l => removeQualityFlag(l.itemData.itemID)))];
 
-            const isItemViableForList = item && !alreadyInList && !hasTagFromGeneric;
-            if (isItemViableForList)
-                ingredientList.push({item: (item), amount: lIngredient.quantity})
-        });
+
+        const isPossiblyGenericItem = itemKeys.length > 1;
+
+        if (isPossiblyGenericItem) {
+            ingredient.listIngredients.forEach(lIngredient => {
+                const item = this.itemMap.get(removeQualityFlag(lIngredient.itemData.itemID));
+
+                const hasTagFromGeneric = item?.tags?.some(tag => genericTags.includes(tag));
+                const alreadyInList = ingredientList.find(ingredient => ingredient.item?.id === item?.id);
+
+                const isItemViableForList = item && !alreadyInList && !hasTagFromGeneric;
+                if (isItemViableForList)
+                    ingredientList.push({item: (item), amount: lIngredient.quantity})
+            });
+        } else {
+            const item = this.itemMap.get(itemKeys[0]);
+            if (item)
+                ingredientList.push({item: (item), amount: ingredient.listIngredients[0].quantity})
+        }
 
         return ingredientList
     }

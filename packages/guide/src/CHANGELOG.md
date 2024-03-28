@@ -1,5 +1,11 @@
 ## Changelog
 
+### 0.17.2 2024-03-28
+
+#### Changed
+
+- Fixed incomplete recipes for Lodeh, Fried Rice and Rainbow Sandwich
+
 ### 0.17.1 2024-03-24
 
 #### Changed

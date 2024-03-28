@@ -1,1 +1,1 @@
-{"version":"0.17.1","date":"2024-03-24","body":"\r\n#### Changed\r\n\r\n- Fixed npc filter on mobile causing broken layouts\r\n\r"}
+{"version":"0.17.2","date":"2024-03-28","body":"\r\n#### Changed\r\n\r\n- Fixed incomplete recipes for Lodeh, Fried Rice and Rainbow Sandwich\r\n\r"}
