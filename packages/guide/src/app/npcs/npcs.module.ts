@@ -20,6 +20,9 @@ import { MatSelect } from "@angular/material/select";
 import { MatCheckbox } from "@angular/material/checkbox";
 import { NpcFilterComponent } from "./npc-filter/npc-filter.component";
 import { JournalModule } from "../journal/journal.module";
+import { DatabaseItemDetailsDirective } from "../shared/directives/database-item-details.directive";
+import { ItemCardSwitchComponent } from "../shared/components/item-card-switch/item-card-switch.component";
+import { OfferingComponent } from "../shared/components/database-item-details/offering/offering.component";
 
 @NgModule({
     declarations: [
@@ -31,7 +34,7 @@ import { JournalModule } from "../journal/journal.module";
         HeartEventTriggerComponent,
         GiftingGridComponent,
     ],
-    imports: [CommonModule, NPCsRoutingModule, SharedModule, MatTooltipModule, MatProgressSpinnerModule, AddSpacesToPascalCasePipe, MatFormField, ReactiveFormsModule, MatInput, MatLabel, MatOption, MatSelect, MatCheckbox, NpcFilterComponent, JournalModule],
+    imports: [CommonModule, NPCsRoutingModule, SharedModule, MatTooltipModule, MatProgressSpinnerModule, AddSpacesToPascalCasePipe, MatFormField, ReactiveFormsModule, MatInput, MatLabel, MatOption, MatSelect, MatCheckbox, NpcFilterComponent, JournalModule, DatabaseItemDetailsDirective, ItemCardSwitchComponent, OfferingComponent],
 })
 export class NPCsModule {
 }

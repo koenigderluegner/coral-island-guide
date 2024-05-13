@@ -10,7 +10,7 @@
             @for (loved of preferences[prefMap.preferenceField]; track loved) {
 
                 @if (loved.type === 'item') {
-                    <app-inline-minimal-item [minimalItem]="loved.item"/>
+                    <app-inline-minimal-item class="cursor-pointer" (click)="itemClicked.emit(loved.item)" [minimalItem]="loved.item"/>
                 }
                 @if (loved.type === 'category') {
                     <span>All {{ loved.categoryName | addSpacesToPascalCase }}</span>

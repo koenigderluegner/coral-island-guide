@@ -1,10 +1,11 @@
 import { Component, computed, inject, signal, viewChild, ViewEncapsulation } from '@angular/core';
 import { DatabaseService } from '../../../shared/services/database.service';
 import { forkJoin, Observable, of, switchMap } from 'rxjs';
-import { GiftPreferences, NPC, UiIcon } from '@ci/data-types';
+import { GiftPreferences, MinimalItem, NPC, UiIcon } from '@ci/data-types';
 import { MapKeyed } from '../../../shared/types/map-keyed.type';
 import { NpcFilterComponent } from "../../npc-filter/npc-filter.component";
 import { filterNPCs } from '../../filter-npcs.function';
+import { BaseSelectableContainerComponent } from "../../../shared/components/base-selectable-container/base-selectable-container.component";
 
 type CombinedGiftPreference = {
     preferences: MapKeyed<GiftPreferences>,
@@ -17,11 +18,11 @@ type CombinedGiftPreference = {
     styleUrls: ['./gifting.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class GiftingComponent {
+export class GiftingComponent extends BaseSelectableContainerComponent<MinimalItem> {
 
+    npcFilter = viewChild(NpcFilterComponent);
     protected uiIcon = UiIcon;
     protected gifting$: Observable<CombinedGiftPreference[]>;
-    npcFilter = viewChild(NpcFilterComponent);
     #searchValueChanges = computed(() => this.npcFilter()?.searchValueChanges() ?? '')
     #sortValueChanges = computed(() => this.npcFilter()?.sortValueChanges() ?? 'default')
     #filterNPCs = filterNPCs
@@ -40,6 +41,7 @@ export class GiftingComponent {
     #database = inject(DatabaseService)
 
     constructor() {
+        super();
         this.gifting$ = forkJoin({
             gifts: this.#database.fetchGiftingPreferences$(),
             npcs: this.#database.fetchNPCs$(),
