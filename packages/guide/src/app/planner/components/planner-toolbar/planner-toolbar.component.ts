@@ -4,7 +4,7 @@ import { PlannerService } from "../../services/planner.service";
 import { combineLatest } from "rxjs";
 import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
 import { DatabaseService } from "../../../shared/services/database.service";
-import { Crop, FruitPlant, FruitTree, Season } from "@ci/data-types";
+import { Crop, FruitPlant, FruitTree } from "@ci/data-types";
 
 
 interface Tree {
@@ -232,15 +232,17 @@ export class PlannerToolbarComponent {
         });
 
         plants.forEach(crop => {
-            const key = crop.dropData[0].itemId;
-            const label = crop.dropData[0].item?.displayName;
-            PlaceableItemsMap.set(crop.dropData[0].itemId, {
+            const dropData = crop.dropData[0];
+            if (!dropData) return;
+            const key = dropData?.itemId;
+            const label = dropData.item?.displayName;
+            PlaceableItemsMap.set(dropData.itemId, {
                 component: ItemIconComponent,
                 width: crop.size.width,
                 height: crop.size.length,
                 layer: 2,
                 inputs: new Map<string, unknown>([
-                    ['itemName', crop.dropData[0].item?.iconName ?? 'placeholder.png']
+                    ['itemName', dropData.item?.iconName ?? 'placeholder.png']
                 ])
             });
 
