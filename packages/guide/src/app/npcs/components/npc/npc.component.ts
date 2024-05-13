@@ -17,6 +17,7 @@ export class NpcComponent implements OnInit {
     protected heartEvents: HeartEvent[] = []
     protected readonly UiIcon = UiIcon;
     protected giftingPreferences?: MapKeyed<GiftPreferences>;
+    protected readonly uiIcon = UiIcon;
     private _database: DatabaseService = inject(DatabaseService);
 
     ngOnInit(): void {

@@ -1,12 +1,36 @@
 @if (npc) {
     <div class="npc-wrapper">
 
-        <h1 class="mb-4 font-semibold text-3xl text-white">
-            {{ npc.characterName }}
-        </h1>
-
-
         <app-card>
+            <div class="text-2xl text-black font-semibold flex items-center gifting-portrait">
+                <app-item-icon class="h-16 mr-3"
+                               [itemName]="npc.iconName"/>
+                <div class="flex flex-col">
+                    <div class="flex gap-2 items-center"> {{ npc.characterName }}
+                        @if (npc.isDateable) {
+                            <app-ui-icon
+                                    [uiIcon]="uiIcon.LOVE" class="!text-gifting !h-6 !w-6"
+                                    matTooltip="{{npc.characterName}} is dateable"/>
+                        }
+                    </div>
+                    @if (npc.birthday) {
+                        <div
+                                class="text-lg flex gap-2">
+                            <app-ui-icon [uiIcon]="uiIcon.BIRTHDAY" class="!h-6 !w-6"/>
+                            {{ npc.birthday | ingameDate }}
+                        </div>
+                    }
+                </div>
+
+
+            </div>
+            @if (npc.description) {
+                <p class="mt-2">{{ npc.description }}</p>
+            }
+        </app-card>
+
+
+        <app-card class="mt-6">
             <h2 class="mb-4 font-semibold text-2xl text-black">
                 Gifting
             </h2>
