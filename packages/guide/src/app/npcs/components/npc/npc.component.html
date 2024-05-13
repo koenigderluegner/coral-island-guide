@@ -1,108 +1,118 @@
-@if (npc) {
-    <div class="npc-wrapper">
+<app-list-detail-container [(openDrawer)]="openDrawer">
+    @if (selectedEntity) {
+        <app-item-card-switch [item]="selectedEntity" listDetail>
+            <ng-template let-details appDatabaseItemDetails>
+                <app-offering [details]="details"/>
+            </ng-template>
+        </app-item-card-switch>
+    }
 
-        <app-card>
-            <div class="text-2xl text-black font-semibold flex items-center gifting-portrait">
-                <app-item-icon class="h-16 mr-3"
-                               [itemName]="npc.iconName"/>
-                <div class="flex flex-col">
-                    <div class="flex gap-2 items-center"> {{ npc.characterName }}
-                        @if (npc.isDateable) {
-                            <app-ui-icon
-                                    [uiIcon]="uiIcon.LOVE" class="!text-gifting !h-6 !w-6"
-                                    matTooltip="{{npc.characterName}} is dateable"/>
+    @if (npc) {
+        <div class="npc-wrapper">
+
+            <app-card>
+                <div class="text-2xl text-black font-semibold flex items-center gifting-portrait">
+                    <app-item-icon class="h-16 mr-3"
+                                   [itemName]="npc.iconName"/>
+                    <div class="flex flex-col">
+                        <div class="flex gap-2 items-center"> {{ npc.characterName }}
+                            @if (npc.isDateable) {
+                                <app-ui-icon
+                                        [uiIcon]="uiIcon.LOVE" class="!text-gifting !h-6 !w-6"
+                                        matTooltip="{{npc.characterName}} is dateable"/>
+                            }
+                        </div>
+                        @if (npc.birthday) {
+                            <div
+                                    class="text-lg flex gap-2">
+                                <app-ui-icon [uiIcon]="uiIcon.BIRTHDAY" class="!h-6 !w-6"/>
+                                {{ npc.birthday | ingameDate }}
+                            </div>
                         }
                     </div>
-                    @if (npc.birthday) {
-                        <div
-                                class="text-lg flex gap-2">
-                            <app-ui-icon [uiIcon]="uiIcon.BIRTHDAY" class="!h-6 !w-6"/>
-                            {{ npc.birthday | ingameDate }}
-                        </div>
-                    }
+
+
                 </div>
-
-
-            </div>
-            @if (npc.description) {
-                <p class="mt-2">{{ npc.description }}</p>
-            }
-        </app-card>
-
-
-        <app-card class="mt-6">
-            <h2 class="mb-4 font-semibold text-2xl text-black">
-                Gifting
-            </h2>
-            @if (giftingPreferences) {
-                <app-gifting-grid [preferences]="giftingPreferences"/>
-            }
-            @if (!giftingPreferences) {
-                <p class="text-black text-lg">
-                    {{ npc.characterName }} has no specialized preferences.
-                </p>
-            }
-        </app-card>
-
-        <app-card class="mt-6">
-            <h2 class="mb-4 font-semibold text-2xl text-black">
-                Heart events
-            </h2>
-            @if (heartEvents.length) {
-                <app-heart-events [heartEvents]="heartEvents"/>
-            }
-            @if (!heartEvents.length) {
-                <p class="text-black text-lg">
-                    {{ npc.characterName }} has no heart events.
-                </p>
-            }
-        </app-card>
-
-        <app-card class="mt-6">
-            <h2 class="mb-4 font-semibold text-2xl text-black">
-                Appearances
-            </h2>
-            @if ((npc.appearances | keyvalue); as appearancePairs) {
-
-                @if (appearancePairs.length) {
-
-                    @for (appearancePair of appearancePairs; track appearancePair) {
-                        <div class="font-semibold text-black mb-6">
-                            <h3 class="text-xl">{{ appearancePair.key }}</h3>
-                            <div class="grid portrait-grid gap-4">
-                                @for (emotionPair of (appearancePair.value | keyvalue); track emotionPair) {
-                                    <div
-                                            class="flex flex-col shadow-lg p-2">
-                                        <app-npc-portrait [npcKey]="npc.key" [portraitName]="emotionPair.value"
-                                                          class="h-[400px] flex items-end justify-center"/>
-                                        <span class="">{{ emotionPair.key }}</span>
-                                    </div>
-                                }
-                            </div>
-                        </div>
-                    }
-
+                @if (npc.description) {
+                    <p class="mt-2">{{ npc.description }}</p>
                 }
+            </app-card>
 
-                @if (!appearancePairs.length) {
+
+            <app-card class="mt-6">
+                <h2 class="mb-4 font-semibold text-2xl text-black">
+                    Gifting
+                </h2>
+                @if (giftingPreferences) {
+                    <app-gifting-grid [preferences]="giftingPreferences" (itemClicked)="showDetails($event)"/>
+                }
+                @if (!giftingPreferences) {
                     <p class="text-black text-lg">
-                        {{ npc.characterName }} has no appearances.
+                        {{ npc.characterName }} has no specialized preferences.
                     </p>
                 }
+            </app-card>
+
+            <app-card class="mt-6">
+                <h2 class="mb-4 font-semibold text-2xl text-black">
+                    Heart events
+                </h2>
+                @if (heartEvents.length) {
+                    <app-heart-events [heartEvents]="heartEvents"/>
+                }
+                @if (!heartEvents.length) {
+                    <p class="text-black text-lg">
+                        {{ npc.characterName }} has no heart events.
+                    </p>
+                }
+            </app-card>
+
+            <app-card class="mt-6">
+                <h2 class="mb-4 font-semibold text-2xl text-black">
+                    Appearances
+                </h2>
+                @if ((npc.appearances | keyvalue); as appearancePairs) {
+
+                    @if (appearancePairs.length) {
+
+                        @for (appearancePair of appearancePairs; track appearancePair) {
+                            <div class="font-semibold text-black mb-6">
+                                <h3 class="text-xl">{{ appearancePair.key }}</h3>
+                                <div class="grid portrait-grid gap-4">
+                                    @for (emotionPair of (appearancePair.value | keyvalue); track emotionPair) {
+                                        <div
+                                                class="flex flex-col shadow-lg p-2">
+                                            <app-npc-portrait [npcKey]="npc.key" [portraitName]="emotionPair.value"
+                                                              class="h-[400px] flex items-end justify-center"/>
+                                            <span class="">{{ emotionPair.key }}</span>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        }
+
+                    }
+
+                    @if (!appearancePairs.length) {
+                        <p class="text-black text-lg">
+                            {{ npc.characterName }} has no appearances.
+                        </p>
+                    }
 
 
-            }
+                }
+            </app-card>
+
+        </div>
+    } @else if (npc === undefined) {
+
+        <app-card class="npc-wrapper">
+            <h1 class="mb-4 font-semibold text-3xl text-black flex items-center gap-x-4 ">
+                NPC not found.
+            </h1>
         </app-card>
 
-    </div>
-} @else if (npc === undefined) {
-
-    <app-card class="npc-wrapper">
-        <h1 class="mb-4 font-semibold text-3xl text-black flex items-center gap-x-4 ">
-            NPC not found.
-        </h1>
-    </app-card>
-
-} @else if (npc === null) {
-    <mat-spinner class="mx-auto"/>
-}
+    } @else if (npc === null) {
+        <mat-spinner class="mx-auto"/>
+    }
+</app-list-detail-container>

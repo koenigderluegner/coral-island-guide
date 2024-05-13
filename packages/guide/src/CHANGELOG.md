@@ -1,5 +1,13 @@
 ## Changelog
 
+### TBD
+
+#### Added
+
+- Added map icon, birthday, marriage possibility and description to NPC details
+- Made items in gifting grid clickable for details
+  - This does not apply for categories like "all fruits"
+
 ### 0.17.2 2024-03-28
 
 #### Changed
