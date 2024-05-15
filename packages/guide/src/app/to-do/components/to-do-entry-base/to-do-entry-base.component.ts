@@ -9,12 +9,13 @@ import {
     Output,
     ViewChild
 } from '@angular/core';
-import { MinimalItem, MinimalTagBasedItem, Quality } from "@ci/data-types";
+import { Quality } from "@ci/data-types";
 import { ToDoService } from "../../../core/services/to-do.service";
-import { ToDoCategory } from "../../../core/enums/todo-category.enum";
 import { filter } from "rxjs";
 import { MatCheckbox } from "@angular/material/checkbox";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
+import { ToDoContext } from "../../../core/types/to-do-context.type";
+import { ItemEntry } from "../../../shared/types/item-entry.type";
 
 @Component({
     selector: 'app-to-do-entry-base',
@@ -25,9 +26,9 @@ export class ToDoEntryBaseComponent implements OnInit {
 
     @Input() amount?: number;
     @Input() quality?: Quality | undefined;
-    @Input({required: true}) item!: MinimalItem | MinimalTagBasedItem;
-    @Input({required: true}) category!: ToDoCategory;
-    @Output() markedAsComplete: EventEmitter<MinimalItem | MinimalTagBasedItem> = new EventEmitter<MinimalItem | MinimalTagBasedItem>();
+    @Input({required: true}) item!: ItemEntry;
+    @Input({required: true}) category?: ToDoContext;
+    @Output() markedAsComplete: EventEmitter<ItemEntry> = new EventEmitter<ItemEntry>();
     @ViewChild(MatCheckbox, {static: true}) checkbox?: MatCheckbox;
     todoService: ToDoService = inject(ToDoService)
     protected qualities = Quality;

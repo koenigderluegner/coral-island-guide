@@ -1,11 +1,10 @@
 import { Component, ContentChild, input, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CustomEntry, Item, MinimalItem, MinimalTagBasedItem } from "@ci/data-types";
+import { CustomEntry, MinimalTagBasedItem } from "@ci/data-types";
 import { SharedModule } from "../../shared.module";
 import { DatabaseItemDetailsComponent } from "../database-item-details/database-item-details.component";
 import { DatabaseItemDetailsDirective } from "../../directives/database-item-details.directive";
-
-type ItemEntry = Item | MinimalItem | CustomEntry | MinimalTagBasedItem;
+import { ItemEntry } from "../../types/item-entry.type";
 
 
 @Component({
