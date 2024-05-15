@@ -1,6 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { ToDoCategory } from "../enums/todo-category.enum";
-import { CookingRecipe, Critter, Fish, Item, MinimalItem, MinimalTagBasedItem, Offering } from "@ci/data-types";
+import { MinimalItem, MinimalTagBasedItem } from "@ci/data-types";
 import { LegacyToDo } from "../interfaces/legacy-todo.interface";
 import { SelectionModel } from "@angular/cdk/collections";
 import { SettingsService } from "../../shared/services/settings.service";
@@ -24,7 +23,7 @@ export class ToDoService {
     clearTimer?: number;
     clearTimeout = 3000;
     userDataService = inject(UserDataService)
-    private _completedCategory$: Subject<ToDoContext> = new Subject<ToDoContext>();
+    private _completedCategory$: Subject<ToDoContext | undefined> = new Subject<ToDoContext | undefined>();
     private _markedAsCompleted: SelectionModel<MarkedSelection> = new SelectionModel<MarkedSelection>(true, [])
     private readonly versionSuffix: string;
 
@@ -44,14 +43,9 @@ export class ToDoService {
         return this.currentToDoAmount === 0;
     }
 
-    add(type: ToDoCategory.JOURNAL_FISH, data: Fish): void;
-    add(type: ToDoCategory.JOURNAL_CRITTER | ToDoCategory.JOURNAL_INSECTS, data: Critter): void;
-    add(type: ToDoCategory.OFFERINGS, data: Offering): void;
-    add(type: ToDoCategory.COOKING_RECIPES, data: CookingRecipe): void;
-    add(type: ToDoCategory.JOURNAL_GEMS | ToDoCategory.JOURNAL_FOSSILS | ToDoCategory.JOURNAL_ARTIFACTS, data: Item): void
-    add(type: ToDoCategory, data: any): void {
+    add(toDo: ToDo): void {
         // TODO migrate
-        this.getCategoryList(type).push(data);
+        this.getCurrentToDo().push(toDo);
 
         this.save();
 
@@ -63,7 +57,7 @@ export class ToDoService {
     }
 
     save(): void {
-      this.userDataService.save()
+        this.userDataService.save()
     }
 
     read(): void {
@@ -103,7 +97,7 @@ export class ToDoService {
         this.read()
     }
 
-    alreadyInList(type: ToDoContext, data: ItemEntry): boolean {
+    alreadyInList(type: ToDoContext | undefined, data: ItemEntry): boolean {
 
         const list = this.getCategoryList(type);
 
@@ -120,14 +114,15 @@ export class ToDoService {
 
     getCategoryList(type?: ToDoContext): ToDo[] {
         const currentToDo = this.getCurrentToDo();
+
         return currentToDo.filter(t => t.context === type)
     }
 
-    categoryCompleted$(): Observable<ToDoContext> {
+    categoryCompleted$(): Observable<ToDoContext | undefined> {
         return this._completedCategory$.asObservable();
     }
 
-    completeCategory(category: ToDoContext) {
+    completeCategory(category: ToDoContext | undefined) {
         this._completedCategory$.next(category);
     }
 
@@ -234,7 +229,8 @@ export class ToDoService {
 
             })
 
-
+            localStorage.removeItem(ToDoService._LEGACY_TO_DO_STORE_KEY + this.versionSuffix);
+            this.userDataService.save()
         }
         return parsedSettings as ToDo[];
     }

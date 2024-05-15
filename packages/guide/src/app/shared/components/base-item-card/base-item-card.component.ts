@@ -11,9 +11,9 @@ import {
 } from '@angular/core';
 import { CustomEntry, Item, MinimalItem, MinimalTagBasedItem, TagBasedItem, UiIcon } from '@ci/data-types';
 import { DatabaseService } from '../../services/database.service';
-import { ToDoCategory } from "../../../core/enums/todo-category.enum";
 import { ToDoService } from "../../../core/services/to-do.service";
 import { entityKey } from "@ci/util";
+import { ToDoContext } from "../../../core/types/to-do-context.type";
 
 type ItemEntry = Item | MinimalItem | CustomEntry | MinimalTagBasedItem;
 
@@ -24,7 +24,7 @@ type ItemEntry = Item | MinimalItem | CustomEntry | MinimalTagBasedItem;
 export class BaseItemCardComponent implements OnInit, OnChanges {
     @Input({required: true}) item!: ItemEntry;
     @Input() amount?: number;
-    @Input() toDoCategory?: ToDoCategory | undefined;
+    @Input() toDoCategory?: ToDoContext | undefined;
     @Output() openDrawerChange: EventEmitter<boolean> = new EventEmitter<boolean>();
     @Output() addedToToDo: EventEmitter<void> = new EventEmitter<void>();
     @Input({transform: booleanAttribute}) hideQualityGrid = false
@@ -54,7 +54,7 @@ export class BaseItemCardComponent implements OnInit, OnChanges {
         this._setItem(changes['item'].currentValue);
     }
 
-    removeFromToDo(toDoCategory: ToDoCategory, item: ItemEntry) {
+    removeFromToDo(toDoCategory: ToDoContext, item: ItemEntry) {
         this.toDoService.updateStatus(toDoCategory, item, true, true)
     }
 

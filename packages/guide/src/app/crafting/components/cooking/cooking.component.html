@@ -1,6 +1,6 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     @if (selectedEntity) {
-        <app-database-item-details [itemId]="selectedEntity.item.id" listDetail>
+        <app-database-item-details [itemId]="selectedEntity.item.id" context="cooking_recipes" listDetail>
             <ng-template let-details appDatabaseItemDetails>
                 @if (details.consumables?.base; as consumable) {
                     <app-consumable [consumable]="consumable"/>

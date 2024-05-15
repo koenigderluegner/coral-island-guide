@@ -13,12 +13,14 @@ import {
 import { CommonModule } from '@angular/common';
 import { DatabaseService } from "../../services/database.service";
 import { take } from "rxjs";
-import { DatabaseItem, UiIcon } from "@ci/data-types";
+import { DatabaseItem, Quality, UiIcon } from "@ci/data-types";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { SharedModule } from "../../shared.module";
 import { RouterLink } from "@angular/router";
 import { DatabaseItemDetailsDirective } from "../../directives/database-item-details.directive";
 import { AddSpacesToPascalCasePipe } from "../../pipes/add-spaces-to-pascal-case.pipe";
+import { ToDoToggleComponent } from "../to-do-toggle/to-do-toggle.component";
+import { ToDoContext } from "../../../core/types/to-do-context.type";
 
 
 @Component({
@@ -31,14 +33,17 @@ import { AddSpacesToPascalCasePipe } from "../../pipes/add-spaces-to-pascal-case
         RouterLink,
         AddSpacesToPascalCasePipe,
         DatabaseItemDetailsDirective,
-        SharedModule
+        SharedModule,
+        ToDoToggleComponent
     ],
 
 })
 export class DatabaseItemDetailsComponent implements OnChanges {
     @Input({required: true}) itemId!: string;
     @Input({transform: booleanAttribute}) hideQualityGrid = false;
+    @Input() context?: ToDoContext | undefined;
     @Input() amount?: number;
+    @Input() quality?: Quality;
     @ContentChild(TemplateRef) databaseItemDetails: TemplateRef<any> | null = null;
     protected databaseItem: WritableSignal<DatabaseItem | undefined> = signal(undefined)
     protected readonly UiIcon = UiIcon;
@@ -48,7 +53,6 @@ export class DatabaseItemDetailsComponent implements OnChanges {
     ngOnChanges(changes: SimpleChanges): void {
         const itemId = changes['itemId']?.currentValue;
         if (itemId) {
-            console.log('eyo', itemId)
             this.database
                 .fetchDatabaseItem$(itemId)
                 .pipe(

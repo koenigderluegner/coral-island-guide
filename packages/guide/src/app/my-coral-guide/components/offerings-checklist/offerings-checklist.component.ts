@@ -2,11 +2,11 @@ import { Component, inject } from '@angular/core';
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
 import { MinimalItem, MinimalTagBasedItem, Offering, OfferingAltar, Offerings } from "@ci/data-types";
 import { Observable, tap } from "rxjs";
-import { ToDoCategory } from "../../../core/enums/todo-category.enum";
 import { OfferingChecklistService } from "../../../core/services/checklists/offering-checklist.service";
 import { FormControl, FormRecord } from "@angular/forms";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { entityKey } from "@ci/util";
+import { ToDo } from "../../../core/types/to-do.type";
 
 @Component({
     selector: 'app-offerings-checklist',
@@ -18,7 +18,6 @@ export class OfferingsChecklistComponent extends BaseTabbedSelectableContainerCo
     protected activeOffering?: Offerings;
     protected offerings$: Observable<OfferingAltar[]>;
     protected entryForToDo?: Offering | MinimalItem | MinimalTagBasedItem;
-    protected toDoCategory = ToDoCategory;
     private _altars: OfferingAltar[] = [];
 
     constructor() {
@@ -58,9 +57,14 @@ export class OfferingsChecklistComponent extends BaseTabbedSelectableContainerCo
     }
 
     override registerToToDo(entry: MinimalItem | Offering | MinimalTagBasedItem) {
-        if ('item' in entry) {
-            this._todo.add(ToDoCategory.OFFERINGS, entry)
+        const itemEntry: ToDo = 'item' in entry ? {
+            itemEntry: entry.item,
+            amount: entry.amount,
+            quality: entry.quality
+        } : {
+            itemEntry: (entry)
         }
+        this._todo.add({...itemEntry, context: "offerings"})
     }
 
     override showDetails(selectedEntry?: Offering | MinimalItem | MinimalTagBasedItem) {

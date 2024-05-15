@@ -82,6 +82,11 @@ export function AssetPathNameToIcon(assetPathName: string | AssetPath | ObjectPa
 
 }
 
+/**
+ * Use minifyItem from @ci/util instead
+ * @param item
+ * @deprecated
+ */
 export function minifyItem(item: undefined): undefined ;
 export function minifyItem(item: null): null ;
 export function minifyItem(item: Item | MinimalItem): MinimalItem;

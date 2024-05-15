@@ -3,7 +3,8 @@ import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page
 import { Item } from '@ci/data-types';
 import { FormGroup } from "@angular/forms";
 import { FilterForm } from "../../../shared/types/filter-form.type";
-import { ToDoCategory } from "../../../core/enums/todo-category.enum";
+import { ToDoContext } from "../../../core/types/to-do-context.type";
+import { minifyItem } from "@ci/util";
 
 @Component({
     selector: 'app-found',
@@ -11,7 +12,7 @@ import { ToDoCategory } from "../../../core/enums/todo-category.enum";
 })
 export class FoundComponent extends BaseJournalPageComponent<Item> {
 
-    toDoCategory?: ToDoCategory.JOURNAL_ARTIFACTS | ToDoCategory.JOURNAL_GEMS | ToDoCategory.JOURNAL_FOSSILS;
+    toDoCategory?: ToDoContext;
 
 
     constructor() {
@@ -56,11 +57,11 @@ export class FoundComponent extends BaseJournalPageComponent<Item> {
     override showDetails(selectedEntry?: Item) {
         super.showDetails(selectedEntry);
         this.toDoCategory = this.selectedTabIndex === 0
-            ? ToDoCategory.JOURNAL_ARTIFACTS
+            ? "journal_artifacts"
             : this.selectedTabIndex === 1
-                ? ToDoCategory.JOURNAL_GEMS
+                ? "journal_gems"
                 : this.selectedTabIndex === 2
-                    ? ToDoCategory.JOURNAL_FOSSILS
+                    ? "journal_fossils"
                     : undefined;
 
     }
@@ -68,6 +69,6 @@ export class FoundComponent extends BaseJournalPageComponent<Item> {
     override registerToToDo(entry: Item) {
         const toDoCategory = this.toDoCategory;
         if (toDoCategory)
-            this._todo.add(toDoCategory, entry)
+            this._todo.add({context: toDoCategory, itemEntry: minifyItem(entry)})
     }
 }

@@ -4,7 +4,6 @@ import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page
 import { getTruthyValues } from '@ci/util';
 import { FilterForm } from "../../../shared/types/filter-form.type";
 import { FormControl, FormGroup } from "@angular/forms";
-import { ToDoCategory } from "../../../core/enums/todo-category.enum";
 
 @Component({
     selector: 'app-caught',
@@ -56,12 +55,12 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
 
     override registerToToDo(entry: Fish | Critter) {
         if ('fishName' in entry) {
-            this._todo.add(ToDoCategory.JOURNAL_FISH, entry)
+            this._todo.add({context: "journal_fish", itemEntry: entry.item})
         } else {
             if ((this.matTabGroup?.selectedIndex === this.SEA_CRITTERS_INDEX)) {
-                this._todo.add(ToDoCategory.JOURNAL_CRITTER, entry)
+                this._todo.add({context: "journal_critter", itemEntry: entry.item})
             } else {
-                this._todo.add(ToDoCategory.JOURNAL_INSECTS, entry)
+                this._todo.add({context: "journal_insects", itemEntry: entry.item})
             }
         }
     }
