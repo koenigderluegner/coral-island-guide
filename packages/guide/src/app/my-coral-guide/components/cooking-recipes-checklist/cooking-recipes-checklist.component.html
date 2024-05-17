@@ -1,7 +1,7 @@
 <app-list-detail-container [(openDrawer)]="openDrawer" [removePlaceholder]="showTable">
 
     @if (selectedEntity) {
-        <app-database-item-details [itemId]="selectedEntity.id" listDetail hideQualityGrid>
+        <app-database-item-details [itemId]="selectedEntity.id" listDetail hideQualityGrid context="cooking_recipes">
             <ng-template let-details appDatabaseItemDetails>
                 @for (recipe of details.cookedFrom; track recipe.key) {
                     <app-cooking-recipe class="mb-4" [cookingRecipe]="recipe"/>

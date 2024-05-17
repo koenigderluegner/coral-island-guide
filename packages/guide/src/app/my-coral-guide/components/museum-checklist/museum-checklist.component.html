@@ -1,6 +1,6 @@
 <app-list-detail-container [(openDrawer)]="openDrawer" [removePlaceholder]="showTable">
     @if (selectedEntity) {
-        <app-database-item-details [itemId]="selectedEntity.id" listDetail>
+        <app-database-item-details [itemId]="selectedEntity.id" listDetail context="museum">
             <ng-template let-details appDatabaseItemDetails>
                 @if (details.fish) {
                     <app-fish [fish]="details.fish"/>

@@ -5,6 +5,7 @@ import { SharedModule } from "../../shared.module";
 import { DatabaseItemDetailsComponent } from "../database-item-details/database-item-details.component";
 import { DatabaseItemDetailsDirective } from "../../directives/database-item-details.directive";
 import { ItemEntry } from "../../types/item-entry.type";
+import { ToDoContext } from "../../../core/types/to-do-context.type";
 
 
 @Component({
@@ -16,7 +17,7 @@ import { ItemEntry } from "../../types/item-entry.type";
 export class ItemCardSwitchComponent {
     item = input.required<ItemEntry>();
     @ContentChild(TemplateRef) databaseItemDetails: TemplateRef<any> | null = null;
-
+    context = input<ToDoContext | undefined>();
     isTagBasedItem(item: ItemEntry): item is MinimalTagBasedItem {
         return 'key' in item;
     }
