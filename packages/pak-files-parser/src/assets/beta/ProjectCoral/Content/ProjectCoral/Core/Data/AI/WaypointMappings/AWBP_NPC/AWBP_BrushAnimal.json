@@ -1,0 +1,628 @@
+[
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_AWBP_BrushAnimal",
+    "Outer": "AWBP_BrushAnimal_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_Event_newState",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "K2Node_Event_context",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EC_AnimationContext'",
+          "ObjectPath": "/Script/ProjectCoral"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_npc",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'C_NpcCharacter'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_SwitchEnum_CmpSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnOccupiedStateChanged",
+    "Outer": "AWBP_BrushAnimal_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'C_WorldWaypoint:OnOccupiedStateChanged'",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "newState",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnAnimationContextChanged",
+    "Outer": "AWBP_BrushAnimal_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'C_WorldWaypoint:OnAnimationContextChanged'",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "ChildProperties": [
+      {
+        "Type": "EnumProperty",
+        "Name": "context",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Enum": {
+          "ObjectName": "Enum'EC_AnimationContext'",
+          "ObjectPath": "/Script/ProjectCoral"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "npc",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'C_NpcCharacter'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "AWBP_BrushAnimal_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveBeginPlay'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "AWBP_BrushAnimal_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'AWBP_BrushAnimal_C:SimpleConstructionScript_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.18"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'AWBP_BrushAnimal_C:ExecuteUbergraph_AWBP_BrushAnimal'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.0"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'C_AnimationWaypoint'",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'AWBP_BrushAnimal_C:ReceiveBeginPlay'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.3"
+      },
+      {
+        "ObjectName": "Function'AWBP_BrushAnimal_C:OnAnimationContextChanged'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.2"
+      },
+      {
+        "ObjectName": "Function'AWBP_BrushAnimal_C:OnOccupiedStateChanged'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.1"
+      },
+      {
+        "ObjectName": "Function'AWBP_BrushAnimal_C:ExecuteUbergraph_AWBP_BrushAnimal'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.0"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Box",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Hidetime",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'C_RequirementMapComponent'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "PIG",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SkeletalMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "StationMesh1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "PositionComponent1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "NewVar_0",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnTemplate",
+        "PropertyClass": {
+          "ObjectName": "Class'Light'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_AWBP_BrushAnimal": {
+        "ObjectName": "Function'AWBP_BrushAnimal_C:ExecuteUbergraph_AWBP_BrushAnimal'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.0"
+      },
+      "OnOccupiedStateChanged": {
+        "ObjectName": "Function'AWBP_BrushAnimal_C:OnOccupiedStateChanged'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.1"
+      },
+      "OnAnimationContextChanged": {
+        "ObjectName": "Function'AWBP_BrushAnimal_C:OnAnimationContextChanged'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.2"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'AWBP_BrushAnimal_C:ReceiveBeginPlay'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.3"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "AWBP_BrushAnimal_C'Default__AWBP_BrushAnimal_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.5"
+    }
+  },
+  {
+    "Type": "AWBP_BrushAnimal_C",
+    "Name": "Default__AWBP_BrushAnimal_C",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.AWBP_BrushAnimal_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "animset": {
+        "ObjectName": "C_Animset'Animset_Kenny_BrushAnimal'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Animation/Animsets_v2/Animset_Kenny_BrushAnimal.0"
+      },
+      "linkedState": "EC_WaypointLinkedState::NotLinked",
+      "stationMeshComponent": {
+        "ObjectName": "StaticMeshComponent'Default__AWBP_BrushAnimal_C:StationMesh'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.21"
+      },
+      "previewMesh": {
+        "ObjectName": "SkeletalMesh'SK_Kenny_V2_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Kenny/SK_Kenny_V2_1.1"
+      },
+      "defaultAnimation": {
+        "ObjectName": "AnimSequence'A_NPC_Kenny_IdlePose'",
+        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/NPCIdle_Anim/A_NPC_Kenny_IdlePose.1"
+      },
+      "useDefaultMaterials": true,
+      "RootComponent": {
+        "ObjectName": "SceneComponent'Default__AWBP_BrushAnimal_C:PositionComponent'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.11"
+      }
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "Box_GEN_VARIABLE",
+    "Outer": "AWBP_BrushAnimal_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "AreaClass": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "RelativeLocation": {
+        "X": 72.67324,
+        "Y": 6.2607384,
+        "Z": 59.590866
+      },
+      "RelativeScale3D": {
+        "X": 1.6515292,
+        "Y": 2.9662795,
+        "Z": 1.7607149
+      },
+      "bVisible": false
+    }
+  },
+  {
+    "Type": "C_RequirementMapComponent",
+    "Name": "Hidetime_GEN_VARIABLE",
+    "Outer": "AWBP_BrushAnimal_C",
+    "Class": "UScriptClass'C_RequirementMapComponent'",
+    "Properties": {
+      "evaluationFrequency": "EC_ConditionEvaluationFrequency::EveryTimeOfTheDay",
+      "requirementsMap": [
+        {
+          "Night": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_TimeOfTheDayRequirement'AWBP_BrushAnimal_C:Hidetime_GEN_VARIABLE.C_TimeOfTheDayRequirement_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.8"
+              }
+            ]
+          }
+        }
+      ],
+      "checkOnDayBegin": false
+    }
+  },
+  {
+    "Type": "C_TimeOfTheDayRequirement",
+    "Name": "C_TimeOfTheDayRequirement_0",
+    "Outer": "Hidetime_GEN_VARIABLE",
+    "Class": "UScriptClass'C_TimeOfTheDayRequirement'",
+    "Properties": {
+      "expectedTimeOfTheDay": "EC_TimeOfDay::Night"
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "AWBP_BrushAnimal_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "PositionComponent1_GEN_VARIABLE",
+    "Outer": "AWBP_BrushAnimal_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "PositionComponent",
+    "Outer": "Default__AWBP_BrushAnimal_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'AWBP_BrushAnimal_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.9"
+      },
+      "VariableGuid": "86FF7B1C-4355787F-27DF6394-7F85B608",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'AWBP_BrushAnimal_C:PositionComponent1_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.10"
+      },
+      "ParentComponentOrVariableName": "PositionComponent",
+      "bIsParentComponentNative": true,
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node'AWBP_BrushAnimal_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.14"
+        }
+      ],
+      "VariableGuid": "F617F3AE-4467C6A8-71615386-0F8FAB75",
+      "InternalVariableName": "PositionComponent1"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'AWBP_BrushAnimal_C:StationMesh1_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.20"
+      },
+      "VariableGuid": "D1473881-4D00FA25-9648CBA3-916603D9",
+      "InternalVariableName": "StationMesh1"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_4",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SkeletalMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SkeletalMeshComponent'AWBP_BrushAnimal_C:PIG_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.19"
+      },
+      "ParentComponentOrVariableName": "PositionComponent",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "04F4A430-46A26069-A6ABF6B5-3D89FB98",
+      "InternalVariableName": "PIG"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_5",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'C_RequirementMapComponent'",
+        "ObjectPath": "/Script/ProjectCoral"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "C_RequirementMapComponent'AWBP_BrushAnimal_C:Hidetime_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.7"
+      },
+      "VariableGuid": "605C44EB-4D4605CD-8A8AD289-A6886F47",
+      "InternalVariableName": "Hidetime"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_6",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'AWBP_BrushAnimal_C:Box_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.6"
+      },
+      "ParentComponentOrVariableName": "PositionComponent",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "D18DEACB-412AE85D-39C4FD9A-013E7FAD",
+      "InternalVariableName": "Box"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "AWBP_BrushAnimal_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'AWBP_BrushAnimal_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.13"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_BrushAnimal_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.15"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_BrushAnimal_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.16"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_BrushAnimal_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.17"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'AWBP_BrushAnimal_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.13"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_BrushAnimal_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.14"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_BrushAnimal_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.15"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_BrushAnimal_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.16"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_BrushAnimal_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.17"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'AWBP_BrushAnimal_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.12"
+      }
+    }
+  },
+  {
+    "Type": "SkeletalMeshComponent",
+    "Name": "PIG_GEN_VARIABLE",
+    "Outer": "AWBP_BrushAnimal_C",
+    "Class": "UScriptClass'SkeletalMeshComponent'",
+    "Properties": {
+      "AnimationData": {
+        "AnimToPlay": {
+          "ObjectName": "AnimMontage'AM_PigIdle04'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Pig/AM_PigIdle04.0"
+        }
+      },
+      "AnimationMode": "EAnimationMode::AnimationSingleNode",
+      "bDisableClothSimulation": true,
+      "ClothingSimulationFactory": {
+        "ObjectName": "Class'ClothingSimulationFactoryNv'",
+        "ObjectPath": "/Script/ClothingSystemRuntimeNv"
+      },
+      "SkeletalMesh": {
+        "ObjectName": "SkeletalMesh'SK_Big_Pig_4'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Pig/SK_Big_Pig_4.7"
+      },
+      "VisibilityBasedAnimTickOption": "EVisibilityBasedAnimTickOption::OnlyTickMontagesWhenNotRendered",
+      "bComponentUseFixedSkelBounds": true,
+      "bEnableUpdateRateOptimizations": true,
+      "RelativeLocation": {
+        "X": 78.0945,
+        "Y": -10.483582,
+        "Z": 0.0
+      },
+      "bVisible": false
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "StationMesh1_GEN_VARIABLE",
+    "Outer": "AWBP_BrushAnimal_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "bUseDefaultCollision": true,
+      "bGenerateOverlapEvents": false,
+      "BodyInstance": {
+        "ObjectType": "ECC_WorldStatic",
+        "CollisionProfileName": "BlockAll"
+      },
+      "bAbsoluteScale": true
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "StationMesh",
+    "Outer": "Default__AWBP_BrushAnimal_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "AttachParent": {
+        "ObjectName": "SceneComponent'Default__AWBP_BrushAnimal_C:PositionComponent'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_BrushAnimal.11"
+      }
+    }
+  }
+]

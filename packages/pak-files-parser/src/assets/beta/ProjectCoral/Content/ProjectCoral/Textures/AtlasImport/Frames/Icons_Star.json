@@ -1,0 +1,111 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "Icons_Star",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -0.5,
+              "Y": 0.0,
+              "Z": 0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 39.0,
+            "Y": 10.0,
+            "Z": 39.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "644514964CD7D01E1FB55F8990738E34"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Icons_Star",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 2.0,
+        "Y": 455.0
+      },
+      "BakedSourceDimension": {
+        "X": 39.0,
+        "Y": 39.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D T_AtlasIcons",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/T_AtlasIcons.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant TranslucentUnlitSpriteMaterial",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup Icons_Star:BodySetup_1",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Icons_Star.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 19.0,
+          "Y": 20.0,
+          "Z": 0.080078125,
+          "W": 0.8886719
+        },
+        {
+          "X": -20.0,
+          "Y": 20.0,
+          "Z": 0.00390625,
+          "W": 0.8886719
+        },
+        {
+          "X": -20.0,
+          "Y": -19.0,
+          "Z": 0.00390625,
+          "W": 0.96484375
+        },
+        {
+          "X": 19.0,
+          "Y": -19.0,
+          "Z": 0.080078125,
+          "W": 0.96484375
+        },
+        {
+          "X": 19.0,
+          "Y": 20.0,
+          "Z": 0.080078125,
+          "W": 0.8886719
+        },
+        {
+          "X": -20.0,
+          "Y": -19.0,
+          "Z": 0.00390625,
+          "W": 0.96484375
+        }
+      ]
+    }
+  }
+]

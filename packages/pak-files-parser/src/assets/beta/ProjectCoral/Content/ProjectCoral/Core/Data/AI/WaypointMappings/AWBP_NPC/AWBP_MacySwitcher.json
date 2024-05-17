@@ -1,0 +1,416 @@
+[
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_AWBP_MacySwitcher",
+    "Outer": "AWBP_MacySwitcher_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "K2Node_Event_context",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EC_AnimationContext'",
+          "ObjectPath": "/Script/ProjectCoral"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_npc",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'C_NpcCharacter'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Npc_Character",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_NpcCharacter_C'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/_Characters/NPCs/BP_NpcCharacter.37"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetAnimInstance_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'AnimInstance'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsABP_NPC_V_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "AnimBlueprintGeneratedClass'ABP_NPC_v2_C'",
+          "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/ABP_NPC_v2.32"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnAnimationContextChanged",
+    "Outer": "AWBP_MacySwitcher_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'C_WorldWaypoint:OnAnimationContextChanged'",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "ChildProperties": [
+      {
+        "Type": "EnumProperty",
+        "Name": "context",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Enum": {
+          "ObjectName": "Enum'EC_AnimationContext'",
+          "ObjectPath": "/Script/ProjectCoral"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "npc",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'C_NpcCharacter'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "AWBP_MacySwitcher_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveBeginPlay'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "AWBP_MacySwitcher_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'AWBP_MacySwitcher_C:SimpleConstructionScript_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.11"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'AWBP_MacySwitcher_C:ExecuteUbergraph_AWBP_MacySwitcher'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.0"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'C_AnimationWaypoint'",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'AWBP_MacySwitcher_C:ReceiveBeginPlay'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.2"
+      },
+      {
+        "ObjectName": "Function'AWBP_MacySwitcher_C:OnAnimationContextChanged'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.1"
+      },
+      {
+        "ObjectName": "Function'AWBP_MacySwitcher_C:ExecuteUbergraph_AWBP_MacySwitcher'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.0"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "StationMesh1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "PositionComponent1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BP_Stephen",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnTemplate",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_AWBP_MacySwitcher": {
+        "ObjectName": "Function'AWBP_MacySwitcher_C:ExecuteUbergraph_AWBP_MacySwitcher'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.0"
+      },
+      "OnAnimationContextChanged": {
+        "ObjectName": "Function'AWBP_MacySwitcher_C:OnAnimationContextChanged'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.1"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'AWBP_MacySwitcher_C:ReceiveBeginPlay'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.2"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "AWBP_MacySwitcher_C'Default__AWBP_MacySwitcher_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.4"
+    }
+  },
+  {
+    "Type": "AWBP_MacySwitcher_C",
+    "Name": "Default__AWBP_MacySwitcher_C",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.AWBP_MacySwitcher_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "linkedState": "EC_WaypointLinkedState::NotLinked",
+      "stationMeshComponent": {
+        "ObjectName": "StaticMeshComponent'Default__AWBP_MacySwitcher_C:StationMesh'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.13"
+      },
+      "previewMesh": {
+        "ObjectName": "SkeletalMesh'SK_Macy_V2_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Macy/SK_Macy_V2_1.8"
+      },
+      "defaultAnimation": {
+        "ObjectName": "AnimSequence'A_NPC_Macy_IdlePose'",
+        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/NPCIdle_Anim/A_NPC_Macy_IdlePose.1"
+      },
+      "RootComponent": {
+        "ObjectName": "SceneComponent'Default__AWBP_MacySwitcher_C:PositionComponent'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.7"
+      }
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "AWBP_MacySwitcher_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "PositionComponent1_GEN_VARIABLE",
+    "Outer": "AWBP_MacySwitcher_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "PositionComponent",
+    "Outer": "Default__AWBP_MacySwitcher_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'AWBP_MacySwitcher_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.5"
+      },
+      "VariableGuid": "86FF7B1C-4355787F-27DF6394-7F85B608",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'AWBP_MacySwitcher_C:PositionComponent1_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.6"
+      },
+      "ParentComponentOrVariableName": "PositionComponent",
+      "bIsParentComponentNative": true,
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node'AWBP_MacySwitcher_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.10"
+        }
+      ],
+      "VariableGuid": "F617F3AE-4467C6A8-71615386-0F8FAB75",
+      "InternalVariableName": "PositionComponent1"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'AWBP_MacySwitcher_C:StationMesh1_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.12"
+      },
+      "VariableGuid": "D1473881-4D00FA25-9648CBA3-916603D9",
+      "InternalVariableName": "StationMesh1"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "AWBP_MacySwitcher_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'AWBP_MacySwitcher_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.9"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'AWBP_MacySwitcher_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.9"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_MacySwitcher_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.10"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'AWBP_MacySwitcher_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.8"
+      }
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "StationMesh1_GEN_VARIABLE",
+    "Outer": "AWBP_MacySwitcher_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "bUseDefaultCollision": true,
+      "bGenerateOverlapEvents": false,
+      "BodyInstance": {
+        "ObjectType": "ECC_WorldStatic",
+        "CollisionProfileName": "BlockAll"
+      },
+      "bAbsoluteScale": true
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "StationMesh",
+    "Outer": "Default__AWBP_MacySwitcher_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "AttachParent": {
+        "ObjectName": "SceneComponent'Default__AWBP_MacySwitcher_C:PositionComponent'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_MacySwitcher.7"
+      }
+    }
+  }
+]

@@ -1,0 +1,290 @@
+[
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_Duck_Pet",
+    "Outer": "BP_Duck_Pet_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetAnimInstance_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'AnimInstance'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_interactor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsABP_Duck_Pet_Festival",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "AnimBlueprintGeneratedClass'ABP_Duck_Pet_Festival_C'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Duck/ABP_Duck_Pet_Festival.4"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnInteractNode",
+    "Outer": "BP_Duck_Pet_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'C_InteractibleActorBase:OnInteractNode'",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "interactor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_Duck_Pet_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_Duck_Pet_C:SimpleConstructionScript_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_Duck_Pet.9"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_Duck_Pet_C:ExecuteUbergraph_BP_Duck_Pet'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_Duck_Pet.0"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'C_InteractibleActorBase'",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_Duck_Pet_C:OnInteractNode'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_Duck_Pet.1"
+      },
+      {
+        "ObjectName": "Function'BP_Duck_Pet_C:ExecuteUbergraph_BP_Duck_Pet'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_Duck_Pet.0"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Duck",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SkeletalMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_Duck_Pet": {
+        "ObjectName": "Function'BP_Duck_Pet_C:ExecuteUbergraph_BP_Duck_Pet'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_Duck_Pet.0"
+      },
+      "OnInteractNode": {
+        "ObjectName": "Function'BP_Duck_Pet_C:OnInteractNode'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_Duck_Pet.1"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_Duck_Pet_C'Default__BP_Duck_Pet_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_Duck_Pet.3"
+    }
+  },
+  {
+    "Type": "BP_Duck_Pet_C",
+    "Name": "Default__BP_Duck_Pet_C",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_Duck_Pet.BP_Duck_Pet_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "InteractibleComponent": {
+        "ObjectName": "C_InteractibleComponent'Default__BP_Duck_Pet_C:Interactible Component'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_Duck_Pet.4"
+      },
+      "RootComponent": {
+        "ObjectName": "SceneComponent'Default__BP_Duck_Pet_C:Root Component'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_Duck_Pet.6"
+      }
+    }
+  },
+  {
+    "Type": "C_InteractibleComponent",
+    "Name": "Interactible Component",
+    "Outer": "Default__BP_Duck_Pet_C",
+    "Class": "UScriptClass'C_InteractibleComponent'",
+    "Properties": {
+      "AttachParent": {
+        "ObjectName": "SceneComponent'Default__BP_Duck_Pet_C:Root Component'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_Duck_Pet.6"
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 37.0
+      },
+      "RelativeScale3D": {
+        "X": -7.5,
+        "Y": -7.5,
+        "Z": -7.5
+      }
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_Duck_Pet_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "Root Component",
+    "Outer": "Default__BP_Duck_Pet_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_Duck_Pet_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_Duck_Pet.5"
+      },
+      "VariableGuid": "53A06A6F-4A21B12F-CCDB38B4-1A6D4C47",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SkeletalMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SkeletalMeshComponent'BP_Duck_Pet_C:Duck_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_Duck_Pet.10"
+      },
+      "ParentComponentOrVariableName": "Root Component",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "77B67161-4312F606-D096CDA0-30DBE34F",
+      "InternalVariableName": "Duck"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_Duck_Pet_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_Duck_Pet_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_Duck_Pet.8"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_Duck_Pet_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_Duck_Pet.8"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_Duck_Pet_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/BP_Duck_Pet.7"
+      }
+    }
+  },
+  {
+    "Type": "SkeletalMeshComponent",
+    "Name": "Duck_GEN_VARIABLE",
+    "Outer": "BP_Duck_Pet_C",
+    "Class": "UScriptClass'SkeletalMeshComponent'",
+    "Properties": {
+      "AnimClass": {
+        "ObjectName": "AnimBlueprintGeneratedClass'ABP_Duck_Pet_Festival_C'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Duck/ABP_Duck_Pet_Festival.4"
+      },
+      "ClothingSimulationFactory": {
+        "ObjectName": "Class'ClothingSimulationFactoryNv'",
+        "ObjectPath": "/Script/ClothingSystemRuntimeNv"
+      },
+      "SkeletalMesh": {
+        "ObjectName": "SkeletalMesh'SK_Duck_Ver3'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Duck/SK_Duck_Ver3.7"
+      }
+    }
+  }
+]
