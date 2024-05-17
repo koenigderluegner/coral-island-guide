@@ -1,0 +1,272 @@
+{
+  "item": {
+    "id": "item_41280",
+    "displayName": "熟成ゲイシャコーヒー",
+    "price": 4300,
+    "sellPrice": 1720,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Artisan product",
+    "displayKey": "ArtisanProduct",
+    "description": "飲みすぎに注意しましょう。",
+    "qualities": {
+      "bronze": {
+        "price": 5000,
+        "sellPrice": 1980
+      },
+      "silver": {
+        "price": 5600,
+        "sellPrice": 2240
+      },
+      "gold": {
+        "price": 6500,
+        "sellPrice": 2580
+      },
+      "osmium": {
+        "price": 8600,
+        "sellPrice": 3440
+      }
+    },
+    "iconName": "Aged_Gesha_Coffee_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.AgingBarrel",
+      "Item.Consumable.Drink",
+      "item.artisan"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 2,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41020",
+          "displayName": "ゲイシャコーヒー",
+          "iconName": "Gesha_coffee_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41280",
+          "displayName": "熟成ゲイシャコーヒー",
+          "iconName": "Aged_Gesha_Coffee_Sprite",
+          "sellPrice": 1720
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 1,
+          "time": {
+            "hours": 18,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 1,
+          "time": {
+            "hours": 13,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 1,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 1,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "ストーンスープ",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "食用とは思えません。食べるなら自己責任で。",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "食用食材すべて"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "石材",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "食用食材すべて": [
+          {
+            "id": "item_41180",
+            "displayName": "ヤギのヨーグルト",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "大きなヤギのヨーグルト",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50307",
+            "displayName": "オオシャコガイ",
+            "iconName": "Giant_Clam_Sprite"
+          },
+          {
+            "id": "item_50314",
+            "displayName": "ワカメ",
+            "iconName": "Wakame_weed_Sprite"
+          },
+          {
+            "id": "item_80065",
+            "displayName": "花束",
+            "iconName": "Flower_Bouquet_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41280",
+      "bVaryHealthToMax": false,
+      "healthDelta": -90,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 80,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "bronze": {
+      "key": "item_41280-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": -68,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 90,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "silver": {
+      "key": "item_41280-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": -59,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 95,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "gold": {
+      "key": "item_41280-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": -51,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 115,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "osmium": {
+      "key": "item_41280-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": -45,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 150,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    }
+  }
+}

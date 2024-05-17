@@ -1,0 +1,55 @@
+[
+  {
+    "Type": "C_DateSeasonRangeRequirement",
+    "Name": "C_DateSeasonRangeRequirement_1",
+    "Outer": "BenFall1-14",
+    "Class": "UScriptClass'C_DateSeasonRangeRequirement'",
+    "Properties": {
+      "expectedDateSeason": {
+        "from": {
+          "season": "EC_Season::Fall"
+        },
+        "to": {
+          "season": "EC_Season::Fall",
+          "day": 14
+        }
+      }
+    }
+  },
+  {
+    "Type": "C_MarriageHasProposedRequirement",
+    "Name": "C_MarriageHasProposedRequirement_0",
+    "Outer": "BenFall1-14",
+    "Class": "UScriptClass'C_MarriageHasProposedRequirement'",
+    "Properties": {
+      "checkNPC": true,
+      "npcId": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_NPCs'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.0"
+        },
+        "RowName": "Ben"
+      }
+    }
+  },
+  {
+    "Type": "C_RequirementsConfig",
+    "Name": "BenFall1-14",
+    "Class": "UScriptClass'C_RequirementsConfig'",
+    "Properties": {
+      "requirements": {
+        "type": "EC_RequirementCollectionType::Or",
+        "requirements": [
+          {
+            "ObjectName": "C_DateSeasonRangeRequirement'BenFall1-14:C_DateSeasonRangeRequirement_1'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/BenFall1-14.0"
+          },
+          {
+            "ObjectName": "C_MarriageHasProposedRequirement'BenFall1-14:C_MarriageHasProposedRequirement_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/BenFall1-14.1"
+          }
+        ]
+      }
+    }
+  }
+]

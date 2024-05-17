@@ -1,0 +1,111 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_2",
+    "Outer": "Items_Stone_Fence",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -0.5,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 63.0,
+            "Y": 10.0,
+            "Z": 126.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "22277F5247BACB59D57CEDAD307607C4"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Items_Stone_Fence",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 132.0,
+        "Y": 1562.0
+      },
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D T_AtlasItems",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/T_AtlasItems.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant TranslucentUnlitSpriteMaterial",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup Items_Stone_Fence:BodySetup_2",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Items_Stone_Fence.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 31.0,
+          "Y": 63.0,
+          "Z": 0.110839844,
+          "W": 0.7631836
+        },
+        {
+          "X": -32.0,
+          "Y": 63.0,
+          "Z": 0.080078125,
+          "W": 0.7631836
+        },
+        {
+          "X": -32.0,
+          "Y": -63.0,
+          "Z": 0.080078125,
+          "W": 0.82470703
+        },
+        {
+          "X": 31.0,
+          "Y": -63.0,
+          "Z": 0.110839844,
+          "W": 0.82470703
+        },
+        {
+          "X": 31.0,
+          "Y": 63.0,
+          "Z": 0.110839844,
+          "W": 0.7631836
+        },
+        {
+          "X": -32.0,
+          "Y": -63.0,
+          "Z": 0.080078125,
+          "W": 0.82470703
+        }
+      ]
+    }
+  }
+]

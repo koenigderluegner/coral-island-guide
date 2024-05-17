@@ -1,0 +1,93 @@
+[
+  {
+    "Type": "C_DialogueTopicConfig",
+    "Name": "DA_DialogueTopicTest",
+    "Class": "UScriptClass'C_DialogueTopicConfig'",
+    "Properties": {
+      "dialogueTopicSettings": [
+        {
+          "topicTag": {
+            "TagName": "Dialogue.Topic.PridefulOfKingdom"
+          },
+          "requirementType": "EC_RequirementCollectionType::And",
+          "requirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_FarmHouseRequirement'DA_DialogueTopicTest:C_FarmHouseRequirement_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/Merfolk/Test/DA_DialogueTopicTest.1"
+              }
+            ]
+          },
+          "npcRequirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "priority": 40,
+          "cooldown": 3,
+          "samePriorityAsBefore": false
+        },
+        {
+          "topicTag": {
+            "TagName": "Dialogue.Topic.Grandma"
+          },
+          "requirementType": "EC_RequirementCollectionType::And",
+          "requirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "npcRequirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "priority": 30,
+          "cooldown": 3,
+          "samePriorityAsBefore": false
+        },
+        {
+          "topicTag": {
+            "TagName": "Dialogue.Topic.DarkComment"
+          },
+          "requirementType": "EC_RequirementCollectionType::And",
+          "requirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "npcRequirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "priority": 20,
+          "cooldown": 3,
+          "samePriorityAsBefore": false
+        },
+        {
+          "topicTag": {
+            "TagName": "Dialogue.Topic.CommentDarkSlime"
+          },
+          "requirementType": "EC_RequirementCollectionType::And",
+          "requirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "npcRequirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "priority": 10,
+          "cooldown": 3,
+          "samePriorityAsBefore": false
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_FarmHouseRequirement",
+    "Name": "C_FarmHouseRequirement_0",
+    "Outer": "DA_DialogueTopicTest",
+    "Class": "UScriptClass'C_FarmHouseRequirement'",
+    "Properties": {
+      "requiredLevel": 1
+    }
+  }
+]

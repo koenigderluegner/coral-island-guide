@@ -1,0 +1,56 @@
+[
+  {
+    "Type": "C_DialogueSubTypeRuleConfig",
+    "Name": "DA_SubtypeRule",
+    "Class": "UScriptClass'C_DialogueSubTypeRuleConfig'",
+    "Properties": {
+      "subtypeRules": [
+        {
+          "EC_DTDialogueColumn_SubType::BeforeRoot": {
+            "gameplayRequirements": {
+              "type": "EC_RequirementCollectionType::And",
+              "requirements": [
+                {
+                  "ObjectName": "C_IsCutsceneTriggeredRequirement'DA_SubtypeRule:C_IsCutsceneTriggeredRequirement_0'",
+                  "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/Merfolk/Test/DA_SubtypeRule.1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "EC_DTDialogueColumn_SubType::AfterRoot": {
+            "gameplayRequirements": {
+              "type": "EC_RequirementCollectionType::And",
+              "requirements": [
+                {
+                  "ObjectName": "C_IsCutsceneTriggeredRequirement'DA_SubtypeRule:C_IsCutsceneTriggeredRequirement_1'",
+                  "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/Merfolk/Test/DA_SubtypeRule.2"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_IsCutsceneTriggeredRequirement",
+    "Name": "C_IsCutsceneTriggeredRequirement_0",
+    "Outer": "DA_SubtypeRule",
+    "Class": "UScriptClass'C_IsCutsceneTriggeredRequirement'",
+    "Properties": {
+      "cutsceneTopic": "GS_Coral_Tree_Heal",
+      "invertResult": true
+    }
+  },
+  {
+    "Type": "C_IsCutsceneTriggeredRequirement",
+    "Name": "C_IsCutsceneTriggeredRequirement_1",
+    "Outer": "DA_SubtypeRule",
+    "Class": "UScriptClass'C_IsCutsceneTriggeredRequirement'",
+    "Properties": {
+      "cutsceneTopic": "GS_Coral_Tree_Heal"
+    }
+  }
+]

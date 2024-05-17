@@ -1,0 +1,345 @@
+{
+  "item": {
+    "id": "item_41205",
+    "displayName": "Minuman pisang",
+    "price": 1240,
+    "sellPrice": 495,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Artisan product",
+    "displayKey": "ArtisanProduct",
+    "description": "Aromanya bersahaja. Atau mungkin sedikit seperti asap? Minum secukupnya.",
+    "qualities": {
+      "bronze": {
+        "price": 1465,
+        "sellPrice": 585
+      },
+      "silver": {
+        "price": 1640,
+        "sellPrice": 655
+      },
+      "gold": {
+        "price": 1865,
+        "sellPrice": 745
+      },
+      "osmium": {
+        "price": 2475,
+        "sellPrice": 990
+      }
+    },
+    "iconName": "Wine_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.AgingBarrel",
+      "Item.Consumable.Drink",
+      "item.artisan.FruitWine"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 4,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41054",
+          "displayName": "Jus pisang",
+          "iconName": "Juice_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41205",
+          "displayName": "Minuman pisang",
+          "iconName": "Wine_Sprite",
+          "sellPrice": 495
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 3,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 3,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 2,
+          "time": {
+            "hours": 16,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 2,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "Sup batu",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Tidak terlihat bisa dimakan. Mengkonsumsi risiko Anda sendiri.",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "Bahan Makanan Apa pun"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "Batu",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "Bahan Makanan Apa pun": [
+          {
+            "id": "item_41180",
+            "displayName": "Yogurt kambing",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "Yogurt kambing besar",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50307",
+            "displayName": "Kerang raksasa",
+            "iconName": "Giant_Clam_Sprite"
+          },
+          {
+            "id": "item_50314",
+            "displayName": "Kelp wakame",
+            "iconName": "Wakame_weed_Sprite"
+          },
+          {
+            "id": "item_80065",
+            "displayName": "Buket bunga",
+            "iconName": "Flower_Bouquet_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "RareBased",
+      "offeringGroupTitle": "Altar Barang Langka",
+      "urlPath": "rarealtar",
+      "offeringGroupRewardText": "Membuka Akses Savannah",
+      "offerings": [
+        {
+          "title": "Pengrajin langka",
+          "imageName": "Rare_Artisan_Offerings",
+          "numOfItemRequired": -1,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_65022",
+                  "displayName": "Barel Fermentasi",
+                  "iconName": "Aging_Barrel_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "id": "item_41169",
+                "displayName": "Madu hitam titan arum",
+                "iconName": "Black_Honey_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "key": "Any_Kimchi",
+                "displayName": "Kimchi Apa pun",
+                "iconName": "Kimchi"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_Wine",
+                "displayName": "Anggur apa pun",
+                "iconName": "Wine"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "id": "item_41178",
+                "displayName": "Roda keju kambing fermentasi",
+                "iconName": "Fermented_Goat_Cheese_Wheel_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_41174",
+                "displayName": "Minyak truffle putih",
+                "iconName": "White_truffle_oil_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41205",
+      "bVaryHealthToMax": false,
+      "healthDelta": 85,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 60,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 120,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "bronze": {
+      "key": "item_41205-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 90,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 70,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 138,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "silver": {
+      "key": "item_41205-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 105,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 80,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 156,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "gold": {
+      "key": "item_41205-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 120,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 90,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 180,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "osmium": {
+      "key": "item_41205-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 165,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 120,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 240,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    }
+  }
+}
