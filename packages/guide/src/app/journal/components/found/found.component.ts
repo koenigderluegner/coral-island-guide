@@ -1,19 +1,30 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, computed, DestroyRef, inject } from '@angular/core';
 import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page.component';
 import { Item } from '@ci/data-types';
 import { FormGroup } from "@angular/forms";
 import { FilterForm } from "../../../shared/types/filter-form.type";
+import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ToDoContext } from "../../../core/types/to-do-context.type";
-import { minifyItem } from "@ci/util";
+import { startWith } from "rxjs";
 
 @Component({
     selector: 'app-found',
     templateUrl: './found.component.html',
 })
-export class FoundComponent extends BaseJournalPageComponent<Item> {
+export class FoundComponent extends BaseJournalPageComponent<Item> implements AfterViewInit {
 
-    toDoCategory?: ToDoContext;
+    contextsPerTab: ToDoContext[] = [
+        "journal_artifacts",
+        "journal_gems",
+        "journal_fossils",
+        "journal_scavangables"
+    ]
 
+    toDoContext = computed<ToDoContext | undefined>(() => {
+        const selectedTabIndex = this.selectedTabIndex()
+        return this.contextsPerTab[selectedTabIndex]
+    });
+    destroyRef = inject(DestroyRef)
 
     constructor() {
         super(new FormGroup<FilterForm>({}));
@@ -54,21 +65,23 @@ export class FoundComponent extends BaseJournalPageComponent<Item> {
 
     }
 
+
     override showDetails(selectedEntry?: Item) {
         super.showDetails(selectedEntry);
-        this.toDoCategory = this.selectedTabIndex === 0
-            ? "journal_artifacts"
-            : this.selectedTabIndex === 1
-                ? "journal_gems"
-                : this.selectedTabIndex === 2
-                    ? "journal_fossils"
-                    : undefined;
+
 
     }
 
-    override registerToToDo(entry: Item) {
-        const toDoCategory = this.toDoCategory;
-        if (toDoCategory)
-            this._todo.add({context: toDoCategory, itemEntry: minifyItem(entry)})
+
+    ngAfterViewInit(): void {
+
+        this.matTabGroup?.selectedIndexChange.pipe(
+            takeUntilDestroyed(this.destroyRef),
+            startWith(this.matTabGroup?.selectedIndex ?? 0)
+        ).subscribe({
+            next: (selectedTabIndex) => {
+                this.selectedTabIndex.set(selectedTabIndex)
+            }
+        })
     }
 }

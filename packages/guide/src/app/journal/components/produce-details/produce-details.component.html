@@ -1,4 +1,4 @@
-<app-database-item-details [itemId]="((item | isBaseCrop) ? item.dropData[0].item : item).id">
+<app-database-item-details [itemId]="((item | isBaseCrop) ? item.dropData[0].item : item).id" [context]="toDoContext()">
     <ng-template let-details appDatabaseItemDetails>
         @for (crop of details.isSeedFor; track crop) {
             <app-crop class="mb-4" [item]="crop"/>
@@ -7,7 +7,7 @@
             <app-animal-produce [animal]="details.producedByAnimal" [shownItemId]="details.item.id"/>
         }
         @for (product of details.artisanResult; track product) {
-            <app-processor [class.mt-3]="!$first" [itemProcessing]="product"/>
+            <app-processing [class.mt-3]="!$first" [itemProcessing]="product"/>
         }
     </ng-template>
 </app-database-item-details>

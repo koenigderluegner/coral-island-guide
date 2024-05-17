@@ -1,9 +1,9 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     @if (selectedEntity) {
-        <app-produce-details [item]="selectedEntity" listDetail/>
+        <app-produce-details [item]="selectedEntity" listDetail [toDoContext]="toDoContext()"/>
     }
 
-    <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex"
+    <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex()"
                    class=" px-2 xl:px-[50px] w-full"
                    mat-stretch-tabs="false">
         @for (tab of tabs; track tab) {

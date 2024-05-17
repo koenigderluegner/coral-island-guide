@@ -1,13 +1,13 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     @if (selectedEntity) {
-        <app-database-item-details [itemId]="selectedEntity.id" listDetail>
+        <app-database-item-details [itemId]="selectedEntity.id" [context]="toDoContext()" listDetail>
             <ng-template let-details appDatabaseItemDetails>
                 <app-db-item-found [details]="details"/>
             </ng-template>
         </app-database-item-details>
     }
 
-    <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex"
+    <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex()"
                    class=" px-2 xl:px-[50px] w-full"
                    mat-stretch-tabs="false">
         @for (tab of tabs; track tab) {

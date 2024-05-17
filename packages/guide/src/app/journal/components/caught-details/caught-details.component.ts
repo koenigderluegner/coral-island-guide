@@ -1,6 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Critter, Fish } from '@ci/data-types';
-import { CaughtComponent } from "../caught/caught.component";
 import { ToDoContext } from "../../../core/types/to-do-context.type";
 
 @Component({
@@ -9,9 +8,8 @@ import { ToDoContext } from "../../../core/types/to-do-context.type";
 })
 export class CaughtDetailsComponent implements OnInit, OnChanges {
     @Input({required: true}) critter!: Fish | Critter;
-    @Input() registerToToDo?: CaughtComponent['registerToToDo'];
 
-    protected toDoCategory!: ToDoContext;
+    protected toDoContext!: ToDoContext;
 
     ngOnInit() {
         this._setCategory();
@@ -24,7 +22,7 @@ export class CaughtDetailsComponent implements OnInit, OnChanges {
     }
 
     private _setCategory() {
-        this.toDoCategory = 'fishName' in this.critter
+        this.toDoContext = 'fishName' in this.critter
             ? "journal_fish"
             : this.critter.item.inventoryCategory.toLocaleLowerCase() === 'bug'
                 ? "journal_insects"

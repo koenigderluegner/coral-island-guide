@@ -14,7 +14,7 @@
 
 
     <mat-tab-group class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false" (selectedTabChange)="updateUrl($event)"
-                   [selectedIndex]="selectedTabIndex">
+                   [selectedIndex]="selectedTabIndex()">
         @for (utensilName of utensilNames; track utensilName) {
             <mat-tab
                     [label]="cookingUtensilMapping[utensilName.toLowerCase()] ? cookingUtensilMapping[utensilName.toLowerCase()].displayName : utensilName | addSpacesToPascalCase | titlecase">

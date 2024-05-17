@@ -9,7 +9,7 @@
     @if (offerings$ | async; as offeringAltars) {
         <mat-tab-group (selectedTabChange)="updateUrl($event)"
                        [formGroup]="checklistForm"
-                       [selectedIndex]="selectedTabIndex"
+                       [selectedIndex]="selectedTabIndex()"
                        class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false">
             @for (offeringAltar of offeringAltars; track offeringAltar) {
                 <mat-tab

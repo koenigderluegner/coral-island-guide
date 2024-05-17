@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { BaseSelectableContainerComponent } from "../base-selectable-container/base-selectable-container.component";
 import { MatTabChangeEvent } from "@angular/material/tabs";
 import { Router } from "@angular/router";
@@ -16,7 +16,7 @@ export class BaseTabbedSelectableContainerComponent<T> extends BaseSelectableCon
 
 
     reusedImages: string[] = [];
-    selectedTabIndex = -1;
+    selectedTabIndex = signal(-1);
 
     protected readonly _router: Router = inject(Router);
     protected readonly _title: Title = inject(Title);
@@ -24,7 +24,7 @@ export class BaseTabbedSelectableContainerComponent<T> extends BaseSelectableCon
     updateUrl($event: MatTabChangeEvent | string) {
 
         if (typeof $event !== 'string') {
-            this.selectedTabIndex = $event.index
+            this.selectedTabIndex.set($event.index)
         }
 
         const tabName = typeof $event === "string" ? $event : $event.tab.textLabel;
@@ -44,10 +44,11 @@ export class BaseTabbedSelectableContainerComponent<T> extends BaseSelectableCon
                 const tabName = params.get('tabName');
 
                 if (tabName) {
-                    this.selectedTabIndex = tabNames
+                    const selectedTabIndex = tabNames
                         .map(s => s.toLowerCase().replaceAll(' ', ''))
                         .indexOf(tabName);
-                    this.updateTitle(tabNames[this.selectedTabIndex])
+                    this.selectedTabIndex.set(selectedTabIndex);
+                    this.updateTitle(tabNames[selectedTabIndex])
                 } else if (tabNames[0]) {
                     this.updateUrl(tabNames[0])
                 }

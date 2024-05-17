@@ -21,8 +21,6 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
             location: new FormControl<string | null>(null),
         }));
 
-        this.registerToToDo = this.registerToToDo.bind(this)
-
 
         this.tabs = [
             {
@@ -51,18 +49,6 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
 
         this.activateTabFromRoute(this.tabs.map(tab => tab.title));
 
-    }
-
-    override registerToToDo(entry: Fish | Critter) {
-        if ('fishName' in entry) {
-            this._todo.add({context: "journal_fish", itemEntry: entry.item})
-        } else {
-            if ((this.matTabGroup?.selectedIndex === this.SEA_CRITTERS_INDEX)) {
-                this._todo.add({context: "journal_critter", itemEntry: entry.item})
-            } else {
-                this._todo.add({context: "journal_insects", itemEntry: entry.item})
-            }
-        }
     }
 
     override filterPredicate(foundEntry: Fish | Critter, filterValues: FormGroup<FilterForm>["value"], index: number): boolean {

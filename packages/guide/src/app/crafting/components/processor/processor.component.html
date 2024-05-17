@@ -1,42 +1,18 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     @if (selectedEntity) {
-        <app-base-item-card listDetail [item]="selectedEntity.output.item"
-                            [amount]="selectedEntity.output.amount">
+        <app-database-item-details listDetail [itemId]="selectedEntity.output.item.id"
+                                   [amount]="selectedEntity.output.amount" context="artisan">
+            <ng-template let-details appDatabaseItemDetails>
 
-            @if (!selectedEntity.qualities) {
-                <div class="mb-3">Processing time:
-                    <span class="text-black">
-              <app-processing-time [processingTime]="selectedEntity"/>
-                </span>
-                </div>
-            }
+                <app-processing hideMaschine [itemProcessing]="selectedEntity"/>
 
-            <app-item-list [itemList]="selectedEntity | itemProcessingIngredients" class="mb-3"/>
-
-
-            @if (selectedEntity.qualities) {
-
-                <div class="mb-3">Time per input quality
-                    <app-processing-time-per-quality [baseProcessingTime]="selectedEntity"
-                                                     [processingTimePerQualities]="selectedEntity.qualities"/>
-                </div>
-
-            }
-
-
-            @if (selectedEntity.refinements) {
-
-                <div class="mb-3">Time to improve quality
-                    <app-refinements-list [refinements]="selectedEntity.refinements"/>
-                </div>
-
-            }
-        </app-base-item-card>
+            </ng-template>
+        </app-database-item-details>
     }
 
 
     <mat-tab-group (selectedTabChange)="updateUrl($event)" class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false"
-                   [selectedIndex]="selectedTabIndex">
+                   [selectedIndex]="selectedTabIndex()">
         @for (machineName of machineNames; track machineName) {
             <mat-tab
                     [label]="processorMapping[machineName.toLowerCase()] ? processorMapping[machineName.toLowerCase()].displayName : machineName |  addSpacesToPascalCase | titlecase">
