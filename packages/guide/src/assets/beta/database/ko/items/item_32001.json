@@ -1,0 +1,192 @@
+{
+  "item": {
+    "id": "item_32001",
+    "displayName": "양털",
+    "price": 240,
+    "sellPrice": 170,
+    "sellAt": [
+      "Sam"
+    ],
+    "stackable": true,
+    "inventoryCategory": "Animal product",
+    "displayKey": "AnimalProduct",
+    "description": "양털 한 뭉치. 라놀린을 함유해 부드럽고 번드르르하다.",
+    "qualities": {
+      "bronze": {
+        "price": 280,
+        "sellPrice": 196
+      },
+      "silver": {
+        "price": 310,
+        "sellPrice": 221
+      },
+      "gold": {
+        "price": 360,
+        "sellPrice": 255
+      },
+      "osmium": {
+        "price": 480,
+        "sellPrice": 340
+      }
+    },
+    "iconName": "Wool_Sprite",
+    "tags": [
+      "income.ranching",
+      "item.townrank.1",
+      "item.animalproduct.wool"
+    ]
+  },
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_32001",
+          "displayName": "양털",
+          "iconName": "Wool_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_42011",
+          "displayName": "모직",
+          "iconName": "Wool_Cloth_Sprite",
+          "sellPrice": 375
+        }
+      },
+      "genericInput": null,
+      "machine": "Loom"
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "SpecialityBased",
+      "offeringGroupTitle": "고급 제단",
+      "urlPath": "advancedaltar",
+      "offeringGroupRewardText": "순간이동 공물 잠금 해제",
+      "offerings": [
+        {
+          "title": "외양간 동물",
+          "imageName": "Barn_Animals_Offerings",
+          "numOfItemRequired": -1,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_65018",
+                  "displayName": "치즈 압착기",
+                  "iconName": "Cheese_Press_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "id": "item_31004",
+                "displayName": "우유",
+                "iconName": "Milk_Sprite_"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_31005",
+                "displayName": "염소젖",
+                "iconName": "Goat_milk_Sprite_"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_32001",
+                "displayName": "양털",
+                "iconName": "Wool_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_31018",
+                "displayName": "대용량 염소젖",
+                "iconName": "Large_goat_milk_Sprite_"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_32009",
+                "displayName": "큰 양털",
+                "iconName": "Large_wool_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_31016",
+                "displayName": "대용량 우유",
+                "iconName": "Large_milk_Sprite_"
+              },
+              "amount": 1,
+              "quality": "silver"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "producedByAnimal": {
+    "key": "Sheep",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Sheep_Sprite"
+        }
+      }
+    ],
+    "building": "Barn",
+    "daysToGrow": 10,
+    "harvestCooldown": 2,
+    "animalProduceType": "UsingTools",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65043",
+      "displayName": "털 가위",
+      "iconName": "Shears_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_32001",
+          "displayName": "양털",
+          "iconName": "Wool_Sprite"
+        },
+        "large": {
+          "id": "item_32009",
+          "displayName": "큰 양털",
+          "iconName": "Large_wool_Sprite"
+        }
+      }
+    ],
+    "displayName": "양"
+  }
+}

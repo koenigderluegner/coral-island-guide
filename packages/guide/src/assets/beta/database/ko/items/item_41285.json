@@ -1,0 +1,272 @@
+{
+  "item": {
+    "id": "item_41285",
+    "displayName": "메추리알 피단",
+    "price": 2775,
+    "sellPrice": 1110,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Artisan product",
+    "displayKey": "ArtisanProduct",
+    "description": "보존 처리한 달걀.",
+    "qualities": {
+      "bronze": {
+        "price": 3190,
+        "sellPrice": 1275
+      },
+      "silver": {
+        "price": 3600,
+        "sellPrice": 1440
+      },
+      "gold": {
+        "price": 4125,
+        "sellPrice": 1650
+      },
+      "osmium": {
+        "price": 5515,
+        "sellPrice": 2205
+      }
+    },
+    "iconName": "Century_quail_egg_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.AgingBarrel",
+      "Item.Consumable.Drink",
+      "item.artisan"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 2,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41294",
+          "displayName": "메추리알 함압단",
+          "iconName": "Salted_quail_egg_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41285",
+          "displayName": "메추리알 피단",
+          "iconName": "Century_quail_egg_Sprite",
+          "sellPrice": 1110
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 1,
+          "time": {
+            "hours": 18,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 1,
+          "time": {
+            "hours": 13,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 1,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 1,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "돌 수프",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "먹는 게 불가능해 보이는 음식. 위험 부담은 본인 몫.",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "아무 식용 재료"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "돌",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "아무 식용 재료": [
+          {
+            "id": "item_41180",
+            "displayName": "염소 요구르트",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "대용량 염소 요구르트",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50307",
+            "displayName": "대왕조개",
+            "iconName": "Giant_Clam_Sprite"
+          },
+          {
+            "id": "item_50314",
+            "displayName": "미역",
+            "iconName": "Wakame_weed_Sprite"
+          },
+          {
+            "id": "item_80065",
+            "displayName": "꽃다발",
+            "iconName": "Flower_Bouquet_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41285",
+      "bVaryHealthToMax": false,
+      "healthDelta": 30,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 70,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "bronze": {
+      "key": "item_41285-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 40,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 85,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "silver": {
+      "key": "item_41285-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 40,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 90,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "gold": {
+      "key": "item_41285-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 45,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 110,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "osmium": {
+      "key": "item_41285-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 60,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 145,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    }
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "item": {
+    "id": "item_41288",
+    "displayName": "鹌鹑皮蛋（大）",
+    "price": 4465,
+    "sellPrice": 1785,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Artisan product",
+    "displayKey": "ArtisanProduct",
+    "description": "腌制鹌鹑蛋。",
+    "qualities": {
+      "bronze": {
+        "price": 5100,
+        "sellPrice": 2040
+      },
+      "silver": {
+        "price": 5775,
+        "sellPrice": 2310
+      },
+      "gold": {
+        "price": 6675,
+        "sellPrice": 2670
+      },
+      "osmium": {
+        "price": 8890,
+        "sellPrice": 3555
+      }
+    },
+    "iconName": "Large_century_quail_egg_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.AgingBarrel",
+      "Item.Consumable.Drink",
+      "item.artisan"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 2,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41291",
+          "displayName": "大咸鹌鹑蛋",
+          "iconName": "Large_salted_quail_egg_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41288",
+          "displayName": "鹌鹑皮蛋（大）",
+          "iconName": "Large_century_quail_egg_Sprite",
+          "sellPrice": 1785
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 1,
+          "time": {
+            "hours": 18,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 1,
+          "time": {
+            "hours": 13,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 1,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 1,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "石头汤",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "看起来不可食用。风险自负。",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "任何食用配料"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "石头",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "任何食用配料": [
+          {
+            "id": "item_41180",
+            "displayName": "山羊酸奶",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "山羊酸奶（大）",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50307",
+            "displayName": "大砗磲",
+            "iconName": "Giant_Clam_Sprite"
+          },
+          {
+            "id": "item_50314",
+            "displayName": "裙带菜丛",
+            "iconName": "Wakame_weed_Sprite"
+          },
+          {
+            "id": "item_80065",
+            "displayName": "花束",
+            "iconName": "Flower_Bouquet_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41288",
+      "bVaryHealthToMax": false,
+      "healthDelta": 160,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 55,
+      "level": 1,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "bronze": {
+      "key": "item_41288-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 190,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 60,
+      "level": 1,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "silver": {
+      "key": "item_41288-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 205,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 65,
+      "level": 1,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "gold": {
+      "key": "item_41288-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 240,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 80,
+      "level": 1,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "osmium": {
+      "key": "item_41288-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 325,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 110,
+      "level": 1,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    }
+  }
+}

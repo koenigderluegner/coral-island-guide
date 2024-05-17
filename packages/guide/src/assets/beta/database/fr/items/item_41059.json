@@ -1,0 +1,372 @@
+{
+  "item": {
+    "id": "item_41059",
+    "displayName": "Jus de durian",
+    "price": 565,
+    "sellPrice": 340,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Artisan product",
+    "displayKey": "ArtisanProduct",
+    "description": "Bouteille de jus de fruits sain.",
+    "qualities": {
+      "bronze": {
+        "price": 650,
+        "sellPrice": 390
+      },
+      "silver": {
+        "price": 740,
+        "sellPrice": 445
+      },
+      "gold": {
+        "price": 860,
+        "sellPrice": 515
+      },
+      "osmium": {
+        "price": 1135,
+        "sellPrice": 680
+      }
+    },
+    "iconName": "Juice_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.Keg",
+      "Item.Consumable.Drink",
+      "item.artisan.FruitJuice"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21017",
+          "displayName": "Durian",
+          "iconName": "Durian_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41059",
+          "displayName": "Jus de durian",
+          "iconName": "Juice_Sprite",
+          "sellPrice": 340
+        }
+      },
+      "genericInput": null,
+      "machine": "Keg"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 4,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41059",
+          "displayName": "Jus de durian",
+          "iconName": "Juice_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41210",
+          "displayName": "Vin de durian",
+          "iconName": "Wine_Sprite",
+          "sellPrice": 1530
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 3,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 3,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 2,
+          "time": {
+            "hours": 16,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 2,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "Soupe aux pierres",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Ça n'a pas l'air comestible. À consommer à tes risques et périls.",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "Ingrédients comestibles"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "Pierre",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "Ingrédients comestibles": [
+          {
+            "id": "item_41180",
+            "displayName": "Yaourt de chèvre",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "Grand yaourt de chèvre",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50307",
+            "displayName": "Palourde géante",
+            "iconName": "Giant_Clam_Sprite"
+          },
+          {
+            "id": "item_50314",
+            "displayName": "Algues wakamé",
+            "iconName": "Wakame_weed_Sprite"
+          },
+          {
+            "id": "item_80065",
+            "displayName": "Bouquet de fleurs",
+            "iconName": "Flower_Bouquet_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "SpecialityBased",
+      "offeringGroupTitle": "Autel avancé",
+      "urlPath": "advancedaltar",
+      "offeringGroupRewardText": "Débloque les téléporteurs d'offrandes",
+      "offerings": [
+        {
+          "title": "Artisan de base",
+          "imageName": "Artisan_Product_Offerings",
+          "numOfItemRequired": -1,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_65020",
+                  "displayName": "Fût",
+                  "iconName": "Keg_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "key": "Any_Mayonnaise",
+                "displayName": "Mayonnaise",
+                "iconName": "T_AnyMayo_Sprite"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_FruitJuice",
+                "displayName": "Tout jus de fruits",
+                "iconName": "Juice"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_Butter",
+                "displayName": "Beurre",
+                "iconName": "T_AnyButter_Sprite"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_DriedScavengables",
+                "displayName": "Tout récupérable séché",
+                "iconName": "Seafood_jerky"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_Pickle",
+                "displayName": "Tout aliment mariné",
+                "iconName": "Pickles"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41059",
+      "bVaryHealthToMax": false,
+      "healthDelta": 35,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 30,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "bronze": {
+      "key": "item_41059-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 40,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 35,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "silver": {
+      "key": "item_41059-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 45,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 35,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "gold": {
+      "key": "item_41059-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 55,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 45,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "osmium": {
+      "key": "item_41059-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 70,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 60,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    }
+  }
+}

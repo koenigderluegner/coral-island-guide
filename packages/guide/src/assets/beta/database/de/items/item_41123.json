@@ -1,0 +1,334 @@
+{
+  "item": {
+    "id": "item_41123",
+    "displayName": "Traubensaft",
+    "price": 400,
+    "sellPrice": 160,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Artisan product",
+    "displayKey": "ArtisanProduct",
+    "description": "Eine Flasche mit gesundem Fruchtsaft.",
+    "qualities": {
+      "bronze": {
+        "price": 465,
+        "sellPrice": 185
+      },
+      "silver": {
+        "price": 525,
+        "sellPrice": 210
+      },
+      "gold": {
+        "price": 600,
+        "sellPrice": 240
+      },
+      "osmium": {
+        "price": 800,
+        "sellPrice": 320
+      }
+    },
+    "iconName": "Juice_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.Keg",
+      "Item.Consumable.Drink",
+      "item.artisan.FruitJuice"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_23007",
+          "displayName": "Trauben",
+          "iconName": "Grape_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41123",
+          "displayName": "Traubensaft",
+          "iconName": "Juice_Sprite",
+          "sellPrice": 160
+        }
+      },
+      "genericInput": null,
+      "machine": "Keg"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 4,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41123",
+          "displayName": "Traubensaft",
+          "iconName": "Juice_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41332",
+          "displayName": "Traubenwein",
+          "iconName": "Wine_Sprite",
+          "sellPrice": 720
+        }
+      },
+      "genericInput": null,
+      "machine": "Barrel"
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "Steinsuppe",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Sieht ungenießbar aus. Verzehr auf eigene Gefahr.",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "Alle essbaren Zutaten"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "Stein",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "Alle essbaren Zutaten": [
+          {
+            "id": "item_41180",
+            "displayName": "Ziegenjoghurt",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "Großer Ziegenjoghurt",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50307",
+            "displayName": "Riesenmuschel",
+            "iconName": "Giant_Clam_Sprite"
+          },
+          {
+            "id": "item_50314",
+            "displayName": "Wakame-Alge",
+            "iconName": "Wakame_weed_Sprite"
+          },
+          {
+            "id": "item_80065",
+            "displayName": "Blumenstrauß",
+            "iconName": "Flower_Bouquet_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "SpecialityBased",
+      "offeringGroupTitle": "Fortgeschrittener Altar",
+      "urlPath": "advancedaltar",
+      "offeringGroupRewardText": "Schaltet Warp Sesajen frei",
+      "offerings": [
+        {
+          "title": "Einfacher Handwerker",
+          "imageName": "Artisan_Product_Offerings",
+          "numOfItemRequired": -1,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_65020",
+                  "displayName": "Fässchen",
+                  "iconName": "Keg_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "key": "Any_Mayonnaise",
+                "displayName": "Beliebige Mayonnaise",
+                "iconName": "T_AnyMayo_Sprite"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_FruitJuice",
+                "displayName": "Beliebiger Fruchtsaft",
+                "iconName": "Juice"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_Butter",
+                "displayName": "Beliebige Butter",
+                "iconName": "T_AnyButter_Sprite"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_DriedScavengables",
+                "displayName": "Jegliche Getrockneten Überreste",
+                "iconName": "Seafood_jerky"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_Pickle",
+                "displayName": "Beliebige Essiggurke",
+                "iconName": "Pickles"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41123",
+      "bVaryHealthToMax": false,
+      "healthDelta": 70,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 60,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "bronze": {
+      "key": "item_41123-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 80,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 65,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "silver": {
+      "key": "item_41123-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 85,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 70,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "gold": {
+      "key": "item_41123-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 105,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 85,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "osmium": {
+      "key": "item_41123-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 140,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 115,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    }
+  }
+}

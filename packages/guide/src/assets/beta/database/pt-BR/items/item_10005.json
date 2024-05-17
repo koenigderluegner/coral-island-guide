@@ -1,0 +1,63 @@
+{
+  "item": {
+    "id": "item_10005",
+    "displayName": "Anel de diamante",
+    "price": 5000,
+    "sellPrice": 450,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Others",
+    "displayKey": "Others",
+    "description": "Usado para pedir alguém em casamento.",
+    "qualities": {},
+    "iconName": "diamond_ring_Sprite",
+    "tags": []
+  },
+  "buyAt": [
+    {
+      "item": {
+        "id": "item_10005",
+        "displayName": "Anel de diamante",
+        "iconName": "diamond_ring_Sprite",
+        "price": 5000,
+        "sellPrice": 450
+      },
+      "allowedDays": [],
+      "allowedSeasons": [],
+      "allowedWeather": [],
+      "forbiddenDays": [],
+      "forbiddenSeasons": [],
+      "forbiddenWeather": [],
+      "townRank": 0,
+      "tag": [],
+      "priceOverride": 0,
+      "priority": 11,
+      "enabled": true,
+      "availableSinceDate": false,
+      "availableTillDate": false,
+      "availableDuringTime": false,
+      "requirements": {
+        "key": "diamondRing",
+        "type": "And",
+        "requirements": [
+          {
+            "type": "CountNPCHeartLevel",
+            "meta": {
+              "expectedHeartLevel": 10
+            }
+          },
+          {
+            "type": "MarriageHasProposed",
+            "meta": {
+              "inverted": true
+            }
+          }
+        ]
+      },
+      "shop": {
+        "url": "blacksmith",
+        "displayName": "Blacksmith"
+      }
+    }
+  ]
+}
