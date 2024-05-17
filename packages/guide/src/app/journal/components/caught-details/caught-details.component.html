@@ -1,4 +1,4 @@
-<app-database-item-details [itemId]="critter.item.id">
+<app-database-item-details [itemId]="critter.item.id" [context]="toDoContext">
     <ng-template let-details appDatabaseItemDetails>
         @if (details.fish) {
             <app-fish [fish]="details.fish"/>

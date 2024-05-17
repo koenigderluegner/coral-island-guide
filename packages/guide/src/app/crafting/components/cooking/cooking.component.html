@@ -1,6 +1,6 @@
 <app-list-detail-container [(openDrawer)]="openDrawer">
     @if (selectedEntity) {
-        <app-database-item-details [itemId]="selectedEntity.item.id" listDetail>
+        <app-database-item-details [itemId]="selectedEntity.item.id" context="cooking_recipes" listDetail>
             <ng-template let-details appDatabaseItemDetails>
                 @if (details.consumables?.base; as consumable) {
                     <app-consumable [consumable]="consumable"/>
@@ -14,7 +14,7 @@
 
 
     <mat-tab-group class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false" (selectedTabChange)="updateUrl($event)"
-                   [selectedIndex]="selectedTabIndex">
+                   [selectedIndex]="selectedTabIndex()">
         @for (utensilName of utensilNames; track utensilName) {
             <mat-tab
                     [label]="cookingUtensilMapping[utensilName.toLowerCase()] ? cookingUtensilMapping[utensilName.toLowerCase()].displayName : utensilName | addSpacesToPascalCase | titlecase">

@@ -1,6 +1,6 @@
 import { CookingRecipe, Critter, Fish, Item, MinimalItem, Offering } from "@ci/data-types";
 
-export interface ToDo {
+export interface LegacyToDo {
     version: number;
     offerings: Offering[];
     journal: {

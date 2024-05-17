@@ -1,6 +1,6 @@
 <app-list-detail-container [(openDrawer)]="openDrawer" [removePlaceholder]="showTable">
     @if (selectedEntity) {
-        <app-database-item-details [itemId]="selectedEntity.id" listDetail>
+        <app-database-item-details [itemId]="selectedEntity.id" listDetail context="museum">
             <ng-template let-details appDatabaseItemDetails>
                 @if (details.fish) {
                     <app-fish [fish]="details.fish"/>
@@ -17,7 +17,7 @@
     @if (checklistDefinition$ | async; as checklistDefinition) {
 
 
-        <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex"
+        <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex()"
                        class=" px-2 xl:px-[50px] w-full"
                        dynamicHeight mat-stretch-tabs="false">
             @for (tab of (checklistDefinition | keyvalue: keyValueNoOrder); track tab) {

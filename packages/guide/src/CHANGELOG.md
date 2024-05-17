@@ -4,6 +4,10 @@
 
 #### Added
 
+- Reactivated To-Do lists.
+    - To-Dos are now more flexible and can store all items. If context is given, they will be categorized else they will
+      go into "Uncategorized"-category at the end.
+    - Many categories/contexts were added
 - Added map icon, birthday, marriage possibility and description to NPC details
 - Made items in gifting grid clickable for details
   - This does not apply for categories like "all fruits"

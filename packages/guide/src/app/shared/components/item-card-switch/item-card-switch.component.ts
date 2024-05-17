@@ -1,11 +1,11 @@
 import { Component, ContentChild, input, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CustomEntry, Item, MinimalItem, MinimalTagBasedItem } from "@ci/data-types";
+import { CustomEntry, MinimalTagBasedItem } from "@ci/data-types";
 import { SharedModule } from "../../shared.module";
 import { DatabaseItemDetailsComponent } from "../database-item-details/database-item-details.component";
 import { DatabaseItemDetailsDirective } from "../../directives/database-item-details.directive";
-
-type ItemEntry = Item | MinimalItem | CustomEntry | MinimalTagBasedItem;
+import { ItemEntry } from "../../types/item-entry.type";
+import { ToDoContext } from "../../../core/types/to-do-context.type";
 
 
 @Component({
@@ -17,7 +17,7 @@ type ItemEntry = Item | MinimalItem | CustomEntry | MinimalTagBasedItem;
 export class ItemCardSwitchComponent {
     item = input.required<ItemEntry>();
     @ContentChild(TemplateRef) databaseItemDetails: TemplateRef<any> | null = null;
-
+    context = input<ToDoContext | undefined>();
     isTagBasedItem(item: ItemEntry): item is MinimalTagBasedItem {
         return 'key' in item;
     }

@@ -4,7 +4,6 @@ import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page
 import { getTruthyValues } from '@ci/util';
 import { FilterForm } from "../../../shared/types/filter-form.type";
 import { FormControl, FormGroup } from "@angular/forms";
-import { ToDoCategory } from "../../../core/enums/todo-category.enum";
 
 @Component({
     selector: 'app-caught',
@@ -21,8 +20,6 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
             weather: new FormControl<Weather[]>([...Weathers], {nonNullable: true}),
             location: new FormControl<string | null>(null),
         }));
-
-        this.registerToToDo = this.registerToToDo.bind(this)
 
 
         this.tabs = [
@@ -52,18 +49,6 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
 
         this.activateTabFromRoute(this.tabs.map(tab => tab.title));
 
-    }
-
-    override registerToToDo(entry: Fish | Critter) {
-        if ('fishName' in entry) {
-            this._todo.add(ToDoCategory.JOURNAL_FISH, entry)
-        } else {
-            if ((this.matTabGroup?.selectedIndex === this.SEA_CRITTERS_INDEX)) {
-                this._todo.add(ToDoCategory.JOURNAL_CRITTER, entry)
-            } else {
-                this._todo.add(ToDoCategory.JOURNAL_INSECTS, entry)
-            }
-        }
     }
 
     override filterPredicate(foundEntry: Fish | Critter, filterValues: FormGroup<FilterForm>["value"], index: number): boolean {

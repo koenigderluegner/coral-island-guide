@@ -1,10 +1,9 @@
 <app-list-detail-container [(openDrawer)]="openDrawer" [removePlaceholder]="showTable">
     @if (selectedEntity) {
-        <app-caught-details [critter]="selectedEntity" [registerToToDo]="registerToToDo"
-                            listDetail></app-caught-details>
+        <app-caught-details [critter]="selectedEntity" listDetail/>
     }
 
-    <mat-tab-group (selectedTabChange)="updateUrl($event); resetLocationFilter()" [selectedIndex]="selectedTabIndex"
+    <mat-tab-group (selectedTabChange)="updateUrl($event); resetLocationFilter()" [selectedIndex]="selectedTabIndex()"
                    class=" px-2 xl:px-[50px] w-full"
                    mat-stretch-tabs="false">
         @for (tab of tabs; track tab) {
