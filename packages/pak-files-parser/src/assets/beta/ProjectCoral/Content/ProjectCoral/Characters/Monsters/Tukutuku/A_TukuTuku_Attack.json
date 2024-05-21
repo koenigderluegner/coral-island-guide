@@ -1,0 +1,685 @@
+[
+  {
+    "Type": "AnimNotify_PlayNiagaraEffect",
+    "Name": "AnimNotify_PlayNiagaraEffect_0",
+    "Outer": "A_TukuTuku_Attack",
+    "Class": "UScriptClass'AnimNotify_PlayNiagaraEffect'",
+    "Properties": {
+      "Template": {
+        "ObjectName": "NiagaraSystem'NS_TukuEnd'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/FX/Monster/TukuTuku/NS_TukuEnd.16"
+      },
+      "LocationOffset": {
+        "X": 0.0,
+        "Y": 200.0,
+        "Z": 0.0
+      }
+    }
+  },
+  {
+    "Type": "AnimNotifyState_TimedNiagaraEffect",
+    "Name": "AnimNotifyState_TimedNiagaraEffect_0",
+    "Outer": "A_TukuTuku_Attack",
+    "Class": "UScriptClass'AnimNotifyState_TimedNiagaraEffect'",
+    "Properties": {
+      "Template": {
+        "ObjectName": "NiagaraSystem'NS_AttTrail'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/FX/Monster/TukuTuku/NS_AttTrail.12"
+      },
+      "SocketName": "joint2",
+      "LocationOffset": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 50.0
+      }
+    }
+  },
+  {
+    "Type": "AnimSequence",
+    "Name": "A_TukuTuku_Attack",
+    "Class": "UScriptClass'AnimSequence'",
+    "Properties": {
+      "NumFrames": 53,
+      "TrackToSkeletonMapTable": [
+        {
+          "BoneTreeIndex": 0
+        },
+        {
+          "BoneTreeIndex": 1
+        },
+        {
+          "BoneTreeIndex": 2
+        },
+        {
+          "BoneTreeIndex": 3
+        },
+        {
+          "BoneTreeIndex": 4
+        },
+        {
+          "BoneTreeIndex": 5
+        },
+        {
+          "BoneTreeIndex": 6
+        },
+        {
+          "BoneTreeIndex": 7
+        },
+        {
+          "BoneTreeIndex": 8
+        },
+        {
+          "BoneTreeIndex": 9
+        },
+        {
+          "BoneTreeIndex": 10
+        },
+        {
+          "BoneTreeIndex": 11
+        }
+      ],
+      "BoneCompressionSettings": {
+        "ObjectName": "AnimBoneCompressionSettings'DefaultAnimBoneCompressionSettings'",
+        "ObjectPath": "Engine/Content/Animation/DefaultAnimBoneCompressionSettings.0"
+      },
+      "CurveCompressionSettings": {
+        "ObjectName": "AnimCurveCompressionSettings'DefaultAnimCurveCompressionSettings'",
+        "ObjectPath": "Engine/Content/Animation/DefaultAnimCurveCompressionSettings.1"
+      },
+      "Notifies": [
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "TimedNiagaraEffect",
+          "Notify": null,
+          "NotifyStateClass": {
+            "ObjectName": "AnimNotifyState_TimedNiagaraEffect'A_TukuTuku_Attack:AnimNotifyState_TimedNiagaraEffect_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Tukutuku/A_TukuTuku_Attack.1"
+          },
+          "Duration": 0.24104622,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": 0,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 1.7333333,
+            "LinkValue": 0.81890035,
+            "LinkedSequence": {
+              "ObjectName": "AnimSequence'A_TukuTuku_Attack'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Tukutuku/A_TukuTuku_Attack.2"
+            }
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 1,
+          "LinkedMontage": null,
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.7333333,
+          "LinkValue": 0.5778541,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_TukuTuku_Attack'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Tukutuku/A_TukuTuku_Attack.2"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PlayNiagaraEffect",
+          "Notify": {
+            "ObjectName": "AnimNotify_PlayNiagaraEffect'A_TukuTuku_Attack:AnimNotify_PlayNiagaraEffect_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Tukutuku/A_TukuTuku_Attack.0"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.80358446,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 0,
+          "LinkedMontage": null,
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.7333333,
+          "LinkValue": 0.80358446,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_TukuTuku_Attack'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Tukutuku/A_TukuTuku_Attack.2"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "CPlaySoundEvent",
+          "Notify": {
+            "ObjectName": "CAnimNotify_PlaySoundEvent'A_TukuTuku_Attack:CAnimNotify_PlaySoundEvent_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Tukutuku/A_TukuTuku_Attack.3"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.8043623,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 2,
+          "LinkedMontage": null,
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.7333333,
+          "LinkValue": 0.8043623,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_TukuTuku_Attack'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Tukutuku/A_TukuTuku_Attack.2"
+          }
+        }
+      ],
+      "SequenceLength": 1.7333333,
+      "Skeleton": {
+        "ObjectName": "Skeleton'SKEL_Tukutuku'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Tukutuku/SKEL_Tukutuku.0"
+      }
+    },
+    "SkeletonGuid": "0EBA4578-4DAFCD55-7256D5AA-38F2DF45",
+    "CompressedTrackToSkeletonMapTable": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "CompressedCurveNames": [
+      {
+        "DisplayName": "Leaf1"
+      },
+      {
+        "DisplayName": "Leaf2"
+      }
+    ],
+    "CompressedCurveData": {
+      "FloatCurves": [
+        {
+          "FloatCurve": {
+            "Keys": [
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.0,
+                "Value": 1.0,
+                "ArriveTangent": 0.591162,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.591162,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.1,
+                "Value": 3.0,
+                "ArriveTangent": 0.591162,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.591162,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.3,
+                "Value": -2.5,
+                "ArriveTangent": 0.591162,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.591162,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.4,
+                "Value": 3.0,
+                "ArriveTangent": 20.023613,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 20.023613,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.5,
+                "Value": -0.4999998,
+                "ArriveTangent": -19.808073,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": -19.808073,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.6,
+                "Value": 2.5000002,
+                "ArriveTangent": -1.3580012,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": -1.3580012,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.7,
+                "Value": -4.0,
+                "ArriveTangent": 3.333333,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 3.333333,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.8,
+                "Value": 4.0,
+                "ArriveTangent": -1.25,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": -1.25,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.9,
+                "Value": -1.5,
+                "ArriveTangent": 3.228582,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 3.228582,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.0,
+                "Value": 2.5,
+                "ArriveTangent": 3.228582,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 3.228582,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.1,
+                "Value": 0.0,
+                "ArriveTangent": 3.228582,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 3.228582,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.2,
+                "Value": 1.5,
+                "ArriveTangent": 3.228582,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 3.228582,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.3,
+                "Value": 0.5,
+                "ArriveTangent": 3.228582,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 3.228582,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.4,
+                "Value": 1.5,
+                "ArriveTangent": 3.228582,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 3.228582,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.5,
+                "Value": 0.9999997,
+                "ArriveTangent": -5.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": -5.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.6,
+                "Value": 0.49999973,
+                "ArriveTangent": 1.3411042E-06,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 1.3411042E-06,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.7,
+                "Value": 1.0,
+                "ArriveTangent": 0.591162,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.591162,
+                "LeaveTangentWeight": 0.0
+              }
+            ],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "RCCE_Constant",
+            "PostInfinityExtrap": "RCCE_Constant"
+          },
+          "Name": {
+            "DisplayName": "Leaf1"
+          },
+          "CurveTypeFlags": 4
+        },
+        {
+          "FloatCurve": {
+            "Keys": [
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.0,
+                "Value": 1.0,
+                "ArriveTangent": 0.591162,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.591162,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.1,
+                "Value": 3.0,
+                "ArriveTangent": 0.591162,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.591162,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.3,
+                "Value": -2.5,
+                "ArriveTangent": 0.591162,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.591162,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.4,
+                "Value": 3.0,
+                "ArriveTangent": 20.023613,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 20.023613,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.5,
+                "Value": -0.5,
+                "ArriveTangent": -19.808073,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": -19.808073,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.6,
+                "Value": 2.5,
+                "ArriveTangent": -1.358001,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": -1.358001,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.7,
+                "Value": -4.0,
+                "ArriveTangent": 3.333333,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 3.333333,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.8,
+                "Value": 4.0,
+                "ArriveTangent": -1.25,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": -1.25,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.9,
+                "Value": -1.5,
+                "ArriveTangent": 3.228582,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 3.228582,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.0,
+                "Value": 2.5,
+                "ArriveTangent": 3.228582,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 3.228582,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.1,
+                "Value": 0.0,
+                "ArriveTangent": 3.228582,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 3.228582,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.2,
+                "Value": 1.5,
+                "ArriveTangent": 3.228582,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 3.228582,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.3,
+                "Value": 0.5,
+                "ArriveTangent": 3.228582,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 3.228582,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.4,
+                "Value": 1.5,
+                "ArriveTangent": 3.228582,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 3.228582,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.5,
+                "Value": 1.0,
+                "ArriveTangent": -5.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": -5.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.6,
+                "Value": 0.5,
+                "ArriveTangent": 1E-06,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 1E-06,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.7,
+                "Value": 1.0,
+                "ArriveTangent": 0.591162,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.591162,
+                "LeaveTangentWeight": 0.0
+              }
+            ],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "RCCE_Constant",
+            "PostInfinityExtrap": "RCCE_Constant"
+          },
+          "Name": {
+            "DisplayName": "Leaf2"
+          },
+          "CurveTypeFlags": 4
+        }
+      ]
+    },
+    "CompressedDataStructure": {
+      "CompressedNumberOfFrames": 53,
+      "KeyEncodingFormat": "AKF_PerTrackCompression",
+      "TranslationCompressionFormat": "ACF_Identity",
+      "RotationCompressionFormat": "ACF_Identity",
+      "ScaleCompressionFormat": "ACF_Identity"
+    },
+    "BoneCompressionCodec": {
+      "ObjectName": "AnimCompress_PerTrackCompression'DefaultAnimBoneCompressionSettings:AnimCompress_PerTrackCompression_2'",
+      "ObjectPath": "Engine/Content/Animation/DefaultAnimBoneCompressionSettings"
+    },
+    "CurveCompressionCodec": {
+      "ObjectName": "AnimCurveCompressionCodec_CompressedRichCurve'DefaultAnimCurveCompressionSettings:CurveCompressionCodec'",
+      "ObjectPath": "Engine/Content/Animation/DefaultAnimCurveCompressionSettings"
+    },
+    "CompressedRawDataSize": 15112
+  },
+  {
+    "Type": "CAnimNotify_PlaySoundEvent",
+    "Name": "CAnimNotify_PlaySoundEvent_0",
+    "Outer": "A_TukuTuku_Attack",
+    "Class": "UScriptClass'CAnimNotify_PlaySoundEvent'",
+    "Properties": {
+      "soundEvent": {
+        "ObjectName": "AkAudioEvent'anim_npc_tuku_tuku_attack'",
+        "ObjectPath": "ProjectCoral/Content/WwiseAudio/Events/Animation/MonsterEnemy/TukuTuku/anim_npc_tuku_tuku_attack.1"
+      }
+    }
+  }
+]

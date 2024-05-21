@@ -1,0 +1,177 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_MCF_Balloon_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_FestivalBalloon_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/BP_FestivalBalloon.6"
+    },
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_MCF_Balloon_C:SimpleConstructionScript_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/BP_MCF_Balloon.7"
+      },
+      "InheritableComponentHandler": {
+        "ObjectName": "InheritableComponentHandler'BP_MCF_Balloon_C:InheritableComponentHandler'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/BP_MCF_Balloon.4"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_FestivalBalloon_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/BP_FestivalBalloon.6"
+    },
+    "ClassFlags": "CLASS_Config | CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_MCF_Balloon_C'Default__BP_MCF_Balloon_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/BP_MCF_Balloon.1"
+    }
+  },
+  {
+    "Type": "BP_MCF_Balloon_C",
+    "Name": "Default__BP_MCF_Balloon_C",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/BP_MCF_Balloon.BP_MCF_Balloon_C'",
+    "Template": {
+      "ObjectName": "BP_FestivalBalloon_C'Default__BP_FestivalBalloon_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/BP_FestivalBalloon.7"
+    },
+    "Properties": {
+      "SK_FestivalBalloonPrep": {
+        "ObjectName": "SkeletalMesh'SK_MCF_Baloon_Preparing'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/SK_MCF_Baloon_Preparing.0"
+      },
+      "Animation DataPreps": {
+        "AnimToPlay": {
+          "ObjectName": "AnimSequence'A_MCF_Baloon_Preparing'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/A_MCF_Baloon_Preparing.0"
+        }
+      },
+      "SK_FestivalBalloonReady": {
+        "ObjectName": "SkeletalMesh'SK_MCF_Baloon_Ready'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/SK_MCF_Baloon_Ready.0"
+      },
+      "Animation DataReady": {
+        "AnimToPlay": {
+          "ObjectName": "AnimSequence'A_MCF_Baloon_Ready'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/A_MCF_Baloon_Ready.0"
+        }
+      }
+    }
+  },
+  {
+    "Type": "C_IsFestivalDayRequirement",
+    "Name": "C_IsFestivalDayRequirement_0",
+    "Outer": "C_WorldMapActor_GEN_VARIABLE",
+    "Class": "UScriptClass'C_IsFestivalDayRequirement'",
+    "Template": {
+      "ObjectName": "C_IsFestivalDayRequirement'BP_FestivalBalloon_C:C_WorldMapActor_GEN_VARIABLE.C_IsFestivalDayRequirement_0'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/BP_FestivalBalloon.9"
+    },
+    "Properties": {
+      "festivalId": {
+        "RowName": "MooncakeFestival"
+      }
+    }
+  },
+  {
+    "Type": "C_WorldMapActorComponent",
+    "Name": "C_WorldMapActor_GEN_VARIABLE",
+    "Outer": "BP_MCF_Balloon_C",
+    "Class": "UScriptClass'C_WorldMapActorComponent'",
+    "Template": {
+      "ObjectName": "C_WorldMapActorComponent'BP_FestivalBalloon_C:C_WorldMapActor_GEN_VARIABLE'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/BP_FestivalBalloon.11"
+    },
+    "Properties": {
+      "pinData": {
+        "RowName": "Festival_Mooncake"
+      },
+      "visibilityRequirement": {
+        "requirements": [
+          {
+            "ObjectName": "C_IsFestivalDayRequirement'BP_MCF_Balloon_C:C_WorldMapActor_GEN_VARIABLE.C_IsFestivalDayRequirement_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/BP_MCF_Balloon.2"
+          }
+        ]
+      },
+      "openingHoursConfig": {
+        "ObjectName": "C_OpeningHoursConfig'MoonCakeHour'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/OpeningHours/FestivalHour/MoonCakeHour.0"
+      }
+    }
+  },
+  {
+    "Type": "InheritableComponentHandler",
+    "Name": "InheritableComponentHandler",
+    "Outer": "BP_MCF_Balloon_C",
+    "Class": "UScriptClass'InheritableComponentHandler'",
+    "Properties": {
+      "Records": [
+        {
+          "ComponentClass": {
+            "ObjectName": "Class'C_WorldMapActorComponent'",
+            "ObjectPath": "/Script/ProjectCoral"
+          },
+          "ComponentTemplate": {
+            "ObjectName": "C_WorldMapActorComponent'BP_MCF_Balloon_C:C_WorldMapActor_GEN_VARIABLE'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/BP_MCF_Balloon.3"
+          },
+          "ComponentKey": {
+            "OwnerClass": {
+              "ObjectName": "BlueprintGeneratedClass'BP_FestivalBalloon_C'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/BP_FestivalBalloon.6"
+            },
+            "SCSVariableName": "C_WorldMapActor",
+            "AssociatedGuid": "0E781DE7-462171E2-A19649A2-66BF9918"
+          },
+          "CookedComponentInstancingData": {
+            "ChangedPropertyList": [],
+            "bHasValidCookedData": false
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_MCF_Balloon_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_MCF_Balloon_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/BP_MCF_Balloon.5"
+      },
+      "VariableGuid": "9A5B803F-4AF17C6D-55FBFEAF-EB0A1A4B",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_MCF_Balloon_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_MCF_Balloon_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/BP_MCF_Balloon.6"
+      }
+    }
+  }
+]

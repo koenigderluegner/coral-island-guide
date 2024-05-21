@@ -1,0 +1,133 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_item_21075_PinkCoralCap_S03",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_item_21075_PinkCoralCap_S03:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/PinkCoralCap/PA_item_21075_PinkCoralCap_S03.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_item_21075_PinkCoralCap_S03:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/PinkCoralCap/PA_item_21075_PinkCoralCap_S03.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_item_21075_PinkCoralCap_S03:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/PinkCoralCap/PA_item_21075_PinkCoralCap_S03.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_item_21075_PinkCoralCap_S03",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Crops_Jnt2",
+        "ConstraintBone1": "Crops_Jnt2",
+        "ConstraintBone2": "RootCrops_Jnt",
+        "Pos2": {
+          "X": 19.454765,
+          "Y": -0.986648,
+          "Z": -5.336705E-16
+        },
+        "PriAxis2": {
+          "X": 1.0,
+          "Y": -1.8075011E-34,
+          "Z": -6.814206E-18
+        },
+        "SecAxis2": {
+          "X": -5.4225036E-34,
+          "Y": 1.0,
+          "Z": -1.0610194E-16
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_item_21075_PinkCoralCap_S03",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 22.57021,
+              "Y": -1.4477196,
+              "Z": -0.92593956
+            },
+            "Rotation": {
+              "Pitch": -6.830189E-06,
+              "Yaw": -91.004486,
+              "Roll": -89.47816
+            },
+            "Radius": 13.997785,
+            "Length": 23.115114,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "RootCrops_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "59A4B8074CEF29FB740890938687FE83"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_item_21075_PinkCoralCap_S03",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 23.722338,
+              "Y": -1.9253864,
+              "Z": -0.07455635
+            },
+            "Rotation": {
+              "Pitch": -6.830189E-06,
+              "Yaw": -92.89167,
+              "Roll": -89.996925
+            },
+            "Radius": 24.953558,
+            "Length": 28.017094,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Crops_Jnt2",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "F15CE13F476C57D3830AB0815FCB8A8A"
+  }
+]

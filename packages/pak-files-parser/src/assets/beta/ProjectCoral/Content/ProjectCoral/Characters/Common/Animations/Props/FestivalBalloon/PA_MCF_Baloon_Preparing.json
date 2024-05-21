@@ -1,0 +1,202 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_MCF_Baloon_Preparing",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_MCF_Baloon_Preparing:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/PA_MCF_Baloon_Preparing.3"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_MCF_Baloon_Preparing:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/PA_MCF_Baloon_Preparing.4"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_MCF_Baloon_Preparing:SkeletalBodySetup_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/PA_MCF_Baloon_Preparing.5"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_MCF_Baloon_Preparing:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/PA_MCF_Baloon_Preparing.1"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_MCF_Baloon_Preparing:PhysicsConstraintTemplate_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/FestivalBalloon/PA_MCF_Baloon_Preparing.2"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_MCF_Baloon_Preparing",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Bottom",
+        "ConstraintBone1": "Bottom",
+        "ConstraintBone2": "ARM_MCF_Baloon_Preparing",
+        "SecAxis2": {
+          "X": 0.0,
+          "Y": 5.9604645E-08,
+          "Z": -0.99999994
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_1",
+    "Outer": "PA_MCF_Baloon_Preparing",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Top",
+        "ConstraintBone1": "Top",
+        "ConstraintBone2": "ARM_MCF_Baloon_Preparing",
+        "Pos2": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.4505816
+        },
+        "PriAxis2": {
+          "X": 1.0,
+          "Y": -2.3841856E-07,
+          "Z": 0.0
+        },
+        "SecAxis2": {
+          "X": 0.0,
+          "Y": 5.9604645E-08,
+          "Z": -0.99999994
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_MCF_Baloon_Preparing",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.21988659,
+              "Y": 0.0009664446,
+              "Z": 0.9979544
+            },
+            "Rotation": {
+              "Pitch": 1.625141,
+              "Yaw": -90.0,
+              "Roll": 0.45586744
+            },
+            "Radius": 0.25951898,
+            "Length": 0.3104219,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "ARM_MCF_Baloon_Preparing",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "A36A218D4DDF8065C0F94ABDB3CD09E4"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_MCF_Baloon_Preparing",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 2.9802322E-08,
+              "Y": -0.39884076,
+              "Z": 2.278923E-05
+            },
+            "Rotation": {
+              "Pitch": 0.009220755,
+              "Yaw": -89.99999,
+              "Roll": -0.7174006
+            },
+            "Radius": 0.7984549,
+            "Length": 0.7984969,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Bottom",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "D2BEE5A0413042B31489D48930012F23"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_2",
+    "Outer": "PA_MCF_Baloon_Preparing",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.00091310334,
+              "Y": -1.0027808,
+              "Z": 0.0019549727
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.37241447,
+              "Roll": -88.88995
+            },
+            "Radius": 0.9272348,
+            "Length": 1.0871456,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Top",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "22B867054B5296F2A79F9586EDCB990A"
+  }
+]

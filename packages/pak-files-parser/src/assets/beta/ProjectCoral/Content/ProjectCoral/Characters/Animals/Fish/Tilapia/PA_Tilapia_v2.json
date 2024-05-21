@@ -1,0 +1,133 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_Tilapia_v2",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Tilapia_v2:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Fish/Tilapia/PA_Tilapia_v2.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Tilapia_v2:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Fish/Tilapia/PA_Tilapia_v2.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Tilapia_v2:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Fish/Tilapia/PA_Tilapia_v2.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_Tilapia_v2",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Spine_Fish_Jnt",
+        "ConstraintBone1": "Spine_Fish_Jnt",
+        "ConstraintBone2": "Root_Fish_Jnt",
+        "Pos2": {
+          "X": 14.683342,
+          "Y": 0.10793034,
+          "Z": -2.3212665E-16
+        },
+        "PriAxis2": {
+          "X": 0.99763924,
+          "Y": 0.06867293,
+          "Z": 0.0
+        },
+        "SecAxis2": {
+          "X": -0.06867293,
+          "Y": 0.99763924,
+          "Z": 0.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_Tilapia_v2",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 9.916245,
+              "Y": 0.10470361,
+              "Z": 0.0004953892
+            },
+            "Rotation": {
+              "Pitch": 90.0,
+              "Yaw": -0.08043225,
+              "Roll": -0.086639404
+            },
+            "Radius": 12.7295265,
+            "Length": 2.9388475,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Root_Fish_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "CB4B0687419890E2A1E7C19FAC0F8505"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_Tilapia_v2",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 20.027584,
+              "Y": -1.1236119,
+              "Z": -0.00036723912
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 87.93146,
+              "Roll": -89.99995
+            },
+            "Radius": 15.907352,
+            "Length": 19.214155,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Spine_Fish_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "2DFF1BAD4C0CD7BB160C12B897DAEC19"
+  }
+]

@@ -1,0 +1,443 @@
+[
+  {
+    "Type": "AnimNotify_PlayNiagaraEffect",
+    "Name": "AnimNotify_PlayNiagaraEffect_0",
+    "Outer": "A_SpiderDead",
+    "Class": "UScriptClass'AnimNotify_PlayNiagaraEffect'",
+    "Properties": {
+      "Template": {
+        "ObjectName": "NiagaraSystem'NS_Explode'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/FX/Monster/Explode/NS_Explode.161"
+      },
+      "SocketName": "SC_Explode"
+    }
+  },
+  {
+    "Type": "AnimSequence",
+    "Name": "A_SpiderDead",
+    "Class": "UScriptClass'AnimSequence'",
+    "Properties": {
+      "NumFrames": 1117,
+      "TrackToSkeletonMapTable": [
+        {
+          "BoneTreeIndex": 0
+        },
+        {
+          "BoneTreeIndex": 1
+        },
+        {
+          "BoneTreeIndex": 9
+        },
+        {
+          "BoneTreeIndex": 8
+        },
+        {
+          "BoneTreeIndex": 7
+        },
+        {
+          "BoneTreeIndex": 10
+        },
+        {
+          "BoneTreeIndex": 11
+        },
+        {
+          "BoneTreeIndex": 5
+        },
+        {
+          "BoneTreeIndex": 6
+        },
+        {
+          "BoneTreeIndex": 2
+        },
+        {
+          "BoneTreeIndex": 3
+        },
+        {
+          "BoneTreeIndex": 4
+        }
+      ],
+      "BoneCompressionSettings": {
+        "ObjectName": "AnimBoneCompressionSettings'DefaultAnimBoneCompressionSettings'",
+        "ObjectPath": "Engine/Content/Animation/DefaultAnimBoneCompressionSettings.0"
+      },
+      "CurveCompressionSettings": {
+        "ObjectName": "AnimCurveCompressionSettings'DefaultAnimCurveCompressionSettings'",
+        "ObjectPath": "Engine/Content/Animation/DefaultAnimCurveCompressionSettings.1"
+      },
+      "Notifies": [
+        {
+          "TriggerTimeOffset": 0.0001,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "On_C",
+          "Notify": {
+            "ObjectName": "On_C'A_SpiderDead:On_C_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Monster/A_SpiderDead.5"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.0,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 1,
+          "LinkedMontage": null,
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.2,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_SpiderDead'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Monster/A_SpiderDead.1"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0001,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "CPlaySoundEvent",
+          "Notify": {
+            "ObjectName": "CAnimNotify_PlaySoundEvent'A_SpiderDead:CAnimNotify_PlaySoundEvent_1'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Monster/A_SpiderDead.3"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.0,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 2,
+          "LinkedMontage": null,
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.2,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_SpiderDead'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Monster/A_SpiderDead.1"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PlayNiagaraEffect",
+          "Notify": {
+            "ObjectName": "AnimNotify_PlayNiagaraEffect'A_SpiderDead:AnimNotify_PlayNiagaraEffect_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Monster/A_SpiderDead.0"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.7497861,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 0,
+          "LinkedMontage": null,
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.2,
+          "LinkValue": 0.7497861,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_SpiderDead'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Monster/A_SpiderDead.1"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "CPlaySoundEvent",
+          "Notify": {
+            "ObjectName": "CAnimNotify_PlaySoundEvent'A_SpiderDead:CAnimNotify_PlaySoundEvent_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Monster/A_SpiderDead.2"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.75178313,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 2,
+          "LinkedMontage": null,
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.2,
+          "LinkValue": 0.75178313,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_SpiderDead'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Monster/A_SpiderDead.1"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "Off_C",
+          "Notify": {
+            "ObjectName": "Off_C'A_SpiderDead:Off_C_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Monster/A_SpiderDead.4"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.7752518,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 1,
+          "LinkedMontage": null,
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.2,
+          "LinkValue": 0.7752518,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_SpiderDead'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Monster/A_SpiderDead.1"
+          }
+        }
+      ],
+      "SequenceLength": 1.2,
+      "Skeleton": {
+        "ObjectName": "Skeleton'SKEL_Crab'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Crab/SKEL_Crab.2"
+      }
+    },
+    "SkeletonGuid": "18A3643F-4D9AB77A-F8C54ABD-F0BA8FE5",
+    "CompressedTrackToSkeletonMapTable": [
+      0,
+      1,
+      9,
+      8,
+      7,
+      10,
+      11,
+      5,
+      6,
+      2,
+      3,
+      4
+    ],
+    "CompressedCurveNames": [
+      {
+        "DisplayName": "Explode"
+      }
+    ],
+    "CompressedCurveData": {
+      "FloatCurves": [
+        {
+          "FloatCurve": {
+            "Keys": [
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.0,
+                "Value": -8.328755E-09,
+                "ArriveTangent": 6.0289216,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 6.0289216,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.3,
+                "Value": 0.54999995,
+                "ArriveTangent": -1.2923535,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": -1.2923535,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.4,
+                "Value": 1.0,
+                "ArriveTangent": -2.2402227,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": -2.2402227,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.7,
+                "Value": 1.3750001,
+                "ArriveTangent": 13.802509,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 13.802509,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.8,
+                "Value": -0.625,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              }
+            ],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "RCCE_Constant",
+            "PostInfinityExtrap": "RCCE_Constant"
+          },
+          "Name": {
+            "DisplayName": "Explode"
+          },
+          "CurveTypeFlags": 4
+        }
+      ]
+    },
+    "CompressedDataStructure": {
+      "CompressedNumberOfFrames": 1117,
+      "KeyEncodingFormat": "AKF_PerTrackCompression",
+      "TranslationCompressionFormat": "ACF_Identity",
+      "RotationCompressionFormat": "ACF_Identity",
+      "ScaleCompressionFormat": "ACF_Identity"
+    },
+    "BoneCompressionCodec": {
+      "ObjectName": "AnimCompress_PerTrackCompression'DefaultAnimBoneCompressionSettings:AnimCompress_PerTrackCompression_3'",
+      "ObjectPath": "Engine/Content/Animation/DefaultAnimBoneCompressionSettings"
+    },
+    "CurveCompressionCodec": {
+      "ObjectName": "AnimCurveCompressionCodec_CompressedRichCurve'DefaultAnimCurveCompressionSettings:CurveCompressionCodec'",
+      "ObjectPath": "Engine/Content/Animation/DefaultAnimCurveCompressionSettings"
+    },
+    "CompressedRawDataSize": 291388
+  },
+  {
+    "Type": "CAnimNotify_PlaySoundEvent",
+    "Name": "CAnimNotify_PlaySoundEvent_0",
+    "Outer": "A_SpiderDead",
+    "Class": "UScriptClass'CAnimNotify_PlaySoundEvent'",
+    "Properties": {
+      "soundEvent": {
+        "ObjectName": "AkAudioEvent'anim_npc_spider_dead'",
+        "ObjectPath": "ProjectCoral/Content/WwiseAudio/Events/Animation/MonsterEnemy/Spider/anim_npc_spider_dead.1"
+      }
+    }
+  },
+  {
+    "Type": "CAnimNotify_PlaySoundEvent",
+    "Name": "CAnimNotify_PlaySoundEvent_1",
+    "Outer": "A_SpiderDead",
+    "Class": "UScriptClass'CAnimNotify_PlaySoundEvent'",
+    "Properties": {
+      "soundEvent": {
+        "ObjectName": "AkAudioEvent'anml_spiders'",
+        "ObjectPath": "ProjectCoral/Content/WwiseAudio/Events/Environment/Animals/anml_spiders.1"
+      }
+    }
+  },
+  {
+    "Type": "Off_C",
+    "Name": "Off_C_0",
+    "Outer": "A_SpiderDead",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/FX/Monster/Explode/Off.Off_C'",
+    "Template": {
+      "ObjectName": "Off_C'Default__Off_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/FX/Monster/Explode/Off.2"
+    }
+  },
+  {
+    "Type": "On_C",
+    "Name": "On_C_0",
+    "Outer": "A_SpiderDead",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/FX/Monster/Explode/On.On_C'",
+    "Template": {
+      "ObjectName": "On_C'Default__On_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/FX/Monster/Explode/On.2"
+    }
+  }
+]

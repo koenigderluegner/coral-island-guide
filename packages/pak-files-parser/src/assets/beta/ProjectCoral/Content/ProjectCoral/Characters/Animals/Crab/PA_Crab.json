@@ -1,0 +1,215 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_Crab",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Crab:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Crab/PA_Crab.3"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Crab:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Crab/PA_Crab.4"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Crab:SkeletalBodySetup_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Crab/PA_Crab.5"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Crab:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Crab/PA_Crab.1"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Crab:PhysicsConstraintTemplate_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Crab/PA_Crab.2"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_Crab",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "joint10",
+        "ConstraintBone1": "joint10",
+        "ConstraintBone2": "joint2",
+        "Pos2": {
+          "X": 11.99,
+          "Y": -18.909845,
+          "Z": 3.5568337
+        },
+        "PriAxis2": {
+          "X": 0.99678105,
+          "Y": -0.0801718,
+          "Z": 1.7541548E-05
+        },
+        "SecAxis2": {
+          "X": 0.0801718,
+          "Y": 0.99678105,
+          "Z": 7.0430235E-07
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_1",
+    "Outer": "PA_Crab",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "joint16",
+        "ConstraintBone1": "joint16",
+        "ConstraintBone2": "joint2",
+        "Pos2": {
+          "X": -11.99,
+          "Y": -18.909813,
+          "Z": 3.5568337
+        },
+        "PriAxis2": {
+          "X": 0.99678105,
+          "Y": 0.0801718,
+          "Z": -1.7541548E-05
+        },
+        "SecAxis2": {
+          "X": 0.0801718,
+          "Y": -0.996781,
+          "Z": -7.0430235E-07
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_Crab",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -0.00061905844,
+              "Y": -18.330599,
+              "Z": 3.9442496
+            },
+            "Rotation": {
+              "Pitch": 9.089745,
+              "Yaw": -90.00163,
+              "Roll": -89.99995
+            },
+            "Radius": 26.201683,
+            "Length": 22.682693,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "joint2",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex",
+      "CollisionReponse": "EBodyCollisionResponse::BodyCollision_Disabled"
+    },
+    "BodySetupGuid": "8CE7B5014172BC50307B6885787E13F4"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_Crab",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 17.416075,
+              "Y": -11.135623,
+              "Z": 6.552553
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 36.07014,
+              "Roll": -73.82289
+            },
+            "Radius": 12.665629,
+            "Length": 12.062281,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "joint10",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex",
+      "CollisionReponse": "EBodyCollisionResponse::BodyCollision_Disabled"
+    },
+    "BodySetupGuid": "271582F84A6E4DC68984208CE14835AB"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_2",
+    "Outer": "PA_Crab",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -17.416082,
+              "Y": 11.135647,
+              "Z": -6.552555
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 36.07014,
+              "Roll": -73.82289
+            },
+            "Radius": 12.665624,
+            "Length": 12.062279,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "joint16",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex",
+      "CollisionReponse": "EBodyCollisionResponse::BodyCollision_Disabled"
+    },
+    "BodySetupGuid": "5EC9057E415887F39978FBA51352F2AC"
+  }
+]

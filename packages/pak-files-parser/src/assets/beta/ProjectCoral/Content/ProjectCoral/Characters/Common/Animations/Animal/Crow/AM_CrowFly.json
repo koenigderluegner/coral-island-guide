@@ -1,0 +1,152 @@
+[
+  {
+    "Type": "AnimMontage",
+    "Name": "AM_CrowFly",
+    "Class": "UScriptClass'AnimMontage'",
+    "Properties": {
+      "CompositeSections": [
+        {
+          "SectionName": "Default",
+          "NextSectionName": "FlyLoop",
+          "MetaData": [],
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_CrowFly'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Crow/AM_CrowFly.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 0.26666668,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_CrowStartFly'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Crow/A_CrowStartFly.0"
+          }
+        },
+        {
+          "SectionName": "FlyLoop",
+          "NextSectionName": "FlyLoop",
+          "MetaData": [],
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_CrowFly'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Crow/AM_CrowFly.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 1,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.26666668,
+          "SegmentLength": 0.4,
+          "LinkValue": 0.26666668,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_CrowFly'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Crow/A_CrowFly.0"
+          }
+        }
+      ],
+      "SlotAnimTracks": [
+        {
+          "SlotName": "DefaultSlot",
+          "AnimTrack": {
+            "AnimSegments": [
+              {
+                "AnimReference": {
+                  "ObjectName": "AnimSequence'A_CrowStartFly'",
+                  "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Crow/A_CrowStartFly.0"
+                },
+                "StartPos": 0.0,
+                "AnimStartTime": 0.0,
+                "AnimEndTime": 0.26666668,
+                "AnimPlayRate": 1.0,
+                "LoopingCount": 1
+              },
+              {
+                "AnimReference": {
+                  "ObjectName": "AnimSequence'A_CrowFly'",
+                  "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Crow/A_CrowFly.0"
+                },
+                "StartPos": 0.26666668,
+                "AnimStartTime": 0.0,
+                "AnimEndTime": 0.4,
+                "AnimPlayRate": 1.0,
+                "LoopingCount": 1
+              }
+            ]
+          }
+        }
+      ],
+      "BranchingPointMarkers": [
+        {
+          "NotifyIndex": 0,
+          "TriggerTime": 0.2665667,
+          "NotifyEventType": "EAnimNotifyEventType::Begin"
+        }
+      ],
+      "Notifies": [
+        {
+          "TriggerTimeOffset": -0.0001,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PlayMontageNotify",
+          "Notify": {
+            "ObjectName": "AnimNotify_PlayMontageNotify'AM_CrowFly:AnimNotify_PlayMontageNotify_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Crow/AM_CrowFly.1"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.0,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 0,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_CrowFly'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Crow/AM_CrowFly.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 1,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.26666668,
+          "SegmentLength": 0.4,
+          "LinkValue": 0.26666668,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_CrowFly'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Crow/A_CrowFly.0"
+          }
+        }
+      ],
+      "SequenceLength": 0.6666667,
+      "Skeleton": {
+        "ObjectName": "Skeleton'SKEL_Crow'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Crow/SKEL_Crow.2"
+      }
+    },
+    "SkeletonGuid": "A238111F-43D3B667-C6616189-D530D43C"
+  },
+  {
+    "Type": "AnimNotify_PlayMontageNotify",
+    "Name": "AnimNotify_PlayMontageNotify_0",
+    "Outer": "AM_CrowFly",
+    "Class": "UScriptClass'AnimNotify_PlayMontageNotify'",
+    "Properties": {
+      "NotifyName": "Fly"
+    }
+  }
+]
