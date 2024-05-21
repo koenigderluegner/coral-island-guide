@@ -79,7 +79,7 @@ export class ItemProcessorDbGenerator {
                     } : null,
                 };
 
-                                if (exisitingItem) {
+                if (exisitingItem) {
 
                     let {qualities, ...qualitylessExistingItem} = exisitingItem;
                     let {qualities: _, ...qualitylessNewItem} = newRecipe;

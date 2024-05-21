@@ -59,10 +59,8 @@ export class AnimalDataGenerator extends BaseGenerator<RawAnimal, AnimalData> {
                 return {
                     minimumFriendshipLevelToSpawn: produce.minimumFriendshipLevelToSpawn,
                     small: minifyItem(this.itemMap.get(produce.itemSmall.itemID)),
-                    medium: minifyItem(this.itemMap.get(produce.itemMedium.itemID)),
                     large: minifyItem(this.itemMap.get(produce.itemLarge.itemID)),
                     smallGolden: minifyItem(this.itemMap.get(produce.itemSmallGolden.itemID)),
-                    mediumGolden: minifyItem(this.itemMap.get(produce.itemMediumGolden.itemID)),
                     largeGolden: minifyItem(this.itemMap.get(produce.itemLargeGolden.itemID)),
                 }
             })
