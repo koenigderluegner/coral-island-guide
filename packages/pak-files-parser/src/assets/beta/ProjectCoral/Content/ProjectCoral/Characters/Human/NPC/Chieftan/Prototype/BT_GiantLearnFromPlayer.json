@@ -1,0 +1,576 @@
+[
+  {
+    "Type": "BehaviorTree",
+    "Name": "BT_GiantLearnFromPlayer",
+    "Class": "UScriptClass'BehaviorTree'",
+    "Properties": {
+      "RootNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantLearnFromPlayer:BTComposite_Sequence_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.2"
+      },
+      "BlackboardAsset": {
+        "ObjectName": "BlackboardData'BB_Giant'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BB_Giant.0"
+      }
+    }
+  },
+  {
+    "Type": "BTComposite_Selector",
+    "Name": "BTComposite_Selector_0",
+    "Outer": "BT_GiantLearnFromPlayer",
+    "Class": "UScriptClass'BTComposite_Selector'",
+    "Properties": {
+      "Children": [
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "BTTask_MoveTo'BT_GiantLearnFromPlayer:BTTask_MoveTo_17'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.8"
+          },
+          "Decorators": [
+            {
+              "ObjectName": "BTDecorator_Blackboard'BT_GiantLearnFromPlayer:BTDecorator_Blackboard_0'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.4"
+            }
+          ],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "BTTask_MoveTo'BT_GiantLearnFromPlayer:BTTask_MoveTo_1'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.7"
+          },
+          "Decorators": [
+            {
+              "ObjectName": "C_DistanceBetweenActor'BT_GiantLearnFromPlayer:C_DistanceBetweenActor_0'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.11"
+            },
+            {
+              "ObjectName": "BTDecorator_TimeLimit'BT_GiantLearnFromPlayer:BTDecorator_TimeLimit_1'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.5"
+            }
+          ],
+          "DecoratorOps": []
+        }
+      ],
+      "NodeName": "Move To Actor",
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantLearnFromPlayer'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantLearnFromPlayer:BTComposite_Sequence_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.2"
+      }
+    }
+  },
+  {
+    "Type": "BTComposite_Sequence",
+    "Name": "BTComposite_Sequence_2",
+    "Outer": "BT_GiantLearnFromPlayer",
+    "Class": "UScriptClass'BTComposite_Sequence'",
+    "Properties": {
+      "Children": [
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "C_FindActorOfType'BT_GiantLearnFromPlayer:C_FindActorOfType_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.12"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "C_ClearAIFocusTask'BT_GiantLearnFromPlayer:C_ClearAIFocusTask_1'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.10"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": {
+            "ObjectName": "BTComposite_Selector'BT_GiantLearnFromPlayer:BTComposite_Selector_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.1"
+          },
+          "ChildTask": null,
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "C_SetAIFocusTask'BT_GiantLearnFromPlayer:C_SetAIFocusTask_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.15"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "C_ShowRandomBubbleSpeechTask'BT_GiantLearnFromPlayer:C_ShowRandomBubbleSpeechTask_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.16"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": {
+            "ObjectName": "BTComposite_SimpleParallel'BT_GiantLearnFromPlayer:BTComposite_SimpleParallel_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.3"
+          },
+          "ChildTask": null,
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "C_ShowRandomBubbleSpeechTask'BT_GiantLearnFromPlayer:C_ShowRandomBubbleSpeechTask_1'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.17"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "C_ClearAIFocusTask'BT_GiantLearnFromPlayer:C_ClearAIFocusTask_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.9"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "C_GiantEvaluateWorkTask'BT_GiantLearnFromPlayer:C_GiantEvaluateWorkTask_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.13"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        }
+      ],
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantLearnFromPlayer'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.0"
+      }
+    }
+  },
+  {
+    "Type": "BTComposite_SimpleParallel",
+    "Name": "BTComposite_SimpleParallel_0",
+    "Outer": "BT_GiantLearnFromPlayer",
+    "Class": "UScriptClass'BTComposite_SimpleParallel'",
+    "Properties": {
+      "Children": [
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "C_GiantWatchAndLearn'BT_GiantLearnFromPlayer:C_GiantWatchAndLearn_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.14"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "BTTask_MoveTo'BT_GiantLearnFromPlayer:BTTask_MoveTo_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.6"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        }
+      ],
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantLearnFromPlayer'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantLearnFromPlayer:BTComposite_Sequence_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.2"
+      }
+    }
+  },
+  {
+    "Type": "BTDecorator_Blackboard",
+    "Name": "BTDecorator_Blackboard_0",
+    "Outer": "BT_GiantLearnFromPlayer",
+    "Class": "UScriptClass'BTDecorator_Blackboard'",
+    "Properties": {
+      "CachedDescription": "BeingSummoned is Is Set",
+      "BlackboardKey": {
+        "SelectedKeyName": "BeingSummoned"
+      },
+      "NodeName": "If Being Summoned",
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantLearnFromPlayer'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Selector'BT_GiantLearnFromPlayer:BTComposite_Selector_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.1"
+      }
+    }
+  },
+  {
+    "Type": "BTDecorator_TimeLimit",
+    "Name": "BTDecorator_TimeLimit_1",
+    "Outer": "BT_GiantLearnFromPlayer",
+    "Class": "UScriptClass'BTDecorator_TimeLimit'",
+    "Properties": {
+      "TimeLimit": 30.0,
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantLearnFromPlayer'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Selector'BT_GiantLearnFromPlayer:BTComposite_Selector_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.1"
+      }
+    }
+  },
+  {
+    "Type": "BTTask_MoveTo",
+    "Name": "BTTask_MoveTo_0",
+    "Outer": "BT_GiantLearnFromPlayer",
+    "Class": "UScriptClass'BTTask_MoveTo'",
+    "Properties": {
+      "AcceptableRadius": 500.0,
+      "bAllowPartialPath": false,
+      "bStopOnOverlapNeedsUpdate": false,
+      "BlackboardKey": {
+        "SelectedKeyName": "ActorTarget"
+      },
+      "bIgnoreRestartSelf": true,
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantLearnFromPlayer'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_SimpleParallel'BT_GiantLearnFromPlayer:BTComposite_SimpleParallel_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.3"
+      }
+    }
+  },
+  {
+    "Type": "BTTask_MoveTo",
+    "Name": "BTTask_MoveTo_1",
+    "Outer": "BT_GiantLearnFromPlayer",
+    "Class": "UScriptClass'BTTask_MoveTo'",
+    "Properties": {
+      "AcceptableRadius": 500.0,
+      "bAllowPartialPath": false,
+      "bStopOnOverlapNeedsUpdate": false,
+      "BlackboardKey": {
+        "SelectedKeyName": "ActorTarget"
+      },
+      "bIgnoreRestartSelf": true,
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantLearnFromPlayer'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Selector'BT_GiantLearnFromPlayer:BTComposite_Selector_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.1"
+      }
+    }
+  },
+  {
+    "Type": "BTTask_MoveTo",
+    "Name": "BTTask_MoveTo_17",
+    "Outer": "BT_GiantLearnFromPlayer",
+    "Class": "UScriptClass'BTTask_MoveTo'",
+    "Properties": {
+      "AcceptableRadius": 200.0,
+      "bStopOnOverlapNeedsUpdate": false,
+      "BlackboardKey": {
+        "SelectedKeyName": "moveTarget"
+      },
+      "bIgnoreRestartSelf": true,
+      "NodeName": "Move Regardless distance",
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantLearnFromPlayer'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Selector'BT_GiantLearnFromPlayer:BTComposite_Selector_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.1"
+      }
+    }
+  },
+  {
+    "Type": "C_ClearAIFocusTask",
+    "Name": "C_ClearAIFocusTask_0",
+    "Outer": "BT_GiantLearnFromPlayer",
+    "Class": "UScriptClass'C_ClearAIFocusTask'",
+    "Properties": {
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantLearnFromPlayer'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantLearnFromPlayer:BTComposite_Sequence_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.2"
+      }
+    }
+  },
+  {
+    "Type": "C_ClearAIFocusTask",
+    "Name": "C_ClearAIFocusTask_1",
+    "Outer": "BT_GiantLearnFromPlayer",
+    "Class": "UScriptClass'C_ClearAIFocusTask'",
+    "Properties": {
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantLearnFromPlayer'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantLearnFromPlayer:BTComposite_Sequence_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.2"
+      }
+    }
+  },
+  {
+    "Type": "C_DistanceBetweenActor",
+    "Name": "C_DistanceBetweenActor_0",
+    "Outer": "BT_GiantLearnFromPlayer",
+    "Class": "UScriptClass'C_DistanceBetweenActor'",
+    "Properties": {
+      "Origin": {
+        "SelectedKeyName": "SelfActor"
+      },
+      "Target": {
+        "SelectedKeyName": "ActorTarget"
+      },
+      "FlowAbortMode": "EBTFlowAbortMode::Self",
+      "NodeName": "Near Player",
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantLearnFromPlayer'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Selector'BT_GiantLearnFromPlayer:BTComposite_Selector_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.1"
+      }
+    }
+  },
+  {
+    "Type": "C_FindActorOfType",
+    "Name": "C_FindActorOfType_0",
+    "Outer": "BT_GiantLearnFromPlayer",
+    "Class": "UScriptClass'C_FindActorOfType'",
+    "Properties": {
+      "subClass": {
+        "ObjectName": "Class'C_PlayerCharacter'",
+        "ObjectPath": "/Script/ProjectCoral"
+      },
+      "cacheResult": true,
+      "cacheInvalidateTimer": 999999.0,
+      "BlackboardKey": {
+        "SelectedKeyName": "ActorTarget"
+      },
+      "NodeName": "Find Player",
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantLearnFromPlayer'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantLearnFromPlayer:BTComposite_Sequence_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.2"
+      }
+    }
+  },
+  {
+    "Type": "C_GiantEvaluateWorkTask",
+    "Name": "C_GiantEvaluateWorkTask_0",
+    "Outer": "BT_GiantLearnFromPlayer",
+    "Class": "UScriptClass'C_GiantEvaluateWorkTask'",
+    "Properties": {
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantLearnFromPlayer'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantLearnFromPlayer:BTComposite_Sequence_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.2"
+      }
+    }
+  },
+  {
+    "Type": "C_GiantWatchAndLearn",
+    "Name": "C_GiantWatchAndLearn_0",
+    "Outer": "BT_GiantLearnFromPlayer",
+    "Class": "UScriptClass'C_GiantWatchAndLearn'",
+    "Properties": {
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantLearnFromPlayer'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_SimpleParallel'BT_GiantLearnFromPlayer:BTComposite_SimpleParallel_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.3"
+      }
+    }
+  },
+  {
+    "Type": "C_SetAIFocusTask",
+    "Name": "C_SetAIFocusTask_0",
+    "Outer": "BT_GiantLearnFromPlayer",
+    "Class": "UScriptClass'C_SetAIFocusTask'",
+    "Properties": {
+      "BlackboardKey": {
+        "SelectedKeyName": "ActorTarget"
+      },
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantLearnFromPlayer'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantLearnFromPlayer:BTComposite_Sequence_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.2"
+      }
+    }
+  },
+  {
+    "Type": "C_ShowRandomBubbleSpeechTask",
+    "Name": "C_ShowRandomBubbleSpeechTask_0",
+    "Outer": "BT_GiantLearnFromPlayer",
+    "Class": "UScriptClass'C_ShowRandomBubbleSpeechTask'",
+    "Properties": {
+      "randomMessage": [
+        {
+          "textValue": {
+            "Namespace": "",
+            "Key": "FEA7954E41235CB6CBB43BAC14EBA2FF",
+            "SourceString": "Teach me!",
+            "LocalizedString": "Teach me!"
+          },
+          "floatValue": 1.0
+        },
+        {
+          "textValue": {
+            "Namespace": "",
+            "Key": "2D21C9924C8E1C200E2779865223FA34",
+            "SourceString": "Duin Farm?",
+            "LocalizedString": "Duin Farm?"
+          },
+          "floatValue": 1.0
+        },
+        {
+          "textValue": {
+            "Namespace": "",
+            "Key": "5F019CBF4194EDA67E3EE2B3D2DA7427",
+            "SourceString": "I wan learn",
+            "LocalizedString": "I wan learn"
+          },
+          "floatValue": 1.0
+        },
+        {
+          "textValue": {
+            "Namespace": "",
+            "Key": "D86104644C0906B145F9568B1CB07AD6",
+            "SourceString": "Study time",
+            "LocalizedString": "Study time"
+          },
+          "floatValue": 1.0
+        },
+        {
+          "textValue": {
+            "Namespace": "",
+            "Key": "0039BB094393CF14C36115B9C49979C4",
+            "SourceString": "Watchu duin?",
+            "LocalizedString": "Watchu duin?"
+          },
+          "floatValue": 1.0
+        }
+      ],
+      "NodeName": "Learn Comment",
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantLearnFromPlayer'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantLearnFromPlayer:BTComposite_Sequence_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.2"
+      }
+    }
+  },
+  {
+    "Type": "C_ShowRandomBubbleSpeechTask",
+    "Name": "C_ShowRandomBubbleSpeechTask_1",
+    "Outer": "BT_GiantLearnFromPlayer",
+    "Class": "UScriptClass'C_ShowRandomBubbleSpeechTask'",
+    "Properties": {
+      "randomMessage": [
+        {
+          "textValue": {
+            "Namespace": "",
+            "Key": "C0F1D0FC4085E6B6777A52834E16E076",
+            "SourceString": "I see",
+            "LocalizedString": "I see"
+          },
+          "floatValue": 1.0
+        },
+        {
+          "textValue": {
+            "Namespace": "",
+            "Key": "A3EE463E4B7AE306ABB5398287036AAF",
+            "SourceString": "Got it",
+            "LocalizedString": "Got it"
+          },
+          "floatValue": 1.0
+        },
+        {
+          "textValue": {
+            "Namespace": "",
+            "Key": "99B1A3D94C869B2CE84A858A2392E06B",
+            "SourceString": "Ooh",
+            "LocalizedString": "Ooh"
+          },
+          "floatValue": 1.0
+        },
+        {
+          "textValue": {
+            "Namespace": "",
+            "Key": "43C1A2ED45F6142651F777BC3FA51949",
+            "SourceString": "Im bored",
+            "LocalizedString": "Im bored"
+          },
+          "floatValue": 1.0
+        },
+        {
+          "textValue": {
+            "Namespace": "",
+            "Key": "06029E564FC49DAAD456B7AAED802E16",
+            "SourceString": "Naruhodo",
+            "LocalizedString": "Naruhodo"
+          },
+          "floatValue": 1.0
+        },
+        {
+          "textValue": {
+            "Namespace": "",
+            "Key": "BAD294EF427FC1C5805F30A71C2BC455",
+            "SourceString": "hmm ok",
+            "LocalizedString": "hmm ok"
+          },
+          "floatValue": 1.0
+        }
+      ],
+      "NodeName": "Learn Comment",
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantLearnFromPlayer'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantLearnFromPlayer:BTComposite_Sequence_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantLearnFromPlayer.2"
+      }
+    }
+  }
+]

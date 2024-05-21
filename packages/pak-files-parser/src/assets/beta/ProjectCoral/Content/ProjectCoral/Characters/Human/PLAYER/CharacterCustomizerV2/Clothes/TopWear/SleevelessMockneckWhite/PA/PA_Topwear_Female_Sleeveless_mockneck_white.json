@@ -1,0 +1,133 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_Topwear_Female_Sleeveless_mockneck_white",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Topwear_Female_Sleeveless_mockneck_white:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/TopWear/SleevelessMockneckWhite/PA/PA_Topwear_Female_Sleeveless_mockneck_white.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Topwear_Female_Sleeveless_mockneck_white:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/TopWear/SleevelessMockneckWhite/PA/PA_Topwear_Female_Sleeveless_mockneck_white.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Topwear_Female_Sleeveless_mockneck_white:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/TopWear/SleevelessMockneckWhite/PA/PA_Topwear_Female_Sleeveless_mockneck_white.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_Topwear_Female_Sleeveless_mockneck_white",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Chest_M",
+        "ConstraintBone1": "Chest_M",
+        "ConstraintBone2": "Pelvis_M",
+        "Pos2": {
+          "X": 43.715584,
+          "Y": -1.9160568,
+          "Z": 0.0
+        },
+        "PriAxis2": {
+          "X": 0.99994254,
+          "Y": 0.010717038,
+          "Z": 0.0
+        },
+        "SecAxis2": {
+          "X": -0.010717038,
+          "Y": 0.99994254,
+          "Z": 0.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_Topwear_Female_Sleeveless_mockneck_white",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 16.84452,
+              "Y": -0.4810028,
+              "Z": -0.00049835094
+            },
+            "Rotation": {
+              "Pitch": -0.002390566,
+              "Yaw": -89.99999,
+              "Roll": 0.0027817967
+            },
+            "Radius": 15.769682,
+            "Length": 19.083662,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Pelvis_M",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "27B2F7CB4859823386E562BE5F0FCC05"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_Topwear_Female_Sleeveless_mockneck_white",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 3.3029175,
+              "Y": 3.2906072,
+              "Z": -0.00045776367
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -67.89415,
+              "Roll": -89.9972
+            },
+            "Radius": 18.235558,
+            "Length": 27.85756,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Chest_M",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "DAE0FA7444915ACD741574885E6270B3"
+  }
+]
