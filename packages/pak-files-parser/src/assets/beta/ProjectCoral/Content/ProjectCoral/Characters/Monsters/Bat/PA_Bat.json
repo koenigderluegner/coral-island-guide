@@ -1,0 +1,288 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_Bat",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Bat:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Bat/PA_Bat.3"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Bat:SkeletalBodySetup_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Bat/PA_Bat.4"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Bat:SkeletalBodySetup_3'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Bat/PA_Bat.5"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Bat:SkeletalBodySetup_4'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Bat/PA_Bat.6"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Bat:SkeletalBodySetup_5'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Bat/PA_Bat.7"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Bat:PhysicsConstraintTemplate_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Bat/PA_Bat.1"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Bat:PhysicsConstraintTemplate_4'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Bat/PA_Bat.2"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_2",
+    "Outer": "PA_Bat",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "L_Wing2_Jnt1",
+        "ConstraintBone1": "L_Wing2_Jnt1",
+        "ConstraintBone2": "L_Wing1_Jnt1",
+        "Pos2": {
+          "X": 41.925568,
+          "Y": -25.522305,
+          "Z": 0.32720232
+        },
+        "PriAxis2": {
+          "X": 0.5200002,
+          "Y": 0.8541579,
+          "Z": -0.0037460923
+        },
+        "SecAxis2": {
+          "X": -0.8541579,
+          "Y": 0.51997095,
+          "Z": -0.006666158
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_4",
+    "Outer": "PA_Bat",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "R_Wing2_Jnt1",
+        "ConstraintBone1": "R_Wing2_Jnt1",
+        "ConstraintBone2": "R_Wing1_Jnt1",
+        "Pos2": {
+          "X": -41.9256,
+          "Y": 25.5223,
+          "Z": -0.32721
+        },
+        "PriAxis2": {
+          "X": 0.5200002,
+          "Y": 0.8541579,
+          "Z": -0.0037460923
+        },
+        "SecAxis2": {
+          "X": -0.8541579,
+          "Y": 0.51997095,
+          "Z": -0.006666158
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_Bat",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -0.098662846,
+              "Y": -16.34579,
+              "Z": 0.036791503
+            },
+            "Rotation": {
+              "Pitch": -88.81007,
+              "Yaw": 106.28237,
+              "Roll": 163.75229
+            },
+            "Radius": 30.344357,
+            "Length": 23.502129,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Jaw_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "009025AA4AED54AA9AFBB0A30467F6D8"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_2",
+    "Outer": "PA_Bat",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 17.3696,
+              "Y": -15.130659,
+              "Z": -0.39702195
+            },
+            "Rotation": {
+              "Pitch": 0.005723698,
+              "Yaw": -125.66725,
+              "Roll": -90.01737
+            },
+            "Radius": 18.599052,
+            "Length": 32.15944,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "L_Wing1_Jnt1",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "F365512541C8788FC49A9E907220CE2C"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_3",
+    "Outer": "PA_Bat",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 27.88363,
+              "Y": -32.992474,
+              "Z": -1.631638
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -141.55273,
+              "Roll": -88.8657
+            },
+            "Radius": 9.93438,
+            "Length": 83.86937,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "L_Wing2_Jnt1",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "30785FD74B814CA53D0871AED53D3AE5"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_4",
+    "Outer": "PA_Bat",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -18.298985,
+              "Y": 13.836004,
+              "Z": 0.39804757
+            },
+            "Rotation": {
+              "Pitch": 0.0057920003,
+              "Yaw": -125.66675,
+              "Roll": -90.01729
+            },
+            "Radius": 18.59905,
+            "Length": 32.15944,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "R_Wing1_Jnt1",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "8F3F7EA04447C395EE549EACF62757F3"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_5",
+    "Outer": "PA_Bat",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -26.311035,
+              "Y": 32.206356,
+              "Z": 1.6003981
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -141.55261,
+              "Roll": -88.86568
+            },
+            "Radius": 9.934372,
+            "Length": 81.11937,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "R_Wing2_Jnt1",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "302B14864E74E3231BF732898FE7D7C2"
+  }
+]

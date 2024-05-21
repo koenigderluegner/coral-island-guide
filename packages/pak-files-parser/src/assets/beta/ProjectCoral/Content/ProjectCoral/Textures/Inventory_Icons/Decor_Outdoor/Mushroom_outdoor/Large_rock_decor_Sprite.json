@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Large_rock_decor_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -0.5,
+              "Y": 0.0,
+              "Z": 0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 127.0,
+            "Y": 10.0,
+            "Z": 125.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "C5068B6F49279F2B9D320BB05B34A22C"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Large_rock_decor_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Large_rock_decor'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/Mushroom_outdoor/Mushroom_outdoor_textures/Large_rock_decor.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Large_rock_decor_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/Mushroom_outdoor/Large_rock_decor_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 63.0,
+          "Y": 63.0,
+          "Z": 0.9921875,
+          "W": 0.0078125
+        },
+        {
+          "X": -64.0,
+          "Y": 63.0,
+          "Z": 0.0,
+          "W": 0.0078125
+        },
+        {
+          "X": -64.0,
+          "Y": -62.0,
+          "Z": 0.0,
+          "W": 0.984375
+        },
+        {
+          "X": 63.0,
+          "Y": -62.0,
+          "Z": 0.9921875,
+          "W": 0.984375
+        },
+        {
+          "X": 63.0,
+          "Y": 63.0,
+          "Z": 0.9921875,
+          "W": 0.0078125
+        },
+        {
+          "X": -64.0,
+          "Y": -62.0,
+          "Z": 0.0,
+          "W": 0.984375
+        }
+      ]
+    }
+  }
+]

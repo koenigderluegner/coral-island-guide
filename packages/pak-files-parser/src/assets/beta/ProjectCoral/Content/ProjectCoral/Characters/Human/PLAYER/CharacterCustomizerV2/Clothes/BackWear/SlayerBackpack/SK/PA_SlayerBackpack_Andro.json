@@ -1,0 +1,128 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_SlayerBackpack_Andro",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_SlayerBackpack_Andro:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/BackWear/SlayerBackpack/SK/PA_SlayerBackpack_Andro.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_SlayerBackpack_Andro:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/BackWear/SlayerBackpack/SK/PA_SlayerBackpack_Andro.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_SlayerBackpack_Andro:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/BackWear/SlayerBackpack/SK/PA_SlayerBackpack_Andro.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_SlayerBackpack_Andro",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Back1_Jnt",
+        "ConstraintBone1": "Back1_Jnt",
+        "ConstraintBone2": "Root_Accesories",
+        "Pos2": {
+          "X": 0.0,
+          "Y": -4.0347025E-15,
+          "Z": -25.08902
+        },
+        "SecAxis2": {
+          "X": 0.0,
+          "Y": 1.0,
+          "Z": -5.293956E-23
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_SlayerBackpack_Andro",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -0.79452395,
+              "Y": -6.2426715,
+              "Z": -7.364648
+            },
+            "Rotation": {
+              "Pitch": -6.830189E-06,
+              "Yaw": -93.88144,
+              "Roll": -87.50886
+            },
+            "Radius": 24.577883,
+            "Length": 16.299051,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Root_Accesories",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "8D7D4D5F45F11AB9E72AE28FB769FD20"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_SlayerBackpack_Andro",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -0.14067654,
+              "Y": 3.5912051,
+              "Z": -11.283647
+            },
+            "Rotation": {
+              "Pitch": -1.1463653,
+              "Yaw": 0.44866076,
+              "Roll": -93.48365
+            },
+            "Radius": 25.405884,
+            "Length": 26.41785,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Back1_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "0DC419F44B2E39ED44F188B393F9C430"
+  }
+]

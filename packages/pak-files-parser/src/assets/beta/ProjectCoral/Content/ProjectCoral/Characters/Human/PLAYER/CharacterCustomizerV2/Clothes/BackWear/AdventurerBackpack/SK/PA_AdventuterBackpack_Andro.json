@@ -1,0 +1,202 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_AdventuterBackpack_Andro",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_AdventuterBackpack_Andro:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/BackWear/AdventurerBackpack/SK/PA_AdventuterBackpack_Andro.3"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_AdventuterBackpack_Andro:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/BackWear/AdventurerBackpack/SK/PA_AdventuterBackpack_Andro.4"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_AdventuterBackpack_Andro:SkeletalBodySetup_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/BackWear/AdventurerBackpack/SK/PA_AdventuterBackpack_Andro.5"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_AdventuterBackpack_Andro:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/BackWear/AdventurerBackpack/SK/PA_AdventuterBackpack_Andro.1"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_AdventuterBackpack_Andro:PhysicsConstraintTemplate_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/BackWear/AdventurerBackpack/SK/PA_AdventuterBackpack_Andro.2"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_AdventuterBackpack_Andro",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Back1_Jnt",
+        "ConstraintBone1": "Back1_Jnt",
+        "ConstraintBone2": "Root_Accesories",
+        "Pos2": {
+          "X": 0.0,
+          "Y": -4.0347034E-15,
+          "Z": -25.08902
+        },
+        "SecAxis2": {
+          "X": 0.0,
+          "Y": 1.0,
+          "Z": 5.293956E-23
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_1",
+    "Outer": "PA_AdventuterBackpack_Andro",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Back1_2_Jnt",
+        "ConstraintBone1": "Back1_2_Jnt",
+        "ConstraintBone2": "Back1_Jnt",
+        "Pos2": {
+          "X": 0.0,
+          "Y": -8.407014,
+          "Z": -9.046438
+        },
+        "SecAxis2": {
+          "X": 0.0,
+          "Y": 1.0,
+          "Z": -1.09165396E-13
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_AdventuterBackpack_Andro",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -18.522995,
+              "Y": 5.5590057,
+              "Z": -41.903034
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -56.142796,
+              "Roll": -85.25623
+            },
+            "Radius": 45.578526,
+            "Length": 67.81132,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Root_Accesories",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "5A996A8C4338D459C38ECDB46CB7566F"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_AdventuterBackpack_Andro",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.0045309067,
+              "Y": -5.9649763,
+              "Z": 14.439297
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 89.95679,
+              "Roll": -89.99662
+            },
+            "Radius": 24.993896,
+            "Length": 27.970898,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Back1_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "B6F1E0DE4342BDF1A467858AB28B185C"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_2",
+    "Outer": "PA_AdventuterBackpack_Andro",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 6.829278,
+              "Z": 11.7921505
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 180.0,
+              "Roll": -88.433464
+            },
+            "Radius": 0.505,
+            "Length": 0.505,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Back1_2_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "293F14F045B9A0BE98FD638CF39BF997"
+  }
+]

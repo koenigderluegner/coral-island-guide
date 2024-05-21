@@ -1,39 +1,101 @@
 {
   "item": {
     "id": "item_21072",
-    "displayName": "Marinip",
-    "price": 10,
-    "sellPrice": 10,
-    "sellAt": [],
+    "displayName": "Marinavet",
+    "price": 85,
+    "sellPrice": 50,
+    "sellAt": [
+      "Merfolk General"
+    ],
     "stackable": true,
     "inventoryCategory": "Vegetables",
     "displayKey": "Vegetables",
-    "description": "Is this underwater turnip blushing or green with envy?",
+    "description": "Ce navet sous-marin rougit ou il est vert de jalousie ?",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 95,
+        "sellPrice": 58
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 110,
+        "sellPrice": 65
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 125,
+        "sellPrice": 75
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 165,
+        "sellPrice": 100
       }
     },
     "iconName": "Marinip_Sprite",
     "tags": [
-      "income.farming",
+      "income.oceanfarming",
+      "item.crop.diving",
+      "Item.Consumable.Food",
       "item.vegetable",
-      "Item.Consumable.Food"
+      "item.UnderwaterrVegetables"
     ]
   },
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21072",
+          "displayName": "Marinavet",
+          "iconName": "Marinip_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41391",
+          "displayName": "Jus de marinavet",
+          "iconName": "Underwater_vegetable_juice_Sprite",
+          "sellPrice": 110
+        }
+      },
+      "genericInput": null,
+      "machine": "Keg"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21072",
+          "displayName": "Marinavet",
+          "iconName": "Marinip_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41361",
+          "displayName": "Marinavet mariné",
+          "iconName": "Underwater_pink_pickles_Sprite",
+          "sellPrice": 75
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_42013",
@@ -942,21 +1004,6 @@
             "id": "item_41181",
             "displayName": "Grand yaourt de chèvre",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Palourde géante",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Algues wakamé",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Bouquet de fleurs",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -1008,7 +1055,7 @@
           "genericItem": {
             "key": "Any_Cheese",
             "tags": [
-              "Artisan.CheesePress"
+              "item.artisan.cheese"
             ],
             "iconName": "Any_Cheese_Sprite",
             "displayName": "Fromage"
@@ -1107,5 +1154,67 @@
       "ingredients": [],
       "eitherOrIngredients": []
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_21072",
+      "bVaryHealthToMax": false,
+      "healthDelta": 60,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 85,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "bronze": {
+      "key": "item_21072-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 69,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 98,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "silver": {
+      "key": "item_21072-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 75,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 106,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "gold": {
+      "key": "item_21072-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 90,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 128,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "osmium": {
+      "key": "item_21072-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 120,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 170,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    }
+  }
 }

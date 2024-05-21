@@ -1,0 +1,266 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_Skully_Fire",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Skully_Fire:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Skully/Skully_Fire/PA_Skully_Fire.4"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Skully_Fire:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Skully/Skully_Fire/PA_Skully_Fire.5"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Skully_Fire:SkeletalBodySetup_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Skully/Skully_Fire/PA_Skully_Fire.6"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Skully_Fire:SkeletalBodySetup_3'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Skully/Skully_Fire/PA_Skully_Fire.7"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Skully_Fire:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Skully/Skully_Fire/PA_Skully_Fire.1"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Skully_Fire:PhysicsConstraintTemplate_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Skully/Skully_Fire/PA_Skully_Fire.2"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Skully_Fire:PhysicsConstraintTemplate_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Skully/Skully_Fire/PA_Skully_Fire.3"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_Skully_Fire",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Skull",
+        "ConstraintBone1": "Skull",
+        "ConstraintBone2": "Root",
+        "Pos2": {
+          "X": 0.0,
+          "Y": -85.90473,
+          "Z": -13.240362
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_1",
+    "Outer": "PA_Skully_Fire",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Backbone",
+        "ConstraintBone1": "Backbone",
+        "ConstraintBone2": "Root",
+        "Pos2": {
+          "X": 0.0,
+          "Y": -73.679276,
+          "Z": -14.614835
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_2",
+    "Outer": "PA_Skully_Fire",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Jaw",
+        "ConstraintBone1": "Jaw",
+        "ConstraintBone2": "Root",
+        "Pos2": {
+          "X": 0.0,
+          "Y": -72.41845,
+          "Z": -2.7589169
+        },
+        "SecAxis2": {
+          "X": 0.0,
+          "Y": 0.97493887,
+          "Z": 0.22247292
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_Skully_Fire",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -89.99999,
+              "Roll": 0.0
+            },
+            "Radius": 0.505,
+            "Length": 0.505,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Root",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "16C7849C4B78647EFF01E5998FFA27F4"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_Skully_Fire",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.40115684,
+              "Y": -21.94201,
+              "Z": 10.4358835
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 179.38164,
+              "Roll": -88.6406
+            },
+            "Radius": 47.9319,
+            "Length": 5.8090615,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Skull",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "BAB43E6143D2AB6BC953D5970E102327"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_2",
+    "Outer": "PA_Skully_Fire",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.1404171,
+              "Y": 22.208933,
+              "Z": -26.663118
+            },
+            "Rotation": {
+              "Pitch": -25.589884,
+              "Yaw": -90.0,
+              "Roll": -0.30421886
+            },
+            "Radius": 13.782539,
+            "Length": 37.68992,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Backbone",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "9C1521BB49DDBEEAAB0BC3B3B4AD1983"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_3",
+    "Outer": "PA_Skully_Fire",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -1.2566711,
+              "Y": 20.700117,
+              "Z": 7.281625
+            },
+            "Rotation": {
+              "Pitch": 4.2724333,
+              "Yaw": -177.30237,
+              "Roll": -82.60201
+            },
+            "Radius": 19.890463,
+            "Length": 20.682066,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Jaw",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "AEA4B57A4FE830D8E18275A104764F17"
+  }
+]

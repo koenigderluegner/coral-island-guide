@@ -1,0 +1,145 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "SM_lifebuoys",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldStatic",
+        "CollisionProfileName": "BlockAll",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      }
+    },
+    "BodySetupGuid": "76020C0A4BA21DFC5107469CBFE730E9"
+  },
+  {
+    "Type": "NavCollision",
+    "Name": "NavCollision_0",
+    "Outer": "SM_lifebuoys",
+    "Class": "UScriptClass'NavCollision'",
+    "CookedFormatData": {
+      "NavCollision_X": {
+        "BulkDataFlags": "BULKDATA_SingleUse | BULKDATA_ForceInlinePayload",
+        "ElementCount": 21,
+        "SizeOnDisk": 21,
+        "OffsetInFile": "0x1389B"
+      }
+    }
+  },
+  {
+    "Type": "StaticMesh",
+    "Name": "SM_lifebuoys",
+    "Class": "UScriptClass'StaticMesh'",
+    "Properties": {
+      "StaticMaterials": [
+        {
+          "MaterialInterface": {
+            "ObjectName": "Material'WorldGridMaterial'",
+            "ObjectPath": "Engine/Content/EngineMaterials/WorldGridMaterial.0"
+          },
+          "MaterialSlotName": "WorldGridMaterial",
+          "ImportedMaterialSlotName": "WorldGridMaterial",
+          "UVChannelData": {
+            "bInitialized": true,
+            "bOverrideDensities": false,
+            "LocalUVDensities": 1187.9313,
+            "LocalUVDensities": 0.0,
+            "LocalUVDensities": 0.0,
+            "LocalUVDensities": 0.0
+          }
+        }
+      ],
+      "LightMapResolution": 64,
+      "LightMapCoordinateIndex": 1,
+      "ExtendedBounds": {
+        "Origin": {
+          "X": -18.463272,
+          "Y": -0.08244324,
+          "Z": -78.56065
+        },
+        "BoxExtent": {
+          "X": 21.302734,
+          "Y": 67.38464,
+          "Z": 89.15297
+        },
+        "SphereRadius": 89.85642
+      }
+    },
+    "BodySetup": {
+      "ObjectName": "BodySetup'SM_lifebuoys:BodySetup_0'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/Lifebuoys/SM_lifebuoys.0"
+    },
+    "NavCollision": {
+      "ObjectName": "NavCollision'SM_lifebuoys:NavCollision_0'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/Lifebuoys/SM_lifebuoys.1"
+    },
+    "LightingGuid": "ABAE4CC2-43385E25-59AE74AB-F4406E34",
+    "RenderData": {
+      "LODs": [
+        {
+          "Sections": [
+            {
+              "MaterialIndex": 0,
+              "FirstIndex": 0,
+              "NumTriangles": 1002,
+              "MinVertexIndex": 0,
+              "MaxVertexIndex": 699,
+              "bEnableCollision": false,
+              "bCastShadow": true,
+              "bForceOpaque": false,
+              "bVisibleInRayTracing": true
+            }
+          ],
+          "MaxDeviation": 0.0,
+          "PositionVertexBuffer": {
+            "Stride": 12,
+            "NumVertices": 700
+          },
+          "VertexBuffer": {
+            "NumTexCoords": 2,
+            "NumVertices": 700,
+            "Strides": -1,
+            "UseHighPrecisionTangentBasis": false,
+            "UseFullPrecisionUVs": true
+          },
+          "ColorVertexBuffer": {
+            "Stride": 0,
+            "NumVertices": 0
+          }
+        }
+      ],
+      "Bounds": {
+        "Origin": {
+          "X": -18.463272,
+          "Y": -0.08244324,
+          "Z": -78.56065
+        },
+        "BoxExtent": {
+          "X": 21.302734,
+          "Y": 67.38464,
+          "Z": 89.15297
+        },
+        "SphereRadius": 89.85642
+      },
+      "bLODsShareStaticLighting": true,
+      "ScreenSize": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  }
+]

@@ -1,0 +1,133 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_AlmondFruitTree_S09",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_AlmondFruitTree_S09:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/FruitTree/Almond/PA_AlmondFruitTree_S09.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_AlmondFruitTree_S09:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/FruitTree/Almond/PA_AlmondFruitTree_S09.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_AlmondFruitTree_S09:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/FruitTree/Almond/PA_AlmondFruitTree_S09.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_AlmondFruitTree_S09",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Oak_Trunk_Jnt",
+        "ConstraintBone1": "Oak_Trunk_Jnt",
+        "ConstraintBone2": "Root_Oak_Tree",
+        "Pos2": {
+          "X": 11.669415,
+          "Y": -47.809185,
+          "Z": 0.45001465
+        },
+        "PriAxis2": {
+          "X": 0.99999815,
+          "Y": -0.0013664839,
+          "Z": -0.0013664851
+        },
+        "SecAxis2": {
+          "X": 0.0013646166,
+          "Y": 0.99999815,
+          "Z": -0.0013664839
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_AlmondFruitTree_S09",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 10.82052,
+              "Y": -23.998112,
+              "Z": -0.528718
+            },
+            "Rotation": {
+              "Pitch": -1.7960323,
+              "Yaw": -89.999985,
+              "Roll": -50.70086
+            },
+            "Radius": 53.043133,
+            "Length": 54.69692,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Root_Oak_Tree",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "FC38CAB94D342687FC3F8BA53928338C"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_AlmondFruitTree_S09",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 1.3758469,
+              "Y": -182.39125,
+              "Z": -2.800064
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -153.77289,
+              "Roll": -85.870674
+            },
+            "Radius": 118.53132,
+            "Length": 181.38135,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Oak_Trunk_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "9A9C41DB412C00F6E710F8A5E5877D7C"
+  }
+]

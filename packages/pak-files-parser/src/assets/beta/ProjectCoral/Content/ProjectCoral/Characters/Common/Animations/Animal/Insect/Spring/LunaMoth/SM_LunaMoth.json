@@ -1,0 +1,145 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "SM_LunaMoth",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldStatic",
+        "CollisionProfileName": "BlockAll",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      }
+    },
+    "BodySetupGuid": "A8D34F474B3D4DBEC5A040BFBA1AB865"
+  },
+  {
+    "Type": "NavCollision",
+    "Name": "NavCollision_2",
+    "Outer": "SM_LunaMoth",
+    "Class": "UScriptClass'NavCollision'",
+    "CookedFormatData": {
+      "NavCollision_X": {
+        "BulkDataFlags": "BULKDATA_SingleUse | BULKDATA_ForceInlinePayload",
+        "ElementCount": 21,
+        "SizeOnDisk": 21,
+        "OffsetInFile": "0x966B"
+      }
+    }
+  },
+  {
+    "Type": "StaticMesh",
+    "Name": "SM_LunaMoth",
+    "Class": "UScriptClass'StaticMesh'",
+    "Properties": {
+      "StaticMaterials": [
+        {
+          "MaterialInterface": {
+            "ObjectName": "Material'WorldGridMaterial'",
+            "ObjectPath": "Engine/Content/EngineMaterials/WorldGridMaterial.0"
+          },
+          "MaterialSlotName": "WorldGridMaterial",
+          "ImportedMaterialSlotName": "WorldGridMaterial",
+          "UVChannelData": {
+            "bInitialized": true,
+            "bOverrideDensities": false,
+            "LocalUVDensities": 132.38855,
+            "LocalUVDensities": 0.0,
+            "LocalUVDensities": 0.0,
+            "LocalUVDensities": 0.0
+          }
+        }
+      ],
+      "LightMapResolution": 64,
+      "LightMapCoordinateIndex": 1,
+      "ExtendedBounds": {
+        "Origin": {
+          "X": -0.5736389,
+          "Y": -3.789772,
+          "Z": 8.728714
+        },
+        "BoxExtent": {
+          "X": 21.432007,
+          "Y": 21.064228,
+          "Z": 32.392914
+        },
+        "SphereRadius": 38.088306
+      }
+    },
+    "BodySetup": {
+      "ObjectName": "BodySetup'SM_LunaMoth:BodySetup_0'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Insect/Spring/LunaMoth/SM_LunaMoth.0"
+    },
+    "NavCollision": {
+      "ObjectName": "NavCollision'SM_LunaMoth:NavCollision_2'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Insect/Spring/LunaMoth/SM_LunaMoth.1"
+    },
+    "LightingGuid": "20A7C2AF-4D6C1120-E849FE99-1A0C88CD",
+    "RenderData": {
+      "LODs": [
+        {
+          "Sections": [
+            {
+              "MaterialIndex": 0,
+              "FirstIndex": 0,
+              "NumTriangles": 432,
+              "MinVertexIndex": 0,
+              "MaxVertexIndex": 305,
+              "bEnableCollision": false,
+              "bCastShadow": true,
+              "bForceOpaque": false,
+              "bVisibleInRayTracing": true
+            }
+          ],
+          "MaxDeviation": 0.0,
+          "PositionVertexBuffer": {
+            "Stride": 12,
+            "NumVertices": 306
+          },
+          "VertexBuffer": {
+            "NumTexCoords": 2,
+            "NumVertices": 306,
+            "Strides": -1,
+            "UseHighPrecisionTangentBasis": false,
+            "UseFullPrecisionUVs": true
+          },
+          "ColorVertexBuffer": {
+            "Stride": 0,
+            "NumVertices": 0
+          }
+        }
+      ],
+      "Bounds": {
+        "Origin": {
+          "X": -0.5736389,
+          "Y": -3.789772,
+          "Z": 8.728714
+        },
+        "BoxExtent": {
+          "X": 21.432007,
+          "Y": 21.064228,
+          "Z": 32.392914
+        },
+        "SphereRadius": 38.088306
+      },
+      "bLODsShareStaticLighting": true,
+      "ScreenSize": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  }
+]

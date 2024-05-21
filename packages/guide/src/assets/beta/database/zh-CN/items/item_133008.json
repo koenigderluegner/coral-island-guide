@@ -33,7 +33,8 @@
     "tags": [
       "income.bugcatching",
       "item.insect.legendary",
-      "item.insect"
+      "item.insect",
+      "item.insect.Spider"
     ]
   },
   "artisanIngredient": [
@@ -422,8 +423,13 @@
               "iconName": "Sproutfruit_Sprite"
             },
             {
+              "id": "item_21075",
+              "displayName": "粉色珊瑚草",
+              "iconName": "Pink_Coralcap_Sprite"
+            },
+            {
               "id": "item_21077",
-              "displayName": "蓝铃花绽放",
+              "displayName": "蓝铃花",
               "iconName": "Bluebell_Blossom_Sprite"
             },
             {
@@ -455,6 +461,21 @@
               "id": "item_21084",
               "displayName": "大丽香",
               "iconName": "Petalia_Sprite"
+            },
+            {
+              "id": "item_21085",
+              "displayName": "蘑菇树种子",
+              "iconName": "Mushroom_tree_seeds_Sprite"
+            },
+            {
+              "id": "item_21086",
+              "displayName": "月芽孢种子",
+              "iconName": "Wooblecap_seeds_Sprite"
+            },
+            {
+              "id": "item_21087",
+              "displayName": "蘑菇伞",
+              "iconName": "Moonspore_seeds_Sprite"
             },
             {
               "id": "item_22001",
@@ -653,7 +674,7 @@
             },
             {
               "id": "item_50306",
-              "displayName": "海蘑菇",
+              "displayName": "海菇",
               "iconName": "Sea_Mushroom_Sprite"
             },
             {
@@ -758,7 +779,7 @@
             },
             {
               "id": "item_51106",
-              "displayName": "洋水仙",
+              "displayName": "水仙花",
               "iconName": "Daffodil_Sprite"
             },
             {
@@ -938,7 +959,7 @@
             },
             {
               "id": "item_71008",
-              "displayName": "短吻鳄雀鳝",
+              "displayName": "福鱷",
               "iconName": "Gator_Gar_Sprite"
             },
             {
@@ -1477,6 +1498,393 @@
       "machine": "CompostBin"
     }
   ],
+  "usedToCook": [
+    {
+      "key": "item_80097",
+      "amount": 1,
+      "cookingKey": "BugJerky",
+      "item": {
+        "id": "item_80097",
+        "displayName": "炸虫干",
+        "price": 90,
+        "sellPrice": 13,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "看起来怪怪的，但味道是真不错。",
+        "qualities": {
+          "bronze": {
+            "price": 104,
+            "sellPrice": 15
+          },
+          "silver": {
+            "price": 113,
+            "sellPrice": 16
+          },
+          "gold": {
+            "price": 135,
+            "sellPrice": 20
+          },
+          "osmium": {
+            "price": 180,
+            "sellPrice": 26
+          }
+        },
+        "iconName": "Bug_jerky_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80097",
+        "masteryLevel": 2,
+        "masteryType": "Catching"
+      },
+      "utensils": [
+        "Grill"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Generic_Insect",
+            "tags": [
+              "item.insect"
+            ],
+            "iconName": "T_AnyInsect_Sprite",
+            "displayName": "任何昆虫"
+          },
+          "key": "Generic_Insect"
+        }
+      ],
+      "ingredients": [],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "任何昆虫": [
+          {
+            "id": "item_132007",
+            "displayName": "苍蝇",
+            "iconName": "Fly_Sprite"
+          },
+          {
+            "id": "item_132011",
+            "displayName": "蜗牛",
+            "iconName": "Snail_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "usedToCraft": [
+    {
+      "key": "item_65358",
+      "displayName": "Medium fish bait",
+      "amount": 2,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_50303",
+            "displayName": "海藻",
+            "iconName": "Seaweed_Sprite"
+          },
+          "amount": 2
+        }
+      ],
+      "genericIngredients": [
+        {
+          "key": "Generic_Insect",
+          "amount": 1,
+          "genericItem": {
+            "key": "Generic_Insect",
+            "tags": [
+              "item.insect"
+            ],
+            "iconName": "T_AnyInsect_Sprite",
+            "displayName": "任何昆虫",
+            "items": [
+              {
+                "id": "item_131001",
+                "displayName": "枫叶穿孔蛾",
+                "iconName": "Maple_Leafcutter_Moth_Sprite"
+              },
+              {
+                "id": "item_131002",
+                "displayName": "多音天蚕",
+                "iconName": "Polyphemus_Moth_Sprite"
+              },
+              {
+                "id": "item_131003",
+                "displayName": "幽灵螳螂",
+                "iconName": "Ghost_Mantis_Sprite"
+              },
+              {
+                "id": "item_131004",
+                "displayName": "虎甲虫",
+                "iconName": "Tiger_Beetle_Sprite"
+              },
+              {
+                "id": "item_131005",
+                "displayName": "婪步甲",
+                "iconName": "Harpalus_Beetle_Sprite"
+              },
+              {
+                "id": "item_131006",
+                "displayName": "萤火虫",
+                "iconName": "Firefly_Sprite"
+              },
+              {
+                "id": "item_131007",
+                "displayName": "天蚕幼虫",
+                "iconName": "Cecropia_Caterpillar_Sprite"
+              },
+              {
+                "id": "item_131008",
+                "displayName": "美洲蓝凤蝶",
+                "iconName": "Pipevine_Swallowtail_Butterfly_Sprite"
+              },
+              {
+                "id": "item_131009",
+                "displayName": "小木眼蝶",
+                "iconName": "Little_Wood_Satyr_Butterfly_Sprite"
+              },
+              {
+                "id": "item_131010",
+                "displayName": "狼蛛",
+                "iconName": "Wolf_Spider_Sprite"
+              },
+              {
+                "id": "item_131011",
+                "displayName": "人面蝽",
+                "iconName": "Man-faced_stink_bug_Sprite"
+              },
+              {
+                "id": "item_131012",
+                "displayName": "黄蜂",
+                "iconName": "Wasp_Sprite"
+              },
+              {
+                "id": "item_131013",
+                "displayName": "蟋蟀",
+                "iconName": "Cricket_Sprite"
+              },
+              {
+                "id": "item_131014",
+                "displayName": "飞蛾",
+                "iconName": "Moth_Sprite"
+              },
+              {
+                "id": "item_131015",
+                "displayName": "松天蛾幼虫",
+                "iconName": "Pine_Sphinx_Sprite"
+              },
+              {
+                "id": "item_131016",
+                "displayName": "月形天蚕蛾",
+                "iconName": "Luna_Moth_Sprite"
+              },
+              {
+                "id": "item_131017",
+                "displayName": "条纹夜蛾幼虫",
+                "iconName": "Striped_garden_caterpillar_Sprite"
+              },
+              {
+                "id": "item_131018",
+                "displayName": "玉兰绿跳蛛",
+                "iconName": "Magnolia_green_jumper_Sprite"
+              },
+              {
+                "id": "item_132001",
+                "displayName": "丝兰蛾",
+                "iconName": "Yucca_Moth_Sprite"
+              },
+              {
+                "id": "item_132002",
+                "displayName": "黑带二尾舟蛾",
+                "iconName": "Puss_Moth_Sprite"
+              },
+              {
+                "id": "item_132003",
+                "displayName": "瓢虫",
+                "iconName": "Lady_Beetle_Sprite"
+              },
+              {
+                "id": "item_132004",
+                "displayName": "提琴虫",
+                "iconName": "Violin_Beetle_Sprite"
+              },
+              {
+                "id": "item_132005",
+                "displayName": "锹形虫",
+                "iconName": "Scarites_Beetle_Sprite"
+              },
+              {
+                "id": "item_132006",
+                "displayName": "兰花螳螂",
+                "iconName": "Orchid_Mantis_Sprite"
+              },
+              {
+                "id": "item_132008",
+                "displayName": "蓝闪蝶",
+                "iconName": "Blue_Morpho_Butterfly_Sprite"
+              },
+              {
+                "id": "item_132009",
+                "displayName": "冠细纹蝶",
+                "iconName": "Crowned_Hairstreak_Butterfly_Sprite"
+              },
+              {
+                "id": "item_132010",
+                "displayName": "寡妇蜘蛛",
+                "iconName": "Widow_Spider_Sprite"
+              },
+              {
+                "id": "item_132012",
+                "displayName": "蜈蚣",
+                "iconName": "Centipede_Sprite"
+              },
+              {
+                "id": "item_132013",
+                "displayName": "胡桃角蛾幼虫",
+                "iconName": "Hickory_Horned_Devil_Sprite"
+              },
+              {
+                "id": "item_132014",
+                "displayName": "西部虎纹凤蝶幼虫",
+                "iconName": "Western_Tiger_Swallowtail_Sprite"
+              },
+              {
+                "id": "item_132015",
+                "displayName": "鞍背",
+                "iconName": "Saddleback_Sprite"
+              },
+              {
+                "id": "item_133001",
+                "displayName": "钩翅大蚕",
+                "iconName": "Assam_silk_moth_Sprite"
+              },
+              {
+                "id": "item_133002",
+                "displayName": "蜻蜓",
+                "iconName": "Dragonfly_Sprite"
+              },
+              {
+                "id": "item_133003",
+                "displayName": "隐翅虫",
+                "iconName": "Rove_Beetle_Sprite"
+              },
+              {
+                "id": "item_133004",
+                "displayName": "花萤",
+                "iconName": "Soldier_Beetle_Sprite"
+              },
+              {
+                "id": "item_133005",
+                "displayName": "螳螂",
+                "iconName": "Praying_Mantis_Sprite"
+              },
+              {
+                "id": "item_133006",
+                "displayName": "虎纹凤蝶",
+                "iconName": "Tiger_Swallowtail_Butterfly_Sprite"
+              },
+              {
+                "id": "item_133007",
+                "displayName": "栎蛱蝶",
+                "iconName": "Janetta_Forester_Butterfly_Sprite"
+              },
+              {
+                "id": "item_133008",
+                "displayName": "捕鸟蛛",
+                "iconName": "Tarantula_Sprite"
+              },
+              {
+                "id": "item_133009",
+                "displayName": "珀凤蝶幼虫",
+                "iconName": "Eastern_Black_Swallowtail_Sprite"
+              },
+              {
+                "id": "item_133010",
+                "displayName": "银纹红袖蝶幼虫",
+                "iconName": "Gulf_Fritillary_Sprite"
+              },
+              {
+                "id": "item_133011",
+                "displayName": "优红蛱蝶幼虫",
+                "iconName": "Red_Admiral_Sprite"
+              },
+              {
+                "id": "item_133012",
+                "displayName": "鸭蛱蝶",
+                "iconName": "Olivewing_Butterfly_Sprite"
+              },
+              {
+                "id": "item_134001",
+                "displayName": "皇蛾",
+                "iconName": "Atlas_Moth_Sprite"
+              },
+              {
+                "id": "item_134002",
+                "displayName": "蚱蜢",
+                "iconName": "Grasshopper_Sprite"
+              },
+              {
+                "id": "item_134003",
+                "displayName": "步甲虫",
+                "iconName": "Ground_beetle_Sprite"
+              },
+              {
+                "id": "item_134004",
+                "displayName": "金花虫",
+                "iconName": "Leaf_Beetle_Sprite"
+              },
+              {
+                "id": "item_134005",
+                "displayName": "大桦斑蝶幼虫",
+                "iconName": "Monarch_Caterpillar_Sprite"
+              },
+              {
+                "id": "item_134006",
+                "displayName": "银月豹凤蝶",
+                "iconName": "Spicebush_Swallowtail_Butterfly_Sprite"
+              },
+              {
+                "id": "item_134007",
+                "displayName": "鸟翼蝴蝶",
+                "iconName": "Birdwing_Butterfly_Sprite"
+              },
+              {
+                "id": "item_134009",
+                "displayName": "灯蛾幼虫",
+                "iconName": "Banded_woollybear_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Misc",
+      "craftingUnlock": {
+        "key": "item_65358",
+        "masteryLevel": 4,
+        "masteryType": "Fishing"
+      },
+      "item": {
+        "id": "item_65358",
+        "displayName": "中鱼饵",
+        "price": 50,
+        "sellPrice": 12,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Baits",
+        "displayKey": "Baits",
+        "description": "需要装到钓竿上使用。",
+        "qualities": {},
+        "iconName": "Medium_fish_bait_Sprite",
+        "tags": []
+      }
+    }
+  ],
   "insect": {
     "key": "Tarantula",
     "rarity": "Legendary",
@@ -1517,7 +1925,8 @@
       "tags": [
         "income.bugcatching",
         "item.insect.legendary",
-        "item.insect"
+        "item.insect",
+        "item.insect.Spider"
       ]
     },
     "spawnSeason": {

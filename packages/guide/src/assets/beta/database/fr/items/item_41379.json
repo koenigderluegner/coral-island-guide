@@ -1,0 +1,331 @@
+{
+  "item": {
+    "id": "item_41379",
+    "displayName": "Kimchi de chapeau-corail rose",
+    "price": 940,
+    "sellPrice": 375,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Artisan product",
+    "displayKey": "ArtisanProduct",
+    "description": "Aigre et piquant. Délicieux !",
+    "qualities": {
+      "bronze": {
+        "price": 1065,
+        "sellPrice": 425
+      },
+      "silver": {
+        "price": 1190,
+        "sellPrice": 475
+      },
+      "gold": {
+        "price": 1375,
+        "sellPrice": 550
+      },
+      "osmium": {
+        "price": 1750,
+        "sellPrice": 700
+      }
+    },
+    "iconName": "Underwater_kimchi_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.AgingBarrel",
+      "Item.Consumable.Food",
+      "item.artisan.Kimchi",
+      "item.UnderwaterArtisan"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 4,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41364",
+          "displayName": "Chapeau-corail rose mariné",
+          "iconName": "Underwater_pink_pickles_Sprite"
+        }
+      },
+      "output": {
+        "amount": 0,
+        "item": {
+          "id": "item_41379",
+          "displayName": "Kimchi de chapeau-corail rose",
+          "iconName": "Underwater_kimchi_Sprite",
+          "sellPrice": 375
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 3,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 3,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 2,
+          "time": {
+            "hours": 16,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 2,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "Soupe aux pierres",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Ça n'a pas l'air comestible. À consommer à tes risques et périls.",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "Ingrédients comestibles"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "Pierre",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "Ingrédients comestibles": [
+          {
+            "id": "item_41180",
+            "displayName": "Yaourt de chèvre",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "Grand yaourt de chèvre",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "RareBased",
+      "offeringGroupTitle": "Autel rare",
+      "urlPath": "rarealtar",
+      "offeringGroupRewardText": "Débloque l'accès à Savannah",
+      "offerings": [
+        {
+          "title": "Artisan rare",
+          "imageName": "Rare_Artisan_Offerings",
+          "numOfItemRequired": -1,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_65022",
+                  "displayName": "Fût de vieillissement",
+                  "iconName": "Aging_Barrel_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "id": "item_41169",
+                "displayName": "Miel noir d'arum titan",
+                "iconName": "Black_Honey_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "key": "Any_Kimchi",
+                "displayName": "Tout kimchi",
+                "iconName": "Kimchi"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_Wine",
+                "displayName": "Tout vin",
+                "iconName": "Wine"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "id": "item_41178",
+                "displayName": "Meule de fromage de chèvre fermenté",
+                "iconName": "Fermented_Goat_Cheese_Wheel_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_41174",
+                "displayName": "Huile de truffe blanche",
+                "iconName": "White_truffle_oil_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41379",
+      "bVaryHealthToMax": false,
+      "healthDelta": 70,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 40,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_41379-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 75,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 50,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_41379-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 85,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 55,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_41379-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 100,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 65,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_41379-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 130,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 85,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  }
+}

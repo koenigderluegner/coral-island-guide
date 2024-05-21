@@ -1,39 +1,97 @@
 {
   "item": {
     "id": "item_31038",
-    "displayName": "Large buffalo milk",
-    "price": 10,
-    "sellPrice": 10,
+    "displayName": "Grand lait de buffle",
+    "price": 710,
+    "sellPrice": 500,
     "sellAt": [],
     "stackable": true,
-    "inventoryCategory": "Produit animal",
+    "inventoryCategory": "Animal product",
     "displayKey": "AnimalProduct",
-    "description": "A large buffalo milk.",
+    "description": "Grand lait de buffle.",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 820,
+        "sellPrice": 575
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 930,
+        "sellPrice": 650
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1070,
+        "sellPrice": 750
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1430,
+        "sellPrice": 1000
       }
     },
-    "iconName": "placeholder_icon_Sprite",
+    "iconName": "Large_buffalo_milk_Sprite",
     "tags": [
       "income.ranching",
       "item.animalproduct.milk",
       "Item.Consumable.Food"
     ]
   },
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31038",
+          "displayName": "Grand lait de buffle",
+          "iconName": "Large_buffalo_milk_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41351",
+          "displayName": "Meule de fromage de buffle",
+          "iconName": "Buffalo_Cheese_Wheel_Sprite",
+          "sellPrice": 1000
+        }
+      },
+      "genericInput": null,
+      "machine": "CheesePress"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31038",
+          "displayName": "Grand lait de buffle",
+          "iconName": "Large_buffalo_milk_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41341",
+          "displayName": "Gros beurre de buffle",
+          "iconName": "Large_buffalo_butter_Sprite",
+          "sellPrice": 765
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_80004",
@@ -492,16 +550,7 @@
         }
       ],
       "ingredients": [],
-      "eitherOrIngredients": [],
-      "additionsToGenerics": {
-        "Toute palourde": [
-          {
-            "id": "item_50307",
-            "displayName": "Palourde géante",
-            "iconName": "Giant_Clam_Sprite"
-          }
-        ]
-      }
+      "eitherOrIngredients": []
     },
     {
       "key": "item_80088",
@@ -586,21 +635,6 @@
             "id": "item_41181",
             "displayName": "Grand yaourt de chèvre",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Palourde géante",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Algues wakamé",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Bouquet de fleurs",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -742,5 +776,170 @@
       "ingredients": [],
       "eitherOrIngredients": []
     }
-  ]
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "HeritageBased",
+      "offeringGroupTitle": "Autel du patrimoine",
+      "urlPath": "guardianaltar",
+      "offeringGroupRewardText": "Guardian Mural",
+      "offerings": [
+        {
+          "title": "Dame Lavanna",
+          "imageName": "T_Art_OfferingSavanna",
+          "numOfItemRequired": 5,
+          "rewards": {
+            "items": [],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "id": "item_31038",
+                "displayName": "Grand lait de buffle",
+                "iconName": "Large_buffalo_milk_Sprite"
+              },
+              "amount": 4,
+              "quality": "osmium"
+            },
+            {
+              "item": {
+                "id": "item_41355",
+                "displayName": "Meule de fromage de buffle fermenté",
+                "iconName": "Fermented_buffalo_cheese_wheel_Sprite"
+              },
+              "amount": 4,
+              "quality": "osmium"
+            },
+            {
+              "item": {
+                "id": "item_41359",
+                "displayName": "Grand œuf d'autruche du siècle",
+                "iconName": "Large_century_ostrich_egg_Sprite"
+              },
+              "amount": 4,
+              "quality": "osmium"
+            },
+            {
+              "item": {
+                "id": "item_41337",
+                "displayName": "Grande mayonnaise d'autruche",
+                "iconName": "Large_ostrich_mayonnaise_Sprite"
+              },
+              "amount": 4,
+              "quality": "osmium"
+            },
+            {
+              "item": {
+                "key": "Any_DinoPrint",
+                "displayName": "Any Dino Print",
+                "iconName": "Any_Dino_Prints_Sprite"
+              },
+              "amount": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_31038",
+      "bVaryHealthToMax": false,
+      "healthDelta": 40,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 45,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_31038-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 46,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 52,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_31038-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 50,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 56,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_31038-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 60,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 68,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_31038-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 80,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 90,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Buffaloo",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Buffalo_Sprite"
+        }
+      }
+    ],
+    "building": "BarnLvl2",
+    "daysToGrow": 15,
+    "harvestCooldown": 3,
+    "animalProduceType": "UsingTools",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65042",
+      "displayName": "Seau à lait",
+      "iconName": "Milk_Pail_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31037",
+          "displayName": "Lait de buffle",
+          "iconName": "Buffalo_Milk_Sprite"
+        },
+        "large": {
+          "id": "item_31038",
+          "displayName": "Grand lait de buffle",
+          "iconName": "Large_buffalo_milk_Sprite"
+        }
+      }
+    ]
+  }
 }

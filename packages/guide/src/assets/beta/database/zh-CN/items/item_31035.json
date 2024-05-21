@@ -2,38 +2,96 @@
   "item": {
     "id": "item_31035",
     "displayName": "鸵鸟蛋",
-    "price": 10,
-    "sellPrice": 10,
+    "price": 400,
+    "sellPrice": 280,
     "sellAt": [],
     "stackable": true,
-    "inventoryCategory": "动物产品",
+    "inventoryCategory": "Animal product",
     "displayKey": "AnimalProduct",
     "description": "鸵鸟蛋。",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 460,
+        "sellPrice": 322
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 520,
+        "sellPrice": 364
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 600,
+        "sellPrice": 420
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 800,
+        "sellPrice": 560
       }
     },
-    "iconName": "placeholder_icon_Sprite",
+    "iconName": "Ostrich_egg_Sprite",
     "tags": [
       "income.ranching",
       "item.animalproduct.egg",
       "Item.Consumable.Food"
     ]
   },
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31035",
+          "displayName": "鸵鸟蛋",
+          "iconName": "Ostrich_egg_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41336",
+          "displayName": "鸵鸟蛋黄酱",
+          "iconName": "Ostrich_Mayonnaise_Sprite",
+          "sellPrice": 560
+        }
+      },
+      "genericInput": null,
+      "machine": "MayoniseMachine"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31035",
+          "displayName": "鸵鸟蛋",
+          "iconName": "Ostrich_egg_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41346",
+          "displayName": "咸鸵鸟蛋",
+          "iconName": "Salted_ostrich_egg_Sprite",
+          "sellPrice": 420
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_80003",
@@ -985,21 +1043,6 @@
             "id": "item_41181",
             "displayName": "山羊酸奶（大）",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "大砗磲",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "裙带菜丛",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "花束",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -1087,7 +1130,7 @@
   "usedToCraft": [
     {
       "key": "item_64010",
-      "displayName": "Monster Lure Scent",
+      "displayName": "Monster lure scent",
       "amount": 2,
       "ingredients": [],
       "genericIngredients": [
@@ -1179,22 +1222,22 @@
               {
                 "id": "item_31025",
                 "displayName": "卡拉蛋",
-                "iconName": "placeholder_icon_Sprite"
+                "iconName": "Cara_egg_Sprite"
               },
               {
                 "id": "item_31026",
                 "displayName": "卡拉蛋（大）",
-                "iconName": "placeholder_icon_Sprite"
+                "iconName": "Large_cara_egg_Sprite"
               },
               {
                 "id": "item_31035",
                 "displayName": "鸵鸟蛋",
-                "iconName": "placeholder_icon_Sprite"
+                "iconName": "Ostrich_egg_Sprite"
               },
               {
                 "id": "item_31036",
                 "displayName": "鸵鸟蛋（大）",
-                "iconName": "placeholder_icon_Sprite"
+                "iconName": "Large_ostrich_egg_Sprite"
               },
               {
                 "id": "item_32016",
@@ -1308,22 +1351,22 @@
               {
                 "id": "item_31025",
                 "displayName": "卡拉蛋",
-                "iconName": "placeholder_icon_Sprite"
+                "iconName": "Cara_egg_Sprite"
               },
               {
                 "id": "item_31026",
                 "displayName": "卡拉蛋（大）",
-                "iconName": "placeholder_icon_Sprite"
+                "iconName": "Large_cara_egg_Sprite"
               },
               {
                 "id": "item_31035",
                 "displayName": "鸵鸟蛋",
-                "iconName": "placeholder_icon_Sprite"
+                "iconName": "Ostrich_egg_Sprite"
               },
               {
                 "id": "item_31036",
                 "displayName": "鸵鸟蛋（大）",
-                "iconName": "placeholder_icon_Sprite"
+                "iconName": "Large_ostrich_egg_Sprite"
               },
               {
                 "id": "item_32016",
@@ -1355,5 +1398,100 @@
         "tags": []
       }
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_31035",
+      "bVaryHealthToMax": false,
+      "healthDelta": 21,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 23,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_31035-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 24,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 26,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_31035-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 26,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 29,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_31035-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 32,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 35,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_31035-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 42,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 46,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Ostrich",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Ostritch_Sprite"
+        }
+      }
+    ],
+    "building": "CoopLvl2",
+    "daysToGrow": 7,
+    "harvestCooldown": 3,
+    "animalProduceType": "DropAtDayBegin",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31035",
+          "displayName": "鸵鸟蛋",
+          "iconName": "Ostrich_egg_Sprite"
+        },
+        "large": {
+          "id": "item_31036",
+          "displayName": "鸵鸟蛋（大）",
+          "iconName": "Large_ostrich_egg_Sprite"
+        }
+      }
+    ]
+  }
 }

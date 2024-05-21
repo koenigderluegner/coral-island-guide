@@ -2,39 +2,71 @@
   "item": {
     "id": "item_21081",
     "displayName": "Marinethorn blossom",
-    "price": 10,
-    "sellPrice": 10,
-    "sellAt": [],
+    "price": 210,
+    "sellPrice": 125,
+    "sellAt": [
+      "Merfolk General"
+    ],
     "stackable": true,
     "inventoryCategory": "Flower",
     "displayKey": "Flower",
     "description": "Beautiful flower with prickly attitude from the depth of the sea.",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 240,
+        "sellPrice": 144
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 270,
+        "sellPrice": 163
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 315,
+        "sellPrice": 188
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 415,
+        "sellPrice": 250
       }
     },
     "iconName": "Marinethorn_Blossom_Sprite",
     "tags": [
-      "income.farming",
+      "income.oceanfarming",
+      "item.crop.diving",
+      "Item.Consumable.Food",
       "item.flower",
-      "Item.Consumable.Food"
+      "item.UnderwaterFlower"
     ]
   },
   "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 2,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21081",
+          "displayName": "Marinethorn blossom",
+          "iconName": "Marinethorn_Blossom_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41373",
+          "displayName": "Marinethorn blossom honey",
+          "iconName": "Underwater_blue_honey_Sprite",
+          "sellPrice": 250
+        }
+      },
+      "genericInput": null,
+      "machine": "BeeHouse"
+    },
     {
       "useCategory": false,
       "day": 0,
@@ -420,6 +452,11 @@
               "iconName": "Sproutfruit_Sprite"
             },
             {
+              "id": "item_21075",
+              "displayName": "Pink coralcap",
+              "iconName": "Pink_Coralcap_Sprite"
+            },
+            {
               "id": "item_21077",
               "displayName": "Bluebell blossom",
               "iconName": "Bluebell_Blossom_Sprite"
@@ -453,6 +490,21 @@
               "id": "item_21084",
               "displayName": "Petalia",
               "iconName": "Petalia_Sprite"
+            },
+            {
+              "id": "item_21085",
+              "displayName": "Mushroom tree seeds",
+              "iconName": "Mushroom_tree_seeds_Sprite"
+            },
+            {
+              "id": "item_21086",
+              "displayName": "Shroomba seeds",
+              "iconName": "Wooblecap_seeds_Sprite"
+            },
+            {
+              "id": "item_21087",
+              "displayName": "Moonspore seeds",
+              "iconName": "Moonspore_seeds_Sprite"
             },
             {
               "id": "item_22001",
@@ -1559,21 +1611,6 @@
             "id": "item_41181",
             "displayName": "Large goat yogurt",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Giant clam",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Wakame weed",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Flower bouquet",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -3016,5 +3053,67 @@
         "tags": []
       }
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_21081",
+      "bVaryHealthToMax": false,
+      "healthDelta": 114,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 120,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "bronze": {
+      "key": "item_21081-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 131,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 138,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "silver": {
+      "key": "item_21081-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 143,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 150,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "gold": {
+      "key": "item_21081-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 171,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 180,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "osmium": {
+      "key": "item_21081-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 228,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 240,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    }
+  }
 }

@@ -1,0 +1,171 @@
+[
+  {
+    "Type": "BehaviorTree",
+    "Name": "BT_GiantMoveToTotem",
+    "Class": "UScriptClass'BehaviorTree'",
+    "Properties": {
+      "RootNode": {
+        "ObjectName": "BTComposite_Selector'BT_GiantMoveToTotem:BTComposite_Selector_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantMoveToTotem.1"
+      },
+      "BlackboardAsset": {
+        "ObjectName": "BlackboardData'BB_Giant'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BB_Giant.0"
+      }
+    }
+  },
+  {
+    "Type": "BTComposite_Selector",
+    "Name": "BTComposite_Selector_0",
+    "Outer": "BT_GiantMoveToTotem",
+    "Class": "UScriptClass'BTComposite_Selector'",
+    "Properties": {
+      "Children": [
+        {
+          "ChildComposite": {
+            "ObjectName": "BTComposite_Sequence'BT_GiantMoveToTotem:BTComposite_Sequence_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantMoveToTotem.2"
+          },
+          "ChildTask": null,
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "C_GiantEvaluateWorkTask'BT_GiantMoveToTotem:C_GiantEvaluateWorkTask_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantMoveToTotem.5"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        }
+      ],
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantMoveToTotem'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantMoveToTotem.0"
+      }
+    }
+  },
+  {
+    "Type": "BTComposite_Sequence",
+    "Name": "BTComposite_Sequence_0",
+    "Outer": "BT_GiantMoveToTotem",
+    "Class": "UScriptClass'BTComposite_Sequence'",
+    "Properties": {
+      "Children": [
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "C_FindActorOfType'BT_GiantMoveToTotem:C_FindActorOfType_1'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantMoveToTotem.4"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "BTTask_MoveTo'BT_GiantMoveToTotem:BTTask_MoveTo_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantMoveToTotem.3"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "C_GiantEvaluateWorkTask'BT_GiantMoveToTotem:C_GiantEvaluateWorkTask_1'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantMoveToTotem.6"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        }
+      ],
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantMoveToTotem'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantMoveToTotem.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Selector'BT_GiantMoveToTotem:BTComposite_Selector_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantMoveToTotem.1"
+      }
+    }
+  },
+  {
+    "Type": "BTTask_MoveTo",
+    "Name": "BTTask_MoveTo_0",
+    "Outer": "BT_GiantMoveToTotem",
+    "Class": "UScriptClass'BTTask_MoveTo'",
+    "Properties": {
+      "AcceptableRadius": 100.0,
+      "bStopOnOverlapNeedsUpdate": false,
+      "BlackboardKey": {
+        "SelectedKeyName": "Totem"
+      },
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantMoveToTotem'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantMoveToTotem.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantMoveToTotem:BTComposite_Sequence_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantMoveToTotem.2"
+      }
+    }
+  },
+  {
+    "Type": "C_FindActorOfType",
+    "Name": "C_FindActorOfType_1",
+    "Outer": "BT_GiantMoveToTotem",
+    "Class": "UScriptClass'C_FindActorOfType'",
+    "Properties": {
+      "subClass": {
+        "ObjectName": "Class'C_GiantTotem'",
+        "ObjectPath": "/Script/ProjectCoral"
+      },
+      "cacheResult": true,
+      "BlackboardKey": {
+        "SelectedKeyName": "Totem"
+      },
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantMoveToTotem'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantMoveToTotem.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantMoveToTotem:BTComposite_Sequence_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantMoveToTotem.2"
+      }
+    }
+  },
+  {
+    "Type": "C_GiantEvaluateWorkTask",
+    "Name": "C_GiantEvaluateWorkTask_0",
+    "Outer": "BT_GiantMoveToTotem",
+    "Class": "UScriptClass'C_GiantEvaluateWorkTask'",
+    "Properties": {
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantMoveToTotem'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantMoveToTotem.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Selector'BT_GiantMoveToTotem:BTComposite_Selector_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantMoveToTotem.1"
+      }
+    }
+  },
+  {
+    "Type": "C_GiantEvaluateWorkTask",
+    "Name": "C_GiantEvaluateWorkTask_1",
+    "Outer": "BT_GiantMoveToTotem",
+    "Class": "UScriptClass'C_GiantEvaluateWorkTask'",
+    "Properties": {
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantMoveToTotem'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantMoveToTotem.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantMoveToTotem:BTComposite_Sequence_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantMoveToTotem.2"
+      }
+    }
+  }
+]

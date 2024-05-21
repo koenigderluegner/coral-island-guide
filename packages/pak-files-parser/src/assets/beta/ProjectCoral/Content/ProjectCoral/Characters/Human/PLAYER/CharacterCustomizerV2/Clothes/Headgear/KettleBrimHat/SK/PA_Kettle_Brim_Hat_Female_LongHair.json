@@ -1,0 +1,128 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_Kettle_Brim_Hat_Female_LongHair",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Kettle_Brim_Hat_Female_LongHair:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/Headgear/KettleBrimHat/SK/PA_Kettle_Brim_Hat_Female_LongHair.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Kettle_Brim_Hat_Female_LongHair:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/Headgear/KettleBrimHat/SK/PA_Kettle_Brim_Hat_Female_LongHair.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Kettle_Brim_Hat_Female_LongHair:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/Headgear/KettleBrimHat/SK/PA_Kettle_Brim_Hat_Female_LongHair.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_Kettle_Brim_Hat_Female_LongHair",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "L_Hair_jnt",
+        "ConstraintBone1": "L_Hair_jnt",
+        "ConstraintBone2": "Root_Hair_jnt",
+        "Pos2": {
+          "X": 16.007679,
+          "Y": -22.800945,
+          "Z": 8.50184
+        },
+        "SecAxis2": {
+          "X": 0.0,
+          "Y": -1.0,
+          "Z": 1.2246469E-16
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_Kettle_Brim_Hat_Female_LongHair",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.60920715,
+              "Y": -17.516996,
+              "Z": -2.9961703
+            },
+            "Rotation": {
+              "Pitch": -29.549706,
+              "Yaw": -90.00001,
+              "Roll": -9.716466
+            },
+            "Radius": 27.548306,
+            "Length": 31.821142,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Root_Hair_jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "11F3B7FE4AD82618ED7AE7B8F6A6309B"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_Kettle_Brim_Hat_Female_LongHair",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -0.34471226,
+              "Y": -12.310394,
+              "Z": 0.7027054
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 173.95901,
+              "Roll": -82.41527
+            },
+            "Radius": 6.0363097,
+            "Length": 15.630848,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "L_Hair_jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "BA54FE71433A491B612A5190399089EA"
+  }
+]

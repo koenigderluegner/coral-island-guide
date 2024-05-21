@@ -2,8 +2,8 @@
   "item": {
     "id": "item_31028",
     "displayName": "Große Seekuh-Milch",
-    "price": 10,
-    "sellPrice": 10,
+    "price": 520,
+    "sellPrice": 365,
     "sellAt": [],
     "stackable": true,
     "inventoryCategory": "Animal product",
@@ -11,29 +11,87 @@
     "description": "Milch von einer großen Seekuh.",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 600,
+        "sellPrice": 420
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 680,
+        "sellPrice": 475
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 780,
+        "sellPrice": 548
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1040,
+        "sellPrice": 730
       }
     },
-    "iconName": "placeholder_icon_Sprite",
+    "iconName": "Large_mermoo_milk_Sprite",
     "tags": [
       "income.ranching",
       "item.animalproduct.milk",
       "Item.Consumable.Food"
     ]
   },
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31028",
+          "displayName": "Große Seekuh-Milch",
+          "iconName": "Large_mermoo_milk_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41349",
+          "displayName": "Seekuh-Käserad",
+          "iconName": "Mermoo_cheese_wheel_Sprite",
+          "sellPrice": 730
+        }
+      },
+      "genericInput": null,
+      "machine": "CheesePress"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31028",
+          "displayName": "Große Seekuh-Milch",
+          "iconName": "Large_mermoo_milk_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41339",
+          "displayName": "Große Seekuh-Butter",
+          "iconName": "Large_mermoo_butter_Sprite",
+          "sellPrice": 565
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_80004",
@@ -492,16 +550,7 @@
         }
       ],
       "ingredients": [],
-      "eitherOrIngredients": [],
-      "additionsToGenerics": {
-        "Beliebige Muschel": [
-          {
-            "id": "item_50307",
-            "displayName": "Riesenmuschel",
-            "iconName": "Giant_Clam_Sprite"
-          }
-        ]
-      }
+      "eitherOrIngredients": []
     },
     {
       "key": "item_80088",
@@ -586,21 +635,6 @@
             "id": "item_41181",
             "displayName": "Großer Ziegenjoghurt",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Riesenmuschel",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Wakame-Alge",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Blumenstrauß",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -742,5 +776,105 @@
       "ingredients": [],
       "eitherOrIngredients": []
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_31028",
+      "bVaryHealthToMax": false,
+      "healthDelta": 25,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 30,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_31028-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 29,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 35,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_31028-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 31,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 38,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_31028-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 38,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 45,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_31028-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 50,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 60,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Mermoo",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Mermoo_Sprite"
+        }
+      }
+    ],
+    "building": "UnderwaterRanch",
+    "daysToGrow": 15,
+    "harvestCooldown": 1,
+    "animalProduceType": "UsingTools",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65042",
+      "displayName": "Milcheimer",
+      "iconName": "Milk_Pail_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31027",
+          "displayName": "Seekuh-Milch",
+          "iconName": "Mermoo_milk_Sprite"
+        },
+        "large": {
+          "id": "item_31028",
+          "displayName": "Große Seekuh-Milch",
+          "iconName": "Large_mermoo_milk_Sprite"
+        }
+      }
+    ]
+  }
 }

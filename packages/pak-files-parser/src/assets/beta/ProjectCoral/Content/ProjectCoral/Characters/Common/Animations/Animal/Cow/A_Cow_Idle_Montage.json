@@ -1,0 +1,117 @@
+[
+  {
+    "Type": "AnimMontage",
+    "Name": "A_Cow_Idle_Montage",
+    "Class": "UScriptClass'AnimMontage'",
+    "Properties": {
+      "CompositeSections": [
+        {
+          "SectionName": "Default",
+          "NextSectionName": "None",
+          "MetaData": [],
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'A_Cow_Idle_Montage'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Cow/A_Cow_Idle_Montage.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 7.3333335,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_Cow_Idle'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Cow/A_Cow_Idle.0"
+          }
+        }
+      ],
+      "SlotAnimTracks": [
+        {
+          "SlotName": "DefaultSlot",
+          "AnimTrack": {
+            "AnimSegments": [
+              {
+                "AnimReference": {
+                  "ObjectName": "AnimSequence'A_Cow_Idle'",
+                  "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Cow/A_Cow_Idle.0"
+                },
+                "StartPos": 0.0,
+                "AnimStartTime": 0.0,
+                "AnimEndTime": 7.3333335,
+                "AnimPlayRate": 1.0,
+                "LoopingCount": 1
+              }
+            ]
+          }
+        }
+      ],
+      "Notifies": [
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "CPlaySoundEvent",
+          "Notify": {
+            "ObjectName": "CAnimNotify_PlaySoundEvent'A_Cow_Idle_Montage:CAnimNotify_PlaySoundEvent_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Cow/A_Cow_Idle_Montage.1"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.0,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 0,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'A_Cow_Idle_Montage'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Cow/A_Cow_Idle_Montage.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 7.3333335,
+          "LinkValue": 1.4863714,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_Cow_Idle'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Cow/A_Cow_Idle.0"
+          }
+        }
+      ],
+      "SequenceLength": 7.3333335,
+      "Skeleton": {
+        "ObjectName": "Skeleton'SKEL_Cow_Ver4'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Cow/SKEL_Cow_Ver4.0"
+      }
+    },
+    "SkeletonGuid": "996CF5A3-4AB99B0F-3B3CDDA9-E48335B8"
+  },
+  {
+    "Type": "CAnimNotify_PlaySoundEvent",
+    "Name": "CAnimNotify_PlaySoundEvent_0",
+    "Outer": "A_Cow_Idle_Montage",
+    "Class": "UScriptClass'CAnimNotify_PlaySoundEvent'",
+    "Properties": {
+      "soundEvent": {
+        "ObjectName": "AkAudioEvent'anml_cows_small'",
+        "ObjectPath": "ProjectCoral/Content/WwiseAudio/Events/Environment/Animals/anml_cows_small.1"
+      }
+    }
+  }
+]

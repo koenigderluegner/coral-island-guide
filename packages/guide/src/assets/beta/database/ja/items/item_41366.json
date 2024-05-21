@@ -1,0 +1,358 @@
+{
+  "item": {
+    "id": "item_41366",
+    "displayName": "ブルーコールのピクルス",
+    "price": 125,
+    "sellPrice": 75,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Artisan product",
+    "displayKey": "ArtisanProduct",
+    "description": "保存可能期間が長い食品。",
+    "qualities": {
+      "bronze": {
+        "price": 140,
+        "sellPrice": 85
+      },
+      "silver": {
+        "price": 160,
+        "sellPrice": 95
+      },
+      "gold": {
+        "price": 185,
+        "sellPrice": 110
+      },
+      "osmium": {
+        "price": 235,
+        "sellPrice": 140
+      }
+    },
+    "iconName": "Underwater_blue_pickles_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.PreserveJar",
+      "Item.Consumable.Food",
+      "item.artisan.Pickle",
+      "item.UnderwaterArtisan"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21083",
+          "displayName": "ブルーコール",
+          "iconName": "Bluecole_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41366",
+          "displayName": "ブルーコールのピクルス",
+          "iconName": "Underwater_blue_pickles_Sprite",
+          "sellPrice": 75
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 4,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41366",
+          "displayName": "ブルーコールのピクルス",
+          "iconName": "Underwater_blue_pickles_Sprite"
+        }
+      },
+      "output": {
+        "amount": 0,
+        "item": {
+          "id": "item_41381",
+          "displayName": "ブルーコールキムチ",
+          "iconName": "Underwater_kimchi_Sprite",
+          "sellPrice": 375
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 3,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 3,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 2,
+          "time": {
+            "hours": 16,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 2,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "ストーンスープ",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "食用とは思えません。食べるなら自己責任で。",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "食用食材すべて"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "石材",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "食用食材すべて": [
+          {
+            "id": "item_41180",
+            "displayName": "ヤギのヨーグルト",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "大きなヤギのヨーグルト",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "SpecialityBased",
+      "offeringGroupTitle": "高度な祭壇",
+      "urlPath": "advancedaltar",
+      "offeringGroupRewardText": "ワープの供え物をアンロック",
+      "offerings": [
+        {
+          "title": "ベーシックな手作り製品",
+          "imageName": "Artisan_Product_Offerings",
+          "numOfItemRequired": -1,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_65020",
+                  "displayName": "ケグ",
+                  "iconName": "Keg_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "key": "Any_Mayonnaise",
+                "displayName": "マヨネーズすべて",
+                "iconName": "T_AnyMayo_Sprite"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_FruitJuice",
+                "displayName": "フルーツジュースすべて",
+                "iconName": "Juice"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_Butter",
+                "displayName": "バターすべて",
+                "iconName": "T_AnyButter_Sprite"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_DriedScavengables",
+                "displayName": "乾燥スカベンジ可能品すべて",
+                "iconName": "Seafood_jerky"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_Pickle",
+                "displayName": "ピクルスすべて",
+                "iconName": "Pickles"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41366",
+      "bVaryHealthToMax": false,
+      "healthDelta": 210,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 170,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_41366-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 240,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 195,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_41366-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 265,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 210,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_41366-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 315,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 250,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_41366-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 420,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 335,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  }
+}

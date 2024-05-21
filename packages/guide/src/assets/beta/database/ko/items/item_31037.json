@@ -1,39 +1,97 @@
 {
   "item": {
     "id": "item_31037",
-    "displayName": "Buffalo milk",
-    "price": 10,
-    "sellPrice": 10,
+    "displayName": "물소 젖",
+    "price": 500,
+    "sellPrice": 350,
     "sellAt": [],
     "stackable": true,
-    "inventoryCategory": "축산물",
+    "inventoryCategory": "Animal product",
     "displayKey": "AnimalProduct",
-    "description": "A buffalo milk.",
+    "description": "물소의 젖.",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 580,
+        "sellPrice": 403
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 650,
+        "sellPrice": 455
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 750,
+        "sellPrice": 525
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1000,
+        "sellPrice": 700
       }
     },
-    "iconName": "placeholder_icon_Sprite",
+    "iconName": "Buffalo_Milk_Sprite",
     "tags": [
       "income.ranching",
       "item.animalproduct.milk",
       "Item.Consumable.Food"
     ]
   },
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31037",
+          "displayName": "물소 젖",
+          "iconName": "Buffalo_Milk_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41350",
+          "displayName": "물소 치즈",
+          "iconName": "Buffalo_Cheese_Sprite",
+          "sellPrice": 700
+        }
+      },
+      "genericInput": null,
+      "machine": "CheesePress"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31037",
+          "displayName": "물소 젖",
+          "iconName": "Buffalo_Milk_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41340",
+          "displayName": "물소 버터",
+          "iconName": "Buffalo_Butter_Sprite",
+          "sellPrice": 540
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_80004",
@@ -492,16 +550,7 @@
         }
       ],
       "ingredients": [],
-      "eitherOrIngredients": [],
-      "additionsToGenerics": {
-        "아무 조개": [
-          {
-            "id": "item_50307",
-            "displayName": "대왕조개",
-            "iconName": "Giant_Clam_Sprite"
-          }
-        ]
-      }
+      "eitherOrIngredients": []
     },
     {
       "key": "item_80088",
@@ -586,21 +635,6 @@
             "id": "item_41181",
             "displayName": "대용량 염소 요구르트",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "대왕조개",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "미역",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "꽃다발",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -742,5 +776,105 @@
       "ingredients": [],
       "eitherOrIngredients": []
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_31037",
+      "bVaryHealthToMax": false,
+      "healthDelta": 21,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 23,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_31037-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 24,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 26,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_31037-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 26,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 29,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_31037-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 32,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 35,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_31037-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 42,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 46,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Buffaloo",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Buffalo_Sprite"
+        }
+      }
+    ],
+    "building": "BarnLvl2",
+    "daysToGrow": 15,
+    "harvestCooldown": 3,
+    "animalProduceType": "UsingTools",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65042",
+      "displayName": "우유통",
+      "iconName": "Milk_Pail_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31037",
+          "displayName": "물소 젖",
+          "iconName": "Buffalo_Milk_Sprite"
+        },
+        "large": {
+          "id": "item_31038",
+          "displayName": "대용량 물소 젖",
+          "iconName": "Large_buffalo_milk_Sprite"
+        }
+      }
+    ]
+  }
 }

@@ -1,0 +1,128 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_PeachFruitTree_S00",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_PeachFruitTree_S00:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/FruitTree/Peach/PA_PeachFruitTree_S00.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_PeachFruitTree_S00:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/FruitTree/Peach/PA_PeachFruitTree_S00.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_PeachFruitTree_S00:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/FruitTree/Peach/PA_PeachFruitTree_S00.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_PeachFruitTree_S00",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Oak_Jnt1",
+        "ConstraintBone1": "Oak_Jnt1",
+        "ConstraintBone2": "Oak_Trunk_Jnt",
+        "Pos2": {
+          "X": -0.2737874,
+          "Y": -39.46891,
+          "Z": -0.41227537
+        },
+        "PriAxis2": {
+          "X": 1.0,
+          "Y": 0.0,
+          "Z": -4.9974944E-20
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_PeachFruitTree_S00",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -4.3634152,
+              "Y": -19.683083,
+              "Z": 4.176008
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -1.4282652,
+              "Roll": -179.04128
+            },
+            "Radius": 20.481308,
+            "Length": 24.412012,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Oak_Trunk_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "841281104850E4CBE32B0ABD747EFECE"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_PeachFruitTree_S00",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -0.50085306,
+              "Y": -36.141766,
+              "Z": -0.7693882
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 30.63343,
+              "Roll": -146.50159
+            },
+            "Radius": 32.2689,
+            "Length": 37.213978,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Oak_Jnt1",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "E4AFA965455368B47CC84E8807CDB856"
+  }
+]

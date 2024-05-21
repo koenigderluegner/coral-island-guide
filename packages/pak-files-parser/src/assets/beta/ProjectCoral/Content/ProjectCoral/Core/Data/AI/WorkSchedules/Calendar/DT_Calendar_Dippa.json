@@ -383,7 +383,10 @@
         "seasonOverrides": [],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
-        "conditions": null
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'ScottMuseum2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/ScottMuseum2.1"
+        }
       },
       "MooncakeRunning": {
         "dateOverrides": [],
@@ -461,10 +464,136 @@
         "petRequirement": "EC_PetAdoptState::Any",
         "hasChildSchedule": false,
         "weatherOverrides": [],
-        "seasonOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": []
+            }
+          }
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
         "conditions": null
+      },
+      "Weather_FSTSNM_1": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [
+          {
+            "EC_Weather::Rain": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday",
+                "EC_DayOfTheWeek::Monday"
+              ]
+            }
+          },
+          {
+            "EC_Weather::Storm": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday",
+                "EC_DayOfTheWeek::Monday"
+              ]
+            }
+          },
+          {
+            "EC_Weather::Snow": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday",
+                "EC_DayOfTheWeek::Monday"
+              ]
+            }
+          }
+        ],
+        "seasonOverrides": [],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'ScottMuseum1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/ScottMuseum1.1"
+        }
+      },
+      "RANK-S_Spring_STSN_SummerFall_ST": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Summer": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
+          }
+        ],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'DA_AttractionReq_RecCenter_MovieTheater_Completed'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/Attraction/DA_AttractionReq_RecCenter_MovieTheater_Completed.1"
+        }
+      },
+      "QUEST-Attraction_PaintTownMural": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'DA_AttractionReq_TownMural'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/Attraction/DA_AttractionReq_TownMural.1"
+        }
       }
     }
   }

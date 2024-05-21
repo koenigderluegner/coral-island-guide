@@ -1,0 +1,287 @@
+{
+  "item": {
+    "id": "item_41346",
+    "displayName": "Œuf d'autruche salé",
+    "price": 1050,
+    "sellPrice": 420,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Artisan product",
+    "displayKey": "ArtisanProduct",
+    "description": "Œuf salé fermenté.",
+    "qualities": {
+      "bronze": {
+        "price": 1215,
+        "sellPrice": 485
+      },
+      "silver": {
+        "price": 1365,
+        "sellPrice": 545
+      },
+      "gold": {
+        "price": 1575,
+        "sellPrice": 630
+      },
+      "osmium": {
+        "price": 2100,
+        "sellPrice": 840
+      }
+    },
+    "iconName": "Salted_ostrich_egg_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.PreserveJar",
+      "Item.Consumable.Food",
+      "item.artisan"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31035",
+          "displayName": "Œuf d'autruche",
+          "iconName": "Ostrich_egg_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41346",
+          "displayName": "Œuf d'autruche salé",
+          "iconName": "Salted_ostrich_egg_Sprite",
+          "sellPrice": 420
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 2,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41346",
+          "displayName": "Œuf d'autruche salé",
+          "iconName": "Salted_ostrich_egg_Sprite"
+        }
+      },
+      "output": {
+        "amount": 0,
+        "item": {
+          "id": "item_41358",
+          "displayName": "Œuf d'autruche du siècle",
+          "iconName": "Century_ostrich_egg_Sprite",
+          "sellPrice": 1260
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 1,
+          "time": {
+            "hours": 18,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 1,
+          "time": {
+            "hours": 13,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 1,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 1,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "Soupe aux pierres",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Ça n'a pas l'air comestible. À consommer à tes risques et périls.",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "Ingrédients comestibles"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "Pierre",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "Ingrédients comestibles": [
+          {
+            "id": "item_41180",
+            "displayName": "Yaourt de chèvre",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "Grand yaourt de chèvre",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41346",
+      "bVaryHealthToMax": false,
+      "healthDelta": 30,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 30,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_41346-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 35,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 30,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_41346-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 40,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 35,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_41346-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 50,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 40,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_41346-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 65,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 55,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  }
+}

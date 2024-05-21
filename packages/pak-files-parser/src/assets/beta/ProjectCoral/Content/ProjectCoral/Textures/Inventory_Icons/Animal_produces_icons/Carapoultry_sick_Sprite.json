@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Carapoultry_sick_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 1.5,
+              "Y": 0.0,
+              "Z": 2.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 249.0,
+            "Y": 10.0,
+            "Z": 252.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "50DB9DE14C78E70C9A430BB6A1557BF6"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Carapoultry_sick_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 256.0,
+        "Y": 256.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Carapoultry_sick'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Textures/Carapoultry_sick.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Carapoultry_sick_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Carapoultry_sick_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 126.0,
+          "Y": 128.0,
+          "Z": 0.9921875,
+          "W": 0.0
+        },
+        {
+          "X": -123.0,
+          "Y": 128.0,
+          "Z": 0.01953125,
+          "W": 0.0
+        },
+        {
+          "X": -123.0,
+          "Y": -124.0,
+          "Z": 0.01953125,
+          "W": 0.984375
+        },
+        {
+          "X": 126.0,
+          "Y": -124.0,
+          "Z": 0.9921875,
+          "W": 0.984375
+        },
+        {
+          "X": 126.0,
+          "Y": 128.0,
+          "Z": 0.9921875,
+          "W": 0.0
+        },
+        {
+          "X": -123.0,
+          "Y": -124.0,
+          "Z": 0.01953125,
+          "W": 0.984375
+        }
+      ]
+    }
+  }
+]

@@ -2,36 +2,40 @@
   "item": {
     "id": "item_21082",
     "displayName": "Sea spud",
-    "price": 10,
-    "sellPrice": 10,
-    "sellAt": [],
+    "price": 255,
+    "sellPrice": 154,
+    "sellAt": [
+      "Merfolk General"
+    ],
     "stackable": true,
     "inventoryCategory": "Vegetables",
-    "displayKey": "Vegetables",
+    "displayKey": "Fruit",
     "description": "If I made french fries with this, do I still need salt to flavour it?",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 295,
+        "sellPrice": 177
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 335,
+        "sellPrice": 200
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 385,
+        "sellPrice": 231
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 515,
+        "sellPrice": 308
       }
     },
     "iconName": "Sea_Spud_Sprite",
     "tags": [
-      "income.farming",
+      "income.oceanfarming",
+      "item.crop.diving",
+      "Item.Consumable.Food",
       "item.fruit",
-      "Item.Consumable.Food"
+      "item.UnderwaterFruit"
     ]
   },
   "artisanIngredient": [
@@ -420,6 +424,11 @@
               "iconName": "Sproutfruit_Sprite"
             },
             {
+              "id": "item_21075",
+              "displayName": "Pink coralcap",
+              "iconName": "Pink_Coralcap_Sprite"
+            },
+            {
               "id": "item_21077",
               "displayName": "Bluebell blossom",
               "iconName": "Bluebell_Blossom_Sprite"
@@ -453,6 +462,21 @@
               "id": "item_21084",
               "displayName": "Petalia",
               "iconName": "Petalia_Sprite"
+            },
+            {
+              "id": "item_21085",
+              "displayName": "Mushroom tree seeds",
+              "iconName": "Mushroom_tree_seeds_Sprite"
+            },
+            {
+              "id": "item_21086",
+              "displayName": "Shroomba seeds",
+              "iconName": "Wooblecap_seeds_Sprite"
+            },
+            {
+              "id": "item_21087",
+              "displayName": "Moonspore seeds",
+              "iconName": "Moonspore_seeds_Sprite"
             },
             {
               "id": "item_22001",
@@ -1473,6 +1497,62 @@
         }
       },
       "machine": "CompostBin"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21082",
+          "displayName": "Sea spud",
+          "iconName": "Sea_Spud_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41400",
+          "displayName": "Sea spud juice",
+          "iconName": "Underwater_fruit_juice_Sprite",
+          "sellPrice": 340
+        }
+      },
+      "genericInput": null,
+      "machine": "Keg"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21082",
+          "displayName": "Sea spud",
+          "iconName": "Sea_Spud_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41368",
+          "displayName": "Sea spud jam",
+          "iconName": "Jam_Yellow_underwater_Sprite",
+          "sellPrice": 245
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
     }
   ],
   "usedToCook": [
@@ -1783,21 +1863,6 @@
             "id": "item_41181",
             "displayName": "Large goat yogurt",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Giant clam",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Wakame weed",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Flower bouquet",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -1861,5 +1926,67 @@
       "ingredients": [],
       "eitherOrIngredients": []
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_21082",
+      "bVaryHealthToMax": false,
+      "healthDelta": 125,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 80,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "bronze": {
+      "key": "item_21082-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 144,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 92,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "silver": {
+      "key": "item_21082-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 156,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 100,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "gold": {
+      "key": "item_21082-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 188,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 120,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "osmium": {
+      "key": "item_21082-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 250,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 160,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    }
+  }
 }

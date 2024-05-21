@@ -1,0 +1,133 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_Hair_Andro_48",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Hair_Andro_48:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/SK/PA/PA_Hair_Andro_48.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Hair_Andro_48:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/SK/PA/PA_Hair_Andro_48.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Hair_Andro_48:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/SK/PA/PA_Hair_Andro_48.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_Hair_Andro_48",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "r_hair_side1_R",
+        "ConstraintBone1": "r_hair_side1_R",
+        "ConstraintBone2": "Root_Hair_Jnt",
+        "Pos2": {
+          "X": -1.899986,
+          "Y": -29.970097,
+          "Z": 14.856178
+        },
+        "PriAxis2": {
+          "X": -0.8182757,
+          "Y": -0.56906235,
+          "Z": 0.081196114
+        },
+        "SecAxis2": {
+          "X": 0.3686192,
+          "Y": -0.41108942,
+          "Z": 0.8337417
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_Hair_Andro_48",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.45584488,
+              "Y": -22.80455,
+              "Z": -6.262001
+            },
+            "Rotation": {
+              "Pitch": -9.693895,
+              "Yaw": -90.0,
+              "Roll": 2.1482453
+            },
+            "Radius": 27.84221,
+            "Length": 31.268522,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Root_Hair_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "145E44BA42EFE478A9F77A9D7588984C"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_Hair_Andro_48",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 5.7044454,
+              "Y": -1.0550299,
+              "Z": 7.6013947
+            },
+            "Rotation": {
+              "Pitch": -40.018158,
+              "Yaw": -89.99999,
+              "Roll": 10.767004
+            },
+            "Radius": 7.8839893,
+            "Length": 11.130677,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "r_hair_side1_R",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "5CA0A62A4F6B6C433BA5419469748469"
+  }
+]

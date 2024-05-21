@@ -1,0 +1,123 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_BackWear_Female_Bagpack_leaf_clover",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_BackWear_Female_Bagpack_leaf_clover:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/BackWear/CloverBackpack/SK/PA_BackWear_Female_Bagpack_leaf_clover.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_BackWear_Female_Bagpack_leaf_clover:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/BackWear/CloverBackpack/SK/PA_BackWear_Female_Bagpack_leaf_clover.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_BackWear_Female_Bagpack_leaf_clover:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/BackWear/CloverBackpack/SK/PA_BackWear_Female_Bagpack_leaf_clover.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_BackWear_Female_Bagpack_leaf_clover",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Back1_2_Jnt",
+        "ConstraintBone1": "Back1_2_Jnt",
+        "ConstraintBone2": "Root_Accesories",
+        "Pos2": {
+          "X": 0.0,
+          "Y": -8.407013,
+          "Z": -34.135456
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_BackWear_Female_Bagpack_leaf_clover",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.000754392,
+              "Y": -0.9895501,
+              "Z": -3.2343812
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -179.99817,
+              "Roll": -83.41027
+            },
+            "Radius": 25.351078,
+            "Length": 27.260992,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Root_Accesories",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "23A8B9704E2E2E01C5233F8FD4680982"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_BackWear_Female_Bagpack_leaf_clover",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -0.52244365,
+              "Y": 17.087914,
+              "Z": 1.1740742
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -13.232509,
+              "Roll": -78.90954
+            },
+            "Radius": 22.674688,
+            "Length": 29.927122,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Back1_2_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "E2B6EB8B4D18ED6F5602C4BB0DACD5E3"
+  }
+]

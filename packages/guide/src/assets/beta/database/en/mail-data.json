@@ -2524,7 +2524,7 @@
     "key": "winter_fair_reminder",
     "sender": "Mayor <NPCName>Connor</>",
     "title": "Winter Fair begins tomorrow!",
-    "content": "The Winter Fair starts tomorrow and runs for three days from Winter 17–21. Join us at the beach from 5 pm until late. There will be shops, games, and the best Winter festivities.",
+    "content": "The Winter Fair starts tomorrow and runs for five days from Winter 17–21. Join us at the beach from 5 pm until late. There will be shops, games, and the best Winter festivities.",
     "isImportant": true,
     "tags": [],
     "mailType": null,
@@ -2862,9 +2862,22 @@
     "content": "I found an old painting. Thought you might like it.",
     "isImportant": true,
     "tags": [],
-    "mailType": null,
+    "mailType": "Gift",
     "greetCloseMessage": null,
-    "greetOpenMessage": "<PlayerName>$player</>"
+    "greetOpenMessage": "<PlayerName>$player</>",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_96067",
+            "displayName": "Cherry blossom painting",
+            "iconName": "Cherry_blossom_painting_Sprite"
+          },
+          "isQuestReward": true
+        }
+      }
+    ]
   },
   {
     "key": "yuri_heart10b",
@@ -3211,6 +3224,30 @@
     "greetOpenMessage": "Resident of Starlet Town,"
   },
   {
+    "key": "TownRankA_Aftermath",
+    "sender": "Mayor <NPCName>Connor</>",
+    "title": "Official trophy from the mayor’s office",
+    "content": "I want to send you this trophy as a token of our appreciation. You were the major contributor to our town's rank increasing to A. We hope you will display it proudly!",
+    "isImportant": true,
+    "tags": [],
+    "mailType": null,
+    "greetCloseMessage": null,
+    "greetOpenMessage": "<PlayerName>$player</>,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_100014",
+            "displayName": "Rank A trophy",
+            "iconName": "Rank_A_Trophy_Sprite"
+          },
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
     "key": "Unlock_Tier2_Lab",
     "sender": "<NPCName>Ling</>",
     "title": "Tier 2 lab devices!",
@@ -3427,6 +3464,783 @@
             "id": "item_41025",
             "displayName": "Sake",
             "iconName": "Sake_Sprite"
+          },
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "StarletExpedition",
+    "sender": "Merfolk Kingdom",
+    "title": "Starlet Expedition Crew",
+    "content": "Our kingdom is about to embark on an important project called the \"Starlet Expedition,\" and we need your help.\r\n\r\nGiven your unique experience as a human living in Starlet Town, we believe you could provide valuable insights into this venture.\r\n\r\nPlease join us at the Palace to discuss the details.\r\n",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "MainQuest",
+    "greetCloseMessage": null,
+    "greetOpenMessage": "Dear <PlayerName>$Player</>,"
+  },
+  {
+    "key": "HelpMerfolkAfterPufferfishGone",
+    "sender": "<NPCName>King Krakatoa</>",
+    "title": "Rebuild Merfolk Kingdom",
+    "content": "We invite you to Naga Palace for an important discussion about our Kingdom. Your insights are valued, but please attend only after your surface mission is stable.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "MainQuest",
+    "greetCloseMessage": "We await your visit,",
+    "greetOpenMessage": "<PlayerName>$Player</>,"
+  },
+  {
+    "key": "agung_heart7",
+    "sender": "<NPCName>Agung</>",
+    "title": "Request for assistance",
+    "content": "I got a lead that it might be in a cave, not too far from the Sleepy Eel.\r\nBut here's the catch – it's a bit of a tricky spot, known for its twisty tunnels and curious creatures. \r\nMeet me at my house at noon.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": null,
+    "greetCloseMessage": null,
+    "greetOpenMessage": "Dear <PlayerName>$Player</>,"
+  },
+  {
+    "key": "denali_heart10",
+    "sender": "<NPCName>Denali</>",
+    "title": "Cozy lunch date",
+    "content": "I’ve got a surprise planned for us, a cozy lunch date. I really hope you can join me today. Let’s meet in front of the Sleepy Eel, alright?",
+    "isImportant": true,
+    "tags": [],
+    "mailType": null,
+    "greetCloseMessage": "Yours,",
+    "greetOpenMessage": "My <PlayerName>$Player</>,"
+  },
+  {
+    "key": "semeru_heart6",
+    "sender": "<NPCName>Semeru</>",
+    "title": "Re: Finding Poseidon",
+    "content": "I wanted to express my gratitude for your assistance with Poseidon recently. I'm planning to explore near the surface soon, and I thought you might be interested in joining me. I'll be keeping an eye out for Poseidon – there's a chance he might return.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": null,
+    "greetCloseMessage": null,
+    "greetOpenMessage": "Dear <PlayerName>$Player</>,"
+  },
+  {
+    "key": "semeru_heart10",
+    "sender": "<NPCName>Semeru</>",
+    "title": "Are you busy?",
+    "content": "Let’s meet up at the beach this afternoon, and spend some time together.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": null,
+    "greetCloseMessage": "I miss seeing you around,",
+    "greetOpenMessage": "Hey <PlayerName>$Player</>,"
+  },
+  {
+    "key": "miranjani_heart10",
+    "sender": "<NPCName>PrincessMiranjani</>",
+    "title": "Greetings",
+    "content": "I’d love to go back to Starlet Town. Maybe you can take me to that cafe for a date? You did promise, after all. See you there tonight at 7.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": null,
+    "greetCloseMessage": "Your princess",
+    "greetOpenMessage": "Dearest <PlayerName>$Player</>, my favorite land-dweller,"
+  },
+  {
+    "key": "kingkrakatoa_heart3",
+    "sender": "<NPCName>KingKrakatoa</>",
+    "title": "Audience",
+    "content": "Please visit the Palace at a time that suits you.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": null,
+    "greetCloseMessage": null,
+    "greetOpenMessage": "<PlayerName>$Player</>,"
+  },
+  {
+    "key": "olan_heart5",
+    "sender": "<NPCName>Olan</>",
+    "title": "Invitation to kitchen",
+    "content": "Please stop by my house whenever you're free—I have something exciting to share with you. I'll be in the kitchen!",
+    "isImportant": true,
+    "tags": [],
+    "mailType": null,
+    "greetCloseMessage": null,
+    "greetOpenMessage": "Dear <PlayerName>$Player</>,"
+  },
+  {
+    "key": "olan_heart10",
+    "sender": "<NPCName>Olan</>",
+    "title": "The latest creation",
+    "content": "Enclosed is my latest creation, the Oceanic Mojito, crafted especially for you. Enjoy this refreshing blend of the sea's finest flavors.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": null,
+    "greetCloseMessage": "Cheers",
+    "greetOpenMessage": "<PlayerName>$Player</>,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_80117",
+            "displayName": "Oceanic mojito",
+            "iconName": "Oceanic_Mojito_Sprite"
+          },
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "chooyu_heart10",
+    "sender": "<NPCName>ChoOyu</>",
+    "title": "Frozen treat",
+    "content": "Gratitude fills Cho Oyu's heart, my two-legged friend. For your aid in that whirlpool of events, accept this gift of frozen treat from the depths.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": null,
+    "greetCloseMessage": null,
+    "greetOpenMessage": "<PlayerName>$Player</>,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_80121",
+            "displayName": "Frozen seagrass",
+            "iconName": "Frozen_Seagrass_Sprite"
+          },
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Aaliyah",
+    "sender": "Mom & Dad",
+    "title": "Wedding gift",
+    "content": "Here is a little something your father and I kept in savings for this special occasion. May it bring a little extra joy to you and <PlayerName>$Player</>.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "With love,",
+    "greetOpenMessage": "Aaliyah and <PlayerName>$Player</>,",
+    "effects": [
+      {
+        "type": "VaryMoney",
+        "meta": {
+          "amount": 30000
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Alice",
+    "sender": "Betty and Noah",
+    "title": "Wedding gift",
+    "content": "Congratulations on your wedding! Please accept these oranges as a gift for your wedding. We hope they bring you and <PlayerName>$Player</> good fortune and great luck in your journey together. May these fruits symbolize a vibrant and prosperous life ahead.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "Warm regards,",
+    "greetOpenMessage": "Alice and <PlayerName>$Player</>,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_21018",
+            "displayName": "Orange",
+            "iconName": "Orange_Sprite"
+          },
+          "quantity": 10,
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Ben",
+    "sender": "Luke Duckorns",
+    "title": "Wedding gift",
+    "content": "Congratulations on your wedding! To add a touch of comfort to your new beginnings, I've gotten you two a new bed as a present. I wasn't entirely sure what to get you, but I thought you might need a bigger bed now that you two are sharing. ",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "Warm regards,",
+    "greetOpenMessage": "Dear Ben and <PlayerName>$Player</>,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_91060",
+            "displayName": "Classic bed",
+            "iconName": "Classic_Bed_Sprite"
+          },
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Chaem",
+    "sender": "Wakuu",
+    "title": "Wedding gift",
+    "content": "Congratulations on your marriage! Though the observatory is nice and quiet now (he he), I wouldn't mind having you two over for dinner sometime.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "Cheers,",
+    "greetOpenMessage": "My friends,"
+  },
+  {
+    "key": "WeddingGift_Charles",
+    "sender": "Scott",
+    "title": "Wedding gift",
+    "content": "Gotta say, my ads in Sam's sure worked. Married man now, Charles. Well, here's my advance payment for the rent. Thanks for letting me stay, bro.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "Cheers,",
+    "greetOpenMessage": "Congrats Charles and <PlayerName>$Player</>!",
+    "effects": [
+      {
+        "type": "VaryMoney",
+        "meta": {
+          "amount": 20000
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Eva",
+    "sender": "Sam & Emily",
+    "title": "Wedding gift",
+    "content": "As a symbol of our appreciation for all you do and to celebrate your special day, we're gifting you this vase. May it bring beauty to your new home.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "With love,",
+    "greetOpenMessage": "Congratulations on your wedding!",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_96080",
+            "displayName": "Sea snail rose vase",
+            "iconName": "Sea_snail_rose_vase_Sprite"
+          },
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Kenny",
+    "sender": "Mom & Dad",
+    "title": "Wedding gift",
+    "content": "Congratulations on your wedding! To celebrate this big day and help y'all start this new chapter, we're sendin' over 15,000c. Just remember, no matter how far life takes you, our roots and love are always with you.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "With love,",
+    "greetOpenMessage": "Kenny and <PlayerName>$Player</>,",
+    "effects": [
+      {
+        "type": "VaryMoney",
+        "meta": {
+          "amount": 15000
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Leah",
+    "sender": "Mom",
+    "title": "Wedding gift",
+    "content": "Congratulations on your wedding, darling. I'm so sorry I couldn't be there, but please know my prayers and thoughts are with you and your spouse always.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "With love,",
+    "greetOpenMessage": "My darling Leah and spouse,",
+    "effects": [
+      {
+        "type": "VaryMoney",
+        "meta": {
+          "amount": 30000
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Lily",
+    "sender": "Tonami Co., Ltd",
+    "title": "Wedding gift",
+    "content": "On your wedding day, your Tonami family wishes you all the happiness in the world!",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "Warm regards,",
+    "greetOpenMessage": "Lily and spouse,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_65254",
+            "displayName": "Regal bonsai",
+            "iconName": "Regal_bonsai_Sprite"
+          },
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Luke",
+    "sender": "Mother and Father",
+    "title": "Wedding gift",
+    "content": "Congratulations on your nuptials. Please accept these coins as a token of our affection. Welcome to our family, <PlayerName>$Player</>.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "With love,",
+    "greetOpenMessage": "Our dearest Luke and <PlayerName>$Player</>,",
+    "effects": [
+      {
+        "type": "VaryMoney",
+        "meta": {
+          "amount": 50000
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Macy",
+    "sender": "Your friends at Coral Inn",
+    "title": "Wedding gift",
+    "content": "We miss you and Stephen already! Come visit soon, okay? P.S.: We baked you something.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "Lots of love,",
+    "greetOpenMessage": "Congratulations on tying the knot!",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_80004",
+            "displayName": "Red velvet cake",
+            "iconName": "Red_velvet_cake_Sprite"
+          },
+          "quantity": 10,
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Mark",
+    "sender": "Zoe",
+    "title": "Wedding gift",
+    "content": "I made your favorite muffins! I hope you like them. And can you make babies soon? I really want cousins to play with. And I mean human cousins, not dog cousins.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "Lots of love,",
+    "greetOpenMessage": "Dear Uncle Mark and <PlayerName>$honorifics $player</>,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_80046",
+            "displayName": "Chocolate chip muffins",
+            "iconName": "Chocolate_chip_muffins_Sprite"
+          },
+          "quantity": 10,
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Millie",
+    "sender": "Yuri",
+    "title": "Wedding gift",
+    "content": "Millie! <PlayerName>$Player</>! Congratulations on your wedding! I wanted to give you something special, so I'm passing on a clock that I bought for my own home back when I was at Universal Doctors. It's been with me through many moments, and now, I thought you two should have it.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "With love,",
+    "greetOpenMessage": "Starlet Town's newly weds,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_90045",
+            "displayName": "Grandfather clock",
+            "iconName": "Grandfather_Clock_Sprite"
+          },
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Nina",
+    "sender": "Morgan and Partners Legal Services",
+    "title": "Wedding gift",
+    "content": "Congratulations on your recent marriage. We are pleased to inform you that, as per the last will and testament of Father and Mother, you have been named as a beneficiary and are entitled to a bequest of 50,000 coins.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "Warm regards,",
+    "greetOpenMessage": "Dear Nina,",
+    "effects": [
+      {
+        "type": "VaryMoney",
+        "meta": {
+          "amount": 50000
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Noah",
+    "sender": "Mom & Dad",
+    "title": "Wedding gift",
+    "content": "Here is a little something your father and I kept in savings for this special occasion. May it bring a little extra joy to you and <PlayerName>$Player</>.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "With love,",
+    "greetOpenMessage": "Dear Noah and <PlayerName>$Player</>,",
+    "effects": [
+      {
+        "type": "VaryMoney",
+        "meta": {
+          "amount": 30000
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Pablo Sanchez",
+    "sender": "Mom & Dad",
+    "title": "Wedding gift",
+    "content": "Congratulations on your wedding! We're giving you two this antique vase. It's a tradition in our family – to give a vase when someone gets a new home. Hope it looks real nice at the farm.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "With love,",
+    "greetOpenMessage": "Pablo and <PlayerName>$Player</>,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_50431",
+            "displayName": "Ceramic vase",
+            "iconName": "Ceramic_Vase_Sprite"
+          },
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Rafael Sanchez",
+    "sender": "Mom & Dad",
+    "title": "Wedding gift",
+    "content": "Congratulations on your wedding! We're giving you two this antique vase. It's a tradition in our family – to give a vase when someone gets a new home. Hope it looks real nice at the farm.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "With love,",
+    "greetOpenMessage": "<PlayerName>$Player</> and Rafael,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_50431",
+            "displayName": "Ceramic vase",
+            "iconName": "Ceramic_Vase_Sprite"
+          },
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Raj",
+    "sender": "The girls at Coral Inn (and Antonio)",
+    "title": "Wedding gift",
+    "content": "Congrats on your wedding! The ceremony was absolutely beautiful. We've made you two some sweets – you know, for energy.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "xxx",
+    "greetOpenMessage": "Coral Island's hottest couple,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_80013",
+            "displayName": "Pineapple upside-down cake",
+            "iconName": "Pineapple_upside-down_cake_Sprite"
+          },
+          "quantity": 10,
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Scott",
+    "sender": "Charles",
+    "title": "Wedding gift",
+    "content": "Congratulations on your nuptials! The salesperson told me it's good luck to gift a newlywed couple a new bed, so here you go. I hope you like it.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "Your friend,",
+    "greetOpenMessage": "Dear Scott and <PlayerName>$Player</>,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_91044",
+            "displayName": "Javanese bed",
+            "iconName": "Javanese_Bed_Sprite"
+          },
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Suki",
+    "sender": "Naomi Sanchez",
+    "title": "Wedding gift",
+    "content": "Congratulations on your wedding! I heard it was beautiful, and I’m so sorry we couldn’t be there. I've baked your favorite pies and hopefully, they’re still warm when you get them.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "With love,",
+    "greetOpenMessage": "Suki and <PlayerName>$Player</>,"
+  },
+  {
+    "key": "WeddingGift_Surya",
+    "sender": "Joko & Dinda",
+    "title": "Wedding gift",
+    "content": "Congratulations on your wedding! We’ve crafted a new bed for you two. It's a great tradition to start your marriage with a new bed, so make sure to replace the old one.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "With love,",
+    "greetOpenMessage": "Surya and <PlayerName>$Player</>,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_91107",
+            "displayName": "Medieval bed",
+            "iconName": "placeholder_icon"
+          },
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Theo",
+    "sender": "Sunny & Eleanor",
+    "title": "Wedding gift",
+    "content": "Congratulations on your marriage! Here's a little something special from the Shack.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "Warmly,",
+    "greetOpenMessage": "Dear Theo and <PlayerName>$Player</>,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_80015",
+            "displayName": "Seafood ramen",
+            "iconName": "Seafood_Ramen_Sprite"
+          },
+          "quantity": 10,
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Wakuu",
+    "sender": "Dad",
+    "title": "Wedding gift",
+    "content": "Aye, congratulations, Son and <PlayerName>$Player</>, on your marriage. I've never experienced the kind of bond you two have, and I'm glad you do. My biggest fear was for you to be alone like your old man here, but now you have a family of your own. That makes me truly happy.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": null,
+    "greetOpenMessage": "Wakuu and <PlayerName>$Player</>,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_80046",
+            "displayName": "Chocolate chip muffins",
+            "iconName": "Chocolate_chip_muffins_Sprite"
+          },
+          "quantity": 20,
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Yuri",
+    "sender": "Millie",
+    "title": "Wedding gift",
+    "content": "Congrats! The wedding was absolutely beautiful! I picked out something special for you two – hope you like it.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "xoxo",
+    "greetOpenMessage": "To the happy couple,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_98013",
+            "displayName": "Cabin wall",
+            "iconName": "Cabin_Wall_Sprite"
+          },
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Zarah",
+    "sender": "Mom & Dad",
+    "title": "Wedding gift",
+    "content": "Congratulations on your wedding! We're sending you two some diamonds to help with your new start. Welcome to the family, <PlayerName>$Player</>!",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "With love,",
+    "greetOpenMessage": "My dearest Zarah and <PlayerName>$Player</>,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_61015",
+            "displayName": "Diamond",
+            "iconName": "Diamond_Sprite"
+          },
+          "quantity": 10,
+          "isQuestReward": true
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Semeru",
+    "sender": "The Kingdom",
+    "title": "Wedding gift",
+    "content": "Congratulations on your nuptials. As a wedding gift, we're presenting you with 20,000 coins. We hope it serves you well in your new journey together.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "Warmly,",
+    "greetOpenMessage": "Semeru and <PlayerName>$Player</>,",
+    "effects": [
+      {
+        "type": "VaryMoney",
+        "meta": {
+          "amount": 20000
+        }
+      }
+    ]
+  },
+  {
+    "key": "WeddingGift_Denali",
+    "sender": "The Kingdom",
+    "title": "Wedding gift",
+    "content": "Congratulations on your nuptials. As a wedding gift, we're presenting you with 20,000 coins. We hope it serves you well in your new journey together.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": "Warmly,",
+    "greetOpenMessage": "Denali and <PlayerName>$Player</>,"
+  },
+  {
+    "key": "WeddingGift_Princess Miranjani",
+    "sender": "Mother and Father",
+    "title": "Wedding gift",
+    "content": "Heartfelt congratulations on your marriage. We're sending you some coins, so you can purchase whatever you need to start this wonderful new chapter together. Welcome to the family, <PlayerName>$Player</>.",
+    "isImportant": true,
+    "tags": [],
+    "mailType": "Gift",
+    "greetCloseMessage": null,
+    "greetOpenMessage": "To Our Beloved Princess and <PlayerName>$Player</>,",
+    "effects": [
+      {
+        "type": "VaryMoney",
+        "meta": {
+          "amount": 50000
+        }
+      }
+    ]
+  },
+  {
+    "key": "merfolk_seed_restock",
+    "sender": "<NPCName>Merfolk Store</>",
+    "title": "[text WIP]Seed Restock",
+    "content": "[text WIP] Please Visit Merfolk General Store",
+    "isImportant": true,
+    "tags": [],
+    "mailType": null,
+    "greetCloseMessage": null,
+    "greetOpenMessage": "Dear <PlayerName>$Player</>,"
+  },
+  {
+    "key": "Gort_MemoryRecovered",
+    "sender": "<NPCName>Gort</>",
+    "title": "From Gort",
+    "content": "Grateful am I, for your aid in the Cave of Memories. This Tablet of Memories, accept you must. With it, your memories you may safely revisit.",
+    "isImportant": false,
+    "tags": [],
+    "mailType": "MainQuest",
+    "greetCloseMessage": null,
+    "greetOpenMessage": "Hooman,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_65781",
+            "displayName": "Tablet of memories",
+            "iconName": "Tablet_of_memories_Sprite"
           },
           "isQuestReward": true
         }

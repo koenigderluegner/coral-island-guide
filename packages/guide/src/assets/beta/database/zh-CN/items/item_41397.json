@@ -1,0 +1,287 @@
+{
+  "item": {
+    "id": "item_41397",
+    "displayName": "萌芽果汁",
+    "price": 325,
+    "sellPrice": 195,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Artisan product",
+    "displayKey": "ArtisanProduct",
+    "description": "一瓶健康果汁。",
+    "qualities": {
+      "bronze": {
+        "price": 365,
+        "sellPrice": 220
+      },
+      "silver": {
+        "price": 415,
+        "sellPrice": 250
+      },
+      "gold": {
+        "price": 485,
+        "sellPrice": 290
+      },
+      "osmium": {
+        "price": 640,
+        "sellPrice": 385
+      }
+    },
+    "iconName": "Underwater_fruit_juice_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.Keg",
+      "Item.Consumable.Drink",
+      "item.UnderwaterArtisan"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21071",
+          "displayName": "萌芽果",
+          "iconName": "Sproutfruit_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41397",
+          "displayName": "萌芽果汁",
+          "iconName": "Underwater_fruit_juice_Sprite",
+          "sellPrice": 195
+        }
+      },
+      "genericInput": null,
+      "machine": "Keg"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 4,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41397",
+          "displayName": "萌芽果汁",
+          "iconName": "Underwater_fruit_juice_Sprite"
+        }
+      },
+      "output": {
+        "amount": 0,
+        "item": {
+          "id": "item_41382",
+          "displayName": "萌芽果酒",
+          "iconName": "Underwater_purple_wine_Sprite",
+          "sellPrice": 880
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 3,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 3,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 2,
+          "time": {
+            "hours": 16,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 2,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "石头汤",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "看起来不可食用。风险自负。",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "任何食用配料"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "石头",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "任何食用配料": [
+          {
+            "id": "item_41180",
+            "displayName": "山羊酸奶",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "山羊酸奶（大）",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41397",
+      "bVaryHealthToMax": false,
+      "healthDelta": 130,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 110,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_41397-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 145,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 125,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_41397-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 160,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 135,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_41397-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 190,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 160,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_41397-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 255,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 215,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  }
+}

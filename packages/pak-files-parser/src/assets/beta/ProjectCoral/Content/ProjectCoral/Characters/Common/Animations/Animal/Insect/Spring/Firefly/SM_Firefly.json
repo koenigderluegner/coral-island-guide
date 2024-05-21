@@ -1,0 +1,153 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "SM_Firefly",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldStatic",
+        "CollisionProfileName": "BlockAll",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      }
+    },
+    "BodySetupGuid": "717D503240F3457A12B480B62590D25E",
+    "CookedFormatData": {
+      "PhysXPC": {
+        "BulkDataFlags": "BULKDATA_SingleUse | BULKDATA_ForceInlinePayload",
+        "ElementCount": 25909,
+        "SizeOnDisk": 25909,
+        "OffsetInFile": "0x18B06"
+      }
+    }
+  },
+  {
+    "Type": "NavCollision",
+    "Name": "NavCollision_0",
+    "Outer": "SM_Firefly",
+    "Class": "UScriptClass'NavCollision'",
+    "CookedFormatData": {
+      "NavCollision_X": {
+        "BulkDataFlags": "BULKDATA_SingleUse | BULKDATA_ForceInlinePayload",
+        "ElementCount": 21,
+        "SizeOnDisk": 21,
+        "OffsetInFile": "0x1F083"
+      }
+    }
+  },
+  {
+    "Type": "StaticMesh",
+    "Name": "SM_Firefly",
+    "Class": "UScriptClass'StaticMesh'",
+    "Properties": {
+      "StaticMaterials": [
+        {
+          "MaterialInterface": {
+            "ObjectName": "Material'WorldGridMaterial'",
+            "ObjectPath": "Engine/Content/EngineMaterials/WorldGridMaterial.0"
+          },
+          "MaterialSlotName": "MI_Insects_Spring",
+          "ImportedMaterialSlotName": "MI_Insects_Spring",
+          "UVChannelData": {
+            "bInitialized": true,
+            "bOverrideDensities": false,
+            "LocalUVDensities": 146.69315,
+            "LocalUVDensities": 0.0,
+            "LocalUVDensities": 0.0,
+            "LocalUVDensities": 0.0
+          }
+        }
+      ],
+      "LightMapResolution": 64,
+      "LightMapCoordinateIndex": 1,
+      "ExtendedBounds": {
+        "Origin": {
+          "X": -0.10496712,
+          "Y": 6.7608786,
+          "Z": 16.741875
+        },
+        "BoxExtent": {
+          "X": 18.846336,
+          "Y": 22.544111,
+          "Z": 17.93779
+        },
+        "SphereRadius": 26.453302
+      }
+    },
+    "BodySetup": {
+      "ObjectName": "BodySetup'SM_Firefly:BodySetup_0'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Insect/Spring/Firefly/SM_Firefly.0"
+    },
+    "NavCollision": {
+      "ObjectName": "NavCollision'SM_Firefly:NavCollision_0'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Insect/Spring/Firefly/SM_Firefly.1"
+    },
+    "LightingGuid": "E29EB7A6-40E21F21-2DAC4C80-EB5ECE06",
+    "RenderData": {
+      "LODs": [
+        {
+          "Sections": [
+            {
+              "MaterialIndex": 0,
+              "FirstIndex": 0,
+              "NumTriangles": 936,
+              "MinVertexIndex": 0,
+              "MaxVertexIndex": 651,
+              "bEnableCollision": true,
+              "bCastShadow": true,
+              "bForceOpaque": false,
+              "bVisibleInRayTracing": true
+            }
+          ],
+          "MaxDeviation": 0.0,
+          "PositionVertexBuffer": {
+            "Stride": 12,
+            "NumVertices": 652
+          },
+          "VertexBuffer": {
+            "NumTexCoords": 2,
+            "NumVertices": 652,
+            "Strides": -1,
+            "UseHighPrecisionTangentBasis": false,
+            "UseFullPrecisionUVs": true
+          },
+          "ColorVertexBuffer": {
+            "Stride": 0,
+            "NumVertices": 0
+          }
+        }
+      ],
+      "Bounds": {
+        "Origin": {
+          "X": -0.10496712,
+          "Y": 6.7608786,
+          "Z": 16.741875
+        },
+        "BoxExtent": {
+          "X": 18.846336,
+          "Y": 22.544111,
+          "Z": 17.93779
+        },
+        "SphereRadius": 26.453302
+      },
+      "bLODsShareStaticLighting": true,
+      "ScreenSize": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  }
+]

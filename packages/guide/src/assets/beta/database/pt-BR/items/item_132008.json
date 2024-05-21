@@ -33,7 +33,8 @@
     "tags": [
       "income.bugcatching",
       "item.insect.legendary",
-      "item.insect"
+      "item.insect",
+      "item.insect.Butterfly"
     ]
   },
   "artisanIngredient": [
@@ -418,17 +419,22 @@
             },
             {
               "id": "item_21071",
-              "displayName": "Sproutfruit",
+              "displayName": "Frutinha de Broto",
               "iconName": "Sproutfruit_Sprite"
             },
             {
+              "id": "item_21075",
+              "displayName": "Crista-de-coral Rosa",
+              "iconName": "Pink_Coralcap_Sprite"
+            },
+            {
               "id": "item_21077",
-              "displayName": "Bluebell blossom",
+              "displayName": "Flor de Jacinto",
               "iconName": "Bluebell_Blossom_Sprite"
             },
             {
               "id": "item_21078",
-              "displayName": "Goldglow",
+              "displayName": "Brilho Dourado",
               "iconName": "Goldglow_Sprite"
             },
             {
@@ -438,23 +444,38 @@
             },
             {
               "id": "item_21080",
-              "displayName": "Helixpur blossom",
+              "displayName": "Flor de Helixpur",
               "iconName": "Helixpur_Blossom_Sprite"
             },
             {
               "id": "item_21081",
-              "displayName": "Marinethorn blossom",
+              "displayName": "Flor de Marinhespinho",
               "iconName": "Marinethorn_Blossom_Sprite"
             },
             {
               "id": "item_21082",
-              "displayName": "Sea spud",
+              "displayName": "Batata Marinha",
               "iconName": "Sea_Spud_Sprite"
             },
             {
               "id": "item_21084",
-              "displayName": "Petalia",
+              "displayName": "Petália",
               "iconName": "Petalia_Sprite"
+            },
+            {
+              "id": "item_21085",
+              "displayName": "Mushroom tree seeds",
+              "iconName": "Mushroom_tree_seeds_Sprite"
+            },
+            {
+              "id": "item_21086",
+              "displayName": "Shroomba seeds",
+              "iconName": "Wooblecap_seeds_Sprite"
+            },
+            {
+              "id": "item_21087",
+              "displayName": "Moonspore seeds",
+              "iconName": "Moonspore_seeds_Sprite"
             },
             {
               "id": "item_22001",
@@ -1477,6 +1498,393 @@
       "machine": "CompostBin"
     }
   ],
+  "usedToCook": [
+    {
+      "key": "item_80097",
+      "amount": 1,
+      "cookingKey": "BugJerky",
+      "item": {
+        "id": "item_80097",
+        "displayName": "Carne seca de insetos",
+        "price": 90,
+        "sellPrice": 13,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Parece estranha. Surpreendentemente deliciosa.",
+        "qualities": {
+          "bronze": {
+            "price": 104,
+            "sellPrice": 15
+          },
+          "silver": {
+            "price": 113,
+            "sellPrice": 16
+          },
+          "gold": {
+            "price": 135,
+            "sellPrice": 20
+          },
+          "osmium": {
+            "price": 180,
+            "sellPrice": 26
+          }
+        },
+        "iconName": "Bug_jerky_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80097",
+        "masteryLevel": 2,
+        "masteryType": "Catching"
+      },
+      "utensils": [
+        "Grill"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Generic_Insect",
+            "tags": [
+              "item.insect"
+            ],
+            "iconName": "T_AnyInsect_Sprite",
+            "displayName": "Qualquer Inseto"
+          },
+          "key": "Generic_Insect"
+        }
+      ],
+      "ingredients": [],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "Qualquer Inseto": [
+          {
+            "id": "item_132007",
+            "displayName": "Mosca",
+            "iconName": "Fly_Sprite"
+          },
+          {
+            "id": "item_132011",
+            "displayName": "Caracol",
+            "iconName": "Snail_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "usedToCraft": [
+    {
+      "key": "item_65358",
+      "displayName": "Medium fish bait",
+      "amount": 2,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_50303",
+            "displayName": "Alga marinha",
+            "iconName": "Seaweed_Sprite"
+          },
+          "amount": 2
+        }
+      ],
+      "genericIngredients": [
+        {
+          "key": "Generic_Insect",
+          "amount": 1,
+          "genericItem": {
+            "key": "Generic_Insect",
+            "tags": [
+              "item.insect"
+            ],
+            "iconName": "T_AnyInsect_Sprite",
+            "displayName": "Qualquer Inseto",
+            "items": [
+              {
+                "id": "item_131001",
+                "displayName": "Mariposa maple leafcutter",
+                "iconName": "Maple_Leafcutter_Moth_Sprite"
+              },
+              {
+                "id": "item_131002",
+                "displayName": "Mariposa polífemo",
+                "iconName": "Polyphemus_Moth_Sprite"
+              },
+              {
+                "id": "item_131003",
+                "displayName": "Louva-a-deus fantasma",
+                "iconName": "Ghost_Mantis_Sprite"
+              },
+              {
+                "id": "item_131004",
+                "displayName": "Tetraca",
+                "iconName": "Tiger_Beetle_Sprite"
+              },
+              {
+                "id": "item_131005",
+                "displayName": "Harpalo",
+                "iconName": "Harpalus_Beetle_Sprite"
+              },
+              {
+                "id": "item_131006",
+                "displayName": "Vaga-lume",
+                "iconName": "Firefly_Sprite"
+              },
+              {
+                "id": "item_131007",
+                "displayName": "Lagarta cecropia",
+                "iconName": "Cecropia_Caterpillar_Sprite"
+              },
+              {
+                "id": "item_131008",
+                "displayName": "Borboleta Rabo-de-andorinha Pipevine",
+                "iconName": "Pipevine_Swallowtail_Butterfly_Sprite"
+              },
+              {
+                "id": "item_131009",
+                "displayName": "Borboleta little wood satyr",
+                "iconName": "Little_Wood_Satyr_Butterfly_Sprite"
+              },
+              {
+                "id": "item_131010",
+                "displayName": "Aranha-lobo",
+                "iconName": "Wolf_Spider_Sprite"
+              },
+              {
+                "id": "item_131011",
+                "displayName": "Percevejo man-faced",
+                "iconName": "Man-faced_stink_bug_Sprite"
+              },
+              {
+                "id": "item_131012",
+                "displayName": "Vespa",
+                "iconName": "Wasp_Sprite"
+              },
+              {
+                "id": "item_131013",
+                "displayName": "Grilo",
+                "iconName": "Cricket_Sprite"
+              },
+              {
+                "id": "item_131014",
+                "displayName": "Mariposa",
+                "iconName": "Moth_Sprite"
+              },
+              {
+                "id": "item_131015",
+                "displayName": "Esfinge de pinheiro",
+                "iconName": "Pine_Sphinx_Sprite"
+              },
+              {
+                "id": "item_131016",
+                "displayName": "Mariposa luna",
+                "iconName": "Luna_Moth_Sprite"
+              },
+              {
+                "id": "item_131017",
+                "displayName": "Lagarta de mariposa listrada de jardim",
+                "iconName": "Striped_garden_caterpillar_Sprite"
+              },
+              {
+                "id": "item_131018",
+                "displayName": "Papa-Moscas Verde",
+                "iconName": "Magnolia_green_jumper_Sprite"
+              },
+              {
+                "id": "item_132001",
+                "displayName": "Mariposa Yucca",
+                "iconName": "Yucca_Moth_Sprite"
+              },
+              {
+                "id": "item_132002",
+                "displayName": "Mariposa-bichana",
+                "iconName": "Puss_Moth_Sprite"
+              },
+              {
+                "id": "item_132003",
+                "displayName": "Joaninha",
+                "iconName": "Lady_Beetle_Sprite"
+              },
+              {
+                "id": "item_132004",
+                "displayName": "Besouro violino",
+                "iconName": "Violin_Beetle_Sprite"
+              },
+              {
+                "id": "item_132005",
+                "displayName": "Besouro scarites",
+                "iconName": "Scarites_Beetle_Sprite"
+              },
+              {
+                "id": "item_132006",
+                "displayName": "Louva-a-deus orquídea",
+                "iconName": "Orchid_Mantis_Sprite"
+              },
+              {
+                "id": "item_132008",
+                "displayName": "Borboleta azul-seda",
+                "iconName": "Blue_Morpho_Butterfly_Sprite"
+              },
+              {
+                "id": "item_132009",
+                "displayName": "Borboleta crowned hairstreak",
+                "iconName": "Crowned_Hairstreak_Butterfly_Sprite"
+              },
+              {
+                "id": "item_132010",
+                "displayName": "Viúva-negra",
+                "iconName": "Widow_Spider_Sprite"
+              },
+              {
+                "id": "item_132012",
+                "displayName": "Centopeia",
+                "iconName": "Centipede_Sprite"
+              },
+              {
+                "id": "item_132013",
+                "displayName": "Lagarta demônio com chifres de nogueira",
+                "iconName": "Hickory_Horned_Devil_Sprite"
+              },
+              {
+                "id": "item_132014",
+                "displayName": "Lagarta rabo-de-andorinha do tigre ocidental",
+                "iconName": "Western_Tiger_Swallowtail_Sprite"
+              },
+              {
+                "id": "item_132015",
+                "displayName": "Costas-de-sela",
+                "iconName": "Saddleback_Sprite"
+              },
+              {
+                "id": "item_133001",
+                "displayName": "Mariposa assam silk",
+                "iconName": "Assam_silk_moth_Sprite"
+              },
+              {
+                "id": "item_133002",
+                "displayName": "Libélula",
+                "iconName": "Dragonfly_Sprite"
+              },
+              {
+                "id": "item_133003",
+                "displayName": "Potó",
+                "iconName": "Rove_Beetle_Sprite"
+              },
+              {
+                "id": "item_133004",
+                "displayName": "Besouro-soldado",
+                "iconName": "Soldier_Beetle_Sprite"
+              },
+              {
+                "id": "item_133005",
+                "displayName": "Louva-a-deus",
+                "iconName": "Praying_Mantis_Sprite"
+              },
+              {
+                "id": "item_133006",
+                "displayName": "Borboleta tiger rabo-de-andorinha",
+                "iconName": "Tiger_Swallowtail_Butterfly_Sprite"
+              },
+              {
+                "id": "item_133007",
+                "displayName": "Borboleta janetta forester",
+                "iconName": "Janetta_Forester_Butterfly_Sprite"
+              },
+              {
+                "id": "item_133008",
+                "displayName": "Caranguejeira",
+                "iconName": "Tarantula_Sprite"
+              },
+              {
+                "id": "item_133009",
+                "displayName": "Lagarta de borboleta rabo-de-andorinha preto",
+                "iconName": "Eastern_Black_Swallowtail_Sprite"
+              },
+              {
+                "id": "item_133010",
+                "displayName": "Borboleta-pingos-de-prata",
+                "iconName": "Gulf_Fritillary_Sprite"
+              },
+              {
+                "id": "item_133011",
+                "displayName": "Almirante-vermelho",
+                "iconName": "Red_Admiral_Sprite"
+              },
+              {
+                "id": "item_133012",
+                "displayName": "Obrina-de-asa-oliva",
+                "iconName": "Olivewing_Butterfly_Sprite"
+              },
+              {
+                "id": "item_134001",
+                "displayName": "Mariposa-atlas",
+                "iconName": "Atlas_Moth_Sprite"
+              },
+              {
+                "id": "item_134002",
+                "displayName": "Gafanhoto",
+                "iconName": "Grasshopper_Sprite"
+              },
+              {
+                "id": "item_134003",
+                "displayName": "Carabídeo",
+                "iconName": "Ground_beetle_Sprite"
+              },
+              {
+                "id": "item_134004",
+                "displayName": "Crisomelídeo",
+                "iconName": "Leaf_Beetle_Sprite"
+              },
+              {
+                "id": "item_134005",
+                "displayName": "Lagarta de borboleta-monarca",
+                "iconName": "Monarch_Caterpillar_Sprite"
+              },
+              {
+                "id": "item_134006",
+                "displayName": "Borboleta rabo-de-andorinha spicebush",
+                "iconName": "Spicebush_Swallowtail_Butterfly_Sprite"
+              },
+              {
+                "id": "item_134007",
+                "displayName": "Borboleta birdwing",
+                "iconName": "Birdwing_Butterfly_Sprite"
+              },
+              {
+                "id": "item_134009",
+                "displayName": "Lagarta da Traça-tigre Isabella",
+                "iconName": "Banded_woollybear_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Misc",
+      "craftingUnlock": {
+        "key": "item_65358",
+        "masteryLevel": 4,
+        "masteryType": "Fishing"
+      },
+      "item": {
+        "id": "item_65358",
+        "displayName": "Isca de peixe média",
+        "price": 50,
+        "sellPrice": 12,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Baits",
+        "displayKey": "Baits",
+        "description": "Precisa ser colocada em uma vara de pescar.",
+        "qualities": {},
+        "iconName": "Medium_fish_bait_Sprite",
+        "tags": []
+      }
+    }
+  ],
   "insect": {
     "key": "BlueMorphoButterfly",
     "rarity": "Legendary",
@@ -1517,7 +1925,8 @@
       "tags": [
         "income.bugcatching",
         "item.insect.legendary",
-        "item.insect"
+        "item.insect",
+        "item.insect.Butterfly"
       ]
     },
     "spawnSeason": {

@@ -724,8 +724,8 @@ AvailableLanguages.forEach(lang => {
 
             const producedByAnimal: DatabaseItem['producedByAnimal'] = generatorValues["animal-data"].find(a => {
                 return a.produces.some(p =>
-                    p.small?.id === item.id || p.medium?.id === item.id || p.large?.id === item.id
-                    || p.smallGolden?.id === item.id || p.mediumGolden?.id === item.id || p.largeGolden?.id === item.id
+                    p.small?.id === item.id || p.large?.id === item.id
+                    || p.smallGolden?.id === item.id || p.largeGolden?.id === item.id
                 )
             })
             if (producedByAnimal)

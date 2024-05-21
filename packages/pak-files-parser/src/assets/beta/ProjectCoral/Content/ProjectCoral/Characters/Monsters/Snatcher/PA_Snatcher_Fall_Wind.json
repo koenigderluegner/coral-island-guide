@@ -1,0 +1,577 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_Snatcher_Fall_Wind",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Snatcher_Fall_Wind:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Snatcher/PA_Snatcher_Fall_Wind.8"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Snatcher_Fall_Wind:SkeletalBodySetup_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Snatcher/PA_Snatcher_Fall_Wind.11"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Snatcher_Fall_Wind:SkeletalBodySetup_3'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Snatcher/PA_Snatcher_Fall_Wind.12"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Snatcher_Fall_Wind:SkeletalBodySetup_5'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Snatcher/PA_Snatcher_Fall_Wind.13"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Snatcher_Fall_Wind:SkeletalBodySetup_6'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Snatcher/PA_Snatcher_Fall_Wind.14"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Snatcher_Fall_Wind:SkeletalBodySetup_9'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Snatcher/PA_Snatcher_Fall_Wind.15"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Snatcher_Fall_Wind:SkeletalBodySetup_10'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Snatcher/PA_Snatcher_Fall_Wind.9"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Snatcher_Fall_Wind:SkeletalBodySetup_13'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Snatcher/PA_Snatcher_Fall_Wind.10"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Snatcher_Fall_Wind:PhysicsConstraintTemplate_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Snatcher/PA_Snatcher_Fall_Wind.1"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Snatcher_Fall_Wind:PhysicsConstraintTemplate_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Snatcher/PA_Snatcher_Fall_Wind.3"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Snatcher_Fall_Wind:PhysicsConstraintTemplate_4'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Snatcher/PA_Snatcher_Fall_Wind.4"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Snatcher_Fall_Wind:PhysicsConstraintTemplate_5'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Snatcher/PA_Snatcher_Fall_Wind.5"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Snatcher_Fall_Wind:PhysicsConstraintTemplate_8'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Snatcher/PA_Snatcher_Fall_Wind.6"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Snatcher_Fall_Wind:PhysicsConstraintTemplate_9'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Snatcher/PA_Snatcher_Fall_Wind.7"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Snatcher_Fall_Wind:PhysicsConstraintTemplate_12'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Snatcher/PA_Snatcher_Fall_Wind.2"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_1",
+    "Outer": "PA_Snatcher_Fall_Wind",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "spine_AuxSHJnt",
+        "ConstraintBone1": "spine_AuxSHJnt",
+        "ConstraintBone2": "TrajectorySHJnt",
+        "Pos2": {
+          "X": 0.0,
+          "Y": -60.162895,
+          "Z": -3.6627274
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_12",
+    "Outer": "PA_Snatcher_Fall_Wind",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "head_AuxSHJnt",
+        "ConstraintBone1": "head_AuxSHJnt",
+        "ConstraintBone2": "chest_AuxSHJnt",
+        "Pos2": {
+          "X": 0.0,
+          "Y": -15.436022,
+          "Z": 8.881784E-16
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_2",
+    "Outer": "PA_Snatcher_Fall_Wind",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "chest_AuxSHJnt",
+        "ConstraintBone1": "chest_AuxSHJnt",
+        "ConstraintBone2": "spine_AuxSHJnt",
+        "Pos2": {
+          "X": 0.0,
+          "Y": -14.86504,
+          "Z": 4.440892E-16
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_4",
+    "Outer": "PA_Snatcher_Fall_Wind",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "l_arm_ShoulderSHJnt",
+        "ConstraintBone1": "l_arm_ShoulderSHJnt",
+        "ConstraintBone2": "chest_AuxSHJnt",
+        "Pos2": {
+          "X": 18.148504,
+          "Y": -1.7492524,
+          "Z": -0.6241015
+        },
+        "PriAxis2": {
+          "X": 0.7089335,
+          "Y": 0.70521253,
+          "Z": -0.009413958
+        },
+        "SecAxis2": {
+          "X": -0.70524377,
+          "Y": 0.7089648,
+          "Z": -8.5448846E-08
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_5",
+    "Outer": "PA_Snatcher_Fall_Wind",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "l_arm_ElbowSHJnt",
+        "ConstraintBone1": "l_arm_ElbowSHJnt",
+        "ConstraintBone2": "l_arm_ShoulderSHJnt",
+        "Pos2": {
+          "X": 18.492756,
+          "Y": 1.1849065E-05,
+          "Z": 1.25531E-06
+        },
+        "PriAxis2": {
+          "X": 1.0,
+          "Y": 6.058176E-07,
+          "Z": 1.0105047E-05
+        },
+        "SecAxis2": {
+          "X": -6.058177E-07,
+          "Y": 1.0,
+          "Z": 5.8975993E-09
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_8",
+    "Outer": "PA_Snatcher_Fall_Wind",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "r_arm_ShoulderSHJnt",
+        "ConstraintBone1": "r_arm_ShoulderSHJnt",
+        "ConstraintBone2": "chest_AuxSHJnt",
+        "Pos2": {
+          "X": -18.148504,
+          "Y": -1.749253,
+          "Z": -0.624102
+        },
+        "PriAxis2": {
+          "X": 0.70893323,
+          "Y": -0.7052125,
+          "Z": 0.009437833
+        },
+        "SecAxis2": {
+          "X": -0.7052438,
+          "Y": -0.7089648,
+          "Z": -2.3283064E-10
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_9",
+    "Outer": "PA_Snatcher_Fall_Wind",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "r_arm_ElbowSHJnt",
+        "ConstraintBone1": "r_arm_ElbowSHJnt",
+        "ConstraintBone2": "r_arm_ShoulderSHJnt",
+        "Pos2": {
+          "X": -18.492706,
+          "Y": 1.3715336E-06,
+          "Z": 1.5339414E-06
+        },
+        "PriAxis2": {
+          "X": 1.0,
+          "Y": -9.942854E-08,
+          "Z": 5.5921846E-05
+        },
+        "SecAxis2": {
+          "X": 9.942894E-08,
+          "Y": 1.0,
+          "Z": -7.0582282E-09
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_Snatcher_Fall_Wind",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.33477923,
+              "Y": -21.383038,
+              "Z": -15.35143
+            },
+            "Rotation": {
+              "Pitch": -0.97108895,
+              "Yaw": -89.99994,
+              "Roll": -2.7637436
+            },
+            "Radius": 23.371437,
+            "Length": 41.42264,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "TrajectorySHJnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "3D8A45B0410FA94B7A4FB0ACD38B16A4"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_10",
+    "Outer": "PA_Snatcher_Fall_Wind",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -23.583105,
+              "Y": -1.6193929,
+              "Z": -1.9049627
+            },
+            "Rotation": {
+              "Pitch": -8.44559,
+              "Yaw": 94.525795,
+              "Roll": -89.99995
+            },
+            "Radius": 12.596835,
+            "Length": 23.278542,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "r_arm_ElbowSHJnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "B04292BA4EFA40C1E93BF3B81FAD9656"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_13",
+    "Outer": "PA_Snatcher_Fall_Wind",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.0857583,
+              "Y": -22.303234,
+              "Z": 1.752949
+            },
+            "Rotation": {
+              "Pitch": -3.252324,
+              "Yaw": -90.57157,
+              "Roll": -89.28722
+            },
+            "Radius": 31.782593,
+            "Length": 5.2816963,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "head_AuxSHJnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "F38B241E402C5EDF25D021B19F109FE2"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_2",
+    "Outer": "PA_Snatcher_Fall_Wind",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -1.5465937,
+              "Y": 10.81602,
+              "Z": 4.2741356
+            },
+            "Rotation": {
+              "Pitch": -2.825328,
+              "Yaw": 96.619835,
+              "Roll": -97.124664
+            },
+            "Radius": 20.29604,
+            "Length": 0.75,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "spine_AuxSHJnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "F0141E794C70FB87EC7FC1BE1CAD0CA1"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_3",
+    "Outer": "PA_Snatcher_Fall_Wind",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -0.034310922,
+              "Y": 9.371854,
+              "Z": -16.577768
+            },
+            "Rotation": {
+              "Pitch": -8.169712,
+              "Yaw": -89.99199,
+              "Roll": 0.020433264
+            },
+            "Radius": 22.518078,
+            "Length": 34.208553,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "chest_AuxSHJnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "F311D467465DFD67329B4AA763A33728"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_5",
+    "Outer": "PA_Snatcher_Fall_Wind",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 12.800657,
+              "Y": -0.27128756,
+              "Z": 0.06878932
+            },
+            "Rotation": {
+              "Pitch": -2.4217527,
+              "Yaw": -89.999275,
+              "Roll": -92.37599
+            },
+            "Radius": 9.519082,
+            "Length": 18.758991,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "l_arm_ShoulderSHJnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "B7601E344CF8988EA11E31A2C6C6DC17"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_6",
+    "Outer": "PA_Snatcher_Fall_Wind",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 21.61215,
+              "Y": 1.3546679,
+              "Z": 0.1948461
+            },
+            "Rotation": {
+              "Pitch": -20.0241,
+              "Yaw": 104.02631,
+              "Roll": -102.146706
+            },
+            "Radius": 10.728452,
+            "Length": 19.450161,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "l_arm_ElbowSHJnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "856964F2419BCA8B7C7E769A5CF7CCB2"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_9",
+    "Outer": "PA_Snatcher_Fall_Wind",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -12.426013,
+              "Y": -0.0006578341,
+              "Z": 2.215135
+            },
+            "Rotation": {
+              "Pitch": -70.52972,
+              "Yaw": -39.318203,
+              "Roll": -146.19363
+            },
+            "Radius": 11.531682,
+            "Length": 18.716074,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "r_arm_ShoulderSHJnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "B87E7B5145261C9BABC1FE92A7664AEB"
+  }
+]

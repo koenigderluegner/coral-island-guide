@@ -2,8 +2,8 @@
   "item": {
     "id": "item_31027",
     "displayName": "Leite de vacareia",
-    "price": 10,
-    "sellPrice": 10,
+    "price": 310,
+    "sellPrice": 220,
     "sellAt": [],
     "stackable": true,
     "inventoryCategory": "Animal product",
@@ -11,29 +11,87 @@
     "description": "Leite de vacareia pequeno.",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 360,
+        "sellPrice": 253
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 410,
+        "sellPrice": 286
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 470,
+        "sellPrice": 330
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 630,
+        "sellPrice": 440
       }
     },
-    "iconName": "placeholder_icon_Sprite",
+    "iconName": "Mermoo_milk_Sprite",
     "tags": [
       "income.ranching",
       "item.animalproduct.milk",
       "Item.Consumable.Food"
     ]
   },
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31027",
+          "displayName": "Leite de vacareia",
+          "iconName": "Mermoo_milk_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41348",
+          "displayName": "Queijo de vacareia",
+          "iconName": "Mermoo_Cheese_Sprite",
+          "sellPrice": 440
+        }
+      },
+      "genericInput": null,
+      "machine": "CheesePress"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31027",
+          "displayName": "Leite de vacareia",
+          "iconName": "Mermoo_milk_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41338",
+          "displayName": "Manteiga de vacareia",
+          "iconName": "Mermoo_Butter_Sprite",
+          "sellPrice": 345
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_80004",
@@ -492,16 +550,7 @@
         }
       ],
       "ingredients": [],
-      "eitherOrIngredients": [],
-      "additionsToGenerics": {
-        "Qualquer Marisco": [
-          {
-            "id": "item_50307",
-            "displayName": "Amêijoa gigante",
-            "iconName": "Giant_Clam_Sprite"
-          }
-        ]
-      }
+      "eitherOrIngredients": []
     },
     {
       "key": "item_80088",
@@ -586,21 +635,6 @@
             "id": "item_41181",
             "displayName": "Iogurte de cabra grande",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Amêijoa gigante",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Alga Wakame",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Buquê de flores",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -742,5 +776,105 @@
       "ingredients": [],
       "eitherOrIngredients": []
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_31027",
+      "bVaryHealthToMax": false,
+      "healthDelta": 14,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 15,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_31027-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 16,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 17,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_31027-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 18,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 19,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_31027-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 21,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 23,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_31027-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 28,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 30,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Mermoo",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Mermoo_Sprite"
+        }
+      }
+    ],
+    "building": "UnderwaterRanch",
+    "daysToGrow": 15,
+    "harvestCooldown": 1,
+    "animalProduceType": "UsingTools",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65042",
+      "displayName": "Balde de leite",
+      "iconName": "Milk_Pail_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31027",
+          "displayName": "Leite de vacareia",
+          "iconName": "Mermoo_milk_Sprite"
+        },
+        "large": {
+          "id": "item_31028",
+          "displayName": "Leite de vacareia grande",
+          "iconName": "Large_mermoo_milk_Sprite"
+        }
+      }
+    ]
+  }
 }

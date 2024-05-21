@@ -1,0 +1,666 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_Lizard",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Lizard:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Lizard/PA_Lizard.9"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Lizard:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Lizard/PA_Lizard.10"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Lizard:SkeletalBodySetup_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Lizard/PA_Lizard.11"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Lizard:SkeletalBodySetup_3'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Lizard/PA_Lizard.12"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Lizard:SkeletalBodySetup_4'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Lizard/PA_Lizard.13"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Lizard:SkeletalBodySetup_5'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Lizard/PA_Lizard.14"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Lizard:SkeletalBodySetup_6'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Lizard/PA_Lizard.15"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Lizard:SkeletalBodySetup_7'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Lizard/PA_Lizard.16"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Lizard:SkeletalBodySetup_8'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Lizard/PA_Lizard.17"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Lizard:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Lizard/PA_Lizard.1"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Lizard:PhysicsConstraintTemplate_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Lizard/PA_Lizard.2"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Lizard:PhysicsConstraintTemplate_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Lizard/PA_Lizard.3"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Lizard:PhysicsConstraintTemplate_3'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Lizard/PA_Lizard.4"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Lizard:PhysicsConstraintTemplate_4'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Lizard/PA_Lizard.5"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Lizard:PhysicsConstraintTemplate_5'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Lizard/PA_Lizard.6"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Lizard:PhysicsConstraintTemplate_6'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Lizard/PA_Lizard.7"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Lizard:PhysicsConstraintTemplate_7'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Lizard/PA_Lizard.8"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_Lizard",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Spine",
+        "ConstraintBone1": "Spine",
+        "ConstraintBone2": "Root",
+        "Pos2": {
+          "X": 0.0,
+          "Y": -14.494067,
+          "Z": -17.211704
+        },
+        "PriAxis2": {
+          "X": 0.0,
+          "Y": -1.0,
+          "Z": 0.0
+        },
+        "SecAxis2": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_1",
+    "Outer": "PA_Lizard",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Tail01_jnt",
+        "ConstraintBone1": "Tail01_jnt",
+        "ConstraintBone2": "Spine",
+        "Pos2": {
+          "X": -1.6672176,
+          "Y": -10.487337,
+          "Z": 0.0
+        },
+        "PriAxis2": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": -1.0
+        },
+        "SecAxis2": {
+          "X": -0.98354733,
+          "Y": 0.18065053,
+          "Z": 0.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_2",
+    "Outer": "PA_Lizard",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "L_LegBack_Knee_jnt",
+        "ConstraintBone1": "L_LegBack_Knee_jnt",
+        "ConstraintBone2": "Spine",
+        "Pos2": {
+          "X": -4.800408,
+          "Y": 0.18516326,
+          "Z": -9.984012
+        },
+        "PriAxis2": {
+          "X": -0.7567694,
+          "Y": -0.65344137,
+          "Z": 0.01773505
+        },
+        "SecAxis2": {
+          "X": -0.49089974,
+          "Y": 0.58602214,
+          "Z": 0.64466697
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_3",
+    "Outer": "PA_Lizard",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "R_LegBack_Knee_jnt",
+        "ConstraintBone1": "R_LegBack_Knee_jnt",
+        "ConstraintBone2": "Spine",
+        "Pos2": {
+          "X": -4.800407,
+          "Y": 0.18520495,
+          "Z": 9.984011
+        },
+        "PriAxis2": {
+          "X": 0.75676936,
+          "Y": 0.65344137,
+          "Z": 0.017735094
+        },
+        "SecAxis2": {
+          "X": 0.49089974,
+          "Y": -0.58602226,
+          "Z": 0.6446669
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_4",
+    "Outer": "PA_Lizard",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Chest_jnt",
+        "ConstraintBone1": "Chest_jnt",
+        "ConstraintBone2": "Root",
+        "Pos2": {
+          "X": 0.0,
+          "Y": -17.9974,
+          "Z": 13.356991
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_5",
+    "Outer": "PA_Lizard",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Head_jnt",
+        "ConstraintBone1": "Head_jnt",
+        "ConstraintBone2": "Chest_jnt",
+        "Pos2": {
+          "X": 0.0,
+          "Y": -8.018955,
+          "Z": 6.0619736
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_6",
+    "Outer": "PA_Lizard",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "L_front_Hip_jnt",
+        "ConstraintBone1": "L_front_Hip_jnt",
+        "ConstraintBone2": "Chest_jnt",
+        "Pos2": {
+          "X": 7.1436133,
+          "Y": 4.274516,
+          "Z": 2.0040476
+        },
+        "PriAxis2": {
+          "X": 0.40957952,
+          "Y": 0.8440672,
+          "Z": 0.34611446
+        },
+        "SecAxis2": {
+          "X": -0.89967394,
+          "Y": 0.43656248,
+          "Z": 0.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_7",
+    "Outer": "PA_Lizard",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "R_front_Hip_jnt",
+        "ConstraintBone1": "R_front_Hip_jnt",
+        "ConstraintBone2": "Chest_jnt",
+        "Pos2": {
+          "X": -7.1436133,
+          "Y": 4.274516,
+          "Z": 2.0040476
+        },
+        "PriAxis2": {
+          "X": 0.40957952,
+          "Y": -0.8440672,
+          "Z": -0.34611446
+        },
+        "SecAxis2": {
+          "X": -0.89967394,
+          "Y": -0.43656254,
+          "Z": 0.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_Lizard",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -5.033309E-07,
+              "Y": -14.720108,
+              "Z": 7.2855167
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 180.0,
+              "Roll": -81.14865
+            },
+            "Radius": 10.782131,
+            "Length": 10.824232,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Root",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "3BB00ED04AAAC9EDF4F6B88704DADFEF"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_Lizard",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.106476665,
+              "Y": 1.936739,
+              "Z": -1.2997893E-07
+            },
+            "Rotation": {
+              "Pitch": 6.830189E-06,
+              "Yaw": -89.99999,
+              "Roll": 7.830899E-07
+            },
+            "Radius": 12.862967,
+            "Length": 13.823897,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Spine",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "6CD99A4D46E1910261F74FA13E125831"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_2",
+    "Outer": "PA_Lizard",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": -1.3478018,
+              "Z": -25.872932
+            },
+            "Rotation": {
+              "Pitch": 1.8641498,
+              "Yaw": -89.99999,
+              "Roll": 3.2033464E-07
+            },
+            "Radius": 6.956351,
+            "Length": 21.197124,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Tail01_jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "6094C526495F0BABF9743DB6AD4C6F49"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_3",
+    "Outer": "PA_Lizard",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 3.568379,
+              "Y": 0.49510264,
+              "Z": 4.7085567
+            },
+            "Rotation": {
+              "Pitch": 25.382246,
+              "Yaw": -90.00001,
+              "Roll": -26.736485
+            },
+            "Radius": 6.6778903,
+            "Length": 10.006652,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "L_LegBack_Knee_jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "222A69E544AACFBC859B189ADA4B4DB0"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_4",
+    "Outer": "PA_Lizard",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -3.5684052,
+              "Y": -0.4950738,
+              "Z": -4.708536
+            },
+            "Rotation": {
+              "Pitch": 25.38226,
+              "Yaw": -89.999985,
+              "Roll": -26.736485
+            },
+            "Radius": 6.6778917,
+            "Length": 10.00665,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "R_LegBack_Knee_jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "44E9435642B0B0363DB7F5B63FDEFA6C"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_5",
+    "Outer": "PA_Lizard",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 1.7267283E-07,
+              "Y": 2.7033095,
+              "Z": 5.7973995
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -3.6597453E-06,
+              "Roll": -86.73701
+            },
+            "Radius": 10.797323,
+            "Length": 11.736535,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Chest_jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "4CF40ACC4E7EA5F163BBDB8644B1D9B9"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_6",
+    "Outer": "PA_Lizard",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 9.536743E-07,
+              "Y": -9.099181,
+              "Z": 4.516044
+            },
+            "Rotation": {
+              "Pitch": 12.209174,
+              "Yaw": -90.00001,
+              "Roll": -1.965445E-05
+            },
+            "Radius": 17.367245,
+            "Length": 21.600855,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Head_jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "194B84B640D3CE37A35D97957C547B3E"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_7",
+    "Outer": "PA_Lizard",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 10.850905,
+              "Y": 0.64207983,
+              "Z": 3.9445162
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 91.97558,
+              "Roll": -54.871864
+            },
+            "Radius": 6.7772846,
+            "Length": 12.675395,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "L_front_Hip_jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "CE4F55D146DC2A63D202A288FF2FA392"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_8",
+    "Outer": "PA_Lizard",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -10.850907,
+              "Y": -0.64208317,
+              "Z": -3.944518
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 91.97558,
+              "Roll": -54.871857
+            },
+            "Radius": 6.7772846,
+            "Length": 12.675395,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "R_front_Hip_jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "F144758F480014755D619795B9C33056"
+  }
+]

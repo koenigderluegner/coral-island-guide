@@ -1,0 +1,133 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_item_21081_MarinethornBlossom_S02",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_item_21081_MarinethornBlossom_S02:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/MarinethornBlossom/PA_item_21081_MarinethornBlossom_S02.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_item_21081_MarinethornBlossom_S02:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/MarinethornBlossom/PA_item_21081_MarinethornBlossom_S02.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_item_21081_MarinethornBlossom_S02:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/MarinethornBlossom/PA_item_21081_MarinethornBlossom_S02.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_item_21081_MarinethornBlossom_S02",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Crops_Jnt3",
+        "ConstraintBone1": "Crops_Jnt3",
+        "ConstraintBone2": "Crops_Jnt1",
+        "Pos2": {
+          "X": 26.515606,
+          "Y": -1.4313234,
+          "Z": -0.116073094
+        },
+        "PriAxis2": {
+          "X": 1.0,
+          "Y": 0.0,
+          "Z": -6.8142064E-18
+        },
+        "SecAxis2": {
+          "X": -1.0456065E-18,
+          "Y": 0.98815715,
+          "Z": -0.15344511
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_item_21081_MarinethornBlossom_S02",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 17.151344,
+              "Y": -0.83073807,
+              "Z": -0.24076486
+            },
+            "Rotation": {
+              "Pitch": 15.550099,
+              "Yaw": -89.99999,
+              "Roll": -0.5224621
+            },
+            "Radius": 11.37877,
+            "Length": 22.118147,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Crops_Jnt1",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "9398C79649D99C49E875A3A49215E143"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_item_21081_MarinethornBlossom_S02",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 11.563955,
+              "Y": -0.5113988,
+              "Z": 0.029612541
+            },
+            "Rotation": {
+              "Pitch": 6.830189E-06,
+              "Yaw": 85.737854,
+              "Roll": -88.77675
+            },
+            "Radius": 13.5130825,
+            "Length": 16.124498,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Crops_Jnt3",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "062C1E1647C05CB9BE7411B3391943D4"
+  }
+]

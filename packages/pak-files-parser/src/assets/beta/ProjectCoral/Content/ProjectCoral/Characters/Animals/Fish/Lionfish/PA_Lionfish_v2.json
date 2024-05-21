@@ -1,0 +1,212 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_Lionfish_v2",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Lionfish_v2:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Fish/Lionfish/PA_Lionfish_v2.3"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Lionfish_v2:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Fish/Lionfish/PA_Lionfish_v2.4"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Lionfish_v2:SkeletalBodySetup_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Fish/Lionfish/PA_Lionfish_v2.5"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Lionfish_v2:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Fish/Lionfish/PA_Lionfish_v2.1"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Lionfish_v2:PhysicsConstraintTemplate_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Fish/Lionfish/PA_Lionfish_v2.2"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_Lionfish_v2",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Spine_Fish_Jnt",
+        "ConstraintBone1": "Spine_Fish_Jnt",
+        "ConstraintBone2": "Root_Fish_Jnt",
+        "Pos2": {
+          "X": 27.367373,
+          "Y": 0.49474892,
+          "Z": -1.3008801E-16
+        },
+        "PriAxis2": {
+          "X": 0.99798197,
+          "Y": 0.06349839,
+          "Z": 1.540744E-33
+        },
+        "SecAxis2": {
+          "X": -0.06349839,
+          "Y": 0.99798197,
+          "Z": 0.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_1",
+    "Outer": "PA_Lionfish_v2",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Tail_Fish_Jnt",
+        "ConstraintBone1": "Tail_Fish_Jnt",
+        "ConstraintBone2": "Spine_Fish_Jnt",
+        "Pos2": {
+          "X": 38.83754,
+          "Y": -1.4054639,
+          "Z": -5.610363E-16
+        },
+        "PriAxis2": {
+          "X": 1.1920929E-07,
+          "Y": 0.0,
+          "Z": -0.9999999
+        },
+        "SecAxis2": {
+          "X": 0.07040774,
+          "Y": 0.9975183,
+          "Z": 0.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_Lionfish_v2",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 16.405804,
+              "Y": -5.065501,
+              "Z": -0.0002987329
+            },
+            "Rotation": {
+              "Pitch": 90.0,
+              "Yaw": -0.0005828428,
+              "Roll": 179.99649
+            },
+            "Radius": 24.121035,
+            "Length": 6.4664345,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Root_Fish_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "F41138D5418A26E4388EC48D84BF5104"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_Lionfish_v2",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 17.32446,
+              "Y": -4.5586543,
+              "Z": -0.00033968876
+            },
+            "Rotation": {
+              "Pitch": -6.830189E-06,
+              "Yaw": -88.20106,
+              "Roll": -89.99988
+            },
+            "Radius": 21.329084,
+            "Length": 24.703995,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Spine_Fish_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "421B4038452F50611AE684AD968BACBE"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_2",
+    "Outer": "PA_Lionfish_v2",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 2.1733051E-06,
+              "Y": -2.1085205,
+              "Z": 13.597109
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 7.4829865E-07,
+              "Roll": -83.18575
+            },
+            "Radius": 10.574728,
+            "Length": 18.1874,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Tail_Fish_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "4273B5B24DBB3DB17775CF8CAFAC0F7C"
+  }
+]

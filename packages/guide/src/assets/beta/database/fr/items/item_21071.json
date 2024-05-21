@@ -1,37 +1,41 @@
 {
   "item": {
     "id": "item_21071",
-    "displayName": "Sproutfruit",
-    "price": 10,
-    "sellPrice": 10,
-    "sellAt": [],
+    "displayName": "Fruit de pousse",
+    "price": 140,
+    "sellPrice": 83,
+    "sellAt": [
+      "Merfolk General"
+    ],
     "stackable": true,
     "inventoryCategory": "Vegetables",
-    "displayKey": "Vegetables",
-    "description": "No this isn't a cosmic disco ball, its a Sproutfruit!",
+    "displayKey": "Fruit",
+    "description": "Non, ce n'est pas une boule disco cosmique, c'est un fruit de pousse !",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 161,
+        "sellPrice": 95
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 182,
+        "sellPrice": 108
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 210,
+        "sellPrice": 125
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 280,
+        "sellPrice": 166
       }
     },
     "iconName": "Sproutfruit_Sprite",
     "tags": [
-      "income.farming",
+      "income.oceanfarming",
+      "item.crop.diving",
+      "Item.Consumable.Food",
       "item.fruit",
-      "Item.Consumable.Food"
+      "item.UnderwaterFruit"
     ]
   },
   "artisanIngredient": [
@@ -416,17 +420,22 @@
             },
             {
               "id": "item_21071",
-              "displayName": "Sproutfruit",
+              "displayName": "Fruit de pousse",
               "iconName": "Sproutfruit_Sprite"
             },
             {
+              "id": "item_21075",
+              "displayName": "Chapeau-corail rose",
+              "iconName": "Pink_Coralcap_Sprite"
+            },
+            {
               "id": "item_21077",
-              "displayName": "Bluebell blossom",
+              "displayName": "Jacinthe sauvage",
               "iconName": "Bluebell_Blossom_Sprite"
             },
             {
               "id": "item_21078",
-              "displayName": "Goldglow",
+              "displayName": "Éclat d'or",
               "iconName": "Goldglow_Sprite"
             },
             {
@@ -436,23 +445,38 @@
             },
             {
               "id": "item_21080",
-              "displayName": "Helixpur blossom",
+              "displayName": "Fleur d'helixpur",
               "iconName": "Helixpur_Blossom_Sprite"
             },
             {
               "id": "item_21081",
-              "displayName": "Marinethorn blossom",
+              "displayName": "Fleur de marinépine",
               "iconName": "Marinethorn_Blossom_Sprite"
             },
             {
               "id": "item_21082",
-              "displayName": "Sea spud",
+              "displayName": "Patate de mer",
               "iconName": "Sea_Spud_Sprite"
             },
             {
               "id": "item_21084",
-              "displayName": "Petalia",
+              "displayName": "Pétalia",
               "iconName": "Petalia_Sprite"
+            },
+            {
+              "id": "item_21085",
+              "displayName": "Mushroom tree seeds",
+              "iconName": "Mushroom_tree_seeds_Sprite"
+            },
+            {
+              "id": "item_21086",
+              "displayName": "Shroomba seeds",
+              "iconName": "Wooblecap_seeds_Sprite"
+            },
+            {
+              "id": "item_21087",
+              "displayName": "Moonspore seeds",
+              "iconName": "Moonspore_seeds_Sprite"
             },
             {
               "id": "item_22001",
@@ -1473,6 +1497,62 @@
         }
       },
       "machine": "CompostBin"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21071",
+          "displayName": "Fruit de pousse",
+          "iconName": "Sproutfruit_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41397",
+          "displayName": "Jus de fruit de pousse",
+          "iconName": "Underwater_fruit_juice_Sprite",
+          "sellPrice": 195
+        }
+      },
+      "genericInput": null,
+      "machine": "Keg"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21071",
+          "displayName": "Fruit de pousse",
+          "iconName": "Sproutfruit_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41369",
+          "displayName": "Confiture de fruit de pousse",
+          "iconName": "Jam_purple_underwater_Sprite",
+          "sellPrice": 140
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
     }
   ],
   "usedToCook": [
@@ -1783,21 +1863,6 @@
             "id": "item_41181",
             "displayName": "Grand yaourt de chèvre",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Palourde géante",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Algues wakamé",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Bouquet de fleurs",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -1861,5 +1926,67 @@
       "ingredients": [],
       "eitherOrIngredients": []
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_21071",
+      "bVaryHealthToMax": false,
+      "healthDelta": 85,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 90,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "bronze": {
+      "key": "item_21071-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 98,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 104,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "silver": {
+      "key": "item_21071-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 106,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 113,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "gold": {
+      "key": "item_21071-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 128,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 135,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "osmium": {
+      "key": "item_21071-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 170,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 180,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    }
+  }
 }

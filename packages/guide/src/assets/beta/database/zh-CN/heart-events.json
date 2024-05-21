@@ -318,6 +318,192 @@
         ]
       }
     ],
+    "agung": [
+      {
+        "npc": "Agung",
+        "heartLevel": 3,
+        "trigger": [
+          {
+            "id": "Agung_3",
+            "location": "Agung House_ Interior",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Agung_Heart_3",
+            "enabled": true,
+            "otherCutscenesState": [],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 17,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Agung_3",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "SpecialItem",
+                  "meta": {
+                    "item": {
+                      "id": "merfolk_blessing",
+                      "displayName": "人鱼的祝福",
+                      "iconName": "Sea_Language_III"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "Agung",
+        "heartLevel": 5,
+        "trigger": [
+          {
+            "id": "Agung_5",
+            "location": "Merfolk_ Center",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Agung_Heart_5",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Agung_Heart_3": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 15,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Agung",
+        "heartLevel": 7,
+        "trigger": [
+          {
+            "id": "Agung_7",
+            "location": "Agung House_ Interior",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Agung_Heart_7",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Agung_Heart_5": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 12,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 18,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Agung_7",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "agung_7_helper"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "Agung",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "Agung_8",
+            "location": "Diving50m_ Orchestra",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Agung_Heart_8",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Agung_Heart_7": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 15,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Agung",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "Agung_10",
+            "location": "Agung House_ Interior",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Agung_Heart_10",
+            "enabled": false,
+            "otherCutscenesState": [
+              {
+                "HS_Agung_Heart_8": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 17,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      }
+    ],
     "alice": [
       {
         "npc": "Alice",
@@ -1837,7 +2023,7 @@
             "location": "Dump Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Bree_Heart_6",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Bree_Heart_5": true
@@ -1872,7 +2058,7 @@
             "location": "Coral Inn",
             "canTriggerSameDay": false,
             "cutscene": "HS_Bree_Heart_7",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Bree_Heart_6": true
@@ -1904,7 +2090,7 @@
             "location": "Caravan Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Bree_Heart_8",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Bree_Heart_7": true
@@ -1939,7 +2125,7 @@
             "location": "Beach Shack",
             "canTriggerSameDay": false,
             "cutscene": "HS_Bree_Heart_9",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Bree_Heart_8": true
@@ -1965,7 +2151,29 @@
                 "minutes": 0
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "bree_9",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 17,
+                      "season": "Winter",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 21,
+                      "season": "Winter",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -1978,7 +2186,7 @@
             "location": "Hillside Manor Vineyard",
             "canTriggerSameDay": false,
             "cutscene": "HS_Bree_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Bree_Heart_9": true
@@ -2730,6 +2938,311 @@
         ]
       }
     ],
+    "chieftain": [
+      {
+        "npc": "Chieftain",
+        "heartLevel": 1,
+        "trigger": [
+          {
+            "id": "Chieftain_1",
+            "location": "Giant Village",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Chieftain_Heart_1",
+            "enabled": true,
+            "otherCutscenesState": [],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Chieftain_1",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "ObjectState",
+                  "meta": {
+                    "id": "giant_village_blocker",
+                    "state": "open"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "Chieftain",
+        "heartLevel": 3,
+        "trigger": [
+          {
+            "id": "Chieftain_3",
+            "location": "Garden Lane Area",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Chieftain_Heart_3",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Chieftain_Heart_1": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Chieftain_3",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "IsGiantUnlocked",
+                  "meta": {
+                    "types": 2
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "Chieftain",
+        "heartLevel": 6,
+        "trigger": [
+          {
+            "id": "Chieftain_6",
+            "location": "Chieftain_ Interior",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Chieftain_Heart_6",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Chieftain_Heart_3": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Chieftain",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "Chieftain_8",
+            "location": "Forest Middle",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Chieftain_Heart_8",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Chieftain_Heart_6": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Chieftain_8",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "IsGiantUnlocked",
+                  "meta": {
+                    "types": 24
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "Chieftain",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "Chieftain_10",
+            "location": "Chieftain_ Interior",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Chieftain_Heart_10",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Chieftain_Heart_8": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      }
+    ],
+    "chooyu": [
+      {
+        "npc": "ChoOyu",
+        "heartLevel": 3,
+        "trigger": [
+          {
+            "id": "ChoOyu_3",
+            "location": "Oracle Chamber",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_ChoOyu_Heart_3",
+            "enabled": true,
+            "otherCutscenesState": [],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 8,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 15,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "ChoOyu_3",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "SpecialItem",
+                  "meta": {
+                    "item": {
+                      "id": "merfolk_blessing",
+                      "displayName": "人鱼的祝福",
+                      "iconName": "Sea_Language_III"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "ChoOyu",
+        "heartLevel": 6,
+        "trigger": [
+          {
+            "id": "ChoOyu_6",
+            "location": "Diving20m_ Second Area",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_ChoOyu_Heart_6",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_ChoOyu_Heart_3": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "ChoOyu",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "ChoOyu_8",
+            "location": "Naga Castle_ Throne Room",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_ChoOyu_Heart_8",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_ChoOyu_Heart_6": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 11,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 17,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      }
+    ],
     "connor": [
       {
         "npc": "Connor",
@@ -2923,6 +3436,192 @@
               }
             },
             "effects": []
+          }
+        ]
+      }
+    ],
+    "denali": [
+      {
+        "npc": "Denali",
+        "heartLevel": 3,
+        "trigger": [
+          {
+            "id": "Denali_3",
+            "location": "Naga Castle_ Front",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Denali_Heart_3",
+            "enabled": true,
+            "otherCutscenesState": [],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 17,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 0,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Denali_3",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "SpecialItem",
+                  "meta": {
+                    "item": {
+                      "id": "merfolk_blessing",
+                      "displayName": "人鱼的祝福",
+                      "iconName": "Sea_Language_III"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "Denali",
+        "heartLevel": 5,
+        "trigger": [
+          {
+            "id": "Denali_5",
+            "location": "Merfolk_ Center",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Denali_Heart_5",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Denali_Heart_3": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 19,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 0,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Denali",
+        "heartLevel": 7,
+        "trigger": [
+          {
+            "id": "Denali_7",
+            "location": "Diving20m_ Second Area",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Denali_Heart_7",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Denali_Heart_5": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Denali",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "Denali_8",
+            "location": "Diving10m_ Second Area",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Denali_Heart_8",
+            "enabled": false,
+            "otherCutscenesState": [
+              {
+                "HS_Denali_Heart_7": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Denali",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "Denali_10",
+            "location": "Sleepy Eel_ Front",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Denali_Heart_10",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Denali_Heart_7": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 11,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 14,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Denali_10",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "denali_10_helper"
+                  }
+                }
+              ]
+            }
           }
         ]
       }
@@ -3187,7 +3886,7 @@
             "location": "Emma Dippa House Kitchen",
             "canTriggerSameDay": false,
             "cutscene": "HS_Dippa_Heart_6",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Dippa_Heart_2": true
@@ -3219,7 +3918,7 @@
             "location": "Emma Dippa House Kitchen",
             "canTriggerSameDay": false,
             "cutscene": "HS_Dippa_Heart_7",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Dippa_Heart_6": true
@@ -3251,7 +3950,7 @@
             "location": "Emma Dippa House",
             "canTriggerSameDay": false,
             "cutscene": "HS_Dippa_Heart_8",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Dippa_Heart_7": true
@@ -3283,7 +3982,7 @@
             "location": "Emma Dippa House",
             "canTriggerSameDay": false,
             "cutscene": "HS_Dippa_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Dippa_Heart_8": true
@@ -3317,18 +4016,56 @@
             "location": "Garden Lane Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Eleanor_Heart_4",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
             "time": {
               "fromTime": {
-                "hours": 0,
+                "hours": 8,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 0,
+                "hours": 17,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Eleanor",
+        "heartLevel": 6,
+        "trigger": [
+          {
+            "id": "eleanor_6",
+            "location": "农场",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Eleanor_Heart_6",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Eleanor_Heart_4": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 6,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 17,
                 "minutes": 0
               }
             },
@@ -3345,22 +4082,51 @@
             "location": "Beach Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Eleanor_Heart_8",
-            "enabled": false,
-            "otherCutscenesState": [],
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Eleanor_Heart_6": true
+              }
+            ],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
             "time": {
               "fromTime": {
-                "hours": 0,
+                "hours": 8,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 0,
+                "hours": 17,
                 "minutes": 0
               }
             },
-            "effects": []
+            "effects": [],
+            "requirements": {
+              "key": "eleanor_8",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 17,
+                      "season": "Winter",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 21,
+                      "season": "Winter",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -3373,18 +4139,25 @@
             "location": "Garden Lane Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Eleanor_Heart_10",
-            "enabled": false,
-            "otherCutscenesState": [],
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Eleanor_Heart_8": true
+              }
+            ],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
             "time": {
               "fromTime": {
-                "hours": 0,
+                "hours": 8,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 0,
+                "hours": 17,
                 "minutes": 0
               }
             },
@@ -4091,6 +4864,1014 @@
         ]
       }
     ],
+    "giu": [
+      {
+        "npc": "Giu",
+        "heartLevel": 2,
+        "trigger": [
+          {
+            "id": "Giu_2",
+            "location": "Forest Middle",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Giu_Heart_2",
+            "enabled": true,
+            "otherCutscenesState": [],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Giu",
+        "heartLevel": 4,
+        "trigger": [
+          {
+            "id": "Giu_4",
+            "location": "Beach West Area",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Giu_Heart_4",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Giu_Heart_2": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Giu_4",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 17,
+                      "season": "Winter",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 21,
+                      "season": "Winter",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "Giu",
+        "heartLevel": 6,
+        "trigger": [
+          {
+            "id": "Giu_6",
+            "location": "General Store",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Giu_Heart_6",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Giu_Heart_4": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Giu",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "Giu_8",
+            "location": "Mine Area Outside",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Giu_Heart_8",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Giu_Heart_6": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Giu",
+        "heartLevel": 9,
+        "trigger": [
+          {
+            "id": "Giu_9",
+            "location": "Giant Village",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Giu_Heart_9",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Giu_Heart_8": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Giu",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "Giu_10",
+            "location": "Giant Village",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Giu_Heart_10",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Giu_Heart_9": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      }
+    ],
+    "gong": [
+      {
+        "npc": "Gong",
+        "heartLevel": 1,
+        "trigger": [
+          {
+            "id": "Gong_1",
+            "location": "Mine Lobby",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Gong_Heart_1",
+            "enabled": true,
+            "otherCutscenesState": [],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Gong",
+        "heartLevel": 3,
+        "trigger": [
+          {
+            "id": "Gong_3",
+            "location": "Giant Village",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Gong_Heart_3",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Gong_Heart_1": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Gong",
+        "heartLevel": 5,
+        "trigger": [
+          {
+            "id": "Gong_5",
+            "location": "Forest Caravan",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Gong_Heart_5",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Gong_Heart_3": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Gong_5",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "IsGiantUnlocked",
+                  "meta": {
+                    "types": 7
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "Gong",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "Gong_8",
+            "location": "Mine Area Outside",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Gong_Heart_8",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Gong_Heart_5": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Gong_8",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "IsGiantUnlocked",
+                  "meta": {
+                    "types": 24
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "Gong",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "Gong_10",
+            "location": "Lake Area",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Gong_Heart_10",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Gong_Heart_8": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      }
+    ],
+    "gort": [
+      {
+        "npc": "Gort",
+        "heartLevel": 1,
+        "trigger": [
+          {
+            "id": "Gort_1",
+            "location": "Giant Village",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Gort_Heart_1",
+            "enabled": true,
+            "otherCutscenesState": [],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Gort",
+        "heartLevel": 2,
+        "trigger": [
+          {
+            "id": "Gort_2",
+            "location": "Digging Site",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Gort_Heart_2",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Gort_Heart_1": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Gort",
+        "heartLevel": 4,
+        "trigger": [
+          {
+            "id": "Gort_4",
+            "location": "Forest Middle",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Gort_Heart_4",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Gort_Heart_2": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Gort",
+        "heartLevel": 6,
+        "trigger": [
+          {
+            "id": "Gort_6",
+            "location": "Lake Area",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Gort_Heart_6",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Gort_Heart_4": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Gort_6",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "TempleLevel",
+                  "meta": {
+                    "level": 10
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "Gort",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "Gort_8",
+            "location": "Lake Area",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Gort_Heart_8",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Gort_Heart_6": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Gort",
+        "heartLevel": 9,
+        "trigger": [
+          {
+            "id": "Gort_9",
+            "location": "Forest Caravan",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Gort_Heart_9",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Gort_Heart_8": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Gort",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "Gort_10",
+            "location": "Fire Giant_ Interior",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giants_Gort_Heart_10",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Gort_Heart_9": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      }
+    ],
+    "grog": [
+      {
+        "npc": "Grog",
+        "heartLevel": 2,
+        "trigger": [
+          {
+            "id": "Grog_2",
+            "location": "Mine Lobby",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giant_Grog_Heart_2",
+            "enabled": true,
+            "otherCutscenesState": [],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Grog_2",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "IsGiantUnlocked",
+                  "meta": {
+                    "types": 15
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "Grog",
+        "heartLevel": 4,
+        "trigger": [
+          {
+            "id": "Grog_4",
+            "location": "Forest Middle",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giant_Grog_Heart_4",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Grog_Heart_2": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Grog",
+        "heartLevel": 6,
+        "trigger": [
+          {
+            "id": "Grog_6",
+            "location": "Mine Lobby",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giant_Grog_Heart_6",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Grog_Heart_4": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Grog",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "Grog_8",
+            "location": "Earth Giant_ Interior",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giant_Grog_Heart_8",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Grog_Heart_6": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Grog_8",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "IsGiantUnlocked",
+                  "meta": {
+                    "types": 24
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "Grog",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "Grog_10",
+            "location": "Giant Village",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giant_Grog_Heart_10",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Grog_Heart_8": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      }
+    ],
+    "groo": [
+      {
+        "npc": "Groo",
+        "heartLevel": 3,
+        "trigger": [
+          {
+            "id": "Groo_3",
+            "location": "Wind Giant_ Interior",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giant_Groo_Heart_3",
+            "enabled": true,
+            "otherCutscenesState": [],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Groo",
+        "heartLevel": 5,
+        "trigger": [
+          {
+            "id": "Groo_5",
+            "location": "Giant Village",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giant_Groo_Heart_5",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Groo_Heart_3": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Groo",
+        "heartLevel": 7,
+        "trigger": [
+          {
+            "id": "Groo_7",
+            "location": "Lake Area",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giant_Groo_Heart_7",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Groo_Heart_5": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Groo",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "Groo_8",
+            "location": "Forest Path",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giant_Groo_Heart_8",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Groo_Heart_7": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Groo",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "Groo_10",
+            "location": "Giant Village",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Giant_Groo_Heart_10",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Giants_Groo_Heart_8": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      }
+    ],
     "jack": [
       {
         "npc": "Jack",
@@ -4502,7 +6283,7 @@
             "location": "Beach Shack",
             "canTriggerSameDay": false,
             "cutscene": "HS_Jim_Heart_6",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Jim_Heart_5": true
@@ -4524,7 +6305,7 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 12,
+                "hours": 14,
                 "minutes": 0
               }
             },
@@ -4563,7 +6344,7 @@
             "location": "Beach Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Jim_Heart_7",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Jim_Heart_6": true
@@ -4571,14 +6352,17 @@
             ],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
             "time": {
               "fromTime": {
-                "hours": 0,
+                "hours": 8,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 0,
+                "hours": 15,
                 "minutes": 0
               }
             },
@@ -4617,7 +6401,7 @@
             "location": "Lily Jim Theo House Bonsai",
             "canTriggerSameDay": false,
             "cutscene": "HS_Jim_Heart_8",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Jim_Heart_7": true
@@ -4625,14 +6409,16 @@
             ],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [],
+            "specificWeather": [
+              "Sunny"
+            ],
             "time": {
               "fromTime": {
-                "hours": 0,
+                "hours": 10,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 0,
+                "hours": 15,
                 "minutes": 0
               }
             },
@@ -4649,7 +6435,7 @@
             "location": "Beach Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Jim_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Jim_Heart_8": true
@@ -4657,10 +6443,13 @@
             ],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
             "time": {
               "fromTime": {
-                "hours": 7,
+                "hours": 6,
                 "minutes": 0
               },
               "toTime": {
@@ -4799,7 +6588,7 @@
             "location": "Beach Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Joko_Heart_6",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Joko_Heart_5": true
@@ -4855,7 +6644,7 @@
             "location": "Carpenter",
             "canTriggerSameDay": false,
             "cutscene": "HS_Joko_Heart_7",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Joko_Heart_6": true
@@ -4887,7 +6676,7 @@
             "location": "Blacksmith",
             "canTriggerSameDay": false,
             "cutscene": "HS_Joko_Heart_8",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Joko_Heart_7": true
@@ -4919,7 +6708,7 @@
             "location": "Carpenter",
             "canTriggerSameDay": false,
             "cutscene": "HS_Joko_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Joko_Heart_8": true
@@ -5212,6 +7001,9 @@
             "otherCutscenesState": [
               {
                 "HS_Kenny_Heart_10": true
+              },
+              {
+                "HS_Kenny_Heart_10_NK": false
               }
             ],
             "specificDay": [],
@@ -5227,6 +7019,122 @@
               "toTime": {
                 "hours": 23,
                 "minutes": 59
+              }
+            },
+            "effects": []
+          }
+        ]
+      }
+    ],
+    "kingkrakatoa": [
+      {
+        "npc": "KingKrakatoa",
+        "heartLevel": 3,
+        "trigger": [
+          {
+            "id": "Krakatoa_3",
+            "location": "Naga Castle_ Throne Room",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Krakatoa_Heart_3",
+            "enabled": true,
+            "otherCutscenesState": [],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 6,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Krakatoa_3",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "kingkrakatoa_3_helper_quest"
+                  }
+                },
+                {
+                  "type": "SpecialItem",
+                  "meta": {
+                    "item": {
+                      "id": "merfolk_blessing",
+                      "displayName": "人鱼的祝福",
+                      "iconName": "Sea_Language_III"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "KingKrakatoa",
+        "heartLevel": 6,
+        "trigger": [
+          {
+            "id": "Krakatoa_6",
+            "location": "Merfolk_ Center",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Krakatoa_Heart_6",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Krakatoa_Heart_3": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 10,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "KingKrakatoa",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "Krakatoa_10",
+            "location": "Naga Castle_ Dining Room",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Krakatoa_Heart_10",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Krakatoa_Heart_6": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 11,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 14,
+                "minutes": 0
               }
             },
             "effects": []
@@ -5268,11 +7176,11 @@
         "heartLevel": 3,
         "trigger": [
           {
-            "id": "kira_3",
+            "id": "Kira_3",
             "location": "Jack Kira Kenny House Outside",
             "canTriggerSameDay": false,
             "cutscene": "HS_Kira_Heart_3",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Kira_Heart_2": true
@@ -5288,6 +7196,172 @@
               },
               "toTime": {
                 "hours": 21,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Kira",
+        "heartLevel": 4,
+        "trigger": [
+          {
+            "id": "Kira_4",
+            "location": "Jack Kira Kenny House Outside",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Kira_Heart_4",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Kira_Heart_3": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 8,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 15,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Kira",
+        "heartLevel": 5,
+        "trigger": [
+          {
+            "id": "Kira_5",
+            "location": "Jack Kira Kenny House Outside",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Kira_Heart_5",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Kira_Heart_4": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 8,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 15,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Kira",
+        "heartLevel": 7,
+        "trigger": [
+          {
+            "id": "Kira_7",
+            "location": "General Store",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Kira_Heart_7",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Kira_Heart_5": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 17,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Kira",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "Kira_8",
+            "location": "Hillside Manor Vineyard",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Kira_Heart_8",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Kira_Heart_7": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 8,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 15,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "Kira",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "Kira_10",
+            "location": "Forest Monkey Tree",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Kira_Heart_10",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Kira_Heart_8": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 8,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 15,
                 "minutes": 0
               }
             },
@@ -7683,8 +9757,8 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 23,
-                "minutes": 59
+                "hours": 21,
+                "minutes": 0
               }
             },
             "effects": [],
@@ -8152,6 +10226,128 @@
         ]
       }
     ],
+    "olan": [
+      {
+        "npc": "Olan",
+        "heartLevel": 3,
+        "trigger": [
+          {
+            "id": "Olan_3",
+            "location": "Merfolk_ Center",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Olan_Heart_3",
+            "enabled": true,
+            "otherCutscenesState": [],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 11,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 14,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Olan_3",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "SpecialItem",
+                  "meta": {
+                    "item": {
+                      "id": "merfolk_blessing",
+                      "displayName": "人鱼的祝福",
+                      "iconName": "Sea_Language_III"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "Olan",
+        "heartLevel": 5,
+        "trigger": [
+          {
+            "id": "Olan_5",
+            "location": "Cook House_ Interior",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Olan_Heart_5",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Olan_Heart_3": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 20,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Olan_5",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "olan_5_helper"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "Olan",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "Olan_8",
+            "location": "Merfolk_ Center",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Olan_Heart_8",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Olan_Heart_5": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 11,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 14,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      }
+    ],
     "pablo": [
       {
         "npc": "Pablo",
@@ -8415,8 +10611,14 @@
             "enabled": true,
             "otherCutscenesState": [],
             "specificDay": [],
-            "specificMonth": [],
-            "specificWeather": [],
+            "specificMonth": [
+              "Spring",
+              "Summer",
+              "Fall"
+            ],
+            "specificWeather": [
+              "Sunny"
+            ],
             "time": {
               "fromTime": {
                 "hours": 9,
@@ -8440,14 +10642,18 @@
             "location": "Zoe Anne Paul House Outside",
             "canTriggerSameDay": false,
             "cutscene": "HS_Paul_Heart_4",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Paul_Heart_2": true
               }
             ],
             "specificDay": [],
-            "specificMonth": [],
+            "specificMonth": [
+              "Spring",
+              "Summer",
+              "Fall"
+            ],
             "specificWeather": [],
             "time": {
               "fromTime": {
@@ -8469,17 +10675,21 @@
         "trigger": [
           {
             "id": "paul_6",
-            "location": "Town Upper Area",
+            "location": "Forest Ruin",
             "canTriggerSameDay": false,
             "cutscene": "HS_Paul_Heart_6",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Paul_Heart_4": true
               }
             ],
             "specificDay": [],
-            "specificMonth": [],
+            "specificMonth": [
+              "Spring",
+              "Summer",
+              "Fall"
+            ],
             "specificWeather": [],
             "time": {
               "fromTime": {
@@ -8504,14 +10714,18 @@
             "location": "Mine Area Outside",
             "canTriggerSameDay": false,
             "cutscene": "HS_Paul_Heart_7",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Paul_Heart_6": true
               }
             ],
             "specificDay": [],
-            "specificMonth": [],
+            "specificMonth": [
+              "Spring",
+              "Summer",
+              "Fall"
+            ],
             "specificWeather": [],
             "time": {
               "fromTime": {
@@ -8558,15 +10772,21 @@
             "location": "Zoe Anne Paul House Outside",
             "canTriggerSameDay": false,
             "cutscene": "HS_Paul_Heart_8",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Paul_Heart_7": true
               }
             ],
             "specificDay": [],
-            "specificMonth": [],
-            "specificWeather": [],
+            "specificMonth": [
+              "Spring",
+              "Summer",
+              "Fall"
+            ],
+            "specificWeather": [
+              "Sunny"
+            ],
             "time": {
               "fromTime": {
                 "hours": 9,
@@ -8587,13 +10807,248 @@
         "trigger": [
           {
             "id": "paul_10",
-            "location": "Town Upper Area",
+            "location": "Forest Farm",
             "canTriggerSameDay": false,
             "cutscene": "HS_Paul_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Paul_Heart_8": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [
+              "Spring",
+              "Summer",
+              "Fall"
+            ],
+            "specificWeather": [
+              "Sunny"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      }
+    ],
+    "princessmiranjani": [
+      {
+        "npc": "PrincessMiranjani",
+        "heartLevel": 2,
+        "trigger": [
+          {
+            "id": "Miranjani_2",
+            "location": "Naga Castle_ Dining Room",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Miranjani_Heart_2",
+            "enabled": true,
+            "otherCutscenesState": [],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 11,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 14,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Miranjani_2",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "SpecialItem",
+                  "meta": {
+                    "item": {
+                      "id": "merfolk_blessing",
+                      "displayName": "人鱼的祝福",
+                      "iconName": "Sea_Language_III"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "PrincessMiranjani",
+        "heartLevel": 4,
+        "trigger": [
+          {
+            "id": "Miranjani_4A",
+            "location": "Beach Area",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Miranjani_Heart_4A",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Miranjani_Heart_2": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 8,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 14,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Miranjani_4A",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 17,
+                      "season": "Winter",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 21,
+                      "season": "Winter",
+                      "year": -1
+                    }
+                  }
+                },
+                {
+                  "type": "QuestFactCompare",
+                  "meta": {
+                    "factName": "merfolk_human",
+                    "comparator": "Equal",
+                    "value": 1
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "Miranjani_4B",
+            "location": "Beach Area",
+            "canTriggerSameDay": true,
+            "cutscene": "HS_Miranjani_Heart_4B",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Miranjani_Heart_4A": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 8,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 14,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Miranjani_4B",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 17,
+                      "season": "Winter",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 21,
+                      "season": "Winter",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "PrincessMiranjani",
+        "heartLevel": 6,
+        "trigger": [
+          {
+            "id": "Miranjani_6",
+            "location": "Raja Coffee Shop Area",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Miranjani_Heart_6",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Miranjani_Heart_4B": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 8,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 18,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "PrincessMiranjani",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "Miranjani_8",
+            "location": "Naga Castle_ Dining Room",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Miranjani_Heart_8",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Miranjani_Heart_6": true
               }
             ],
             "specificDay": [],
@@ -8605,7 +11060,193 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 16,
+                "hours": 20,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "PrincessMiranjani",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "Miranjani_10",
+            "location": "Local Tavern",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Miranjani_Heart_10",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Miranjani_Heart_8": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 19,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 21,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Miranjani_10",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "miranjani_10_helper"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "queennandadevi": [
+      {
+        "npc": "QueenNandaDevi",
+        "heartLevel": 3,
+        "trigger": [
+          {
+            "id": "NandaDevi_3",
+            "location": "Naga Castle_ Throne Room",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_NandaDevi_Heart_3",
+            "enabled": true,
+            "otherCutscenesState": [],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 17,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "NandaDevi_3",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "SpecialItem",
+                  "meta": {
+                    "item": {
+                      "id": "merfolk_blessing",
+                      "displayName": "人鱼的祝福",
+                      "iconName": "Sea_Language_III"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "QueenNandaDevi",
+        "heartLevel": 6,
+        "trigger": [
+          {
+            "id": "NandaDevi_6",
+            "location": "Merfolk Barrack_ Lobby",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_NandaDevi_Heart_6",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_NandaDevi_Heart_3": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 11,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "QueenNandaDevi",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "NandaDevi_8",
+            "location": "Naga Castle_ Dining Room",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_NandaDevi_Heart_8",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_NandaDevi_Heart_6": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 13,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 17,
+                "minutes": 0
+              }
+            },
+            "effects": []
+          }
+        ]
+      },
+      {
+        "npc": "QueenNandaDevi",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "NandaDevi_10",
+            "location": "Merfolk_ Center",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_NandaDevi_Heart_10",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_NandaDevi_Heart_8": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 11,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 14,
                 "minutes": 0
               }
             },
@@ -9187,7 +11828,7 @@
             "location": "General Store",
             "canTriggerSameDay": true,
             "cutscene": "HS_Sam_Heart_2",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [],
             "specificDay": [],
             "specificMonth": [
@@ -9497,6 +12138,216 @@
                   "meta": {
                     "mailId": "scott_heart10",
                     "title": "来自博物馆的惊喜"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "semeru": [
+      {
+        "npc": "Semeru",
+        "heartLevel": 3,
+        "trigger": [
+          {
+            "id": "Semeru_3",
+            "location": "Naga Castle_ Front",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Semeru_Heart_3",
+            "enabled": true,
+            "otherCutscenesState": [],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 8,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Semeru_3",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "SpecialItem",
+                  "meta": {
+                    "item": {
+                      "id": "merfolk_blessing",
+                      "displayName": "人鱼的祝福",
+                      "iconName": "Sea_Language_III"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "Semeru",
+        "heartLevel": 6,
+        "trigger": [
+          {
+            "id": "Semeru_6",
+            "location": "Naga Castle_ Front",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Semeru_Heart_6",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Semeru_Heart_3": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 6,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 18,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Semeru_6",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "semeru_6_helper"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "Semeru",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "Semeru_8",
+            "location": "Beach West Area",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Semeru_Heart_8",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Semeru_Heart_6": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 8,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 15,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Semeru_8",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 17,
+                      "season": "Winter",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 21,
+                      "season": "Winter",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "npc": "Semeru",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "Semeru_10",
+            "location": "Beach Area",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Semeru_Heart_10",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Semeru_Heart_8": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [
+              "Spring",
+              "Summer",
+              "Fall"
+            ],
+            "specificWeather": [
+              "Sunny"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 12,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 18,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "requirements": {
+              "key": "Semeru_10",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "QuestActive",
+                  "meta": {
+                    "questId": "semeru_10_helper"
+                  }
+                },
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 17,
+                      "season": "Winter",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 21,
+                      "season": "Winter",
+                      "year": -1
+                    }
                   }
                 }
               ]
@@ -10627,7 +13478,7 @@
             "location": "Coral Inn",
             "canTriggerSameDay": true,
             "cutscene": "HS_Valentina_Heart_3",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [],
             "specificDay": [],
             "specificMonth": [],
@@ -10655,7 +13506,7 @@
             "location": "Beach Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Valentina_Heart_6",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Valentina_Heart_3": true
@@ -10711,7 +13562,7 @@
             "location": "Beach Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Valentina_Heart_8",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Valentina_Heart_6": true
@@ -11192,7 +14043,7 @@
             "location": "Hillside Manor Vineyard",
             "canTriggerSameDay": false,
             "cutscene": "HS_Walter_Heart_7",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Walter_Heart_4": true
@@ -11245,7 +14096,7 @@
             "location": "Hillside Manor Vineyard",
             "canTriggerSameDay": false,
             "cutscene": "HS_Walter_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Walter_Heart_7": true
@@ -11984,11 +14835,11 @@
             "specificWeather": [],
             "time": {
               "fromTime": {
-                "hours": 9,
+                "hours": 8,
                 "minutes": 0
               },
               "toTime": {
-                "hours": 23,
+                "hours": 20,
                 "minutes": 0
               }
             },
@@ -12000,7 +14851,7 @@
                 {
                   "type": "QuestActive",
                   "meta": {
-                    "questId": "yuri_8c_helper"
+                    "questId": "yuri_8c_helper_v2"
                   }
                 }
               ]
@@ -12032,8 +14883,8 @@
                 "minutes": 0
               },
               "toTime": {
-                "hours": 14,
-                "minutes": 59
+                "hours": 15,
+                "minutes": 0
               }
             },
             "effects": []
@@ -12439,7 +15290,7 @@
             "location": "School",
             "canTriggerSameDay": false,
             "cutscene": "HS_Zoe_Heart_5",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Zoe_Heart_2": true
@@ -12471,7 +15322,7 @@
             "location": "Beach Area",
             "canTriggerSameDay": false,
             "cutscene": "HS_Zoe_Heart_6",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Zoe_Heart_5": true
@@ -12527,7 +15378,7 @@
             "location": "School",
             "canTriggerSameDay": false,
             "cutscene": "HS_Zoe_Heart_8",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Zoe_Heart_6": true
@@ -12559,7 +15410,7 @@
             "location": "Zoe Anne Paul House",
             "canTriggerSameDay": false,
             "cutscene": "HS_Zoe_Heart_9",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Zoe_Heart_8": true
@@ -12595,7 +15446,7 @@
             "location": "Zoe Anne Paul House",
             "canTriggerSameDay": false,
             "cutscene": "HS_Zoe_Heart_10",
-            "enabled": false,
+            "enabled": true,
             "otherCutscenesState": [
               {
                 "HS_Zoe_Heart_9": true

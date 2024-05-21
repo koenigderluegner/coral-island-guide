@@ -1,0 +1,212 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_Topwear_Andro_Sleeveless_mockneck_white",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Topwear_Andro_Sleeveless_mockneck_white:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/TopWear/SleevelessMockneckWhite/PA/PA_Topwear_Andro_Sleeveless_mockneck_white.3"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Topwear_Andro_Sleeveless_mockneck_white:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/TopWear/SleevelessMockneckWhite/PA/PA_Topwear_Andro_Sleeveless_mockneck_white.4"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Topwear_Andro_Sleeveless_mockneck_white:SkeletalBodySetup_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/TopWear/SleevelessMockneckWhite/PA/PA_Topwear_Andro_Sleeveless_mockneck_white.5"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Topwear_Andro_Sleeveless_mockneck_white:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/TopWear/SleevelessMockneckWhite/PA/PA_Topwear_Andro_Sleeveless_mockneck_white.1"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Topwear_Andro_Sleeveless_mockneck_white:PhysicsConstraintTemplate_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/TopWear/SleevelessMockneckWhite/PA/PA_Topwear_Andro_Sleeveless_mockneck_white.2"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_Topwear_Andro_Sleeveless_mockneck_white",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Spine1_M",
+        "ConstraintBone1": "Spine1_M",
+        "ConstraintBone2": "Pelvis_M",
+        "Pos2": {
+          "X": 20.896065,
+          "Y": -1.5393184,
+          "Z": 0.0
+        },
+        "PriAxis2": {
+          "X": 0.9999962,
+          "Y": -0.0027654003,
+          "Z": 0.0
+        },
+        "SecAxis2": {
+          "X": 0.0027654003,
+          "Y": 0.9999962,
+          "Z": 0.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_1",
+    "Outer": "PA_Topwear_Andro_Sleeveless_mockneck_white",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Chest_M",
+        "ConstraintBone1": "Chest_M",
+        "ConstraintBone2": "Spine1_M",
+        "Pos2": {
+          "X": 26.862492,
+          "Y": 1.3365633,
+          "Z": 0.0
+        },
+        "PriAxis2": {
+          "X": 0.9999091,
+          "Y": 0.013482238,
+          "Z": 0.0
+        },
+        "SecAxis2": {
+          "X": -0.013482238,
+          "Y": 0.9999091,
+          "Z": 0.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_Topwear_Andro_Sleeveless_mockneck_white",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 10.976433,
+              "Y": -0.87810326,
+              "Z": -0.0011310896
+            },
+            "Rotation": {
+              "Pitch": -0.008401132,
+              "Yaw": -89.99999,
+              "Roll": 0.0039480585
+            },
+            "Radius": 16.33872,
+            "Length": 19.817616,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Pelvis_M",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "08254EA441EDED8591203F8C69B3817A"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_Topwear_Andro_Sleeveless_mockneck_white",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.89498234,
+              "Y": -0.7117548,
+              "Z": 3.5651728E-06
+            },
+            "Rotation": {
+              "Pitch": 0.00010928302,
+              "Yaw": -89.99999,
+              "Roll": -2.1290618E-05
+            },
+            "Radius": 16.390318,
+            "Length": 19.069176,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Spine1_M",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "A67544AE4ACD7D0A3EE0D296B9E1A05B"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_2",
+    "Outer": "PA_Topwear_Andro_Sleeveless_mockneck_white",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 6.6903443,
+              "Y": 1.107223,
+              "Z": 0.011986289
+            },
+            "Rotation": {
+              "Pitch": -0.024322303,
+              "Yaw": -89.99999,
+              "Roll": -90.0702
+            },
+            "Radius": 23.786022,
+            "Length": 24.150953,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Chest_M",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "F557BC384D127EC849E499BE10C21D2B"
+  }
+]
