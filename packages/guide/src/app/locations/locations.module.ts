@@ -108,6 +108,14 @@ import { OfferingComponent } from "../shared/components/database-item-details/of
         ShopItemProcessTableComponent,
         ItemUpgradeTableComponent,
         FestivalShopItemTableComponent,
+        OpeningHoursComponent,
+        ShopItemDataDetailsComponent,
+        ShopItemDataTableComponent,
+        ShopItemProcessTableComponent,
+        ItemUpgradeDetailsComponent,
+        ShopItemProcessDataDetailsComponent,
+        AnimalMoodTableComponent,
+        AnimalDetailsComponent
     ],
 })
 export class LocationsModule {

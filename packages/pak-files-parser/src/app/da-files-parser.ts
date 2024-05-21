@@ -387,8 +387,9 @@ export class DaFilesParser {
 
     private parseGameplayRequirements(mappingEntry: GameplayRequirementsConfig): RequirementMap {
         const result: RequirementMap = new Map<string, RequirementEntry>
-        const map = mappingEntry.Properties.map;
+        const map = mappingEntry.Properties?.map;
 
+        if(!map) return new Map()
 
         let conf: GameplayRequirementsConfigMap;
 

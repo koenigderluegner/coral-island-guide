@@ -50,6 +50,7 @@ import { BestiaryGenerator } from "./app/generators/bestiary.generator";
 import { CookingUtensilMapGenerator } from "./app/generators/cooking-utensil-map.generator";
 import { StringTable } from "./util/string-table.class";
 import {
+    AnimalShopData,
     AvailableLanguages,
     CookingRecipe,
     CraftingRecipe,
@@ -78,6 +79,7 @@ import { preferencesMap } from "../../guide/src/app/shared/constants/preference-
 import fs from "fs";
 import { Datatable } from "./interfaces/datatable.interface";
 import { DashboardFilesCreation } from "./app/dashboard-files-creation.function";
+import { BaseOpeningHoursGenerator } from "./app/opening-hours-generators/base-opening-hours.generator";
 
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
@@ -151,7 +153,42 @@ AvailableLanguages.forEach(lang => {
     try {
 
         if (environment.isBeta) {
-            betaGenerators = {}
+            betaGenerators = {
+
+                'taco-truck-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_TacoTruck.json'),
+
+                'sales-cart-stall-indoor-shop-data': {
+                    generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopUnderWaterFurnitureIndoor.json').generate({
+                        daFiles: [
+                            'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Furniture/DA_UnderWaterFurnitureShopBuyEffect.json',
+
+                        ]
+                    })
+                },
+                'sales-cart-stall-outdoor-shop-data': {
+                    generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopUnderWaterFurnitureOutdoor.json').generate({
+                        daFiles: [
+                            'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Furniture/DA_UnderWaterFurnitureShopBuyEffect.json',
+
+                        ]
+                    })
+                },
+                'sales-cart-stall-opening-hours': new BaseOpeningHoursGenerator({'Building': 'ProjectCoral/Content/ProjectCoral/Data/OpeningHours/UnderWaterFurnitureHours.json'}),
+
+                'tidal-threads-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/TidalThreads/DT_TidalThreadsClothShop.json'),
+                'tidal-threads-opening-hours': new BaseOpeningHoursGenerator({'Building': 'ProjectCoral/Content/ProjectCoral/Data/OpeningHours/TidalThreadsHours.json'}),
+
+
+                'underwater-ranch-opening-hours': new BaseOpeningHoursGenerator({'Building': 'ProjectCoral/Content/ProjectCoral/Data/OpeningHours/UnderWaterRanchHours.json'}),
+                'underwater-ranch-animal-shop-data': {
+                    generate: () => new AnimalShopDataGenerator(`ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_AnimalUnderwaterShop.json`).generate({
+                        daFiles: [
+                            'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_AnimalUnderwaterShopAdvanceRequirement.json',
+
+                        ]
+                    })
+                },
+            }
         } else {
 
 
@@ -239,8 +276,8 @@ AvailableLanguages.forEach(lang => {
 
             'ranch-opening-hours': new RanchOpeningHoursGenerator(),
             'ranch-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_RanchShop.json'),
-            'animal-shop-data': {
-                generate: () => new AnimalShopDataGenerator().generate({
+            'ranch-animal-shop-data': {
+                generate: () => new AnimalShopDataGenerator(`ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_AnimalShop.json`).generate({
                     daFiles: [
                         'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_AnimalShopAdvanceRequirement.json',
 
@@ -670,7 +707,8 @@ AvailableLanguages.forEach(lang => {
 
 
             const buyAt = ShopNames.map(shopName => {
-                return generatorValues[`${shopName}-shop-items`].map(sd => {
+                // @ts-ignore
+                return (generatorValues[`${shopName}-shop-items`] ?? []).map(sd => {
                     return {
                         ...sd,
                         shop: {
@@ -742,8 +780,14 @@ AvailableLanguages.forEach(lang => {
                     || p.smallGolden?.id === item.id || p.largeGolden?.id === item.id
                 )
             })
-            if (producedByAnimal)
-                producedByAnimal.displayName = generatorValues["animal-shop-data"].find(a => a.animalKey === producedByAnimal.key)?.readableName ?? undefined
+            if (producedByAnimal) {
+                const animalShopData = ShopNames.map(name => {
+                    const key = name + "-animal-shop-data";
+                    // @ts-ignore
+                    return key in generatorValues ? generatorValues[key] as AnimalShopData[] : []
+                }).flat();
+                producedByAnimal.displayName = animalShopData.find(a => a.animalKey === producedByAnimal.key)?.readableName ?? undefined
+            }
 
 
             let enchantmentPoints: undefined | number;

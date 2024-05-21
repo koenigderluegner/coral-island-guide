@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Route, RouterModule, Routes } from '@angular/router';
 import { LocationsComponent } from './locations.component';
 import { LakeTempleComponent } from "./components/lake-temple/lake-temple.component";
 import { onlyInBetaGuard } from "../core/guards/only-in-beta.guard";
@@ -22,12 +22,19 @@ const routes: Routes = [
             {path: 'lake-temple', redirectTo: 'lake-temple/', pathMatch: 'full'},
             {path: 'lake-temple/:tabName', component: LakeTempleComponent, title: 'Lake temple - Locations'},
 
-            ...shopRouteConfig.map(config => ({
-                    path: config.name,
-                    component: config.component,
-                    title: `${ShopDisplayNames[config.name]} - Locations`,
-                    canActivate: config.betaOnly ? [onlyInBetaGuard] : []
-                })
+            ...shopRouteConfig.map(config => {
+
+                    const component: Pick<Route, 'component'> | Pick<Route, 'loadComponent'> = 'component' in config ?
+                        {component: config.component} : {loadComponent: config.loadComponent}
+
+
+                    return ({
+                        path: config.name,
+                        ...component,
+                        title: `${ShopDisplayNames[config.name]} - Locations`,
+                        canActivate: config.betaOnly ? [onlyInBetaGuard] : []
+                    })
+                }
             ),
             ...festivalRouteConfig.map(config => ({
                     path: config.data.name,
