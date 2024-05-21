@@ -1,5 +1,11 @@
 ## Changelog
 
+### TBD
+
+#### Added
+
+- Added more images to NPCs like alternate forms of Sawee
+
 ### 0.18.0 2024-05-21
 
 #### Added

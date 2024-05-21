@@ -97,6 +97,20 @@ const itemIconsImageProcessor: ItemIconsImageProcessor = new ItemIconsImageProce
 
 const readable = !parsedArgs['prepare'] && true;
 
+const additionalNPCOutfitsMappings = [
+    {npcKey: 'Sawee', outfitKey: 'Sawee', appearanceName: 'Mystical Pet'},
+    {npcKey: 'Sawee', outfitKey: 'Dragon', appearanceName: 'Mystical Pet'},
+    {npcKey: 'Sawee', outfitKey: 'Lembu', appearanceName: 'Mystical Pet'},
+];
+
+if (environment.isBeta) {
+    additionalNPCOutfitsMappings.unshift(...[
+        {npcKey: 'Semeru', outfitKey: 'SemeruHuman', appearanceName: 'Human Form'},
+        {npcKey: 'Denali', outfitKey: 'DenaliHuman', appearanceName: 'Human Form'},
+        {npcKey: 'PrincessMiranjani', outfitKey: 'MiranjaniHuman', appearanceName: 'Human Form'},
+        {npcKey: 'Raina', outfitKey: 'RainaRecCenter', appearanceName: 'Rec Center'},
+    ])
+}
 
 AvailableLanguages.forEach(lang => {
     Logger.info(`Generators for "${lang}" starting...`);
@@ -114,7 +128,7 @@ AvailableLanguages.forEach(lang => {
     calendarDbMap = calendarDbGenerator.generate();
 
 
-    const npcDbGenerator = new NPCDbGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.json', calendarDbMap);
+    const npcDbGenerator = new NPCDbGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.json', calendarDbMap, additionalNPCOutfitsMappings);
     const npcDbMap = npcDbGenerator.generate();
 
     const craftingRecipeUnlockedByMasteryDbGenerator = new CraftingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
@@ -779,4 +793,4 @@ AvailableLanguages.forEach(lang => {
 
 })
 itemIconsImageProcessor.process();
-new NpcPortraitsImageProcessor(config.characterPortraitsPath, config.portraitPath, config.headPortraitPath).process()
+new NpcPortraitsImageProcessor(config.characterPortraitsPath, config.portraitPath, config.headPortraitPath, additionalNPCOutfitsMappings).process()
