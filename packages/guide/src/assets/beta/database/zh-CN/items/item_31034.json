@@ -2,8 +2,8 @@
   "item": {
     "id": "item_31034",
     "displayName": "海鞘藻类（大）",
-    "price": 10,
-    "sellPrice": 10,
+    "price": 960,
+    "sellPrice": 675,
     "sellAt": [],
     "stackable": true,
     "inventoryCategory": "动物产品",
@@ -11,26 +11,94 @@
     "description": "一种大型海藻。",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1110,
+        "sellPrice": 776
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1250,
+        "sellPrice": 878
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1450,
+        "sellPrice": 1013
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1930,
+        "sellPrice": 1350
       }
     },
-    "iconName": "placeholder_icon_Sprite",
+    "iconName": "Large_seashroud_algae_Sprite",
     "tags": [
       "income.ranching",
       "item.animalproduct.wool"
+    ]
+  },
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31034",
+          "displayName": "海鞘藻类（大）",
+          "iconName": "Large_seashroud_algae_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_42025",
+          "displayName": "海鞘藻纱线（大）",
+          "iconName": "Large_seashroud_yarn_Sprite",
+          "sellPrice": 1485
+        }
+      },
+      "genericInput": null,
+      "machine": "Loom"
+    }
+  ],
+  "producedByAnimal": {
+    "key": "Seashroud",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Seashroud_Sprite"
+        }
+      }
+    ],
+    "building": "UnderwaterRanch",
+    "daysToGrow": 15,
+    "harvestCooldown": 3,
+    "animalProduceType": "UsingTools",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65043",
+      "displayName": "羊毛剪",
+      "iconName": "Shears_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31033",
+          "displayName": "海鞘藻类",
+          "iconName": "Seashroud_algae_Sprite"
+        },
+        "large": {
+          "id": "item_31034",
+          "displayName": "海鞘藻类（大）",
+          "iconName": "Large_seashroud_algae_Sprite"
+        }
+      }
     ]
   }
 }

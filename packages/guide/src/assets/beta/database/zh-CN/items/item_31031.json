@@ -2,8 +2,8 @@
   "item": {
     "id": "item_31031",
     "displayName": "蛋珠",
-    "price": 10,
-    "sellPrice": 10,
+    "price": 2140,
+    "sellPrice": 1500,
     "sellAt": [],
     "stackable": true,
     "inventoryCategory": "Animal product",
@@ -11,26 +11,64 @@
     "description": "一颗小咯咯贝珍珠。",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 2460,
+        "sellPrice": 1725
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 2790,
+        "sellPrice": 1950
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 3210,
+        "sellPrice": 2250
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 4290,
+        "sellPrice": 3000
       }
     },
-    "iconName": "placeholder_icon_Sprite",
+    "iconName": "Sphere_Sprite",
     "tags": [
       "income.ranching",
       "item.animalproduct.other"
+    ]
+  },
+  "producedByAnimal": {
+    "key": "Shelluck",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Shell_cluck_Sprite"
+        }
+      }
+    ],
+    "building": "UnderwaterRanch",
+    "daysToGrow": 15,
+    "harvestCooldown": 6,
+    "animalProduceType": "DropAtDayBegin",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65042",
+      "displayName": "挤奶桶",
+      "iconName": "Milk_Pail_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31031",
+          "displayName": "蛋珠",
+          "iconName": "Sphere_Sprite"
+        },
+        "large": {
+          "id": "item_31032",
+          "displayName": "蛋珠（大）",
+          "iconName": "Large_sphere_Sprite"
+        }
+      }
     ]
   }
 }

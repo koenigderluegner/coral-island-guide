@@ -2,8 +2,8 @@
   "item": {
     "id": "item_31025",
     "displayName": "Cara egg",
-    "price": 10,
-    "sellPrice": 10,
+    "price": 250,
+    "sellPrice": 180,
     "sellAt": [],
     "stackable": true,
     "inventoryCategory": "Animal product",
@@ -11,29 +11,87 @@
     "description": "A small cara's egg.",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 300,
+        "sellPrice": 207
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 330,
+        "sellPrice": 234
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 390,
+        "sellPrice": 270
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 510,
+        "sellPrice": 360
       }
     },
-    "iconName": "placeholder_icon_Sprite",
+    "iconName": "Cara_egg_Sprite",
     "tags": [
       "income.ranching",
       "item.animalproduct.egg",
       "Item.Consumable.Food"
     ]
   },
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31025",
+          "displayName": "Cara egg",
+          "iconName": "Cara_egg_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41334",
+          "displayName": "Cara mayonnaise",
+          "iconName": "Cara_Mayonnaise_Sprite",
+          "sellPrice": 360
+        }
+      },
+      "genericInput": null,
+      "machine": "MayoniseMachine"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31025",
+          "displayName": "Cara egg",
+          "iconName": "Cara_egg_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41344",
+          "displayName": "Salted cara egg",
+          "iconName": "Salted_cara_egg_Sprite",
+          "sellPrice": 270
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_80003",
@@ -985,21 +1043,6 @@
             "id": "item_41181",
             "displayName": "Large goat yogurt",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Giant clam",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Wakame weed",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Flower bouquet",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -1087,7 +1130,7 @@
   "usedToCraft": [
     {
       "key": "item_64010",
-      "displayName": "Monster Lure Scent",
+      "displayName": "Monster lure scent",
       "amount": 2,
       "ingredients": [],
       "genericIngredients": [
@@ -1179,22 +1222,22 @@
               {
                 "id": "item_31025",
                 "displayName": "Cara egg",
-                "iconName": "placeholder_icon_Sprite"
+                "iconName": "Cara_egg_Sprite"
               },
               {
                 "id": "item_31026",
                 "displayName": "Large cara egg",
-                "iconName": "placeholder_icon_Sprite"
+                "iconName": "Large_cara_egg_Sprite"
               },
               {
                 "id": "item_31035",
                 "displayName": "Ostrich egg",
-                "iconName": "placeholder_icon_Sprite"
+                "iconName": "Ostrich_egg_Sprite"
               },
               {
                 "id": "item_31036",
                 "displayName": "Large ostrich egg",
-                "iconName": "placeholder_icon_Sprite"
+                "iconName": "Large_ostrich_egg_Sprite"
               },
               {
                 "id": "item_32016",
@@ -1218,14 +1261,14 @@
       },
       "item": {
         "id": "item_64010",
-        "displayName": "Monster Lure Scent",
+        "displayName": "Monster lure scent",
         "price": 140,
         "sellPrice": 35,
         "sellAt": [],
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "Increase aggro scent",
+        "description": "The scent lures monsters to attack the wearer.",
         "qualities": {},
         "iconName": "Increase_aggro_scent_Sprite",
         "tags": [
@@ -1308,22 +1351,22 @@
               {
                 "id": "item_31025",
                 "displayName": "Cara egg",
-                "iconName": "placeholder_icon_Sprite"
+                "iconName": "Cara_egg_Sprite"
               },
               {
                 "id": "item_31026",
                 "displayName": "Large cara egg",
-                "iconName": "placeholder_icon_Sprite"
+                "iconName": "Large_cara_egg_Sprite"
               },
               {
                 "id": "item_31035",
                 "displayName": "Ostrich egg",
-                "iconName": "placeholder_icon_Sprite"
+                "iconName": "Ostrich_egg_Sprite"
               },
               {
                 "id": "item_31036",
                 "displayName": "Large ostrich egg",
-                "iconName": "placeholder_icon_Sprite"
+                "iconName": "Large_ostrich_egg_Sprite"
               },
               {
                 "id": "item_32016",
@@ -1355,5 +1398,100 @@
         "tags": []
       }
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_31025",
+      "bVaryHealthToMax": false,
+      "healthDelta": 14,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 15,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_31025-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 16,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 17,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_31025-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 18,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 19,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_31025-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 21,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 23,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_31025-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 28,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 30,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Carapoultry",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Carapoultry_Sprite"
+        }
+      }
+    ],
+    "building": "UnderwaterRanch",
+    "daysToGrow": 7,
+    "harvestCooldown": 2,
+    "animalProduceType": "DropAtDayBegin",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31025",
+          "displayName": "Cara egg",
+          "iconName": "Cara_egg_Sprite"
+        },
+        "large": {
+          "id": "item_31026",
+          "displayName": "Large cara egg",
+          "iconName": "Large_cara_egg_Sprite"
+        }
+      }
+    ]
+  }
 }

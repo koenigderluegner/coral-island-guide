@@ -1,39 +1,97 @@
 {
   "item": {
     "id": "item_31037",
-    "displayName": "Buffalo milk",
-    "price": 10,
-    "sellPrice": 10,
+    "displayName": "#REF!",
+    "price": 500,
+    "sellPrice": 350,
     "sellAt": [],
     "stackable": true,
-    "inventoryCategory": "Productos de origen animal",
+    "inventoryCategory": "Animal product",
     "displayKey": "AnimalProduct",
-    "description": "A buffalo milk.",
+    "description": "#REF!",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 580,
+        "sellPrice": 403
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 650,
+        "sellPrice": 455
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 750,
+        "sellPrice": 525
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1000,
+        "sellPrice": 700
       }
     },
-    "iconName": "placeholder_icon_Sprite",
+    "iconName": "Buffalo_Milk_Sprite",
     "tags": [
       "income.ranching",
       "item.animalproduct.milk",
       "Item.Consumable.Food"
     ]
   },
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31037",
+          "displayName": "#REF!",
+          "iconName": "Buffalo_Milk_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41350",
+          "displayName": "#REF!",
+          "iconName": "Buffalo_Cheese_Sprite",
+          "sellPrice": 700
+        }
+      },
+      "genericInput": null,
+      "machine": "CheesePress"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31037",
+          "displayName": "#REF!",
+          "iconName": "Buffalo_Milk_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41340",
+          "displayName": "#REF!",
+          "iconName": "Buffalo_Butter_Sprite",
+          "sellPrice": 540
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_80004",
@@ -492,16 +550,7 @@
         }
       ],
       "ingredients": [],
-      "eitherOrIngredients": [],
-      "additionsToGenerics": {
-        "Cualquier almeja": [
-          {
-            "id": "item_50307",
-            "displayName": "Almeja gigante",
-            "iconName": "Giant_Clam_Sprite"
-          }
-        ]
-      }
+      "eitherOrIngredients": []
     },
     {
       "key": "item_80088",
@@ -586,21 +635,6 @@
             "id": "item_41181",
             "displayName": "Yogur de cabra grande",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Almeja gigante",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Alga wakame",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Ramo de flores",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -742,5 +776,105 @@
       "ingredients": [],
       "eitherOrIngredients": []
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_31037",
+      "bVaryHealthToMax": false,
+      "healthDelta": 21,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 23,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_31037-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 24,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 26,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_31037-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 26,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 29,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_31037-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 32,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 35,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_31037-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 42,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 46,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Buffaloo",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Buffalo_Sprite"
+        }
+      }
+    ],
+    "building": "BarnLvl2",
+    "daysToGrow": 15,
+    "harvestCooldown": 3,
+    "animalProduceType": "UsingTools",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65042",
+      "displayName": "Cubeta lechera",
+      "iconName": "Milk_Pail_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31037",
+          "displayName": "#REF!",
+          "iconName": "Buffalo_Milk_Sprite"
+        },
+        "large": {
+          "id": "item_31038",
+          "displayName": "#REF!",
+          "iconName": "Large_buffalo_milk_Sprite"
+        }
+      }
+    ]
+  }
 }

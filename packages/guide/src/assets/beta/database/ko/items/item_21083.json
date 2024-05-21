@@ -1,39 +1,101 @@
 {
   "item": {
     "id": "item_21083",
-    "displayName": "Bluecole",
-    "price": 10,
-    "sellPrice": 10,
-    "sellAt": [],
+    "displayName": "청양배추",
+    "price": 700,
+    "sellPrice": 420,
+    "sellAt": [
+      "Merfolk General"
+    ],
     "stackable": true,
     "inventoryCategory": "Vegetables",
     "displayKey": "Vegetables",
-    "description": "Such a \"blue-tiful\" cabbage!",
+    "description": "엄'청' 아름다운 양배추!",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 805,
+        "sellPrice": 483
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 910,
+        "sellPrice": 546
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1050,
+        "sellPrice": 630
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1400,
+        "sellPrice": 840
       }
     },
     "iconName": "Bluecole_Sprite",
     "tags": [
-      "income.farming",
+      "income.oceanfarming",
+      "item.crop.diving",
+      "Item.Consumable.Food",
       "item.vegetable",
-      "Item.Consumable.Food"
+      "item.UnderwaterrVegetables"
     ]
   },
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21083",
+          "displayName": "청양배추",
+          "iconName": "Bluecole_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41396",
+          "displayName": "청양배추 주스",
+          "iconName": "Underwater_vegetable_juice_Sprite",
+          "sellPrice": 925
+        }
+      },
+      "genericInput": null,
+      "machine": "Keg"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21083",
+          "displayName": "청양배추",
+          "iconName": "Bluecole_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41366",
+          "displayName": "청양배추 절임",
+          "iconName": "Underwater_blue_pickles_Sprite",
+          "sellPrice": 75
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_42013",
@@ -942,21 +1004,6 @@
             "id": "item_41181",
             "displayName": "대용량 염소 요구르트",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "대왕조개",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "미역",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "꽃다발",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -1008,7 +1055,7 @@
           "genericItem": {
             "key": "Any_Cheese",
             "tags": [
-              "Artisan.CheesePress"
+              "item.artisan.cheese"
             ],
             "iconName": "Any_Cheese_Sprite",
             "displayName": "아무 치즈"
@@ -1107,5 +1154,67 @@
       "ingredients": [],
       "eitherOrIngredients": []
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_21083",
+      "bVaryHealthToMax": false,
+      "healthDelta": 140,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 140,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "bronze": {
+      "key": "item_21083-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 161,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 161,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "silver": {
+      "key": "item_21083-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 175,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 175,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "gold": {
+      "key": "item_21083-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 210,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 210,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "osmium": {
+      "key": "item_21083-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 280,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 280,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    }
+  }
 }

@@ -2,8 +2,8 @@
   "item": {
     "id": "item_31032",
     "displayName": "Grosse sphère",
-    "price": 10,
-    "sellPrice": 10,
+    "price": 3420,
+    "sellPrice": 2400,
     "sellAt": [],
     "stackable": true,
     "inventoryCategory": "Animal product",
@@ -11,26 +11,64 @@
     "description": "Grosse perle de coquicaque.",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 3940,
+        "sellPrice": 2760
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 4460,
+        "sellPrice": 3120
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 5140,
+        "sellPrice": 3600
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 6860,
+        "sellPrice": 4800
       }
     },
-    "iconName": "placeholder_icon_Sprite",
+    "iconName": "Large_sphere_Sprite",
     "tags": [
       "income.ranching",
       "item.animalproduct.other"
+    ]
+  },
+  "producedByAnimal": {
+    "key": "Shelluck",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Shell_cluck_Sprite"
+        }
+      }
+    ],
+    "building": "UnderwaterRanch",
+    "daysToGrow": 15,
+    "harvestCooldown": 6,
+    "animalProduceType": "DropAtDayBegin",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65042",
+      "displayName": "Seau à lait",
+      "iconName": "Milk_Pail_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31031",
+          "displayName": "Sphère",
+          "iconName": "Sphere_Sprite"
+        },
+        "large": {
+          "id": "item_31032",
+          "displayName": "Grosse sphère",
+          "iconName": "Large_sphere_Sprite"
+        }
+      }
     ]
   }
 }
