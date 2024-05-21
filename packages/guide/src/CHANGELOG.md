@@ -5,6 +5,7 @@
 #### Added
 
 - Added data for beta 1.1 (game version v1.1-1051 on Steam)
+  - Go to [My guide -> Settings](/my/settings) to activate the beta.
   - Some features received changes or weren't fetched correctly - this problem is known and will be fixed in the next few days (example NPC images)
 - Reactivated To-Do lists.
     - To-Dos are now more flexible and can store all items. If context is given, they will be categorized else they will
