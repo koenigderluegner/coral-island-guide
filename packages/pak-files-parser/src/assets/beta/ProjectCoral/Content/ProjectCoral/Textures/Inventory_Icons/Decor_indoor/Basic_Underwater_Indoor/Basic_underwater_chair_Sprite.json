@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Basic_underwater_chair_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": -5.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 102.0,
+            "Y": 10.0,
+            "Z": 101.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "80B2DFD44A60F92C73C8E28428F5A150"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Basic_underwater_chair_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Basic_underwater_chair'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/Basic_Underwater_Indoor/Basic_Underwater_Indoor_Textures/Basic_underwater_chair.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Basic_underwater_chair_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/Basic_Underwater_Indoor/Basic_underwater_chair_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 51.0,
+          "Y": 45.0,
+          "Z": 0.8984375,
+          "W": 0.1484375
+        },
+        {
+          "X": -51.0,
+          "Y": 45.0,
+          "Z": 0.1015625,
+          "W": 0.1484375
+        },
+        {
+          "X": -51.0,
+          "Y": -56.0,
+          "Z": 0.1015625,
+          "W": 0.9375
+        },
+        {
+          "X": 51.0,
+          "Y": -56.0,
+          "Z": 0.8984375,
+          "W": 0.9375
+        },
+        {
+          "X": 51.0,
+          "Y": 45.0,
+          "Z": 0.8984375,
+          "W": 0.1484375
+        },
+        {
+          "X": -51.0,
+          "Y": -56.0,
+          "Z": 0.1015625,
+          "W": 0.9375
+        }
+      ]
+    }
+  }
+]

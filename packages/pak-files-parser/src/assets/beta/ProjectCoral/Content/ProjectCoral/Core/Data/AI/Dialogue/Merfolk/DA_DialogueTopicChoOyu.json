@@ -18,7 +18,7 @@
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           },
-          "priority": 160,
+          "priority": 180,
           "cooldown": 7,
           "samePriorityAsBefore": true
         },
@@ -35,7 +35,7 @@
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           },
-          "priority": 160,
+          "priority": 180,
           "cooldown": 7,
           "samePriorityAsBefore": true
         },
@@ -52,7 +52,7 @@
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           },
-          "priority": 160,
+          "priority": 180,
           "cooldown": 7,
           "samePriorityAsBefore": true
         },
@@ -69,7 +69,7 @@
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           },
-          "priority": 160,
+          "priority": 180,
           "cooldown": 7,
           "samePriorityAsBefore": true
         },
@@ -86,7 +86,7 @@
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           },
-          "priority": 160,
+          "priority": 180,
           "cooldown": 7,
           "samePriorityAsBefore": true
         },
@@ -103,7 +103,7 @@
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           },
-          "priority": 160,
+          "priority": 180,
           "cooldown": 7,
           "samePriorityAsBefore": true
         },
@@ -120,7 +120,7 @@
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           },
-          "priority": 160,
+          "priority": 180,
           "cooldown": 7,
           "samePriorityAsBefore": true
         },
@@ -137,7 +137,7 @@
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           },
-          "priority": 160,
+          "priority": 180,
           "cooldown": 7,
           "samePriorityAsBefore": true
         },
@@ -159,7 +159,7 @@
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           },
-          "priority": 160,
+          "priority": 180,
           "cooldown": 7,
           "samePriorityAsBefore": true
         },
@@ -176,7 +176,7 @@
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           },
-          "priority": 160,
+          "priority": 180,
           "cooldown": 7,
           "samePriorityAsBefore": true
         },
@@ -193,7 +193,7 @@
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           },
-          "priority": 160,
+          "priority": 180,
           "cooldown": 7,
           "samePriorityAsBefore": true
         },
@@ -210,7 +210,7 @@
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           },
-          "priority": 160,
+          "priority": 180,
           "cooldown": 7,
           "samePriorityAsBefore": true
         },
@@ -227,7 +227,7 @@
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           },
-          "priority": 160,
+          "priority": 180,
           "cooldown": 7,
           "samePriorityAsBefore": true
         },
@@ -244,7 +244,7 @@
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           },
-          "priority": 160,
+          "priority": 180,
           "cooldown": 7,
           "samePriorityAsBefore": true
         },
@@ -261,7 +261,7 @@
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           },
-          "priority": 160,
+          "priority": 180,
           "cooldown": 7,
           "samePriorityAsBefore": true
         },
@@ -278,9 +278,48 @@
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           },
-          "priority": 160,
+          "priority": 180,
           "cooldown": 7,
           "samePriorityAsBefore": true
+        },
+        {
+          "topicTag": {
+            "TagName": "Dialogue.Topic.PersonalityTrait1"
+          },
+          "requirementType": "EC_RequirementCollectionType::And",
+          "requirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "npcRequirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "priority": 180,
+          "cooldown": 7,
+          "samePriorityAsBefore": true
+        },
+        {
+          "topicTag": {
+            "TagName": "Dialogue.Topic.50mCleared"
+          },
+          "requirementType": "EC_RequirementCollectionType::And",
+          "requirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_IsCutsceneTriggeredRequirement'DA_DialogueTopicChoOyu:C_IsCutsceneTriggeredRequirement_1'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/Merfolk/DA_DialogueTopicChoOyu.2"
+              }
+            ]
+          },
+          "npcRequirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": []
+          },
+          "priority": 10,
+          "cooldown": 3,
+          "samePriorityAsBefore": false
         }
       ]
     }
@@ -292,6 +331,15 @@
     "Class": "UScriptClass'C_IsCutsceneTriggeredRequirement'",
     "Properties": {
       "cutsceneTopic": "GS_Naga_Freed"
+    }
+  },
+  {
+    "Type": "C_IsCutsceneTriggeredRequirement",
+    "Name": "C_IsCutsceneTriggeredRequirement_1",
+    "Outer": "DA_DialogueTopicChoOyu",
+    "Class": "UScriptClass'C_IsCutsceneTriggeredRequirement'",
+    "Properties": {
+      "cutsceneTopic": "GS_Coral_Tree_Heal"
     }
   }
 ]

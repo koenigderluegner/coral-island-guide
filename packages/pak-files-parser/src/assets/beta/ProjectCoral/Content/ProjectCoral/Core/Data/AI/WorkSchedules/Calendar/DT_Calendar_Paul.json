@@ -608,10 +608,57 @@
         "petRequirement": "EC_PetAdoptState::Any",
         "hasChildSchedule": false,
         "weatherOverrides": [],
-        "seasonOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": []
+            }
+          }
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
         "conditions": null
+      },
+      "RANK-S_Weather_MTW": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [
+          {
+            "EC_Weather::Rain": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday"
+              ]
+            }
+          },
+          {
+            "EC_Weather::Snow": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday"
+              ]
+            }
+          }
+        ],
+        "seasonOverrides": [],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'Rank_S_Museum_Unlocked'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/Rank_S_Museum_Unlocked.1"
+        }
       }
     }
   }

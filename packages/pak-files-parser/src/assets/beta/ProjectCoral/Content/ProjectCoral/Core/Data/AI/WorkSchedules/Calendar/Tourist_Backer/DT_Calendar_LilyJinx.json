@@ -1,0 +1,279 @@
+[
+  {
+    "Type": "DataTable",
+    "Name": "DT_Calendar_LilyJinx",
+    "Class": "UScriptClass'DataTable'",
+    "Properties": {
+      "RowStruct": {
+        "ObjectName": "ScriptStruct'C_WorkCalendarEntry'",
+        "ObjectPath": "/Script/ProjectCoral"
+      }
+    },
+    "Rows": {
+      "TreePlantingRunning": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
+        "festivalOverrides": [
+          "TreePlanting"
+        ],
+        "festivalStatesAllowed": [
+          "EC_FestivalState::RunningFestival"
+        ],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'EditorOnly'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/EditorOnly.1"
+        }
+      },
+      "SpookyDayRunning": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
+        "festivalOverrides": [
+          "SpookyDay"
+        ],
+        "festivalStatesAllowed": [
+          "EC_FestivalState::RunningFestival"
+        ],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'EditorOnly'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/EditorOnly.1"
+        }
+      },
+      "Spring_20-21": {
+        "dateOverrides": [
+          {
+            "isValidOnSpecificDate": false,
+            "isValidIndefinitelyOnceStarted": false,
+            "random": false,
+            "startsFrom": {
+              "day": 20,
+              "season": "EC_Season::Spring",
+              "year": 1
+            },
+            "lastsTill": {
+              "day": 21,
+              "season": "EC_Season::Spring",
+              "year": 1
+            }
+          }
+        ],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::Annually",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": []
+            }
+          }
+        ],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'20-21_Spring_ClearWeather'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/20-21_Spring_ClearWeather.1"
+        }
+      },
+      "Fall_27-28": {
+        "dateOverrides": [
+          {
+            "isValidOnSpecificDate": false,
+            "isValidIndefinitelyOnceStarted": false,
+            "random": false,
+            "startsFrom": {
+              "day": 27,
+              "season": "EC_Season::Fall",
+              "year": 1
+            },
+            "lastsTill": {
+              "day": 28,
+              "season": "EC_Season::Fall",
+              "year": 1
+            }
+          }
+        ],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::Annually",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": []
+            }
+          }
+        ],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'27-28_Fall_ClearWeather'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/27-28_Fall_ClearWeather.1"
+        }
+      },
+      "Spring_20-21_Weather": {
+        "dateOverrides": [
+          {
+            "isValidOnSpecificDate": false,
+            "isValidIndefinitelyOnceStarted": false,
+            "random": false,
+            "startsFrom": {
+              "day": 20,
+              "season": "EC_Season::Spring",
+              "year": 1
+            },
+            "lastsTill": {
+              "day": 21,
+              "season": "EC_Season::Spring",
+              "year": 1
+            }
+          }
+        ],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::Annually",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [
+          {
+            "EC_Weather::Rain": {
+              "daysOfTheWeek": []
+            }
+          },
+          {
+            "EC_Weather::Storm": {
+              "daysOfTheWeek": []
+            }
+          },
+          {
+            "EC_Weather::Snow": {
+              "daysOfTheWeek": []
+            }
+          },
+          {
+            "EC_Weather::Blizzard": {
+              "daysOfTheWeek": []
+            }
+          }
+        ],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": []
+            }
+          }
+        ],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": null
+      },
+      "Fall_27-28_Weather": {
+        "dateOverrides": [
+          {
+            "isValidOnSpecificDate": false,
+            "isValidIndefinitelyOnceStarted": false,
+            "random": false,
+            "startsFrom": {
+              "day": 27,
+              "season": "EC_Season::Fall",
+              "year": 1
+            },
+            "lastsTill": {
+              "day": 28,
+              "season": "EC_Season::Fall",
+              "year": 1
+            }
+          }
+        ],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::Annually",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [
+          {
+            "EC_Weather::Rain": {
+              "daysOfTheWeek": []
+            }
+          },
+          {
+            "EC_Weather::Storm": {
+              "daysOfTheWeek": []
+            }
+          },
+          {
+            "EC_Weather::Snow": {
+              "daysOfTheWeek": []
+            }
+          },
+          {
+            "EC_Weather::Blizzard": {
+              "daysOfTheWeek": []
+            }
+          }
+        ],
+        "seasonOverrides": [
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": []
+            }
+          }
+        ],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": null
+      }
+    }
+  }
+]

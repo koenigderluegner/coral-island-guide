@@ -1,0 +1,52 @@
+[
+  {
+    "Type": "DataTable",
+    "Name": "DT_BuildingEditUnderwaterShop",
+    "Class": "UScriptClass'DataTable'",
+    "Properties": {
+      "RowStruct": {
+        "ObjectName": "ScriptStruct'C_BuildingEditShopData'",
+        "ObjectPath": "/Script/ProjectCoral"
+      }
+    },
+    "Rows": {
+      "item_110038": {
+        "requirements": [
+          {
+            "EC_BuildingShopAction::Move": {
+              "price": 300,
+              "resources": []
+            }
+          },
+          {
+            "EC_BuildingShopAction::Destroy": {
+              "price": 1000,
+              "resources": []
+            }
+          }
+        ],
+        "confirmationTextsOverwrite": [
+          {
+            "EC_BuildingShopAction::Upgrade": {
+              "Namespace": "",
+              "Key": "04D8AF174185AC513ED7848771599A34",
+              "SourceString": "This upgrade will increase the animal capacity from <Places>4 to 8</>. Do you want to expand?",
+              "LocalizedString": "This upgrade will increase the animal capacity from <Places>4 to 8</>. Do you want to expand?"
+            }
+          }
+        ],
+        "itemResult": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_110038"
+          },
+          "itemID": "item_110038"
+        },
+        "previewImage": null
+      }
+    }
+  }
+]

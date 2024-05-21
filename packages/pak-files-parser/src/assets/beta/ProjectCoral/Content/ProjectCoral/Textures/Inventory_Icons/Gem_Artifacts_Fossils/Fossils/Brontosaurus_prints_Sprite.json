@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "Brontosaurus_prints_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -2.0,
+              "Y": -0.0,
+              "Z": -4.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 440.0,
+            "Y": 10.0,
+            "Z": 476.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "233D025245B7C9EE3CFADABB971BDC05"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Brontosaurus_prints_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 512.0,
+        "Y": 512.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Brontosaurus_prints'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Gem_Artifacts_Fossils/Fossils/Fossils_textures/Brontosaurus_prints.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Brontosaurus_prints_Sprite:BodySetup_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Gem_Artifacts_Fossils/Fossils/Brontosaurus_prints_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 218.0,
+          "Y": 234.0,
+          "Z": 0.92578125,
+          "W": 0.04296875
+        },
+        {
+          "X": -222.0,
+          "Y": 234.0,
+          "Z": 0.06640625,
+          "W": 0.04296875
+        },
+        {
+          "X": -222.0,
+          "Y": -242.0,
+          "Z": 0.06640625,
+          "W": 0.97265625
+        },
+        {
+          "X": 218.0,
+          "Y": -242.0,
+          "Z": 0.92578125,
+          "W": 0.97265625
+        },
+        {
+          "X": 218.0,
+          "Y": 234.0,
+          "Z": 0.92578125,
+          "W": 0.04296875
+        },
+        {
+          "X": -222.0,
+          "Y": -242.0,
+          "Z": 0.06640625,
+          "W": 0.97265625
+        }
+      ]
+    }
+  }
+]
