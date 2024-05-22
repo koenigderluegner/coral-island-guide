@@ -8,14 +8,15 @@ import { OfferingRewardsDbGenerator } from "./offering-rewards-db.generator";
 import { OfferingMatch } from "../../interfaces/offering-match.interface";
 import { StringTable } from "../../util/string-table.class";
 import { Logger } from "../../util/logger.class";
+import { environment } from "../../environments/environment";
 
 export class OfferingDetailsDbGenerator extends BaseGenerator<RawOffering, Offerings> {
 
     datatable: Datatable<RawOffering>[] = [
         readAsset<Datatable<RawOffering>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_OfferingRegistry.json'),
-        readAsset<Datatable<RawOffering>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_DivingOfferingRegistry.json')
+        (environment.isBeta ? readAsset<Datatable<RawOffering>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_DivingOfferingRegistry.json') :[])
     ].reduce((previousValue, currentValue) => {
-        Object.assign(previousValue[0].Rows, (currentValue)[0].Rows);
+        Object.assign(previousValue[0]?.Rows ?? {}, (currentValue)[0]?.Rows ?? {});
         return previousValue
     }).flat();
     private offeringMatches: OfferingMatch[];

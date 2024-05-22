@@ -7,14 +7,15 @@ import { GameplayEffectsConfig, GameplayEffectsConfigEntry } from "../../types/o
 import { OfferingMatch } from "../../interfaces/offering-match.interface";
 import { RawAddItemToInventoryEffect } from "../../interfaces/raw-data-interfaces/da-file-parse/effects/add-item-to-inventory-effect.type";
 import { RawUnlockCookingRecipeEffect } from "../../interfaces/raw-data-interfaces/da-file-parse/effects/unlock-cooking-recipe-effect.type";
+import { environment } from "../../environments/environment";
 
 export class OfferingRewardsDbGenerator extends BaseGenerator<RawOfferingReward, OfferingMatch> {
 
     datatable: Datatable<RawOfferingReward>[] = [
         readAsset<Datatable<RawOfferingReward>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_OfferingRewardRegistry.json'),
-        readAsset<Datatable<RawOfferingReward>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_HeritageOfferingRewardRegistry.json'),
+        (environment.isBeta ?  readAsset<Datatable<RawOfferingReward>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_HeritageOfferingRewardRegistry.json') :[]),
     ].reduce((previousValue, currentValue) => {
-        Object.assign(previousValue[0].Rows, (currentValue)[0].Rows);
+        Object.assign(previousValue[0]?.Rows ?? {}, (currentValue)[0]?.Rows ?? {});
         return previousValue
     }).flat();
     private rewardsDa: GameplayEffectsConfigEntry[];

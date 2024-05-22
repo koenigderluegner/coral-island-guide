@@ -7,6 +7,7 @@ import { OfferingDetailsDbGenerator } from "./offering-details-db.generator";
 import { nonNullable } from "@ci/util";
 import { StringTable } from "../../util/string-table.class";
 import { RawOffering } from "../../interfaces/raw-data-interfaces/raw-offering.interface";
+import { environment } from "../../environments/environment";
 
 export class OfferingsDbGenerator extends BaseGenerator<RawOfferingAltar, OfferingAltar> {
 
@@ -15,15 +16,17 @@ export class OfferingsDbGenerator extends BaseGenerator<RawOfferingAltar, Offeri
 
     constructor(protected itemMap: Map<string, Item>, protected cookingMap: Map<string, Record<string, CookingRecipe[]>>, protected tagBasedItemsMap: Map<string, TagBasedItem>,) {
         super();
-        const offeringDetailsGenerator = new OfferingDetailsDbGenerator(itemMap, cookingMap, tagBasedItemsMap)
-        this.offeringDetails = offeringDetailsGenerator.generate();
+        const offeringDetailsGenerator = new OfferingDetailsDbGenerator(itemMap, cookingMap, tagBasedItemsMap);
 
-        this.datatable[0].Rows['CustomDiving'] = {
-            offeringId: Object.keys(readAsset<Datatable<RawOffering>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_DivingOfferingRegistry.json')[0].Rows),
-            offeringGroupTitle: {CultureInvariantString: null},
-            customType: "diving",
-            isHeritageOffering: false,
-            offeringGroupRewardText: {CultureInvariantString: null}
+        this.offeringDetails = offeringDetailsGenerator.generate();
+        if (environment.isBeta) {
+            this.datatable[0].Rows['CustomDiving'] = {
+                offeringId: Object.keys(readAsset<Datatable<RawOffering>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_DivingOfferingRegistry.json')[0].Rows),
+                offeringGroupTitle: {CultureInvariantString: null},
+                customType: "diving",
+                isHeritageOffering: false,
+                offeringGroupRewardText: {CultureInvariantString: null}
+            }
         }
     }
 
