@@ -4,7 +4,12 @@
 
 #### Added
 
-- Added more images to NPCs like alternate forms of Sawee
+- \[Beta] Added more images to NPCs like alternate forms of Sawee
+- \[Beta] Added new Shops: Tidal Threads, Taco Truck and Underwater Ranch
+
+### Changed
+
+- \[Beta] Fixed missing crop to seed mapping for new seeds
 
 ### 0.18.0 2024-05-21
 

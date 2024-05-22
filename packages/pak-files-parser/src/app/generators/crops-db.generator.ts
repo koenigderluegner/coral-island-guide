@@ -1,15 +1,19 @@
-import { Crop, Item, Season } from '@ci/data-types';
+import { Crop, Item } from '@ci/data-types';
 import { minifyItem, readAsset } from '../../util/functions';
 import { RegisteredCrop } from '../../interfaces/registered-crop.interface';
 import { CropRegistry } from '../../types/crop-registry.type';
 import { getEnumValue, nonNullable } from '@ci/util';
+import { environment } from "../../environments/environment";
 
 export class CropsDbGenerator {
 
-    cropRegistry: CropRegistry[];
+    cropRegistry: CropRegistry[][];
 
     constructor(protected itemMap: Map<string, Item>) {
-        this.cropRegistry = readAsset<CropRegistry[]>('ProjectCoral/Content/ProjectCoral/Core/HismcManagers/Crop/DT_CropRegistry.json');
+        this.cropRegistry = [
+            readAsset<CropRegistry[]>('ProjectCoral/Content/ProjectCoral/Core/HismcManagers/Crop/DT_CropRegistry.json'),
+            (environment.isBeta ? readAsset<CropRegistry[]>('ProjectCoral/Content/ProjectCoral/Core/HismcManagers/UnderwaterFarm/Crop/DT_CropRegistry_UnderwaterFarm.json') : [])
+        ];
 
     }
 
@@ -18,9 +22,10 @@ export class CropsDbGenerator {
 
         // RequiredToUse
 
-        Object.keys(this.cropRegistry[0]?.Rows).forEach(itemKey => {
+        const combinedCrops = this.cropRegistry.map(r => r[0]?.Rows).reduce((previousValue, currentValue) => Object.assign(previousValue, currentValue), {});
+        Object.keys(combinedCrops).forEach(itemKey => {
 
-            const dbItem: RegisteredCrop = this.cropRegistry[0]?.Rows[itemKey];
+            const dbItem: RegisteredCrop = combinedCrops[itemKey];
 
             const seed: Item | undefined = this.itemMap.get(itemKey);
 
@@ -50,7 +55,7 @@ export class CropsDbGenerator {
 
                         const ddItem = this.itemMap.get(dd.itemId.itemID);
 
-                        if(!ddItem) return;
+                        if (!ddItem) return;
 
                         return {
                             itemId: dd.itemId.itemID,
