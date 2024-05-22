@@ -11,7 +11,13 @@ import { Logger } from "../../util/logger.class";
 
 export class OfferingDetailsDbGenerator extends BaseGenerator<RawOffering, Offerings> {
 
-    datatable: Datatable<RawOffering>[] = readAsset<Datatable<RawOffering>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_OfferingRegistry.json');
+    datatable: Datatable<RawOffering>[] = [
+        readAsset<Datatable<RawOffering>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_OfferingRegistry.json'),
+        readAsset<Datatable<RawOffering>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_DivingOfferingRegistry.json')
+    ].reduce((previousValue, currentValue) => {
+        Object.assign(previousValue[0].Rows, (currentValue)[0].Rows);
+        return previousValue
+    }).flat();
     private offeringMatches: OfferingMatch[];
 
 

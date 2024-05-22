@@ -9,6 +9,7 @@ export class EntityKeyPipe implements PipeTransform {
     transform(value: undefined): undefined;
     transform(value: null): null;
     transform(value: MinimalItem | MinimalTagBasedItem | MinimalNPC): string ;
+    transform(value: MinimalItem | MinimalTagBasedItem | MinimalNPC | undefined): string | undefined;
     transform(value: MinimalItem | MinimalTagBasedItem | MinimalNPC | undefined | null): string | undefined | null {
         if (!value) return value;
 

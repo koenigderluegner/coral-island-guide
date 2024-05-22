@@ -10,7 +10,7 @@ export interface NPC {
     canInteract: boolean,
     characterCategory: string,
     iconName: string | null;
-    appearances: Record<string, Record<string, string>>
+    appearances: { appearanceCategory?: string | undefined, appearances: Record<string, Record<string, string>> }[] // <appearance, <emotion, filepath>>
     headerPortraitFileName: string | null;
     customHead?: true,
     birthday?: SpecificDate

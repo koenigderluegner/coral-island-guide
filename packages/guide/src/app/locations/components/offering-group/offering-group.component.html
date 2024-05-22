@@ -1,0 +1,62 @@
+<app-data-filter [(showTable)]="showTable"/>
+@if (offeringAltar().offeringGroupRewardText) {
+    <div class="bg-merino rounded-lg mb-4 text-lg font-semibold p-4">
+        Reward: {{ offeringAltar().offeringGroupRewardText }}
+    </div>
+}
+@if (!showTable) {
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        @for (offering of offeringAltar().offerings; track offering) {
+            <div (click)="activeOffering = offering"
+
+                 [class.bg-merino-300]="activeOffering?.title === offering.title"
+                 class="rounded-lg bg-merino flex flex-col items-center gap-4 px-4 py-8 hover:bg-merino-200">
+                <img alt="{{offering.title}} offering icon" height="128"
+                     ngSrc="{{bundleAssetPath() + offering.imageName}}.webp"
+                     width="128"/>
+                <div class="text-lg font-semibold">{{ offering.title }}</div>
+            </div>
+        }
+    </div>
+}
+@if (showTable) {
+    <app-offerings-table [dataSource]="[offeringAltar()]"/>
+}
+
+@if (activeOffering && !showTable) {
+    <div class="bg-merino rounded-lg mb-4 text-lg font-semibold p-4 my-8">
+        Rewards:
+    </div>
+
+    <div class="grid gap-4 icon-grid  mt-8">
+        @for (offeringReward of activeOffering.rewards.items; track offeringReward) {
+            <app-item-icon (click)="showDetails(offeringReward.item)"
+
+                           [amount]="offeringReward.amount"
+                           [class.selected-icon]="selectedEntity() && (selectedEntity() | entityKey) === offeringReward.item.id"
+                           [itemName]="offeringReward.item.iconName"
+                           class="icon-grid-item">
+            </app-item-icon>
+        }
+    </div>
+
+    <div class="bg-merino rounded-lg mb-4 text-lg font-semibold p-4 my-8">
+        {{ activeOffering.numOfItemRequired === -1 ? 'All' : activeOffering.numOfItemRequired }} of the
+        following
+        items are required:
+    </div>
+    <div class="grid gap-4 icon-grid  mt-8">
+
+        @for (offering of activeOffering.requiredItems; track offering) {
+            <app-item-icon (click)="showDetails(offering)"
+
+                           [amount]="offering.amount"
+                           [class.selected-icon]="selectedEntity() && (selectedEntity() | entityKey) === (offering.item | entityKey)"
+                           [itemName]="offering.item.iconName"
+                           [quality]="offering.quality"
+                           class="icon-grid-item">
+            </app-item-icon>
+        }
+    </div>
+
+}

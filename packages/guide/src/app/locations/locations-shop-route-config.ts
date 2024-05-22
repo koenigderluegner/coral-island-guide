@@ -16,8 +16,12 @@ import { SocketAndPanComponent } from "./components/shops/socket-and-pan/socket-
 import { WhiteFlamingoComponent } from "./components/shops/white-flamingo/white-flamingo.component";
 import { CoffeeComponent } from "./components/shops/coffee/coffee.component";
 import { TavernComponent } from "./components/shops/tavern/tavern.component";
+import { TidalThreadsComponent } from "./components/shops/tidal-threads.component";
+import { Route } from "@angular/router";
 
-export const shopRouteConfig: { name: ShopName, component: Type<any>, betaOnly?: true }[] = [
+export const shopRouteConfig: ({ name: ShopName, betaOnly?: true } & ({ component: Type<any>, } | {
+    loadComponent: Route['loadComponent']
+}))[] = [
     {
         name: 'general-store',
         component: GeneralStoreComponent,
@@ -68,6 +72,30 @@ export const shopRouteConfig: { name: ShopName, component: Type<any>, betaOnly?:
     {
         name: 'merfolk-oracle-tail-store',
         component: MerfolkOracleTailStoreComponent,
+    },
+    {
+        name: 'tidal-threads',
+        loadComponent: () => import('./components/shops/tidal-threads.component').then(c => c.TidalThreadsComponent),
+        betaOnly: true
+    },
+    {
+        name: 'underwater-ranch',
+        loadComponent: () => import('./components/underwater-ranch/underwater-ranch.component').then(c => c.UnderwaterRanchComponent),
+        betaOnly: true
+    },
+    {
+        name: 'taco-truck',
+        loadComponent: () => import('./components/shops/taco-truck.component').then(c => c.TacoTruckComponent),
+        betaOnly: true
+    },
+    {
+        name: 'sales-cart-stall',
+        loadComponent: () => import('./components/shops/sales-cart-stall.component').then(c => c.SalesCartStallComponent),
+        betaOnly: true
+    },
+    {
+        name: 'furniture-store',
+        loadComponent: () => import('./components/shops/furniture-store.component').then(c => c.FurnitureStoreComponent),
     },
     {
         name: 'white-flamingo',

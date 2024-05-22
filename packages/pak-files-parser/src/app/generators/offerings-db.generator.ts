@@ -6,6 +6,7 @@ import { RawOfferingAltar } from "../../interfaces/raw-data-interfaces/raw-offer
 import { OfferingDetailsDbGenerator } from "./offering-details-db.generator";
 import { nonNullable } from "@ci/util";
 import { StringTable } from "../../util/string-table.class";
+import { RawOffering } from "../../interfaces/raw-data-interfaces/raw-offering.interface";
 
 export class OfferingsDbGenerator extends BaseGenerator<RawOfferingAltar, OfferingAltar> {
 
@@ -16,6 +17,14 @@ export class OfferingsDbGenerator extends BaseGenerator<RawOfferingAltar, Offeri
         super();
         const offeringDetailsGenerator = new OfferingDetailsDbGenerator(itemMap, cookingMap, tagBasedItemsMap)
         this.offeringDetails = offeringDetailsGenerator.generate();
+
+        this.datatable[0].Rows['CustomDiving'] = {
+            offeringId: Object.keys(readAsset<Datatable<RawOffering>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_DivingOfferingRegistry.json')[0].Rows),
+            offeringGroupTitle: {CultureInvariantString: null},
+            customType: "diving",
+            isHeritageOffering: false,
+            offeringGroupRewardText: {CultureInvariantString: null}
+        }
     }
 
     handleEntry(itemKey: string, dbItem: RawOfferingAltar): OfferingAltar {
@@ -33,13 +42,19 @@ export class OfferingsDbGenerator extends BaseGenerator<RawOfferingAltar, Offeri
             })
             .filter(nonNullable)
 
+        let customType: Pick<OfferingAltar, 'customType'> = {}
+        if ('customType' in dbItem) {
+            customType.customType = dbItem.customType
+        }
 
         return {
             key: itemKey,
             offeringGroupTitle: StringTable.getString(dbItem.offeringGroupTitle) ?? '',
             urlPath: (StringTable.getString(dbItem.offeringGroupTitle, "en") ?? '').toLowerCase().replaceAll(' ', ''),
             offeringGroupRewardText: StringTable.getString(dbItem.offeringGroupRewardText) ?? '',
-            offerings
+            offerings,
+            isHeritageOffering: dbItem.isHeritageOffering,
+            ...customType
 
         };
 

@@ -115,6 +115,8 @@ export class DatabaseService extends BaseDbService {
     private _BESTIARY: Enemy[] = [];
     private _BESTIARY$?: Observable<Enemy[]>;
 
+
+    private _ANIMAL_SHOP_DATA: Map<string, AnimalShopData[]> = new Map<string, AnimalShopData[]>();
     private _ANIMAL_DATA$?: Observable<AnimalData[]>;
     private _ANIMAL_MOOD_DATA$?: Observable<ProductSizeByMood[]>;
     private _ANIMAL_SHOP_DATA$?: Observable<AnimalShopData[]>;
@@ -197,15 +199,22 @@ export class DatabaseService extends BaseDbService {
         return this._ANIMAL_MOOD_DATA$;
     }
 
-    fetchAnimalShopData$(): Observable<AnimalShopData[]> {
-        if (!this._ANIMAL_SHOP_DATA$) {
-            this._ANIMAL_SHOP_DATA$ = this.http.get<AnimalShopData[]>(`${this.BASE_PATH}/animal-shop-data.json`)
+
+
+    fetchAnimalShopData$(shopName: ShopName): Observable<AnimalShopData[]> {
+        if (!this._ANIMAL_SHOP_DATA.has(shopName)) {
+            return this.http.get<AnimalShopData[]>(`${this.BASE_PATH}/${shopName}-animal-shop-data.json`)
                 .pipe(
+                    tap(items => this._ANIMAL_SHOP_DATA.set(shopName, items)),
                     shareReplay(1)
                 );
+        } else {
+            return of(this._ANIMAL_SHOP_DATA.get(shopName)!)
         }
-        return this._ANIMAL_SHOP_DATA$;
+
     }
+
+
 
     fetchTornPagesData$(): Observable<TornPageData[]> {
         if (!this._TORN_PAGES_DATA$) {

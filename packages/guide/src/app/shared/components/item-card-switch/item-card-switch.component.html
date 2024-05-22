@@ -2,7 +2,10 @@
     @if (isCustomEntry(item()) || isTagBasedItem(item())) {
         <app-base-item-card [item]="item()"/>
     } @else if (itemEntry | isMinimalItem) {
-        <app-database-item-details [itemId]="itemEntry.id" [context]="context()">
+        <app-database-item-details [itemId]="itemEntry.id"
+                                   [context]="context()"
+                                   [quality]="quality()"
+                                   [amount]="amount()">
             <ng-template let-details appDatabaseItemDetails>
                 <ng-container *ngTemplateOutlet="databaseItemDetails; context: {$implicit: details}"></ng-container>
             </ng-template>

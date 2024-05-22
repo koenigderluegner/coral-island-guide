@@ -10,7 +10,13 @@ import { RawUnlockCookingRecipeEffect } from "../../interfaces/raw-data-interfac
 
 export class OfferingRewardsDbGenerator extends BaseGenerator<RawOfferingReward, OfferingMatch> {
 
-    datatable: Datatable<RawOfferingReward>[] = readAsset<Datatable<RawOfferingReward>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_OfferingRewardRegistry.json');
+    datatable: Datatable<RawOfferingReward>[] = [
+        readAsset<Datatable<RawOfferingReward>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_OfferingRewardRegistry.json'),
+        readAsset<Datatable<RawOfferingReward>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_HeritageOfferingRewardRegistry.json'),
+    ].reduce((previousValue, currentValue) => {
+        Object.assign(previousValue[0].Rows, (currentValue)[0].Rows);
+        return previousValue
+    }).flat();
     private rewardsDa: GameplayEffectsConfigEntry[];
     private rewardsConfig: GameplayEffectsConfig;
     private cookingrecipes: CookingRecipe[];

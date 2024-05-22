@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { LocationsComponent } from './locations.component';
 import { SharedModule } from '../shared/shared.module';
-import { LakeTempleComponent } from './components/lake-temple/lake-temple.component';
 import { LocationsRoutingModule } from './locations-routing.module';
 import { MatTabsModule } from '@angular/material/tabs';
 import { OfferingsTableComponent } from './components/tables/offerings-table/offerings-table.component';
@@ -51,7 +50,6 @@ import { OfferingComponent } from "../shared/components/database-item-details/of
 @NgModule({
     declarations: [
         LocationsComponent,
-        LakeTempleComponent,
         OfferingsTableComponent,
         BlacksmithComponent,
         ShopItemDataDetailsComponent,
@@ -108,6 +106,14 @@ import { OfferingComponent } from "../shared/components/database-item-details/of
         ShopItemProcessTableComponent,
         ItemUpgradeTableComponent,
         FestivalShopItemTableComponent,
+        OpeningHoursComponent,
+        ShopItemDataDetailsComponent,
+        ShopItemDataTableComponent,
+        ShopItemProcessTableComponent,
+        ItemUpgradeDetailsComponent,
+        ShopItemProcessDataDetailsComponent,
+        AnimalMoodTableComponent,
+        AnimalDetailsComponent
     ],
 })
 export class LocationsModule {

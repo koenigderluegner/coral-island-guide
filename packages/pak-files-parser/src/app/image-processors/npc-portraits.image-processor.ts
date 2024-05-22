@@ -15,7 +15,24 @@ export class NpcPortraitsImageProcessor {
 
     petNPCs: Datatable<RawNPC>[] = readAsset('ProjectCoral/Content/ProjectCoral/AdoptablePets/NPC/DT_PetNPCs.json');
 
-    constructor(protected sourcePath: string, protected portraitOutputPath: string, protected headPortraitOutputPath: string, protected skipIfExists = true) {
+    constructor(protected sourcePath: string, protected portraitOutputPath: string, protected headPortraitOutputPath: string, protected additionalMappings: {
+        npcKey: string,
+        appearanceName: string,
+        outfitKey: string
+    }[] = [], protected skipIfExists = true) {
+    }
+
+    private static extract(npcData: RawNPC, npcKey: string) {
+        let npcAppearances: Record<string, RawNpcAppearances> = {}
+        let {index, fileName} = extractOutfitPortraitsLocation(npcData, npcKey);
+
+        try {
+            npcAppearances = readAsset<Datatable<RawNpcAppearances>[]>(fileName)[+index].Rows;
+        } catch (e) {
+            Logger.error(e)
+            Logger.warn(`Can't find NPC appearances for ${npcKey} at path ${fileName}`)
+        }
+        return npcAppearances;
     }
 
     async process() {
@@ -46,63 +63,23 @@ export class NpcPortraitsImageProcessor {
 
         npcKeys.forEach(npcKey => {
             const npcData = this.petNPCs[0]?.Rows[npcKey] ?? this.datatable[0].Rows[npcKey];
-            let npcAppearances: Record<string, RawNpcAppearances> = {}
-            let {index, fileName} = extractOutfitPortraitsLocation(npcData, npcKey);
-
-            try {
-                npcAppearances = readAsset<Datatable<RawNpcAppearances>[]>(fileName)[+index].Rows;
-            } catch (e) {
-                Logger.error(e)
-                Logger.warn(`Can't find NPC appearances for ${npcKey} at path ${fileName}`)
-            }
+            let npcAppearances = NpcPortraitsImageProcessor.extract(npcData, npcKey);
 
             this.detectHeadImage(npcData, npcKey, sourceImagesHeadPortraits);
+            this.extractAppearances(npcAppearances, npcKey, sourceImages, appearances);
 
 
-            Object.keys(npcAppearances).forEach(npcAppearanceKey => {
-                const npcAppearnace = npcAppearances[npcAppearanceKey]
+            this.additionalMappings
+                .filter(mapping => mapping.npcKey === npcKey)
+                .forEach(mapping => {
 
-                npcAppearnace.images.forEach(imageDefinition => {
-                    const assetPath = imageDefinition.texture.AssetPathName.replace('/Game/ProjectCoral/', '/ProjectCoral/Content/ProjectCoral/').split('.')[0];
-                    if (assetPath === 'None') return;
-                    const emotion = imageDefinition.EmotionRow.RowName;
-
-
-                    const sourceImagePath = path.join(environment.assetPath, assetPath + '.png');
-
-                    if (!fs.existsSync(sourceImagePath)) {
-
-
-                        const guessedPath = sourceImagePath.replace('Potrait', 'Potraits');
-
-                        if (fs.existsSync(guessedPath)) {
-                            Logger.warn(`Guessed portrait image for ${npcKey}.`);
-                            sourceImages.add({npcKey, image: guessedPath});
-                            appearances.push({
-                                fileName: this._getFileName(guessedPath),
-                                npcKey,
-                                emotion,
-                                npcAppearanceKey
-                            })
-
-                        } else if (!sourceImagePath.includes('Winter') && !sourceImagePath.includes('Wedding'))
-                            Logger.warn('Can\'t find portrait source image.', sourceImagePath);
-                        return;
-                    }
-
-                    sourceImages.add({npcKey, image: sourceImagePath});
-                    appearances.push({
-                        fileName: this._getFileName(sourceImagePath),
-                        npcKey,
-                        emotion,
-                        npcAppearanceKey
-                    })
-
-
+                    // set to null so it doenst auto-detect, maybe FIXME ?
+                    let additionalAppearance = NpcPortraitsImageProcessor.extract({
+                        ...npcData,
+                        portraitsDT: null
+                    }, mapping.outfitKey);
+                    this.extractAppearances(additionalAppearance, npcKey, sourceImages, appearances);
                 })
-
-
-            })
 
 
         });
@@ -118,6 +95,56 @@ export class NpcPortraitsImageProcessor {
         this.cleanUpUnusedFiles(excludeFromDeletion);
 
 
+    }
+
+    private extractAppearances(npcAppearances: Record<string, RawNpcAppearances>, npcKey: string, sourceImages: Set<{
+        npcKey: string;
+        image: string
+    }>, appearances: { npcKey: string; emotion: string; fileName: string; npcAppearanceKey: string }[]) {
+        Object.keys(npcAppearances).forEach(npcAppearanceKey => {
+            const npcAppearnace = npcAppearances[npcAppearanceKey]
+
+            npcAppearnace.images.forEach(imageDefinition => {
+                const assetPath = imageDefinition.texture.AssetPathName.replace('/Game/ProjectCoral/', '/ProjectCoral/Content/ProjectCoral/').split('.')[0];
+                if (assetPath === 'None') return;
+                const emotion = imageDefinition.EmotionRow.RowName;
+
+
+                const sourceImagePath = path.join(environment.assetPath, assetPath + '.png');
+
+                if (!fs.existsSync(sourceImagePath)) {
+
+
+                    const guessedPath = sourceImagePath.replace('Potrait', 'Potraits');
+
+                    if (fs.existsSync(guessedPath)) {
+                        Logger.warn(`Guessed portrait image for ${npcKey}.`);
+                        sourceImages.add({npcKey, image: guessedPath});
+                        appearances.push({
+                            fileName: this._getFileName(guessedPath),
+                            npcKey,
+                            emotion,
+                            npcAppearanceKey
+                        })
+
+                    } else if (!sourceImagePath.includes('Winter') && !sourceImagePath.includes('Wedding'))
+                        Logger.warn('Can\'t find portrait source image.', sourceImagePath);
+                    return;
+                }
+
+                sourceImages.add({npcKey, image: sourceImagePath});
+                appearances.push({
+                    fileName: this._getFileName(sourceImagePath),
+                    npcKey,
+                    emotion,
+                    npcAppearanceKey
+                })
+
+
+            })
+
+
+        })
     }
 
     private async extractPortraits(sourceImages: Set<{

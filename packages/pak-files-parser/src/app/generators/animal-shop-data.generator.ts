@@ -6,8 +6,12 @@ import { AnimalShopData } from "@ci/data-types";
 import { StringTable } from "../../util/string-table.class";
 
 export class AnimalShopDataGenerator extends BaseGenerator<RawAnimalShopData, AnimalShopData> {
-    datatable: Datatable<RawAnimalShopData>[] = readAsset(`ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_AnimalShop.json`);
+    datatable: Datatable<RawAnimalShopData>[];
 
+    constructor(protected path: string) {
+        super();
+        this.datatable = readAsset(this.path);
+    }
 
     handleEntry(itemKey: string, dbItem: RawAnimalShopData): AnimalShopData | undefined {
 

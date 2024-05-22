@@ -50,6 +50,7 @@ import { BestiaryGenerator } from "./app/generators/bestiary.generator";
 import { CookingUtensilMapGenerator } from "./app/generators/cooking-utensil-map.generator";
 import { StringTable } from "./util/string-table.class";
 import {
+    AnimalShopData,
     AvailableLanguages,
     CookingRecipe,
     CraftingRecipe,
@@ -78,6 +79,7 @@ import { preferencesMap } from "../../guide/src/app/shared/constants/preference-
 import fs from "fs";
 import { Datatable } from "./interfaces/datatable.interface";
 import { DashboardFilesCreation } from "./app/dashboard-files-creation.function";
+import { BaseOpeningHoursGenerator } from "./app/opening-hours-generators/base-opening-hours.generator";
 
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
@@ -97,6 +99,20 @@ const itemIconsImageProcessor: ItemIconsImageProcessor = new ItemIconsImageProce
 
 const readable = !parsedArgs['prepare'] && true;
 
+const additionalNPCOutfitsMappings = [
+    {npcKey: 'Sawee', outfitKey: 'Sawee', appearanceName: 'Mystical Pet'},
+    {npcKey: 'Sawee', outfitKey: 'Dragon', appearanceName: 'Mystical Pet'},
+    {npcKey: 'Sawee', outfitKey: 'Lembu', appearanceName: 'Mystical Pet'},
+];
+
+if (environment.isBeta) {
+    additionalNPCOutfitsMappings.unshift(...[
+        {npcKey: 'Semeru', outfitKey: 'SemeruHuman', appearanceName: 'Human Form'},
+        {npcKey: 'Denali', outfitKey: 'DenaliHuman', appearanceName: 'Human Form'},
+        {npcKey: 'PrincessMiranjani', outfitKey: 'MiranjaniHuman', appearanceName: 'Human Form'},
+        {npcKey: 'Raina', outfitKey: 'RainaRecCenter', appearanceName: 'Rec Center'},
+    ])
+}
 
 AvailableLanguages.forEach(lang => {
     Logger.info(`Generators for "${lang}" starting...`);
@@ -114,7 +130,7 @@ AvailableLanguages.forEach(lang => {
     calendarDbMap = calendarDbGenerator.generate();
 
 
-    const npcDbGenerator = new NPCDbGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.json', calendarDbMap);
+    const npcDbGenerator = new NPCDbGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.json', calendarDbMap, additionalNPCOutfitsMappings);
     const npcDbMap = npcDbGenerator.generate();
 
     const craftingRecipeUnlockedByMasteryDbGenerator = new CraftingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
@@ -137,7 +153,42 @@ AvailableLanguages.forEach(lang => {
     try {
 
         if (environment.isBeta) {
-            betaGenerators = {}
+            betaGenerators = {
+
+                'taco-truck-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_TacoTruck.json'),
+
+                'sales-cart-stall-indoor-shop-items': {
+                    generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopUnderWaterFurnitureIndoor.json').generate({
+                        daFiles: [
+                            'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Furniture/DA_UnderWaterFurnitureShopBuyEffect.json',
+
+                        ]
+                    })
+                },
+                'sales-cart-stall-outdoor-shop-items': {
+                    generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopUnderWaterFurnitureOutdoor.json').generate({
+                        daFiles: [
+                            'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Furniture/DA_UnderWaterFurnitureShopBuyEffect.json',
+
+                        ]
+                    })
+                },
+                'sales-cart-stall-opening-hours': new BaseOpeningHoursGenerator({'Building': 'ProjectCoral/Content/ProjectCoral/Data/OpeningHours/UnderWaterFurnitureHours.json'}),
+
+                'tidal-threads-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/TidalThreads/DT_TidalThreadsClothShop.json'),
+                'tidal-threads-opening-hours': new BaseOpeningHoursGenerator({'Building': 'ProjectCoral/Content/ProjectCoral/Data/OpeningHours/TidalThreadsHours.json'}),
+
+
+                'underwater-ranch-opening-hours': new BaseOpeningHoursGenerator({'Building': 'ProjectCoral/Content/ProjectCoral/Data/OpeningHours/UnderWaterRanchHours.json'}),
+                'underwater-ranch-animal-shop-data': {
+                    generate: () => new AnimalShopDataGenerator(`ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_AnimalUnderwaterShop.json`).generate({
+                        daFiles: [
+                            'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_AnimalUnderwaterShopAdvanceRequirement.json',
+
+                        ]
+                    })
+                },
+            }
         } else {
 
 
@@ -225,14 +276,28 @@ AvailableLanguages.forEach(lang => {
 
             'ranch-opening-hours': new RanchOpeningHoursGenerator(),
             'ranch-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_RanchShop.json'),
-            'animal-shop-data': {
-                generate: () => new AnimalShopDataGenerator().generate({
+            'ranch-animal-shop-data': {
+                generate: () => new AnimalShopDataGenerator(`ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_AnimalShop.json`).generate({
                     daFiles: [
                         'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DA_AnimalShopAdvanceRequirement.json',
 
                     ]
                 })
             },
+
+
+
+
+            'furniture-store-indoor-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopFurniture.json'),
+            'furniture-store-outdoor-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopFurnitureOutdoor.json'),
+            'furniture-store-opening-hours': new BaseOpeningHoursGenerator({'Building': 'ProjectCoral/Content/ProjectCoral/Data/OpeningHours/FurnitureShop.json'}),
+
+
+
+
+
+
+
 
             'white-flamingo-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ClothShop.json'),
 
@@ -656,7 +721,20 @@ AvailableLanguages.forEach(lang => {
 
 
             const buyAt = ShopNames.map(shopName => {
-                return generatorValues[`${shopName}-shop-items`].map(sd => {
+
+               // @ts-ignore
+                const shopData =  [
+                    // @ts-ignore
+                    (generatorValues[`${shopName}-shop-items`] ?? []),
+                    // @ts-ignore
+                    (generatorValues[`${shopName}-indoor-shop-items`] ?? []),
+                    // @ts-ignore
+                    (generatorValues[`${shopName}-outdoor-shop-items`] ?? []),
+
+                ].flat()
+
+                // @ts-ignore
+                return shopData.map(sd => {
                     return {
                         ...sd,
                         shop: {
@@ -728,8 +806,14 @@ AvailableLanguages.forEach(lang => {
                     || p.smallGolden?.id === item.id || p.largeGolden?.id === item.id
                 )
             })
-            if (producedByAnimal)
-                producedByAnimal.displayName = generatorValues["animal-shop-data"].find(a => a.animalKey === producedByAnimal.key)?.readableName ?? undefined
+            if (producedByAnimal) {
+                const animalShopData = ShopNames.map(name => {
+                    const key = name + "-animal-shop-data";
+                    // @ts-ignore
+                    return key in generatorValues ? generatorValues[key] as AnimalShopData[] : []
+                }).flat();
+                producedByAnimal.displayName = animalShopData.find(a => a.animalKey === producedByAnimal.key)?.readableName ?? undefined
+            }
 
 
             let enchantmentPoints: undefined | number;
@@ -779,4 +863,4 @@ AvailableLanguages.forEach(lang => {
 
 })
 itemIconsImageProcessor.process();
-new NpcPortraitsImageProcessor(config.characterPortraitsPath, config.portraitPath, config.headPortraitPath).process()
+new NpcPortraitsImageProcessor(config.characterPortraitsPath, config.portraitPath, config.headPortraitPath, additionalNPCOutfitsMappings).process()

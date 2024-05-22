@@ -1,0 +1,20 @@
+<app-list-detail-container [(openDrawer)]="openDrawer">
+    @if (selectedEntity) {
+        <app-item-card-switch [item]="selectedEntity" listDetail context="offerings">
+            <ng-template let-details appDatabaseItemDetails>
+                <app-offering [details]="details"/>
+            </ng-template>
+        </app-item-card-switch>
+    }
+    <div class="px-2 xl:px-[50px] w-full">
+        @if (offerings$ | async; as offeringAltar) {
+
+            <app-offering-group (selected)="showDetails($event)"
+                                [offeringAltar]="offeringAltar"
+                                [selectedEntity]="selectedEntity"/>
+
+
+        }
+
+    </div>
+</app-list-detail-container>

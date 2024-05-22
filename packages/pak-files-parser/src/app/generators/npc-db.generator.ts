@@ -18,13 +18,61 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
     birthdays: CalendarBirthday[] = []
 
 
-    constructor(protected itemMap: Map<string, Item>, filepath: string, protected calendarMap?: Map<string, CalendarEvent[]>) {
+    constructor(protected itemMap: Map<string, Item>, filepath: string, protected calendarMap: Map<string, CalendarEvent[]>, protected additionalMappings: {
+        npcKey: string,
+        appearanceName: string,
+        outfitKey: string
+    }[] = []) {
         super();
         this.datatable = readAsset(filepath);
         this.petNPCs = readAsset('ProjectCoral/Content/ProjectCoral/AdoptablePets/NPC/DT_PetNPCs.json');
         if (this.calendarMap) {
             this.birthdays = [...this.calendarMap.values()][0].filter((e): e is CalendarBirthday => e.eventType === "birthday");
         }
+    }
+
+    private static formatRawAppearances(npcAppearances: Record<string, RawNpcAppearances>) {
+        const defaultAppearance: NPC['appearances'][0]["appearances"] = {}
+        Object.keys(npcAppearances).forEach(npcAppearanceKey => {
+            const npcAppearance = npcAppearances[npcAppearanceKey]
+
+            npcAppearance.images.forEach(imageDefinition => {
+                const assetPath = imageDefinition.texture.AssetPathName.replace('/Game/ProjectCoral/', '/ProjectCoral/Content/ProjectCoral/').split('.')[0];
+                if (assetPath === 'None') return;
+                const emotion = imageDefinition.EmotionRow.RowName;
+
+                const sourceImagePath = path.join(environment.assetPath, assetPath + '.png');
+
+                if (!fs.existsSync(sourceImagePath)) {
+                    const guessedPath = sourceImagePath.replace('Potrait', 'Potraits');
+
+                    if (!fs.existsSync(guessedPath)) return;
+                }
+
+                if (!defaultAppearance[npcAppearanceKey]) {
+                    defaultAppearance[npcAppearanceKey] = {}
+                }
+
+                defaultAppearance[npcAppearanceKey][emotion] = assetPath.split('/').pop() ?? '';
+
+
+            })
+
+
+        })
+        return defaultAppearance;
+    }
+
+    private static getNPCAppearances(dbItem: RawNPC, itemKey: string) {
+        let npcAppearances: Record<string, RawNpcAppearances> = {}
+        let {index, fileName} = extractOutfitPortraitsLocation(dbItem, itemKey);
+
+        try {
+            npcAppearances = readAsset<Datatable<RawNpcAppearances>[]>(fileName)[+index].Rows;
+        } catch (e) {
+            Logger.error(`Can't open character outfit file for ${dbItem.characterID}`)
+        }
+        return npcAppearances;
     }
 
     handleEntry(itemKey: string, dbItem: RawNPC): NPC {
@@ -36,14 +84,6 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
 
         const objectName = dbItem.mapIcon.AssetPathName.split('.').pop() ?? '';
 
-        let npcAppearances: Record<string, RawNpcAppearances> = {}
-        let {index, fileName} = extractOutfitPortraitsLocation(dbItem, itemKey);
-
-        try {
-            npcAppearances = readAsset<Datatable<RawNpcAppearances>[]>(fileName)[+index].Rows;
-        } catch (e) {
-            Logger.error(`Can't open character outfit file for ${dbItem.characterID}`)
-        }
 
         const portraitPath = dbItem.Portrait.AssetPathName.replace('/Game/ProjectCoral/', '/ProjectCoral/Content/ProjectCoral/').split('.')[0];
         let headerPortraitFileName: string | null = null
@@ -76,50 +116,33 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
         } else {
             headerPortraitFileName = portraitPath.split('/').pop() ?? null
         }
+        const appearances: NPC['appearances'] = [];
 
+        let npcAppearances = NPCDbGenerator.getNPCAppearances(dbItem, itemKey);
+        const defaultAppearance = NPCDbGenerator.formatRawAppearances(npcAppearances);
+        appearances.push({appearances: defaultAppearance});
 
-        const appearances: NPC['appearances'] = {};
+        this.additionalMappings
+            .filter(mapping => mapping.npcKey === itemKey)
+            .forEach(mapping => {
 
-        Object.keys(npcAppearances).forEach(npcAppearanceKey => {
-            const npcAppearance = npcAppearances[npcAppearanceKey]
+                // set to null so it doenst auto-detect, maybe FIXME ?
+                let additionalAppearance = NPCDbGenerator.getNPCAppearances({
+                    ...dbItem,
+                    portraitsDT: null
+                }, mapping.outfitKey);
+                const formattedAdditionalAppearance = NPCDbGenerator.formatRawAppearances(additionalAppearance);
 
-            npcAppearance.images.forEach(imageDefinition => {
-                const assetPath = imageDefinition.texture.AssetPathName.replace('/Game/ProjectCoral/', '/ProjectCoral/Content/ProjectCoral/').split('.')[0];
-                if (assetPath === 'None') return;
-                const emotion = imageDefinition.EmotionRow.RowName;
-
-                const sourceImagePath = path.join(environment.assetPath, assetPath + '.png');
-
-                if (!fs.existsSync(sourceImagePath)) {
-                    const guessedPath = sourceImagePath.replace('Potrait', 'Potraits');
-
-                    if (!fs.existsSync(guessedPath)) return;
-                }
-
-                if (!appearances[npcAppearanceKey]) {
-                    appearances[npcAppearanceKey] = {}
-                }
-
-                appearances[npcAppearanceKey][emotion] = assetPath.split('/').pop() ?? '';
-
-
+                appearances.push({
+                    appearanceCategory: mapping.appearanceName,
+                    appearances: formattedAdditionalAppearance
+                });
             })
 
-
-        })
-
-        let birthday: SpecificDate | undefined;
-
-        const foundBirthday = this.birthdays.find(b => b.npcKey === itemKey.toLowerCase())
-
-        if (foundBirthday) {
-            birthday = {
-                day: foundBirthday.day,
-                season: foundBirthday.season,
-                year: -1
-            }
+        let birthday = this.getBirthday(itemKey);
+        if (itemKey === 'Semeru') {
+            console.log(appearances)
         }
-
         return {
             key: itemKey,
             canHaveRelationships: dbItem.canHaveRelationships,
@@ -139,5 +162,17 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
 
     }
 
+    private getBirthday(itemKey: string): SpecificDate | undefined {
 
+        const foundBirthday = this.birthdays.find(b => b.npcKey === itemKey.toLowerCase())
+
+        if (!foundBirthday) return;
+
+        return {
+            day: foundBirthday.day,
+            season: foundBirthday.season,
+            year: -1
+        }
+
+    }
 }
