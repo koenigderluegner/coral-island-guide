@@ -5,7 +5,8 @@
 #### Added
 
 - \[Beta] Added more images to NPCs like alternate forms of Sawee
-- \[Beta] Added new Shops: Tidal Threads, Taco Truck and Underwater Ranch
+- \[Beta] Added new Shops: Tidal Threads, Taco Truck and Underwater Ranch, Sales Cart Stall
+- Added new Shops: Furniture Store
 
 ### Changed
 
@@ -16,15 +17,16 @@
 #### Added
 
 - Added data for beta 1.1 (game version v1.1-1051 on Steam)
-  - Go to [My guide -> Settings](/my/settings) to activate the beta.
-  - Some features received changes or weren't fetched correctly - this problem is known and will be fixed in the next few days (example NPC images)
+    - Go to [My guide -> Settings](/my/settings) to activate the beta.
+    - Some features received changes or weren't fetched correctly - this problem is known and will be fixed in the next
+      few days (example NPC images)
 - Reactivated To-Do lists.
     - To-Dos are now more flexible and can store all items. If context is given, they will be categorized else they will
       go into "Uncategorized"-category at the end.
     - Many categories/contexts were added
 - Added map icon, birthday, marriage possibility and description to NPC details
 - Made items in gifting grid clickable for details
-  - This does not apply for categories like "all fruits"
+    - This does not apply for categories like "all fruits"
 
 ### 0.17.2 2024-03-28
 
@@ -40,7 +42,7 @@
 
 ### 0.17.0 2024-03-24
 
-#### Added 
+#### Added
 
 - Added filter and sort options to NPC overview
 - Added filter and sort options to NPC gifting
@@ -60,20 +62,21 @@
 - Fixed cheese press not showing recipe for gold milk input
 - Fixed journal filter on mobile/smaller devices being cut off
 
-### 0.16.1 2024-02-23 
+### 0.16.1 2024-02-23
 
-#### Changed 
+#### Changed
 
 - Updated live data to v1-945 except character images (Steam version)
 
-### 0.16.0 2024-02-01 
+### 0.16.0 2024-02-01
 
-In the last update, I added the groundwork for a new way to retrieve item data. This update focuses a lot on those new changes, please let me know if you encounter any issues.
+In the last update, I added the groundwork for a new way to retrieve item data. This update focuses a lot on those new
+changes, please let me know if you encounter any issues.
 
 #### Added
 
 - Added latest changelog, which shows up once per update per device.
-  - You can disable them via the changelog dialog or dis-/enable them under My Guide -> Settings
+    - You can disable them via the changelog dialog or dis-/enable them under My Guide -> Settings
 - Added game version of shown data to footer.
 - Added sources (geodes, coffer etc) to "found" items in journal
 - Added cooking recipes to checklist
@@ -127,7 +130,7 @@ All your feedback and requests (thanks for them!) are still being worked on.
 - Added missing recipes in database, when an item was in the list of "either or" ingredients
 - Reduced height of sidebar items on bigger screens
 - NPC overview is now the entry page for NPC category instead of gifting
-  - Also swapped positions of sub navi entries
+    - Also swapped positions of sub navi entries
 - Renamed achievements to badges to match in-game
 
 ### 0.13.0 2023-11-01

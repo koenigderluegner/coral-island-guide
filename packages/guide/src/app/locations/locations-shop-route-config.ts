@@ -89,6 +89,15 @@ export const shopRouteConfig: ({ name: ShopName, betaOnly?: true } & ({ componen
         betaOnly: true
     },
     {
+        name: 'sales-cart-stall',
+        loadComponent: () => import('./components/shops/sales-cart-stall.component').then(c => c.SalesCartStallComponent),
+        betaOnly: true
+    },
+    {
+        name: 'furniture-store',
+        loadComponent: () => import('./components/shops/furniture-store.component').then(c => c.FurnitureStoreComponent),
+    },
+    {
         name: 'white-flamingo',
         component: WhiteFlamingoComponent,
     },

@@ -157,7 +157,7 @@ AvailableLanguages.forEach(lang => {
 
                 'taco-truck-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_TacoTruck.json'),
 
-                'sales-cart-stall-indoor-shop-data': {
+                'sales-cart-stall-indoor-shop-items': {
                     generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopUnderWaterFurnitureIndoor.json').generate({
                         daFiles: [
                             'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Furniture/DA_UnderWaterFurnitureShopBuyEffect.json',
@@ -165,7 +165,7 @@ AvailableLanguages.forEach(lang => {
                         ]
                     })
                 },
-                'sales-cart-stall-outdoor-shop-data': {
+                'sales-cart-stall-outdoor-shop-items': {
                     generate: () => new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopUnderWaterFurnitureOutdoor.json').generate({
                         daFiles: [
                             'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Furniture/DA_UnderWaterFurnitureShopBuyEffect.json',
@@ -284,6 +284,20 @@ AvailableLanguages.forEach(lang => {
                     ]
                 })
             },
+
+
+
+
+            'furniture-store-indoor-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopFurniture.json'),
+            'furniture-store-outdoor-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopFurnitureOutdoor.json'),
+            'furniture-store-opening-hours': new BaseOpeningHoursGenerator({'Building': 'ProjectCoral/Content/ProjectCoral/Data/OpeningHours/FurnitureShop.json'}),
+
+
+
+
+
+
+
 
             'white-flamingo-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ClothShop.json'),
 
@@ -707,8 +721,20 @@ AvailableLanguages.forEach(lang => {
 
 
             const buyAt = ShopNames.map(shopName => {
+
+               // @ts-ignore
+                const shopData =  [
+                    // @ts-ignore
+                    (generatorValues[`${shopName}-shop-items`] ?? []),
+                    // @ts-ignore
+                    (generatorValues[`${shopName}-indoor-shop-items`] ?? []),
+                    // @ts-ignore
+                    (generatorValues[`${shopName}-outdoor-shop-items`] ?? []),
+
+                ].flat()
+
                 // @ts-ignore
-                return (generatorValues[`${shopName}-shop-items`] ?? []).map(sd => {
+                return shopData.map(sd => {
                     return {
                         ...sd,
                         shop: {
