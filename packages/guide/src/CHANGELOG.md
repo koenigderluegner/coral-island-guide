@@ -5,7 +5,7 @@
 #### Added
 
 - \[Beta] Added more images to NPCs like alternate forms of Sawee
-- \[Beta] Added new Shops: Tidal Threads, Taco Truck and Underwater Ranch, Sales Cart Stall
+- \[Beta] Added new Shops: Tidal Threads, Taco Truck, Underwater Ranch and Sales Cart Stall
 - Added new Shops: Furniture Store
 
 ### Changed
