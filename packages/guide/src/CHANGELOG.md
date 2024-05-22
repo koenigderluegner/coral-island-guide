@@ -9,7 +9,7 @@
 - \[Beta] Added Orchestra Zones to locations
 - Added new Shops: Furniture Store
 
-### Changed
+#### Changed
 
 - \[Beta] Fixed missing crop to seed mapping for new seeds
 
