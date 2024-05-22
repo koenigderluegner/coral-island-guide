@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Route, RouterModule, Routes } from '@angular/router';
 import { LocationsComponent } from './locations.component';
-import { LakeTempleComponent } from "./components/lake-temple/lake-temple.component";
 import { onlyInBetaGuard } from "../core/guards/only-in-beta.guard";
 import { FestivalDisplayNames, ShopDisplayNames } from "@ci/data-types";
 import { shopRouteConfig } from "./locations-shop-route-config";
@@ -20,7 +19,11 @@ const routes: Routes = [
         component: LocationsComponent,
         children: [
             {path: 'lake-temple', redirectTo: 'lake-temple/', pathMatch: 'full'},
-            {path: 'lake-temple/:tabName', component: LakeTempleComponent, title: 'Lake temple - Locations'},
+            {
+                path: 'lake-temple/:tabName',
+                loadComponent: () => import('./components/lake-temple/lake-temple.component').then(c => c.LakeTempleComponent),
+                title: 'Lake temple - Locations'
+            },
 
             ...shopRouteConfig.map(config => {
 
@@ -48,6 +51,11 @@ const routes: Routes = [
                 path: 'merit-exchange',
                 component: MeritShopComponent,
                 title: `Merit Exchange - Locations`
+            },
+            {
+                path: 'orchestra-zones',
+                loadComponent: () => import('./components/orchestra-zones/orchestra-zones.component').then(c => c.OrchestraZonesComponent),
+                title: `Orchestra Zones - Locations`
             }
 
         ]

@@ -1,7 +1,9 @@
 import { SourceString } from "../../types/source-string.type";
 
 export interface RawOfferingAltar {
-    "offeringGroupTitle": SourceString,
-    "offeringGroupRewardText": SourceString,
-    "offeringId": string [ ]
+    offeringGroupTitle: SourceString,
+    offeringGroupRewardText: SourceString,
+    offeringId: string[]
+    isHeritageOffering: boolean;
+    customType?: 'diving'
 }

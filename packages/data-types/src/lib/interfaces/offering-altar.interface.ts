@@ -6,4 +6,6 @@ export interface OfferingAltar {
     offeringGroupTitle: string;
     offeringGroupRewardText: string;
     offerings: Offerings[]
+    isHeritageOffering: boolean
+    customType?: 'diving'
 }

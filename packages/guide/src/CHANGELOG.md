@@ -6,6 +6,7 @@
 
 - \[Beta] Added more images to NPCs like alternate forms of Sawee
 - \[Beta] Added new Shops: Tidal Threads, Taco Truck, Underwater Ranch and Sales Cart Stall
+- \[Beta] Added Orchestra Zones to locations
 - Added new Shops: Furniture Store
 
 ### Changed

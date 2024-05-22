@@ -1,53 +1,50 @@
 import { Component } from '@angular/core';
-import { MinimalItem, MinimalTagBasedItem, Offering, OfferingAltar, Offerings } from "@ci/data-types";
-import { Observable, tap } from "rxjs";
+import { MinimalItem, MinimalTagBasedItem, Offering, OfferingAltar } from "@ci/data-types";
+import { map, Observable } from "rxjs";
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
-import { ToDo } from "../../../core/types/to-do.type";
+import { MatTab, MatTabGroup } from "@angular/material/tabs";
+import { ItemCardSwitchComponent } from "../../../shared/components/item-card-switch/item-card-switch.component";
+import { SharedModule } from "../../../shared/shared.module";
+import { OfferingComponent } from "../../../shared/components/database-item-details/offering/offering.component";
+import { OfferingGroupComponent } from "../offering-group/offering-group.component";
+import { AddSpacesToPascalCasePipe } from "../../../shared/pipes/add-spaces-to-pascal-case.pipe";
+import { DatabaseItemDetailsDirective } from "../../../shared/directives/database-item-details.directive";
+import { AsyncPipe } from "@angular/common";
 
 @Component({
     selector: 'app-lake-temple',
     templateUrl: './lake-temple.component.html',
+    standalone: true,
+    imports: [
+        MatTabGroup,
+        ItemCardSwitchComponent,
+        SharedModule,
+        OfferingComponent,
+        OfferingGroupComponent,
+        MatTab,
+        AddSpacesToPascalCasePipe,
+        DatabaseItemDetailsDirective,
+        AsyncPipe
+    ]
 })
 export class LakeTempleComponent extends BaseTabbedSelectableContainerComponent<MinimalItem | MinimalTagBasedItem> {
-    protected activeOffering?: Offerings;
-    protected offerings$: Observable<OfferingAltar[]>;
-    protected entryForToDo?: Offering | MinimalItem | MinimalTagBasedItem;
-    private _altars: OfferingAltar[] = [];
 
+    protected offerings$: Observable<OfferingAltar[]>;
+    private _altars: OfferingAltar[] = [];
 
     constructor() {
         super()
         this.offerings$ = this._database.fetchOfferings$().pipe(
-            tap((records) => {
-                    this._altars = records;
-                    const altarNames = records.map(altar => altar.urlPath);
+            map((records) => {
+                    const altars = records.filter(r => !r.isHeritageOffering && !r.customType);
+                    this._altars = altars
+                    const altarNames = altars.map(altar => altar.urlPath);
                     this.activateTabFromRoute(altarNames);
+
+                    return altars
                 }
             )
         );
-
-    }
-
-    override registerToToDo(entry: MinimalItem | Offering | MinimalTagBasedItem) {
-        const itemEntry: ToDo = 'item' in entry ? {
-            itemEntry: entry.item,
-            amount: entry.amount,
-            quality: entry.quality
-        } : {
-            itemEntry: (entry)
-        }
-        this._todo.add({...itemEntry, context: "offerings"})
-
-    }
-
-    override showDetails(selectedEntry?: Offering | MinimalItem | MinimalTagBasedItem) {
-        this.entryForToDo = selectedEntry;
-
-        if (selectedEntry && 'amount' in selectedEntry) {
-            super.showDetails(selectedEntry.item);
-        } else {
-            super.showDetails(selectedEntry);
-        }
 
     }
 
