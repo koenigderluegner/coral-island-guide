@@ -1,5 +1,11 @@
 ## Changelog
 
+### TBD
+
+#### Added
+
+- \[Beta] Added ocean produce to journal
+
 ### 0.19.0 2024-05-22
 
 #### Added
