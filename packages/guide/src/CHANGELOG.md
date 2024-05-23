@@ -6,6 +6,11 @@
 
 - \[Beta] Added ocean produce to journal
 
+#### Changed
+
+- \[Beta] Fixed missing beta notification for orchestra zones
+- Fixed link to settings in "beta only"-landing page
+
 ### 0.19.0 2024-05-22
 
 #### Added
