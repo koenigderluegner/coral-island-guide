@@ -13,10 +13,28 @@ import { Logger } from "../../util/logger.class";
 
 export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
 
+    static filePaths: {
+        appearances: Set<{
+            npcKey: string;
+            image: string
+        }>
+        heads: Set<{
+            npcKey: string;
+            image: string
+        }>
+    } = {
+        appearances: new Set<{
+            npcKey: string;
+            image: string
+        }>,
+        heads: new Set<{
+            npcKey: string;
+            image: string
+        }>
+    };
     datatable: Datatable<RawNPC>[];
     petNPCs: Datatable<RawNPC>[];
     birthdays: CalendarBirthday[] = []
-
 
     constructor(protected itemMap: Map<string, Item>, filepath: string, protected calendarMap: Map<string, CalendarEvent[]>, protected additionalMappings: {
         npcKey: string,
@@ -31,7 +49,7 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
         }
     }
 
-    private static formatRawAppearances(npcAppearances: Record<string, RawNpcAppearances>) {
+    private static formatRawAppearances(npcKey: string, npcAppearances: Record<string, RawNpcAppearances>) {
         const defaultAppearance: NPC['appearances'][0]["appearances"] = {}
         Object.keys(npcAppearances).forEach(npcAppearanceKey => {
             const npcAppearance = npcAppearances[npcAppearanceKey]
@@ -46,7 +64,13 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
                 if (!fs.existsSync(sourceImagePath)) {
                     const guessedPath = sourceImagePath.replace('Potrait', 'Potraits');
 
-                    if (!fs.existsSync(guessedPath)) return;
+                    if (!fs.existsSync(guessedPath)) {
+                        return;
+                    } else {
+                        NPCDbGenerator.filePaths.appearances.add({npcKey, image: guessedPath})
+                    }
+                } else {
+                    NPCDbGenerator.filePaths.appearances.add({npcKey, image: sourceImagePath})
                 }
 
                 if (!defaultAppearance[npcAppearanceKey]) {
@@ -119,7 +143,7 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
         const appearances: NPC['appearances'] = [];
 
         let npcAppearances = NPCDbGenerator.getNPCAppearances(dbItem, itemKey);
-        const defaultAppearance = NPCDbGenerator.formatRawAppearances(npcAppearances);
+        const defaultAppearance = NPCDbGenerator.formatRawAppearances(itemKey, npcAppearances);
         appearances.push({appearances: defaultAppearance});
 
         this.additionalMappings
@@ -131,7 +155,7 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
                     ...dbItem,
                     portraitsDT: null
                 }, mapping.outfitKey);
-                const formattedAdditionalAppearance = NPCDbGenerator.formatRawAppearances(additionalAppearance);
+                const formattedAdditionalAppearance = NPCDbGenerator.formatRawAppearances(itemKey, additionalAppearance);
 
                 appearances.push({
                     appearanceCategory: mapping.appearanceName,
@@ -140,9 +164,7 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
             })
 
         let birthday = this.getBirthday(itemKey);
-        if (itemKey === 'Semeru') {
-            console.log(appearances)
-        }
+
         return {
             key: itemKey,
             canHaveRelationships: dbItem.canHaveRelationships,

@@ -1,13 +1,13 @@
-import { createPathIfNotExists, extractOutfitPortraitsLocation, readAsset } from "../../util/functions";
+import { createPathIfNotExists, readAsset } from "../../util/functions";
 import { RawNPC } from "../../interfaces/raw-data-interfaces/raw-npc.interface";
 import { Datatable } from "../../interfaces/datatable.interface";
 import { Logger } from "../../util/logger.class";
-import { RawNpcAppearances } from "../../interfaces/raw-data-interfaces/raw-npc-appearances.interface";
 import path from "path";
 import fs from "fs";
 import { environment } from "../../environments/environment";
 import sharp from "sharp";
 import glob from "glob";
+import { NPCDbGenerator } from "../generators/npc-db.generator";
 
 export class NpcPortraitsImageProcessor {
 
@@ -22,28 +22,9 @@ export class NpcPortraitsImageProcessor {
     }[] = [], protected skipIfExists = true) {
     }
 
-    private static extract(npcData: RawNPC, npcKey: string) {
-        let npcAppearances: Record<string, RawNpcAppearances> = {}
-        let {index, fileName} = extractOutfitPortraitsLocation(npcData, npcKey);
-
-        try {
-            npcAppearances = readAsset<Datatable<RawNpcAppearances>[]>(fileName)[+index].Rows;
-        } catch (e) {
-            Logger.error(e)
-            Logger.warn(`Can't find NPC appearances for ${npcKey} at path ${fileName}`)
-        }
-        return npcAppearances;
-    }
-
     async process() {
         const npcKeys = Object.keys(this.datatable[0].Rows);
-        const sourceImages: Set<{
-            npcKey: string;
-            image: string
-        }> = new Set<{
-            npcKey: string;
-            image: string
-        }>();
+        const sourceImages = NPCDbGenerator.filePaths.appearances
         const sourceImagesHeadPortraits: Set<{
             npcKey: string;
             image: string
@@ -54,32 +35,11 @@ export class NpcPortraitsImageProcessor {
 
         const excludeFromDeletion: Set<string> = new Set<string>()
 
-        const appearances: {
-            npcKey: string;
-            emotion: string;
-            fileName: string;
-            npcAppearanceKey: string
-        }[] = []
 
         npcKeys.forEach(npcKey => {
             const npcData = this.petNPCs[0]?.Rows[npcKey] ?? this.datatable[0].Rows[npcKey];
-            let npcAppearances = NpcPortraitsImageProcessor.extract(npcData, npcKey);
 
             this.detectHeadImage(npcData, npcKey, sourceImagesHeadPortraits);
-            this.extractAppearances(npcAppearances, npcKey, sourceImages, appearances);
-
-
-            this.additionalMappings
-                .filter(mapping => mapping.npcKey === npcKey)
-                .forEach(mapping => {
-
-                    // set to null so it doenst auto-detect, maybe FIXME ?
-                    let additionalAppearance = NpcPortraitsImageProcessor.extract({
-                        ...npcData,
-                        portraitsDT: null
-                    }, mapping.outfitKey);
-                    this.extractAppearances(additionalAppearance, npcKey, sourceImages, appearances);
-                })
 
 
         });
@@ -97,55 +57,6 @@ export class NpcPortraitsImageProcessor {
 
     }
 
-    private extractAppearances(npcAppearances: Record<string, RawNpcAppearances>, npcKey: string, sourceImages: Set<{
-        npcKey: string;
-        image: string
-    }>, appearances: { npcKey: string; emotion: string; fileName: string; npcAppearanceKey: string }[]) {
-        Object.keys(npcAppearances).forEach(npcAppearanceKey => {
-            const npcAppearnace = npcAppearances[npcAppearanceKey]
-
-            npcAppearnace.images.forEach(imageDefinition => {
-                const assetPath = imageDefinition.texture.AssetPathName.replace('/Game/ProjectCoral/', '/ProjectCoral/Content/ProjectCoral/').split('.')[0];
-                if (assetPath === 'None') return;
-                const emotion = imageDefinition.EmotionRow.RowName;
-
-
-                const sourceImagePath = path.join(environment.assetPath, assetPath + '.png');
-
-                if (!fs.existsSync(sourceImagePath)) {
-
-
-                    const guessedPath = sourceImagePath.replace('Potrait', 'Potraits');
-
-                    if (fs.existsSync(guessedPath)) {
-                        Logger.warn(`Guessed portrait image for ${npcKey}.`);
-                        sourceImages.add({npcKey, image: guessedPath});
-                        appearances.push({
-                            fileName: this._getFileName(guessedPath),
-                            npcKey,
-                            emotion,
-                            npcAppearanceKey
-                        })
-
-                    } else if (!sourceImagePath.includes('Winter') && !sourceImagePath.includes('Wedding'))
-                        Logger.warn('Can\'t find portrait source image.', sourceImagePath);
-                    return;
-                }
-
-                sourceImages.add({npcKey, image: sourceImagePath});
-                appearances.push({
-                    fileName: this._getFileName(sourceImagePath),
-                    npcKey,
-                    emotion,
-                    npcAppearanceKey
-                })
-
-
-            })
-
-
-        })
-    }
 
     private async extractPortraits(sourceImages: Set<{
         npcKey: string;
