@@ -10,5 +10,6 @@ export type AvailableJournalOrders =
 
 
     'journal-animal-products' |
+    'journal-ocean-products' |
     'journal-artisan-products' |
     'journal-crops';

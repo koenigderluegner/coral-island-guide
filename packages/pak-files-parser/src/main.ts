@@ -80,6 +80,8 @@ import fs from "fs";
 import { Datatable } from "./interfaces/datatable.interface";
 import { DashboardFilesCreation } from "./app/dashboard-files-creation.function";
 import { BaseOpeningHoursGenerator } from "./app/opening-hours-generators/base-opening-hours.generator";
+import { TreasureHuntGenerator } from "./app/generators/treasure-hunt.generator";
+import { SimpleCopyImageProcessor } from "./app/image-processors/simple-copy.image-processor";
 
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
@@ -188,6 +190,8 @@ AvailableLanguages.forEach(lang => {
                         ]
                     })
                 },
+                'treasure-hunt-maps': new TreasureHuntGenerator(itemDbMap),
+
             }
         } else {
 
@@ -246,6 +250,7 @@ AvailableLanguages.forEach(lang => {
 
 
             'journal-animal-products': new JournalOrderDbGenerator('Produce/DT_JournalAnimalProducts.json'),
+            'journal-ocean-products': new JournalOrderDbGenerator('Produce/DT_JournalOcean.json'),
             'journal-artisan-products': new JournalOrderDbGenerator('Produce/DT_JournalArtisanProducts.json'),
             'journal-crops': new JournalOrderDbGenerator('Produce/DT_JournalCrops.json'),
 
@@ -286,17 +291,9 @@ AvailableLanguages.forEach(lang => {
             },
 
 
-
-
             'furniture-store-indoor-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopFurniture.json'),
             'furniture-store-outdoor-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopFurnitureOutdoor.json'),
             'furniture-store-opening-hours': new BaseOpeningHoursGenerator({'Building': 'ProjectCoral/Content/ProjectCoral/Data/OpeningHours/FurnitureShop.json'}),
-
-
-
-
-
-
 
 
             'white-flamingo-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ClothShop.json'),
@@ -722,8 +719,8 @@ AvailableLanguages.forEach(lang => {
 
             const buyAt = ShopNames.map(shopName => {
 
-               // @ts-ignore
-                const shopData =  [
+                // @ts-ignore
+                const shopData = [
                     // @ts-ignore
                     (generatorValues[`${shopName}-shop-items`] ?? []),
                     // @ts-ignore
@@ -862,5 +859,15 @@ AvailableLanguages.forEach(lang => {
     }
 
 })
+// Treasure Map Images
+new SimpleCopyImageProcessor([
+    {
+        inputGlob: 'ProjectCoral/Data/TreasureHunt/SavanahTreasureMaps/*.png',
+        outputPathSuffix: 'treasure-maps',
+        options: {maxWidth: 1024}
+    }
+], false).process()
+
+
 itemIconsImageProcessor.process();
 new NpcPortraitsImageProcessor(config.characterPortraitsPath, config.portraitPath, config.headPortraitPath, additionalNPCOutfitsMappings).process()

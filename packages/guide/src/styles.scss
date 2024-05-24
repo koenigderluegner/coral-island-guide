@@ -36,6 +36,8 @@
   --cg-icon-grid-min-size: 55px;
   --cg-min-header-height: 64px;
   --cg-min-footer-height: calc(56px + env(safe-area-inset-bottom));
+  --cg-card-padding: 20px;
+  --cg-card-radius: 30px;
 }
 
 html {
@@ -161,5 +163,19 @@ td.mdc-data-table__cell {
 
   .mdc-text-field--filled .mdc-floating-label--float-above {
     transform: translateY(-50%)
+  }
+}
+
+.full-size-card-image {
+  margin-top: calc(0px - var(--cg-card-padding));
+  margin-inline: calc(0px - var(--cg-card-padding));
+  border-top-left-radius: var(--cg-card-radius);
+  border-top-right-radius: var(--cg-card-radius);
+  overflow: hidden;
+
+  &.image-only {
+    margin-bottom: calc(0px - var(--cg-card-padding));;
+    border-bottom-left-radius: var(--cg-card-radius);
+    border-bottom-right-radius: var(--cg-card-radius);
   }
 }

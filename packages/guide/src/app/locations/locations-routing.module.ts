@@ -55,7 +55,8 @@ const routes: Routes = [
             {
                 path: 'orchestra-zones',
                 loadComponent: () => import('./components/orchestra-zones/orchestra-zones.component').then(c => c.OrchestraZonesComponent),
-                title: `Orchestra Zones - Locations`
+                title: `Orchestra Zones - Locations`,
+                canActivate: [onlyInBetaGuard]
             }
 
         ]
