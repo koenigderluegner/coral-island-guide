@@ -34,7 +34,7 @@ import {
     ShopItemData,
     ShopName,
     TagBasedItem,
-    TornPageData
+    TornPageData, TreasureHunt
 } from '@ci/data-types';
 import { AvailableJournalOrders } from '../types/available-journal-orders.type';
 import { MapKeyed } from '../types/map-keyed.type';
@@ -66,6 +66,8 @@ export class DatabaseService extends BaseDbService {
     private _FRUIT_PLANTS: FruitPlant[] = [];
     private _TAG_BASED_ITEMS$?: Observable<TagBasedItem[]>;
     private _TAG_BASED_ITEMS: TagBasedItem[] = [];
+    private _TREASURE_HUNTS$?: Observable<TreasureHunt[]>;
+    private _TREASURE_HUNTSS: TreasureHunt[] = [];
     private _ITEM_PROCESSING_RECIPE$?: Observable<Record<string, ItemProcessing[]>>;
     private _ITEM_PROCESSING_RECIPE: Record<string, ItemProcessing[]> = {};
     private _COOKING_RECIPE$?: Observable<Record<string, CookingRecipe[]>>;
@@ -457,7 +459,17 @@ export class DatabaseService extends BaseDbService {
         return this._COOKING_RECIPE;
     }
 
-    fetchTagBasedItems$(): Observable<TagBasedItem[]> {
+    fetchTreasureHunts$(): Observable<TreasureHunt[]> {
+        if (!this._TREASURE_HUNTS$) {
+            this._TREASURE_HUNTS$ = this.http.get<TreasureHunt[]>(`${this.BASE_PATH}/treasure-hunt-maps.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+        return this._TREASURE_HUNTS$;
+    }
+
+      fetchTagBasedItems$(): Observable<TagBasedItem[]> {
         if (!this._TAG_BASED_ITEMS$) {
             this._TAG_BASED_ITEMS$ = this.http.get<TagBasedItem[]>(`${this.BASE_PATH}/tag-based-items.json`)
                 .pipe(

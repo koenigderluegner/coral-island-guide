@@ -6,6 +6,17 @@
         @if (selectedTornPage) {
             <app-torn-page-details [tornPage]="selectedTornPage"/>
         }
+
+        @if (selectedTreasureHunt) {
+            <app-card class="text-lg font-semibold relative">
+
+                <app-full-size-image class="full-size-card-image image-only" hasThumb
+                                     [imageName]="'treasure-maps/'+selectedTreasureHunt.mapImage"/>
+
+
+            </app-card>
+        }
+
     </ng-container>
     @if (data$ | async) {
         <mat-tab-group (selectedTabChange)="updateUrl($event)"
@@ -47,6 +58,21 @@
                 @if (showTornPagesTable) {
                     <app-torn-pages-table [dataSource]="tornPages"/>
                 }
+
+            </mat-tab>
+            <mat-tab [label]="tabNames[2]">
+
+                <div class="grid gap-4 icon-grid mt-3">
+                    @for (tornPage of treasureMaps; track tornPage) {
+                        <app-item-icon (click)="showTreasureDetails(tornPage)"
+
+                                       [class.selected-icon]="selectedTreasureHunt?.treasureId === tornPage.treasureId"
+                                       class="icon-grid-item"
+                                       [itemName]="tornPage.iconName">
+                        </app-item-icon>
+                    }
+                </div>
+
 
             </mat-tab>
 

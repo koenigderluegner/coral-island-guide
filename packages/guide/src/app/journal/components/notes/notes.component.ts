@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
-import { MailData, TornPageData } from "@ci/data-types";
+import { MailData, TornPageData, TreasureHunt } from "@ci/data-types";
 import { combineLatest, Observable, tap } from "rxjs";
 
 @Component({
@@ -9,21 +9,25 @@ import { combineLatest, Observable, tap } from "rxjs";
 })
 export class NotesComponent extends BaseTabbedSelectableContainerComponent<MailData> {
     selectedTornPage?: TornPageData;
+    selectedTreasureHunt?: TreasureHunt;
     showTornPagesTable = false
     protected mails: MailData[] = [];
     protected tornPages: TornPageData[] = [];
-    protected data$: Observable<[mails: MailData[], tornPages: TornPageData[]]>;
-    protected tabNames = ['Letters', 'Torn pages'];
+    protected treasureMaps: TreasureHunt[] = [];
+    protected data$: Observable<[mails: MailData[], tornPages: TornPageData[], treasureMaps: TreasureHunt[]]>;
+    protected tabNames = ['Letters', 'Torn pages', 'Treasure Map'];
 
     constructor() {
         super()
         this.data$ = combineLatest([
             this._database.fetchMailData$(),
-            this._database.fetchTornPagesData$()
+            this._database.fetchTornPagesData$(),
+            this._database.fetchTreasureHunts$(),
         ]).pipe(
-            tap(([mails, tornPages]) => {
+            tap(([mails, tornPages, treasureMaps]) => {
                     this.mails = mails;
                     this.tornPages = tornPages;
+                    this.treasureMaps = treasureMaps;
 
                     const selectedId = this.selectedId;
                     if (selectedId) {
@@ -35,6 +39,11 @@ export class NotesComponent extends BaseTabbedSelectableContainerComponent<MailD
                         const foundTornPage = this.tornPages.find(m => m.key.toLowerCase() === selectedId.toLowerCase())
                         if (foundTornPage) {
                             this.showTornPageDetails(foundTornPage)
+                        }
+
+                        const foundTreasureMap = this.treasureMaps.find(m => m.treasureId === +selectedId.toLowerCase())
+                        if (foundTreasureMap) {
+                            this.showTreasureDetails(foundTreasureMap)
                         }
                     }
 
@@ -48,12 +57,21 @@ export class NotesComponent extends BaseTabbedSelectableContainerComponent<MailD
 
     override showDetails(selectedEntry?: MailData) {
         this.selectedTornPage = undefined;
+        this.selectedTreasureHunt = undefined;
         super.showDetails(selectedEntry);
     }
 
     showTornPageDetails(tornPage: TornPageData): void {
         this.selectedEntity = undefined;
+        this.selectedTreasureHunt = undefined;
         this.selectedTornPage = tornPage;
+        this.openDrawer = true;
+    }
+
+    showTreasureDetails(treasureHunt: TreasureHunt): void {
+        this.selectedEntity = undefined;
+        this.selectedTornPage = undefined;
+        this.selectedTreasureHunt = treasureHunt;
         this.openDrawer = true;
     }
 

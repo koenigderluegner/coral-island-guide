@@ -5,6 +5,7 @@
 #### Added
 
 - \[Beta] Added ocean produce to journal
+- \[Beta] Added treasure maps to journal
 
 #### Changed
 

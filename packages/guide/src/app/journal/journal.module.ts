@@ -46,6 +46,7 @@ import { CropComponent } from "../shared/components/database-item-details/crop/c
 import { ProcessingComponent } from "../shared/components/database-item-details/processing/processing.component";
 import { AnimalProduceComponent } from "../shared/components/database-item-details/animal-produce/animal-produce.component";
 import { FoundComponent as DbItemFound } from "../shared/components/database-item-details/found/found.component";
+import { FullSizeImageComponent } from "../shared/components/full-size-image/full-size-image.component";
 
 @NgModule({
     declarations: [
@@ -98,6 +99,7 @@ import { FoundComponent as DbItemFound } from "../shared/components/database-ite
         ProcessingComponent,
         AnimalProduceComponent,
         DbItemFound,
+        FullSizeImageComponent,
     ],
     exports: [CaughtDetailsComponent, CaughtTableComponent, CropTableComponent, BestiaryTableComponent],
 })
