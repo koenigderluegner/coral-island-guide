@@ -191,7 +191,7 @@ AvailableLanguages.forEach(lang => {
                     })
                 },
                 'treasure-hunt-maps': new TreasureHuntGenerator(itemDbMap),
-
+                'journal-ocean-products': new JournalOrderDbGenerator('Produce/DT_JournalOcean.json'),
             }
         } else {
 
@@ -250,7 +250,7 @@ AvailableLanguages.forEach(lang => {
 
 
             'journal-animal-products': new JournalOrderDbGenerator('Produce/DT_JournalAnimalProducts.json'),
-            'journal-ocean-products': new JournalOrderDbGenerator('Produce/DT_JournalOcean.json'),
+
             'journal-artisan-products': new JournalOrderDbGenerator('Produce/DT_JournalArtisanProducts.json'),
             'journal-crops': new JournalOrderDbGenerator('Produce/DT_JournalCrops.json'),
 

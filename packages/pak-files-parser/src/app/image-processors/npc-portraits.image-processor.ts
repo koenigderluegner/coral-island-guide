@@ -43,17 +43,21 @@ export class NpcPortraitsImageProcessor {
     }>, excludeFromDeletion: Set<string>) {
         let counter = 0;
         for (const s of sourceImages) {
-            await this._createImages(s.npcKey, s.image, this.portraitOutputPath);
+            await this._createImages(s.npcKey, s.image, this.portraitOutputPath, {createThumbs: true, trim: true});
             excludeFromDeletion.add(s.image.replace('\\dist', '').replace('\\assets', '\\src\\assets'))
             counter++;
-            Logger.progress((counter / sourceImages.size) * 100)
+            counter++;
+            Logger.progress((counter / (sourceImages.size * 2)) * 100)
         }
     }
 
     private async extractHeadImages(sourceImagesHeadPortraits: Set<{ npcKey: string; image: string }>) {
         let headCounter = 0;
         for (const s of sourceImagesHeadPortraits) {
-            await this._createImages(s.npcKey, s.image, this.headPortraitOutputPath, false);
+            await this._createImages(s.npcKey, s.image, this.headPortraitOutputPath, {
+                createThumbs: false,
+                trim: false
+            });
             headCounter++;
             Logger.progress((headCounter / sourceImagesHeadPortraits.size) * 100)
         }
@@ -96,31 +100,52 @@ export class NpcPortraitsImageProcessor {
         });
     }
 
-    private async _createImages(npcKey: string, sourceImagePath: string, outputPath: string, trim = true) {
+    private async _createImages(npcKey: string, sourceImagePath: string, outputPath: string, options: {
+        trim?: boolean,
+        createThumbs?: boolean
+    } = {trim: true}) {
 
+        const {trim, createThumbs} = options
 
         const fileName = this._getFileName(sourceImagePath)
 
         const webpPath = path.join(outputPath, npcKey, fileName + '.webp');
+        const webpThumbsPath = path.join(outputPath, npcKey, 'thumbs', fileName + '.webp');
 
         const webpTargetExists = fs.existsSync(webpPath);
+        const webpThumbsPathExists = fs.existsSync(webpThumbsPath);
 
         const targetPathParts = webpPath.split(path.sep);
         targetPathParts.pop()
         const targetPath = targetPathParts.join(path.sep)
-        createPathIfNotExists(targetPath)
-        if (this.skipIfExists && webpTargetExists) return;
+        createPathIfNotExists(targetPath);
 
+        const targetPathParts2 = webpThumbsPath.split(path.sep);
+        targetPathParts2.pop()
+        const targetPath2 = targetPathParts2.join(path.sep)
+        createPathIfNotExists(targetPath2)
+        if (this.skipIfExists && webpTargetExists && webpThumbsPathExists) return;
 
-        let image = sharp(sourceImagePath);
+        const imagesToCreate = [];
+        let image
+        if (!webpTargetExists) {
+            image = sharp(sourceImagePath);
 
-        if (trim) {
-            image = image.trim()
+            if (trim) {
+                image = image.trim()
+            }
+
+            imagesToCreate.push(image.webp().toFile(webpPath))
+        }
+        if (!webpThumbsPathExists && !!createThumbs) {
+            let clone = (image ?? sharp(sourceImagePath).trim()).clone().resize(400, 400, {fit: "inside"})
+            imagesToCreate.push(clone.webp().toFile(webpThumbsPath));
         }
 
+
         try {
-            if (!webpTargetExists || !this.skipIfExists)
-                await image.webp().toFile(webpPath);
+            if (!webpTargetExists || !this.skipIfExists || !webpThumbsPathExists)
+                await Promise.all(imagesToCreate)
         } catch (e) {
             console.log(e);
         }

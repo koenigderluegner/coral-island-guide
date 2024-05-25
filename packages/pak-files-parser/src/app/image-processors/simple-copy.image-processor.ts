@@ -80,7 +80,7 @@ export class SimpleCopyImageProcessor {
                     const imagesToCreate = []
 
                     if (options.trim) image.trim();
-                    if (options.maxHeight || options.maxWidth) clone = image.clone().resize(options.maxWidth, options.maxHeight, {fit: "outside"})
+                    if (options.maxHeight || options.maxWidth) clone = image.clone().resize(options.maxWidth, options.maxHeight, {fit: "inside"})
 
                     if (clone) {
                         imagesToCreate.push(clone.webp().toFile(path.join(options.outputPath, 'thumbs', targetBasename)));
