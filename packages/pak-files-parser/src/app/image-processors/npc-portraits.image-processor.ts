@@ -1,19 +1,13 @@
-import { createPathIfNotExists, readAsset } from "../../util/functions";
-import { RawNPC } from "../../interfaces/raw-data-interfaces/raw-npc.interface";
-import { Datatable } from "../../interfaces/datatable.interface";
+import { createPathIfNotExists } from "../../util/functions";
 import { Logger } from "../../util/logger.class";
 import path from "path";
 import fs from "fs";
-import { environment } from "../../environments/environment";
 import sharp from "sharp";
 import glob from "glob";
 import { NPCDbGenerator } from "../generators/npc-db.generator";
 
 export class NpcPortraitsImageProcessor {
 
-    datatable: Datatable<RawNPC>[] = readAsset('ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.json');
-
-    petNPCs: Datatable<RawNPC>[] = readAsset('ProjectCoral/Content/ProjectCoral/AdoptablePets/NPC/DT_PetNPCs.json');
 
     constructor(protected sourcePath: string, protected portraitOutputPath: string, protected headPortraitOutputPath: string, protected additionalMappings: {
         npcKey: string,
@@ -23,26 +17,11 @@ export class NpcPortraitsImageProcessor {
     }
 
     async process() {
-        const npcKeys = Object.keys(this.datatable[0].Rows);
         const sourceImages = NPCDbGenerator.filePaths.appearances
-        const sourceImagesHeadPortraits: Set<{
-            npcKey: string;
-            image: string
-        }> = new Set<{
-            npcKey: string;
-            image: string
-        }>();
+        const sourceImagesHeadPortraits = NPCDbGenerator.filePaths.heads;
 
         const excludeFromDeletion: Set<string> = new Set<string>()
 
-
-        npcKeys.forEach(npcKey => {
-            const npcData = this.petNPCs[0]?.Rows[npcKey] ?? this.datatable[0].Rows[npcKey];
-
-            this.detectHeadImage(npcData, npcKey, sourceImagesHeadPortraits);
-
-
-        });
 
         Logger.log(`checking ${sourceImagesHeadPortraits.size} head portraits`);
         await this.extractHeadImages(sourceImagesHeadPortraits);
@@ -77,45 +56,6 @@ export class NpcPortraitsImageProcessor {
             await this._createImages(s.npcKey, s.image, this.headPortraitOutputPath, false);
             headCounter++;
             Logger.progress((headCounter / sourceImagesHeadPortraits.size) * 100)
-        }
-    }
-
-    private detectHeadImage(npcData: RawNPC, npcKey: string, sourceImagesHeadPortraits: Set<{
-        npcKey: string;
-        image: string
-    }>) {
-        const portraitPath = npcData.Portrait.AssetPathName.replace('/Game/ProjectCoral/', '/ProjectCoral/Content/ProjectCoral/').split('.')[0];
-        const sourceImagePath = path.join(environment.assetPath, portraitPath + '.png');
-        const customPath = path.join(...environment.assetPath.split(path.sep).slice(0, -1), 'custom', 'head-portraits', npcKey + '.png');
-        const guessedPath = path.join(environment.assetPath, 'ProjectCoral', 'Content', 'ProjectCoral', 'Textures', 'UI', 'NPCHeadPortraits', 'T_Relationship' + npcKey + '.png');
-        const guessedPetPath = path.join(environment.assetPath, 'ProjectCoral', 'Content', 'ProjectCoral', 'Textures', 'UI', 'NPCHeadPortraits', 'Pet', 'T_Relationship' + npcKey + '.png');
-
-        if (fs.existsSync(sourceImagePath) && fs.existsSync(guessedPath) && sourceImagePath !== guessedPath) {
-            Logger.info(`Replaced guessed header image with given one for ${npcKey}`);
-            sourceImagesHeadPortraits.add({npcKey, image: guessedPath})
-        } else if (fs.existsSync(guessedPetPath)) {
-            Logger.info(`Guessed  header image for ${npcKey}`);
-            sourceImagesHeadPortraits.add({npcKey, image: guessedPetPath})
-        } else if (fs.existsSync(customPath) && fs.existsSync(sourceImagePath) && !sourceImagePath.includes('NPCHeadPortraits')) {
-            Logger.warn(`Found custom header image for ${npcKey}. Force overwrite for found source image!`);
-            sourceImagesHeadPortraits.add({npcKey, image: customPath})
-        } else if (!fs.existsSync(sourceImagePath) || portraitPath === "None") {
-
-            if (fs.existsSync(guessedPath)) {
-                Logger.info(`Guessed  header image for ${npcKey}`);
-                sourceImagesHeadPortraits.add({npcKey, image: guessedPath})
-            } else if (fs.existsSync(customPath)) {
-                Logger.info(`Found custom header image for ${npcKey}`);
-                sourceImagesHeadPortraits.add({npcKey, image: customPath})
-            } else {
-                if (portraitPath !== "None")
-                    Logger.warn(`Can't find head portrait source image for ${npcKey}.`, sourceImagePath);
-
-            }
-
-
-        } else {
-            sourceImagesHeadPortraits.add({npcKey, image: sourceImagePath})
         }
     }
 

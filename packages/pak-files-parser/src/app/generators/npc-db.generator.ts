@@ -121,24 +121,41 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
         if (fs.existsSync(sourceImagePath) && fs.existsSync(guessedPath) && sourceImagePath !== guessedPath) {
             headerPortraitFileName = guessedPath.split(path.sep).at(-1)?.replace('.png', '') ?? null;
             customHead = true as const;
+
+            Logger.info(`Replaced guessed header image with given one for ${itemKey}`);
+            NPCDbGenerator.filePaths.heads.add({npcKey: itemKey, image: guessedPath})
         } else if (fs.existsSync(guessedPetPath)) {
             headerPortraitFileName = guessedPetPath.split(path.sep).at(-1)?.replace('.png', '') ?? null;
             customHead = true as const;
+            Logger.info(`Guessed  header image for ${itemKey}`);
+            NPCDbGenerator.filePaths.heads.add({npcKey: itemKey, image: guessedPetPath})
         } else if (fs.existsSync(customPath) && fs.existsSync(sourceImagePath) && !sourceImagePath.includes('NPCHeadPortraits')) {
             headerPortraitFileName = itemKey;
             customHead = true as const;
+            Logger.warn(`Found custom header image for ${itemKey}. Force overwrite for found source image!`);
+            NPCDbGenerator.filePaths.heads.add({npcKey: itemKey, image: customPath})
+
         } else if (!fs.existsSync(sourceImagePath) || portraitPath === 'None') {
 
             if (fs.existsSync(guessedPath)) {
                 headerPortraitFileName = guessedPath.split(path.sep).at(-1)?.replace('.png', '') ?? null;
                 customHead = true as const;
+                Logger.info(`Guessed  header image for ${itemKey}`);
+                NPCDbGenerator.filePaths.heads.add({npcKey: itemKey, image: guessedPath})
             } else if (fs.existsSync(customPath)) {
                 headerPortraitFileName = itemKey;
                 customHead = true as const;
+                Logger.info(`Found custom header image for ${itemKey}`);
+                NPCDbGenerator.filePaths.heads.add({npcKey: itemKey, image: customPath})
+            } else {
+                if (portraitPath !== "None")
+                    Logger.warn(`Can't find head portrait source image for ${itemKey}.`, sourceImagePath);
             }
 
         } else {
-            headerPortraitFileName = portraitPath.split('/').pop() ?? null
+            headerPortraitFileName = portraitPath.split('/').pop() ?? null;
+            NPCDbGenerator.filePaths.heads.add({npcKey: itemKey, image: sourceImagePath})
+
         }
         const appearances: NPC['appearances'] = [];
 
