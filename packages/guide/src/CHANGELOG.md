@@ -11,6 +11,7 @@
 
 - \[Beta] Fixed missing beta notification for orchestra zones
 - Fixed link to settings in "beta only"-landing page
+- High-res NPC images were swapped for compressed ones to save bandwidth and improve performance
 
 ### 0.19.0 2024-05-22
 
