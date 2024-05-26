@@ -16,7 +16,7 @@ type MarkedSelection = { category: ToDoContext | undefined, item: MinimalItem | 
     providedIn: 'root'
 })
 export class ToDoService {
-
+      private readonly _settings = inject(SettingsService);
     private static _CURRENT_TO_DO_VERSION = 1
     // TODO migrate
     private static _LEGACY_TO_DO_STORE_KEY = 'checklist'
@@ -27,7 +27,7 @@ export class ToDoService {
     private _markedAsCompleted: SelectionModel<MarkedSelection> = new SelectionModel<MarkedSelection>(true, [])
     private readonly versionSuffix: string;
 
-    constructor(private readonly _settings: SettingsService) {
+    constructor() {
         this.versionSuffix = this._settings.getSettings().useBeta ? '_beta' : '_live';
         this.read();
         this._markedAsCompleted.compareWith = (o1, o2) => {
