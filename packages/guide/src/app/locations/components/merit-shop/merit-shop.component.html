@@ -5,38 +5,34 @@
         }
     </ng-container>
 
-    <div class="px-2 xl:px-[50px] w-full">
+    <app-card>
+        <h1 class="mb-4 font-semibold text-3xl text-black flex items-center gap-x-4 ">
+            <app-ui-icon [uiIcon]="uiIcon.STORE"/>
+            Merit Exchange
+        </h1>
+    </app-card>
 
-        <app-card>
-            <h1 class="mb-4 font-semibold text-3xl text-black flex items-center gap-x-4 ">
-                <app-ui-icon [uiIcon]="uiIcon.STORE"/>
-                Merit Exchange
-            </h1>
-        </app-card>
+    @if (shopItemData$) {
 
-        @if (shopItemData$) {
+        <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Stock list</h2>
+        @if ((shopItemData$ |async); as shopItemData) {
 
-            <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Stock list</h2>
-            @if ((shopItemData$ |async); as shopItemData) {
+            @if (!showTable) {
+                <div class="grid gap-4 icon-grid">
 
-                @if (!showTable) {
-                    <div class="grid gap-4 icon-grid">
-
-                        @for (shopItem of shopItemData; track shopItem) {
-                            <app-item-icon (click)="showDetails(shopItem)"
-                                           [class.selected-icon]="selectedEntity?.item?.id === shopItem.item.id"
-                                           [itemName]="shopItem.item.iconName"
-                                           class="icon-grid-item">
-                            </app-item-icon>
-                        }
-                    </div>
-                }
-
-
+                    @for (shopItem of shopItemData; track shopItem) {
+                        <app-item-icon (click)="showDetails(shopItem)"
+                                       [class.selected-icon]="selectedEntity?.item?.id === shopItem.item.id"
+                                       [itemName]="shopItem.item.iconName"
+                                       class="icon-grid-item">
+                        </app-item-icon>
+                    }
+                </div>
             }
+
 
         }
 
+    }
 
-    </div>
 </app-list-detail-container>

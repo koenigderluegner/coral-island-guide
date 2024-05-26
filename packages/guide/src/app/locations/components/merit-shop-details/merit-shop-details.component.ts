@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { MeritExchangeShopData } from "@ci/data-types";
 
 @Component({
@@ -7,6 +7,6 @@ import { MeritExchangeShopData } from "@ci/data-types";
 })
 export class MeritShopDetailsComponent {
 
-    @Input({required: true}) meritExchangeData!: MeritExchangeShopData;
+   meritExchangeData = input.required<MeritExchangeShopData>();
 
 }

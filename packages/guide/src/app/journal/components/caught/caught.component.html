@@ -3,9 +3,7 @@
         <app-caught-details [critter]="selectedEntity" listDetail/>
     }
 
-    <mat-tab-group (selectedTabChange)="updateUrl($event); resetLocationFilter()" [selectedIndex]="selectedTabIndex()"
-                   class=" px-2 xl:px-[50px] w-full"
-                   mat-stretch-tabs="false">
+    <mat-tab-group (selectedTabChange)="updateUrl($event); resetLocationFilter()" [selectedIndex]="selectedTabIndex()">
         @for (tab of tabs; track tab) {
             <mat-tab [label]="tab.title">
                 @if ((tab.data |async); as syncedData) {

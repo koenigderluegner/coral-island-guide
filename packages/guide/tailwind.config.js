@@ -6,6 +6,13 @@ module.exports = {
     content: [join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html}'), ...createGlobPatternsForDependencies(__dirname)],
     theme: {
         extend: {
+            padding: {
+              'main-content': 'var(--cg-main-space-vertical) var(--cg-main-space-card-placeholder-width) var(--cg-main-space-vertical) var(--cg-main-space-horizontal)'
+            },
+            spacing: {
+                'main-hz': `var(--cg-main-space-horizontal)`,
+                'main-vt': `var(--cg-main-space-vertical)`
+            },
             height: {
                 main: 'calc(100vh - (var(--cg-min-header-height) + var(--cg-min-footer-height)))'
             },

@@ -11,8 +11,7 @@
     }
 
 
-    <mat-tab-group (selectedTabChange)="updateUrl($event)" class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false"
-                   [selectedIndex]="selectedTabIndex()">
+    <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex()">
         @for (machineName of machineNames; track machineName) {
             <mat-tab
                     [label]="processorMapping[machineName.toLowerCase()] ? processorMapping[machineName.toLowerCase()].displayName : machineName |  addSpacesToPascalCase | titlecase">

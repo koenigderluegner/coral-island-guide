@@ -2,7 +2,7 @@
     @if (selectedEntity) {
         <app-inventory-details [craftingRecipe]="selectedEntity" listDetail/>
     }
-    <mat-tab-group class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false">
+    <mat-tab-group>
         <mat-tab label="All">
             <app-data-filter [(showTable)]="showTable"/>
             @if ((recipes$ |async); as recipes) {

@@ -1,4 +1,15 @@
-import { ChangeDetectorRef, Component, EventEmitter, inject, Input, OnDestroy, Output, ViewChild } from '@angular/core';
+import {
+    booleanAttribute,
+    ChangeDetectorRef,
+    Component,
+    EventEmitter,
+    inject,
+    input,
+    Input,
+    OnDestroy,
+    Output,
+    ViewChild
+} from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { UiIcon } from '@ci/data-types';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
@@ -27,17 +38,7 @@ export class ListDetailContainerComponent implements OnDestroy{
 
     _openDrawer = false;
 
-    @Input()
-    get removePlaceholder(): boolean {
-        return this._removePlaceholder;
-    }
-
-    set removePlaceholder(size: boolean | number | string | null | undefined) {
-        this._removePlaceholder = coerceBooleanProperty(size);
-    }
-
-
-    _removePlaceholder = false;
+    removePlaceholder = input(false, {transform: booleanAttribute})
 
     uiIcon = UiIcon;
 
@@ -48,7 +49,7 @@ export class ListDetailContainerComponent implements OnDestroy{
     changeDetectorRef: ChangeDetectorRef = inject(ChangeDetectorRef);
 
     constructor() {
-        this.mobileQuery = this.media.matchMedia('(max-width: 600px)');
+        this.mobileQuery = this.media.matchMedia('(max-width: calc(600px - 1.5rem))');
         this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
         this.mobileQuery.addListener(this._mobileQueryListener);
 

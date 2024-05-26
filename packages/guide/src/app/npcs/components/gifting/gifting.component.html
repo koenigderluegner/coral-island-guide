@@ -6,7 +6,7 @@
             </ng-template>
         </app-item-card-switch>
     }
-<div class="px-2 xl:px-[50px] w-full pt-2 pb-6 2xl:pt-[60px]">
+
     <app-npc-filter/>
 
     @if (gifting$  | async; as gifting) {
@@ -51,7 +51,8 @@
                            [class.up]="expandableComponent.open" class="arrow"></i>
 
                     </div>
-                    <app-gifting-grid [preferences]="giftingPreferences.preferences" (itemClicked)="showDetails($event)"/>
+                    <app-gifting-grid [preferences]="giftingPreferences.preferences"
+                                      (itemClicked)="showDetails($event)"/>
 
                 </app-expandable>
             }
@@ -59,5 +60,5 @@
 
         </app-card>
     }
-</div>
+
 </app-list-detail-container>

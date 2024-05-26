@@ -7,9 +7,7 @@
         </app-item-card-switch>
     }
     @if (offerings$ | async; as offeringAltars) {
-        <mat-tab-group (selectedTabChange)="updateUrl($event)"
-                       [selectedIndex]="selectedTabIndex()"
-                       class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false">
+        <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex()">
             @for (offeringAltar of offeringAltars; track offeringAltar) {
                 <mat-tab label="{{offeringAltar.offeringGroupTitle | addSpacesToPascalCase}}">
                     <app-offering-group (selected)="showDetails($event)" [offeringAltar]="offeringAltar"
@@ -19,6 +17,4 @@
             }
         </mat-tab-group>
     }
-
-
 </app-list-detail-container>

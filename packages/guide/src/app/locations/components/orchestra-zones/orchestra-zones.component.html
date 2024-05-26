@@ -6,15 +6,13 @@
             </ng-template>
         </app-item-card-switch>
     }
-    <div class="px-2 xl:px-[50px] w-full">
-        @if (offerings$ | async; as offeringAltar) {
+    @if (offerings$ | async; as offeringAltar) {
 
-            <app-offering-group (selected)="showDetails($event)"
-                                [offeringAltar]="offeringAltar"
-                                [selectedEntity]="selectedEntity"/>
+        <app-offering-group (selected)="showDetails($event)"
+                            [offeringAltar]="offeringAltar"
+                            [selectedEntity]="selectedEntity"/>
 
 
-        }
+    }
 
-    </div>
 </app-list-detail-container>

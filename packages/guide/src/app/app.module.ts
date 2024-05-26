@@ -8,7 +8,7 @@ import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MarkdownModule } from 'ngx-markdown';
 import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
-import { MAT_TABS_CONFIG } from '@angular/material/tabs';
+import { MAT_TABS_CONFIG, MatTabsConfig } from '@angular/material/tabs';
 import { PageTitleService } from './shared/services/page-title.service';
 import { StartComponent } from './start/start.component';
 import { BETA_CODE } from "./core/injection-tokens/beta-code.injection-token";
@@ -122,7 +122,7 @@ const appRoutes: Route[] = [
             deps: [[new Optional(), BETA_CODE], SettingsService]
         },
         {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: {disabled: true}},
-        {provide: MAT_TABS_CONFIG, useValue: {animationDuration: '0'}},
+        {provide: MAT_TABS_CONFIG, useValue: {animationDuration: '0', stretchTabs: false} satisfies MatTabsConfig},
         {provide: TitleStrategy, useClass: PageTitleService},
     ],
     bootstrap: [AppComponent],

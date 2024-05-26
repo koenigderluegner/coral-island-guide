@@ -9,77 +9,73 @@
         }
     </ng-container>
 
-    <div class="px-2 xl:px-[50px] w-full">
+    <app-card>
+        <h1 class="mb-4 font-semibold text-3xl text-black flex items-center gap-x-4 ">
+            <app-ui-icon [uiIcon]="SHOP_ICONS[shopName]"/>
+            {{ SHOP_DISPLAY_NAMES[shopName] }}
+        </h1>
+        @if (openingHours$) {
 
-        <app-card>
-            <h1 class="mb-4 font-semibold text-3xl text-black flex items-center gap-x-4 ">
-                <app-ui-icon [uiIcon]="SHOP_ICONS[shopName]"/>
-                {{ SHOP_DISPLAY_NAMES[shopName] }}
-            </h1>
-            @if (openingHours$) {
-
-                @if ((openingHours$ |async); as openingHours) {
-                    <app-opening-hours [openingHours]="openingHours"/>
-                }
-
-            }
-        </app-card>
-
-        @if (shopItemData$) {
-
-            <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Stock list</h2>
-            @if ((shopItemData$ |async); as shopItemData) {
-
-                <app-data-filter [(showTable)]="showTable"/>
-                @if (!showTable) {
-                    <div class="grid gap-4 icon-grid">
-
-                        @for (shopItem of shopItemData; track shopItem) {
-                            <app-item-icon (click)="showDetails(shopItem)"
-                                           [class.selected-icon]="selectedEntity?.item?.id === shopItem.item.id"
-                                           [itemName]="shopItem.item.iconName"
-                                           class="icon-grid-item">
-                            </app-item-icon>
-                        }
-                    </div>
-                }
-                @if (showTable) {
-                    <app-shop-item-data-table [dataSource]="shopItemData"/>
-                }
-
-
+            @if ((openingHours$ |async); as openingHours) {
+                <app-opening-hours [openingHours]="openingHours"/>
             }
 
         }
+    </app-card>
 
+    @if (shopItemData$) {
 
-        <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Animals</h2>
-        @if ((animalData$ |async); as shopItemData) {
+        <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Stock list</h2>
+        @if ((shopItemData$ |async); as shopItemData) {
 
             <app-data-filter [(showTable)]="showTable"/>
             @if (!showTable) {
                 <div class="grid gap-4 icon-grid">
 
                     @for (shopItem of shopItemData; track shopItem) {
-                        <app-item-icon (click)="showAnimal(shopItem)"
-
-                                       [class.selected-icon]="selectedAnimal?.key === shopItem.key"
-                                       [itemName]="shopItem.animal?.variants?.[0]?.icons?.adult ?? null"
+                        <app-item-icon (click)="showDetails(shopItem)"
+                                       [class.selected-icon]="selectedEntity?.item?.id === shopItem.item.id"
+                                       [itemName]="shopItem.item.iconName"
                                        class="icon-grid-item">
                         </app-item-icon>
                     }
                 </div>
             }
+            @if (showTable) {
+                <app-shop-item-data-table [dataSource]="shopItemData"/>
+            }
 
 
         }
 
+    }
 
-        <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Animal product size per mood and hearts</h2>
-        @if (sizeByMood$ | async; as sizeByMoods) {
-            <app-animal-mood-table [productSizeByMood]="sizeByMoods"/>
+
+    <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Animals</h2>
+    @if ((animalData$ |async); as shopItemData) {
+
+        <app-data-filter [(showTable)]="showTable"/>
+        @if (!showTable) {
+            <div class="grid gap-4 icon-grid">
+
+                @for (shopItem of shopItemData; track shopItem) {
+                    <app-item-icon (click)="showAnimal(shopItem)"
+
+                                   [class.selected-icon]="selectedAnimal?.key === shopItem.key"
+                                   [itemName]="shopItem.animal?.variants?.[0]?.icons?.adult ?? null"
+                                   class="icon-grid-item">
+                    </app-item-icon>
+                }
+            </div>
         }
 
 
-    </div>
+    }
+
+
+    <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Animal product size per mood and hearts</h2>
+    @if (sizeByMood$ | async; as sizeByMoods) {
+        <app-animal-mood-table [productSizeByMood]="sizeByMoods"/>
+    }
+
 </app-list-detail-container>
