@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { GenericEntry, ItemEntry } from '@ci/data-types';
 
 
@@ -8,10 +8,11 @@ import { GenericEntry, ItemEntry } from '@ci/data-types';
     styleUrls: ['./item-list.component.scss'],
 })
 export class ItemListComponent {
-    @Input() itemList?: (ItemEntry | GenericEntry)[];
 
+    itemList = input.required<(ItemEntry | GenericEntry)[]>();
 
     protected isGenericEntry(e: ItemEntry | GenericEntry): e is GenericEntry {
         return 'genericItem' in e;
     }
+
 }

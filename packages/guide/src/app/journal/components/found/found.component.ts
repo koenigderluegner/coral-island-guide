@@ -24,7 +24,6 @@ export class FoundComponent extends BaseJournalPageComponent<Item> implements Af
         const selectedTabIndex = this.selectedTabIndex()
         return this.contextsPerTab[selectedTabIndex]
     });
-    destroyRef = inject(DestroyRef)
 
     constructor() {
         super(new FormGroup<FilterForm>({}));
@@ -64,14 +63,6 @@ export class FoundComponent extends BaseJournalPageComponent<Item> implements Af
         this.activateTabFromRoute(this.tabs.map(tab => tab.title));
 
     }
-
-
-    override showDetails(selectedEntry?: Item) {
-        super.showDetails(selectedEntry);
-
-
-    }
-
 
     ngAfterViewInit(): void {
 

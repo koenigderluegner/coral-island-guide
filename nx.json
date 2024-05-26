@@ -6,6 +6,9 @@
       "style": "none",
       "skipTests": true
     },
+    "@schematics/angular:service": {
+      "skipTests": true
+    },
     "@nx/angular:application": {
       "style": "none",
       "linter": "eslint",
@@ -26,7 +29,10 @@
       "cache": true
     },
     "@nx/eslint:lint": {
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json"
+      ],
       "cache": true
     }
   },

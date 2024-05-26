@@ -2,11 +2,11 @@ import {
     booleanAttribute,
     Component,
     ContentChild,
+    effect,
     inject,
-    Input,
+    input,
     OnChanges,
     signal,
-    SimpleChanges,
     TemplateRef,
     WritableSignal
 } from '@angular/core';
@@ -21,6 +21,8 @@ import { DatabaseItemDetailsDirective } from "../../directives/database-item-det
 import { AddSpacesToPascalCasePipe } from "../../pipes/add-spaces-to-pascal-case.pipe";
 import { ToDoToggleComponent } from "../to-do-toggle/to-do-toggle.component";
 import { ToDoContext } from "../../../core/types/to-do-context.type";
+import { ListDetailService } from "../list-detail-container/list-detail.service";
+import { UiIconComponent } from "../ui-icon/ui-icon.component";
 
 
 @Component({
@@ -34,27 +36,29 @@ import { ToDoContext } from "../../../core/types/to-do-context.type";
         AddSpacesToPascalCasePipe,
         DatabaseItemDetailsDirective,
         SharedModule,
-        ToDoToggleComponent
+        ToDoToggleComponent,
+        UiIconComponent
     ],
 
 })
-export class DatabaseItemDetailsComponent implements OnChanges {
-    @Input({required: true}) itemId!: string;
-    @Input({transform: booleanAttribute}) hideQualityGrid = false;
-    @Input() context?: ToDoContext | undefined;
-    @Input() amount?: number;
-    @Input() quality?: Quality;
+export class DatabaseItemDetailsComponent {
+    itemId = input.required<string>();
+    hideQualityGrid = input(false, {transform: booleanAttribute});
+
+    context = input<ToDoContext | undefined>();
+    amount = input<number>();
+    quality = input<Quality>();
     @ContentChild(TemplateRef) databaseItemDetails: TemplateRef<any> | null = null;
     protected databaseItem: WritableSignal<DatabaseItem | undefined> = signal(undefined)
     protected readonly UiIcon = UiIcon;
     protected readonly uiIcon = UiIcon;
+    protected readonly listDetails = inject(ListDetailService);
     private readonly database = inject(DatabaseService);
 
-    ngOnChanges(changes: SimpleChanges): void {
-        const itemId = changes['itemId']?.currentValue;
-        if (itemId) {
+    constructor() {
+        effect(() => {
             this.database
-                .fetchDatabaseItem$(itemId)
+                .fetchDatabaseItem$(this.itemId())
                 .pipe(
                     take(1)
                 ).subscribe({
@@ -62,6 +66,6 @@ export class DatabaseItemDetailsComponent implements OnChanges {
                     this.databaseItem.set(i)
                 }
             })
-        }
+        });
     }
 }

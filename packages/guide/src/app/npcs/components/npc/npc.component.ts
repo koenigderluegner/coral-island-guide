@@ -1,5 +1,4 @@
-import { Component, inject, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { DatabaseService } from "../../../shared/services/database.service";
+import { Component, input, OnInit, ViewEncapsulation } from '@angular/core';
 import { GiftPreferences, HeartEvent, MinimalItem, NPC, UiIcon } from "@ci/data-types";
 import { combineLatest } from "rxjs";
 import { MapKeyed } from "../../../shared/types/map-keyed.type";
@@ -13,7 +12,7 @@ import { BaseSelectableContainerComponent } from "../../../shared/components/bas
 })
 export class NpcComponent extends BaseSelectableContainerComponent<MinimalItem> implements OnInit {
 
-    @Input() npcKey!: string;
+    npcKey = input.required<string>();
     protected npc?: NPC | null = null;
     protected heartEvents: HeartEvent[] = []
     protected readonly UiIcon = UiIcon;
@@ -23,8 +22,8 @@ export class NpcComponent extends BaseSelectableContainerComponent<MinimalItem> 
     ngOnInit(): void {
         combineLatest([this._database.fetchNPCs$(), this._database.fetchHeartEvents$(), this._database.fetchGiftingPreferences$()]).subscribe({
             next: ([npcs, heartEvents, giftingPreferences]) => {
-                this.npc = npcs.find(npc => npc.key.toLowerCase() === this.npcKey.toLowerCase())
-                this.heartEvents = heartEvents[this.npcKey.toLowerCase()] ?? []
+                this.npc = npcs.find(npc => npc.key.toLowerCase() === this.npcKey().toLowerCase())
+                this.heartEvents = heartEvents[this.npcKey().toLowerCase()] ?? []
                 this.giftingPreferences = giftingPreferences.find(g => g.mapKey.toLowerCase() === this.npc?.key.toLowerCase())
             }
         })

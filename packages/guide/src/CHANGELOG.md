@@ -6,12 +6,20 @@
 
 - \[Beta] Added ocean produce to journal
 - \[Beta] Added treasure maps to journal
+- More entries can be added to to-dos (although being uncategorized for now)
 
 #### Changed
 
 - \[Beta] Fixed missing beta notification for orchestra zones
 - Fixed link to settings in "beta only"-landing page
 - High-res NPC images were swapped for compressed ones to save bandwidth and improve performance
+- Various UI and UX improvements:
+  - More consistent spacing across the app
+  - Reduced large gaps to make many things more compact
+  - Sidebars, main content and details now have their own scroll area
+  - Fixed floating 'X' on detail cards
+  - Reduced content jumping
+
 
 ### 0.19.0 2024-05-22
 

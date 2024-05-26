@@ -1,11 +1,17 @@
-@if (toDoService.alreadyInList(context, item)) {
-    <button (click)="toDoService.updateStatus(context, item, true, true)"
+@if (toDoService.alreadyInList(context(), item())) {
+    <button (click)="toDoService.updateStatus(context(), item(), true, true)"
             matTooltip="Remove from to-do">
         <app-ui-icon [uiIcon]="UiIcon.TO_DO_ON_LIST"
                      class="!text-green-600 !w-8 !h-8 hover:!text-green-800 focus-visible:!text-green-800"/>
     </button>
 } @else {
-    <button (click)="toDoService.add({context, itemEntry: item, quality, amount})" matTooltip=" Add to to-do">
+    <button (click)="toDoService.add({
+                        context: context(),
+                        itemEntry: item(),
+                        quality: quality(),
+                        amount: amount()
+            })"
+            matTooltip=" Add to to-do">
         <app-ui-icon [uiIcon]="UiIcon.TO_DO" class="!w-8 !h-8 hover:!text-black focus-visible:!text-black"/>
     </button>
 

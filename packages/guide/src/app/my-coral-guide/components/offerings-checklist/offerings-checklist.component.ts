@@ -56,16 +56,16 @@ export class OfferingsChecklistComponent extends BaseTabbedSelectableContainerCo
 
     }
 
-    override registerToToDo(entry: MinimalItem | Offering | MinimalTagBasedItem) {
-        const itemEntry: ToDo = 'item' in entry ? {
-            itemEntry: entry.item,
-            amount: entry.amount,
-            quality: entry.quality
-        } : {
-            itemEntry: (entry)
-        }
-        this._todo.add({...itemEntry, context: "offerings"})
-    }
+    // override registerToToDo(entry: MinimalItem | Offering | MinimalTagBasedItem) {
+    //     const itemEntry: ToDo = 'item' in entry ? {
+    //         itemEntry: entry.item,
+    //         amount: entry.amount,
+    //         quality: entry.quality
+    //     } : {
+    //         itemEntry: (entry)
+    //     }
+    //     this._todo.add({...itemEntry, context: "offerings"})
+    // }
 
     override showDetails(selectedEntry?: Offering | MinimalItem | MinimalTagBasedItem) {
         this.entryForToDo = selectedEntry;

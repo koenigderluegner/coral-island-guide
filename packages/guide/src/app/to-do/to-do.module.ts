@@ -10,6 +10,7 @@ import { ToDoPartialComponent } from './components/to-do-partial/to-do-partial.c
 import { MatSelectModule } from "@angular/material/select";
 import { ReactiveFormsModule } from "@angular/forms";
 import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-case.pipe";
+import { UiIconComponent } from "../shared/components/ui-icon/ui-icon.component";
 
 const routes: Routes = [
     {path: '', component: ToDoComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
         CommonModule,
         RouterModule.forChild(routes),
         SharedModule,
+        UiIconComponent,
         MatCheckboxModule,
         MatTableModule,
         MatSelectModule,

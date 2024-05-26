@@ -6,6 +6,7 @@ import { SharedModule } from "../shared/shared.module";
 import { ReactiveFormsModule } from "@angular/forms";
 import { MatIconModule } from "@angular/material/icon";
 import { MatSelectModule } from "@angular/material/select";
+import { UiIconComponent } from "../shared/components/ui-icon/ui-icon.component";
 
 const routes: Routes = [{path: '', component: SettingsComponent}];
 
@@ -17,7 +18,8 @@ const routes: Routes = [{path: '', component: SettingsComponent}];
         SharedModule,
         ReactiveFormsModule,
         MatIconModule,
-        MatSelectModule
+        MatSelectModule,
+        UiIconComponent
     ],
 })
 export class SettingsModule {

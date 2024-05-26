@@ -1,41 +1,18 @@
-@if (fetchedItem) {
+@if (computedItem(); as fetchedItem) {
     <app-card class="text-lg font-semibold relative">
-        <div class="card-actions h-8 absolute right-[75px] top-[15px]">
-            @if (toDoCategory) {
-
-                @if (toDoService.alreadyInList(toDoCategory, item)) {
-                    <button (click)="removeFromToDo(toDoCategory, item)"
-                            matTooltip="Remove from to-do">
-                        <app-ui-icon [uiIcon]="UiIcon.TO_DO_ON_LIST"
-                                     class="!text-green-600 !w-8 !h-8 hover:!text-green-800 focus-visible:!text-green-800"/>
-                    </button>
-                }
-                @if (!toDoService.alreadyInList(toDoCategory, item)) {
-                    <span
-                            [matTooltip]="addedToToDo.observed ? 'Add to to-do' :'To-do is not available for this entry'">
-            <button (click)="addedToToDo.emit()" [disabled]="!addedToToDo.observed">
-                <app-ui-icon [uiIcon]="UiIcon.TO_DO" class="!w-8 !h-8 hover:!text-black focus-visible:!text-black"/>
+        <div cardActions class="card-actions">
+            <app-to-do-toggle [amount]="amount()" [quality]="quality()" [item]="item()" [context]="context()"/>
+            <button (click)="listDetails.close()" matTooltip="Close">
+                <app-ui-icon [uiIcon]="uiIcon.CROSS" class="!w-8 !h-8 hover:text-black focus-visible:text-black"/>
             </button>
-        </span>
-                }
-
-            }
-            @if (!toDoCategory || !item) {
-                <span matTooltip="To-Do is not available for this entry">
-            <button disabled>
-                <app-ui-icon [uiIcon]="UiIcon.TO_DO" class="!w-8 !h-8"/>
-            </button>
-        </span>
-            }
         </div>
 
-        <app-item-icon [amount]="amount" cardIcon itemName="{{fetchedItem.iconName}}"/>
+        <app-item-icon [amount]="amount()" cardIcon itemName="{{fetchedItem.iconName}}"/>
         <div class="flex justify-between items-center">
             <div class="flex flex-col">
                 <div class="text-black text-2xl">{{ fetchedItem.displayName }}</div>
                 @if (!(fetchedItem | isTagBasedItem)) {
-                    <span
-                            class="text-accent text-2xl">   {{ fetchedItem.displayKey | addSpacesToPascalCase }}</span>
+                    <span class="text-accent text-2xl">{{ fetchedItem.displayKey | addSpacesToPascalCase }}</span>
                 }
             </div>
             @if (!(fetchedItem | isTagBasedItem)) {
@@ -53,14 +30,13 @@
 
         <ng-content></ng-content>
         @if ((fetchedItem | isTagBasedItem)) {
-            <app-item-list [itemList]="fetchedItem.items | toItemListEntries"
-                           class="mt-6"></app-item-list>
+            <app-item-list [itemList]="fetchedItem.items | toItemListEntries" class="mt-6"/>
         }
 
 
         @if (!(fetchedItem | isTagBasedItem)) {
 
-            @if ((fetchedItem | isItem) && (fetchedItem.qualities | keyvalue).length && !hideQualityGrid) {
+            @if ((fetchedItem | isItem) && (fetchedItem.qualities | keyvalue).length && !hideQualityGrid()) {
                 <app-quality-grid
 
                         [item]="fetchedItem"
@@ -71,8 +47,7 @@
                 <div class="flex">
                     Sells for:
                     @if (fetchedItem && (fetchedItem | has: 'sellPrice')) {
-                        <app-money [amount]="fetchedItem.sellPrice"
-                                   class="ml-2 text-black"></app-money>
+                        <app-money [amount]="fetchedItem.sellPrice" class="ml-2 text-black"/>
                     }
                 </div>
 

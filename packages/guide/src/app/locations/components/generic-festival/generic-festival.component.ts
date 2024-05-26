@@ -5,6 +5,7 @@ import { FestivalRouteData } from "../../types/festival-route-data.type";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { Observable, switchMap } from "rxjs";
 import { DatabaseService } from "../../../shared/services/database.service";
+import { ListDetailService } from "../../../shared/components/list-detail-container/list-detail.service";
 
 @Component({
     selector: 'app-generic-festival',
@@ -12,8 +13,6 @@ import { DatabaseService } from "../../../shared/services/database.service";
 })
 export class GenericFestivalComponent {
 
-
-    openDrawer = false;
     protected selectedEntity: FestivalShopItemData | undefined;
     protected festivalName?: FestivalName;
     protected readonly FESTIVAL_DISPLAY_NAMES = FestivalDisplayNames
@@ -22,6 +21,7 @@ export class GenericFestivalComponent {
     protected showTable = false;
     private readonly _router = inject(ActivatedRoute);
     private readonly _database = inject(DatabaseService);
+     readonly #listDetailService = inject(ListDetailService);
 
     constructor() {
         this.festivalData$ = this._router.data
@@ -39,7 +39,7 @@ export class GenericFestivalComponent {
 
     showDetails(entity: FestivalShopItemData): void {
         this.selectedEntity = entity;
-        this.openDrawer = true;
+       this.#listDetailService.open()
     }
 
 }

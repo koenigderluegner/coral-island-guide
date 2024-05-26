@@ -6,12 +6,13 @@ import { MappedAnimalShopData } from "../../types/mapped-animal-shop-data.type";
 import { LocationsModule } from "../../locations.module";
 import { SharedModule } from "../../../shared/shared.module";
 import { AsyncPipe } from "@angular/common";
+import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
 
 @Component({
     selector: 'app-underwater-ranch',
     templateUrl: './underwater-ranch.component.html',
     standalone: true,
-    imports: [LocationsModule, SharedModule, AsyncPipe]
+    imports: [LocationsModule, SharedModule, AsyncPipe, UiIconComponent]
 })
 export class UnderwaterRanchComponent extends BaseShopComponent {
 
@@ -50,7 +51,6 @@ export class UnderwaterRanchComponent extends BaseShopComponent {
     showAnimal(shopItem: MappedAnimalShopData) {
         this.selectedAnimal = shopItem;
         this.selectedEntity = undefined;
-
-        this.openDrawer = true;
+        this.listDetail.open()
     }
 }

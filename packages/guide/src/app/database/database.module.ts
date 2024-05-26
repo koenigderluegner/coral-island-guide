@@ -31,6 +31,7 @@ import { DatabaseHeaderButtonComponent } from './components/database-header-butt
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { DatabaseFestivalShopDataComponent } from './components/database-festival-shop-data/database-festival-shop-data.component';
+import { UiIconComponent } from "../shared/components/ui-icon/ui-icon.component";
 
 @NgModule({
     declarations: [
@@ -68,6 +69,7 @@ import { DatabaseFestivalShopDataComponent } from './components/database-festiva
         MatButtonModule,
         MatSortModule,
         MatTableModule,
+        UiIconComponent,
     ],
 })
 export class DatabaseModule {

@@ -4,6 +4,7 @@ import { LocationsModule } from "../../locations.module";
 import { AsyncPipe } from "@angular/common";
 import { ShopName } from "@ci/data-types";
 import { BaseFurnitureStoreComponent } from "../base-furniture-store/base-furniture-store.component";
+import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
 
 @Component({
   selector: 'app-furniture-store',
@@ -11,7 +12,8 @@ import { BaseFurnitureStoreComponent } from "../base-furniture-store/base-furnit
     imports: [
         SharedModule,
         LocationsModule,
-        AsyncPipe
+        AsyncPipe,
+        UiIconComponent
     ],
     templateUrl: '../base-furniture-store/base-furniture-store.component.html'
 })

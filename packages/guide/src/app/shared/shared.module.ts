@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { UiIconComponent } from './components/ui-icon/ui-icon.component';
 import { ItemIconComponent } from './components/item-icon/item-icon.component';
 import { RarityIconComponent } from './components/rarity-icon/rarity-icon.component';
 import { ModuleSidebarComponent } from './components/module-sidebar/module-sidebar.component';
@@ -63,9 +62,11 @@ import { ToItemListEntriesPipe } from './pipes/to-item-list-entries.pipe';
 import { RequirementsListComponent } from './components/requirements-list/requirements-list.component';
 import { AddSpacesToPascalCasePipe } from "./pipes/add-spaces-to-pascal-case.pipe";
 import { MultiSelectTriggerComponent } from "./components/multi-select-trigger/multi-select-trigger.component";
+import { ToDoToggleComponent } from "./components/to-do-toggle/to-do-toggle.component";
+import { UiIconComponent } from "./components/ui-icon/ui-icon.component";
 
-@NgModule({ declarations: [
-        UiIconComponent,
+@NgModule({
+    declarations: [
         ItemIconComponent,
         RarityIconComponent,
         ModuleSidebarComponent,
@@ -118,7 +119,6 @@ import { MultiSelectTriggerComponent } from "./components/multi-select-trigger/m
         RequirementsListComponent,
     ],
     exports: [
-        UiIconComponent,
         ModuleSidebarComponent,
         ModuleSidebarItemComponent,
         ItemIconComponent,
@@ -166,7 +166,8 @@ import { MultiSelectTriggerComponent } from "./components/multi-select-trigger/m
         IsMinimalTagBasedItemPipe,
         IsTagBasedItemPipe,
         RequirementsListComponent,
-    ], imports: [CommonModule,
+    ], imports: [
+        CommonModule,
         RouterModule,
         MatSelectModule,
         MatMenuModule,
@@ -177,6 +178,13 @@ import { MultiSelectTriggerComponent } from "./components/multi-select-trigger/m
         ReactiveFormsModule,
         MatSortModule,
         AddSpacesToPascalCasePipe,
-        MultiSelectTriggerComponent], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        MultiSelectTriggerComponent,
+        ToDoToggleComponent,
+        UiIconComponent
+    ],
+    providers: [
+        provideHttpClient(withInterceptorsFromDi())
+    ]
+})
 export class SharedModule {
 }

@@ -23,6 +23,7 @@ import { JournalModule } from "../journal/journal.module";
 import { DatabaseItemDetailsDirective } from "../shared/directives/database-item-details.directive";
 import { ItemCardSwitchComponent } from "../shared/components/item-card-switch/item-card-switch.component";
 import { OfferingComponent } from "../shared/components/database-item-details/offering/offering.component";
+import { UiIconComponent } from "../shared/components/ui-icon/ui-icon.component";
 
 @NgModule({
     declarations: [
@@ -34,7 +35,27 @@ import { OfferingComponent } from "../shared/components/database-item-details/of
         HeartEventTriggerComponent,
         GiftingGridComponent,
     ],
-    imports: [CommonModule, NPCsRoutingModule, SharedModule, MatTooltipModule, MatProgressSpinnerModule, AddSpacesToPascalCasePipe, MatFormField, ReactiveFormsModule, MatInput, MatLabel, MatOption, MatSelect, MatCheckbox, NpcFilterComponent, JournalModule, DatabaseItemDetailsDirective, ItemCardSwitchComponent, OfferingComponent],
+    imports: [
+        CommonModule,
+        NPCsRoutingModule,
+        SharedModule,
+        MatTooltipModule,
+        MatProgressSpinnerModule,
+        AddSpacesToPascalCasePipe,
+        MatFormField,
+        ReactiveFormsModule,
+        MatInput,
+        MatLabel,
+        MatOption,
+        MatSelect,
+        MatCheckbox,
+        NpcFilterComponent,
+        JournalModule,
+        DatabaseItemDetailsDirective,
+        ItemCardSwitchComponent,
+        OfferingComponent,
+        UiIconComponent
+    ],
 })
 export class NPCsModule {
 }
