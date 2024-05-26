@@ -9,8 +9,6 @@ import sharp from "sharp";
 
 export class SimpleCopyImageProcessor {
 
-    processedImageNames: Set<string> = new Set<string>();
-
     constructor(protected mappings: {
         inputGlob: string,
         outputPathSuffix?: string,
@@ -20,7 +18,7 @@ export class SimpleCopyImageProcessor {
 
     }
 
-//
+
     process() {
 
         this.mappings.forEach(async mapping => {

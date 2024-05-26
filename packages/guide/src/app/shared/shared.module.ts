@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { UiIconComponent } from './components/ui-icon/ui-icon.component';
 import { ItemIconComponent } from './components/item-icon/item-icon.component';
 import { RarityIconComponent } from './components/rarity-icon/rarity-icon.component';
@@ -64,8 +64,7 @@ import { RequirementsListComponent } from './components/requirements-list/requir
 import { AddSpacesToPascalCasePipe } from "./pipes/add-spaces-to-pascal-case.pipe";
 import { MultiSelectTriggerComponent } from "./components/multi-select-trigger/multi-select-trigger.component";
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         UiIconComponent,
         ItemIconComponent,
         RarityIconComponent,
@@ -118,21 +117,6 @@ import { MultiSelectTriggerComponent } from "./components/multi-select-trigger/m
         ToItemListEntriesPipe,
         RequirementsListComponent,
     ],
-    imports: [
-        CommonModule,
-        HttpClientModule,
-        RouterModule,
-        MatSelectModule,
-        MatMenuModule,
-        MatTabsModule,
-        MatSidenavModule,
-        MatTableModule,
-        MatTooltipModule,
-        ReactiveFormsModule,
-        MatSortModule,
-        AddSpacesToPascalCasePipe,
-        MultiSelectTriggerComponent,
-    ],
     exports: [
         UiIconComponent,
         ModuleSidebarComponent,
@@ -182,7 +166,17 @@ import { MultiSelectTriggerComponent } from "./components/multi-select-trigger/m
         IsMinimalTagBasedItemPipe,
         IsTagBasedItemPipe,
         RequirementsListComponent,
-    ],
-})
+    ], imports: [CommonModule,
+        RouterModule,
+        MatSelectModule,
+        MatMenuModule,
+        MatTabsModule,
+        MatSidenavModule,
+        MatTableModule,
+        MatTooltipModule,
+        ReactiveFormsModule,
+        MatSortModule,
+        AddSpacesToPascalCasePipe,
+        MultiSelectTriggerComponent], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class SharedModule {
 }

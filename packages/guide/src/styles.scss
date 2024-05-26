@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "styles/material-theme";
+@import "styles/m3-theme";
 
 @import "styles/dialogs";
 @import "styles/tabs";
@@ -178,4 +178,11 @@ td.mdc-data-table__cell {
     border-bottom-left-radius: var(--cg-card-radius);
     border-bottom-right-radius: var(--cg-card-radius);
   }
+}
+
+
+// FIXME this causes an empty row at the bottom, but display none may cause unwanted side-effect -> check
+.cdk-describedby-message-container.cdk-visually-hidden {
+  display: none;
+
 }
