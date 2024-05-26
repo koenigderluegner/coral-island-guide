@@ -1,26 +1,26 @@
-@if (!showOnlyBase) {
+@if (!showOnlyBase()) {
 
-    <app-item-icon [itemName]="item.iconName" [quality]="QUALITY.BASE"></app-item-icon>
-    <app-item-icon [itemName]="item.iconName" [quality]="QUALITY.BRONZE"></app-item-icon>
-    <app-item-icon [itemName]="item.iconName" [quality]="QUALITY.SILVER"></app-item-icon>
-    <app-item-icon [itemName]="item.iconName" [quality]="QUALITY.GOLD"></app-item-icon>
-    <app-item-icon [itemName]="item.iconName" [quality]="QUALITY.OSMIUM"></app-item-icon>
-    @if (includePrices && item) {
+    <app-item-icon [itemName]="item().iconName" [quality]="QUALITY.BASE"></app-item-icon>
+    <app-item-icon [itemName]="item().iconName" [quality]="QUALITY.BRONZE"></app-item-icon>
+    <app-item-icon [itemName]="item().iconName" [quality]="QUALITY.SILVER"></app-item-icon>
+    <app-item-icon [itemName]="item().iconName" [quality]="QUALITY.GOLD"></app-item-icon>
+    <app-item-icon [itemName]="item().iconName" [quality]="QUALITY.OSMIUM"></app-item-icon>
+    @if (includePrices()) {
 
-        <app-money [amount]="item.sellPrice" class="text-black"></app-money>
-        <app-money [amount]="item.qualities.bronze?.sellPrice" class="text-black"></app-money>
-        <app-money [amount]="item.qualities.silver?.sellPrice" class="text-black"></app-money>
-        <app-money [amount]="item.qualities.gold?.sellPrice" class="text-black"></app-money>
-        <app-money [amount]="item.qualities.osmium?.sellPrice" class="text-black"></app-money>
+        <app-money [amount]="item().sellPrice" class="text-black"></app-money>
+        <app-money [amount]="item().qualities.bronze?.sellPrice" class="text-black"></app-money>
+        <app-money [amount]="item().qualities.silver?.sellPrice" class="text-black"></app-money>
+        <app-money [amount]="item().qualities.gold?.sellPrice" class="text-black"></app-money>
+        <app-money [amount]="item().qualities.osmium?.sellPrice" class="text-black"></app-money>
 
     }
 
 }
-@if (showOnlyBase) {
+@if (showOnlyBase()) {
 
-    <app-item-icon [itemName]="item.iconName" [quality]="QUALITY.BASE"></app-item-icon>
-    @if (includePrices) {
-        <app-money [amount]="item.sellPrice" class="text-black"></app-money>
+    <app-item-icon [itemName]="item().iconName" [quality]="QUALITY.BASE"></app-item-icon>
+    @if (includePrices()) {
+        <app-money [amount]="item().sellPrice" class="text-black"></app-money>
     }
 
 }

@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
+import { booleanAttribute, Component, HostBinding, input, ViewEncapsulation } from '@angular/core';
 import { Item, Quality } from '@ci/data-types';
 
 @Component({
@@ -10,10 +10,10 @@ import { Item, Quality } from '@ci/data-types';
 export class QualityGridComponent {
 
     QUALITY = Quality;
-    @Input({required: true}) item!: Item;
-    @Input({transform: booleanAttribute}) includePrices = false;
+    item = input.required<Item>();
+    includePrices = input(false, {transform: booleanAttribute});
     @HostBinding('class.!grid-cols-1')
-    @Input({transform: booleanAttribute}) showOnlyBase = false;
+    showOnlyBase = input(false, {transform: booleanAttribute})
     @HostBinding('class.app-quality-grid') private _setClass = true;
 
 
