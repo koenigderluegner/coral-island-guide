@@ -51,7 +51,7 @@
         @for (context of toDoContexts; track context) {
             <app-to-do-partial [context]="context" [toDoId]="toDoCategoryControl.value"/>
         }
-        <app-to-do-partial context="uncategorized" [toDoId]="toDoCategoryControl.value"/>
+        <app-to-do-partial [toDoId]="toDoCategoryControl.value" context="uncategorized"/>
 
 
         @if (toDoService.currentIsEmpty) {

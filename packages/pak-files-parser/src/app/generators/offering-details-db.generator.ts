@@ -14,7 +14,7 @@ export class OfferingDetailsDbGenerator extends BaseGenerator<RawOffering, Offer
 
     datatable: Datatable<RawOffering>[] = [
         readAsset<Datatable<RawOffering>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_OfferingRegistry.json'),
-        (environment.isBeta ? readAsset<Datatable<RawOffering>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_DivingOfferingRegistry.json') :[])
+        (environment.isBeta ? readAsset<Datatable<RawOffering>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_DivingOfferingRegistry.json') : [])
     ].reduce((previousValue, currentValue) => {
         Object.assign(previousValue[0]?.Rows ?? {}, (currentValue)[0]?.Rows ?? {});
         return previousValue

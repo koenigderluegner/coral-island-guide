@@ -8,11 +8,9 @@ import { ModuleSidebarItemComponent } from '../module-sidebar-item/module-sideba
     encapsulation: ViewEncapsulation.None
 })
 export class ModuleSidebarComponent {
-    @HostBinding('class.app-module-sidebar') private _setClass = true;
-
     @ContentChildren(ModuleSidebarItemComponent) viewChildren?: QueryList<ModuleSidebarItemComponent>;
     showMenu = false;
-
+    @HostBinding('class.app-module-sidebar') private _setClass = true;
 
     toggleMenu($event: MouseEvent) {
         $event.preventDefault();

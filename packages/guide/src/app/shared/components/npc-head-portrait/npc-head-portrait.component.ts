@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, ViewEncapsulation, inject } from '@angular/core';
+import { Component, HostBinding, inject, input, ViewEncapsulation } from '@angular/core';
 import { SettingsService } from '../../services/settings.service';
 
 @Component({
@@ -7,13 +7,9 @@ import { SettingsService } from '../../services/settings.service';
     encapsulation: ViewEncapsulation.None,
 })
 export class NpcHeadPortraitComponent {
-    private readonly _settings = inject(SettingsService);
-    @Input({ required: true }) portraitName: string | null | undefined;
-    @Input({ required: true }) npcKey: string | null | undefined;
-    protected version: string;
+    portraitName = input.required<string | null | undefined>();
+    npcKey = input.required<string | null | undefined>();
+    protected version = inject(SettingsService).getSettings().useBeta ? 'beta' : 'live';
     @HostBinding('class.npc-head-portrait') private _setClass = true;
 
-    constructor() {
-        this.version = this._settings.getSettings().useBeta ? 'beta' : 'live';
-    }
 }

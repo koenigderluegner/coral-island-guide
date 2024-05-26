@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MinimalItem, MinimalTagBasedItem, Offering, OfferingAltar } from "@ci/data-types";
+import { MinimalItem, MinimalTagBasedItem, OfferingAltar } from "@ci/data-types";
 import { map, Observable } from "rxjs";
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
 import { MatTab, MatTabGroup } from "@angular/material/tabs";

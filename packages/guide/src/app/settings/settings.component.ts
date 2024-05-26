@@ -24,16 +24,14 @@ type SettingsFormGroup = {
     templateUrl: './settings.component.html',
 })
 export class SettingsComponent {
-    private readonly _settingsService = inject(SettingsService);
-    private readonly _toDo = inject(ToDoService);
     settingsForm: FormGroup<SettingsFormGroup>;
     protected reloadRequired = false;
     protected uiIcon = UiIcon;
-
     protected availableLanguages = AvailableLanguages;
     protected availableLanguageDisplayName = AvailableLanguageDisplayName;
-
-    protected readonly BETA_CODE = inject(BETA_CODE, { optional: true });
+    protected readonly BETA_CODE = inject(BETA_CODE, {optional: true});
+    private readonly _settingsService = inject(SettingsService);
+    private readonly _toDo = inject(ToDoService);
     private readonly _checklistOfferings = inject(OfferingChecklistService);
     private readonly _checklistCooking = inject(CookingRecipesChecklistService);
     private readonly _checklistMuseum = inject(MuseumChecklistService);
@@ -41,13 +39,13 @@ export class SettingsComponent {
 
     constructor() {
         this.settingsForm = new FormGroup<SettingsFormGroup>({
-            useBeta: new FormControl<boolean>(false, { nonNullable: true }),
-            resetLiveToDo: new FormControl<boolean>(false, { nonNullable: true }),
-            resetBetaToDo: new FormControl<boolean>(false, { nonNullable: true }),
-            resetLiveChecklists: new FormControl<boolean>(false, { nonNullable: true }),
-            resetBetaChecklists: new FormControl<boolean>(false, { nonNullable: true }),
-            language: new FormControl<AvailableLanguage>('en', { nonNullable: true }),
-            disableChangelogs: new FormControl<boolean>(false, { nonNullable: true }),
+            useBeta: new FormControl<boolean>(false, {nonNullable: true}),
+            resetLiveToDo: new FormControl<boolean>(false, {nonNullable: true}),
+            resetBetaToDo: new FormControl<boolean>(false, {nonNullable: true}),
+            resetLiveChecklists: new FormControl<boolean>(false, {nonNullable: true}),
+            resetBetaChecklists: new FormControl<boolean>(false, {nonNullable: true}),
+            language: new FormControl<AvailableLanguage>('en', {nonNullable: true}),
+            disableChangelogs: new FormControl<boolean>(false, {nonNullable: true}),
         });
 
         if (!this.BETA_CODE) {
@@ -66,7 +64,7 @@ export class SettingsComponent {
     }
 
     saveSettings(): void {
-        const settings = { ...this.settingsForm.value };
+        const settings = {...this.settingsForm.value};
 
         if (settings.resetLiveChecklists) {
             this._checklistMuseum.resetLiveChecklist();

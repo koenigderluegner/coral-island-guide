@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, isDevMode, isStandalone, NgModule, Optional } from '@angular/core';
+import { APP_INITIALIZER, isDevMode, NgModule, Optional } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';

@@ -389,7 +389,7 @@ export class DaFilesParser {
         const result: RequirementMap = new Map<string, RequirementEntry>
         const map = mappingEntry.Properties?.map;
 
-        if(!map) return new Map()
+        if (!map) return new Map()
 
         let conf: GameplayRequirementsConfigMap;
 

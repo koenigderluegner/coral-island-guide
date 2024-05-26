@@ -6,7 +6,6 @@ import { OfferingChecklistService } from "../../../core/services/checklists/offe
 import { FormControl, FormRecord } from "@angular/forms";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { entityKey } from "@ci/util";
-import { ToDo } from "../../../core/types/to-do.type";
 
 @Component({
     selector: 'app-offerings-checklist',

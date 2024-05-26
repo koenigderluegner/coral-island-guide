@@ -7,6 +7,6 @@ import { MeritExchangeShopData } from "@ci/data-types";
 })
 export class MeritShopDetailsComponent {
 
-   meritExchangeData = input.required<MeritExchangeShopData>();
+    meritExchangeData = input.required<MeritExchangeShopData>();
 
 }

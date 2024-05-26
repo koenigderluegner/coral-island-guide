@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
-import { MinimalItem, MinimalTagBasedItem, Offering, OfferingAltar } from "@ci/data-types";
+import { MinimalItem, MinimalTagBasedItem, OfferingAltar } from "@ci/data-types";
 import { map, Observable } from "rxjs";
 import { AddSpacesToPascalCasePipe } from "../../../shared/pipes/add-spaces-to-pascal-case.pipe";
 import { AsyncPipe, NgOptimizedImage } from "@angular/common";

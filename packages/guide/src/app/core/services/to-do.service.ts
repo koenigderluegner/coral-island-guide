@@ -16,13 +16,13 @@ type MarkedSelection = { category: ToDoContext | undefined, item: MinimalItem | 
     providedIn: 'root'
 })
 export class ToDoService {
-      private readonly _settings = inject(SettingsService);
     private static _CURRENT_TO_DO_VERSION = 1
     // TODO migrate
     private static _LEGACY_TO_DO_STORE_KEY = 'checklist'
     clearTimer?: number;
     clearTimeout = 3000;
     userDataService = inject(UserDataService)
+    private readonly _settings = inject(SettingsService);
     private _completedCategory$: Subject<ToDoContext | undefined> = new Subject<ToDoContext | undefined>();
     private _markedAsCompleted: SelectionModel<MarkedSelection> = new SelectionModel<MarkedSelection>(true, [])
     private readonly versionSuffix: string;

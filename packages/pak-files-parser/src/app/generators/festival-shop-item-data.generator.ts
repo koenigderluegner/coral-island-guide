@@ -39,7 +39,7 @@ export class FestivalShopItemDataGenerator extends ShopItemDataGenerator<RawFest
 
         if (options && options.daFiles) {
             this.getEffectsAndRequirements(options.daFiles)
-               }
+        }
 
 
         const map: Map<string, FestivalShopItemData> = new Map<string, FestivalShopItemData>();

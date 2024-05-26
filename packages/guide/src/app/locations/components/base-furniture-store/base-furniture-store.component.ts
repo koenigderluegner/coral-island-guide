@@ -1,22 +1,14 @@
 import { Component } from '@angular/core';
 import { BaseSelectableContainerComponent } from "../../../shared/components/base-selectable-container/base-selectable-container.component";
-import {
-    ItemProcessShopData, ItemUpgradeData,
-    OpeningHours,
-    ShopDisplayNames,
-    ShopIcons,
-    ShopItemData,
-    ShopName,
-    UiIcon
-} from "@ci/data-types";
+import { OpeningHours, ShopDisplayNames, ShopIcons, ShopItemData, ShopName, UiIcon } from "@ci/data-types";
 import { Observable } from "rxjs";
 import { AsyncPipe } from "@angular/common";
 import { LocationsModule } from "../../locations.module";
 import { SharedModule } from "../../../shared/shared.module";
 
 @Component({
-  selector: 'app-base-furniture-store',
-  standalone: true,
+    selector: 'app-base-furniture-store',
+    standalone: true,
     imports: [
         AsyncPipe,
         LocationsModule,
@@ -24,7 +16,7 @@ import { SharedModule } from "../../../shared/shared.module";
     ],
     template: ''
 })
-export  abstract  class BaseFurnitureStoreComponent extends BaseSelectableContainerComponent<ShopItemData> {
+export abstract class BaseFurnitureStoreComponent extends BaseSelectableContainerComponent<ShopItemData> {
 
     protected abstract shopName: ShopName;
     protected readonly SHOP_DISPLAY_NAMES = ShopDisplayNames

@@ -15,11 +15,11 @@ import { toSignal } from "@angular/core/rxjs-interop";
     templateUrl: './npc-filter.component.html',
 })
 export class NpcFilterComponent {
-    protected readonly npcSortOptions = sortOptions;
     searchControl: FormControl<string> = new FormControl<string>('', {nonNullable: true})
     sortControl: FormControl<NpcSortValues> = new FormControl<NpcSortValues>('default', {nonNullable: true})
     sortOrderControl: FormControl<'asc' | 'desc'> = new FormControl<'asc' | 'desc'>('asc', {nonNullable: true})
     searchValueChanges = toSignal(this.searchControl.valueChanges, {initialValue: ''})
     sortValueChanges = toSignal(this.sortControl.valueChanges, {initialValue: 'default'})
     sortOrderValueChanges = toSignal(this.sortOrderControl.valueChanges, {initialValue: 'asc'})
+    protected readonly npcSortOptions = sortOptions;
 }

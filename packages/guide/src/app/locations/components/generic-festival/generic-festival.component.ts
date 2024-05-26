@@ -21,7 +21,7 @@ export class GenericFestivalComponent {
     protected showTable = false;
     private readonly _router = inject(ActivatedRoute);
     private readonly _database = inject(DatabaseService);
-     readonly #listDetailService = inject(ListDetailService);
+    readonly #listDetailService = inject(ListDetailService);
 
     constructor() {
         this.festivalData$ = this._router.data
@@ -39,7 +39,7 @@ export class GenericFestivalComponent {
 
     showDetails(entity: FestivalShopItemData): void {
         this.selectedEntity = entity;
-       this.#listDetailService.open()
+        this.#listDetailService.open()
     }
 
 }

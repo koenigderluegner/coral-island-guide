@@ -26,7 +26,7 @@ export class ItemProcessShopGenerator extends BaseGenerator<RawItemProcessShopDa
 
 
         const outputChancesSum = dbItem.outputChance.reduce((a, b) => a + b.chance, 0);
-        if (Math.abs(outputChancesSum - 100) > 1.5){
+        if (Math.abs(outputChancesSum - 100) > 1.5) {
             Logger.warn(`Percentage sum for ${input.displayName} (${input.id}) deviates more than 1.5%:`, outputChancesSum)
         }
         return {

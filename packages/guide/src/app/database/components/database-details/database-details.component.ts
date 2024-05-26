@@ -1,4 +1,4 @@
-import { Component, HostBinding, inject, input, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, HostBinding, inject, input, OnInit, ViewEncapsulation } from '@angular/core';
 import { DatabaseItem, Item } from "@ci/data-types";
 import { DatabaseService } from "../../../shared/services/database.service";
 import { Observable } from "rxjs";
@@ -10,7 +10,7 @@ import { Observable } from "rxjs";
     encapsulation: ViewEncapsulation.None
 })
 export class DatabaseDetailsComponent implements OnInit {
-    item = input.required< Item>();
+    item = input.required<Item>();
 
     protected databaseItem$?: Observable<DatabaseItem>;
 

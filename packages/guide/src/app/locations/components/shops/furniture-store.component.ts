@@ -7,8 +7,8 @@ import { BaseFurnitureStoreComponent } from "../base-furniture-store/base-furnit
 import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
 
 @Component({
-  selector: 'app-furniture-store',
-  standalone: true,
+    selector: 'app-furniture-store',
+    standalone: true,
     imports: [
         SharedModule,
         LocationsModule,
@@ -17,7 +17,7 @@ import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.comp
     ],
     templateUrl: '../base-furniture-store/base-furniture-store.component.html'
 })
-export class FurnitureStoreComponent   extends BaseFurnitureStoreComponent{
+export class FurnitureStoreComponent extends BaseFurnitureStoreComponent {
     protected shopName: ShopName = "furniture-store";
 
     constructor() {

@@ -1,4 +1,4 @@
-import { Component, HostBinding, ViewEncapsulation, inject } from '@angular/core';
+import { Component, HostBinding, inject, ViewEncapsulation } from '@angular/core';
 import { UiIcon } from '@ci/data-types';
 import { NavigationStart, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
@@ -17,8 +17,6 @@ type NaviLinks = {
     encapsulation: ViewEncapsulation.None,
 })
 export class HeaderComponent {
-    private readonly _router = inject(Router);
-    private readonly _settingsService = inject(SettingsService);
     naviLinks: NaviLinks = [
         {
             text: 'Journal',
@@ -54,6 +52,8 @@ export class HeaderComponent {
     @HostBinding('class.open-menu') isOpen = false;
     protected uiIcon = UiIcon;
     protected isBeta = false;
+    private readonly _router = inject(Router);
+    private readonly _settingsService = inject(SettingsService);
     @HostBinding('class.app-header') private _setClass = true;
 
     constructor() {

@@ -14,8 +14,8 @@ import { filterNPCs } from "../../filter-npcs.function";
 })
 export class NpcListComponent {
 
-    protected readonly uiIcon = UiIcon;
     npcFilter = viewChild(NpcFilterComponent);
+    protected readonly uiIcon = UiIcon;
     #searchValueChanges = computed(() => this.npcFilter()?.searchValueChanges() ?? '')
     #sortValueChanges = computed(() => this.npcFilter()?.sortValueChanges() ?? 'default')
     #filterNPCs = filterNPCs

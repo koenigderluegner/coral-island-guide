@@ -6,7 +6,7 @@
 
     <mat-form-field class="semi-transparent-form-field grow lg:grow-0 shrink-0 basis-auto">
         <mat-label>Sorting</mat-label>
-        <mat-select disableOptionCentering [formControl]="sortControl">
+        <mat-select [formControl]="sortControl" disableOptionCentering>
             @for (seasonOption of npcSortOptions; track seasonOption) {
                 <mat-option [value]="seasonOption.value">{{ seasonOption.displayName }}</mat-option>
             }

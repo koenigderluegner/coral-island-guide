@@ -1,5 +1,5 @@
-<app-database-item-details [itemId]="critter.item.id" [context]="toDoContext">
-    <ng-template let-details appDatabaseItemDetails>
+<app-database-item-details [context]="toDoContext" [itemId]="critter.item.id">
+    <ng-template appDatabaseItemDetails let-details>
         @if (details.fish) {
             <app-fish [fish]="details.fish"/>
         } @else if (details.insect) {

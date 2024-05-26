@@ -14,18 +14,18 @@ import { Title } from '@angular/platform-browser';
     templateUrl: './database.component.html',
 })
 export class DatabaseComponent {
+    protected readonly items: Item[];
+    protected searchTermControl: FormControl<string> = new FormControl<string>('', {nonNullable: true});
+    protected filteredItems$: Observable<Item[]>;
+    protected shouldHideImportantNote = false;
+    protected filteredItems: Item[] = [];
+    protected selectedItem?: Item;
     private readonly _route = inject(ActivatedRoute);
     private readonly _router = inject(Router);
     private readonly _database = inject(DatabaseService);
     private readonly _appRef = inject(ApplicationRef);
     private readonly _injector = inject(EnvironmentInjector);
     private readonly _title = inject(Title);
-    protected readonly items: Item[];
-    protected searchTermControl: FormControl<string> = new FormControl<string>('', { nonNullable: true });
-    protected filteredItems$: Observable<Item[]>;
-    protected shouldHideImportantNote = false;
-    protected filteredItems: Item[] = [];
-    protected selectedItem?: Item;
     private _localStorageHideNoteKey = 'databaseHideImportantNote';
     private _didInitialLoad = false;
 
@@ -63,7 +63,7 @@ export class DatabaseComponent {
             this._route.queryParams.pipe(
                 map((params) => {
                     const value = params['q'] ?? '';
-                    this.searchTermControl.setValue(value, { emitEvent: false });
+                    this.searchTermControl.setValue(value, {emitEvent: false});
                     return value;
                 }),
                 mapToItems,
@@ -136,7 +136,7 @@ export class DatabaseComponent {
     public updateQueryParam(searchTerm: string) {
         this._router.navigate([], {
             relativeTo: this._route,
-            queryParams: { q: searchTerm },
+            queryParams: {q: searchTerm},
             queryParamsHandling: 'merge',
             replaceUrl: true,
         });
@@ -177,15 +177,12 @@ export class DatabaseComponent {
             .subscribe();
     }
 
-    private _setGridContent(item: Item) {
-        const component = this.createComponent(item);
-        document.getElementById('grid')?.appendChild(component.location.nativeElement);
-        this._appRef.attachView(component.hostView);
-        this.selectedItem = item;
-    }
-
     trackById<T extends { id: string }>(index: number, item: T): string {
         return item.id;
+    }
+
+    prefetchItem(item: Item) {
+        this._database.fetchDatabaseItem$(item.id).pipe(take(1)).subscribe();
     }
 
     protected updateTitle(itemName: string) {
@@ -195,7 +192,10 @@ export class DatabaseComponent {
         }
     }
 
-    prefetchItem(item: Item) {
-        this._database.fetchDatabaseItem$(item.id).pipe(take(1)).subscribe();
+    private _setGridContent(item: Item) {
+        const component = this.createComponent(item);
+        document.getElementById('grid')?.appendChild(component.location.nativeElement);
+        this._appRef.attachView(component.hostView);
+        this.selectedItem = item;
     }
 }

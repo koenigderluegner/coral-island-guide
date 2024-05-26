@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, computed, DestroyRef, inject } from '@angular/core';
+import { AfterViewInit, Component, computed } from '@angular/core';
 import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page.component';
 import { Item } from '@ci/data-types';
 import { FormGroup } from "@angular/forms";

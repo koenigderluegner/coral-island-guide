@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, inject, input, Input } from '@angular/core';
+import { booleanAttribute, Component, inject, input } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { ItemProcessing } from "@ci/data-types";
 import { DatabaseService } from "../../../../shared/services/database.service";
@@ -9,7 +9,7 @@ import { DatabaseService } from "../../../../shared/services/database.service";
 })
 export class ProcessorTableComponent extends BaseTableComponent<ItemProcessing> {
 
-     showProcessor = input(false, {transform: booleanAttribute})
+    showProcessor = input(false, {transform: booleanAttribute})
     protected readonly BASE_DISPLAY_COLUMNS: string[] = [
         'icon',
         'outputName',

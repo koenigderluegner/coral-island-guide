@@ -1,9 +1,9 @@
 <mat-sidenav-container [hasBackdrop]="false">
-    <mat-sidenav #drawer [mode]="'over'" position="end" class="list-detail-drawer"
-                 [fixedInViewport]="mobileQuery.matches">
+    <mat-sidenav #drawer [fixedInViewport]="mobileQuery.matches" [mode]="'over'" class="list-detail-drawer"
+                 position="end">
         <ng-content select="[listDetail]"></ng-content>
     </mat-sidenav>
-    <mat-sidenav-content class="p-main-content w-full" [class.remove-placeholder-padding]="removePlaceholder()">
+    <mat-sidenav-content [class.remove-placeholder-padding]="removePlaceholder()" class="p-main-content w-full">
 
         <ng-content></ng-content>
 

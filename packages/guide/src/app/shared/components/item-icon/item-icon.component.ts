@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, numberAttribute, ViewEncapsulation, inject } from '@angular/core';
+import { Component, HostBinding, inject, Input, numberAttribute, ViewEncapsulation } from '@angular/core';
 import { Quality } from '@ci/data-types';
 import { SettingsService } from '../../services/settings.service';
 
@@ -9,12 +9,12 @@ import { SettingsService } from '../../services/settings.service';
     encapsulation: ViewEncapsulation.None,
 })
 export class ItemIconComponent {
-    private readonly _settings = inject(SettingsService);
     @Input() itemName?: string | null | undefined;
     @Input() subIconName?: string | null;
     @Input() quality?: Quality | undefined;
-    @Input({ transform: numberAttribute }) amount = 0;
+    @Input({transform: numberAttribute}) amount = 0;
     protected version: string;
+    private readonly _settings = inject(SettingsService);
     @HostBinding('class.app-item-icon') private _setClass = true;
 
     constructor() {

@@ -8,7 +8,7 @@ export type RawTreasureHunt = {
             },
             "RowName": string
         },
-        "itemID":string
+        "itemID": string
     },
     "treasureLocationImage": {
         "AssetPathName": string

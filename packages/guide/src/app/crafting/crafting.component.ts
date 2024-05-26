@@ -9,11 +9,10 @@ import { addSpacesToPascalCase } from '@ci/util';
     templateUrl: './crafting.component.html',
 })
 export class CraftingComponent {
-    private readonly _databaseService = inject(DatabaseService);
     UI_ICONS = UiIcon;
-
     itemProcessingRecipes$: Observable<Record<string, ItemProcessing[]>>;
     addSpacesToPascalCase = addSpacesToPascalCase;
+    private readonly _databaseService = inject(DatabaseService);
 
     constructor() {
         this.itemProcessingRecipes$ = this._databaseService.fetchItemProcessingRecipes$();
