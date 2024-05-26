@@ -57,15 +57,15 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
 
 
         const spawnSeason = 'spawnSettings' in foundEntry
-            ? foundEntry.spawnSettings.map(s => s.spawnSeason)
+            ? foundEntry.spawnSettings?.map(s => s.spawnSeason)
             : [foundEntry.spawnSeason];
 
         const spawnWeather = 'spawnSettings' in foundEntry
-            ? foundEntry.spawnSettings.map(s => s.spawnWeather)
+            ? foundEntry.spawnSettings?.map(s => s.spawnWeather)
             : [foundEntry.spawnWeather];
 
         const locations = 'spawnSettings' in foundEntry
-            ? foundEntry.spawnSettings.map(s => s.spawnLocation).flat()
+            ? foundEntry.spawnSettings?.map(s => s.spawnLocation).flat()
             : foundEntry.spawnLocation
 
         const locationMatch = !filterValues.location || locations.includes(filterValues.location)
