@@ -19,6 +19,7 @@
   - Sidebars, main content and details now have their own scroll area
   - Fixed floating 'X' on detail cards
   - Reduced content jumping
+  - fixed active highlight for processors
 
 
 ### 0.19.0 2024-05-22

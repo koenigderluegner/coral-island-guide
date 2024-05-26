@@ -5,7 +5,6 @@ import {
     effect,
     inject,
     input,
-    OnChanges,
     signal,
     TemplateRef,
     WritableSignal
@@ -66,6 +65,6 @@ export class DatabaseItemDetailsComponent {
                     this.databaseItem.set(i)
                 }
             })
-        });
+        }, {allowSignalWrites: true});
     }
 }
