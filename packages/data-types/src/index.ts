@@ -39,6 +39,7 @@ export * from './lib/types/requirements/quest-fact-requirement.type';
 export * from './lib/types/requirements/requirement.type';
 export * from './lib/types/requirements/special-item-requirements.type';
 export * from './lib/types/requirements/temple-level-requirement.type';
+export * from './lib/types/requirements/ship-to-unlock-requirement.type';
 
 export * from './lib/interfaces/achievement.interface';
 export * from './lib/interfaces/animal-data.interface';
@@ -106,6 +107,7 @@ export * from './lib/types/requirement-entry.type';
 export * from './lib/types/season.type';
 export * from './lib/types/shop-names.type';
 export * from './lib/types/treasure-hunt.type';
+export * from './lib/types/weather.type';
 export * from './lib/types/weather.type';
 
 export * from './lib/dashboard/fish-dashboard-entry.type';

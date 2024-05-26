@@ -51,7 +51,7 @@ import { CookingUtensilMapGenerator } from "./app/generators/cooking-utensil-map
 import { StringTable } from "./util/string-table.class";
 import {
     AnimalShopData,
-    AvailableLanguages,
+    AvailableLanguage,
     CookingRecipe,
     CraftingRecipe,
     DatabaseItem,
@@ -313,7 +313,9 @@ AvailableLanguages.forEach(lang => {
             'carpenter-item-upgrade': new ItemUpgradeDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_CarpenterBuldingUpgrades.json'),
 
 
-            'merfolk-general-store-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopMerfolkGeneralStore.json'),
+            'merfolk-general-store-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopMerfolkGeneralStore.json', {
+                itemShipUnlockData: environment.isBeta ? 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/GeneralMerfok/DT_MerfolkGeneralItemShipUnlock.json' : undefined
+            }),
             'merfolk-oracle-tail-store-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ShopMerfolkOracleTailStore.json'),
 
             'pet-shop-adoptions': new PetShopAdoptionsGenerator(npcDbMap),

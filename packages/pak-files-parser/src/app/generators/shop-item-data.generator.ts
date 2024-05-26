@@ -1,20 +1,36 @@
 import { BaseGenerator } from "./base-generator.class";
-import { CustomEntry, Effect, Item, RequirementEntry, ShopItemData } from "@ci/data-types";
+import { CustomEntry, Effect, Item, RequirementEntry, ShipToUnlockRequirement, ShopItemData } from "@ci/data-types";
 import { RawShopItemData } from "../../interfaces/raw-data-interfaces/raw-shop-item-data.interface";
 import { AssetPathNameToIcon, minifyItem, readAsset } from "../../util/functions";
 import { Datatable } from "../../interfaces/datatable.interface";
 import { getEnumValue } from "@ci/util";
 import { StringTable } from "../../util/string-table.class";
 import { Logger } from "../../util/logger.class";
+import { ItemShipUnlockDataGenerator } from "./item-ship-unlock-data.generator";
 
 
 export class ShopItemDataGenerator<T extends RawShopItemData = RawShopItemData> extends BaseGenerator<T, ShopItemData> {
 
     datatable: Datatable<T>[];
 
-    constructor(protected itemMap: Map<string, Item>, protected datatablePath: string) {
+    shipToUnlock: Record<string, ShipToUnlockRequirement> = {}
+
+    constructor(protected itemMap: Map<string, Item>, protected datatablePath: string, options?: {
+        itemShipUnlockData?: string | string[]
+    }) {
         super();
         this.datatable = readAsset<Datatable<T>[]>(datatablePath);
+
+        const shipToUnlock = options?.itemShipUnlockData;
+
+        if (shipToUnlock) {
+            (Array.isArray(shipToUnlock) ? shipToUnlock : [shipToUnlock]).forEach(s => {
+                const a = [...new ItemShipUnlockDataGenerator(this.itemMap, s).generate().values()];
+                a.forEach(si => this.shipToUnlock[si.itemId] = si.value)
+            })
+        }
+
+
     }
 
     handleEntry(itemKey: string, dbItem: T): ShopItemData | undefined {
@@ -38,7 +54,20 @@ export class ShopItemDataGenerator<T extends RawShopItemData = RawShopItemData> 
 
         const effectsAndRequirements: { effects?: Effect[], requirements?: RequirementEntry } = {}
 
-        const requirements = this.getRequirements(itemKey);
+        let requirements = this.getRequirements(itemKey);
+
+        const shipToUnlockElement = this.shipToUnlock[dbItem.item.itemID];
+
+        if (shipToUnlockElement) {
+            if (!requirements) {
+                requirements = {
+                    key: itemKey,
+                    requirements: [],
+                    type: 'And'
+                }
+            }
+            requirements.requirements.push(shipToUnlockElement)
+        }
 
         if (requirements && requirements.requirements.length) {
             effectsAndRequirements.requirements = requirements
