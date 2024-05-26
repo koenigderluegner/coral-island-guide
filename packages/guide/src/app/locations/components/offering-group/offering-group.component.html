@@ -28,7 +28,7 @@
         Rewards:
     </div>
 
-    <div class="grid gap-4 icon-grid  mt-8">
+    <div class="icon-grid  mt-8">
         @for (offeringReward of activeOffering.rewards.items; track offeringReward) {
             <app-item-icon (click)="showDetails(offeringReward.item)"
 
@@ -45,7 +45,7 @@
         following
         items are required:
     </div>
-    <div class="grid gap-4 icon-grid  mt-8">
+    <div class="icon-grid  mt-8">
 
         @for (offering of activeOffering.requiredItems; track offering) {
             <app-item-icon (click)="showDetails(offering)"

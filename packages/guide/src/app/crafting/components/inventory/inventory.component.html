@@ -8,7 +8,7 @@
             @if ((recipes$ |async); as recipes) {
 
                 @if (!showTable) {
-                    <div class="grid gap-4 icon-grid">
+                    <div class="icon-grid">
 
                         @for (recipe of recipes; track recipe) {
                             <app-item-icon (click)="showDetails(recipe)"

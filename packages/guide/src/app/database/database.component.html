@@ -19,7 +19,7 @@
         <input [formControl]="searchTermControl" matInput />
     </mat-form-field>
 
-    <div class="grid gap-4 icon-grid" id="grid">
+    <div class="icon-grid" id="grid">
         @if ((filteredItems$ | async)) {
 
             @for (item of filteredItems; track trackById(index, item); let index = $index) {

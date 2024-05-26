@@ -30,7 +30,7 @@
 
             <app-data-filter [(showTable)]="showTable"/>
             @if (!showTable) {
-                <div class="grid gap-4 icon-grid">
+                <div class="icon-grid">
 
                     @for (shopItem of shopItemData; track shopItem) {
                         <app-item-icon (click)="showDetails(shopItem)"
@@ -56,7 +56,7 @@
 
         <app-data-filter [(showTable)]="showTable"/>
         @if (!showTable) {
-            <div class="grid gap-4 icon-grid">
+            <div class="icon-grid">
 
                 @for (shopItem of shopItemData; track shopItem) {
                     <app-item-icon (click)="showAnimal(shopItem)"

@@ -14,7 +14,7 @@
                 @if ((tab.data |async); as syncedData) {
 
                     @if (!showTable) {
-                        <div class="grid gap-4 icon-grid">
+                        <div class="icon-grid">
                             @for (entry of syncedData; track entry) {
                                 <app-item-icon (click)="showDetails(entry)"
                                                [class.selected-icon]="selectedEntity?.id === entry.id"

@@ -19,7 +19,7 @@
                 @if ((filteredData$(machineName) | async); as processorItems) {
 
                     @if (!showTable) {
-                        <div class="grid gap-4 icon-grid">
+                        <div class="icon-grid">
 
                             @for (itemProcess of processorItems; track itemProcess) {
                                 <app-item-icon (click)="showDetails(itemProcess)"

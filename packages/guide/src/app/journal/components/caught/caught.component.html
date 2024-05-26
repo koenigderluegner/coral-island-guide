@@ -13,7 +13,7 @@
                                      [locations]="getLocations(syncedData)"/>
                     @if (!showTable) {
 
-                        <div class="grid gap-4 icon-grid">
+                        <div class="icon-grid">
                             @for (entry of syncedData; track entry) {
                                 <app-item-icon [itemName]="entry.item.iconName"
                                                (click)="showDetails(entry)"
