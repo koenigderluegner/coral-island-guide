@@ -51,7 +51,7 @@ import { CookingUtensilMapGenerator } from "./app/generators/cooking-utensil-map
 import { StringTable } from "./util/string-table.class";
 import {
     AnimalShopData,
-    AvailableLanguage,
+    AvailableLanguages,
     CookingRecipe,
     CraftingRecipe,
     DatabaseItem,

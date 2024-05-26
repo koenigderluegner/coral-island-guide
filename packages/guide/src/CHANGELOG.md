@@ -6,10 +6,13 @@
 
 - \[Beta] Added ocean produce to journal
 - \[Beta] Added treasure maps to journal
+- \[Beta] Added custom npc head portraits
+- \[Beta] Added requirements to merfolk general store items
 - More entries can be added to to-dos (although being uncategorized for now)
 
 #### Changed
 
+- \[Beta] Updated beta data to v1.1-1063 images (Steam version)
 - \[Beta] Fixed missing beta notification for orchestra zones
 - Fixed link to settings in "beta only"-landing page
 - High-res NPC images were swapped for compressed ones to save bandwidth and improve performance
