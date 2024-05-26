@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
+import { Component, HostBinding, input, ViewEncapsulation } from '@angular/core';
 import { MinimalItem } from '@ci/data-types';
 
 @Component({
@@ -8,6 +8,6 @@ import { MinimalItem } from '@ci/data-types';
     encapsulation: ViewEncapsulation.None
 })
 export class InlineMinimalItemComponent {
+    minimalItem = input.required<MinimalItem>();
     @HostBinding('class.app-inline-minimal-item') private _setClass = true;
-    @Input({required: true}) minimalItem!: MinimalItem;
 }

@@ -20,11 +20,12 @@ export class OfferingGroupComponent {
     offeringAltar = input.required<OfferingAltar>()
     selectedEntity = input.required<MinimalItem | MinimalTagBasedItem | undefined>()
     @Output() selected = new EventEmitter<MinimalItem | MinimalTagBasedItem | undefined>()
+    showTable = false;
     protected activeOffering?: Offerings;
     protected useBeta = inject(SettingsService).getSettings().useBeta;
     protected bundleAssetPath = signal(`assets/${this.useBeta ? 'beta' : 'live'}/items/icons/`);
     protected entryForToDo?: ToDo;
-    showTable = false;
+
     showDetails(selectedEntry?: Offering | MinimalItem | MinimalTagBasedItem) {
         if (selectedEntry) {
             this.entryForToDo = 'item' in selectedEntry ? {

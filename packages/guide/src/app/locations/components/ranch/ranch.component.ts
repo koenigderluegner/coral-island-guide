@@ -47,6 +47,6 @@ export class RanchComponent extends BaseShopComponent {
         this.selectedAnimal = shopItem;
         this.selectedEntity = undefined;
 
-        this.openDrawer = true;
+        this.listDetail.open()
     }
 }

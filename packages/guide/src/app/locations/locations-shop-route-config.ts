@@ -16,7 +16,6 @@ import { SocketAndPanComponent } from "./components/shops/socket-and-pan/socket-
 import { WhiteFlamingoComponent } from "./components/shops/white-flamingo/white-flamingo.component";
 import { CoffeeComponent } from "./components/shops/coffee/coffee.component";
 import { TavernComponent } from "./components/shops/tavern/tavern.component";
-import { TidalThreadsComponent } from "./components/shops/tidal-threads.component";
 import { Route } from "@angular/router";
 
 export const shopRouteConfig: ({ name: ShopName, betaOnly?: true } & ({ component: Type<any>, } | {

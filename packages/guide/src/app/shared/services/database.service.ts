@@ -34,7 +34,8 @@ import {
     ShopItemData,
     ShopName,
     TagBasedItem,
-    TornPageData, TreasureHunt
+    TornPageData,
+    TreasureHunt
 } from '@ci/data-types';
 import { AvailableJournalOrders } from '../types/available-journal-orders.type';
 import { MapKeyed } from '../types/map-keyed.type';
@@ -49,37 +50,27 @@ export class DatabaseService extends BaseDbService {
     private _ITEMS$?: Observable<Item[]>;
     private _ITEMS: Item[] = [];
     private _FISH$?: Observable<Fish[]>;
-    private _FISH: Fish[] = [];
     private _CRAFTING_RECIPE$?: Observable<CraftingRecipe[]>;
-    private _CRAFTING_RECIPE: CraftingRecipe[] = [];
     private _OCEAN_CRITTERS$?: Observable<Critter[]>;
-    private _OCEAN_CRITTERS: Critter[] = [];
     private _BUGS_AND_INSECTS$?: Observable<Critter[]>;
-    private _BUGS_AND_INSECTS: Critter[] = [];
 
     private _JOURNAL_ORDERS: Map<string, Observable<JournalOrder[]>> = new Map<string, Observable<JournalOrder[]>>();
     private _CROPS$?: Observable<Crop[]>;
-    private _CROPS: Crop[] = [];
     private _FRUIT_TREES$?: Observable<FruitTree[]>;
-    private _FRUIT_TREES: FruitTree[] = [];
     private _FRUIT_PLANTS$?: Observable<FruitPlant[]>;
-    private _FRUIT_PLANTS: FruitPlant[] = [];
     private _TAG_BASED_ITEMS$?: Observable<TagBasedItem[]>;
     private _TAG_BASED_ITEMS: TagBasedItem[] = [];
     private _TREASURE_HUNTS$?: Observable<TreasureHunt[]>;
-    private _TREASURE_HUNTSS: TreasureHunt[] = [];
+
     private _ITEM_PROCESSING_RECIPE$?: Observable<Record<string, ItemProcessing[]>>;
-    private _ITEM_PROCESSING_RECIPE: Record<string, ItemProcessing[]> = {};
     private _COOKING_RECIPE$?: Observable<Record<string, CookingRecipe[]>>;
-    private _COOKING_RECIPE: Record<string, CookingRecipe[]> = {};
     private _CONSUMABLES$?: Observable<Consumable[]>;
-    private _CONSUMABLES: Consumable[] = [];
+
     private _GIFT_PREFERENCES$?: Observable<MapKeyed<GiftPreferences>[]>;
     private _GIFT_PREFERENCES: MapKeyed<GiftPreferences>[] = [];
 
 
     private _OFFERINGS$?: Observable<OfferingAltar[]>;
-    private _OFFERINGS: OfferingAltar[] = [];
 
 
     private _SHOP_ITEMS: Map<string, ShopItemData[]> = new Map<string, ShopItemData[]>();
@@ -88,13 +79,11 @@ export class DatabaseService extends BaseDbService {
     private _OPENING_HOURS: Map<string, Record<string, OpeningHours>> = new Map<string, Record<string, OpeningHours>>();
     private _ITEM_UPGRADE: Map<string, ItemUpgradeData[]> = new Map<string, ItemUpgradeData[]>();
     private _PET_SHOP_ADOPTIONS$?: Observable<PetShopAdoptions[]>;
-    private _PET_SHOP_ADOPTIONS: PetShopAdoptions[] = [];
     private _NPCS: NPC[] = [];
     private _NPCS$?: Observable<NPC[]>;
     private _ACHHIEVEMENTS$?: Observable<Achievement[]>;
     private _MERIT_EXCHANGE_SHOP_DATA$?: Observable<MeritExchangeShopData[]>;
 
-    private _HEART_EVENTS: Record<string, HeartEvent[]> = {};
     private _HEART_EVENTS$?: Observable<Record<string, HeartEvent[]>>;
 
     private _PROCESSOR_MAPPING: Record<string, MinimalItem> = {};
@@ -102,26 +91,20 @@ export class DatabaseService extends BaseDbService {
     private _COOKING_UTENSIL_MAPPING: Record<string, MinimalItem> = {};
     private _COOKING_UTENSIL_MAPPING$?: Observable<Record<string, MinimalItem>>;
 
-    private _MUSEUM_CHECKLIST: Record<string, MinimalItem[]> = {};
     private _MUSEUM_CHECKLIST$?: Observable<Record<string, MinimalItem[]>>;
 
-    private _COOKING_RECIPES_CHECKLIST: Record<string, MinimalItem[]> = {};
     private _COOKING_RECIPES_CHECKLIST$?: Observable<Record<string, MinimalItem[]>>;
 
-    private _MAIL_DATA: MailData[] = [];
     private _MAIL_DATA$?: Observable<MailData[]>;
 
-    private _TORN_PAGES_DATA: TornPageData[] = [];
     private _TORN_PAGES_DATA$?: Observable<TornPageData[]>;
 
-    private _BESTIARY: Enemy[] = [];
     private _BESTIARY$?: Observable<Enemy[]>;
 
 
     private _ANIMAL_SHOP_DATA: Map<string, AnimalShopData[]> = new Map<string, AnimalShopData[]>();
     private _ANIMAL_DATA$?: Observable<AnimalData[]>;
     private _ANIMAL_MOOD_DATA$?: Observable<ProductSizeByMood[]>;
-    private _ANIMAL_SHOP_DATA$?: Observable<AnimalShopData[]>;
 
     private _DATABASE_ITEMS: Map<string, DatabaseItem> = new Map<string, DatabaseItem>();
 
@@ -159,22 +142,16 @@ export class DatabaseService extends BaseDbService {
         if (!this._MAIL_DATA$) {
             this._MAIL_DATA$ = this.http.get<MailData[]>(`${this.BASE_PATH}/mail-data.json`)
                 .pipe(
-                    tap(items => this._MAIL_DATA = items),
                     shareReplay(1)
                 );
         }
         return this._MAIL_DATA$;
     }
 
-    getBestiary(): Enemy[] {
-        return this._BESTIARY
-    }
-
     fetchBestiary$(): Observable<Enemy[]> {
         if (!this._BESTIARY$) {
             this._BESTIARY$ = this.http.get<Enemy[]>(`${this.BASE_PATH}/bestiary.json`)
                 .pipe(
-                    tap(items => this._BESTIARY = items),
                     shareReplay(1)
                 );
         }
@@ -202,7 +179,6 @@ export class DatabaseService extends BaseDbService {
     }
 
 
-
     fetchAnimalShopData$(shopName: ShopName): Observable<AnimalShopData[]> {
         if (!this._ANIMAL_SHOP_DATA.has(shopName)) {
             return this.http.get<AnimalShopData[]>(`${this.BASE_PATH}/${shopName}-animal-shop-data.json`)
@@ -217,12 +193,10 @@ export class DatabaseService extends BaseDbService {
     }
 
 
-
     fetchTornPagesData$(): Observable<TornPageData[]> {
         if (!this._TORN_PAGES_DATA$) {
             this._TORN_PAGES_DATA$ = this.http.get<TornPageData[]>(`${this.BASE_PATH}/torn-pages.json`)
                 .pipe(
-                    tap(items => this._TORN_PAGES_DATA = items),
                     shareReplay(1)
                 );
         }
@@ -280,26 +254,15 @@ export class DatabaseService extends BaseDbService {
     }
 
 
-    getHeartEvents(): Record<string, HeartEvent[]> {
-        return this._HEART_EVENTS;
-    }
-
-
     fetchHeartEvents$(): Observable<Record<string, HeartEvent[]>> {
         if (!this._HEART_EVENTS$) {
             this._HEART_EVENTS$ = this.http.get<Record<string, HeartEvent[]>[]>(`${this.BASE_PATH}/heart-events.json`)
                 .pipe(
                     map(events => events[0]),
-                    tap(items => this._HEART_EVENTS = items),
                     shareReplay(1)
                 );
         }
         return this._HEART_EVENTS$;
-    }
-
-
-    getMuseumChecklist(): Record<string, MinimalItem[]> {
-        return this._MUSEUM_CHECKLIST;
     }
 
 
@@ -308,7 +271,6 @@ export class DatabaseService extends BaseDbService {
             this._MUSEUM_CHECKLIST$ = this.http.get<Record<string, MinimalItem[]>[]>(`${this.BASE_PATH}/museum-checklist.json`)
                 .pipe(
                     map(events => events[0]),
-                    tap(items => this._MUSEUM_CHECKLIST = items),
                     shareReplay(1)
                 );
         }
@@ -320,7 +282,6 @@ export class DatabaseService extends BaseDbService {
             this._COOKING_RECIPES_CHECKLIST$ = this.http.get<Record<string, MinimalItem[]>[]>(`${this.BASE_PATH}/cooking-recipes-checklist.json`)
                 .pipe(
                     map(events => events[0]),
-                    tap(items => this._COOKING_RECIPES_CHECKLIST = items),
                     shareReplay(1)
                 );
         }
@@ -338,17 +299,10 @@ export class DatabaseService extends BaseDbService {
         return this._ACHHIEVEMENTS$;
     }
 
-
-    getOfferings(): OfferingAltar[] {
-        return this._OFFERINGS;
-    }
-
-
     fetchOfferings$(): Observable<OfferingAltar[]> {
         if (!this._OFFERINGS$) {
             this._OFFERINGS$ = this.http.get<OfferingAltar[]>(`${this.BASE_PATH}/offerings.json`)
                 .pipe(
-                    tap(items => this._OFFERINGS = items),
                     shareReplay(1)
                 );
         }
@@ -359,7 +313,6 @@ export class DatabaseService extends BaseDbService {
         if (!this._CONSUMABLES$) {
             this._CONSUMABLES$ = this.http.get<Consumable[]>(`${this.BASE_PATH}/consumables.json`)
                 .pipe(
-                    tap(items => this._CONSUMABLES = items),
                     shareReplay(1)
                 );
         }
@@ -370,15 +323,10 @@ export class DatabaseService extends BaseDbService {
         if (!this._FISH$) {
             this._FISH$ = this.http.get<Fish[]>(`${this.BASE_PATH}/fish.json`)
                 .pipe(
-                    tap(fish => this._FISH = fish),
                     shareReplay(1)
                 );
         }
         return this._FISH$;
-    }
-
-    getFish(): Fish[] {
-        return this._FISH;
     }
 
     fetchCraftingRecipes$(): Observable<CraftingRecipe[]> {
@@ -398,15 +346,10 @@ export class DatabaseService extends BaseDbService {
                 })
             )
                 .pipe(
-                    tap(craftingRecipes => this._CRAFTING_RECIPE = craftingRecipes),
                     shareReplay(1)
                 );
         }
         return this._CRAFTING_RECIPE$;
-    }
-
-    getCraftingRecipes(): CraftingRecipe[] {
-        return this._CRAFTING_RECIPE;
     }
 
     fetchItemProcessingRecipes$(): Observable<Record<string, ItemProcessing[]>> {
@@ -432,15 +375,10 @@ export class DatabaseService extends BaseDbService {
 
                         return recipes
                     }),
-                    tap(ipa => this._ITEM_PROCESSING_RECIPE = ipa),
                     shareReplay(1)
                 );
         }
         return this._ITEM_PROCESSING_RECIPE$;
-    }
-
-    getItemProcessingRecipes(): Record<string, ItemProcessing[]> {
-        return this._ITEM_PROCESSING_RECIPE;
     }
 
     fetchCookingRecipes$(): Observable<Record<string, CookingRecipe[]>> {
@@ -448,15 +386,10 @@ export class DatabaseService extends BaseDbService {
             this._COOKING_RECIPE$ = this.http.get<Record<string, CookingRecipe[]>[]>(`${this.BASE_PATH}/cooking-recipes.json`)
                 .pipe(
                     map(cooking => cooking[0]),
-                    tap(cooking => this._COOKING_RECIPE = cooking),
                     shareReplay(1)
                 );
         }
         return this._COOKING_RECIPE$;
-    }
-
-    getCookingRecipes(): Record<string, CookingRecipe[]> {
-        return this._COOKING_RECIPE;
     }
 
     fetchTreasureHunts$(): Observable<TreasureHunt[]> {
@@ -469,7 +402,7 @@ export class DatabaseService extends BaseDbService {
         return this._TREASURE_HUNTS$;
     }
 
-      fetchTagBasedItems$(): Observable<TagBasedItem[]> {
+    fetchTagBasedItems$(): Observable<TagBasedItem[]> {
         if (!this._TAG_BASED_ITEMS$) {
             this._TAG_BASED_ITEMS$ = this.http.get<TagBasedItem[]>(`${this.BASE_PATH}/tag-based-items.json`)
                 .pipe(
@@ -488,76 +421,53 @@ export class DatabaseService extends BaseDbService {
         if (!this._OCEAN_CRITTERS$) {
             this._OCEAN_CRITTERS$ = this.http.get<Critter[]>(`${this.BASE_PATH}/ocean-critters.json`)
                 .pipe(
-                    tap(oceanCritters => this._OCEAN_CRITTERS = oceanCritters),
                     shareReplay(1)
                 );
         }
         return this._OCEAN_CRITTERS$;
     }
 
-    getOceanCritters(): Critter[] {
-        return this._OCEAN_CRITTERS;
-    }
-
     fetchBugsAndInsects$(): Observable<Critter[]> {
         if (!this._BUGS_AND_INSECTS$) {
             this._BUGS_AND_INSECTS$ = this.http.get<Critter[]>(`${this.BASE_PATH}/bugs-and-insects.json`)
                 .pipe(
-                    tap(bugs => this._BUGS_AND_INSECTS = bugs),
                     shareReplay(1)
                 );
         }
         return this._BUGS_AND_INSECTS$;
     }
 
-    getBugsAndInsects(): Critter[] {
-        return this._BUGS_AND_INSECTS;
-    }
-
     fetchCrops$(): Observable<Crop[]> {
         if (!this._CROPS$) {
             this._CROPS$ = this.http.get<Crop[]>(`${this.BASE_PATH}/crops.json`)
                 .pipe(
-                    tap(crops => this._CROPS = crops),
                     shareReplay(1)
                 );
         }
         return this._CROPS$;
     }
 
-    getCrops(): Crop[] {
-        return this._CROPS;
-    }
-
     fetchFruitTrees$(): Observable<FruitTree[]> {
         if (!this._FRUIT_TREES$) {
             this._FRUIT_TREES$ = this.http.get<Crop[]>(`${this.BASE_PATH}/fruit-trees.json`)
                 .pipe(
-                    tap(fruitTrees => this._FRUIT_TREES = fruitTrees),
                     shareReplay(1)
                 );
         }
         return this._FRUIT_TREES$;
     }
 
-    getFruitTrees(): FruitTree[] {
-        return this._FRUIT_TREES;
-    }
 
     fetchFruitPlants$(): Observable<FruitPlant[]> {
         if (!this._FRUIT_PLANTS$) {
             this._FRUIT_PLANTS$ = this.http.get<Crop[]>(`${this.BASE_PATH}/fruit-plants.json`)
                 .pipe(
-                    tap(fruitPlants => this._FRUIT_PLANTS = fruitPlants),
                     shareReplay(1)
                 );
         }
         return this._FRUIT_PLANTS$;
     }
 
-    getFruitPlants(): FruitPlant[] {
-        return this._FRUIT_PLANTS;
-    }
 
     fetchJournalOrder$(listName: AvailableJournalOrders): Observable<JournalOrder[]> {
         if (!this._JOURNAL_ORDERS.get(listName)) {
@@ -593,7 +503,6 @@ export class DatabaseService extends BaseDbService {
         if (!this._PET_SHOP_ADOPTIONS$) {
             this._PET_SHOP_ADOPTIONS$ = this.http.get<PetShopAdoptions[]>(`${this.BASE_PATH}/pet-shop-adoptions.json`)
                 .pipe(
-                    tap(prefs => this._PET_SHOP_ADOPTIONS = prefs),
                     shareReplay(1)
                 );
         }
@@ -638,26 +547,6 @@ export class DatabaseService extends BaseDbService {
             return of(this._OPENING_HOURS.get(shopName)!)
         }
 
-    }
-
-    getShopProcessItems(shopName: ShopName): ItemProcessShopData[] {
-        return this._SHOP_PROCESS_ITEMS.get(shopName) ?? [];
-    }
-
-    getShopData(shopName: ShopName): ShopItemData[] {
-        return this._SHOP_ITEMS.get(shopName) ?? [];
-    }
-
-    getFestivalData(shopName: FestivalName): FestivalData | null {
-        return this._FESTIVAL_DATA.get(shopName) ?? null;
-    }
-
-    getItemUpgradeData(shopName: ShopName): ItemUpgradeData[] {
-        return this._ITEM_UPGRADE.get(shopName) ?? [];
-    }
-
-    getOpeningHours(shopName: ShopName): Record<string, OpeningHours> {
-        return this._OPENING_HOURS.get(shopName) ?? {};
     }
 
     fetchShopItemData$(shopName: ShopName): Observable<ShopItemData[]> {

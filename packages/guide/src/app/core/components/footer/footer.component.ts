@@ -15,6 +15,6 @@ import { VersionService } from "../../services/version.service";
 })
 export class FooterComponent {
     protected uiIcon = UiIcon;
-    @HostBinding('class.app-footer') private _setCssClass = true;
     protected version$ = inject(VersionService).get()
+    @HostBinding('class.app-footer') private _setCssClass = true;
 }

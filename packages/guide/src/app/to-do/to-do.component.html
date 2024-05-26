@@ -1,74 +1,78 @@
-<app-card class="m-2 2xl:mx-16 2xl:mt-16 2xl:mb-10">
-    <div class="flex justify-between">
-        <h1 class="mb-4 font-semibold text-2xl text-black">To-Dos</h1>
-        <mat-form-field class="btn btn-secondary">
-            <mat-select [formControl]="toDoCategoryControl" multiple placeholder="None">
-                <mat-select-trigger>
-                    @if (toDoCategoryControl.value.includes('all')) {
-                        All
-                    }
-                    @if (!toDoCategoryControl.value.includes('all')) {
+<div class="px-main-hz py-main-vt">
+    <app-card>
+        <div class="flex justify-between">
+            <h1 class="mb-4 font-semibold text-2xl text-black">To-Dos</h1>
+            <mat-form-field class="btn btn-secondary">
+                <mat-select [formControl]="toDoCategoryControl" multiple placeholder="None">
+                    <mat-select-trigger>
+                        @if (toDoCategoryControl.value.includes('all')) {
+                            All
+                        }
+                        @if (!toDoCategoryControl.value.includes('all')) {
 
-                        @if (toDoCategoryControl.value.length) {
+                            @if (toDoCategoryControl.value.length) {
 
-                            {{ toDoCategoryControl.value[0] !== 'all' ? toDoCategoryControl.value[0] === 'uncategorized' ? 'Uncategorized' : toDoContextDisplayNames[toDoCategoryControl.value[0]] : '' }}
-                            @if (toDoCategoryControl.value.length > 1) {
-                                <span class="text-sm opacity-80">
+                                {{ toDoCategoryControl.value[0] !== 'all' ? toDoCategoryControl.value[0] === 'uncategorized' ? 'Uncategorized' : toDoContextDisplayNames[toDoCategoryControl.value[0]] : '' }}
+                                @if (toDoCategoryControl.value.length > 1) {
+                                    <span class="text-sm opacity-80">
                                 (+{{ toDoCategoryControl.value.length - 1 }} {{ toDoCategoryControl.value.length === 2 ? 'other' : 'others' }}
-                                    )
+                                        )
                             </span>
+                                }
+
                             }
 
                         }
+                    </mat-select-trigger>
 
-                    }
-                </mat-select-trigger>
-
-                <mat-option value="all">
-                    <div class="flex justify-between">
-                        <span>All</span>
-                        <span>{{ toDoService.currentToDoAmount }}</span>
-                    </div>
-                </mat-option>
-                @for (context of toDoContexts; track context) {
-                    <mat-option [value]="context">
+                    <mat-option value="all">
                         <div class="flex justify-between">
-                            <span>{{ toDoContextDisplayNames[context] }}</span>
-                            <span>{{ toDoService.getCategoryList(context).length }}</span>
+                            <span>All</span>
+                            <span>{{ toDoService.currentToDoAmount }}</span>
                         </div>
                     </mat-option>
-                }
-                <mat-option value="uncategorized">
-                    <div class="flex justify-between">
-                        <span>Uncategorized</span>
-                        <span>{{ toDoService.getCategoryList().length }}</span>
-                    </div>
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-    </div>
-    @for (context of toDoContexts; track context) {
-        <app-to-do-partial [context]="context" [toDoId]="toDoCategoryControl.value"/>
-    }
-    <app-to-do-partial context="uncategorized" [toDoId]="toDoCategoryControl.value"/>
+                    @for (context of toDoContexts; track context) {
+                        <mat-option [value]="context">
+                            <div class="flex justify-between">
+                                <span>{{ toDoContextDisplayNames[context] }}</span>
+                                <span>{{ toDoService.getCategoryList(context).length }}</span>
+                            </div>
+                        </mat-option>
+                    }
+                    <mat-option value="uncategorized">
+                        <div class="flex justify-between">
+                            <span>Uncategorized</span>
+                            <span>{{ toDoService.getCategoryList().length }}</span>
+                        </div>
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        @for (context of toDoContexts; track context) {
+            <app-to-do-partial [context]="context" [toDoId]="toDoCategoryControl.value"/>
+        }
+        <app-to-do-partial [toDoId]="toDoCategoryControl.value" context="uncategorized"/>
 
 
-    @if (toDoService.currentIsEmpty) {
-        <div class="show-when-none-displayed">
-            <h2 class="mb-2 mt-4 font-semibold text-xl text-black">No entries in to-do list</h2>
-            <p class="text-black">
-                Your current to-do list is empty! Visit the <a class="underline" routerLink="/journal">journal</a>, the
-                <a class="underline" routerLink="/locations/lake-temple">offerings</a> or other places to add entries to
-                your to-do list.
-            </p>
-        </div>
-    }
-    @if (!toDoService.currentIsEmpty) {
-        <div class="show-when-none-displayed">
-            <h2 class="mb-2 mt-4 font-semibold text-xl text-black">No entries for selection</h2>
-            <p class="text-black">
-                There are no entries for your current filter settings.
-            </p>
-        </div>
-    }
-</app-card>
+        @if (toDoService.currentIsEmpty) {
+            <div class="show-when-none-displayed">
+                <h2 class="mb-2 mt-4 font-semibold text-xl text-black">No entries in to-do list</h2>
+                <p class="text-black">
+                    Your current to-do list is empty! Visit the <a class="underline" routerLink="/journal">journal</a>,
+                    the
+                    <a class="underline" routerLink="/locations/lake-temple">offerings</a> or other places to add
+                    entries to
+                    your to-do list.
+                </p>
+            </div>
+        }
+        @if (!toDoService.currentIsEmpty) {
+            <div class="show-when-none-displayed">
+                <h2 class="mb-2 mt-4 font-semibold text-xl text-black">No entries for selection</h2>
+                <p class="text-black">
+                    There are no entries for your current filter settings.
+                </p>
+            </div>
+        }
+    </app-card>
+</div>

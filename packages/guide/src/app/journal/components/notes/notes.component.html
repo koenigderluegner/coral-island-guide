@@ -1,4 +1,4 @@
-<app-list-detail-container [(openDrawer)]="openDrawer">
+<app-list-detail-container>
     <ng-container listDetail>
         @if (selectedEntity) {
             <app-mail-details [mail]="selectedEntity"/>
@@ -19,13 +19,11 @@
 
     </ng-container>
     @if (data$ | async) {
-        <mat-tab-group (selectedTabChange)="updateUrl($event)"
-                       [selectedIndex]="selectedTabIndex()"
-                       class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false">
+        <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex()">
             <mat-tab [label]="tabNames[0]">
                 <app-data-filter [(showTable)]="showTable"/>
                 @if (!showTable) {
-                    <div class="grid gap-4 icon-grid mt-3">
+                    <div class="icon-grid mt-3">
                         @for (mail of mails; track mail) {
                             <app-item-icon (click)="showDetails(mail)"
 
@@ -44,7 +42,7 @@
             <mat-tab [label]="tabNames[1]">
                 <app-data-filter [(showTable)]="showTornPagesTable"/>
                 @if (!showTornPagesTable) {
-                    <div class="grid gap-4 icon-grid mt-3">
+                    <div class="icon-grid mt-3">
                         @for (tornPage of tornPages; track tornPage) {
                             <app-item-icon (click)="showTornPageDetails(tornPage)"
 
@@ -62,7 +60,7 @@
             </mat-tab>
             <mat-tab [label]="tabNames[2]">
 
-                <div class="grid gap-4 icon-grid mt-3">
+                <div class="icon-grid mt-3">
                     @for (tornPage of treasureMaps; track tornPage) {
                         <app-item-icon (click)="showTreasureDetails(tornPage)"
 

@@ -8,7 +8,7 @@ import { CookingRecipe, GenericEntry, ItemEntry } from "@ci/data-types";
 export class CookingRecipeIngredientsPipe implements PipeTransform {
 
     transform(cookingRecipe: CookingRecipe): (ItemEntry | GenericEntry)[] {
-        const items: ItemListComponent['itemList'] = [...cookingRecipe.ingredients];
+        const items: ReturnType<ItemListComponent['itemList']> = [...cookingRecipe.ingredients];
 
         if (cookingRecipe.genericIngredients.length) {
 

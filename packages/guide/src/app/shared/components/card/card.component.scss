@@ -6,30 +6,21 @@
   flex-direction: column;
 
   [cardIcon] {
-    height: 140px;
+    height: var(--cg-card-icon-height);
     @apply flex justify-center mx-auto;
 
 
     & > img {
-      height: 140px;
+      height: var(--cg-card-icon-height);
       width: auto;
     }
   }
 
 
   @screen xl {
-
     & {
-
       --cg-card-padding: 36px;
-
-      [cardIcon] {
-        height: 220px;
-
-        & > img {
-          height: 220px;
-        }
-      }
+      --cg-card-icon-height: 180px;
     }
   }
 

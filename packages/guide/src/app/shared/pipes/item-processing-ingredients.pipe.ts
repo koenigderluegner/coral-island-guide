@@ -8,7 +8,7 @@ import { ItemListComponent } from "../components/item-list/item-list.component";
 export class ItemProcessingIngredientsPipe implements PipeTransform {
 
     transform(itemProcessing: ItemProcessing): (ItemEntry | GenericEntry)[] {
-        const items: ItemListComponent['itemList'] = [itemProcessing.input, ...itemProcessing.additionalInput];
+        const items: ReturnType<ItemListComponent['itemList']> = [itemProcessing.input, ...itemProcessing.additionalInput];
         if (itemProcessing.genericInput) {
             const genericInput: GenericEntry = {
                 ...itemProcessing.genericInput,

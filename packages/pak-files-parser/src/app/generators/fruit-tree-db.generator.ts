@@ -1,4 +1,4 @@
-import { FruitTree, Item, Season } from '@ci/data-types';
+import { FruitTree, Item } from '@ci/data-types';
 import { minifyItem, readAsset } from '../../util/functions';
 import { CropRegistry } from '../../types/crop-registry.type';
 import { getEnumValue, nonNullable } from '@ci/util';

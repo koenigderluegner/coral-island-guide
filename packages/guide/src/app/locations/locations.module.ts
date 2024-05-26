@@ -46,6 +46,7 @@ import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-
 import { DatabaseItemDetailsDirective } from "../shared/directives/database-item-details.directive";
 import { ItemCardSwitchComponent } from "../shared/components/item-card-switch/item-card-switch.component";
 import { OfferingComponent } from "../shared/components/database-item-details/offering/offering.component";
+import { UiIconComponent } from "../shared/components/ui-icon/ui-icon.component";
 
 @NgModule({
     declarations: [
@@ -99,6 +100,7 @@ import { OfferingComponent } from "../shared/components/database-item-details/of
         DatabaseItemDetailsDirective,
         ItemCardSwitchComponent,
         OfferingComponent,
+        UiIconComponent,
     ],
     exports: [
         OfferingsTableComponent,

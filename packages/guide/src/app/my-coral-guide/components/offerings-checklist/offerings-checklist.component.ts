@@ -6,7 +6,6 @@ import { OfferingChecklistService } from "../../../core/services/checklists/offe
 import { FormControl, FormRecord } from "@angular/forms";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { entityKey } from "@ci/util";
-import { ToDo } from "../../../core/types/to-do.type";
 
 @Component({
     selector: 'app-offerings-checklist',
@@ -56,16 +55,16 @@ export class OfferingsChecklistComponent extends BaseTabbedSelectableContainerCo
 
     }
 
-    override registerToToDo(entry: MinimalItem | Offering | MinimalTagBasedItem) {
-        const itemEntry: ToDo = 'item' in entry ? {
-            itemEntry: entry.item,
-            amount: entry.amount,
-            quality: entry.quality
-        } : {
-            itemEntry: (entry)
-        }
-        this._todo.add({...itemEntry, context: "offerings"})
-    }
+    // override registerToToDo(entry: MinimalItem | Offering | MinimalTagBasedItem) {
+    //     const itemEntry: ToDo = 'item' in entry ? {
+    //         itemEntry: entry.item,
+    //         amount: entry.amount,
+    //         quality: entry.quality
+    //     } : {
+    //         itemEntry: (entry)
+    //     }
+    //     this._todo.add({...itemEntry, context: "offerings"})
+    // }
 
     override showDetails(selectedEntry?: Offering | MinimalItem | MinimalTagBasedItem) {
         this.entryForToDo = selectedEntry;

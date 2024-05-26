@@ -1,4 +1,4 @@
-<app-list-detail-container [(openDrawer)]="openDrawer" [removePlaceholder]="showTable">
+<app-list-detail-container [removePlaceholder]="showTable">
     @if (selectedEntity) {
         <app-item-card-switch [item]="selectedEntity" listDetail>
             <ng-template let-details appDatabaseItemDetails>
@@ -6,7 +6,7 @@
             </ng-template>
         </app-item-card-switch>
     }
-    <app-card class="mx-2 2xl:mx-16">
+    <app-card>
         <h2 class="mb-4 font-semibold text-2xl text-black">
             My Coral Guide
         </h2>
@@ -22,18 +22,18 @@
             </p>
         </div>
     </app-card>
-    <app-dashboard-filter class="mx-2 my-5 2xl:mx-16 block" [parentFormGroup]="filterFormGroup"/>
+    <app-dashboard-filter [parentFormGroup]="filterFormGroup" class="my-5 block"/>
     @if (requests$ | async; ) {
-        <div class="m-2 2xl:mx-16">
+        <div class="my-2">
             <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">
                 Fish
             </h2>
 
-            <div class="grid gap-4 icon-grid">
+            <div class="icon-grid">
                 @for (entry of fish(); track entry.entry.id + entry.context) {
                     <!--                    [class.selected-icon]="selectedEntity?entry.id === entry.entry.id"        -->
-                    <div                            [class.checklist-checked]="entry.completed"
-                            class="icon-grid-item checklist-item  flex flex-col">
+                    <div [class.checklist-checked]="entry.completed"
+                         class="icon-grid-item checklist-item  flex flex-col">
                         <app-item-icon
                                 (click)="showDetails(entry.entry.item)"
                                 [itemName]="entry.entry.item.iconName"/>

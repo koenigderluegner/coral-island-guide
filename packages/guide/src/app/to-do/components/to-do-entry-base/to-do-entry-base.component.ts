@@ -4,7 +4,7 @@ import {
     EventEmitter,
     HostBinding,
     inject,
-    Input,
+    input,
     OnInit,
     Output,
     ViewChild
@@ -24,21 +24,21 @@ import { ItemEntry } from "../../../shared/types/item-entry.type";
 })
 export class ToDoEntryBaseComponent implements OnInit {
 
-    @Input() amount?: number;
-    @Input() quality?: Quality | undefined;
-    @Input({required: true}) item!: ItemEntry;
-    @Input({required: true}) category?: ToDoContext;
+    amount = input<number>();
+    quality = input<Quality | undefined>();
+    item = input.required<ItemEntry>();
+    category = input.required<ToDoContext | undefined>();
     @Output() markedAsComplete: EventEmitter<ItemEntry> = new EventEmitter<ItemEntry>();
     @ViewChild(MatCheckbox, {static: true}) checkbox?: MatCheckbox;
-    todoService: ToDoService = inject(ToDoService)
     protected qualities = Quality;
     @HostBinding('class.opacity-50') protected isChecked = false;
-    private _destroyRef = inject(DestroyRef);
+    #todoService = inject(ToDoService)
+    #destroyRef = inject(DestroyRef);
 
     ngOnInit() {
-        this.todoService.categoryCompleted$().pipe(
-            takeUntilDestroyed(this._destroyRef),
-            filter(category => category === this.category)
+        this.#todoService.categoryCompleted$().pipe(
+            takeUntilDestroyed(this.#destroyRef),
+            filter(category => category === this.category())
         ).subscribe({
             next: () => {
                 this.toggleCompletionStatus(true);
@@ -50,6 +50,6 @@ export class ToDoEntryBaseComponent implements OnInit {
 
     toggleCompletionStatus(isChecked: boolean) {
         this.isChecked = isChecked;
-        this.todoService.updateStatus(this.category, this.item, isChecked)
+        this.#todoService.updateStatus(this.category(), this.item(), isChecked)
     }
 }

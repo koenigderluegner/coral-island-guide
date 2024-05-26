@@ -43,13 +43,13 @@ export abstract class BaseShopComponent extends BaseSelectableContainerComponent
         this.selectedEntity = undefined;
         this.selectedItemUpgrade = undefined;
         this.selectedProcessEntity = selectedEntry;
-        this.openDrawer = true;
+        this.listDetail.open()
     }
 
     showItemUpgradeDetails(selectedEntry?: ItemUpgradeData) {
         this.selectedEntity = undefined;
         this.selectedItemUpgrade = selectedEntry;
         this.selectedProcessEntity = undefined;
-        this.openDrawer = true;
+        this.listDetail.open()
     }
 }

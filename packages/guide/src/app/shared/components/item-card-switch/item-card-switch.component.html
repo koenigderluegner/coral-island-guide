@@ -1,6 +1,9 @@
 @if (item(); as itemEntry) {
     @if (isCustomEntry(item()) || isTagBasedItem(item())) {
-        <app-base-item-card [item]="item()"/>
+        <app-base-item-card [item]="itemEntry"
+                            [context]="context()"
+                            [quality]="quality()"
+                            [amount]="amount()"/>
     } @else if (itemEntry | isMinimalItem) {
         <app-database-item-details [itemId]="itemEntry.id"
                                    [context]="context()"

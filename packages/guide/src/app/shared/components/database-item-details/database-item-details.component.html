@@ -1,10 +1,13 @@
-@if (databaseItem()) {
-    <app-card class="text-lg font-semibold relative" *ngIf="databaseItem() as dbItem">
-        <div class="card-actions h-8 absolute right-[75px] top-[15px]">
-            <app-to-do-toggle [item]="dbItem.item" [context]="context" [amount]="amount" [quality]="quality"/>
+@if (databaseItem(); as dbItem) {
+    <app-card class="text-lg font-semibold relative">
+        <div cardActions class="card-actions">
+            <app-to-do-toggle [item]="dbItem.item" [context]="context()" [amount]="amount()" [quality]="quality()"/>
+            <button (click)="listDetails.close()" matTooltip="Close">
+                <app-ui-icon [uiIcon]="uiIcon.CROSS" class="!w-8 !h-8 hover:text-black focus-visible:text-black"/>
+            </button>
         </div>
 
-        <app-item-icon [amount]="amount" cardIcon itemName="{{dbItem.item.iconName}}"/>
+        <app-item-icon [amount]="amount()" cardIcon itemName="{{dbItem.item.iconName}}"/>
         <div class="flex justify-between items-center">
             <div class="flex flex-col">
                 <div class="text-black text-2xl">{{ dbItem.item.displayName }}</div>
@@ -23,9 +26,9 @@
         <hr class="my-5"/>
         <span class="text-lg mb-6">{{ dbItem.item.description }}</span>
 
-        <ng-container *ngTemplateOutlet="databaseItemDetails; context: {$implicit: dbItem}"></ng-container>
+        <ng-container *ngTemplateOutlet="databaseItemDetails; context: {$implicit: dbItem}"/>
 
-        @if (((dbItem.item.qualities) | keyvalue).length && !hideQualityGrid) {
+        @if (((dbItem.item.qualities) | keyvalue).length && !hideQualityGrid()) {
             <app-quality-grid
                     [item]="dbItem.item"
                     class="mt-6"

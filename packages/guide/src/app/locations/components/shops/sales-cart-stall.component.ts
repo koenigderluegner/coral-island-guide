@@ -4,6 +4,7 @@ import { ShopName } from "@ci/data-types";
 import { SharedModule } from "../../../shared/shared.module";
 import { LocationsModule } from "../../locations.module";
 import { AsyncPipe } from "@angular/common";
+import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
 
 @Component({
     selector: 'app-sales-cart-stall',
@@ -11,7 +12,8 @@ import { AsyncPipe } from "@angular/common";
     imports: [
         SharedModule,
         LocationsModule,
-        AsyncPipe
+        AsyncPipe,
+        UiIconComponent
     ],
     templateUrl: '../base-furniture-store/base-furniture-store.component.html'
 })

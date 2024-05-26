@@ -3,17 +3,20 @@ import { BaseCrop, JournalOrder, MinimalItem, UiIcon } from '@ci/data-types';
 import { combineLatest, map, Observable, of, startWith } from 'rxjs';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { FormGroup } from '@angular/forms';
-import { FilterForm } from "../../../shared/types/filter-form.type";
-import { MatTabGroup } from "@angular/material/tabs";
-import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
+import { FilterForm } from '../../../shared/types/filter-form.type';
+import { MatTabGroup } from '@angular/material/tabs';
+import { BaseTabbedSelectableContainerComponent } from '../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component';
 
 export interface BaseJournalPageComponent<D> {
-    filterPredicate?(foundEntry: D, filterValues: BaseJournalPageComponent<D>['formControl']['value'], index: number): boolean;
+    filterPredicate?(
+        foundEntry: D,
+        filterValues: BaseJournalPageComponent<D>['formControl']['value'],
+        index: number
+    ): boolean;
 }
 
-
 @Component({
-    template: ''
+    template: '',
 })
 export class BaseJournalPageComponent<D extends ({
     item: MinimalItem
@@ -37,40 +40,39 @@ export class BaseJournalPageComponent<D extends ({
         this.mobileQuery.addListener(this._mobileQueryListener);
 
         this.formControl = formControl;
-
     }
 
-    getFilteredJournalData(journalOrder$: Observable<JournalOrder[]>, data: Observable<D[]>, index: number): Observable<D[]> {
+    getFilteredJournalData(
+        journalOrder$: Observable<JournalOrder[]>,
+        data: Observable<D[]>,
+        index: number
+    ): Observable<D[]> {
         return combineLatest([
-                journalOrder$,
-                data,
-                this.formControl.valueChanges.pipe(startWith(this.formControl.value)),
-                of(index)
-            ],
-        ).pipe(map(
-            ([orders, entries, filterValues, index]) => {
+            journalOrder$,
+            data,
+            this.formControl.valueChanges.pipe(startWith(this.formControl.value)),
+            of(index),
+        ]).pipe(
+            map(([orders, entries, filterValues, index]) => {
                 const res: D[] = [];
 
+                orders
+                    .sort((a, b) => (a.order > b.order ? 1 : -1))
+                    .forEach((journalOrder) => {
+                        const foundEntry: D | undefined = entries.find((f) => {
+                            if ('dropData' in f) {
+                                return (f as BaseCrop).dropData[0].item?.id === journalOrder.key;
+                            }
 
-                orders.sort((a, b) => a.order > b.order ? 1 : -1).forEach(journalOrder => {
-                    const foundEntry: D | undefined = entries.find(f => {
-
-                        if ('dropData' in f) {
-                            return ((f as BaseCrop).dropData[0].item?.id === journalOrder.key)
+                            return 'item' in f ? f.item.id === journalOrder.key : f.id === journalOrder.key;
+                        });
+                        if (foundEntry) {
+                            if (!this.filterPredicate) res.push(foundEntry);
+                            if (this.filterPredicate && this.filterPredicate(foundEntry, filterValues, index)) {
+                                res.push(foundEntry);
+                            }
                         }
-
-                        return 'item' in f ? (f.item.id === journalOrder.key) : (f.id === journalOrder.key)
                     });
-                    if (foundEntry) {
-                        if (!this.filterPredicate)
-                            res.push(foundEntry);
-                        if (this.filterPredicate && this.filterPredicate(foundEntry, filterValues, index)) {
-                            res.push(foundEntry);
-                        }
-
-
-                    }
-                });
                 return res;
             })
         );
@@ -79,5 +81,4 @@ export class BaseJournalPageComponent<D extends ({
     ngOnDestroy(): void {
         this.mobileQuery.removeListener(this._mobileQueryListener);
     }
-
 }

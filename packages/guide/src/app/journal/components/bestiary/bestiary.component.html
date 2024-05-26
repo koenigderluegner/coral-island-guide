@@ -1,30 +1,30 @@
-<app-list-detail-container [(openDrawer)]="openDrawer">
+<app-list-detail-container>
     @if (selectedEntity) {
         <app-bestiary-details [enemy]="selectedEntity" listDetail/>
     }
-    <div class="px-2 xl:px-[50px] w-full max-w-full-safe">
-        <app-data-filter [(showTable)]="showTable"/>
-        @if ((bestiary$  |async); as syncedData) {
 
-            @if (!showTable) {
+    <app-data-filter [(showTable)]="showTable"/>
+    @if ((bestiary$  |async); as syncedData) {
 
-                <div class="grid gap-4 icon-grid">
-                    @for (entry of syncedData; track entry) {
-                        <app-item-icon (click)="showDetails(entry)"
-                                       [class.selected-icon]="selectedEntity?.key === entry.key"
-                                       [itemName]="entry.iconName"
-                                       class="icon-grid-item"
-                        />
-                    }
-                </div>
+        @if (!showTable) {
 
-            }
-            @if (showTable) {
-
-                <app-bestiary-table [dataSource]="syncedData"/>
-
-            }
+            <div class="icon-grid">
+                @for (entry of syncedData; track entry) {
+                    <app-item-icon (click)="showDetails(entry)"
+                                   [class.selected-icon]="selectedEntity?.key === entry.key"
+                                   [itemName]="entry.iconName"
+                                   class="icon-grid-item"
+                    />
+                }
+            </div>
 
         }
-    </div>
+        @if (showTable) {
+
+            <app-bestiary-table [dataSource]="syncedData"/>
+
+        }
+
+    }
+
 </app-list-detail-container>

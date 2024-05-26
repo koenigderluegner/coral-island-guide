@@ -11,6 +11,7 @@
 @import "styles/form-fields";
 @import "styles/buttons";
 @import "styles/mat-select";
+@import "styles/scrollbars";
 @import "@angular/cdk/overlay-prebuilt.css";
 
 
@@ -38,6 +39,10 @@
   --cg-min-footer-height: calc(56px + env(safe-area-inset-bottom));
   --cg-card-padding: 20px;
   --cg-card-radius: 30px;
+  --cg-card-icon-height: 140px;
+  --cg-main-space-horizontal: 0.5rem;
+  --cg-main-space-vertical: 1.5rem;
+  --cg-main-space-card-placeholder-width: var(--cg-main-space-horizontal)
 }
 
 html {
@@ -86,6 +91,10 @@ hr {
   box-shadow: none
 }
 
+.p-main-content.remove-placeholder-padding {
+  --cg-main-space-card-placeholder-width: var(--cg-main-space-horizontal);
+}
+
 @layer components {
   .btn-amber {
     @apply inline-flex justify-center py-2 px-4 border border-transparent shadow-sm font-medium rounded-md text-white bg-amber-700 hover:bg-amber-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-700;
@@ -100,7 +109,9 @@ hr {
 }
 @screen xl {
   :root {
+    --cg-main-space-horizontal: 1.5rem;
     --cg-min-header-height: 108px;
+    --cg-main-space-card-placeholder-width: calc(600px - var(--cg-main-space-vertical));
   }
 
   .mat-drawer-container {
@@ -108,17 +119,13 @@ hr {
   }
 
   .mat-drawer-inner-container {
-    padding: 60px 30px;
+    padding: var(--cg-main-space-vertical) var(--cg-main-space-horizontal);
   }
 
   .drawer-close-button {
     right: 45px;
     top: 75px;
 
-  }
-
-  .placeholder-padding {
-    padding-right: 600px;
   }
 
 }
@@ -178,6 +185,10 @@ td.mdc-data-table__cell {
     border-bottom-left-radius: var(--cg-card-radius);
     border-bottom-right-radius: var(--cg-card-radius);
   }
+}
+
+.card-actions {
+ @apply flex gap-6 h-8 justify-end;
 }
 
 

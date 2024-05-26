@@ -1,4 +1,4 @@
-<app-list-detail-container [(openDrawer)]="openDrawer">
+<app-list-detail-container>
     @if (selectedEntity) {
         <app-database-item-details [itemId]="selectedEntity.item.id" context="cooking_recipes" listDetail>
             <ng-template let-details appDatabaseItemDetails>
@@ -13,8 +13,8 @@
     }
 
 
-    <mat-tab-group class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false" (selectedTabChange)="updateUrl($event)"
-                   [selectedIndex]="selectedTabIndex()">
+    <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex()" class="w-full"
+                   mat-stretch-tabs="false">
         @for (utensilName of utensilNames; track utensilName) {
             <mat-tab
                     [label]="cookingUtensilMapping[utensilName.toLowerCase()] ? cookingUtensilMapping[utensilName.toLowerCase()].displayName : utensilName | addSpacesToPascalCase | titlecase">
@@ -22,7 +22,7 @@
                 @if ((filteredData$(utensilName) | async); as processorItems) {
 
                     @if (!showTable) {
-                        <div class="grid gap-4 icon-grid">
+                        <div class="icon-grid">
 
                             @for (itemProcess of processorItems; track itemProcess) {
                                 <app-item-icon (click)="showDetails(itemProcess)"

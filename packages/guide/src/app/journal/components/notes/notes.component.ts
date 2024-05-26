@@ -65,14 +65,14 @@ export class NotesComponent extends BaseTabbedSelectableContainerComponent<MailD
         this.selectedEntity = undefined;
         this.selectedTreasureHunt = undefined;
         this.selectedTornPage = tornPage;
-        this.openDrawer = true;
+        this.listDetail.open()
     }
 
     showTreasureDetails(treasureHunt: TreasureHunt): void {
         this.selectedEntity = undefined;
         this.selectedTornPage = undefined;
         this.selectedTreasureHunt = treasureHunt;
-        this.openDrawer = true;
+        this.listDetail.open()
     }
 
 }
