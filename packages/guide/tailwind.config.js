@@ -6,6 +6,12 @@ module.exports = {
     content: [join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html}'), ...createGlobPatternsForDependencies(__dirname)],
     theme: {
         extend: {
+            height: {
+                main: 'calc(100vh - (var(--cg-min-header-height) + var(--cg-min-footer-height)))'
+            },
+            maxHeight: {
+                main: 'calc(100vh - (var(--cg-min-header-height) + var(--cg-min-footer-height)))'
+            },
             maxWidth: {
                 'full-safe': 'calc(100vw - (env(safe-area-inset-left) + env(safe-area-inset-right)))'
             },
