@@ -188,7 +188,17 @@ td.mdc-data-table__cell {
 }
 
 .card-actions {
- @apply flex gap-6 h-8 justify-end;
+  @apply flex gap-6 h-8 justify-end;
+
+  &:has(+ .full-size-card-image) {
+
+    --blur-color: rgb(255 255 255 / .5);
+    --blur-distance: 1px;
+
+
+    filter: drop-shadow(var(--blur-distance) var(--blur-distance) 0 var(--blur-color)) drop-shadow(calc(0px - var(--blur-distance)) calc(0px - var(--blur-distance)) 0 var(--blur-color)) drop-shadow(calc(0px - var(--blur-distance)) var(--blur-distance) 0 var(--blur-color)) drop-shadow(var(--blur-distance) calc(0px - var(--blur-distance)) 0 var(--blur-color));
+    margin-bottom: calc(0px - var(--cg-card-padding));
+  }
 }
 
 

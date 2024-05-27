@@ -9,7 +9,12 @@
 
         @if (selectedTreasureHunt) {
             <app-card class="text-lg font-semibold relative">
-
+                <div cardActions class="card-actions">
+                    <button (click)="listDetail.close()" matTooltip="Close">
+                        <app-ui-icon [uiIcon]="uiIcon.CROSS"
+                                     class="!w-8 !h-8 hover:text-black focus-visible:text-black"/>
+                    </button>
+                </div>
                 <app-full-size-image class="full-size-card-image image-only" hasThumb
                                      [imageName]="'treasure-maps/'+selectedTreasureHunt.mapImage"/>
 

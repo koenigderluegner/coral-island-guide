@@ -1,11 +1,13 @@
-import { Component, Input } from '@angular/core';
-import { TornPageData } from "@ci/data-types";
+import { Component, inject, input } from '@angular/core';
+import { TornPageData, UiIcon } from "@ci/data-types";
+import { ListDetailService } from "../../../shared/components/list-detail-container/list-detail.service";
 
 @Component({
     selector: 'app-torn-page-details',
     templateUrl: './torn-page-details.component.html',
 })
 export class TornPageDetailsComponent {
-    @Input({required: true}) tornPage!: TornPageData
-
+    tornPage = input.required<TornPageData>()
+    listDetails = inject(ListDetailService)
+    protected readonly uiIcon = UiIcon;
 }

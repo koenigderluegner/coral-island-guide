@@ -192,6 +192,10 @@ AvailableLanguages.forEach(lang => {
                 },
                 'treasure-hunt-maps': new TreasureHuntGenerator(itemDbMap),
                 'journal-ocean-products': new JournalOrderDbGenerator('Produce/DT_JournalOcean.json'),
+
+                'ramen-shop-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops//DT_RamenShop.json'),
+                'ramen-shop-opening-hours': new BaseOpeningHoursGenerator({'Building': 'ProjectCoral/Content/ProjectCoral/Data/OpeningHours/RamenShops.json'}),
+
             }
         } else {
 
@@ -355,7 +359,6 @@ AvailableLanguages.forEach(lang => {
             'torn-pages': new TornPagesGenerator(),
             'bestiary': new BestiaryGenerator(itemDbMap),
 
-
             'winter-fair-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["winter-fair"])!, [
                 {
                     title: 'Clothing Shop',
@@ -371,6 +374,8 @@ AvailableLanguages.forEach(lang => {
                 },
             ]),
 
+
+            'cherry-blossom-festival-opening-hours': new BaseOpeningHoursGenerator({'Festival': 'ProjectCoral/Content/ProjectCoral/Data/OpeningHours/FestivalHour/CherryBlossomHour.json'}),
             'cherry-blossom-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["cherry-blossom"])!, [
                 {
                     title: 'Booth',
@@ -378,18 +383,25 @@ AvailableLanguages.forEach(lang => {
                 }
             ]),
 
+
+            'tree-planting-festival-opening-hours': new BaseOpeningHoursGenerator({'Festival': 'ProjectCoral/Content/ProjectCoral/Data/OpeningHours/FestivalHour/TreePlantingHour.json'}),
             'tree-planting-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["tree-planting"])!, [
                 {
                     title: 'Shop',
                     shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_TreePlantingFestivalShop.json').generate()
                 }
             ]),
+
+
+            'animal-festival-opening-hours': new BaseOpeningHoursGenerator({'Festival': 'ProjectCoral/Content/ProjectCoral/Data/OpeningHours/FestivalHour/AnimalFestivalHour.json'}),
             'animal-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["animal"])!, [
                 {
                     title: 'Shop',
                     shop: new FestivalShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Festival/DT_AnimalFestivalShop.json').generate()
                 }
             ]),
+
+            'beach-clean-up-festival-opening-hours': new BaseOpeningHoursGenerator({'Festival': 'ProjectCoral/Content/ProjectCoral/Data/OpeningHours/FestivalHour/BeachCleanUpHour.json'}),
             'beach-clean-up-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["beach-clean-up"])!, [
                 {
                     title: 'Shop',
@@ -412,6 +424,8 @@ AvailableLanguages.forEach(lang => {
                     )
                 }
             ]),
+
+            'harvest-festival-opening-hours': new BaseOpeningHoursGenerator({'Festival': 'ProjectCoral/Content/ProjectCoral/Data/OpeningHours/FestivalHour/MoonCakeHour.json'}),
             'harvest-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["harvest"])!, [
                 {
                     title: 'Shop',
@@ -424,6 +438,7 @@ AvailableLanguages.forEach(lang => {
                     )
                 }
             ]),
+            'spooky-festival-opening-hours': new BaseOpeningHoursGenerator({'Festival': 'ProjectCoral/Content/ProjectCoral/Data/OpeningHours/FestivalHour/SpookyDayHour.json'}),
             'spooky-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["spooky"])!, [
                 {
                     title: 'Shop',
@@ -436,6 +451,7 @@ AvailableLanguages.forEach(lang => {
                     )
                 }
             ]),
+            'new-year-eve-festival-opening-hours': new BaseOpeningHoursGenerator({'Festival': 'ProjectCoral/Content/ProjectCoral/Data/OpeningHours/FestivalHour/NewYearFeastHour.json'}),
             'new-year-eve-festival-data': new FestivalDataGenerator(festivalDbValues.find(f => f.eventId === FestivalEventIds["new-year-eve"])!, [
                 {
                     title: 'Shop',

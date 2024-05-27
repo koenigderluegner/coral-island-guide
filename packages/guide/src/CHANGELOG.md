@@ -1,6 +1,6 @@
 ## Changelog
 
-### TBD
+### 0.20.0 2024-05-27
 
 #### Added
 
@@ -8,11 +8,13 @@
 - \[Beta] Added treasure maps to journal
 - \[Beta] Added custom npc head portraits
 - \[Beta] Added requirements to merfolk general store items
+- \[Beta] Added ramen shop
 - More entries can be added to to-dos (although being uncategorized for now)
+- Added festival opening hours
 
 #### Changed
 
-- \[Beta] Updated beta data to v1.1-1063 images (Steam version)
+- \[Beta] Updated beta data to v1.1-1063 (Steam version)
 - \[Beta] Fixed missing beta notification for orchestra zones
 - Fixed link to settings in "beta only"-landing page
 - High-res NPC images were swapped for compressed ones to save bandwidth and improve performance
@@ -22,7 +24,7 @@
     - Sidebars, main content and details now have their own scroll area
     - Fixed floating 'X' on detail cards
     - Reduced content jumping
-    - fixed active highlight for processors
+  - Fixed active highlight for processors when closing details
 
 ### 0.19.0 2024-05-22
 

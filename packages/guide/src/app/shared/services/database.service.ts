@@ -577,6 +577,21 @@ export class DatabaseService extends BaseDbService {
 
     }
 
+    fetchFestivalOpeningHours$(festivalName: FestivalName): Observable<Record<string, OpeningHours>> {
+        const key = 'festival_' + festivalName as ShopName
+        if (!this._OPENING_HOURS.has(key)) {
+            return this.http.get<Record<string, OpeningHours>[]>(`${this.BASE_PATH}/${festivalName}-festival-opening-hours.json`)
+                .pipe(
+                    map(items => items[0]),
+                    tap(items => this._OPENING_HOURS.set(key, items)),
+                    shareReplay(1)
+                );
+        } else {
+            return of(this._OPENING_HOURS.get(key)!)
+        }
+
+    }
+
     fetchMeritExchangeShopData$(): Observable<MeritExchangeShopData[]> {
         if (!this._MERIT_EXCHANGE_SHOP_DATA$) {
             this._MERIT_EXCHANGE_SHOP_DATA$ = this.http.get<MeritExchangeShopData[]>(`${this.BASE_PATH}/merit-exchange-shop-items.json`)

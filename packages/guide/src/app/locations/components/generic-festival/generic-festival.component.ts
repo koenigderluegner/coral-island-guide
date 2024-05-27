@@ -1,5 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { FestivalData, FestivalDisplayNames, FestivalIcons, FestivalName, FestivalShopItemData } from "@ci/data-types";
+import {
+    FestivalData,
+    FestivalDisplayNames,
+    FestivalIcons,
+    FestivalName,
+    FestivalShopItemData,
+    OpeningHours
+} from "@ci/data-types";
 import { ActivatedRoute } from "@angular/router";
 import { FestivalRouteData } from "../../types/festival-route-data.type";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
@@ -18,6 +25,7 @@ export class GenericFestivalComponent {
     protected readonly FESTIVAL_DISPLAY_NAMES = FestivalDisplayNames
     protected readonly FESTIVAL_ICONS = FestivalIcons
     protected readonly festivalData$: Observable<FestivalData>;
+    protected openingHours$?: Observable<Record<string, OpeningHours>>;
     protected showTable = false;
     private readonly _router = inject(ActivatedRoute);
     private readonly _database = inject(DatabaseService);
@@ -30,6 +38,11 @@ export class GenericFestivalComponent {
                 switchMap(data => {
                         const routeData = data as FestivalRouteData
                         this.festivalName = routeData.name;
+
+                    if (!routeData.hasNoOpeningHours) {
+                        this.openingHours$ = this._database.fetchFestivalOpeningHours$(routeData.name)
+                    }
+
                         return this._database.fetchFestivalData$(routeData.name)
 
                     }

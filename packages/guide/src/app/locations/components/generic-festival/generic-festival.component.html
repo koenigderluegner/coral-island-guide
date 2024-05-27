@@ -14,6 +14,13 @@
                     <app-ui-icon [uiIcon]="FESTIVAL_ICONS[festivalName]"/>
                     {{ FESTIVAL_DISPLAY_NAMES[festivalName] }}
                 </h1>
+                @if (openingHours$) {
+
+                    @if ((openingHours$ |async); as openingHours) {
+                        <app-opening-hours [openingHours]="openingHours"/>
+                    }
+
+                }
             </app-card>
 
             @if (festivalData.shops) {

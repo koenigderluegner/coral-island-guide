@@ -88,6 +88,11 @@ export const shopRouteConfig: ({ name: ShopName, betaOnly?: true } & ({ componen
         betaOnly: true
     },
     {
+        name: 'ramen-shop',
+        loadComponent: () => import('./components/shops/ramen-shop.component').then(c => c.RamenShopComponent),
+        betaOnly: true
+    },
+    {
         name: 'sales-cart-stall',
         loadComponent: () => import('./components/shops/sales-cart-stall.component').then(c => c.SalesCartStallComponent),
         betaOnly: true

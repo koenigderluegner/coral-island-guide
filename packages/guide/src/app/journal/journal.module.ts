@@ -35,7 +35,6 @@ import { BestiaryComponent } from './components/bestiary/bestiary.component';
 import { BestiaryDetailsComponent } from './components/bestiary-details/bestiary-details.component';
 import { BestiaryTableComponent } from './components/tables/bestiary-table/bestiary-table.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { BestiaryImageComponent } from './components/bestiary-image/bestiary-image.component';
 import { DatabaseItemDetailsComponent } from "../shared/components/database-item-details/database-item-details.component";
 import { FishComponent } from "../shared/components/database-item-details/fish/fish.component";
 import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-case.pipe";
@@ -47,6 +46,7 @@ import { ProcessingComponent } from "../shared/components/database-item-details/
 import { AnimalProduceComponent } from "../shared/components/database-item-details/animal-produce/animal-produce.component";
 import { FoundComponent as DbItemFound } from "../shared/components/database-item-details/found/found.component";
 import { FullSizeImageComponent } from "../shared/components/full-size-image/full-size-image.component";
+import { UiIconComponent } from "../shared/components/ui-icon/ui-icon.component";
 
 @NgModule({
     declarations: [
@@ -72,7 +72,6 @@ import { FullSizeImageComponent } from "../shared/components/full-size-image/ful
         BestiaryComponent,
         BestiaryDetailsComponent,
         BestiaryTableComponent,
-        BestiaryImageComponent,
     ],
     imports: [
         CommonModule,
@@ -100,6 +99,7 @@ import { FullSizeImageComponent } from "../shared/components/full-size-image/ful
         AnimalProduceComponent,
         DbItemFound,
         FullSizeImageComponent,
+        UiIconComponent,
     ],
     exports: [CaughtDetailsComponent, CaughtTableComponent, CropTableComponent, BestiaryTableComponent],
 })

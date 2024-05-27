@@ -5,11 +5,16 @@
 
 .mat-mdc-tab-group {
   width: 100%;
-  max-width: calc(100vw - (env(safe-area-inset-left) + env(safe-area-inset-right))) !important;
 
+  max-width: calc(100vw - (var(--cg-main-space-horizontal) * 2)) !important;
+  // TODO use safe space again calc(100vw - (env(safe-area-inset-left) + env(safe-area-inset-right))) !important;
 
   .mat-mdc-tab-labels {
     @apply gap-x-3 justify-center;
+  }
+
+  .mat-mdc-tab-header-pagination-before, .mat-mdc-tab-header-pagination-after {
+    padding: 0;
   }
 
   .mdc-tab {

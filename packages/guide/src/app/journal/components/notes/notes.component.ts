@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
-import { MailData, TornPageData, TreasureHunt } from "@ci/data-types";
+import { MailData, TornPageData, TreasureHunt, UiIcon } from "@ci/data-types";
 import { combineLatest, Observable, tap } from "rxjs";
 
 @Component({
@@ -75,4 +75,5 @@ export class NotesComponent extends BaseTabbedSelectableContainerComponent<MailD
         this.listDetail.open()
     }
 
+    protected readonly uiIcon = UiIcon;
 }
