@@ -1,42 +1,47 @@
 <app-card class="text-lg font-semibold relative">
-    <app-item-icon [itemName]="mappedAnimalShopData.animal?.variants?.[0]?.icons?.adult" cardIcon/>
+    <div cardActions class="card-actions">
+        <button (click)="listDetails.close()" matTooltip="Close">
+            <app-ui-icon [uiIcon]="uiIcon.CROSS" class="!w-8 !h-8 hover:text-black focus-visible:text-black"/>
+        </button>
+    </div>
+    <app-item-icon [itemName]="mappedAnimalShopData().animal?.variants?.[0]?.icons?.adult" cardIcon/>
 
 
     <div class="flex justify-between items-center">
         <div class="flex flex-col">
-            <div class="text-black text-2xl">{{ mappedAnimalShopData.readableName }}</div>
-            @if (!mappedAnimalShopData.readableCategory) {
+            <div class="text-black text-2xl">{{ mappedAnimalShopData().readableName }}</div>
+            @if (!mappedAnimalShopData().readableCategory) {
                 <span
-                        class="text-accent text-2xl">   {{ mappedAnimalShopData.readableCategory }}</span>
+                        class="text-accent text-2xl">   {{ mappedAnimalShopData().readableCategory }}</span>
             }
         </div>
     </div>
     <hr class="my-5"/>
-    @if (mappedAnimalShopData.description) {
-        <span class="text-lg mb-6">{{ mappedAnimalShopData.description }}</span>
+    @if (mappedAnimalShopData().description) {
+        <span class="text-lg mb-6">{{ mappedAnimalShopData().description }}</span>
     }
 
     <div class="flex">Price:
-        <app-money [amount]="mappedAnimalShopData.price" class="ml-2 text-black"/>
+        <app-money [amount]="mappedAnimalShopData().price" class="ml-2 text-black"/>
     </div>
     <div>Amount on purchase:
         <span class="text-black">
-{{ mappedAnimalShopData.amountOnPurchase }}
+{{ mappedAnimalShopData().amountOnPurchase }}
         </span>
     </div>
     <div>Town rank:
         <span class="text-black">
-{{ mappedAnimalShopData.townRank | townrank }}
+{{ mappedAnimalShopData().townRank | townrank }}
         </span>
     </div>
-    @if (mappedAnimalShopData.itemLimit >= 0) {
+    @if (mappedAnimalShopData().itemLimit >= 0) {
         <div>Limited amount:
             <span class="text-black">
-{{ mappedAnimalShopData.itemLimit }}
+{{ mappedAnimalShopData().itemLimit }}
         </span>
         </div>
     }
-    @if (mappedAnimalShopData.animal; as animal) {
+    @if (mappedAnimalShopData().animal; as animal) {
         <div class="mt-4">
 
             <div>Variants:
@@ -106,10 +111,10 @@
     }
 
 
-    <app-requirements-list [requirements]="mappedAnimalShopData.requirements"/>
+    <app-requirements-list [requirements]="mappedAnimalShopData().requirements"/>
 
     <div class="flex">
         Sells for:
-        <app-money [amount]="mappedAnimalShopData.sellPrice" class="ml-2 text-black"/>
+        <app-money [amount]="mappedAnimalShopData().sellPrice" class="ml-2 text-black"/>
     </div>
 </app-card>
