@@ -21,7 +21,8 @@ export const ShopNames = [
     'underwater-ranch',
     'taco-truck',
     'sales-cart-stall',
-    'furniture-store'
+    'furniture-store',
+    'ramen-shop'
 ] as const;
 
 export type ShopName = typeof ShopNames[number];
@@ -47,7 +48,8 @@ export const ShopDisplayNames = {
     "underwater-ranch": 'Underwater Ranch',
     "taco-truck": 'Taco Truck',
     "sales-cart-stall": "Sales Cart Stall",
-    "furniture-store": 'Furniture Store'
+    "furniture-store": 'Furniture Store',
+    "ramen-shop": 'Ramen Shop'
 } as const satisfies Record<ShopName, string>
 
 type ShopDisplayName = (typeof ShopDisplayNames)[keyof typeof ShopDisplayNames]
@@ -73,6 +75,7 @@ export const ShopIcons = {
     'underwater-ranch': UiIcon.RANCH,
     'taco-truck': UiIcon.STORE,
     "sales-cart-stall": UiIcon.STORE,
-    "furniture-store": UiIcon.STORE
+    "furniture-store": UiIcon.STORE,
+    "ramen-shop": UiIcon.COOKING,
 } as const satisfies Record<ShopName, UiIcon>
 
