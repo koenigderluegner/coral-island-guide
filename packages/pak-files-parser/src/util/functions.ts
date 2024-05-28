@@ -29,7 +29,7 @@ export function readAsset<T = any>(fileName: string): T {
 }
 
 export function generateJson(fileName: string, jsonContent: any, readable = false, lang: AvailableLanguage = "en") {
-    const databasePath = path.join(config.databasePath, lang)
+    const databasePath = path.join(config.target.databasePath, lang)
     const filePath = path.join(databasePath, fileName);
     const fileTargetLocation = filePath.split(path.sep).slice(0, -1).join(path.sep)
 

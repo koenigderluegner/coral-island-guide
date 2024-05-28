@@ -85,16 +85,16 @@ import { SimpleCopyImageProcessor } from "./app/image-processors/simple-copy.ima
 
 
 console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
-const versionFile = path.join(config.sourceContentPath, 'Version', 'Config.json');
+const versionFile = path.join(config.source.contentRoot, 'Version', 'Config.json');
 if (fs.existsSync(versionFile)) {
     const version = fs.readFileSync(versionFile, {encoding: 'utf8', flag: 'r'}).trim();
-    fs.writeFileSync(path.join(config.assetsPath, 'version.json'), JSON.stringify({version}));
+    fs.writeFileSync(path.join(config.target.versionRootPath, 'version.json'), JSON.stringify({version}));
 }
 const parsedArgs = getParsedArgs()
 
 
-const itemIconPath = config.itemIconPath
-const itemIconsTexturesPath = config.texturesPath;
+const itemIconPath = config.target.itemIconPath
+const itemIconsTexturesPath = config.source.texturesPath;
 const skipIfExists = !parsedArgs['prepare'] && true;
 const itemIconsImageProcessor: ItemIconsImageProcessor = new ItemIconsImageProcessor(itemIconsTexturesPath, itemIconPath, skipIfExists);
 
@@ -888,4 +888,4 @@ new SimpleCopyImageProcessor([
 
 
 itemIconsImageProcessor.process();
-new NpcPortraitsImageProcessor(config.characterPortraitsPath, config.portraitPath, config.headPortraitPath, additionalNPCOutfitsMappings).process()
+new NpcPortraitsImageProcessor(config.source.portraitsPath, config.target.portraitPath, config.target.headPortraitPath, additionalNPCOutfitsMappings).process()
