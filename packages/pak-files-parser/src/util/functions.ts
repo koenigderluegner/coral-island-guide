@@ -7,6 +7,11 @@ import { EffectMap, RequirementMap } from "../app/da-files-parser";
 import { AssetPath } from "../types/asset-path.type";
 import { ObjectPath } from "../types/object-path.type";
 import { RawNPC } from "../interfaces/raw-data-interfaces/raw-npc.interface";
+import { EmptyObject } from "./empty-object.type";
+
+export function keys<T extends Readonly<Record<any, any>>>(object: T): T extends EmptyObject ? [] : (keyof T)[] {
+    return Object.keys(object) as T extends EmptyObject ? [] : (keyof T)[];
+}
 
 export function getParsedArgs(): Record<string, any> {
     return process.argv
@@ -28,8 +33,11 @@ export function readAsset<T = any>(fileName: string): T {
     return JSON.parse(fs.readFileSync(path.join(environment.assetPath, fileName), {encoding: 'utf8', flag: 'r'}));
 }
 
-export function generateJson(fileName: string, jsonContent: any, readable = false, lang: AvailableLanguage = "en") {
-    const databasePath = path.join(config.target.databasePath, lang)
+export function generateJson(fileName: string, jsonContent: any, readable = false, lang: AvailableLanguage | 'none' = "en") {
+    let databasePath = path.join(config.target.databasePath)
+    if (lang !== "none") {
+        databasePath = path.join(databasePath, lang)
+    }
     const filePath = path.join(databasePath, fileName);
     const fileTargetLocation = filePath.split(path.sep).slice(0, -1).join(path.sep)
 

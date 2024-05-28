@@ -35,12 +35,12 @@
                     <div [class.checklist-checked]="entry.completed"
                          class="icon-grid-item checklist-item  flex flex-col">
                         <app-item-icon
-                                (click)="showDetails(entry.entry.item)"
-                                [itemName]="entry.entry.item.iconName"/>
+                                (click)="showDetails({id: entry.entry.id, displayName: '', iconName: entry.entry.iconName})"
+                                [itemName]="entry.entry.iconName"/>
                         <label class="text-white flex justify-center" for="entry-{{entry.entry.id}}-input">
                             <mat-checkbox class="flex" id="entry-{{entry.entry.id}}"
                                           [checked]="entry.completed"
-                                          (change)="updateChecklist($event, entry.entry.item.id, entry.context); entry.completed = !entry.completed"
+                                          (change)="updateChecklist($event, entry.entry.id, entry.context); entry.completed = !entry.completed"
                                           name="entry-{{entry.entry.id}}"></mat-checkbox>
                         </label>
                     </div>

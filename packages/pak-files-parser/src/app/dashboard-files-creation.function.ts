@@ -1,5 +1,5 @@
 import { DatabaseItem, FishDashboardEntry, Season, Weather } from "@ci/data-types";
-import { generateJson, minifyItem } from "../util/functions";
+import { generateJson } from "../util/functions";
 import path from "path";
 
 function createFishDashboardFile(dbItems: DatabaseItem[]) {
@@ -49,7 +49,7 @@ function createFishDashboardFile(dbItems: DatabaseItem[]) {
             ];
             const entry: FishDashboardEntry = {
                 id: item.item.id,
-                item: minifyItem(item.item),
+                iconName: item.item.iconName,
                 seasons: seasons,
                 weathers: weather,
                 dateRanges: fish.spawnSettings.map(f => f.dateRangeList)
@@ -59,7 +59,7 @@ function createFishDashboardFile(dbItems: DatabaseItem[]) {
             dashboardList.push(entry)
         });
 
-    generateJson(path.join('dashboards', `fish.json`), dashboardList, true, "en");
+    generateJson(path.join('dashboards', `fish.json`), dashboardList, true, 'none');
 
 
 }
