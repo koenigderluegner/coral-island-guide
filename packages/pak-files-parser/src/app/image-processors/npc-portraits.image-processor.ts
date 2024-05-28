@@ -4,7 +4,7 @@ import path from "path";
 import fs from "fs";
 import sharp from "sharp";
 import glob from "glob";
-import { NPCDbGenerator } from "../generators/npc-db.generator";
+import { NPCDbGenerator } from "../generators/npcs/npc-db.generator";
 
 export class NpcPortraitsImageProcessor {
 
