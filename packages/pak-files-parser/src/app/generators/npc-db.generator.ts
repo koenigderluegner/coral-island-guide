@@ -10,9 +10,12 @@ import { environment } from "../../environments/environment";
 import fs from "fs";
 import { StringTable } from "../../util/string-table.class";
 import { Logger } from "../../util/logger.class";
+import { AdditionalNpcAppearances } from "./npcs/additional-npc-appearances.type";
 
 export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
 
+    static AdditionalNpcAppearances: AdditionalNpcAppearances[] = [];
+    static RanOnce = false;
     static filePaths: {
         appearances: Set<{
             npcKey: string;
@@ -20,27 +23,28 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
         }>
         heads: Set<{
             npcKey: string;
-            image: string
+            image: string;
+            customHead?: true,
+            headerPortraitFileName: string | null
         }>
     } = {
         appearances: new Set<{
             npcKey: string;
-            image: string
+            image: string;
         }>,
         heads: new Set<{
             npcKey: string;
-            image: string
+            image: string,
+            customHead?: true,
+            headerPortraitFileName: string | null
+
         }>
     };
     datatable: Datatable<RawNPC>[];
     petNPCs: Datatable<RawNPC>[];
     birthdays: CalendarBirthday[] = []
 
-    constructor(protected itemMap: Map<string, Item>, filepath: string, protected calendarMap: Map<string, CalendarEvent[]>, protected additionalMappings: {
-        npcKey: string,
-        appearanceName: string,
-        outfitKey: string
-    }[] = []) {
+    constructor(protected itemMap: Map<string, Item>, filepath: string, protected calendarMap: Map<string, CalendarEvent[]>) {
         super();
         this.datatable = readAsset(filepath);
         this.petNPCs = readAsset('ProjectCoral/Content/ProjectCoral/AdoptablePets/NPC/DT_PetNPCs.json');
@@ -99,71 +103,14 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
         return npcAppearances;
     }
 
-    handleEntry(itemKey: string, dbItem: RawNPC): NPC {
-
-        const petNPC = this.petNPCs[0]?.Rows[itemKey];
-        if (petNPC) {
-            dbItem = petNPC;
-        }
-
-        const objectName = dbItem.mapIcon.AssetPathName.split('.').pop() ?? '';
-
-
-        const portraitPath = dbItem.Portrait.AssetPathName.replace('/Game/ProjectCoral/', '/ProjectCoral/Content/ProjectCoral/').split('.')[0];
-        let headerPortraitFileName: string | null = null
-        let customHead;
-
-        const sourceImagePath = path.join(environment.assetPath, portraitPath + '.png');
-        const guessedPath = path.join(environment.assetPath, 'ProjectCoral', 'Content', 'ProjectCoral', 'Textures', 'UI', 'NPCHeadPortraits', 'T_Relationship' + itemKey + '.png');
-        const customPath = path.join(...environment.assetPath.split(path.sep).slice(0, -1), 'custom', 'head-portraits', itemKey + '.png');
-        const guessedPetPath = path.join(environment.assetPath, 'ProjectCoral', 'Content', 'ProjectCoral', 'Textures', 'UI', 'NPCHeadPortraits', 'Pet', 'T_Relationship' + itemKey + '.png');
-
-        if (fs.existsSync(sourceImagePath) && fs.existsSync(guessedPath) && sourceImagePath !== guessedPath) {
-            headerPortraitFileName = guessedPath.split(path.sep).at(-1)?.replace('.png', '') ?? null;
-            customHead = true as const;
-
-            Logger.info(`Replaced guessed header image with given one for ${itemKey}`);
-            NPCDbGenerator.filePaths.heads.add({npcKey: itemKey, image: guessedPath})
-        } else if (fs.existsSync(guessedPetPath)) {
-            headerPortraitFileName = guessedPetPath.split(path.sep).at(-1)?.replace('.png', '') ?? null;
-            customHead = true as const;
-            Logger.info(`Guessed  header image for ${itemKey}`);
-            NPCDbGenerator.filePaths.heads.add({npcKey: itemKey, image: guessedPetPath})
-        } else if (fs.existsSync(customPath) && fs.existsSync(sourceImagePath) && !sourceImagePath.includes('NPCHeadPortraits')) {
-            headerPortraitFileName = itemKey;
-            customHead = true as const;
-            Logger.warn(`Found custom header image for ${itemKey}. Force overwrite for found source image!`);
-            NPCDbGenerator.filePaths.heads.add({npcKey: itemKey, image: customPath})
-
-        } else if (!fs.existsSync(sourceImagePath) || portraitPath === 'None') {
-
-            if (fs.existsSync(guessedPath)) {
-                headerPortraitFileName = guessedPath.split(path.sep).at(-1)?.replace('.png', '') ?? null;
-                customHead = true as const;
-                Logger.info(`Guessed  header image for ${itemKey}`);
-                NPCDbGenerator.filePaths.heads.add({npcKey: itemKey, image: guessedPath})
-            } else if (fs.existsSync(customPath)) {
-                headerPortraitFileName = itemKey;
-                customHead = true as const;
-                Logger.info(`Found custom header image for ${itemKey}`);
-                NPCDbGenerator.filePaths.heads.add({npcKey: itemKey, image: customPath})
-            } else {
-                if (portraitPath !== "None")
-                    Logger.warn(`Can't find head portrait source image for ${itemKey}.`, sourceImagePath);
-            }
-
-        } else {
-            headerPortraitFileName = portraitPath.split('/').pop() ?? null;
-            NPCDbGenerator.filePaths.heads.add({npcKey: itemKey, image: sourceImagePath})
-
-        }
+    private static extractAllAppearances(dbItem: RawNPC, itemKey: string) {
         const appearances: NPC['appearances'] = [];
 
         let npcAppearances = NPCDbGenerator.getNPCAppearances(dbItem, itemKey);
         const defaultAppearance = NPCDbGenerator.formatRawAppearances(itemKey, npcAppearances);
         appearances.push({appearances: defaultAppearance});
 
-        this.additionalMappings
+        NPCDbGenerator.AdditionalNpcAppearances
             .filter(mapping => mapping.npcKey === itemKey)
             .forEach(mapping => {
 
@@ -179,6 +126,109 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
                     appearances: formattedAdditionalAppearance
                 });
             })
+        return appearances;
+    }
+
+    private static extractHeadPortrait(itemKey: string, dbItem: RawNPC) {
+
+        if (NPCDbGenerator.RanOnce) {
+            const find = [...NPCDbGenerator.filePaths.heads.values()]
+                .find(value => value.npcKey === itemKey);
+            return find ?? {headerPortraitFileName: null}
+        }
+
+        let headerPortraitFileName: string | null = null
+        let customHead;
+        const portraitPath = dbItem.Portrait.AssetPathName.replace('/Game/ProjectCoral/', '/ProjectCoral/Content/ProjectCoral/').split('.')[0];
+
+        const sourceImagePath = path.join(environment.assetPath, portraitPath + '.png');
+        const guessedPath = path.join(environment.assetPath, 'ProjectCoral', 'Content', 'ProjectCoral', 'Textures', 'UI', 'NPCHeadPortraits', 'T_Relationship' + itemKey + '.png');
+        const customPath = path.join(...environment.assetPath.split(path.sep).slice(0, -1), 'custom', 'head-portraits', itemKey + '.png');
+        const guessedPetPath = path.join(environment.assetPath, 'ProjectCoral', 'Content', 'ProjectCoral', 'Textures', 'UI', 'NPCHeadPortraits', 'Pet', 'T_Relationship' + itemKey + '.png');
+
+
+        if (fs.existsSync(sourceImagePath) && fs.existsSync(guessedPath) && sourceImagePath !== guessedPath) {
+            headerPortraitFileName = guessedPath.split(path.sep).at(-1)?.replace('.png', '') ?? null;
+            customHead = true as const;
+
+            Logger.info(`Replaced guessed header image with given one for ${itemKey}`);
+            NPCDbGenerator.filePaths.heads.add({
+                npcKey: itemKey,
+                image: guessedPath,
+                customHead,
+                headerPortraitFileName
+            })
+        } else if (fs.existsSync(guessedPetPath)) {
+            headerPortraitFileName = guessedPetPath.split(path.sep).at(-1)?.replace('.png', '') ?? null;
+            customHead = true as const;
+            Logger.info(`Guessed  header image for ${itemKey}`);
+            NPCDbGenerator.filePaths.heads.add({
+                npcKey: itemKey, image: guessedPetPath,
+                customHead,
+                headerPortraitFileName
+            })
+        } else if (fs.existsSync(customPath) && fs.existsSync(sourceImagePath) && !sourceImagePath.includes('NPCHeadPortraits')) {
+            headerPortraitFileName = itemKey;
+            customHead = true as const;
+            Logger.warn(`Found custom header image for ${itemKey}. Force overwrite for found source image!`);
+            NPCDbGenerator.filePaths.heads.add({
+                npcKey: itemKey, image: customPath,
+                customHead,
+                headerPortraitFileName
+            })
+
+        } else if (!fs.existsSync(sourceImagePath) || portraitPath === 'None') {
+
+            if (fs.existsSync(guessedPath)) {
+                headerPortraitFileName = guessedPath.split(path.sep).at(-1)?.replace('.png', '') ?? null;
+                customHead = true as const;
+                Logger.info(`Guessed  header image for ${itemKey}`);
+                NPCDbGenerator.filePaths.heads.add({
+                    npcKey: itemKey, image: guessedPath,
+                    customHead,
+                    headerPortraitFileName
+                })
+            } else if (fs.existsSync(customPath)) {
+                headerPortraitFileName = itemKey;
+                customHead = true as const;
+                Logger.info(`Found custom header image for ${itemKey}`);
+                NPCDbGenerator.filePaths.heads.add({
+                    npcKey: itemKey, image: customPath,
+                    customHead,
+                    headerPortraitFileName
+                })
+            } else {
+                if (portraitPath !== "None")
+                    Logger.warn(`Can't find head portrait source image for ${itemKey}.`, sourceImagePath);
+            }
+
+        } else {
+            headerPortraitFileName = portraitPath.split('/').pop() ?? null;
+            NPCDbGenerator.filePaths.heads.add({
+                npcKey: itemKey, image: sourceImagePath,
+                headerPortraitFileName
+            })
+
+        }
+        return {headerPortraitFileName, customHead};
+    }
+
+    override afterParse = () => {
+        NPCDbGenerator.RanOnce = true;
+
+    }
+
+    handleEntry(itemKey: string, dbItem: RawNPC): NPC {
+
+        const petNPC = this.petNPCs[0]?.Rows[itemKey];
+        if (petNPC) {
+            dbItem = petNPC;
+        }
+
+        const objectName = dbItem.mapIcon.AssetPathName.split('.').pop() ?? '';
+
+        const {headerPortraitFileName, customHead} = NPCDbGenerator.extractHeadPortrait(itemKey, dbItem);
+        const appearances = NPCDbGenerator.extractAllAppearances(dbItem, itemKey);
 
         let birthday = this.getBirthday(itemKey);
 

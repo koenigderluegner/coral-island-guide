@@ -14,6 +14,9 @@ export abstract class BaseGenerator<DT, R> {
     effectMaps: EffectMap[] = [];
     requirementMaps: RequirementMap[] = [];
 
+    afterParse: (map: Map<string, R>) => void = () => {
+    };
+
     abstract handleEntry(itemKey: string, dbItem: DT): R | undefined;
 
     generate(options?: GeneratorOptions): Map<string, R> {
@@ -33,6 +36,8 @@ export abstract class BaseGenerator<DT, R> {
             if (entry !== undefined)
                 map.set(itemKey, entry);
         });
+
+        this.afterParse(map)
 
         return map;
     }

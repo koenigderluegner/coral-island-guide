@@ -1,4 +1,4 @@
-import { generateJson, getParsedArgs, readAsset } from './util/functions';
+import { generateGameVersionFile, generateJson, getParsedArgs, readAsset } from './util/functions';
 import { ItemDbGenerator } from './app/generators/item-db.generator';
 import { environment } from "./environments/environment";
 import chalk from "chalk";
@@ -51,7 +51,7 @@ import { CookingUtensilMapGenerator } from "./app/generators/cooking-utensil-map
 import { StringTable } from "./util/string-table.class";
 import {
     AnimalShopData,
-    AvailableLanguages,
+    AvailableLanguage,
     CookingRecipe,
     CraftingRecipe,
     DatabaseItem,
@@ -76,20 +76,15 @@ import { FestivalDataGenerator } from "./app/generators/festival-data.generator"
 import path from "path";
 import { flatObjectMap, getQuality, nonNullable, omitFields, removeQualityFlag } from "@ci/util";
 import { preferencesMap } from "../../guide/src/app/shared/constants/preference-map.const";
-import fs from "fs";
 import { Datatable } from "./interfaces/datatable.interface";
 import { DashboardFilesCreation } from "./app/dashboard-files-creation.function";
 import { BaseOpeningHoursGenerator } from "./app/opening-hours-generators/base-opening-hours.generator";
 import { TreasureHuntGenerator } from "./app/generators/treasure-hunt.generator";
 import { SimpleCopyImageProcessor } from "./app/image-processors/simple-copy.image-processor";
 
+const version = generateGameVersionFile();
+console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + ' - ' + chalk.bold(version) + '\n');
 
-console.log('CURRENT ENVIRONMENT SET TO ' + chalk.bold(environment.isBeta ? 'BETA' : 'LIVE') + '\n');
-const versionFile = path.join(config.source.contentRoot, 'Version', 'Config.json');
-if (fs.existsSync(versionFile)) {
-    const version = fs.readFileSync(versionFile, {encoding: 'utf8', flag: 'r'}).trim();
-    fs.writeFileSync(path.join(config.target.versionRootPath, 'version.json'), JSON.stringify({version}));
-}
 const parsedArgs = getParsedArgs()
 
 
@@ -115,6 +110,7 @@ if (environment.isBeta) {
         {npcKey: 'Raina', outfitKey: 'RainaRecCenter', appearanceName: 'Rec Center'},
     ])
 }
+NPCDbGenerator.AdditionalNpcAppearances = additionalNPCOutfitsMappings;
 
 AvailableLanguages.forEach(lang => {
     Logger.info(`Generators for "${lang}" starting...`);
@@ -125,27 +121,13 @@ AvailableLanguages.forEach(lang => {
 
     DaFilesParser.ItemMap = itemDbMap;
 
-    let calendarDbMap;
 
-
-    const calendarDbGenerator = new CalendarGenerator();
-    calendarDbMap = calendarDbGenerator.generate();
-
-
-    const npcDbGenerator = new NPCDbGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.json', calendarDbMap, additionalNPCOutfitsMappings);
-    const npcDbMap = npcDbGenerator.generate();
-
-    const craftingRecipeUnlockedByMasteryDbGenerator = new CraftingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
-    const craftingRecipeUnlockedByMasteryDbMap = craftingRecipeUnlockedByMasteryDbGenerator.generate();
-
-    const cookingRecipeUnlockedByMasteryDbGenerator = new CookingRecipeUnlockedByMasteryDbGenerator(itemDbMap);
-    const cookingRecipeUnlockedByMasteryDbMap = cookingRecipeUnlockedByMasteryDbGenerator.generate();
-
-    const tagBasedItemsDbGenerator = new TagBasedItemGenericDbGenerator(itemDbMap);
-    const tagBasedItemsDbMap = tagBasedItemsDbGenerator.generate();
-
-    const cookingDbGenerator = new CookingDbGenerator(itemDbMap, cookingRecipeUnlockedByMasteryDbMap, tagBasedItemsDbMap);
-    const cookingDbMap = cookingDbGenerator.generate();
+    const calendarDbMap = new CalendarGenerator().generate();
+    const npcDbMap = new NPCDbGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.json', calendarDbMap).generate();
+    const craftingRecipeUnlockedByMasteryDbMap = new CraftingRecipeUnlockedByMasteryDbGenerator(itemDbMap).generate();
+    const cookingRecipeUnlockedByMasteryDbMap = new CookingRecipeUnlockedByMasteryDbGenerator(itemDbMap).generate();
+    const tagBasedItemsDbMap = new TagBasedItemGenericDbGenerator(itemDbMap).generate();
+    const cookingDbMap = new CookingDbGenerator(itemDbMap, cookingRecipeUnlockedByMasteryDbMap, tagBasedItemsDbMap).generate();
 
     DaFilesParser.CookingMap = cookingDbMap;
 
