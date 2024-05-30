@@ -111,3 +111,4 @@ export * from './lib/types/weather.type';
 export * from './lib/types/weather.type';
 
 export * from './lib/dashboard/fish-dashboard-entry.type';
+export * from './lib/dashboard/birthday-dashboard-entry.type';

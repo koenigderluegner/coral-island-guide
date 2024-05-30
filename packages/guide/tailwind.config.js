@@ -7,7 +7,7 @@ module.exports = {
     theme: {
         extend: {
             padding: {
-              'main-content': 'var(--cg-main-space-vertical) var(--cg-main-space-card-placeholder-width) var(--cg-main-space-vertical) var(--cg-main-space-horizontal)'
+                'main-content': 'var(--cg-main-space-vertical) var(--cg-main-space-card-placeholder-width) var(--cg-main-space-vertical) var(--cg-main-space-horizontal)'
             },
             spacing: {
                 'main-hz': `var(--cg-main-space-horizontal)`,
@@ -49,5 +49,5 @@ module.exports = {
             },
         },
     },
-    plugins: [require('@tailwindcss/typography'), require('tailwindcss-safe-area')],
+    plugins: [require('@tailwindcss/typography'), require('tailwindcss-safe-area'), require('@tailwindcss/container-queries'),],
 };

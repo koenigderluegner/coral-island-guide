@@ -27,6 +27,7 @@ import { ProcessingComponent } from "../shared/components/database-item-details/
 import { OfferingComponent } from "../shared/components/database-item-details/offering/offering.component";
 import { MatProgressSpinner } from "@angular/material/progress-spinner";
 import { DashboardFilterComponent } from "./components/dashboard-filter/dashboard-filter.component";
+import { BirthdayDashboardComponent } from "./dashboards/birthday-dashboard/birthday-dashboard.component";
 
 @NgModule({
     declarations: [
@@ -59,7 +60,8 @@ import { DashboardFilterComponent } from "./components/dashboard-filter/dashboar
         ProcessingComponent,
         OfferingComponent,
         MatProgressSpinner,
-        DashboardFilterComponent
+        DashboardFilterComponent,
+        BirthdayDashboardComponent
     ],
 })
 export class MyCoralGuideModule {

@@ -6,25 +6,34 @@
             </ng-template>
         </app-item-card-switch>
     }
-    <app-card>
-        <h2 class="mb-4 font-semibold text-2xl text-black">
-            My Coral Guide
-        </h2>
-        <div class="prose lg:prose-xl">
-            <p class="text-black text-lg">
-                Welcome! This is "My Coral Guide" - your personal space.
-            </p>
-            <p class="text-black text-lg">
-                For now this startpage is quite empty. Sometime in the future this will be your dashboard. Until then,
-                feel
-                free
-                to check the sub navigation to edit some checklist, add to-dos or change your settings.
-            </p>
-        </div>
-    </app-card>
+    <h1 class="mb-4 font-semibold text-3xl text-white flex items-center gap-x-4">
+        My Coral Guide
+    </h1>
     <app-dashboard-filter [parentFormGroup]="filterFormGroup" class="my-5 block"/>
     @if (requests$ | async; ) {
-        <div class="my-2">
+
+        <section class="my-2">
+            <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">
+                Birthdays
+            </h2>
+            <app-card class="@container">
+                <div class="@3xl:grid-cols-2 grid gap-x-3 gap-y-5">
+                    <div>
+                        <h2 class="mb-4 font-semibold text-2xl text-black">
+                            Today
+                        </h2>
+                        <app-birthday-dashboard [birthdays]=" birthdaysToday()" (itemClicked)="showDetails($event)"/>
+                    </div>
+                    <div>
+                        <h2 class="mb-4 font-semibold text-2xl text-black">
+                            Tomorrow
+                        </h2>
+                        <app-birthday-dashboard [birthdays]=" birthdaysTomorrow()" (itemClicked)="showDetails($event)"/>
+                    </div>
+                </div>
+            </app-card>
+        </section>
+        <section class="my-2">
             <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">
                 Fish
             </h2>
@@ -48,7 +57,7 @@
                     <p class="col-span-full">No more fish to catch :)</p>
                 }
             </div>
-        </div>
+        </section>
     } @else {
         @defer (on immediate) {
             <mat-spinner class="mx-auto"/>

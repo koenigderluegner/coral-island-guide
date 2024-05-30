@@ -1,7 +1,7 @@
 import { Component, computed, inject, Signal, signal } from '@angular/core';
 import { DashboardService } from "../../services/dashboard.service";
 import { forkJoin, map, Observable, tap } from "rxjs";
-import { FishDashboardEntry, MinimalItem, MinimalTagBasedItem, Season, Weather } from "@ci/data-types";
+import { FishDashboardEntry, MinimalItem, MinimalTagBasedItem, Season, SpecificDate, Weather } from "@ci/data-types";
 import { MuseumChecklistService } from "../../../core/services/checklists/museum-checklist.service";
 import { DatabaseService } from "../../../shared/services/database.service";
 import { BaseSelectableContainerComponent } from "../../../shared/components/base-selectable-container/base-selectable-container.component";
@@ -10,6 +10,7 @@ import { DashboardFilter } from "../../types/dashboard-filter.type";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { ChecklistContext } from "../../types/checklist-context.type";
 import { MatCheckboxChange } from "@angular/material/checkbox";
+import { addDays } from "@ci/util";
 
 @Component({
     selector: 'app-index',
@@ -26,16 +27,18 @@ export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem
         entry: FishDashboardEntry,
         completed: boolean
     }[]>;
+    protected birthdaysToday;
+    protected birthdaysTomorrow;
     #database = inject(DatabaseService)
     museumChecklistDefinition$ = this.#database.fetchMuseumChecklist$();
-
     private museuemDef = signal<Record<string, MinimalItem[]>>({});
 
     constructor() {
         super();
         this.requests$ = forkJoin({
             museumDefinition: this.museumChecklistDefinition$.pipe(tap(d => this.museuemDef.set(d))),
-            fish: this.dashboards.getFish$()
+            fish: this.dashboards.getFish$(),
+            birthdays: this.dashboards.getBirthdays$(),
         });
 
         this.filterFormGroup = new FormGroup<DashboardFilter>({
@@ -88,7 +91,33 @@ export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem
             return musuemFish;
 
 
-        })
+        });
+
+
+        this.birthdaysToday = computed(() => {
+            const birthdays = this.dashboards.getBirthdays()();
+            const season: Season = filterValues().season;
+            const day = filterValues().day;
+
+
+            return birthdays.filter(e => e.birthday.day === day && e.birthday.season === season);
+
+
+        });
+        this.birthdaysTomorrow = computed(() => {
+            const birthdays = this.dashboards.getBirthdays()();
+
+            const season: Season = filterValues().season;
+            const day = filterValues().day;
+            const today: SpecificDate = {day, season, year: 1};
+
+            const tomorrow = addDays(today, 1);
+            console.log(tomorrow);
+
+            return birthdays.filter(e => e.birthday.day === tomorrow.day && e.birthday.season === tomorrow.season);
+
+
+        });
     }
 
     updateChecklist($event: MatCheckboxChange, id: string, context: ChecklistContext) {

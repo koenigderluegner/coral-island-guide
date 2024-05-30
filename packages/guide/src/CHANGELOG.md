@@ -2,6 +2,10 @@
 
 ### TBD
 
+#### Added
+
+- Added birthdays to My Guide
+
 #### Changed
 
 - Improved portrait guesser algorithm to provide more NPC portraits
