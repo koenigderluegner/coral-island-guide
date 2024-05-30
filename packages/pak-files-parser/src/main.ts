@@ -9,7 +9,6 @@ import { NpcPortraitsImageProcessor } from "./app/image-processors/npc-portraits
 import { StringTable } from "./util/string-table.class";
 import {
     AnimalShopData,
-    AvailableLanguage,
     AvailableLanguages,
     CookingRecipe,
     CraftingRecipe,
@@ -69,7 +68,7 @@ if (environment.isBeta) {
 }
 NPCDbGenerator.AdditionalNpcAppearances = additionalNPCOutfitsMappings;
 
-(['en'] as AvailableLanguage[]).forEach((lang, langIndex) => {
+(AvailableLanguages).forEach((lang, langIndex) => {
     Logger.info(`Generators for "${lang}" starting...`);
     StringTable.defaultLang = lang;
 
@@ -474,12 +473,11 @@ NPCDbGenerator.AdditionalNpcAppearances = additionalNPCOutfitsMappings;
         })
 
 
-        if (true || langIndex === AvailableLanguages.length - 1) {
+        if (langIndex === AvailableLanguages.length - 1) {
             Logger.info('Create dashboard files')
             DashboardFilesCreation(dbItems, npcDbMap, calendarDbMap, generatorResults['gift-preferences']);
             Logger.info('Creating dashboard files done')
 
-            process.exit()
         }
 
     } catch (e) {

@@ -1,0 +1,740 @@
+[
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_ArmoliteAttack",
+    "Outer": "BP_ArmoliteAttack_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_Lerp_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_Event_DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OverlappedComponent",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OtherActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OtherComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "K2Node_ComponentBoundEvent_OtherBodyIndex",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_ComponentBoundEvent_bFromSweep",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_ComponentBoundEvent_SweepResult",
+        "Flags": "RF_Public",
+        "ElementSize": 144,
+        "PropertyFlags": "ConstParm | ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_Add_FloatFloat_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_Divide_FloatFloat_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_Lerp_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetScaledBoxExtent_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakVector_X",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakVector_Y",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakVector_Z",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeVector_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Add_VectorVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetRelativeLocation_SweepHitResult",
+        "Flags": "RF_Public",
+        "ElementSize": 144,
+        "PropertyFlags": "ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateDynamicMaterialInstance_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'MaterialInstanceDynamic'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "BndEvt__BP_SlimeAttack_Box_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature",
+    "Outer": "BP_ArmoliteAttack_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "OverlappedComponent",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "OtherBodyIndex",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "bFromSweep",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "SweepResult",
+        "Flags": "RF_Public",
+        "ElementSize": 144,
+        "PropertyFlags": "ConstParm | BlueprintVisible | BlueprintReadOnly | Parm | OutParm | ReferenceParm | ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_HasOutParms | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveTick",
+    "Outer": "BP_ArmoliteAttack_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveTick'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "FloatProperty",
+        "Name": "DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "BP_ArmoliteAttack_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_EnemyAttackBase_C:ReceiveBeginPlay'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemyAttackBase.5"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_EnemyAttackBase_C:ReceiveBeginPlay'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemyAttackBase.5"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_ArmoliteAttack_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_EnemyAttackBase_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemyAttackBase.7"
+    },
+    "Properties": {
+      "DynamicBindingObjects": [
+        {
+          "ObjectName": "ComponentDelegateBinding'BP_ArmoliteAttack_C:ComponentDelegateBinding_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.7"
+        }
+      ],
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_ArmoliteAttack_C:SimpleConstructionScript_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.15"
+      },
+      "InheritableComponentHandler": {
+        "ObjectName": "InheritableComponentHandler'BP_ArmoliteAttack_C:InheritableComponentHandler'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.10"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_ArmoliteAttack_C:ExecuteUbergraph_BP_ArmoliteAttack'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.0"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_EnemyAttackBase_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemyAttackBase.7"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_ArmoliteAttack_C:ReceiveBeginPlay'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.3"
+      },
+      {
+        "ObjectName": "Function'BP_ArmoliteAttack_C:ReceiveTick'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.2"
+      },
+      {
+        "ObjectName": "Function'BP_ArmoliteAttack_C:BndEvt__BP_SlimeAttack_Box_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.1"
+      },
+      {
+        "ObjectName": "Function'BP_ArmoliteAttack_C:ExecuteUbergraph_BP_ArmoliteAttack'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.0"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "AttackDecal",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'DecalComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Decal",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'DecalComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CurrentActor_0",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnTemplate | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ArrayProperty",
+        "Name": "Actors_0",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnTemplate | DisableEditOnInstance",
+        "Inner": {
+          "Type": "ObjectProperty",
+          "Name": "Actors_0",
+          "Flags": "RF_Public",
+          "ElementSize": 8,
+          "PropertyClass": {
+            "ObjectName": "Class'Actor'",
+            "ObjectPath": "/Script/Engine"
+          }
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "maxReach",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "attackOffset",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "attackDuration",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "currentTime",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "startAttack",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "AttackDecalMaterial",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'MaterialInstanceDynamic'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "timeAlpha",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_ArmoliteAttack": {
+        "ObjectName": "Function'BP_ArmoliteAttack_C:ExecuteUbergraph_BP_ArmoliteAttack'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.0"
+      },
+      "BndEvt__BP_SlimeAttack_Box_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature": {
+        "ObjectName": "Function'BP_ArmoliteAttack_C:BndEvt__BP_SlimeAttack_Box_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.1"
+      },
+      "ReceiveTick": {
+        "ObjectName": "Function'BP_ArmoliteAttack_C:ReceiveTick'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.2"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'BP_ArmoliteAttack_C:ReceiveBeginPlay'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.3"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_ArmoliteAttack_C'Default__BP_ArmoliteAttack_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.5"
+    }
+  },
+  {
+    "Type": "BP_ArmoliteAttack_C",
+    "Name": "Default__BP_ArmoliteAttack_C",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.BP_ArmoliteAttack_C'",
+    "Template": {
+      "ObjectName": "BP_EnemyAttackBase_C'Default__BP_EnemyAttackBase_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemyAttackBase.8"
+    },
+    "Properties": {
+      "UberGraphFrame": {},
+      "maxReach": 200.0,
+      "attackOffset": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "attackDuration": 0.5
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "Box_GEN_VARIABLE",
+    "Outer": "BP_ArmoliteAttack_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Template": {
+      "ObjectName": "BoxComponent'BP_EnemyAttackBase_C:Box_GEN_VARIABLE'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemyAttackBase.9"
+    },
+    "Properties": {
+      "BoxExtent": {
+        "X": 0.0,
+        "Y": 32.0,
+        "Z": 48.0
+      },
+      "RelativeLocation": {
+        "X": 50.0,
+        "Y": 0.0,
+        "Z": 24.0
+      }
+    }
+  },
+  {
+    "Type": "ComponentDelegateBinding",
+    "Name": "ComponentDelegateBinding_0",
+    "Outer": "BP_ArmoliteAttack_C",
+    "Class": "UScriptClass'ComponentDelegateBinding'",
+    "Properties": {
+      "ComponentDelegateBindings": [
+        {
+          "ComponentPropertyName": "Box",
+          "DelegatePropertyName": "OnComponentBeginOverlap",
+          "FunctionNameToBind": "BndEvt__BP_SlimeAttack_Box_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "DecalComponent",
+    "Name": "AttackDecal_GEN_VARIABLE",
+    "Outer": "BP_ArmoliteAttack_C",
+    "Class": "UScriptClass'DecalComponent'",
+    "Properties": {
+      "DecalMaterial": {
+        "ObjectName": "MaterialInstanceConstant'M_Box_Armolite_Attack'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/FX/Marker/M_Box_Armolite_Attack.0"
+      },
+      "DecalSize": {
+        "X": 48.0,
+        "Y": 32.0,
+        "Z": 200.0
+      },
+      "RelativeLocation": {
+        "X": 249.60411,
+        "Y": 0.00018307031,
+        "Z": -16.0
+      },
+      "RelativeRotation": {
+        "Pitch": -90.0,
+        "Yaw": 0.0,
+        "Roll": 0.0
+      }
+    }
+  },
+  {
+    "Type": "DecalComponent",
+    "Name": "Decal_GEN_VARIABLE",
+    "Outer": "BP_ArmoliteAttack_C",
+    "Class": "UScriptClass'DecalComponent'",
+    "Properties": {
+      "DecalMaterial": {
+        "ObjectName": "MaterialInstanceConstant'M_Box_Armolite_Tongue'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/FX/Marker/M_Box_Armolite_Tongue.0"
+      },
+      "DecalSize": {
+        "X": 48.0,
+        "Y": 32.0,
+        "Z": 200.0
+      },
+      "RelativeLocation": {
+        "X": 249.60411,
+        "Y": 6.1035156E-05,
+        "Z": -16.0
+      },
+      "RelativeRotation": {
+        "Pitch": -90.0,
+        "Yaw": 0.0,
+        "Roll": 0.0
+      }
+    }
+  },
+  {
+    "Type": "InheritableComponentHandler",
+    "Name": "InheritableComponentHandler",
+    "Outer": "BP_ArmoliteAttack_C",
+    "Class": "UScriptClass'InheritableComponentHandler'",
+    "Properties": {
+      "Records": [
+        {
+          "ComponentClass": {
+            "ObjectName": "Class'BoxComponent'",
+            "ObjectPath": "/Script/Engine"
+          },
+          "ComponentTemplate": {
+            "ObjectName": "BoxComponent'BP_ArmoliteAttack_C:Box_GEN_VARIABLE'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.6"
+          },
+          "ComponentKey": {
+            "OwnerClass": {
+              "ObjectName": "BlueprintGeneratedClass'BP_EnemyAttackBase_C'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemyAttackBase.7"
+            },
+            "SCSVariableName": "Box",
+            "AssociatedGuid": "3DACBDA8-48BA9549-FB6FB485-28E4276E"
+          },
+          "CookedComponentInstancingData": {
+            "ChangedPropertyList": [],
+            "bHasValidCookedData": false
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_ArmoliteAttack_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_ArmoliteAttack_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.11"
+      },
+      "VariableGuid": "DECE0DD1-48BC2D38-A636BC92-8EF6CBC5",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'DecalComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "DecalComponent'BP_ArmoliteAttack_C:Decal_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.9"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_EnemyAttackBase_C",
+      "VariableGuid": "CF7C7FA5-44029131-4AA5A291-D94F1648",
+      "InternalVariableName": "Decal"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'DecalComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "DecalComponent'BP_ArmoliteAttack_C:AttackDecal_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.8"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_EnemyAttackBase_C",
+      "VariableGuid": "B7602CC9-4DC306FD-4F261E98-331EBBA0",
+      "InternalVariableName": "AttackDecal"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_ArmoliteAttack_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_ArmoliteAttack_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.13"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_ArmoliteAttack_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.14"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_ArmoliteAttack_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.13"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_ArmoliteAttack_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.14"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_ArmoliteAttack_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Armolite/BP_ArmoliteAttack.12"
+      }
+    }
+  }
+]

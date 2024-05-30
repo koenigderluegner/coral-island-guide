@@ -1,0 +1,60 @@
+[
+  {
+    "Type": "BehaviorTree",
+    "Name": "BT_Tuku_Spawning",
+    "Class": "UScriptClass'BehaviorTree'",
+    "Properties": {
+      "RootNode": {
+        "ObjectName": "BTComposite_Sequence'BT_Tuku_Spawning:BTComposite_Sequence_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_Spawning.1"
+      },
+      "BlackboardAsset": {
+        "ObjectName": "BlackboardData'BB_Enemies'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BB_Enemies.0"
+      }
+    }
+  },
+  {
+    "Type": "BTComposite_Sequence",
+    "Name": "BTComposite_Sequence_0",
+    "Outer": "BT_Tuku_Spawning",
+    "Class": "UScriptClass'BTComposite_Sequence'",
+    "Properties": {
+      "Children": [
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "BTTC_SetEnemiesState'BT_Tuku_Spawning:BTTC_SetEnemiesState_5'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_Spawning.2"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        }
+      ],
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_Tuku_Spawning'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_Spawning.0"
+      }
+    }
+  },
+  {
+    "Type": "BTTC_SetEnemiesState",
+    "Name": "BTTC_SetEnemiesState_5",
+    "Outer": "BT_Tuku_Spawning",
+    "Class": "UScriptClass'BTTC_SetEnemiesState'",
+    "Properties": {
+      "blackBoardState": {
+        "SelectedKeyName": "SelfActor"
+      },
+      "newEnemiesState": "EC_EnemiesState::SpecialInteraction",
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_Tuku_Spawning'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_Spawning.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_Tuku_Spawning:BTComposite_Sequence_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_Spawning.1"
+      }
+    }
+  }
+]
