@@ -22,9 +22,9 @@ export class SimpleCopyImageProcessor {
     process() {
 
         this.mappings.forEach(async mapping => {
-            const outputPath = path.join(config.assetsPath, mapping.outputPathSuffix?.trim() ?? '');
+            const outputPath = path.join(config.target.versionRootPath, mapping.outputPathSuffix?.trim() ?? '');
             const shouldCreateThumbs = mapping.options?.maxWidth || mapping.options?.maxHeight;
-            const fullPath = path.join(config.sourceContentPath, mapping.inputGlob);
+            const fullPath = path.join(config.source.contentRoot, mapping.inputGlob);
             const imagePaths = fg.sync(fg.convertPathToPattern(fullPath))
             let amountImagesToCreate = imagePaths.length;
             if (shouldCreateThumbs) amountImagesToCreate *= 2

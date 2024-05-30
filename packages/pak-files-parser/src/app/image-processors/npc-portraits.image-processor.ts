@@ -4,7 +4,7 @@ import path from "path";
 import fs from "fs";
 import sharp from "sharp";
 import glob from "glob";
-import { NPCDbGenerator } from "../generators/npc-db.generator";
+import { NPCDbGenerator } from "../generators/npcs/npc-db.generator";
 
 export class NpcPortraitsImageProcessor {
 
@@ -152,6 +152,6 @@ export class NpcPortraitsImageProcessor {
     }
 
     private _getFileName(sourceImagePath: string): string {
-        return path.join((sourceImagePath.split(path.sep).pop() ?? '').replace('.png', ''));
+        return (path.join((sourceImagePath.split('/').pop() ?? '').split('\\').pop() ?? '').replace('.png', ''));
     }
 }

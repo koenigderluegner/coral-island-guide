@@ -6,25 +6,34 @@
             </ng-template>
         </app-item-card-switch>
     }
-    <app-card>
-        <h2 class="mb-4 font-semibold text-2xl text-black">
-            My Coral Guide
-        </h2>
-        <div class="prose lg:prose-xl">
-            <p class="text-black text-lg">
-                Welcome! This is "My Coral Guide" - your personal space.
-            </p>
-            <p class="text-black text-lg">
-                For now this startpage is quite empty. Sometime in the future this will be your dashboard. Until then,
-                feel
-                free
-                to check the sub navigation to edit some checklist, add to-dos or change your settings.
-            </p>
-        </div>
-    </app-card>
+    <h1 class="mb-4 font-semibold text-3xl text-white flex items-center gap-x-4">
+        My Coral Guide
+    </h1>
     <app-dashboard-filter [parentFormGroup]="filterFormGroup" class="my-5 block"/>
     @if (requests$ | async; ) {
-        <div class="my-2">
+
+        <section class="my-2">
+            <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">
+                Birthdays
+            </h2>
+            <app-card class="@container">
+                <div class="@3xl:grid-cols-2 grid gap-x-3 gap-y-5">
+                    <div>
+                        <h2 class="mb-4 font-semibold text-2xl text-black">
+                            Today
+                        </h2>
+                        <app-birthday-dashboard [birthdays]=" birthdaysToday()" (itemClicked)="showDetails($event)"/>
+                    </div>
+                    <div>
+                        <h2 class="mb-4 font-semibold text-2xl text-black">
+                            Tomorrow
+                        </h2>
+                        <app-birthday-dashboard [birthdays]=" birthdaysTomorrow()" (itemClicked)="showDetails($event)"/>
+                    </div>
+                </div>
+            </app-card>
+        </section>
+        <section class="my-2">
             <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">
                 Fish
             </h2>
@@ -35,12 +44,12 @@
                     <div [class.checklist-checked]="entry.completed"
                          class="icon-grid-item checklist-item  flex flex-col">
                         <app-item-icon
-                                (click)="showDetails(entry.entry.item)"
-                                [itemName]="entry.entry.item.iconName"/>
+                                (click)="showDetails({id: entry.entry.id, displayName: '', iconName: entry.entry.iconName})"
+                                [itemName]="entry.entry.iconName"/>
                         <label class="text-white flex justify-center" for="entry-{{entry.entry.id}}-input">
                             <mat-checkbox class="flex" id="entry-{{entry.entry.id}}"
                                           [checked]="entry.completed"
-                                          (change)="updateChecklist($event, entry.entry.item.id, entry.context); entry.completed = !entry.completed"
+                                          (change)="updateChecklist($event, entry.entry.id, entry.context); entry.completed = !entry.completed"
                                           name="entry-{{entry.entry.id}}"></mat-checkbox>
                         </label>
                     </div>
@@ -48,7 +57,7 @@
                     <p class="col-span-full">No more fish to catch :)</p>
                 }
             </div>
-        </div>
+        </section>
     } @else {
         @defer (on immediate) {
             <mat-spinner class="mx-auto"/>
