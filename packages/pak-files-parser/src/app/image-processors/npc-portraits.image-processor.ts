@@ -152,6 +152,6 @@ export class NpcPortraitsImageProcessor {
     }
 
     private _getFileName(sourceImagePath: string): string {
-        return path.join((sourceImagePath.split(path.sep).pop() ?? '').replace('.png', ''));
+        return (path.join((sourceImagePath.split('/').pop() ?? '').split('\\').pop() ?? '').replace('.png', ''));
     }
 }

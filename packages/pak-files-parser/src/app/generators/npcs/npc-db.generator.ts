@@ -11,6 +11,10 @@ import fs from "fs";
 import { StringTable } from "../../../util/string-table.class";
 import { Logger } from "../../../util/logger.class";
 import { AdditionalNpcAppearances } from "./additional-npc-appearances.type";
+import * as fg from "fast-glob";
+import { config } from "../../../config";
+import { knownAppearances, knownEmotions, knownSpecialForms } from "./known-portrait-configurations.const";
+
 
 export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
 
@@ -104,7 +108,7 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
     }
 
     private static extractAllAppearances(dbItem: RawNPC, itemKey: string) {
-        const appearances: NPC['appearances'] = [];
+        let appearances: NPC['appearances'] = [];
 
         let npcAppearances = NPCDbGenerator.getNPCAppearances(dbItem, itemKey);
         const defaultAppearance = NPCDbGenerator.formatRawAppearances(itemKey, npcAppearances);
@@ -126,6 +130,17 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
                     appearances: formattedAdditionalAppearance
                 });
             })
+
+
+        const foundImages = [...NPCDbGenerator.filePaths.appearances].map(s => s.image).map(s => fg.convertPathToPattern(s));
+        const fullPath = config.source.portraitsPath + `/**/${fg.escapePath(itemKey)}/**/Po*traits/**/*.png`;
+        const imagePaths = fg.sync(fg.convertPathToPattern(fullPath))
+
+        const filtered = imagePaths.filter(i => !foundImages.includes(i))
+        if (filtered.length) {
+            appearances = NPCDbGenerator.mergeAppearances(appearances, NPCDbGenerator.getUnmatchedAppearances(filtered));
+        }
+
         return appearances;
     }
 
@@ -213,9 +228,124 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
         return {headerPortraitFileName, customHead};
     }
 
-    override afterParse = () => {
-        NPCDbGenerator.RanOnce = true;
+    private static getUnmatchedAppearances(filtered: string[]) {
+        const appearances: NPC['appearances'] = [];
+        filtered.forEach(imagePath => {
+            const pathParts = imagePath.split('/');
 
+            const portraitsIndex = pathParts.findIndex(p => p.toLowerCase() === 'potraits' || p.toLowerCase() === 'portraits');
+            const npcKeyFromPath = pathParts[portraitsIndex - 1];
+            const outfitFromPath = pathParts[portraitsIndex + 1];
+            const imageOrSpecialForm = pathParts[portraitsIndex + 2];
+            const imageOrEmpty = pathParts[portraitsIndex + 3];
+
+            const image = imageOrEmpty ?? imageOrSpecialForm;
+
+            const split = image?.replace('.png', '').split('_');
+
+            let emotion;
+            let appearance;
+            let specialForm;
+
+
+            if (!split?.length) {
+
+            } else {
+
+                split.splice(0, 1);
+
+                const appearanceIndex = split.findIndex(s => s.toLowerCase() === outfitFromPath.toLowerCase())
+                const knownAppearanceIndex = split.findIndex(s => knownAppearances.includes(s.toLowerCase()));
+                const pathAppearanceIsKnown = knownAppearances.includes(outfitFromPath.toLowerCase())
+
+                if (appearanceIndex !== -1) {
+                    appearance = outfitFromPath;
+                    split.splice(appearanceIndex, 1)
+                } else if (knownAppearanceIndex !== -1) {
+                    appearance = split[knownAppearanceIndex];
+                    split.splice(knownAppearanceIndex, 1)
+                } else if (pathAppearanceIsKnown) {
+                    appearance = outfitFromPath
+                } else {
+                    return;
+                }
+
+                const knownEmotionIndex = split.findIndex(s => knownEmotions.includes(s.toLowerCase()));
+
+                if (knownEmotionIndex !== -1) {
+                    emotion = split[knownEmotionIndex];
+                    split.splice(knownEmotionIndex, 1)
+                } else if (split.length === 1) {
+                    emotion = split[0];
+                    split.splice(0, 1)
+                } else {
+                    return
+                }
+
+
+                if (split.length) {
+                    const knownSpecialFormIndex = split.findIndex(s => knownSpecialForms.includes(s.toLowerCase()))
+                    if (knownSpecialFormIndex !== 1) {
+                        specialForm = split[knownSpecialFormIndex];
+                        split.splice(knownSpecialFormIndex, 1)
+                    }
+
+                    if (split.length) {
+                        Logger.warn('Cannot do suggestion for Portrait: ' + imagePath)
+                    }
+                }
+
+
+                appearances.push({
+                    appearanceCategory: specialForm,
+                    appearances: {[appearance]: {[emotion]: imagePath.replace('.png', '').split('/').pop() ?? ''}}
+                })
+                NPCDbGenerator.filePaths.appearances.add({npcKey: npcKeyFromPath, image: imagePath})
+
+            }
+
+
+        })
+
+        return appearances;
+    }
+
+    private static mergeAppearances(existing: NPC['appearances'], newOnes: NPC['appearances']): NPC['appearances'] {
+        const combined = structuredClone(existing);
+
+        newOnes.forEach(newAppearance => {
+
+            const existingCategory = combined.find(c => c.appearanceCategory === newAppearance.appearanceCategory);
+            if (!existingCategory) {
+                combined.push(newAppearance)
+                return;
+            }
+
+            const newAppearancesKeys = Object.keys(newAppearance.appearances);
+
+            newAppearancesKeys.forEach(apKey => {
+                    const existingAppearance = existingCategory.appearances[apKey];
+
+                    if (!existingAppearance) {
+                        existingCategory.appearances[apKey] = newAppearance.appearances[apKey];
+                        return;
+                    }
+
+                    const newEmotionKeys = Object.keys(existingAppearance);
+                    newEmotionKeys.forEach(newEmotionKey => {
+                        const existingAppearanceElement = existingAppearance[newEmotionKey];
+                        if (!existingAppearanceElement) {
+                            existingAppearance[newEmotionKey] = newAppearance.appearances[apKey][newEmotionKey];
+                        }
+                    })
+
+
+                }
+            )
+
+
+        })
+        return combined;
     }
 
     handleEntry(itemKey: string, dbItem: RawNPC): NPC {
@@ -249,6 +379,10 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
             birthday
         };
 
+    }
+
+    override afterParse = () => {
+        NPCDbGenerator.RanOnce = true;
     }
 
     private getBirthday(itemKey: string): SpecificDate | undefined {

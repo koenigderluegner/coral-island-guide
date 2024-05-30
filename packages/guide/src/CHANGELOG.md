@@ -1,5 +1,11 @@
 ## Changelog
 
+### TBD
+
+#### Changed
+
+- Improved portrait guesser algorithm to provide more NPC portraits
+
 ### 0.20.1 2024-05-29
 
 #### Changed
