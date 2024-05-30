@@ -1,0 +1,2045 @@
+[
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_Boar",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_OtherActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OverlappedComponent_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OtherActor_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OtherComp_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "K2Node_ComponentBoundEvent_OtherBodyIndex_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_ComponentBoundEvent_bFromSweep_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_ComponentBoundEvent_SweepResult_1",
+        "Flags": "RF_Public",
+        "ElementSize": 144,
+        "PropertyFlags": "ConstParm | ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Not_PreBool_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Add_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_MyComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_Other",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_OtherComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_Event_bSelfMoved",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_Event_HitLocation",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_Event_HitNormal",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_Event_NormalImpulse",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_Event_Hit",
+        "Flags": "RF_Public",
+        "ElementSize": 144,
+        "PropertyFlags": "ConstParm | ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_SetGamePaused_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_SetGamePaused_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetActorLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPlayerCharacter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Character'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetActorLocation_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_FindLookAtRotation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetForwardVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Multiply_VectorFloat_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakVector_X",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakVector_Y",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakVector_Z",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_Event_damage",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_Event_isCrit",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetActorForwardVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Multiply_VectorFloat_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "Temp_bool_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Not_PreBool_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_attacker",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_PlayDeathAnimation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OverlappedComponent",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OtherActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OtherComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "K2Node_ComponentBoundEvent_OtherBodyIndex",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_ComponentBoundEvent_bFromSweep",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_ComponentBoundEvent_SweepResult",
+        "Flags": "RF_Public",
+        "ElementSize": 144,
+        "PropertyFlags": "ConstParm | ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "InterfaceProperty",
+        "Name": "K2Node_DynamicCast_AsC_Combat_Target_Interface",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "InterfaceClass": {
+          "ObjectName": "Class'C_CombatTargetInterface'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetCombatActor_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPlayerController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PlayerController'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "Temp_int_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Greater_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_CustomEvent_BounceDirection",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "K2Node_Event_attackPattern",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_C_KnockbackInfo",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "Struct": {
+          "ObjectName": "ScriptStruct'C_KnockbackInfo'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_PlayAttackAnimation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "Attack",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_Enemy_C:Attack'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.14"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_Enemy_C:Attack'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.14"
+    },
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "attackPattern",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Bounceback",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "BounceDirection",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_Enemy_C:ReceiveBeginPlay'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.21"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_Enemy_C:ReceiveBeginPlay'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.21"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "BndEvt__Detection_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "OverlappedComponent",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "OtherBodyIndex",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "bFromSweep",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "SweepResult",
+        "Flags": "RF_Public",
+        "ElementSize": 144,
+        "PropertyFlags": "ConstParm | BlueprintVisible | BlueprintReadOnly | Parm | OutParm | ReferenceParm | ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_HasOutParms | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Death",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'C_Enemies:Death'",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "attacker",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "StopCharge",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Charge",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "DamagedBP",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'C_Enemies:DamagedBP'",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "ChildProperties": [
+      {
+        "Type": "FloatProperty",
+        "Name": "damage",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "isCrit",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "CustomEvent_0",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Jumping",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveHit",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveHit'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "MyComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Other",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "bSelfMoved",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "HitLocation",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "HitNormal",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "NormalImpulse",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Hit",
+        "Flags": "RF_Public",
+        "ElementSize": 144,
+        "PropertyFlags": "ConstParm | BlueprintVisible | BlueprintReadOnly | Parm | OutParm | ReferenceParm | ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Blinking",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "CameraShake",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "TraceAttack0",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'C_Enemies:TraceAttack0'",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "BndEvt__Breaker_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "OverlappedComponent",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "OtherBodyIndex",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "bFromSweep",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "SweepResult",
+        "Flags": "RF_Public",
+        "ElementSize": 144,
+        "PropertyFlags": "ConstParm | BlueprintVisible | BlueprintReadOnly | Parm | OutParm | ReferenceParm | ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_HasOutParms | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveActorBeginOverlap",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveActorBeginOverlap'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_Boar_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_Enemy_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.27"
+    },
+    "Properties": {
+      "DynamicBindingObjects": [
+        {
+          "ObjectName": "ComponentDelegateBinding'BP_Boar_C:ComponentDelegateBinding_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.25"
+        }
+      ],
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_Boar_C:SimpleConstructionScript_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.31"
+      },
+      "InheritableComponentHandler": {
+        "ObjectName": "InheritableComponentHandler'BP_Boar_C:InheritableComponentHandler'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.26"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_Boar_C:ExecuteUbergraph_BP_Boar'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.0"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_Enemy_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.27"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_Boar_C:ReceiveActorBeginOverlap'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.16"
+      },
+      {
+        "ObjectName": "Function'BP_Boar_C:BndEvt__Breaker_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.15"
+      },
+      {
+        "ObjectName": "Function'BP_Boar_C:TraceAttack0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.14"
+      },
+      {
+        "ObjectName": "Function'BP_Boar_C:CameraShake'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.13"
+      },
+      {
+        "ObjectName": "Function'BP_Boar_C:Blinking'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.12"
+      },
+      {
+        "ObjectName": "Function'BP_Boar_C:ReceiveHit'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.11"
+      },
+      {
+        "ObjectName": "Function'BP_Boar_C:Jumping'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.10"
+      },
+      {
+        "ObjectName": "Function'BP_Boar_C:CustomEvent_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.9"
+      },
+      {
+        "ObjectName": "Function'BP_Boar_C:DamagedBP'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.8"
+      },
+      {
+        "ObjectName": "Function'BP_Boar_C:Charge'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.7"
+      },
+      {
+        "ObjectName": "Function'BP_Boar_C:StopCharge'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.6"
+      },
+      {
+        "ObjectName": "Function'BP_Boar_C:Death'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.5"
+      },
+      {
+        "ObjectName": "Function'BP_Boar_C:BndEvt__Detection_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.4"
+      },
+      {
+        "ObjectName": "Function'BP_Boar_C:ReceiveBeginPlay'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.3"
+      },
+      {
+        "ObjectName": "Function'BP_Boar_C:Bounceback'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.2"
+      },
+      {
+        "ObjectName": "Function'BP_Boar_C:Attack'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.1"
+      },
+      {
+        "ObjectName": "Function'BP_Boar_C:ExecuteUbergraph_BP_Boar'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.0"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Breaker",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SphereComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Detection_0",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SphereComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "blinkCounter",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "blinkTimer",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CameraShakeScale",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "usePause",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "curVel",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "curRad",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "knocbackStart_0",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "knocbackEnd_0",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "breakDebrisOnce?",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "bounceAfterBreak?",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "breakNTimesBeforeStop",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "currentBrokenDebrisCounter_0",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Dead Boar Event",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'AkAudioEvent'",
+          "ObjectPath": "/Script/AkAudio"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_Boar": {
+        "ObjectName": "Function'BP_Boar_C:ExecuteUbergraph_BP_Boar'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.0"
+      },
+      "Attack": {
+        "ObjectName": "Function'BP_Boar_C:Attack'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.1"
+      },
+      "Bounceback": {
+        "ObjectName": "Function'BP_Boar_C:Bounceback'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.2"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'BP_Boar_C:ReceiveBeginPlay'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.3"
+      },
+      "BndEvt__Detection_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature": {
+        "ObjectName": "Function'BP_Boar_C:BndEvt__Detection_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.4"
+      },
+      "Death": {
+        "ObjectName": "Function'BP_Boar_C:Death'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.5"
+      },
+      "StopCharge": {
+        "ObjectName": "Function'BP_Boar_C:StopCharge'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.6"
+      },
+      "Charge": {
+        "ObjectName": "Function'BP_Boar_C:Charge'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.7"
+      },
+      "DamagedBP": {
+        "ObjectName": "Function'BP_Boar_C:DamagedBP'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.8"
+      },
+      "CustomEvent_0": {
+        "ObjectName": "Function'BP_Boar_C:CustomEvent_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.9"
+      },
+      "Jumping": {
+        "ObjectName": "Function'BP_Boar_C:Jumping'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.10"
+      },
+      "ReceiveHit": {
+        "ObjectName": "Function'BP_Boar_C:ReceiveHit'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.11"
+      },
+      "Blinking": {
+        "ObjectName": "Function'BP_Boar_C:Blinking'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.12"
+      },
+      "CameraShake": {
+        "ObjectName": "Function'BP_Boar_C:CameraShake'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.13"
+      },
+      "TraceAttack0": {
+        "ObjectName": "Function'BP_Boar_C:TraceAttack0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.14"
+      },
+      "BndEvt__Breaker_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature": {
+        "ObjectName": "Function'BP_Boar_C:BndEvt__Breaker_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.15"
+      },
+      "ReceiveActorBeginOverlap": {
+        "ObjectName": "Function'BP_Boar_C:ReceiveActorBeginOverlap'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.16"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Game",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_Boar_C'Default__BP_Boar_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.18"
+    }
+  },
+  {
+    "Type": "BP_Boar_C",
+    "Name": "Default__BP_Boar_C",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.BP_Boar_C'",
+    "Template": {
+      "ObjectName": "BP_Enemy_C'Default__BP_Enemy_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.28"
+    },
+    "Properties": {
+      "UberGraphFrame": {},
+      "blinkTimer": {
+        "Handle": 0
+      },
+      "CameraShakeScale": 0.75,
+      "usePause": true,
+      "curVel": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "curRad": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "knocbackStart_0": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "knocbackEnd_0": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "breakNTimesBeforeStop": 6,
+      "Dead Boar Event": {
+        "ObjectName": "AkAudioEvent'anim_npc_stone_boar_dead'",
+        "ObjectPath": "ProjectCoral/Content/WwiseAudio/Events/Animation/MonsterEnemy/StoneBoar/anim_npc_stone_boar_dead.1"
+      },
+      "enemiesID": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_Enemies'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/DT_Enemies.0"
+        },
+        "RowName": "boar"
+      },
+      "damagedAnim": {
+        "ObjectName": "AnimMontage'AM_BoarHit'",
+        "ObjectPath": "ProjectCoral/Content/_Imports/Animals/MonsterEnemy/StoneBoar/AM_BoarHit.0"
+      },
+      "deathAnim": {
+        "ObjectName": "AnimMontage'AM_BoarHit'",
+        "ObjectPath": "ProjectCoral/Content/_Imports/Animals/MonsterEnemy/StoneBoar/AM_BoarHit.0"
+      },
+      "attackAnim": {
+        "ObjectName": "AnimMontage'AM_Boar_Attack1'",
+        "ObjectPath": "ProjectCoral/Content/_Imports/Animals/MonsterEnemy/StoneBoar/AM_Boar_Attack1.0"
+      },
+      "attackDataAsset": {
+        "ObjectName": "C_EnemyAttack'DA_BossBoarAttacks'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/DA_BossBoarAttacks.0"
+      },
+      "SoundComponent": {
+        "ObjectName": "C_SoundComponent'Default__BP_Boar_C:SoundComponent'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.22"
+      },
+      "HealthComponent": {
+        "ObjectName": "C_FillableStatisticComponent'Default__BP_Boar_C:HealthComponent'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.20"
+      },
+      "HpBarWidgetComponent": {
+        "ObjectName": "WidgetComponent'Default__BP_Boar_C:HpBarWidgetComponent'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.37"
+      },
+      "EnemyBuffWidgetComponent": {
+        "ObjectName": "WidgetComponent'Default__BP_Boar_C:BuffWidgetComponent'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.36"
+      },
+      "buffComponent": {
+        "ObjectName": "C_PlayerBuffComponent'Default__BP_Boar_C:BuffComponent'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.21"
+      },
+      "registratorComponent": {
+        "ObjectName": "C_ActorRegistratorComponent'Default__BP_Boar_C:ActorRegistrator'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.19"
+      },
+      "Mesh": {
+        "ObjectName": "SkeletalMeshComponent'Default__BP_Boar_C:CharacterMesh0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.32"
+      },
+      "CharacterMovement": {
+        "ObjectName": "CharacterMovementComponent'Default__BP_Boar_C:CharMoveComp'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.24"
+      },
+      "CapsuleComponent": {
+        "ObjectName": "CapsuleComponent'Default__BP_Boar_C:CollisionCylinder'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.23"
+      },
+      "AIControllerClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_EnemyAIC_BossBoar_C'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_EnemyAIC_BossBoar.0"
+      },
+      "RootComponent": {
+        "ObjectName": "CapsuleComponent'Default__BP_Boar_C:CollisionCylinder'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.23"
+      }
+    }
+  },
+  {
+    "Type": "C_ActorRegistratorComponent",
+    "Name": "ActorRegistrator",
+    "Outer": "Default__BP_Boar_C",
+    "Class": "UScriptClass'C_ActorRegistratorComponent'",
+    "Template": {
+      "ObjectName": "C_ActorRegistratorComponent'Default__BP_Enemy_C:ActorRegistrator'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.29"
+    },
+    "Properties": {
+      "AttachParent": {
+        "ObjectName": "CapsuleComponent'Default__BP_Boar_C:CollisionCylinder'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.23"
+      }
+    }
+  },
+  {
+    "Type": "C_FillableStatisticComponent",
+    "Name": "HealthComponent",
+    "Outer": "Default__BP_Boar_C",
+    "Class": "UScriptClass'C_FillableStatisticComponent'",
+    "Template": {
+      "ObjectName": "C_FillableStatisticComponent'Default__BP_Enemy_C:HealthComponent'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.30"
+    },
+    "Properties": {
+      "maximumValue": 900.0
+    }
+  },
+  {
+    "Type": "C_PlayerBuffComponent",
+    "Name": "BuffComponent",
+    "Outer": "Default__BP_Boar_C",
+    "Class": "UScriptClass'C_PlayerBuffComponent'",
+    "Template": {
+      "ObjectName": "C_PlayerBuffComponent'Default__BP_Enemy_C:BuffComponent'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.31"
+    }
+  },
+  {
+    "Type": "C_SoundComponent",
+    "Name": "SoundComponent",
+    "Outer": "Default__BP_Boar_C",
+    "Class": "UScriptClass'C_SoundComponent'",
+    "Template": {
+      "ObjectName": "C_SoundComponent'Default__BP_Enemy_C:SoundComponent'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.32"
+    },
+    "Properties": {
+      "AttachParent": {
+        "ObjectName": "CapsuleComponent'Default__BP_Boar_C:CollisionCylinder'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.23"
+      }
+    }
+  },
+  {
+    "Type": "CapsuleComponent",
+    "Name": "CollisionCylinder",
+    "Outer": "Default__BP_Boar_C",
+    "Class": "UScriptClass'CapsuleComponent'",
+    "Template": {
+      "ObjectName": "CapsuleComponent'Default__BP_Enemy_C:CollisionCylinder'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.33"
+    },
+    "Properties": {
+      "CapsuleHalfHeight": 103.62639,
+      "CapsuleRadius": 103.62639,
+      "BodyInstance": {
+        "bNotifyRigidBodyCollision": true,
+        "bLockZTranslation": true,
+        "bLockXRotation": true,
+        "bLockYRotation": true,
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "TileActor",
+              "Response": "ECR_Block"
+            },
+            {
+              "Channel": "Translucentable",
+              "Response": "ECR_Block"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "WeaponTrace",
+              "Response": "ECR_Overlap"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Type": "CharacterMovementComponent",
+    "Name": "CharMoveComp",
+    "Outer": "Default__BP_Boar_C",
+    "Class": "UScriptClass'CharacterMovementComponent'",
+    "Template": {
+      "ObjectName": "CharacterMovementComponent'Default__BP_Enemy_C:CharMoveComp'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.34"
+    },
+    "Properties": {
+      "MaxWalkSpeed": 100.0
+    }
+  },
+  {
+    "Type": "ComponentDelegateBinding",
+    "Name": "ComponentDelegateBinding_0",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'ComponentDelegateBinding'",
+    "Properties": {
+      "ComponentDelegateBindings": [
+        {
+          "ComponentPropertyName": "Detection_0",
+          "DelegatePropertyName": "OnComponentBeginOverlap",
+          "FunctionNameToBind": "BndEvt__Detection_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature"
+        },
+        {
+          "ComponentPropertyName": "Breaker",
+          "DelegatePropertyName": "OnComponentBeginOverlap",
+          "FunctionNameToBind": "BndEvt__Breaker_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "InheritableComponentHandler",
+    "Name": "InheritableComponentHandler",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'InheritableComponentHandler'",
+    "Properties": {
+      "Records": [
+        {
+          "ComponentClass": {
+            "ObjectName": "Class'WidgetComponent'",
+            "ObjectPath": "/Script/UMG"
+          },
+          "ComponentTemplate": {
+            "ObjectName": "WidgetComponent'BP_Boar_C:Aggro_GEN_VARIABLE'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.35"
+          },
+          "ComponentKey": {
+            "OwnerClass": {
+              "ObjectName": "BlueprintGeneratedClass'BP_Enemy_C'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.27"
+            },
+            "SCSVariableName": "Aggro",
+            "AssociatedGuid": "ABAE61F0-42C24ED4-B22A0DB5-E50CF076"
+          },
+          "CookedComponentInstancingData": {
+            "ChangedPropertyList": [],
+            "bHasValidCookedData": false
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_Boar_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.27"
+      },
+      "VariableGuid": "09066F46-412F58AE-BE0871B6-A366B811",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SphereComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SphereComponent'BP_Boar_C:Detection_0_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.34"
+      },
+      "ParentComponentOrVariableName": "CollisionCylinder",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "EDD3081C-45932578-F6A02497-6AA0A830",
+      "InternalVariableName": "Detection_0"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_3",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SphereComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SphereComponent'BP_Boar_C:Breaker_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.33"
+      },
+      "ParentComponentOrVariableName": "CollisionCylinder",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "365E88E5-409E86A7-F944E3A0-0F74BB2B",
+      "InternalVariableName": "Breaker"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_Boar_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.29"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_Boar_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.30"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_Boar_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.29"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_Boar_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.30"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_Boar_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.28"
+      }
+    }
+  },
+  {
+    "Type": "SkeletalMeshComponent",
+    "Name": "CharacterMesh0",
+    "Outer": "Default__BP_Boar_C",
+    "Class": "UScriptClass'SkeletalMeshComponent'",
+    "Template": {
+      "ObjectName": "SkeletalMeshComponent'Default__BP_Enemy_C:CharacterMesh0'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.43"
+    },
+    "Properties": {
+      "AnimClass": {
+        "ObjectName": "AnimBlueprintGeneratedClass'ABP_StoneBoar_C'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/StoneBoar/ABP_StoneBoar.3"
+      },
+      "SkeletalMesh": {
+        "ObjectName": "SkeletalMesh'SK_StoneBoar'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/StoneBoar/SK_StoneBoar.0"
+      },
+      "BodyInstance": {
+        "CollisionEnabled": "ECollisionEnabled::NoCollision",
+        "CollisionProfileName": "NoCollision",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel2",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel3",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel4",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel5",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel6",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "NPC",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "Crop",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "TrellisCrop",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "Debris",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "OverlapableDebris",
+              "Response": "ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "AttachParent": {
+        "ObjectName": "CapsuleComponent'Default__BP_Boar_C:CollisionCylinder'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.23"
+      },
+      "RelativeLocation": {
+        "X": -21.999996,
+        "Y": 8.392334E-05,
+        "Z": -34.977127
+      },
+      "RelativeRotation": {
+        "Pitch": 0.0,
+        "Yaw": -90.00021,
+        "Roll": 0.0
+      }
+    }
+  },
+  {
+    "Type": "SphereComponent",
+    "Name": "Breaker_GEN_VARIABLE",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'SphereComponent'",
+    "Properties": {
+      "SphereRadius": 70.0,
+      "AreaClass": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "BodyInstance": {
+        "ObjectType": "ECC_Pawn",
+        "CollisionProfileName": "Custom",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "TileActor",
+              "Response": "ECR_Overlap"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 90.0,
+        "Y": 0.0,
+        "Z": 0.0
+      }
+    }
+  },
+  {
+    "Type": "SphereComponent",
+    "Name": "Detection_0_GEN_VARIABLE",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'SphereComponent'",
+    "Properties": {
+      "SphereRadius": 400.0,
+      "AreaClass": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "BodyInstance": {
+        "CollisionProfileName": "Custom",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECR_Ignore"
+            },
+            {
+              "Channel": "TileActor",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "NPC",
+              "Response": "ECR_Ignore"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Type": "WidgetComponent",
+    "Name": "Aggro_GEN_VARIABLE",
+    "Outer": "BP_Boar_C",
+    "Class": "UScriptClass'WidgetComponent'",
+    "Template": {
+      "ObjectName": "WidgetComponent'BP_Enemy_C:Aggro_GEN_VARIABLE'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.47"
+    },
+    "Properties": {
+      "Space": "EWidgetSpace::World",
+      "WidgetClass": null,
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      }
+    }
+  },
+  {
+    "Type": "WidgetComponent",
+    "Name": "BuffWidgetComponent",
+    "Outer": "Default__BP_Boar_C",
+    "Class": "UScriptClass'WidgetComponent'",
+    "Template": {
+      "ObjectName": "WidgetComponent'Default__BP_Enemy_C:BuffWidgetComponent'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.48"
+    },
+    "Properties": {
+      "AttachParent": {
+        "ObjectName": "CapsuleComponent'Default__BP_Boar_C:CollisionCylinder'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.23"
+      }
+    }
+  },
+  {
+    "Type": "WidgetComponent",
+    "Name": "HpBarWidgetComponent",
+    "Outer": "Default__BP_Boar_C",
+    "Class": "UScriptClass'WidgetComponent'",
+    "Template": {
+      "ObjectName": "WidgetComponent'Default__BP_Enemy_C:HpBarWidgetComponent'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.49"
+    },
+    "Properties": {
+      "AttachParent": {
+        "ObjectName": "CapsuleComponent'Default__BP_Boar_C:CollisionCylinder'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_Boar.23"
+      }
+    }
+  }
+]

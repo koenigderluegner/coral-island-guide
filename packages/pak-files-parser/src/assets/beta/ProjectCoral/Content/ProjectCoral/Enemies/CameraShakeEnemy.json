@@ -1,0 +1,53 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "CameraShakeEnemy_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "SuperStruct": {
+      "ObjectName": "Class'MatineeCameraShake'",
+      "ObjectPath": "/Script/GameplayCameras"
+    },
+    "ClassFlags": "CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_EditInlineNew | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "CameraShakeEnemy_C'Default__CameraShakeEnemy_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/CameraShakeEnemy.1"
+    }
+  },
+  {
+    "Type": "CameraShakeEnemy_C",
+    "Name": "Default__CameraShakeEnemy_C",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Enemies/CameraShakeEnemy.CameraShakeEnemy_C'",
+    "Properties": {
+      "OscillationDuration": 0.5,
+      "LocOscillation": {
+        "Y": {
+          "Amplitude": 5.0,
+          "Frequency": 8.0,
+          "Waveform": "EOscillatorWaveform::PerlinNoise"
+        },
+        "Z": {
+          "Amplitude": 5.0,
+          "Frequency": 8.0,
+          "Waveform": "EOscillatorWaveform::PerlinNoise"
+        }
+      },
+      "bSingleInstance": true,
+      "RootShakePattern": {
+        "ObjectName": "MatineeCameraShakePattern'Default__CameraShakeEnemy_C:RootShakePattern'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/CameraShakeEnemy.2"
+      }
+    }
+  },
+  {
+    "Type": "MatineeCameraShakePattern",
+    "Name": "RootShakePattern",
+    "Outer": "Default__CameraShakeEnemy_C",
+    "Class": "UScriptClass'MatineeCameraShakePattern'"
+  }
+]

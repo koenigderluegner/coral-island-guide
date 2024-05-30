@@ -1,0 +1,223 @@
+[
+  {
+    "Type": "BehaviorTree",
+    "Name": "BT_Tuku_SpecialInteraction",
+    "Class": "UScriptClass'BehaviorTree'",
+    "Properties": {
+      "RootNode": {
+        "ObjectName": "BTComposite_Selector'BT_Tuku_SpecialInteraction:BTComposite_Selector_4'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.1"
+      },
+      "BlackboardAsset": {
+        "ObjectName": "BlackboardData'BB_Enemies'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BB_Enemies.0"
+      }
+    }
+  },
+  {
+    "Type": "BTComposite_Selector",
+    "Name": "BTComposite_Selector_4",
+    "Outer": "BT_Tuku_SpecialInteraction",
+    "Class": "UScriptClass'BTComposite_Selector'",
+    "Properties": {
+      "Children": [
+        {
+          "ChildComposite": {
+            "ObjectName": "BTComposite_Sequence'BT_Tuku_SpecialInteraction:BTComposite_Sequence_11'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.3"
+          },
+          "ChildTask": null,
+          "Decorators": [
+            {
+              "ObjectName": "BTDecorator_Blackboard'BT_Tuku_SpecialInteraction:BTDecorator_Blackboard_12'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.5"
+            }
+          ],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": {
+            "ObjectName": "BTComposite_Sequence'BT_Tuku_SpecialInteraction:BTComposite_Sequence_10'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.2"
+          },
+          "ChildTask": null,
+          "Decorators": [
+            {
+              "ObjectName": "BTDecorator_Blackboard'BT_Tuku_SpecialInteraction:BTDecorator_Blackboard_11'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.4"
+            }
+          ],
+          "DecoratorOps": []
+        }
+      ],
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_Tuku_SpecialInteraction'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.0"
+      }
+    }
+  },
+  {
+    "Type": "BTComposite_Sequence",
+    "Name": "BTComposite_Sequence_10",
+    "Outer": "BT_Tuku_SpecialInteraction",
+    "Class": "UScriptClass'BTComposite_Sequence'",
+    "Properties": {
+      "Children": [
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "BTTask_TukuShow_C'BT_Tuku_SpecialInteraction:BTTask_TukuShow_C_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.7"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "BTTC_SetEnemiesState'BT_Tuku_SpecialInteraction:BTTC_SetEnemiesState_3'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.8"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        }
+      ],
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_Tuku_SpecialInteraction'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Selector'BT_Tuku_SpecialInteraction:BTComposite_Selector_4'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.1"
+      }
+    }
+  },
+  {
+    "Type": "BTComposite_Sequence",
+    "Name": "BTComposite_Sequence_11",
+    "Outer": "BT_Tuku_SpecialInteraction",
+    "Class": "UScriptClass'BTComposite_Sequence'",
+    "Properties": {
+      "Children": [
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "BTTask_TukuHide_C'BT_Tuku_SpecialInteraction:BTTask_TukuHide_C_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.6"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        }
+      ],
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_Tuku_SpecialInteraction'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Selector'BT_Tuku_SpecialInteraction:BTComposite_Selector_4'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.1"
+      }
+    }
+  },
+  {
+    "Type": "BTDecorator_Blackboard",
+    "Name": "BTDecorator_Blackboard_11",
+    "Outer": "BT_Tuku_SpecialInteraction",
+    "Class": "UScriptClass'BTDecorator_Blackboard'",
+    "Properties": {
+      "CachedDescription": "HasNoticedPlayer is Is Set",
+      "BlackboardKey": {
+        "SelectedKeyName": "HasNoticedPlayer"
+      },
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_Tuku_SpecialInteraction'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Selector'BT_Tuku_SpecialInteraction:BTComposite_Selector_4'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.1"
+      }
+    }
+  },
+  {
+    "Type": "BTDecorator_Blackboard",
+    "Name": "BTDecorator_Blackboard_12",
+    "Outer": "BT_Tuku_SpecialInteraction",
+    "Class": "UScriptClass'BTDecorator_Blackboard'",
+    "Properties": {
+      "CachedDescription": "HasNoticedPlayer is Is Not Set",
+      "OperationType": 1,
+      "BlackboardKey": {
+        "SelectedKeyName": "HasNoticedPlayer"
+      },
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_Tuku_SpecialInteraction'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Selector'BT_Tuku_SpecialInteraction:BTComposite_Selector_4'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.1"
+      }
+    }
+  },
+  {
+    "Type": "BTTask_TukuHide_C",
+    "Name": "BTTask_TukuHide_C_0",
+    "Outer": "BT_Tuku_SpecialInteraction",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BTTask_TukuHide.BTTask_TukuHide_C'",
+    "Template": {
+      "ObjectName": "BTTask_TukuHide_C'Default__BTTask_TukuHide_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BTTask_TukuHide.3"
+    },
+    "Properties": {
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_Tuku_SpecialInteraction'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_Tuku_SpecialInteraction:BTComposite_Sequence_11'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.3"
+      }
+    }
+  },
+  {
+    "Type": "BTTask_TukuShow_C",
+    "Name": "BTTask_TukuShow_C_0",
+    "Outer": "BT_Tuku_SpecialInteraction",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BTTask_TukuShow.BTTask_TukuShow_C'",
+    "Template": {
+      "ObjectName": "BTTask_TukuShow_C'Default__BTTask_TukuShow_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BTTask_TukuShow.3"
+    },
+    "Properties": {
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_Tuku_SpecialInteraction'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_Tuku_SpecialInteraction:BTComposite_Sequence_10'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.2"
+      }
+    }
+  },
+  {
+    "Type": "BTTC_SetEnemiesState",
+    "Name": "BTTC_SetEnemiesState_3",
+    "Outer": "BT_Tuku_SpecialInteraction",
+    "Class": "UScriptClass'BTTC_SetEnemiesState'",
+    "Properties": {
+      "blackBoardState": {
+        "SelectedKeyName": "EnemiesState"
+      },
+      "newEnemiesState": "EC_EnemiesState::Chasing",
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_Tuku_SpecialInteraction'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_Tuku_SpecialInteraction:BTComposite_Sequence_10'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BT_Tuku_SpecialInteraction.2"
+      }
+    }
+  }
+]

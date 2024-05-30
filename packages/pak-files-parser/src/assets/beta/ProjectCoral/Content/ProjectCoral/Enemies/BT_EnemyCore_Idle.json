@@ -1,0 +1,86 @@
+[
+  {
+    "Type": "BehaviorTree",
+    "Name": "BT_EnemyCore_Idle",
+    "Class": "UScriptClass'BehaviorTree'",
+    "Properties": {
+      "RootNode": {
+        "ObjectName": "BTComposite_Sequence'BT_EnemyCore_Idle:BTComposite_Sequence_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BT_EnemyCore_Idle.1"
+      },
+      "BlackboardAsset": {
+        "ObjectName": "BlackboardData'BB_Enemies'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BB_Enemies.0"
+      }
+    }
+  },
+  {
+    "Type": "BTComposite_Sequence",
+    "Name": "BTComposite_Sequence_1",
+    "Outer": "BT_EnemyCore_Idle",
+    "Class": "UScriptClass'BTComposite_Sequence'",
+    "Properties": {
+      "Children": [
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "BTTask_Wait'BT_EnemyCore_Idle:BTTask_Wait_3'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BT_EnemyCore_Idle.2"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "BTTC_SetEnemiesState'BT_EnemyCore_Idle:BTTC_SetEnemiesState_1'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BT_EnemyCore_Idle.3"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        }
+      ],
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_EnemyCore_Idle'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BT_EnemyCore_Idle.0"
+      }
+    }
+  },
+  {
+    "Type": "BTTask_Wait",
+    "Name": "BTTask_Wait_3",
+    "Outer": "BT_EnemyCore_Idle",
+    "Class": "UScriptClass'BTTask_Wait'",
+    "Properties": {
+      "RandomDeviation": 3.0,
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_EnemyCore_Idle'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BT_EnemyCore_Idle.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_EnemyCore_Idle:BTComposite_Sequence_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BT_EnemyCore_Idle.1"
+      }
+    }
+  },
+  {
+    "Type": "BTTC_SetEnemiesState",
+    "Name": "BTTC_SetEnemiesState_1",
+    "Outer": "BT_EnemyCore_Idle",
+    "Class": "UScriptClass'BTTC_SetEnemiesState'",
+    "Properties": {
+      "blackBoardState": {
+        "SelectedKeyName": "EnemiesState"
+      },
+      "newEnemiesState": "EC_EnemiesState::Moving",
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_EnemyCore_Idle'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BT_EnemyCore_Idle.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_EnemyCore_Idle:BTComposite_Sequence_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BT_EnemyCore_Idle.1"
+      }
+    }
+  }
+]

@@ -1,0 +1,256 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_SphekterWind_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_SphekterBase_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterBase.11"
+    },
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_SphekterWind_C:SimpleConstructionScript_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.11"
+      },
+      "InheritableComponentHandler": {
+        "ObjectName": "InheritableComponentHandler'BP_SphekterWind_C:InheritableComponentHandler'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.8"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_SphekterBase_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterBase.11"
+    },
+    "ClassFlags": "CLASS_Config | CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Game",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_SphekterWind_C'Default__BP_SphekterWind_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.1"
+    }
+  },
+  {
+    "Type": "BP_SphekterWind_C",
+    "Name": "Default__BP_SphekterWind_C",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.BP_SphekterWind_C'",
+    "Template": {
+      "ObjectName": "BP_SphekterBase_C'Default__BP_SphekterBase_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterBase.12"
+    },
+    "Properties": {
+      "enemiesID": {
+        "RowName": "sphekterWind"
+      },
+      "SoundComponent": {
+        "ObjectName": "C_SoundComponent'Default__BP_SphekterWind_C:SoundComponent'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.5"
+      },
+      "HealthComponent": {
+        "ObjectName": "C_FillableStatisticComponent'Default__BP_SphekterWind_C:HealthComponent'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.3"
+      },
+      "HpBarWidgetComponent": {
+        "ObjectName": "WidgetComponent'Default__BP_SphekterWind_C:HpBarWidgetComponent'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.14"
+      },
+      "EnemyBuffWidgetComponent": {
+        "ObjectName": "WidgetComponent'Default__BP_SphekterWind_C:BuffWidgetComponent'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.13"
+      },
+      "buffComponent": {
+        "ObjectName": "C_PlayerBuffComponent'Default__BP_SphekterWind_C:BuffComponent'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.4"
+      },
+      "registratorComponent": {
+        "ObjectName": "C_ActorRegistratorComponent'Default__BP_SphekterWind_C:ActorRegistrator'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.2"
+      },
+      "Mesh": {
+        "ObjectName": "SkeletalMeshComponent'Default__BP_SphekterWind_C:CharacterMesh0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.12"
+      },
+      "CharacterMovement": {
+        "ObjectName": "CharacterMovementComponent'Default__BP_SphekterWind_C:CharMoveComp'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.7"
+      },
+      "CapsuleComponent": {
+        "ObjectName": "CapsuleComponent'Default__BP_SphekterWind_C:CollisionCylinder'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.6"
+      },
+      "RootComponent": {
+        "ObjectName": "CapsuleComponent'Default__BP_SphekterWind_C:CollisionCylinder'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.6"
+      }
+    }
+  },
+  {
+    "Type": "C_ActorRegistratorComponent",
+    "Name": "ActorRegistrator",
+    "Outer": "Default__BP_SphekterWind_C",
+    "Class": "UScriptClass'C_ActorRegistratorComponent'",
+    "Template": {
+      "ObjectName": "C_ActorRegistratorComponent'Default__BP_SphekterBase_C:ActorRegistrator'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterBase.13"
+    },
+    "Properties": {
+      "AttachParent": {
+        "ObjectName": "CapsuleComponent'Default__BP_SphekterWind_C:CollisionCylinder'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.6"
+      }
+    }
+  },
+  {
+    "Type": "C_FillableStatisticComponent",
+    "Name": "HealthComponent",
+    "Outer": "Default__BP_SphekterWind_C",
+    "Class": "UScriptClass'C_FillableStatisticComponent'",
+    "Template": {
+      "ObjectName": "C_FillableStatisticComponent'Default__BP_SphekterBase_C:HealthComponent'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterBase.14"
+    }
+  },
+  {
+    "Type": "C_PlayerBuffComponent",
+    "Name": "BuffComponent",
+    "Outer": "Default__BP_SphekterWind_C",
+    "Class": "UScriptClass'C_PlayerBuffComponent'",
+    "Template": {
+      "ObjectName": "C_PlayerBuffComponent'Default__BP_SphekterBase_C:BuffComponent'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterBase.15"
+    }
+  },
+  {
+    "Type": "C_SoundComponent",
+    "Name": "SoundComponent",
+    "Outer": "Default__BP_SphekterWind_C",
+    "Class": "UScriptClass'C_SoundComponent'",
+    "Template": {
+      "ObjectName": "C_SoundComponent'Default__BP_SphekterBase_C:SoundComponent'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterBase.16"
+    },
+    "Properties": {
+      "AttachParent": {
+        "ObjectName": "CapsuleComponent'Default__BP_SphekterWind_C:CollisionCylinder'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.6"
+      }
+    }
+  },
+  {
+    "Type": "CapsuleComponent",
+    "Name": "CollisionCylinder",
+    "Outer": "Default__BP_SphekterWind_C",
+    "Class": "UScriptClass'CapsuleComponent'",
+    "Template": {
+      "ObjectName": "CapsuleComponent'Default__BP_SphekterBase_C:CollisionCylinder'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterBase.17"
+    }
+  },
+  {
+    "Type": "CharacterMovementComponent",
+    "Name": "CharMoveComp",
+    "Outer": "Default__BP_SphekterWind_C",
+    "Class": "UScriptClass'CharacterMovementComponent'",
+    "Template": {
+      "ObjectName": "CharacterMovementComponent'Default__BP_SphekterBase_C:CharMoveComp'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterBase.18"
+    }
+  },
+  {
+    "Type": "InheritableComponentHandler",
+    "Name": "InheritableComponentHandler",
+    "Outer": "BP_SphekterWind_C",
+    "Class": "UScriptClass'InheritableComponentHandler'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_SphekterWind_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_SphekterWind_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.9"
+      },
+      "VariableGuid": "D0B915D5-46DFCEB8-077F5BB1-C9993E62",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_SphekterWind_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_SphekterWind_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.10"
+      }
+    }
+  },
+  {
+    "Type": "SkeletalMeshComponent",
+    "Name": "CharacterMesh0",
+    "Outer": "Default__BP_SphekterWind_C",
+    "Class": "UScriptClass'SkeletalMeshComponent'",
+    "Template": {
+      "ObjectName": "SkeletalMeshComponent'Default__BP_SphekterBase_C:CharacterMesh0'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterBase.25"
+    },
+    "Properties": {
+      "SkeletalMesh": {
+        "ObjectName": "SkeletalMesh'SK_Sphekter_Wind'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Sphekter/SK_Sphekter_Wind.0"
+      },
+      "AttachParent": {
+        "ObjectName": "CapsuleComponent'Default__BP_SphekterWind_C:CollisionCylinder'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.6"
+      }
+    }
+  },
+  {
+    "Type": "WidgetComponent",
+    "Name": "BuffWidgetComponent",
+    "Outer": "Default__BP_SphekterWind_C",
+    "Class": "UScriptClass'WidgetComponent'",
+    "Template": {
+      "ObjectName": "WidgetComponent'Default__BP_SphekterBase_C:BuffWidgetComponent'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterBase.30"
+    },
+    "Properties": {
+      "AttachParent": {
+        "ObjectName": "CapsuleComponent'Default__BP_SphekterWind_C:CollisionCylinder'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.6"
+      }
+    }
+  },
+  {
+    "Type": "WidgetComponent",
+    "Name": "HpBarWidgetComponent",
+    "Outer": "Default__BP_SphekterWind_C",
+    "Class": "UScriptClass'WidgetComponent'",
+    "Template": {
+      "ObjectName": "WidgetComponent'Default__BP_SphekterBase_C:HpBarWidgetComponent'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterBase.31"
+    },
+    "Properties": {
+      "AttachParent": {
+        "ObjectName": "CapsuleComponent'Default__BP_SphekterWind_C:CollisionCylinder'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Sphekter/BP_SphekterWind.6"
+      }
+    }
+  }
+]
