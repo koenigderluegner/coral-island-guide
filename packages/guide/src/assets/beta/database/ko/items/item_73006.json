@@ -58,8 +58,42 @@
         },
         "spawnLocation": [
           "River Town",
-          "Estuary",
           "Lake Temple"
+        ],
+        "spawnTime": {
+          "morning": true,
+          "afternoon": true,
+          "evening": true,
+          "night": true
+        },
+        "spawnWeather": {
+          "sunny": true,
+          "rain": true,
+          "snow": true,
+          "blizzard": true,
+          "windy": true,
+          "storm": true
+        },
+        "spawnSeason": {
+          "spring": true,
+          "summer": true,
+          "fall": true,
+          "winter": true
+        },
+        "isUsingSpecificDate": false,
+        "dateRangeList": []
+      },
+      {
+        "key": "RedSnapper_Estuary",
+        "spawnArea": {
+          "canBeCatchOnCave": false,
+          "canBeCatchOnLake": false,
+          "canBeCatchOnOcean": true,
+          "canBeCatchOnPond": false,
+          "canBeCatchOnRiver": false
+        },
+        "spawnLocation": [
+          "Estuary"
         ],
         "spawnTime": {
           "morning": true,
@@ -88,6 +122,56 @@
     "pattern": "Circle",
     "difficulty": "Medium"
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 2,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_73006",
+          "displayName": "빨간퉁돔",
+          "iconName": "Red_Snapper_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_73006",
+          "displayName": "빨간퉁돔",
+          "iconName": "Red_Snapper_Sprite",
+          "sellPrice": 45
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 3,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 5,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
     {
       "useCategory": false,
@@ -1547,6 +1631,54 @@
         }
       },
       "machine": "CompostBin"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 2,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_73006",
+          "displayName": "빨간퉁돔",
+          "iconName": "Red_Snapper_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_73006",
+          "displayName": "빨간퉁돔",
+          "iconName": "Red_Snapper_Sprite",
+          "sellPrice": 45
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 3,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 5,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [

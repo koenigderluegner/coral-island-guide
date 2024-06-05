@@ -12,6 +12,7 @@ import { VaryMoneyEffect } from "./vary-money-effect.type";
 import { SendMailToPlayerEffect } from "./send-mail-to-player-effect.type";
 import { ChangeObjectStateEffect } from "./change-object-state-effect.type";
 import { UpdateNpcScheduleEffect } from "./update-npc-schedule-effect.type";
+import { UnlockSpecialItemEffect } from "./unlock-special-item-effect.type";
 
 export type Effect =
     AddItemToInventoryEffect
@@ -28,4 +29,5 @@ export type Effect =
     | SendMailToPlayerEffect
     | ChangeObjectStateEffect
     | UpdateNpcScheduleEffect
+    | UnlockSpecialItemEffect
 

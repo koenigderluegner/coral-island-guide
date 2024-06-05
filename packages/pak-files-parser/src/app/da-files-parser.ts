@@ -50,6 +50,7 @@ import {
     UnlockCookingRecipeEffect,
     UnlockCookingUtensilEffect,
     UnlockCraftingRecipeEffect,
+    UnlockSpecialItemEffect,
     UpdateNpcScheduleEffect,
     VaryMoneyEffect
 } from "@ci/data-types";
@@ -169,6 +170,18 @@ export class DaFilesParser {
                         daEffect = {type: "BoostMaxStamina"} satisfies BoostMaxStaminaEffect;
                         break;
                     }
+                    case 'C_UnlockSpecialItemEffect':
+                        const item = DaFilesParser.SpecialItemMap.get(foundEffect.Properties.item.RowName)
+
+                        if (!item) return;
+
+                        daEffect = {
+                            type: "UnlockSpecialItem",
+                            meta: {
+                                item: minifyItem(item)
+                            }
+                        } satisfies UnlockSpecialItemEffect;
+                        break;
                     case "C_AddItemToInventoryEffect": {
 
                         const {itemData, ...rest} = foundEffect.Properties

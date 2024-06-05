@@ -12,6 +12,7 @@ import { RawVaryMoneyEffect } from "./vary-money-effect.type";
 import { RawSendMailToPlayerEffect } from "./send-mail-to-player-effect.type";
 import { RawChangeObjectStateEffect } from "./change-object-state-effect.type";
 import { RawUpdateNpcScheduleEffect } from "./update-npc-schedule-effect.type";
+import { RawUnlockSpecialItemEffect } from "./unlock-special-item-effect.type";
 
 export type DaEffects =
     RawAddItemToInventoryEffect
@@ -28,3 +29,4 @@ export type DaEffects =
     | RawSendMailToPlayerEffect
     | RawChangeObjectStateEffect
     | RawUpdateNpcScheduleEffect
+    | RawUnlockSpecialItemEffect

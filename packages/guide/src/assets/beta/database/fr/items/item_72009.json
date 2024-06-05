@@ -38,17 +38,17 @@
     ]
   },
   "fish": {
-    "key": "GiantMudskipper",
+    "key": "GiantMudskipper_Estuary",
     "isEnabled": true,
     "fishName": "",
     "fishSize": "Small",
-    "rarity": "Common",
+    "rarity": "Uncommon",
     "minCaughtSize": 12,
     "maxCaughtSize": 27,
     "experienceGrantedWhenCaught": 12,
     "spawnSettings": [
       {
-        "key": "GiantMudskipper",
+        "key": "GiantMudskipper_Estuary",
         "spawnArea": {
           "canBeCatchOnCave": false,
           "canBeCatchOnLake": false,
@@ -57,8 +57,42 @@
           "canBeCatchOnRiver": false
         },
         "spawnLocation": [
-          "Rice Field",
           "Estuary"
+        ],
+        "spawnTime": {
+          "morning": true,
+          "afternoon": true,
+          "evening": true,
+          "night": true
+        },
+        "spawnWeather": {
+          "sunny": true,
+          "rain": true,
+          "snow": true,
+          "blizzard": true,
+          "windy": true,
+          "storm": true
+        },
+        "spawnSeason": {
+          "spring": false,
+          "summer": false,
+          "fall": true,
+          "winter": true
+        },
+        "isUsingSpecificDate": false,
+        "dateRangeList": []
+      },
+      {
+        "key": "GiantMudskipper_RiceField",
+        "spawnArea": {
+          "canBeCatchOnCave": false,
+          "canBeCatchOnLake": false,
+          "canBeCatchOnOcean": false,
+          "canBeCatchOnPond": false,
+          "canBeCatchOnRiver": false
+        },
+        "spawnLocation": [
+          "Rice Field"
         ],
         "spawnTime": {
           "morning": true,
@@ -122,6 +156,56 @@
     "pattern": "Stay",
     "difficulty": "Easy"
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 2,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_72009",
+          "displayName": "Gobie géant",
+          "iconName": "Giant_Mudskipper_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_72009",
+          "displayName": "Gobie géant",
+          "iconName": "Giant_Mudskipper_Sprite",
+          "sellPrice": 40
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 3,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
     {
       "useCategory": false,
@@ -1581,6 +1665,54 @@
         }
       },
       "machine": "CompostBin"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 2,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_72009",
+          "displayName": "Gobie géant",
+          "iconName": "Giant_Mudskipper_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_72009",
+          "displayName": "Gobie géant",
+          "iconName": "Giant_Mudskipper_Sprite",
+          "sellPrice": 40
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 3,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
