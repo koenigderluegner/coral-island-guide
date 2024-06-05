@@ -88,3 +88,14 @@
     Sets state of '{{ effect.meta.customName ?? effect.meta.id }}' to '{{ effect.meta.state }}'
 
 }
+@if (effect.type === 'UnlockSpecialItem') {
+
+    <div>
+        Unlocks special item
+        <app-item-icon [itemName]="effect.meta.item.iconName"
+                       class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
+        {{ effect.meta.item.displayName }}
+    </div>
+
+
+}

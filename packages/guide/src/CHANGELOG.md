@@ -1,5 +1,15 @@
 ## Changelog
 
+### 0.20.3 2024-06-06
+
+#### Changed
+
+- \[Beta] Updated beta data to v1.1-1113 (Steam version)
+
+#### Known issues
+
+- \[Beta] Slime of transmutation recipes for upgrading items are partially broken/missing
+
 ### 0.20.2 2024-05-30
 
 #### Added
