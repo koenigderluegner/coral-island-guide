@@ -1,6 +1,6 @@
 <app-list-detail-container>
     @if (selectedEntity) {
-        <app-database-item-details [itemId]="selectedEntity.item.id" context="cooking_recipes" listDetail>
+        <app-database-item-details [itemId]="selectedEntity.item.id" context="item_mixing" listDetail>
             <ng-template let-details appDatabaseItemDetails>
 
                 @for (recipe of details.mixedFrom; track recipe.key) {
