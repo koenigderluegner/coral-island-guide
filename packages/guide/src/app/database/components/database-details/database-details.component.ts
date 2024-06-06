@@ -13,13 +13,10 @@ export class DatabaseDetailsComponent implements OnInit {
     item = input.required<Item>();
 
     protected databaseItem$?: Observable<DatabaseItem>;
-
-    private _databaseService = inject(DatabaseService);
+    #databaseService = inject(DatabaseService);
     @HostBinding('class') private _classes = 'col-span-full database-details';
 
     ngOnInit(): void {
-        this.databaseItem$ = this._databaseService.fetchDatabaseItem$(this.item().id)
+        this.databaseItem$ = this.#databaseService.fetchDatabaseItem$(this.item().id)
     }
-
-
 }

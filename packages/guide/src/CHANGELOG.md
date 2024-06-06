@@ -6,6 +6,7 @@
 
 - \[Beta] Added item mixing to crafting
     - This was also added to database
+- Added "Add to to-do"-button to database entries
 
 ### 0.20.3 2024-06-06
 

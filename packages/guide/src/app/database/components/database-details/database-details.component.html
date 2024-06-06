@@ -8,6 +8,9 @@
                     <h2 class="!my-0 font-semibold text-xl text-black">{{ databaseItem.item.displayName }}</h2>
                     <span>{{ databaseItem.item.id }}</span>
                 </div>
+                <div class="card-actions ml-4">
+                    <app-to-do-toggle [item]="databaseItem.item" context="database"/>
+                </div>
                 <div class="h-0 w-full md:hidden"></div>
                 <app-quality-grid [showOnlyBase]="!databaseItem.item.qualities.bronze"
                                   [item]="databaseItem.item"

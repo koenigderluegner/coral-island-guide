@@ -34,6 +34,8 @@ import { DatabaseFestivalShopDataComponent } from './components/database-festiva
 import { UiIconComponent } from "../shared/components/ui-icon/ui-icon.component";
 import { DatabaseMixingComponent } from "./components/database-mixing/database-mixing.component";
 import { MixingTableComponent } from "../crafting/mixing-table/mixing-table.component";
+import { MatTooltip } from "@angular/material/tooltip";
+import { ToDoToggleComponent } from "../shared/components/to-do-toggle/to-do-toggle.component";
 
 @NgModule({
     declarations: [
@@ -74,6 +76,8 @@ import { MixingTableComponent } from "../crafting/mixing-table/mixing-table.comp
         MatTableModule,
         UiIconComponent,
         MixingTableComponent,
+        MatTooltip,
+        ToDoToggleComponent,
     ],
 })
 export class DatabaseModule {
