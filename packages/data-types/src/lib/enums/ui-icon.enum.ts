@@ -19,6 +19,7 @@ export enum UiIcon {
     BURGER_MENU = 'T_Icon_BurgerMenu',
     SETTINGS = 'T_Icon_GameSettings',
     MY_CORAL = 'T_icon_coral',
+    MISC = 'T_Icon_ShipmentMedium',
 
     // PAUSE MENU SIDEBAR
     CATCHING = 'T_Icon_CatchingM',
@@ -47,6 +48,7 @@ export enum UiIcon {
     CLOTHING_STORE = 'T_Icons_ClothingStore',
     STORE = 'T_Icons_Store',
     TAVERN = 'T_Icons_Tavern',
+    RAMEN = 'T_Icons_Ramen',
 
     //
     GIFTING = 'Icons_Gift',

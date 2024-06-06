@@ -76,6 +76,6 @@ export const ShopIcons = {
     'taco-truck': UiIcon.STORE,
     "sales-cart-stall": UiIcon.STORE,
     "furniture-store": UiIcon.STORE,
-    "ramen-shop": UiIcon.COOKING,
+    "ramen-shop": UiIcon.RAMEN,
 } as const satisfies Record<ShopName, UiIcon>
 
