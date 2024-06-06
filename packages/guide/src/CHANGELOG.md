@@ -5,6 +5,7 @@
 #### Added
 
 - \[Beta] Added item mixing to crafting
+    - This was also added to database
 
 ### 0.20.3 2024-06-06
 
