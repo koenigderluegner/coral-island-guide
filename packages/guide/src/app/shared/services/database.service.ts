@@ -19,6 +19,7 @@ import {
     GiftPreferences,
     HeartEvent,
     Item,
+    ItemMixingRecipeData,
     ItemProcessing,
     ItemProcessShopData,
     ItemUpgradeData,
@@ -64,6 +65,7 @@ export class DatabaseService extends BaseDbService {
 
     private _ITEM_PROCESSING_RECIPE$?: Observable<Record<string, ItemProcessing[]>>;
     private _COOKING_RECIPE$?: Observable<Record<string, CookingRecipe[]>>;
+    private _ITEM_MIXING_RECIPE$?: Observable<ItemMixingRecipeData[]>;
     private _CONSUMABLES$?: Observable<Consumable[]>;
 
     private _GIFT_PREFERENCES$?: Observable<MapKeyed<GiftPreferences>[]>;
@@ -317,6 +319,16 @@ export class DatabaseService extends BaseDbService {
                 );
         }
         return this._CONSUMABLES$;
+    }
+
+    fetchItemMixingRecipeData$(): Observable<ItemMixingRecipeData[]> {
+        if (!this._ITEM_MIXING_RECIPE$) {
+            this._ITEM_MIXING_RECIPE$ = this.http.get<ItemMixingRecipeData[]>(`${this.BASE_PATH_WITH_LANG}/underwater-seeds-item-mixing-data.json`)
+                .pipe(
+                    shareReplay(1)
+                );
+        }
+        return this._ITEM_MIXING_RECIPE$;
     }
 
     fetchFish$(): Observable<Fish[]> {

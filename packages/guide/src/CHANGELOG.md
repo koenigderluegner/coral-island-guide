@@ -1,5 +1,11 @@
 ## Changelog
 
+### TBD
+
+#### Added
+
+- \[Beta] Added item mixing to crafting
+
 ### 0.20.3 2024-06-06
 
 #### Changed

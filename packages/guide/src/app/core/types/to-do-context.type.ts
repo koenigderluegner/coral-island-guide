@@ -14,7 +14,8 @@ export const ToDoContexts = [
     'crafting',
     'artisan',
     'museum',
-    'uncategorized'
+    'uncategorized',
+    'item_mixing'
 ] as const;
 
 export type ToDoContext = typeof ToDoContexts[number];
@@ -35,5 +36,6 @@ export const ToDoContextDisplayNames = {
     crafting: 'Crafting',
     artisan: 'Artisan',
     museum: 'Museum',
-    uncategorized: 'Uncategorized'
+    uncategorized: 'Uncategorized',
+    item_mixing: 'Item mixing'
 } as const satisfies Record<ToDoContext, string>

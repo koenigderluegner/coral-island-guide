@@ -4,10 +4,11 @@ import { AnimalShopDataGenerator } from "./shops-and-festivals/animal-shop-data.
 import { TreasureHuntGenerator } from "./journal/treasure-hunt.generator";
 import { JournalOrderDbGenerator } from "./journal/journal-order-db.generator";
 import { GeneratorList } from "./generator-list.type";
-import { Item } from "@ci/data-types";
+import { Item, TagBasedItem } from "@ci/data-types";
+import { ItemMixingRecipeDataDbGenerator } from "./item-mixing-recipe-data/item-mixing-recipe-data-db.generator";
 
-export const getBetaGenerators = (itemDbMap: Map<string, Item>) => ({
-
+export const getBetaGenerators = (itemDbMap: Map<string, Item>, tagBasedItemsDbMap: Map<string, TagBasedItem>) => ({
+    'underwater-seeds-item-mixing-data': new ItemMixingRecipeDataDbGenerator('ProjectCoral/Content/ProjectCoral/Data/ItemMixing/DT_ItemMixingRecipes.json', itemDbMap, tagBasedItemsDbMap),
     'taco-truck-shop-items': new ShopItemDataGenerator(itemDbMap, 'ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_TacoTruck.json'),
 
     'sales-cart-stall-indoor-shop-items': {

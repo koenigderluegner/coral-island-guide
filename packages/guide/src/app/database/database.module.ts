@@ -32,6 +32,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { DatabaseFestivalShopDataComponent } from './components/database-festival-shop-data/database-festival-shop-data.component';
 import { UiIconComponent } from "../shared/components/ui-icon/ui-icon.component";
+import { DatabaseMixingComponent } from "./components/database-mixing/database-mixing.component";
+import { MixingTableComponent } from "../crafting/mixing-table/mixing-table.component";
 
 @NgModule({
     declarations: [
@@ -54,6 +56,7 @@ import { UiIconComponent } from "../shared/components/ui-icon/ui-icon.component"
         DatabaseBestiaryComponent,
         DatabaseHeaderButtonComponent,
         DatabaseFestivalShopDataComponent,
+        DatabaseMixingComponent
     ],
     imports: [
         CommonModule,
@@ -70,6 +73,7 @@ import { UiIconComponent } from "../shared/components/ui-icon/ui-icon.component"
         MatSortModule,
         MatTableModule,
         UiIconComponent,
+        MixingTableComponent,
     ],
 })
 export class DatabaseModule {

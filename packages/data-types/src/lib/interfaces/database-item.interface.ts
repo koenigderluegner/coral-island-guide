@@ -10,6 +10,7 @@ import {
     Fish,
     GiftingPreferenceKey,
     Item,
+    ItemMixingRecipeData,
     ItemProcessing,
     ItemProcessShopData,
     ItemUpgradeData,
@@ -27,7 +28,9 @@ export interface DatabaseItem {
     artisanIngredient?: ItemProcessing[];
     fromEnemies?: Enemy[]
     usedToCook?: CookingRecipe[];
-    cookedFrom?: CookingRecipe[]
+    cookedFrom?: CookingRecipe[];
+    usedToMix?: ItemMixingRecipeData[];
+    mixedFrom?: ItemMixingRecipeData[];
     craftedFrom?: CraftingRecipe[]
     usedToCraft?: CraftingRecipe[]
     isSeedFor?: BaseCrop[];

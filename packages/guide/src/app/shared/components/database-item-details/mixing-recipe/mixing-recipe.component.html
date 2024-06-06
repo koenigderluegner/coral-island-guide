@@ -1,0 +1,45 @@
+<app-item-list [itemList]="mixingRecipe() | cookingRecipeIngredients" class="mb-3"/>
+@if (mixingRecipe().eitherOrIngredients.length) {
+
+    <span class="text-black"> Either of the following</span>
+
+    @for (ingredients of mixingRecipe().eitherOrIngredients; track ingredients; let last = $last) {
+
+        <app-item-list [itemList]="ingredients" class="mb-3"/>
+        @if (!last) {
+            <hr class="my-5"/>
+        }
+
+    }
+
+
+}
+@if (mixingRecipe().additionsToGenerics) {
+
+    <span class="text-black"> The following counting as</span>
+
+    @for (itemListItem of (mixingRecipe().additionsToGenerics | keyvalue); track itemListItem) {
+        <div class="mb-3">
+            @for (item of (itemListItem.value | castToMinimalItemArray); track item) {
+
+                <div class="flex justify-between py-1">
+
+                    @if (item) {
+                        <div class="flex gap-x-3 items-center">
+                            <app-item-icon class="w-10" [itemName]="item.iconName"></app-item-icon>
+                            <span>{{ item.displayName }}</span>
+                        </div>
+                    }
+
+
+                    <div class="flex items-center">as {{ itemListItem.key }}</div>
+
+                </div>
+                <hr>
+
+            }
+        </div>
+    }
+
+
+}

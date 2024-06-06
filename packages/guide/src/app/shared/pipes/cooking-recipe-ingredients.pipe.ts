@@ -1,13 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { ItemListComponent } from "../components/item-list/item-list.component";
-import { CookingRecipe, GenericEntry, ItemEntry } from "@ci/data-types";
+import { CookingRecipe, GenericEntry, ItemEntry, ItemMixingRecipeData } from "@ci/data-types";
 
 @Pipe({
     name: 'cookingRecipeIngredients'
 })
 export class CookingRecipeIngredientsPipe implements PipeTransform {
 
-    transform(cookingRecipe: CookingRecipe): (ItemEntry | GenericEntry)[] {
+    transform(cookingRecipe: CookingRecipe | ItemMixingRecipeData): (ItemEntry | GenericEntry)[] {
         const items: ReturnType<ItemListComponent['itemList']> = [...cookingRecipe.ingredients];
 
         if (cookingRecipe.genericIngredients.length) {

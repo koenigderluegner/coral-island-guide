@@ -20,6 +20,11 @@ const routes: Routes = [
             {path: 'artisan/:tabName', component: ProcessorComponent, title: 'Artisan - Crafting'},
             {path: 'cooking', redirectTo: 'cooking/', pathMatch: 'full'},
             {path: 'cooking/:tabName', component: CookingComponent, title: 'Cooking - Crafting'},
+            {
+                path: 'mixing',
+                loadComponent: () => import('./mixing/mixing.component').then(c => c.MixingComponent),
+                title: 'Mixing - Crafting'
+            },
         ]
     },
 

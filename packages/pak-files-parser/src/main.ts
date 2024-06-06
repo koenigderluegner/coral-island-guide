@@ -16,6 +16,7 @@ import {
     FestivalDisplayNames,
     FestivalNames,
     Item,
+    ItemMixingRecipeData,
     ItemProcessing,
     ItemProcessShopData,
     ItemUpgradeData,
@@ -108,7 +109,7 @@ NPCDbGenerator.AdditionalNpcAppearances = additionalNPCOutfitsMappings;
         let generators = {...baseGenerators}
 
         if (environment.isBeta) {
-            generators = {...generators, ...getBetaGenerators(itemDbMap)}
+            generators = {...generators, ...getBetaGenerators(itemDbMap, tagBasedItemsDbMap)}
         } else {
             generators = {...generators, ...getLiveGenerators(itemDbMap)}
         }
@@ -152,7 +153,7 @@ NPCDbGenerator.AdditionalNpcAppearances = additionalNPCOutfitsMappings;
             return generatorValues['tag-based-items']?.filter(tbi => tbi.tags.some(tag => item.tags?.includes(tag)))
         }
 
-        const isIngredient = (item: Item, recipe: CookingRecipe): boolean => {
+        const isIngredient = (item: Item, recipe: CookingRecipe | ItemMixingRecipeData): boolean => {
             const tags = getGenericItems(item);
 
             return recipe.ingredients.some(ingredient => ingredient.item?.id === item?.id) || recipe.genericIngredients.some(genericIngredient => tags.find(tag => tag.key === genericIngredient.key))
@@ -188,6 +189,12 @@ NPCDbGenerator.AdditionalNpcAppearances = additionalNPCOutfitsMappings;
                 cookedFrom.push(...cookingRecipes[utensil].filter(recipe => recipe.item?.id === item.id));
                 usedToCook.push(...cookingRecipes[utensil].filter(recipe => isIngredient(item, recipe)));
             })
+
+            const mixingRecipes: ItemMixingRecipeData[] = generatorValues['underwater-seeds-item-mixing-data'] as ItemMixingRecipeData[] ?? [];
+
+
+            const mixedFrom: ItemMixingRecipeData[] = mixingRecipes.filter(recipe => recipe.item?.id === item.id);
+            const usedToMix: ItemMixingRecipeData[] = mixingRecipes.filter(recipe => isIngredient(item, recipe));
 
             const artisanResult: ItemProcessing[] = [];
             const artisanIngredient: ItemProcessing[] = [];
@@ -464,7 +471,9 @@ NPCDbGenerator.AdditionalNpcAppearances = additionalNPCOutfitsMappings;
                 chanceAsProcessResult: chanceAsProcessResult.length ? chanceAsProcessResult : undefined,
                 consumables: Object.keys(consumables).length ? consumables : undefined,
                 producedByAnimal,
-                enchantmentPoints
+                enchantmentPoints,
+                mixedFrom: mixedFrom.length ? mixedFrom : undefined,
+                usedToMix: usedToMix.length ? usedToMix : undefined,
             }
 
             generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, lang);

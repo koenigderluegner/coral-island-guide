@@ -109,7 +109,7 @@ export * from './lib/types/season.type';
 export * from './lib/types/shop-names.type';
 export * from './lib/types/treasure-hunt.type';
 export * from './lib/types/weather.type';
-export * from './lib/types/weather.type';
+export * from './lib/types/item-mixing-recipe-data.type';
 
 export * from './lib/dashboard/fish-dashboard-entry.type';
 export * from './lib/dashboard/birthday-dashboard-entry.type';

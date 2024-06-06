@@ -1,0 +1,84 @@
+<app-responsive-table>
+    @if (matDataSource) {
+        <table [dataSource]="matDataSource" mat-table matSort>
+            <ng-container matColumnDef="icon" sticky>
+                <td *matCellDef="let element" class="!pl-2 !pr-0  w-10 text-center icon-col " mat-cell>
+                    <app-item-icon [itemName]="element.item?.iconName"></app-item-icon>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="outputName">
+                <th *matHeaderCellDef [attr.colspan]="2" class="backdrop-blur-xl" mat-header-cell mat-sort-header>
+                    Output
+                </th>
+                <td *matCellDef="let element" class="text-col whitespace-nowrap"
+                    mat-cell>{{ element.item?.displayName }}
+                    ({{ element.amount }})
+                </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="ingredients">
+                <th *matHeaderCellDef mat-header-cell> Ingredients</th>
+                <td *matCellDef="let element" class="list-col" mat-cell>
+                    <app-table-item-list [itemList]="element |cookingRecipeIngredients"
+                                         class="mb-3"></app-table-item-list>
+                    @if (element.eitherOrIngredients.length) {
+
+                        <span class="text-black mt-1"> Either of the following</span>
+
+                        @for (ingredients of element.eitherOrIngredients; track ingredients; let last = $last) {
+
+                            <app-table-item-list [itemList]="ingredients" class="mb-3"></app-table-item-list>
+                            @if (!last) {
+                                <hr class="my-5"/>
+                            }
+
+                        }
+
+                    }
+
+                    @if (element.additionsToGenerics) {
+
+                        <span class="text-black mt-1"> The following counting as</span>
+
+                        @for (itemListItem of (element.additionsToGenerics | keyvalue); track itemListItem) {
+
+                            @for (item of (itemListItem.value | castToMinimalItemArray); track item) {
+
+                                <div class="flex justify-between mb-1">
+
+                                    @if (item) {
+                                        <div class="flex gap-x-3 items-center">
+                                            <app-item-icon [itemName]="item.iconName" class="!w-7"></app-item-icon>
+                                            <span class="whitespace-nowrap">{{ item.displayName }}</span>
+                                        </div>
+                                    }
+
+                                    <div class="ml-2 flex items-center whitespace-nowrap">as {{ itemListItem.key }}
+                                    </div>
+
+                                </div>
+
+                            }
+
+                        }
+
+
+                    }
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="sellPrice">
+                <th *matHeaderCellDef class="whitespace-nowrap" mat-header-cell mat-sort-header> Sell price</th>
+                <td *matCellDef="let element" class="text-col !text-right w-[1%]" mat-cell>
+                    <app-money [amount]="element.item.sellPrice"/>
+                </td>
+            </ng-container>
+
+
+            <tr *matHeaderRowDef="displayHeaderColumns; sticky: true" mat-header-row></tr>
+            <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+        </table>
+    }
+</app-responsive-table>
