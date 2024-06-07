@@ -1463,6 +1463,128 @@
           "ObjectName": "C_RequirementsConfig'DA_NPC_Merfolk_Marriage_Homecoming_SummerFallWinter_21'",
           "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/Diving/DA_NPC_Merfolk_Marriage_Homecoming_SummerFallWinter_21.2"
         }
+      },
+      "MARRIAGE_TreePlantingRunning": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": true,
+        "relationshipRequirement": "EC_RelationshipStatus::SPOUSE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
+        "festivalOverrides": [
+          "TreePlanting"
+        ],
+        "festivalStatesAllowed": [
+          "EC_FestivalState::RunningFestival"
+        ],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'DA_NPC_Merfolk_Marriage'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/Diving/DA_NPC_Merfolk_Marriage.1"
+        }
+      },
+      "MARRIAGE_AnimalFestivalRunning": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": true,
+        "relationshipRequirement": "EC_RelationshipStatus::SPOUSE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
+        "festivalOverrides": [
+          "AnimalFestival"
+        ],
+        "festivalStatesAllowed": [
+          "EC_FestivalState::RunningFestival"
+        ],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'DA_NPC_Merfolk_Marriage'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/Diving/DA_NPC_Merfolk_Marriage.1"
+        }
+      },
+      "MARRIAGE_MooncakeRunning": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": true,
+        "relationshipRequirement": "EC_RelationshipStatus::SPOUSE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [],
+        "festivalOverrides": [
+          "MooncakeFestival"
+        ],
+        "festivalStatesAllowed": [
+          "EC_FestivalState::RunningFestival"
+        ],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'DA_NPC_Merfolk_Marriage'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/Diving/DA_NPC_Merfolk_Marriage.1"
+        }
+      },
+      "MARRIAGE_Winter_17-21": {
+        "dateOverrides": [
+          {
+            "isValidOnSpecificDate": false,
+            "isValidIndefinitelyOnceStarted": false,
+            "random": false,
+            "startsFrom": {
+              "day": 17,
+              "season": "EC_Season::Winter",
+              "year": 1
+            },
+            "lastsTill": {
+              "day": 21,
+              "season": "EC_Season::Winter",
+              "year": 1
+            }
+          }
+        ],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::Annually",
+        "useRelationshipRequirement": true,
+        "relationshipRequirement": "EC_RelationshipStatus::SPOUSE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": []
+            }
+          }
+        ],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'DA_NPC_Merfolk_Marriage'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/Diving/DA_NPC_Merfolk_Marriage.1"
+        }
       }
     }
   }
