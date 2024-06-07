@@ -7,7 +7,7 @@ import { AddSpacesToPascalCasePipe } from "../../../pipes/add-spaces-to-pascal-c
 import { RouterLink } from "@angular/router";
 
 @Component({
-    selector: 'app-processor',
+    selector: 'app-processing',
     standalone: true,
     imports: [CommonModule, SharedModule, AddSpacesToPascalCasePipe, RouterLink],
     templateUrl: './processing.component.html'

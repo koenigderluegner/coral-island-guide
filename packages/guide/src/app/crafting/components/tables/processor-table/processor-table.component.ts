@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, inject, Input } from '@angular/core';
+import { booleanAttribute, Component, inject, input } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { ItemProcessing } from "@ci/data-types";
 import { DatabaseService } from "../../../../shared/services/database.service";
@@ -9,7 +9,7 @@ import { DatabaseService } from "../../../../shared/services/database.service";
 })
 export class ProcessorTableComponent extends BaseTableComponent<ItemProcessing> {
 
-    @Input({transform: booleanAttribute}) showProcessor = false
+    showProcessor = input(false, {transform: booleanAttribute})
     protected readonly BASE_DISPLAY_COLUMNS: string[] = [
         'icon',
         'outputName',
@@ -39,10 +39,10 @@ export class ProcessorTableComponent extends BaseTableComponent<ItemProcessing> 
         super.setupDataSource(dataSource);
 
         const utensilIndex = this.displayedColumns.indexOf('processor');
-        if (this.showProcessor && utensilIndex === -1) {
+        if (this.showProcessor() && utensilIndex === -1) {
             this.displayedColumns.splice(3, 0, 'processor');
             this.displayHeaderColumns = this.displayedColumns.filter(col => col !== 'icon');
-        } else if (!this.showProcessor && utensilIndex !== -1) {
+        } else if (!this.showProcessor() && utensilIndex !== -1) {
             this.displayedColumns.splice(utensilIndex, 1);
             this.displayHeaderColumns = this.displayedColumns.filter(col => col !== 'icon');
         }

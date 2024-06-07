@@ -1,0 +1,348 @@
+[
+  {
+    "Type": "BehaviorTree",
+    "Name": "BT_GiantWater1",
+    "Class": "UScriptClass'BehaviorTree'",
+    "Properties": {
+      "RootNode": {
+        "ObjectName": "BTComposite_Selector'BT_GiantWater1:BTComposite_Selector_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.1"
+      },
+      "BlackboardAsset": {
+        "ObjectName": "BlackboardData'BB_Giant'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BB_Giant.0"
+      }
+    }
+  },
+  {
+    "Type": "BTComposite_Selector",
+    "Name": "BTComposite_Selector_0",
+    "Outer": "BT_GiantWater1",
+    "Class": "UScriptClass'BTComposite_Selector'",
+    "Properties": {
+      "Children": [
+        {
+          "ChildComposite": {
+            "ObjectName": "BTComposite_Sequence'BT_GiantWater1:BTComposite_Sequence_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.3"
+          },
+          "ChildTask": null,
+          "Decorators": [
+            {
+              "ObjectName": "C_GiantAllowWateringDecorator'BT_GiantWater1:C_GiantAllowWateringDecorator_0'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.9"
+            }
+          ],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "C_GiantEvaluateWorkTask'BT_GiantWater1:C_GiantEvaluateWorkTask_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.11"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        }
+      ],
+      "NodeName": "Giant Activity",
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantWater1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.0"
+      }
+    }
+  },
+  {
+    "Type": "BTComposite_Selector",
+    "Name": "BTComposite_Selector_2",
+    "Outer": "BT_GiantWater1",
+    "Class": "UScriptClass'BTComposite_Selector'",
+    "Properties": {
+      "Children": [
+        {
+          "ChildComposite": {
+            "ObjectName": "BTComposite_Sequence'BT_GiantWater1:BTComposite_Sequence_6'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.4"
+          },
+          "ChildTask": null,
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "C_GiantEvaluateWateringTask'BT_GiantWater1:C_GiantEvaluateWateringTask_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.10"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        }
+      ],
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantWater1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantWater1:BTComposite_Sequence_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.3"
+      }
+    }
+  },
+  {
+    "Type": "BTComposite_Sequence",
+    "Name": "BTComposite_Sequence_0",
+    "Outer": "BT_GiantWater1",
+    "Class": "UScriptClass'BTComposite_Sequence'",
+    "Properties": {
+      "Children": [
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "C_GiantFindWateringTargetTask'BT_GiantWater1:C_GiantFindWateringTargetTask_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.12"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": {
+            "ObjectName": "BTComposite_Selector'BT_GiantWater1:BTComposite_Selector_2'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.2"
+          },
+          "ChildTask": null,
+          "Decorators": [],
+          "DecoratorOps": []
+        }
+      ],
+      "NodeName": "Water Plant",
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantWater1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Selector'BT_GiantWater1:BTComposite_Selector_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.1"
+      }
+    }
+  },
+  {
+    "Type": "BTComposite_Sequence",
+    "Name": "BTComposite_Sequence_6",
+    "Outer": "BT_GiantWater1",
+    "Class": "UScriptClass'BTComposite_Sequence'",
+    "Properties": {
+      "Children": [
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "BTTask_MoveTo'BT_GiantWater1:BTTask_MoveTo_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.6"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "BTTask_RotateToFaceBBEntry'BT_GiantWater1:BTTask_RotateToFaceBBEntry_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.8"
+          },
+          "Decorators": [
+            {
+              "ObjectName": "BTDecorator_TimeLimit'BT_GiantWater1:BTDecorator_TimeLimit_0'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.5"
+            }
+          ],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "BTTask_PlayAnimation'BT_GiantWater1:BTTask_PlayAnimation_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.7"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "C_GiantWateringPlantTask'BT_GiantWater1:C_GiantWateringPlantTask_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.13"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        }
+      ],
+      "NodeName": "Perform Watering",
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantWater1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Selector'BT_GiantWater1:BTComposite_Selector_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.2"
+      }
+    }
+  },
+  {
+    "Type": "BTDecorator_TimeLimit",
+    "Name": "BTDecorator_TimeLimit_0",
+    "Outer": "BT_GiantWater1",
+    "Class": "UScriptClass'BTDecorator_TimeLimit'",
+    "Properties": {
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantWater1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantWater1:BTComposite_Sequence_6'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.4"
+      }
+    }
+  },
+  {
+    "Type": "BTTask_MoveTo",
+    "Name": "BTTask_MoveTo_0",
+    "Outer": "BT_GiantWater1",
+    "Class": "UScriptClass'BTTask_MoveTo'",
+    "Properties": {
+      "bStopOnOverlapNeedsUpdate": false,
+      "BlackboardKey": {
+        "SelectedKeyName": "UnwateredTile"
+      },
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantWater1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantWater1:BTComposite_Sequence_6'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.4"
+      }
+    }
+  },
+  {
+    "Type": "BTTask_PlayAnimation",
+    "Name": "BTTask_PlayAnimation_0",
+    "Outer": "BT_GiantWater1",
+    "Class": "UScriptClass'BTTask_PlayAnimation'",
+    "Properties": {
+      "AnimationToPlay": {
+        "ObjectName": "AnimSequence'A_ChieftainCastSpell'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/A_ChieftainCastSpell.0"
+      },
+      "bIgnoreRestartSelf": true,
+      "NodeName": "Watering Anim",
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantWater1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantWater1:BTComposite_Sequence_6'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.4"
+      }
+    }
+  },
+  {
+    "Type": "BTTask_RotateToFaceBBEntry",
+    "Name": "BTTask_RotateToFaceBBEntry_0",
+    "Outer": "BT_GiantWater1",
+    "Class": "UScriptClass'BTTask_RotateToFaceBBEntry'",
+    "Properties": {
+      "BlackboardKey": {
+        "SelectedKeyName": "UnwateredTile"
+      },
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantWater1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantWater1:BTComposite_Sequence_6'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.4"
+      }
+    }
+  },
+  {
+    "Type": "C_GiantAllowWateringDecorator",
+    "Name": "C_GiantAllowWateringDecorator_0",
+    "Outer": "BT_GiantWater1",
+    "Class": "UScriptClass'C_GiantAllowWateringDecorator'",
+    "Properties": {
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantWater1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Selector'BT_GiantWater1:BTComposite_Selector_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.1"
+      }
+    }
+  },
+  {
+    "Type": "C_GiantEvaluateWateringTask",
+    "Name": "C_GiantEvaluateWateringTask_0",
+    "Outer": "BT_GiantWater1",
+    "Class": "UScriptClass'C_GiantEvaluateWateringTask'",
+    "Properties": {
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantWater1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Selector'BT_GiantWater1:BTComposite_Selector_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.2"
+      }
+    }
+  },
+  {
+    "Type": "C_GiantEvaluateWorkTask",
+    "Name": "C_GiantEvaluateWorkTask_0",
+    "Outer": "BT_GiantWater1",
+    "Class": "UScriptClass'C_GiantEvaluateWorkTask'",
+    "Properties": {
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantWater1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Selector'BT_GiantWater1:BTComposite_Selector_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.1"
+      }
+    }
+  },
+  {
+    "Type": "C_GiantFindWateringTargetTask",
+    "Name": "C_GiantFindWateringTargetTask_0",
+    "Outer": "BT_GiantWater1",
+    "Class": "UScriptClass'C_GiantFindWateringTargetTask'",
+    "Properties": {
+      "WateringTargetKey": {
+        "SelectedKeyName": "UnwateredTile"
+      },
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantWater1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantWater1:BTComposite_Sequence_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.3"
+      }
+    }
+  },
+  {
+    "Type": "C_GiantWateringPlantTask",
+    "Name": "C_GiantWateringPlantTask_0",
+    "Outer": "BT_GiantWater1",
+    "Class": "UScriptClass'C_GiantWateringPlantTask'",
+    "Properties": {
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_GiantWater1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_GiantWater1:BTComposite_Sequence_6'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/Prototype/BT_GiantWater1.4"
+      }
+    }
+  }
+]

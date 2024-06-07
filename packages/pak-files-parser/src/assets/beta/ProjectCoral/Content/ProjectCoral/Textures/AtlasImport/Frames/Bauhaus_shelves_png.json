@@ -1,0 +1,113 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_2",
+    "Outer": "Bauhaus_shelves_png",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.5,
+              "Y": 0.0,
+              "Z": -0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 111.0,
+            "Y": 10.0,
+            "Z": 97.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "054875CC4A8BFE2311654D9A3885DED7"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Bauhaus_shelves_png",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 1024.0,
+        "Y": 256.0
+      },
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'TP_AtlasItems_6'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_AtlasItems_6.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Bauhaus_shelves_png:BodySetup_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Bauhaus_shelves_png.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 56.0,
+          "Y": 48.0,
+          "Z": 0.27929688,
+          "W": 0.06640625
+        },
+        {
+          "X": -55.0,
+          "Y": 48.0,
+          "Z": 0.25219727,
+          "W": 0.06640625
+        },
+        {
+          "X": -55.0,
+          "Y": -49.0,
+          "Z": 0.25219727,
+          "W": 0.09008789
+        },
+        {
+          "X": 56.0,
+          "Y": -49.0,
+          "Z": 0.27929688,
+          "W": 0.09008789
+        },
+        {
+          "X": 56.0,
+          "Y": 48.0,
+          "Z": 0.27929688,
+          "W": 0.06640625
+        },
+        {
+          "X": -55.0,
+          "Y": -49.0,
+          "Z": 0.25219727,
+          "W": 0.09008789
+        }
+      ]
+    }
+  }
+]

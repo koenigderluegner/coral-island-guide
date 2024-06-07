@@ -1,0 +1,2294 @@
+[
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_ABP_HairStyle44",
+    "Outer": "ABP_HairStyle44_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_Event_DeltaTimeX",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsAnyMontagePlaying_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPlayerAnimInstance_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'C_PlayerAnimInstance'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsABP_Characters_V_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "AnimBlueprintGeneratedClass'ABP_Characters_v2_C'",
+          "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/ABP_Characters_v2.105"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetPhysicsSetting_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 40,
+        "Struct": {
+          "ObjectName": "ScriptStruct'C_KawaiiPhysicsSetting'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "BlueprintUpdateAnimation",
+    "Outer": "ABP_HairStyle44_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'AnimInstance:BlueprintUpdateAnimation'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "FloatProperty",
+        "Name": "DeltaTimeX",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "AnimGraph",
+    "Outer": "ABP_HairStyle44_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraph",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "Parm | OutParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PoseLink'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "AnimBlueprintGeneratedClass",
+    "Name": "ABP_HairStyle44_C",
+    "Class": "UScriptClass'AnimBlueprintGeneratedClass'",
+    "Properties": {
+      "BakedStateMachines": [
+        {
+          "MachineName": "Fainted",
+          "InitialState": 0,
+          "States": [
+            {
+              "StateName": "Idle",
+              "Transitions": [
+                {
+                  "CanTakeDelegateIndex": 5,
+                  "CustomResultNodeIndex": -1,
+                  "TransitionIndex": 0,
+                  "bDesiredTransitionReturnValue": true,
+                  "bAutomaticRemainingTimeRule": false,
+                  "PoseEvaluatorLinks": []
+                }
+              ],
+              "StateRootNodeIndex": 1,
+              "StartNotify": -1,
+              "EndNotify": -1,
+              "FullyBlendedNotify": -1,
+              "bIsAConduit": false,
+              "EntryRuleNodeIndex": -1,
+              "PlayerNodeIndices": [
+                2
+              ],
+              "LayerNodeIndices": [],
+              "bAlwaysResetOnEntry": false
+            },
+            {
+              "StateName": "walk",
+              "Transitions": [
+                {
+                  "CanTakeDelegateIndex": 6,
+                  "CustomResultNodeIndex": -1,
+                  "TransitionIndex": 1,
+                  "bDesiredTransitionReturnValue": true,
+                  "bAutomaticRemainingTimeRule": false,
+                  "PoseEvaluatorLinks": []
+                }
+              ],
+              "StateRootNodeIndex": 3,
+              "StartNotify": -1,
+              "EndNotify": -1,
+              "FullyBlendedNotify": -1,
+              "bIsAConduit": false,
+              "EntryRuleNodeIndex": -1,
+              "PlayerNodeIndices": [
+                4
+              ],
+              "LayerNodeIndices": [],
+              "bAlwaysResetOnEntry": false
+            }
+          ],
+          "Transitions": [
+            {
+              "PreviousState": 0,
+              "NextState": 1,
+              "CrossfadeDuration": 0.2,
+              "StartNotify": -1,
+              "EndNotify": -1,
+              "InterruptNotify": -1,
+              "BlendMode": "EAlphaBlendOption::HermiteCubic",
+              "CustomCurve": null,
+              "BlendProfile": null,
+              "LogicType": "ETransitionLogicType::TLT_StandardBlend",
+              "StateName": "None"
+            },
+            {
+              "PreviousState": 1,
+              "NextState": 0,
+              "CrossfadeDuration": 0.2,
+              "StartNotify": -1,
+              "EndNotify": -1,
+              "InterruptNotify": -1,
+              "BlendMode": "EAlphaBlendOption::HermiteCubic",
+              "CustomCurve": null,
+              "BlendProfile": null,
+              "LogicType": "ETransitionLogicType::TLT_StandardBlend",
+              "StateName": "None"
+            }
+          ]
+        },
+        {
+          "MachineName": "New State Machine",
+          "InitialState": 0,
+          "States": [
+            {
+              "StateName": "State",
+              "Transitions": [],
+              "StateRootNodeIndex": 9,
+              "StartNotify": -1,
+              "EndNotify": -1,
+              "FullyBlendedNotify": -1,
+              "bIsAConduit": false,
+              "EntryRuleNodeIndex": -1,
+              "PlayerNodeIndices": [],
+              "LayerNodeIndices": [],
+              "bAlwaysResetOnEntry": false
+            }
+          ],
+          "Transitions": []
+        }
+      ],
+      "TargetSkeleton": {
+        "ObjectName": "Skeleton'SKEL_Hair'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/SK/SKEL/SKEL_Hair.0"
+      },
+      "OrderedSavedPoseIndicesMap": [
+        {
+          "AnimGraph": {
+            "OrderedSavedPoseNodeIndices": [
+              15
+            ]
+          }
+        }
+      ],
+      "EvaluateGraphExposedInputs": [
+        {
+          "BoundFunction": "None",
+          "CopyRecords": [
+            {
+              "CopyIndex": 0,
+              "PostCopyOperation": "EPostCopyOperation::None"
+            }
+          ],
+          "Function": null,
+          "ValueHandlerNodeProperty": {
+            "Path": [
+              "AnimGraphNode_BlendListByBool"
+            ],
+            "ResolvedOwner": {
+              "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+            }
+          }
+        },
+        {
+          "BoundFunction": "None",
+          "CopyRecords": [
+            {
+              "CopyIndex": 1,
+              "PostCopyOperation": "EPostCopyOperation::None"
+            },
+            {
+              "CopyIndex": 2,
+              "PostCopyOperation": "EPostCopyOperation::None"
+            }
+          ],
+          "Function": null,
+          "ValueHandlerNodeProperty": {
+            "Path": [
+              "AnimGraphNode_KawaiiPhysics"
+            ],
+            "ResolvedOwner": {
+              "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+            }
+          }
+        },
+        {
+          "BoundFunction": "None",
+          "CopyRecords": [
+            {
+              "CopyIndex": 3,
+              "PostCopyOperation": "EPostCopyOperation::None"
+            },
+            {
+              "CopyIndex": 4,
+              "PostCopyOperation": "EPostCopyOperation::None"
+            }
+          ],
+          "Function": null,
+          "ValueHandlerNodeProperty": {
+            "Path": [
+              "AnimGraphNode_KawaiiPhysics_1"
+            ],
+            "ResolvedOwner": {
+              "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+            }
+          }
+        },
+        {
+          "BoundFunction": "None",
+          "CopyRecords": [
+            {
+              "CopyIndex": 5,
+              "PostCopyOperation": "EPostCopyOperation::None"
+            },
+            {
+              "CopyIndex": 6,
+              "PostCopyOperation": "EPostCopyOperation::None"
+            }
+          ],
+          "Function": null,
+          "ValueHandlerNodeProperty": {
+            "Path": [
+              "AnimGraphNode_KawaiiPhysics_2"
+            ],
+            "ResolvedOwner": {
+              "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+            }
+          }
+        },
+        {
+          "BoundFunction": "None",
+          "CopyRecords": [
+            {
+              "CopyIndex": 7,
+              "PostCopyOperation": "EPostCopyOperation::None"
+            }
+          ],
+          "Function": null,
+          "ValueHandlerNodeProperty": {
+            "Path": [
+              "AnimGraphNode_TransitionResult"
+            ],
+            "ResolvedOwner": {
+              "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+            }
+          }
+        },
+        {
+          "BoundFunction": "None",
+          "CopyRecords": [
+            {
+              "CopyIndex": 8,
+              "PostCopyOperation": "EPostCopyOperation::LogicalNegateBool"
+            }
+          ],
+          "Function": null,
+          "ValueHandlerNodeProperty": {
+            "Path": [
+              "AnimGraphNode_TransitionResult_1"
+            ],
+            "ResolvedOwner": {
+              "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+            }
+          }
+        }
+      ],
+      "PropertyAccessLibrary": {
+        "PathSegments": [
+          {
+            "Name": "Is Exhausted",
+            "Struct": null,
+            "Property": {
+              "Path": [
+                "Is Exhausted"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 2
+          },
+          {
+            "Name": "AnimGraphNode_BlendListByBool",
+            "Struct": {
+              "ObjectName": "ScriptStruct'AnimNode_BlendListByBool'",
+              "ObjectPath": "/Script/AnimGraphRuntime"
+            },
+            "Property": {
+              "Path": [
+                "AnimGraphNode_BlendListByBool"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 1
+          },
+          {
+            "Name": "bActiveValue",
+            "Struct": null,
+            "Property": {
+              "Path": [
+                "bActiveValue"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "ScriptStruct'AnimNode_BlendListByBool'",
+                "ObjectPath": "/Script/AnimGraphRuntime"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 2
+          },
+          {
+            "Name": "Physics Setting",
+            "Struct": null,
+            "Property": {
+              "Path": [
+                "Physics Setting"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 2
+          },
+          {
+            "Name": "AnimGraphNode_KawaiiPhysics",
+            "Struct": {
+              "ObjectName": "ScriptStruct'AnimNode_KawaiiPhysics'",
+              "ObjectPath": "/Script/KawaiiPhysics"
+            },
+            "Property": {
+              "Path": [
+                "AnimGraphNode_KawaiiPhysics"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 1
+          },
+          {
+            "Name": "PhysicsSettings",
+            "Struct": null,
+            "Property": {
+              "Path": [
+                "PhysicsSettings"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "ScriptStruct'AnimNode_KawaiiPhysics'",
+                "ObjectPath": "/Script/KawaiiPhysics"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 2
+          },
+          {
+            "Name": "Gravity",
+            "Struct": null,
+            "Property": {
+              "Path": [
+                "Gravity"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 2
+          },
+          {
+            "Name": "AnimGraphNode_KawaiiPhysics",
+            "Struct": {
+              "ObjectName": "ScriptStruct'AnimNode_KawaiiPhysics'",
+              "ObjectPath": "/Script/KawaiiPhysics"
+            },
+            "Property": {
+              "Path": [
+                "AnimGraphNode_KawaiiPhysics"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 1
+          },
+          {
+            "Name": "Gravity",
+            "Struct": null,
+            "Property": {
+              "Path": [
+                "Gravity"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "ScriptStruct'AnimNode_KawaiiPhysics'",
+                "ObjectPath": "/Script/KawaiiPhysics"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 2
+          },
+          {
+            "Name": "Physics Setting",
+            "Struct": null,
+            "Property": {
+              "Path": [
+                "Physics Setting"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 2
+          },
+          {
+            "Name": "AnimGraphNode_KawaiiPhysics_1",
+            "Struct": {
+              "ObjectName": "ScriptStruct'AnimNode_KawaiiPhysics'",
+              "ObjectPath": "/Script/KawaiiPhysics"
+            },
+            "Property": {
+              "Path": [
+                "AnimGraphNode_KawaiiPhysics_1"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 1
+          },
+          {
+            "Name": "PhysicsSettings",
+            "Struct": null,
+            "Property": {
+              "Path": [
+                "PhysicsSettings"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "ScriptStruct'AnimNode_KawaiiPhysics'",
+                "ObjectPath": "/Script/KawaiiPhysics"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 2
+          },
+          {
+            "Name": "Gravity",
+            "Struct": null,
+            "Property": {
+              "Path": [
+                "Gravity"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 2
+          },
+          {
+            "Name": "AnimGraphNode_KawaiiPhysics_1",
+            "Struct": {
+              "ObjectName": "ScriptStruct'AnimNode_KawaiiPhysics'",
+              "ObjectPath": "/Script/KawaiiPhysics"
+            },
+            "Property": {
+              "Path": [
+                "AnimGraphNode_KawaiiPhysics_1"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 1
+          },
+          {
+            "Name": "Gravity",
+            "Struct": null,
+            "Property": {
+              "Path": [
+                "Gravity"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "ScriptStruct'AnimNode_KawaiiPhysics'",
+                "ObjectPath": "/Script/KawaiiPhysics"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 2
+          },
+          {
+            "Name": "Physics Setting",
+            "Struct": null,
+            "Property": {
+              "Path": [
+                "Physics Setting"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 2
+          },
+          {
+            "Name": "AnimGraphNode_KawaiiPhysics_2",
+            "Struct": {
+              "ObjectName": "ScriptStruct'AnimNode_KawaiiPhysics'",
+              "ObjectPath": "/Script/KawaiiPhysics"
+            },
+            "Property": {
+              "Path": [
+                "AnimGraphNode_KawaiiPhysics_2"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 1
+          },
+          {
+            "Name": "PhysicsSettings",
+            "Struct": null,
+            "Property": {
+              "Path": [
+                "PhysicsSettings"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "ScriptStruct'AnimNode_KawaiiPhysics'",
+                "ObjectPath": "/Script/KawaiiPhysics"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 2
+          },
+          {
+            "Name": "Gravity",
+            "Struct": null,
+            "Property": {
+              "Path": [
+                "Gravity"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 2
+          },
+          {
+            "Name": "AnimGraphNode_KawaiiPhysics_2",
+            "Struct": {
+              "ObjectName": "ScriptStruct'AnimNode_KawaiiPhysics'",
+              "ObjectPath": "/Script/KawaiiPhysics"
+            },
+            "Property": {
+              "Path": [
+                "AnimGraphNode_KawaiiPhysics_2"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 1
+          },
+          {
+            "Name": "Gravity",
+            "Struct": null,
+            "Property": {
+              "Path": [
+                "Gravity"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "ScriptStruct'AnimNode_KawaiiPhysics'",
+                "ObjectPath": "/Script/KawaiiPhysics"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 2
+          },
+          {
+            "Name": "Can Run",
+            "Struct": null,
+            "Property": {
+              "Path": [
+                "Can Run"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 2
+          },
+          {
+            "Name": "AnimGraphNode_TransitionResult",
+            "Struct": {
+              "ObjectName": "ScriptStruct'AnimNode_TransitionResult'",
+              "ObjectPath": "/Script/Engine"
+            },
+            "Property": {
+              "Path": [
+                "AnimGraphNode_TransitionResult"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 1
+          },
+          {
+            "Name": "bCanEnterTransition",
+            "Struct": null,
+            "Property": {
+              "Path": [
+                "bCanEnterTransition"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "ScriptStruct'AnimNode_TransitionResult'",
+                "ObjectPath": "/Script/Engine"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 2
+          },
+          {
+            "Name": "Can Run",
+            "Struct": null,
+            "Property": {
+              "Path": [
+                "Can Run"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 2
+          },
+          {
+            "Name": "AnimGraphNode_TransitionResult_1",
+            "Struct": {
+              "ObjectName": "ScriptStruct'AnimNode_TransitionResult'",
+              "ObjectPath": "/Script/Engine"
+            },
+            "Property": {
+              "Path": [
+                "AnimGraphNode_TransitionResult_1"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "AnimBlueprintGeneratedClass'ABP_HairStyle44_C'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.3"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 1
+          },
+          {
+            "Name": "bCanEnterTransition",
+            "Struct": null,
+            "Property": {
+              "Path": [
+                "bCanEnterTransition"
+              ],
+              "ResolvedOwner": {
+                "ObjectName": "ScriptStruct'AnimNode_TransitionResult'",
+                "ObjectPath": "/Script/Engine"
+              }
+            },
+            "Function": null,
+            "ArrayIndex": -1,
+            "Flags": 2
+          }
+        ],
+        "SrcPaths": [
+          {
+            "PathSegmentStartIndex": 0,
+            "PathSegmentCount": 1,
+            "bHasEvents": false
+          },
+          {
+            "PathSegmentStartIndex": 3,
+            "PathSegmentCount": 1,
+            "bHasEvents": false
+          },
+          {
+            "PathSegmentStartIndex": 6,
+            "PathSegmentCount": 1,
+            "bHasEvents": false
+          },
+          {
+            "PathSegmentStartIndex": 9,
+            "PathSegmentCount": 1,
+            "bHasEvents": false
+          },
+          {
+            "PathSegmentStartIndex": 12,
+            "PathSegmentCount": 1,
+            "bHasEvents": false
+          },
+          {
+            "PathSegmentStartIndex": 15,
+            "PathSegmentCount": 1,
+            "bHasEvents": false
+          },
+          {
+            "PathSegmentStartIndex": 18,
+            "PathSegmentCount": 1,
+            "bHasEvents": false
+          },
+          {
+            "PathSegmentStartIndex": 21,
+            "PathSegmentCount": 1,
+            "bHasEvents": false
+          },
+          {
+            "PathSegmentStartIndex": 24,
+            "PathSegmentCount": 1,
+            "bHasEvents": false
+          }
+        ],
+        "DestPaths": [
+          {
+            "PathSegmentStartIndex": 1,
+            "PathSegmentCount": 2,
+            "bHasEvents": false
+          },
+          {
+            "PathSegmentStartIndex": 4,
+            "PathSegmentCount": 2,
+            "bHasEvents": false
+          },
+          {
+            "PathSegmentStartIndex": 7,
+            "PathSegmentCount": 2,
+            "bHasEvents": false
+          },
+          {
+            "PathSegmentStartIndex": 10,
+            "PathSegmentCount": 2,
+            "bHasEvents": false
+          },
+          {
+            "PathSegmentStartIndex": 13,
+            "PathSegmentCount": 2,
+            "bHasEvents": false
+          },
+          {
+            "PathSegmentStartIndex": 16,
+            "PathSegmentCount": 2,
+            "bHasEvents": false
+          },
+          {
+            "PathSegmentStartIndex": 19,
+            "PathSegmentCount": 2,
+            "bHasEvents": false
+          },
+          {
+            "PathSegmentStartIndex": 22,
+            "PathSegmentCount": 2,
+            "bHasEvents": false
+          },
+          {
+            "PathSegmentStartIndex": 25,
+            "PathSegmentCount": 2,
+            "bHasEvents": false
+          }
+        ],
+        "CopyBatches": {
+          "Copies": [
+            {
+              "AccessIndex": 0,
+              "DestAccessStartIndex": 0,
+              "DestAccessEndIndex": 1,
+              "Type": "EPropertyAccessCopyType::Bool"
+            },
+            {
+              "AccessIndex": 1,
+              "DestAccessStartIndex": 1,
+              "DestAccessEndIndex": 2,
+              "Type": "EPropertyAccessCopyType::Struct"
+            },
+            {
+              "AccessIndex": 2,
+              "DestAccessStartIndex": 2,
+              "DestAccessEndIndex": 3,
+              "Type": "EPropertyAccessCopyType::Struct"
+            },
+            {
+              "AccessIndex": 3,
+              "DestAccessStartIndex": 3,
+              "DestAccessEndIndex": 4,
+              "Type": "EPropertyAccessCopyType::Struct"
+            },
+            {
+              "AccessIndex": 4,
+              "DestAccessStartIndex": 4,
+              "DestAccessEndIndex": 5,
+              "Type": "EPropertyAccessCopyType::Struct"
+            },
+            {
+              "AccessIndex": 5,
+              "DestAccessStartIndex": 5,
+              "DestAccessEndIndex": 6,
+              "Type": "EPropertyAccessCopyType::Struct"
+            },
+            {
+              "AccessIndex": 6,
+              "DestAccessStartIndex": 6,
+              "DestAccessEndIndex": 7,
+              "Type": "EPropertyAccessCopyType::Struct"
+            },
+            {
+              "AccessIndex": 7,
+              "DestAccessStartIndex": 7,
+              "DestAccessEndIndex": 8,
+              "Type": "EPropertyAccessCopyType::Bool"
+            },
+            {
+              "AccessIndex": 8,
+              "DestAccessStartIndex": 8,
+              "DestAccessEndIndex": 9,
+              "Type": "EPropertyAccessCopyType::Bool"
+            }
+          ]
+        }
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'ABP_HairStyle44_C:ExecuteUbergraph_ABP_HairStyle44'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.0"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'AnimInstance'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'ABP_HairStyle44_C:AnimGraph'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.2"
+      },
+      {
+        "ObjectName": "Function'ABP_HairStyle44_C:BlueprintUpdateAnimation'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.1"
+      },
+      {
+        "ObjectName": "Function'ABP_HairStyle44_C:ExecuteUbergraph_ABP_HairStyle44'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.0"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_KawaiiPhysics_2",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 688,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_KawaiiPhysics'",
+          "ObjectPath": "/Script/KawaiiPhysics"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_LocalToComponentSpace_3",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 40,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_ConvertLocalToComponentSpace'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_ComponentToLocalSpace_3",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 40,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_ConvertComponentToLocalSpace'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_KawaiiPhysics_1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 688,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_KawaiiPhysics'",
+          "ObjectPath": "/Script/KawaiiPhysics"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_KawaiiPhysics",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 688,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_KawaiiPhysics'",
+          "ObjectPath": "/Script/KawaiiPhysics"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_BlendListByBool",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 160,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_BlendListByBool'",
+          "ObjectPath": "/Script/AnimGraphRuntime"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_ComponentToLocalSpace_2",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 40,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_ConvertComponentToLocalSpace'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_LocalToComponentSpace_2",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 40,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_ConvertLocalToComponentSpace'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_ComponentToLocalSpace_1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 40,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_ConvertComponentToLocalSpace'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_SaveCachedPose",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 352,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_SaveCachedPose'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_ComponentToLocalSpace",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 40,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_ConvertComponentToLocalSpace'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_UseCachedPose",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 56,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_UseCachedPose'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_LocalToComponentSpace_1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 40,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_ConvertLocalToComponentSpace'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_Slot",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 88,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_Slot'",
+          "ObjectPath": "/Script/AnimGraphRuntime"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_LocalToComponentSpace",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 40,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_ConvertLocalToComponentSpace'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_StateResult_2",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 64,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_StateResult'",
+          "ObjectPath": "/Script/AnimGraphRuntime"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_StateMachine_1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 176,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_StateMachine'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_Root",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 64,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_Root'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_TransitionResult_1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 40,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_TransitionResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_TransitionResult",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 40,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_TransitionResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_SequencePlayer_1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 136,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_SequencePlayer'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_StateResult_1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 64,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_StateResult'",
+          "ObjectPath": "/Script/AnimGraphRuntime"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_SequencePlayer",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 136,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_SequencePlayer'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_StateResult",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 64,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_StateResult'",
+          "ObjectPath": "/Script/AnimGraphRuntime"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnimGraphNode_StateMachine",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 176,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNode_StateMachine'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Physics Setting",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'KawaiiPhysicsSettings'",
+          "ObjectPath": "/Script/KawaiiPhysics"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Gravity",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "Alpha",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Player_Anim_Instance",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "AnimBlueprintGeneratedClass'ABP_Characters_v2_C'",
+          "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/ABP_Characters_v2.105"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BP_PlayerChar",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnTemplate | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_PlayerCharacter_C'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/_Characters/BP_PlayerCharacter.31"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "Is Exhausted",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "Can Run",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "SetProperty",
+        "Name": "Check_Montage",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 80,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "ElementProp": {
+          "Type": "ObjectProperty",
+          "Name": "Check_Montage",
+          "Flags": "RF_Public",
+          "ElementSize": 8,
+          "PropertyClass": {
+            "ObjectName": "Class'AnimMontage'",
+            "ObjectPath": "/Script/Engine"
+          }
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_ABP_HairStyle44": {
+        "ObjectName": "Function'ABP_HairStyle44_C:ExecuteUbergraph_ABP_HairStyle44'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.0"
+      },
+      "BlueprintUpdateAnimation": {
+        "ObjectName": "Function'ABP_HairStyle44_C:BlueprintUpdateAnimation'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.1"
+      },
+      "AnimGraph": {
+        "ObjectName": "Function'ABP_HairStyle44_C:AnimGraph'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.2"
+      }
+    },
+    "ClassFlags": "CLASS_Transient | CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'SkeletalMeshComponent'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "ABP_HairStyle44_C'Default__ABP_HairStyle44_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.4"
+    }
+  },
+  {
+    "Type": "ABP_HairStyle44_C",
+    "Name": "Default__ABP_HairStyle44_C",
+    "Class": "AnimBlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/ABP/ABP_HairStyle44.ABP_HairStyle44_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "AnimGraphNode_KawaiiPhysics_2": {
+        "RootBone": {
+          "BoneName": "back_hair2_M"
+        },
+        "ExcludeBones": [],
+        "TargetFramerate": 60,
+        "OverrideTargetFramerate": false,
+        "PhysicsSettings": {
+          "Damping": 0.1,
+          "WorldDampingLocation": 0.8,
+          "WorldDampingRotation": 0.8,
+          "Stiffness": 0.05,
+          "Radius": 3.0,
+          "LimitAngle": 0.0
+        },
+        "DampingCurve": null,
+        "WorldDampingLocationCurve": null,
+        "WorldDampingRotationCurve": null,
+        "StiffnessCurve": null,
+        "RadiusCurve": null,
+        "LimitAngleCurve": null,
+        "bUpdatePhysicsSettingsInGame": true,
+        "DummyBoneLength": 15.0,
+        "BoneForwardAxis": "EBoneForwardAxis::Y_Positive",
+        "PlanarConstraint": "EPlanarConstraint::None",
+        "SphericalLimits": [
+          {
+            "Radius": 15.0,
+            "LimitType": "ESphericalLimitType::Outer",
+            "DrivingBone": {
+              "BoneName": "Root_Hair_Jnt"
+            },
+            "OffsetLocation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "OffsetRotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "Location": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0,
+              "W": 1.0,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            }
+          }
+        ],
+        "CapsuleLimits": [
+          {
+            "Radius": 16.0,
+            "Length": 62.0,
+            "DrivingBone": {
+              "BoneName": "Root_Hair_Jnt"
+            },
+            "OffsetLocation": {
+              "X": 1.2421223,
+              "Y": 23.224873,
+              "Z": -4.1913667
+            },
+            "OffsetRotation": {
+              "Pitch": -88.52673,
+              "Yaw": -25.841572,
+              "Roll": 26.353493
+            },
+            "Location": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0,
+              "W": 1.0,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            }
+          },
+          {
+            "Radius": 16.0,
+            "Length": 16.5,
+            "DrivingBone": {
+              "BoneName": "Root_Hair_Jnt"
+            },
+            "OffsetLocation": {
+              "X": 0.0,
+              "Y": 0.329069,
+              "Z": 2.115317
+            },
+            "OffsetRotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 98.84235
+            },
+            "Location": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0,
+              "W": 1.0,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            }
+          },
+          {
+            "Radius": 16.75,
+            "Length": 35.249847,
+            "DrivingBone": {
+              "BoneName": "Root_Hair_Jnt"
+            },
+            "OffsetLocation": {
+              "X": -0.001159668,
+              "Y": 58.380226,
+              "Z": -10.259274
+            },
+            "OffsetRotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 92.79464
+            },
+            "Location": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0,
+              "W": 1.0,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            }
+          }
+        ],
+        "PlanarLimits": [],
+        "LimitsDataAsset": null,
+        "SphericalLimitsData": [],
+        "CapsuleLimitsData": [],
+        "PlanarLimitsData": [],
+        "TeleportDistanceThreshold": 300.0,
+        "TeleportRotationThreshold": 10.0,
+        "Gravity": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "bEnableWind": false,
+        "WindScale": 1.0,
+        "ModifyBones": [],
+        "TotalBoneLength": 0.0,
+        "PreSkelCompTransform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 1.0,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "Scale3D": {
+            "X": 1.0,
+            "Y": 1.0,
+            "Z": 1.0
+          }
+        },
+        "bInitPhysicsSettings": false,
+        "ComponentPose": {
+          "LinkID": 12
+        },
+        "LODThreshold": -1,
+        "ActualAlpha": 0.0,
+        "AlphaInputType": "EAnimAlphaInputType::Float",
+        "bAlphaBoolEnabled": true,
+        "Alpha": 1.0,
+        "AlphaScaleBias": {
+          "Scale": 1.0,
+          "Bias": 0.0
+        },
+        "AlphaBoolBlend": {
+          "BlendInTime": 0.0,
+          "BlendOutTime": 0.0,
+          "BlendOption": "EAlphaBlendOption::Linear",
+          "bInitialized": false,
+          "CustomCurve": null,
+          "AlphaBlend": {
+            "CustomCurve": null,
+            "BlendTime": 0.2,
+            "BlendOption": "EAlphaBlendOption::Linear"
+          }
+        },
+        "AlphaCurveName": "None",
+        "AlphaScaleBiasClamp": {
+          "bMapRange": false,
+          "bClampResult": false,
+          "bInterpResult": false,
+          "InRange": {
+            "Min": 0.0,
+            "Max": 1.0
+          },
+          "OutRange": {
+            "Min": 0.0,
+            "Max": 1.0
+          },
+          "Scale": 1.0,
+          "Bias": 0.0,
+          "ClampMin": 0.0,
+          "ClampMax": 1.0,
+          "InterpSpeedIncreasing": 10.0,
+          "InterpSpeedDecreasing": 10.0
+        }
+      },
+      "AnimGraphNode_LocalToComponentSpace_3": {
+        "LocalPose": {
+          "LinkID": 13
+        }
+      },
+      "AnimGraphNode_ComponentToLocalSpace_3": {
+        "ComponentPose": {
+          "LinkID": 7
+        }
+      },
+      "AnimGraphNode_KawaiiPhysics_1": {
+        "RootBone": {
+          "BoneName": "r_hair_side2_R"
+        },
+        "ExcludeBones": [],
+        "TargetFramerate": 60,
+        "OverrideTargetFramerate": false,
+        "PhysicsSettings": {
+          "Damping": 0.1,
+          "WorldDampingLocation": 0.8,
+          "WorldDampingRotation": 0.8,
+          "Stiffness": 0.05,
+          "Radius": 3.0,
+          "LimitAngle": 0.0
+        },
+        "DampingCurve": null,
+        "WorldDampingLocationCurve": null,
+        "WorldDampingRotationCurve": null,
+        "StiffnessCurve": null,
+        "RadiusCurve": null,
+        "LimitAngleCurve": null,
+        "bUpdatePhysicsSettingsInGame": true,
+        "DummyBoneLength": 15.0,
+        "BoneForwardAxis": "EBoneForwardAxis::Y_Positive",
+        "PlanarConstraint": "EPlanarConstraint::None",
+        "SphericalLimits": [
+          {
+            "Radius": 14.463845,
+            "LimitType": "ESphericalLimitType::Outer",
+            "DrivingBone": {
+              "BoneName": "Root_Hair_Jnt"
+            },
+            "OffsetLocation": {
+              "X": -3.1E-05,
+              "Y": -14.262388,
+              "Z": 3.8207698
+            },
+            "OffsetRotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "Location": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0,
+              "W": 1.0,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            }
+          }
+        ],
+        "CapsuleLimits": [
+          {
+            "Radius": 13.429338,
+            "Length": 30.83967,
+            "DrivingBone": {
+              "BoneName": "Root_Hair_Jnt"
+            },
+            "OffsetLocation": {
+              "X": 1.1655027,
+              "Y": 21.493134,
+              "Z": -10.524001
+            },
+            "OffsetRotation": {
+              "Pitch": -85.0712,
+              "Yaw": -7.130921,
+              "Roll": 7.6637783
+            },
+            "Location": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0,
+              "W": 1.0,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            }
+          },
+          {
+            "Radius": 12.693256,
+            "Length": 36.75999,
+            "DrivingBone": {
+              "BoneName": "Root_Hair_Jnt"
+            },
+            "OffsetLocation": {
+              "X": -3.4850655,
+              "Y": 23.592697,
+              "Z": 10.945058
+            },
+            "OffsetRotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 83.842285
+            },
+            "Location": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0,
+              "W": 1.0,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            }
+          }
+        ],
+        "PlanarLimits": [],
+        "LimitsDataAsset": null,
+        "SphericalLimitsData": [],
+        "CapsuleLimitsData": [],
+        "PlanarLimitsData": [],
+        "TeleportDistanceThreshold": 300.0,
+        "TeleportRotationThreshold": 10.0,
+        "Gravity": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "bEnableWind": false,
+        "WindScale": 1.0,
+        "ModifyBones": [],
+        "TotalBoneLength": 0.0,
+        "PreSkelCompTransform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 1.0,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "Scale3D": {
+            "X": 1.0,
+            "Y": 1.0,
+            "Z": 1.0
+          }
+        },
+        "bInitPhysicsSettings": false,
+        "ComponentPose": {
+          "LinkID": 0
+        },
+        "LODThreshold": -1,
+        "ActualAlpha": 0.0,
+        "AlphaInputType": "EAnimAlphaInputType::Float",
+        "bAlphaBoolEnabled": true,
+        "Alpha": 1.0,
+        "AlphaScaleBias": {
+          "Scale": 1.0,
+          "Bias": 0.0
+        },
+        "AlphaBoolBlend": {
+          "BlendInTime": 0.0,
+          "BlendOutTime": 0.0,
+          "BlendOption": "EAlphaBlendOption::Linear",
+          "bInitialized": false,
+          "CustomCurve": null,
+          "AlphaBlend": {
+            "CustomCurve": null,
+            "BlendTime": 0.2,
+            "BlendOption": "EAlphaBlendOption::Linear"
+          }
+        },
+        "AlphaCurveName": "None",
+        "AlphaScaleBiasClamp": {
+          "bMapRange": false,
+          "bClampResult": false,
+          "bInterpResult": false,
+          "InRange": {
+            "Min": 0.0,
+            "Max": 1.0
+          },
+          "OutRange": {
+            "Min": 0.0,
+            "Max": 1.0
+          },
+          "Scale": 1.0,
+          "Bias": 0.0,
+          "ClampMin": 0.0,
+          "ClampMax": 1.0,
+          "InterpSpeedIncreasing": 10.0,
+          "InterpSpeedDecreasing": 10.0
+        }
+      },
+      "AnimGraphNode_KawaiiPhysics": {
+        "RootBone": {
+          "BoneName": "r_hair_side2_L"
+        },
+        "ExcludeBones": [],
+        "TargetFramerate": 60,
+        "OverrideTargetFramerate": false,
+        "PhysicsSettings": {
+          "Damping": 0.1,
+          "WorldDampingLocation": 0.8,
+          "WorldDampingRotation": 0.8,
+          "Stiffness": 0.05,
+          "Radius": 3.0,
+          "LimitAngle": 0.0
+        },
+        "DampingCurve": null,
+        "WorldDampingLocationCurve": null,
+        "WorldDampingRotationCurve": null,
+        "StiffnessCurve": null,
+        "RadiusCurve": null,
+        "LimitAngleCurve": null,
+        "bUpdatePhysicsSettingsInGame": true,
+        "DummyBoneLength": 15.0,
+        "BoneForwardAxis": "EBoneForwardAxis::Y_Positive",
+        "PlanarConstraint": "EPlanarConstraint::None",
+        "SphericalLimits": [
+          {
+            "Radius": 14.463845,
+            "LimitType": "ESphericalLimitType::Outer",
+            "DrivingBone": {
+              "BoneName": "Root_Hair_Jnt"
+            },
+            "OffsetLocation": {
+              "X": -3.1E-05,
+              "Y": -14.696533,
+              "Z": 3.82111
+            },
+            "OffsetRotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "Location": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0,
+              "W": 1.0,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            }
+          }
+        ],
+        "CapsuleLimits": [
+          {
+            "Radius": 13.429338,
+            "Length": 30.83967,
+            "DrivingBone": {
+              "BoneName": "Root_Hair_Jnt"
+            },
+            "OffsetLocation": {
+              "X": 1.165503,
+              "Y": 21.493134,
+              "Z": -10.524001
+            },
+            "OffsetRotation": {
+              "Pitch": -85.0712,
+              "Yaw": -7.130921,
+              "Roll": 7.663778
+            },
+            "Location": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0,
+              "W": 1.0,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            }
+          },
+          {
+            "Radius": 12.693256,
+            "Length": 36.75999,
+            "DrivingBone": {
+              "BoneName": "Root_Hair_Jnt"
+            },
+            "OffsetLocation": {
+              "X": 2.4800267,
+              "Y": 23.592688,
+              "Z": 10.945143
+            },
+            "OffsetRotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 83.842285
+            },
+            "Location": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0,
+              "W": 1.0,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            }
+          }
+        ],
+        "PlanarLimits": [],
+        "LimitsDataAsset": null,
+        "SphericalLimitsData": [],
+        "CapsuleLimitsData": [],
+        "PlanarLimitsData": [],
+        "TeleportDistanceThreshold": 300.0,
+        "TeleportRotationThreshold": 10.0,
+        "Gravity": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "bEnableWind": false,
+        "WindScale": 1.0,
+        "ModifyBones": [],
+        "TotalBoneLength": 0.0,
+        "PreSkelCompTransform": {
+          "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "W": 1.0,
+            "IsNormalized": true,
+            "Size": 1.0,
+            "SizeSquared": 1.0
+          },
+          "Translation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "Scale3D": {
+            "X": 1.0,
+            "Y": 1.0,
+            "Z": 1.0
+          }
+        },
+        "bInitPhysicsSettings": false,
+        "ComponentPose": {
+          "LinkID": 3
+        },
+        "LODThreshold": -1,
+        "ActualAlpha": 0.0,
+        "AlphaInputType": "EAnimAlphaInputType::Float",
+        "bAlphaBoolEnabled": true,
+        "Alpha": 1.0,
+        "AlphaScaleBias": {
+          "Scale": 1.0,
+          "Bias": 0.0
+        },
+        "AlphaBoolBlend": {
+          "BlendInTime": 0.0,
+          "BlendOutTime": 0.0,
+          "BlendOption": "EAlphaBlendOption::Linear",
+          "bInitialized": false,
+          "CustomCurve": null,
+          "AlphaBlend": {
+            "CustomCurve": null,
+            "BlendTime": 0.2,
+            "BlendOption": "EAlphaBlendOption::Linear"
+          }
+        },
+        "AlphaCurveName": "None",
+        "AlphaScaleBiasClamp": {
+          "bMapRange": false,
+          "bClampResult": false,
+          "bInterpResult": false,
+          "InRange": {
+            "Min": 0.0,
+            "Max": 1.0
+          },
+          "OutRange": {
+            "Min": 0.0,
+            "Max": 1.0
+          },
+          "Scale": 1.0,
+          "Bias": 0.0,
+          "ClampMin": 0.0,
+          "ClampMax": 1.0,
+          "InterpSpeedIncreasing": 10.0,
+          "InterpSpeedDecreasing": 10.0
+        }
+      },
+      "AnimGraphNode_BlendListByBool": {
+        "bActiveValue": false,
+        "BlendPose": [
+          {
+            "LinkID": 8
+          },
+          {
+            "LinkID": 6
+          }
+        ],
+        "BlendTime": [
+          0.1,
+          0.1
+        ],
+        "TransitionType": "EBlendListTransitionType::StandardBlend",
+        "BlendType": "EAlphaBlendOption::Linear",
+        "bResetChildOnActivation": false,
+        "CustomBlendCurve": null,
+        "BlendProfile": null
+      },
+      "AnimGraphNode_ComponentToLocalSpace_2": {
+        "ComponentPose": {
+          "LinkID": 4
+        }
+      },
+      "AnimGraphNode_LocalToComponentSpace_2": {
+        "LocalPose": {
+          "LinkID": 5
+        }
+      },
+      "AnimGraphNode_ComponentToLocalSpace_1": {
+        "ComponentPose": {
+          "LinkID": 14
+        }
+      },
+      "AnimGraphNode_SaveCachedPose": {
+        "Pose": {
+          "LinkID": 10
+        },
+        "CachePoseName": "After_empty Locomotion"
+      },
+      "AnimGraphNode_ComponentToLocalSpace": {
+        "ComponentPose": {
+          "LinkID": 1
+        }
+      },
+      "AnimGraphNode_UseCachedPose": {
+        "LinkToCachingNode": {
+          "LinkID": 9
+        },
+        "CachePoseName": "After_empty Locomotion"
+      },
+      "AnimGraphNode_LocalToComponentSpace_1": {
+        "LocalPose": {
+          "LinkID": 11
+        }
+      },
+      "AnimGraphNode_Slot": {
+        "Source": {
+          "LinkID": 16
+        },
+        "SlotName": "DefaultSlot",
+        "bAlwaysUpdateSourcePose": false
+      },
+      "AnimGraphNode_LocalToComponentSpace": {
+        "LocalPose": {
+          "LinkID": 24
+        }
+      },
+      "AnimGraphNode_StateResult_2": {
+        "Result": {
+          "LinkID": -1
+        },
+        "Name": "State",
+        "Group": "None"
+      },
+      "AnimGraphNode_StateMachine_1": {
+        "StateMachineIndexInClass": 1,
+        "MaxTransitionsPerFrame": 3,
+        "bSkipFirstUpdateTransition": true,
+        "bReinitializeOnBecomingRelevant": true
+      },
+      "AnimGraphNode_Root": {
+        "Result": {
+          "LinkID": 2
+        },
+        "Name": "AnimGraph",
+        "Group": "None"
+      },
+      "AnimGraphNode_TransitionResult_1": {
+        "bCanEnterTransition": false
+      },
+      "AnimGraphNode_TransitionResult": {
+        "bCanEnterTransition": false
+      },
+      "AnimGraphNode_SequencePlayer_1": {
+        "Sequence": {
+          "ObjectName": "AnimSequence'A_Hair35_Walk_Fainted'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/Animation/A_Hair35_Walk_Fainted.0"
+        },
+        "PlayRateBasis": 1.0,
+        "PlayRate": 1.0,
+        "PlayRateScaleBiasClamp": {
+          "bMapRange": false,
+          "bClampResult": false,
+          "bInterpResult": false,
+          "InRange": {
+            "Min": 0.0,
+            "Max": 1.0
+          },
+          "OutRange": {
+            "Min": 0.0,
+            "Max": 1.0
+          },
+          "Scale": 1.0,
+          "Bias": 0.0,
+          "ClampMin": 0.0,
+          "ClampMax": 1.0,
+          "InterpSpeedIncreasing": 10.0,
+          "InterpSpeedDecreasing": 10.0
+        },
+        "StartPosition": 0.0,
+        "bLoopAnimation": true,
+        "GroupName": "None",
+        "GroupRole": "EAnimGroupRole::CanBeLeader",
+        "GroupScope": "EAnimSyncGroupScope::Local",
+        "bIgnoreForRelevancyTest": false,
+        "BlendWeight": 0.0,
+        "InternalTimeAccumulator": 0.0
+      },
+      "AnimGraphNode_StateResult_1": {
+        "Result": {
+          "LinkID": 20
+        },
+        "Name": "walk",
+        "Group": "None"
+      },
+      "AnimGraphNode_SequencePlayer": {
+        "Sequence": {
+          "ObjectName": "AnimSequence'A_Hair35_Idle_Fainted'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Hair/Animation/A_Hair35_Idle_Fainted.0"
+        },
+        "PlayRateBasis": 1.0,
+        "PlayRate": 1.0,
+        "PlayRateScaleBiasClamp": {
+          "bMapRange": false,
+          "bClampResult": false,
+          "bInterpResult": false,
+          "InRange": {
+            "Min": 0.0,
+            "Max": 1.0
+          },
+          "OutRange": {
+            "Min": 0.0,
+            "Max": 1.0
+          },
+          "Scale": 1.0,
+          "Bias": 0.0,
+          "ClampMin": 0.0,
+          "ClampMax": 1.0,
+          "InterpSpeedIncreasing": 10.0,
+          "InterpSpeedDecreasing": 10.0
+        },
+        "StartPosition": 0.0,
+        "bLoopAnimation": true,
+        "GroupName": "None",
+        "GroupRole": "EAnimGroupRole::CanBeLeader",
+        "GroupScope": "EAnimSyncGroupScope::Local",
+        "bIgnoreForRelevancyTest": false,
+        "BlendWeight": 0.0,
+        "InternalTimeAccumulator": 0.0
+      },
+      "AnimGraphNode_StateResult": {
+        "Result": {
+          "LinkID": 22
+        },
+        "Name": "Idle",
+        "Group": "None"
+      },
+      "AnimGraphNode_StateMachine": {
+        "StateMachineIndexInClass": 0,
+        "MaxTransitionsPerFrame": 3,
+        "bSkipFirstUpdateTransition": true,
+        "bReinitializeOnBecomingRelevant": true
+      },
+      "Physics Setting": {
+        "Damping": 0.1,
+        "WorldDampingLocation": 0.8,
+        "WorldDampingRotation": 0.8,
+        "Stiffness": 0.05,
+        "Radius": 3.0,
+        "LimitAngle": 0.0
+      },
+      "Gravity": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Check_Montage": [
+        {
+          "ObjectName": "AnimMontage'AM_FemaleSwingVertical_v2_Axe'",
+          "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_FemaleSwingVertical_v2_Axe.0"
+        },
+        {
+          "ObjectName": "AnimMontage'AM_FemaleSwingHorizontal_v2'",
+          "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_FemaleSwingHorizontal_v2.0"
+        },
+        {
+          "ObjectName": "AnimMontage'AM_FemaleSwingVertical_v2_Hoe'",
+          "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_FemaleSwingVertical_v2_Hoe.0"
+        },
+        {
+          "ObjectName": "AnimMontage'AM_FemaleSwingVertical_v2_Pickaxe'",
+          "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_FemaleSwingVertical_v2_Pickaxe.0"
+        }
+      ],
+      "RootMotionMode": "ERootMotionMode::NoRootMotionExtraction"
+    }
+  }
+]

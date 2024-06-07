@@ -1,5 +1,23 @@
 [
   {
+    "Type": "C_DateSeasonRangeRequirement",
+    "Name": "C_DateSeasonRangeRequirement_0",
+    "Outer": "DA_BenDiscountRequirement",
+    "Class": "UScriptClass'C_DateSeasonRangeRequirement'",
+    "Properties": {
+      "expectedDateSeason": {
+        "from": {
+          "season": "EC_Season::Winter",
+          "day": 17
+        },
+        "to": {
+          "season": "EC_Season::Winter",
+          "day": 21
+        }
+      }
+    }
+  },
+  {
     "Type": "C_GameplayRequirementsConfig",
     "Name": "DA_BenDiscountRequirement",
     "Class": "UScriptClass'C_GameplayRequirementsConfig'",
@@ -17,7 +35,7 @@
             "requirements": [
               {
                 "ObjectName": "C_NPCHeartLevelRequirement'DA_BenDiscountRequirement:C_NPCHeartLevelRequirement_2'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Ben/DA_BenDiscountRequirement.2"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Ben/DA_BenDiscountRequirement.3"
               }
             ]
           }
@@ -28,7 +46,7 @@
             "requirements": [
               {
                 "ObjectName": "C_NPCHeartLevelRequirement'DA_BenDiscountRequirement:C_NPCHeartLevelRequirement_3'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Ben/DA_BenDiscountRequirement.3"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Ben/DA_BenDiscountRequirement.4"
               }
             ]
           }
@@ -39,7 +57,7 @@
             "requirements": [
               {
                 "ObjectName": "C_NPCHeartLevelRequirement'DA_BenDiscountRequirement:C_NPCHeartLevelRequirement_4'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Ben/DA_BenDiscountRequirement.4"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Ben/DA_BenDiscountRequirement.5"
               }
             ]
           }
@@ -50,7 +68,7 @@
             "requirements": [
               {
                 "ObjectName": "C_NPCHeartLevelRequirement'DA_BenDiscountRequirement:C_NPCHeartLevelRequirement_5'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Ben/DA_BenDiscountRequirement.5"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Ben/DA_BenDiscountRequirement.6"
               }
             ]
           }
@@ -61,7 +79,18 @@
             "requirements": [
               {
                 "ObjectName": "C_NPCHeartLevelRequirement'DA_BenDiscountRequirement:C_NPCHeartLevelRequirement_1'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Ben/DA_BenDiscountRequirement.1"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Ben/DA_BenDiscountRequirement.2"
+              }
+            ]
+          }
+        },
+        {
+          "WinterFair": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_DateSeasonRangeRequirement'DA_BenDiscountRequirement:C_DateSeasonRangeRequirement_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/Ben/DA_BenDiscountRequirement.0"
               }
             ]
           }

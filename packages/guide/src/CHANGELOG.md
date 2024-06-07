@@ -1,5 +1,99 @@
 ## Changelog
 
+### 0.20.4 2024-06-07
+
+#### Added
+
+- \[Beta] Added item mixing to crafting
+    - This was also added to database
+- Added "Add to to-do"-button to database entries
+- \[Beta] Added ramen shop icon
+
+#### Changed
+
+- \[Beta] Updated beta data to v1.1-1122 (Steam version)
+
+### 0.20.3 2024-06-06
+
+#### Changed
+
+- \[Beta] Updated beta data to v1.1-1113 (Steam version)
+
+#### Known issues
+
+- \[Beta] Slime of transmutation recipes for upgrading items are partially broken/missing
+
+### 0.20.2 2024-05-30
+
+#### Added
+
+- Added birthdays to My Guide
+
+#### Changed
+
+- Improved portrait guesser algorithm to provide more NPC portraits
+
+### 0.20.1 2024-05-29
+
+#### Changed
+
+- \[Beta] Updated beta data to v1.1-1076 (Steam version)
+
+### 0.20.0 2024-05-27
+
+#### Added
+
+- \[Beta] Added ocean produce to journal
+- \[Beta] Added treasure maps to journal
+- \[Beta] Added custom npc head portraits
+- \[Beta] Added requirements to merfolk general store items
+- \[Beta] Added ramen shop
+- More entries can be added to to-dos (although being uncategorized for now)
+- Added festival opening hours
+
+#### Changed
+
+- \[Beta] Updated beta data to v1.1-1063 (Steam version)
+- \[Beta] Fixed missing beta notification for orchestra zones
+- Fixed link to settings in "beta only"-landing page
+- High-res NPC images were swapped for compressed ones to save bandwidth and improve performance
+- Various UI and UX improvements:
+    - More consistent spacing across the app
+    - Reduced large gaps to make many things more compact
+    - Sidebars, main content and details now have their own scroll area
+    - Fixed floating 'X' on detail cards
+    - Reduced content jumping
+  - Fixed active highlight for processors when closing details
+
+### 0.19.0 2024-05-22
+
+#### Added
+
+- \[Beta] Added more images to NPCs like alternate forms of Sawee
+- \[Beta] Added new Shops: Tidal Threads, Taco Truck, Underwater Ranch and Sales Cart Stall
+- \[Beta] Added Orchestra Zones to locations
+- Added new Shops: Furniture Store
+
+#### Changed
+
+- \[Beta] Fixed missing crop to seed mapping for new seeds
+
+### 0.18.0 2024-05-21
+
+#### Added
+
+- Added data for beta 1.1 (game version v1.1-1051 on Steam)
+    - Go to [My guide -> Settings](/my/settings) to activate the beta.
+    - Some features received changes or weren't fetched correctly - this problem is known and will be fixed in the next
+      few days (example NPC images)
+- Reactivated To-Do lists.
+    - To-Dos are now more flexible and can store all items. If context is given, they will be categorized else they will
+      go into "Uncategorized"-category at the end.
+    - Many categories/contexts were added
+- Added map icon, birthday, marriage possibility and description to NPC details
+- Made items in gifting grid clickable for details
+    - This does not apply for categories like "all fruits"
+
 ### 0.17.2 2024-03-28
 
 #### Changed
@@ -14,7 +108,7 @@
 
 ### 0.17.0 2024-03-24
 
-#### Added 
+#### Added
 
 - Added filter and sort options to NPC overview
 - Added filter and sort options to NPC gifting
@@ -34,20 +128,21 @@
 - Fixed cheese press not showing recipe for gold milk input
 - Fixed journal filter on mobile/smaller devices being cut off
 
-### 0.16.1 2024-02-23 
+### 0.16.1 2024-02-23
 
-#### Changed 
+#### Changed
 
 - Updated live data to v1-945 except character images (Steam version)
 
-### 0.16.0 2024-02-01 
+### 0.16.0 2024-02-01
 
-In the last update, I added the groundwork for a new way to retrieve item data. This update focuses a lot on those new changes, please let me know if you encounter any issues.
+In the last update, I added the groundwork for a new way to retrieve item data. This update focuses a lot on those new
+changes, please let me know if you encounter any issues.
 
 #### Added
 
 - Added latest changelog, which shows up once per update per device.
-  - You can disable them via the changelog dialog or dis-/enable them under My Guide -> Settings
+    - You can disable them via the changelog dialog or dis-/enable them under My Guide -> Settings
 - Added game version of shown data to footer.
 - Added sources (geodes, coffer etc) to "found" items in journal
 - Added cooking recipes to checklist
@@ -101,7 +196,7 @@ All your feedback and requests (thanks for them!) are still being worked on.
 - Added missing recipes in database, when an item was in the list of "either or" ingredients
 - Reduced height of sidebar items on bigger screens
 - NPC overview is now the entry page for NPC category instead of gifting
-  - Also swapped positions of sub navi entries
+    - Also swapped positions of sub navi entries
 - Renamed achievements to badges to match in-game
 
 ### 0.13.0 2023-11-01

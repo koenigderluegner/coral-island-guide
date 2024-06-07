@@ -20,10 +20,8 @@ export interface AnimalData {
     produces: {
         minimumFriendshipLevelToSpawn: number;
         small: MinimalItem | undefined;
-        medium: MinimalItem | undefined;
         large: MinimalItem | undefined;
         smallGolden: MinimalItem | undefined;
-        mediumGolden: MinimalItem | undefined;
         largeGolden: MinimalItem | undefined;
     }[]
 }

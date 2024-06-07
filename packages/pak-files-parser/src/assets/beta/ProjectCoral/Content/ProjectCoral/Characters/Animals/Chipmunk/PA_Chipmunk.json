@@ -1,0 +1,582 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_Chipmunk",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Chipmunk:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Chipmunk/PA_Chipmunk.8"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Chipmunk:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Chipmunk/PA_Chipmunk.9"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Chipmunk:SkeletalBodySetup_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Chipmunk/PA_Chipmunk.10"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Chipmunk:SkeletalBodySetup_3'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Chipmunk/PA_Chipmunk.11"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Chipmunk:SkeletalBodySetup_4'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Chipmunk/PA_Chipmunk.12"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Chipmunk:SkeletalBodySetup_5'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Chipmunk/PA_Chipmunk.13"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Chipmunk:SkeletalBodySetup_6'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Chipmunk/PA_Chipmunk.14"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Chipmunk:SkeletalBodySetup_7'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Chipmunk/PA_Chipmunk.15"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Chipmunk:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Chipmunk/PA_Chipmunk.1"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Chipmunk:PhysicsConstraintTemplate_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Chipmunk/PA_Chipmunk.2"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Chipmunk:PhysicsConstraintTemplate_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Chipmunk/PA_Chipmunk.3"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Chipmunk:PhysicsConstraintTemplate_3'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Chipmunk/PA_Chipmunk.4"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Chipmunk:PhysicsConstraintTemplate_4'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Chipmunk/PA_Chipmunk.5"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Chipmunk:PhysicsConstraintTemplate_5'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Chipmunk/PA_Chipmunk.6"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Chipmunk:PhysicsConstraintTemplate_6'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Chipmunk/PA_Chipmunk.7"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_Chipmunk",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Spine",
+        "ConstraintBone1": "Spine",
+        "ConstraintBone2": "Pelvis",
+        "Pos2": {
+          "X": 0.0,
+          "Y": -8.581283,
+          "Z": 8.881784E-16
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_1",
+    "Outer": "PA_Chipmunk",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Head",
+        "ConstraintBone1": "Head",
+        "ConstraintBone2": "Spine",
+        "Pos2": {
+          "X": 0.0,
+          "Y": -13.610868,
+          "Z": 0.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_2",
+    "Outer": "PA_Chipmunk",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Arm_L",
+        "ConstraintBone1": "Arm_L",
+        "ConstraintBone2": "Spine",
+        "Pos2": {
+          "X": 10.081358,
+          "Y": -8.074872,
+          "Z": -1.2690654
+        },
+        "PriAxis2": {
+          "X": 0.8201421,
+          "Y": 0.5691828,
+          "Z": -0.05829105
+        },
+        "SecAxis2": {
+          "X": -0.5701522,
+          "Y": 0.82153904,
+          "Z": 0.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_3",
+    "Outer": "PA_Chipmunk",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Arm_R",
+        "ConstraintBone1": "Arm_R",
+        "ConstraintBone2": "Spine",
+        "Pos2": {
+          "X": -10.0814,
+          "Y": -8.074903,
+          "Z": -1.2690625
+        },
+        "PriAxis2": {
+          "X": 0.8201421,
+          "Y": -0.5691828,
+          "Z": 0.05829105
+        },
+        "SecAxis2": {
+          "X": -0.5701522,
+          "Y": -0.82153904,
+          "Z": 0.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_4",
+    "Outer": "PA_Chipmunk",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Leg_L",
+        "ConstraintBone1": "Leg_L",
+        "ConstraintBone2": "Pelvis",
+        "Pos2": {
+          "X": 7.91435,
+          "Y": 4.486914,
+          "Z": 0.0
+        },
+        "PriAxis2": {
+          "X": -0.057634234,
+          "Y": 0.9914847,
+          "Z": 0.11677398
+        },
+        "SecAxis2": {
+          "X": -0.9983147,
+          "Y": -0.0580312,
+          "Z": -3.7252903E-09
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_5",
+    "Outer": "PA_Chipmunk",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Leg_R",
+        "ConstraintBone1": "Leg_R",
+        "ConstraintBone2": "Pelvis",
+        "Pos2": {
+          "X": -7.91435,
+          "Y": 4.4869156,
+          "Z": -2.5072402E-06
+        },
+        "PriAxis2": {
+          "X": -0.057634234,
+          "Y": -0.9914847,
+          "Z": -0.11677398
+        },
+        "SecAxis2": {
+          "X": -0.9983147,
+          "Y": 0.0580315,
+          "Z": 3.7252903E-09
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_6",
+    "Outer": "PA_Chipmunk",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Tail1",
+        "ConstraintBone1": "Tail1",
+        "ConstraintBone2": "Pelvis",
+        "Pos2": {
+          "X": 0.0,
+          "Y": 1.543488,
+          "Z": -11.867182
+        },
+        "SecAxis2": {
+          "X": 0.0,
+          "Y": 0.9984469,
+          "Z": 0.055712372
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_Chipmunk",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 2.0529003,
+              "Z": -0.8684461
+            },
+            "Rotation": {
+              "Pitch": 6.171342,
+              "Yaw": -89.99999,
+              "Roll": -90.000046
+            },
+            "Radius": 12.289095,
+            "Length": 13.519648,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Pelvis",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "A7B6A80445BD27AC251C3DA1CA3F0A74"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_Chipmunk",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.026796818,
+              "Y": -7.4809732,
+              "Z": -0.16790438
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 91.9467,
+              "Roll": -83.81643
+            },
+            "Radius": 11.766724,
+            "Length": 12.178424,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Spine",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "C16FE2524844D63DF0E6B893916674FA"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_2",
+    "Outer": "PA_Chipmunk",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -0.0008382797,
+              "Y": -8.677717,
+              "Z": 3.256284
+            },
+            "Rotation": {
+              "Pitch": 43.65329,
+              "Yaw": -89.99999,
+              "Roll": 0.016085915
+            },
+            "Radius": 13.26649,
+            "Length": 15.304561,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Head",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "B3F5CF19499655FBE2B0CF8619350ECC"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_3",
+    "Outer": "PA_Chipmunk",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 11.998005,
+              "Y": 0.2998066,
+              "Z": 1.8392448
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 93.48535,
+              "Roll": -81.226234
+            },
+            "Radius": 5.9488726,
+            "Length": 13.215239,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Arm_L",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "72DBFA3D4A576B928EDFBC9693828398"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_4",
+    "Outer": "PA_Chipmunk",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -11.997988,
+              "Y": -0.29985285,
+              "Z": -1.8392401
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 93.48535,
+              "Roll": -81.226234
+            },
+            "Radius": 5.9488726,
+            "Length": 13.215239,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Arm_R",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "3453EB404F074E3B06EB7E91BDD25AC6"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_5",
+    "Outer": "PA_Chipmunk",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 6.8009033,
+              "Y": -0.0005955696,
+              "Z": 0.12030983
+            },
+            "Rotation": {
+              "Pitch": -6.830189E-06,
+              "Yaw": 99.24452,
+              "Roll": -67.952866
+            },
+            "Radius": 7.7211494,
+            "Length": 10.982472,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Leg_L",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "0CEED59A4DDB813BC181FE94D6E332BD"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_6",
+    "Outer": "PA_Chipmunk",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -6.8008995,
+              "Y": 0.00059604645,
+              "Z": -0.12031412
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 99.24453,
+              "Roll": -67.95286
+            },
+            "Radius": 7.72115,
+            "Length": 10.982473,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Leg_R",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "8B7EE53E4AF6007B38F499924644E4E2"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_7",
+    "Outer": "PA_Chipmunk",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.017595649,
+              "Y": 0.32824957,
+              "Z": -19.641315
+            },
+            "Rotation": {
+              "Pitch": 1.1307105,
+              "Yaw": -89.99999,
+              "Roll": -0.0029712305
+            },
+            "Radius": 6.913688,
+            "Length": 18.853977,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Tail1",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "E2729BAC468FA25496F584A95DF79885"
+  }
+]

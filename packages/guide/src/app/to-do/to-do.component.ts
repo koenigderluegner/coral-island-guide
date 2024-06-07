@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ToDoService } from "../core/services/to-do.service";
-import { ToDo } from "../core/interfaces/todo.interface";
-import { animate, style, transition, trigger } from "@angular/animations";
 import { SettingsService } from "../shared/services/settings.service";
-import { ToDoCategory, ToDoCategoryDisplayNames } from "../core/enums/todo-category.enum";
 import { FormControl } from "@angular/forms";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
+import { ToDoContextDisplayNames, ToDoContexts } from "../core/types/to-do-context.type";
+import { ToDoFilterOptions } from "./types/to-do-filter-options.type";
 
 @Component({
     selector: 'app-to-do',
@@ -14,49 +13,29 @@ import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
         app-to-do-partial:not(.hidden) ~ .show-when-none-displayed {
             display: none;
         }
-    `],
-    animations: [
-        trigger(
-            'leaveAnimation',
-            [
-                transition(
-                    ':leave',
-                    [
-                        style({height: '*', opacity: 1}),
-                        animate('200ms ease-in',
-                            style({height: 0, opacity: 0}))
-                    ]
-                )
-            ]
-        )
-    ]
+    `]
 })
 export class ToDoComponent {
 
-    toDoCategoryControl: FormControl<(ToDoCategory | 'all')[]> = new FormControl<(ToDoCategory | "all")[]>(['all', ...Object.values(ToDoCategory)], {nonNullable: true});
-    protected toDo: ToDo;
-    protected toDoCategory = ToDoCategory;
-    protected toDoCategoryDisplayNames = ToDoCategoryDisplayNames;
-    protected readonly isBeta: boolean;
+    toDoContexts = ToDoContexts;
+    toDoContextDisplayNames = ToDoContextDisplayNames;
+    toDoCategoryControl: FormControl<ToDoFilterOptions[]> = new FormControl(['all', ...ToDoContexts, 'uncategorized'], {nonNullable: true});
+    protected readonly toDoService = inject(ToDoService);
     private hadAllBefore = true;
+    private readonly settings = inject(SettingsService)
 
-    constructor(protected readonly toDoService: ToDoService, private readonly settings: SettingsService) {
-        this.toDo = this.toDoService.getCurrentToDo();
-        this.isBeta = this.settings.getSettings().useBeta;
-
+    constructor() {
         this.toDoCategoryControl.valueChanges.pipe(
             takeUntilDestroyed()
         ).subscribe({
             next: value => {
-                const enumValues = Object.values(ToDoCategory);
-
                 if (this.hadAllBefore && !value.includes('all')) {
                     this.toDoCategoryControl.setValue([], {emitEvent: false})
                     this.hadAllBefore = false;
                 } else if (!this.hadAllBefore && value.includes('all')) {
-                    this.toDoCategoryControl.setValue(['all', ...enumValues], {emitEvent: false});
+                    this.toDoCategoryControl.setValue(['all', ...this.toDoContexts], {emitEvent: false});
                     this.hadAllBefore = true;
-                } else if (this.hadAllBefore && value.length < (enumValues.length + 1)) {
+                } else if (this.hadAllBefore && value.length < (this.toDoContexts.length + 1)) {
                     this.toDoCategoryControl.setValue(value.filter(s => s !== 'all'), {emitEvent: false})
                     this.hadAllBefore = false;
                 }

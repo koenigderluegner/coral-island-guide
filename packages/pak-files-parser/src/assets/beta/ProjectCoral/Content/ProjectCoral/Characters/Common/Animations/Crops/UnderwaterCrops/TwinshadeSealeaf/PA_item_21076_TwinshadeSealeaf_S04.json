@@ -1,0 +1,133 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_item_21076_TwinshadeSealeaf_S04",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_item_21076_TwinshadeSealeaf_S04:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/TwinshadeSealeaf/PA_item_21076_TwinshadeSealeaf_S04.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_item_21076_TwinshadeSealeaf_S04:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/TwinshadeSealeaf/PA_item_21076_TwinshadeSealeaf_S04.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_item_21076_TwinshadeSealeaf_S04:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/TwinshadeSealeaf/PA_item_21076_TwinshadeSealeaf_S04.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_item_21076_TwinshadeSealeaf_S04",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Crops_Jnt2",
+        "ConstraintBone1": "Crops_Jnt2",
+        "ConstraintBone2": "Crops_Jnt1",
+        "Pos2": {
+          "X": 14.362309,
+          "Y": -1.2973758,
+          "Z": -0.44188088
+        },
+        "PriAxis2": {
+          "X": 1.0,
+          "Y": 5.74E-42,
+          "Z": -3.407103E-18
+        },
+        "SecAxis2": {
+          "X": -1.8075012E-34,
+          "Y": 1.0,
+          "Z": -5.305097E-17
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_item_21076_TwinshadeSealeaf_S04",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 14.118534,
+              "Y": -2.1289797,
+              "Z": 1.7639613
+            },
+            "Rotation": {
+              "Pitch": 89.61589,
+              "Yaw": -91.28202,
+              "Roll": -1.2832668
+            },
+            "Radius": 41.242245,
+            "Length": 41.877563,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Crops_Jnt1",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "B27BA52442BDF293CCE87B9655F1E46A"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_item_21076_TwinshadeSealeaf_S04",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 49.826736,
+              "Y": -13.667465,
+              "Z": 6.1193275
+            },
+            "Rotation": {
+              "Pitch": 6.830189E-06,
+              "Yaw": 69.30603,
+              "Roll": -81.62682
+            },
+            "Radius": 36.330765,
+            "Length": 58.441235,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Crops_Jnt2",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "7EBCDE344BD2EEE25A32E78F066EF1FE"
+  }
+]

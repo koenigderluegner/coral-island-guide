@@ -1,0 +1,123 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_WidowSpiderRope",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_WidowSpiderRope:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Insect/WidowSpider/SK/PA_WidowSpiderRope.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_WidowSpiderRope:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Insect/WidowSpider/SK/PA_WidowSpiderRope.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_WidowSpiderRope:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Insect/WidowSpider/SK/PA_WidowSpiderRope.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_WidowSpiderRope",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Rope02_jnt",
+        "ConstraintBone1": "Rope02_jnt",
+        "ConstraintBone2": "Rope_jnt",
+        "Pos2": {
+          "X": 48.240334,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_WidowSpiderRope",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 22.969683,
+              "Y": -1.9073486E-06,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 90.03101,
+              "Roll": -90.0
+            },
+            "Radius": 0.505,
+            "Length": 0.505,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Rope_jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "07FC0FBD45D2CFFB91A68AB667B6C732"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_WidowSpiderRope",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 33.61564,
+              "Y": 1.9073486E-06,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -90.01803,
+              "Roll": -90.0
+            },
+            "Radius": 0.505,
+            "Length": 0.505,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Rope02_jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "E62569C44C31CD21A73B38A9341F8BEC"
+  }
+]

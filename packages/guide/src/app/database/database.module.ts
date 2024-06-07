@@ -31,6 +31,11 @@ import { DatabaseHeaderButtonComponent } from './components/database-header-butt
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { DatabaseFestivalShopDataComponent } from './components/database-festival-shop-data/database-festival-shop-data.component';
+import { UiIconComponent } from "../shared/components/ui-icon/ui-icon.component";
+import { DatabaseMixingComponent } from "./components/database-mixing/database-mixing.component";
+import { MixingTableComponent } from "../crafting/mixing-table/mixing-table.component";
+import { MatTooltip } from "@angular/material/tooltip";
+import { ToDoToggleComponent } from "../shared/components/to-do-toggle/to-do-toggle.component";
 
 @NgModule({
     declarations: [
@@ -53,6 +58,7 @@ import { DatabaseFestivalShopDataComponent } from './components/database-festiva
         DatabaseBestiaryComponent,
         DatabaseHeaderButtonComponent,
         DatabaseFestivalShopDataComponent,
+        DatabaseMixingComponent
     ],
     imports: [
         CommonModule,
@@ -68,6 +74,10 @@ import { DatabaseFestivalShopDataComponent } from './components/database-festiva
         MatButtonModule,
         MatSortModule,
         MatTableModule,
+        UiIconComponent,
+        MixingTableComponent,
+        MatTooltip,
+        ToDoToggleComponent,
     ],
 })
 export class DatabaseModule {

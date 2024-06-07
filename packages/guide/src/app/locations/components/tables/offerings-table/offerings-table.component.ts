@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, Input } from '@angular/core';
+import { booleanAttribute, Component, input, Input } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { OfferingAltar } from "@ci/data-types";
 
@@ -7,6 +7,7 @@ import { OfferingAltar } from "@ci/data-types";
     templateUrl: './offerings-table.component.html',
 })
 export class OfferingsTableComponent extends BaseTableComponent<OfferingAltar> {
+    showAltar = input(false, {transform: booleanAttribute})
     protected readonly BASE_DISPLAY_COLUMNS: string[] = [
         'icon',
         'displayName',
@@ -32,17 +33,14 @@ export class OfferingsTableComponent extends BaseTableComponent<OfferingAltar> {
         this._datasource = results;
     }
 
-
-    @Input({transform: booleanAttribute}) showAltar = false
-
     protected override setupDataSource(dataSource: OfferingAltar[]) {
         super.setupDataSource(dataSource);
 
         const altarIndex = this.displayedColumns.indexOf('altar');
-        if (this.showAltar && altarIndex === -1) {
+        if (this.showAltar() && altarIndex === -1) {
             this.displayedColumns.splice(2, 0, 'altar');
             this.displayHeaderColumns = this.displayedColumns.filter(col => col !== 'icon');
-        } else if (!this.showAltar && altarIndex !== -1) {
+        } else if (!this.showAltar() && altarIndex !== -1) {
             this.displayedColumns.splice(altarIndex, 1);
             this.displayHeaderColumns = this.displayedColumns.filter(col => col !== 'icon');
         }

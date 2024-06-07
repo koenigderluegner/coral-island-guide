@@ -1,0 +1,17 @@
+@if (databaseItem.usedToMix && databaseItem.usedToMix.length) {
+    <app-expandable #expandableComponent open>
+        <h3 class="database-header" expandableHeader>
+            <app-database-header-button [templateRef]="expandableComponent">Usage in mixing
+            </app-database-header-button>
+        </h3>
+        <app-mixing-table [dataSource]="databaseItem.usedToMix"/>
+    </app-expandable>
+}
+@if (databaseItem.mixedFrom && databaseItem.mixedFrom.length) {
+    <app-expandable #expandableComponent open>
+        <h3 class="database-header" expandableHeader>
+            <app-database-header-button [templateRef]="expandableComponent">Mixing recipe</app-database-header-button>
+        </h3>
+        <app-mixing-table [dataSource]="databaseItem.mixedFrom"/>
+    </app-expandable>
+}

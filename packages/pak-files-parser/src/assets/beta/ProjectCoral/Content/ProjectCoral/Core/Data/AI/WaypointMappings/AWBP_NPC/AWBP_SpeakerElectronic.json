@@ -1,0 +1,718 @@
+[
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_AWBP_SpeakerElectronic",
+    "Outer": "AWBP_SpeakerElectronic_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'C_TimeManager:DelegateOnTimeStateChanged__DelegateSignature'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "K2Node_Event_context",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EC_AnimationContext'",
+          "ObjectPath": "/Script/ProjectCoral"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_npc",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'C_NpcCharacter'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_Event_newState",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_SwitchEnum_CmpSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetGameState_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'GameStateBase'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetGameInstanceSubsystem_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'C_FestivalManager'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsC_Game_State",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'C_GameState'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetTimeManager_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'C_TimeManager'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "CustomEvent_0",
+    "Outer": "AWBP_SpeakerElectronic_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "AWBP_SpeakerElectronic_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveBeginPlay'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnOccupiedStateChanged",
+    "Outer": "AWBP_SpeakerElectronic_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'C_WorldWaypoint:OnOccupiedStateChanged'",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "newState",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnAnimationContextChanged",
+    "Outer": "AWBP_SpeakerElectronic_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'C_WorldWaypoint:OnAnimationContextChanged'",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "ChildProperties": [
+      {
+        "Type": "EnumProperty",
+        "Name": "context",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Enum": {
+          "ObjectName": "Enum'EC_AnimationContext'",
+          "ObjectPath": "/Script/ProjectCoral"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "npc",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'C_NpcCharacter'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "AWBP_SpeakerElectronic_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'AWBP_SpeakerElectronic_C:SimpleConstructionScript_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.23"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'AWBP_SpeakerElectronic_C:ExecuteUbergraph_AWBP_SpeakerElectronic'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.0"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'C_AnimationWaypoint'",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'AWBP_SpeakerElectronic_C:OnAnimationContextChanged'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.4"
+      },
+      {
+        "ObjectName": "Function'AWBP_SpeakerElectronic_C:OnOccupiedStateChanged'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.3"
+      },
+      {
+        "ObjectName": "Function'AWBP_SpeakerElectronic_C:ReceiveBeginPlay'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.2"
+      },
+      {
+        "ObjectName": "Function'AWBP_SpeakerElectronic_C:CustomEvent_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.1"
+      },
+      {
+        "ObjectName": "Function'AWBP_SpeakerElectronic_C:ExecuteUbergraph_AWBP_SpeakerElectronic'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.0"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "NS_MusicTone4",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "NS_MusicTone3",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "NS_MusicTone2",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "NS_MusicTone1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "NS_MusicTone",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "StationMesh1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "PositionComponent1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_AWBP_SpeakerElectronic": {
+        "ObjectName": "Function'AWBP_SpeakerElectronic_C:ExecuteUbergraph_AWBP_SpeakerElectronic'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.0"
+      },
+      "CustomEvent_0": {
+        "ObjectName": "Function'AWBP_SpeakerElectronic_C:CustomEvent_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.1"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'AWBP_SpeakerElectronic_C:ReceiveBeginPlay'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.2"
+      },
+      "OnOccupiedStateChanged": {
+        "ObjectName": "Function'AWBP_SpeakerElectronic_C:OnOccupiedStateChanged'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.3"
+      },
+      "OnAnimationContextChanged": {
+        "ObjectName": "Function'AWBP_SpeakerElectronic_C:OnAnimationContextChanged'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.4"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "AWBP_SpeakerElectronic_C'Default__AWBP_SpeakerElectronic_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.6"
+    }
+  },
+  {
+    "Type": "AWBP_SpeakerElectronic_C",
+    "Name": "Default__AWBP_SpeakerElectronic_C",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.AWBP_SpeakerElectronic_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "linkedState": "EC_WaypointLinkedState::NotLinked",
+      "stationMeshComponent": {
+        "ObjectName": "StaticMeshComponent'Default__AWBP_SpeakerElectronic_C:StationMesh'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.25"
+      },
+      "RootComponent": {
+        "ObjectName": "SceneComponent'Default__AWBP_SpeakerElectronic_C:PositionComponent'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.14"
+      }
+    }
+  },
+  {
+    "Type": "NiagaraComponent",
+    "Name": "NS_MusicTone1_GEN_VARIABLE",
+    "Outer": "AWBP_SpeakerElectronic_C",
+    "Class": "UScriptClass'NiagaraComponent'",
+    "Properties": {
+      "OverrideParameters": {}
+    }
+  },
+  {
+    "Type": "NiagaraComponent",
+    "Name": "NS_MusicTone2_GEN_VARIABLE",
+    "Outer": "AWBP_SpeakerElectronic_C",
+    "Class": "UScriptClass'NiagaraComponent'",
+    "Properties": {
+      "OverrideParameters": {}
+    }
+  },
+  {
+    "Type": "NiagaraComponent",
+    "Name": "NS_MusicTone3_GEN_VARIABLE",
+    "Outer": "AWBP_SpeakerElectronic_C",
+    "Class": "UScriptClass'NiagaraComponent'",
+    "Properties": {
+      "OverrideParameters": {}
+    }
+  },
+  {
+    "Type": "NiagaraComponent",
+    "Name": "NS_MusicTone4_GEN_VARIABLE",
+    "Outer": "AWBP_SpeakerElectronic_C",
+    "Class": "UScriptClass'NiagaraComponent'",
+    "Properties": {
+      "OverrideParameters": {}
+    }
+  },
+  {
+    "Type": "NiagaraComponent",
+    "Name": "NS_MusicTone_GEN_VARIABLE",
+    "Outer": "AWBP_SpeakerElectronic_C",
+    "Class": "UScriptClass'NiagaraComponent'",
+    "Properties": {
+      "OverrideParameters": {}
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "AWBP_SpeakerElectronic_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "PositionComponent1_GEN_VARIABLE",
+    "Outer": "AWBP_SpeakerElectronic_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "PositionComponent",
+    "Outer": "Default__AWBP_SpeakerElectronic_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'AWBP_SpeakerElectronic_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.12"
+      },
+      "VariableGuid": "E8C93428-46076D74-1C3147B0-D0DD08F6",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'AWBP_SpeakerElectronic_C:PositionComponent1_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.13"
+      },
+      "ParentComponentOrVariableName": "PositionComponent",
+      "bIsParentComponentNative": true,
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node'AWBP_SpeakerElectronic_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.17"
+        }
+      ],
+      "VariableGuid": "9FB2D103-4555C95D-BDE82B9A-C76F5F1A",
+      "InternalVariableName": "PositionComponent1"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'AWBP_SpeakerElectronic_C:StationMesh1_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.24"
+      },
+      "VariableGuid": "343F954F-438928FA-F1843296-34E7B847",
+      "InternalVariableName": "StationMesh1"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_3",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'NiagaraComponent'",
+        "ObjectPath": "/Script/Niagara"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "NiagaraComponent'AWBP_SpeakerElectronic_C:NS_MusicTone_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.11"
+      },
+      "ParentComponentOrVariableName": "PositionComponent",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "2C6BECDB-40860A5F-067491A7-F78A6B89",
+      "InternalVariableName": "NS_MusicTone"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_4",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'NiagaraComponent'",
+        "ObjectPath": "/Script/Niagara"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "NiagaraComponent'AWBP_SpeakerElectronic_C:NS_MusicTone1_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.7"
+      },
+      "ParentComponentOrVariableName": "PositionComponent",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "65645004-43A27D94-CAEB88B8-69A7D389",
+      "InternalVariableName": "NS_MusicTone1"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_5",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'NiagaraComponent'",
+        "ObjectPath": "/Script/Niagara"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "NiagaraComponent'AWBP_SpeakerElectronic_C:NS_MusicTone2_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.8"
+      },
+      "ParentComponentOrVariableName": "PositionComponent",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "39271824-40495E06-1B935DA5-AC8524E2",
+      "InternalVariableName": "NS_MusicTone2"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_6",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'NiagaraComponent'",
+        "ObjectPath": "/Script/Niagara"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "NiagaraComponent'AWBP_SpeakerElectronic_C:NS_MusicTone3_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.9"
+      },
+      "ParentComponentOrVariableName": "PositionComponent",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "F7B6479D-4E5B85F2-E2F83287-6DA270AA",
+      "InternalVariableName": "NS_MusicTone3"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_7",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'NiagaraComponent'",
+        "ObjectPath": "/Script/Niagara"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "NiagaraComponent'AWBP_SpeakerElectronic_C:NS_MusicTone4_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.10"
+      },
+      "ParentComponentOrVariableName": "PositionComponent",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "C8A5FC8E-4F8DE1E6-4FE6D1BD-74E6ADC1",
+      "InternalVariableName": "NS_MusicTone4"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "AWBP_SpeakerElectronic_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'AWBP_SpeakerElectronic_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.16"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_SpeakerElectronic_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.18"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_SpeakerElectronic_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.19"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_SpeakerElectronic_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.20"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_SpeakerElectronic_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.21"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_SpeakerElectronic_C:SimpleConstructionScript_0.SCS_Node_7'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.22"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'AWBP_SpeakerElectronic_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.16"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_SpeakerElectronic_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.17"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_SpeakerElectronic_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.18"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_SpeakerElectronic_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.19"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_SpeakerElectronic_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.20"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_SpeakerElectronic_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.21"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_SpeakerElectronic_C:SimpleConstructionScript_0.SCS_Node_7'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.22"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'AWBP_SpeakerElectronic_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.15"
+      }
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "StationMesh1_GEN_VARIABLE",
+    "Outer": "AWBP_SpeakerElectronic_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "bUseDefaultCollision": true,
+      "bGenerateOverlapEvents": false,
+      "BodyInstance": {
+        "ObjectType": "ECC_WorldStatic",
+        "CollisionProfileName": "BlockAll"
+      },
+      "bAbsoluteScale": true
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "StationMesh",
+    "Outer": "Default__AWBP_SpeakerElectronic_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "AttachParent": {
+        "ObjectName": "SceneComponent'Default__AWBP_SpeakerElectronic_C:PositionComponent'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_SpeakerElectronic.14"
+      }
+    }
+  }
+]

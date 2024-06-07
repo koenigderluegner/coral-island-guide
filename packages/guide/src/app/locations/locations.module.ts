@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { LocationsComponent } from './locations.component';
 import { SharedModule } from '../shared/shared.module';
-import { LakeTempleComponent } from './components/lake-temple/lake-temple.component';
 import { LocationsRoutingModule } from './locations-routing.module';
 import { MatTabsModule } from '@angular/material/tabs';
 import { OfferingsTableComponent } from './components/tables/offerings-table/offerings-table.component';
@@ -47,11 +46,11 @@ import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-
 import { DatabaseItemDetailsDirective } from "../shared/directives/database-item-details.directive";
 import { ItemCardSwitchComponent } from "../shared/components/item-card-switch/item-card-switch.component";
 import { OfferingComponent } from "../shared/components/database-item-details/offering/offering.component";
+import { UiIconComponent } from "../shared/components/ui-icon/ui-icon.component";
 
 @NgModule({
     declarations: [
         LocationsComponent,
-        LakeTempleComponent,
         OfferingsTableComponent,
         BlacksmithComponent,
         ShopItemDataDetailsComponent,
@@ -101,6 +100,7 @@ import { OfferingComponent } from "../shared/components/database-item-details/of
         DatabaseItemDetailsDirective,
         ItemCardSwitchComponent,
         OfferingComponent,
+        UiIconComponent,
     ],
     exports: [
         OfferingsTableComponent,
@@ -108,6 +108,14 @@ import { OfferingComponent } from "../shared/components/database-item-details/of
         ShopItemProcessTableComponent,
         ItemUpgradeTableComponent,
         FestivalShopItemTableComponent,
+        OpeningHoursComponent,
+        ShopItemDataDetailsComponent,
+        ShopItemDataTableComponent,
+        ShopItemProcessTableComponent,
+        ItemUpgradeDetailsComponent,
+        ShopItemProcessDataDetailsComponent,
+        AnimalMoodTableComponent,
+        AnimalDetailsComponent
     ],
 })
 export class LocationsModule {

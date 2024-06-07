@@ -128,3 +128,11 @@
                         class="underline">{{ requirement.meta.title }}</a>'
 
 }
+@if (requirement.type === 'ShipToUnlock') {
+    Player shipped the following item(s) 50x{{ requirement.meta.includeAllQualities ? ' (any quality)' : '' }}:
+    @for (item of requirement.meta.itemsToShip; track item.id) {
+        <app-inline-minimal-item [minimalItem]="item"/>{{ !$last ? ', ' : '' }}
+    }
+
+
+}

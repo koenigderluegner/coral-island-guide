@@ -1,4 +1,5 @@
 import chalk from "chalk";
+import * as readline from 'readline'
 
 export class Logger {
 
@@ -25,8 +26,8 @@ export class Logger {
     }
 
     static progress(progress: number) {
-        process.stdout.clearLine(0);
-        process.stdout.cursorTo(0);
+        readline.clearLine(process.stdout, 0)
+        readline.cursorTo(process.stdout, 0)
         const percentage = progress.toFixed(2).padStart(3, '0') + '%';
         process.stdout.write(chalk.blue('PROGRESS:'.padEnd(Logger.PAD_SIZE)) + ' ' + percentage);
         if (progress === 100) console.log()

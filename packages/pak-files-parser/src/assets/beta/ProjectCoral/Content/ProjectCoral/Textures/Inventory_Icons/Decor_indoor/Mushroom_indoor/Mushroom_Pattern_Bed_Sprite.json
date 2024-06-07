@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Mushroom_Pattern_Bed_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.5,
+              "Y": 0.0,
+              "Z": 8.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 509.0,
+            "Y": 10.0,
+            "Z": 496.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "4D5150FF438A870807F43AA504BF2784"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Mushroom_Pattern_Bed_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 512.0,
+        "Y": 512.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Mushroom_Pattern_Bed'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/Mushroom_indoor/Mushroom_Indoor_Textures/Mushroom_Pattern_Bed.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Mushroom_Pattern_Bed_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/Mushroom_indoor/Mushroom_Pattern_Bed_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 255.0,
+          "Y": 256.0,
+          "Z": 0.9980469,
+          "W": 0.0
+        },
+        {
+          "X": -254.0,
+          "Y": 256.0,
+          "Z": 0.00390625,
+          "W": 0.0
+        },
+        {
+          "X": -254.0,
+          "Y": -240.0,
+          "Z": 0.00390625,
+          "W": 0.96875
+        },
+        {
+          "X": 255.0,
+          "Y": -240.0,
+          "Z": 0.9980469,
+          "W": 0.96875
+        },
+        {
+          "X": 255.0,
+          "Y": 256.0,
+          "Z": 0.9980469,
+          "W": 0.0
+        },
+        {
+          "X": -254.0,
+          "Y": -240.0,
+          "Z": 0.00390625,
+          "W": 0.96875
+        }
+      ]
+    }
+  }
+]

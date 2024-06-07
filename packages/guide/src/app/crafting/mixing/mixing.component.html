@@ -1,0 +1,34 @@
+<app-list-detail-container>
+    @if (selectedEntity) {
+        <app-database-item-details [itemId]="selectedEntity.item.id" context="item_mixing" listDetail>
+            <ng-template let-details appDatabaseItemDetails>
+
+                @for (recipe of details.mixedFrom; track recipe.key) {
+                    <app-mixing-recipe [mixingRecipe]="recipe"/>
+                }
+            </ng-template>
+        </app-database-item-details>
+    }
+
+    @if (itemMixingRecipes | async; as processorItems) {
+
+        @if (!showTable) {
+            <div class="icon-grid">
+
+                @for (itemProcess of processorItems; track itemProcess) {
+                    <app-item-icon (click)="showDetails(itemProcess)"
+
+                                   [amount]="itemProcess.amount"
+                                   [class.selected-icon]="selectedEntity?.item?.id === itemProcess.item.id"
+                                   [itemName]="itemProcess.item.iconName"
+                                   class="icon-grid-item">
+                    </app-item-icon>
+                }
+            </div>
+        }
+        @if (showTable) {
+            <!--            <app-cooking-table [dataSource]="processorItems"/>-->
+        }
+    }
+
+</app-list-detail-container>

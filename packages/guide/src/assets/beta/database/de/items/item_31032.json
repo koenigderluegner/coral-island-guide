@@ -1,0 +1,176 @@
+{
+  "item": {
+    "id": "item_31032",
+    "displayName": "Großer Bereich",
+    "price": 3420,
+    "sellPrice": 2400,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Animal product",
+    "displayKey": "AnimalProduct",
+    "description": "Perle von einem großen Muschelkrebs.",
+    "qualities": {
+      "bronze": {
+        "price": 3940,
+        "sellPrice": 2760
+      },
+      "silver": {
+        "price": 4460,
+        "sellPrice": 3120
+      },
+      "gold": {
+        "price": 5140,
+        "sellPrice": 3600
+      },
+      "osmium": {
+        "price": 6860,
+        "sellPrice": 4800
+      }
+    },
+    "iconName": "Large_sphere_Sprite",
+    "tags": [
+      "income.ranching",
+      "item.animalproduct.other",
+      "item.UnderwaterAnimalProduct"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 18,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31032",
+          "displayName": "Großer Bereich",
+          "iconName": "Large_sphere_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_31032",
+          "displayName": "Großer Bereich",
+          "iconName": "Large_sphere_Sprite",
+          "sellPrice": 2400
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 1,
+          "time": {
+            "hours": 1,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 2,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 18,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31032",
+          "displayName": "Großer Bereich",
+          "iconName": "Large_sphere_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_31032",
+          "displayName": "Großer Bereich",
+          "iconName": "Large_sphere_Sprite",
+          "sellPrice": 2400
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 1,
+          "time": {
+            "hours": 1,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 2,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
+  "producedByAnimal": {
+    "key": "Shelluck",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Shell_cluck_Sprite"
+        }
+      }
+    ],
+    "building": "UnderwaterRanch",
+    "daysToGrow": 15,
+    "harvestCooldown": 6,
+    "animalProduceType": "DropAtDayBegin",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65042",
+      "displayName": "Milcheimer",
+      "iconName": "Milk_Pail_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31031",
+          "displayName": "Bereich",
+          "iconName": "Sphere_Sprite"
+        },
+        "large": {
+          "id": "item_31032",
+          "displayName": "Großer Bereich",
+          "iconName": "Large_sphere_Sprite"
+        }
+      }
+    ],
+    "displayName": "Perlkrebs"
+  }
+}

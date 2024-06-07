@@ -1,0 +1,133 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_Bluetang_v2",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Bluetang_v2:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Fish/Bluetang/PA_Bluetang_v2.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Bluetang_v2:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Fish/Bluetang/PA_Bluetang_v2.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Bluetang_v2:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Fish/Bluetang/PA_Bluetang_v2.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_Bluetang_v2",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Spine_Fish_Jnt",
+        "ConstraintBone1": "Spine_Fish_Jnt",
+        "ConstraintBone2": "Root_Fish_Jnt",
+        "Pos2": {
+          "X": 13.32427,
+          "Y": 0.052240424,
+          "Z": -2.3826788E-16
+        },
+        "PriAxis2": {
+          "X": 0.99916154,
+          "Y": 0.04094208,
+          "Z": 0.0
+        },
+        "SecAxis2": {
+          "X": -0.04094208,
+          "Y": 0.99916154,
+          "Z": 2.4651903E-32
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_Bluetang_v2",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 14.486693,
+              "Y": -0.18802397,
+              "Z": 6.2551335E-06
+            },
+            "Rotation": {
+              "Pitch": 90.0,
+              "Yaw": 0.0,
+              "Roll": -4.999634
+            },
+            "Radius": 15.934801,
+            "Length": 0.5,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Root_Fish_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "D1FD7760469719ECBA6710A2A6AB154C"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_Bluetang_v2",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 19.392096,
+              "Y": -0.94622725,
+              "Z": -0.0002848981
+            },
+            "Rotation": {
+              "Pitch": 1.3660378E-05,
+              "Yaw": 89.891106,
+              "Roll": -89.999954
+            },
+            "Radius": 14.209011,
+            "Length": 18.06881,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Spine_Fish_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "B1BF7C1E40B117F3973FA2B230D21B01"
+  }
+]

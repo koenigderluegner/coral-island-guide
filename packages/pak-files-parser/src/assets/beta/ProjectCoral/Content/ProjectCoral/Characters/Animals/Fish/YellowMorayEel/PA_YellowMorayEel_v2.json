@@ -1,0 +1,133 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_YellowMorayEel_v2",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_YellowMorayEel_v2:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Fish/YellowMorayEel/PA_YellowMorayEel_v2.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_YellowMorayEel_v2:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Fish/YellowMorayEel/PA_YellowMorayEel_v2.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_YellowMorayEel_v2:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Fish/YellowMorayEel/PA_YellowMorayEel_v2.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_YellowMorayEel_v2",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Spine_Fish_Jnt",
+        "ConstraintBone1": "Spine_Fish_Jnt",
+        "ConstraintBone2": "Root_Fish_Jnt",
+        "Pos2": {
+          "X": 17.951796,
+          "Y": 0.16049749,
+          "Z": -2.2494048E-16
+        },
+        "PriAxis2": {
+          "X": 0.9986586,
+          "Y": 0.051778052,
+          "Z": -1.2037062E-35
+        },
+        "SecAxis2": {
+          "X": -0.051778052,
+          "Y": 0.9986586,
+          "Z": 0.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_YellowMorayEel_v2",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 9.261099,
+              "Y": -1.1834021,
+              "Z": -0.0043391646
+            },
+            "Rotation": {
+              "Pitch": 90.0,
+              "Yaw": 90.0,
+              "Roll": -94.992676
+            },
+            "Radius": 17.297527,
+            "Length": 3.2104807,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Root_Fish_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "269C68744882C17DE2BA4E848EB4FC6D"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_YellowMorayEel_v2",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 52.048634,
+              "Y": -1.691558,
+              "Z": -0.0018777307
+            },
+            "Rotation": {
+              "Pitch": 0.042661358,
+              "Yaw": 91.929924,
+              "Roll": -89.99975
+            },
+            "Radius": 19.300373,
+            "Length": 86.05474,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Spine_Fish_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "E5778F1341E63CA4147587A71901BB07"
+  }
+]

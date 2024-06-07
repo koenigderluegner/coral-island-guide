@@ -1,0 +1,291 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_SeaTurtl",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_SeaTurtl:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/SeaTurtle/PA_SeaTurtl.4"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_SeaTurtl:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/SeaTurtle/PA_SeaTurtl.5"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_SeaTurtl:SkeletalBodySetup_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/SeaTurtle/PA_SeaTurtl.6"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_SeaTurtl:SkeletalBodySetup_3'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/SeaTurtle/PA_SeaTurtl.7"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_SeaTurtl:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/SeaTurtle/PA_SeaTurtl.1"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_SeaTurtl:PhysicsConstraintTemplate_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/SeaTurtle/PA_SeaTurtl.2"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_SeaTurtl:PhysicsConstraintTemplate_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/SeaTurtle/PA_SeaTurtl.3"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_SeaTurtl",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Spine_TopSHJnt",
+        "ConstraintBone1": "Spine_TopSHJnt",
+        "ConstraintBone2": "ROOTSHJnt",
+        "Pos2": {
+          "X": 33.35649,
+          "Y": -2.6336677,
+          "Z": 2.9508066E-14
+        },
+        "PriAxis2": {
+          "X": 0.9733496,
+          "Y": -0.22932652,
+          "Z": 2.1102816E-15
+        },
+        "SecAxis2": {
+          "X": 0.22932652,
+          "Y": 0.9733496,
+          "Z": 1.4841439E-16
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_1",
+    "Outer": "PA_SeaTurtl",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "l_Clavicle_AuxSHJnt",
+        "ConstraintBone1": "l_Clavicle_AuxSHJnt",
+        "ConstraintBone2": "Spine_TopSHJnt",
+        "Pos2": {
+          "X": -3.1797357,
+          "Y": 4.5606217,
+          "Z": -10.670801
+        },
+        "PriAxis2": {
+          "X": 0.13650954,
+          "Y": 0.83672893,
+          "Z": -0.53032976
+        },
+        "SecAxis2": {
+          "X": -0.5152148,
+          "Y": 0.51720935,
+          "Z": 0.6834092
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_2",
+    "Outer": "PA_SeaTurtl",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "r_Clavicle_AuxSHJnt",
+        "ConstraintBone1": "r_Clavicle_AuxSHJnt",
+        "ConstraintBone2": "Spine_TopSHJnt",
+        "Pos2": {
+          "X": -3.179772,
+          "Y": 4.560628,
+          "Z": 10.6708
+        },
+        "PriAxis2": {
+          "X": -0.13650942,
+          "Y": -0.83672893,
+          "Z": -0.53032976
+        },
+        "SecAxis2": {
+          "X": 0.5152148,
+          "Y": -0.5172093,
+          "Z": 0.6834092
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_SeaTurtl",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -4.080933,
+              "Y": -1.8042902,
+              "Z": 4.2915344E-06
+            },
+            "Rotation": {
+              "Pitch": 6.830189E-06,
+              "Yaw": -101.355835,
+              "Roll": -90.0
+            },
+            "Radius": 32.634716,
+            "Length": 38.704594,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "ROOTSHJnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "2327946541BCF96B64E1F7AD83596A54"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_SeaTurtl",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 16.035686,
+              "Y": -2.6134434,
+              "Z": -3.716237E-07
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -89.999985,
+              "Roll": -89.99999
+            },
+            "Radius": 11.758118,
+            "Length": 13.958817,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Spine_TopSHJnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "69F3D51140733135785E34ADBA35CCE9"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_2",
+    "Outer": "PA_SeaTurtl",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 19.642815,
+              "Y": -5.6257515,
+              "Z": -14.289982
+            },
+            "Rotation": {
+              "Pitch": 12.903688,
+              "Yaw": -89.99999,
+              "Roll": -34.15108
+            },
+            "Radius": 8.4623785,
+            "Length": 22.810934,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "l_Clavicle_AuxSHJnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "92CD08C34421A294805CF88A75A7F138"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_3",
+    "Outer": "PA_SeaTurtl",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -19.64281,
+              "Y": 5.6257744,
+              "Z": 14.289951
+            },
+            "Rotation": {
+              "Pitch": 12.903667,
+              "Yaw": -89.99999,
+              "Roll": -34.15106
+            },
+            "Radius": 8.462379,
+            "Length": 22.810934,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "r_Clavicle_AuxSHJnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "B7E35F76499781D500F2398ED1B60D9B"
+  }
+]

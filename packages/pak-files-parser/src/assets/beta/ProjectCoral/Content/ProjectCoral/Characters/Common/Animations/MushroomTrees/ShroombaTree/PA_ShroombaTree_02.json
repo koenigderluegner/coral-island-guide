@@ -1,0 +1,133 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_ShroombaTree_02",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_ShroombaTree_02:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/MushroomTrees/ShroombaTree/PA_ShroombaTree_02.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_ShroombaTree_02:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/MushroomTrees/ShroombaTree/PA_ShroombaTree_02.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_ShroombaTree_02:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/MushroomTrees/ShroombaTree/PA_ShroombaTree_02.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_ShroombaTree_02",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Oak_Trunk_Jnt",
+        "ConstraintBone1": "Oak_Trunk_Jnt",
+        "ConstraintBone2": "Root_Oak_Tree",
+        "Pos2": {
+          "X": 0.0,
+          "Y": -82.120224,
+          "Z": 0.71714467
+        },
+        "PriAxis2": {
+          "X": 0.99999815,
+          "Y": -0.0013664839,
+          "Z": -0.0013664851
+        },
+        "SecAxis2": {
+          "X": 0.0013646166,
+          "Y": 0.99999815,
+          "Z": -0.0013664839
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_ShroombaTree_02",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -0.91542625,
+              "Y": -25.87741,
+              "Z": -1.7008111
+            },
+            "Rotation": {
+              "Pitch": -8.552673,
+              "Yaw": -89.99999,
+              "Roll": 22.998997
+            },
+            "Radius": 40.521484,
+            "Length": 42.08115,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Root_Oak_Tree",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "B275C527423DD09ABD03AAAD8A8A7686"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_ShroombaTree_02",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 14.4880905,
+              "Y": -92.772255,
+              "Z": 12.672852
+            },
+            "Rotation": {
+              "Pitch": 37.288513,
+              "Yaw": 76.30947,
+              "Roll": -89.99999
+            },
+            "Radius": 109.22124,
+            "Length": 115.00999,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Oak_Trunk_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "6852156045B2860AE2E0DFAB8F9CDBD2"
+  }
+]

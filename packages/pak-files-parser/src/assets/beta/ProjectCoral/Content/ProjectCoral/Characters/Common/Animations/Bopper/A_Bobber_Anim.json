@@ -1,0 +1,157 @@
+[
+  {
+    "Type": "AnimSequence",
+    "Name": "A_Bobber_Anim",
+    "Class": "UScriptClass'AnimSequence'",
+    "Properties": {
+      "NumFrames": 45,
+      "TrackToSkeletonMapTable": [
+        {
+          "BoneTreeIndex": 0
+        },
+        {
+          "BoneTreeIndex": 1
+        },
+        {
+          "BoneTreeIndex": 2
+        }
+      ],
+      "BoneCompressionSettings": {
+        "ObjectName": "AnimBoneCompressionSettings'DefaultAnimBoneCompressionSettings'",
+        "ObjectPath": "Engine/Content/Animation/DefaultAnimBoneCompressionSettings.0"
+      },
+      "CurveCompressionSettings": {
+        "ObjectName": "AnimCurveCompressionSettings'DefaultAnimCurveCompressionSettings'",
+        "ObjectPath": "Engine/Content/Animation/DefaultAnimCurveCompressionSettings.1"
+      },
+      "Notifies": [
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "C_NotifyHitWater",
+          "Notify": {
+            "ObjectName": "C_NotifyHitWater'A_Bobber_Anim:C_NotifyHitWater_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Bopper/A_Bobber_Anim.1"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 1.0288879,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 0,
+          "LinkedMontage": null,
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.4666667,
+          "LinkValue": 1.0288879,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_Bobber_Anim'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Bopper/A_Bobber_Anim.0"
+          }
+        }
+      ],
+      "SequenceLength": 1.4666667,
+      "Skeleton": {
+        "ObjectName": "Skeleton'SM_Bobber_Skeleton'",
+        "ObjectPath": "ProjectCoral/Content/_Imports/Tools/SM_Bobber_Skeleton.2"
+      }
+    },
+    "SkeletonGuid": "F2FB13C8-4C4212FD-A3F8E1AB-09A20766",
+    "CompressedTrackToSkeletonMapTable": [
+      0,
+      1,
+      2
+    ],
+    "CompressedCurveNames": [
+      {
+        "DisplayName": "SM_Fishing_Bobber"
+      }
+    ],
+    "CompressedCurveData": {
+      "FloatCurves": [
+        {
+          "FloatCurve": {
+            "Keys": [
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.0,
+                "Value": 0.0,
+                "ArriveTangent": 0.30131555,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.2830306,
+                "Value": 0.30131555,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              }
+            ],
+            "DefaultValue": 3.4028235E+38,
+            "PreInfinityExtrap": "RCCE_Constant",
+            "PostInfinityExtrap": "RCCE_Constant"
+          },
+          "Name": {
+            "DisplayName": "SM_Fishing_Bobber"
+          },
+          "CurveTypeFlags": 4
+        }
+      ]
+    },
+    "CompressedDataStructure": {
+      "CompressedNumberOfFrames": 45,
+      "KeyEncodingFormat": "AKF_PerTrackCompression",
+      "TranslationCompressionFormat": "ACF_Identity",
+      "RotationCompressionFormat": "ACF_Identity",
+      "ScaleCompressionFormat": "ACF_Identity"
+    },
+    "BoneCompressionCodec": {
+      "ObjectName": "AnimCompress_PerTrackCompression'DefaultAnimBoneCompressionSettings:AnimCompress_PerTrackCompression_3'",
+      "ObjectPath": "Engine/Content/Animation/DefaultAnimBoneCompressionSettings"
+    },
+    "CurveCompressionCodec": {
+      "ObjectName": "AnimCurveCompressionCodec_CompressedRichCurve'DefaultAnimCurveCompressionSettings:CurveCompressionCodec'",
+      "ObjectPath": "Engine/Content/Animation/DefaultAnimCurveCompressionSettings"
+    },
+    "CompressedRawDataSize": 2220
+  },
+  {
+    "Type": "C_NotifyHitWater",
+    "Name": "C_NotifyHitWater_0",
+    "Outer": "A_Bobber_Anim",
+    "Class": "UScriptClass'C_NotifyHitWater'",
+    "Properties": {
+      "soundEvent": {
+        "ObjectName": "AkAudioEvent'anim_fishing_bobber'",
+        "ObjectPath": "ProjectCoral/Content/WwiseAudio/Events/Animation/Tools/Fishing/anim_fishing_bobber.1"
+      }
+    }
+  }
+]

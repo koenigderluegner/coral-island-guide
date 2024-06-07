@@ -89,3 +89,25 @@ export function flatObjectMap<T>(objectMap: { [key: string]: T }[]): (T & { mapK
 
 
 }
+
+export function minifyItem(item: undefined): undefined ;
+export function minifyItem(item: null): null ;
+export function minifyItem(item: Item | MinimalItem): MinimalItem;
+export function minifyItem(item: {
+    id: string,
+    displayName: string,
+    iconName: string | null
+} | undefined): MinimalItem | undefined;
+export function minifyItem(item: {
+    id: string,
+    displayName: string,
+    iconName: string | null
+} | Item | MinimalItem | null | undefined): MinimalItem | null | undefined {
+    if (!item) return item;
+
+    return {
+        id: item.id,
+        displayName: item.displayName,
+        iconName: item.iconName
+    };
+}

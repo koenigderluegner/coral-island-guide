@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_1",
+    "Outer": "Tyrannousaurus_prints_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -2.0,
+              "Y": -0.0,
+              "Z": -3.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 450.0,
+            "Y": 10.0,
+            "Z": 469.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "C1FA84EA48B90F5DB78051A29E321635"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Tyrannousaurus_prints_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 512.0,
+        "Y": 512.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Tyrannousaurus_prints'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Gem_Artifacts_Fossils/Fossils/Fossils_textures/Tyrannousaurus_prints.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Tyrannousaurus_prints_Sprite:BodySetup_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Gem_Artifacts_Fossils/Fossils/Tyrannousaurus_prints_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 223.0,
+          "Y": 231.0,
+          "Z": 0.9355469,
+          "W": 0.048828125
+        },
+        {
+          "X": -227.0,
+          "Y": 231.0,
+          "Z": 0.056640625,
+          "W": 0.048828125
+        },
+        {
+          "X": -227.0,
+          "Y": -238.0,
+          "Z": 0.056640625,
+          "W": 0.96484375
+        },
+        {
+          "X": 223.0,
+          "Y": -238.0,
+          "Z": 0.9355469,
+          "W": 0.96484375
+        },
+        {
+          "X": 223.0,
+          "Y": 231.0,
+          "Z": 0.9355469,
+          "W": 0.048828125
+        },
+        {
+          "X": -227.0,
+          "Y": -238.0,
+          "Z": 0.056640625,
+          "W": 0.96484375
+        }
+      ]
+    }
+  }
+]

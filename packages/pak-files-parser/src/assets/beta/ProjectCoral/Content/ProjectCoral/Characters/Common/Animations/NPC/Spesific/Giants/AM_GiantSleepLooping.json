@@ -1,0 +1,353 @@
+[
+  {
+    "Type": "AnimMontage",
+    "Name": "AM_GiantSleepLooping",
+    "Class": "UScriptClass'AnimMontage'",
+    "Properties": {
+      "CompositeSections": [
+        {
+          "SectionName": "Default",
+          "NextSectionName": "Loop",
+          "MetaData": [],
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_GiantSleepLooping'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/AM_GiantSleepLooping.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 4.633333,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_ChieftainEarth_StartSleep'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/A_ChieftainEarth_StartSleep.0"
+          }
+        },
+        {
+          "SectionName": "Loop",
+          "NextSectionName": "Loop",
+          "MetaData": [],
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_GiantSleepLooping'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/AM_GiantSleepLooping.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 1,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 4.633333,
+          "SegmentLength": 5.9333334,
+          "LinkValue": 4.633333,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_ChieftainEarth_IdleSleep'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/A_ChieftainEarth_IdleSleep.0"
+          }
+        },
+        {
+          "SectionName": "EndLoop",
+          "NextSectionName": "None",
+          "MetaData": [],
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_GiantSleepLooping'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/AM_GiantSleepLooping.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 2,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 10.566667,
+          "SegmentLength": 1.8,
+          "LinkValue": 10.566667,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_ChieftainEarth_EndSleep'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/A_ChieftainEarth_EndSleep.0"
+          }
+        }
+      ],
+      "SlotAnimTracks": [
+        {
+          "SlotName": "DefaultSlot",
+          "AnimTrack": {
+            "AnimSegments": [
+              {
+                "AnimReference": {
+                  "ObjectName": "AnimSequence'A_ChieftainEarth_StartSleep'",
+                  "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/A_ChieftainEarth_StartSleep.0"
+                },
+                "StartPos": 0.0,
+                "AnimStartTime": 0.0,
+                "AnimEndTime": 4.633333,
+                "AnimPlayRate": 1.0,
+                "LoopingCount": 1
+              },
+              {
+                "AnimReference": {
+                  "ObjectName": "AnimSequence'A_ChieftainEarth_IdleSleep'",
+                  "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/A_ChieftainEarth_IdleSleep.0"
+                },
+                "StartPos": 4.633333,
+                "AnimStartTime": 0.0,
+                "AnimEndTime": 5.9333334,
+                "AnimPlayRate": 1.0,
+                "LoopingCount": 1
+              },
+              {
+                "AnimReference": {
+                  "ObjectName": "AnimSequence'A_ChieftainEarth_EndSleep'",
+                  "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/A_ChieftainEarth_EndSleep.0"
+                },
+                "StartPos": 10.566667,
+                "AnimStartTime": 0.0,
+                "AnimEndTime": 1.8,
+                "AnimPlayRate": 1.0,
+                "LoopingCount": 1
+              }
+            ]
+          }
+        }
+      ],
+      "Notifies": [
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0001,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "C_Footstep",
+          "Notify": {
+            "ObjectName": "C_AnimNotify_Footstep'AM_GiantSleepLooping:C_AnimNotify_Footstep_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/AM_GiantSleepLooping.1"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.0,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 1,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_GiantSleepLooping'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/AM_GiantSleepLooping.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 4.633333,
+          "LinkValue": 2.248262,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_ChieftainEarth_StartSleep'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/A_ChieftainEarth_StartSleep.0"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0001,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "CPlaySoundEvent",
+          "Notify": {
+            "ObjectName": "CAnimNotify_PlaySoundEvent'AM_GiantSleepLooping:CAnimNotify_PlaySoundEvent_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/AM_GiantSleepLooping.3"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.0,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 0,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_GiantSleepLooping'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/AM_GiantSleepLooping.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 4.633333,
+          "LinkValue": 2.9466915,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_ChieftainEarth_StartSleep'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/A_ChieftainEarth_StartSleep.0"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0001,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "CPlaySoundEvent",
+          "Notify": {
+            "ObjectName": "CAnimNotify_PlaySoundEvent'AM_GiantSleepLooping:CAnimNotify_PlaySoundEvent_1'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/AM_GiantSleepLooping.4"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.0,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 1,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_GiantSleepLooping'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/AM_GiantSleepLooping.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 4.633333,
+          "LinkValue": 3.5705302,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_ChieftainEarth_StartSleep'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/A_ChieftainEarth_StartSleep.0"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0001,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "C_Footstep",
+          "Notify": {
+            "ObjectName": "C_AnimNotify_Footstep'AM_GiantSleepLooping:C_AnimNotify_Footstep_1'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/AM_GiantSleepLooping.2"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.0,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 0,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_GiantSleepLooping'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/AM_GiantSleepLooping.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 2,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 10.566667,
+          "SegmentLength": 1.8,
+          "LinkValue": 12.060171,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_ChieftainEarth_EndSleep'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/NPC/Spesific/Giants/A_ChieftainEarth_EndSleep.0"
+          }
+        }
+      ],
+      "SequenceLength": 12.366667,
+      "Skeleton": {
+        "ObjectName": "Skeleton'SKEL_Chieftan'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Chieftan/SKEL_Chieftan.3"
+      }
+    },
+    "SkeletonGuid": "7D649E20-46489CB3-F75CC48D-73342AFD"
+  },
+  {
+    "Type": "C_AnimNotify_Footstep",
+    "Name": "C_AnimNotify_Footstep_0",
+    "Outer": "AM_GiantSleepLooping",
+    "Class": "UScriptClass'C_AnimNotify_Footstep'",
+    "Properties": {
+      "previewSound": {
+        "ObjectName": "AkAudioEvent'anim_giant_footsteps'",
+        "ObjectPath": "ProjectCoral/Content/WwiseAudio/Events/Animation/Giant/anim_giant_footsteps.1"
+      }
+    }
+  },
+  {
+    "Type": "C_AnimNotify_Footstep",
+    "Name": "C_AnimNotify_Footstep_1",
+    "Outer": "AM_GiantSleepLooping",
+    "Class": "UScriptClass'C_AnimNotify_Footstep'",
+    "Properties": {
+      "previewSound": {
+        "ObjectName": "AkAudioEvent'anim_giant_footsteps'",
+        "ObjectPath": "ProjectCoral/Content/WwiseAudio/Events/Animation/Giant/anim_giant_footsteps.1"
+      }
+    }
+  },
+  {
+    "Type": "CAnimNotify_PlaySoundEvent",
+    "Name": "CAnimNotify_PlaySoundEvent_0",
+    "Outer": "AM_GiantSleepLooping",
+    "Class": "UScriptClass'CAnimNotify_PlaySoundEvent'",
+    "Properties": {
+      "soundEvent": {
+        "ObjectName": "AkAudioEvent'anim_npc_sit_down'",
+        "ObjectPath": "ProjectCoral/Content/WwiseAudio/Events/Animation/SitStand/anim_npc_sit_down.1"
+      }
+    }
+  },
+  {
+    "Type": "CAnimNotify_PlaySoundEvent",
+    "Name": "CAnimNotify_PlaySoundEvent_1",
+    "Outer": "AM_GiantSleepLooping",
+    "Class": "UScriptClass'CAnimNotify_PlaySoundEvent'",
+    "Properties": {
+      "soundEvent": {
+        "ObjectName": "AkAudioEvent'anim_giant_sleep'",
+        "ObjectPath": "ProjectCoral/Content/WwiseAudio/Events/Animation/Giant/anim_giant_sleep.1"
+      }
+    }
+  }
+]

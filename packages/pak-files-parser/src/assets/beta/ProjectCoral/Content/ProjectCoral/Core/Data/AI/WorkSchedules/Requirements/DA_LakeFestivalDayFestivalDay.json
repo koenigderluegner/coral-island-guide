@@ -1,0 +1,52 @@
+[
+  {
+    "Type": "C_IsFestivalDayRequirement",
+    "Name": "C_IsFestivalDayRequirement_0",
+    "Outer": "DA_LakeFestivalDayFestivalDay",
+    "Class": "UScriptClass'C_IsFestivalDayRequirement'",
+    "Properties": {
+      "festivalId": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_FestivalRegistry'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Festival/DT_FestivalRegistry.0"
+        },
+        "RowName": "CherryBlossom"
+      }
+    }
+  },
+  {
+    "Type": "C_IsFestivalDayRequirement",
+    "Name": "C_IsFestivalDayRequirement_1",
+    "Outer": "DA_LakeFestivalDayFestivalDay",
+    "Class": "UScriptClass'C_IsFestivalDayRequirement'",
+    "Properties": {
+      "festivalId": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_FestivalRegistry'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Festival/DT_FestivalRegistry.0"
+        },
+        "RowName": "MooncakeFestival"
+      }
+    }
+  },
+  {
+    "Type": "C_RequirementsConfig",
+    "Name": "DA_LakeFestivalDayFestivalDay",
+    "Class": "UScriptClass'C_RequirementsConfig'",
+    "Properties": {
+      "requirements": {
+        "type": "EC_RequirementCollectionType::Or",
+        "requirements": [
+          {
+            "ObjectName": "C_IsFestivalDayRequirement'DA_LakeFestivalDayFestivalDay:C_IsFestivalDayRequirement_1'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/DA_LakeFestivalDayFestivalDay.1"
+          },
+          {
+            "ObjectName": "C_IsFestivalDayRequirement'DA_LakeFestivalDayFestivalDay:C_IsFestivalDayRequirement_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/DA_LakeFestivalDayFestivalDay.0"
+          }
+        ]
+      }
+    }
+  }
+]

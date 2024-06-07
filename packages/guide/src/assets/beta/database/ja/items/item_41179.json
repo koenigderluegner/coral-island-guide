@@ -1,0 +1,219 @@
+{
+  "item": {
+    "id": "item_41179",
+    "displayName": "大きなヨーグルト",
+    "price": 650,
+    "sellPrice": 390,
+    "sellAt": [
+      "Sam"
+    ],
+    "stackable": true,
+    "inventoryCategory": "Artisan product",
+    "displayKey": "ArtisanProduct",
+    "description": "ミルクを発酵させて作ったプレーンヨーグルト。サイズは大型です。",
+    "qualities": {
+      "bronze": {
+        "price": 750,
+        "sellPrice": 450
+      },
+      "silver": {
+        "price": 840,
+        "sellPrice": 505
+      },
+      "gold": {
+        "price": 975,
+        "sellPrice": 585
+      },
+      "osmium": {
+        "price": 1300,
+        "sellPrice": 780
+      }
+    },
+    "iconName": "Large_Yoghurt_Sprite",
+    "tags": [
+      "income.farming",
+      "Item.Consumable.Food"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 1,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31016",
+          "displayName": "大きなミルク",
+          "iconName": "Large_milk_Sprite_"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41179",
+          "displayName": "大きなヨーグルト",
+          "iconName": "Large_Yoghurt_Sprite",
+          "sellPrice": 390
+        }
+      },
+      "genericInput": null,
+      "machine": "YogurtMachine"
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "ストーンスープ",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "食用とは思えません。食べるなら自己責任で。",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "食用食材すべて"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "石材",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "食用食材すべて": [
+          {
+            "id": "item_41180",
+            "displayName": "ヤギのヨーグルト",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "大きなヤギのヨーグルト",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41179",
+      "bVaryHealthToMax": false,
+      "healthDelta": 35,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 40,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_41179-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 40,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 45,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_41179-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 45,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 50,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_41179-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 55,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 60,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_41179-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 70,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 80,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  }
+}

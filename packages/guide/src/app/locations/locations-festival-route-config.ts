@@ -11,6 +11,7 @@ export const festivalRouteConfig: {
         component: GenericFestivalComponent,
         data: {
             name: "winter-fair",
+            hasNoOpeningHours: true
         }
     },
     {

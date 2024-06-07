@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { MailData } from "@ci/data-types";
+import { Component, inject, input } from '@angular/core';
+import { MailData, UiIcon } from "@ci/data-types";
+import { ListDetailService } from "../../../shared/components/list-detail-container/list-detail.service";
 
 @Component({
     selector: 'app-mail-details',
@@ -7,6 +8,7 @@ import { MailData } from "@ci/data-types";
 })
 export class MailDetailsComponent {
 
-    @Input({required: true}) mail!: MailData
-
+    mail = input.required<MailData>()
+    listDetails = inject(ListDetailService)
+    protected readonly uiIcon = UiIcon;
 }

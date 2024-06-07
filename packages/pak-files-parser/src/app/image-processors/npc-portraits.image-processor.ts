@@ -1,111 +1,27 @@
-import { createPathIfNotExists, extractOutfitPortraitsLocation, readAsset } from "../../util/functions";
-import { RawNPC } from "../../interfaces/raw-data-interfaces/raw-npc.interface";
-import { Datatable } from "../../interfaces/datatable.interface";
+import { createPathIfNotExists } from "../../util/functions";
 import { Logger } from "../../util/logger.class";
-import { RawNpcAppearances } from "../../interfaces/raw-data-interfaces/raw-npc-appearances.interface";
 import path from "path";
 import fs from "fs";
-import { environment } from "../../environments/environment";
 import sharp from "sharp";
 import glob from "glob";
+import { NPCDbGenerator } from "../generators/npcs/npc-db.generator";
 
 export class NpcPortraitsImageProcessor {
 
-    datatable: Datatable<RawNPC>[] = readAsset('ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.json');
 
-    petNPCs: Datatable<RawNPC>[] = readAsset('ProjectCoral/Content/ProjectCoral/AdoptablePets/NPC/DT_PetNPCs.json');
-
-    constructor(protected sourcePath: string, protected portraitOutputPath: string, protected headPortraitOutputPath: string, protected skipIfExists = true) {
+    constructor(protected sourcePath: string, protected portraitOutputPath: string, protected headPortraitOutputPath: string, protected additionalMappings: {
+        npcKey: string,
+        appearanceName: string,
+        outfitKey: string
+    }[] = [], protected skipIfExists = true) {
     }
 
     async process() {
-        const npcKeys = Object.keys(this.datatable[0].Rows);
-        const sourceImages: Set<{
-            npcKey: string;
-            image: string
-        }> = new Set<{
-            npcKey: string;
-            image: string
-        }>();
-        const sourceImagesHeadPortraits: Set<{
-            npcKey: string;
-            image: string
-        }> = new Set<{
-            npcKey: string;
-            image: string
-        }>();
+        const sourceImages = NPCDbGenerator.filePaths.appearances
+        const sourceImagesHeadPortraits = NPCDbGenerator.filePaths.heads;
 
         const excludeFromDeletion: Set<string> = new Set<string>()
 
-        const appearances: {
-            npcKey: string;
-            emotion: string;
-            fileName: string;
-            npcAppearanceKey: string
-        }[] = []
-
-        npcKeys.forEach(npcKey => {
-            const npcData = this.petNPCs[0]?.Rows[npcKey] ?? this.datatable[0].Rows[npcKey];
-            let npcAppearances: Record<string, RawNpcAppearances> = {}
-            let {index, fileName} = extractOutfitPortraitsLocation(npcData, npcKey);
-
-            try {
-                npcAppearances = readAsset<Datatable<RawNpcAppearances>[]>(fileName)[+index].Rows;
-            } catch (e) {
-                Logger.error(e)
-                Logger.warn(`Can't find NPC appearances for ${npcKey} at path ${fileName}`)
-            }
-
-            this.detectHeadImage(npcData, npcKey, sourceImagesHeadPortraits);
-
-
-            Object.keys(npcAppearances).forEach(npcAppearanceKey => {
-                const npcAppearnace = npcAppearances[npcAppearanceKey]
-
-                npcAppearnace.images.forEach(imageDefinition => {
-                    const assetPath = imageDefinition.texture.AssetPathName.replace('/Game/ProjectCoral/', '/ProjectCoral/Content/ProjectCoral/').split('.')[0];
-                    if (assetPath === 'None') return;
-                    const emotion = imageDefinition.EmotionRow.RowName;
-
-
-                    const sourceImagePath = path.join(environment.assetPath, assetPath + '.png');
-
-                    if (!fs.existsSync(sourceImagePath)) {
-
-
-                        const guessedPath = sourceImagePath.replace('Potrait', 'Potraits');
-
-                        if (fs.existsSync(guessedPath)) {
-                            Logger.warn(`Guessed portrait image for ${npcKey}.`);
-                            sourceImages.add({npcKey, image: guessedPath});
-                            appearances.push({
-                                fileName: this._getFileName(guessedPath),
-                                npcKey,
-                                emotion,
-                                npcAppearanceKey
-                            })
-
-                        } else if (!sourceImagePath.includes('Winter') && !sourceImagePath.includes('Wedding'))
-                            Logger.warn('Can\'t find portrait source image.', sourceImagePath);
-                        return;
-                    }
-
-                    sourceImages.add({npcKey, image: sourceImagePath});
-                    appearances.push({
-                        fileName: this._getFileName(sourceImagePath),
-                        npcKey,
-                        emotion,
-                        npcAppearanceKey
-                    })
-
-
-                })
-
-
-            })
-
-
-        });
 
         Logger.log(`checking ${sourceImagesHeadPortraits.size} head portraits`);
         await this.extractHeadImages(sourceImagesHeadPortraits);
@@ -120,64 +36,30 @@ export class NpcPortraitsImageProcessor {
 
     }
 
+
     private async extractPortraits(sourceImages: Set<{
         npcKey: string;
         image: string
     }>, excludeFromDeletion: Set<string>) {
         let counter = 0;
         for (const s of sourceImages) {
-            await this._createImages(s.npcKey, s.image, this.portraitOutputPath);
+            await this._createImages(s.npcKey, s.image, this.portraitOutputPath, {createThumbs: true, trim: true});
             excludeFromDeletion.add(s.image.replace('\\dist', '').replace('\\assets', '\\src\\assets'))
             counter++;
-            Logger.progress((counter / sourceImages.size) * 100)
+            counter++;
+            Logger.progress((counter / (sourceImages.size * 2)) * 100)
         }
     }
 
     private async extractHeadImages(sourceImagesHeadPortraits: Set<{ npcKey: string; image: string }>) {
         let headCounter = 0;
         for (const s of sourceImagesHeadPortraits) {
-            await this._createImages(s.npcKey, s.image, this.headPortraitOutputPath, false);
+            await this._createImages(s.npcKey, s.image, this.headPortraitOutputPath, {
+                createThumbs: false,
+                trim: false
+            });
             headCounter++;
             Logger.progress((headCounter / sourceImagesHeadPortraits.size) * 100)
-        }
-    }
-
-    private detectHeadImage(npcData: RawNPC, npcKey: string, sourceImagesHeadPortraits: Set<{
-        npcKey: string;
-        image: string
-    }>) {
-        const portraitPath = npcData.Portrait.AssetPathName.replace('/Game/ProjectCoral/', '/ProjectCoral/Content/ProjectCoral/').split('.')[0];
-        const sourceImagePath = path.join(environment.assetPath, portraitPath + '.png');
-        const customPath = path.join(...environment.assetPath.split(path.sep).slice(0, -1), 'custom', 'head-portraits', npcKey + '.png');
-        const guessedPath = path.join(environment.assetPath, 'ProjectCoral', 'Content', 'ProjectCoral', 'Textures', 'UI', 'NPCHeadPortraits', 'T_Relationship' + npcKey + '.png');
-        const guessedPetPath = path.join(environment.assetPath, 'ProjectCoral', 'Content', 'ProjectCoral', 'Textures', 'UI', 'NPCHeadPortraits', 'Pet', 'T_Relationship' + npcKey + '.png');
-
-        if (fs.existsSync(sourceImagePath) && fs.existsSync(guessedPath) && sourceImagePath !== guessedPath) {
-            Logger.info(`Replaced guessed header image with given one for ${npcKey}`);
-            sourceImagesHeadPortraits.add({npcKey, image: guessedPath})
-        } else if (fs.existsSync(guessedPetPath)) {
-            Logger.info(`Guessed  header image for ${npcKey}`);
-            sourceImagesHeadPortraits.add({npcKey, image: guessedPetPath})
-        } else if (fs.existsSync(customPath) && fs.existsSync(sourceImagePath) && !sourceImagePath.includes('NPCHeadPortraits')) {
-            Logger.warn(`Found custom header image for ${npcKey}. Force overwrite for found source image!`);
-            sourceImagesHeadPortraits.add({npcKey, image: customPath})
-        } else if (!fs.existsSync(sourceImagePath) || portraitPath === "None") {
-
-            if (fs.existsSync(guessedPath)) {
-                Logger.info(`Guessed  header image for ${npcKey}`);
-                sourceImagesHeadPortraits.add({npcKey, image: guessedPath})
-            } else if (fs.existsSync(customPath)) {
-                Logger.info(`Found custom header image for ${npcKey}`);
-                sourceImagesHeadPortraits.add({npcKey, image: customPath})
-            } else {
-                if (portraitPath !== "None")
-                    Logger.warn(`Can't find head portrait source image for ${npcKey}.`, sourceImagePath);
-
-            }
-
-
-        } else {
-            sourceImagesHeadPortraits.add({npcKey, image: sourceImagePath})
         }
     }
 
@@ -218,37 +100,58 @@ export class NpcPortraitsImageProcessor {
         });
     }
 
-    private async _createImages(npcKey: string, sourceImagePath: string, outputPath: string, trim = true) {
+    private async _createImages(npcKey: string, sourceImagePath: string, outputPath: string, options: {
+        trim?: boolean,
+        createThumbs?: boolean
+    } = {trim: true}) {
 
+        const {trim, createThumbs} = options
 
         const fileName = this._getFileName(sourceImagePath)
 
         const webpPath = path.join(outputPath, npcKey, fileName + '.webp');
+        const webpThumbsPath = path.join(outputPath, npcKey, 'thumbs', fileName + '.webp');
 
         const webpTargetExists = fs.existsSync(webpPath);
+        const webpThumbsPathExists = fs.existsSync(webpThumbsPath);
 
         const targetPathParts = webpPath.split(path.sep);
         targetPathParts.pop()
         const targetPath = targetPathParts.join(path.sep)
-        createPathIfNotExists(targetPath)
-        if (this.skipIfExists && webpTargetExists) return;
+        createPathIfNotExists(targetPath);
 
+        const targetPathParts2 = webpThumbsPath.split(path.sep);
+        targetPathParts2.pop()
+        const targetPath2 = targetPathParts2.join(path.sep)
+        createPathIfNotExists(targetPath2)
+        if (this.skipIfExists && webpTargetExists && webpThumbsPathExists) return;
 
-        let image = sharp(sourceImagePath);
+        const imagesToCreate = [];
+        let image
+        if (!webpTargetExists) {
+            image = sharp(sourceImagePath);
 
-        if (trim) {
-            image = image.trim()
+            if (trim) {
+                image = image.trim()
+            }
+
+            imagesToCreate.push(image.webp().toFile(webpPath))
+        }
+        if (!webpThumbsPathExists && !!createThumbs) {
+            let clone = (image ?? sharp(sourceImagePath).trim()).clone().resize(400, 400, {fit: "inside"})
+            imagesToCreate.push(clone.webp().toFile(webpThumbsPath));
         }
 
+
         try {
-            if (!webpTargetExists || !this.skipIfExists)
-                await image.webp().toFile(webpPath);
+            if (!webpTargetExists || !this.skipIfExists || !webpThumbsPathExists)
+                await Promise.all(imagesToCreate)
         } catch (e) {
             console.log(e);
         }
     }
 
     private _getFileName(sourceImagePath: string): string {
-        return path.join((sourceImagePath.split(path.sep).pop() ?? '').replace('.png', ''));
+        return (path.join((sourceImagePath.split('/').pop() ?? '').split('\\').pop() ?? '').replace('.png', ''));
     }
 }

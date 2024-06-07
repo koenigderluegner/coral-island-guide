@@ -1,0 +1,2701 @@
+[
+  {
+    "Type": "Rig",
+    "Name": "SKEL_CharacterRig",
+    "Class": "UScriptClass'Rig'",
+    "Properties": {
+      "TransformBases": [
+        {
+          "Node": "C_Root",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "World",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "World",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Pelvis_M",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "C_Root",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "C_Root",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Hip_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Pelvis_M",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Pelvis_M",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Knee_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Hip_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Hip_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Ankle_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Knee_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Knee_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Toes_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Ankle_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Ankle_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "ToesEnd_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Toes_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Toes_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Spine1_M",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Pelvis_M",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Pelvis_M",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Chest_M",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Spine1_M",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Spine1_M",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Scapula_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Chest_M",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Chest_M",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Shoulder_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Scapula_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Scapula_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "ShoulderPart1_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Shoulder_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Shoulder_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Elbow_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "ShoulderPart1_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "ShoulderPart1_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Wrist_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Elbow_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Elbow_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "MiddleFinger1_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Wrist_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Wrist_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "MiddleFinger2_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "MiddleFinger1_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "MiddleFinger1_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "MiddleFinger3_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "MiddleFinger2_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "MiddleFinger2_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "MiddleFinger4_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "MiddleFinger3_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "MiddleFinger3_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "ThumbFinger1_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Wrist_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Wrist_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "ThumbFinger2_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "ThumbFinger1_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "ThumbFinger1_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "ThumbFinger3_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "ThumbFinger2_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "ThumbFinger2_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "ThumbFinger4_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "ThumbFinger3_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "ThumbFinger3_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "r_weapon_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Wrist_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Wrist_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "joint2_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "r_weapon_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "r_weapon_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "joint3_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "joint2_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "joint2_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "joint4_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "joint3_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "joint3_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "joint5_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "joint4_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "joint4_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "joint6_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "joint5_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "joint5_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "joint7_R",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "joint6_R",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "joint6_R",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Neck_M",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Chest_M",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Chest_M",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Head_M",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Neck_M",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Neck_M",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "HeadEnd_M",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Head_M",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Head_M",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Scapula_L",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Chest_M",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Chest_M",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Shoulder_L",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Scapula_L",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Scapula_L",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "ShoulderPart1_L",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Shoulder_L",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Shoulder_L",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Elbow_L",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "ShoulderPart1_L",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "ShoulderPart1_L",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Wrist_L",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Elbow_L",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Elbow_L",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "MiddleFinger1_L",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Wrist_L",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Wrist_L",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "MiddleFinger2_L",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "MiddleFinger1_L",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "MiddleFinger1_L",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "MiddleFinger3_L",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "MiddleFinger2_L",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "MiddleFinger2_L",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "MiddleFinger4_L",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "MiddleFinger3_L",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "MiddleFinger3_L",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "ThumbFinger1_L",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Wrist_L",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Wrist_L",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "ThumbFinger2_L",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "ThumbFinger1_L",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "ThumbFinger1_L",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "ThumbFinger3_L",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "ThumbFinger2_L",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "ThumbFinger2_L",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "ThumbFinger4_L",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "ThumbFinger3_L",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "ThumbFinger3_L",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Hip_L",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Pelvis_M",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Pelvis_M",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Knee_L",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Hip_L",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Hip_L",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Ankle_L",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Knee_L",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Knee_L",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "Toes_L",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Ankle_L",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Ankle_L",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "ToesEnd_L",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Toes_L",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Toes_L",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "follicle1",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Head_M",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Head_M",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "baseCurve2",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "follicle1",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "follicle1",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "follicle2",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Head_M",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Head_M",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "baseCurve4",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "follicle2",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "follicle2",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "follicle3",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Head_M",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "Head_M",
+                "Weight": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "Node": "baseCurve6",
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "follicle3",
+                "Weight": 1.0
+              }
+            ]
+          },
+          "Constraints": {
+            "TransformConstraints": [
+              {
+                "TranformType": "EConstraintTransform::Absolute",
+                "ParentSpace": "follicle3",
+                "Weight": 1.0
+              }
+            ]
+          }
+        }
+      ],
+      "Nodes": [
+        {
+          "Name": "C_Root",
+          "ParentName": "World",
+          "Transform": {
+            "Rotation": {
+              "X": -0.7071067,
+              "Y": 0.0,
+              "Z": 0.0,
+              "W": 0.7071068,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 0.99999994,
+              "Z": 0.99999994
+            }
+          },
+          "DisplayName": "C_Root",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Pelvis_M",
+          "ParentName": "C_Root",
+          "Transform": {
+            "Rotation": {
+              "X": 0.70708376,
+              "Y": -0.0057046413,
+              "Z": 0.70708376,
+              "W": -0.0057046413,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": 0.0,
+              "Y": -5.977173,
+              "Z": 90.8848
+            },
+            "Scale3D": {
+              "X": 1.0000001,
+              "Y": 1.0,
+              "Z": 0.99999994
+            }
+          },
+          "DisplayName": "Pelvis_M",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Hip_R",
+          "ParentName": "Pelvis_M",
+          "Transform": {
+            "Rotation": {
+              "X": 0.6578303,
+              "Y": 0.0462356,
+              "Z": -0.7501161,
+              "W": -0.049469575,
+              "IsNormalized": true,
+              "Size": 0.9999999,
+              "SizeSquared": 0.9999998
+            },
+            "Translation": {
+              "X": -12.23193,
+              "Y": -6.5333385,
+              "Z": 80.99783
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 0.9999997,
+              "Z": 1.0
+            }
+          },
+          "DisplayName": "Hip_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Knee_R",
+          "ParentName": "Hip_R",
+          "Transform": {
+            "Rotation": {
+              "X": -0.6582074,
+              "Y": 0.040512986,
+              "Z": 0.7501194,
+              "W": -0.04942072,
+              "IsNormalized": true,
+              "Size": 0.9999999,
+              "SizeSquared": 0.9999998
+            },
+            "Translation": {
+              "X": -16.686337,
+              "Y": -1.8926053,
+              "Z": 47.24122
+            },
+            "Scale3D": {
+              "X": 0.9999998,
+              "Y": 1.0000001,
+              "Z": 1.0
+            }
+          },
+          "DisplayName": "Knee_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Ankle_R",
+          "ParentName": "Knee_R",
+          "Transform": {
+            "Rotation": {
+              "X": 0.7070886,
+              "Y": 0.0050619566,
+              "Z": -0.7070886,
+              "W": 0.005061891,
+              "IsNormalized": true,
+              "Size": 0.9999999,
+              "SizeSquared": 0.9999998
+            },
+            "Translation": {
+              "X": -21.700474,
+              "Y": -6.8612866,
+              "Z": 8.907909
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0000001,
+              "Z": 1.0000004
+            }
+          },
+          "DisplayName": "Ankle_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Toes_R",
+          "ParentName": "Ankle_R",
+          "Transform": {
+            "Rotation": {
+              "X": -0.57578284,
+              "Y": -0.38714442,
+              "Z": 0.5980967,
+              "W": 0.40109026,
+              "IsNormalized": true,
+              "Size": 0.9999999,
+              "SizeSquared": 0.99999976
+            },
+            "Translation": {
+              "X": -21.870033,
+              "Y": 4.980786,
+              "Z": 4.3002067
+            },
+            "Scale3D": {
+              "X": 0.9999996,
+              "Y": 1.0000006,
+              "Z": 1.0000002
+            }
+          },
+          "DisplayName": "Toes_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "ToesEnd_R",
+          "ParentName": "Toes_R",
+          "Transform": {
+            "Rotation": {
+              "X": 0.57578284,
+              "Y": 0.38714442,
+              "Z": -0.5980967,
+              "W": -0.40109026,
+              "IsNormalized": true,
+              "Size": 0.9999999,
+              "SizeSquared": 0.99999976
+            },
+            "Translation": {
+              "X": -22.022045,
+              "Y": 14.236866,
+              "Z": 0.5183077
+            },
+            "Scale3D": {
+              "X": 0.9999996,
+              "Y": 1.0000006,
+              "Z": 1.0000002
+            }
+          },
+          "DisplayName": "ToesEnd_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Spine1_M",
+          "ParentName": "Pelvis_M",
+          "Transform": {
+            "Rotation": {
+              "X": -0.707091,
+              "Y": 0.00472695,
+              "Z": -0.707091,
+              "W": 0.00472695,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": 0.0,
+              "Y": -6.2352996,
+              "Z": 106.88104
+            },
+            "Scale3D": {
+              "X": 1.0000004,
+              "Y": 1.0000002,
+              "Z": 0.99999994
+            }
+          },
+          "DisplayName": "Spine1_M",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Chest_M",
+          "ParentName": "Spine1_M",
+          "Transform": {
+            "Rotation": {
+              "X": 0.70704305,
+              "Y": -0.009493535,
+              "Z": 0.70704305,
+              "W": -0.009493535,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": 0.0,
+              "Y": -6.412912,
+              "Z": 120.16465
+            },
+            "Scale3D": {
+              "X": 0.99999946,
+              "Y": 0.99999934,
+              "Z": 0.99999994
+            }
+          },
+          "DisplayName": "Chest_M",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Scapula_R",
+          "ParentName": "Chest_M",
+          "Transform": {
+            "Rotation": {
+              "X": -0.000105291605,
+              "Y": 0.015882699,
+              "Z": -0.9998199,
+              "W": 0.010386856,
+              "IsNormalized": true,
+              "Size": 0.99999994,
+              "SizeSquared": 0.99999994
+            },
+            "Translation": {
+              "X": -3.5718994,
+              "Y": -11.007008,
+              "Z": 137.6108
+            },
+            "Scale3D": {
+              "X": 0.9999993,
+              "Y": 1.0000001,
+              "Z": 0.99999994
+            }
+          },
+          "DisplayName": "Scapula_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Shoulder_R",
+          "ParentName": "Scapula_R",
+          "Transform": {
+            "Rotation": {
+              "X": -0.43099907,
+              "Y": -0.020252783,
+              "Z": 0.9021079,
+              "W": -0.005545272,
+              "IsNormalized": true,
+              "Size": 0.9999999,
+              "SizeSquared": 0.99999976
+            },
+            "Translation": {
+              "X": -18.30629,
+              "Y": -11.313155,
+              "Z": 137.60904
+            },
+            "Scale3D": {
+              "X": 0.9999995,
+              "Y": 0.9999997,
+              "Z": 1.0000001
+            }
+          },
+          "DisplayName": "Shoulder_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "ShoulderPart1_R",
+          "ParentName": "Shoulder_R",
+          "Transform": {
+            "Rotation": {
+              "X": 0.43099907,
+              "Y": 0.020252783,
+              "Z": -0.9021079,
+              "W": 0.005545272,
+              "IsNormalized": true,
+              "Size": 0.9999999,
+              "SizeSquared": 0.99999976
+            },
+            "Translation": {
+              "X": -26.506927,
+              "Y": -11.215897,
+              "Z": 127.45848
+            },
+            "Scale3D": {
+              "X": 0.9999995,
+              "Y": 0.9999997,
+              "Z": 1.0000001
+            }
+          },
+          "DisplayName": "ShoulderPart1_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Elbow_R",
+          "ParentName": "ShoulderPart1_R",
+          "Transform": {
+            "Rotation": {
+              "X": -0.4228455,
+              "Y": -0.085860714,
+              "Z": 0.8923653,
+              "W": 0.13233905,
+              "IsNormalized": true,
+              "Size": 0.9999999,
+              "SizeSquared": 0.9999998
+            },
+            "Translation": {
+              "X": -34.707565,
+              "Y": -11.118638,
+              "Z": 117.30792
+            },
+            "Scale3D": {
+              "X": 0.9999995,
+              "Y": 1.0000001,
+              "Z": 1.0000001
+            }
+          },
+          "DisplayName": "Elbow_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Wrist_R",
+          "ParentName": "Elbow_R",
+          "Transform": {
+            "Rotation": {
+              "X": 0.48124236,
+              "Y": 0.07919139,
+              "Z": -0.86238134,
+              "W": -0.13576743,
+              "IsNormalized": true,
+              "Size": 0.9999999,
+              "SizeSquared": 0.9999998
+            },
+            "Translation": {
+              "X": -49.0959,
+              "Y": -3.803348,
+              "Z": 99.968735
+            },
+            "Scale3D": {
+              "X": 0.9999999,
+              "Y": 0.9999998,
+              "Z": 0.99999994
+            }
+          },
+          "DisplayName": "Wrist_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "MiddleFinger1_R",
+          "ParentName": "Wrist_R",
+          "Transform": {
+            "Rotation": {
+              "X": -0.62598974,
+              "Y": -0.063750766,
+              "Z": 0.7643423,
+              "W": 0.14090188,
+              "IsNormalized": true,
+              "Size": 0.9999999,
+              "SizeSquared": 0.9999998
+            },
+            "Translation": {
+              "X": -53.534878,
+              "Y": -1.0474486,
+              "Z": 92.7899
+            },
+            "Scale3D": {
+              "X": 0.99999976,
+              "Y": 0.9999998,
+              "Z": 0.99999976
+            }
+          },
+          "DisplayName": "MiddleFinger1_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "MiddleFinger2_R",
+          "ParentName": "MiddleFinger1_R",
+          "Transform": {
+            "Rotation": {
+              "X": 0.6865312,
+              "Y": 0.052250087,
+              "Z": -0.71048295,
+              "W": -0.1454606,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": -54.473827,
+              "Y": 0.5224259,
+              "Z": 87.796585
+            },
+            "Scale3D": {
+              "X": 0.9999999,
+              "Y": 0.9999996,
+              "Z": 0.9999999
+            }
+          },
+          "DisplayName": "MiddleFinger2_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "MiddleFinger3_R",
+          "ParentName": "MiddleFinger2_R",
+          "Transform": {
+            "Rotation": {
+              "X": -0.72768664,
+              "Y": -0.043849345,
+              "Z": 0.668311,
+              "W": 0.14801946,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": -54.52978,
+              "Y": 1.5588224,
+              "Z": 84.22202
+            },
+            "Scale3D": {
+              "X": 0.99999976,
+              "Y": 0.9999998,
+              "Z": 0.9999999
+            }
+          },
+          "DisplayName": "MiddleFinger3_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "MiddleFinger4_R",
+          "ParentName": "MiddleFinger3_R",
+          "Transform": {
+            "Rotation": {
+              "X": 0.72768664,
+              "Y": 0.043849345,
+              "Z": -0.668311,
+              "W": -0.14801946,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": -54.14934,
+              "Y": 2.5264711,
+              "Z": 80.67313
+            },
+            "Scale3D": {
+              "X": 0.99999976,
+              "Y": 0.9999998,
+              "Z": 0.9999999
+            }
+          },
+          "DisplayName": "MiddleFinger4_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "ThumbFinger1_R",
+          "ParentName": "Wrist_R",
+          "Transform": {
+            "Rotation": {
+              "X": 0.104412235,
+              "Y": -0.4569041,
+              "Z": -0.43361157,
+              "W": -0.76962173,
+              "IsNormalized": true,
+              "Size": 0.99999994,
+              "SizeSquared": 0.9999999
+            },
+            "Translation": {
+              "X": -47.992245,
+              "Y": 2.2861242,
+              "Z": 97.33468
+            },
+            "Scale3D": {
+              "X": 1.0000001,
+              "Y": 1.0,
+              "Z": 0.99999994
+            }
+          },
+          "DisplayName": "ThumbFinger1_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "ThumbFinger2_R",
+          "ParentName": "ThumbFinger1_R",
+          "Transform": {
+            "Rotation": {
+              "X": -0.16972736,
+              "Y": 0.60762095,
+              "Z": 0.46524683,
+              "W": 0.6209144,
+              "IsNormalized": true,
+              "Size": 0.99999994,
+              "SizeSquared": 0.9999999
+            },
+            "Translation": {
+              "X": -47.398994,
+              "Y": 3.9299555,
+              "Z": 95.05341
+            },
+            "Scale3D": {
+              "X": 1.0000002,
+              "Y": 0.9999999,
+              "Z": 1.0000001
+            }
+          },
+          "DisplayName": "ThumbFinger2_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "ThumbFinger3_R",
+          "ParentName": "ThumbFinger2_R",
+          "Transform": {
+            "Rotation": {
+              "X": 0.16972736,
+              "Y": -0.60762095,
+              "Z": -0.46524683,
+              "W": -0.6209144,
+              "IsNormalized": true,
+              "Size": 0.99999994,
+              "SizeSquared": 0.9999999
+            },
+            "Translation": {
+              "X": -48.21173,
+              "Y": 5.6923676,
+              "Z": 90.72448
+            },
+            "Scale3D": {
+              "X": 1.0000002,
+              "Y": 0.9999999,
+              "Z": 1.0000001
+            }
+          },
+          "DisplayName": "ThumbFinger3_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "ThumbFinger4_R",
+          "ParentName": "ThumbFinger3_R",
+          "Transform": {
+            "Rotation": {
+              "X": -0.16972736,
+              "Y": 0.60762095,
+              "Z": 0.46524683,
+              "W": 0.6209144,
+              "IsNormalized": true,
+              "Size": 0.99999994,
+              "SizeSquared": 0.9999999
+            },
+            "Translation": {
+              "X": -48.93876,
+              "Y": 7.268917,
+              "Z": 86.85207
+            },
+            "Scale3D": {
+              "X": 1.0000002,
+              "Y": 0.9999999,
+              "Z": 1.0000001
+            }
+          },
+          "DisplayName": "ThumbFinger4_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "r_weapon_R",
+          "ParentName": "Wrist_R",
+          "Transform": {
+            "Rotation": {
+              "X": -0.5018181,
+              "Y": -0.4994399,
+              "Z": 0.49901298,
+              "W": 0.49972418,
+              "IsNormalized": true,
+              "Size": 0.99999994,
+              "SizeSquared": 0.9999999
+            },
+            "Translation": {
+              "X": -49.07337,
+              "Y": -0.87061644,
+              "Z": 88.97093
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 0.9999993,
+              "Z": 1.0
+            }
+          },
+          "DisplayName": "r_weapon_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "joint2_R",
+          "ParentName": "r_weapon_R",
+          "Transform": {
+            "Rotation": {
+              "X": 0.49026558,
+              "Y": 0.5109815,
+              "Z": -0.4936515,
+              "W": -0.5048223,
+              "IsNormalized": true,
+              "Size": 0.9999999,
+              "SizeSquared": 0.99999976
+            },
+            "Translation": {
+              "X": -49.05596,
+              "Y": 4.7607026,
+              "Z": 88.96156
+            },
+            "Scale3D": {
+              "X": 0.99999976,
+              "Y": 0.9999999,
+              "Z": 1.0000005
+            }
+          },
+          "DisplayName": "joint2_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "joint3_R",
+          "ParentName": "joint2_R",
+          "Transform": {
+            "Rotation": {
+              "X": -0.49588537,
+              "Y": -0.5055296,
+              "Z": 0.49920297,
+              "W": 0.4993333,
+              "IsNormalized": true,
+              "Size": 0.9999999,
+              "SizeSquared": 0.9999998
+            },
+            "Translation": {
+              "X": -49.285957,
+              "Y": 28.735804,
+              "Z": 89.72605
+            },
+            "Scale3D": {
+              "X": 0.9999999,
+              "Y": 0.9999997,
+              "Z": 1.0
+            }
+          },
+          "DisplayName": "joint3_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "joint4_R",
+          "ParentName": "joint3_R",
+          "Transform": {
+            "Rotation": {
+              "X": 0.50062776,
+              "Y": 0.5008336,
+              "Z": -0.5038868,
+              "W": -0.49460632,
+              "IsNormalized": true,
+              "Size": 0.9999998,
+              "SizeSquared": 0.9999997
+            },
+            "Translation": {
+              "X": -49.632256,
+              "Y": 65.07957,
+              "Z": 90.080826
+            },
+            "Scale3D": {
+              "X": 0.9999999,
+              "Y": 0.9999997,
+              "Z": 1.0
+            }
+          },
+          "DisplayName": "joint4_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "joint5_R",
+          "ParentName": "joint4_R",
+          "Transform": {
+            "Rotation": {
+              "X": -0.50133085,
+              "Y": -0.5001297,
+              "Z": 0.5045812,
+              "W": 0.49389786,
+              "IsNormalized": true,
+              "Size": 0.9999998,
+              "SizeSquared": 0.99999964
+            },
+            "Translation": {
+              "X": -49.9752,
+              "Y": 101.281105,
+              "Z": 89.75178
+            },
+            "Scale3D": {
+              "X": 0.9999999,
+              "Y": 0.9999997,
+              "Z": 1.0
+            }
+          },
+          "DisplayName": "joint5_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "joint6_R",
+          "ParentName": "joint5_R",
+          "Transform": {
+            "Rotation": {
+              "X": 0.5075759,
+              "Y": 0.49379045,
+              "Z": -0.5107477,
+              "W": -0.48751825,
+              "IsNormalized": true,
+              "Size": 0.99999976,
+              "SizeSquared": 0.9999996
+            },
+            "Translation": {
+              "X": -50.315002,
+              "Y": 137.1824,
+              "Z": 89.32457
+            },
+            "Scale3D": {
+              "X": 0.9999999,
+              "Y": 0.9999997,
+              "Z": 1.0
+            }
+          },
+          "DisplayName": "joint6_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "joint7_R",
+          "ParentName": "joint6_R",
+          "Transform": {
+            "Rotation": {
+              "X": -0.5075759,
+              "Y": -0.49379045,
+              "Z": 0.5107477,
+              "W": 0.48751825,
+              "IsNormalized": true,
+              "Size": 0.99999976,
+              "SizeSquared": 0.9999996
+            },
+            "Translation": {
+              "X": -50.6688,
+              "Y": 174.8556,
+              "Z": 87.92879
+            },
+            "Scale3D": {
+              "X": 0.9999999,
+              "Y": 0.9999997,
+              "Z": 1.0
+            }
+          },
+          "DisplayName": "joint7_R",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Neck_M",
+          "ParentName": "Chest_M",
+          "Transform": {
+            "Rotation": {
+              "X": -0.70698196,
+              "Y": -0.013287382,
+              "Z": -0.70698196,
+              "W": -0.013287382,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0000001
+            },
+            "Translation": {
+              "X": 1.9073486E-06,
+              "Y": -7.214216,
+              "Z": 149.99837
+            },
+            "Scale3D": {
+              "X": 1.0000001,
+              "Y": 1.0,
+              "Z": 0.99999994
+            }
+          },
+          "DisplayName": "Neck_M",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Head_M",
+          "ParentName": "Neck_M",
+          "Transform": {
+            "Rotation": {
+              "X": 0.70710677,
+              "Y": -8.381903E-08,
+              "Z": 0.70710677,
+              "W": -8.381903E-08,
+              "IsNormalized": true,
+              "Size": 0.99999994,
+              "SizeSquared": 0.99999994
+            },
+            "Translation": {
+              "X": 0.0,
+              "Y": -6.745782,
+              "Z": 162.45593
+            },
+            "Scale3D": {
+              "X": 0.9999999,
+              "Y": 0.99999976,
+              "Z": 0.99999994
+            }
+          },
+          "DisplayName": "Head_M",
+          "bAdvanced": false
+        },
+        {
+          "Name": "HeadEnd_M",
+          "ParentName": "Head_M",
+          "Transform": {
+            "Rotation": {
+              "X": -0.70710677,
+              "Y": 8.381903E-08,
+              "Z": -0.70710677,
+              "W": 8.381903E-08,
+              "IsNormalized": true,
+              "Size": 0.99999994,
+              "SizeSquared": 0.99999994
+            },
+            "Translation": {
+              "X": 0.0,
+              "Y": -6.7457914,
+              "Z": 202.13153
+            },
+            "Scale3D": {
+              "X": 0.9999999,
+              "Y": 0.99999976,
+              "Z": 0.99999994
+            }
+          },
+          "DisplayName": "HeadEnd_M",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Scapula_L",
+          "ParentName": "Chest_M",
+          "Transform": {
+            "Rotation": {
+              "X": -0.010386856,
+              "Y": -0.99982,
+              "Z": -0.015882697,
+              "W": -0.000105291605,
+              "IsNormalized": true,
+              "Size": 1.0000001,
+              "SizeSquared": 1.0000002
+            },
+            "Translation": {
+              "X": 3.5718994,
+              "Y": -11.007008,
+              "Z": 137.6108
+            },
+            "Scale3D": {
+              "X": 0.9999993,
+              "Y": 1.0000001,
+              "Z": 0.99999994
+            }
+          },
+          "DisplayName": "Scapula_L",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Shoulder_L",
+          "ParentName": "Scapula_L",
+          "Transform": {
+            "Rotation": {
+              "X": 0.0055452734,
+              "Y": 0.902108,
+              "Z": 0.02025278,
+              "W": -0.43099913,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": 18.306297,
+              "Y": -11.313156,
+              "Z": 137.60904
+            },
+            "Scale3D": {
+              "X": 0.9999995,
+              "Y": 0.9999997,
+              "Z": 1.0000001
+            }
+          },
+          "DisplayName": "Shoulder_L",
+          "bAdvanced": false
+        },
+        {
+          "Name": "ShoulderPart1_L",
+          "ParentName": "Shoulder_L",
+          "Transform": {
+            "Rotation": {
+              "X": -0.0055452734,
+              "Y": -0.902108,
+              "Z": -0.02025278,
+              "W": 0.43099913,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": 26.506939,
+              "Y": -11.215898,
+              "Z": 127.45848
+            },
+            "Scale3D": {
+              "X": 0.9999995,
+              "Y": 0.9999997,
+              "Z": 1.0000001
+            }
+          },
+          "DisplayName": "ShoulderPart1_L",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Elbow_L",
+          "ParentName": "ShoulderPart1_L",
+          "Transform": {
+            "Rotation": {
+              "X": -0.13233906,
+              "Y": 0.8923654,
+              "Z": 0.085860714,
+              "W": -0.42284557,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0000001
+            },
+            "Translation": {
+              "X": 34.70758,
+              "Y": -11.118639,
+              "Z": 117.30792
+            },
+            "Scale3D": {
+              "X": 0.9999995,
+              "Y": 1.0000001,
+              "Z": 1.0000001
+            }
+          },
+          "DisplayName": "Elbow_L",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Wrist_L",
+          "ParentName": "Elbow_L",
+          "Transform": {
+            "Rotation": {
+              "X": 0.13576744,
+              "Y": -0.86238146,
+              "Z": -0.07919139,
+              "W": 0.48124245,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0000001
+            },
+            "Translation": {
+              "X": 49.095924,
+              "Y": -3.803348,
+              "Z": 99.96873
+            },
+            "Scale3D": {
+              "X": 0.9999999,
+              "Y": 0.9999998,
+              "Z": 0.99999994
+            }
+          },
+          "DisplayName": "Wrist_L",
+          "bAdvanced": false
+        },
+        {
+          "Name": "MiddleFinger1_L",
+          "ParentName": "Wrist_L",
+          "Transform": {
+            "Rotation": {
+              "X": -0.1409019,
+              "Y": 0.7643424,
+              "Z": 0.063750766,
+              "W": -0.62598985,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0000001
+            },
+            "Translation": {
+              "X": 53.534904,
+              "Y": -1.0474479,
+              "Z": 92.789894
+            },
+            "Scale3D": {
+              "X": 0.99999976,
+              "Y": 0.9999998,
+              "Z": 0.99999976
+            }
+          },
+          "DisplayName": "MiddleFinger1_L",
+          "bAdvanced": false
+        },
+        {
+          "Name": "MiddleFinger2_L",
+          "ParentName": "MiddleFinger1_L",
+          "Transform": {
+            "Rotation": {
+              "X": 0.14546062,
+              "Y": -0.7104831,
+              "Z": -0.052250087,
+              "W": 0.6865313,
+              "IsNormalized": true,
+              "Size": 1.0000001,
+              "SizeSquared": 1.0000002
+            },
+            "Translation": {
+              "X": 54.473858,
+              "Y": 0.5224271,
+              "Z": 87.79658
+            },
+            "Scale3D": {
+              "X": 0.9999999,
+              "Y": 0.9999996,
+              "Z": 0.9999999
+            }
+          },
+          "DisplayName": "MiddleFinger2_L",
+          "bAdvanced": false
+        },
+        {
+          "Name": "MiddleFinger3_L",
+          "ParentName": "MiddleFinger2_L",
+          "Transform": {
+            "Rotation": {
+              "X": -0.14801948,
+              "Y": 0.6683112,
+              "Z": 0.043849345,
+              "W": -0.72768676,
+              "IsNormalized": true,
+              "Size": 1.0000001,
+              "SizeSquared": 1.0000004
+            },
+            "Translation": {
+              "X": 54.52981,
+              "Y": 1.5588238,
+              "Z": 84.222015
+            },
+            "Scale3D": {
+              "X": 0.99999976,
+              "Y": 0.9999998,
+              "Z": 0.9999999
+            }
+          },
+          "DisplayName": "MiddleFinger3_L",
+          "bAdvanced": false
+        },
+        {
+          "Name": "MiddleFinger4_L",
+          "ParentName": "MiddleFinger3_L",
+          "Transform": {
+            "Rotation": {
+              "X": 0.14801948,
+              "Y": -0.6683112,
+              "Z": -0.043849345,
+              "W": 0.72768676,
+              "IsNormalized": true,
+              "Size": 1.0000001,
+              "SizeSquared": 1.0000004
+            },
+            "Translation": {
+              "X": 54.149372,
+              "Y": 2.5264728,
+              "Z": 80.67311
+            },
+            "Scale3D": {
+              "X": 0.99999976,
+              "Y": 0.9999998,
+              "Z": 0.9999999
+            }
+          },
+          "DisplayName": "MiddleFinger4_L",
+          "bAdvanced": false
+        },
+        {
+          "Name": "ThumbFinger1_L",
+          "ParentName": "Wrist_L",
+          "Transform": {
+            "Rotation": {
+              "X": 0.7696218,
+              "Y": -0.43361163,
+              "Z": 0.4569042,
+              "W": 0.10441227,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0000001
+            },
+            "Translation": {
+              "X": 47.992268,
+              "Y": 2.2861261,
+              "Z": 97.33467
+            },
+            "Scale3D": {
+              "X": 1.0000001,
+              "Y": 1.0,
+              "Z": 0.99999994
+            }
+          },
+          "DisplayName": "ThumbFinger1_L",
+          "bAdvanced": false
+        },
+        {
+          "Name": "ThumbFinger2_L",
+          "ParentName": "ThumbFinger1_L",
+          "Transform": {
+            "Rotation": {
+              "X": -0.62091446,
+              "Y": 0.4652469,
+              "Z": -0.6076211,
+              "W": -0.16972739,
+              "IsNormalized": true,
+              "Size": 1.0000001,
+              "SizeSquared": 1.0000002
+            },
+            "Translation": {
+              "X": 47.399017,
+              "Y": 3.9299576,
+              "Z": 95.053406
+            },
+            "Scale3D": {
+              "X": 1.0000002,
+              "Y": 0.9999999,
+              "Z": 1.0000001
+            }
+          },
+          "DisplayName": "ThumbFinger2_L",
+          "bAdvanced": false
+        },
+        {
+          "Name": "ThumbFinger3_L",
+          "ParentName": "ThumbFinger2_L",
+          "Transform": {
+            "Rotation": {
+              "X": 0.62091446,
+              "Y": -0.4652469,
+              "Z": 0.6076211,
+              "W": 0.16972739,
+              "IsNormalized": true,
+              "Size": 1.0000001,
+              "SizeSquared": 1.0000002
+            },
+            "Translation": {
+              "X": 48.211754,
+              "Y": 5.69237,
+              "Z": 90.72447
+            },
+            "Scale3D": {
+              "X": 1.0000002,
+              "Y": 0.9999999,
+              "Z": 1.0000001
+            }
+          },
+          "DisplayName": "ThumbFinger3_L",
+          "bAdvanced": false
+        },
+        {
+          "Name": "ThumbFinger4_L",
+          "ParentName": "ThumbFinger3_L",
+          "Transform": {
+            "Rotation": {
+              "X": -0.62091446,
+              "Y": 0.4652469,
+              "Z": -0.6076211,
+              "W": -0.16972739,
+              "IsNormalized": true,
+              "Size": 1.0000001,
+              "SizeSquared": 1.0000002
+            },
+            "Translation": {
+              "X": 48.93878,
+              "Y": 7.26892,
+              "Z": 86.852066
+            },
+            "Scale3D": {
+              "X": 1.0000002,
+              "Y": 0.9999999,
+              "Z": 1.0000001
+            }
+          },
+          "DisplayName": "ThumbFinger4_L",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Hip_L",
+          "ParentName": "Pelvis_M",
+          "Transform": {
+            "Rotation": {
+              "X": -0.04946958,
+              "Y": 0.75011617,
+              "Z": 0.0462356,
+              "W": -0.65783036,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": 12.231929,
+              "Y": -6.5333385,
+              "Z": 80.99784
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 0.9999997,
+              "Z": 1.0
+            }
+          },
+          "DisplayName": "Hip_L",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Knee_L",
+          "ParentName": "Hip_L",
+          "Transform": {
+            "Rotation": {
+              "X": -0.049420726,
+              "Y": -0.75011945,
+              "Z": 0.04051299,
+              "W": 0.6582075,
+              "IsNormalized": true,
+              "Size": 0.99999994,
+              "SizeSquared": 0.99999994
+            },
+            "Translation": {
+              "X": 16.686344,
+              "Y": -1.8926048,
+              "Z": 47.241222
+            },
+            "Scale3D": {
+              "X": 0.9999998,
+              "Y": 1.0000001,
+              "Z": 1.0
+            }
+          },
+          "DisplayName": "Knee_L",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Ankle_L",
+          "ParentName": "Knee_L",
+          "Transform": {
+            "Rotation": {
+              "X": 0.005061891,
+              "Y": 0.70708865,
+              "Z": 0.005061958,
+              "W": -0.7070887,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": 21.700489,
+              "Y": -6.861287,
+              "Z": 8.907906
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0000001,
+              "Z": 1.0000004
+            }
+          },
+          "DisplayName": "Ankle_L",
+          "bAdvanced": false
+        },
+        {
+          "Name": "Toes_L",
+          "ParentName": "Ankle_L",
+          "Transform": {
+            "Rotation": {
+              "X": 0.40109032,
+              "Y": -0.5980968,
+              "Z": -0.38714448,
+              "W": 0.57578295,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": 21.870049,
+              "Y": 4.980789,
+              "Z": 4.300201
+            },
+            "Scale3D": {
+              "X": 0.9999996,
+              "Y": 1.0000006,
+              "Z": 1.0000002
+            }
+          },
+          "DisplayName": "Toes_L",
+          "bAdvanced": false
+        },
+        {
+          "Name": "ToesEnd_L",
+          "ParentName": "Toes_L",
+          "Transform": {
+            "Rotation": {
+              "X": -0.40109032,
+              "Y": 0.5980968,
+              "Z": 0.38714448,
+              "W": -0.57578295,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": 22.022062,
+              "Y": 14.236874,
+              "Z": 0.5183015
+            },
+            "Scale3D": {
+              "X": 0.9999996,
+              "Y": 1.0000006,
+              "Z": 1.0000002
+            }
+          },
+          "DisplayName": "ToesEnd_L",
+          "bAdvanced": false
+        },
+        {
+          "Name": "follicle1",
+          "ParentName": "Head_M",
+          "Transform": {
+            "Rotation": {
+              "X": -0.10000506,
+              "Y": 0.7109716,
+              "Z": -0.10815075,
+              "W": 0.6876203,
+              "IsNormalized": true,
+              "Size": 0.9999999,
+              "SizeSquared": 0.9999998
+            },
+            "Translation": {
+              "X": 0.888136,
+              "Y": -28.628052,
+              "Z": 168.72891
+            },
+            "Scale3D": {
+              "X": 1.0000001,
+              "Y": 1.0,
+              "Z": 0.99999994
+            }
+          },
+          "DisplayName": "follicle1",
+          "bAdvanced": false
+        },
+        {
+          "Name": "baseCurve2",
+          "ParentName": "follicle1",
+          "Transform": {
+            "Rotation": {
+              "X": 0.70710677,
+              "Y": -2.6077032E-08,
+              "Z": -1.4901161E-08,
+              "W": -0.70710665,
+              "IsNormalized": true,
+              "Size": 0.9999999,
+              "SizeSquared": 0.99999976
+            },
+            "Translation": {
+              "X": 1.347065E-05,
+              "Y": -4.5776367E-05,
+              "Z": -3.0517578E-05
+            },
+            "Scale3D": {
+              "X": 1.0000001,
+              "Y": 1.0,
+              "Z": 0.99999994
+            }
+          },
+          "DisplayName": "baseCurve2",
+          "bAdvanced": false
+        },
+        {
+          "Name": "follicle2",
+          "ParentName": "Head_M",
+          "Transform": {
+            "Rotation": {
+              "X": -0.015745869,
+              "Y": 0.7201944,
+              "Z": -0.026723668,
+              "W": 0.6930785,
+              "IsNormalized": true,
+              "Size": 0.99999994,
+              "SizeSquared": 0.99999994
+            },
+            "Translation": {
+              "X": -15.704361,
+              "Y": 0.92767084,
+              "Z": 172.64818
+            },
+            "Scale3D": {
+              "X": 0.9999998,
+              "Y": 0.9999999,
+              "Z": 0.9999998
+            }
+          },
+          "DisplayName": "follicle2",
+          "bAdvanced": false
+        },
+        {
+          "Name": "baseCurve4",
+          "ParentName": "follicle2",
+          "Transform": {
+            "Rotation": {
+              "X": 0.7071067,
+              "Y": -2.7939677E-09,
+              "Z": -2.7939677E-09,
+              "W": -0.7071069,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0000001
+            },
+            "Translation": {
+              "X": 1.5258789E-05,
+              "Y": 2.2649765E-06,
+              "Z": 1.5258789E-05
+            },
+            "Scale3D": {
+              "X": 0.9999998,
+              "Y": 0.9999999,
+              "Z": 0.9999998
+            }
+          },
+          "DisplayName": "baseCurve4",
+          "bAdvanced": false
+        },
+        {
+          "Name": "follicle3",
+          "ParentName": "Head_M",
+          "Transform": {
+            "Rotation": {
+              "X": 0.71538854,
+              "Y": 0.015930135,
+              "Z": 0.698038,
+              "W": 0.026614238,
+              "IsNormalized": true,
+              "Size": 0.99999994,
+              "SizeSquared": 0.9999999
+            },
+            "Translation": {
+              "X": 18.64277,
+              "Y": 0.36907953,
+              "Z": 171.58403
+            },
+            "Scale3D": {
+              "X": 0.9999998,
+              "Y": 0.9999999,
+              "Z": 0.9999998
+            }
+          },
+          "DisplayName": "follicle3",
+          "bAdvanced": false
+        },
+        {
+          "Name": "baseCurve6",
+          "ParentName": "follicle3",
+          "Transform": {
+            "Rotation": {
+              "X": 0.70710665,
+              "Y": 2.9802322E-08,
+              "Z": 5.9604645E-08,
+              "W": -0.7071068,
+              "IsNormalized": true,
+              "Size": 0.99999994,
+              "SizeSquared": 0.9999999
+            },
+            "Translation": {
+              "X": -5.722046E-06,
+              "Y": -5.9604645E-08,
+              "Z": 3.0517578E-05
+            },
+            "Scale3D": {
+              "X": 0.9999998,
+              "Y": 0.9999999,
+              "Z": 0.9999998
+            }
+          },
+          "DisplayName": "baseCurve6",
+          "bAdvanced": false
+        }
+      ]
+    }
+  }
+]

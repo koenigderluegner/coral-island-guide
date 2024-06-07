@@ -1,0 +1,145 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "SM_Centipede",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldStatic",
+        "CollisionProfileName": "BlockAll",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      }
+    },
+    "BodySetupGuid": "7BAB0B1544B8DB7479EF5DBAA09819C6"
+  },
+  {
+    "Type": "NavCollision",
+    "Name": "NavCollision_0",
+    "Outer": "SM_Centipede",
+    "Class": "UScriptClass'NavCollision'",
+    "CookedFormatData": {
+      "NavCollision_X": {
+        "BulkDataFlags": "BULKDATA_SingleUse | BULKDATA_ForceInlinePayload",
+        "ElementCount": 21,
+        "SizeOnDisk": 21,
+        "OffsetInFile": "0x14F81"
+      }
+    }
+  },
+  {
+    "Type": "StaticMesh",
+    "Name": "SM_Centipede",
+    "Class": "UScriptClass'StaticMesh'",
+    "Properties": {
+      "StaticMaterials": [
+        {
+          "MaterialInterface": {
+            "ObjectName": "Material'WorldGridMaterial'",
+            "ObjectPath": "Engine/Content/EngineMaterials/WorldGridMaterial.0"
+          },
+          "MaterialSlotName": "WorldGridMaterial",
+          "ImportedMaterialSlotName": "WorldGridMaterial",
+          "UVChannelData": {
+            "bInitialized": true,
+            "bOverrideDensities": false,
+            "LocalUVDensities": 132.49504,
+            "LocalUVDensities": 0.0,
+            "LocalUVDensities": 0.0,
+            "LocalUVDensities": 0.0
+          }
+        }
+      ],
+      "LightMapResolution": 64,
+      "LightMapCoordinateIndex": 1,
+      "ExtendedBounds": {
+        "Origin": {
+          "X": 2.1298208,
+          "Y": -0.21211815,
+          "Z": 2.691603
+        },
+        "BoxExtent": {
+          "X": 10.96349,
+          "Y": 24.860668,
+          "Z": 2.7638142
+        },
+        "SphereRadius": 26.440624
+      }
+    },
+    "BodySetup": {
+      "ObjectName": "BodySetup'SM_Centipede:BodySetup_0'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Insect/Summer/Centipede/SM_Centipede.0"
+    },
+    "NavCollision": {
+      "ObjectName": "NavCollision'SM_Centipede:NavCollision_0'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Insect/Summer/Centipede/SM_Centipede.1"
+    },
+    "LightingGuid": "068EC89F-42851859-74856088-8A2D56BF",
+    "RenderData": {
+      "LODs": [
+        {
+          "Sections": [
+            {
+              "MaterialIndex": 0,
+              "FirstIndex": 0,
+              "NumTriangles": 1008,
+              "MinVertexIndex": 0,
+              "MaxVertexIndex": 853,
+              "bEnableCollision": false,
+              "bCastShadow": true,
+              "bForceOpaque": false,
+              "bVisibleInRayTracing": true
+            }
+          ],
+          "MaxDeviation": 0.0,
+          "PositionVertexBuffer": {
+            "Stride": 12,
+            "NumVertices": 854
+          },
+          "VertexBuffer": {
+            "NumTexCoords": 2,
+            "NumVertices": 854,
+            "Strides": -1,
+            "UseHighPrecisionTangentBasis": false,
+            "UseFullPrecisionUVs": true
+          },
+          "ColorVertexBuffer": {
+            "Stride": 0,
+            "NumVertices": 0
+          }
+        }
+      ],
+      "Bounds": {
+        "Origin": {
+          "X": 2.1298208,
+          "Y": -0.21211815,
+          "Z": 2.691603
+        },
+        "BoxExtent": {
+          "X": 10.96349,
+          "Y": 24.860668,
+          "Z": 2.7638142
+        },
+        "SphereRadius": 26.440624
+      },
+      "bLODsShareStaticLighting": true,
+      "ScreenSize": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  }
+]

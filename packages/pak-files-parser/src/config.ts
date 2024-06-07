@@ -1,26 +1,35 @@
 import path from 'path';
 import { environment } from "./environments/environment";
 
-const targetAssetsPath = path.join(__dirname, '..', '..', '..', 'packages', 'guide', 'src', 'assets', environment.isBeta ? 'beta' : 'live');
+const targetAssetsPath = path.join(__dirname, '..', '..', '..', 'packages', 'guide', 'src', 'assets',);
 const sourceContentPath = path.join(environment.assetPath, 'ProjectCoral', 'Content')
+const versionRootPath = path.join(targetAssetsPath, environment.isBeta ? 'beta' : 'live');
 export const config: {
-    assetsPath: string;
-    itemIconPath: string;
-    databasePath: string;
-    atlasFramesPath: string;
-    characterPortraitsPath: string;
-    sourceContentPath: string;
-    texturesPath: string;
-    portraitPath: string
-    headPortraitPath: string
+    target: {
+        assetsRoot: string;
+        versionRootPath: string,
+        itemIconPath: string;
+        headPortraitPath: string;
+        databasePath: string;
+        portraitPath: string
+    },
+    source: {
+        contentRoot: string;
+        texturesPath: string;
+        portraitsPath: string;
+    }
 } = {
-    assetsPath: targetAssetsPath,
-    itemIconPath: path.join(targetAssetsPath, 'items', 'icons'),
-    portraitPath: path.join(targetAssetsPath, 'portraits'),
-    headPortraitPath: path.join(targetAssetsPath, 'head-portraits'),
-    databasePath: path.join(targetAssetsPath, 'database'),
-    sourceContentPath,
-    texturesPath: path.join(sourceContentPath, 'ProjectCoral', 'Textures'),
-    characterPortraitsPath: path.join(sourceContentPath, 'ProjectCoral', 'Characters'),
-    atlasFramesPath: path.join(sourceContentPath, 'ProjectCoral', 'Textures', 'AtlasImport', 'Frames')
+    target: {
+        assetsRoot: targetAssetsPath,
+        versionRootPath,
+        itemIconPath: path.join(versionRootPath, 'items', 'icons'),
+        headPortraitPath: path.join(versionRootPath, 'head-portraits'),
+        databasePath: path.join(versionRootPath, 'database'),
+        portraitPath: path.join(versionRootPath, 'portraits'),
+    },
+    source: {
+        contentRoot: sourceContentPath,
+        texturesPath: path.join(sourceContentPath, 'ProjectCoral', 'Textures'),
+        portraitsPath: path.join(sourceContentPath, 'ProjectCoral', 'Characters'),
+    },
 }

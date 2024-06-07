@@ -1,0 +1,212 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_item_21071_Sproutfruit_S04",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_item_21071_Sproutfruit_S04:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/Sproutfruit/PA_item_21071_Sproutfruit_S04.3"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_item_21071_Sproutfruit_S04:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/Sproutfruit/PA_item_21071_Sproutfruit_S04.4"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_item_21071_Sproutfruit_S04:SkeletalBodySetup_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/Sproutfruit/PA_item_21071_Sproutfruit_S04.5"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_item_21071_Sproutfruit_S04:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/Sproutfruit/PA_item_21071_Sproutfruit_S04.1"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_item_21071_Sproutfruit_S04:PhysicsConstraintTemplate_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/Sproutfruit/PA_item_21071_Sproutfruit_S04.2"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_item_21071_Sproutfruit_S04",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Crops_Jnt3",
+        "ConstraintBone1": "Crops_Jnt3",
+        "ConstraintBone2": "RootCrops_Jnt",
+        "Pos2": {
+          "X": 25.96325,
+          "Y": -1.3835392,
+          "Z": 0.018350456
+        },
+        "PriAxis2": {
+          "X": 1.0,
+          "Y": 5.169879E-26,
+          "Z": -1.02213095E-17
+        },
+        "SecAxis2": {
+          "X": -1.5684099E-18,
+          "Y": 0.98815715,
+          "Z": -0.15344511
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_1",
+    "Outer": "PA_item_21071_Sproutfruit_S04",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Crops_Jnt4",
+        "ConstraintBone1": "Crops_Jnt4",
+        "ConstraintBone2": "Crops_Jnt3",
+        "Pos2": {
+          "X": 19.977709,
+          "Y": -0.93233216,
+          "Z": -0.16334675
+        },
+        "PriAxis2": {
+          "X": 0.8560885,
+          "Y": -0.48176527,
+          "Z": -0.18712224
+        },
+        "SecAxis2": {
+          "X": 0.011860803,
+          "Y": 0.38027638,
+          "Z": -0.9247969
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_item_21071_Sproutfruit_S04",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 14.51832,
+              "Y": 0.25824738,
+              "Z": -2.1587384
+            },
+            "Rotation": {
+              "Pitch": 90.0,
+              "Yaw": -78.550644,
+              "Roll": 11.449219
+            },
+            "Radius": 27.9084,
+            "Length": 28.95352,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "RootCrops_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "40ABED844BC5831C96C65398F3278AEC"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_item_21071_Sproutfruit_S04",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 14.377109,
+              "Y": 0.37905884,
+              "Z": -0.4770212
+            },
+            "Rotation": {
+              "Pitch": -0.021808792,
+              "Yaw": -90.0,
+              "Roll": 0.44486064
+            },
+            "Radius": 16.095123,
+            "Length": 16.47643,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Crops_Jnt3",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "ABEE253547322CBB851CD298399FC9E9"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_2",
+    "Outer": "PA_item_21071_Sproutfruit_S04",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 25.634333,
+              "Y": -0.018990517,
+              "Z": 13.760761
+            },
+            "Rotation": {
+              "Pitch": -6.830189E-06,
+              "Yaw": 91.959595,
+              "Roll": -63.00388
+            },
+            "Radius": 24.232864,
+            "Length": 30.313166,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Crops_Jnt4",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "26876EB14BE62F7D7F4776A64E99A7AC"
+  }
+]

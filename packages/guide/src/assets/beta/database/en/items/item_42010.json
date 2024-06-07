@@ -1,0 +1,319 @@
+{
+  "item": {
+    "id": "item_42010",
+    "displayName": "Tofu",
+    "price": 65,
+    "sellPrice": 40,
+    "sellAt": [
+      "Sam"
+    ],
+    "stackable": true,
+    "inventoryCategory": "Artisan product",
+    "displayKey": "ArtisanProduct",
+    "description": "Silky and soft. It has a subtle taste.",
+    "qualities": {
+      "bronze": {
+        "price": 75,
+        "sellPrice": 45
+      },
+      "silver": {
+        "price": 85,
+        "sellPrice": 50
+      },
+      "gold": {
+        "price": 100,
+        "sellPrice": 60
+      },
+      "osmium": {
+        "price": 125,
+        "sellPrice": 75
+      }
+    },
+    "iconName": "Tofu_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.CheesePress",
+      "Item.Consumable.Food",
+      "item.artisan"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21015",
+          "displayName": "Soybean",
+          "iconName": "Soybean_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_42010",
+          "displayName": "Tofu",
+          "iconName": "Tofu_Sprite",
+          "sellPrice": 40
+        }
+      },
+      "genericInput": null,
+      "machine": "CheesePress"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 1,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_42010",
+          "displayName": "Tofu",
+          "iconName": "Tofu_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_42010",
+          "displayName": "Tofu",
+          "iconName": "Tofu_Sprite",
+          "sellPrice": 40
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 3,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 1,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_42010",
+          "displayName": "Tofu",
+          "iconName": "Tofu_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_42010",
+          "displayName": "Tofu",
+          "iconName": "Tofu_Sprite",
+          "sellPrice": 40
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 3,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "Stone soup",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Doesn’t look edible. Consume at your own risk.",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "Any Edible Ingredients"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "Stone",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "Any Edible Ingredients": [
+          {
+            "id": "item_41180",
+            "displayName": "Goat yogurt",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "Large goat yogurt",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_42010",
+      "bVaryHealthToMax": false,
+      "healthDelta": 25,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 30,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_42010-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 30,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 35,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_42010-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 30,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 35,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_42010-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 40,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 45,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_42010-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 50,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 60,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    }
+  }
+}

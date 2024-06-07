@@ -5,6 +5,7 @@ import { ChangelogService } from "./changelog/changelog.service";
 import { MatDialog } from "@angular/material/dialog";
 import { ChangelogDialogComponent } from "./changelog/changelog-dialog/changelog-dialog.component";
 import { SettingsService } from "./shared/services/settings.service";
+import { UserDataService } from "./core/services/user-data.service";
 
 @Component({
     selector: 'app-root',
@@ -17,9 +18,11 @@ export class AppComponent {
     #databaseService = inject(DatabaseService)
     #changelogService = inject(ChangelogService)
     #dialog = inject(MatDialog);
-    #settingsService = inject(SettingsService)
+    #settingsService = inject(SettingsService);
+
 
     constructor() {
+        inject(UserDataService).read();
 
         if (!this.#settingsService.getSettings().disableChangelogs) {
             this.#changelogService.getLatestChangelog().subscribe({

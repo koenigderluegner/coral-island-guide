@@ -1,0 +1,434 @@
+{
+  "item": {
+    "id": "item_41016",
+    "displayName": "Yogurt",
+    "price": 85,
+    "sellPrice": 240,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Consumable",
+    "displayKey": "Consumable",
+    "description": "Plain fermented milk.",
+    "qualities": {
+      "bronze": {
+        "price": 98,
+        "sellPrice": 275
+      },
+      "silver": {
+        "price": 106,
+        "sellPrice": 310
+      },
+      "gold": {
+        "price": 128,
+        "sellPrice": 360
+      },
+      "osmium": {
+        "price": 170,
+        "sellPrice": 480
+      }
+    },
+    "iconName": "Yoghurt_Sprite",
+    "tags": [
+      "income.other",
+      "Item.Consumable.Food"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 1,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41016",
+          "displayName": "Yogurt",
+          "iconName": "Yoghurt_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41016",
+          "displayName": "Yogurt",
+          "iconName": "Yoghurt_Sprite",
+          "sellPrice": 240
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 5,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    },
+    {
+      "useCategory": false,
+      "day": 1,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31004",
+          "displayName": "Milk",
+          "iconName": "Milk_Sprite_"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41016",
+          "displayName": "Yogurt",
+          "iconName": "Yoghurt_Sprite",
+          "sellPrice": 240
+        }
+      },
+      "genericInput": null,
+      "machine": "YogurtMachine"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 1,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41016",
+          "displayName": "Yogurt",
+          "iconName": "Yoghurt_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41016",
+          "displayName": "Yogurt",
+          "iconName": "Yoghurt_Sprite",
+          "sellPrice": 240
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 5,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "Stone soup",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Doesn’t look edible. Consume at your own risk.",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "Any Edible Ingredients"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "Stone",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "Any Edible Ingredients": [
+          {
+            "id": "item_41180",
+            "displayName": "Goat yogurt",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "Large goat yogurt",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "cookedFrom": [
+    {
+      "key": "item_41016",
+      "amount": 1,
+      "cookingKey": "Yogurt",
+      "item": {
+        "id": "item_41016",
+        "displayName": "Yogurt",
+        "price": 85,
+        "sellPrice": 240,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Plain fermented milk.",
+        "qualities": {
+          "bronze": {
+            "price": 98,
+            "sellPrice": 275
+          },
+          "silver": {
+            "price": 106,
+            "sellPrice": 310
+          },
+          "gold": {
+            "price": 128,
+            "sellPrice": 360
+          },
+          "osmium": {
+            "price": 170,
+            "sellPrice": 480
+          }
+        },
+        "iconName": "Yoghurt_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "utensils": [
+        "CeramicBowl"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Milk",
+            "tags": [
+              "item.animalproduct.milk"
+            ],
+            "iconName": "Any_Milk_Sprite",
+            "displayName": "Any Milk"
+          },
+          "key": "Any_Milk"
+        }
+      ],
+      "ingredients": [],
+      "eitherOrIngredients": []
+    }
+  ],
+  "asGift": [
+    {
+      "pref": {
+        "icon": "T_Icon_Love",
+        "label": "Love",
+        "preferenceField": "lovePreferences"
+      },
+      "npcs": [
+        {
+          "key": "Joko",
+          "characterName": "Joko",
+          "iconName": "Icon_joko"
+        },
+        {
+          "key": "Nina",
+          "characterName": "Nina",
+          "iconName": "Icon_nina"
+        }
+      ]
+    },
+    {
+      "pref": {
+        "icon": "T_Icon_Dislike",
+        "label": "Dislike",
+        "preferenceField": "dislikePreferences"
+      },
+      "npcs": [
+        {
+          "key": "Ben",
+          "characterName": "Ben",
+          "iconName": "Icon_ben"
+        }
+      ]
+    },
+    {
+      "pref": {
+        "icon": "T_Icon_Hate",
+        "label": "Hate",
+        "preferenceField": "hatePreferences"
+      },
+      "npcs": [
+        {
+          "key": "Erika",
+          "characterName": "Erika",
+          "iconName": "Icon_erika"
+        },
+        {
+          "key": "Frank",
+          "characterName": "Frank",
+          "iconName": "Icon_frank"
+        },
+        {
+          "key": "Noah",
+          "characterName": "Noah",
+          "iconName": "Icon_noah"
+        }
+      ]
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41016",
+      "bVaryHealthToMax": false,
+      "healthDelta": 20,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 20,
+      "level": 1,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_41016-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 20,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 20,
+      "level": 1,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_41016-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 20,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 20,
+      "level": 1,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_41016-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 20,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 20,
+      "level": 1,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_41016-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 20,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 20,
+      "level": 1,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  }
+}

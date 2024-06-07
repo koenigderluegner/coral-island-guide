@@ -1,0 +1,192 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_Slime",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Slime:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Slime/PA_Slime.3"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Slime:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Slime/PA_Slime.4"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Slime:SkeletalBodySetup_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Slime/PA_Slime.5"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Slime:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Slime/PA_Slime.1"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Slime:PhysicsConstraintTemplate_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Monsters/Slime/PA_Slime.2"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_Slime",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "joint2",
+        "ConstraintBone1": "joint2",
+        "ConstraintBone2": "joint1",
+        "Pos2": {
+          "X": 0.0,
+          "Y": -59.37288,
+          "Z": 0.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_1",
+    "Outer": "PA_Slime",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "joint3",
+        "ConstraintBone1": "joint3",
+        "ConstraintBone2": "joint2",
+        "Pos2": {
+          "X": 0.0,
+          "Y": 48.97441,
+          "Z": 0.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_Slime",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.015192032,
+              "Y": -4.012376,
+              "Z": -1.0609627E-05
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -90.20104,
+              "Roll": -152.78346
+            },
+            "Radius": 45.485558,
+            "Length": 45.485676,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "joint1",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "C941381B4E2F9751B096B5897D046BED"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_Slime",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.14045668,
+              "Y": 7.4624143,
+              "Z": -2.3841858E-07
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -88.91174,
+              "Roll": -152.9387
+            },
+            "Radius": 28.778147,
+            "Length": 28.780527,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "joint2",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "F249C98F4DB5F7F87458E5A57B9DCE71"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_2",
+    "Outer": "PA_Slime",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.036064148,
+              "Y": -15.277346,
+              "Z": -5.722046E-06
+            },
+            "Rotation": {
+              "Pitch": -6.830189E-06,
+              "Yaw": -89.83997,
+              "Roll": -152.51031
+            },
+            "Radius": 45.248417,
+            "Length": 45.24849,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "joint3",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "FF5A730C456A291959A4E29CC79C48DC"
+  }
+]

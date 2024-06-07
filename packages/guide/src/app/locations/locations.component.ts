@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
     FestivalDisplayNames,
     FestivalIcons,
@@ -10,6 +10,7 @@ import {
 } from "@ci/data-types";
 import { shopRouteConfig } from "./locations-shop-route-config";
 import { festivalRouteConfig } from "./locations-festival-route-config";
+import { SettingsService } from "../shared/services/settings.service";
 
 @Component({
     selector: 'app-locations',
@@ -22,7 +23,10 @@ export class LocationsComponent {
     protected readonly FESTIVAL_DISPLAY_NAMES = FestivalDisplayNames;
     protected readonly FESTIVAL_ICONS = FestivalIcons;
 
+    protected isBeta = inject(SettingsService).getSettings().useBeta
+
     protected shops: ShopName[] = shopRouteConfig
+        .filter(c => this.isBeta ? true : !c.betaOnly)
         .map(c => c.name)
         .sort((a, b) => ShopDisplayNames[a].localeCompare(ShopDisplayNames[b]))
 

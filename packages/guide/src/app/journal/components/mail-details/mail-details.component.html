@@ -1,9 +1,14 @@
 <app-card>
-    <app-mail [mail]="mail"/>
-    @if (mail.effects?.length) {
+    <div cardActions class="card-actions">
+        <button (click)="listDetails.close()" matTooltip="Close">
+            <app-ui-icon [uiIcon]="uiIcon.CROSS" class="!w-8 !h-8 hover:text-black focus-visible:text-black"/>
+        </button>
+    </div>
+    <app-mail [mail]="mail()"/>
+    @if (mail().effects?.length) {
         <div class="mt-6">
             <div class="text-lg font-semibold">Effects:</div>
-            @for (effect of mail.effects; track effect) {
+            @for (effect of mail().effects; track effect) {
                 <app-effect [effect]="effect"/>
             }
         </div>

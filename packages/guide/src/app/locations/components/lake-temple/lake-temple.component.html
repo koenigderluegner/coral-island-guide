@@ -1,88 +1,20 @@
-<app-list-detail-container [(openDrawer)]="openDrawer">
+<app-list-detail-container>
     @if (selectedEntity) {
-        <app-item-card-switch [item]="selectedEntity" listDetail>
+        <app-item-card-switch [item]="selectedEntity" listDetail context="offerings">
             <ng-template let-details appDatabaseItemDetails>
                 <app-offering [details]="details"/>
             </ng-template>
         </app-item-card-switch>
     }
     @if (offerings$ | async; as offeringAltars) {
-        <mat-tab-group (selectedTabChange)="updateUrl($event)"
-                       [selectedIndex]="selectedTabIndex"
-                       class="px-2 xl:px-[50px] w-full" mat-stretch-tabs="false">
+        <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex()">
             @for (offeringAltar of offeringAltars; track offeringAltar) {
-                <mat-tab
-                        label="{{offeringAltar.offeringGroupTitle | addSpacesToPascalCase}}">
-                    <app-data-filter [(showTable)]="showTable"/>
-                    <div class="bg-merino rounded-lg mb-4 text-lg font-semibold p-4">
-                        Reward: {{ offeringAltar.offeringGroupRewardText }}
-                    </div>
-                    @if (!showTable) {
-                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                            @for (offering of offeringAltar.offerings; track offering) {
-                                <div (click)="activeOffering = offering"
-
-                                     [class.bg-merino-300]="activeOffering?.title === offering.title"
-                                     class="rounded-lg bg-merino flex flex-col items-center gap-4 px-4 py-8 hover:bg-merino-200">
-                                    <img alt="{{offering.title}} offering icon" height="128"
-                                         src="assets/ui/images/offering/{{offering.imageName}}.png"
-                                         width="128"/>
-                                    <div class="text-lg font-semibold">{{ offering.title }}</div>
-                                </div>
-                            }
-                        </div>
-                    }
-                    @if (showTable) {
-                        <app-offerings-table [dataSource]="[offeringAltar]"/>
-                    }
+                <mat-tab label="{{offeringAltar.offeringGroupTitle | addSpacesToPascalCase}}">
+                    <app-offering-group (selected)="showDetails($event)" [offeringAltar]="offeringAltar"
+                                        [selectedEntity]="selectedEntity"/>
 
                 </mat-tab>
             }
-
-
         </mat-tab-group>
     }
-
-
-    @if (activeOffering) {
-        <div class="px-2 xl:px-[50px]">
-
-
-            <div class="bg-merino rounded-lg mb-4 text-lg font-semibold p-4 my-8">
-                Rewards:
-            </div>
-
-            <div class="grid gap-4 icon-grid  mt-8">
-                @for (offeringReward of activeOffering.rewards.items; track offeringReward) {
-                    <app-item-icon (click)="showDetails(offeringReward.item)"
-
-                                   [amount]="offeringReward.amount"
-                                   [class.selected-icon]="selectedEntity && (selectedEntity | entityKey) === offeringReward.item.id"
-                                   [itemName]="offeringReward.item.iconName"
-                                   class="icon-grid-item">
-                    </app-item-icon>
-                }
-            </div>
-
-            <div class="bg-merino rounded-lg mb-4 text-lg font-semibold p-4 my-8">
-                {{ activeOffering.numOfItemRequired === -1 ? 'All' : activeOffering.numOfItemRequired }} of the
-                following
-                items are required:
-            </div>
-            <div class="grid gap-4 icon-grid  mt-8">
-
-                @for (offering of activeOffering.requiredItems; track offering) {
-                    <app-item-icon (click)="showDetails(offering)"
-
-                                   [amount]="offering.amount"
-                                   [class.selected-icon]="selectedEntity && (selectedEntity | entityKey) === (offering.item | entityKey)"
-                                   [itemName]="offering.item.iconName"
-                                   [quality]="offering.quality"
-                                   class="icon-grid-item">
-                    </app-item-icon>
-                }
-            </div>
-        </div>
-    }
-
 </app-list-detail-container>

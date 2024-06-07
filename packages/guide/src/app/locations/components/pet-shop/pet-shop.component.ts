@@ -35,7 +35,7 @@ export class PetShopComponent extends BaseSelectableContainerComponent<ShopItemD
     showAdoptionDetails(selectedAdoption?: PetShopAdoptions): void {
         this.selectedEntity = undefined;
         this.selectedAdoption = selectedAdoption;
-        this.openDrawer = true
+        this.listDetail.open()
 
     }
 }

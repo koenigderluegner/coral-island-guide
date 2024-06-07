@@ -1,0 +1,920 @@
+[
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_AWBP_JackFeed_Cow",
+    "Outer": "AWBP_JackFeed_Cow_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "K2Node_Event_context",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EC_AnimationContext'",
+          "ObjectPath": "/Script/ProjectCoral"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_npc",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'C_NpcCharacter'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_SwitchEnum_CmpSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_Event_newState",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnOccupiedStateChanged",
+    "Outer": "AWBP_JackFeed_Cow_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'C_WorldWaypoint:OnOccupiedStateChanged'",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "newState",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnAnimationContextChanged",
+    "Outer": "AWBP_JackFeed_Cow_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'C_WorldWaypoint:OnAnimationContextChanged'",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "ChildProperties": [
+      {
+        "Type": "EnumProperty",
+        "Name": "context",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Enum": {
+          "ObjectName": "Enum'EC_AnimationContext'",
+          "ObjectPath": "/Script/ProjectCoral"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "npc",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'C_NpcCharacter'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "AWBP_JackFeed_Cow_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'AWBP_JackFeed_Cow_C:SimpleConstructionScript_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.27"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'AWBP_JackFeed_Cow_C:ExecuteUbergraph_AWBP_JackFeed_Cow'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.0"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'C_AnimationWaypoint'",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'AWBP_JackFeed_Cow_C:OnAnimationContextChanged'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.2"
+      },
+      {
+        "ObjectName": "Function'AWBP_JackFeed_Cow_C:OnOccupiedStateChanged'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.1"
+      },
+      {
+        "ObjectName": "Function'AWBP_JackFeed_Cow_C:ExecuteUbergraph_AWBP_JackFeed_Cow'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.0"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Box",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Cow",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SkeletalMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "TimeActive",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'C_RequirementMapComponent'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "DayList",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'C_RequirementMapComponent'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "StationMesh1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "PositionComponent1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Offset_Loc",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Offset_Rotation",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Montage_Set",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "PropertyClass": {
+          "ObjectName": "Class'AnimMontage'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "Start_Section",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "End_Section",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "NewVar_0",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'SkeletalMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_AWBP_JackFeed_Cow": {
+        "ObjectName": "Function'AWBP_JackFeed_Cow_C:ExecuteUbergraph_AWBP_JackFeed_Cow'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.0"
+      },
+      "OnOccupiedStateChanged": {
+        "ObjectName": "Function'AWBP_JackFeed_Cow_C:OnOccupiedStateChanged'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.1"
+      },
+      "OnAnimationContextChanged": {
+        "ObjectName": "Function'AWBP_JackFeed_Cow_C:OnAnimationContextChanged'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.2"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "AWBP_JackFeed_Cow_C'Default__AWBP_JackFeed_Cow_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.4"
+    }
+  },
+  {
+    "Type": "AWBP_JackFeed_Cow_C",
+    "Name": "Default__AWBP_JackFeed_Cow_C",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.AWBP_JackFeed_Cow_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "Offset_Loc": {
+        "X": -3.907074,
+        "Y": -2.256264,
+        "Z": -0.002122
+      },
+      "Offset_Rotation": {
+        "Pitch": 0.0,
+        "Yaw": 0.0,
+        "Roll": 0.0
+      },
+      "Montage_Set": {
+        "ObjectName": "AnimMontage'A_Cow_Eat_Loop_Montage'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Cow/A_Cow_Eat_Loop_Montage.0"
+      },
+      "Start_Section": "Start",
+      "End_Section": "End",
+      "animset": {
+        "ObjectName": "C_Animset'Animset_Jack_FeedingCow'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Animation/Animsets_v2/Animset_Jack_FeedingCow.0"
+      },
+      "linkedState": "EC_WaypointLinkedState::NotLinked",
+      "stationMeshComponent": {
+        "ObjectName": "StaticMeshComponent'Default__AWBP_JackFeed_Cow_C:StationMesh'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.30"
+      },
+      "previewMesh": {
+        "ObjectName": "SkeletalMesh'SK_Jack_V2_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Jack/Mesh/Ver2/SK_Jack_V2_1.1"
+      },
+      "previewAnimationPosition": 1.0,
+      "defaultAnimation": {
+        "ObjectName": "AnimSequence'A_NPC_Jack_IdlePose'",
+        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/NPCIdle_Anim/A_NPC_Jack_IdlePose.1"
+      },
+      "useDefaultMaterials": true,
+      "RootComponent": {
+        "ObjectName": "SceneComponent'Default__AWBP_JackFeed_Cow_C:PositionComponent'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.19"
+      }
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "Box_GEN_VARIABLE",
+    "Outer": "AWBP_JackFeed_Cow_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "AreaClass": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "CanCharacterStepUpOn": "ECB_No",
+      "BodyInstance": {
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Visibility",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECR_Overlap"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECR_Overlap"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 271.77753,
+        "Y": 10.522308,
+        "Z": 70.70935
+      },
+      "RelativeScale3D": {
+        "X": 4.1194115,
+        "Y": 1.9981424,
+        "Z": 2.5202558
+      },
+      "bVisible": false
+    }
+  },
+  {
+    "Type": "C_ClearWeatherRequirement",
+    "Name": "C_ClearWeatherRequirement_0",
+    "Outer": "DayList_GEN_VARIABLE",
+    "Class": "UScriptClass'C_ClearWeatherRequirement'"
+  },
+  {
+    "Type": "C_ClearWeatherRequirement",
+    "Name": "C_ClearWeatherRequirement_1",
+    "Outer": "DayList_GEN_VARIABLE",
+    "Class": "UScriptClass'C_ClearWeatherRequirement'",
+    "Properties": {
+      "invertResult": true
+    }
+  },
+  {
+    "Type": "C_DayRequirement",
+    "Name": "C_DayRequirement_0",
+    "Outer": "DayList_GEN_VARIABLE",
+    "Class": "UScriptClass'C_DayRequirement'",
+    "Properties": {
+      "requirementType": "EC_DayRequirementType::DaysOfTheWeek",
+      "expectedDaysOfTheWeek": [
+        "EC_DayOfTheWeek::Tuesday",
+        "EC_DayOfTheWeek::Wednesday"
+      ],
+      "invertResult": true
+    }
+  },
+  {
+    "Type": "C_DayRequirement",
+    "Name": "C_DayRequirement_2",
+    "Outer": "DayList_GEN_VARIABLE",
+    "Class": "UScriptClass'C_DayRequirement'",
+    "Properties": {
+      "requirementType": "EC_DayRequirementType::DaysOfTheWeek",
+      "expectedDaysOfTheWeek": [
+        "EC_DayOfTheWeek::Tuesday",
+        "EC_DayOfTheWeek::Wednesday"
+      ]
+    }
+  },
+  {
+    "Type": "C_RequirementMapComponent",
+    "Name": "DayList_GEN_VARIABLE",
+    "Outer": "AWBP_JackFeed_Cow_C",
+    "Class": "UScriptClass'C_RequirementMapComponent'",
+    "Properties": {
+      "requirementsMap": [
+        {
+          "DayActive": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_DayRequirement'AWBP_JackFeed_Cow_C:DayList_GEN_VARIABLE.C_DayRequirement_2'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.9"
+              },
+              {
+                "ObjectName": "C_ClearWeatherRequirement'AWBP_JackFeed_Cow_C:DayList_GEN_VARIABLE.C_ClearWeatherRequirement_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.6"
+              },
+              {
+                "ObjectName": "C_SeasonRequirement'AWBP_JackFeed_Cow_C:DayList_GEN_VARIABLE.C_SeasonRequirement_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.12"
+              },
+              {
+                "ObjectName": "C_TimeRequirement'AWBP_JackFeed_Cow_C:DayList_GEN_VARIABLE.C_TimeRequirement_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.15"
+              }
+            ]
+          }
+        },
+        {
+          "DayOff": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_DayRequirement'AWBP_JackFeed_Cow_C:DayList_GEN_VARIABLE.C_DayRequirement_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.8"
+              },
+              {
+                "ObjectName": "C_ClearWeatherRequirement'AWBP_JackFeed_Cow_C:DayList_GEN_VARIABLE.C_ClearWeatherRequirement_1'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.7"
+              },
+              {
+                "ObjectName": "C_SeasonRequirement'AWBP_JackFeed_Cow_C:DayList_GEN_VARIABLE.C_SeasonRequirement_1'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.13"
+              },
+              {
+                "ObjectName": "C_TimeRequirement'AWBP_JackFeed_Cow_C:DayList_GEN_VARIABLE.C_TimeRequirement_1'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.16"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_RequirementMapComponent",
+    "Name": "TimeActive_GEN_VARIABLE",
+    "Outer": "AWBP_JackFeed_Cow_C",
+    "Class": "UScriptClass'C_RequirementMapComponent'",
+    "Properties": {
+      "evaluationFrequency": "EC_ConditionEvaluationFrequency::EveryTimeOfTheDay",
+      "requirementsMap": [
+        {
+          "Night": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_TimeOfTheDayRequirement'AWBP_JackFeed_Cow_C:TimeActive_GEN_VARIABLE.C_TimeOfTheDayRequirement_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.14"
+              }
+            ]
+          }
+        }
+      ],
+      "checkOnDayBegin": false
+    }
+  },
+  {
+    "Type": "C_SeasonRequirement",
+    "Name": "C_SeasonRequirement_0",
+    "Outer": "DayList_GEN_VARIABLE",
+    "Class": "UScriptClass'C_SeasonRequirement'",
+    "Properties": {
+      "expectedSeasons": [
+        "EC_Season::Fall"
+      ],
+      "invertResult": true
+    }
+  },
+  {
+    "Type": "C_SeasonRequirement",
+    "Name": "C_SeasonRequirement_1",
+    "Outer": "DayList_GEN_VARIABLE",
+    "Class": "UScriptClass'C_SeasonRequirement'",
+    "Properties": {
+      "expectedSeasons": [
+        "EC_Season::Fall"
+      ],
+      "invertResult": true
+    }
+  },
+  {
+    "Type": "C_TimeOfTheDayRequirement",
+    "Name": "C_TimeOfTheDayRequirement_0",
+    "Outer": "TimeActive_GEN_VARIABLE",
+    "Class": "UScriptClass'C_TimeOfTheDayRequirement'",
+    "Properties": {
+      "expectedTimeOfTheDay": "EC_TimeOfDay::Night"
+    }
+  },
+  {
+    "Type": "C_TimeRequirement",
+    "Name": "C_TimeRequirement_0",
+    "Outer": "DayList_GEN_VARIABLE",
+    "Class": "UScriptClass'C_TimeRequirement'",
+    "Properties": {
+      "expectedTimeRange": {
+        "fromTime": {
+          "hours": 7,
+          "minutes": 25
+        },
+        "toTime": {
+          "hours": 7,
+          "minutes": 30
+        }
+      }
+    }
+  },
+  {
+    "Type": "C_TimeRequirement",
+    "Name": "C_TimeRequirement_1",
+    "Outer": "DayList_GEN_VARIABLE",
+    "Class": "UScriptClass'C_TimeRequirement'",
+    "Properties": {
+      "expectedTimeRange": {
+        "fromTime": {
+          "hours": 15
+        },
+        "toTime": {
+          "hours": 15,
+          "minutes": 10
+        }
+      }
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "AWBP_JackFeed_Cow_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "PositionComponent1_GEN_VARIABLE",
+    "Outer": "AWBP_JackFeed_Cow_C",
+    "Class": "UScriptClass'SceneComponent'",
+    "Properties": {
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": -2.050231E-06,
+        "Z": 3.7519302
+      },
+      "RelativeRotation": {
+        "Pitch": 0.0,
+        "Yaw": -2.390566E-05,
+        "Roll": 0.0
+      }
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "PositionComponent",
+    "Outer": "Default__AWBP_JackFeed_Cow_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'AWBP_JackFeed_Cow_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.17"
+      },
+      "VariableGuid": "97D09D00-406C0827-065C3DB6-23567526",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'AWBP_JackFeed_Cow_C:PositionComponent1_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.18"
+      },
+      "ParentComponentOrVariableName": "PositionComponent",
+      "bIsParentComponentNative": true,
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node'AWBP_JackFeed_Cow_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.22"
+        }
+      ],
+      "VariableGuid": "64CF5A1C-41830416-091ED88C-E519E2E3",
+      "InternalVariableName": "PositionComponent1"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'AWBP_JackFeed_Cow_C:StationMesh1_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.29"
+      },
+      "VariableGuid": "D5ADBC00-41CB08C6-F32FA7AE-7E800DA6",
+      "InternalVariableName": "StationMesh1"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_4",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'C_RequirementMapComponent'",
+        "ObjectPath": "/Script/ProjectCoral"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "C_RequirementMapComponent'AWBP_JackFeed_Cow_C:DayList_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.10"
+      },
+      "VariableGuid": "49A066DB-47E5873D-51B03892-602C6EAD",
+      "InternalVariableName": "DayList"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_5",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'C_RequirementMapComponent'",
+        "ObjectPath": "/Script/ProjectCoral"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "C_RequirementMapComponent'AWBP_JackFeed_Cow_C:TimeActive_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.11"
+      },
+      "VariableGuid": "E9A23DD6-4E42BB3D-9E69F0BE-1346815A",
+      "InternalVariableName": "TimeActive"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_6",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SkeletalMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SkeletalMeshComponent'AWBP_JackFeed_Cow_C:Cow_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.28"
+      },
+      "ParentComponentOrVariableName": "PositionComponent",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "4CA7E203-443AF81A-AEFD839B-2BA1481A",
+      "InternalVariableName": "Cow"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_7",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'AWBP_JackFeed_Cow_C:Box_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.5"
+      },
+      "ParentComponentOrVariableName": "PositionComponent",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "A1FC18D8-46D433FC-BCBC94B7-B1FC1ED4",
+      "InternalVariableName": "Box"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "AWBP_JackFeed_Cow_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'AWBP_JackFeed_Cow_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.21"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_JackFeed_Cow_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.23"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_JackFeed_Cow_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.24"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_JackFeed_Cow_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.25"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_JackFeed_Cow_C:SimpleConstructionScript_0.SCS_Node_7'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.26"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'AWBP_JackFeed_Cow_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.21"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_JackFeed_Cow_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.22"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_JackFeed_Cow_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.23"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_JackFeed_Cow_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.24"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_JackFeed_Cow_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.25"
+        },
+        {
+          "ObjectName": "SCS_Node'AWBP_JackFeed_Cow_C:SimpleConstructionScript_0.SCS_Node_7'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.26"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'AWBP_JackFeed_Cow_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.20"
+      }
+    }
+  },
+  {
+    "Type": "SkeletalMeshComponent",
+    "Name": "Cow_GEN_VARIABLE",
+    "Outer": "AWBP_JackFeed_Cow_C",
+    "Class": "UScriptClass'SkeletalMeshComponent'",
+    "Properties": {
+      "AnimationData": {
+        "AnimToPlay": {
+          "ObjectName": "AnimSequence'A_Cow_Eat_Loop'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Animal/Cow/A_Cow_Eat_Loop.0"
+        }
+      },
+      "AnimationMode": "EAnimationMode::AnimationSingleNode",
+      "bDisableClothSimulation": true,
+      "ClothingSimulationFactory": {
+        "ObjectName": "Class'ClothingSimulationFactoryNv'",
+        "ObjectPath": "/Script/ClothingSystemRuntimeNv"
+      },
+      "SkeletalMesh": {
+        "ObjectName": "SkeletalMesh'SK_Cow_Brown_V5_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Cow/NewCow/SK_Cow_Brown_V5_1.10"
+      },
+      "RelativeLocation": {
+        "X": 273.6504,
+        "Y": 12.262361,
+        "Z": 0.0
+      },
+      "RelativeRotation": {
+        "Pitch": 0.0,
+        "Yaw": 90.0,
+        "Roll": 0.0
+      },
+      "bVisible": false
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "StationMesh1_GEN_VARIABLE",
+    "Outer": "AWBP_JackFeed_Cow_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "bUseDefaultCollision": true,
+      "bGenerateOverlapEvents": false,
+      "BodyInstance": {
+        "ObjectType": "ECC_WorldStatic",
+        "CollisionProfileName": "BlockAll"
+      },
+      "bAbsoluteScale": true
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "StationMesh",
+    "Outer": "Default__AWBP_JackFeed_Cow_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "AttachParent": {
+        "ObjectName": "SceneComponent'Default__AWBP_JackFeed_Cow_C:PositionComponent'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_JackFeed_Cow.19"
+      }
+    }
+  }
+]

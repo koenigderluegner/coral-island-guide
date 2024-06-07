@@ -3,8 +3,8 @@
         <h4>{{ heartEventTrigger.cutscene }}</h4>
         <span>Id: {{ heartEventTrigger.id }} </span>
     </div>
-    <mat-checkbox [checked]="heartEventChecklist.isChecked(heartEventTrigger.cutscene)"
-                  (change)="toggleHeartEvent($event.checked)">Cutscene seen
+    <mat-checkbox (change)="toggleHeartEvent($event.checked)"
+                  [checked]="heartEventChecklist.isChecked(heartEventTrigger.cutscene)">Cutscene seen
     </mat-checkbox>
 </header>
 

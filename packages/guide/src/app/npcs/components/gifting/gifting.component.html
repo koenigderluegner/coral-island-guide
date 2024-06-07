@@ -1,8 +1,16 @@
-<div class="px-2 xl:px-[50px] w-full pt-2 pb-6 2xl:pt-[60px]">
+<app-list-detail-container>
+    @if (selectedEntity) {
+        <app-item-card-switch [item]="selectedEntity" listDetail>
+            <ng-template let-details appDatabaseItemDetails>
+                <app-offering [details]="details"/>
+            </ng-template>
+        </app-item-card-switch>
+    }
+
     <app-npc-filter/>
 
-    @if (gifting$  | async; as gifting) {
-        <app-card class="text-xl gifting-card">
+    @if (gifting$ | async; as gifting) {
+        <app-card class="text-xl">
 
             @for (giftingPreferences of filteredAndSortedNpcs(); track giftingPreferences) {
 
@@ -43,7 +51,8 @@
                            [class.up]="expandableComponent.open" class="arrow"></i>
 
                     </div>
-                    <app-gifting-grid [preferences]="giftingPreferences.preferences"/>
+                    <app-gifting-grid [preferences]="giftingPreferences.preferences"
+                                      (itemClicked)="showDetails($event)"/>
 
                 </app-expandable>
             }
@@ -51,4 +60,5 @@
 
         </app-card>
     }
-</div>
+
+</app-list-detail-container>

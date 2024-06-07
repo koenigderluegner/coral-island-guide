@@ -1,22 +1,20 @@
-<app-list-detail-container [(openDrawer)]="openDrawer">
+<app-list-detail-container>
     @if (selectedEntity) {
-        <app-database-item-details [itemId]="selectedEntity.id" listDetail>
+        <app-database-item-details [itemId]="selectedEntity.id" [context]="toDoContext()" listDetail>
             <ng-template let-details appDatabaseItemDetails>
                 <app-db-item-found [details]="details"/>
             </ng-template>
         </app-database-item-details>
     }
 
-    <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex"
-                   class=" px-2 xl:px-[50px] w-full"
-                   mat-stretch-tabs="false">
+    <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex()">
         @for (tab of tabs; track tab) {
             <mat-tab [label]="tab.title">
                 <app-data-filter [(showTable)]="showTable" [parentFormGroup]="formControl"/>
                 @if ((tab.data |async); as syncedData) {
 
                     @if (!showTable) {
-                        <div class="grid gap-4 icon-grid">
+                        <div class="icon-grid">
                             @for (entry of syncedData; track entry) {
                                 <app-item-icon (click)="showDetails(entry)"
                                                [class.selected-icon]="selectedEntity?.id === entry.id"

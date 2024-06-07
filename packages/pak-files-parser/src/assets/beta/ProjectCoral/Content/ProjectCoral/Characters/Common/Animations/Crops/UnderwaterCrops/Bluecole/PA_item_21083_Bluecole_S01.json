@@ -1,0 +1,133 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_item_21083_Bluecole_S01",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_item_21083_Bluecole_S01:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/Bluecole/PA_item_21083_Bluecole_S01.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_item_21083_Bluecole_S01:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/Bluecole/PA_item_21083_Bluecole_S01.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_item_21083_Bluecole_S01:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/Bluecole/PA_item_21083_Bluecole_S01.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_item_21083_Bluecole_S01",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Crops_Jnt2",
+        "ConstraintBone1": "Crops_Jnt2",
+        "ConstraintBone2": "RootCrops_Jnt",
+        "Pos2": {
+          "X": 5.009565,
+          "Y": -3.1503904,
+          "Z": 0.795481
+        },
+        "PriAxis2": {
+          "X": 1.0,
+          "Y": -1.8075011E-34,
+          "Z": -6.814206E-18
+        },
+        "SecAxis2": {
+          "X": -5.4225036E-34,
+          "Y": 1.0,
+          "Z": -1.0610194E-16
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_item_21083_Bluecole_S01",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 2.2100375,
+              "Y": -1.8123397,
+              "Z": 2.7456303
+            },
+            "Rotation": {
+              "Pitch": 31.237486,
+              "Yaw": -90.0,
+              "Roll": 0.89657634
+            },
+            "Radius": 8.756305,
+            "Length": 11.146099,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "RootCrops_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "88764200463E68800D8C72816F2E3D3F"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_item_21083_Bluecole_S01",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 2.1422598,
+              "Y": 1.1435394,
+              "Z": -0.02859272
+            },
+            "Rotation": {
+              "Pitch": 16.380583,
+              "Yaw": -90.00001,
+              "Roll": 3.296136
+            },
+            "Radius": 11.033957,
+            "Length": 16.881456,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Crops_Jnt2",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "F1FDC4204D31F56E11253E8A2BE95C24"
+  }
+]

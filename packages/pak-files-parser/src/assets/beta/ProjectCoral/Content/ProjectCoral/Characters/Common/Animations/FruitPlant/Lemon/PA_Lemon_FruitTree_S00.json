@@ -1,0 +1,202 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_Lemon_FruitTree_S00",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Lemon_FruitTree_S00:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/FruitPlant/Lemon/PA_Lemon_FruitTree_S00.3"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Lemon_FruitTree_S00:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/FruitPlant/Lemon/PA_Lemon_FruitTree_S00.4"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Lemon_FruitTree_S00:SkeletalBodySetup_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/FruitPlant/Lemon/PA_Lemon_FruitTree_S00.5"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Lemon_FruitTree_S00:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/FruitPlant/Lemon/PA_Lemon_FruitTree_S00.1"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Lemon_FruitTree_S00:PhysicsConstraintTemplate_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/FruitPlant/Lemon/PA_Lemon_FruitTree_S00.2"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_Lemon_FruitTree_S00",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Oak_Jnt10",
+        "ConstraintBone1": "Oak_Jnt10",
+        "ConstraintBone2": "Oak_Trunk_Jnt",
+        "Pos2": {
+          "X": 0.70906734,
+          "Y": -71.32925,
+          "Z": 1.6151317
+        },
+        "PriAxis2": {
+          "X": 1.0,
+          "Y": 0.0,
+          "Z": -4.9974944E-20
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_1",
+    "Outer": "PA_Lemon_FruitTree_S00",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Oak_Jnt7",
+        "ConstraintBone1": "Oak_Jnt7",
+        "ConstraintBone2": "Oak_Trunk_Jnt",
+        "Pos2": {
+          "X": 0.2917156,
+          "Y": -68.53136,
+          "Z": -3.6398985
+        },
+        "PriAxis2": {
+          "X": 1.0,
+          "Y": 0.0,
+          "Z": -4.9974944E-20
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_Lemon_FruitTree_S00",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.5612377,
+              "Y": -36.968502,
+              "Z": -0.3839798
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -178.71819,
+              "Roll": -89.23286
+            },
+            "Radius": 6.324352,
+            "Length": 39.934498,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Oak_Trunk_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "37622E644A4902982DF5CD8CA790AF1E"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_Lemon_FruitTree_S00",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 4.775261,
+              "Y": -26.839579,
+              "Z": 23.127516
+            },
+            "Rotation": {
+              "Pitch": -25.92108,
+              "Yaw": -89.99999,
+              "Roll": 6.0117555
+            },
+            "Radius": 12.390264,
+            "Length": 26.548664,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Oak_Jnt10",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "729BA73A495DFCC2AF37F7AC57C419FA"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_2",
+    "Outer": "PA_Lemon_FruitTree_S00",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -10.25175,
+              "Y": -9.330519,
+              "Z": -16.211008
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -107.34856,
+              "Roll": -80.260254
+            },
+            "Radius": 19.887321,
+            "Length": 42.313198,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Oak_Jnt7",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "2194EAFD4B299F0606748BBDA7EF3653"
+  }
+]

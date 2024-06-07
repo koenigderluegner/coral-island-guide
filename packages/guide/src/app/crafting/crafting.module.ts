@@ -18,6 +18,8 @@ import { DatabaseItemDetailsComponent } from "../shared/components/database-item
 import { DatabaseItemDetailsDirective } from "../shared/directives/database-item-details.directive";
 import { CookingRecipeComponent } from "../shared/components/database-item-details/cooking-recipe/cooking-recipe.component";
 import { ConsumableComponent } from "../shared/components/database-item-details/consumable/consumable.component";
+import { ProcessingComponent } from "../shared/components/database-item-details/processing/processing.component";
+import { InventoryCraftingComponent } from "../shared/components/database-item-details/inventory-crafting/inventory-crafting.component";
 
 @NgModule({
     declarations: [
@@ -39,7 +41,7 @@ import { ConsumableComponent } from "../shared/components/database-item-details/
         AddSpacesToPascalCasePipe,
         DatabaseItemDetailsComponent,
         DatabaseItemDetailsDirective,
-        CookingRecipeComponent, ConsumableComponent
+        CookingRecipeComponent, ConsumableComponent, ProcessingComponent, InventoryCraftingComponent
     ],
     exports: [
         InventoryTableComponent,

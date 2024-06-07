@@ -1,0 +1,86 @@
+[
+  {
+    "Type": "BehaviorTree",
+    "Name": "BT_Skully_SpecialInteraction",
+    "Class": "UScriptClass'BehaviorTree'",
+    "Properties": {
+      "RootNode": {
+        "ObjectName": "BTComposite_Sequence'BT_Skully_SpecialInteraction:BTComposite_Sequence_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Skully/BT_Skully_SpecialInteraction.1"
+      },
+      "BlackboardAsset": {
+        "ObjectName": "BlackboardData'BB_Enemies'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BB_Enemies.0"
+      }
+    }
+  },
+  {
+    "Type": "BTComposite_Sequence",
+    "Name": "BTComposite_Sequence_2",
+    "Outer": "BT_Skully_SpecialInteraction",
+    "Class": "UScriptClass'BTComposite_Sequence'",
+    "Properties": {
+      "Children": [
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "BTTask_Wait'BT_Skully_SpecialInteraction:BTTask_Wait_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Skully/BT_Skully_SpecialInteraction.2"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "BTTC_SetEnemiesState'BT_Skully_SpecialInteraction:BTTC_SetEnemiesState_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Skully/BT_Skully_SpecialInteraction.3"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        }
+      ],
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_Skully_SpecialInteraction'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Skully/BT_Skully_SpecialInteraction.0"
+      }
+    }
+  },
+  {
+    "Type": "BTTask_Wait",
+    "Name": "BTTask_Wait_0",
+    "Outer": "BT_Skully_SpecialInteraction",
+    "Class": "UScriptClass'BTTask_Wait'",
+    "Properties": {
+      "WaitTime": 20.0,
+      "RandomDeviation": 5.0,
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_Skully_SpecialInteraction'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Skully/BT_Skully_SpecialInteraction.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_Skully_SpecialInteraction:BTComposite_Sequence_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Skully/BT_Skully_SpecialInteraction.1"
+      }
+    }
+  },
+  {
+    "Type": "BTTC_SetEnemiesState",
+    "Name": "BTTC_SetEnemiesState_0",
+    "Outer": "BT_Skully_SpecialInteraction",
+    "Class": "UScriptClass'BTTC_SetEnemiesState'",
+    "Properties": {
+      "blackBoardState": {
+        "SelectedKeyName": "EnemiesState"
+      },
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_Skully_SpecialInteraction'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Skully/BT_Skully_SpecialInteraction.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_Skully_SpecialInteraction:BTComposite_Sequence_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Skully/BT_Skully_SpecialInteraction.1"
+      }
+    }
+  }
+]

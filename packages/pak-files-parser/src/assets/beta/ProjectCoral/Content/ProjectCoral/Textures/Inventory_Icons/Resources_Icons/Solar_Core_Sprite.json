@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Solar_Core_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 2.0,
+              "Y": 0.0,
+              "Z": 1.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 92.0,
+            "Y": 10.0,
+            "Z": 117.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "20825339410C6EB0721CC98DA5B1B4EA"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Solar_Core_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Solar_Core'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Resources_Icons/Textures/Solar_Core.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Solar_Core_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Resources_Icons/Solar_Core_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 48.0,
+          "Y": 60.0,
+          "Z": 0.875,
+          "W": 0.03125
+        },
+        {
+          "X": -44.0,
+          "Y": 60.0,
+          "Z": 0.15625,
+          "W": 0.03125
+        },
+        {
+          "X": -44.0,
+          "Y": -57.0,
+          "Z": 0.15625,
+          "W": 0.9453125
+        },
+        {
+          "X": 48.0,
+          "Y": -57.0,
+          "Z": 0.875,
+          "W": 0.9453125
+        },
+        {
+          "X": 48.0,
+          "Y": 60.0,
+          "Z": 0.875,
+          "W": 0.03125
+        },
+        {
+          "X": -44.0,
+          "Y": -57.0,
+          "Z": 0.15625,
+          "W": 0.9453125
+        }
+      ]
+    }
+  }
+]

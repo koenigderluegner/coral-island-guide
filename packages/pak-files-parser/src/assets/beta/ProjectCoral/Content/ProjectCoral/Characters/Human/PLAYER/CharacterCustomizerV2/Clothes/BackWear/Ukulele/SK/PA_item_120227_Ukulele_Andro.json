@@ -1,0 +1,123 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_item_120227_Ukulele_Andro",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_item_120227_Ukulele_Andro:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/BackWear/Ukulele/SK/PA_item_120227_Ukulele_Andro.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_item_120227_Ukulele_Andro:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/BackWear/Ukulele/SK/PA_item_120227_Ukulele_Andro.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_item_120227_Ukulele_Andro:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/PLAYER/CharacterCustomizerV2/Clothes/BackWear/Ukulele/SK/PA_item_120227_Ukulele_Andro.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_item_120227_Ukulele_Andro",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Back1_Jnt",
+        "ConstraintBone1": "Back1_Jnt",
+        "ConstraintBone2": "Root_Accesories",
+        "Pos2": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": -25.08902
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_item_120227_Ukulele_Andro",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 3.7975674,
+              "Y": 6.6588516,
+              "Z": 10.936047
+            },
+            "Rotation": {
+              "Pitch": 6.830189E-06,
+              "Yaw": 135.00644,
+              "Roll": -89.22394
+            },
+            "Radius": 11.787937,
+            "Length": 41.47417,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Root_Accesories",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "132771F04D5110B64DE796AB7481FB27"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_item_120227_Ukulele_Andro",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -2.4871197,
+              "Y": -1.159131,
+              "Z": 2.782844
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 135.2197,
+              "Roll": -87.840645
+            },
+            "Radius": 20.572721,
+            "Length": 55.530872,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Back1_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "956CA61D4AFC1E12236A29A21AD28D1D"
+  }
+]

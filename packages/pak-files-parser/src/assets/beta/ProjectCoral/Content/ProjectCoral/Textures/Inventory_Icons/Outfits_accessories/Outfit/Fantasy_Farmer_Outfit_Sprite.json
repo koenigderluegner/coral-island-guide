@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Fantasy_Farmer_Outfit_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -0.5,
+              "Y": -0.0,
+              "Z": -1.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 67.0,
+            "Y": 10.0,
+            "Z": 125.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "368519B74117183171B162A76FF2AC68"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Fantasy_Farmer_Outfit_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Fantasy_Farmer_Outfit'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Outfits_accessories/Outfit/Texture/Fantasy_Farmer_Outfit.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Fantasy_Farmer_Outfit_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Outfits_accessories/Outfit/Fantasy_Farmer_Outfit_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 33.0,
+          "Y": 61.0,
+          "Z": 0.7578125,
+          "W": 0.0234375
+        },
+        {
+          "X": -34.0,
+          "Y": 61.0,
+          "Z": 0.234375,
+          "W": 0.0234375
+        },
+        {
+          "X": -34.0,
+          "Y": -64.0,
+          "Z": 0.234375,
+          "W": 1.0
+        },
+        {
+          "X": 33.0,
+          "Y": -64.0,
+          "Z": 0.7578125,
+          "W": 1.0
+        },
+        {
+          "X": 33.0,
+          "Y": 61.0,
+          "Z": 0.7578125,
+          "W": 0.0234375
+        },
+        {
+          "X": -34.0,
+          "Y": -64.0,
+          "Z": 0.234375,
+          "W": 1.0
+        }
+      ]
+    }
+  }
+]

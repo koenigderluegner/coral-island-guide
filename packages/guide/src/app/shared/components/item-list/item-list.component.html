@@ -1,11 +1,11 @@
-@for (itemListItem of itemList; track itemListItem) {
+@for (itemListItem of itemList(); track itemListItem) {
 
     <div class="flex justify-between py-1">
         @if (!isGenericEntry(itemListItem)) {
 
             @if (itemListItem.item) {
                 <div class="flex gap-x-3 items-center">
-                    <app-item-icon class="w-10" [itemName]="itemListItem.item.iconName"></app-item-icon>
+                    <app-item-icon class="size-10" [itemName]="itemListItem.item.iconName"></app-item-icon>
                     <span>{{ itemListItem.item.displayName }}</span>
                 </div>
             }

@@ -23,7 +23,7 @@ export class RanchComponent extends BaseShopComponent {
         this.sizeByMood$ = this._database.fetchAnimalMoodData$();
         this.animalData$ = combineLatest([
             this._database.fetchAnimals$(),
-            this._database.fetchAnimalShopData$()
+            this._database.fetchAnimalShopData$(this.shopName)
         ]).pipe(
             switchMap(([animals, shopData]) => {
 
@@ -47,6 +47,6 @@ export class RanchComponent extends BaseShopComponent {
         this.selectedAnimal = shopItem;
         this.selectedEntity = undefined;
 
-        this.openDrawer = true;
+        this.listDetail.open()
     }
 }

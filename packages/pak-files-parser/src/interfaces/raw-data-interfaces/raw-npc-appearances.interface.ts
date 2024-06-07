@@ -18,7 +18,7 @@ export interface RawNpcAppearances {
             },
             "texture": {
                 "AssetPathName": string
-                "SubPathString":string
+                "SubPathString": string
             }
         }
     ],
@@ -28,7 +28,7 @@ export interface RawNpcAppearances {
     },
     "StaticMesh": {
         "AssetPathName": string
-        "SubPathString":string
+        "SubPathString": string
     },
     "dialogPortraitPosition": {
         "X": number

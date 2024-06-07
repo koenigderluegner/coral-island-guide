@@ -1,0 +1,123 @@
+[
+  {
+    "Type": "AnimMontage",
+    "Name": "AM_SpiderHit",
+    "Class": "UScriptClass'AnimMontage'",
+    "Properties": {
+      "BlendIn": {
+        "BlendTime": 0.0
+      },
+      "BlendOut": {
+        "BlendTime": 0.1
+      },
+      "CompositeSections": [
+        {
+          "SectionName": "Default",
+          "NextSectionName": "None",
+          "MetaData": [],
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_SpiderHit'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Monster/AM_SpiderHit.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 0.6,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_SpiderHit'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Monster/A_SpiderHit.0"
+          }
+        }
+      ],
+      "SlotAnimTracks": [
+        {
+          "SlotName": "DefaultSlot",
+          "AnimTrack": {
+            "AnimSegments": [
+              {
+                "AnimReference": {
+                  "ObjectName": "AnimSequence'A_SpiderHit'",
+                  "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Monster/A_SpiderHit.0"
+                },
+                "StartPos": 0.0,
+                "AnimStartTime": 0.0,
+                "AnimEndTime": 0.6,
+                "AnimPlayRate": 1.0,
+                "LoopingCount": 1
+              }
+            ]
+          }
+        }
+      ],
+      "Notifies": [
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0001,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PlayNiagaraEffect",
+          "Notify": {
+            "ObjectName": "AnimNotify_PlayNiagaraEffect'AM_SpiderHit:AnimNotify_PlayNiagaraEffect_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Monster/AM_SpiderHit.1"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.0,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 1,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_SpiderHit'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Monster/AM_SpiderHit.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 0.6,
+          "LinkValue": 0.18280505,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'A_SpiderHit'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Monster/A_SpiderHit.0"
+          }
+        }
+      ],
+      "SequenceLength": 0.6,
+      "Skeleton": {
+        "ObjectName": "Skeleton'SKEL_Crab'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Animals/Crab/SKEL_Crab.2"
+      }
+    },
+    "SkeletonGuid": "18A3643F-4D9AB77A-F8C54ABD-F0BA8FE5"
+  },
+  {
+    "Type": "AnimNotify_PlayNiagaraEffect",
+    "Name": "AnimNotify_PlayNiagaraEffect_0",
+    "Outer": "AM_SpiderHit",
+    "Class": "UScriptClass'AnimNotify_PlayNiagaraEffect'",
+    "Properties": {
+      "Template": {
+        "ObjectName": "NiagaraSystem'NS_Hit'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/FX/Monster/Explode/NS_Hit.61"
+      }
+    }
+  }
+]

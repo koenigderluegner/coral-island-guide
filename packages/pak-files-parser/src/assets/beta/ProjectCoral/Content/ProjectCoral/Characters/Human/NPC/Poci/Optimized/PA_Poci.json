@@ -1,0 +1,319 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_Poci",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Poci:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Poci/Optimized/PA_Poci.4"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Poci:SkeletalBodySetup_3'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Poci/Optimized/PA_Poci.5"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Poci:SkeletalBodySetup_4'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Poci/Optimized/PA_Poci.6"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Poci:SkeletalBodySetup_5'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Poci/Optimized/PA_Poci.7"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Poci:SkeletalBodySetup_6'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Poci/Optimized/PA_Poci.8"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Poci:PhysicsConstraintTemplate_2'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Poci/Optimized/PA_Poci.1"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Poci:PhysicsConstraintTemplate_3'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Poci/Optimized/PA_Poci.2"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Poci:PhysicsConstraintTemplate_5'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Poci/Optimized/PA_Poci.3"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_2",
+    "Outer": "PA_Poci",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Head_M",
+        "ConstraintBone1": "Head_M",
+        "ConstraintBone2": "Spine1_M",
+        "Pos2": {
+          "X": 34.170956,
+          "Y": 5.294439,
+          "Z": 3.8146973E-06
+        },
+        "PriAxis2": {
+          "X": 0.99991065,
+          "Y": -0.013369311,
+          "Z": -2.2585486E-14
+        },
+        "SecAxis2": {
+          "X": 0.013369311,
+          "Y": 0.99991065,
+          "Z": 3.3785552E-12
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_3",
+    "Outer": "PA_Poci",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Iket_M",
+        "ConstraintBone1": "Iket_M",
+        "ConstraintBone2": "Head_M",
+        "Pos2": {
+          "X": 37.18129,
+          "Y": -9.002676E-06,
+          "Z": 0.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_5",
+    "Outer": "PA_Poci",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Knee_M",
+        "ConstraintBone1": "Knee_M",
+        "ConstraintBone2": "Hip_M",
+        "Pos2": {
+          "X": -27.391665,
+          "Y": -3.293393,
+          "Z": 3.6256132
+        },
+        "PriAxis2": {
+          "X": 0.9655402,
+          "Y": 0.26025417,
+          "Z": 4.3902045E-07
+        },
+        "SecAxis2": {
+          "X": -0.26025417,
+          "Y": 0.9655402,
+          "Z": -8.06312E-08
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_Poci",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 3.189849,
+              "Y": -0.90845704,
+              "Z": -0.32288992
+            },
+            "Rotation": {
+              "Pitch": 6.9101906,
+              "Yaw": -90.0,
+              "Roll": -90.185745
+            },
+            "Radius": 31.126043,
+            "Length": 11.697977,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Spine1_M",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "26F8304B4F11C31B89CCDF8E481368F6"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_3",
+    "Outer": "PA_Poci",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 15.159613,
+              "Y": -1.1959877,
+              "Z": 0.09272385
+            },
+            "Rotation": {
+              "Pitch": 0.6224556,
+              "Yaw": 109.91804,
+              "Roll": -86.46706
+            },
+            "Radius": 20.51386,
+            "Length": 12.389523,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Head_M",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "DD4B5EF54B17258C876B99833B1B4DF2"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_4",
+    "Outer": "PA_Poci",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 16.001137,
+              "Y": 10.920111,
+              "Z": 3.2374377
+            },
+            "Rotation": {
+              "Pitch": 24.698305,
+              "Yaw": -79.92648,
+              "Roll": 89.866554
+            },
+            "Radius": 22.804205,
+            "Length": 8.811905,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Iket_M",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "8A207DF44A003E7562F0678CB22FDFD9"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_5",
+    "Outer": "PA_Poci",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -9.220215,
+              "Y": 0.6025448,
+              "Z": 0.2682786
+            },
+            "Rotation": {
+              "Pitch": -30.393343,
+              "Yaw": -89.99987,
+              "Roll": -76.842804
+            },
+            "Radius": 29.003899,
+            "Length": 11.747742,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Hip_M",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "7357EAB747495AAC15DF3E9AEF4182CF"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_6",
+    "Outer": "PA_Poci",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -30.300953,
+              "Y": 0.05024153,
+              "Z": 3.7540042
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -92.54645,
+              "Roll": -79.768974
+            },
+            "Radius": 18.450068,
+            "Length": 25.498774,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Knee_M",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "06F0E5D34506F7398EB51088D7237827"
+  }
+]

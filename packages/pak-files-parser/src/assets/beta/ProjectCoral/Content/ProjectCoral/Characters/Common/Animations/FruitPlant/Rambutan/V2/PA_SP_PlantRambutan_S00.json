@@ -1,0 +1,133 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_SP_PlantRambutan_S00",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_SP_PlantRambutan_S00:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/FruitPlant/Rambutan/V2/PA_SP_PlantRambutan_S00.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_SP_PlantRambutan_S00:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/FruitPlant/Rambutan/V2/PA_SP_PlantRambutan_S00.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_SP_PlantRambutan_S00:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/FruitPlant/Rambutan/V2/PA_SP_PlantRambutan_S00.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_SP_PlantRambutan_S00",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Oak_Jnt8",
+        "ConstraintBone1": "Oak_Jnt8",
+        "ConstraintBone2": "Oak_Trunk_Jnt",
+        "Pos2": {
+          "X": -0.013347131,
+          "Y": -51.40668,
+          "Z": 0.017487174
+        },
+        "PriAxis2": {
+          "X": 1.0,
+          "Y": 0.0,
+          "Z": -4.836558E-19
+        },
+        "SecAxis2": {
+          "X": -1.0487614E-37,
+          "Y": 1.0,
+          "Z": -2.1684043E-19
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_SP_PlantRambutan_S00",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 3.0099144,
+              "Y": -24.617668,
+              "Z": 0.6753974
+            },
+            "Rotation": {
+              "Pitch": 19.518398,
+              "Yaw": -89.999985,
+              "Roll": 12.159585
+            },
+            "Radius": 26.040194,
+            "Length": 38.791718,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Oak_Trunk_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "EE03E037436217FE4BE69694325ADD66"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_SP_PlantRambutan_S00",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 12.877504,
+              "Y": -42.711784,
+              "Z": -12.883259
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -150.97745,
+              "Roll": -57.329887
+            },
+            "Radius": 31.848042,
+            "Length": 39.081314,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Oak_Jnt8",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "3F75BB874A0F3A12AF32E9833107301E"
+  }
+]

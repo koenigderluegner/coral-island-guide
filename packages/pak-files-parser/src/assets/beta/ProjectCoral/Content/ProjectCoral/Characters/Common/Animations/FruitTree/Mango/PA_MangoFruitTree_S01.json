@@ -1,0 +1,133 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_MangoFruitTree_S01",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_MangoFruitTree_S01:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/FruitTree/Mango/PA_MangoFruitTree_S01.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_MangoFruitTree_S01:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/FruitTree/Mango/PA_MangoFruitTree_S01.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_MangoFruitTree_S01:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/FruitTree/Mango/PA_MangoFruitTree_S01.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_MangoFruitTree_S01",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Oak_Trunk_Jnt",
+        "ConstraintBone1": "Oak_Trunk_Jnt",
+        "ConstraintBone2": "Root_Oak_Tree",
+        "Pos2": {
+          "X": 1.0094341,
+          "Y": -40.490105,
+          "Z": 1.0945177
+        },
+        "PriAxis2": {
+          "X": 0.99999815,
+          "Y": -0.0013664839,
+          "Z": -0.0013664851
+        },
+        "SecAxis2": {
+          "X": 0.0013646166,
+          "Y": 0.99999815,
+          "Z": -0.0013664839
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_MangoFruitTree_S01",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.69045866,
+              "Y": -20.12267,
+              "Z": 1.0170689
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 1.0604199,
+              "Roll": -89.950325
+            },
+            "Radius": 14.013748,
+            "Length": 20.559885,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Root_Oak_Tree",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "1646C8D24CC3855565CB7780BB99446A"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_MangoFruitTree_S01",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.003958583,
+              "Y": -104.018036,
+              "Z": 2.1199722
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -179.628,
+              "Roll": -87.377686
+            },
+            "Radius": 69.29885,
+            "Length": 105.083496,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Oak_Trunk_Jnt",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "81A58F6D4DF5FD241B0CE8ACCFC22F76"
+  }
+]

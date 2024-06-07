@@ -1,8 +1,8 @@
-@if (details.enchantmentPoints) {
-    <div [class.mb-3]="details.chanceAsProcessResult">Enchantment points: <span
-            class="text-black">{{ details.enchantmentPoints }}</span></div>
+@if (details().enchantmentPoints) {
+    <div [class.mb-3]="details().chanceAsProcessResult">Enchantment points: <span
+            class="text-black">{{ details().enchantmentPoints }}</span></div>
 }
-@if (details.chanceAsProcessResult) {
-    <app-shop-processing-result class="mb-4" [itemProcessData]="details.chanceAsProcessResult"/>
+@if (details().chanceAsProcessResult) {
+    <app-shop-processing-result class="mb-4" [itemProcessData]="details().chanceAsProcessResult"/>
 }
 

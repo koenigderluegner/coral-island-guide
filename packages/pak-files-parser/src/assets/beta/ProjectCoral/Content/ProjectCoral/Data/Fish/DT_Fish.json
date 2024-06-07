@@ -10,7 +10,7 @@
       }
     },
     "Rows": {
-      "Salmon": {
+      "Salmon_Estuary": {
         "isEnabled": true,
         "FishSKU": {
           "data": {
@@ -36,7 +36,61 @@
           "CanBeCatchOnPond": false
         },
         "SpawnLocation": [
-          "EC_FishSpawnLocationEnum::Estuary",
+          "EC_FishSpawnLocationEnum::Estuary"
+        ],
+        "SpawnTime": {
+          "Morning": true,
+          "Afternoon": true,
+          "Evening": true,
+          "Night": true
+        },
+        "SpawnWeather": {
+          "Sunny": true,
+          "Rain": true,
+          "Storm": true,
+          "Windy": true,
+          "Snow": true,
+          "Blizzard": true
+        },
+        "SpawnSeason": {
+          "Spring": true,
+          "Summer": false,
+          "Fall": false,
+          "Winter": true
+        },
+        "Rarity": "EC_CaughtableRarityEnum::Uncommon",
+        "minCaughtSize": 71.0,
+        "maxCaughtSize": 76.0,
+        "isUsingSpecificDate": false,
+        "dateRangeList": [],
+        "experienceGrantedWhenCaught": 12
+      },
+      "Salmon_LakeTemple": {
+        "isEnabled": true,
+        "FishSKU": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_72030"
+          },
+          "itemID": "item_72030"
+        },
+        "FishName": "Salmon",
+        "fishMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Animals/Fish/SM_Salmon.SM_Salmon",
+          "SubPathString": ""
+        },
+        "fishSize": "EFishSize::Medium",
+        "SpawnArea": {
+          "CanBeCatchOnLake": true,
+          "CanBeCatchOnRiver": true,
+          "CanBeCatchOnOcean": false,
+          "CanBeCatchOnCave": false,
+          "CanBeCatchOnPond": false
+        },
+        "SpawnLocation": [
           "EC_FishSpawnLocationEnum::LakeTemple"
         ],
         "SpawnTime": {
@@ -617,8 +671,7 @@
           "CanBeCatchOnPond": false
         },
         "SpawnLocation": [
-          "EC_FishSpawnLocationEnum::RiverTown",
-          "EC_FishSpawnLocationEnum::DeepForest"
+          "EC_FishSpawnLocationEnum::RiverTown"
         ],
         "SpawnTime": {
           "Morning": true,
@@ -844,8 +897,7 @@
         "SpawnLocation": [
           "EC_FishSpawnLocationEnum::RiverFarm",
           "EC_FishSpawnLocationEnum::RiverForest",
-          "EC_FishSpawnLocationEnum::LakeTemple",
-          "EC_FishSpawnLocationEnum::DeepForest"
+          "EC_FishSpawnLocationEnum::LakeTemple"
         ],
         "SpawnTime": {
           "Morning": true,
@@ -1067,8 +1119,7 @@
           "CanBeCatchOnPond": false
         },
         "SpawnLocation": [
-          "EC_FishSpawnLocationEnum::RiceField",
-          "EC_FishSpawnLocationEnum::DeepForest"
+          "EC_FishSpawnLocationEnum::RiceField"
         ],
         "SpawnTime": {
           "Morning": true,
@@ -1923,7 +1974,7 @@
         "dateRangeList": [],
         "experienceGrantedWhenCaught": 12
       },
-      "GiantMudskipper": {
+      "GiantMudskipper_Estuary": {
         "isEnabled": true,
         "FishSKU": {
           "data": {
@@ -1949,8 +2000,62 @@
           "CanBeCatchOnPond": false
         },
         "SpawnLocation": [
-          "EC_FishSpawnLocationEnum::RiceField",
           "EC_FishSpawnLocationEnum::Estuary"
+        ],
+        "SpawnTime": {
+          "Morning": true,
+          "Afternoon": true,
+          "Evening": true,
+          "Night": true
+        },
+        "SpawnWeather": {
+          "Sunny": true,
+          "Rain": true,
+          "Storm": true,
+          "Windy": true,
+          "Snow": true,
+          "Blizzard": true
+        },
+        "SpawnSeason": {
+          "Spring": false,
+          "Summer": false,
+          "Fall": true,
+          "Winter": true
+        },
+        "Rarity": "EC_CaughtableRarityEnum::Uncommon",
+        "minCaughtSize": 12.0,
+        "maxCaughtSize": 27.0,
+        "isUsingSpecificDate": false,
+        "dateRangeList": [],
+        "experienceGrantedWhenCaught": 12
+      },
+      "GiantMudskipper_RiceField": {
+        "isEnabled": true,
+        "FishSKU": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_72009"
+          },
+          "itemID": "item_72009"
+        },
+        "FishName": "",
+        "fishMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Animals/Fish/SM_GiantMudskipper.SM_GiantMudskipper",
+          "SubPathString": ""
+        },
+        "fishSize": "EFishSize::Small",
+        "SpawnArea": {
+          "CanBeCatchOnLake": false,
+          "CanBeCatchOnRiver": false,
+          "CanBeCatchOnOcean": false,
+          "CanBeCatchOnCave": false,
+          "CanBeCatchOnPond": false
+        },
+        "SpawnLocation": [
+          "EC_FishSpawnLocationEnum::RiceField"
         ],
         "SpawnTime": {
           "Morning": true,
@@ -3440,7 +3545,6 @@
         },
         "SpawnLocation": [
           "EC_FishSpawnLocationEnum::RiverTown",
-          "EC_FishSpawnLocationEnum::Estuary",
           "EC_FishSpawnLocationEnum::LakeTemple"
         ],
         "SpawnTime": {
@@ -3464,6 +3568,61 @@
           "Winter": true
         },
         "Rarity": "EC_CaughtableRarityEnum::Common",
+        "minCaughtSize": 40.64,
+        "maxCaughtSize": 101.6,
+        "isUsingSpecificDate": false,
+        "dateRangeList": [],
+        "experienceGrantedWhenCaught": 12
+      },
+      "RedSnapper_Estuary": {
+        "isEnabled": true,
+        "FishSKU": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_73006"
+          },
+          "itemID": "item_73006"
+        },
+        "FishName": "",
+        "fishMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Animals/Fish/SM_RedSnapper.SM_RedSnapper",
+          "SubPathString": ""
+        },
+        "fishSize": "EFishSize::Medium",
+        "SpawnArea": {
+          "CanBeCatchOnLake": false,
+          "CanBeCatchOnRiver": false,
+          "CanBeCatchOnOcean": true,
+          "CanBeCatchOnCave": false,
+          "CanBeCatchOnPond": false
+        },
+        "SpawnLocation": [
+          "EC_FishSpawnLocationEnum::Estuary"
+        ],
+        "SpawnTime": {
+          "Morning": true,
+          "Afternoon": true,
+          "Evening": true,
+          "Night": true
+        },
+        "SpawnWeather": {
+          "Sunny": true,
+          "Rain": true,
+          "Storm": true,
+          "Windy": true,
+          "Snow": true,
+          "Blizzard": true
+        },
+        "SpawnSeason": {
+          "Spring": true,
+          "Summer": true,
+          "Fall": true,
+          "Winter": true
+        },
+        "Rarity": "EC_CaughtableRarityEnum::Uncommon",
         "minCaughtSize": 40.64,
         "maxCaughtSize": 101.6,
         "isUsingSpecificDate": false,
@@ -3597,7 +3756,7 @@
         "dateRangeList": [],
         "experienceGrantedWhenCaught": 12
       },
-      "SockeyeSalmon": {
+      "SockeyeSalmon_Estuary": {
         "isEnabled": true,
         "FishSKU": {
           "data": {
@@ -3623,7 +3782,61 @@
           "CanBeCatchOnPond": false
         },
         "SpawnLocation": [
-          "EC_FishSpawnLocationEnum::Estuary",
+          "EC_FishSpawnLocationEnum::Estuary"
+        ],
+        "SpawnTime": {
+          "Morning": true,
+          "Afternoon": true,
+          "Evening": true,
+          "Night": true
+        },
+        "SpawnWeather": {
+          "Sunny": true,
+          "Rain": true,
+          "Storm": true,
+          "Windy": true,
+          "Snow": true,
+          "Blizzard": true
+        },
+        "SpawnSeason": {
+          "Spring": false,
+          "Summer": false,
+          "Fall": false,
+          "Winter": true
+        },
+        "Rarity": "EC_CaughtableRarityEnum::Rare",
+        "minCaughtSize": 71.12,
+        "maxCaughtSize": 76.2,
+        "isUsingSpecificDate": false,
+        "dateRangeList": [],
+        "experienceGrantedWhenCaught": 12
+      },
+      "SockeyeSalmon_LakeTemple": {
+        "isEnabled": true,
+        "FishSKU": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_73008"
+          },
+          "itemID": "item_73008"
+        },
+        "FishName": "",
+        "fishMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Animals/Fish/SM_SockeyeSalmon.SM_SockeyeSalmon",
+          "SubPathString": ""
+        },
+        "fishSize": "EFishSize::Medium",
+        "SpawnArea": {
+          "CanBeCatchOnLake": true,
+          "CanBeCatchOnRiver": true,
+          "CanBeCatchOnOcean": true,
+          "CanBeCatchOnCave": false,
+          "CanBeCatchOnPond": false
+        },
+        "SpawnLocation": [
           "EC_FishSpawnLocationEnum::LakeTemple"
         ],
         "SpawnTime": {
@@ -4929,6 +5142,831 @@
         "Rarity": "EC_CaughtableRarityEnum::Common",
         "minCaughtSize": 30.48,
         "maxCaughtSize": 45.72,
+        "isUsingSpecificDate": false,
+        "dateRangeList": [],
+        "experienceGrantedWhenCaught": 12
+      },
+      "GiantStingray_DeepForest": {
+        "isEnabled": true,
+        "FishSKU": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_75001"
+          },
+          "itemID": "item_75001"
+        },
+        "FishName": "",
+        "fishMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Animals/Fish/SM_GiantStingray.SM_GiantStingray",
+          "SubPathString": ""
+        },
+        "fishSize": "EFishSize::Large",
+        "SpawnArea": {
+          "CanBeCatchOnLake": false,
+          "CanBeCatchOnRiver": false,
+          "CanBeCatchOnOcean": true,
+          "CanBeCatchOnCave": false,
+          "CanBeCatchOnPond": false
+        },
+        "SpawnLocation": [
+          "EC_FishSpawnLocationEnum::DeepForest"
+        ],
+        "SpawnTime": {
+          "Morning": true,
+          "Afternoon": true,
+          "Evening": true,
+          "Night": true
+        },
+        "SpawnWeather": {
+          "Sunny": true,
+          "Rain": true,
+          "Storm": true,
+          "Windy": true,
+          "Snow": true,
+          "Blizzard": true
+        },
+        "SpawnSeason": {
+          "Spring": true,
+          "Summer": true,
+          "Fall": true,
+          "Winter": true
+        },
+        "Rarity": "EC_CaughtableRarityEnum::Legendary",
+        "minCaughtSize": 200.0,
+        "maxCaughtSize": 275.0,
+        "isUsingSpecificDate": false,
+        "dateRangeList": [],
+        "experienceGrantedWhenCaught": 12
+      },
+      "GreenSawfish_DeepForest": {
+        "isEnabled": true,
+        "FishSKU": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_75002"
+          },
+          "itemID": "item_75002"
+        },
+        "FishName": "",
+        "fishMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Animals/Fish/SM_GreenSawfish.SM_GreenSawfish",
+          "SubPathString": ""
+        },
+        "fishSize": "EFishSize::Large",
+        "SpawnArea": {
+          "CanBeCatchOnLake": false,
+          "CanBeCatchOnRiver": true,
+          "CanBeCatchOnOcean": true,
+          "CanBeCatchOnCave": false,
+          "CanBeCatchOnPond": false
+        },
+        "SpawnLocation": [
+          "EC_FishSpawnLocationEnum::DeepForest"
+        ],
+        "SpawnTime": {
+          "Morning": false,
+          "Afternoon": true,
+          "Evening": true,
+          "Night": true
+        },
+        "SpawnWeather": {
+          "Sunny": false,
+          "Rain": true,
+          "Storm": true,
+          "Windy": false,
+          "Snow": true,
+          "Blizzard": true
+        },
+        "SpawnSeason": {
+          "Spring": false,
+          "Summer": false,
+          "Fall": false,
+          "Winter": true
+        },
+        "Rarity": "EC_CaughtableRarityEnum::Legendary",
+        "minCaughtSize": 380.0,
+        "maxCaughtSize": 731.0,
+        "isUsingSpecificDate": false,
+        "dateRangeList": [],
+        "experienceGrantedWhenCaught": 12
+      },
+      "YellowMorayEel_DeepForest": {
+        "isEnabled": true,
+        "FishSKU": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_74003"
+          },
+          "itemID": "item_74003"
+        },
+        "FishName": "",
+        "fishMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Animals/Fish/SM_YellowMorayEel.SM_YellowMorayEel",
+          "SubPathString": ""
+        },
+        "fishSize": "EFishSize::Large",
+        "SpawnArea": {
+          "CanBeCatchOnLake": false,
+          "CanBeCatchOnRiver": false,
+          "CanBeCatchOnOcean": true,
+          "CanBeCatchOnCave": false,
+          "CanBeCatchOnPond": false
+        },
+        "SpawnLocation": [
+          "EC_FishSpawnLocationEnum::DeepForest"
+        ],
+        "SpawnTime": {
+          "Morning": true,
+          "Afternoon": true,
+          "Evening": true,
+          "Night": true
+        },
+        "SpawnWeather": {
+          "Sunny": true,
+          "Rain": true,
+          "Storm": true,
+          "Windy": true,
+          "Snow": true,
+          "Blizzard": true
+        },
+        "SpawnSeason": {
+          "Spring": true,
+          "Summer": true,
+          "Fall": true,
+          "Winter": true
+        },
+        "Rarity": "EC_CaughtableRarityEnum::Legendary",
+        "minCaughtSize": 80.0,
+        "maxCaughtSize": 240.0,
+        "isUsingSpecificDate": false,
+        "dateRangeList": [],
+        "experienceGrantedWhenCaught": 12
+      },
+      "Monkfish_DeepForest": {
+        "isEnabled": true,
+        "FishSKU": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_74002"
+          },
+          "itemID": "item_74002"
+        },
+        "FishName": "",
+        "fishMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Animals/Fish/SM_MonkFish.SM_MonkFish",
+          "SubPathString": ""
+        },
+        "fishSize": "EFishSize::Large",
+        "SpawnArea": {
+          "CanBeCatchOnLake": false,
+          "CanBeCatchOnRiver": false,
+          "CanBeCatchOnOcean": true,
+          "CanBeCatchOnCave": false,
+          "CanBeCatchOnPond": false
+        },
+        "SpawnLocation": [
+          "EC_FishSpawnLocationEnum::DeepForest"
+        ],
+        "SpawnTime": {
+          "Morning": false,
+          "Afternoon": false,
+          "Evening": true,
+          "Night": true
+        },
+        "SpawnWeather": {
+          "Sunny": true,
+          "Rain": true,
+          "Storm": true,
+          "Windy": true,
+          "Snow": false,
+          "Blizzard": false
+        },
+        "SpawnSeason": {
+          "Spring": true,
+          "Summer": false,
+          "Fall": false,
+          "Winter": false
+        },
+        "Rarity": "EC_CaughtableRarityEnum::Legendary",
+        "minCaughtSize": 91.44,
+        "maxCaughtSize": 152.4,
+        "isUsingSpecificDate": false,
+        "dateRangeList": [],
+        "experienceGrantedWhenCaught": 12
+      },
+      "RajaAmpatShark_DeepForest": {
+        "isEnabled": true,
+        "FishSKU": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_75005"
+          },
+          "itemID": "item_75005"
+        },
+        "FishName": "",
+        "fishMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Animals/Fish/SM_RajaAmpatShark.SM_RajaAmpatShark",
+          "SubPathString": ""
+        },
+        "fishSize": "EFishSize::Large",
+        "SpawnArea": {
+          "CanBeCatchOnLake": false,
+          "CanBeCatchOnRiver": false,
+          "CanBeCatchOnOcean": false,
+          "CanBeCatchOnCave": false,
+          "CanBeCatchOnPond": false
+        },
+        "SpawnLocation": [
+          "EC_FishSpawnLocationEnum::DeepForest"
+        ],
+        "SpawnTime": {
+          "Morning": false,
+          "Afternoon": false,
+          "Evening": true,
+          "Night": true
+        },
+        "SpawnWeather": {
+          "Sunny": true,
+          "Rain": true,
+          "Storm": true,
+          "Windy": true,
+          "Snow": false,
+          "Blizzard": false
+        },
+        "SpawnSeason": {
+          "Spring": false,
+          "Summer": true,
+          "Fall": false,
+          "Winter": false
+        },
+        "Rarity": "EC_CaughtableRarityEnum::Legendary",
+        "minCaughtSize": 72.0,
+        "maxCaughtSize": 160.0,
+        "isUsingSpecificDate": false,
+        "dateRangeList": [],
+        "experienceGrantedWhenCaught": 0
+      },
+      "GiantSeaBass_DeepForest": {
+        "isEnabled": true,
+        "FishSKU": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_73004"
+          },
+          "itemID": "item_73004"
+        },
+        "FishName": "",
+        "fishMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Animals/Fish/SM_GiantSeaBass.SM_GiantSeaBass",
+          "SubPathString": ""
+        },
+        "fishSize": "EFishSize::Large",
+        "SpawnArea": {
+          "CanBeCatchOnLake": false,
+          "CanBeCatchOnRiver": false,
+          "CanBeCatchOnOcean": true,
+          "CanBeCatchOnCave": false,
+          "CanBeCatchOnPond": false
+        },
+        "SpawnLocation": [
+          "EC_FishSpawnLocationEnum::DeepForest"
+        ],
+        "SpawnTime": {
+          "Morning": true,
+          "Afternoon": false,
+          "Evening": false,
+          "Night": true
+        },
+        "SpawnWeather": {
+          "Sunny": true,
+          "Rain": true,
+          "Storm": true,
+          "Windy": true,
+          "Snow": false,
+          "Blizzard": false
+        },
+        "SpawnSeason": {
+          "Spring": false,
+          "Summer": false,
+          "Fall": true,
+          "Winter": false
+        },
+        "Rarity": "EC_CaughtableRarityEnum::Legendary",
+        "minCaughtSize": 200.0,
+        "maxCaughtSize": 213.0,
+        "isUsingSpecificDate": false,
+        "dateRangeList": [],
+        "experienceGrantedWhenCaught": 12
+      },
+      "RainbowFish_DeepForest": {
+        "isEnabled": true,
+        "FishSKU": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_71010"
+          },
+          "itemID": "item_71010"
+        },
+        "FishName": "",
+        "fishMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Animals/Fish/SM_Rainbowfish.SM_Rainbowfish",
+          "SubPathString": ""
+        },
+        "fishSize": "EFishSize::Small",
+        "SpawnArea": {
+          "CanBeCatchOnLake": true,
+          "CanBeCatchOnRiver": true,
+          "CanBeCatchOnOcean": false,
+          "CanBeCatchOnCave": false,
+          "CanBeCatchOnPond": false
+        },
+        "SpawnLocation": [
+          "EC_FishSpawnLocationEnum::DeepForest"
+        ],
+        "SpawnTime": {
+          "Morning": true,
+          "Afternoon": true,
+          "Evening": true,
+          "Night": true
+        },
+        "SpawnWeather": {
+          "Sunny": true,
+          "Rain": true,
+          "Storm": true,
+          "Windy": true,
+          "Snow": true,
+          "Blizzard": true
+        },
+        "SpawnSeason": {
+          "Spring": true,
+          "Summer": true,
+          "Fall": true,
+          "Winter": true
+        },
+        "Rarity": "EC_CaughtableRarityEnum::Uncommon",
+        "minCaughtSize": 7.0,
+        "maxCaughtSize": 12.0,
+        "isUsingSpecificDate": false,
+        "dateRangeList": [],
+        "experienceGrantedWhenCaught": 12
+      },
+      "Arapaima_DeepForest": {
+        "isEnabled": true,
+        "FishSKU": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_71017"
+          },
+          "itemID": "item_71017"
+        },
+        "FishName": "",
+        "fishMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Animals/Fish/SM_Arapaima.SM_Arapaima",
+          "SubPathString": ""
+        },
+        "fishSize": "EFishSize::Large",
+        "SpawnArea": {
+          "CanBeCatchOnLake": false,
+          "CanBeCatchOnRiver": true,
+          "CanBeCatchOnOcean": true,
+          "CanBeCatchOnCave": false,
+          "CanBeCatchOnPond": false
+        },
+        "SpawnLocation": [
+          "EC_FishSpawnLocationEnum::DeepForest"
+        ],
+        "SpawnTime": {
+          "Morning": true,
+          "Afternoon": true,
+          "Evening": true,
+          "Night": true
+        },
+        "SpawnWeather": {
+          "Sunny": true,
+          "Rain": true,
+          "Storm": true,
+          "Windy": true,
+          "Snow": true,
+          "Blizzard": true
+        },
+        "SpawnSeason": {
+          "Spring": true,
+          "Summer": false,
+          "Fall": false,
+          "Winter": true
+        },
+        "Rarity": "EC_CaughtableRarityEnum::Rare",
+        "minCaughtSize": 213.0,
+        "maxCaughtSize": 251.0,
+        "isUsingSpecificDate": false,
+        "dateRangeList": [],
+        "experienceGrantedWhenCaught": 12
+      },
+      "Sturgeon_DeepForest": {
+        "isEnabled": true,
+        "FishSKU": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_73007"
+          },
+          "itemID": "item_73007"
+        },
+        "FishName": "",
+        "fishMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Animals/Fish/SM_Sturgeon.SM_Sturgeon",
+          "SubPathString": ""
+        },
+        "fishSize": "EFishSize::Large",
+        "SpawnArea": {
+          "CanBeCatchOnLake": true,
+          "CanBeCatchOnRiver": true,
+          "CanBeCatchOnOcean": true,
+          "CanBeCatchOnCave": false,
+          "CanBeCatchOnPond": false
+        },
+        "SpawnLocation": [
+          "EC_FishSpawnLocationEnum::DeepForest"
+        ],
+        "SpawnTime": {
+          "Morning": false,
+          "Afternoon": false,
+          "Evening": true,
+          "Night": true
+        },
+        "SpawnWeather": {
+          "Sunny": true,
+          "Rain": true,
+          "Storm": true,
+          "Windy": true,
+          "Snow": true,
+          "Blizzard": true
+        },
+        "SpawnSeason": {
+          "Spring": true,
+          "Summer": false,
+          "Fall": true,
+          "Winter": true
+        },
+        "Rarity": "EC_CaughtableRarityEnum::Rare",
+        "minCaughtSize": 213.0,
+        "maxCaughtSize": 305.0,
+        "isUsingSpecificDate": false,
+        "dateRangeList": [],
+        "experienceGrantedWhenCaught": 12
+      },
+      "SeaCucumber_DeepForest": {
+        "isEnabled": true,
+        "FishSKU": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_72011"
+          },
+          "itemID": "item_72011"
+        },
+        "FishName": "",
+        "fishMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Animals/Fish/SM_SeaCucumber.SM_SeaCucumber",
+          "SubPathString": ""
+        },
+        "fishSize": "EFishSize::Small",
+        "SpawnArea": {
+          "CanBeCatchOnLake": false,
+          "CanBeCatchOnRiver": false,
+          "CanBeCatchOnOcean": true,
+          "CanBeCatchOnCave": false,
+          "CanBeCatchOnPond": false
+        },
+        "SpawnLocation": [
+          "EC_FishSpawnLocationEnum::OceanForest"
+        ],
+        "SpawnTime": {
+          "Morning": true,
+          "Afternoon": true,
+          "Evening": true,
+          "Night": true
+        },
+        "SpawnWeather": {
+          "Sunny": true,
+          "Rain": true,
+          "Storm": true,
+          "Windy": true,
+          "Snow": true,
+          "Blizzard": true
+        },
+        "SpawnSeason": {
+          "Spring": true,
+          "Summer": true,
+          "Fall": true,
+          "Winter": true
+        },
+        "Rarity": "EC_CaughtableRarityEnum::Rare",
+        "minCaughtSize": 2.5,
+        "maxCaughtSize": 180.0,
+        "isUsingSpecificDate": false,
+        "dateRangeList": [],
+        "experienceGrantedWhenCaught": 12
+      },
+      "Crayfish_Savannah": {
+        "isEnabled": true,
+        "FishSKU": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_71012"
+          },
+          "itemID": "item_71012"
+        },
+        "FishName": "",
+        "fishMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Animals/Fish/SM_Crayfish.SM_Crayfish",
+          "SubPathString": ""
+        },
+        "fishSize": "EFishSize::Small",
+        "SpawnArea": {
+          "CanBeCatchOnLake": false,
+          "CanBeCatchOnRiver": false,
+          "CanBeCatchOnOcean": false,
+          "CanBeCatchOnCave": false,
+          "CanBeCatchOnPond": false
+        },
+        "SpawnLocation": [
+          "EC_FishSpawnLocationEnum::Savannah"
+        ],
+        "SpawnTime": {
+          "Morning": true,
+          "Afternoon": true,
+          "Evening": true,
+          "Night": true
+        },
+        "SpawnWeather": {
+          "Sunny": true,
+          "Rain": true,
+          "Storm": true,
+          "Windy": true,
+          "Snow": true,
+          "Blizzard": true
+        },
+        "SpawnSeason": {
+          "Spring": true,
+          "Summer": true,
+          "Fall": true,
+          "Winter": true
+        },
+        "Rarity": "EC_CaughtableRarityEnum::Common",
+        "minCaughtSize": 2.5,
+        "maxCaughtSize": 8.0,
+        "isUsingSpecificDate": false,
+        "dateRangeList": [],
+        "experienceGrantedWhenCaught": 12
+      },
+      "GoldenGar_Savannah": {
+        "isEnabled": true,
+        "FishSKU": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_71019"
+          },
+          "itemID": "item_71019"
+        },
+        "FishName": "",
+        "fishMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Animals/Fish/SM_GoldenGar.SM_GoldenGar",
+          "SubPathString": ""
+        },
+        "fishSize": "EFishSize::Small",
+        "SpawnArea": {
+          "CanBeCatchOnLake": false,
+          "CanBeCatchOnRiver": false,
+          "CanBeCatchOnOcean": false,
+          "CanBeCatchOnCave": false,
+          "CanBeCatchOnPond": false
+        },
+        "SpawnLocation": [
+          "EC_FishSpawnLocationEnum::Savannah"
+        ],
+        "SpawnTime": {
+          "Morning": true,
+          "Afternoon": true,
+          "Evening": true,
+          "Night": true
+        },
+        "SpawnWeather": {
+          "Sunny": true,
+          "Rain": true,
+          "Storm": true,
+          "Windy": true,
+          "Snow": true,
+          "Blizzard": true
+        },
+        "SpawnSeason": {
+          "Spring": true,
+          "Summer": true,
+          "Fall": true,
+          "Winter": true
+        },
+        "Rarity": "EC_CaughtableRarityEnum::Common",
+        "minCaughtSize": 30.0,
+        "maxCaughtSize": 48.0,
+        "isUsingSpecificDate": false,
+        "dateRangeList": [],
+        "experienceGrantedWhenCaught": 12
+      },
+      "Archer_Savannah": {
+        "isEnabled": true,
+        "FishSKU": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_72019"
+          },
+          "itemID": "item_72019"
+        },
+        "FishName": "",
+        "fishMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Animals/Fish/SM_Archerfish.SM_Archerfish",
+          "SubPathString": ""
+        },
+        "fishSize": "EFishSize::Small",
+        "SpawnArea": {
+          "CanBeCatchOnLake": false,
+          "CanBeCatchOnRiver": false,
+          "CanBeCatchOnOcean": false,
+          "CanBeCatchOnCave": false,
+          "CanBeCatchOnPond": false
+        },
+        "SpawnLocation": [
+          "EC_FishSpawnLocationEnum::Savannah"
+        ],
+        "SpawnTime": {
+          "Morning": true,
+          "Afternoon": true,
+          "Evening": true,
+          "Night": true
+        },
+        "SpawnWeather": {
+          "Sunny": true,
+          "Rain": true,
+          "Storm": true,
+          "Windy": true,
+          "Snow": true,
+          "Blizzard": true
+        },
+        "SpawnSeason": {
+          "Spring": true,
+          "Summer": true,
+          "Fall": true,
+          "Winter": true
+        },
+        "Rarity": "EC_CaughtableRarityEnum::Common",
+        "minCaughtSize": 22.8,
+        "maxCaughtSize": 30.5,
+        "isUsingSpecificDate": false,
+        "dateRangeList": [],
+        "experienceGrantedWhenCaught": 12
+      },
+      "Arapaima_Savannah": {
+        "isEnabled": true,
+        "FishSKU": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_71017"
+          },
+          "itemID": "item_71017"
+        },
+        "FishName": "",
+        "fishMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Animals/Fish/SM_Arapaima.SM_Arapaima",
+          "SubPathString": ""
+        },
+        "fishSize": "EFishSize::Small",
+        "SpawnArea": {
+          "CanBeCatchOnLake": false,
+          "CanBeCatchOnRiver": false,
+          "CanBeCatchOnOcean": false,
+          "CanBeCatchOnCave": false,
+          "CanBeCatchOnPond": false
+        },
+        "SpawnLocation": [
+          "EC_FishSpawnLocationEnum::Savannah"
+        ],
+        "SpawnTime": {
+          "Morning": true,
+          "Afternoon": true,
+          "Evening": true,
+          "Night": true
+        },
+        "SpawnWeather": {
+          "Sunny": true,
+          "Rain": true,
+          "Storm": true,
+          "Windy": true,
+          "Snow": true,
+          "Blizzard": true
+        },
+        "SpawnSeason": {
+          "Spring": true,
+          "Summer": true,
+          "Fall": true,
+          "Winter": true
+        },
+        "Rarity": "EC_CaughtableRarityEnum::Common",
+        "minCaughtSize": 213.0,
+        "maxCaughtSize": 251.0,
+        "isUsingSpecificDate": false,
+        "dateRangeList": [],
+        "experienceGrantedWhenCaught": 12
+      },
+      "KingRedArowana_Savannah": {
+        "isEnabled": true,
+        "FishSKU": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_74001"
+          },
+          "itemID": "item_74001"
+        },
+        "FishName": "",
+        "fishMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Animals/Fish/SM_KingRedArowana.SM_KingRedArowana",
+          "SubPathString": ""
+        },
+        "fishSize": "EFishSize::Small",
+        "SpawnArea": {
+          "CanBeCatchOnLake": true,
+          "CanBeCatchOnRiver": false,
+          "CanBeCatchOnOcean": false,
+          "CanBeCatchOnCave": true,
+          "CanBeCatchOnPond": false
+        },
+        "SpawnLocation": [
+          "EC_FishSpawnLocationEnum::Savannah"
+        ],
+        "SpawnTime": {
+          "Morning": true,
+          "Afternoon": true,
+          "Evening": true,
+          "Night": true
+        },
+        "SpawnWeather": {
+          "Sunny": true,
+          "Rain": true,
+          "Storm": true,
+          "Windy": true,
+          "Snow": true,
+          "Blizzard": true
+        },
+        "SpawnSeason": {
+          "Spring": true,
+          "Summer": true,
+          "Fall": true,
+          "Winter": true
+        },
+        "Rarity": "EC_CaughtableRarityEnum::Legendary",
+        "minCaughtSize": 76.0,
+        "maxCaughtSize": 89.0,
         "isUsingSpecificDate": false,
         "dateRangeList": [],
         "experienceGrantedWhenCaught": 12

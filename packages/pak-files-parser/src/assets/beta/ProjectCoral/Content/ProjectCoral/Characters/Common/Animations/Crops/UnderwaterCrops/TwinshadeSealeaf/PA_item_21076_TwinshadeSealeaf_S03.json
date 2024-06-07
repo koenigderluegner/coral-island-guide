@@ -1,0 +1,133 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_item_21076_TwinshadeSealeaf_S03",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_item_21076_TwinshadeSealeaf_S03:SkeletalBodySetup_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/TwinshadeSealeaf/PA_item_21076_TwinshadeSealeaf_S03.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_item_21076_TwinshadeSealeaf_S03:SkeletalBodySetup_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/TwinshadeSealeaf/PA_item_21076_TwinshadeSealeaf_S03.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_item_21076_TwinshadeSealeaf_S03:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Crops/UnderwaterCrops/TwinshadeSealeaf/PA_item_21076_TwinshadeSealeaf_S03.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_item_21076_TwinshadeSealeaf_S03",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "Crops_Jnt2",
+        "ConstraintBone1": "Crops_Jnt2",
+        "ConstraintBone2": "Crops_Jnt1",
+        "Pos2": {
+          "X": 11.501395,
+          "Y": -1.4904969,
+          "Z": -1.6701462
+        },
+        "PriAxis2": {
+          "X": 1.0,
+          "Y": 5.74E-42,
+          "Z": -3.407103E-18
+        },
+        "SecAxis2": {
+          "X": -1.8075012E-34,
+          "Y": 1.0,
+          "Z": -5.305097E-17
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "ACM_Limited",
+            "Swing2Motion": "ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_item_21076_TwinshadeSealeaf_S03",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 10.598254,
+              "Y": -2.051467,
+              "Z": 1.5367532
+            },
+            "Rotation": {
+              "Pitch": 89.616394,
+              "Yaw": -90.66696,
+              "Roll": -0.6682159
+            },
+            "Radius": 33.9974,
+            "Length": 34.49191,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Crops_Jnt1",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "52761DD74F57E5C847A286A19BC18E52"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_item_21076_TwinshadeSealeaf_S03",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 35.42932,
+              "Y": -5.039871,
+              "Z": 7.1809616
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 75.404526,
+              "Roll": -72.04018
+            },
+            "Radius": 25.949545,
+            "Length": 42.279976,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "Crops_Jnt2",
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "DAD605874569F5DD4EDD95AD46FD1B3F"
+  }
+]

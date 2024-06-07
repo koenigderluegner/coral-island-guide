@@ -1,0 +1,145 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "SM_BoatPier_A",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldStatic",
+        "CollisionProfileName": "BlockAll",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      }
+    },
+    "BodySetupGuid": "D0A2839343E2AD72D9556FAC27ED5769"
+  },
+  {
+    "Type": "NavCollision",
+    "Name": "NavCollision_1",
+    "Outer": "SM_BoatPier_A",
+    "Class": "UScriptClass'NavCollision'",
+    "CookedFormatData": {
+      "NavCollision_X": {
+        "BulkDataFlags": "BULKDATA_SingleUse | BULKDATA_ForceInlinePayload",
+        "ElementCount": 21,
+        "SizeOnDisk": 21,
+        "OffsetInFile": "0x26873"
+      }
+    }
+  },
+  {
+    "Type": "StaticMesh",
+    "Name": "SM_BoatPier_A",
+    "Class": "UScriptClass'StaticMesh'",
+    "Properties": {
+      "StaticMaterials": [
+        {
+          "MaterialInterface": {
+            "ObjectName": "Material'WorldGridMaterial'",
+            "ObjectPath": "Engine/Content/EngineMaterials/WorldGridMaterial.0"
+          },
+          "MaterialSlotName": "Perahu",
+          "ImportedMaterialSlotName": "Perahu",
+          "UVChannelData": {
+            "bInitialized": true,
+            "bOverrideDensities": false,
+            "LocalUVDensities": 1004.709,
+            "LocalUVDensities": 0.0,
+            "LocalUVDensities": 0.0,
+            "LocalUVDensities": 0.0
+          }
+        }
+      ],
+      "LightMapResolution": 64,
+      "LightMapCoordinateIndex": 1,
+      "ExtendedBounds": {
+        "Origin": {
+          "X": -8.8418045,
+          "Y": 102.92146,
+          "Z": 97.83557
+        },
+        "BoxExtent": {
+          "X": 103.38552,
+          "Y": 280.10925,
+          "Z": 100.32218
+        },
+        "SphereRadius": 290.68686
+      }
+    },
+    "BodySetup": {
+      "ObjectName": "BodySetup'SM_BoatPier_A:BodySetup_0'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/Boat/SM_BoatPier_A.0"
+    },
+    "NavCollision": {
+      "ObjectName": "NavCollision'SM_BoatPier_A:NavCollision_1'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Common/Animations/Props/Boat/SM_BoatPier_A.1"
+    },
+    "LightingGuid": "E46F49FE-440C69E1-0ABFCE88-BBE39356",
+    "RenderData": {
+      "LODs": [
+        {
+          "Sections": [
+            {
+              "MaterialIndex": 0,
+              "FirstIndex": 0,
+              "NumTriangles": 2040,
+              "MinVertexIndex": 0,
+              "MaxVertexIndex": 1475,
+              "bEnableCollision": false,
+              "bCastShadow": true,
+              "bForceOpaque": false,
+              "bVisibleInRayTracing": true
+            }
+          ],
+          "MaxDeviation": 0.0,
+          "PositionVertexBuffer": {
+            "Stride": 12,
+            "NumVertices": 1476
+          },
+          "VertexBuffer": {
+            "NumTexCoords": 2,
+            "NumVertices": 1476,
+            "Strides": -1,
+            "UseHighPrecisionTangentBasis": false,
+            "UseFullPrecisionUVs": true
+          },
+          "ColorVertexBuffer": {
+            "Stride": 0,
+            "NumVertices": 0
+          }
+        }
+      ],
+      "Bounds": {
+        "Origin": {
+          "X": -8.8418045,
+          "Y": 102.92146,
+          "Z": 97.83557
+        },
+        "BoxExtent": {
+          "X": 103.38552,
+          "Y": 280.10925,
+          "Z": 100.32218
+        },
+        "SphereRadius": 290.68686
+      },
+      "bLODsShareStaticLighting": true,
+      "ScreenSize": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  }
+]

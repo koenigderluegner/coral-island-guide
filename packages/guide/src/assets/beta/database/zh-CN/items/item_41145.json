@@ -1,0 +1,335 @@
+{
+  "item": {
+    "id": "item_41145",
+    "displayName": "辣椒汁",
+    "price": 135,
+    "sellPrice": 80,
+    "sellAt": [],
+    "stackable": true,
+    "inventoryCategory": "Artisan product",
+    "displayKey": "ArtisanProduct",
+    "description": "一瓶健康的蔬菜汁。",
+    "qualities": {
+      "bronze": {
+        "price": 150,
+        "sellPrice": 90
+      },
+      "silver": {
+        "price": 175,
+        "sellPrice": 105
+      },
+      "gold": {
+        "price": 200,
+        "sellPrice": 120
+      },
+      "osmium": {
+        "price": 265,
+        "sellPrice": 160
+      }
+    },
+    "iconName": "Vegetable_juice_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.Keg",
+      "Item.Consumable.Drink",
+      "item.artisan"
+    ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_22002",
+          "displayName": "辣椒",
+          "iconName": "Hot_Pepper_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41145",
+          "displayName": "辣椒汁",
+          "iconName": "Vegetable_juice_Sprite",
+          "sellPrice": 80
+        }
+      },
+      "genericInput": null,
+      "machine": "Keg"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 3,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41145",
+          "displayName": "辣椒汁",
+          "iconName": "Vegetable_juice_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41145",
+          "displayName": "辣椒汁",
+          "iconName": "Vegetable_juice_Sprite",
+          "sellPrice": 80
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 7,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 3,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41145",
+          "displayName": "辣椒汁",
+          "iconName": "Vegetable_juice_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41145",
+          "displayName": "辣椒汁",
+          "iconName": "Vegetable_juice_Sprite",
+          "sellPrice": 80
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 7,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "石头汤",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "看起来不可食用。风险自负。",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "任何食用配料"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "石头",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "任何食用配料": [
+          {
+            "id": "item_41180",
+            "displayName": "山羊酸奶",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "山羊酸奶（大）",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41145",
+      "bVaryHealthToMax": false,
+      "healthDelta": 15,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 50,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "bronze": {
+      "key": "item_41145-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 20,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 55,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "silver": {
+      "key": "item_41145-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 20,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 60,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "gold": {
+      "key": "item_41145-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 25,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 70,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    },
+    "osmium": {
+      "key": "item_41145-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 30,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 95,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Drink"
+    }
+  }
+}

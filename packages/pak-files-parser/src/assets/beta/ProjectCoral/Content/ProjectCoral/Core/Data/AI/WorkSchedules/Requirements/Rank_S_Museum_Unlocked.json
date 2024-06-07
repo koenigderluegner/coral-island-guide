@@ -1,0 +1,45 @@
+[
+  {
+    "Type": "C_ObjectStateRequirement",
+    "Name": "C_ObjectStateRequirement_0",
+    "Outer": "Rank_S_Museum_Unlocked",
+    "Class": "UScriptClass'C_ObjectStateRequirement'",
+    "Properties": {
+      "actorRef": {
+        "AssetPathName": "/Game/ProjectCoral/Maps/MapZones/CI_Town.CI_Town",
+        "SubPathString": "PersistentLevel.BP_Museum_2"
+      },
+      "id": "museum",
+      "requiredState": "level2",
+      "requiredStateInput": "level2"
+    }
+  },
+  {
+    "Type": "C_RequirementsConfig",
+    "Name": "Rank_S_Museum_Unlocked",
+    "Class": "UScriptClass'C_RequirementsConfig'",
+    "Properties": {
+      "requirements": {
+        "requirements": [
+          {
+            "ObjectName": "C_TownRankRequirement'Rank_S_Museum_Unlocked:C_TownRankRequirement_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/Rank_S_Museum_Unlocked.2"
+          },
+          {
+            "ObjectName": "C_ObjectStateRequirement'Rank_S_Museum_Unlocked:C_ObjectStateRequirement_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/Rank_S_Museum_Unlocked.0"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Type": "C_TownRankRequirement",
+    "Name": "C_TownRankRequirement_0",
+    "Outer": "Rank_S_Museum_Unlocked",
+    "Class": "UScriptClass'C_TownRankRequirement'",
+    "Properties": {
+      "requiredRank": 6
+    }
+  }
+]

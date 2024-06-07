@@ -7,7 +7,7 @@ import { ItemListComponent } from "../components/item-list/item-list.component";
 })
 export class CraftingRecipeIngredientsPipe implements PipeTransform {
 
-    transform(value: CraftingRecipe): ItemListComponent["itemList"] {
+    transform(value: CraftingRecipe): ReturnType<ItemListComponent["itemList"]> {
         return [...value.ingredients, ...value.genericIngredients];
     }
 

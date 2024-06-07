@@ -3,7 +3,7 @@ import { DaRequirements } from "./da-requirements.type";
 export type GameplayRequirementsConfig = {
     "Type": "C_GameplayRequirementsConfig",
     "Name": string;
-    "Properties": {
+    "Properties"?: {
         "map": GameplayRequirementsConfigMap | GameplayRequirementsConfigMap[]
     }
 }

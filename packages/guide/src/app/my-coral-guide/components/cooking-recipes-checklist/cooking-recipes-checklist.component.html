@@ -1,7 +1,7 @@
-<app-list-detail-container [(openDrawer)]="openDrawer" [removePlaceholder]="showTable">
+<app-list-detail-container [removePlaceholder]="showTable">
 
     @if (selectedEntity) {
-        <app-database-item-details [itemId]="selectedEntity.id" listDetail hideQualityGrid>
+        <app-database-item-details [itemId]="selectedEntity.id" listDetail hideQualityGrid context="cooking_recipes">
             <ng-template let-details appDatabaseItemDetails>
                 @for (recipe of details.cookedFrom; track recipe.key) {
                     <app-cooking-recipe class="mb-4" [cookingRecipe]="recipe"/>
@@ -9,9 +9,7 @@
             </ng-template>
         </app-database-item-details>
     }
-    <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex"
-                   class=" px-2 xl:px-[50px] w-full"
-                   dynamicHeight mat-stretch-tabs="false">
+    <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex()">
         @for (tab of (checklistDefinition$ | async | keyvalue: keyValueNoOrder); track tab) {
             <mat-tab
                     [formGroup]="checklistForm"
@@ -19,7 +17,7 @@
 
                 @if (!showTable) {
 
-                    <div class="grid gap-4 icon-grid">
+                    <div class="icon-grid">
                         @for (entry of tab.value; track entry) {
                             <div [class.checklist-checked]="checklistForm.get(entry.id)?.value"
                                  [class.selected-icon]="selectedEntity?.id === entry.id"
