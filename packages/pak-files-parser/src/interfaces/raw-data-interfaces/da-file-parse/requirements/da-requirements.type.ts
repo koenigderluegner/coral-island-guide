@@ -21,6 +21,7 @@ import { RawNpcHeartLevelRequirement } from "./npc-heart-level-requirement.type"
 import { RawHealedCoralRequirement } from "./healed-coral-requirement.type";
 import { RawMasteryLevelRequirement } from "./mastery-level-requirement.type";
 import { RawIsMailReadRequirement } from "./is-mail-read.requirement.type";
+import { RawDinoHologramItemRewardClaimedRequirement } from "./dino-hologram-item-reward-claimed-requirement.type";
 
 export type DaRequirements = RawIsAchievementCompletedRequirement
     | RawCountNpcHeartLevelRequirement
@@ -45,3 +46,4 @@ export type DaRequirements = RawIsAchievementCompletedRequirement
     | RawHealedCoralRequirement
     | RawMasteryLevelRequirement
     | RawIsMailReadRequirement
+    | RawDinoHologramItemRewardClaimedRequirement

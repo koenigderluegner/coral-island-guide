@@ -22,6 +22,7 @@ import { HealedCoralRequirement } from "./healed-coral-requirement.type";
 import { MasteryLevelRequirements } from "./mastery-level-requirements.type";
 import { IsMailReadRequirement } from "./is-mail-read-requirement.type";
 import { ShipToUnlockRequirement } from "./ship-to-unlock-requirement.type";
+import { DinoHologramItemRewardClaimedRequirement } from "./dino-hologram-item-reward-claimed-requirement.type";
 
 export type Requirement = CountNpcHeartLevelRequirement
     | EditorOnlyRequirement
@@ -47,4 +48,5 @@ export type Requirement = CountNpcHeartLevelRequirement
     | MasteryLevelRequirements
     | IsMailReadRequirement
     | ShipToUnlockRequirement
+    | DinoHologramItemRewardClaimedRequirement
 

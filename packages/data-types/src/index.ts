@@ -41,6 +41,7 @@ export * from './lib/types/requirements/requirement.type';
 export * from './lib/types/requirements/special-item-requirements.type';
 export * from './lib/types/requirements/temple-level-requirement.type';
 export * from './lib/types/requirements/ship-to-unlock-requirement.type';
+export * from './lib/types/requirements/dino-hologram-item-reward-claimed-requirement.type';
 
 export * from './lib/interfaces/achievement.interface';
 export * from './lib/interfaces/animal-data.interface';
