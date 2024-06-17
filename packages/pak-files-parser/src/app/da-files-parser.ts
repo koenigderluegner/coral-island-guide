@@ -15,6 +15,7 @@ import {
     CookingRecipe,
     CountNpcHeartLevelRequirement,
     DateSeasonRangeRequirement,
+    DinoHologramItemRewardClaimedRequirement,
     EditorOnlyRequirement,
     Effect,
     FarmHouseRequirement,
@@ -471,6 +472,15 @@ export class DaFilesParser {
                                 expectedHeartLevel: foundEffect.Properties.expectedHeartLevel
                             }
                         } satisfies CountNpcHeartLevelRequirement;
+                        break;
+                    }
+                    case "C_DinoHologramItemRewardClaimed": {
+                        daEffect = {
+                            type: "DinoHologramItemRewardClaimed",
+                            meta: {
+                                dinosaursName: foundEffect.Properties.dinoHologram.dinosaursName.RowName
+                            }
+                        } satisfies DinoHologramItemRewardClaimedRequirement;
                         break;
                     }
                     case "C_NPCHeartLevelRequirement": {

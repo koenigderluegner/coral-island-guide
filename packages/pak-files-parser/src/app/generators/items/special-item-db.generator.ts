@@ -1,4 +1,4 @@
-import { convertToIconName, getReferencedString, readAsset } from '../../../util/functions';
+import { AssetPathNameToIcon, readAsset } from '../../../util/functions';
 import { SpecialItem } from '@ci/data-types';
 import { BaseGenerator } from "../_base/base-generator.class";
 import { RawSpecialItem } from "../../../interfaces/raw-data-interfaces/raw-special-item.interface";
@@ -15,7 +15,7 @@ export class SpecialItemDbGenerator extends BaseGenerator<RawSpecialItem, Specia
             id: itemKey,
             displayName: StringTable.getString(dbItem.name) ?? '',
             description: StringTable.getString(dbItem.description) ?? '',
-            iconName: convertToIconName(getReferencedString(dbItem.icon.ObjectName)).replace('.png', ''),
+            iconName: AssetPathNameToIcon(dbItem.icon),
         };
     }
 
