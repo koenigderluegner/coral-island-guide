@@ -1,0 +1,80 @@
+[
+  {
+    "Type": "C_DayRequirement",
+    "Name": "C_DayRequirement_0",
+    "Outer": "DA_Pet_Marriage_Homecoming_SpringWinter_7",
+    "Class": "UScriptClass'C_DayRequirement'",
+    "Properties": {
+      "expectedDay": 7,
+      "expectedDayEndRange": 14
+    }
+  },
+  {
+    "Type": "C_NPCStatusRequirement",
+    "Name": "C_NPCStatusRequirement_0",
+    "Outer": "DA_Pet_Marriage_Homecoming_SpringWinter_7",
+    "Class": "UScriptClass'C_NPCStatusRequirement'",
+    "Properties": {
+      "npc": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_NPCs'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.0"
+        },
+        "RowName": "PrincessMiranjani"
+      },
+      "status": "EC_RelationshipStatus::SPOUSE"
+    }
+  },
+  {
+    "Type": "C_QuestFactRequirement",
+    "Name": "C_QuestFactRequirement_0",
+    "Outer": "DA_Pet_Marriage_Homecoming_SpringWinter_7",
+    "Class": "UScriptClass'C_QuestFactRequirement'",
+    "Properties": {
+      "fact": {
+        "factName": {
+          "RowName": "merfolk_human"
+        }
+      }
+    }
+  },
+  {
+    "Type": "C_RequirementsConfig",
+    "Name": "DA_Pet_Marriage_Homecoming_SpringWinter_7",
+    "Class": "UScriptClass'C_RequirementsConfig'",
+    "Properties": {
+      "requirements": {
+        "requirements": [
+          {
+            "ObjectName": "C_QuestFactRequirement'DA_Pet_Marriage_Homecoming_SpringWinter_7:C_QuestFactRequirement_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/Diving/DA_Pet_Marriage_Homecoming_SpringWinter_7.2"
+          },
+          {
+            "ObjectName": "C_DayRequirement'DA_Pet_Marriage_Homecoming_SpringWinter_7:C_DayRequirement_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/Diving/DA_Pet_Marriage_Homecoming_SpringWinter_7.0"
+          },
+          {
+            "ObjectName": "C_SeasonRequirement'DA_Pet_Marriage_Homecoming_SpringWinter_7:C_SeasonRequirement_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/Diving/DA_Pet_Marriage_Homecoming_SpringWinter_7.4"
+          },
+          {
+            "ObjectName": "C_NPCStatusRequirement'DA_Pet_Marriage_Homecoming_SpringWinter_7:C_NPCStatusRequirement_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/Diving/DA_Pet_Marriage_Homecoming_SpringWinter_7.1"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Type": "C_SeasonRequirement",
+    "Name": "C_SeasonRequirement_0",
+    "Outer": "DA_Pet_Marriage_Homecoming_SpringWinter_7",
+    "Class": "UScriptClass'C_SeasonRequirement'",
+    "Properties": {
+      "expectedSeasons": [
+        "EC_Season::Spring",
+        "EC_Season::Winter"
+      ]
+    }
+  }
+]

@@ -1,6 +1,9 @@
 @if (effect.type === 'BoostMaxStamina') {
     Increases max stamina
 }
+@if (effect.type === 'BoostMaxHealth') {
+    Increases max health
+}
 @if (effect.type === 'AddItemToInventory') {
 
     Adds {{ (effect.meta.quantity ?? 1) > 1 ? effect.meta.quantity + 'x ' : '' }}

@@ -14,6 +14,7 @@ export * from './lib/types/effects/unlock-crafting-recipe-effect.type';
 export * from './lib/types/effects/update-npc-schedule-effect.type';
 export * from './lib/types/effects/vary-money-effect.type';
 export * from './lib/types/effects/unlock-special-item-effect.type';
+export * from './lib/types/effects/boost-max-health-effect.type';
 
 
 export * from './lib/types/requirements/complete-mining-requirement.type';

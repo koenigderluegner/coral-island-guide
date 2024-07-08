@@ -8,6 +8,7 @@ import { Logger } from "../util/logger.class";
 import {
     Achievement,
     AddItemToInventoryEffect,
+    BoostMaxHealthEffect,
     BoostMaxStaminaEffect,
     ChangeObjectStateEffect,
     CompleteMiningRequirement,
@@ -166,6 +167,11 @@ export class DaFilesParser {
                 let daEffect: Effect | undefined = undefined;
 
                 switch (foundEffect.Type) {
+                    case "C_BoostMaxHealthEffect": {
+
+                        daEffect = {type: "BoostMaxHealth"} satisfies BoostMaxHealthEffect;
+                        break;
+                    }
                     case "C_BoostMaxStaminaEffect": {
 
                         daEffect = {type: "BoostMaxStamina"} satisfies BoostMaxStaminaEffect;

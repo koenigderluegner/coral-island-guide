@@ -103,5 +103,61 @@
         ]
       }
     }
-  ]
+  ],
+  "buyAt": [
+    {
+      "item": {
+        "id": "item_100015",
+        "displayName": "Wellness fruit",
+        "iconName": "wellness_fruit_Sprite",
+        "price": 10,
+        "sellPrice": 0
+      },
+      "allowedDays": [],
+      "allowedSeasons": [],
+      "allowedWeather": [],
+      "forbiddenDays": [],
+      "forbiddenSeasons": [],
+      "forbiddenWeather": [],
+      "townRank": 0,
+      "tag": [],
+      "priceOverride": 0,
+      "priority": 50,
+      "enabled": true,
+      "availableSinceDate": false,
+      "availableTillDate": false,
+      "availableDuringTime": false,
+      "requirements": {
+        "key": "WellnessFruit",
+        "type": "And",
+        "requirements": [
+          {
+            "type": "CompleteMining",
+            "meta": {
+              "level": 10,
+              "mine": "Wind"
+            }
+          }
+        ]
+      },
+      "shop": {
+        "url": "bos",
+        "displayName": "Band of Smiles"
+      }
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_100015",
+      "bVaryHealthToMax": false,
+      "healthDelta": 100,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 0,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "WellnessFruit",
+      "itemType": "Food"
+    }
+  }
 }

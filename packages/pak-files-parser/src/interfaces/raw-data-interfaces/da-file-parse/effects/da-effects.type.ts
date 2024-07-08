@@ -13,6 +13,7 @@ import { RawSendMailToPlayerEffect } from "./send-mail-to-player-effect.type";
 import { RawChangeObjectStateEffect } from "./change-object-state-effect.type";
 import { RawUpdateNpcScheduleEffect } from "./update-npc-schedule-effect.type";
 import { RawUnlockSpecialItemEffect } from "./unlock-special-item-effect.type";
+import { RawBoostMaxHealthEffect } from "./boost-max-health-effect.type";
 
 export type DaEffects =
     RawAddItemToInventoryEffect
@@ -30,3 +31,4 @@ export type DaEffects =
     | RawChangeObjectStateEffect
     | RawUpdateNpcScheduleEffect
     | RawUnlockSpecialItemEffect
+    | RawBoostMaxHealthEffect

@@ -1,5 +1,11 @@
 ## Changelog
 
+### 0.20.7 2024-07-08
+
+#### Changed
+
+- \[Beta] Updated beta data to v1.1-1198 (Steam version)
+
 ### 0.20.6 2024-06-25
 
 #### Changed
