@@ -1,0 +1,113 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_2",
+    "Outer": "Icon_slamet_png",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -2.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 236.0,
+            "Y": 10.0,
+            "Z": 256.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "B6B25D594C9B5FD1D3C86FBBAF199588"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Icon_slamet_png",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceUV": {
+        "X": 3410.0,
+        "Y": 760.0
+      },
+      "BakedSourceDimension": {
+        "X": 256.0,
+        "Y": 256.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'TP_NPC_Icons'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Textures/TP_NPC_Icons.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Icon_slamet_png:BodySetup_2'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/AtlasImport/Frames/Icon_slamet_png.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 116.0,
+          "Y": 128.0,
+          "Z": 0.89208984,
+          "W": 0.18554688
+        },
+        {
+          "X": -120.0,
+          "Y": 128.0,
+          "Z": 0.83447266,
+          "W": 0.18554688
+        },
+        {
+          "X": -120.0,
+          "Y": -128.0,
+          "Z": 0.83447266,
+          "W": 0.24804688
+        },
+        {
+          "X": 116.0,
+          "Y": -128.0,
+          "Z": 0.89208984,
+          "W": 0.24804688
+        },
+        {
+          "X": 116.0,
+          "Y": 128.0,
+          "Z": 0.89208984,
+          "W": 0.18554688
+        },
+        {
+          "X": -120.0,
+          "Y": -128.0,
+          "Z": 0.83447266,
+          "W": 0.24804688
+        }
+      ]
+    }
+  }
+]
