@@ -24,8 +24,7 @@ const routes: Routes = [
             {
                 path: 'mixing',
                 loadComponent: () => import('./mixing/mixing.component').then(c => c.MixingComponent),
-                title: 'Mixing - Crafting',
-                canActivate: [onlyInBetaGuard]
+                title: 'Mixing - Crafting'
             },
         ]
     },
