@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Mermaid_s_Kiss_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 2.0,
+              "Y": 0.0,
+              "Z": 1.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 92.0,
+            "Y": 10.0,
+            "Z": 118.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "430014E54AF598FE12D63D939D41DA30"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Mermaid_s_Kiss_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Mermaid_s_Kiss'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Consumables/Consumable_textures/Mermaid_s_Kiss.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Mermaid_s_Kiss_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Consumables/Mermaid_s_Kiss_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 48.0,
+          "Y": 60.0,
+          "Z": 0.875,
+          "W": 0.03125
+        },
+        {
+          "X": -44.0,
+          "Y": 60.0,
+          "Z": 0.15625,
+          "W": 0.03125
+        },
+        {
+          "X": -44.0,
+          "Y": -58.0,
+          "Z": 0.15625,
+          "W": 0.953125
+        },
+        {
+          "X": 48.0,
+          "Y": -58.0,
+          "Z": 0.875,
+          "W": 0.953125
+        },
+        {
+          "X": 48.0,
+          "Y": 60.0,
+          "Z": 0.875,
+          "W": 0.03125
+        },
+        {
+          "X": -44.0,
+          "Y": -58.0,
+          "Z": 0.15625,
+          "W": 0.953125
+        }
+      ]
+    }
+  }
+]
