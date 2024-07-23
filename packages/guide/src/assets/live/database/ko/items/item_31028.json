@@ -2,8 +2,8 @@
   "item": {
     "id": "item_31028",
     "displayName": "대용량 바다음매 젖",
-    "price": 10,
-    "sellPrice": 10,
+    "price": 520,
+    "sellPrice": 365,
     "sellAt": [],
     "stackable": true,
     "inventoryCategory": "Animal product",
@@ -11,29 +11,186 @@
     "description": "큰 바다음매의 젖.",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 600,
+        "sellPrice": 420
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 680,
+        "sellPrice": 475
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 780,
+        "sellPrice": 548
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1040,
+        "sellPrice": 730
       }
     },
-    "iconName": "placeholder_icon_Sprite",
+    "iconName": "Large_mermoo_milk_Sprite",
     "tags": [
       "income.ranching",
       "item.animalproduct.milk",
-      "Item.Consumable.Food"
+      "Item.Consumable.Food",
+      "item.UnderwaterAnimalProduct"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31028",
+          "displayName": "대용량 바다음매 젖",
+          "iconName": "Large_mermoo_milk_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_31028",
+          "displayName": "대용량 바다음매 젖",
+          "iconName": "Large_mermoo_milk_Sprite",
+          "sellPrice": 365
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 9,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 18,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31028",
+          "displayName": "대용량 바다음매 젖",
+          "iconName": "Large_mermoo_milk_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41349",
+          "displayName": "원반형 바다음매 치즈",
+          "iconName": "Mermoo_cheese_wheel_Sprite",
+          "sellPrice": 730
+        }
+      },
+      "genericInput": null,
+      "machine": "CheesePress"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31028",
+          "displayName": "대용량 바다음매 젖",
+          "iconName": "Large_mermoo_milk_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41339",
+          "displayName": "대용량 바다음매 버터",
+          "iconName": "Large_mermoo_butter_Sprite",
+          "sellPrice": 565
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31028",
+          "displayName": "대용량 바다음매 젖",
+          "iconName": "Large_mermoo_milk_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_31028",
+          "displayName": "대용량 바다음매 젖",
+          "iconName": "Large_mermoo_milk_Sprite",
+          "sellPrice": 365
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 9,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 18,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_80004",
@@ -492,16 +649,7 @@
         }
       ],
       "ingredients": [],
-      "eitherOrIngredients": [],
-      "additionsToGenerics": {
-        "아무 조개": [
-          {
-            "id": "item_50307",
-            "displayName": "대왕조개",
-            "iconName": "Giant_Clam_Sprite"
-          }
-        ]
-      }
+      "eitherOrIngredients": []
     },
     {
       "key": "item_80088",
@@ -586,21 +734,6 @@
             "id": "item_41181",
             "displayName": "대용량 염소 요구르트",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "대왕조개",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "미역",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "꽃다발",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -742,5 +875,106 @@
       "ingredients": [],
       "eitherOrIngredients": []
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_31028",
+      "bVaryHealthToMax": false,
+      "healthDelta": 25,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 30,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_31028-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 29,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 35,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_31028-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 31,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 38,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_31028-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 38,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 45,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_31028-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 50,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 60,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Mermoo",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Mermoo_Sprite"
+        }
+      }
+    ],
+    "building": "UnderwaterRanch",
+    "daysToGrow": 15,
+    "harvestCooldown": 1,
+    "animalProduceType": "UsingTools",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65042",
+      "displayName": "우유통",
+      "iconName": "Milk_Pail_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31027",
+          "displayName": "바다음매 젖",
+          "iconName": "Mermoo_milk_Sprite"
+        },
+        "large": {
+          "id": "item_31028",
+          "displayName": "대용량 바다음매 젖",
+          "iconName": "Large_mermoo_milk_Sprite"
+        }
+      }
+    ],
+    "displayName": "물소"
+  }
 }

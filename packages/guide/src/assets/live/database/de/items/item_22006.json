@@ -38,6 +38,47 @@
       "Item.Consumable.Food"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 4,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_22006",
+          "displayName": "Rotkohl",
+          "iconName": "Red_Cabbage_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_22006",
+          "displayName": "Rotkohl",
+          "iconName": "Red_Cabbage_Sprite",
+          "sellPrice": 106
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 7,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
     {
       "useCategory": false,
@@ -150,6 +191,45 @@
       },
       "genericInput": null,
       "machine": "SeedMaker"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 4,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_22006",
+          "displayName": "Rotkohl",
+          "iconName": "Red_Cabbage_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_22006",
+          "displayName": "Rotkohl",
+          "iconName": "Red_Cabbage_Sprite",
+          "sellPrice": 106
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 7,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -1060,21 +1140,6 @@
             "id": "item_41181",
             "displayName": "Großer Ziegenjoghurt",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Riesenmuschel",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Wakame-Alge",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Blumenstrauß",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -1126,7 +1191,7 @@
           "genericItem": {
             "key": "Any_Cheese",
             "tags": [
-              "Artisan.CheesePress"
+              "item.artisan.cheese"
             ],
             "iconName": "Any_Cheese_Sprite",
             "displayName": "Beliebiger Käse"
@@ -1402,5 +1467,45 @@
       "buff": "None",
       "itemType": "Food"
     }
-  }
+  },
+  "usedToMix": [
+    {
+      "key": "RedReefbudSeeds",
+      "amount": 1,
+      "cookingKey": "RedReefbudSeeds",
+      "item": {
+        "id": "item_21058",
+        "displayName": "Rote Riffknospensamen",
+        "iconName": "Red_reefbud_seeds_Sprite"
+      },
+      "genericIngredients": [],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_22006",
+            "displayName": "Rotkohl",
+            "iconName": "Red_Cabbage_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_50202",
+            "displayName": "Junonia-Schale",
+            "iconName": "Junonia_Shell_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_62001",
+            "displayName": "Bronze-Seetang",
+            "iconName": "Bronze_kelp_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": []
+    }
+  ]
 }

@@ -2,38 +2,196 @@
   "item": {
     "id": "item_31037",
     "displayName": "水牛奶。",
-    "price": 10,
-    "sellPrice": 10,
-    "sellAt": [],
+    "price": 500,
+    "sellPrice": 350,
+    "sellAt": [
+      "Sam"
+    ],
     "stackable": true,
-    "inventoryCategory": "动物产品",
+    "inventoryCategory": "Animal product",
     "displayKey": "AnimalProduct",
     "description": "一瓶水牛奶。",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 580,
+        "sellPrice": 403
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 650,
+        "sellPrice": 455
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 750,
+        "sellPrice": 525
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1000,
+        "sellPrice": 700
       }
     },
-    "iconName": "placeholder_icon_Sprite",
+    "iconName": "Buffalo_Milk_Sprite",
     "tags": [
       "income.ranching",
       "item.animalproduct.milk",
       "Item.Consumable.Food"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31037",
+          "displayName": "水牛奶。",
+          "iconName": "Buffalo_Milk_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_31037",
+          "displayName": "水牛奶。",
+          "iconName": "Buffalo_Milk_Sprite",
+          "sellPrice": 350
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 9,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 18,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31037",
+          "displayName": "水牛奶。",
+          "iconName": "Buffalo_Milk_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41350",
+          "displayName": "水牛奶酪",
+          "iconName": "Buffalo_Cheese_Sprite",
+          "sellPrice": 700
+        }
+      },
+      "genericInput": null,
+      "machine": "CheesePress"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31037",
+          "displayName": "水牛奶。",
+          "iconName": "Buffalo_Milk_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41340",
+          "displayName": "水牛奶油",
+          "iconName": "Buffalo_Butter_Sprite",
+          "sellPrice": 540
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31037",
+          "displayName": "水牛奶。",
+          "iconName": "Buffalo_Milk_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_31037",
+          "displayName": "水牛奶。",
+          "iconName": "Buffalo_Milk_Sprite",
+          "sellPrice": 350
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 9,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 18,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_80004",
@@ -492,16 +650,7 @@
         }
       ],
       "ingredients": [],
-      "eitherOrIngredients": [],
-      "additionsToGenerics": {
-        "任何蛤蜊": [
-          {
-            "id": "item_50307",
-            "displayName": "大砗磲",
-            "iconName": "Giant_Clam_Sprite"
-          }
-        ]
-      }
+      "eitherOrIngredients": []
     },
     {
       "key": "item_80088",
@@ -586,21 +735,6 @@
             "id": "item_41181",
             "displayName": "山羊酸奶（大）",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "大砗磲",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "裙带菜丛",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "花束",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -742,5 +876,105 @@
       "ingredients": [],
       "eitherOrIngredients": []
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_31037",
+      "bVaryHealthToMax": false,
+      "healthDelta": 21,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 23,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_31037-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 24,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 26,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_31037-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 26,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 29,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_31037-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 32,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 35,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_31037-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 42,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 46,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  },
+  "producedByAnimal": {
+    "key": "Buffaloo",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Buffalo_Sprite"
+        }
+      }
+    ],
+    "building": "BarnLvl2",
+    "daysToGrow": 15,
+    "harvestCooldown": 3,
+    "animalProduceType": "UsingTools",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65042",
+      "displayName": "挤奶桶",
+      "iconName": "Milk_Pail_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31037",
+          "displayName": "水牛奶。",
+          "iconName": "Buffalo_Milk_Sprite"
+        },
+        "large": {
+          "id": "item_31038",
+          "displayName": "水牛奶 （大）",
+          "iconName": "Large_buffalo_milk_Sprite"
+        }
+      }
+    ]
+  }
 }

@@ -14,9 +14,84 @@
     "qualities": {},
     "iconName": "Hoarder_Ring_Sprite",
     "tags": [
-      "item.playercustomization.clothing"
+      "item.playercustomization.clothing",
+      "item.CombatRing"
     ]
   },
+  "requiredAsOffering": [
+    {
+      "key": "HeritageBased",
+      "offeringGroupTitle": "守护者祭坛",
+      "urlPath": "guardianaltar",
+      "offeringGroupRewardText": "守护神壁画",
+      "offerings": [
+        {
+          "title": "Master Slime",
+          "imageName": "T_Art_OfferingSlime",
+          "numOfItemRequired": 5,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_120550",
+                  "displayName": "粘液大师装备",
+                  "iconName": "Master_Slime_Outfit_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "key": "Any_Artifact",
+                "displayName": "任何文物",
+                "iconName": "T_Mastery_Artifact"
+              },
+              "amount": 4
+            },
+            {
+              "item": {
+                "key": "Any_Fossil",
+                "displayName": "任何化石",
+                "iconName": "Brontosaurus_Fossil_Bone_02"
+              },
+              "amount": 4
+            },
+            {
+              "item": {
+                "id": "item_120442",
+                "displayName": "水花背包",
+                "iconName": "Plop_backpack_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_120360",
+                "displayName": "囤积者戒指",
+                "iconName": "Hoarder_Ring_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_65527",
+                "displayName": "精品电脑",
+                "iconName": "Sturdy_Computer_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            }
+          ]
+        }
+      ],
+      "isHeritageOffering": true
+    }
+  ],
   "buyAt": [
     {
       "item": {
@@ -35,8 +110,8 @@
       "townRank": 0,
       "tag": [],
       "priceOverride": 0,
-      "priority": 20,
-      "enabled": false,
+      "priority": 8,
+      "enabled": true,
       "availableSinceDate": false,
       "availableTillDate": false,
       "availableDuringTime": false,

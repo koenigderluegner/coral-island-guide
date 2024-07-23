@@ -38,6 +38,56 @@
       "Item.Consumable.Food"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_23008",
+          "displayName": "Acelga chinesa",
+          "iconName": "Bok_Choy_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_23008",
+          "displayName": "Acelga chinesa",
+          "iconName": "Bok_Choy_Sprite",
+          "sellPrice": 126
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
     {
       "useCategory": false,
@@ -150,6 +200,54 @@
       },
       "genericInput": null,
       "machine": "SeedMaker"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_23008",
+          "displayName": "Acelga chinesa",
+          "iconName": "Bok_Choy_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_23008",
+          "displayName": "Acelga chinesa",
+          "iconName": "Bok_Choy_Sprite",
+          "sellPrice": 126
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -1060,21 +1158,6 @@
             "id": "item_41181",
             "displayName": "Iogurte de cabra grande",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Amêijoa gigante",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Alga Wakame",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Buquê de flores",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -1126,7 +1209,7 @@
           "genericItem": {
             "key": "Any_Cheese",
             "tags": [
-              "Artisan.CheesePress"
+              "item.artisan.cheese"
             ],
             "iconName": "Any_Cheese_Sprite",
             "displayName": "Qualquer Queijo"
@@ -1356,5 +1439,45 @@
       "buff": "None",
       "itemType": "Food"
     }
-  }
+  },
+  "usedToMix": [
+    {
+      "key": "SpringSealeafSeeds",
+      "amount": 1,
+      "cookingKey": "SpringSealeafSeeds",
+      "item": {
+        "id": "item_21059",
+        "displayName": "Sementes de Folha Marinha de Primavera",
+        "iconName": "Spring_sealeaf_seeds_Sprite"
+      },
+      "genericIngredients": [],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_23008",
+            "displayName": "Acelga chinesa",
+            "iconName": "Bok_Choy_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_50323",
+            "displayName": "Concha-caneta âmbar",
+            "iconName": "Amber_pen_shell_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_62003",
+            "displayName": "Kelp de prata",
+            "iconName": "Silver_Kelp_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": []
+    }
+  ]
 }

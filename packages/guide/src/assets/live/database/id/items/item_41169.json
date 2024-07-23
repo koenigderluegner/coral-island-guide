@@ -8,7 +8,7 @@
     "stackable": true,
     "inventoryCategory": "Artisan product",
     "displayKey": "ArtisanProduct",
-    "description": "Stoples besar manis keemasan sirup, langsung dari sarang lebah.",
+    "description": "Sestoples besar sirup manis keemasan, langsung dari sarang lebah.",
     "qualities": {
       "bronze": {
         "price": 4800,
@@ -47,7 +47,7 @@
         "amount": 1,
         "item": {
           "id": "item_53107",
-          "displayName": "Titan arum",
+          "displayName": "Bunga bangkai",
           "iconName": "Titan_Arum_Sprite"
         }
       },
@@ -62,6 +62,122 @@
       },
       "genericInput": null,
       "machine": "BeeHouse"
+    },
+    {
+      "useCategory": false,
+      "day": 1,
+      "time": {
+        "hours": 1,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41169",
+          "displayName": "Madu hitam titan arum",
+          "iconName": "Black_Honey_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41169",
+          "displayName": "Madu hitam titan arum",
+          "iconName": "Black_Honey_Sprite",
+          "sellPrice": 2500
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 0,
+          "time": {
+            "hours": 20,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 1,
+          "time": {
+            "hours": 6,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 3,
+          "time": {
+            "hours": 3,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 1,
+      "time": {
+        "hours": 1,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41169",
+          "displayName": "Madu hitam titan arum",
+          "iconName": "Black_Honey_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41169",
+          "displayName": "Madu hitam titan arum",
+          "iconName": "Black_Honey_Sprite",
+          "sellPrice": 2500
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 0,
+          "time": {
+            "hours": 20,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 1,
+          "time": {
+            "hours": 6,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 3,
+          "time": {
+            "hours": 3,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -121,7 +237,7 @@
               "Item.Consumable.Food"
             ],
             "iconName": "T_AnyIngridient_Sprite",
-            "displayName": "Bahan Makanan Apa pun"
+            "displayName": "Bahan Makanan Apapun"
           },
           "key": "Any_Edible"
         }
@@ -138,7 +254,7 @@
       ],
       "eitherOrIngredients": [],
       "additionsToGenerics": {
-        "Bahan Makanan Apa pun": [
+        "Bahan Makanan Apapun": [
           {
             "id": "item_41180",
             "displayName": "Yogurt kambing",
@@ -148,21 +264,6 @@
             "id": "item_41181",
             "displayName": "Yogurt kambing besar",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Kerang raksasa",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Kelp wakame",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Buket bunga",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -176,7 +277,7 @@
       "offeringGroupRewardText": "Membuka Akses Savannah",
       "offerings": [
         {
-          "title": "Pengrajin langka",
+          "title": "Produk Artisan Langka",
           "imageName": "Rare_Artisan_Offerings",
           "numOfItemRequired": -1,
           "rewards": {
@@ -205,7 +306,7 @@
             {
               "item": {
                 "key": "Any_Kimchi",
-                "displayName": "Kimchi Apa pun",
+                "displayName": "Kimchi Apapun",
                 "iconName": "Kimchi"
               },
               "amount": 1
@@ -213,7 +314,7 @@
             {
               "item": {
                 "key": "Any_Wine",
-                "displayName": "Anggur apa pun",
+                "displayName": "Anggur Apapun",
                 "iconName": "Wine"
               },
               "amount": 1
@@ -238,7 +339,8 @@
             }
           ]
         }
-      ]
+      ],
+      "isHeritageOffering": false
     }
   ],
   "consumables": {

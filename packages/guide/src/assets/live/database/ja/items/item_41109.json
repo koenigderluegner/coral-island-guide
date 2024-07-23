@@ -63,6 +63,122 @@
       },
       "genericInput": null,
       "machine": "PreserveJar"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41109",
+          "displayName": "ドリアンジャム",
+          "iconName": "Jam_Yellow_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41109",
+          "displayName": "ドリアンジャム",
+          "iconName": "Jam_Yellow_Sprite",
+          "sellPrice": 250
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 0,
+          "time": {
+            "hours": 7,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41109",
+          "displayName": "ドリアンジャム",
+          "iconName": "Jam_Yellow_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41109",
+          "displayName": "ドリアンジャム",
+          "iconName": "Jam_Yellow_Sprite",
+          "sellPrice": 250
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 0,
+          "time": {
+            "hours": 7,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -149,24 +265,76 @@
             "id": "item_41181",
             "displayName": "大きなヤギのヨーグルト",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "オオシャコガイ",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "ワカメ",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "花束",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "HeritageBased",
+      "offeringGroupTitle": "遺産の祭壇",
+      "urlPath": "guardianaltar",
+      "offeringGroupRewardText": "守護者の壁画",
+      "offerings": [
+        {
+          "title": "King Tan",
+          "imageName": "T_Art_OfferingKingtan",
+          "numOfItemRequired": 4,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_120551",
+                  "displayName": "キング・タンの服",
+                  "iconName": "King_Tan_Outfit_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "id": "item_41109",
+                "displayName": "ドリアンジャム",
+                "iconName": "Jam_Yellow_Sprite"
+              },
+              "amount": 8,
+              "quality": "osmium"
+            },
+            {
+              "item": {
+                "id": "item_41197",
+                "displayName": "マンゴスチンジャム",
+                "iconName": "Jam_Red_Sprite"
+              },
+              "amount": 8,
+              "quality": "osmium"
+            },
+            {
+              "item": {
+                "id": "item_21020",
+                "displayName": "ライチ",
+                "iconName": "Lychee_Sprite"
+              },
+              "amount": 8,
+              "quality": "osmium"
+            },
+            {
+              "item": {
+                "id": "item_22019",
+                "displayName": "Mango",
+                "iconName": "Mango_Sprite"
+              },
+              "amount": 8,
+              "quality": "osmium"
+            }
+          ]
+        }
+      ],
+      "isHeritageOffering": true
     }
   ],
   "consumables": {

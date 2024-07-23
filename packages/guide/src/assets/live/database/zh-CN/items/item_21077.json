@@ -1,40 +1,131 @@
 {
   "item": {
     "id": "item_21077",
-    "displayName": "蓝铃花绽放",
-    "price": 10,
-    "sellPrice": 10,
-    "sellAt": [],
+    "displayName": "蓝铃花",
+    "price": 225,
+    "sellPrice": 135,
+    "sellAt": [
+      "MerfolkGeneral"
+    ],
     "stackable": true,
     "inventoryCategory": "Flower",
     "displayKey": "Flower",
     "description": "它一朵朵花开，为世界描绘出美丽宁静的蓝色调。",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 260,
+        "sellPrice": 155
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 295,
+        "sellPrice": 176
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 340,
+        "sellPrice": 203
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 450,
+        "sellPrice": 270
       }
     },
     "iconName": "Bluebell_Blossom_Sprite",
     "tags": [
-      "income.farming",
+      "income.oceanfarming",
+      "item.crop.diving",
+      "Item.Consumable.Food",
       "item.flower",
-      "Item.Consumable.Food"
+      "item.UnderwaterFlower"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 3,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21077",
+          "displayName": "蓝铃花",
+          "iconName": "Bluebell_Blossom_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_21077",
+          "displayName": "蓝铃花",
+          "iconName": "Bluebell_Blossom_Sprite",
+          "sellPrice": 135
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 5,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 2,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21077",
+          "displayName": "蓝铃花",
+          "iconName": "Bluebell_Blossom_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41371",
+          "displayName": "蓝铃花蜂蜜",
+          "iconName": "Underwater_blue_honey_Sprite",
+          "sellPrice": 270
+        }
+      },
+      "genericInput": null,
+      "machine": "BeeHouse"
+    },
     {
       "useCategory": false,
       "day": 0,
@@ -420,8 +511,13 @@
               "iconName": "Sproutfruit_Sprite"
             },
             {
+              "id": "item_21075",
+              "displayName": "粉色珊瑚草",
+              "iconName": "Pink_Coralcap_Sprite"
+            },
+            {
               "id": "item_21077",
-              "displayName": "蓝铃花绽放",
+              "displayName": "蓝铃花",
               "iconName": "Bluebell_Blossom_Sprite"
             },
             {
@@ -453,6 +549,21 @@
               "id": "item_21084",
               "displayName": "大丽香",
               "iconName": "Petalia_Sprite"
+            },
+            {
+              "id": "item_21085",
+              "displayName": "蘑菇树种子",
+              "iconName": "Mushroom_tree_seeds_Sprite"
+            },
+            {
+              "id": "item_21086",
+              "displayName": "月芽孢种子",
+              "iconName": "Wooblecap_seeds_Sprite"
+            },
+            {
+              "id": "item_21087",
+              "displayName": "蘑菇伞",
+              "iconName": "Moonspore_seeds_Sprite"
             },
             {
               "id": "item_22001",
@@ -651,7 +762,7 @@
             },
             {
               "id": "item_50306",
-              "displayName": "海蘑菇",
+              "displayName": "海菇",
               "iconName": "Sea_Mushroom_Sprite"
             },
             {
@@ -756,7 +867,7 @@
             },
             {
               "id": "item_51106",
-              "displayName": "洋水仙",
+              "displayName": "水仙花",
               "iconName": "Daffodil_Sprite"
             },
             {
@@ -936,7 +1047,7 @@
             },
             {
               "id": "item_71008",
-              "displayName": "短吻鳄雀鳝",
+              "displayName": "福鱷",
               "iconName": "Gator_Gar_Sprite"
             },
             {
@@ -1473,6 +1584,63 @@
         }
       },
       "machine": "CompostBin"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 3,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21077",
+          "displayName": "蓝铃花",
+          "iconName": "Bluebell_Blossom_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_21077",
+          "displayName": "蓝铃花",
+          "iconName": "Bluebell_Blossom_Sprite",
+          "sellPrice": 135
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 5,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -1559,21 +1727,6 @@
             "id": "item_41181",
             "displayName": "山羊酸奶（大）",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "大砗磲",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "裙带菜丛",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "花束",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -1628,7 +1781,7 @@
               },
               {
                 "id": "item_21077",
-                "displayName": "蓝铃花绽放",
+                "displayName": "蓝铃花",
                 "iconName": "Bluebell_Blossom_Sprite"
               },
               {
@@ -1713,7 +1866,7 @@
               },
               {
                 "id": "item_51106",
-                "displayName": "洋水仙",
+                "displayName": "水仙花",
                 "iconName": "Daffodil_Sprite"
               },
               {
@@ -1780,7 +1933,7 @@
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "一种可制作的气味，能降低地面昆虫的警觉性。可以食用或附在陷阱上。",
+        "description": "一种可制作的香水，能降低地面昆虫的警觉性。可以食用或附在陷阱上。",
         "qualities": {},
         "iconName": "Ground_insect_scent__Sprite",
         "tags": [
@@ -1836,7 +1989,7 @@
               },
               {
                 "id": "item_21077",
-                "displayName": "蓝铃花绽放",
+                "displayName": "蓝铃花",
                 "iconName": "Bluebell_Blossom_Sprite"
               },
               {
@@ -1921,7 +2074,7 @@
               },
               {
                 "id": "item_51106",
-                "displayName": "洋水仙",
+                "displayName": "水仙花",
                 "iconName": "Daffodil_Sprite"
               },
               {
@@ -1988,7 +2141,7 @@
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "一种可制作的气味，可降低爬行的海洋动物的警觉性。可以食用或附在陷阱上。",
+        "description": "一种可制作的香水，可降低爬行的海洋动物的警觉性。可以食用或附在陷阱上。",
         "qualities": {},
         "iconName": "Crawling_critter_scent_Sprite",
         "tags": [
@@ -2044,7 +2197,7 @@
               },
               {
                 "id": "item_21077",
-                "displayName": "蓝铃花绽放",
+                "displayName": "蓝铃花",
                 "iconName": "Bluebell_Blossom_Sprite"
               },
               {
@@ -2129,7 +2282,7 @@
               },
               {
                 "id": "item_51106",
-                "displayName": "洋水仙",
+                "displayName": "水仙花",
                 "iconName": "Daffodil_Sprite"
               },
               {
@@ -2196,7 +2349,7 @@
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "一种可制作的气味，可降低飞虫的警觉性。可以食用或附在陷阱上。",
+        "description": "一种可制作的香水，可降低飞虫的警觉性。可以食用或附在陷阱上。",
         "qualities": {},
         "iconName": "Flying_insect_scent_Sprite",
         "tags": [
@@ -2252,7 +2405,7 @@
               },
               {
                 "id": "item_21077",
-                "displayName": "蓝铃花绽放",
+                "displayName": "蓝铃花",
                 "iconName": "Bluebell_Blossom_Sprite"
               },
               {
@@ -2337,7 +2490,7 @@
               },
               {
                 "id": "item_51106",
-                "displayName": "洋水仙",
+                "displayName": "水仙花",
                 "iconName": "Daffodil_Sprite"
               },
               {
@@ -2404,7 +2557,7 @@
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "一种可制作的气味，可降低漂浮的海洋小动物的警觉性。可以食用或附在陷阱上。",
+        "description": "一种可制作的香水，可降低漂浮的海洋小动物的警觉性。可以食用或附在陷阱上。",
         "qualities": {},
         "iconName": "Floating_critter_scent_Sprite",
         "tags": [
@@ -2451,7 +2604,7 @@
               },
               {
                 "id": "item_21077",
-                "displayName": "蓝铃花绽放",
+                "displayName": "蓝铃花",
                 "iconName": "Bluebell_Blossom_Sprite"
               },
               {
@@ -2536,7 +2689,7 @@
               },
               {
                 "id": "item_51106",
-                "displayName": "洋水仙",
+                "displayName": "水仙花",
                 "iconName": "Daffodil_Sprite"
               },
               {
@@ -2652,7 +2805,7 @@
               },
               {
                 "id": "item_21077",
-                "displayName": "蓝铃花绽放",
+                "displayName": "蓝铃花",
                 "iconName": "Bluebell_Blossom_Sprite"
               },
               {
@@ -2737,7 +2890,7 @@
               },
               {
                 "id": "item_51106",
-                "displayName": "洋水仙",
+                "displayName": "水仙花",
                 "iconName": "Daffodil_Sprite"
               },
               {
@@ -2863,7 +3016,7 @@
               },
               {
                 "id": "item_21077",
-                "displayName": "蓝铃花绽放",
+                "displayName": "蓝铃花",
                 "iconName": "Bluebell_Blossom_Sprite"
               },
               {
@@ -2948,7 +3101,7 @@
               },
               {
                 "id": "item_51106",
-                "displayName": "洋水仙",
+                "displayName": "水仙花",
                 "iconName": "Daffodil_Sprite"
               },
               {
@@ -3016,5 +3169,191 @@
         "tags": []
       }
     }
-  ]
+  ],
+  "isSeedFor": [
+    {
+      "key": "item_21062",
+      "item": {
+        "id": "item_21062",
+        "displayName": "蓝铃花种子",
+        "iconName": "Bluebell_blossom_seeds_Sprite",
+        "price": 75
+      },
+      "size": {
+        "length": 1,
+        "width": 1
+      },
+      "canCombine": false,
+      "chanceToCombine": {
+        "chance": 0
+      },
+      "growableSeason": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "growTime": 10,
+      "isRegrowable": false,
+      "regrowableLength": 1,
+      "readableName": "Bluebell blossom seeds",
+      "isTrellisCrop": false,
+      "pickupableItemId": "item_21077",
+      "pickupableItem": {
+        "id": "item_21077",
+        "displayName": "蓝铃花",
+        "iconName": "Bluebell_Blossom_Sprite"
+      },
+      "isScytheRequired": false,
+      "maxDroppedItems": 1,
+      "overrideExperience": false,
+      "overrideExperienceOnHarvest": 0,
+      "dropData": [
+        {
+          "itemId": "item_21077",
+          "dropChance": 100,
+          "dropRange": {
+            "min": 1,
+            "max": 1
+          },
+          "item": {
+            "id": "item_21077",
+            "displayName": "蓝铃花",
+            "iconName": "Bluebell_Blossom_Sprite",
+            "sellPrice": 135
+          }
+        }
+      ]
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "CustomDiving",
+      "offeringGroupTitle": "",
+      "urlPath": "",
+      "offeringGroupRewardText": "",
+      "offerings": [
+        {
+          "title": "Se Pulu (10m)",
+          "imageName": "Ocean_Offerings",
+          "numOfItemRequired": 4,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_21088",
+                  "displayName": "海藻启动器",
+                  "iconName": "Seaweed_starter_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "id": "item_62005",
+                "displayName": "铜质海带精华",
+                "iconName": "Bronze_kelp_essence_Sprite"
+              },
+              "amount": 5,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_21072",
+                "displayName": "海芜菁",
+                "iconName": "Marinip_Sprite"
+              },
+              "amount": 3,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_21077",
+                "displayName": "蓝铃花",
+                "iconName": "Bluebell_Blossom_Sprite"
+              },
+              "amount": 3,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_21076",
+                "displayName": "双荫海棠叶",
+                "iconName": "Twinshade_Sealeaf_Sprite"
+              },
+              "amount": 3,
+              "quality": "base"
+            }
+          ]
+        }
+      ],
+      "isHeritageOffering": false,
+      "customType": "diving"
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_21077",
+      "bVaryHealthToMax": false,
+      "healthDelta": 90,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 100,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "bronze": {
+      "key": "item_21077-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 104,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 115,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "silver": {
+      "key": "item_21077-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 113,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 125,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "gold": {
+      "key": "item_21077-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 135,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 150,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "osmium": {
+      "key": "item_21077-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 180,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 200,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    }
+  }
 }

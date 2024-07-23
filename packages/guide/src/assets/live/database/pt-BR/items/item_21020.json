@@ -38,6 +38,56 @@
       "Item.Consumable.Food"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 3,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21020",
+          "displayName": "Lichia",
+          "iconName": "Lychee_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_21020",
+          "displayName": "Lichia",
+          "iconName": "Lychee_Sprite",
+          "sellPrice": 79
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 7,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
     {
       "useCategory": false,
@@ -420,17 +470,22 @@
             },
             {
               "id": "item_21071",
-              "displayName": "Sproutfruit",
+              "displayName": "Frutinha de Broto",
               "iconName": "Sproutfruit_Sprite"
             },
             {
+              "id": "item_21075",
+              "displayName": "Crista-de-coral Rosa",
+              "iconName": "Pink_Coralcap_Sprite"
+            },
+            {
               "id": "item_21077",
-              "displayName": "Bluebell blossom",
+              "displayName": "Flor de Jacinto",
               "iconName": "Bluebell_Blossom_Sprite"
             },
             {
               "id": "item_21078",
-              "displayName": "Goldglow",
+              "displayName": "Brilho Dourado",
               "iconName": "Goldglow_Sprite"
             },
             {
@@ -440,23 +495,38 @@
             },
             {
               "id": "item_21080",
-              "displayName": "Helixpur blossom",
+              "displayName": "Flor de Helixpur",
               "iconName": "Helixpur_Blossom_Sprite"
             },
             {
               "id": "item_21081",
-              "displayName": "Marinethorn blossom",
+              "displayName": "Flor de Marinhespinho",
               "iconName": "Marinethorn_Blossom_Sprite"
             },
             {
               "id": "item_21082",
-              "displayName": "Sea spud",
+              "displayName": "Batata Marinha",
               "iconName": "Sea_Spud_Sprite"
             },
             {
               "id": "item_21084",
-              "displayName": "Petalia",
+              "displayName": "Petália",
               "iconName": "Petalia_Sprite"
+            },
+            {
+              "id": "item_21085",
+              "displayName": "Sementes de árvore de cogumelo",
+              "iconName": "Mushroom_tree_seeds_Sprite"
+            },
+            {
+              "id": "item_21086",
+              "displayName": "Sementes de cogumázio",
+              "iconName": "Wooblecap_seeds_Sprite"
+            },
+            {
+              "id": "item_21087",
+              "displayName": "Sementes de lunesporo",
+              "iconName": "Moonspore_seeds_Sprite"
             },
             {
               "id": "item_22001",
@@ -1533,6 +1603,54 @@
       },
       "genericInput": null,
       "machine": "PreserveJar"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 3,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21020",
+          "displayName": "Lichia",
+          "iconName": "Lychee_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_21020",
+          "displayName": "Lichia",
+          "iconName": "Lychee_Sprite",
+          "sellPrice": 79
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 7,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -1843,21 +1961,6 @@
             "id": "item_41181",
             "displayName": "Iogurte de cabra grande",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Amêijoa gigante",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Alga Wakame",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Buquê de flores",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -1999,6 +2102,73 @@
       ]
     }
   ],
+  "requiredAsOffering": [
+    {
+      "key": "HeritageBased",
+      "offeringGroupTitle": "Altar da Tradição",
+      "urlPath": "guardianaltar",
+      "offeringGroupRewardText": "Mural do Guardião",
+      "offerings": [
+        {
+          "title": "King Tan",
+          "imageName": "T_Art_OfferingKingtan",
+          "numOfItemRequired": 4,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_120551",
+                  "displayName": "Traje de Rei Tan",
+                  "iconName": "King_Tan_Outfit_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "id": "item_41109",
+                "displayName": "Geleia de durião",
+                "iconName": "Jam_Yellow_Sprite"
+              },
+              "amount": 8,
+              "quality": "osmium"
+            },
+            {
+              "item": {
+                "id": "item_41197",
+                "displayName": "Geleia de mangostim",
+                "iconName": "Jam_Red_Sprite"
+              },
+              "amount": 8,
+              "quality": "osmium"
+            },
+            {
+              "item": {
+                "id": "item_21020",
+                "displayName": "Lichia",
+                "iconName": "Lychee_Sprite"
+              },
+              "amount": 8,
+              "quality": "osmium"
+            },
+            {
+              "item": {
+                "id": "item_22019",
+                "displayName": "Mango",
+                "iconName": "Mango_Sprite"
+              },
+              "amount": 8,
+              "quality": "osmium"
+            }
+          ]
+        }
+      ],
+      "isHeritageOffering": true
+    }
+  ],
   "consumables": {
     "base": {
       "key": "item_21020",
@@ -2060,5 +2230,45 @@
       "buff": "None",
       "itemType": "Food"
     }
-  }
+  },
+  "usedToMix": [
+    {
+      "key": "MarinethornBlossomSeeds",
+      "amount": 1,
+      "cookingKey": "MarinethornBlossomSeeds",
+      "item": {
+        "id": "item_21066",
+        "displayName": "Sementes de Flor de Marinhespinho",
+        "iconName": "Marinethorn_blossom_seeds_Sprite"
+      },
+      "genericIngredients": [],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_21020",
+            "displayName": "Lichia",
+            "iconName": "Lychee_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_50204",
+            "displayName": "Murex",
+            "iconName": "Murex_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_62002",
+            "displayName": "Kelp de ouro",
+            "iconName": "Gold_Kelp_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": []
+    }
+  ]
 }

@@ -37,6 +37,56 @@
       "Item.Consumable.Food"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 1,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_50335",
+          "displayName": "파타고니아 가리비",
+          "iconName": "Patagonian_Scallop_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_50335",
+          "displayName": "파타고니아 가리비",
+          "iconName": "Patagonian_Scallop_Sprite",
+          "sellPrice": 30
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
     {
       "useCategory": false,
@@ -419,43 +469,63 @@
             },
             {
               "id": "item_21071",
-              "displayName": "Sproutfruit",
+              "displayName": "새싹과",
               "iconName": "Sproutfruit_Sprite"
             },
             {
+              "id": "item_21075",
+              "displayName": "분홍산호모자",
+              "iconName": "Pink_Coralcap_Sprite"
+            },
+            {
               "id": "item_21077",
-              "displayName": "Bluebell blossom",
+              "displayName": "블루벨꽃",
               "iconName": "Bluebell_Blossom_Sprite"
             },
             {
               "id": "item_21078",
-              "displayName": "Goldglow",
+              "displayName": "황금광 씨앗",
               "iconName": "Goldglow_Sprite"
             },
             {
               "id": "item_21079",
-              "displayName": "Soka",
+              "displayName": "소카",
               "iconName": "Soka_Sprite"
             },
             {
               "id": "item_21080",
-              "displayName": "Helixpur blossom",
+              "displayName": "헬릭스푸르꽃",
               "iconName": "Helixpur_Blossom_Sprite"
             },
             {
               "id": "item_21081",
-              "displayName": "Marinethorn blossom",
+              "displayName": "바다가시꽃",
               "iconName": "Marinethorn_Blossom_Sprite"
             },
             {
               "id": "item_21082",
-              "displayName": "Sea spud",
+              "displayName": "바다감자",
               "iconName": "Sea_Spud_Sprite"
             },
             {
               "id": "item_21084",
-              "displayName": "Petalia",
+              "displayName": "페탈리아",
               "iconName": "Petalia_Sprite"
+            },
+            {
+              "id": "item_21085",
+              "displayName": "버섯 나무 씨앗",
+              "iconName": "Mushroom_tree_seeds_Sprite"
+            },
+            {
+              "id": "item_21086",
+              "displayName": "슈롬바 씨앗",
+              "iconName": "Wooblecap_seeds_Sprite"
+            },
+            {
+              "id": "item_21087",
+              "displayName": "문스포어 씨앗",
+              "iconName": "Moonspore_seeds_Sprite"
             },
             {
               "id": "item_22001",
@@ -1504,6 +1574,54 @@
       },
       "genericInput": null,
       "machine": "Dehydrator"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 1,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_50335",
+          "displayName": "파타고니아 가리비",
+          "iconName": "Patagonian_Scallop_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_50335",
+          "displayName": "파타고니아 가리비",
+          "iconName": "Patagonian_Scallop_Sprite",
+          "sellPrice": 30
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -1590,21 +1708,6 @@
             "id": "item_41181",
             "displayName": "대용량 염소 요구르트",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "대왕조개",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "미역",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "꽃다발",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -2332,6 +2435,1241 @@
         "description": "생장률을 크게 증가시킨다.",
         "qualities": {},
         "iconName": "Flash_III_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65776",
+      "displayName": "Anemone auto fertilizer",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_62005",
+            "displayName": "동 켈프 정수",
+            "iconName": "Bronze_kelp_essence_Sprite"
+          },
+          "amount": 3
+        },
+        {
+          "item": {
+            "id": "item_50506",
+            "displayName": "슬라임 찐득이",
+            "iconName": "Slime_goop_Sprite"
+          },
+          "amount": 2
+        },
+        {
+          "item": {
+            "id": "item_62010",
+            "displayName": "태양 핵",
+            "iconName": "Solar_Core_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "genericIngredients": [
+        {
+          "key": "Any_SeaScavenge",
+          "amount": 5,
+          "genericItem": {
+            "key": "Any_SeaScavenge",
+            "tags": [
+              "item.gathering.sea"
+            ],
+            "iconName": "Any_sea_scavangeable_Sprite",
+            "displayName": "아무 바다 채취물",
+            "items": [
+              {
+                "id": "item_50302",
+                "displayName": "검은성게",
+                "iconName": "Black_sea_urchin_Sprite"
+              },
+              {
+                "id": "item_50303",
+                "displayName": "해조",
+                "iconName": "Seaweed_Sprite"
+              },
+              {
+                "id": "item_50306",
+                "displayName": "바다버섯",
+                "iconName": "Sea_Mushroom_Sprite"
+              },
+              {
+                "id": "item_50308",
+                "displayName": "푸른홍합",
+                "iconName": "Blue_Mussel_Sprite"
+              },
+              {
+                "id": "item_50309",
+                "displayName": "캘리코가리비",
+                "iconName": "Calico_Scallop_Sprite"
+              },
+              {
+                "id": "item_50310",
+                "displayName": "피조개",
+                "iconName": "Blood_Clam_Sprite"
+              },
+              {
+                "id": "item_50311",
+                "displayName": "참굴",
+                "iconName": "Pacific_Oyster_Sprite"
+              },
+              {
+                "id": "item_50313",
+                "displayName": "우럭조개",
+                "iconName": "Steamer_Clam_Sprite"
+              },
+              {
+                "id": "item_50315",
+                "displayName": "잭나이프 맛조개",
+                "iconName": "Jackknife_Clam_Sprite"
+              },
+              {
+                "id": "item_50316",
+                "displayName": "오리홍합",
+                "iconName": "Duck_Mussel_Sprite"
+              },
+              {
+                "id": "item_50318",
+                "displayName": "지중해가리비",
+                "iconName": "Mediterranean_Scallop_Sprite"
+              },
+              {
+                "id": "item_50320",
+                "displayName": "아라메",
+                "iconName": "Arame_Sprite"
+              },
+              {
+                "id": "item_50322",
+                "displayName": "대합",
+                "iconName": "Cherrystone_clam_Sprite"
+              },
+              {
+                "id": "item_50323",
+                "displayName": "노랑키조개",
+                "iconName": "Amber_pen_shell_Sprite"
+              },
+              {
+                "id": "item_50324",
+                "displayName": "얼룩말홍합",
+                "iconName": "Zebra_Mussel_Sprite"
+              },
+              {
+                "id": "item_50326",
+                "displayName": "동부굴",
+                "iconName": "Eastern_Oyster_Sprite"
+              },
+              {
+                "id": "item_50327",
+                "displayName": "벨론굴",
+                "iconName": "Belon_Oyster_Sprite"
+              },
+              {
+                "id": "item_50329",
+                "displayName": "보라성게",
+                "iconName": "Purple_urchin_Sprite"
+              },
+              {
+                "id": "item_50330",
+                "displayName": "꼬막",
+                "iconName": "Razor_Clam_Sprite"
+              },
+              {
+                "id": "item_50331",
+                "displayName": "초록입홍합",
+                "iconName": "Green_lipped_mussel_Sprite"
+              },
+              {
+                "id": "item_50332",
+                "displayName": "푸른굴",
+                "iconName": "Blue_oyster_Sprite"
+              },
+              {
+                "id": "item_50333",
+                "displayName": "구마모토굴",
+                "iconName": "Kumamoto_Oyster_Sprite"
+              },
+              {
+                "id": "item_50334",
+                "displayName": "국자가리비",
+                "iconName": "Bay_Scallop_Sprite"
+              },
+              {
+                "id": "item_50335",
+                "displayName": "파타고니아 가리비",
+                "iconName": "Patagonian_Scallop_Sprite"
+              },
+              {
+                "id": "item_50336",
+                "displayName": "Kombu",
+                "iconName": "Kombu_Sprite"
+              },
+              {
+                "id": "item_50337",
+                "displayName": "파래",
+                "iconName": "Sea_Lettuce_Sprite"
+              },
+              {
+                "id": "item_50338",
+                "displayName": "초록성게",
+                "iconName": "Green_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50339",
+                "displayName": "Quahog",
+                "iconName": "Quahog_Sprite"
+              },
+              {
+                "id": "item_50340",
+                "displayName": "코끼리조개",
+                "iconName": "Geoduck_Sprite"
+              },
+              {
+                "id": "item_50341",
+                "displayName": "말홍합",
+                "iconName": "Horse_Mussel_Sprite"
+              },
+              {
+                "id": "item_50342",
+                "displayName": "올림피아굴",
+                "iconName": "Olympia_oyster_Sprite"
+              },
+              {
+                "id": "item_50343",
+                "displayName": "여왕가리비",
+                "iconName": "Queen_Scallop_Sprite"
+              },
+              {
+                "id": "item_50344",
+                "displayName": "왕가리비",
+                "iconName": "King_Scallop_Sprite"
+              },
+              {
+                "id": "item_50345",
+                "displayName": "모자반",
+                "iconName": "Sea_Grapes_Sprite"
+              },
+              {
+                "id": "item_50346",
+                "displayName": "붉은성게",
+                "iconName": "Red_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50347",
+                "displayName": "하트성게",
+                "iconName": "Heart_Urchin_Sprite"
+              },
+              {
+                "id": "item_50348",
+                "displayName": "거위목따개비",
+                "iconName": "Gooseneck_Barnacle_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Farming",
+      "item": {
+        "id": "item_65776",
+        "displayName": "말미잘 자동 비료",
+        "price": 10,
+        "sellPrice": 10,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "살광기에 장착하는 말미잘. 비료를 채우면 자동으로 근처의 씨앗에 비료를 준다.",
+        "qualities": {},
+        "iconName": "Anemone_auto_fertilizer_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65777",
+      "displayName": "Anemone auto harvest",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_62007",
+            "displayName": "은 켈프 정수",
+            "iconName": "Silver_Kelp_Essence_Sprite"
+          },
+          "amount": 3
+        },
+        {
+          "item": {
+            "id": "item_50506",
+            "displayName": "슬라임 찐득이",
+            "iconName": "Slime_goop_Sprite"
+          },
+          "amount": 2
+        },
+        {
+          "item": {
+            "id": "item_62010",
+            "displayName": "태양 핵",
+            "iconName": "Solar_Core_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "genericIngredients": [
+        {
+          "key": "Any_SeaScavenge",
+          "amount": 5,
+          "genericItem": {
+            "key": "Any_SeaScavenge",
+            "tags": [
+              "item.gathering.sea"
+            ],
+            "iconName": "Any_sea_scavangeable_Sprite",
+            "displayName": "아무 바다 채취물",
+            "items": [
+              {
+                "id": "item_50302",
+                "displayName": "검은성게",
+                "iconName": "Black_sea_urchin_Sprite"
+              },
+              {
+                "id": "item_50303",
+                "displayName": "해조",
+                "iconName": "Seaweed_Sprite"
+              },
+              {
+                "id": "item_50306",
+                "displayName": "바다버섯",
+                "iconName": "Sea_Mushroom_Sprite"
+              },
+              {
+                "id": "item_50308",
+                "displayName": "푸른홍합",
+                "iconName": "Blue_Mussel_Sprite"
+              },
+              {
+                "id": "item_50309",
+                "displayName": "캘리코가리비",
+                "iconName": "Calico_Scallop_Sprite"
+              },
+              {
+                "id": "item_50310",
+                "displayName": "피조개",
+                "iconName": "Blood_Clam_Sprite"
+              },
+              {
+                "id": "item_50311",
+                "displayName": "참굴",
+                "iconName": "Pacific_Oyster_Sprite"
+              },
+              {
+                "id": "item_50313",
+                "displayName": "우럭조개",
+                "iconName": "Steamer_Clam_Sprite"
+              },
+              {
+                "id": "item_50315",
+                "displayName": "잭나이프 맛조개",
+                "iconName": "Jackknife_Clam_Sprite"
+              },
+              {
+                "id": "item_50316",
+                "displayName": "오리홍합",
+                "iconName": "Duck_Mussel_Sprite"
+              },
+              {
+                "id": "item_50318",
+                "displayName": "지중해가리비",
+                "iconName": "Mediterranean_Scallop_Sprite"
+              },
+              {
+                "id": "item_50320",
+                "displayName": "아라메",
+                "iconName": "Arame_Sprite"
+              },
+              {
+                "id": "item_50322",
+                "displayName": "대합",
+                "iconName": "Cherrystone_clam_Sprite"
+              },
+              {
+                "id": "item_50323",
+                "displayName": "노랑키조개",
+                "iconName": "Amber_pen_shell_Sprite"
+              },
+              {
+                "id": "item_50324",
+                "displayName": "얼룩말홍합",
+                "iconName": "Zebra_Mussel_Sprite"
+              },
+              {
+                "id": "item_50326",
+                "displayName": "동부굴",
+                "iconName": "Eastern_Oyster_Sprite"
+              },
+              {
+                "id": "item_50327",
+                "displayName": "벨론굴",
+                "iconName": "Belon_Oyster_Sprite"
+              },
+              {
+                "id": "item_50329",
+                "displayName": "보라성게",
+                "iconName": "Purple_urchin_Sprite"
+              },
+              {
+                "id": "item_50330",
+                "displayName": "꼬막",
+                "iconName": "Razor_Clam_Sprite"
+              },
+              {
+                "id": "item_50331",
+                "displayName": "초록입홍합",
+                "iconName": "Green_lipped_mussel_Sprite"
+              },
+              {
+                "id": "item_50332",
+                "displayName": "푸른굴",
+                "iconName": "Blue_oyster_Sprite"
+              },
+              {
+                "id": "item_50333",
+                "displayName": "구마모토굴",
+                "iconName": "Kumamoto_Oyster_Sprite"
+              },
+              {
+                "id": "item_50334",
+                "displayName": "국자가리비",
+                "iconName": "Bay_Scallop_Sprite"
+              },
+              {
+                "id": "item_50335",
+                "displayName": "파타고니아 가리비",
+                "iconName": "Patagonian_Scallop_Sprite"
+              },
+              {
+                "id": "item_50336",
+                "displayName": "Kombu",
+                "iconName": "Kombu_Sprite"
+              },
+              {
+                "id": "item_50337",
+                "displayName": "파래",
+                "iconName": "Sea_Lettuce_Sprite"
+              },
+              {
+                "id": "item_50338",
+                "displayName": "초록성게",
+                "iconName": "Green_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50339",
+                "displayName": "Quahog",
+                "iconName": "Quahog_Sprite"
+              },
+              {
+                "id": "item_50340",
+                "displayName": "코끼리조개",
+                "iconName": "Geoduck_Sprite"
+              },
+              {
+                "id": "item_50341",
+                "displayName": "말홍합",
+                "iconName": "Horse_Mussel_Sprite"
+              },
+              {
+                "id": "item_50342",
+                "displayName": "올림피아굴",
+                "iconName": "Olympia_oyster_Sprite"
+              },
+              {
+                "id": "item_50343",
+                "displayName": "여왕가리비",
+                "iconName": "Queen_Scallop_Sprite"
+              },
+              {
+                "id": "item_50344",
+                "displayName": "왕가리비",
+                "iconName": "King_Scallop_Sprite"
+              },
+              {
+                "id": "item_50345",
+                "displayName": "모자반",
+                "iconName": "Sea_Grapes_Sprite"
+              },
+              {
+                "id": "item_50346",
+                "displayName": "붉은성게",
+                "iconName": "Red_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50347",
+                "displayName": "하트성게",
+                "iconName": "Heart_Urchin_Sprite"
+              },
+              {
+                "id": "item_50348",
+                "displayName": "거위목따개비",
+                "iconName": "Gooseneck_Barnacle_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Farming",
+      "item": {
+        "id": "item_65777",
+        "displayName": "말미잘 자동 수확",
+        "price": 10,
+        "sellPrice": 10,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "살광기에 장착하는 말미잘. 자동으로 수중 작물을 수확한다.",
+        "qualities": {},
+        "iconName": "Anemone_auto_harvest_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65778",
+      "displayName": "Anemone auto seed",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_62006",
+            "displayName": "금 켈프 정수",
+            "iconName": "Gold_Kelp_Essence_Sprite"
+          },
+          "amount": 3
+        },
+        {
+          "item": {
+            "id": "item_50506",
+            "displayName": "슬라임 찐득이",
+            "iconName": "Slime_goop_Sprite"
+          },
+          "amount": 2
+        },
+        {
+          "item": {
+            "id": "item_62010",
+            "displayName": "태양 핵",
+            "iconName": "Solar_Core_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "genericIngredients": [
+        {
+          "key": "Any_SeaScavenge",
+          "amount": 5,
+          "genericItem": {
+            "key": "Any_SeaScavenge",
+            "tags": [
+              "item.gathering.sea"
+            ],
+            "iconName": "Any_sea_scavangeable_Sprite",
+            "displayName": "아무 바다 채취물",
+            "items": [
+              {
+                "id": "item_50302",
+                "displayName": "검은성게",
+                "iconName": "Black_sea_urchin_Sprite"
+              },
+              {
+                "id": "item_50303",
+                "displayName": "해조",
+                "iconName": "Seaweed_Sprite"
+              },
+              {
+                "id": "item_50306",
+                "displayName": "바다버섯",
+                "iconName": "Sea_Mushroom_Sprite"
+              },
+              {
+                "id": "item_50308",
+                "displayName": "푸른홍합",
+                "iconName": "Blue_Mussel_Sprite"
+              },
+              {
+                "id": "item_50309",
+                "displayName": "캘리코가리비",
+                "iconName": "Calico_Scallop_Sprite"
+              },
+              {
+                "id": "item_50310",
+                "displayName": "피조개",
+                "iconName": "Blood_Clam_Sprite"
+              },
+              {
+                "id": "item_50311",
+                "displayName": "참굴",
+                "iconName": "Pacific_Oyster_Sprite"
+              },
+              {
+                "id": "item_50313",
+                "displayName": "우럭조개",
+                "iconName": "Steamer_Clam_Sprite"
+              },
+              {
+                "id": "item_50315",
+                "displayName": "잭나이프 맛조개",
+                "iconName": "Jackknife_Clam_Sprite"
+              },
+              {
+                "id": "item_50316",
+                "displayName": "오리홍합",
+                "iconName": "Duck_Mussel_Sprite"
+              },
+              {
+                "id": "item_50318",
+                "displayName": "지중해가리비",
+                "iconName": "Mediterranean_Scallop_Sprite"
+              },
+              {
+                "id": "item_50320",
+                "displayName": "아라메",
+                "iconName": "Arame_Sprite"
+              },
+              {
+                "id": "item_50322",
+                "displayName": "대합",
+                "iconName": "Cherrystone_clam_Sprite"
+              },
+              {
+                "id": "item_50323",
+                "displayName": "노랑키조개",
+                "iconName": "Amber_pen_shell_Sprite"
+              },
+              {
+                "id": "item_50324",
+                "displayName": "얼룩말홍합",
+                "iconName": "Zebra_Mussel_Sprite"
+              },
+              {
+                "id": "item_50326",
+                "displayName": "동부굴",
+                "iconName": "Eastern_Oyster_Sprite"
+              },
+              {
+                "id": "item_50327",
+                "displayName": "벨론굴",
+                "iconName": "Belon_Oyster_Sprite"
+              },
+              {
+                "id": "item_50329",
+                "displayName": "보라성게",
+                "iconName": "Purple_urchin_Sprite"
+              },
+              {
+                "id": "item_50330",
+                "displayName": "꼬막",
+                "iconName": "Razor_Clam_Sprite"
+              },
+              {
+                "id": "item_50331",
+                "displayName": "초록입홍합",
+                "iconName": "Green_lipped_mussel_Sprite"
+              },
+              {
+                "id": "item_50332",
+                "displayName": "푸른굴",
+                "iconName": "Blue_oyster_Sprite"
+              },
+              {
+                "id": "item_50333",
+                "displayName": "구마모토굴",
+                "iconName": "Kumamoto_Oyster_Sprite"
+              },
+              {
+                "id": "item_50334",
+                "displayName": "국자가리비",
+                "iconName": "Bay_Scallop_Sprite"
+              },
+              {
+                "id": "item_50335",
+                "displayName": "파타고니아 가리비",
+                "iconName": "Patagonian_Scallop_Sprite"
+              },
+              {
+                "id": "item_50336",
+                "displayName": "Kombu",
+                "iconName": "Kombu_Sprite"
+              },
+              {
+                "id": "item_50337",
+                "displayName": "파래",
+                "iconName": "Sea_Lettuce_Sprite"
+              },
+              {
+                "id": "item_50338",
+                "displayName": "초록성게",
+                "iconName": "Green_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50339",
+                "displayName": "Quahog",
+                "iconName": "Quahog_Sprite"
+              },
+              {
+                "id": "item_50340",
+                "displayName": "코끼리조개",
+                "iconName": "Geoduck_Sprite"
+              },
+              {
+                "id": "item_50341",
+                "displayName": "말홍합",
+                "iconName": "Horse_Mussel_Sprite"
+              },
+              {
+                "id": "item_50342",
+                "displayName": "올림피아굴",
+                "iconName": "Olympia_oyster_Sprite"
+              },
+              {
+                "id": "item_50343",
+                "displayName": "여왕가리비",
+                "iconName": "Queen_Scallop_Sprite"
+              },
+              {
+                "id": "item_50344",
+                "displayName": "왕가리비",
+                "iconName": "King_Scallop_Sprite"
+              },
+              {
+                "id": "item_50345",
+                "displayName": "모자반",
+                "iconName": "Sea_Grapes_Sprite"
+              },
+              {
+                "id": "item_50346",
+                "displayName": "붉은성게",
+                "iconName": "Red_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50347",
+                "displayName": "하트성게",
+                "iconName": "Heart_Urchin_Sprite"
+              },
+              {
+                "id": "item_50348",
+                "displayName": "거위목따개비",
+                "iconName": "Gooseneck_Barnacle_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Farming",
+      "item": {
+        "id": "item_65778",
+        "displayName": "말미잘 자동 씨앗",
+        "price": 10,
+        "sellPrice": 10,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "살광기에 장착하는 말미잘. 씨앗을 채우면 자동으로 비어 있는 경작된 흙에 씨앗을 심는다.",
+        "qualities": {},
+        "iconName": "Anemone_auto_seed_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65779",
+      "displayName": "Anemone auto SFH",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_62008",
+            "displayName": "오스뮴 켈프 정수",
+            "iconName": "Osmium_Kelp_Essence_Sprite"
+          },
+          "amount": 3
+        },
+        {
+          "item": {
+            "id": "item_50506",
+            "displayName": "슬라임 찐득이",
+            "iconName": "Slime_goop_Sprite"
+          },
+          "amount": 2
+        },
+        {
+          "item": {
+            "id": "item_62010",
+            "displayName": "태양 핵",
+            "iconName": "Solar_Core_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "genericIngredients": [
+        {
+          "key": "Any_SeaScavenge",
+          "amount": 5,
+          "genericItem": {
+            "key": "Any_SeaScavenge",
+            "tags": [
+              "item.gathering.sea"
+            ],
+            "iconName": "Any_sea_scavangeable_Sprite",
+            "displayName": "아무 바다 채취물",
+            "items": [
+              {
+                "id": "item_50302",
+                "displayName": "검은성게",
+                "iconName": "Black_sea_urchin_Sprite"
+              },
+              {
+                "id": "item_50303",
+                "displayName": "해조",
+                "iconName": "Seaweed_Sprite"
+              },
+              {
+                "id": "item_50306",
+                "displayName": "바다버섯",
+                "iconName": "Sea_Mushroom_Sprite"
+              },
+              {
+                "id": "item_50308",
+                "displayName": "푸른홍합",
+                "iconName": "Blue_Mussel_Sprite"
+              },
+              {
+                "id": "item_50309",
+                "displayName": "캘리코가리비",
+                "iconName": "Calico_Scallop_Sprite"
+              },
+              {
+                "id": "item_50310",
+                "displayName": "피조개",
+                "iconName": "Blood_Clam_Sprite"
+              },
+              {
+                "id": "item_50311",
+                "displayName": "참굴",
+                "iconName": "Pacific_Oyster_Sprite"
+              },
+              {
+                "id": "item_50313",
+                "displayName": "우럭조개",
+                "iconName": "Steamer_Clam_Sprite"
+              },
+              {
+                "id": "item_50315",
+                "displayName": "잭나이프 맛조개",
+                "iconName": "Jackknife_Clam_Sprite"
+              },
+              {
+                "id": "item_50316",
+                "displayName": "오리홍합",
+                "iconName": "Duck_Mussel_Sprite"
+              },
+              {
+                "id": "item_50318",
+                "displayName": "지중해가리비",
+                "iconName": "Mediterranean_Scallop_Sprite"
+              },
+              {
+                "id": "item_50320",
+                "displayName": "아라메",
+                "iconName": "Arame_Sprite"
+              },
+              {
+                "id": "item_50322",
+                "displayName": "대합",
+                "iconName": "Cherrystone_clam_Sprite"
+              },
+              {
+                "id": "item_50323",
+                "displayName": "노랑키조개",
+                "iconName": "Amber_pen_shell_Sprite"
+              },
+              {
+                "id": "item_50324",
+                "displayName": "얼룩말홍합",
+                "iconName": "Zebra_Mussel_Sprite"
+              },
+              {
+                "id": "item_50326",
+                "displayName": "동부굴",
+                "iconName": "Eastern_Oyster_Sprite"
+              },
+              {
+                "id": "item_50327",
+                "displayName": "벨론굴",
+                "iconName": "Belon_Oyster_Sprite"
+              },
+              {
+                "id": "item_50329",
+                "displayName": "보라성게",
+                "iconName": "Purple_urchin_Sprite"
+              },
+              {
+                "id": "item_50330",
+                "displayName": "꼬막",
+                "iconName": "Razor_Clam_Sprite"
+              },
+              {
+                "id": "item_50331",
+                "displayName": "초록입홍합",
+                "iconName": "Green_lipped_mussel_Sprite"
+              },
+              {
+                "id": "item_50332",
+                "displayName": "푸른굴",
+                "iconName": "Blue_oyster_Sprite"
+              },
+              {
+                "id": "item_50333",
+                "displayName": "구마모토굴",
+                "iconName": "Kumamoto_Oyster_Sprite"
+              },
+              {
+                "id": "item_50334",
+                "displayName": "국자가리비",
+                "iconName": "Bay_Scallop_Sprite"
+              },
+              {
+                "id": "item_50335",
+                "displayName": "파타고니아 가리비",
+                "iconName": "Patagonian_Scallop_Sprite"
+              },
+              {
+                "id": "item_50336",
+                "displayName": "Kombu",
+                "iconName": "Kombu_Sprite"
+              },
+              {
+                "id": "item_50337",
+                "displayName": "파래",
+                "iconName": "Sea_Lettuce_Sprite"
+              },
+              {
+                "id": "item_50338",
+                "displayName": "초록성게",
+                "iconName": "Green_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50339",
+                "displayName": "Quahog",
+                "iconName": "Quahog_Sprite"
+              },
+              {
+                "id": "item_50340",
+                "displayName": "코끼리조개",
+                "iconName": "Geoduck_Sprite"
+              },
+              {
+                "id": "item_50341",
+                "displayName": "말홍합",
+                "iconName": "Horse_Mussel_Sprite"
+              },
+              {
+                "id": "item_50342",
+                "displayName": "올림피아굴",
+                "iconName": "Olympia_oyster_Sprite"
+              },
+              {
+                "id": "item_50343",
+                "displayName": "여왕가리비",
+                "iconName": "Queen_Scallop_Sprite"
+              },
+              {
+                "id": "item_50344",
+                "displayName": "왕가리비",
+                "iconName": "King_Scallop_Sprite"
+              },
+              {
+                "id": "item_50345",
+                "displayName": "모자반",
+                "iconName": "Sea_Grapes_Sprite"
+              },
+              {
+                "id": "item_50346",
+                "displayName": "붉은성게",
+                "iconName": "Red_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50347",
+                "displayName": "하트성게",
+                "iconName": "Heart_Urchin_Sprite"
+              },
+              {
+                "id": "item_50348",
+                "displayName": "거위목따개비",
+                "iconName": "Gooseneck_Barnacle_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Farming",
+      "item": {
+        "id": "item_65779",
+        "displayName": "말미잘 자동 씨앗, 비료, 수확",
+        "price": 10,
+        "sellPrice": 10,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "살광기에 장착하는 말미잘. 비어 있는 경작된 흙에 자동으로 비료를 주고, 씨앗을 심고, 농작물을 수확한다.",
+        "qualities": {},
+        "iconName": "Anemone_auto_SFH_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65820",
+      "displayName": "Weather conch",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_62010",
+            "displayName": "태양 핵",
+            "iconName": "Solar_Core_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_50514",
+            "displayName": "바람 정수",
+            "iconName": "Wind_essence_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_50513",
+            "displayName": "물 정수",
+            "iconName": "Water_essence_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "genericIngredients": [
+        {
+          "key": "Any_SeaScavenge",
+          "amount": 2,
+          "genericItem": {
+            "key": "Any_SeaScavenge",
+            "tags": [
+              "item.gathering.sea"
+            ],
+            "iconName": "Any_sea_scavangeable_Sprite",
+            "displayName": "아무 바다 채취물",
+            "items": [
+              {
+                "id": "item_50302",
+                "displayName": "검은성게",
+                "iconName": "Black_sea_urchin_Sprite"
+              },
+              {
+                "id": "item_50303",
+                "displayName": "해조",
+                "iconName": "Seaweed_Sprite"
+              },
+              {
+                "id": "item_50306",
+                "displayName": "바다버섯",
+                "iconName": "Sea_Mushroom_Sprite"
+              },
+              {
+                "id": "item_50308",
+                "displayName": "푸른홍합",
+                "iconName": "Blue_Mussel_Sprite"
+              },
+              {
+                "id": "item_50309",
+                "displayName": "캘리코가리비",
+                "iconName": "Calico_Scallop_Sprite"
+              },
+              {
+                "id": "item_50310",
+                "displayName": "피조개",
+                "iconName": "Blood_Clam_Sprite"
+              },
+              {
+                "id": "item_50311",
+                "displayName": "참굴",
+                "iconName": "Pacific_Oyster_Sprite"
+              },
+              {
+                "id": "item_50313",
+                "displayName": "우럭조개",
+                "iconName": "Steamer_Clam_Sprite"
+              },
+              {
+                "id": "item_50315",
+                "displayName": "잭나이프 맛조개",
+                "iconName": "Jackknife_Clam_Sprite"
+              },
+              {
+                "id": "item_50316",
+                "displayName": "오리홍합",
+                "iconName": "Duck_Mussel_Sprite"
+              },
+              {
+                "id": "item_50318",
+                "displayName": "지중해가리비",
+                "iconName": "Mediterranean_Scallop_Sprite"
+              },
+              {
+                "id": "item_50320",
+                "displayName": "아라메",
+                "iconName": "Arame_Sprite"
+              },
+              {
+                "id": "item_50322",
+                "displayName": "대합",
+                "iconName": "Cherrystone_clam_Sprite"
+              },
+              {
+                "id": "item_50323",
+                "displayName": "노랑키조개",
+                "iconName": "Amber_pen_shell_Sprite"
+              },
+              {
+                "id": "item_50324",
+                "displayName": "얼룩말홍합",
+                "iconName": "Zebra_Mussel_Sprite"
+              },
+              {
+                "id": "item_50326",
+                "displayName": "동부굴",
+                "iconName": "Eastern_Oyster_Sprite"
+              },
+              {
+                "id": "item_50327",
+                "displayName": "벨론굴",
+                "iconName": "Belon_Oyster_Sprite"
+              },
+              {
+                "id": "item_50329",
+                "displayName": "보라성게",
+                "iconName": "Purple_urchin_Sprite"
+              },
+              {
+                "id": "item_50330",
+                "displayName": "꼬막",
+                "iconName": "Razor_Clam_Sprite"
+              },
+              {
+                "id": "item_50331",
+                "displayName": "초록입홍합",
+                "iconName": "Green_lipped_mussel_Sprite"
+              },
+              {
+                "id": "item_50332",
+                "displayName": "푸른굴",
+                "iconName": "Blue_oyster_Sprite"
+              },
+              {
+                "id": "item_50333",
+                "displayName": "구마모토굴",
+                "iconName": "Kumamoto_Oyster_Sprite"
+              },
+              {
+                "id": "item_50334",
+                "displayName": "국자가리비",
+                "iconName": "Bay_Scallop_Sprite"
+              },
+              {
+                "id": "item_50335",
+                "displayName": "파타고니아 가리비",
+                "iconName": "Patagonian_Scallop_Sprite"
+              },
+              {
+                "id": "item_50336",
+                "displayName": "Kombu",
+                "iconName": "Kombu_Sprite"
+              },
+              {
+                "id": "item_50337",
+                "displayName": "파래",
+                "iconName": "Sea_Lettuce_Sprite"
+              },
+              {
+                "id": "item_50338",
+                "displayName": "초록성게",
+                "iconName": "Green_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50339",
+                "displayName": "Quahog",
+                "iconName": "Quahog_Sprite"
+              },
+              {
+                "id": "item_50340",
+                "displayName": "코끼리조개",
+                "iconName": "Geoduck_Sprite"
+              },
+              {
+                "id": "item_50341",
+                "displayName": "말홍합",
+                "iconName": "Horse_Mussel_Sprite"
+              },
+              {
+                "id": "item_50342",
+                "displayName": "올림피아굴",
+                "iconName": "Olympia_oyster_Sprite"
+              },
+              {
+                "id": "item_50343",
+                "displayName": "여왕가리비",
+                "iconName": "Queen_Scallop_Sprite"
+              },
+              {
+                "id": "item_50344",
+                "displayName": "왕가리비",
+                "iconName": "King_Scallop_Sprite"
+              },
+              {
+                "id": "item_50345",
+                "displayName": "모자반",
+                "iconName": "Sea_Grapes_Sprite"
+              },
+              {
+                "id": "item_50346",
+                "displayName": "붉은성게",
+                "iconName": "Red_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50347",
+                "displayName": "하트성게",
+                "iconName": "Heart_Urchin_Sprite"
+              },
+              {
+                "id": "item_50348",
+                "displayName": "거위목따개비",
+                "iconName": "Gooseneck_Barnacle_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Misc",
+      "item": {
+        "id": "item_65820",
+        "displayName": "날씨 소라고둥",
+        "price": 10,
+        "sellPrice": 0,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Others",
+        "displayKey": "Others",
+        "description": "날씨를 바꾸는 능력을 부여하는 신비로운 소라고둥. 그러나 대가가 따르니 사용 시 주의하자.",
+        "qualities": {},
+        "iconName": "Weather_Conch_Sprite",
         "tags": []
       }
     }

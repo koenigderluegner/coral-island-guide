@@ -81,11 +81,122 @@
         },
         "isUsingSpecificDate": false,
         "dateRangeList": []
+      },
+      {
+        "key": "Arapaima_DeepForest",
+        "spawnArea": {
+          "canBeCatchOnCave": false,
+          "canBeCatchOnLake": false,
+          "canBeCatchOnOcean": true,
+          "canBeCatchOnPond": false,
+          "canBeCatchOnRiver": true
+        },
+        "spawnLocation": [
+          "Deep Forest"
+        ],
+        "spawnTime": {
+          "morning": true,
+          "afternoon": true,
+          "evening": true,
+          "night": true
+        },
+        "spawnWeather": {
+          "sunny": true,
+          "rain": true,
+          "snow": true,
+          "blizzard": true,
+          "windy": true,
+          "storm": true
+        },
+        "spawnSeason": {
+          "spring": true,
+          "summer": false,
+          "fall": false,
+          "winter": true
+        },
+        "isUsingSpecificDate": false,
+        "dateRangeList": []
+      },
+      {
+        "key": "Arapaima_Savannah",
+        "spawnArea": {
+          "canBeCatchOnCave": false,
+          "canBeCatchOnLake": false,
+          "canBeCatchOnOcean": false,
+          "canBeCatchOnPond": false,
+          "canBeCatchOnRiver": false
+        },
+        "spawnLocation": [
+          "Savannah"
+        ],
+        "spawnTime": {
+          "morning": true,
+          "afternoon": true,
+          "evening": true,
+          "night": true
+        },
+        "spawnWeather": {
+          "sunny": true,
+          "rain": true,
+          "snow": true,
+          "blizzard": true,
+          "windy": true,
+          "storm": true
+        },
+        "spawnSeason": {
+          "spring": true,
+          "summer": true,
+          "fall": true,
+          "winter": true
+        },
+        "isUsingSpecificDate": false,
+        "dateRangeList": []
       }
     ],
     "pattern": "Stay",
     "difficulty": "VeryHard"
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 8,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_71017",
+          "displayName": "Arapaima",
+          "iconName": "Arapaima_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_71017",
+          "displayName": "Arapaima",
+          "iconName": "Arapaima_Sprite",
+          "sellPrice": 240
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 15,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
     {
       "useCategory": false,
@@ -468,17 +579,22 @@
             },
             {
               "id": "item_21071",
-              "displayName": "Sproutfruit",
+              "displayName": "Fruit de pousse",
               "iconName": "Sproutfruit_Sprite"
             },
             {
+              "id": "item_21075",
+              "displayName": "Chapeau-corail rose",
+              "iconName": "Pink_Coralcap_Sprite"
+            },
+            {
               "id": "item_21077",
-              "displayName": "Bluebell blossom",
+              "displayName": "Jacinthe sauvage",
               "iconName": "Bluebell_Blossom_Sprite"
             },
             {
               "id": "item_21078",
-              "displayName": "Goldglow",
+              "displayName": "Éclat d'or",
               "iconName": "Goldglow_Sprite"
             },
             {
@@ -488,23 +604,38 @@
             },
             {
               "id": "item_21080",
-              "displayName": "Helixpur blossom",
+              "displayName": "Fleur d'helixpur",
               "iconName": "Helixpur_Blossom_Sprite"
             },
             {
               "id": "item_21081",
-              "displayName": "Marinethorn blossom",
+              "displayName": "Fleur de marinépine",
               "iconName": "Marinethorn_Blossom_Sprite"
             },
             {
               "id": "item_21082",
-              "displayName": "Sea spud",
+              "displayName": "Patate de mer",
               "iconName": "Sea_Spud_Sprite"
             },
             {
               "id": "item_21084",
-              "displayName": "Petalia",
+              "displayName": "Pétalia",
               "iconName": "Petalia_Sprite"
+            },
+            {
+              "id": "item_21085",
+              "displayName": "Graines d'arbre à champignons",
+              "iconName": "Mushroom_tree_seeds_Sprite"
+            },
+            {
+              "id": "item_21086",
+              "displayName": "Graines de shrombaas",
+              "iconName": "Wooblecap_seeds_Sprite"
+            },
+            {
+              "id": "item_21087",
+              "displayName": "Graines de sporelunes",
+              "iconName": "Moonspore_seeds_Sprite"
             },
             {
               "id": "item_22001",
@@ -1525,6 +1656,45 @@
         }
       },
       "machine": "CompostBin"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 8,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_71017",
+          "displayName": "Arapaima",
+          "iconName": "Arapaima_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_71017",
+          "displayName": "Arapaima",
+          "iconName": "Arapaima_Sprite",
+          "sellPrice": 240
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 15,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -2586,7 +2756,8 @@
             }
           ]
         }
-      ]
+      ],
+      "isHeritageOffering": false
     }
   ]
 }

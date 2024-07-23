@@ -33,9 +33,69 @@
     "tags": [
       "income.bugcatching",
       "item.insect.uncommon",
-      "item.insect"
+      "item.insect",
+      "item.insect.Beetle"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 3,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_132004",
+          "displayName": "提琴虫",
+          "iconName": "Violin_Beetle_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_132004",
+          "displayName": "提琴虫",
+          "iconName": "Violin_Beetle_Sprite",
+          "sellPrice": 100
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 0,
+          "time": {
+            "hours": 5,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
     {
       "useCategory": false,
@@ -422,8 +482,13 @@
               "iconName": "Sproutfruit_Sprite"
             },
             {
+              "id": "item_21075",
+              "displayName": "粉色珊瑚草",
+              "iconName": "Pink_Coralcap_Sprite"
+            },
+            {
               "id": "item_21077",
-              "displayName": "蓝铃花绽放",
+              "displayName": "蓝铃花",
               "iconName": "Bluebell_Blossom_Sprite"
             },
             {
@@ -455,6 +520,21 @@
               "id": "item_21084",
               "displayName": "大丽香",
               "iconName": "Petalia_Sprite"
+            },
+            {
+              "id": "item_21085",
+              "displayName": "蘑菇树种子",
+              "iconName": "Mushroom_tree_seeds_Sprite"
+            },
+            {
+              "id": "item_21086",
+              "displayName": "月芽孢种子",
+              "iconName": "Wooblecap_seeds_Sprite"
+            },
+            {
+              "id": "item_21087",
+              "displayName": "蘑菇伞",
+              "iconName": "Moonspore_seeds_Sprite"
             },
             {
               "id": "item_22001",
@@ -653,7 +733,7 @@
             },
             {
               "id": "item_50306",
-              "displayName": "海蘑菇",
+              "displayName": "海菇",
               "iconName": "Sea_Mushroom_Sprite"
             },
             {
@@ -758,7 +838,7 @@
             },
             {
               "id": "item_51106",
-              "displayName": "洋水仙",
+              "displayName": "水仙花",
               "iconName": "Daffodil_Sprite"
             },
             {
@@ -938,7 +1018,7 @@
             },
             {
               "id": "item_71008",
-              "displayName": "短吻鳄雀鳝",
+              "displayName": "福鱷",
               "iconName": "Gator_Gar_Sprite"
             },
             {
@@ -1475,6 +1555,63 @@
         }
       },
       "machine": "CompostBin"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 3,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_132004",
+          "displayName": "提琴虫",
+          "iconName": "Violin_Beetle_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_132004",
+          "displayName": "提琴虫",
+          "iconName": "Violin_Beetle_Sprite",
+          "sellPrice": 100
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 0,
+          "time": {
+            "hours": 5,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -1530,10 +1667,7 @@
           "genericItem": {
             "key": "Generic_Insect",
             "tags": [
-              "item.insect.common",
-              "item.insect.rare",
-              "item.insect.superrare",
-              "item.insect.uncommon"
+              "item.insect"
             ],
             "iconName": "T_AnyInsect_Sprite",
             "displayName": "任何昆虫"
@@ -1542,7 +1676,21 @@
         }
       ],
       "ingredients": [],
-      "eitherOrIngredients": []
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "任何昆虫": [
+          {
+            "id": "item_132007",
+            "displayName": "苍蝇",
+            "iconName": "Fly_Sprite"
+          },
+          {
+            "id": "item_132011",
+            "displayName": "蜗牛",
+            "iconName": "Snail_Sprite"
+          }
+        ]
+      }
     }
   ],
   "usedToCraft": [
@@ -1567,10 +1715,7 @@
           "genericItem": {
             "key": "Generic_Insect",
             "tags": [
-              "item.insect.common",
-              "item.insect.rare",
-              "item.insect.superrare",
-              "item.insect.uncommon"
+              "item.insect"
             ],
             "iconName": "T_AnyInsect_Sprite",
             "displayName": "任何昆虫",
@@ -1696,19 +1841,19 @@
                 "iconName": "Orchid_Mantis_Sprite"
               },
               {
-                "id": "item_132007",
-                "displayName": "苍蝇",
-                "iconName": "Fly_Sprite"
+                "id": "item_132008",
+                "displayName": "蓝闪蝶",
+                "iconName": "Blue_Morpho_Butterfly_Sprite"
+              },
+              {
+                "id": "item_132009",
+                "displayName": "冠细纹蝶",
+                "iconName": "Crowned_Hairstreak_Butterfly_Sprite"
               },
               {
                 "id": "item_132010",
                 "displayName": "寡妇蜘蛛",
                 "iconName": "Widow_Spider_Sprite"
-              },
-              {
-                "id": "item_132011",
-                "displayName": "蜗牛",
-                "iconName": "Snail_Sprite"
               },
               {
                 "id": "item_132012",
@@ -1764,6 +1909,11 @@
                 "id": "item_133007",
                 "displayName": "栎蛱蝶",
                 "iconName": "Janetta_Forester_Butterfly_Sprite"
+              },
+              {
+                "id": "item_133008",
+                "displayName": "捕鸟蛛",
+                "iconName": "Tarantula_Sprite"
               },
               {
                 "id": "item_133009",
@@ -1891,7 +2041,8 @@
       "tags": [
         "income.bugcatching",
         "item.insect.uncommon",
-        "item.insect"
+        "item.insect",
+        "item.insect.Beetle"
       ]
     },
     "spawnSeason": {
