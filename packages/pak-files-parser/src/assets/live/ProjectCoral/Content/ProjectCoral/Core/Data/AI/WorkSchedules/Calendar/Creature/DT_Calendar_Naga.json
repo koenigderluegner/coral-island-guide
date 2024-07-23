@@ -10,7 +10,7 @@
       }
     },
     "Rows": {
-      "Everyday": {
+      "SpringSummerFallWinter_MTTRFSTSN": {
         "dateOverrides": [],
         "validFrom": {
           "day": 1,
@@ -30,7 +30,6 @@
               "daysOfTheWeek": [
                 "EC_DayOfTheWeek::Monday",
                 "EC_DayOfTheWeek::Tuesday",
-                "EC_DayOfTheWeek::Wednesday",
                 "EC_DayOfTheWeek::Thursday",
                 "EC_DayOfTheWeek::Friday",
                 "EC_DayOfTheWeek::Saturday",
@@ -43,7 +42,6 @@
               "daysOfTheWeek": [
                 "EC_DayOfTheWeek::Monday",
                 "EC_DayOfTheWeek::Tuesday",
-                "EC_DayOfTheWeek::Wednesday",
                 "EC_DayOfTheWeek::Thursday",
                 "EC_DayOfTheWeek::Friday",
                 "EC_DayOfTheWeek::Saturday",
@@ -56,7 +54,6 @@
               "daysOfTheWeek": [
                 "EC_DayOfTheWeek::Monday",
                 "EC_DayOfTheWeek::Tuesday",
-                "EC_DayOfTheWeek::Wednesday",
                 "EC_DayOfTheWeek::Thursday",
                 "EC_DayOfTheWeek::Friday",
                 "EC_DayOfTheWeek::Saturday",
@@ -69,11 +66,61 @@
               "daysOfTheWeek": [
                 "EC_DayOfTheWeek::Monday",
                 "EC_DayOfTheWeek::Tuesday",
-                "EC_DayOfTheWeek::Wednesday",
                 "EC_DayOfTheWeek::Thursday",
                 "EC_DayOfTheWeek::Friday",
                 "EC_DayOfTheWeek::Saturday",
                 "EC_DayOfTheWeek::Sunday"
+              ]
+            }
+          }
+        ],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'DA_NagaUnlock'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/Diving/DA_NagaUnlock.1"
+        }
+      },
+      "SpringSummerFallWinter_W": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Wednesday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Summer": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Wednesday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Wednesday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Wednesday"
               ]
             }
           }
@@ -127,6 +174,19 @@
           },
           {
             "EC_Weather::Storm": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Monday",
+                "EC_DayOfTheWeek::Tuesday",
+                "EC_DayOfTheWeek::Wednesday",
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday",
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
+          },
+          {
+            "EC_Weather::Blizzard": {
               "daysOfTheWeek": [
                 "EC_DayOfTheWeek::Monday",
                 "EC_DayOfTheWeek::Tuesday",

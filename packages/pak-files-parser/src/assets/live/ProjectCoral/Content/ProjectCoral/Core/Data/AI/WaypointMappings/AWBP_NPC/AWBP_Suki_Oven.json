@@ -13,6 +13,28 @@
         "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
       },
       {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'C_TimeManager:DelegateOnTimeStateChanged__DelegateSignature'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      },
+      {
         "Type": "EnumProperty",
         "Name": "K2Node_Event_context",
         "Flags": "RF_Public",
@@ -50,9 +72,96 @@
         "FieldMask": 255,
         "BoolSize": 1,
         "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_Event_newState",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetGameState_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'GameStateBase'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsC_Game_State",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'C_GameState'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetTimeManager_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'C_TimeManager'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
       }
     ],
     "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "DayInitDelegate_Event",
+    "Outer": "AWBP_Suki_Oven_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnOccupiedStateChanged",
+    "Outer": "AWBP_Suki_Oven_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'C_WorldWaypoint:OnOccupiedStateChanged'",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "newState",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
   },
   {
     "Type": "Function",
@@ -98,6 +207,17 @@
   },
   {
     "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "AWBP_Suki_Oven_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveBeginPlay'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
     "Name": "Oven OFF__UpdateFunc",
     "Outer": "AWBP_Suki_Oven_C",
     "Class": "UScriptClass'Function'",
@@ -132,16 +252,16 @@
       "Timelines": [
         {
           "ObjectName": "TimelineTemplate'AWBP_Suki_Oven_C:Oven ON_Template'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.22"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.25"
         },
         {
           "ObjectName": "TimelineTemplate'AWBP_Suki_Oven_C:Oven OFF_Template'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.21"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.24"
         }
       ],
       "SimpleConstructionScript": {
         "ObjectName": "SimpleConstructionScript'AWBP_Suki_Oven_C:SimpleConstructionScript_0'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.17"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.20"
       },
       "UberGraphFunction": {
         "ObjectName": "Function'AWBP_Suki_Oven_C:ExecuteUbergraph_AWBP_Suki_Oven'",
@@ -155,22 +275,34 @@
     "Children": [
       {
         "ObjectName": "Function'AWBP_Suki_Oven_C:Oven ON__FinishedFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.5"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.8"
       },
       {
         "ObjectName": "Function'AWBP_Suki_Oven_C:Oven ON__UpdateFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.4"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.7"
       },
       {
         "ObjectName": "Function'AWBP_Suki_Oven_C:Oven OFF__FinishedFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.3"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.6"
       },
       {
         "ObjectName": "Function'AWBP_Suki_Oven_C:Oven OFF__UpdateFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.2"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.5"
+      },
+      {
+        "ObjectName": "Function'AWBP_Suki_Oven_C:ReceiveBeginPlay'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.4"
       },
       {
         "ObjectName": "Function'AWBP_Suki_Oven_C:OnAnimationContextChanged'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.3"
+      },
+      {
+        "ObjectName": "Function'AWBP_Suki_Oven_C:OnOccupiedStateChanged'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.2"
+      },
+      {
+        "ObjectName": "Function'AWBP_Suki_Oven_C:DayInitDelegate_Event'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.1"
       },
       {
@@ -283,25 +415,37 @@
         "ObjectName": "Function'AWBP_Suki_Oven_C:ExecuteUbergraph_AWBP_Suki_Oven'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.0"
       },
+      "DayInitDelegate_Event": {
+        "ObjectName": "Function'AWBP_Suki_Oven_C:DayInitDelegate_Event'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.1"
+      },
+      "OnOccupiedStateChanged": {
+        "ObjectName": "Function'AWBP_Suki_Oven_C:OnOccupiedStateChanged'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.2"
+      },
       "OnAnimationContextChanged": {
         "ObjectName": "Function'AWBP_Suki_Oven_C:OnAnimationContextChanged'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.1"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.3"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'AWBP_Suki_Oven_C:ReceiveBeginPlay'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.4"
       },
       "Oven OFF__UpdateFunc": {
         "ObjectName": "Function'AWBP_Suki_Oven_C:Oven OFF__UpdateFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.2"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.5"
       },
       "Oven OFF__FinishedFunc": {
         "ObjectName": "Function'AWBP_Suki_Oven_C:Oven OFF__FinishedFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.3"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.6"
       },
       "Oven ON__UpdateFunc": {
         "ObjectName": "Function'AWBP_Suki_Oven_C:Oven ON__UpdateFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.4"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.7"
       },
       "Oven ON__FinishedFunc": {
         "ObjectName": "Function'AWBP_Suki_Oven_C:Oven ON__FinishedFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.5"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.8"
       }
     },
     "ClassFlags": "CLASS_Config | CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
@@ -313,7 +457,7 @@
     "bCooked": true,
     "ClassDefaultObject": {
       "ObjectName": "AWBP_Suki_Oven_C'Default__AWBP_Suki_Oven_C'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.7"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.10"
     }
   },
   {
@@ -330,7 +474,7 @@
       "linkedState": "EC_WaypointLinkedState::NotLinked",
       "stationMeshComponent": {
         "ObjectName": "StaticMeshComponent'Default__AWBP_Suki_Oven_C:StationMesh'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.20"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.23"
       },
       "previewMesh": {
         "ObjectName": "SkeletalMesh'SK_Suki_Ver2_1'",
@@ -344,7 +488,7 @@
       "useDefaultMaterials": true,
       "RootComponent": {
         "ObjectName": "SceneComponent'Default__AWBP_Suki_Oven_C:PositionComponent'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.12"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.15"
       }
     }
   },
@@ -446,7 +590,7 @@
       },
       "ComponentTemplate": {
         "ObjectName": "SceneComponent'AWBP_Suki_Oven_C:DefaultSceneRoot_GEN_VARIABLE'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.10"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.13"
       },
       "VariableGuid": "86FF7B1C-4355787F-27DF6394-7F85B608",
       "InternalVariableName": "DefaultSceneRoot"
@@ -464,14 +608,14 @@
       },
       "ComponentTemplate": {
         "ObjectName": "SceneComponent'AWBP_Suki_Oven_C:PositionComponent1_GEN_VARIABLE'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.11"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.14"
       },
       "ParentComponentOrVariableName": "PositionComponent",
       "bIsParentComponentNative": true,
       "ChildNodes": [
         {
           "ObjectName": "SCS_Node'AWBP_Suki_Oven_C:SimpleConstructionScript_0.SCS_Node_2'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.15"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.18"
         }
       ],
       "VariableGuid": "F617F3AE-4467C6A8-71615386-0F8FAB75",
@@ -490,7 +634,7 @@
       },
       "ComponentTemplate": {
         "ObjectName": "StaticMeshComponent'AWBP_Suki_Oven_C:StationMesh1_GEN_VARIABLE'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.19"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.22"
       },
       "VariableGuid": "D1473881-4D00FA25-9648CBA3-916603D9",
       "InternalVariableName": "StationMesh1"
@@ -508,7 +652,7 @@
       },
       "ComponentTemplate": {
         "ObjectName": "StaticMeshComponent'AWBP_Suki_Oven_C:Oven_GEN_VARIABLE'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.18"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.21"
       },
       "ParentComponentOrVariableName": "PositionComponent",
       "bIsParentComponentNative": true,
@@ -525,30 +669,30 @@
       "RootNodes": [
         {
           "ObjectName": "SCS_Node'AWBP_Suki_Oven_C:SimpleConstructionScript_0.SCS_Node_1'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.14"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.17"
         },
         {
           "ObjectName": "SCS_Node'AWBP_Suki_Oven_C:SimpleConstructionScript_0.SCS_Node_8'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.16"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.19"
         }
       ],
       "AllNodes": [
         {
           "ObjectName": "SCS_Node'AWBP_Suki_Oven_C:SimpleConstructionScript_0.SCS_Node_1'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.14"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.17"
         },
         {
           "ObjectName": "SCS_Node'AWBP_Suki_Oven_C:SimpleConstructionScript_0.SCS_Node_2'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.15"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.18"
         },
         {
           "ObjectName": "SCS_Node'AWBP_Suki_Oven_C:SimpleConstructionScript_0.SCS_Node_8'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.16"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.19"
         }
       ],
       "DefaultSceneRootNode": {
         "ObjectName": "SCS_Node'AWBP_Suki_Oven_C:SimpleConstructionScript_0.SCS_Node_0'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.13"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.16"
       }
     }
   },
@@ -603,7 +747,7 @@
     "Properties": {
       "AttachParent": {
         "ObjectName": "SceneComponent'Default__AWBP_Suki_Oven_C:PositionComponent'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.12"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.15"
       }
     }
   },
@@ -617,7 +761,7 @@
         {
           "CurveFloat": {
             "ObjectName": "CurveFloat'AWBP_Suki_Oven_C:CurveFloat_0'",
-            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.8"
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.11"
           },
           "PropertyName": "Oven_OFF_Emmisive_Value_9D4D5E024D805694F104BFBC74950304",
           "TrackName": "Emmisive Value",
@@ -641,7 +785,7 @@
         {
           "CurveFloat": {
             "ObjectName": "CurveFloat'AWBP_Suki_Oven_C:CurveFloat_1'",
-            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.9"
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Suki_Oven.12"
           },
           "PropertyName": "Oven_ON_Emmisive_Value_68EA8882418EB0F3DC284DA0C83903C9",
           "TrackName": "Emmisive Value",

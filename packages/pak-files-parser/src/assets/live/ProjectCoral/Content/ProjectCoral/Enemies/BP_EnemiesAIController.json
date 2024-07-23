@@ -1,0 +1,327 @@
+[
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_EnemiesAIController",
+    "Outer": "BP_EnemiesAIController_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetBlackboard_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'BlackboardComponent'",
+          "ObjectPath": "/Script/AIModule"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_PossessedPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_RunBehaviorTree_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "CallFunc_MakeLiteralName_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetActorLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceivePossess",
+    "Outer": "BP_EnemiesAIController_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Controller:ReceivePossess'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "PossessedPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "BP_EnemiesAIController_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveBeginPlay'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_EnemiesAIController_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_EnemiesAIController_C:SimpleConstructionScript_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemiesAIController.10"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_EnemiesAIController_C:ExecuteUbergraph_BP_EnemiesAIController'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemiesAIController.0"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'C_EnemiesAIController'",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_EnemiesAIController_C:ReceiveBeginPlay'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemiesAIController.2"
+      },
+      {
+        "ObjectName": "Function'BP_EnemiesAIController_C:ReceivePossess'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemiesAIController.1"
+      },
+      {
+        "ObjectName": "Function'BP_EnemiesAIController_C:ExecuteUbergraph_BP_EnemiesAIController'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemiesAIController.0"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_EnemiesAIController": {
+        "ObjectName": "Function'BP_EnemiesAIController_C:ExecuteUbergraph_BP_EnemiesAIController'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemiesAIController.0"
+      },
+      "ReceivePossess": {
+        "ObjectName": "Function'BP_EnemiesAIController_C:ReceivePossess'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemiesAIController.1"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'BP_EnemiesAIController_C:ReceiveBeginPlay'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemiesAIController.2"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_Optional | CLASS_NotPlaceable | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_EnemiesAIController_C'Default__BP_EnemiesAIController_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemiesAIController.4"
+    }
+  },
+  {
+    "Type": "BP_EnemiesAIController_C",
+    "Name": "Default__BP_EnemiesAIController_C",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemiesAIController.BP_EnemiesAIController_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "enemyBehaviorTree": {
+        "ObjectName": "BehaviorTree'BT_EnemyCore'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BT_EnemyCore.0"
+      },
+      "enemyStateTag": [
+        {
+          "EC_EnemiesState::Chasing": {
+            "TagName": "enemy.behaviour.chasing"
+          }
+        },
+        {
+          "EC_EnemiesState::SpecialInteraction": {
+            "TagName": "enemy.behaviour.specialinteraction"
+          }
+        },
+        {
+          "EC_EnemiesState::MovingBack": {
+            "TagName": "enemy.behaviour.movingback"
+          }
+        },
+        {
+          "EC_EnemiesState::Moving": {
+            "TagName": "enemy.behaviour.moving"
+          }
+        },
+        {
+          "EC_EnemiesState::Attacking": {
+            "TagName": "enemy.behaviour.attacking"
+          }
+        },
+        {
+          "EC_EnemiesState::Damaged": {
+            "TagName": "enemy.behaviour.damaged"
+          }
+        },
+        {
+          "EC_EnemiesState::Death": {
+            "TagName": "enemy.behaviour.death"
+          }
+        },
+        {
+          "EC_EnemiesState::Staggered": {
+            "TagName": "enemy.behaviour.staggered"
+          }
+        },
+        {
+          "EC_EnemiesState::Spawning": {
+            "TagName": "enemy.behaviour.spawning"
+          }
+        },
+        {
+          "EC_EnemiesState::Rooted": {
+            "TagName": "enemy.behaviour.rooted"
+          }
+        },
+        {
+          "EC_EnemiesState::Stunned": {
+            "TagName": "enemy.behaviour.stunned"
+          }
+        },
+        {
+          "EC_EnemiesState::WaitAttack": {
+            "TagName": "enemy.behaviour.waitattack"
+          }
+        },
+        {
+          "EC_EnemiesState::Taunted": {
+            "TagName": "enemy.behaviour.taunted"
+          }
+        },
+        {
+          "EC_EnemiesState::Idle": {
+            "TagName": "enemy.behaviour.idle"
+          }
+        }
+      ],
+      "PathFollowingComponent": {
+        "ObjectName": "PathFollowingComponent'Default__BP_EnemiesAIController_C:PathFollowingComponent'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemiesAIController.5"
+      },
+      "ActionsComp": {
+        "ObjectName": "PawnActionsComponent'Default__BP_EnemiesAIController_C:ActionsComp'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemiesAIController.6"
+      },
+      "TransformComponent": {
+        "ObjectName": "SceneComponent'Default__BP_EnemiesAIController_C:TransformComponent0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemiesAIController.8"
+      },
+      "RootComponent": {
+        "ObjectName": "SceneComponent'Default__BP_EnemiesAIController_C:TransformComponent0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemiesAIController.8"
+      }
+    }
+  },
+  {
+    "Type": "PathFollowingComponent",
+    "Name": "PathFollowingComponent",
+    "Outer": "Default__BP_EnemiesAIController_C",
+    "Class": "UScriptClass'PathFollowingComponent'"
+  },
+  {
+    "Type": "PawnActionsComponent",
+    "Name": "ActionsComp",
+    "Outer": "Default__BP_EnemiesAIController_C",
+    "Class": "UScriptClass'PawnActionsComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_EnemiesAIController_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "TransformComponent0",
+    "Outer": "Default__BP_EnemiesAIController_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_EnemiesAIController_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemiesAIController.7"
+      },
+      "VariableGuid": "6AA4D408-41B597E0-A8CE7FA1-F89E7F49",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_EnemiesAIController_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_EnemiesAIController_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemiesAIController.9"
+      }
+    }
+  }
+]
