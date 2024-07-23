@@ -75,27 +75,22 @@ export const shopRouteConfig: ({ name: ShopName, betaOnly?: true } & ({ componen
     {
         name: 'tidal-threads',
         loadComponent: () => import('./components/shops/tidal-threads.component').then(c => c.TidalThreadsComponent),
-        betaOnly: true
     },
     {
         name: 'underwater-ranch',
         loadComponent: () => import('./components/underwater-ranch/underwater-ranch.component').then(c => c.UnderwaterRanchComponent),
-        betaOnly: true
     },
     {
         name: 'taco-truck',
         loadComponent: () => import('./components/shops/taco-truck.component').then(c => c.TacoTruckComponent),
-        betaOnly: true
     },
     {
         name: 'ramen-shop',
         loadComponent: () => import('./components/shops/ramen-shop.component').then(c => c.RamenShopComponent),
-        betaOnly: true
     },
     {
         name: 'sales-cart-stall',
         loadComponent: () => import('./components/shops/sales-cart-stall.component').then(c => c.SalesCartStallComponent),
-        betaOnly: true
     },
     {
         name: 'furniture-store',

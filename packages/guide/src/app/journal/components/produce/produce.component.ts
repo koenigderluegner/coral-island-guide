@@ -72,21 +72,16 @@ export class ProduceComponent extends BaseJournalPageComponent<MinimalItem | Cro
                     2
                 )
             },
-
-        ];
-
-        if (this.isBeta) {
-            this.tabs.push(
-                {
+              {
                     title: 'Ocean',
                     data: this.getFilteredJournalData(
                         this._database.fetchJournalOrder$('journal-ocean-products'),
                         this._database.fetchItems$(),
                         3
                     )
-                }
-            )
-        }
+                },
+
+        ];
 
         this.activateTabFromRoute(this.tabs.map(tab => tab.title));
     }

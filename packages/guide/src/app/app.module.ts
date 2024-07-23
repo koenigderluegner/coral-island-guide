@@ -109,7 +109,6 @@ const appRoutes: Route[] = [
         MatProgressSpinnerModule,
     ],
     providers: [
-        {provide: BETA_CODE, useValue: 'pl34ased0ntstr3am'},
         {
             provide: APP_INITIALIZER,
             multi: true,
