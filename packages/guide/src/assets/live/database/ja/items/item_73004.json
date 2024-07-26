@@ -97,11 +97,96 @@
             }
           }
         ]
+      },
+      {
+        "key": "GiantSeaBass_DeepForest",
+        "spawnArea": {
+          "canBeCatchOnCave": false,
+          "canBeCatchOnLake": false,
+          "canBeCatchOnOcean": true,
+          "canBeCatchOnPond": false,
+          "canBeCatchOnRiver": false
+        },
+        "spawnLocation": [
+          "Deep Forest"
+        ],
+        "spawnTime": {
+          "morning": true,
+          "afternoon": false,
+          "evening": false,
+          "night": true
+        },
+        "spawnWeather": {
+          "sunny": true,
+          "rain": true,
+          "snow": false,
+          "blizzard": false,
+          "windy": true,
+          "storm": true
+        },
+        "spawnSeason": {
+          "spring": false,
+          "summer": false,
+          "fall": true,
+          "winter": false
+        },
+        "isUsingSpecificDate": false,
+        "dateRangeList": []
       }
     ],
     "pattern": "Star",
     "difficulty": "VeryHard"
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 16,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_73004",
+          "displayName": "ジャイアントシーバス",
+          "iconName": "Giant_Sea_Bass_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_73004",
+          "displayName": "ジャイアントシーバス",
+          "iconName": "Giant_Sea_Bass_Sprite",
+          "sellPrice": 845
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 14,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 1,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
     {
       "useCategory": false,
@@ -484,43 +569,63 @@
             },
             {
               "id": "item_21071",
-              "displayName": "Sproutfruit",
+              "displayName": "スプラウトフルーツ",
               "iconName": "Sproutfruit_Sprite"
             },
             {
+              "id": "item_21075",
+              "displayName": "ピンクのコラルキャップ",
+              "iconName": "Pink_Coralcap_Sprite"
+            },
+            {
               "id": "item_21077",
-              "displayName": "Bluebell blossom",
+              "displayName": "ブルーベルの花",
               "iconName": "Bluebell_Blossom_Sprite"
             },
             {
               "id": "item_21078",
-              "displayName": "Goldglow",
+              "displayName": "ゴールドグロー",
               "iconName": "Goldglow_Sprite"
             },
             {
               "id": "item_21079",
-              "displayName": "Soka",
+              "displayName": "ソカ",
               "iconName": "Soka_Sprite"
             },
             {
               "id": "item_21080",
-              "displayName": "Helixpur blossom",
+              "displayName": "ヘリックスプールの花",
               "iconName": "Helixpur_Blossom_Sprite"
             },
             {
               "id": "item_21081",
-              "displayName": "Marinethorn blossom",
+              "displayName": "マリネソーンの花",
               "iconName": "Marinethorn_Blossom_Sprite"
             },
             {
               "id": "item_21082",
-              "displayName": "Sea spud",
+              "displayName": "海ジャガイモ",
               "iconName": "Sea_Spud_Sprite"
             },
             {
               "id": "item_21084",
-              "displayName": "Petalia",
+              "displayName": "ペタリア",
               "iconName": "Petalia_Sprite"
+            },
+            {
+              "id": "item_21085",
+              "displayName": "キノコの木の種",
+              "iconName": "Mushroom_tree_seeds_Sprite"
+            },
+            {
+              "id": "item_21086",
+              "displayName": "シュロンバーの種",
+              "iconName": "Wooblecap_seeds_Sprite"
+            },
+            {
+              "id": "item_21087",
+              "displayName": "ムーンスポアの種",
+              "iconName": "Moonspore_seeds_Sprite"
             },
             {
               "id": "item_22001",
@@ -1541,6 +1646,54 @@
         }
       },
       "machine": "CompostBin"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 16,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_73004",
+          "displayName": "ジャイアントシーバス",
+          "iconName": "Giant_Sea_Bass_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_73004",
+          "displayName": "ジャイアントシーバス",
+          "iconName": "Giant_Sea_Bass_Sprite",
+          "sellPrice": 845
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 14,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 1,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -2602,7 +2755,8 @@
             }
           ]
         }
-      ]
+      ],
+      "isHeritageOffering": false
     }
   ]
 }

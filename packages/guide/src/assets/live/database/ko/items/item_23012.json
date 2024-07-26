@@ -38,6 +38,47 @@
       "Item.Consumable.Food"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 1,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_23012",
+          "displayName": "토란",
+          "iconName": "Taro_root_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_23012",
+          "displayName": "토란",
+          "iconName": "Taro_root_Sprite",
+          "sellPrice": 24
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 3,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
     {
       "useCategory": false,
@@ -122,6 +163,45 @@
       },
       "genericInput": null,
       "machine": "SeedMaker"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 1,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_23012",
+          "displayName": "토란",
+          "iconName": "Taro_root_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_23012",
+          "displayName": "토란",
+          "iconName": "Taro_root_Sprite",
+          "sellPrice": 24
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 3,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -1107,21 +1187,6 @@
             "id": "item_41181",
             "displayName": "대용량 염소 요구르트",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "대왕조개",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "미역",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "꽃다발",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -1173,7 +1238,7 @@
           "genericItem": {
             "key": "Any_Cheese",
             "tags": [
-              "Artisan.CheesePress"
+              "item.artisan.cheese"
             ],
             "iconName": "Any_Cheese_Sprite",
             "displayName": "아무 치즈"
@@ -1497,5 +1562,45 @@
       "buff": "None",
       "itemType": "Food"
     }
-  }
+  },
+  "usedToMix": [
+    {
+      "key": "SokaSeeds",
+      "amount": 1,
+      "cookingKey": "SokaSeeds",
+      "item": {
+        "id": "item_21064",
+        "displayName": "소카 씨앗",
+        "iconName": "Soka_seeds_Sprite"
+      },
+      "genericIngredients": [],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_23012",
+            "displayName": "토란",
+            "iconName": "Taro_root_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_50333",
+            "displayName": "구마모토굴",
+            "iconName": "Kumamoto_Oyster_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_62004",
+            "displayName": "오스뮴 켈프",
+            "iconName": "Osmium_Kelp_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": []
+    }
+  ]
 }

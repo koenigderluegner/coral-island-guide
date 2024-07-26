@@ -1,0 +1,66 @@
+[
+  {
+    "Type": "C_AttractionStateRequirement",
+    "Name": "C_AttractionStateRequirement_0",
+    "Outer": "DA_SubtypeRuleRaina",
+    "Class": "UScriptClass'C_AttractionStateRequirement'",
+    "Properties": {
+      "townAttraction": {
+        "attractionName": {
+          "RowName": "RecreationalCenter"
+        }
+      },
+      "state": "EC_TownAttractionState::Completed"
+    }
+  },
+  {
+    "Type": "C_AttractionStateRequirement",
+    "Name": "C_AttractionStateRequirement_1",
+    "Outer": "DA_SubtypeRuleRaina",
+    "Class": "UScriptClass'C_AttractionStateRequirement'",
+    "Properties": {
+      "townAttraction": {
+        "attractionName": {
+          "RowName": "RecreationalCenter"
+        }
+      },
+      "state": "EC_TownAttractionState::Completed",
+      "invertResult": true
+    }
+  },
+  {
+    "Type": "C_DialogueSubTypeRuleConfig",
+    "Name": "DA_SubtypeRuleRaina",
+    "Class": "UScriptClass'C_DialogueSubTypeRuleConfig'",
+    "Properties": {
+      "subtypeRules": [
+        {
+          "EC_DTDialogueColumn_SubType::RecreationCenter": {
+            "gameplayRequirements": {
+              "type": "EC_RequirementCollectionType::And",
+              "requirements": [
+                {
+                  "ObjectName": "C_AttractionStateRequirement'DA_SubtypeRuleRaina:C_AttractionStateRequirement_0'",
+                  "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DA_SubtypeRuleRaina.0"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "EC_DTDialogueColumn_SubType::Normal": {
+            "gameplayRequirements": {
+              "type": "EC_RequirementCollectionType::And",
+              "requirements": [
+                {
+                  "ObjectName": "C_AttractionStateRequirement'DA_SubtypeRuleRaina:C_AttractionStateRequirement_1'",
+                  "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DA_SubtypeRuleRaina.1"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+]

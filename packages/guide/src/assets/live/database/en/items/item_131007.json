@@ -33,9 +33,60 @@
     "tags": [
       "income.bugcatching",
       "item.insect.rare",
-      "item.insect"
+      "item.insect",
+      "item.insect.Catterpillar"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 4,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_131007",
+          "displayName": "Cecropia caterpillar",
+          "iconName": "Cecropia_Caterpillar_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_131007",
+          "displayName": "Cecropia caterpillar",
+          "iconName": "Cecropia_Caterpillar_Sprite",
+          "sellPrice": 110
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 5,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 9,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
     {
       "useCategory": false,
@@ -422,6 +473,11 @@
               "iconName": "Sproutfruit_Sprite"
             },
             {
+              "id": "item_21075",
+              "displayName": "Pink coralcap",
+              "iconName": "Pink_Coralcap_Sprite"
+            },
+            {
               "id": "item_21077",
               "displayName": "Bluebell blossom",
               "iconName": "Bluebell_Blossom_Sprite"
@@ -455,6 +511,21 @@
               "id": "item_21084",
               "displayName": "Petalia",
               "iconName": "Petalia_Sprite"
+            },
+            {
+              "id": "item_21085",
+              "displayName": "Mushroom tree seeds",
+              "iconName": "Mushroom_tree_seeds_Sprite"
+            },
+            {
+              "id": "item_21086",
+              "displayName": "Shroomba seeds",
+              "iconName": "Wooblecap_seeds_Sprite"
+            },
+            {
+              "id": "item_21087",
+              "displayName": "Moonspore seeds",
+              "iconName": "Moonspore_seeds_Sprite"
             },
             {
               "id": "item_22001",
@@ -1475,9 +1546,132 @@
         }
       },
       "machine": "CompostBin"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 4,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_131007",
+          "displayName": "Cecropia caterpillar",
+          "iconName": "Cecropia_Caterpillar_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_131007",
+          "displayName": "Cecropia caterpillar",
+          "iconName": "Cecropia_Caterpillar_Sprite",
+          "sellPrice": 110
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 5,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 9,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
+    {
+      "key": "item_80098",
+      "amount": 1,
+      "cookingKey": "CatterpilarPeyek",
+      "item": {
+        "id": "item_80098",
+        "displayName": "Peyek",
+        "price": 290,
+        "sellPrice": 115,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "A savory, deep-fried cracker. Crunchy, with a hint of leaves and grasses.",
+        "qualities": {
+          "bronze": {
+            "price": 334,
+            "sellPrice": 132
+          },
+          "silver": {
+            "price": 363,
+            "sellPrice": 144
+          },
+          "gold": {
+            "price": 435,
+            "sellPrice": 173
+          },
+          "osmium": {
+            "price": 580,
+            "sellPrice": 230
+          }
+        },
+        "iconName": "Peyek_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "utensils": [
+        "FryingPan"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Catterpilar",
+            "tags": [
+              "item.insect.Catterpillar"
+            ],
+            "iconName": "Any_caterpillar_Sprite",
+            "displayName": "Any Catterpilar"
+          },
+          "key": "Any_Catterpilar"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_41026",
+            "displayName": "Wheat flour",
+            "iconName": "Wheat_flour_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_24003",
+            "displayName": "Almond",
+            "iconName": "Almond_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": []
+    },
     {
       "key": "item_80097",
       "amount": 1,
@@ -1530,10 +1724,7 @@
           "genericItem": {
             "key": "Generic_Insect",
             "tags": [
-              "item.insect.common",
-              "item.insect.rare",
-              "item.insect.superrare",
-              "item.insect.uncommon"
+              "item.insect"
             ],
             "iconName": "T_AnyInsect_Sprite",
             "displayName": "Any Insect"
@@ -1542,7 +1733,21 @@
         }
       ],
       "ingredients": [],
-      "eitherOrIngredients": []
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "Any Insect": [
+          {
+            "id": "item_132007",
+            "displayName": "Fly",
+            "iconName": "Fly_Sprite"
+          },
+          {
+            "id": "item_132011",
+            "displayName": "Snail",
+            "iconName": "Snail_Sprite"
+          }
+        ]
+      }
     }
   ],
   "usedToCraft": [
@@ -1567,10 +1772,7 @@
           "genericItem": {
             "key": "Generic_Insect",
             "tags": [
-              "item.insect.common",
-              "item.insect.rare",
-              "item.insect.superrare",
-              "item.insect.uncommon"
+              "item.insect"
             ],
             "iconName": "T_AnyInsect_Sprite",
             "displayName": "Any Insect",
@@ -1696,19 +1898,19 @@
                 "iconName": "Orchid_Mantis_Sprite"
               },
               {
-                "id": "item_132007",
-                "displayName": "Fly",
-                "iconName": "Fly_Sprite"
+                "id": "item_132008",
+                "displayName": "Blue morpho butterfly",
+                "iconName": "Blue_Morpho_Butterfly_Sprite"
+              },
+              {
+                "id": "item_132009",
+                "displayName": "Crowned hairstreak butterfly",
+                "iconName": "Crowned_Hairstreak_Butterfly_Sprite"
               },
               {
                 "id": "item_132010",
                 "displayName": "Widow spider",
                 "iconName": "Widow_Spider_Sprite"
-              },
-              {
-                "id": "item_132011",
-                "displayName": "Snail",
-                "iconName": "Snail_Sprite"
               },
               {
                 "id": "item_132012",
@@ -1764,6 +1966,11 @@
                 "id": "item_133007",
                 "displayName": "Janetta forester butterfly",
                 "iconName": "Janetta_Forester_Butterfly_Sprite"
+              },
+              {
+                "id": "item_133008",
+                "displayName": "Tarantula",
+                "iconName": "Tarantula_Sprite"
               },
               {
                 "id": "item_133009",
@@ -1891,7 +2098,8 @@
       "tags": [
         "income.bugcatching",
         "item.insect.rare",
-        "item.insect"
+        "item.insect",
+        "item.insect.Catterpillar"
       ]
     },
     "spawnSeason": {
@@ -1994,7 +2202,8 @@
             }
           ]
         }
-      ]
+      ],
+      "isHeritageOffering": false
     }
   ]
 }

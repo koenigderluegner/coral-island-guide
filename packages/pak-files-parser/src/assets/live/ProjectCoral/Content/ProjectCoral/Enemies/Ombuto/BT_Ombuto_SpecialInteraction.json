@@ -1,0 +1,81 @@
+[
+  {
+    "Type": "BehaviorTree",
+    "Name": "BT_Ombuto_SpecialInteraction",
+    "Class": "UScriptClass'BehaviorTree'",
+    "Properties": {
+      "RootNode": {
+        "ObjectName": "BTComposite_Sequence'BT_Ombuto_SpecialInteraction:BTComposite_Sequence_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BT_Ombuto_SpecialInteraction.1"
+      },
+      "BlackboardAsset": {
+        "ObjectName": "BlackboardData'BB_Enemies'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BB_Enemies.0"
+      }
+    }
+  },
+  {
+    "Type": "BTComposite_Sequence",
+    "Name": "BTComposite_Sequence_0",
+    "Outer": "BT_Ombuto_SpecialInteraction",
+    "Class": "UScriptClass'BTComposite_Sequence'",
+    "Properties": {
+      "Children": [
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "BTTask_Wait'BT_Ombuto_SpecialInteraction:BTTask_Wait_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BT_Ombuto_SpecialInteraction.2"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "BTTC_EnemiesSpecialInteraction'BT_Ombuto_SpecialInteraction:BTTC_EnemiesSpecialInteraction_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BT_Ombuto_SpecialInteraction.3"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        }
+      ],
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_Ombuto_SpecialInteraction'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BT_Ombuto_SpecialInteraction.0"
+      }
+    }
+  },
+  {
+    "Type": "BTTask_Wait",
+    "Name": "BTTask_Wait_0",
+    "Outer": "BT_Ombuto_SpecialInteraction",
+    "Class": "UScriptClass'BTTask_Wait'",
+    "Properties": {
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_Ombuto_SpecialInteraction'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BT_Ombuto_SpecialInteraction.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_Ombuto_SpecialInteraction:BTComposite_Sequence_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BT_Ombuto_SpecialInteraction.1"
+      }
+    }
+  },
+  {
+    "Type": "BTTC_EnemiesSpecialInteraction",
+    "Name": "BTTC_EnemiesSpecialInteraction_0",
+    "Outer": "BT_Ombuto_SpecialInteraction",
+    "Class": "UScriptClass'BTTC_EnemiesSpecialInteraction'",
+    "Properties": {
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_Ombuto_SpecialInteraction'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BT_Ombuto_SpecialInteraction.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_Ombuto_SpecialInteraction:BTComposite_Sequence_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BT_Ombuto_SpecialInteraction.1"
+      }
+    }
+  }
+]

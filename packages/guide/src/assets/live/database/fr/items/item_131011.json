@@ -33,9 +33,60 @@
     "tags": [
       "income.bugcatching",
       "item.insect.common",
-      "item.insect"
+      "item.insect",
+      "item.insect.Beetle"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 1,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_131011",
+          "displayName": "Punaise à visage d'homme",
+          "iconName": "Man-faced_stink_bug_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_131011",
+          "displayName": "Punaise à visage d'homme",
+          "iconName": "Man-faced_stink_bug_Sprite",
+          "sellPrice": 25
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
     {
       "useCategory": false,
@@ -418,17 +469,22 @@
             },
             {
               "id": "item_21071",
-              "displayName": "Sproutfruit",
+              "displayName": "Fruit de pousse",
               "iconName": "Sproutfruit_Sprite"
             },
             {
+              "id": "item_21075",
+              "displayName": "Chapeau-corail rose",
+              "iconName": "Pink_Coralcap_Sprite"
+            },
+            {
               "id": "item_21077",
-              "displayName": "Bluebell blossom",
+              "displayName": "Jacinthe sauvage",
               "iconName": "Bluebell_Blossom_Sprite"
             },
             {
               "id": "item_21078",
-              "displayName": "Goldglow",
+              "displayName": "Éclat d'or",
               "iconName": "Goldglow_Sprite"
             },
             {
@@ -438,23 +494,38 @@
             },
             {
               "id": "item_21080",
-              "displayName": "Helixpur blossom",
+              "displayName": "Fleur d'helixpur",
               "iconName": "Helixpur_Blossom_Sprite"
             },
             {
               "id": "item_21081",
-              "displayName": "Marinethorn blossom",
+              "displayName": "Fleur de marinépine",
               "iconName": "Marinethorn_Blossom_Sprite"
             },
             {
               "id": "item_21082",
-              "displayName": "Sea spud",
+              "displayName": "Patate de mer",
               "iconName": "Sea_Spud_Sprite"
             },
             {
               "id": "item_21084",
-              "displayName": "Petalia",
+              "displayName": "Pétalia",
               "iconName": "Petalia_Sprite"
+            },
+            {
+              "id": "item_21085",
+              "displayName": "Graines d'arbre à champignons",
+              "iconName": "Mushroom_tree_seeds_Sprite"
+            },
+            {
+              "id": "item_21086",
+              "displayName": "Graines de shrombaas",
+              "iconName": "Wooblecap_seeds_Sprite"
+            },
+            {
+              "id": "item_21087",
+              "displayName": "Graines de sporelunes",
+              "iconName": "Moonspore_seeds_Sprite"
             },
             {
               "id": "item_22001",
@@ -1475,6 +1546,54 @@
         }
       },
       "machine": "CompostBin"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 1,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_131011",
+          "displayName": "Punaise à visage d'homme",
+          "iconName": "Man-faced_stink_bug_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_131011",
+          "displayName": "Punaise à visage d'homme",
+          "iconName": "Man-faced_stink_bug_Sprite",
+          "sellPrice": 25
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -1530,10 +1649,7 @@
           "genericItem": {
             "key": "Generic_Insect",
             "tags": [
-              "item.insect.common",
-              "item.insect.rare",
-              "item.insect.superrare",
-              "item.insect.uncommon"
+              "item.insect"
             ],
             "iconName": "T_AnyInsect_Sprite",
             "displayName": "Tout insecte"
@@ -1542,7 +1658,21 @@
         }
       ],
       "ingredients": [],
-      "eitherOrIngredients": []
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "Tout insecte": [
+          {
+            "id": "item_132007",
+            "displayName": "Mouche",
+            "iconName": "Fly_Sprite"
+          },
+          {
+            "id": "item_132011",
+            "displayName": "Escargot",
+            "iconName": "Snail_Sprite"
+          }
+        ]
+      }
     }
   ],
   "usedToCraft": [
@@ -1567,10 +1697,7 @@
           "genericItem": {
             "key": "Generic_Insect",
             "tags": [
-              "item.insect.common",
-              "item.insect.rare",
-              "item.insect.superrare",
-              "item.insect.uncommon"
+              "item.insect"
             ],
             "iconName": "T_AnyInsect_Sprite",
             "displayName": "Tout insecte",
@@ -1696,19 +1823,19 @@
                 "iconName": "Orchid_Mantis_Sprite"
               },
               {
-                "id": "item_132007",
-                "displayName": "Mouche",
-                "iconName": "Fly_Sprite"
+                "id": "item_132008",
+                "displayName": "Morpho",
+                "iconName": "Blue_Morpho_Butterfly_Sprite"
+              },
+              {
+                "id": "item_132009",
+                "displayName": "Evenus coronata",
+                "iconName": "Crowned_Hairstreak_Butterfly_Sprite"
               },
               {
                 "id": "item_132010",
                 "displayName": "Araignée veuve",
                 "iconName": "Widow_Spider_Sprite"
-              },
-              {
-                "id": "item_132011",
-                "displayName": "Escargot",
-                "iconName": "Snail_Sprite"
               },
               {
                 "id": "item_132012",
@@ -1764,6 +1891,11 @@
                 "id": "item_133007",
                 "displayName": "Papillon forestier",
                 "iconName": "Janetta_Forester_Butterfly_Sprite"
+              },
+              {
+                "id": "item_133008",
+                "displayName": "Tarentule",
+                "iconName": "Tarantula_Sprite"
               },
               {
                 "id": "item_133009",
@@ -1891,7 +2023,8 @@
       "tags": [
         "income.bugcatching",
         "item.insect.common",
-        "item.insect"
+        "item.insect",
+        "item.insect.Beetle"
       ]
     },
     "spawnSeason": {

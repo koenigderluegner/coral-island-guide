@@ -63,6 +63,122 @@
       },
       "genericInput": null,
       "machine": "PreserveJar"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41109",
+          "displayName": "Selai durian",
+          "iconName": "Jam_Yellow_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41109",
+          "displayName": "Selai durian",
+          "iconName": "Jam_Yellow_Sprite",
+          "sellPrice": 250
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 0,
+          "time": {
+            "hours": 7,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41109",
+          "displayName": "Selai durian",
+          "iconName": "Jam_Yellow_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41109",
+          "displayName": "Selai durian",
+          "iconName": "Jam_Yellow_Sprite",
+          "sellPrice": 250
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 0,
+          "time": {
+            "hours": 7,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -122,7 +238,7 @@
               "Item.Consumable.Food"
             ],
             "iconName": "T_AnyIngridient_Sprite",
-            "displayName": "Bahan Makanan Apa pun"
+            "displayName": "Bahan Makanan Apapun"
           },
           "key": "Any_Edible"
         }
@@ -139,7 +255,7 @@
       ],
       "eitherOrIngredients": [],
       "additionsToGenerics": {
-        "Bahan Makanan Apa pun": [
+        "Bahan Makanan Apapun": [
           {
             "id": "item_41180",
             "displayName": "Yogurt kambing",
@@ -149,24 +265,76 @@
             "id": "item_41181",
             "displayName": "Yogurt kambing besar",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Kerang raksasa",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Kelp wakame",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Buket bunga",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "HeritageBased",
+      "offeringGroupTitle": "Altar Warisan",
+      "urlPath": "guardianaltar",
+      "offeringGroupRewardText": "Mural Penjaga",
+      "offerings": [
+        {
+          "title": "King Tan",
+          "imageName": "T_Art_OfferingKingtan",
+          "numOfItemRequired": 4,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_120551",
+                  "displayName": "Setelan King Tan",
+                  "iconName": "King_Tan_Outfit_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "id": "item_41109",
+                "displayName": "Selai durian",
+                "iconName": "Jam_Yellow_Sprite"
+              },
+              "amount": 8,
+              "quality": "osmium"
+            },
+            {
+              "item": {
+                "id": "item_41197",
+                "displayName": "Selai mangga",
+                "iconName": "Jam_Red_Sprite"
+              },
+              "amount": 8,
+              "quality": "osmium"
+            },
+            {
+              "item": {
+                "id": "item_21020",
+                "displayName": "Leci",
+                "iconName": "Lychee_Sprite"
+              },
+              "amount": 8,
+              "quality": "osmium"
+            },
+            {
+              "item": {
+                "id": "item_22019",
+                "displayName": "Mango",
+                "iconName": "Mango_Sprite"
+              },
+              "amount": 8,
+              "quality": "osmium"
+            }
+          ]
+        }
+      ],
+      "isHeritageOffering": true
     }
   ],
   "consumables": {

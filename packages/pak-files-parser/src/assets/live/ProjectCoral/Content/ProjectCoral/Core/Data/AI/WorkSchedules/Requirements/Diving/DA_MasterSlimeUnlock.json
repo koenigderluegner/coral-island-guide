@@ -1,20 +1,17 @@
 [
   {
-    "Type": "C_ItemInInventoryRequirement",
-    "Name": "C_ItemInInventoryRequirement_0",
+    "Type": "C_ObjectStateRequirement",
+    "Name": "C_ObjectStateRequirement_0",
     "Outer": "DA_MasterSlimeUnlock",
-    "Class": "UScriptClass'C_ItemInInventoryRequirement'",
+    "Class": "UScriptClass'C_ObjectStateRequirement'",
     "Properties": {
-      "inventoryItem": {
-        "data": {
-          "RowName": "item_50506"
-        },
-        "itemID": "item_50506"
+      "actorRef": {
+        "AssetPathName": "/Game/ProjectCoral/Maps/Assets/CI_Lake.CI_Lake",
+        "SubPathString": "PersistentLevel.BP_HeritageOfferingInteractable"
       },
-      "expectedAmount": 100,
-      "qualityRequirement": {
-        "rules": "EC_QualityRules::Any"
-      }
+      "id": "heritage_offering_king_tan",
+      "requiredState": "unlocked",
+      "requiredStateInput": "unlocked"
     }
   },
   {
@@ -25,7 +22,7 @@
       "requirements": {
         "requirements": [
           {
-            "ObjectName": "C_ItemInInventoryRequirement'DA_MasterSlimeUnlock:C_ItemInInventoryRequirement_0'",
+            "ObjectName": "C_ObjectStateRequirement'DA_MasterSlimeUnlock:C_ObjectStateRequirement_0'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/Diving/DA_MasterSlimeUnlock.0"
           }
         ]

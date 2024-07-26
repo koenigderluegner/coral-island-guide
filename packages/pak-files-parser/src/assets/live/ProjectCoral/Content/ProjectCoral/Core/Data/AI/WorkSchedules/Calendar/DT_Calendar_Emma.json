@@ -380,10 +380,61 @@
         "petRequirement": "EC_PetAdoptState::Any",
         "hasChildSchedule": false,
         "weatherOverrides": [],
-        "seasonOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": []
+            }
+          }
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
         "conditions": null
+      },
+      "RANK-S_Spring_STSN_SummerFall_ST": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Summer": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
+          }
+        ],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": {
+          "ObjectName": "C_RequirementsConfig'DA_AttractionReq_RecCenter_MovieTheater_Completed'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/Attraction/DA_AttractionReq_RecCenter_MovieTheater_Completed.1"
+        }
       }
     }
   }

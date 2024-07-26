@@ -2,38 +2,180 @@
   "item": {
     "id": "item_21073",
     "displayName": "红礁石花蕾",
-    "price": 10,
-    "sellPrice": 10,
-    "sellAt": [],
+    "price": 70,
+    "sellPrice": 41,
+    "sellAt": [
+      "MerfolkGeneral"
+    ],
     "stackable": true,
     "inventoryCategory": "Vegetables",
     "displayKey": "Vegetables",
     "description": "看起来像一个漂亮的贝壳，但这个贝壳是可以吃的，而且不会让你牙崩。嗯....也许吧。",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 80,
+        "sellPrice": 47
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 90,
+        "sellPrice": 53
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 105,
+        "sellPrice": 62
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 135,
+        "sellPrice": 82
       }
     },
     "iconName": "Red_Reefbud_Sprite",
     "tags": [
-      "income.farming",
+      "income.oceanfarming",
+      "item.crop.diving",
+      "Item.Consumable.Food",
       "item.vegetable",
-      "Item.Consumable.Food"
+      "item.UnderwaterrVegetables"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 2,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21073",
+          "displayName": "红礁石花蕾",
+          "iconName": "Red_Reefbud_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_21073",
+          "displayName": "红礁石花蕾",
+          "iconName": "Red_Reefbud_Sprite",
+          "sellPrice": 41
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 3,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21073",
+          "displayName": "红礁石花蕾",
+          "iconName": "Red_Reefbud_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41392",
+          "displayName": "红礁石花汁",
+          "iconName": "Underwater_vegetable_juice_Sprite",
+          "sellPrice": 90
+        }
+      },
+      "genericInput": null,
+      "machine": "Keg"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21073",
+          "displayName": "红礁石花蕾",
+          "iconName": "Red_Reefbud_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41362",
+          "displayName": "腌红礁石花蕾",
+          "iconName": "Underwater_red_pickles_Sprite",
+          "sellPrice": 75
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 2,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21073",
+          "displayName": "红礁石花蕾",
+          "iconName": "Red_Reefbud_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_21073",
+          "displayName": "红礁石花蕾",
+          "iconName": "Red_Reefbud_Sprite",
+          "sellPrice": 41
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 3,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_42013",
@@ -942,21 +1084,6 @@
             "id": "item_41181",
             "displayName": "山羊酸奶（大）",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "大砗磲",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "裙带菜丛",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "花束",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -1008,7 +1135,7 @@
           "genericItem": {
             "key": "Any_Cheese",
             "tags": [
-              "Artisan.CheesePress"
+              "item.artisan.cheese"
             ],
             "iconName": "Any_Cheese_Sprite",
             "displayName": "任何奶酪"
@@ -1107,5 +1234,191 @@
       "ingredients": [],
       "eitherOrIngredients": []
     }
-  ]
+  ],
+  "isSeedFor": [
+    {
+      "key": "item_21058",
+      "item": {
+        "id": "item_21058",
+        "displayName": "红礁石花蕾种子",
+        "iconName": "Red_reefbud_seeds_Sprite",
+        "price": 70
+      },
+      "size": {
+        "length": 1,
+        "width": 1
+      },
+      "canCombine": false,
+      "chanceToCombine": {
+        "chance": 0
+      },
+      "growableSeason": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "growTime": 9,
+      "isRegrowable": true,
+      "regrowableLength": 3,
+      "readableName": "Red reefbud seeds",
+      "isTrellisCrop": false,
+      "pickupableItemId": "item_21073",
+      "pickupableItem": {
+        "id": "item_21073",
+        "displayName": "红礁石花蕾",
+        "iconName": "Red_Reefbud_Sprite"
+      },
+      "isScytheRequired": false,
+      "maxDroppedItems": 1,
+      "overrideExperience": false,
+      "overrideExperienceOnHarvest": 0,
+      "dropData": [
+        {
+          "itemId": "item_21073",
+          "dropChance": 100,
+          "dropRange": {
+            "min": 1,
+            "max": 1
+          },
+          "item": {
+            "id": "item_21073",
+            "displayName": "红礁石花蕾",
+            "iconName": "Red_Reefbud_Sprite",
+            "sellPrice": 41
+          }
+        }
+      ]
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "CustomDiving",
+      "offeringGroupTitle": "",
+      "urlPath": "",
+      "offeringGroupRewardText": "",
+      "offerings": [
+        {
+          "title": "Empat Pulu (40m)",
+          "imageName": "Ocean_Offerings",
+          "numOfItemRequired": 4,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_50207",
+                  "displayName": "火焰贝",
+                  "iconName": "Flame_Scallop_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "id": "item_62006",
+                "displayName": "金质海带精华",
+                "iconName": "Gold_Kelp_Essence_Sprite"
+              },
+              "amount": 5,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_21075",
+                "displayName": "粉色珊瑚草",
+                "iconName": "Pink_Coralcap_Sprite"
+              },
+              "amount": 5,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_21084",
+                "displayName": "大丽香",
+                "iconName": "Petalia_Sprite"
+              },
+              "amount": 5,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_21073",
+                "displayName": "红礁石花蕾",
+                "iconName": "Red_Reefbud_Sprite"
+              },
+              "amount": 5,
+              "quality": "base"
+            }
+          ]
+        }
+      ],
+      "isHeritageOffering": false,
+      "customType": "diving"
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_21073",
+      "bVaryHealthToMax": false,
+      "healthDelta": 29,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 30,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "bronze": {
+      "key": "item_21073-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 33,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 35,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "silver": {
+      "key": "item_21073-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 36,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 38,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "gold": {
+      "key": "item_21073-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 44,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 45,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "osmium": {
+      "key": "item_21073-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 58,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 60,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    }
+  }
 }

@@ -12,7 +12,7 @@ export class CropsDbGenerator {
     constructor(protected itemMap: Map<string, Item>) {
         this.cropRegistry = [
             readAsset<CropRegistry[]>('ProjectCoral/Content/ProjectCoral/Core/HismcManagers/Crop/DT_CropRegistry.json'),
-            (environment.isBeta ? readAsset<CropRegistry[]>('ProjectCoral/Content/ProjectCoral/Core/HismcManagers/UnderwaterFarm/Crop/DT_CropRegistry_UnderwaterFarm.json') : [])
+             readAsset<CropRegistry[]>('ProjectCoral/Content/ProjectCoral/Core/HismcManagers/UnderwaterFarm/Crop/DT_CropRegistry_UnderwaterFarm.json') ,
         ];
 
     }

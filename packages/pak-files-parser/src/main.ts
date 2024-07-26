@@ -54,19 +54,17 @@ const itemIconsImageProcessor: ItemIconsImageProcessor = new ItemIconsImageProce
 const readable = !parsedArgs['prepare'] && true;
 
 const additionalNPCOutfitsMappings = [
+    {npcKey: 'Semeru', outfitKey: 'SemeruHuman', appearanceName: 'Human Form'},
+    {npcKey: 'Denali', outfitKey: 'DenaliHuman', appearanceName: 'Human Form'},
+    {npcKey: 'PrincessMiranjani', outfitKey: 'MiranjaniHuman', appearanceName: 'Human Form'},
+    {npcKey: 'Raina', outfitKey: 'RainaRecCenter', appearanceName: 'Rec Center'},
     {npcKey: 'Sawee', outfitKey: 'Sawee', appearanceName: 'Mystical Pet'},
     {npcKey: 'Sawee', outfitKey: 'Dragon', appearanceName: 'Mystical Pet'},
     {npcKey: 'Sawee', outfitKey: 'Lembu', appearanceName: 'Mystical Pet'},
 ];
 
-if (environment.isBeta) {
-    additionalNPCOutfitsMappings.unshift(...[
-        {npcKey: 'Semeru', outfitKey: 'SemeruHuman', appearanceName: 'Human Form'},
-        {npcKey: 'Denali', outfitKey: 'DenaliHuman', appearanceName: 'Human Form'},
-        {npcKey: 'PrincessMiranjani', outfitKey: 'MiranjaniHuman', appearanceName: 'Human Form'},
-        {npcKey: 'Raina', outfitKey: 'RainaRecCenter', appearanceName: 'Rec Center'},
-    ])
-}
+
+
 NPCDbGenerator.AdditionalNpcAppearances = additionalNPCOutfitsMappings;
 
 (AvailableLanguages).forEach((lang, langIndex) => {

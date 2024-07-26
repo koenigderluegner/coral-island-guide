@@ -1,0 +1,84 @@
+[
+  {
+    "Type": "BehaviorTree",
+    "Name": "BT_EnemyCore_Spawning",
+    "Class": "UScriptClass'BehaviorTree'",
+    "Properties": {
+      "RootNode": {
+        "ObjectName": "BTComposite_Sequence'BT_EnemyCore_Spawning:BTComposite_Sequence_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BT_EnemyCore_Spawning.1"
+      },
+      "BlackboardAsset": {
+        "ObjectName": "BlackboardData'BB_Enemies'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BB_Enemies.0"
+      }
+    }
+  },
+  {
+    "Type": "BTComposite_Sequence",
+    "Name": "BTComposite_Sequence_0",
+    "Outer": "BT_EnemyCore_Spawning",
+    "Class": "UScriptClass'BTComposite_Sequence'",
+    "Properties": {
+      "Children": [
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "BTTask_Wait'BT_EnemyCore_Spawning:BTTask_Wait_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BT_EnemyCore_Spawning.2"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        },
+        {
+          "ChildComposite": null,
+          "ChildTask": {
+            "ObjectName": "BTTC_SetEnemiesState'BT_EnemyCore_Spawning:BTTC_SetEnemiesState_5'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BT_EnemyCore_Spawning.3"
+          },
+          "Decorators": [],
+          "DecoratorOps": []
+        }
+      ],
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_EnemyCore_Spawning'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BT_EnemyCore_Spawning.0"
+      }
+    }
+  },
+  {
+    "Type": "BTTask_Wait",
+    "Name": "BTTask_Wait_0",
+    "Outer": "BT_EnemyCore_Spawning",
+    "Class": "UScriptClass'BTTask_Wait'",
+    "Properties": {
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_EnemyCore_Spawning'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BT_EnemyCore_Spawning.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_EnemyCore_Spawning:BTComposite_Sequence_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BT_EnemyCore_Spawning.1"
+      }
+    }
+  },
+  {
+    "Type": "BTTC_SetEnemiesState",
+    "Name": "BTTC_SetEnemiesState_5",
+    "Outer": "BT_EnemyCore_Spawning",
+    "Class": "UScriptClass'BTTC_SetEnemiesState'",
+    "Properties": {
+      "blackBoardState": {
+        "SelectedKeyName": "EnemiesState"
+      },
+      "TreeAsset": {
+        "ObjectName": "BehaviorTree'BT_EnemyCore_Spawning'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BT_EnemyCore_Spawning.0"
+      },
+      "ParentNode": {
+        "ObjectName": "BTComposite_Sequence'BT_EnemyCore_Spawning:BTComposite_Sequence_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BT_EnemyCore_Spawning.1"
+      }
+    }
+  }
+]

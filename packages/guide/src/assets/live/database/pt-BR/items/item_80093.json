@@ -33,6 +33,106 @@
       "Item.Consumable.Food"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 3,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_80093",
+          "displayName": "Es doger",
+          "iconName": "Es_Doger_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_80093",
+          "displayName": "Es doger",
+          "iconName": "Es_Doger_Sprite",
+          "sellPrice": 100
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 3,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_80093",
+          "displayName": "Es doger",
+          "iconName": "Es_Doger_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_80093",
+          "displayName": "Es doger",
+          "iconName": "Es_Doger_Sprite",
+          "sellPrice": 100
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_80088",
@@ -117,21 +217,6 @@
             "id": "item_41181",
             "displayName": "Iogurte de cabra grande",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Amêijoa gigante",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Alga Wakame",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Buquê de flores",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -184,7 +269,7 @@
           "amount": 1,
           "genericItem": {
             "key": "Milk_LargeMilk",
-            "displayName": "Milk/Large Milk",
+            "displayName": "Leite/Leite Grande",
             "tags": [],
             "iconName": "Milk_Sprite_"
           },
@@ -229,7 +314,7 @@
               "displayName": "Leite",
               "iconName": "Milk_Sprite_"
             },
-            "amount": 1
+            "amount": 0
           },
           {
             "item": {
@@ -237,10 +322,77 @@
               "displayName": "Leite grande",
               "iconName": "Large_milk_Sprite_"
             },
-            "amount": 1
+            "amount": 0
           }
         ]
       ]
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "HeritageBased",
+      "offeringGroupTitle": "Altar da Tradição",
+      "urlPath": "guardianaltar",
+      "offeringGroupRewardText": "Mural do Guardião",
+      "offerings": [
+        {
+          "title": "Pandazen",
+          "imageName": "T_Art_OfferingPandazen",
+          "numOfItemRequired": 4,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_120548",
+                  "displayName": "Traje de Pandazen",
+                  "iconName": "Pandazen_Outfit_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "id": "item_80071",
+                "displayName": "Popiah",
+                "iconName": "Popiah_Sprite"
+              },
+              "amount": 4,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_80093",
+                "displayName": "Es doger",
+                "iconName": "Es_Doger_Sprite"
+              },
+              "amount": 4,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_80057",
+                "displayName": "Tempeh com ervas",
+                "iconName": "Herbed_Tempeh_Sprite"
+              },
+              "amount": 4,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_80047",
+                "displayName": "Caçarola de jaca",
+                "iconName": "Jackfruit_casserole_Sprite"
+              },
+              "amount": 4,
+              "quality": "base"
+            }
+          ]
+        }
+      ],
+      "isHeritageOffering": true
     }
   ],
   "consumables": {

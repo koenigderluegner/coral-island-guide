@@ -16,7 +16,8 @@
     "tags": [
       "income.mining",
       "item.gem.wind",
-      "EnhancementRarity.Uncommon"
+      "EnhancementRarity.Uncommon",
+      "item.Gem.Uncommon"
     ]
   },
   "artisanResult": [
@@ -79,11 +80,66 @@
       "machine": "SlimeOfReplicator"
     }
   ],
+  "requiredAsOffering": [
+    {
+      "key": "RareBased",
+      "offeringGroupTitle": "稀有祭坛",
+      "urlPath": "rarealtar",
+      "offeringGroupRewardText": "解锁萨凡纳",
+      "offerings": [
+        {
+          "title": "珍贵的宝石",
+          "imageName": "Precious_Gems_Collection",
+          "numOfItemRequired": -1,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_65268",
+                  "displayName": "史莱姆复制装置",
+                  "iconName": "Slime_of_replication_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "key": "Any_GemUncommon",
+                "displayName": "任何不常见宝石",
+                "iconName": "Any_uncommon_gem_Sprite"
+              },
+              "amount": 3
+            },
+            {
+              "item": {
+                "key": "Any_GemRare",
+                "displayName": "任何稀有宝石",
+                "iconName": "Any_rare_gem_Sprite"
+              },
+              "amount": 3
+            },
+            {
+              "item": {
+                "key": "Any_GemSuperRare",
+                "displayName": "任何超级稀有宝石",
+                "iconName": "Any_super_rare_gem_Sprite"
+              },
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "isHeritageOffering": false
+    }
+  ],
   "chanceAsProcessResult": [
     {
       "input": {
         "id": "item_50481",
-        "displayName": "风之晶洞",
+        "displayName": "风晶洞",
         "iconName": "Wind_geode_Sprite"
       },
       "inputAmount": 1,

@@ -19,7 +19,7 @@ export class OfferingsDbGenerator extends BaseGenerator<RawOfferingAltar, Offeri
         const offeringDetailsGenerator = new OfferingDetailsDbGenerator(itemMap, cookingMap, tagBasedItemsMap);
 
         this.offeringDetails = offeringDetailsGenerator.generate();
-        if (environment.isBeta) {
+
             this.datatable[0].Rows['CustomDiving'] = {
                 offeringId: Object.keys(readAsset<Datatable<RawOffering>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_DivingOfferingRegistry.json')[0].Rows),
                 offeringGroupTitle: {CultureInvariantString: null},
@@ -27,7 +27,7 @@ export class OfferingsDbGenerator extends BaseGenerator<RawOfferingAltar, Offeri
                 isHeritageOffering: false,
                 offeringGroupRewardText: {CultureInvariantString: null}
             }
-        }
+
     }
 
     handleEntry(itemKey: string, dbItem: RawOfferingAltar): OfferingAltar {

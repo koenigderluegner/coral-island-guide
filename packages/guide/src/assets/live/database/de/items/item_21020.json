@@ -38,6 +38,56 @@
       "Item.Consumable.Food"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 3,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21020",
+          "displayName": "Litschi",
+          "iconName": "Lychee_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_21020",
+          "displayName": "Litschi",
+          "iconName": "Lychee_Sprite",
+          "sellPrice": 79
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 7,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
     {
       "useCategory": false,
@@ -420,43 +470,63 @@
             },
             {
               "id": "item_21071",
-              "displayName": "Sproutfruit",
+              "displayName": "Sprösslingsfrucht",
               "iconName": "Sproutfruit_Sprite"
             },
             {
+              "id": "item_21075",
+              "displayName": "Pinke Korallenkappe",
+              "iconName": "Pink_Coralcap_Sprite"
+            },
+            {
               "id": "item_21077",
-              "displayName": "Bluebell blossom",
+              "displayName": "Glockenblume",
               "iconName": "Bluebell_Blossom_Sprite"
             },
             {
               "id": "item_21078",
-              "displayName": "Goldglow",
+              "displayName": "Goldschein",
               "iconName": "Goldglow_Sprite"
             },
             {
               "id": "item_21079",
-              "displayName": "Soka",
+              "displayName": "Ixora",
               "iconName": "Soka_Sprite"
             },
             {
               "id": "item_21080",
-              "displayName": "Helixpur blossom",
+              "displayName": "Helixpur",
               "iconName": "Helixpur_Blossom_Sprite"
             },
             {
               "id": "item_21081",
-              "displayName": "Marinethorn blossom",
+              "displayName": "Marindorn",
               "iconName": "Marinethorn_Blossom_Sprite"
             },
             {
               "id": "item_21082",
-              "displayName": "Sea spud",
+              "displayName": "Meereskartoffel",
               "iconName": "Sea_Spud_Sprite"
             },
             {
               "id": "item_21084",
               "displayName": "Petalia",
               "iconName": "Petalia_Sprite"
+            },
+            {
+              "id": "item_21085",
+              "displayName": "Pilzbaumsamen",
+              "iconName": "Mushroom_tree_seeds_Sprite"
+            },
+            {
+              "id": "item_21086",
+              "displayName": "Sporenbaumsamen",
+              "iconName": "Wooblecap_seeds_Sprite"
+            },
+            {
+              "id": "item_21087",
+              "displayName": "Mondsporenbaumsamen",
+              "iconName": "Moonspore_seeds_Sprite"
             },
             {
               "id": "item_22001",
@@ -1230,7 +1300,7 @@
             },
             {
               "id": "item_72046",
-              "displayName": "Schirmquallen",
+              "displayName": "Schirmqualle",
               "iconName": "CannonBall_Jellyfish_Sprite"
             },
             {
@@ -1533,6 +1603,54 @@
       },
       "genericInput": null,
       "machine": "PreserveJar"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 3,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21020",
+          "displayName": "Litschi",
+          "iconName": "Lychee_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_21020",
+          "displayName": "Litschi",
+          "iconName": "Lychee_Sprite",
+          "sellPrice": 79
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 7,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -1843,21 +1961,6 @@
             "id": "item_41181",
             "displayName": "Großer Ziegenjoghurt",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Riesenmuschel",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Wakame-Alge",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Blumenstrauß",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -1999,6 +2102,73 @@
       ]
     }
   ],
+  "requiredAsOffering": [
+    {
+      "key": "HeritageBased",
+      "offeringGroupTitle": "Vermächtnisaltar",
+      "urlPath": "guardianaltar",
+      "offeringGroupRewardText": "Wächtergemälde",
+      "offerings": [
+        {
+          "title": "King Tan",
+          "imageName": "T_Art_OfferingKingtan",
+          "numOfItemRequired": 4,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_120551",
+                  "displayName": "König-Tan-Outfit",
+                  "iconName": "King_Tan_Outfit_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "id": "item_41109",
+                "displayName": "Duriankonfitüre",
+                "iconName": "Jam_Yellow_Sprite"
+              },
+              "amount": 8,
+              "quality": "osmium"
+            },
+            {
+              "item": {
+                "id": "item_41197",
+                "displayName": "Mangostanekonfitüre",
+                "iconName": "Jam_Red_Sprite"
+              },
+              "amount": 8,
+              "quality": "osmium"
+            },
+            {
+              "item": {
+                "id": "item_21020",
+                "displayName": "Litschi",
+                "iconName": "Lychee_Sprite"
+              },
+              "amount": 8,
+              "quality": "osmium"
+            },
+            {
+              "item": {
+                "id": "item_22019",
+                "displayName": "Mango",
+                "iconName": "Mango_Sprite"
+              },
+              "amount": 8,
+              "quality": "osmium"
+            }
+          ]
+        }
+      ],
+      "isHeritageOffering": true
+    }
+  ],
   "consumables": {
     "base": {
       "key": "item_21020",
@@ -2060,5 +2230,45 @@
       "buff": "None",
       "itemType": "Food"
     }
-  }
+  },
+  "usedToMix": [
+    {
+      "key": "MarinethornBlossomSeeds",
+      "amount": 1,
+      "cookingKey": "MarinethornBlossomSeeds",
+      "item": {
+        "id": "item_21066",
+        "displayName": "Marindornsamen",
+        "iconName": "Marinethorn_blossom_seeds_Sprite"
+      },
+      "genericIngredients": [],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_21020",
+            "displayName": "Litschi",
+            "iconName": "Lychee_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_50204",
+            "displayName": "Murex",
+            "iconName": "Murex_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_62002",
+            "displayName": "Gold-Seetang",
+            "iconName": "Gold_Kelp_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": []
+    }
+  ]
 }

@@ -38,6 +38,56 @@
       "Item.Consumable.Food"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 2,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21011",
+          "displayName": "Laitue",
+          "iconName": "Lettuce_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_21011",
+          "displayName": "Laitue",
+          "iconName": "Lettuce_Sprite",
+          "sellPrice": 47
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 3,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
     {
       "useCategory": false,
@@ -150,6 +200,54 @@
       },
       "genericInput": null,
       "machine": "SeedMaker"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 2,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21011",
+          "displayName": "Laitue",
+          "iconName": "Lettuce_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_21011",
+          "displayName": "Laitue",
+          "iconName": "Lettuce_Sprite",
+          "sellPrice": 47
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 3,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -1143,21 +1241,6 @@
             "id": "item_41181",
             "displayName": "Grand yaourt de chèvre",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Palourde géante",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Algues wakamé",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Bouquet de fleurs",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -1209,7 +1292,7 @@
           "genericItem": {
             "key": "Any_Cheese",
             "tags": [
-              "Artisan.CheesePress"
+              "item.artisan.cheese"
             ],
             "iconName": "Any_Cheese_Sprite",
             "displayName": "Fromage"
@@ -1529,5 +1612,45 @@
       "buff": "None",
       "itemType": "Food"
     }
-  }
+  },
+  "usedToMix": [
+    {
+      "key": "TwinshadeSealeafSeeds",
+      "amount": 1,
+      "cookingKey": "TwinshadeSealeafSeeds",
+      "item": {
+        "id": "item_21061",
+        "displayName": "Graines de merfeuille bicolore",
+        "iconName": "Twinshade_sealeaf_seeds_Sprite"
+      },
+      "genericIngredients": [],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_21011",
+            "displayName": "Laitue",
+            "iconName": "Lettuce_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_50337",
+            "displayName": "Ulve",
+            "iconName": "Sea_Lettuce_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_62004",
+            "displayName": "Varech en osmium",
+            "iconName": "Osmium_Kelp_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": []
+    }
+  ]
 }

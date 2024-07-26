@@ -1,0 +1,48 @@
+[
+  {
+    "Type": "C_GameplayRequirementsConfig",
+    "Name": "DA_LadyLavannaFurnitureDiscountRequirement",
+    "Class": "UScriptClass'C_GameplayRequirementsConfig'",
+    "Properties": {
+      "map": [
+        {
+          "savannahRaceMiniGame50s": {
+            "type": "EC_RequirementCollectionType::Or",
+            "requirements": [
+              {
+                "ObjectName": "C_ObjectStateRequirement'DA_LadyLavannaFurnitureDiscountRequirement:C_ObjectStateRequirement_1'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/LadyLavanna/DA_LadyLavannaFurnitureDiscountRequirement.2"
+              },
+              {
+                "ObjectName": "C_ObjectStateRequirement'DA_LadyLavannaFurnitureDiscountRequirement:C_ObjectStateRequirement_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/LadyLavanna/DA_LadyLavannaFurnitureDiscountRequirement.1"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_ObjectStateRequirement",
+    "Name": "C_ObjectStateRequirement_0",
+    "Outer": "DA_LadyLavannaFurnitureDiscountRequirement",
+    "Class": "UScriptClass'C_ObjectStateRequirement'",
+    "Properties": {
+      "id": "SavannahRaceState",
+      "requiredState": "WinUnder30s",
+      "requiredStateInput": "WinUnder30s"
+    }
+  },
+  {
+    "Type": "C_ObjectStateRequirement",
+    "Name": "C_ObjectStateRequirement_1",
+    "Outer": "DA_LadyLavannaFurnitureDiscountRequirement",
+    "Class": "UScriptClass'C_ObjectStateRequirement'",
+    "Properties": {
+      "id": "SavannahRaceState",
+      "requiredState": "WinUnder50s",
+      "requiredStateInput": "WinUnder50s"
+    }
+  }
+]

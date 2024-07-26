@@ -2,8 +2,8 @@
   "item": {
     "id": "item_31031",
     "displayName": "球体",
-    "price": 10,
-    "sellPrice": 10,
+    "price": 2140,
+    "sellPrice": 1500,
     "sellAt": [],
     "stackable": true,
     "inventoryCategory": "Animal product",
@@ -11,26 +11,148 @@
     "description": "シェルクラックの小さな真珠。",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 2460,
+        "sellPrice": 1725
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 2790,
+        "sellPrice": 1950
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 3210,
+        "sellPrice": 2250
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 4290,
+        "sellPrice": 3000
       }
     },
-    "iconName": "placeholder_icon_Sprite",
+    "iconName": "Sphere_Sprite",
     "tags": [
       "income.ranching",
-      "item.animalproduct.other"
+      "item.animalproduct.other",
+      "item.UnderwaterAnimalProduct"
     ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 15,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31031",
+          "displayName": "球体",
+          "iconName": "Sphere_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_31031",
+          "displayName": "球体",
+          "iconName": "Sphere_Sprite",
+          "sellPrice": 1500
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 1,
+          "time": {
+            "hours": 14,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 15,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31031",
+          "displayName": "球体",
+          "iconName": "Sphere_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_31031",
+          "displayName": "球体",
+          "iconName": "Sphere_Sprite",
+          "sellPrice": 1500
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 1,
+          "time": {
+            "hours": 14,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
+  "producedByAnimal": {
+    "key": "Shelluck",
+    "variants": [
+      {
+        "variant": "Default",
+        "icons": {
+          "adult": "Shell_cluck_Sprite"
+        }
+      }
+    ],
+    "building": "UnderwaterRanch",
+    "daysToGrow": 15,
+    "harvestCooldown": 6,
+    "animalProduceType": "DropAtDayBegin",
+    "baseProduceDropChance": 10,
+    "incrementProduceDropChance": 2,
+    "itemHarvestTool": {
+      "id": "item_65042",
+      "displayName": "ミルク缶",
+      "iconName": "Milk_Pail_Sprite"
+    },
+    "produceDropLocation": "None",
+    "produces": [
+      {
+        "minimumFriendshipLevelToSpawn": 0,
+        "small": {
+          "id": "item_31031",
+          "displayName": "球体",
+          "iconName": "Sphere_Sprite"
+        },
+        "large": {
+          "id": "item_31032",
+          "displayName": "大きな球体",
+          "iconName": "Large_sphere_Sprite"
+        }
+      }
+    ],
+    "displayName": "シェルクラック"
   }
 }

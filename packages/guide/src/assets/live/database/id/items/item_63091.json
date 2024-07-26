@@ -1,14 +1,14 @@
 {
   "item": {
     "id": "item_63091",
-    "displayName": "Rhodonite Wings Hammer",
+    "displayName": "Palu sayap rhodonit",
     "price": 20000,
     "sellPrice": 12000,
     "sellAt": [],
     "stackable": false,
     "inventoryCategory": "Weapon",
     "displayKey": "Weapon",
-    "description": "Itu senjata.",
+    "description": "Ini senjata.",
     "qualities": {},
     "iconName": "Rhodonite_wings_hammer_Sprite",
     "tags": []
@@ -17,7 +17,7 @@
     {
       "item": {
         "id": "item_63091",
-        "displayName": "Rhodonite Wings Hammer",
+        "displayName": "Palu sayap rhodonit",
         "iconName": "Rhodonite_wings_hammer_Sprite",
         "price": 20000,
         "sellPrice": 12000
@@ -31,11 +31,23 @@
       "townRank": 0,
       "tag": [],
       "priceOverride": 0,
-      "priority": 30,
-      "enabled": false,
+      "priority": 48,
+      "enabled": true,
       "availableSinceDate": false,
       "availableTillDate": false,
       "availableDuringTime": false,
+      "requirements": {
+        "key": "RhodoniteWingsHammer",
+        "type": "And",
+        "requirements": [
+          {
+            "type": "IsCutsceneTriggered",
+            "meta": {
+              "cutsceneTopic": "GS_Savannah_Unlock"
+            }
+          }
+        ]
+      },
       "shop": {
         "url": "bos",
         "displayName": "Band of Smiles"

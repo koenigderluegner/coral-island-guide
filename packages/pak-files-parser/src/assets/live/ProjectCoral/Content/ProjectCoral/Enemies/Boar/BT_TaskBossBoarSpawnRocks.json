@@ -1,0 +1,207 @@
+[
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BT_TaskBossBoarSpawnRocks",
+    "Outer": "BT_TaskBossBoarSpawnRocks_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_OwnerController",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'AIController'",
+          "ObjectPath": "/Script/AIModule"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Boss_Boar",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_BossBoar_C'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BP_BossBoar.11"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveExecuteAI",
+    "Outer": "BT_TaskBossBoarSpawnRocks_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'BTTask_BlueprintBase:ReceiveExecuteAI'",
+      "ObjectPath": "/Script/AIModule"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "OwnerController",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'AIController'",
+          "ObjectPath": "/Script/AIModule"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BT_TaskBossBoarSpawnRocks_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "UberGraphFunction": {
+        "ObjectName": "Function'BT_TaskBossBoarSpawnRocks_C:ExecuteUbergraph_BT_TaskBossBoarSpawnRocks'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BT_TaskBossBoarSpawnRocks.0"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'BTTask_BlueprintBase'",
+      "ObjectPath": "/Script/AIModule"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BT_TaskBossBoarSpawnRocks_C:ReceiveExecuteAI'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BT_TaskBossBoarSpawnRocks.1"
+      },
+      {
+        "ObjectName": "Function'BT_TaskBossBoarSpawnRocks_C:ExecuteUbergraph_BT_TaskBossBoarSpawnRocks'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BT_TaskBossBoarSpawnRocks.0"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "ChargingTimer",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "Attack Index",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "ChargingDuration",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "ChargingInterval",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "ChargingPower",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BT_TaskBossBoarSpawnRocks": {
+        "ObjectName": "Function'BT_TaskBossBoarSpawnRocks_C:ExecuteUbergraph_BT_TaskBossBoarSpawnRocks'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BT_TaskBossBoarSpawnRocks.0"
+      },
+      "ReceiveExecuteAI": {
+        "ObjectName": "Function'BT_TaskBossBoarSpawnRocks_C:ReceiveExecuteAI'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BT_TaskBossBoarSpawnRocks.1"
+      }
+    },
+    "ClassFlags": "CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Game",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BT_TaskBossBoarSpawnRocks_C'Default__BT_TaskBossBoarSpawnRocks_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Boar/BT_TaskBossBoarSpawnRocks.3"
+    }
+  },
+  {
+    "Type": "BT_TaskBossBoarSpawnRocks_C",
+    "Name": "Default__BT_TaskBossBoarSpawnRocks_C",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Enemies/Boar/BT_TaskBossBoarSpawnRocks.BT_TaskBossBoarSpawnRocks_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "ChargingTimer": {
+        "Handle": 0
+      },
+      "ChargingDuration": 1.1,
+      "ChargingInterval": 0.1,
+      "ChargingPower": 1000.0
+    }
+  }
+]

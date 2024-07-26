@@ -1,39 +1,93 @@
 {
   "item": {
     "id": "item_21082",
-    "displayName": "Sea spud",
-    "price": 10,
-    "sellPrice": 10,
-    "sellAt": [],
+    "displayName": "Meereskartoffel",
+    "price": 255,
+    "sellPrice": 154,
+    "sellAt": [
+      "MerfolkGeneral"
+    ],
     "stackable": true,
     "inventoryCategory": "Vegetables",
-    "displayKey": "Vegetables",
-    "description": "If I made french fries with this, do I still need salt to flavour it?",
+    "displayKey": "Fruit",
+    "description": "Muss ich noch Salz dazugeben, wenn ich Pommes daraus mache?",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 295,
+        "sellPrice": 177
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 335,
+        "sellPrice": 200
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 385,
+        "sellPrice": 231
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 515,
+        "sellPrice": 308
       }
     },
     "iconName": "Sea_Spud_Sprite",
     "tags": [
-      "income.farming",
+      "income.oceanfarming",
+      "item.crop.diving",
+      "Item.Consumable.Food",
       "item.fruit",
-      "Item.Consumable.Food"
+      "item.UnderwaterFruit"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 4,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21082",
+          "displayName": "Meereskartoffel",
+          "iconName": "Sea_Spud_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_21082",
+          "displayName": "Meereskartoffel",
+          "iconName": "Sea_Spud_Sprite",
+          "sellPrice": 154
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 5,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 10,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
     {
       "useCategory": false,
@@ -416,43 +470,63 @@
             },
             {
               "id": "item_21071",
-              "displayName": "Sproutfruit",
+              "displayName": "Sprösslingsfrucht",
               "iconName": "Sproutfruit_Sprite"
             },
             {
+              "id": "item_21075",
+              "displayName": "Pinke Korallenkappe",
+              "iconName": "Pink_Coralcap_Sprite"
+            },
+            {
               "id": "item_21077",
-              "displayName": "Bluebell blossom",
+              "displayName": "Glockenblume",
               "iconName": "Bluebell_Blossom_Sprite"
             },
             {
               "id": "item_21078",
-              "displayName": "Goldglow",
+              "displayName": "Goldschein",
               "iconName": "Goldglow_Sprite"
             },
             {
               "id": "item_21079",
-              "displayName": "Soka",
+              "displayName": "Ixora",
               "iconName": "Soka_Sprite"
             },
             {
               "id": "item_21080",
-              "displayName": "Helixpur blossom",
+              "displayName": "Helixpur",
               "iconName": "Helixpur_Blossom_Sprite"
             },
             {
               "id": "item_21081",
-              "displayName": "Marinethorn blossom",
+              "displayName": "Marindorn",
               "iconName": "Marinethorn_Blossom_Sprite"
             },
             {
               "id": "item_21082",
-              "displayName": "Sea spud",
+              "displayName": "Meereskartoffel",
               "iconName": "Sea_Spud_Sprite"
             },
             {
               "id": "item_21084",
               "displayName": "Petalia",
               "iconName": "Petalia_Sprite"
+            },
+            {
+              "id": "item_21085",
+              "displayName": "Pilzbaumsamen",
+              "iconName": "Mushroom_tree_seeds_Sprite"
+            },
+            {
+              "id": "item_21086",
+              "displayName": "Sporenbaumsamen",
+              "iconName": "Wooblecap_seeds_Sprite"
+            },
+            {
+              "id": "item_21087",
+              "displayName": "Mondsporenbaumsamen",
+              "iconName": "Moonspore_seeds_Sprite"
             },
             {
               "id": "item_22001",
@@ -1226,7 +1300,7 @@
             },
             {
               "id": "item_72046",
-              "displayName": "Schirmquallen",
+              "displayName": "Schirmqualle",
               "iconName": "CannonBall_Jellyfish_Sprite"
             },
             {
@@ -1473,6 +1547,110 @@
         }
       },
       "machine": "CompostBin"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21082",
+          "displayName": "Meereskartoffel",
+          "iconName": "Sea_Spud_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41400",
+          "displayName": "Meereskartoffelsaft",
+          "iconName": "Underwater_fruit_juice_Sprite",
+          "sellPrice": 340
+        }
+      },
+      "genericInput": null,
+      "machine": "Keg"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21082",
+          "displayName": "Meereskartoffel",
+          "iconName": "Sea_Spud_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41368",
+          "displayName": "Meereskartoffelkonfitüre",
+          "iconName": "Jam_Yellow_underwater_Sprite",
+          "sellPrice": 245
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 4,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21082",
+          "displayName": "Meereskartoffel",
+          "iconName": "Sea_Spud_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_21082",
+          "displayName": "Meereskartoffel",
+          "iconName": "Sea_Spud_Sprite",
+          "sellPrice": 154
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 5,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 10,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -1783,21 +1961,6 @@
             "id": "item_41181",
             "displayName": "Großer Ziegenjoghurt",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Riesenmuschel",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Wakame-Alge",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Blumenstrauß",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -1861,5 +2024,123 @@
       "ingredients": [],
       "eitherOrIngredients": []
     }
-  ]
+  ],
+  "isSeedFor": [
+    {
+      "key": "item_21067",
+      "item": {
+        "id": "item_21067",
+        "displayName": "Meereskartoffelsamen",
+        "iconName": "Sea_spud_seeds_Sprite",
+        "price": 85
+      },
+      "size": {
+        "length": 1,
+        "width": 1
+      },
+      "canCombine": false,
+      "chanceToCombine": {
+        "chance": 0
+      },
+      "growableSeason": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "growTime": 10,
+      "isRegrowable": false,
+      "regrowableLength": 1,
+      "readableName": "Sea spud seeds",
+      "isTrellisCrop": false,
+      "pickupableItemId": "item_21082",
+      "pickupableItem": {
+        "id": "item_21082",
+        "displayName": "Meereskartoffel",
+        "iconName": "Sea_Spud_Sprite"
+      },
+      "isScytheRequired": false,
+      "maxDroppedItems": 1,
+      "overrideExperience": false,
+      "overrideExperienceOnHarvest": 0,
+      "dropData": [
+        {
+          "itemId": "item_21082",
+          "dropChance": 100,
+          "dropRange": {
+            "min": 1,
+            "max": 1
+          },
+          "item": {
+            "id": "item_21082",
+            "displayName": "Meereskartoffel",
+            "iconName": "Sea_Spud_Sprite",
+            "sellPrice": 154
+          }
+        }
+      ]
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_21082",
+      "bVaryHealthToMax": false,
+      "healthDelta": 125,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 80,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "bronze": {
+      "key": "item_21082-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 144,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 92,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "silver": {
+      "key": "item_21082-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 156,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 100,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "gold": {
+      "key": "item_21082-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 188,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 120,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "osmium": {
+      "key": "item_21082-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 250,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 160,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    }
+  }
 }

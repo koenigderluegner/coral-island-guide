@@ -37,6 +37,47 @@
       "Item.Consumable.Food"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 1,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_50324",
+          "displayName": "Mexilhão-zebra",
+          "iconName": "Zebra_Mussel_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_50324",
+          "displayName": "Mexilhão-zebra",
+          "iconName": "Zebra_Mussel_Sprite",
+          "sellPrice": 20
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 3,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
     {
       "useCategory": false,
@@ -419,17 +460,22 @@
             },
             {
               "id": "item_21071",
-              "displayName": "Sproutfruit",
+              "displayName": "Frutinha de Broto",
               "iconName": "Sproutfruit_Sprite"
             },
             {
+              "id": "item_21075",
+              "displayName": "Crista-de-coral Rosa",
+              "iconName": "Pink_Coralcap_Sprite"
+            },
+            {
               "id": "item_21077",
-              "displayName": "Bluebell blossom",
+              "displayName": "Flor de Jacinto",
               "iconName": "Bluebell_Blossom_Sprite"
             },
             {
               "id": "item_21078",
-              "displayName": "Goldglow",
+              "displayName": "Brilho Dourado",
               "iconName": "Goldglow_Sprite"
             },
             {
@@ -439,23 +485,38 @@
             },
             {
               "id": "item_21080",
-              "displayName": "Helixpur blossom",
+              "displayName": "Flor de Helixpur",
               "iconName": "Helixpur_Blossom_Sprite"
             },
             {
               "id": "item_21081",
-              "displayName": "Marinethorn blossom",
+              "displayName": "Flor de Marinhespinho",
               "iconName": "Marinethorn_Blossom_Sprite"
             },
             {
               "id": "item_21082",
-              "displayName": "Sea spud",
+              "displayName": "Batata Marinha",
               "iconName": "Sea_Spud_Sprite"
             },
             {
               "id": "item_21084",
-              "displayName": "Petalia",
+              "displayName": "Petália",
               "iconName": "Petalia_Sprite"
+            },
+            {
+              "id": "item_21085",
+              "displayName": "Sementes de árvore de cogumelo",
+              "iconName": "Mushroom_tree_seeds_Sprite"
+            },
+            {
+              "id": "item_21086",
+              "displayName": "Sementes de cogumázio",
+              "iconName": "Wooblecap_seeds_Sprite"
+            },
+            {
+              "id": "item_21087",
+              "displayName": "Sementes de lunesporo",
+              "iconName": "Moonspore_seeds_Sprite"
             },
             {
               "id": "item_22001",
@@ -1504,6 +1565,45 @@
       },
       "genericInput": null,
       "machine": "Dehydrator"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 1,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_50324",
+          "displayName": "Mexilhão-zebra",
+          "iconName": "Zebra_Mussel_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_50324",
+          "displayName": "Mexilhão-zebra",
+          "iconName": "Zebra_Mussel_Sprite",
+          "sellPrice": 20
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 3,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -1669,21 +1769,6 @@
             "id": "item_41181",
             "displayName": "Iogurte de cabra grande",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Amêijoa gigante",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Alga Wakame",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Buquê de flores",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -2411,6 +2496,1241 @@
         "description": "Aumenta imensamente a taxa de crescimento.",
         "qualities": {},
         "iconName": "Flash_III_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65776",
+      "displayName": "Anemone auto fertilizer",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_62005",
+            "displayName": "Essência de kelp de bronze",
+            "iconName": "Bronze_kelp_essence_Sprite"
+          },
+          "amount": 3
+        },
+        {
+          "item": {
+            "id": "item_50506",
+            "displayName": "Meleca de Gosma",
+            "iconName": "Slime_goop_Sprite"
+          },
+          "amount": 2
+        },
+        {
+          "item": {
+            "id": "item_62010",
+            "displayName": "Núcleo solar",
+            "iconName": "Solar_Core_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "genericIngredients": [
+        {
+          "key": "Any_SeaScavenge",
+          "amount": 5,
+          "genericItem": {
+            "key": "Any_SeaScavenge",
+            "tags": [
+              "item.gathering.sea"
+            ],
+            "iconName": "Any_sea_scavangeable_Sprite",
+            "displayName": "Qualquer item de catação marinho",
+            "items": [
+              {
+                "id": "item_50302",
+                "displayName": "Ouriço-do-mar-negro",
+                "iconName": "Black_sea_urchin_Sprite"
+              },
+              {
+                "id": "item_50303",
+                "displayName": "Alga marinha",
+                "iconName": "Seaweed_Sprite"
+              },
+              {
+                "id": "item_50306",
+                "displayName": "Cogumelo do mar",
+                "iconName": "Sea_Mushroom_Sprite"
+              },
+              {
+                "id": "item_50308",
+                "displayName": "Mexilhão azul",
+                "iconName": "Blue_Mussel_Sprite"
+              },
+              {
+                "id": "item_50309",
+                "displayName": "Vieira malhada",
+                "iconName": "Calico_Scallop_Sprite"
+              },
+              {
+                "id": "item_50310",
+                "displayName": "Amêijoa de sangue",
+                "iconName": "Blood_Clam_Sprite"
+              },
+              {
+                "id": "item_50311",
+                "displayName": "Ostra-do-Pacífico",
+                "iconName": "Pacific_Oyster_Sprite"
+              },
+              {
+                "id": "item_50313",
+                "displayName": "Marisco de concha mole",
+                "iconName": "Steamer_Clam_Sprite"
+              },
+              {
+                "id": "item_50315",
+                "displayName": "Lingueirão",
+                "iconName": "Jackknife_Clam_Sprite"
+              },
+              {
+                "id": "item_50316",
+                "displayName": "Mexilhão-pato",
+                "iconName": "Duck_Mussel_Sprite"
+              },
+              {
+                "id": "item_50318",
+                "displayName": "Vieira-do-Mediterrâneo",
+                "iconName": "Mediterranean_Scallop_Sprite"
+              },
+              {
+                "id": "item_50320",
+                "displayName": "Arame",
+                "iconName": "Arame_Sprite"
+              },
+              {
+                "id": "item_50322",
+                "displayName": "Amêijoa-mercenária",
+                "iconName": "Cherrystone_clam_Sprite"
+              },
+              {
+                "id": "item_50323",
+                "displayName": "Concha-caneta âmbar",
+                "iconName": "Amber_pen_shell_Sprite"
+              },
+              {
+                "id": "item_50324",
+                "displayName": "Mexilhão-zebra",
+                "iconName": "Zebra_Mussel_Sprite"
+              },
+              {
+                "id": "item_50326",
+                "displayName": "Ostra-americana",
+                "iconName": "Eastern_Oyster_Sprite"
+              },
+              {
+                "id": "item_50327",
+                "displayName": "Ostra-plana-europeia",
+                "iconName": "Belon_Oyster_Sprite"
+              },
+              {
+                "id": "item_50329",
+                "displayName": "Ouriço-do-mar-roxo",
+                "iconName": "Purple_urchin_Sprite"
+              },
+              {
+                "id": "item_50330",
+                "displayName": "Navalha do Pacífico",
+                "iconName": "Razor_Clam_Sprite"
+              },
+              {
+                "id": "item_50331",
+                "displayName": "Mexilhão de lábios verdes",
+                "iconName": "Green_lipped_mussel_Sprite"
+              },
+              {
+                "id": "item_50332",
+                "displayName": "Ostra azul",
+                "iconName": "Blue_oyster_Sprite"
+              },
+              {
+                "id": "item_50333",
+                "displayName": "Ostra Kumamoto",
+                "iconName": "Kumamoto_Oyster_Sprite"
+              },
+              {
+                "id": "item_50334",
+                "displayName": "Vieira da baía",
+                "iconName": "Bay_Scallop_Sprite"
+              },
+              {
+                "id": "item_50335",
+                "displayName": "Vieira patagônica",
+                "iconName": "Patagonian_Scallop_Sprite"
+              },
+              {
+                "id": "item_50336",
+                "displayName": "Kombu",
+                "iconName": "Kombu_Sprite"
+              },
+              {
+                "id": "item_50337",
+                "displayName": "Alface-do-mar",
+                "iconName": "Sea_Lettuce_Sprite"
+              },
+              {
+                "id": "item_50338",
+                "displayName": "Ouriço-do-mar-verde",
+                "iconName": "Green_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50339",
+                "displayName": "Quahog",
+                "iconName": "Quahog_Sprite"
+              },
+              {
+                "id": "item_50340",
+                "displayName": "Amêijoa-gigante",
+                "iconName": "Geoduck_Sprite"
+              },
+              {
+                "id": "item_50341",
+                "displayName": "Mexilhão-cavalo",
+                "iconName": "Horse_Mussel_Sprite"
+              },
+              {
+                "id": "item_50342",
+                "displayName": "Ostra Olympia",
+                "iconName": "Olympia_oyster_Sprite"
+              },
+              {
+                "id": "item_50343",
+                "displayName": "Vieira-rainha",
+                "iconName": "Queen_Scallop_Sprite"
+              },
+              {
+                "id": "item_50344",
+                "displayName": "Vieira-rei",
+                "iconName": "King_Scallop_Sprite"
+              },
+              {
+                "id": "item_50345",
+                "displayName": "Uva-do-mar",
+                "iconName": "Sea_Grapes_Sprite"
+              },
+              {
+                "id": "item_50346",
+                "displayName": "Ouriço-do-mar-vermelho",
+                "iconName": "Red_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50347",
+                "displayName": "Ouriço-coração",
+                "iconName": "Heart_Urchin_Sprite"
+              },
+              {
+                "id": "item_50348",
+                "displayName": "Percebe",
+                "iconName": "Gooseneck_Barnacle_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Farming",
+      "item": {
+        "id": "item_65776",
+        "displayName": "Fertilizante automático de anêmona",
+        "price": 10,
+        "sellPrice": 10,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Uma anêmona como acessório de aspersor de lumina. Aplica fertilizante automaticamente às sementes próximas quando carregado.",
+        "qualities": {},
+        "iconName": "Anemone_auto_fertilizer_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65777",
+      "displayName": "Anemone auto harvest",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_62007",
+            "displayName": "Essência de kelp de prata",
+            "iconName": "Silver_Kelp_Essence_Sprite"
+          },
+          "amount": 3
+        },
+        {
+          "item": {
+            "id": "item_50506",
+            "displayName": "Meleca de Gosma",
+            "iconName": "Slime_goop_Sprite"
+          },
+          "amount": 2
+        },
+        {
+          "item": {
+            "id": "item_62010",
+            "displayName": "Núcleo solar",
+            "iconName": "Solar_Core_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "genericIngredients": [
+        {
+          "key": "Any_SeaScavenge",
+          "amount": 5,
+          "genericItem": {
+            "key": "Any_SeaScavenge",
+            "tags": [
+              "item.gathering.sea"
+            ],
+            "iconName": "Any_sea_scavangeable_Sprite",
+            "displayName": "Qualquer item de catação marinho",
+            "items": [
+              {
+                "id": "item_50302",
+                "displayName": "Ouriço-do-mar-negro",
+                "iconName": "Black_sea_urchin_Sprite"
+              },
+              {
+                "id": "item_50303",
+                "displayName": "Alga marinha",
+                "iconName": "Seaweed_Sprite"
+              },
+              {
+                "id": "item_50306",
+                "displayName": "Cogumelo do mar",
+                "iconName": "Sea_Mushroom_Sprite"
+              },
+              {
+                "id": "item_50308",
+                "displayName": "Mexilhão azul",
+                "iconName": "Blue_Mussel_Sprite"
+              },
+              {
+                "id": "item_50309",
+                "displayName": "Vieira malhada",
+                "iconName": "Calico_Scallop_Sprite"
+              },
+              {
+                "id": "item_50310",
+                "displayName": "Amêijoa de sangue",
+                "iconName": "Blood_Clam_Sprite"
+              },
+              {
+                "id": "item_50311",
+                "displayName": "Ostra-do-Pacífico",
+                "iconName": "Pacific_Oyster_Sprite"
+              },
+              {
+                "id": "item_50313",
+                "displayName": "Marisco de concha mole",
+                "iconName": "Steamer_Clam_Sprite"
+              },
+              {
+                "id": "item_50315",
+                "displayName": "Lingueirão",
+                "iconName": "Jackknife_Clam_Sprite"
+              },
+              {
+                "id": "item_50316",
+                "displayName": "Mexilhão-pato",
+                "iconName": "Duck_Mussel_Sprite"
+              },
+              {
+                "id": "item_50318",
+                "displayName": "Vieira-do-Mediterrâneo",
+                "iconName": "Mediterranean_Scallop_Sprite"
+              },
+              {
+                "id": "item_50320",
+                "displayName": "Arame",
+                "iconName": "Arame_Sprite"
+              },
+              {
+                "id": "item_50322",
+                "displayName": "Amêijoa-mercenária",
+                "iconName": "Cherrystone_clam_Sprite"
+              },
+              {
+                "id": "item_50323",
+                "displayName": "Concha-caneta âmbar",
+                "iconName": "Amber_pen_shell_Sprite"
+              },
+              {
+                "id": "item_50324",
+                "displayName": "Mexilhão-zebra",
+                "iconName": "Zebra_Mussel_Sprite"
+              },
+              {
+                "id": "item_50326",
+                "displayName": "Ostra-americana",
+                "iconName": "Eastern_Oyster_Sprite"
+              },
+              {
+                "id": "item_50327",
+                "displayName": "Ostra-plana-europeia",
+                "iconName": "Belon_Oyster_Sprite"
+              },
+              {
+                "id": "item_50329",
+                "displayName": "Ouriço-do-mar-roxo",
+                "iconName": "Purple_urchin_Sprite"
+              },
+              {
+                "id": "item_50330",
+                "displayName": "Navalha do Pacífico",
+                "iconName": "Razor_Clam_Sprite"
+              },
+              {
+                "id": "item_50331",
+                "displayName": "Mexilhão de lábios verdes",
+                "iconName": "Green_lipped_mussel_Sprite"
+              },
+              {
+                "id": "item_50332",
+                "displayName": "Ostra azul",
+                "iconName": "Blue_oyster_Sprite"
+              },
+              {
+                "id": "item_50333",
+                "displayName": "Ostra Kumamoto",
+                "iconName": "Kumamoto_Oyster_Sprite"
+              },
+              {
+                "id": "item_50334",
+                "displayName": "Vieira da baía",
+                "iconName": "Bay_Scallop_Sprite"
+              },
+              {
+                "id": "item_50335",
+                "displayName": "Vieira patagônica",
+                "iconName": "Patagonian_Scallop_Sprite"
+              },
+              {
+                "id": "item_50336",
+                "displayName": "Kombu",
+                "iconName": "Kombu_Sprite"
+              },
+              {
+                "id": "item_50337",
+                "displayName": "Alface-do-mar",
+                "iconName": "Sea_Lettuce_Sprite"
+              },
+              {
+                "id": "item_50338",
+                "displayName": "Ouriço-do-mar-verde",
+                "iconName": "Green_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50339",
+                "displayName": "Quahog",
+                "iconName": "Quahog_Sprite"
+              },
+              {
+                "id": "item_50340",
+                "displayName": "Amêijoa-gigante",
+                "iconName": "Geoduck_Sprite"
+              },
+              {
+                "id": "item_50341",
+                "displayName": "Mexilhão-cavalo",
+                "iconName": "Horse_Mussel_Sprite"
+              },
+              {
+                "id": "item_50342",
+                "displayName": "Ostra Olympia",
+                "iconName": "Olympia_oyster_Sprite"
+              },
+              {
+                "id": "item_50343",
+                "displayName": "Vieira-rainha",
+                "iconName": "Queen_Scallop_Sprite"
+              },
+              {
+                "id": "item_50344",
+                "displayName": "Vieira-rei",
+                "iconName": "King_Scallop_Sprite"
+              },
+              {
+                "id": "item_50345",
+                "displayName": "Uva-do-mar",
+                "iconName": "Sea_Grapes_Sprite"
+              },
+              {
+                "id": "item_50346",
+                "displayName": "Ouriço-do-mar-vermelho",
+                "iconName": "Red_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50347",
+                "displayName": "Ouriço-coração",
+                "iconName": "Heart_Urchin_Sprite"
+              },
+              {
+                "id": "item_50348",
+                "displayName": "Percebe",
+                "iconName": "Gooseneck_Barnacle_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Farming",
+      "item": {
+        "id": "item_65777",
+        "displayName": "Colhedor automático de anêmona",
+        "price": 10,
+        "sellPrice": 10,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Uma anêmona como acessório de aspersor de lumina. Colhe as plantações subaquáticas automaticamente.",
+        "qualities": {},
+        "iconName": "Anemone_auto_harvest_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65778",
+      "displayName": "Anemone auto seed",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_62006",
+            "displayName": "Essência de kelp de ouro",
+            "iconName": "Gold_Kelp_Essence_Sprite"
+          },
+          "amount": 3
+        },
+        {
+          "item": {
+            "id": "item_50506",
+            "displayName": "Meleca de Gosma",
+            "iconName": "Slime_goop_Sprite"
+          },
+          "amount": 2
+        },
+        {
+          "item": {
+            "id": "item_62010",
+            "displayName": "Núcleo solar",
+            "iconName": "Solar_Core_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "genericIngredients": [
+        {
+          "key": "Any_SeaScavenge",
+          "amount": 5,
+          "genericItem": {
+            "key": "Any_SeaScavenge",
+            "tags": [
+              "item.gathering.sea"
+            ],
+            "iconName": "Any_sea_scavangeable_Sprite",
+            "displayName": "Qualquer item de catação marinho",
+            "items": [
+              {
+                "id": "item_50302",
+                "displayName": "Ouriço-do-mar-negro",
+                "iconName": "Black_sea_urchin_Sprite"
+              },
+              {
+                "id": "item_50303",
+                "displayName": "Alga marinha",
+                "iconName": "Seaweed_Sprite"
+              },
+              {
+                "id": "item_50306",
+                "displayName": "Cogumelo do mar",
+                "iconName": "Sea_Mushroom_Sprite"
+              },
+              {
+                "id": "item_50308",
+                "displayName": "Mexilhão azul",
+                "iconName": "Blue_Mussel_Sprite"
+              },
+              {
+                "id": "item_50309",
+                "displayName": "Vieira malhada",
+                "iconName": "Calico_Scallop_Sprite"
+              },
+              {
+                "id": "item_50310",
+                "displayName": "Amêijoa de sangue",
+                "iconName": "Blood_Clam_Sprite"
+              },
+              {
+                "id": "item_50311",
+                "displayName": "Ostra-do-Pacífico",
+                "iconName": "Pacific_Oyster_Sprite"
+              },
+              {
+                "id": "item_50313",
+                "displayName": "Marisco de concha mole",
+                "iconName": "Steamer_Clam_Sprite"
+              },
+              {
+                "id": "item_50315",
+                "displayName": "Lingueirão",
+                "iconName": "Jackknife_Clam_Sprite"
+              },
+              {
+                "id": "item_50316",
+                "displayName": "Mexilhão-pato",
+                "iconName": "Duck_Mussel_Sprite"
+              },
+              {
+                "id": "item_50318",
+                "displayName": "Vieira-do-Mediterrâneo",
+                "iconName": "Mediterranean_Scallop_Sprite"
+              },
+              {
+                "id": "item_50320",
+                "displayName": "Arame",
+                "iconName": "Arame_Sprite"
+              },
+              {
+                "id": "item_50322",
+                "displayName": "Amêijoa-mercenária",
+                "iconName": "Cherrystone_clam_Sprite"
+              },
+              {
+                "id": "item_50323",
+                "displayName": "Concha-caneta âmbar",
+                "iconName": "Amber_pen_shell_Sprite"
+              },
+              {
+                "id": "item_50324",
+                "displayName": "Mexilhão-zebra",
+                "iconName": "Zebra_Mussel_Sprite"
+              },
+              {
+                "id": "item_50326",
+                "displayName": "Ostra-americana",
+                "iconName": "Eastern_Oyster_Sprite"
+              },
+              {
+                "id": "item_50327",
+                "displayName": "Ostra-plana-europeia",
+                "iconName": "Belon_Oyster_Sprite"
+              },
+              {
+                "id": "item_50329",
+                "displayName": "Ouriço-do-mar-roxo",
+                "iconName": "Purple_urchin_Sprite"
+              },
+              {
+                "id": "item_50330",
+                "displayName": "Navalha do Pacífico",
+                "iconName": "Razor_Clam_Sprite"
+              },
+              {
+                "id": "item_50331",
+                "displayName": "Mexilhão de lábios verdes",
+                "iconName": "Green_lipped_mussel_Sprite"
+              },
+              {
+                "id": "item_50332",
+                "displayName": "Ostra azul",
+                "iconName": "Blue_oyster_Sprite"
+              },
+              {
+                "id": "item_50333",
+                "displayName": "Ostra Kumamoto",
+                "iconName": "Kumamoto_Oyster_Sprite"
+              },
+              {
+                "id": "item_50334",
+                "displayName": "Vieira da baía",
+                "iconName": "Bay_Scallop_Sprite"
+              },
+              {
+                "id": "item_50335",
+                "displayName": "Vieira patagônica",
+                "iconName": "Patagonian_Scallop_Sprite"
+              },
+              {
+                "id": "item_50336",
+                "displayName": "Kombu",
+                "iconName": "Kombu_Sprite"
+              },
+              {
+                "id": "item_50337",
+                "displayName": "Alface-do-mar",
+                "iconName": "Sea_Lettuce_Sprite"
+              },
+              {
+                "id": "item_50338",
+                "displayName": "Ouriço-do-mar-verde",
+                "iconName": "Green_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50339",
+                "displayName": "Quahog",
+                "iconName": "Quahog_Sprite"
+              },
+              {
+                "id": "item_50340",
+                "displayName": "Amêijoa-gigante",
+                "iconName": "Geoduck_Sprite"
+              },
+              {
+                "id": "item_50341",
+                "displayName": "Mexilhão-cavalo",
+                "iconName": "Horse_Mussel_Sprite"
+              },
+              {
+                "id": "item_50342",
+                "displayName": "Ostra Olympia",
+                "iconName": "Olympia_oyster_Sprite"
+              },
+              {
+                "id": "item_50343",
+                "displayName": "Vieira-rainha",
+                "iconName": "Queen_Scallop_Sprite"
+              },
+              {
+                "id": "item_50344",
+                "displayName": "Vieira-rei",
+                "iconName": "King_Scallop_Sprite"
+              },
+              {
+                "id": "item_50345",
+                "displayName": "Uva-do-mar",
+                "iconName": "Sea_Grapes_Sprite"
+              },
+              {
+                "id": "item_50346",
+                "displayName": "Ouriço-do-mar-vermelho",
+                "iconName": "Red_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50347",
+                "displayName": "Ouriço-coração",
+                "iconName": "Heart_Urchin_Sprite"
+              },
+              {
+                "id": "item_50348",
+                "displayName": "Percebe",
+                "iconName": "Gooseneck_Barnacle_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Farming",
+      "item": {
+        "id": "item_65778",
+        "displayName": "Semeador automático de anêmona",
+        "price": 10,
+        "sellPrice": 10,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Uma anêmona como acessório de aspersor de lumina. Planta sementes automaticamente no solo arado vazio quando carregado.",
+        "qualities": {},
+        "iconName": "Anemone_auto_seed_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65779",
+      "displayName": "Anemone auto SFH",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_62008",
+            "displayName": "Essência de kelp de ósmio",
+            "iconName": "Osmium_Kelp_Essence_Sprite"
+          },
+          "amount": 3
+        },
+        {
+          "item": {
+            "id": "item_50506",
+            "displayName": "Meleca de Gosma",
+            "iconName": "Slime_goop_Sprite"
+          },
+          "amount": 2
+        },
+        {
+          "item": {
+            "id": "item_62010",
+            "displayName": "Núcleo solar",
+            "iconName": "Solar_Core_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "genericIngredients": [
+        {
+          "key": "Any_SeaScavenge",
+          "amount": 5,
+          "genericItem": {
+            "key": "Any_SeaScavenge",
+            "tags": [
+              "item.gathering.sea"
+            ],
+            "iconName": "Any_sea_scavangeable_Sprite",
+            "displayName": "Qualquer item de catação marinho",
+            "items": [
+              {
+                "id": "item_50302",
+                "displayName": "Ouriço-do-mar-negro",
+                "iconName": "Black_sea_urchin_Sprite"
+              },
+              {
+                "id": "item_50303",
+                "displayName": "Alga marinha",
+                "iconName": "Seaweed_Sprite"
+              },
+              {
+                "id": "item_50306",
+                "displayName": "Cogumelo do mar",
+                "iconName": "Sea_Mushroom_Sprite"
+              },
+              {
+                "id": "item_50308",
+                "displayName": "Mexilhão azul",
+                "iconName": "Blue_Mussel_Sprite"
+              },
+              {
+                "id": "item_50309",
+                "displayName": "Vieira malhada",
+                "iconName": "Calico_Scallop_Sprite"
+              },
+              {
+                "id": "item_50310",
+                "displayName": "Amêijoa de sangue",
+                "iconName": "Blood_Clam_Sprite"
+              },
+              {
+                "id": "item_50311",
+                "displayName": "Ostra-do-Pacífico",
+                "iconName": "Pacific_Oyster_Sprite"
+              },
+              {
+                "id": "item_50313",
+                "displayName": "Marisco de concha mole",
+                "iconName": "Steamer_Clam_Sprite"
+              },
+              {
+                "id": "item_50315",
+                "displayName": "Lingueirão",
+                "iconName": "Jackknife_Clam_Sprite"
+              },
+              {
+                "id": "item_50316",
+                "displayName": "Mexilhão-pato",
+                "iconName": "Duck_Mussel_Sprite"
+              },
+              {
+                "id": "item_50318",
+                "displayName": "Vieira-do-Mediterrâneo",
+                "iconName": "Mediterranean_Scallop_Sprite"
+              },
+              {
+                "id": "item_50320",
+                "displayName": "Arame",
+                "iconName": "Arame_Sprite"
+              },
+              {
+                "id": "item_50322",
+                "displayName": "Amêijoa-mercenária",
+                "iconName": "Cherrystone_clam_Sprite"
+              },
+              {
+                "id": "item_50323",
+                "displayName": "Concha-caneta âmbar",
+                "iconName": "Amber_pen_shell_Sprite"
+              },
+              {
+                "id": "item_50324",
+                "displayName": "Mexilhão-zebra",
+                "iconName": "Zebra_Mussel_Sprite"
+              },
+              {
+                "id": "item_50326",
+                "displayName": "Ostra-americana",
+                "iconName": "Eastern_Oyster_Sprite"
+              },
+              {
+                "id": "item_50327",
+                "displayName": "Ostra-plana-europeia",
+                "iconName": "Belon_Oyster_Sprite"
+              },
+              {
+                "id": "item_50329",
+                "displayName": "Ouriço-do-mar-roxo",
+                "iconName": "Purple_urchin_Sprite"
+              },
+              {
+                "id": "item_50330",
+                "displayName": "Navalha do Pacífico",
+                "iconName": "Razor_Clam_Sprite"
+              },
+              {
+                "id": "item_50331",
+                "displayName": "Mexilhão de lábios verdes",
+                "iconName": "Green_lipped_mussel_Sprite"
+              },
+              {
+                "id": "item_50332",
+                "displayName": "Ostra azul",
+                "iconName": "Blue_oyster_Sprite"
+              },
+              {
+                "id": "item_50333",
+                "displayName": "Ostra Kumamoto",
+                "iconName": "Kumamoto_Oyster_Sprite"
+              },
+              {
+                "id": "item_50334",
+                "displayName": "Vieira da baía",
+                "iconName": "Bay_Scallop_Sprite"
+              },
+              {
+                "id": "item_50335",
+                "displayName": "Vieira patagônica",
+                "iconName": "Patagonian_Scallop_Sprite"
+              },
+              {
+                "id": "item_50336",
+                "displayName": "Kombu",
+                "iconName": "Kombu_Sprite"
+              },
+              {
+                "id": "item_50337",
+                "displayName": "Alface-do-mar",
+                "iconName": "Sea_Lettuce_Sprite"
+              },
+              {
+                "id": "item_50338",
+                "displayName": "Ouriço-do-mar-verde",
+                "iconName": "Green_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50339",
+                "displayName": "Quahog",
+                "iconName": "Quahog_Sprite"
+              },
+              {
+                "id": "item_50340",
+                "displayName": "Amêijoa-gigante",
+                "iconName": "Geoduck_Sprite"
+              },
+              {
+                "id": "item_50341",
+                "displayName": "Mexilhão-cavalo",
+                "iconName": "Horse_Mussel_Sprite"
+              },
+              {
+                "id": "item_50342",
+                "displayName": "Ostra Olympia",
+                "iconName": "Olympia_oyster_Sprite"
+              },
+              {
+                "id": "item_50343",
+                "displayName": "Vieira-rainha",
+                "iconName": "Queen_Scallop_Sprite"
+              },
+              {
+                "id": "item_50344",
+                "displayName": "Vieira-rei",
+                "iconName": "King_Scallop_Sprite"
+              },
+              {
+                "id": "item_50345",
+                "displayName": "Uva-do-mar",
+                "iconName": "Sea_Grapes_Sprite"
+              },
+              {
+                "id": "item_50346",
+                "displayName": "Ouriço-do-mar-vermelho",
+                "iconName": "Red_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50347",
+                "displayName": "Ouriço-coração",
+                "iconName": "Heart_Urchin_Sprite"
+              },
+              {
+                "id": "item_50348",
+                "displayName": "Percebe",
+                "iconName": "Gooseneck_Barnacle_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Farming",
+      "item": {
+        "id": "item_65779",
+        "displayName": "SFC automático de anêmona",
+        "price": 10,
+        "sellPrice": 10,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Uma anêmona como acessório de aspersor de lumina. Aplica fertilizante, planta sementes e colhe as plantações automaticamente. Usar no solo arado vazio.",
+        "qualities": {},
+        "iconName": "Anemone_auto_SFH_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65820",
+      "displayName": "Weather conch",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_62010",
+            "displayName": "Núcleo solar",
+            "iconName": "Solar_Core_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_50514",
+            "displayName": "Essência do Vento",
+            "iconName": "Wind_essence_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_50513",
+            "displayName": "Essência da Água",
+            "iconName": "Water_essence_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "genericIngredients": [
+        {
+          "key": "Any_SeaScavenge",
+          "amount": 2,
+          "genericItem": {
+            "key": "Any_SeaScavenge",
+            "tags": [
+              "item.gathering.sea"
+            ],
+            "iconName": "Any_sea_scavangeable_Sprite",
+            "displayName": "Qualquer item de catação marinho",
+            "items": [
+              {
+                "id": "item_50302",
+                "displayName": "Ouriço-do-mar-negro",
+                "iconName": "Black_sea_urchin_Sprite"
+              },
+              {
+                "id": "item_50303",
+                "displayName": "Alga marinha",
+                "iconName": "Seaweed_Sprite"
+              },
+              {
+                "id": "item_50306",
+                "displayName": "Cogumelo do mar",
+                "iconName": "Sea_Mushroom_Sprite"
+              },
+              {
+                "id": "item_50308",
+                "displayName": "Mexilhão azul",
+                "iconName": "Blue_Mussel_Sprite"
+              },
+              {
+                "id": "item_50309",
+                "displayName": "Vieira malhada",
+                "iconName": "Calico_Scallop_Sprite"
+              },
+              {
+                "id": "item_50310",
+                "displayName": "Amêijoa de sangue",
+                "iconName": "Blood_Clam_Sprite"
+              },
+              {
+                "id": "item_50311",
+                "displayName": "Ostra-do-Pacífico",
+                "iconName": "Pacific_Oyster_Sprite"
+              },
+              {
+                "id": "item_50313",
+                "displayName": "Marisco de concha mole",
+                "iconName": "Steamer_Clam_Sprite"
+              },
+              {
+                "id": "item_50315",
+                "displayName": "Lingueirão",
+                "iconName": "Jackknife_Clam_Sprite"
+              },
+              {
+                "id": "item_50316",
+                "displayName": "Mexilhão-pato",
+                "iconName": "Duck_Mussel_Sprite"
+              },
+              {
+                "id": "item_50318",
+                "displayName": "Vieira-do-Mediterrâneo",
+                "iconName": "Mediterranean_Scallop_Sprite"
+              },
+              {
+                "id": "item_50320",
+                "displayName": "Arame",
+                "iconName": "Arame_Sprite"
+              },
+              {
+                "id": "item_50322",
+                "displayName": "Amêijoa-mercenária",
+                "iconName": "Cherrystone_clam_Sprite"
+              },
+              {
+                "id": "item_50323",
+                "displayName": "Concha-caneta âmbar",
+                "iconName": "Amber_pen_shell_Sprite"
+              },
+              {
+                "id": "item_50324",
+                "displayName": "Mexilhão-zebra",
+                "iconName": "Zebra_Mussel_Sprite"
+              },
+              {
+                "id": "item_50326",
+                "displayName": "Ostra-americana",
+                "iconName": "Eastern_Oyster_Sprite"
+              },
+              {
+                "id": "item_50327",
+                "displayName": "Ostra-plana-europeia",
+                "iconName": "Belon_Oyster_Sprite"
+              },
+              {
+                "id": "item_50329",
+                "displayName": "Ouriço-do-mar-roxo",
+                "iconName": "Purple_urchin_Sprite"
+              },
+              {
+                "id": "item_50330",
+                "displayName": "Navalha do Pacífico",
+                "iconName": "Razor_Clam_Sprite"
+              },
+              {
+                "id": "item_50331",
+                "displayName": "Mexilhão de lábios verdes",
+                "iconName": "Green_lipped_mussel_Sprite"
+              },
+              {
+                "id": "item_50332",
+                "displayName": "Ostra azul",
+                "iconName": "Blue_oyster_Sprite"
+              },
+              {
+                "id": "item_50333",
+                "displayName": "Ostra Kumamoto",
+                "iconName": "Kumamoto_Oyster_Sprite"
+              },
+              {
+                "id": "item_50334",
+                "displayName": "Vieira da baía",
+                "iconName": "Bay_Scallop_Sprite"
+              },
+              {
+                "id": "item_50335",
+                "displayName": "Vieira patagônica",
+                "iconName": "Patagonian_Scallop_Sprite"
+              },
+              {
+                "id": "item_50336",
+                "displayName": "Kombu",
+                "iconName": "Kombu_Sprite"
+              },
+              {
+                "id": "item_50337",
+                "displayName": "Alface-do-mar",
+                "iconName": "Sea_Lettuce_Sprite"
+              },
+              {
+                "id": "item_50338",
+                "displayName": "Ouriço-do-mar-verde",
+                "iconName": "Green_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50339",
+                "displayName": "Quahog",
+                "iconName": "Quahog_Sprite"
+              },
+              {
+                "id": "item_50340",
+                "displayName": "Amêijoa-gigante",
+                "iconName": "Geoduck_Sprite"
+              },
+              {
+                "id": "item_50341",
+                "displayName": "Mexilhão-cavalo",
+                "iconName": "Horse_Mussel_Sprite"
+              },
+              {
+                "id": "item_50342",
+                "displayName": "Ostra Olympia",
+                "iconName": "Olympia_oyster_Sprite"
+              },
+              {
+                "id": "item_50343",
+                "displayName": "Vieira-rainha",
+                "iconName": "Queen_Scallop_Sprite"
+              },
+              {
+                "id": "item_50344",
+                "displayName": "Vieira-rei",
+                "iconName": "King_Scallop_Sprite"
+              },
+              {
+                "id": "item_50345",
+                "displayName": "Uva-do-mar",
+                "iconName": "Sea_Grapes_Sprite"
+              },
+              {
+                "id": "item_50346",
+                "displayName": "Ouriço-do-mar-vermelho",
+                "iconName": "Red_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50347",
+                "displayName": "Ouriço-coração",
+                "iconName": "Heart_Urchin_Sprite"
+              },
+              {
+                "id": "item_50348",
+                "displayName": "Percebe",
+                "iconName": "Gooseneck_Barnacle_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Misc",
+      "item": {
+        "id": "item_65820",
+        "displayName": "Concha do Clima",
+        "price": 10,
+        "sellPrice": 0,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Others",
+        "displayKey": "Others",
+        "description": "Essa concha mística desbloqueia a habilidade de mudar o clima, mas tenha cuidado: usá-la tem um custo.",
+        "qualities": {},
+        "iconName": "Weather_Conch_Sprite",
         "tags": []
       }
     }

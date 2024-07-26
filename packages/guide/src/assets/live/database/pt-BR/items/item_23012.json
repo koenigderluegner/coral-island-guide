@@ -38,6 +38,47 @@
       "Item.Consumable.Food"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 1,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_23012",
+          "displayName": "Inhame",
+          "iconName": "Taro_root_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_23012",
+          "displayName": "Inhame",
+          "iconName": "Taro_root_Sprite",
+          "sellPrice": 24
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 3,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
     {
       "useCategory": false,
@@ -122,6 +163,45 @@
       },
       "genericInput": null,
       "machine": "SeedMaker"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 1,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_23012",
+          "displayName": "Inhame",
+          "iconName": "Taro_root_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_23012",
+          "displayName": "Inhame",
+          "iconName": "Taro_root_Sprite",
+          "sellPrice": 24
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 3,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -1107,21 +1187,6 @@
             "id": "item_41181",
             "displayName": "Iogurte de cabra grande",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Amêijoa gigante",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Alga Wakame",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Buquê de flores",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -1173,7 +1238,7 @@
           "genericItem": {
             "key": "Any_Cheese",
             "tags": [
-              "Artisan.CheesePress"
+              "item.artisan.cheese"
             ],
             "iconName": "Any_Cheese_Sprite",
             "displayName": "Qualquer Queijo"
@@ -1497,5 +1562,45 @@
       "buff": "None",
       "itemType": "Food"
     }
-  }
+  },
+  "usedToMix": [
+    {
+      "key": "SokaSeeds",
+      "amount": 1,
+      "cookingKey": "SokaSeeds",
+      "item": {
+        "id": "item_21064",
+        "displayName": "Sementes de Soka",
+        "iconName": "Soka_seeds_Sprite"
+      },
+      "genericIngredients": [],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_23012",
+            "displayName": "Inhame",
+            "iconName": "Taro_root_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_50333",
+            "displayName": "Ostra Kumamoto",
+            "iconName": "Kumamoto_Oyster_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_62004",
+            "displayName": "Kelp de ósmio",
+            "iconName": "Osmium_Kelp_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": []
+    }
+  ]
 }

@@ -1,0 +1,173 @@
+[
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BTTask_TukuShow",
+    "Outer": "BTTask_TukuShow_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_OwnerActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Enemies_AIController",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_EnemiesAIController_C'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_EnemiesAIController.3"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Tuku",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_Tuku_C'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BP_Tuku.12"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveExecute",
+    "Outer": "BTTask_TukuShow_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'BTTask_BlueprintBase:ReceiveExecute'",
+      "ObjectPath": "/Script/AIModule"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "OwnerActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BTTask_TukuShow_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "UberGraphFunction": {
+        "ObjectName": "Function'BTTask_TukuShow_C:ExecuteUbergraph_BTTask_TukuShow'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BTTask_TukuShow.0"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'BTTask_BlueprintBase'",
+      "ObjectPath": "/Script/AIModule"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BTTask_TukuShow_C:ReceiveExecute'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BTTask_TukuShow.1"
+      },
+      {
+        "ObjectName": "Function'BTTask_TukuShow_C:ExecuteUbergraph_BTTask_TukuShow'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BTTask_TukuShow.0"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BTTask_TukuShow": {
+        "ObjectName": "Function'BTTask_TukuShow_C:ExecuteUbergraph_BTTask_TukuShow'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BTTask_TukuShow.0"
+      },
+      "ReceiveExecute": {
+        "ObjectName": "Function'BTTask_TukuShow_C:ReceiveExecute'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BTTask_TukuShow.1"
+      }
+    },
+    "ClassFlags": "CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Game",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BTTask_TukuShow_C'Default__BTTask_TukuShow_C'",
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BTTask_TukuShow.3"
+    }
+  },
+  {
+    "Type": "BTTask_TukuShow_C",
+    "Name": "Default__BTTask_TukuShow_C",
+    "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Enemies/Tuku-tuku/BTTask_TukuShow.BTTask_TukuShow_C'",
+    "Properties": {
+      "UberGraphFrame": {}
+    }
+  }
+]

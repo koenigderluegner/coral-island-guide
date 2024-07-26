@@ -33,6 +33,106 @@
       "Item.Consumable.Food"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 3,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_80093",
+          "displayName": "Es doger",
+          "iconName": "Es_Doger_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_80093",
+          "displayName": "Es doger",
+          "iconName": "Es_Doger_Sprite",
+          "sellPrice": 100
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 3,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_80093",
+          "displayName": "Es doger",
+          "iconName": "Es_Doger_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_80093",
+          "displayName": "Es doger",
+          "iconName": "Es_Doger_Sprite",
+          "sellPrice": 100
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 8,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_80088",
@@ -117,21 +217,6 @@
             "id": "item_41181",
             "displayName": "대용량 염소 요구르트",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "대왕조개",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "미역",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "꽃다발",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -184,7 +269,7 @@
           "amount": 1,
           "genericItem": {
             "key": "Milk_LargeMilk",
-            "displayName": "Milk/Large Milk",
+            "displayName": "우유/대용량 우유",
             "tags": [],
             "iconName": "Milk_Sprite_"
           },
@@ -229,7 +314,7 @@
               "displayName": "우유",
               "iconName": "Milk_Sprite_"
             },
-            "amount": 1
+            "amount": 0
           },
           {
             "item": {
@@ -237,10 +322,77 @@
               "displayName": "대용량 우유",
               "iconName": "Large_milk_Sprite_"
             },
-            "amount": 1
+            "amount": 0
           }
         ]
       ]
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "HeritageBased",
+      "offeringGroupTitle": "유적지 제단",
+      "urlPath": "guardianaltar",
+      "offeringGroupRewardText": "수호자 벽화",
+      "offerings": [
+        {
+          "title": "Pandazen",
+          "imageName": "T_Art_OfferingPandazen",
+          "numOfItemRequired": 4,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_120548",
+                  "displayName": "판다젠 의상",
+                  "iconName": "Pandazen_Outfit_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "id": "item_80071",
+                "displayName": "Popiah",
+                "iconName": "Popiah_Sprite"
+              },
+              "amount": 4,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_80093",
+                "displayName": "Es doger",
+                "iconName": "Es_Doger_Sprite"
+              },
+              "amount": 4,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_80057",
+                "displayName": "허브 템페",
+                "iconName": "Herbed_Tempeh_Sprite"
+              },
+              "amount": 4,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_80047",
+                "displayName": "잭프루트 캐서롤",
+                "iconName": "Jackfruit_casserole_Sprite"
+              },
+              "amount": 4,
+              "quality": "base"
+            }
+          ]
+        }
+      ],
+      "isHeritageOffering": true
     }
   ],
   "consumables": {

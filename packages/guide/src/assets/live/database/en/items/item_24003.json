@@ -38,6 +38,56 @@
       "Item.Consumable.Food"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 4,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_24003",
+          "displayName": "Almond",
+          "iconName": "Almond_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_24003",
+          "displayName": "Almond",
+          "iconName": "Almond_Sprite",
+          "sellPrice": 144
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 5,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 9,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
     {
       "useCategory": false,
@@ -424,6 +474,11 @@
               "iconName": "Sproutfruit_Sprite"
             },
             {
+              "id": "item_21075",
+              "displayName": "Pink coralcap",
+              "iconName": "Pink_Coralcap_Sprite"
+            },
+            {
               "id": "item_21077",
               "displayName": "Bluebell blossom",
               "iconName": "Bluebell_Blossom_Sprite"
@@ -457,6 +512,21 @@
               "id": "item_21084",
               "displayName": "Petalia",
               "iconName": "Petalia_Sprite"
+            },
+            {
+              "id": "item_21085",
+              "displayName": "Mushroom tree seeds",
+              "iconName": "Mushroom_tree_seeds_Sprite"
+            },
+            {
+              "id": "item_21086",
+              "displayName": "Shroomba seeds",
+              "iconName": "Wooblecap_seeds_Sprite"
+            },
+            {
+              "id": "item_21087",
+              "displayName": "Moonspore seeds",
+              "iconName": "Moonspore_seeds_Sprite"
             },
             {
               "id": "item_22001",
@@ -1533,6 +1603,54 @@
       },
       "genericInput": null,
       "machine": "OilPress"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 4,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_24003",
+          "displayName": "Almond",
+          "iconName": "Almond_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_24003",
+          "displayName": "Almond",
+          "iconName": "Almond_Sprite",
+          "sellPrice": 144
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 5,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 9,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -1812,7 +1930,7 @@
           "genericItem": {
             "key": "Any_Catterpilar",
             "tags": [
-              "item.insect.catterpilar"
+              "item.insect.Catterpillar"
             ],
             "iconName": "Any_caterpillar_Sprite",
             "displayName": "Any Catterpilar"
@@ -1838,26 +1956,7 @@
           "amount": 1
         }
       ],
-      "eitherOrIngredients": [],
-      "additionsToGenerics": {
-        "Any Catterpilar": [
-          {
-            "id": "item_131007",
-            "displayName": "Cecropia caterpillar",
-            "iconName": "Cecropia_Caterpillar_Sprite"
-          },
-          {
-            "id": "item_134005",
-            "displayName": "Monarch caterpillar",
-            "iconName": "Monarch_Caterpillar_Sprite"
-          },
-          {
-            "id": "item_131017",
-            "displayName": "Striped garden caterpillar",
-            "iconName": "Striped_garden_caterpillar_Sprite"
-          }
-        ]
-      }
+      "eitherOrIngredients": []
     },
     {
       "key": "item_80036",
@@ -2075,21 +2174,6 @@
             "id": "item_41181",
             "displayName": "Large goat yogurt",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Giant clam",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Wakame weed",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Flower bouquet",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -2235,7 +2319,7 @@
       "key": "SpecialityBased",
       "offeringGroupTitle": "Advanced Altar",
       "urlPath": "advancedaltar",
-      "offeringGroupRewardText": "Unlocks Warp Sesajen",
+      "offeringGroupRewardText": "Unlocks Cave of Memories",
       "offerings": [
         {
           "title": "Fruit Plant",
@@ -2329,7 +2413,8 @@
             }
           ]
         }
-      ]
+      ],
+      "isHeritageOffering": false
     }
   ],
   "consumables": {

@@ -1,39 +1,93 @@
 {
   "item": {
     "id": "item_21071",
-    "displayName": "Sproutfruit",
-    "price": 10,
-    "sellPrice": 10,
-    "sellAt": [],
+    "displayName": "fruta germinada",
+    "price": 140,
+    "sellPrice": 83,
+    "sellAt": [
+      "MerfolkGeneral"
+    ],
     "stackable": true,
     "inventoryCategory": "Vegetables",
-    "displayKey": "Vegetables",
-    "description": "No this isn't a cosmic disco ball, its a Sproutfruit!",
+    "displayKey": "Fruit",
+    "description": "No, esto no es una bola de discoteca cósmica, ¡es un Sproutfruit!",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 161,
+        "sellPrice": 95
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 182,
+        "sellPrice": 108
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 210,
+        "sellPrice": 125
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 280,
+        "sellPrice": 166
       }
     },
     "iconName": "Sproutfruit_Sprite",
     "tags": [
-      "income.farming",
+      "income.oceanfarming",
+      "item.crop.diving",
+      "Item.Consumable.Food",
       "item.fruit",
-      "Item.Consumable.Food"
+      "item.UnderwaterFruit"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 3,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21071",
+          "displayName": "fruta germinada",
+          "iconName": "Sproutfruit_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_21071",
+          "displayName": "fruta germinada",
+          "iconName": "Sproutfruit_Sprite",
+          "sellPrice": 83
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 7,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
+    }
+  ],
   "artisanIngredient": [
     {
       "useCategory": false,
@@ -416,17 +470,22 @@
             },
             {
               "id": "item_21071",
-              "displayName": "Sproutfruit",
+              "displayName": "fruta germinada",
               "iconName": "Sproutfruit_Sprite"
             },
             {
+              "id": "item_21075",
+              "displayName": "Gorro de coral rosa",
+              "iconName": "Pink_Coralcap_Sprite"
+            },
+            {
               "id": "item_21077",
-              "displayName": "Bluebell blossom",
+              "displayName": "Flor de campanilla",
               "iconName": "Bluebell_Blossom_Sprite"
             },
             {
               "id": "item_21078",
-              "displayName": "Goldglow",
+              "displayName": "brillo dorado",
               "iconName": "Goldglow_Sprite"
             },
             {
@@ -436,23 +495,38 @@
             },
             {
               "id": "item_21080",
-              "displayName": "Helixpur blossom",
+              "displayName": "flor de helixpur",
               "iconName": "Helixpur_Blossom_Sprite"
             },
             {
               "id": "item_21081",
-              "displayName": "Marinethorn blossom",
+              "displayName": "Flor de espino marino",
               "iconName": "Marinethorn_Blossom_Sprite"
             },
             {
               "id": "item_21082",
-              "displayName": "Sea spud",
+              "displayName": "papa de mar",
               "iconName": "Sea_Spud_Sprite"
             },
             {
               "id": "item_21084",
-              "displayName": "Petalia",
+              "displayName": "Pétalo",
               "iconName": "Petalia_Sprite"
+            },
+            {
+              "id": "item_21085",
+              "displayName": "Semillas de Árbol de Hongo",
+              "iconName": "Mushroom_tree_seeds_Sprite"
+            },
+            {
+              "id": "item_21086",
+              "displayName": "Semillas de Shroomba",
+              "iconName": "Wooblecap_seeds_Sprite"
+            },
+            {
+              "id": "item_21087",
+              "displayName": "Semillas de Espora Lunar",
+              "iconName": "Moonspore_seeds_Sprite"
             },
             {
               "id": "item_22001",
@@ -1473,6 +1547,110 @@
         }
       },
       "machine": "CompostBin"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21071",
+          "displayName": "fruta germinada",
+          "iconName": "Sproutfruit_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41397",
+          "displayName": "jugo de fruta germinada",
+          "iconName": "Underwater_fruit_juice_Sprite",
+          "sellPrice": 185
+        }
+      },
+      "genericInput": null,
+      "machine": "Keg"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21071",
+          "displayName": "fruta germinada",
+          "iconName": "Sproutfruit_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41369",
+          "displayName": "Mermelada de germinados",
+          "iconName": "Jam_purple_underwater_Sprite",
+          "sellPrice": 140
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 3,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_21071",
+          "displayName": "fruta germinada",
+          "iconName": "Sproutfruit_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_21071",
+          "displayName": "fruta germinada",
+          "iconName": "Sproutfruit_Sprite",
+          "sellPrice": 83
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 0,
+          "time": {
+            "hours": 4,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 0,
+          "time": {
+            "hours": 7,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "SlimeOfTransmutation"
     }
   ],
   "usedToCook": [
@@ -1783,21 +1961,6 @@
             "id": "item_41181",
             "displayName": "Yogur de cabra grande",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50307",
-            "displayName": "Almeja gigante",
-            "iconName": "Giant_Clam_Sprite"
-          },
-          {
-            "id": "item_50314",
-            "displayName": "Alga wakame",
-            "iconName": "Wakame_weed_Sprite"
-          },
-          {
-            "id": "item_80065",
-            "displayName": "Ramo de flores",
-            "iconName": "Flower_Bouquet_Sprite"
           }
         ]
       }
@@ -1861,5 +2024,191 @@
       "ingredients": [],
       "eitherOrIngredients": []
     }
-  ]
+  ],
+  "isSeedFor": [
+    {
+      "key": "item_21056",
+      "item": {
+        "id": "item_21056",
+        "displayName": "Semillas de Fruto Germinado",
+        "iconName": "Sproutfruit_seeds_Sprite",
+        "price": 45
+      },
+      "size": {
+        "length": 1,
+        "width": 1
+      },
+      "canCombine": false,
+      "chanceToCombine": {
+        "chance": 0
+      },
+      "growableSeason": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "growTime": 6,
+      "isRegrowable": false,
+      "regrowableLength": 1,
+      "readableName": "Sproutfruit seeds",
+      "isTrellisCrop": false,
+      "pickupableItemId": "item_21071",
+      "pickupableItem": {
+        "id": "item_21071",
+        "displayName": "fruta germinada",
+        "iconName": "Sproutfruit_Sprite"
+      },
+      "isScytheRequired": false,
+      "maxDroppedItems": 1,
+      "overrideExperience": false,
+      "overrideExperienceOnHarvest": 0,
+      "dropData": [
+        {
+          "itemId": "item_21071",
+          "dropChance": 100,
+          "dropRange": {
+            "min": 1,
+            "max": 1
+          },
+          "item": {
+            "id": "item_21071",
+            "displayName": "fruta germinada",
+            "iconName": "Sproutfruit_Sprite",
+            "sellPrice": 83
+          }
+        }
+      ]
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "CustomDiving",
+      "offeringGroupTitle": "",
+      "urlPath": "",
+      "offeringGroupRewardText": "",
+      "offerings": [
+        {
+          "title": "Dua Pulu (20m)",
+          "imageName": "Ocean_Offerings",
+          "numOfItemRequired": 4,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_50202",
+                  "displayName": "Concha de junonia",
+                  "iconName": "Junonia_Shell_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "requiredItems": [
+            {
+              "item": {
+                "id": "item_62007",
+                "displayName": "Esencia de alga kelp plateada",
+                "iconName": "Silver_Kelp_Essence_Sprite"
+              },
+              "amount": 5,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_21071",
+                "displayName": "fruta germinada",
+                "iconName": "Sproutfruit_Sprite"
+              },
+              "amount": 5,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_21080",
+                "displayName": "flor de helixpur",
+                "iconName": "Helixpur_Blossom_Sprite"
+              },
+              "amount": 5,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_21074",
+                "displayName": "hoja de mar de primavera",
+                "iconName": "Spring_Sealeaf_Sprite"
+              },
+              "amount": 5,
+              "quality": "base"
+            }
+          ]
+        }
+      ],
+      "isHeritageOffering": false,
+      "customType": "diving"
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_21071",
+      "bVaryHealthToMax": false,
+      "healthDelta": 85,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 90,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "bronze": {
+      "key": "item_21071-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 98,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 104,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "silver": {
+      "key": "item_21071-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 106,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 113,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "gold": {
+      "key": "item_21071-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 128,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 135,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    },
+    "osmium": {
+      "key": "item_21071-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 170,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 180,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "None"
+    }
+  }
 }
