@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { MyCoralGuideComponent } from './my-coral-guide.component';
 import { IndexComponent } from './components/index/index.component';
 import { MyCoralGuideRoutingModule } from './my-coral-guide-routing.module';
@@ -61,7 +61,8 @@ import { BirthdayDashboardComponent } from "./dashboards/birthday-dashboard/birt
         OfferingComponent,
         MatProgressSpinner,
         DashboardFilterComponent,
-        BirthdayDashboardComponent
+        BirthdayDashboardComponent,
+        NgOptimizedImage
     ],
 })
 export class MyCoralGuideModule {

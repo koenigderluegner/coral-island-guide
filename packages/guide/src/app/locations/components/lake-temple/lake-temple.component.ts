@@ -30,14 +30,13 @@ import { AsyncPipe } from "@angular/common";
 export class LakeTempleComponent extends BaseTabbedSelectableContainerComponent<MinimalItem | MinimalTagBasedItem> {
 
     protected offerings$: Observable<OfferingAltar[]>;
-    private _altars: OfferingAltar[] = [];
+    #altars: OfferingAltar[] = [];
 
     constructor() {
         super()
         this.offerings$ = this._database.fetchOfferings$().pipe(
             map((records) => {
-                    const altars = records.filter(r => !r.isHeritageOffering && !r.customType);
-                    this._altars = altars
+                    const altars = records.filter(r => !r.customType);
                     const altarNames = altars.map(altar => altar.urlPath);
                     this.activateTabFromRoute(altarNames);
 
@@ -51,7 +50,7 @@ export class LakeTempleComponent extends BaseTabbedSelectableContainerComponent<
     override urlPathFromLabel = (label: string) => {
 
         const sanitizedLabel = label.toLowerCase().replaceAll(' ', '');
-        const offeringAltar = this._altars.find(altar => altar.offeringGroupTitle.toLowerCase().replaceAll(' ', '') === sanitizedLabel);
+        const offeringAltar = this.#altars.find(altar => altar.offeringGroupTitle.toLowerCase().replaceAll(' ', '') === sanitizedLabel);
 
         if (offeringAltar) {
             return offeringAltar.urlPath

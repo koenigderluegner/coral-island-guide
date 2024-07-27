@@ -10,7 +10,8 @@ import { DashboardFilter } from "../../types/dashboard-filter.type";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { ChecklistContext } from "../../types/checklist-context.type";
 import { MatCheckboxChange } from "@angular/material/checkbox";
-import { addDays } from "@ci/util";
+import { addDays, dateInRanges } from "@ci/util";
+import { UserDataService } from "../../../core/services/user-data.service";
 
 @Component({
     selector: 'app-index',
@@ -21,6 +22,7 @@ export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem
     dashboards = inject(DashboardService)
     museumChecklistService = inject(MuseumChecklistService);
     filterFormGroup: FormGroup<DashboardFilter>
+    userData = inject(UserDataService)
     protected requests$: Observable<any>;
     protected fish: Signal<{
         context: ChecklistContext,
@@ -47,12 +49,17 @@ export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem
             day: new FormControl<number>(1, {nonNullable: true}),
             year: new FormControl<number>(1, {nonNullable: true}),
             hideCompleted: new FormControl<boolean>(true, {nonNullable: true}),
-
         })
+
+        this.filterFormGroup.patchValue(this.userData.getCurrentData().myGuideFilter);
 
         const filterValues = toSignal(
             this.filterFormGroup.valueChanges.pipe(
-                map(() => this.filterFormGroup.getRawValue())
+                map(() => this.filterFormGroup.getRawValue()),
+                tap(v => {
+                    this.userData.getCurrentData().myGuideFilter = v;
+                    this.userData.save()
+                })
             ),
             {initialValue: this.filterFormGroup.getRawValue()}
         )
@@ -64,7 +71,17 @@ export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem
             const hideCompleted = filterValues().hideCompleted;
 
             const baseList = fish().filter(f => {
-                return f.seasons.includes(season) && f.weathers.includes(weather);
+                const seasonAndWeather = f.seasons.includes(season) && f.weathers.includes(weather);
+
+                const date: SpecificDate = {
+                    day: filterValues().day,
+                    season: filterValues().season,
+                    year: filterValues().year
+                };
+
+                const dateRanges = f.dateRanges.map(r => ({from: r.startsFrom, to: r.lastsTill}));
+
+                return seasonAndWeather && (!f.dateRanges.length || dateInRanges(date, dateRanges, true));
             });
 
             const musuemFish: {
@@ -112,7 +129,6 @@ export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem
             const today: SpecificDate = {day, season, year: 1};
 
             const tomorrow = addDays(today, 1);
-            console.log(tomorrow);
 
             return birthdays.filter(e => e.birthday.day === tomorrow.day && e.birthday.season === tomorrow.season);
 

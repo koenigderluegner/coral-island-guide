@@ -6,8 +6,9 @@ import { UserData } from "../types/user-data.type";
     providedIn: 'root'
 })
 export class UserDataService {
-    private static readonly _CURRENT_USER_DATA_VERSION = 1
+    private static readonly _CURRENT_USER_DATA_VERSION = 2
     private static readonly _USER_DATA_STORE_KEY = 'user-data'
+    private static readonly _SAVE_GAME_NAME_PREFIX = 'Save game '
     userData = signal<{ version: number, currentIndex: number; data: UserData[] }>({
         version: UserDataService._CURRENT_USER_DATA_VERSION,
         currentIndex: -1,
@@ -23,7 +24,17 @@ export class UserDataService {
     read(): void {
         const userData = localStorage.getItem(UserDataService._USER_DATA_STORE_KEY + this.#versionSuffix);
         if (userData) {
-            this.userData.set(JSON.parse(userData));
+
+            const parsedJSON = JSON.parse(userData);
+            const migrated = this.#migrate(parsedJSON);
+
+            this.userData.set(migrated);
+
+            if (parsedJSON.version !== migrated.version) {
+                this.save();
+            }
+
+
         } else {
             this.userData.set({
                 version: UserDataService._CURRENT_USER_DATA_VERSION,
@@ -36,7 +47,56 @@ export class UserDataService {
 
     createEmptyUserData(): UserData {
         return {
-            todos: []
+            name: this.#getNextName(),
+            myGuideFilter: {year: 1, day: 1, season: "Spring", weather: "Sunny", hideCompleted: true},
+            todos: [],
+            checklists: {}
         }
+    }
+
+    getCurrentData(): UserData {
+        return this.userData().data[this.userData().currentIndex]
+    }
+
+    #migrate(userData: any): { version: number, currentIndex: number; data: UserData[] } {
+        let migratedData: UserData[] = userData.data ?? [];
+        let existingVersion = userData.version
+        while (existingVersion !== UserDataService._CURRENT_USER_DATA_VERSION) {
+
+            if (!existingVersion) {
+                migratedData = [this.createEmptyUserData()];
+                existingVersion = UserDataService._CURRENT_USER_DATA_VERSION;
+            } else if (existingVersion === 1) {
+                migratedData = migratedData.map((d, index) => {
+                    d.myGuideFilter = {year: 1, day: 1, season: "Spring", weather: "Sunny", hideCompleted: true};
+                    d.name = UserDataService._SAVE_GAME_NAME_PREFIX + (index + 1);
+                    d.checklists = {};
+                    return d
+                });
+                existingVersion = 2;
+            }
+
+
+        }
+
+        return {
+            version: UserDataService._CURRENT_USER_DATA_VERSION,
+            currentIndex: userData.currentIndex ?? 0,
+            data: migratedData
+        }
+
+    }
+
+    #getNextName(): string {
+        const names = new Set(this.userData().data.map(d => d.name));
+        let currentIndex = this.userData().data.length + 1;
+
+        while (names.has(UserDataService._SAVE_GAME_NAME_PREFIX + currentIndex)) {
+            currentIndex++;
+        }
+
+        return UserDataService._SAVE_GAME_NAME_PREFIX + currentIndex;
+
+
     }
 }

@@ -20,7 +20,7 @@
                                             [class.bg-merino-300]="activeOffering?.title === offering.title"
                                             class="rounded-lg bg-merino flex  items-center gap-4 p-4 ">
                                         <img alt="{{offering.title}} offering icon" height="64"
-                                             src="assets/ui/images/offering/{{offering.imageName}}.png"
+                                             ngSrc="{{bundleAssetPath() + offering.imageName}}.webp"
                                              width="64"/>
                                         <div class="flex flex-col text-lg font-semibold">
                                             <div>{{ offering.title }}</div>
