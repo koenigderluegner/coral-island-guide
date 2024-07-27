@@ -1,6 +1,6 @@
 ## Changelog
 
-### TBD
+### 0.21.1 2024-07-27
 
 #### Changed
 

@@ -1,1 +1,1 @@
-{"version":"0.21.0","date":"2024-07-23","body":"\r\n#### Changed\r\n\r\n- Updated live data to v1.1-1198 (Steam version)\r\n- Closed beta modus\r\n\r"}
+{"version":"0.21.1","date":"2024-07-27","body":"\r\n#### Changed\r\n\r\n- Fixed fish with date ranges not being shown properly in dashboard.\r\n- Fixed date/configuration for dashboard (My Guide) not being persisted.\r\n- Fixed missing icons for guardian altar\r\n- Show guardian altar under locations -> Lake temple\r\n\r"}
