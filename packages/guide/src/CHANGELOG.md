@@ -1,5 +1,11 @@
 ## Changelog
 
+### TBD
+
+#### Changed
+
+- Fixed fish with date ranges not being shown properly in dashboard.
+
 ### 0.21.0 2024-07-23
 
 #### Changed

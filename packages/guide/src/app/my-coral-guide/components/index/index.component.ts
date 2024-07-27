@@ -10,7 +10,7 @@ import { DashboardFilter } from "../../types/dashboard-filter.type";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { ChecklistContext } from "../../types/checklist-context.type";
 import { MatCheckboxChange } from "@angular/material/checkbox";
-import { addDays } from "@ci/util";
+import { addDays, dateInRanges } from "@ci/util";
 
 @Component({
     selector: 'app-index',
@@ -64,7 +64,17 @@ export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem
             const hideCompleted = filterValues().hideCompleted;
 
             const baseList = fish().filter(f => {
-                return f.seasons.includes(season) && f.weathers.includes(weather);
+                const seasonAndWeather = f.seasons.includes(season) && f.weathers.includes(weather);
+
+                const date: SpecificDate = {
+                    day: filterValues().day,
+                    season: filterValues().season,
+                    year: filterValues().year
+                };
+
+                const dateRanges = f.dateRanges.map(r => ({from: r.startsFrom, to: r.lastsTill}));
+
+                return seasonAndWeather && (!f.dateRanges.length || dateInRanges(date, dateRanges, true));
             });
 
             const musuemFish: {
