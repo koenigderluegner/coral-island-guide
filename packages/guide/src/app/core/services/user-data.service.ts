@@ -49,8 +49,13 @@ export class UserDataService {
         return {
             name: this.#getNextName(),
             myGuideDate: {year: 1, day: 1, season: "Spring"},
-            todos: []
+            todos: [],
+            checklists: {}
         }
+    }
+
+    getCurrentData(): UserData {
+        return this.userData().data[this.userData().currentIndex]
     }
 
     #migrate(userData: any): { version: number, currentIndex: number; data: UserData[] } {
@@ -64,7 +69,8 @@ export class UserDataService {
             } else if (existingVersion === 1) {
                 migratedData = migratedData.map((d, index) => {
                     d.myGuideDate = {year: 1, day: 1, season: "Spring"};
-                    d.name = UserDataService._SAVE_GAME_NAME_PREFIX + (index + 1)
+                    d.name = UserDataService._SAVE_GAME_NAME_PREFIX + (index + 1);
+                    d.checklists = {};
                     return d
                 });
                 existingVersion = 2;

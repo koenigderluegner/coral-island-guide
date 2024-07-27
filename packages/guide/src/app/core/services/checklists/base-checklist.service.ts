@@ -1,49 +1,51 @@
 import { inject, Injectable } from '@angular/core';
 import { SettingsService } from "../../../shared/services/settings.service";
 import { Checklist } from "../../interfaces/checklist.interface";
+import { UserDataService } from "../user-data.service";
 
 @Injectable()
 export abstract class BaseChecklistService {
 
-    protected static _CURRENT_TO_DO_VERSION = 1
     protected static _TO_DO_STORE_KEY = 'checklist_'
 
     protected readonly versionSuffix = inject(SettingsService).getSettings().useBeta ? '_beta' : '_live';
 
-    protected checklists: Checklist[] = []
-    protected currentChecklistIndex = 0;
+
+    protected readonly userData = inject(UserDataService);
 
     protected constructor(protected checklistName: string) {
         if (checklistName.trim() === '') throw new Error(`checklistName can't be empty!`)
         this.read();
     }
 
+    /**
+     * @deprecated Only used to migrate existing data. To read checklists see UserDataService.
+     * @see UserDataService
+     */
     read(): void {
         const toDos = localStorage.getItem(this.getChecklistStorageKey());
-        if (toDos) {
-            this.checklists = JSON.parse(toDos);
-        } else {
-            this.checklists.push(this._createEmptyChecklist())
-            this.save();
+        if (toDos && !this.userData.getCurrentData().checklists[this.checklistName]) {
+
+            const checklists: Checklist[] = JSON.parse(toDos);
+
+            this.userData.getCurrentData().checklists[this.checklistName] = checklists[0] ?? [];
+            this.userData.save();
+            localStorage.removeItem(this.getChecklistStorageKey())
         }
     }
 
     save(): void {
-        localStorage.setItem(this.getChecklistStorageKey(), JSON.stringify(this.checklists));
+        this.userData.save()
     }
 
     getCurrentChecklist(): Checklist {
-        let checklist = this.checklists[this.currentChecklistIndex];
-        if (!checklist) {
-            this.currentChecklistIndex = 0;
-            checklist = this.checklists[this.currentChecklistIndex]
-        }
+        let checklist = this.userData.getCurrentData().checklists[this.checklistName]
 
         if (!checklist) {
-            this.checklists.push(this._createEmptyChecklist());
-            checklist = this.checklists[this.currentChecklistIndex];
-        }
+            this.userData.getCurrentData().checklists[this.checklistName] = this._createEmptyChecklist();
+            checklist = this.userData.getCurrentData().checklists[this.checklistName]
 
+        }
         return checklist;
     }
 
@@ -92,7 +94,7 @@ export abstract class BaseChecklistService {
 
     protected _createEmptyChecklist(): Checklist {
         return {
-            version: BaseChecklistService._CURRENT_TO_DO_VERSION,
+            version: 1,
             entries: []
         } satisfies Checklist
     }

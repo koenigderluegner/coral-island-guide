@@ -52,8 +52,7 @@ export class ToDoService {
     }
 
     getCurrentToDo(): ToDo[] {
-        const userData = this.userDataService.userData();
-        return userData.data[userData.currentIndex].todos
+        return this.userDataService.getCurrentData().todos
     }
 
     save(): void {
