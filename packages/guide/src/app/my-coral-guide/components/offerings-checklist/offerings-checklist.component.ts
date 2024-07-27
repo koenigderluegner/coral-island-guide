@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
 import { MinimalItem, MinimalTagBasedItem, Offering, OfferingAltar, Offerings } from "@ci/data-types";
-import { Observable, tap } from "rxjs";
+import { map, Observable } from "rxjs";
 import { OfferingChecklistService } from "../../../core/services/checklists/offering-checklist.service";
 import { FormControl, FormRecord } from "@angular/forms";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
@@ -38,9 +38,11 @@ export class OfferingsChecklistComponent extends BaseTabbedSelectableContainerCo
             }
         })
         this.offerings$ = this._database.fetchOfferings$().pipe(
-            tap((records) => {
+            map((record) => {
 
+                    const records = record.filter(r => !r.customType);
                     const altarNames = records.map(altar => altar.urlPath);
+
                     this._altars = records;
                     records.forEach(checklist => {
 
@@ -52,6 +54,7 @@ export class OfferingsChecklistComponent extends BaseTabbedSelectableContainerCo
                         })
                     })
                     this.activateTabFromRoute(altarNames);
+                    return records;
                 }
             )
         );
