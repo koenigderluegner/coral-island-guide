@@ -48,7 +48,7 @@ export class UserDataService {
     createEmptyUserData(): UserData {
         return {
             name: this.#getNextName(),
-            myGuideDate: {year: 1, day: 1, season: "Spring"},
+            myGuideFilter: {year: 1, day: 1, season: "Spring", weather: "Sunny", hideCompleted: true},
             todos: [],
             checklists: {}
         }
@@ -68,7 +68,7 @@ export class UserDataService {
                 existingVersion = UserDataService._CURRENT_USER_DATA_VERSION;
             } else if (existingVersion === 1) {
                 migratedData = migratedData.map((d, index) => {
-                    d.myGuideDate = {year: 1, day: 1, season: "Spring"};
+                    d.myGuideFilter = {year: 1, day: 1, season: "Spring", weather: "Sunny", hideCompleted: true};
                     d.name = UserDataService._SAVE_GAME_NAME_PREFIX + (index + 1);
                     d.checklists = {};
                     return d

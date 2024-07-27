@@ -11,6 +11,7 @@ import { toSignal } from "@angular/core/rxjs-interop";
 import { ChecklistContext } from "../../types/checklist-context.type";
 import { MatCheckboxChange } from "@angular/material/checkbox";
 import { addDays, dateInRanges } from "@ci/util";
+import { UserDataService } from "../../../core/services/user-data.service";
 
 @Component({
     selector: 'app-index',
@@ -21,6 +22,7 @@ export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem
     dashboards = inject(DashboardService)
     museumChecklistService = inject(MuseumChecklistService);
     filterFormGroup: FormGroup<DashboardFilter>
+    userData = inject(UserDataService)
     protected requests$: Observable<any>;
     protected fish: Signal<{
         context: ChecklistContext,
@@ -47,12 +49,17 @@ export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem
             day: new FormControl<number>(1, {nonNullable: true}),
             year: new FormControl<number>(1, {nonNullable: true}),
             hideCompleted: new FormControl<boolean>(true, {nonNullable: true}),
-
         })
+
+        this.filterFormGroup.patchValue(this.userData.getCurrentData().myGuideFilter);
 
         const filterValues = toSignal(
             this.filterFormGroup.valueChanges.pipe(
-                map(() => this.filterFormGroup.getRawValue())
+                map(() => this.filterFormGroup.getRawValue()),
+                tap(v => {
+                    this.userData.getCurrentData().myGuideFilter = v;
+                    this.userData.save()
+                })
             ),
             {initialValue: this.filterFormGroup.getRawValue()}
         )
@@ -122,7 +129,6 @@ export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem
             const today: SpecificDate = {day, season, year: 1};
 
             const tomorrow = addDays(today, 1);
-            console.log(tomorrow);
 
             return birthdays.filter(e => e.birthday.day === tomorrow.day && e.birthday.season === tomorrow.season);
 

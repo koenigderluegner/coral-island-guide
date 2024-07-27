@@ -1,10 +1,14 @@
 import { FormControl } from "@angular/forms";
 import { Season, Weather } from "@ci/data-types";
 
+export type DashboardFilterData = {
+    day: number,
+    season: Season,
+    year: number,
+    weather: Weather
+    hideCompleted: boolean
+}
+
 export type DashboardFilter = {
-    day: FormControl<number>,
-    season: FormControl<Season>,
-    year: FormControl<number>,
-    weather: FormControl<Weather>
-    hideCompleted: FormControl<boolean>
+    [key in keyof DashboardFilterData]: FormControl<DashboardFilterData[key]>
 }
