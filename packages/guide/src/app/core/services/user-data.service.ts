@@ -8,6 +8,7 @@ import { UserData } from "../types/user-data.type";
 export class UserDataService {
     private static readonly _CURRENT_USER_DATA_VERSION = 2
     private static readonly _USER_DATA_STORE_KEY = 'user-data'
+    private static readonly _SAVE_GAME_NAME_PREFIX = 'Save game '
     userData = signal<{ version: number, currentIndex: number; data: UserData[] }>({
         version: UserDataService._CURRENT_USER_DATA_VERSION,
         currentIndex: -1,
@@ -46,6 +47,7 @@ export class UserDataService {
 
     createEmptyUserData(): UserData {
         return {
+            name: this.#getNextName(),
             myGuideDate: {year: 1, day: 1, season: "Spring"},
             todos: []
         }
@@ -60,8 +62,9 @@ export class UserDataService {
                 migratedData = [this.createEmptyUserData()];
                 existingVersion = UserDataService._CURRENT_USER_DATA_VERSION;
             } else if (existingVersion === 1) {
-                migratedData = migratedData.map(d => {
+                migratedData = migratedData.map((d, index) => {
                     d.myGuideDate = {year: 1, day: 1, season: "Spring"};
+                    d.name = UserDataService._SAVE_GAME_NAME_PREFIX + (index + 1)
                     return d
                 });
                 existingVersion = 2;
@@ -75,6 +78,19 @@ export class UserDataService {
             currentIndex: userData.currentIndex ?? 0,
             data: migratedData
         }
+
+    }
+
+    #getNextName(): string {
+        const names = new Set(this.userData().data.map(d => d.name));
+        let currentIndex = this.userData().data.length + 1;
+
+        while (names.has(UserDataService._SAVE_GAME_NAME_PREFIX + currentIndex)) {
+            currentIndex++;
+        }
+
+        return UserDataService._SAVE_GAME_NAME_PREFIX + currentIndex;
+
 
     }
 }
