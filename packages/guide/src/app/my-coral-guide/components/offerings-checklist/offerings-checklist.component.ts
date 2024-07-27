@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
 import { MinimalItem, MinimalTagBasedItem, Offering, OfferingAltar, Offerings } from "@ci/data-types";
 import { Observable, tap } from "rxjs";
@@ -6,6 +6,7 @@ import { OfferingChecklistService } from "../../../core/services/checklists/offe
 import { FormControl, FormRecord } from "@angular/forms";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { entityKey } from "@ci/util";
+import { SettingsService } from "../../../shared/services/settings.service";
 
 @Component({
     selector: 'app-offerings-checklist',
@@ -17,6 +18,8 @@ export class OfferingsChecklistComponent extends BaseTabbedSelectableContainerCo
     protected activeOffering?: Offerings;
     protected offerings$: Observable<OfferingAltar[]>;
     protected entryForToDo?: Offering | MinimalItem | MinimalTagBasedItem;
+    protected useBeta = inject(SettingsService).getSettings().useBeta;
+    protected bundleAssetPath = signal(`assets/${this.useBeta ? 'beta' : 'live'}/items/icons/`);
     private _altars: OfferingAltar[] = [];
 
     constructor() {

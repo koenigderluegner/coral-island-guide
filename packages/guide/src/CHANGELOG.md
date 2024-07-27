@@ -6,6 +6,7 @@
 
 - Fixed fish with date ranges not being shown properly in dashboard.
 - Fixed date/configuration for dashboard (My Guide) not being persisted.
+- Fixed missing icons for guardian altar
 
 ### 0.21.0 2024-07-23
 
