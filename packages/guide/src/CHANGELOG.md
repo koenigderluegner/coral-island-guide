@@ -1,5 +1,11 @@
 ## Changelog
 
+### TBD
+
+#### Changed
+
+- Added version to assets to bust caches. This should reduce/remove cases where old assets are shown.
+
 ### 0.21.1 2024-07-27
 
 #### Changed

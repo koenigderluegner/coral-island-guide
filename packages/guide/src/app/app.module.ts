@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, isDevMode, NgModule, Optional } from '@angular/core';
+import { APP_INITIALIZER, importProvidersFrom, isDevMode, NgModule, Optional } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -16,6 +16,9 @@ import { SettingsService } from "./shared/services/settings.service";
 import { of } from "rxjs";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { provideHttpClient, withInterceptors } from "@angular/common/http";
+import { assetVersionInterceptor } from "./core/interceptors/asset-version.interceptor";
+import { GameVersionModule } from "./core/injection-tokens/version.injection-token";
 
 const routerOptions: ExtraOptions = {
     scrollPositionRestoration: 'disabled',
@@ -123,6 +126,8 @@ const appRoutes: Route[] = [
         {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: {disabled: true}},
         {provide: MAT_TABS_CONFIG, useValue: {animationDuration: '0', stretchTabs: false} satisfies MatTabsConfig},
         {provide: TitleStrategy, useClass: PageTitleService},
+        importProvidersFrom(GameVersionModule),
+        provideHttpClient(withInterceptors([assetVersionInterceptor])),
     ],
     bootstrap: [AppComponent],
 })

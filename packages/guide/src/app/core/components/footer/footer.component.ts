@@ -1,6 +1,6 @@
 import { Component, HostBinding, inject, ViewEncapsulation } from '@angular/core';
 import { UiIcon } from "@ci/data-types";
-import { VersionService } from "../../services/version.service";
+import { GAME_VERSION } from "../../injection-tokens/version.injection-token";
 
 @Component({
     selector: 'app-footer',
@@ -15,6 +15,6 @@ import { VersionService } from "../../services/version.service";
 })
 export class FooterComponent {
     protected uiIcon = UiIcon;
-    protected version$ = inject(VersionService).get()
+    protected version = inject(GAME_VERSION);
     @HostBinding('class.app-footer') private _setCssClass = true;
 }
