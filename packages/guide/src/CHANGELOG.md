@@ -2,6 +2,10 @@
 
 ### TBD
 
+#### Added
+
+- Added small loading indicator when opening an item card.
+
 #### Changed
 
 - Added version to assets to bust caches. This should reduce/remove cases where old assets are shown.

@@ -1,12 +1,17 @@
-@if (databaseItem(); as dbItem) {
-    <app-card class="text-lg font-semibold relative">
-        <div cardActions class="card-actions">
-            <app-to-do-toggle [item]="dbItem.item" [context]="context()" [amount]="amount()" [quality]="quality()"/>
-            <button (click)="listDetails.close()" matTooltip="Close">
-                <app-ui-icon [uiIcon]="uiIcon.CROSS" class="!w-8 !h-8 hover:text-black focus-visible:text-black"/>
-            </button>
-        </div>
+<app-card class="text-lg font-semibold relative" style="">
+    <div cardActions class="card-actions">
+        @if (databaseItem(); as dbItem) {
+            @if (isFetching()) {
+                <mat-spinner diameter="30"/>
+            }
 
+            <app-to-do-toggle [item]="dbItem.item" [context]="context()" [amount]="amount()" [quality]="quality()"/>
+        }
+        <button (click)="listDetails.close()" matTooltip="Close">
+            <app-ui-icon [uiIcon]="uiIcon.CROSS" class="!w-8 !h-8 hover:text-black focus-visible:text-black"/>
+        </button>
+    </div>
+    @if (databaseItem(); as dbItem) {
         <app-item-icon [amount]="amount()" cardIcon itemName="{{dbItem.item.iconName}}"/>
         <div class="flex justify-between items-center">
             <div class="flex flex-col">
@@ -42,6 +47,10 @@
 
 
         }
+    } @else {
+        @if (isFetching()) {
+            <mat-spinner class="mx-auto"/>
+        }
+    }
+</app-card>
 
-    </app-card>
-}
