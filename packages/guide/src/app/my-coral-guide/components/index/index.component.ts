@@ -1,7 +1,15 @@
 import { Component, computed, inject, Signal, signal } from '@angular/core';
 import { DashboardService } from "../../services/dashboard.service";
 import { forkJoin, map, Observable, tap } from "rxjs";
-import { FishDashboardEntry, MinimalItem, MinimalTagBasedItem, Season, SpecificDate, Weather } from "@ci/data-types";
+import {
+    CritterDashboardEntry,
+    FishDashboardEntry,
+    MinimalItem,
+    MinimalTagBasedItem,
+    Season,
+    SpecificDate,
+    Weather
+} from "@ci/data-types";
 import { MuseumChecklistService } from "../../../core/services/checklists/museum-checklist.service";
 import { DatabaseService } from "../../../shared/services/database.service";
 import { BaseSelectableContainerComponent } from "../../../shared/components/base-selectable-container/base-selectable-container.component";
@@ -29,6 +37,16 @@ export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem
         entry: FishDashboardEntry,
         completed: boolean
     }[]>;
+    protected insects: Signal<{
+        context: ChecklistContext,
+        entry: CritterDashboardEntry,
+        completed: boolean
+    }[]>;
+    protected oceanCritter: Signal<{
+        context: ChecklistContext,
+        entry: CritterDashboardEntry,
+        completed: boolean
+    }[]>;
     protected birthdaysToday;
     protected birthdaysTomorrow;
     #database = inject(DatabaseService)
@@ -40,6 +58,8 @@ export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem
         this.requests$ = forkJoin({
             museumDefinition: this.museumChecklistDefinition$.pipe(tap(d => this.museuemDef.set(d))),
             fish: this.dashboards.getFish$(),
+            insects: this.dashboards.getInsects$(),
+            oceanCritters: this.dashboards.getOceanCritters$(),
             birthdays: this.dashboards.getBirthdays$(),
         });
 
@@ -109,6 +129,15 @@ export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem
 
 
         });
+        this.insects = computed(() => {
+            const critters = this.dashboards.getInsects();
+            return this.critterEntriesToList(critters(), filterValues(), this.museuemDef()['Insects']);
+        });
+
+        this.oceanCritter = computed(() => {
+            const critters = this.dashboards.getOceanCritter();
+            return this.critterEntriesToList(critters(), filterValues(), this.museuemDef()['Sea critters']);
+        });
 
 
         this.birthdaysToday = computed(() => {
@@ -134,6 +163,44 @@ export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem
 
 
         });
+    }
+
+    critterEntriesToList(critters: CritterDashboardEntry[], filterValue: ReturnType<typeof this.filterFormGroup.getRawValue>, museumDef: MinimalItem[]): {
+        context: ChecklistContext;
+        entry: CritterDashboardEntry;
+        completed: boolean
+    }[] {
+        const season: Season = filterValue.season;
+        const weather: Weather = filterValue.weather;
+        const hideCompleted = filterValue.hideCompleted;
+
+        const baseList = critters.filter(f => {
+            return f.seasons.includes(season) && (f.weathers.includes(weather) || !f.weathers.length);
+
+        });
+
+        const critter: {
+            context: ChecklistContext,
+            entry: CritterDashboardEntry,
+            completed: boolean
+        }[] = [];
+
+        museumDef.forEach(key => {
+
+            const entry = baseList.find(f => f.id === key.id)
+            if (entry) {
+                const completed = this.museumChecklistService.isChecked(entry.id);
+                if (!(completed && hideCompleted))
+                    critter.push({
+                        completed: completed,
+                        context: "museum",
+                        entry
+                    })
+            }
+        })
+
+
+        return critter;
     }
 
     updateChecklist($event: MatCheckboxChange, id: string, context: ChecklistContext) {

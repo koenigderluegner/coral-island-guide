@@ -1,6 +1,6 @@
 import { GiftPreferences, NPC } from "@ci/data-types";
 import { specificDateToNumber } from "@ci/util";
-import { BirthdayDashboardEntry } from "../../../../data-types/src/lib/dashboard/birthday-dashboard-entry.type";
+import { BirthdayDashboardEntry } from "@ci/data-types";
 import { generateJson } from "../../util/functions";
 import path from "path";
 

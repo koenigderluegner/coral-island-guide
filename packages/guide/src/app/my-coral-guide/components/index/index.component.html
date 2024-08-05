@@ -58,6 +58,56 @@
                 }
             </div>
         </section>
+        <section class="my-2">
+            <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">
+                Insects
+            </h2>
+
+            <div class="icon-grid">
+                @for (entry of insects(); track entry.entry.id + entry.context) {
+                    <!--                    [class.selected-icon]="selectedEntity?entry.id === entry.entry.id"        -->
+                    <div [class.checklist-checked]="entry.completed"
+                         class="icon-grid-item checklist-item  flex flex-col">
+                        <app-item-icon
+                                (click)="showDetails({id: entry.entry.id, displayName: '', iconName: entry.entry.iconName})"
+                                [itemName]="entry.entry.iconName"/>
+                        <label class="text-white flex justify-center" for="entry-{{entry.entry.id}}-input">
+                            <mat-checkbox class="flex" id="entry-{{entry.entry.id}}"
+                                          [checked]="entry.completed"
+                                          (change)="updateChecklist($event, entry.entry.id, entry.context); entry.completed = !entry.completed"
+                                          name="entry-{{entry.entry.id}}"></mat-checkbox>
+                        </label>
+                    </div>
+                } @empty {
+                    <p class="col-span-full">No more fish to catch :)</p>
+                }
+            </div>
+        </section>
+        <section class="my-2">
+            <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">
+                Ocean critters
+            </h2>
+
+            <div class="icon-grid">
+                @for (entry of oceanCritter(); track entry.entry.id + entry.context) {
+                    <!--                    [class.selected-icon]="selectedEntity?entry.id === entry.entry.id"        -->
+                    <div [class.checklist-checked]="entry.completed"
+                         class="icon-grid-item checklist-item  flex flex-col">
+                        <app-item-icon
+                                (click)="showDetails({id: entry.entry.id, displayName: '', iconName: entry.entry.iconName})"
+                                [itemName]="entry.entry.iconName"/>
+                        <label class="text-white flex justify-center" for="entry-{{entry.entry.id}}-input">
+                            <mat-checkbox class="flex" id="entry-{{entry.entry.id}}"
+                                          [checked]="entry.completed"
+                                          (change)="updateChecklist($event, entry.entry.id, entry.context); entry.completed = !entry.completed"
+                                          name="entry-{{entry.entry.id}}"></mat-checkbox>
+                        </label>
+                    </div>
+                } @empty {
+                    <p class="col-span-full">No more fish to catch :)</p>
+                }
+            </div>
+        </section>
     } @else {
         @defer (on immediate) {
             <mat-spinner class="mx-auto"/>
