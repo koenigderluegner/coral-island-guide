@@ -6,6 +6,7 @@ export interface RegisteredCrop {
     "scytheRequirement": string,
     "isRegrowable": boolean,
     "regrowableLength": 0,
+    regrowableLimit: number
     "canCombine": true,
     "chanceToCombine": {
         "chance": 5.0
@@ -13,12 +14,12 @@ export interface RegisteredCrop {
     "pickupableItem": {
         "data": {
             "DataTable": {
-                "ObjectName": "DataTable DT_InventoryItems",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                "ObjectName": string
+                "ObjectPath": string
             },
-            "RowName": "item_21001"
+            "RowName": string
         },
-        "itemID": "item_21001"
+        "itemID": string
     },
     "floatiesConfig": {
         "maxDroppedItems": 1,
@@ -27,17 +28,17 @@ export interface RegisteredCrop {
                 "itemId": {
                     "data": {
                         "DataTable": {
-                            "ObjectName": "DataTable DT_InventoryItems",
-                            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                            "ObjectName": string
+                            "ObjectPath": string
                         },
-                        "RowName": "item_21001"
+                        "RowName": string
                     },
-                    "itemID": "item_21001"
+                    "itemID": string
                 },
-                "dropChance": 100.0,
+                "dropChance": number
                 "dropRange": {
-                    "min": 1,
-                    "max": 1
+                    "min": number
+                    "max": number
                 }
             }
         ]
@@ -45,10 +46,10 @@ export interface RegisteredCrop {
     "stages": { length: number; }[]
     "overrideExperience": false,
     "overrideExperienceOnHarvest": 0,
-    "readableName": "Potato seeds",
+    "readableName": string
     "size": {
-        "length": 1,
-        "width": 1
+        "length": number
+        "width": number
     },
     "isManualEntry": false
 }

@@ -7,5 +7,6 @@ export interface Crop extends BaseCrop {
     pickupableItemId: string;
     pickupableItem?: MinimalItem
     canCombine: boolean,
+    regrowableLimit?: number
     chanceToCombine: { chance: number }
 }

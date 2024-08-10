@@ -1239,40 +1239,187 @@
           "TokenStreamVersion": 0,
           "TagDictionary": [
             {
-              "TagName": "item.UnderwaterFlower"
+              "TagName": "item.crop.diving"
             },
             {
-              "TagName": "item.UnderwaterFruit"
+              "TagName": "Item.Quality.Silver"
             },
             {
-              "TagName": "item.UnderwaterrMushroom"
+              "TagName": "Item.Quality.Osmium"
             },
             {
-              "TagName": "item.UnderwaterrVegetables"
+              "TagName": "Item.Quality.Gold"
+            },
+            {
+              "TagName": "Item.Quality.Bronze"
+            },
+            {
+              "TagName": "Item.Quality.Basic"
             }
           ],
           "QueryTokenStream": [
             0,
             1,
+            5,
+            2,
             1,
-            4,
+            1,
             0,
             1,
+            5,
+            1,
             2,
-            3
+            3,
+            4,
+            5
           ],
-          "UserDescription": "Any Underwater Crop",
-          "AutoDescription": " ANY( item.UnderwaterFlower, item.UnderwaterFruit, item.UnderwaterrMushroom, item.UnderwaterrVegetables )"
+          "UserDescription": "Any Ocean Crop",
+          "AutoDescription": " ALL(  ANY( item.crop.diving ),  ANY( Item.Quality.Silver, Item.Quality.Osmium, Item.Quality.Gold, Item.Quality.Bronze, Item.Quality.Basic ) )"
         },
         "icon": {
-          "AssetPathName": "/Game/ProjectCoral/Textures/UI/Icons/Sprite/T_AnyIngridient_Sprite.T_AnyIngridient_Sprite",
+          "AssetPathName": "/Game/ProjectCoral/Textures/UI/Icons/Sprite/Any_Underwater_Crops_Sprite.Any_Underwater_Crops_Sprite",
           "SubPathString": ""
         },
         "readableText": {
           "Namespace": "",
           "Key": "BD4A080C4ED5FE77CEAA5BBBE894FF79",
-          "SourceString": "Any Underwater Crop",
-          "LocalizedString": "Any Underwater Crop"
+          "SourceString": "Any Ocean Crop",
+          "LocalizedString": "Any Ocean Crop"
+        }
+      },
+      "Any_Bronze_UnderwaterCrop": {
+        "tagQuery": {
+          "TokenStreamVersion": 0,
+          "TagDictionary": [
+            {
+              "TagName": "item.crop.diving"
+            },
+            {
+              "TagName": "Item.Quality.Silver"
+            },
+            {
+              "TagName": "Item.Quality.Osmium"
+            },
+            {
+              "TagName": "Item.Quality.Gold"
+            },
+            {
+              "TagName": "Item.Quality.Bronze"
+            }
+          ],
+          "QueryTokenStream": [
+            0,
+            1,
+            5,
+            2,
+            1,
+            1,
+            0,
+            1,
+            4,
+            1,
+            2,
+            3,
+            4
+          ],
+          "UserDescription": "Any Bronze Ocean Crop",
+          "AutoDescription": " ALL(  ANY( item.crop.diving ),  ANY( Item.Quality.Silver, Item.Quality.Osmium, Item.Quality.Gold, Item.Quality.Bronze ) )"
+        },
+        "icon": {
+          "AssetPathName": "/Game/ProjectCoral/Textures/UI/Icons/Sprite/Any_Underwater_Crops_Sprite.Any_Underwater_Crops_Sprite",
+          "SubPathString": ""
+        },
+        "readableText": {
+          "Namespace": "",
+          "Key": "BDBC46ED474DF8798722EF9176960F33",
+          "SourceString": "Any Bronze Ocean Crop",
+          "LocalizedString": "Any Bronze Ocean Crop"
+        }
+      },
+      "Any_Silver_UnderwaterCrop": {
+        "tagQuery": {
+          "TokenStreamVersion": 0,
+          "TagDictionary": [
+            {
+              "TagName": "item.crop.diving"
+            },
+            {
+              "TagName": "Item.Quality.Silver"
+            },
+            {
+              "TagName": "Item.Quality.Osmium"
+            },
+            {
+              "TagName": "Item.Quality.Gold"
+            }
+          ],
+          "QueryTokenStream": [
+            0,
+            1,
+            5,
+            2,
+            1,
+            1,
+            0,
+            1,
+            3,
+            1,
+            2,
+            3
+          ],
+          "UserDescription": "Any Silver Ocean Crop",
+          "AutoDescription": " ALL(  ANY( item.crop.diving ),  ANY( Item.Quality.Silver, Item.Quality.Osmium, Item.Quality.Gold ) )"
+        },
+        "icon": {
+          "AssetPathName": "/Game/ProjectCoral/Textures/UI/Icons/Sprite/Any_Underwater_Crops_Sprite.Any_Underwater_Crops_Sprite",
+          "SubPathString": ""
+        },
+        "readableText": {
+          "Namespace": "",
+          "Key": "278E5FF944797C4A28AE1280F9C352F2",
+          "SourceString": "Any Silver Ocean Crop",
+          "LocalizedString": "Any Silver Ocean Crop"
+        }
+      },
+      "Any_Gold_UnderwaterCrop": {
+        "tagQuery": {
+          "TokenStreamVersion": 0,
+          "TagDictionary": [
+            {
+              "TagName": "item.crop.diving"
+            },
+            {
+              "TagName": "Item.Quality.Osmium"
+            },
+            {
+              "TagName": "Item.Quality.Gold"
+            }
+          ],
+          "QueryTokenStream": [
+            0,
+            1,
+            5,
+            2,
+            1,
+            1,
+            0,
+            1,
+            2,
+            1,
+            2
+          ],
+          "UserDescription": "Any Gold Ocean Crop",
+          "AutoDescription": " ALL(  ANY( item.crop.diving ),  ANY( Item.Quality.Osmium, Item.Quality.Gold ) )"
+        },
+        "icon": {
+          "AssetPathName": "/Game/ProjectCoral/Textures/UI/Icons/Sprite/Any_Underwater_Crops_Sprite.Any_Underwater_Crops_Sprite",
+          "SubPathString": ""
+        },
+        "readableText": {
+          "Namespace": "",
+          "Key": "445D8A9442CA2A5B01AF98BD02F23377",
+          "SourceString": "Any Gold Ocean Crop",
+          "LocalizedString": "Any Gold Ocean Crop"
         }
       },
       "Any_UnderwaterAnimalProduce": {
@@ -1281,20 +1428,44 @@
           "TagDictionary": [
             {
               "TagName": "item.UnderwaterAnimalProduct"
+            },
+            {
+              "TagName": "Item.Quality.Silver"
+            },
+            {
+              "TagName": "Item.Quality.Osmium"
+            },
+            {
+              "TagName": "Item.Quality.Gold"
+            },
+            {
+              "TagName": "Item.Quality.Bronze"
+            },
+            {
+              "TagName": "Item.Quality.Basic"
             }
           ],
           "QueryTokenStream": [
             0,
             1,
+            5,
+            2,
             1,
             1,
-            0
+            0,
+            1,
+            5,
+            1,
+            2,
+            3,
+            4,
+            5
           ],
-          "UserDescription": "Any Underwater Animal Produce",
-          "AutoDescription": " ANY( item.UnderwaterAnimalProduct )"
+          "UserDescription": "Any Ocean Animal Produce",
+          "AutoDescription": " ALL(  ANY( item.UnderwaterAnimalProduct ),  ANY( Item.Quality.Silver, Item.Quality.Osmium, Item.Quality.Gold, Item.Quality.Bronze, Item.Quality.Basic ) )"
         },
         "icon": {
-          "AssetPathName": "/Game/ProjectCoral/Textures/UI/Icons/Sprite/Any_Milk_Sprite.Any_Milk_Sprite",
+          "AssetPathName": "/Game/ProjectCoral/Textures/UI/Icons/Sprite/Any_Underwater_Ranch_Sprite.Any_Underwater_Ranch_Sprite",
           "SubPathString": ""
         },
         "readableText": {
@@ -1302,6 +1473,141 @@
           "Key": "D9847FD243A16419B6A225AEBD8DDBA6",
           "SourceString": "Any Underwater Animal Produce",
           "LocalizedString": "Any Underwater Animal Produce"
+        }
+      },
+      "Any_Bronze_UnderwaterAnimalProduce": {
+        "tagQuery": {
+          "TokenStreamVersion": 0,
+          "TagDictionary": [
+            {
+              "TagName": "item.UnderwaterAnimalProduct"
+            },
+            {
+              "TagName": "Item.Quality.Osmium"
+            },
+            {
+              "TagName": "Item.Quality.Gold"
+            },
+            {
+              "TagName": "Item.Quality.Bronze"
+            },
+            {
+              "TagName": "Item.Quality.Silver"
+            }
+          ],
+          "QueryTokenStream": [
+            0,
+            1,
+            5,
+            2,
+            1,
+            1,
+            0,
+            1,
+            4,
+            1,
+            2,
+            3,
+            4
+          ],
+          "UserDescription": "Any Bronze Ocean Animal Produce",
+          "AutoDescription": " ALL(  ANY( item.UnderwaterAnimalProduct ),  ANY( Item.Quality.Osmium, Item.Quality.Gold, Item.Quality.Bronze, Item.Quality.Silver ) )"
+        },
+        "icon": {
+          "AssetPathName": "/Game/ProjectCoral/Textures/UI/Icons/Sprite/Any_Underwater_Ranch_Sprite.Any_Underwater_Ranch_Sprite",
+          "SubPathString": ""
+        },
+        "readableText": {
+          "Namespace": "",
+          "Key": "314BCA0843AE2E54D4922FB86C86A493",
+          "SourceString": "Any Bronze Ocean Animal Produce",
+          "LocalizedString": "Any Bronze Ocean Animal Produce"
+        }
+      },
+      "Any_Silver_UnderwaterAnimalProduce": {
+        "tagQuery": {
+          "TokenStreamVersion": 0,
+          "TagDictionary": [
+            {
+              "TagName": "item.UnderwaterAnimalProduct"
+            },
+            {
+              "TagName": "Item.Quality.Osmium"
+            },
+            {
+              "TagName": "Item.Quality.Gold"
+            },
+            {
+              "TagName": "Item.Quality.Silver"
+            }
+          ],
+          "QueryTokenStream": [
+            0,
+            1,
+            5,
+            2,
+            1,
+            1,
+            0,
+            1,
+            3,
+            1,
+            2,
+            3
+          ],
+          "UserDescription": "Any Silver Ocean Animal Produce",
+          "AutoDescription": " ALL(  ANY( item.UnderwaterAnimalProduct ),  ANY( Item.Quality.Osmium, Item.Quality.Gold, Item.Quality.Silver ) )"
+        },
+        "icon": {
+          "AssetPathName": "/Game/ProjectCoral/Textures/UI/Icons/Sprite/Any_Underwater_Ranch_Sprite.Any_Underwater_Ranch_Sprite",
+          "SubPathString": ""
+        },
+        "readableText": {
+          "Namespace": "",
+          "Key": "98E4CE734FB3EC9BC93FAD8667EFCFE6",
+          "SourceString": "Any Silver Ocean Animal Produce",
+          "LocalizedString": "Any Silver Ocean Animal Produce"
+        }
+      },
+      "Any_Gold_UnderwaterAnimalProduce": {
+        "tagQuery": {
+          "TokenStreamVersion": 0,
+          "TagDictionary": [
+            {
+              "TagName": "item.UnderwaterAnimalProduct"
+            },
+            {
+              "TagName": "Item.Quality.Osmium"
+            },
+            {
+              "TagName": "Item.Quality.Gold"
+            }
+          ],
+          "QueryTokenStream": [
+            0,
+            1,
+            5,
+            2,
+            1,
+            1,
+            0,
+            1,
+            2,
+            1,
+            2
+          ],
+          "UserDescription": "Any Gold Ocean Animal Produce",
+          "AutoDescription": " ALL(  ANY( item.UnderwaterAnimalProduct ),  ANY( Item.Quality.Osmium, Item.Quality.Gold ) )"
+        },
+        "icon": {
+          "AssetPathName": "/Game/ProjectCoral/Textures/UI/Icons/Sprite/Any_Underwater_Ranch_Sprite.Any_Underwater_Ranch_Sprite",
+          "SubPathString": ""
+        },
+        "readableText": {
+          "Namespace": "",
+          "Key": "5CAC293B428715B73107BEA582D5E917",
+          "SourceString": "Any Gold Ocean Animal Produce",
+          "LocalizedString": "Any Gold Ocean Animal Produce"
         }
       },
       "Any_GemUncommon": {
