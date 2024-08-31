@@ -9,6 +9,7 @@
     - for devices with cursors: move your cursor over an NPC image and the magnifying glass will appear, click on it to
       open image
     - for touch devices: tap on the image once to make the icon appear and click again on the icon to open the image
+- Added error page if a non-existing link was used (Error 404)
 
 #### Changed
 

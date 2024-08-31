@@ -92,6 +92,10 @@ const appRoutes: Route[] = [
         path: 'about',
         loadComponent: () => import('./about/about.component').then(c => c.AboutComponent)
     },
+    {
+        path: '**',
+        loadComponent: () => import('./error-404/error-404.component').then(c => c.Error404Component)
+    }
 ];
 
 @NgModule({
