@@ -1,5 +1,11 @@
 ## Changelog
 
+### TBD 
+
+#### Changed
+
+- Updated live data to v1.1-1226 (Steam version)
+
 ### 0.22.1 2024-08-10
 
 #### Added
