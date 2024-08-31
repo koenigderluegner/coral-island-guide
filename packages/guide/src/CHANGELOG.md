@@ -15,6 +15,7 @@
 - Updated live data to v1.1-1226 (Steam version)
 - Removed duplicate 'uncategorized' to-do category
 - Fixed minor design error in card with much information
+- Fixed broken links to cooking utensils in detail cards
 
 ### 0.22.1 2024-08-10
 

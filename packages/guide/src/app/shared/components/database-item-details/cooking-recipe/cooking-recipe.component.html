@@ -4,7 +4,7 @@
             @for (utensil of cookingRecipe.utensils; track utensil) {
                 <div class="whitespace-nowrap">
                     @if (cookingUtensilMapping[utensil.toLowerCase()]; as minimalItem) {
-                        <a [routerLink]="['crafting/cooking', utensil.toLowerCase()]"
+                        <a [routerLink]="['/crafting/cooking', utensil.toLowerCase()]"
                            class="flex gap-2 items-center">
                             <app-item-icon [itemName]="minimalItem.iconName" class="!w-7"/>
                             <span class="ml-1 whitespace-nowrap underline">{{ minimalItem.displayName }}</span>
