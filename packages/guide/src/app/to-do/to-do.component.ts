@@ -22,7 +22,6 @@ export class ToDoComponent {
     toDoCategoryControl: FormControl<ToDoFilterOptions[]> = new FormControl(['all', ...ToDoContexts, 'uncategorized'], {nonNullable: true});
     protected readonly toDoService = inject(ToDoService);
     private hadAllBefore = true;
-    private readonly settings = inject(SettingsService)
 
     constructor() {
         this.toDoCategoryControl.valueChanges.pipe(

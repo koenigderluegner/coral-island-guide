@@ -5,6 +5,7 @@
 #### Changed
 
 - Updated live data to v1.1-1226 (Steam version)
+- Removed duplicate 'uncategorized' to-do category
 
 ### 0.22.1 2024-08-10
 
