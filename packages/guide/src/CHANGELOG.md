@@ -2,6 +2,10 @@
 
 ### TBD 
 
+#### Added
+
+- Added information card to to-do lists
+
 #### Changed
 
 - Updated live data to v1.1-1226 (Steam version)

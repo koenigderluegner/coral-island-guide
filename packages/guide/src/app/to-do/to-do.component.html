@@ -1,4 +1,11 @@
-<div class="px-main-hz py-main-vt">
+<app-list-detail-container [removePlaceholder]="showTable">
+    @if (selectedEntity) {
+        <app-item-card-switch [item]="selectedEntity" listDetail [context]="selectedContext()">
+            <ng-template let-details appDatabaseItemDetails>
+                <app-offering [details]="details"/>
+            </ng-template>
+        </app-item-card-switch>
+    }
     <app-card>
         <div class="flex justify-between">
             <h1 class="mb-4 font-semibold text-2xl text-black">To-Dos</h1>
@@ -48,8 +55,11 @@
                 </mat-select>
             </mat-form-field>
         </div>
+
         @for (context of toDoContexts; track context) {
-            <app-to-do-partial [context]="context" [toDoId]="toDoCategoryControl.value"/>
+            <app-to-do-partial [context]="context"
+                               [toDoId]="toDoCategoryControl.value"
+                               (entrySelected)="openEntry($event, context)"/>
         }
 
         @if (toDoService.currentIsEmpty) {
@@ -73,4 +83,4 @@
             </div>
         }
     </app-card>
-</div>
+</app-list-detail-container>

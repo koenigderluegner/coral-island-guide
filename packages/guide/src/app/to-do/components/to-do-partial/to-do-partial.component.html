@@ -7,8 +7,9 @@
     <div [@.disabled]="!(toDoId?.includes(context) || toDoId === undefined)">
         @for (entry of data; track entry) {
             <app-to-do-entry-base class="mb-2 block"
+                                  (entrySelected)="entrySelected.emit($event)"
                                   [amount]="entry.amount"
-                                  [category]="context === 'uncategorized' ? undefined : context"
+                                  [category]="context"
                                   [item]="entry.itemEntry"
                                   [quality]="entry.quality" @leaveAnimation/>
         }

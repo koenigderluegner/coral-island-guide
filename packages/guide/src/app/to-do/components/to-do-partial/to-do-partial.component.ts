@@ -1,9 +1,10 @@
-import { Component, HostBinding, inject, Input } from '@angular/core';
+import { Component, HostBinding, inject, Input, output } from '@angular/core';
 import { ToDoService } from "../../../core/services/to-do.service";
 import { ToDoContext, ToDoContextDisplayNames } from "../../../core/types/to-do-context.type";
 import { ToDo } from "../../../core/types/to-do.type";
 import { ToDoFilterOptions } from "../../types/to-do-filter-options.type";
 import { animate, style, transition, trigger } from "@angular/animations";
+import { ItemEntry } from "../../../shared/types/item-entry.type";
 
 @Component({
     selector: 'app-to-do-partial',
@@ -25,7 +26,7 @@ import { animate, style, transition, trigger } from "@angular/animations";
     ]
 })
 export class ToDoPartialComponent {
-
+    entrySelected = output<ItemEntry>()
     @Input({required: true}) context!: ToDoContext | 'uncategorized';
     @Input() toDoId?: ToDoFilterOptions[] | undefined;
     protected readonly ToDoContextDisplayNames = ToDoContextDisplayNames;

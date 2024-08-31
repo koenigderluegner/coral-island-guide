@@ -114,7 +114,7 @@ export class ToDoService {
     getCategoryList(type?: ToDoContext): ToDo[] {
         const currentToDo = this.getCurrentToDo();
 
-        return currentToDo.filter(t => t.context === type)
+        return currentToDo.filter(t => t.context === type || (type === 'uncategorized' && !t.context))
     }
 
     categoryCompleted$(): Observable<ToDoContext | undefined> {
@@ -155,12 +155,12 @@ export class ToDoService {
 
         let foundIndex = -1
 
-        completedEntries.forEach(entry => {
-            const entryId = entityKey(entry.item);
+        completedEntries.forEach(completedEntry => {
+            const entryId = entityKey(completedEntry.item);
 
-            foundIndex = this.getCurrentToDo().findIndex(offering => {
-                const offeringKey = entityKey(offering.itemEntry);
-                return offeringKey === entryId && offering.context === entry.category
+            foundIndex = this.getCurrentToDo().findIndex(currentTodoEntry => {
+                const offeringKey = entityKey(currentTodoEntry.itemEntry);
+                return offeringKey === entryId && currentTodoEntry.context === completedEntry.category || (completedEntry.category === 'uncategorized' && !currentTodoEntry.context)
             })
             if (foundIndex >= 0) {
                 this.getCurrentToDo().splice(foundIndex, 1);

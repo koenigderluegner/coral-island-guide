@@ -1,14 +1,4 @@
-import {
-    Component,
-    DestroyRef,
-    EventEmitter,
-    HostBinding,
-    inject,
-    input,
-    OnInit,
-    Output,
-    ViewChild
-} from '@angular/core';
+import { Component, DestroyRef, HostBinding, inject, input, OnInit, output, ViewChild } from '@angular/core';
 import { Quality } from "@ci/data-types";
 import { ToDoService } from "../../../core/services/to-do.service";
 import { filter } from "rxjs";
@@ -28,7 +18,7 @@ export class ToDoEntryBaseComponent implements OnInit {
     quality = input<Quality | undefined>();
     item = input.required<ItemEntry>();
     category = input.required<ToDoContext | undefined>();
-    @Output() markedAsComplete: EventEmitter<ItemEntry> = new EventEmitter<ItemEntry>();
+    entrySelected = output<ItemEntry>();
     @ViewChild(MatCheckbox, {static: true}) checkbox?: MatCheckbox;
     protected qualities = Quality;
     @HostBinding('class.opacity-50') protected isChecked = false;

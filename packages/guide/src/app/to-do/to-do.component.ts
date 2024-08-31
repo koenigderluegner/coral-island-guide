@@ -1,10 +1,11 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ToDoService } from "../core/services/to-do.service";
-import { SettingsService } from "../shared/services/settings.service";
 import { FormControl } from "@angular/forms";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
-import { ToDoContextDisplayNames, ToDoContexts } from "../core/types/to-do-context.type";
+import { ToDoContext, ToDoContextDisplayNames, ToDoContexts } from "../core/types/to-do-context.type";
 import { ToDoFilterOptions } from "./types/to-do-filter-options.type";
+import { BaseSelectableContainerComponent } from "../shared/components/base-selectable-container/base-selectable-container.component";
+import { ItemEntry } from "../shared/types/item-entry.type";
 
 @Component({
     selector: 'app-to-do',
@@ -15,15 +16,17 @@ import { ToDoFilterOptions } from "./types/to-do-filter-options.type";
         }
     `]
 })
-export class ToDoComponent {
+export class ToDoComponent extends BaseSelectableContainerComponent<ItemEntry> {
 
     toDoContexts = ToDoContexts;
     toDoContextDisplayNames = ToDoContextDisplayNames;
     toDoCategoryControl: FormControl<ToDoFilterOptions[]> = new FormControl(['all', ...ToDoContexts, 'uncategorized'], {nonNullable: true});
     protected readonly toDoService = inject(ToDoService);
+    protected selectedContext = signal<ToDoContext>('uncategorized');
     private hadAllBefore = true;
 
     constructor() {
+        super()
         this.toDoCategoryControl.valueChanges.pipe(
             takeUntilDestroyed()
         ).subscribe({
@@ -43,4 +46,8 @@ export class ToDoComponent {
         })
     }
 
+    openEntry($event: ItemEntry, context: ToDoContext) {
+        this.showDetails($event);
+        this.selectedContext.set(context)
+    }
 }

@@ -11,6 +11,9 @@ import { MatSelectModule } from "@angular/material/select";
 import { ReactiveFormsModule } from "@angular/forms";
 import { AddSpacesToPascalCasePipe } from "../shared/pipes/add-spaces-to-pascal-case.pipe";
 import { UiIconComponent } from "../shared/components/ui-icon/ui-icon.component";
+import { DatabaseItemDetailsDirective } from "../shared/directives/database-item-details.directive";
+import { ItemCardSwitchComponent } from "../shared/components/item-card-switch/item-card-switch.component";
+import { OfferingComponent } from "../shared/components/database-item-details/offering/offering.component";
 
 const routes: Routes = [
     {path: '', component: ToDoComponent},
@@ -32,8 +35,11 @@ const routes: Routes = [
         MatTableModule,
         MatSelectModule,
         ReactiveFormsModule,
-        AddSpacesToPascalCasePipe
-    ],
+        AddSpacesToPascalCasePipe,
+        DatabaseItemDetailsDirective,
+        ItemCardSwitchComponent,
+        OfferingComponent,
+    ]
 })
 export class ToDoModule {
 }
