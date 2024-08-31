@@ -88,8 +88,12 @@
                                 <h4 class="text-lg">{{ appearancePair.key }}</h4>
                                 <div class="grid portrait-grid gap-4">
                                     @for (emotionPair of (appearancePair.value | keyvalue); track emotionPair) {
-                                        <div
-                                                class="flex flex-col shadow-lg p-2">
+                                        <div class="flex flex-col shadow-lg p-2 relative group">
+                                            <a href="assets/{{environment}}/portraits/{{npc.key}}/{{emotionPair.value}}.webp?v={{version}}"
+                                               target="_blank"
+                                               class="hidden group-focus-visible:block group-hover:block absolute top-2.5 right-2.5">
+                                                <app-ui-icon [uiIcon]="UiIcon.MAGNIFYING_GLASS"/>
+                                            </a>
                                             <app-npc-portrait [npcKey]="npc.key" [portraitName]="emotionPair.value"
                                                               class="h-[400px] flex items-end justify-center"/>
                                             <span class="">{{ emotionPair.key }}</span>

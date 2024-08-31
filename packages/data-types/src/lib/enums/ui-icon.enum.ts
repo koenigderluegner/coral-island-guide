@@ -7,6 +7,7 @@ export enum UiIcon {
     WARNING = 'Exclamation_Warning',
     FESTIVAL = 'T_Icon_Festivals',
     BIRTHDAY = 'T_Icon_Birthday',
+    MAGNIFYING_GLASS = 'T_Icon_Magnifying_Glass',
 
     // PAUSE MENU TOP
     JOURNAL = 'T_Icon_Journal',

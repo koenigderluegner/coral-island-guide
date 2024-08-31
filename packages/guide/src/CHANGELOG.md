@@ -1,10 +1,14 @@
 ## Changelog
 
-### TBD 
+### TBD
 
 #### Added
 
 - Added information card to to-do lists
+- Added possibility to open NPC portraits in original size in a new tab
+    - for devices with cursors: move your cursor over an NPC image and the magnifying glass will appear, click on it to
+      open image
+    - for touch devices: tap on the image once to make the icon appear and click again on the icon to open the image
 
 #### Changed
 
@@ -130,7 +134,7 @@
     - Sidebars, main content and details now have their own scroll area
     - Fixed floating 'X' on detail cards
     - Reduced content jumping
-  - Fixed active highlight for processors when closing details
+    - Fixed active highlight for processors when closing details
 
 ### 0.19.0 2024-05-22
 
