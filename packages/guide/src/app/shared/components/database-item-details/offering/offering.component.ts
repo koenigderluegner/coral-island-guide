@@ -13,7 +13,12 @@ import { DatabaseItem } from "@ci/data-types";
     selector: 'app-offering',
     standalone: true,
     imports: [CommonModule, AnimalProduceComponent, CookingRecipeComponent, CropComponent, FishComponent, InsectComponent, ProcessingComponent, ShopProcessingResultComponent],
-    templateUrl: './offering.component.html'
+    templateUrl: './offering.component.html',
+    styles: `:host {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+    }`
 })
 export class OfferingComponent {
     @Input({required: true}) details!: DatabaseItem
