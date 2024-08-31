@@ -20,8 +20,24 @@
             &dash; Koenig
         </p>
 
-        @if (markdown$ | async; as markdown) {
-            <app-changelog [markdown]="markdown"/>
+        @if (latestChangelog$ | async; as changelog) {
+            @if (!showWholeChangelog()) {
+                <h2>Changelog</h2>
+                <h3>{{ changelog.version }}
+                    @if (changelog.date) {
+                        -            <span>{{ changelog.date }}</span>
+                    }
+                </h3>
+                <markdown [data]="changelog.body"/>
+                <div class=" flex items-center gap-4">
+                    <button class="btn-amber" (click)="loadChangelog()">Show all</button>
+                    @if (isLoading()) {
+                        <mat-spinner diameter="24"/>
+                    }
+                </div>
+            } @else {
+                <markdown [data]="showWholeChangelog()"/>
+            }
         }
 
 

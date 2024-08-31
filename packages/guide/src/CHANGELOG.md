@@ -17,6 +17,8 @@
 - Removed duplicate 'uncategorized' to-do category
 - Fixed minor design error in card with much information
 - Fixed broken links to cooking utensils in detail cards
+- Changed changelog on start page to latest changelog only, all changes can be loaded lazily
+- Fixed caching problem with changelog after a new version appears
 
 ### 0.22.1 2024-08-10
 
