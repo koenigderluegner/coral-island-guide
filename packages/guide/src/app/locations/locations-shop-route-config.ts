@@ -18,7 +18,7 @@ import { CoffeeComponent } from "./components/shops/coffee/coffee.component";
 import { TavernComponent } from "./components/shops/tavern/tavern.component";
 import { Route } from "@angular/router";
 
-export const shopRouteConfig: ({ name: ShopName, betaOnly?: true } & ({ component: Type<any>, } | {
+export const shopRouteConfig: ({ name: ShopName, betaOnly?: true, liveOnly?: true } & ({ component: Type<any>, } | {
     loadComponent: Route['loadComponent']
 }))[] = [
     {

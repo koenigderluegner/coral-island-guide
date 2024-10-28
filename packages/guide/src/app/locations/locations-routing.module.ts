@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import { Route, RouterModule, Routes } from '@angular/router';
+import { CanActivateFn, Route, RouterModule, Routes } from '@angular/router';
 import { LocationsComponent } from './locations.component';
 import { onlyInBetaGuard } from "../core/guards/only-in-beta.guard";
 import { FestivalDisplayNames, ShopDisplayNames } from "@ci/data-types";
 import { shopRouteConfig } from "./locations-shop-route-config";
 import { MeritShopComponent } from "./components/merit-shop/merit-shop.component";
 import { festivalRouteConfig } from "./locations-festival-route-config";
+import { onlyInLiveGuard } from "../core/guards/only-in-live.guard";
 
 
 const routes: Routes = [
@@ -31,11 +32,20 @@ const routes: Routes = [
                         {component: config.component} : {loadComponent: config.loadComponent}
 
 
+                    const guards: CanActivateFn[] = [];
+
+                    if (config.betaOnly) {
+                        guards.push(onlyInBetaGuard)
+                    }
+                    if (config.liveOnly) {
+                        guards.push(onlyInLiveGuard)
+                    }
+
                     return ({
                         path: config.name,
                         ...component,
                         title: `${ShopDisplayNames[config.name]} - Locations`,
-                        canActivate: config.betaOnly ? [onlyInBetaGuard] : []
+                        canActivate: guards
                     })
                 }
             ),
@@ -55,7 +65,8 @@ const routes: Routes = [
             {
                 path: 'orchestra-zones',
                 loadComponent: () => import('./components/orchestra-zones/orchestra-zones.component').then(c => c.OrchestraZonesComponent),
-                title: `Orchestra Zones - Locations`
+                title: `Orchestra Zones - Locations`,
+                canActivate: [onlyInLiveGuard]
             }
 
         ]

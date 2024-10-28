@@ -81,6 +81,10 @@ const appRoutes: Route[] = [
         }
     },
     {
+        path: 'only-in-live',
+        loadComponent: () => import('./only-in-live/only-in-live.component').then(c => c.OnlyInBLiveComponent)
+    },
+    {
         path: 'only-in-beta',
         loadComponent: () => import('./only-in-beta/only-in-beta.component').then(c => c.OnlyInBetaComponent)
     },
@@ -116,6 +120,7 @@ const appRoutes: Route[] = [
         MatProgressSpinnerModule,
     ],
     providers: [
+        {provide: BETA_CODE, useValue: 'd0ntstr3ampl34ase'},
         {
             provide: APP_INITIALIZER,
             multi: true,

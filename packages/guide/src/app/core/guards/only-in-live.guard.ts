@@ -2,14 +2,14 @@ import { ActivatedRouteSnapshot, CanActivateFn, RedirectCommand, Router } from "
 import { inject } from "@angular/core";
 import { SettingsService } from "../../shared/services/settings.service";
 
-export const onlyInBetaGuard: CanActivateFn = (route: ActivatedRouteSnapshot,) => {
+export const onlyInLiveGuard: CanActivateFn = (route: ActivatedRouteSnapshot,) => {
     const settings = inject(SettingsService);
     const router = inject(Router);
 
-    if (settings.getSettings().useBeta) {
+    if (!settings.getSettings().useBeta) {
         return true
     } else {
-        const routePath = router.parseUrl('/only-in-beta');
+        const routePath = router.parseUrl('/only-in-live');
         return new RedirectCommand(routePath, {
             skipLocationChange: true,
         });
