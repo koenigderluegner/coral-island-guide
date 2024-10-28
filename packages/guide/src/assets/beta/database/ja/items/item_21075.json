@@ -35,7 +35,8 @@
       "item.crop.diving",
       "Item.Consumable.Food",
       "item.mushroom",
-      "item.UnderwaterrMushroom"
+      "item.UnderwaterrMushroom",
+      "Item.Quality.Basic"
     ]
   },
   "artisanResult": [
@@ -2418,6 +2419,21 @@
             "id": "item_41181",
             "displayName": "大きなヤギのヨーグルト",
             "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50201",
+            "displayName": "貝殻",
+            "iconName": "Clam_shell_Sprite"
+          },
+          {
+            "id": "item_50203",
+            "displayName": "ザルガイ",
+            "iconName": "Cockle_Sprite"
+          },
+          {
+            "id": "item_50207",
+            "displayName": "ウコンハネガイ",
+            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -2449,6 +2465,7 @@
       "growTime": 14,
       "isRegrowable": true,
       "regrowableLength": 4,
+      "regrowableLimit": 3,
       "readableName": "Pink coralcap seeds",
       "isTrellisCrop": false,
       "pickupableItemId": "item_21075",
@@ -2481,9 +2498,9 @@
   ],
   "requiredAsOffering": [
     {
-      "key": "CustomDiving",
-      "offeringGroupTitle": "",
-      "urlPath": "",
+      "key": "DivingBased",
+      "offeringGroupTitle": "Diving Altar",
+      "urlPath": "divingaltar",
       "offeringGroupRewardText": "",
       "offerings": [
         {
@@ -2543,8 +2560,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false,
-      "customType": "diving"
+      "isHeritageOffering": false
     }
   ],
   "consumables": {

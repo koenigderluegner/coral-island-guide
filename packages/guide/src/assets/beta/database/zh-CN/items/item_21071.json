@@ -8,7 +8,7 @@
       "MerfolkGeneral"
     ],
     "stackable": true,
-    "inventoryCategory": "Vegetables",
+    "inventoryCategory": "Fruit",
     "displayKey": "Fruit",
     "description": "不，这不是宇宙迪斯科球，这是一个萌芽果！",
     "qualities": {
@@ -35,7 +35,8 @@
       "item.crop.diving",
       "Item.Consumable.Food",
       "item.fruit",
-      "item.UnderwaterFruit"
+      "item.UnderwaterFruit",
+      "Item.Quality.Basic"
     ]
   },
   "artisanResult": [
@@ -1961,6 +1962,21 @@
             "id": "item_41181",
             "displayName": "山羊酸奶（大）",
             "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50201",
+            "displayName": "蛤蜊壳",
+            "iconName": "Clam_shell_Sprite"
+          },
+          {
+            "id": "item_50203",
+            "displayName": "鸟蛤",
+            "iconName": "Cockle_Sprite"
+          },
+          {
+            "id": "item_50207",
+            "displayName": "火焰贝",
+            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -2081,11 +2097,27 @@
       ]
     }
   ],
+  "asGift": [
+    {
+      "pref": {
+        "icon": "T_Icon_Love",
+        "label": "Love",
+        "preferenceField": "lovePreferences"
+      },
+      "npcs": [
+        {
+          "key": "Etna",
+          "characterName": "Etna",
+          "iconName": "Icon_etna_Sprite"
+        }
+      ]
+    }
+  ],
   "requiredAsOffering": [
     {
-      "key": "CustomDiving",
-      "offeringGroupTitle": "",
-      "urlPath": "",
+      "key": "DivingBased",
+      "offeringGroupTitle": "Diving Altar",
+      "urlPath": "divingaltar",
       "offeringGroupRewardText": "",
       "offerings": [
         {
@@ -2145,8 +2177,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false,
-      "customType": "diving"
+      "isHeritageOffering": false
     }
   ],
   "consumables": {

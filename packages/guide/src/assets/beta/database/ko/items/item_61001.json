@@ -148,7 +148,7 @@
       "key": "tukuBronze",
       "displayName": "투쿠 동",
       "description": null,
-      "experience": 4,
+      "experience": 10,
       "iconName": "Tuku_Tuku_Bronze_Sprite",
       "image": "Tuku_Bronze_2880x2160",
       "dropRates": [
@@ -165,45 +165,6 @@
     }
   ],
   "usedToCraft": [
-    {
-      "key": "item_65034",
-      "displayName": "Furnace",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_65004",
-            "displayName": "돌",
-            "iconName": "Stone_Sprite"
-          },
-          "amount": 40
-        },
-        {
-          "item": {
-            "id": "item_61001",
-            "displayName": "동광석",
-            "iconName": "Bronze_Ore_Sprite"
-          },
-          "amount": 20
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Artisan",
-      "item": {
-        "id": "item_65034",
-        "displayName": "용광로",
-        "price": 500,
-        "sellPrice": 140,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Resource equipment",
-        "displayKey": "ResourceEquipment",
-        "description": "주괴를 만드는 기계.",
-        "qualities": {},
-        "iconName": "Furnace_Sprite",
-        "tags": []
-      }
-    },
     {
       "key": "item_65203",
       "displayName": "Kiln",
@@ -249,6 +210,45 @@
       }
     },
     {
+      "key": "item_65034",
+      "displayName": "Furnace",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "돌",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 40
+        },
+        {
+          "item": {
+            "id": "item_61001",
+            "displayName": "동광석",
+            "iconName": "Bronze_Ore_Sprite"
+          },
+          "amount": 20
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Artisan",
+      "item": {
+        "id": "item_65034",
+        "displayName": "용광로",
+        "price": 500,
+        "sellPrice": 140,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Resource equipment",
+        "displayKey": "ResourceEquipment",
+        "description": "주괴를 만드는 기계.",
+        "qualities": {},
+        "iconName": "Furnace_Sprite",
+        "tags": []
+      }
+    },
+    {
       "key": "item_65016",
       "displayName": "Bee house",
       "amount": 1,
@@ -286,9 +286,40 @@
         "stackable": true,
         "inventoryCategory": "Artisan equipment",
         "displayKey": "ArtisanEquipment",
-        "description": "꿀벌 전용 호텔. 꽃을 넣으면 꿀을 생산한다.",
+        "description": "꽃을 놓으면 꿀이 생산됩니다.",
         "qualities": {},
         "iconName": "Beehouse_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65533",
+      "displayName": "Ocean Explorer chest",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_61001",
+            "displayName": "동광석",
+            "iconName": "Bronze_Ore_Sprite"
+          },
+          "amount": 30
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Farming",
+      "item": {
+        "id": "item_65533",
+        "displayName": "스카우트 상자",
+        "price": 380,
+        "sellPrice": 150,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "모든 종류의 아이템을 저장한다. 농장 전역에 배치할 수 있고, 아이템은 최대 40개까지 보관할 수 있다.",
+        "qualities": {},
+        "iconName": "Scout_chest_Sprite",
         "tags": []
       }
     },
@@ -332,66 +363,9 @@
         "stackable": true,
         "inventoryCategory": "Bombs",
         "displayKey": "Bombs",
-        "description": "작은 폭발을 일으킨다. 전투 시에 유용하다. 위험해!",
+        "description": "지상에서 작은 폭발을 생성합니다. 물속에서는 사용할 수 없습니다.",
         "qualities": {},
         "iconName": "Explosive_I_Sprite",
-        "tags": []
-      }
-    },
-    {
-      "key": "Item_63029",
-      "displayName": "Spikes",
-      "amount": 2,
-      "ingredients": [],
-      "genericIngredients": [
-        {
-          "key": "Generic_Ore",
-          "amount": 10,
-          "genericItem": {
-            "key": "Generic_Ore",
-            "tags": [
-              "item.ore"
-            ],
-            "iconName": "T_AnyOre_Sprite",
-            "displayName": "아무 원석",
-            "items": [
-              {
-                "id": "item_61001",
-                "displayName": "동광석",
-                "iconName": "Bronze_Ore_Sprite"
-              },
-              {
-                "id": "item_61002",
-                "displayName": "금광석",
-                "iconName": "Gold_Ore_Sprite"
-              },
-              {
-                "id": "item_61004",
-                "displayName": "오스뮴 광석",
-                "iconName": "Osmium_Ore_Sprite"
-              },
-              {
-                "id": "item_61045",
-                "displayName": "은광석",
-                "iconName": "Silver_Ore_Sprite"
-              }
-            ]
-          }
-        }
-      ],
-      "category": "Misc",
-      "item": {
-        "id": "item_63029",
-        "displayName": "스파이크",
-        "price": 200,
-        "sellPrice": 50,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Trap",
-        "displayKey": "Trap",
-        "description": "함정. 적에게 피해를 준다.",
-        "qualities": {},
-        "iconName": "Spikes_Sprite",
         "tags": []
       }
     },
@@ -458,6 +432,80 @@
         "description": "함정. 적의 이동 속도를 감소시킨다.",
         "qualities": {},
         "iconName": "Slime_trap_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "Item_63034",
+      "displayName": "Decoy",
+      "amount": 2,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_50509",
+            "displayName": "질긴 고기",
+            "iconName": "Tough_meat_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_50507",
+            "displayName": "부드러운 털",
+            "iconName": "Silky_fur_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "genericIngredients": [
+        {
+          "key": "Generic_Ore",
+          "amount": 2,
+          "genericItem": {
+            "key": "Generic_Ore",
+            "tags": [
+              "item.ore"
+            ],
+            "iconName": "T_AnyOre_Sprite",
+            "displayName": "아무 원석",
+            "items": [
+              {
+                "id": "item_61001",
+                "displayName": "동광석",
+                "iconName": "Bronze_Ore_Sprite"
+              },
+              {
+                "id": "item_61002",
+                "displayName": "금광석",
+                "iconName": "Gold_Ore_Sprite"
+              },
+              {
+                "id": "item_61004",
+                "displayName": "오스뮴 광석",
+                "iconName": "Osmium_Ore_Sprite"
+              },
+              {
+                "id": "item_61045",
+                "displayName": "은광석",
+                "iconName": "Silver_Ore_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Misc",
+      "item": {
+        "id": "item_63034",
+        "displayName": "미끼",
+        "price": 170,
+        "sellPrice": 50,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Decoy",
+        "displayKey": "Decoy",
+        "description": "적에게 던지면 적이 미끼를 대신 공격한다.",
+        "qualities": {},
+        "iconName": "Decoy_Sprite",
         "tags": []
       }
     },
@@ -668,31 +716,14 @@
       }
     },
     {
-      "key": "Item_63034",
-      "displayName": "Decoy",
+      "key": "Item_63029",
+      "displayName": "Spikes",
       "amount": 2,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_50509",
-            "displayName": "질긴 고기",
-            "iconName": "Tough_meat_Sprite"
-          },
-          "amount": 1
-        },
-        {
-          "item": {
-            "id": "item_50507",
-            "displayName": "부드러운 털",
-            "iconName": "Silky_fur_Sprite"
-          },
-          "amount": 1
-        }
-      ],
+      "ingredients": [],
       "genericIngredients": [
         {
           "key": "Generic_Ore",
-          "amount": 2,
+          "amount": 10,
           "genericItem": {
             "key": "Generic_Ore",
             "tags": [
@@ -727,17 +758,17 @@
       ],
       "category": "Misc",
       "item": {
-        "id": "item_63034",
-        "displayName": "미끼",
-        "price": 170,
+        "id": "item_63029",
+        "displayName": "스파이크",
+        "price": 200,
         "sellPrice": 50,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Decoy",
-        "displayKey": "Decoy",
-        "description": "적에게 던지면 적이 미끼를 대신 공격한다.",
+        "inventoryCategory": "Trap",
+        "displayKey": "Trap",
+        "description": "함정. 적에게 피해를 준다.",
         "qualities": {},
-        "iconName": "Decoy_Sprite",
+        "iconName": "Spikes_Sprite",
         "tags": []
       }
     },
@@ -793,37 +824,6 @@
         "description": "농장에 배치한다.",
         "qualities": {},
         "iconName": "Sturdy_Computer_Sprite",
-        "tags": []
-      }
-    },
-    {
-      "key": "item_65533",
-      "displayName": "Ocean Explorer chest",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_61001",
-            "displayName": "동광석",
-            "iconName": "Bronze_Ore_Sprite"
-          },
-          "amount": 30
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Farming",
-      "item": {
-        "id": "item_65533",
-        "displayName": "스카우트 상자",
-        "price": 380,
-        "sellPrice": 150,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Farming",
-        "displayKey": "Farming",
-        "description": "모든 종류의 아이템을 저장한다. 농장 전역에 배치할 수 있고, 아이템은 최대 40개까지 보관할 수 있다.",
-        "qualities": {},
-        "iconName": "Scout_chest_Sprite",
         "tags": []
       }
     }

@@ -35,7 +35,8 @@
       "item.crop.diving",
       "Item.Consumable.Food",
       "item.vegetable",
-      "item.UnderwaterrVegetables"
+      "item.UnderwaterrVegetables",
+      "Item.Quality.Basic"
     ]
   },
   "artisanResult": [
@@ -1102,6 +1103,21 @@
             "id": "item_41181",
             "displayName": "大きなヤギのヨーグルト",
             "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50201",
+            "displayName": "貝殻",
+            "iconName": "Clam_shell_Sprite"
+          },
+          {
+            "id": "item_50203",
+            "displayName": "ザルガイ",
+            "iconName": "Cockle_Sprite"
+          },
+          {
+            "id": "item_50207",
+            "displayName": "ウコンハネガイ",
+            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -1309,11 +1325,27 @@
       ]
     }
   ],
+  "asGift": [
+    {
+      "pref": {
+        "icon": "T_Icon_Love",
+        "label": "Love",
+        "preferenceField": "lovePreferences"
+      },
+      "npcs": [
+        {
+          "key": "Denali",
+          "characterName": "Denali",
+          "iconName": "Icon_denali"
+        }
+      ]
+    }
+  ],
   "requiredAsOffering": [
     {
-      "key": "CustomDiving",
-      "offeringGroupTitle": "",
-      "urlPath": "",
+      "key": "DivingBased",
+      "offeringGroupTitle": "Diving Altar",
+      "urlPath": "divingaltar",
       "offeringGroupRewardText": "",
       "offerings": [
         {
@@ -1373,8 +1405,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false,
-      "customType": "diving"
+      "isHeritageOffering": false
     }
   ],
   "consumables": {

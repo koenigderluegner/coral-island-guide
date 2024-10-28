@@ -35,7 +35,8 @@
       "item.crop.diving",
       "Item.Consumable.Food",
       "item.vegetable",
-      "item.UnderwaterrVegetables"
+      "item.UnderwaterrVegetables",
+      "Item.Quality.Basic"
     ]
   },
   "artisanResult": [
@@ -1084,6 +1085,21 @@
             "id": "item_41181",
             "displayName": "대용량 염소 요구르트",
             "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50201",
+            "displayName": "조개껍데기",
+            "iconName": "Clam_shell_Sprite"
+          },
+          {
+            "id": "item_50203",
+            "displayName": "꼬막",
+            "iconName": "Cockle_Sprite"
+          },
+          {
+            "id": "item_50207",
+            "displayName": "화염가리비",
+            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -1261,6 +1277,7 @@
       "growTime": 9,
       "isRegrowable": true,
       "regrowableLength": 3,
+      "regrowableLimit": 6,
       "readableName": "Red reefbud seeds",
       "isTrellisCrop": false,
       "pickupableItemId": "item_21073",
@@ -1293,9 +1310,9 @@
   ],
   "requiredAsOffering": [
     {
-      "key": "CustomDiving",
-      "offeringGroupTitle": "",
-      "urlPath": "",
+      "key": "DivingBased",
+      "offeringGroupTitle": "Diving Altar",
+      "urlPath": "divingaltar",
       "offeringGroupRewardText": "",
       "offerings": [
         {
@@ -1355,8 +1372,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false,
-      "customType": "diving"
+      "isHeritageOffering": false
     }
   ],
   "consumables": {

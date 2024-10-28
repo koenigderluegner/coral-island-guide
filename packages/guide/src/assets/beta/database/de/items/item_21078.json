@@ -8,7 +8,7 @@
       "MerfolkGeneral"
     ],
     "stackable": true,
-    "inventoryCategory": "Vegetables",
+    "inventoryCategory": "Fruit",
     "displayKey": "Fruit",
     "description": "Ooohhh, es glitzert! Ach, vergiss es, das ist nur Gemüse ...",
     "qualities": {
@@ -35,7 +35,8 @@
       "item.crop.diving",
       "Item.Consumable.Food",
       "item.fruit",
-      "item.UnderwaterFruit"
+      "item.UnderwaterFruit",
+      "Item.Quality.Basic"
     ]
   },
   "artisanResult": [
@@ -1300,7 +1301,7 @@
             },
             {
               "id": "item_72046",
-              "displayName": "Schirmquallen",
+              "displayName": "Schirmqualle",
               "iconName": "CannonBall_Jellyfish_Sprite"
             },
             {
@@ -1961,6 +1962,21 @@
             "id": "item_41181",
             "displayName": "Großer Ziegenjoghurt",
             "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50201",
+            "displayName": "Muschelschale",
+            "iconName": "Clam_shell_Sprite"
+          },
+          {
+            "id": "item_50203",
+            "displayName": "Herzmuschel",
+            "iconName": "Cockle_Sprite"
+          },
+          {
+            "id": "item_50207",
+            "displayName": "Flammen-Jakobsmuschel",
+            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -2051,6 +2067,7 @@
       "growTime": 9,
       "isRegrowable": true,
       "regrowableLength": 4,
+      "regrowableLimit": 4,
       "readableName": "Goldglow seeds",
       "isTrellisCrop": false,
       "pickupableItemId": "item_21078",
@@ -2083,9 +2100,9 @@
   ],
   "requiredAsOffering": [
     {
-      "key": "CustomDiving",
-      "offeringGroupTitle": "",
-      "urlPath": "",
+      "key": "DivingBased",
+      "offeringGroupTitle": "Diving Altar",
+      "urlPath": "divingaltar",
       "offeringGroupRewardText": "",
       "offerings": [
         {
@@ -2097,7 +2114,7 @@
               {
                 "item": {
                   "id": "item_62010",
-                  "displayName": "Solar core",
+                  "displayName": "Sonnen-Orb",
                   "iconName": "Solar_Core_Sprite"
                 },
                 "amount": 1
@@ -2145,8 +2162,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false,
-      "customType": "diving"
+      "isHeritageOffering": false
     }
   ],
   "consumables": {

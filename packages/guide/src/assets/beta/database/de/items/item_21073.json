@@ -35,7 +35,8 @@
       "item.crop.diving",
       "Item.Consumable.Food",
       "item.vegetable",
-      "item.UnderwaterrVegetables"
+      "item.UnderwaterrVegetables",
+      "Item.Quality.Basic"
     ]
   },
   "artisanResult": [
@@ -1084,6 +1085,21 @@
             "id": "item_41181",
             "displayName": "Großer Ziegenjoghurt",
             "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50201",
+            "displayName": "Muschelschale",
+            "iconName": "Clam_shell_Sprite"
+          },
+          {
+            "id": "item_50203",
+            "displayName": "Herzmuschel",
+            "iconName": "Cockle_Sprite"
+          },
+          {
+            "id": "item_50207",
+            "displayName": "Flammen-Jakobsmuschel",
+            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -1261,6 +1277,7 @@
       "growTime": 9,
       "isRegrowable": true,
       "regrowableLength": 3,
+      "regrowableLimit": 6,
       "readableName": "Red reefbud seeds",
       "isTrellisCrop": false,
       "pickupableItemId": "item_21073",
@@ -1293,9 +1310,9 @@
   ],
   "requiredAsOffering": [
     {
-      "key": "CustomDiving",
-      "offeringGroupTitle": "",
-      "urlPath": "",
+      "key": "DivingBased",
+      "offeringGroupTitle": "Diving Altar",
+      "urlPath": "divingaltar",
       "offeringGroupRewardText": "",
       "offerings": [
         {
@@ -1355,8 +1372,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false,
-      "customType": "diving"
+      "isHeritageOffering": false
     }
   ],
   "consumables": {

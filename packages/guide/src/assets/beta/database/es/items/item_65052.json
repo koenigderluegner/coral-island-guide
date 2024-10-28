@@ -425,62 +425,62 @@
             },
             {
               "id": "item_21071",
-              "displayName": "#REF!",
+              "displayName": "fruta germinada",
               "iconName": "Sproutfruit_Sprite"
             },
             {
               "id": "item_21075",
-              "displayName": "#REF!",
+              "displayName": "Gorro de coral rosa",
               "iconName": "Pink_Coralcap_Sprite"
             },
             {
               "id": "item_21077",
-              "displayName": "#REF!",
+              "displayName": "Flor de campanilla",
               "iconName": "Bluebell_Blossom_Sprite"
             },
             {
               "id": "item_21078",
-              "displayName": "#REF!",
+              "displayName": "brillo dorado",
               "iconName": "Goldglow_Sprite"
             },
             {
               "id": "item_21079",
-              "displayName": "#REF!",
+              "displayName": "Soka",
               "iconName": "Soka_Sprite"
             },
             {
               "id": "item_21080",
-              "displayName": "#REF!",
+              "displayName": "flor de helixpur",
               "iconName": "Helixpur_Blossom_Sprite"
             },
             {
               "id": "item_21081",
-              "displayName": "#REF!",
+              "displayName": "Flor de espino marino",
               "iconName": "Marinethorn_Blossom_Sprite"
             },
             {
               "id": "item_21082",
-              "displayName": "#REF!",
+              "displayName": "papa de mar",
               "iconName": "Sea_Spud_Sprite"
             },
             {
               "id": "item_21084",
-              "displayName": "#REF!",
+              "displayName": "Pétalo",
               "iconName": "Petalia_Sprite"
             },
             {
               "id": "item_21085",
-              "displayName": "#REF!",
+              "displayName": "Semillas de Árbol de Hongo",
               "iconName": "Mushroom_tree_seeds_Sprite"
             },
             {
               "id": "item_21086",
-              "displayName": "#REF!",
+              "displayName": "Semillas de Shroomba",
               "iconName": "Wooblecap_seeds_Sprite"
             },
             {
               "id": "item_21087",
-              "displayName": "#REF!",
+              "displayName": "Semillas de Espora Lunar",
               "iconName": "Moonspore_seeds_Sprite"
             },
             {
@@ -1573,54 +1573,41 @@
       }
     },
     {
-      "key": "item_65049",
-      "displayName": "Recycling machine",
+      "key": "Item_65317",
+      "displayName": "Makeshift scarecrow",
       "amount": 1,
       "ingredients": [
+        {
+          "item": {
+            "id": "item_65003",
+            "displayName": "Madera",
+            "iconName": "Wood_Sprite"
+          },
+          "amount": 10
+        },
         {
           "item": {
             "id": "item_65052",
             "displayName": "Basura",
             "iconName": "Trash_Sprite"
           },
-          "amount": 20
-        },
-        {
-          "item": {
-            "id": "item_65004",
-            "displayName": "Piedra",
-            "iconName": "Stone_Sprite"
-          },
-          "amount": 30
-        },
-        {
-          "item": {
-            "id": "item_62001",
-            "displayName": "Alga kelp de bronce",
-            "iconName": "Bronze_kelp_Sprite"
-          },
           "amount": 15
         }
       ],
       "genericIngredients": [],
-      "category": "Artisan",
-      "craftingUnlock": {
-        "key": "item_65049",
-        "masteryLevel": 2,
-        "masteryType": "Diving"
-      },
+      "category": "Scarecrow",
       "item": {
-        "id": "item_65049",
-        "displayName": "Máquina de reciclaje",
-        "price": 400,
-        "sellPrice": 125,
+        "id": "item_65317",
+        "displayName": "Espantapájaros improvisado",
+        "price": 90,
+        "sellPrice": 35,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Resource equipment",
-        "displayKey": "ResourceEquipment",
-        "description": "Convierte un recurso en otro.",
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Evita que los cuervos se acerquen a los cultivos. Protege una zona de 5x5.",
         "qualities": {},
-        "iconName": "Recycling_Machine_Sprite",
+        "iconName": "Makeshift_Scarecrow_Sprite",
         "tags": []
       }
     },
@@ -1677,41 +1664,85 @@
       }
     },
     {
-      "key": "Item_65317",
-      "displayName": "Makeshift scarecrow",
+      "key": "item_65049",
+      "displayName": "Recycling machine",
       "amount": 1,
       "ingredients": [
-        {
-          "item": {
-            "id": "item_65003",
-            "displayName": "Madera",
-            "iconName": "Wood_Sprite"
-          },
-          "amount": 10
-        },
         {
           "item": {
             "id": "item_65052",
             "displayName": "Basura",
             "iconName": "Trash_Sprite"
           },
+          "amount": 20
+        },
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "Piedra",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 30
+        },
+        {
+          "item": {
+            "id": "item_62001",
+            "displayName": "Alga kelp de bronce",
+            "iconName": "Bronze_kelp_Sprite"
+          },
           "amount": 15
         }
       ],
       "genericIngredients": [],
-      "category": "Scarecrow",
+      "category": "Artisan",
+      "craftingUnlock": {
+        "key": "item_65049",
+        "masteryLevel": 2,
+        "masteryType": "Diving"
+      },
       "item": {
-        "id": "item_65317",
-        "displayName": "Espantapájaros improvisado",
-        "price": 90,
-        "sellPrice": 35,
+        "id": "item_65049",
+        "displayName": "Máquina de reciclaje",
+        "price": 400,
+        "sellPrice": 125,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Resource equipment",
+        "displayKey": "ResourceEquipment",
+        "description": "Convierte un recurso en otro.",
+        "qualities": {},
+        "iconName": "Recycling_Machine_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65507",
+      "displayName": "Ocean guardian chest",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65052",
+            "displayName": "Basura",
+            "iconName": "Trash_Sprite"
+          },
+          "amount": 50
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Farming",
+      "item": {
+        "id": "item_65507",
+        "displayName": "Cofre de guardián del océano",
+        "price": 380,
+        "sellPrice": 150,
         "sellAt": [],
         "stackable": true,
         "inventoryCategory": "Farming",
         "displayKey": "Farming",
-        "description": "Evita que los cuervos se acerquen a los cultivos. Protege una zona de 5x5.",
+        "description": "Almacena toda clase de objetos. Se puede colocar en la granja, y puede contener hasta 40 objetos.",
         "qualities": {},
-        "iconName": "Makeshift_Scarecrow_Sprite",
+        "iconName": "Ocean_warrior_chest_Sprite",
         "tags": []
       }
     },
@@ -1743,167 +1774,6 @@
         "description": "Colócalo en el suelo.",
         "qualities": {},
         "iconName": "Makeshift_Path_Sprite",
-        "tags": []
-      }
-    },
-    {
-      "key": "item_65319",
-      "displayName": "Makeshift gate",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_65003",
-            "displayName": "Madera",
-            "iconName": "Wood_Sprite"
-          },
-          "amount": 2
-        },
-        {
-          "item": {
-            "id": "item_65052",
-            "displayName": "Basura",
-            "iconName": "Trash_Sprite"
-          },
-          "amount": 5
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Decor",
-      "item": {
-        "id": "item_65319",
-        "displayName": "Puerta improvisada",
-        "price": 23,
-        "sellPrice": 9,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Decor",
-        "displayKey": "Decor",
-        "description": "Se debe colocar entre dos vallas.",
-        "qualities": {},
-        "iconName": "Makeshift_Gate_Sprite",
-        "tags": []
-      }
-    },
-    {
-      "key": "item_65318",
-      "displayName": "Makeshift fence",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_65003",
-            "displayName": "Madera",
-            "iconName": "Wood_Sprite"
-          },
-          "amount": 1
-        },
-        {
-          "item": {
-            "id": "item_65052",
-            "displayName": "Basura",
-            "iconName": "Trash_Sprite"
-          },
-          "amount": 1
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Decor",
-      "item": {
-        "id": "item_65318",
-        "displayName": "Valla improvisada",
-        "price": 8,
-        "sellPrice": 3,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Decor",
-        "displayKey": "Decor",
-        "description": "Una valla hecha de madera y basura.",
-        "qualities": {},
-        "iconName": "Makeshift_Fence_Sprite",
-        "tags": []
-      }
-    },
-    {
-      "key": "item_65342",
-      "displayName": "Makeshift sign",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_65003",
-            "displayName": "Madera",
-            "iconName": "Wood_Sprite"
-          },
-          "amount": 2
-        },
-        {
-          "item": {
-            "id": "item_65052",
-            "displayName": "Basura",
-            "iconName": "Trash_Sprite"
-          },
-          "amount": 5
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Decor",
-      "item": {
-        "id": "item_65342",
-        "displayName": "Cartel improvisado",
-        "price": 23,
-        "sellPrice": 9,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Decor",
-        "displayKey": "Decor",
-        "description": "Hecho de madera y basura. Utiliza un objeto para modificar lo que muestra.",
-        "qualities": {},
-        "iconName": "Makeshift_Sign_Sprite",
-        "tags": []
-      }
-    },
-    {
-      "key": "item_65360",
-      "displayName": "Makeshift arch",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_65003",
-            "displayName": "Madera",
-            "iconName": "Wood_Sprite"
-          },
-          "amount": 1
-        },
-        {
-          "item": {
-            "id": "item_65052",
-            "displayName": "Basura",
-            "iconName": "Trash_Sprite"
-          },
-          "amount": 10
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Decor",
-      "craftingUnlock": {
-        "key": "item_65360",
-        "masteryLevel": 3,
-        "masteryType": "Farming"
-      },
-      "item": {
-        "id": "item_65360",
-        "displayName": "Arco improvisado",
-        "price": 30,
-        "sellPrice": 12,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Decor",
-        "displayKey": "Decor",
-        "description": "Colócalo en la granja.",
-        "qualities": {},
-        "iconName": "Makeshift_Arch_Sprite",
         "tags": []
       }
     },
@@ -1952,10 +1822,18 @@
       }
     },
     {
-      "key": "item_65125",
-      "displayName": "Trash fence",
+      "key": "item_65318",
+      "displayName": "Makeshift fence",
       "amount": 1,
       "ingredients": [
+        {
+          "item": {
+            "id": "item_65003",
+            "displayName": "Madera",
+            "iconName": "Wood_Sprite"
+          },
+          "amount": 1
+        },
         {
           "item": {
             "id": "item_65052",
@@ -1968,79 +1846,139 @@
       "genericIngredients": [],
       "category": "Decor",
       "item": {
-        "id": "item_65125",
-        "displayName": "Valla de basura",
-        "price": 3,
-        "sellPrice": 1,
+        "id": "item_65318",
+        "displayName": "Valla improvisada",
+        "price": 8,
+        "sellPrice": 3,
         "sellAt": [],
         "stackable": true,
         "inventoryCategory": "Decor",
         "displayKey": "Decor",
-        "description": "Colócala en el suelo.",
+        "description": "Una valla hecha de madera y basura.",
         "qualities": {},
-        "iconName": "Trash_Fence_Sprite",
+        "iconName": "Makeshift_Fence_Sprite",
         "tags": []
       }
     },
     {
-      "key": "item_65126",
-      "displayName": "Trash floor tile",
+      "key": "item_65319",
+      "displayName": "Makeshift gate",
       "amount": 1,
       "ingredients": [
+        {
+          "item": {
+            "id": "item_65003",
+            "displayName": "Madera",
+            "iconName": "Wood_Sprite"
+          },
+          "amount": 2
+        },
         {
           "item": {
             "id": "item_65052",
             "displayName": "Basura",
             "iconName": "Trash_Sprite"
           },
-          "amount": 2
+          "amount": 5
         }
       ],
       "genericIngredients": [],
       "category": "Decor",
       "item": {
-        "id": "item_65126",
-        "displayName": "Baldosa de suelo de basura",
-        "price": 5,
-        "sellPrice": 2,
+        "id": "item_65319",
+        "displayName": "Puerta improvisada",
+        "price": 23,
+        "sellPrice": 9,
         "sellAt": [],
         "stackable": true,
         "inventoryCategory": "Decor",
         "displayKey": "Decor",
-        "description": "Colócala en el suelo.",
+        "description": "Se debe colocar entre dos vallas.",
         "qualities": {},
-        "iconName": "Trash_floor_tile_Sprite",
+        "iconName": "Makeshift_Gate_Sprite",
         "tags": []
       }
     },
     {
-      "key": "item_65507",
-      "displayName": "Ocean guardian chest",
+      "key": "item_65360",
+      "displayName": "Makeshift arch",
       "amount": 1,
       "ingredients": [
+        {
+          "item": {
+            "id": "item_65003",
+            "displayName": "Madera",
+            "iconName": "Wood_Sprite"
+          },
+          "amount": 1
+        },
         {
           "item": {
             "id": "item_65052",
             "displayName": "Basura",
             "iconName": "Trash_Sprite"
           },
-          "amount": 50
+          "amount": 10
         }
       ],
       "genericIngredients": [],
-      "category": "Farming",
+      "category": "Decor",
+      "craftingUnlock": {
+        "key": "item_65360",
+        "masteryLevel": 3,
+        "masteryType": "Farming"
+      },
       "item": {
-        "id": "item_65507",
-        "displayName": "Cofre de guardián del océano",
-        "price": 380,
-        "sellPrice": 150,
+        "id": "item_65360",
+        "displayName": "Arco improvisado",
+        "price": 30,
+        "sellPrice": 12,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Farming",
-        "displayKey": "Farming",
-        "description": "Almacena toda clase de objetos. Se puede colocar en la granja, y puede contener hasta 40 objetos.",
+        "inventoryCategory": "Decor",
+        "displayKey": "Decor",
+        "description": "Colócalo en la granja.",
         "qualities": {},
-        "iconName": "Ocean_warrior_chest_Sprite",
+        "iconName": "Makeshift_Arch_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65342",
+      "displayName": "Makeshift sign",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65003",
+            "displayName": "Madera",
+            "iconName": "Wood_Sprite"
+          },
+          "amount": 2
+        },
+        {
+          "item": {
+            "id": "item_65052",
+            "displayName": "Basura",
+            "iconName": "Trash_Sprite"
+          },
+          "amount": 5
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Decor",
+      "item": {
+        "id": "item_65342",
+        "displayName": "Cartel improvisado",
+        "price": 23,
+        "sellPrice": 9,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Decor",
+        "displayKey": "Decor",
+        "description": "Hecho de madera y basura. Utiliza un objeto para modificar lo que muestra.",
+        "qualities": {},
+        "iconName": "Makeshift_Sign_Sprite",
         "tags": []
       }
     },
@@ -2088,6 +2026,53 @@
         "description": "Evita que los cuervos se acerquen a los cultivos. Protege un área de 11x11 casillas.",
         "qualities": {},
         "iconName": "Ocean_warrior_scarecrow_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "Item_65115",
+      "displayName": "Scrap scarecrow",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65107",
+            "displayName": "Chatarra",
+            "iconName": "Scrap_Sprite"
+          },
+          "amount": 10
+        },
+        {
+          "item": {
+            "id": "item_65052",
+            "displayName": "Basura",
+            "iconName": "Trash_Sprite"
+          },
+          "amount": 10
+        },
+        {
+          "item": {
+            "id": "item_65108",
+            "displayName": "Savia",
+            "iconName": "Sap_Sprite"
+          },
+          "amount": 10
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Scarecrow",
+      "item": {
+        "id": "item_65115",
+        "displayName": "Espantapájaros de chatarra",
+        "price": 600,
+        "sellPrice": 110,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Resource equipment",
+        "displayKey": "ResourceEquipment",
+        "description": "Evita que los cuervos se acerquen a los cultivos. Protege una área de 11x11 casillas.",
+        "qualities": {},
+        "iconName": "Scrap_scarecrow_Sprite",
         "tags": []
       }
     }
