@@ -101,7 +101,77 @@
         "festivalStatesAllowed": [],
         "conditions": null
       },
-      "Weather_Sat": {
+      "Weather_SpringFallWinter_F_Summer_ThF": {
+        "dateOverrides": [],
+        "validFrom": {
+          "day": 1,
+          "season": "EC_Season::None",
+          "year": 1
+        },
+        "repeatType": "EC_DateRecurranceType::None",
+        "useRelationshipRequirement": false,
+        "relationshipRequirement": "EC_RelationshipStatus::NONE",
+        "usePetRequirement": false,
+        "petRequirement": "EC_PetAdoptState::Any",
+        "hasChildSchedule": false,
+        "weatherOverrides": [
+          {
+            "EC_Weather::Rain": {
+              "daysOfTheWeek": []
+            }
+          },
+          {
+            "EC_Weather::Storm": {
+              "daysOfTheWeek": []
+            }
+          },
+          {
+            "EC_Weather::Snow": {
+              "daysOfTheWeek": []
+            }
+          },
+          {
+            "EC_Weather::Blizzard": {
+              "daysOfTheWeek": []
+            }
+          }
+        ],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Friday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Friday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Friday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Summer": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Thursday",
+                "EC_DayOfTheWeek::Friday"
+              ]
+            }
+          }
+        ],
+        "festivalOverrides": [],
+        "festivalStatesAllowed": [],
+        "conditions": null
+      },
+      "Weather_SpringFallWinter_Sat_SpringSun": {
         "dateOverrides": [],
         "validFrom": {
           "day": 1,
@@ -135,9 +205,37 @@
                 "EC_DayOfTheWeek::Saturday"
               ]
             }
+          },
+          {
+            "EC_Weather::Blizzard": {
+              "daysOfTheWeek": []
+            }
           }
         ],
-        "seasonOverrides": [],
+        "seasonOverrides": [
+          {
+            "EC_Season::Spring": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday",
+                "EC_DayOfTheWeek::Sunday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Fall": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
+          },
+          {
+            "EC_Season::Winter": {
+              "daysOfTheWeek": [
+                "EC_DayOfTheWeek::Saturday"
+              ]
+            }
+          }
+        ],
         "festivalOverrides": [],
         "festivalStatesAllowed": [],
         "conditions": null

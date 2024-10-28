@@ -1,20 +1,5 @@
 [
   {
-    "Type": "C_ObjectStateRequirement",
-    "Name": "C_ObjectStateRequirement_0",
-    "Outer": "DA_Derek_Pufferfish_Construction",
-    "Class": "UScriptClass'C_ObjectStateRequirement'",
-    "Properties": {
-      "actorRef": {
-        "AssetPathName": "/Game/ProjectCoral/Maps/MapZones/CI_Town.CI_Town",
-        "SubPathString": "PersistentLevel.BP_Pufferfish_2"
-      },
-      "id": "pufferfish",
-      "requiredState": "building",
-      "requiredStateInput": "building"
-    }
-  },
-  {
     "Type": "C_RequirementsConfig",
     "Name": "DA_Derek_Pufferfish_Construction",
     "Class": "UScriptClass'C_RequirementsConfig'",
@@ -22,10 +7,30 @@
       "requirements": {
         "requirements": [
           {
-            "ObjectName": "C_ObjectStateRequirement'DA_Derek_Pufferfish_Construction:C_ObjectStateRequirement_0'",
-            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/DA_Derek_Pufferfish_Construction.0"
+            "ObjectName": "C_TimeDateRequirement'DA_Derek_Pufferfish_Construction:C_TimeDateRequirement_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WorkSchedules/Requirements/DA_Derek_Pufferfish_Construction.1"
           }
         ]
+      }
+    }
+  },
+  {
+    "Type": "C_TimeDateRequirement",
+    "Name": "C_TimeDateRequirement_0",
+    "Outer": "DA_Derek_Pufferfish_Construction",
+    "Class": "UScriptClass'C_TimeDateRequirement'",
+    "Properties": {
+      "conditionType": "EC_TimeDateRequirementType::dateRangeInclusive",
+      "dateRange": {
+        "isValidOnSpecificDate": false,
+        "isValidIndefinitelyOnceStarted": false,
+        "startsFrom": {
+          "season": "EC_Season::Spring"
+        },
+        "lastsTill": {
+          "day": 3,
+          "season": "EC_Season::Spring"
+        }
       }
     }
   }

@@ -7,6 +7,7 @@
       "subtypeRules": [
         {
           "EC_DTDialogueColumn_SubType::BeforePlayerBecomeMerfolk": {
+            "requirementType": "EC_RequirementCollectionType::And",
             "gameplayRequirements": {
               "type": "EC_RequirementCollectionType::And",
               "requirements": [
@@ -15,11 +16,16 @@
                   "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/Merfolk/DA_SubtypeRuleOceanAnimal.2"
                 }
               ]
+            },
+            "npcRequirements": {
+              "type": "EC_RequirementCollectionType::And",
+              "requirements": []
             }
           }
         },
         {
           "EC_DTDialogueColumn_SubType::Normal": {
+            "requirementType": "EC_RequirementCollectionType::And",
             "gameplayRequirements": {
               "type": "EC_RequirementCollectionType::And",
               "requirements": [
@@ -28,6 +34,10 @@
                   "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/Merfolk/DA_SubtypeRuleOceanAnimal.1"
                 }
               ]
+            },
+            "npcRequirements": {
+              "type": "EC_RequirementCollectionType::And",
+              "requirements": []
             }
           }
         }

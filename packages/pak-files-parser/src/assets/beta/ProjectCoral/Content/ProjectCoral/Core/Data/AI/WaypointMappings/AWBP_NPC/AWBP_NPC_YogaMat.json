@@ -13,16 +13,25 @@
         "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
       },
       {
-        "Type": "BoolProperty",
-        "Name": "K2Node_Event_newState",
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetGameState_ReturnValue",
         "Flags": "RF_Public",
-        "ElementSize": 1,
-        "FieldSize": 1,
-        "ByteOffset": 0,
-        "ByteMask": 1,
-        "FieldMask": 255,
-        "BoolSize": 1,
-        "bIsNativeBool": true
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'GameStateBase'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'C_FestivalManager'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
       },
       {
         "Type": "ObjectProperty",
@@ -75,7 +84,7 @@
       },
       {
         "Type": "ObjectProperty",
-        "Name": "CallFunc_GetGameState_ReturnValue",
+        "Name": "CallFunc_GetGameState_ReturnValue_1",
         "Flags": "RF_Public",
         "ElementSize": 8,
         "PropertyClass": {
@@ -122,8 +131,9 @@
         "Name": "CallFunc_GetTimeManager_ReturnValue",
         "Flags": "RF_Public",
         "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
         "PropertyClass": {
-          "ObjectName": "Class'C_TimeManager'",
+          "ObjectName": "Class'C_TimeManagerComponent'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       },
@@ -168,19 +178,21 @@
         "Flags": "RF_Public",
         "ElementSize": 20,
         "SignatureFunction": {
-          "ObjectName": "DelegateFunction'C_TimeManager:DelegateOnTimeStateChanged__DelegateSignature'",
+          "ObjectName": "DelegateFunction'C_TimeManagerComponent:DelegateOnTimeStateChanged__DelegateSignature'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       },
       {
-        "Type": "ObjectProperty",
-        "Name": "CallFunc_GetGameInstanceSubsystem_ReturnValue",
+        "Type": "BoolProperty",
+        "Name": "K2Node_Event_newState",
         "Flags": "RF_Public",
-        "ElementSize": 8,
-        "PropertyClass": {
-          "ObjectName": "Class'C_FestivalManager'",
-          "ObjectPath": "/Script/ProjectCoral"
-        }
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
       }
     ],
     "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"

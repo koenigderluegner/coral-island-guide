@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Floatie_Sign_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 1.5,
+              "Y": 0.0,
+              "Z": -0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 71.0,
+            "Y": 10.0,
+            "Z": 125.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "D54D8A3249A14652B2E90085E5F0004A"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Floatie_Sign_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Floatie_Sign'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/SeabedCity_Outdoor/SeabedCity_Outdoor_Textures/Floatie_Sign.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Floatie_Sign_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/SeabedCity_Outdoor/Floatie_Sign_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 37.0,
+          "Y": 62.0,
+          "Z": 0.7890625,
+          "W": 0.015625
+        },
+        {
+          "X": -34.0,
+          "Y": 62.0,
+          "Z": 0.234375,
+          "W": 0.015625
+        },
+        {
+          "X": -34.0,
+          "Y": -63.0,
+          "Z": 0.234375,
+          "W": 0.9921875
+        },
+        {
+          "X": 37.0,
+          "Y": -63.0,
+          "Z": 0.7890625,
+          "W": 0.9921875
+        },
+        {
+          "X": 37.0,
+          "Y": 62.0,
+          "Z": 0.7890625,
+          "W": 0.015625
+        },
+        {
+          "X": -34.0,
+          "Y": -63.0,
+          "Z": 0.234375,
+          "W": 0.9921875
+        }
+      ]
+    }
+  }
+]

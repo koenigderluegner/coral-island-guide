@@ -294,16 +294,6 @@
         "ElementSize": 4
       },
       {
-        "Type": "StructProperty",
-        "Name": "CallFunc_MakeRotator_ReturnValue",
-        "Flags": "RF_Public",
-        "ElementSize": 12,
-        "Struct": {
-          "ObjectName": "ScriptStruct'Rotator'",
-          "ObjectPath": "/Script/CoreUObject"
-        }
-      },
-      {
         "Type": "FloatProperty",
         "Name": "K2Node_Event_damage",
         "Flags": "RF_Public",
@@ -320,6 +310,16 @@
         "FieldMask": 255,
         "BoolSize": 1,
         "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeRotator_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
       },
       {
         "Type": "BoolProperty",
@@ -485,12 +485,6 @@
         }
       },
       {
-        "Type": "IntProperty",
-        "Name": "CallFunc_Add_IntInt_ReturnValue",
-        "Flags": "RF_Public",
-        "ElementSize": 4
-      },
-      {
         "Type": "StructProperty",
         "Name": "CallFunc_Array_Get_Item",
         "Flags": "RF_Public",
@@ -499,6 +493,12 @@
           "ObjectName": "ScriptStruct'C_EnemyAttackStruct'",
           "ObjectPath": "/Script/ProjectCoral"
         }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Add_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
       },
       {
         "Type": "IntProperty",
@@ -590,12 +590,6 @@
         }
       },
       {
-        "Type": "FloatProperty",
-        "Name": "CallFunc_PlayAnimMontage_ReturnValue",
-        "Flags": "RF_Public",
-        "ElementSize": 4
-      },
-      {
         "Type": "BoolProperty",
         "Name": "CallFunc_Array_IsValidIndex_ReturnValue",
         "Flags": "RF_Public",
@@ -609,7 +603,7 @@
       },
       {
         "Type": "FloatProperty",
-        "Name": "CallFunc_PlayAnimMontage_ReturnValue_1",
+        "Name": "CallFunc_PlayAnimMontage_ReturnValue",
         "Flags": "RF_Public",
         "ElementSize": 4
       },
@@ -634,9 +628,88 @@
         "FieldMask": 255,
         "BoolSize": 1,
         "bIsNativeBool": true
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_CustomEvent_delay",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_PlayAttackAnimation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "K2Node_Event_attackIndex",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_Event_startDelay",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_EqualEqual_IntInt_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
       }
     ],
     "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnPostClientPlayAttackAnimation",
+    "Outer": "BP_SnatcherBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'C_Enemies:OnPostClientPlayAttackAnimation'",
+      "ObjectPath": "/Script/ProjectCoral"
+    },
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "attackIndex",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "startDelay",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "PostJumpAnimation",
+    "Outer": "BP_SnatcherBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "FloatProperty",
+        "Name": "delay",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
   },
   {
     "Type": "Function",
@@ -672,11 +745,11 @@
     "Class": "UScriptClass'Function'",
     "Super": {
       "ObjectName": "Function'BP_Enemy_C:ReceiveTick'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.6"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.7"
     },
     "SuperStruct": {
       "ObjectName": "Function'BP_Enemy_C:ReceiveTick'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.6"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.7"
     },
     "ChildProperties": [
       {
@@ -737,11 +810,11 @@
     "Class": "UScriptClass'Function'",
     "Super": {
       "ObjectName": "Function'BP_Enemy_C:Attack'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.14"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.15"
     },
     "SuperStruct": {
       "ObjectName": "Function'BP_Enemy_C:Attack'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.14"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.15"
     },
     "ChildProperties": [
       {
@@ -761,11 +834,11 @@
     "Class": "UScriptClass'Function'",
     "Super": {
       "ObjectName": "Function'BP_Enemy_C:Staggered'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.11"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.12"
     },
     "SuperStruct": {
       "ObjectName": "Function'BP_Enemy_C:Staggered'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.11"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.12"
     },
     "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
   },
@@ -840,11 +913,11 @@
     "Class": "UScriptClass'Function'",
     "Super": {
       "ObjectName": "Function'BP_Enemy_C:ReceiveBeginPlay'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.21"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.22"
     },
     "SuperStruct": {
       "ObjectName": "Function'BP_Enemy_C:ReceiveBeginPlay'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.21"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.22"
     },
     "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
   },
@@ -944,34 +1017,34 @@
     "Class": "UScriptClass'BlueprintGeneratedClass'",
     "Super": {
       "ObjectName": "BlueprintGeneratedClass'BP_Enemy_C'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.27"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.31"
     },
     "Properties": {
       "Timelines": [
         {
           "ObjectName": "TimelineTemplate'BP_SnatcherBase_C:WaitStrike_Template'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.52"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.54"
         },
         {
           "ObjectName": "TimelineTemplate'BP_SnatcherBase_C:ForwardJump_Template'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.49"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.51"
         },
         {
           "ObjectName": "TimelineTemplate'BP_SnatcherBase_C:InitialJump_Template'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.50"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.52"
         },
         {
           "ObjectName": "TimelineTemplate'BP_SnatcherBase_C:PlungeStrike_Template'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.51"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.53"
         }
       ],
       "SimpleConstructionScript": {
         "ObjectName": "SimpleConstructionScript'BP_SnatcherBase_C:SimpleConstructionScript_0'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.45"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.47"
       },
       "InheritableComponentHandler": {
         "ObjectName": "InheritableComponentHandler'BP_SnatcherBase_C:InheritableComponentHandler'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.39"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.41"
       },
       "UberGraphFunction": {
         "ObjectName": "Function'BP_SnatcherBase_C:ExecuteUbergraph_BP_SnatcherBase'",
@@ -980,99 +1053,107 @@
     },
     "SuperStruct": {
       "ObjectName": "BlueprintGeneratedClass'BP_Enemy_C'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.27"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.31"
     },
     "Children": [
       {
         "ObjectName": "Function'BP_SnatcherBase_C:ForwardJump__FinishedFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.23"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.25"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:ForwardJump__UpdateFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.22"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.24"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:WaitStrike__FinishedFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.21"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.23"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:WaitStrike__UpdateFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.20"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.22"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:InitialJump__FinishedFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.19"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.21"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:InitialJump__UpdateFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.18"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.20"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:PlungeStrike__FinishedFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.17"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.19"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:PlungeStrike__UpdateFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.16"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.18"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:Jumping'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.15"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.17"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:CameraShake'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.14"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.16"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:Bounceback'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.13"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.15"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:ReceiveBeginPlay'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.12"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.14"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:MeleeAttack'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.11"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.13"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:DamagedBP'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.10"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.12"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:Death'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.9"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.11"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:Staggered'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.8"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.10"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:Attack'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.7"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.9"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:JumpUp'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.6"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.8"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:PlungeAttack'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.5"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.7"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:OnStateChange'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.4"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.6"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:ReceiveTick'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.3"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.5"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:Blinking'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.2"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.4"
       },
       {
         "ObjectName": "Function'BP_SnatcherBase_C:OnPlungeAttackDamage'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.3"
+      },
+      {
+        "ObjectName": "Function'BP_SnatcherBase_C:PostJumpAnimation'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.2"
+      },
+      {
+        "ObjectName": "Function'BP_SnatcherBase_C:OnPostClientPlayAttackAnimation'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.1"
       },
       {
@@ -1341,97 +1422,105 @@
         "ObjectName": "Function'BP_SnatcherBase_C:ExecuteUbergraph_BP_SnatcherBase'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.0"
       },
+      "OnPostClientPlayAttackAnimation": {
+        "ObjectName": "Function'BP_SnatcherBase_C:OnPostClientPlayAttackAnimation'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.1"
+      },
+      "PostJumpAnimation": {
+        "ObjectName": "Function'BP_SnatcherBase_C:PostJumpAnimation'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.2"
+      },
       "OnPlungeAttackDamage": {
         "ObjectName": "Function'BP_SnatcherBase_C:OnPlungeAttackDamage'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.1"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.3"
       },
       "Blinking": {
         "ObjectName": "Function'BP_SnatcherBase_C:Blinking'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.2"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.4"
       },
       "ReceiveTick": {
         "ObjectName": "Function'BP_SnatcherBase_C:ReceiveTick'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.3"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.5"
       },
       "OnStateChange": {
         "ObjectName": "Function'BP_SnatcherBase_C:OnStateChange'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.4"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.6"
       },
       "PlungeAttack": {
         "ObjectName": "Function'BP_SnatcherBase_C:PlungeAttack'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.5"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.7"
       },
       "JumpUp": {
         "ObjectName": "Function'BP_SnatcherBase_C:JumpUp'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.6"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.8"
       },
       "Attack": {
         "ObjectName": "Function'BP_SnatcherBase_C:Attack'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.7"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.9"
       },
       "Staggered": {
         "ObjectName": "Function'BP_SnatcherBase_C:Staggered'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.8"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.10"
       },
       "Death": {
         "ObjectName": "Function'BP_SnatcherBase_C:Death'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.9"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.11"
       },
       "DamagedBP": {
         "ObjectName": "Function'BP_SnatcherBase_C:DamagedBP'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.10"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.12"
       },
       "MeleeAttack": {
         "ObjectName": "Function'BP_SnatcherBase_C:MeleeAttack'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.11"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.13"
       },
       "ReceiveBeginPlay": {
         "ObjectName": "Function'BP_SnatcherBase_C:ReceiveBeginPlay'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.12"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.14"
       },
       "Bounceback": {
         "ObjectName": "Function'BP_SnatcherBase_C:Bounceback'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.13"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.15"
       },
       "CameraShake": {
         "ObjectName": "Function'BP_SnatcherBase_C:CameraShake'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.14"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.16"
       },
       "Jumping": {
         "ObjectName": "Function'BP_SnatcherBase_C:Jumping'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.15"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.17"
       },
       "PlungeStrike__UpdateFunc": {
         "ObjectName": "Function'BP_SnatcherBase_C:PlungeStrike__UpdateFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.16"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.18"
       },
       "PlungeStrike__FinishedFunc": {
         "ObjectName": "Function'BP_SnatcherBase_C:PlungeStrike__FinishedFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.17"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.19"
       },
       "InitialJump__UpdateFunc": {
         "ObjectName": "Function'BP_SnatcherBase_C:InitialJump__UpdateFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.18"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.20"
       },
       "InitialJump__FinishedFunc": {
         "ObjectName": "Function'BP_SnatcherBase_C:InitialJump__FinishedFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.19"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.21"
       },
       "WaitStrike__UpdateFunc": {
         "ObjectName": "Function'BP_SnatcherBase_C:WaitStrike__UpdateFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.20"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.22"
       },
       "WaitStrike__FinishedFunc": {
         "ObjectName": "Function'BP_SnatcherBase_C:WaitStrike__FinishedFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.21"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.23"
       },
       "ForwardJump__UpdateFunc": {
         "ObjectName": "Function'BP_SnatcherBase_C:ForwardJump__UpdateFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.22"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.24"
       },
       "ForwardJump__FinishedFunc": {
         "ObjectName": "Function'BP_SnatcherBase_C:ForwardJump__FinishedFunc'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.23"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.25"
       }
     },
     "ClassFlags": "CLASS_Config | CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
@@ -1443,7 +1532,7 @@
     "bCooked": true,
     "ClassDefaultObject": {
       "ObjectName": "BP_SnatcherBase_C'Default__BP_SnatcherBase_C'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.25"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.27"
     }
   },
   {
@@ -1452,7 +1541,7 @@
     "Class": "BlueprintGeneratedClass'ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.BP_SnatcherBase_C'",
     "Template": {
       "ObjectName": "BP_Enemy_C'Default__BP_Enemy_C'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.28"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.32"
     },
     "Properties": {
       "UberGraphFrame": {},
@@ -1495,39 +1584,39 @@
       "maxStagger": 6.0,
       "SoundComponent": {
         "ObjectName": "C_SoundComponent'Default__BP_SnatcherBase_C:SoundComponent'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.30"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.32"
       },
       "HealthComponent": {
         "ObjectName": "C_FillableStatisticComponent'Default__BP_SnatcherBase_C:HealthComponent'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.27"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.29"
       },
       "HpBarWidgetComponent": {
         "ObjectName": "WidgetComponent'Default__BP_SnatcherBase_C:HpBarWidgetComponent'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.54"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.56"
       },
       "EnemyBuffWidgetComponent": {
         "ObjectName": "WidgetComponent'Default__BP_SnatcherBase_C:BuffWidgetComponent'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.53"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.55"
       },
       "buffComponent": {
         "ObjectName": "C_PlayerBuffComponent'Default__BP_SnatcherBase_C:BuffComponent'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.29"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.31"
       },
       "registratorComponent": {
         "ObjectName": "C_ActorRegistratorComponent'Default__BP_SnatcherBase_C:ActorRegistrator'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.26"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.28"
       },
       "Mesh": {
         "ObjectName": "SkeletalMeshComponent'Default__BP_SnatcherBase_C:CharacterMesh0'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.46"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.48"
       },
       "CharacterMovement": {
         "ObjectName": "CharacterMovementComponent'Default__BP_SnatcherBase_C:CharMoveComp'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.33"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.35"
       },
       "CapsuleComponent": {
         "ObjectName": "CapsuleComponent'Default__BP_SnatcherBase_C:CollisionCylinder'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.32"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.34"
       },
       "AIControllerClass": {
         "ObjectName": "BlueprintGeneratedClass'BP_EnemyAIC_Snatcher_C'",
@@ -1535,7 +1624,7 @@
       },
       "RootComponent": {
         "ObjectName": "CapsuleComponent'Default__BP_SnatcherBase_C:CollisionCylinder'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.32"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.34"
       }
     }
   },
@@ -1546,13 +1635,13 @@
     "Class": "UScriptClass'C_ActorRegistratorComponent'",
     "Template": {
       "ObjectName": "C_ActorRegistratorComponent'Default__BP_Enemy_C:ActorRegistrator'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.29"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.33"
     },
     "Properties": {
       "bReceivesDecals": false,
       "AttachParent": {
         "ObjectName": "CapsuleComponent'Default__BP_SnatcherBase_C:CollisionCylinder'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.32"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.34"
       }
     }
   },
@@ -1563,7 +1652,7 @@
     "Class": "UScriptClass'C_FillableStatisticComponent'",
     "Template": {
       "ObjectName": "C_FillableStatisticComponent'Default__BP_Enemy_C:HealthComponent'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.30"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.34"
     },
     "Properties": {
       "maximumValue": 340.0
@@ -1588,7 +1677,7 @@
     "Class": "UScriptClass'C_PlayerBuffComponent'",
     "Template": {
       "ObjectName": "C_PlayerBuffComponent'Default__BP_Enemy_C:BuffComponent'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.31"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.35"
     }
   },
   {
@@ -1598,12 +1687,12 @@
     "Class": "UScriptClass'C_SoundComponent'",
     "Template": {
       "ObjectName": "C_SoundComponent'Default__BP_Enemy_C:SoundComponent'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.32"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.36"
     },
     "Properties": {
       "AttachParent": {
         "ObjectName": "CapsuleComponent'Default__BP_SnatcherBase_C:CollisionCylinder'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.32"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.34"
       }
     }
   },
@@ -1620,7 +1709,7 @@
     "Class": "UScriptClass'CapsuleComponent'",
     "Template": {
       "ObjectName": "CapsuleComponent'Default__BP_Enemy_C:CollisionCylinder'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.33"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.37"
     },
     "Properties": {
       "CapsuleHalfHeight": 90.0,
@@ -1637,7 +1726,7 @@
     "Class": "UScriptClass'CharacterMovementComponent'",
     "Template": {
       "ObjectName": "CharacterMovementComponent'Default__BP_Enemy_C:CharMoveComp'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.34"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.38"
     }
   },
   {
@@ -1829,12 +1918,12 @@
           },
           "ComponentTemplate": {
             "ObjectName": "StaticMeshComponent'BP_SnatcherBase_C:StaticMesh_GEN_VARIABLE'",
-            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.48"
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.50"
           },
           "ComponentKey": {
             "OwnerClass": {
               "ObjectName": "BlueprintGeneratedClass'BP_Enemy_C'",
-              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.27"
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.31"
             },
             "SCSVariableName": "StaticMesh",
             "AssociatedGuid": "3EC784FF-46426216-CC1790BC-F4F662CA"
@@ -1851,12 +1940,12 @@
           },
           "ComponentTemplate": {
             "ObjectName": "SphereComponent'BP_SnatcherBase_C:Detection_GEN_VARIABLE'",
-            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.47"
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.49"
           },
           "ComponentKey": {
             "OwnerClass": {
               "ObjectName": "BlueprintGeneratedClass'BP_Enemy_C'",
-              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.27"
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.31"
             },
             "SCSVariableName": "Detection",
             "AssociatedGuid": "D7BA4316-407F4E59-2282489C-732AA1DB"
@@ -1887,7 +1976,7 @@
       },
       "ComponentTemplate": {
         "ObjectName": "SceneComponent'BP_SnatcherBase_C:DefaultSceneRoot_GEN_VARIABLE'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.40"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.42"
       },
       "VariableGuid": "DD5D66D8-4015E737-59D919B7-8D655CD2",
       "InternalVariableName": "DefaultSceneRoot"
@@ -1905,7 +1994,7 @@
       },
       "ComponentTemplate": {
         "ObjectName": "DecalComponent'BP_SnatcherBase_C:Decal_GEN_VARIABLE'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.38"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.40"
       },
       "ParentComponentOrVariableName": "CollisionCylinder",
       "bIsParentComponentNative": true,
@@ -1925,7 +2014,7 @@
       },
       "ComponentTemplate": {
         "ObjectName": "C_FootstepsComponent'BP_SnatcherBase_C:C_Footsteps_GEN_VARIABLE'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.28"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.30"
       },
       "VariableGuid": "8A2F4638-424E33AA-7D3A1DA9-B7F8B804",
       "InternalVariableName": "C_Footsteps"
@@ -1943,7 +2032,7 @@
       },
       "ComponentTemplate": {
         "ObjectName": "C_WorldInteractionComponent'BP_SnatcherBase_C:C_WorldInteraction_GEN_VARIABLE'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.31"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.33"
       },
       "VariableGuid": "51922263-4D9F9DBF-395944A3-CAFAEAB7",
       "InternalVariableName": "C_WorldInteraction"
@@ -1958,34 +2047,34 @@
       "RootNodes": [
         {
           "ObjectName": "SCS_Node'BP_SnatcherBase_C:SimpleConstructionScript_0.SCS_Node_1'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.42"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.44"
         },
         {
           "ObjectName": "SCS_Node'BP_SnatcherBase_C:SimpleConstructionScript_0.SCS_Node_2'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.43"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.45"
         },
         {
           "ObjectName": "SCS_Node'BP_SnatcherBase_C:SimpleConstructionScript_0.SCS_Node_3'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.44"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.46"
         }
       ],
       "AllNodes": [
         {
           "ObjectName": "SCS_Node'BP_SnatcherBase_C:SimpleConstructionScript_0.SCS_Node_1'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.42"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.44"
         },
         {
           "ObjectName": "SCS_Node'BP_SnatcherBase_C:SimpleConstructionScript_0.SCS_Node_2'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.43"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.45"
         },
         {
           "ObjectName": "SCS_Node'BP_SnatcherBase_C:SimpleConstructionScript_0.SCS_Node_3'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.44"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.46"
         }
       ],
       "DefaultSceneRootNode": {
         "ObjectName": "SCS_Node'BP_SnatcherBase_C:SimpleConstructionScript_0.SCS_Node_0'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.41"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.43"
       }
     }
   },
@@ -1996,7 +2085,7 @@
     "Class": "UScriptClass'SkeletalMeshComponent'",
     "Template": {
       "ObjectName": "SkeletalMeshComponent'Default__BP_Enemy_C:CharacterMesh0'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.43"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.47"
     },
     "Properties": {
       "AnimClass": {
@@ -2090,7 +2179,7 @@
       },
       "AttachParent": {
         "ObjectName": "CapsuleComponent'Default__BP_SnatcherBase_C:CollisionCylinder'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.32"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.34"
       },
       "RelativeLocation": {
         "X": 0.0,
@@ -2111,7 +2200,7 @@
     "Class": "UScriptClass'SphereComponent'",
     "Template": {
       "ObjectName": "SphereComponent'BP_Enemy_C:Detection_GEN_VARIABLE'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.44"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.48"
     },
     "Properties": {
       "SphereRadius": 400.0
@@ -2124,7 +2213,7 @@
     "Class": "UScriptClass'StaticMeshComponent'",
     "Template": {
       "ObjectName": "StaticMeshComponent'BP_Enemy_C:StaticMesh_GEN_VARIABLE'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.45"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.49"
     },
     "Properties": {
       "bReceivesDecals": false,
@@ -2147,7 +2236,7 @@
         {
           "CurveFloat": {
             "ObjectName": "CurveFloat'BP_SnatcherBase_C:CurveFloat_1'",
-            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.35"
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.37"
           },
           "PropertyName": "ForwardJump_NewTrack_0_55F666EC40EBBE694F189FA23080A3F6",
           "TrackName": "NewTrack_0",
@@ -2172,7 +2261,7 @@
         {
           "CurveFloat": {
             "ObjectName": "CurveFloat'BP_SnatcherBase_C:CurveFloat_0'",
-            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.34"
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.36"
           },
           "PropertyName": "InitialJump_Height_56D5AD414B5F29472E46FE87A44F3644",
           "TrackName": "Height",
@@ -2197,7 +2286,7 @@
         {
           "CurveFloat": {
             "ObjectName": "CurveFloat'BP_SnatcherBase_C:CurveFloat_3'",
-            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.37"
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.39"
           },
           "PropertyName": "PlungeStrike_Height_E9F9B70A4B3A459EC45079AF92B0943E",
           "TrackName": "Height",
@@ -2222,7 +2311,7 @@
         {
           "CurveFloat": {
             "ObjectName": "CurveFloat'BP_SnatcherBase_C:CurveFloat_2'",
-            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.36"
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.38"
           },
           "PropertyName": "WaitStrike_Alpha_0F0F77D448733C6611596E9E58CE7807",
           "TrackName": "Alpha",
@@ -2254,12 +2343,12 @@
     "Class": "UScriptClass'WidgetComponent'",
     "Template": {
       "ObjectName": "WidgetComponent'Default__BP_Enemy_C:BuffWidgetComponent'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.48"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.52"
     },
     "Properties": {
       "AttachParent": {
         "ObjectName": "CapsuleComponent'Default__BP_SnatcherBase_C:CollisionCylinder'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.32"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.34"
       }
     }
   },
@@ -2270,12 +2359,12 @@
     "Class": "UScriptClass'WidgetComponent'",
     "Template": {
       "ObjectName": "WidgetComponent'Default__BP_Enemy_C:HpBarWidgetComponent'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.49"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/BP_Enemy.53"
     },
     "Properties": {
       "AttachParent": {
         "ObjectName": "CapsuleComponent'Default__BP_SnatcherBase_C:CollisionCylinder'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.32"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Snatcher/BP_SnatcherBase.34"
       }
     }
   }

@@ -14,12 +14,6 @@
       },
       {
         "Type": "IntProperty",
-        "Name": "CallFunc_Array_Length_ReturnValue",
-        "Flags": "RF_Public",
-        "ElementSize": 4
-      },
-      {
-        "Type": "IntProperty",
         "Name": "Temp_int_Array_Index_Variable",
         "Flags": "RF_Public",
         "ElementSize": 4
@@ -29,18 +23,6 @@
         "Name": "Temp_int_Loop_Counter_Variable",
         "Flags": "RF_Public",
         "ElementSize": 4
-      },
-      {
-        "Type": "BoolProperty",
-        "Name": "CallFunc_Less_IntInt_ReturnValue",
-        "Flags": "RF_Public",
-        "ElementSize": 1,
-        "FieldSize": 1,
-        "ByteOffset": 0,
-        "ByteMask": 1,
-        "FieldMask": 255,
-        "BoolSize": 1,
-        "bIsNativeBool": true
       },
       {
         "Type": "IntProperty",
@@ -65,16 +47,6 @@
         }
       },
       {
-        "Type": "ObjectProperty",
-        "Name": "CallFunc_Array_Get_Item",
-        "Flags": "RF_Public",
-        "ElementSize": 8,
-        "PropertyClass": {
-          "ObjectName": "Class'Actor'",
-          "ObjectPath": "/Script/Engine"
-        }
-      },
-      {
         "Type": "FloatProperty",
         "Name": "K2Node_Event_DeltaSeconds",
         "Flags": "RF_Public",
@@ -82,7 +54,7 @@
       },
       {
         "Type": "ObjectProperty",
-        "Name": "K2Node_ComponentBoundEvent_OverlappedComponent",
+        "Name": "K2Node_ComponentBoundEvent_OverlappedComponent_1",
         "Flags": "RF_Public",
         "ElementSize": 8,
         "PropertyFlags": "InstancedReference",
@@ -93,7 +65,7 @@
       },
       {
         "Type": "ObjectProperty",
-        "Name": "K2Node_ComponentBoundEvent_OtherActor",
+        "Name": "K2Node_ComponentBoundEvent_OtherActor_1",
         "Flags": "RF_Public",
         "ElementSize": 8,
         "PropertyClass": {
@@ -103,7 +75,7 @@
       },
       {
         "Type": "ObjectProperty",
-        "Name": "K2Node_ComponentBoundEvent_OtherComp",
+        "Name": "K2Node_ComponentBoundEvent_OtherComp_1",
         "Flags": "RF_Public",
         "ElementSize": 8,
         "PropertyFlags": "InstancedReference",
@@ -114,7 +86,7 @@
       },
       {
         "Type": "IntProperty",
-        "Name": "K2Node_ComponentBoundEvent_OtherBodyIndex",
+        "Name": "K2Node_ComponentBoundEvent_OtherBodyIndex_1",
         "Flags": "RF_Public",
         "ElementSize": 4
       },
@@ -182,6 +154,22 @@
         "ElementSize": 4
       },
       {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Add_IntInt_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Array_Get_Item",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
         "Type": "ObjectProperty",
         "Name": "CallFunc_Array_Get_Item_1",
         "Flags": "RF_Public",
@@ -193,9 +181,27 @@
       },
       {
         "Type": "IntProperty",
+        "Name": "CallFunc_Array_Length_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
         "Name": "CallFunc_Array_Length_ReturnValue_1",
         "Flags": "RF_Public",
         "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Less_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
       },
       {
         "Type": "BoolProperty",
@@ -210,13 +216,106 @@
         "bIsNativeBool": true
       },
       {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OverlappedComponent",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OtherActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OtherComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
         "Type": "IntProperty",
-        "Name": "CallFunc_Add_IntInt_ReturnValue_1",
+        "Name": "K2Node_ComponentBoundEvent_OtherBodyIndex",
         "Flags": "RF_Public",
         "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Array_RemoveItem_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
       }
     ],
     "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "BndEvt__BP_OmbutoAoeAttack_Sphere_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature",
+    "Outer": "BP_OmbutoAoeAttack_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "OverlappedComponent",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "OtherBodyIndex",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintEvent"
   },
   {
     "Type": "Function",
@@ -338,16 +437,16 @@
       "DynamicBindingObjects": [
         {
           "ObjectName": "ComponentDelegateBinding'BP_OmbutoAoeAttack_C:ComponentDelegateBinding_0'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.7"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.8"
         }
       ],
       "SimpleConstructionScript": {
         "ObjectName": "SimpleConstructionScript'BP_OmbutoAoeAttack_C:SimpleConstructionScript_0'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.14"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.15"
       },
       "InheritableComponentHandler": {
         "ObjectName": "InheritableComponentHandler'BP_OmbutoAoeAttack_C:InheritableComponentHandler'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.9"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.10"
       },
       "UberGraphFunction": {
         "ObjectName": "Function'BP_OmbutoAoeAttack_C:ExecuteUbergraph_BP_OmbutoAoeAttack'",
@@ -361,14 +460,18 @@
     "Children": [
       {
         "ObjectName": "Function'BP_OmbutoAoeAttack_C:ReceiveBeginPlay'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.3"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.4"
       },
       {
         "ObjectName": "Function'BP_OmbutoAoeAttack_C:ReceiveTick'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.2"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.3"
       },
       {
         "ObjectName": "Function'BP_OmbutoAoeAttack_C:BndEvt__BP_OmbutoAoeAttack_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.2"
+      },
+      {
+        "ObjectName": "Function'BP_OmbutoAoeAttack_C:BndEvt__BP_OmbutoAoeAttack_Sphere_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.1"
       },
       {
@@ -457,17 +560,21 @@
         "ObjectName": "Function'BP_OmbutoAoeAttack_C:ExecuteUbergraph_BP_OmbutoAoeAttack'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.0"
       },
+      "BndEvt__BP_OmbutoAoeAttack_Sphere_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature": {
+        "ObjectName": "Function'BP_OmbutoAoeAttack_C:BndEvt__BP_OmbutoAoeAttack_Sphere_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.1"
+      },
       "BndEvt__BP_OmbutoAoeAttack_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature": {
         "ObjectName": "Function'BP_OmbutoAoeAttack_C:BndEvt__BP_OmbutoAoeAttack_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.1"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.2"
       },
       "ReceiveTick": {
         "ObjectName": "Function'BP_OmbutoAoeAttack_C:ReceiveTick'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.2"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.3"
       },
       "ReceiveBeginPlay": {
         "ObjectName": "Function'BP_OmbutoAoeAttack_C:ReceiveBeginPlay'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.3"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.4"
       }
     },
     "ClassFlags": "CLASS_Config | CLASS_Optional | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
@@ -479,7 +586,7 @@
     "bCooked": true,
     "ClassDefaultObject": {
       "ObjectName": "BP_OmbutoAoeAttack_C'Default__BP_OmbutoAoeAttack_C'",
-      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.5"
+      "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.6"
     }
   },
   {
@@ -583,6 +690,11 @@
       "ComponentDelegateBindings": [
         {
           "ComponentPropertyName": "Sphere",
+          "DelegatePropertyName": "OnComponentEndOverlap",
+          "FunctionNameToBind": "BndEvt__BP_OmbutoAoeAttack_Sphere_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature"
+        },
+        {
+          "ComponentPropertyName": "Sphere",
           "DelegatePropertyName": "OnComponentBeginOverlap",
           "FunctionNameToBind": "BndEvt__BP_OmbutoAoeAttack_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature"
         }
@@ -625,7 +737,7 @@
           },
           "ComponentTemplate": {
             "ObjectName": "BoxComponent'BP_OmbutoAoeAttack_C:Box_GEN_VARIABLE'",
-            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.6"
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.7"
           },
           "ComponentKey": {
             "OwnerClass": {
@@ -661,7 +773,7 @@
       },
       "ComponentTemplate": {
         "ObjectName": "SceneComponent'BP_OmbutoAoeAttack_C:DefaultSceneRoot_GEN_VARIABLE'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.10"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.11"
       },
       "VariableGuid": "DECE0DD1-48BC2D38-A636BC92-8EF6CBC5",
       "InternalVariableName": "DefaultSceneRoot"
@@ -679,7 +791,7 @@
       },
       "ComponentTemplate": {
         "ObjectName": "SphereComponent'BP_OmbutoAoeAttack_C:Sphere_GEN_VARIABLE'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.15"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.16"
       },
       "ParentComponentOrVariableName": "DefaultSceneRoot",
       "ParentComponentOwnerClassName": "BP_EnemyAttackBase_C",
@@ -699,7 +811,7 @@
       },
       "ComponentTemplate": {
         "ObjectName": "DecalComponent'BP_OmbutoAoeAttack_C:Decal_GEN_VARIABLE'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.8"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.9"
       },
       "ParentComponentOrVariableName": "DefaultSceneRoot",
       "ParentComponentOwnerClassName": "BP_EnemyAttackBase_C",
@@ -716,26 +828,26 @@
       "RootNodes": [
         {
           "ObjectName": "SCS_Node'BP_OmbutoAoeAttack_C:SimpleConstructionScript_0.SCS_Node_1'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.12"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.13"
         },
         {
           "ObjectName": "SCS_Node'BP_OmbutoAoeAttack_C:SimpleConstructionScript_0.SCS_Node_2'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.13"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.14"
         }
       ],
       "AllNodes": [
         {
           "ObjectName": "SCS_Node'BP_OmbutoAoeAttack_C:SimpleConstructionScript_0.SCS_Node_1'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.12"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.13"
         },
         {
           "ObjectName": "SCS_Node'BP_OmbutoAoeAttack_C:SimpleConstructionScript_0.SCS_Node_2'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.13"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.14"
         }
       ],
       "DefaultSceneRootNode": {
         "ObjectName": "SCS_Node'BP_OmbutoAoeAttack_C:SimpleConstructionScript_0.SCS_Node_0'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.11"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Enemies/Ombuto/BP_OmbutoAoeAttack.12"
       }
     }
   },

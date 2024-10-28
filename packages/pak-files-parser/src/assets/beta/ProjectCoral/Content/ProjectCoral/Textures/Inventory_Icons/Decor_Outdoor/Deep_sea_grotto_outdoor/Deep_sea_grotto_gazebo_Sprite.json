@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Deep_sea_grotto_gazebo_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -2.0,
+              "Y": -0.0,
+              "Z": -1.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 124.0,
+            "Y": 10.0,
+            "Z": 126.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "2EBF8C1A4F1ED8C9F004AEA1D05F00DE"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Deep_sea_grotto_gazebo_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Deep_sea_grotto_gazebo'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/Deep_sea_grotto_outdoor/Deep_sea_Grotto_Outdoor_Textures/Deep_sea_grotto_gazebo.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Deep_sea_grotto_gazebo_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/Deep_sea_grotto_outdoor/Deep_sea_grotto_gazebo_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 60.0,
+          "Y": 62.0,
+          "Z": 0.96875,
+          "W": 0.015625
+        },
+        {
+          "X": -64.0,
+          "Y": 62.0,
+          "Z": 0.0,
+          "W": 0.015625
+        },
+        {
+          "X": -64.0,
+          "Y": -64.0,
+          "Z": 0.0,
+          "W": 1.0
+        },
+        {
+          "X": 60.0,
+          "Y": -64.0,
+          "Z": 0.96875,
+          "W": 1.0
+        },
+        {
+          "X": 60.0,
+          "Y": 62.0,
+          "Z": 0.96875,
+          "W": 0.015625
+        },
+        {
+          "X": -64.0,
+          "Y": -64.0,
+          "Z": 0.0,
+          "W": 1.0
+        }
+      ]
+    }
+  }
+]

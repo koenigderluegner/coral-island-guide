@@ -13,12 +13,33 @@
         "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
       },
       {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetGameState_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'GameStateBase'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'C_FestivalManager'",
+          "ObjectPath": "/Script/ProjectCoral"
+        }
+      },
+      {
         "Type": "DelegateProperty",
         "Name": "K2Node_CreateDelegate_OutputDelegate",
         "Flags": "RF_Public",
         "ElementSize": 20,
         "SignatureFunction": {
-          "ObjectName": "DelegateFunction'C_TimeManager:DelegateOnTimeStateChanged__DelegateSignature'",
+          "ObjectName": "DelegateFunction'C_FestivalManager:DelegateOnChangeFestivalState__DelegateSignature'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       },
@@ -63,22 +84,12 @@
       },
       {
         "Type": "ObjectProperty",
-        "Name": "CallFunc_GetGameState_ReturnValue",
+        "Name": "CallFunc_GetGameState_ReturnValue_1",
         "Flags": "RF_Public",
         "ElementSize": 8,
         "PropertyClass": {
           "ObjectName": "Class'GameStateBase'",
           "ObjectPath": "/Script/Engine"
-        }
-      },
-      {
-        "Type": "ObjectProperty",
-        "Name": "CallFunc_GetGameInstanceSubsystem_ReturnValue",
-        "Flags": "RF_Public",
-        "ElementSize": 8,
-        "PropertyClass": {
-          "ObjectName": "Class'C_FestivalManager'",
-          "ObjectPath": "/Script/ProjectCoral"
         }
       },
       {
@@ -108,8 +119,9 @@
         "Name": "CallFunc_GetTimeManager_ReturnValue",
         "Flags": "RF_Public",
         "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
         "PropertyClass": {
-          "ObjectName": "Class'C_TimeManager'",
+          "ObjectName": "Class'C_TimeManagerComponent'",
           "ObjectPath": "/Script/ProjectCoral"
         }
       }
@@ -304,8 +316,8 @@
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/WaypointMappings/AWBP_NPC/AWBP_Charless_playGame.16"
       },
       "previewMesh": {
-        "ObjectName": "SkeletalMesh'SK_Charless_V2_1'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Characters/Human/NPC/Charles/SK_Charless_V2_1.11"
+        "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Charles/SK_Charless_V2_1.SK_Charless_V2_1",
+        "SubPathString": ""
       },
       "useDefaultMaterials": true,
       "RootComponent": {

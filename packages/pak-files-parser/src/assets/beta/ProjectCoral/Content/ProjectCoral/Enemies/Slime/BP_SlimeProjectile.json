@@ -13,14 +13,8 @@
         "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
       },
       {
-        "Type": "IntProperty",
-        "Name": "CallFunc_Array_Find_ReturnValue",
-        "Flags": "RF_Public",
-        "ElementSize": 4
-      },
-      {
         "Type": "BoolProperty",
-        "Name": "CallFunc_GreaterEqual_IntInt_ReturnValue",
+        "Name": "CallFunc_IsServer_ReturnValue",
         "Flags": "RF_Public",
         "ElementSize": 1,
         "FieldSize": 1,
@@ -150,6 +144,24 @@
         }
       },
       {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Array_Find_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_GreaterEqual_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
         "Type": "BoolProperty",
         "Name": "CallFunc_Greater_FloatFloat_ReturnValue",
         "Flags": "RF_Public",
@@ -172,16 +184,6 @@
         }
       },
       {
-        "Type": "ObjectProperty",
-        "Name": "CallFunc_GetPlayerCharacter_ReturnValue_1",
-        "Flags": "RF_Public",
-        "ElementSize": 8,
-        "PropertyClass": {
-          "ObjectName": "Class'Character'",
-          "ObjectPath": "/Script/Engine"
-        }
-      },
-      {
         "Type": "FloatProperty",
         "Name": "CallFunc_BreakVector_X",
         "Flags": "RF_Public",
@@ -201,7 +203,7 @@
       },
       {
         "Type": "StructProperty",
-        "Name": "CallFunc_GetActorForwardVector_ReturnValue",
+        "Name": "CallFunc_VLerp_ReturnValue_1",
         "Flags": "RF_Public",
         "ElementSize": 12,
         "Struct": {
@@ -216,15 +218,22 @@
         "ElementSize": 4
       },
       {
-        "Type": "ObjectProperty",
-        "Name": "CallFunc_GetMovementComponent_ReturnValue",
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakVector_X_1",
         "Flags": "RF_Public",
-        "ElementSize": 8,
-        "PropertyFlags": "InstancedReference",
-        "PropertyClass": {
-          "ObjectName": "Class'PawnMovementComponent'",
-          "ObjectPath": "/Script/Engine"
-        }
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakVector_Y_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakVector_Z_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
       },
       {
         "Type": "StructProperty",
@@ -235,6 +244,12 @@
           "ObjectName": "ScriptStruct'Vector'",
           "ObjectPath": "/Script/CoreUObject"
         }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_Add_FloatFloat_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
       },
       {
         "Type": "StructProperty",
@@ -260,86 +275,6 @@
         "bIsNativeBool": true
       },
       {
-        "Type": "FloatProperty",
-        "Name": "CallFunc_VSize_ReturnValue",
-        "Flags": "RF_Public",
-        "ElementSize": 4
-      },
-      {
-        "Type": "StructProperty",
-        "Name": "CallFunc_K2_GetActorLocation_ReturnValue_1",
-        "Flags": "RF_Public",
-        "ElementSize": 12,
-        "Struct": {
-          "ObjectName": "ScriptStruct'Vector'",
-          "ObjectPath": "/Script/CoreUObject"
-        }
-      },
-      {
-        "Type": "StructProperty",
-        "Name": "CallFunc_Multiply_VectorFloat_ReturnValue",
-        "Flags": "RF_Public",
-        "ElementSize": 12,
-        "Struct": {
-          "ObjectName": "ScriptStruct'Vector'",
-          "ObjectPath": "/Script/CoreUObject"
-        }
-      },
-      {
-        "Type": "StructProperty",
-        "Name": "CallFunc_Multiply_VectorFloat_ReturnValue_1",
-        "Flags": "RF_Public",
-        "ElementSize": 12,
-        "Struct": {
-          "ObjectName": "ScriptStruct'Vector'",
-          "ObjectPath": "/Script/CoreUObject"
-        }
-      },
-      {
-        "Type": "StructProperty",
-        "Name": "CallFunc_VLerp_ReturnValue_1",
-        "Flags": "RF_Public",
-        "ElementSize": 12,
-        "Struct": {
-          "ObjectName": "ScriptStruct'Vector'",
-          "ObjectPath": "/Script/CoreUObject"
-        }
-      },
-      {
-        "Type": "StructProperty",
-        "Name": "CallFunc_Add_VectorVector_ReturnValue",
-        "Flags": "RF_Public",
-        "ElementSize": 12,
-        "Struct": {
-          "ObjectName": "ScriptStruct'Vector'",
-          "ObjectPath": "/Script/CoreUObject"
-        }
-      },
-      {
-        "Type": "FloatProperty",
-        "Name": "CallFunc_BreakVector_X_1",
-        "Flags": "RF_Public",
-        "ElementSize": 4
-      },
-      {
-        "Type": "FloatProperty",
-        "Name": "CallFunc_BreakVector_Y_1",
-        "Flags": "RF_Public",
-        "ElementSize": 4
-      },
-      {
-        "Type": "FloatProperty",
-        "Name": "CallFunc_BreakVector_Z_1",
-        "Flags": "RF_Public",
-        "ElementSize": 4
-      },
-      {
-        "Type": "FloatProperty",
-        "Name": "CallFunc_Add_FloatFloat_ReturnValue_1",
-        "Flags": "RF_Public",
-        "ElementSize": 4
-      },
-      {
         "Type": "StructProperty",
         "Name": "CallFunc_MakeVector_ReturnValue_1",
         "Flags": "RF_Public",
@@ -347,17 +282,6 @@
         "Struct": {
           "ObjectName": "ScriptStruct'Vector'",
           "ObjectPath": "/Script/CoreUObject"
-        }
-      },
-      {
-        "Type": "StructProperty",
-        "Name": "CallFunc_K2_AddActorLocalOffset_SweepHitResult",
-        "Flags": "RF_Public",
-        "ElementSize": 144,
-        "PropertyFlags": "ContainsInstancedReference",
-        "Struct": {
-          "ObjectName": "ScriptStruct'HitResult'",
-          "ObjectPath": "/Script/Engine"
         }
       },
       {
@@ -384,6 +308,17 @@
         "bIsNativeBool": true
       },
       {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_AddActorLocalOffset_SweepHitResult",
+        "Flags": "RF_Public",
+        "ElementSize": 144,
+        "PropertyFlags": "ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
         "Type": "IntProperty",
         "Name": "CallFunc_PlaySoundEvent_ReturnValue",
         "Flags": "RF_Public",
@@ -401,7 +336,7 @@
       },
       {
         "Type": "StructProperty",
-        "Name": "CallFunc_K2_GetActorLocation_ReturnValue_2",
+        "Name": "CallFunc_K2_GetActorLocation_ReturnValue_1",
         "Flags": "RF_Public",
         "ElementSize": 12,
         "Struct": {
@@ -411,7 +346,7 @@
       },
       {
         "Type": "FloatProperty",
-        "Name": "CallFunc_VSize_ReturnValue_1",
+        "Name": "CallFunc_VSize_ReturnValue",
         "Flags": "RF_Public",
         "ElementSize": 4
       },
@@ -428,18 +363,8 @@
         "bIsNativeBool": true
       },
       {
-        "Type": "ObjectProperty",
-        "Name": "CallFunc_GetPlayerCharacter_ReturnValue_2",
-        "Flags": "RF_Public",
-        "ElementSize": 8,
-        "PropertyClass": {
-          "ObjectName": "Class'Character'",
-          "ObjectPath": "/Script/Engine"
-        }
-      },
-      {
         "Type": "StructProperty",
-        "Name": "CallFunc_K2_GetActorLocation_ReturnValue_3",
+        "Name": "CallFunc_K2_GetActorLocation_ReturnValue_2",
         "Flags": "RF_Public",
         "ElementSize": 12,
         "Struct": {
@@ -448,8 +373,19 @@
         }
       },
       {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetMovementComponent_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PawnMovementComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
         "Type": "StructProperty",
-        "Name": "CallFunc_K2_GetActorLocation_ReturnValue_4",
+        "Name": "CallFunc_K2_GetActorLocation_ReturnValue_3",
         "Flags": "RF_Public",
         "ElementSize": 12,
         "Struct": {
@@ -468,8 +404,24 @@
         }
       },
       {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_VSize_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
         "Type": "StructProperty",
         "Name": "CallFunc_Conv_RotatorToVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetActorForwardVector_ReturnValue",
         "Flags": "RF_Public",
         "ElementSize": 12,
         "Struct": {
@@ -497,7 +449,27 @@
       },
       {
         "Type": "StructProperty",
+        "Name": "CallFunc_Multiply_VectorFloat_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
         "Name": "CallFunc_MakeVector_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Multiply_VectorFloat_ReturnValue_1",
         "Flags": "RF_Public",
         "ElementSize": 12,
         "Struct": {
@@ -517,6 +489,26 @@
       },
       {
         "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetActorLocation_ReturnValue_4",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Add_VectorVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
         "Name": "CallFunc_Add_VectorVector_ReturnValue_1",
         "Flags": "RF_Public",
         "ElementSize": 12,
@@ -524,6 +516,18 @@
           "ObjectName": "ScriptStruct'Vector'",
           "ObjectPath": "/Script/CoreUObject"
         }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsServer_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
       }
     ],
     "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
@@ -938,7 +942,9 @@
         "ObjectName": "AkAudioEvent'anim_npc_slime_drop'",
         "ObjectPath": "ProjectCoral/Content/WwiseAudio/Events/Animation/MonsterEnemy/Slime/anim_npc_slime_drop.1"
       },
-      "currentDamage": 20.0
+      "currentDamage": 20.0,
+      "bReplicateMovement": true,
+      "bReplicates": true
     }
   },
   {

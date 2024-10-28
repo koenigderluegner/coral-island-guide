@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Volcano_Fountain_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 2.0,
+              "Y": 0.0,
+              "Z": 0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 110.0,
+            "Y": 10.0,
+            "Z": 123.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "97CDBE5A417477E08E767D8EEFE2F34D"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Volcano_Fountain_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Volcano_Fountain'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/Deep_sea_grotto_outdoor/Deep_sea_Grotto_Outdoor_Textures/Volcano_Fountain.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Volcano_Fountain_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/Deep_sea_grotto_outdoor/Volcano_Fountain_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 57.0,
+          "Y": 62.0,
+          "Z": 0.9453125,
+          "W": 0.015625
+        },
+        {
+          "X": -53.0,
+          "Y": 62.0,
+          "Z": 0.0859375,
+          "W": 0.015625
+        },
+        {
+          "X": -53.0,
+          "Y": -61.0,
+          "Z": 0.0859375,
+          "W": 0.9765625
+        },
+        {
+          "X": 57.0,
+          "Y": -61.0,
+          "Z": 0.9453125,
+          "W": 0.9765625
+        },
+        {
+          "X": 57.0,
+          "Y": 62.0,
+          "Z": 0.9453125,
+          "W": 0.015625
+        },
+        {
+          "X": -53.0,
+          "Y": -61.0,
+          "Z": 0.0859375,
+          "W": 0.9765625
+        }
+      ]
+    }
+  }
+]

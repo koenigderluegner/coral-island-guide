@@ -9,6 +9,24 @@
     }
   },
   {
+    "Type": "C_ChanceRequirement",
+    "Name": "C_ChanceRequirement_1",
+    "Outer": "DA_NPCDateableGiftOffering",
+    "Class": "UScriptClass'C_ChanceRequirement'",
+    "Properties": {
+      "chance": 0.2
+    }
+  },
+  {
+    "Type": "C_ChanceRequirement",
+    "Name": "C_ChanceRequirement_2",
+    "Outer": "DA_NPCDateableGiftOffering",
+    "Class": "UScriptClass'C_ChanceRequirement'",
+    "Properties": {
+      "chance": 0.2
+    }
+  },
+  {
     "Type": "C_GiftOfferingItemDishSelector",
     "Name": "C_GiftOfferingItemDishSelector_0",
     "Outer": "DA_NPCDateableGiftOffering",
@@ -16,10 +34,51 @@
     "Properties": {
       "expiredOnDayEnd": true,
       "dialogueRequest": {
+        "requestedDialogLineIds": [
+          "GivingDish"
+        ]
+      },
+      "genericDialogueRequest": {
         "useDialogData": true,
         "dialogData": {
           "AssetPathName": "/Game/ProjectCoral/Data/Dialog/Quest/DA_DQ_GenericGiftingItem.DA_DQ_GenericGiftingItem",
           "SubPathString": ""
+        }
+      }
+    }
+  },
+  {
+    "Type": "C_GiftOfferingItemDTSelector",
+    "Name": "C_GiftOfferingItemDTSelector_0",
+    "Outer": "DA_NPCDateableGiftOffering",
+    "Class": "UScriptClass'C_GiftOfferingItemDTSelector'",
+    "Properties": {
+      "giftOfferingDT": {
+        "ObjectName": "DataTable'DA_ItemGiftOfferingEvaSpouseCookies'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/GiftOffering/DA_ItemGiftOfferingEvaSpouseCookies.0"
+      }
+    }
+  },
+  {
+    "Type": "C_GiftOfferingItemSpecificSelector",
+    "Name": "C_GiftOfferingItemSpecificSelector_0",
+    "Outer": "DA_NPCDateableGiftOffering",
+    "Class": "UScriptClass'C_GiftOfferingItemSpecificSelector'",
+    "Properties": {
+      "giftData": {
+        "id": "GivingJackFruitPie",
+        "npcId": "Alice",
+        "item": {
+          "data": {
+            "RowName": "item_80074"
+          },
+          "itemID": "item_80074"
+        },
+        "dialogueRequest": {
+          "requestId": "GivingJackFruitPie",
+          "requestedDialogLineIds": [
+            "GivingJackFruitPie"
+          ]
         }
       }
     }
@@ -34,14 +93,84 @@
           "rollId": "Spouse",
           "itemSelector": {
             "ObjectName": "C_GiftOfferingItemDishSelector'DA_NPCDateableGiftOffering:C_GiftOfferingItemDishSelector_0'",
-            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/GiftOffering/DA_NPCDateableGiftOffering.1"
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/GiftOffering/DA_NPCDateableGiftOffering.3"
+          },
+          "npcRequirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_IsNPCRelationshipRequirement'DA_NPCDateableGiftOffering:C_IsNPCRelationshipRequirement_1'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/GiftOffering/DA_NPCDateableGiftOffering.10"
+              }
+            ]
+          },
+          "gameplayRequirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_ChanceRequirement'DA_NPCDateableGiftOffering:C_ChanceRequirement_1'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/GiftOffering/DA_NPCDateableGiftOffering.1"
+              },
+              {
+                "ObjectName": "C_TimeOfTheDayRequirement'DA_NPCDateableGiftOffering:C_TimeOfTheDayRequirement_1'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/GiftOffering/DA_NPCDateableGiftOffering.13"
+              }
+            ]
+          },
+          "evaluationFrequency": "EC_ConditionEvaluationFrequency::EveryDay",
+          "oneTime": false
+        },
+        {
+          "rollId": "EvaGiveCookie",
+          "itemSelector": {
+            "ObjectName": "C_GiftOfferingItemDTSelector'DA_NPCDateableGiftOffering:C_GiftOfferingItemDTSelector_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/GiftOffering/DA_NPCDateableGiftOffering.4"
+          },
+          "npcRequirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_IsNpcIdRequirement'DA_NPCDateableGiftOffering:C_IsNpcIdRequirement_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/GiftOffering/DA_NPCDateableGiftOffering.7"
+              },
+              {
+                "ObjectName": "C_IsNPCRelationshipRequirement'DA_NPCDateableGiftOffering:C_IsNPCRelationshipRequirement_2'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/GiftOffering/DA_NPCDateableGiftOffering.11"
+              }
+            ]
+          },
+          "gameplayRequirements": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_ChanceRequirement'DA_NPCDateableGiftOffering:C_ChanceRequirement_2'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/GiftOffering/DA_NPCDateableGiftOffering.2"
+              },
+              {
+                "ObjectName": "C_TimeOfTheDayRequirement'DA_NPCDateableGiftOffering:C_TimeOfTheDayRequirement_2'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/GiftOffering/DA_NPCDateableGiftOffering.14"
+              }
+            ]
+          },
+          "evaluationFrequency": "EC_ConditionEvaluationFrequency::EveryDay",
+          "oneTime": false
+        },
+        {
+          "rollId": "AliceGiveJackfruitPie",
+          "itemSelector": {
+            "ObjectName": "C_GiftOfferingItemSpecificSelector'DA_NPCDateableGiftOffering:C_GiftOfferingItemSpecificSelector_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/GiftOffering/DA_NPCDateableGiftOffering.5"
           },
           "npcRequirements": {
             "type": "EC_RequirementCollectionType::And",
             "requirements": [
               {
                 "ObjectName": "C_IsNPCRelationshipRequirement'DA_NPCDateableGiftOffering:C_IsNPCRelationshipRequirement_0'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/GiftOffering/DA_NPCDateableGiftOffering.3"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/GiftOffering/DA_NPCDateableGiftOffering.9"
+              },
+              {
+                "ObjectName": "C_IsNpcIdRequirement'DA_NPCDateableGiftOffering:C_IsNpcIdRequirement_1'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/GiftOffering/DA_NPCDateableGiftOffering.8"
               }
             ]
           },
@@ -54,7 +183,7 @@
               },
               {
                 "ObjectName": "C_TimeOfTheDayRequirement'DA_NPCDateableGiftOffering:C_TimeOfTheDayRequirement_0'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/GiftOffering/DA_NPCDateableGiftOffering.4"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/GiftOffering/DA_NPCDateableGiftOffering.12"
               }
             ]
           },
@@ -62,6 +191,36 @@
           "oneTime": false
         }
       ]
+    }
+  },
+  {
+    "Type": "C_IsNpcIdRequirement",
+    "Name": "C_IsNpcIdRequirement_0",
+    "Outer": "DA_NPCDateableGiftOffering",
+    "Class": "UScriptClass'C_IsNpcIdRequirement'",
+    "Properties": {
+      "npcDataRow": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_NPCs'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.0"
+        },
+        "RowName": "Eva"
+      }
+    }
+  },
+  {
+    "Type": "C_IsNpcIdRequirement",
+    "Name": "C_IsNpcIdRequirement_1",
+    "Outer": "DA_NPCDateableGiftOffering",
+    "Class": "UScriptClass'C_IsNpcIdRequirement'",
+    "Properties": {
+      "npcDataRow": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_NPCs'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCs.0"
+        },
+        "RowName": "Alice"
+      }
     }
   },
   {
@@ -76,8 +235,48 @@
     }
   },
   {
+    "Type": "C_IsNPCRelationshipRequirement",
+    "Name": "C_IsNPCRelationshipRequirement_1",
+    "Outer": "DA_NPCDateableGiftOffering",
+    "Class": "UScriptClass'C_IsNPCRelationshipRequirement'",
+    "Properties": {
+      "expectedStatus": [
+        "EC_RelationshipStatus::SPOUSE"
+      ]
+    }
+  },
+  {
+    "Type": "C_IsNPCRelationshipRequirement",
+    "Name": "C_IsNPCRelationshipRequirement_2",
+    "Outer": "DA_NPCDateableGiftOffering",
+    "Class": "UScriptClass'C_IsNPCRelationshipRequirement'",
+    "Properties": {
+      "expectedStatus": [
+        "EC_RelationshipStatus::SPOUSE"
+      ]
+    }
+  },
+  {
     "Type": "C_TimeOfTheDayRequirement",
     "Name": "C_TimeOfTheDayRequirement_0",
+    "Outer": "DA_NPCDateableGiftOffering",
+    "Class": "UScriptClass'C_TimeOfTheDayRequirement'",
+    "Properties": {
+      "expectedTimeOfTheDay": "EC_TimeOfDay::Morning"
+    }
+  },
+  {
+    "Type": "C_TimeOfTheDayRequirement",
+    "Name": "C_TimeOfTheDayRequirement_1",
+    "Outer": "DA_NPCDateableGiftOffering",
+    "Class": "UScriptClass'C_TimeOfTheDayRequirement'",
+    "Properties": {
+      "expectedTimeOfTheDay": "EC_TimeOfDay::Morning"
+    }
+  },
+  {
+    "Type": "C_TimeOfTheDayRequirement",
+    "Name": "C_TimeOfTheDayRequirement_2",
     "Outer": "DA_NPCDateableGiftOffering",
     "Class": "UScriptClass'C_TimeOfTheDayRequirement'",
     "Properties": {

@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Lunar_Window_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": -1.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 82.0,
+            "Y": 10.0,
+            "Z": 115.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "8D01D5684F463FF87431FA9E1D815FC7"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Lunar_Window_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Lunar_Window'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/East_asian_indoor/East_asian_indoor_textures/Lunar_Window.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "Engine/Plugins/2D/Paper2D/Content/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Lunar_Window_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/East_asian_indoor/Lunar_Window_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 41.0,
+          "Y": 56.0,
+          "Z": 0.8203125,
+          "W": 0.0625
+        },
+        {
+          "X": -41.0,
+          "Y": 56.0,
+          "Z": 0.1796875,
+          "W": 0.0625
+        },
+        {
+          "X": -41.0,
+          "Y": -59.0,
+          "Z": 0.1796875,
+          "W": 0.9609375
+        },
+        {
+          "X": 41.0,
+          "Y": -59.0,
+          "Z": 0.8203125,
+          "W": 0.9609375
+        },
+        {
+          "X": 41.0,
+          "Y": 56.0,
+          "Z": 0.8203125,
+          "W": 0.0625
+        },
+        {
+          "X": -41.0,
+          "Y": -59.0,
+          "Z": 0.1796875,
+          "W": 0.9609375
+        }
+      ]
+    }
+  }
+]

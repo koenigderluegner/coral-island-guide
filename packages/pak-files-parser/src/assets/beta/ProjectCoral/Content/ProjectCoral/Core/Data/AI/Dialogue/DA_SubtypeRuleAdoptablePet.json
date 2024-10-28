@@ -1,0 +1,35 @@
+[
+  {
+    "Type": "C_DialogueSubTypeRuleConfig",
+    "Name": "DA_SubtypeRuleAdoptablePet",
+    "Class": "UScriptClass'C_DialogueSubTypeRuleConfig'",
+    "Properties": {
+      "subtypeRules": [
+        {
+          "EC_DTDialogueColumn_SubType::Adopted": {
+            "requirementType": "EC_RequirementCollectionType::And",
+            "gameplayRequirements": {
+              "type": "EC_RequirementCollectionType::And",
+              "requirements": []
+            },
+            "npcRequirements": {
+              "type": "EC_RequirementCollectionType::And",
+              "requirements": [
+                {
+                  "ObjectName": "C_IsNPCAdoptedPetRequirement'DA_SubtypeRuleAdoptablePet:C_IsNPCAdoptedPetRequirement_0'",
+                  "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DA_SubtypeRuleAdoptablePet.1"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_IsNPCAdoptedPetRequirement",
+    "Name": "C_IsNPCAdoptedPetRequirement_0",
+    "Outer": "DA_SubtypeRuleAdoptablePet",
+    "Class": "UScriptClass'C_IsNPCAdoptedPetRequirement'"
+  }
+]
