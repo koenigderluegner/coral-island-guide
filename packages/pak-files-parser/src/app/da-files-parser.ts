@@ -65,6 +65,9 @@ import {
     GameplayRequirementsConfigEntry,
     GameplayRequirementsConfigMap
 } from "../interfaces/raw-data-interfaces/da-file-parse/requirements/gameplay-requirement-config.type";
+import { MarkDinoHologramRewardClaimedEffect } from "../../../data-types/src/lib/types/effects/mark-dino-hologram-reward-claimed-effect.type";
+import { TimeDateRequirement } from "../../../data-types/src/lib/types/requirements/time-date-requirement.type";
+import { DateSeasonRequirement } from "../../../data-types/src/lib/types/requirements/date-season-requirement.type";
 
 export type EffectEntry = {
     key: string,
@@ -223,6 +226,16 @@ export class DaFilesParser {
                                 factName: foundEffect.Properties.fact.factName.RowName
                             }
                         } satisfies SetQuestFactValueEffect;
+                        break;
+                    }
+                    case "C_MarkDinoHologramRewardClaimed": {
+
+                        daEffect = {
+                            type: "MarkDinoHologramRewardClaimed",
+                            meta: {
+                                dinoName: foundEffect.Properties.dinoId.dinosaursName.RowName
+                            }
+                        } satisfies MarkDinoHologramRewardClaimedEffect;
                         break;
                     }
                     case "C_UnlockCookingRecipeEffect": {
@@ -497,6 +510,43 @@ export class DaFilesParser {
                                 npcKey: foundEffect.Properties.NPCId
                             }
                         } satisfies NpcHeartLevelRequirement;
+                        break;
+                    }
+                    case "C_TimeDateRequirement": {
+                        daEffect = {
+                            type: "TimeDate",
+                            meta: {
+                                inverted: foundEffect.Properties.invertResult,
+                                clampDateRange: foundEffect.Properties.clampDateRange,
+                                conditionType: getEnumValue(foundEffect.Properties.conditionType),
+                                dateRange: {
+                                    isValidIndefinitelyOnceStarted: foundEffect.Properties.dateRange.isValidIndefinitelyOnceStarted,
+                                    isValidOnSpecificDate: foundEffect.Properties.dateRange.isValidOnSpecificDate,
+                                    startsFrom: {
+                                        day: foundEffect.Properties.dateRange.startsFrom.day ?? 1,
+                                        season: getEnumValue(foundEffect.Properties.dateRange.startsFrom.season),
+                                        year: foundEffect.Properties.dateRange.startsFrom.year ?? 1,
+
+                                    },
+                                    lastsTill: {
+                                        day: foundEffect.Properties.dateRange.lastsTill.day ?? 1,
+                                        season: getEnumValue(foundEffect.Properties.dateRange.lastsTill.season),
+                                        year: foundEffect.Properties.dateRange.lastsTill.year ?? 1,
+
+                                    }
+                                }
+                            }
+                        } satisfies TimeDateRequirement;
+                        break;
+                    }
+                    case "C_DateSeasonRequirement": {
+                        daEffect = {
+                            type: "DateSeason",
+                            meta: {
+                                day: foundEffect.Properties.expectedDateSeason.day,
+                                season: getEnumValue(foundEffect.Properties.expectedDateSeason.season)
+                            }
+                        } satisfies DateSeasonRequirement;
                         break;
                     }
 

@@ -141,3 +141,10 @@
 
 
 }
+@if (requirement.type === 'TimeDate') {
+    Date is {{ requirement.meta.inverted ? 'not ' : '' }}between {{ requirement.meta.dateRange.startsFrom | ingameDate }}
+    and  {{ requirement.meta.dateRange.lastsTill | ingameDate }}
+}
+@if (requirement.type === 'DateSeason') {
+    Date is {{ requirement.meta.day }} {{ requirement.meta.season }}
+}

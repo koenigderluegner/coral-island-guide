@@ -19,9 +19,14 @@ export class CalendarGenerator {
 
         const events: CalendarEvent[] = [];
 
-        Object.keys(this.calendarConfig.Properties).forEach(key => {
+        const properties = this.calendarConfig.Properties;
+        const keys = Object.keys(properties);
 
-            const keyValuePair = this.calendarConfig.Properties[key]
+        keys.forEach(key => {
+
+            const keyValuePair = properties[key]
+
+            if (!('map' in keyValuePair)) return;
 
             keyValuePair.map.forEach(mapEntry => {
 

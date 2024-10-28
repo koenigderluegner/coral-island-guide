@@ -22,6 +22,8 @@ import { RawHealedCoralRequirement } from "./healed-coral-requirement.type";
 import { RawMasteryLevelRequirement } from "./mastery-level-requirement.type";
 import { RawIsMailReadRequirement } from "./is-mail-read.requirement.type";
 import { RawDinoHologramItemRewardClaimedRequirement } from "./dino-hologram-item-reward-claimed-requirement.type";
+import { RawTimeDateRequirement } from "./time-date-requirement.type";
+import { RawDateSeasonRequirement } from "./date-season-requirement.type";
 
 export type DaRequirements = RawIsAchievementCompletedRequirement
     | RawCountNpcHeartLevelRequirement
@@ -47,3 +49,5 @@ export type DaRequirements = RawIsAchievementCompletedRequirement
     | RawMasteryLevelRequirement
     | RawIsMailReadRequirement
     | RawDinoHologramItemRewardClaimedRequirement
+    | RawTimeDateRequirement
+    | RawDateSeasonRequirement

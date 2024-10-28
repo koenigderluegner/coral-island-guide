@@ -20,6 +20,7 @@ export class OfferingsDbGenerator extends BaseGenerator<RawOfferingAltar, Offeri
 
         this.offeringDetails = offeringDetailsGenerator.generate();
 
+        if (!environment.isBeta)
             this.datatable[0].Rows['CustomDiving'] = {
                 offeringId: Object.keys(readAsset<Datatable<RawOffering>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_DivingOfferingRegistry.json')[0].Rows),
                 offeringGroupTitle: {CultureInvariantString: null},

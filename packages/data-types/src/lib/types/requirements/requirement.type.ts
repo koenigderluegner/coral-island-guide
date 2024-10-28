@@ -23,6 +23,8 @@ import { MasteryLevelRequirements } from "./mastery-level-requirements.type";
 import { IsMailReadRequirement } from "./is-mail-read-requirement.type";
 import { ShipToUnlockRequirement } from "./ship-to-unlock-requirement.type";
 import { DinoHologramItemRewardClaimedRequirement } from "./dino-hologram-item-reward-claimed-requirement.type";
+import { DateSeasonRequirement } from "./date-season-requirement.type";
+import { TimeDateRequirement } from "./time-date-requirement.type";
 
 export type Requirement = CountNpcHeartLevelRequirement
     | EditorOnlyRequirement
@@ -49,4 +51,6 @@ export type Requirement = CountNpcHeartLevelRequirement
     | IsMailReadRequirement
     | ShipToUnlockRequirement
     | DinoHologramItemRewardClaimedRequirement
+    | DateSeasonRequirement
+    | TimeDateRequirement
 
