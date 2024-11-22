@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "extract-assets": " START /D \".\\packages\\file-extraction\\UnrealExporter\" UnrealExporter.exe config",
     "prepare-deploy": "nx run pak-files-parser:prepare:beta && nx run pak-files-parser:prepare:live && nx run guide:build:production && copy .\\dist\\packages\\guide\\browser\\index.html .\\dist\\packages\\guide\\browser\\404.html && git reset --hard"
   },
   "private": true,
