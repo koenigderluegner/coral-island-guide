@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Fire_Peal_Lamp_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 17.5,
+              "Y": 0.0,
+              "Z": -0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 89.0,
+            "Y": 10.0,
+            "Z": 123.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "9098EEA243F99DA005D60EB18786BED4"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Fire_Peal_Lamp_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Fire_Peal_Lamp'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/Deep_sea_grotto_outdoor/Deep_sea_Grotto_Outdoor_Textures/Fire_Peal_Lamp.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Fire_Peal_Lamp_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/Deep_sea_grotto_outdoor/Fire_Peal_Lamp_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 62.0,
+          "Y": 61.0,
+          "Z": 0.984375,
+          "W": 0.0234375
+        },
+        {
+          "X": -27.0,
+          "Y": 61.0,
+          "Z": 0.2890625,
+          "W": 0.0234375
+        },
+        {
+          "X": -27.0,
+          "Y": -62.0,
+          "Z": 0.2890625,
+          "W": 0.984375
+        },
+        {
+          "X": 62.0,
+          "Y": -62.0,
+          "Z": 0.984375,
+          "W": 0.984375
+        },
+        {
+          "X": 62.0,
+          "Y": 61.0,
+          "Z": 0.984375,
+          "W": 0.0234375
+        },
+        {
+          "X": -27.0,
+          "Y": -62.0,
+          "Z": 0.2890625,
+          "W": 0.984375
+        }
+      ]
+    }
+  }
+]

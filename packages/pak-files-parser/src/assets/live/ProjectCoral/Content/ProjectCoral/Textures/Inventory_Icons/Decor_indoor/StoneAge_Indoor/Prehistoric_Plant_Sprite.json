@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Prehistoric_Plant_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 6.5,
+              "Y": 0.0,
+              "Z": -0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 85.0,
+            "Y": 10.0,
+            "Z": 125.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "965006E94C0F7846FB4D9D8C2170C114"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Prehistoric_Plant_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Prehistoric_Plant'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/StoneAge_Indoor/StoneAge_Indoor_Textures/Prehistoric_Plant.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Prehistoric_Plant_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/StoneAge_Indoor/Prehistoric_Plant_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 49.0,
+          "Y": 62.0,
+          "Z": 0.8828125,
+          "W": 0.015625
+        },
+        {
+          "X": -36.0,
+          "Y": 62.0,
+          "Z": 0.21875,
+          "W": 0.015625
+        },
+        {
+          "X": -36.0,
+          "Y": -63.0,
+          "Z": 0.21875,
+          "W": 0.9921875
+        },
+        {
+          "X": 49.0,
+          "Y": -63.0,
+          "Z": 0.8828125,
+          "W": 0.9921875
+        },
+        {
+          "X": 49.0,
+          "Y": 62.0,
+          "Z": 0.8828125,
+          "W": 0.015625
+        },
+        {
+          "X": -36.0,
+          "Y": -63.0,
+          "Z": 0.21875,
+          "W": 0.9921875
+        }
+      ]
+    }
+  }
+]

@@ -1,5 +1,145 @@
 [
   {
+    "Type": "C_AddItemToInventoryEffect",
+    "Name": "C_AddItemToInventoryEffect_0",
+    "Outer": "DA_ItemConsumableCustomEffectsConfig",
+    "Class": "UScriptClass'C_AddItemToInventoryEffect'",
+    "Properties": {
+      "itemData": {
+        "data": {
+          "RowName": "item_65595"
+        },
+        "itemID": "item_65595"
+      }
+    }
+  },
+  {
+    "Type": "C_AddItemToInventoryEffect",
+    "Name": "C_AddItemToInventoryEffect_1",
+    "Outer": "DA_ItemConsumableCustomEffectsConfig",
+    "Class": "UScriptClass'C_AddItemToInventoryEffect'",
+    "Properties": {
+      "itemData": {
+        "data": {
+          "RowName": "item_65606"
+        },
+        "itemID": "item_65606"
+      }
+    }
+  },
+  {
+    "Type": "C_AddItemToInventoryEffect",
+    "Name": "C_AddItemToInventoryEffect_2",
+    "Outer": "DA_ItemConsumableCustomEffectsConfig",
+    "Class": "UScriptClass'C_AddItemToInventoryEffect'",
+    "Properties": {
+      "itemData": {
+        "data": {
+          "RowName": "item_65596"
+        },
+        "itemID": "item_65596"
+      }
+    }
+  },
+  {
+    "Type": "C_AddItemToInventoryEffect",
+    "Name": "C_AddItemToInventoryEffect_3",
+    "Outer": "DA_ItemConsumableCustomEffectsConfig",
+    "Class": "UScriptClass'C_AddItemToInventoryEffect'",
+    "Properties": {
+      "itemData": {
+        "data": {
+          "RowName": "item_65603"
+        },
+        "itemID": "item_65603"
+      }
+    }
+  },
+  {
+    "Type": "C_AddItemToInventoryEffect",
+    "Name": "C_AddItemToInventoryEffect_4",
+    "Outer": "DA_ItemConsumableCustomEffectsConfig",
+    "Class": "UScriptClass'C_AddItemToInventoryEffect'",
+    "Properties": {
+      "itemData": {
+        "data": {
+          "RowName": "item_65605"
+        },
+        "itemID": "item_65605"
+      }
+    }
+  },
+  {
+    "Type": "C_AddItemToInventoryEffect",
+    "Name": "C_AddItemToInventoryEffect_5",
+    "Outer": "DA_ItemConsumableCustomEffectsConfig",
+    "Class": "UScriptClass'C_AddItemToInventoryEffect'",
+    "Properties": {
+      "itemData": {
+        "data": {
+          "RowName": "item_65604"
+        },
+        "itemID": "item_65604"
+      }
+    }
+  },
+  {
+    "Type": "C_AddItemToInventoryEffect",
+    "Name": "C_AddItemToInventoryEffect_6",
+    "Outer": "DA_ItemConsumableCustomEffectsConfig",
+    "Class": "UScriptClass'C_AddItemToInventoryEffect'",
+    "Properties": {
+      "itemData": {
+        "data": {
+          "RowName": "item_65597"
+        },
+        "itemID": "item_65597"
+      }
+    }
+  },
+  {
+    "Type": "C_AddItemToInventoryEffect",
+    "Name": "C_AddItemToInventoryEffect_7",
+    "Outer": "DA_ItemConsumableCustomEffectsConfig",
+    "Class": "UScriptClass'C_AddItemToInventoryEffect'",
+    "Properties": {
+      "itemData": {
+        "data": {
+          "RowName": "item_65600"
+        },
+        "itemID": "item_65600"
+      }
+    }
+  },
+  {
+    "Type": "C_AddItemToInventoryEffect",
+    "Name": "C_AddItemToInventoryEffect_8",
+    "Outer": "DA_ItemConsumableCustomEffectsConfig",
+    "Class": "UScriptClass'C_AddItemToInventoryEffect'",
+    "Properties": {
+      "itemData": {
+        "data": {
+          "RowName": "item_65599"
+        },
+        "itemID": "item_65599"
+      }
+    }
+  },
+  {
+    "Type": "C_AddItemToInventoryEffect",
+    "Name": "C_AddItemToInventoryEffect_9",
+    "Outer": "DA_ItemConsumableCustomEffectsConfig",
+    "Class": "UScriptClass'C_AddItemToInventoryEffect'",
+    "Properties": {
+      "itemData": {
+        "data": {
+          "RowName": "item_65598"
+        },
+        "itemID": "item_65598"
+      }
+    }
+  },
+  {
     "Type": "C_BoostMaxHealthEffect",
     "Name": "C_BoostMaxHealthEffect_0",
     "Outer": "DA_ItemConsumableCustomEffectsConfig",
@@ -18,22 +158,24 @@
     "Class": "UScriptClass'C_ConsumeItemMasteryEffect'",
     "Properties": {
       "masteryType": "EC_MasteryType::Ranching",
-      "itemData": {
-        "data": {
-          "RowName": "item_80109"
+      "config": {
+        "itemData": {
+          "data": {
+            "RowName": "item_80109"
+          },
+          "itemID": "item_80109"
         },
-        "itemID": "item_80109"
-      },
-      "playAnimationTrigger": true,
-      "animationMontage": {
-        "ObjectName": "AnimMontage'AM_PlayerShowItemFull'",
-        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/Player_Anim/AM_PlayerShowItemFull.0"
-      },
-      "sectionName": "full",
-      "animationSpeed": 1.5,
-      "endAnimMontage": {
-        "ObjectName": "AnimMontage'AM_Player_ConsumeItem'",
-        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_Player_ConsumeItem.0"
+        "playAnimation": true,
+        "showItemAnim": {
+          "AssetPathName": "/Game/_Imports/Animasi/Retarget_ANIM/Player_Anim/AM_PlayerShowItemFull.AM_PlayerShowItemFull",
+          "SubPathString": ""
+        },
+        "sectionName": "full",
+        "animationSpeed": 1.5,
+        "consumeItemAnim": {
+          "AssetPathName": "/Game/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_Player_ConsumeItem.AM_Player_ConsumeItem",
+          "SubPathString": ""
+        }
       }
     }
   },
@@ -44,22 +186,24 @@
     "Class": "UScriptClass'C_ConsumeItemMasteryEffect'",
     "Properties": {
       "masteryType": "EC_MasteryType::Catching",
-      "itemData": {
-        "data": {
-          "RowName": "item_80102"
+      "config": {
+        "itemData": {
+          "data": {
+            "RowName": "item_80102"
+          },
+          "itemID": "item_80102"
         },
-        "itemID": "item_80102"
-      },
-      "playAnimationTrigger": true,
-      "animationMontage": {
-        "ObjectName": "AnimMontage'AM_PlayerShowItemFull'",
-        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/Player_Anim/AM_PlayerShowItemFull.0"
-      },
-      "sectionName": "full",
-      "animationSpeed": 1.5,
-      "endAnimMontage": {
-        "ObjectName": "AnimMontage'AM_Player_ConsumeItem'",
-        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_Player_ConsumeItem.0"
+        "playAnimation": true,
+        "showItemAnim": {
+          "AssetPathName": "/Game/_Imports/Animasi/Retarget_ANIM/Player_Anim/AM_PlayerShowItemFull.AM_PlayerShowItemFull",
+          "SubPathString": ""
+        },
+        "sectionName": "full",
+        "animationSpeed": 1.5,
+        "consumeItemAnim": {
+          "AssetPathName": "/Game/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_Player_ConsumeItem.AM_Player_ConsumeItem",
+          "SubPathString": ""
+        }
       }
     }
   },
@@ -70,22 +214,24 @@
     "Class": "UScriptClass'C_ConsumeItemMasteryEffect'",
     "Properties": {
       "masteryType": "EC_MasteryType::Combat",
-      "itemData": {
-        "data": {
-          "RowName": "item_80103"
+      "config": {
+        "itemData": {
+          "data": {
+            "RowName": "item_80103"
+          },
+          "itemID": "item_80103"
         },
-        "itemID": "item_80103"
-      },
-      "playAnimationTrigger": true,
-      "animationMontage": {
-        "ObjectName": "AnimMontage'AM_PlayerShowItemFull'",
-        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/Player_Anim/AM_PlayerShowItemFull.0"
-      },
-      "sectionName": "full",
-      "animationSpeed": 1.5,
-      "endAnimMontage": {
-        "ObjectName": "AnimMontage'AM_Player_ConsumeItem'",
-        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_Player_ConsumeItem.0"
+        "playAnimation": true,
+        "showItemAnim": {
+          "AssetPathName": "/Game/_Imports/Animasi/Retarget_ANIM/Player_Anim/AM_PlayerShowItemFull.AM_PlayerShowItemFull",
+          "SubPathString": ""
+        },
+        "sectionName": "full",
+        "animationSpeed": 1.5,
+        "consumeItemAnim": {
+          "AssetPathName": "/Game/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_Player_ConsumeItem.AM_Player_ConsumeItem",
+          "SubPathString": ""
+        }
       }
     }
   },
@@ -96,22 +242,24 @@
     "Class": "UScriptClass'C_ConsumeItemMasteryEffect'",
     "Properties": {
       "masteryType": "EC_MasteryType::Diving",
-      "itemData": {
-        "data": {
-          "RowName": "item_80104"
+      "config": {
+        "itemData": {
+          "data": {
+            "RowName": "item_80104"
+          },
+          "itemID": "item_80104"
         },
-        "itemID": "item_80104"
-      },
-      "playAnimationTrigger": true,
-      "animationMontage": {
-        "ObjectName": "AnimMontage'AM_PlayerShowItemFull'",
-        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/Player_Anim/AM_PlayerShowItemFull.0"
-      },
-      "sectionName": "full",
-      "animationSpeed": 1.5,
-      "endAnimMontage": {
-        "ObjectName": "AnimMontage'AM_Player_ConsumeItem'",
-        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_Player_ConsumeItem.0"
+        "playAnimation": true,
+        "showItemAnim": {
+          "AssetPathName": "/Game/_Imports/Animasi/Retarget_ANIM/Player_Anim/AM_PlayerShowItemFull.AM_PlayerShowItemFull",
+          "SubPathString": ""
+        },
+        "sectionName": "full",
+        "animationSpeed": 1.5,
+        "consumeItemAnim": {
+          "AssetPathName": "/Game/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_Player_ConsumeItem.AM_Player_ConsumeItem",
+          "SubPathString": ""
+        }
       }
     }
   },
@@ -122,22 +270,24 @@
     "Class": "UScriptClass'C_ConsumeItemMasteryEffect'",
     "Properties": {
       "masteryType": "EC_MasteryType::Farming",
-      "itemData": {
-        "data": {
-          "RowName": "item_80105"
+      "config": {
+        "itemData": {
+          "data": {
+            "RowName": "item_80105"
+          },
+          "itemID": "item_80105"
         },
-        "itemID": "item_80105"
-      },
-      "playAnimationTrigger": true,
-      "animationMontage": {
-        "ObjectName": "AnimMontage'AM_PlayerShowItemFull'",
-        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/Player_Anim/AM_PlayerShowItemFull.0"
-      },
-      "sectionName": "full",
-      "animationSpeed": 1.5,
-      "endAnimMontage": {
-        "ObjectName": "AnimMontage'AM_Player_ConsumeItem'",
-        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_Player_ConsumeItem.0"
+        "playAnimation": true,
+        "showItemAnim": {
+          "AssetPathName": "/Game/_Imports/Animasi/Retarget_ANIM/Player_Anim/AM_PlayerShowItemFull.AM_PlayerShowItemFull",
+          "SubPathString": ""
+        },
+        "sectionName": "full",
+        "animationSpeed": 1.5,
+        "consumeItemAnim": {
+          "AssetPathName": "/Game/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_Player_ConsumeItem.AM_Player_ConsumeItem",
+          "SubPathString": ""
+        }
       }
     }
   },
@@ -148,22 +298,24 @@
     "Class": "UScriptClass'C_ConsumeItemMasteryEffect'",
     "Properties": {
       "masteryType": "EC_MasteryType::Fishing",
-      "itemData": {
-        "data": {
-          "RowName": "item_80106"
+      "config": {
+        "itemData": {
+          "data": {
+            "RowName": "item_80106"
+          },
+          "itemID": "item_80106"
         },
-        "itemID": "item_80106"
-      },
-      "playAnimationTrigger": true,
-      "animationMontage": {
-        "ObjectName": "AnimMontage'AM_PlayerShowItemFull'",
-        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/Player_Anim/AM_PlayerShowItemFull.0"
-      },
-      "sectionName": "full",
-      "animationSpeed": 1.5,
-      "endAnimMontage": {
-        "ObjectName": "AnimMontage'AM_Player_ConsumeItem'",
-        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_Player_ConsumeItem.0"
+        "playAnimation": true,
+        "showItemAnim": {
+          "AssetPathName": "/Game/_Imports/Animasi/Retarget_ANIM/Player_Anim/AM_PlayerShowItemFull.AM_PlayerShowItemFull",
+          "SubPathString": ""
+        },
+        "sectionName": "full",
+        "animationSpeed": 1.5,
+        "consumeItemAnim": {
+          "AssetPathName": "/Game/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_Player_ConsumeItem.AM_Player_ConsumeItem",
+          "SubPathString": ""
+        }
       }
     }
   },
@@ -174,22 +326,24 @@
     "Class": "UScriptClass'C_ConsumeItemMasteryEffect'",
     "Properties": {
       "masteryType": "EC_MasteryType::Foraging",
-      "itemData": {
-        "data": {
-          "RowName": "item_80107"
+      "config": {
+        "itemData": {
+          "data": {
+            "RowName": "item_80107"
+          },
+          "itemID": "item_80107"
         },
-        "itemID": "item_80107"
-      },
-      "playAnimationTrigger": true,
-      "animationMontage": {
-        "ObjectName": "AnimMontage'AM_PlayerShowItemFull'",
-        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/Player_Anim/AM_PlayerShowItemFull.0"
-      },
-      "sectionName": "full",
-      "animationSpeed": 1.5,
-      "endAnimMontage": {
-        "ObjectName": "AnimMontage'AM_Player_ConsumeItem'",
-        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_Player_ConsumeItem.0"
+        "playAnimation": true,
+        "showItemAnim": {
+          "AssetPathName": "/Game/_Imports/Animasi/Retarget_ANIM/Player_Anim/AM_PlayerShowItemFull.AM_PlayerShowItemFull",
+          "SubPathString": ""
+        },
+        "sectionName": "full",
+        "animationSpeed": 1.5,
+        "consumeItemAnim": {
+          "AssetPathName": "/Game/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_Player_ConsumeItem.AM_Player_ConsumeItem",
+          "SubPathString": ""
+        }
       }
     }
   },
@@ -200,22 +354,24 @@
     "Class": "UScriptClass'C_ConsumeItemMasteryEffect'",
     "Properties": {
       "masteryType": "EC_MasteryType::Mining",
-      "itemData": {
-        "data": {
-          "RowName": "item_80108"
+      "config": {
+        "itemData": {
+          "data": {
+            "RowName": "item_80108"
+          },
+          "itemID": "item_80108"
         },
-        "itemID": "item_80108"
-      },
-      "playAnimationTrigger": true,
-      "animationMontage": {
-        "ObjectName": "AnimMontage'AM_PlayerShowItemFull'",
-        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/Player_Anim/AM_PlayerShowItemFull.0"
-      },
-      "sectionName": "full",
-      "animationSpeed": 1.5,
-      "endAnimMontage": {
-        "ObjectName": "AnimMontage'AM_Player_ConsumeItem'",
-        "ObjectPath": "ProjectCoral/Content/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_Player_ConsumeItem.0"
+        "playAnimation": true,
+        "showItemAnim": {
+          "AssetPathName": "/Game/_Imports/Animasi/Retarget_ANIM/Player_Anim/AM_PlayerShowItemFull.AM_PlayerShowItemFull",
+          "SubPathString": ""
+        },
+        "sectionName": "full",
+        "animationSpeed": 1.5,
+        "consumeItemAnim": {
+          "AssetPathName": "/Game/_Imports/Animasi/Retarget_ANIM/AnimMontage/AM_Player_ConsumeItem.AM_Player_ConsumeItem",
+          "SubPathString": ""
+        }
       }
     }
   },
@@ -230,7 +386,7 @@
             "effects": [
               {
                 "ObjectName": "C_ConsumeItemMasteryEffect'DA_ItemConsumableCustomEffectsConfig:C_ConsumeItemMasteryEffect_3'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.3"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.13"
               }
             ]
           }
@@ -240,7 +396,7 @@
             "effects": [
               {
                 "ObjectName": "C_ConsumeItemMasteryEffect'DA_ItemConsumableCustomEffectsConfig:C_ConsumeItemMasteryEffect_4'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.4"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.14"
               }
             ]
           }
@@ -250,7 +406,7 @@
             "effects": [
               {
                 "ObjectName": "C_ConsumeItemMasteryEffect'DA_ItemConsumableCustomEffectsConfig:C_ConsumeItemMasteryEffect_5'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.5"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.15"
               }
             ]
           }
@@ -260,7 +416,7 @@
             "effects": [
               {
                 "ObjectName": "C_ConsumeItemMasteryEffect'DA_ItemConsumableCustomEffectsConfig:C_ConsumeItemMasteryEffect_6'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.6"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.16"
               }
             ]
           }
@@ -270,7 +426,7 @@
             "effects": [
               {
                 "ObjectName": "C_ConsumeItemMasteryEffect'DA_ItemConsumableCustomEffectsConfig:C_ConsumeItemMasteryEffect_7'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.7"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.17"
               }
             ]
           }
@@ -280,7 +436,7 @@
             "effects": [
               {
                 "ObjectName": "C_ConsumeItemMasteryEffect'DA_ItemConsumableCustomEffectsConfig:C_ConsumeItemMasteryEffect_8'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.8"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.18"
               }
             ]
           }
@@ -290,7 +446,7 @@
             "effects": [
               {
                 "ObjectName": "C_ConsumeItemMasteryEffect'DA_ItemConsumableCustomEffectsConfig:C_ConsumeItemMasteryEffect_9'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.9"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.19"
               }
             ]
           }
@@ -300,7 +456,7 @@
             "effects": [
               {
                 "ObjectName": "C_ConsumeItemMasteryEffect'DA_ItemConsumableCustomEffectsConfig:C_ConsumeItemMasteryEffect_0'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.2"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.12"
               }
             ]
           }
@@ -310,7 +466,7 @@
             "effects": [
               {
                 "ObjectName": "C_BoostMaxHealthEffect'DA_ItemConsumableCustomEffectsConfig:C_BoostMaxHealthEffect_0'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.0"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.10"
               }
             ]
           }
@@ -320,7 +476,107 @@
             "effects": [
               {
                 "ObjectName": "C_BoostMaxStaminaEffect'DA_ItemConsumableCustomEffectsConfig:C_BoostMaxStaminaEffect_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.11"
+              }
+            ]
+          }
+        },
+        {
+          "item_65595": {
+            "effects": [
+              {
+                "ObjectName": "C_AddItemToInventoryEffect'DA_ItemConsumableCustomEffectsConfig:C_AddItemToInventoryEffect_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.0"
+              }
+            ]
+          }
+        },
+        {
+          "item_65606": {
+            "effects": [
+              {
+                "ObjectName": "C_AddItemToInventoryEffect'DA_ItemConsumableCustomEffectsConfig:C_AddItemToInventoryEffect_1'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.1"
+              }
+            ]
+          }
+        },
+        {
+          "item_65596": {
+            "effects": [
+              {
+                "ObjectName": "C_AddItemToInventoryEffect'DA_ItemConsumableCustomEffectsConfig:C_AddItemToInventoryEffect_2'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.2"
+              }
+            ]
+          }
+        },
+        {
+          "item_65603": {
+            "effects": [
+              {
+                "ObjectName": "C_AddItemToInventoryEffect'DA_ItemConsumableCustomEffectsConfig:C_AddItemToInventoryEffect_3'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.3"
+              }
+            ]
+          }
+        },
+        {
+          "item_65605": {
+            "effects": [
+              {
+                "ObjectName": "C_AddItemToInventoryEffect'DA_ItemConsumableCustomEffectsConfig:C_AddItemToInventoryEffect_4'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.4"
+              }
+            ]
+          }
+        },
+        {
+          "item_65604": {
+            "effects": [
+              {
+                "ObjectName": "C_AddItemToInventoryEffect'DA_ItemConsumableCustomEffectsConfig:C_AddItemToInventoryEffect_5'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.5"
+              }
+            ]
+          }
+        },
+        {
+          "item_65597": {
+            "effects": [
+              {
+                "ObjectName": "C_AddItemToInventoryEffect'DA_ItemConsumableCustomEffectsConfig:C_AddItemToInventoryEffect_6'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.6"
+              }
+            ]
+          }
+        },
+        {
+          "item_65600": {
+            "effects": [
+              {
+                "ObjectName": "C_AddItemToInventoryEffect'DA_ItemConsumableCustomEffectsConfig:C_AddItemToInventoryEffect_7'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.7"
+              }
+            ]
+          }
+        },
+        {
+          "item_65599": {
+            "effects": [
+              {
+                "ObjectName": "C_AddItemToInventoryEffect'DA_ItemConsumableCustomEffectsConfig:C_AddItemToInventoryEffect_8'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.8"
+              }
+            ]
+          }
+        },
+        {
+          "item_65598": {
+            "effects": [
+              {
+                "ObjectName": "C_AddItemToInventoryEffect'DA_ItemConsumableCustomEffectsConfig:C_AddItemToInventoryEffect_9'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Items/DA_ItemConsumableCustomEffectsConfig.9"
               }
             ]
           }

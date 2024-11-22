@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Black_Cat_Statue_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -1.5,
+              "Y": -0.0,
+              "Z": -0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 79.0,
+            "Y": 10.0,
+            "Z": 121.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "C3DCDC5E49027679438715AAF8E21247"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Black_Cat_Statue_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Black_Cat_Statue'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/Wizardly_Indoor/Wizardly_Indoor_Textures/Black_Cat_Statue.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Black_Cat_Statue_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/Wizardly_Indoor/Black_Cat_Statue_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 38.0,
+          "Y": 60.0,
+          "Z": 0.796875,
+          "W": 0.03125
+        },
+        {
+          "X": -41.0,
+          "Y": 60.0,
+          "Z": 0.1796875,
+          "W": 0.03125
+        },
+        {
+          "X": -41.0,
+          "Y": -61.0,
+          "Z": 0.1796875,
+          "W": 0.9765625
+        },
+        {
+          "X": 38.0,
+          "Y": -61.0,
+          "Z": 0.796875,
+          "W": 0.9765625
+        },
+        {
+          "X": 38.0,
+          "Y": 60.0,
+          "Z": 0.796875,
+          "W": 0.03125
+        },
+        {
+          "X": -41.0,
+          "Y": -61.0,
+          "Z": 0.1796875,
+          "W": 0.9765625
+        }
+      ]
+    }
+  }
+]

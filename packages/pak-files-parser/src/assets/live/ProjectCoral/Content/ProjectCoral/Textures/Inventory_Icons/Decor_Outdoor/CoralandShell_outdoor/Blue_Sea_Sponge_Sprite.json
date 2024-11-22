@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Blue_Sea_Sponge_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": -3.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 106.0,
+            "Y": 10.0,
+            "Z": 108.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "67B48DEA44C68840ED37C0A3B490D992"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Blue_Sea_Sponge_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Blue_Sea_Sponge'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/CoralandShell_outdoor/CoralandShell_outdoor_textures/Blue_Sea_Sponge.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Blue_Sea_Sponge_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/CoralandShell_outdoor/Blue_Sea_Sponge_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 53.0,
+          "Y": 51.0,
+          "Z": 0.9140625,
+          "W": 0.1015625
+        },
+        {
+          "X": -53.0,
+          "Y": 51.0,
+          "Z": 0.0859375,
+          "W": 0.1015625
+        },
+        {
+          "X": -53.0,
+          "Y": -57.0,
+          "Z": 0.0859375,
+          "W": 0.9453125
+        },
+        {
+          "X": 53.0,
+          "Y": -57.0,
+          "Z": 0.9140625,
+          "W": 0.9453125
+        },
+        {
+          "X": 53.0,
+          "Y": 51.0,
+          "Z": 0.9140625,
+          "W": 0.1015625
+        },
+        {
+          "X": -53.0,
+          "Y": -57.0,
+          "Z": 0.0859375,
+          "W": 0.9453125
+        }
+      ]
+    }
+  }
+]

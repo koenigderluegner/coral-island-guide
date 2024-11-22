@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Stone_age_bench_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -0.5,
+              "Y": -0.0,
+              "Z": -1.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 125.0,
+            "Y": 10.0,
+            "Z": 74.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "EB0E4160442D6E8135AB0881F08B668A"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Stone_age_bench_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Stone_age_bench'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/StoneAge_Outdoor/StoneAge_Outdoor_Textures/Stone_age_bench.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Stone_age_bench_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/StoneAge_Outdoor/Stone_age_bench_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 62.0,
+          "Y": 36.0,
+          "Z": 0.984375,
+          "W": 0.21875
+        },
+        {
+          "X": -63.0,
+          "Y": 36.0,
+          "Z": 0.0078125,
+          "W": 0.21875
+        },
+        {
+          "X": -63.0,
+          "Y": -38.0,
+          "Z": 0.0078125,
+          "W": 0.796875
+        },
+        {
+          "X": 62.0,
+          "Y": -38.0,
+          "Z": 0.984375,
+          "W": 0.796875
+        },
+        {
+          "X": 62.0,
+          "Y": 36.0,
+          "Z": 0.984375,
+          "W": 0.21875
+        },
+        {
+          "X": -63.0,
+          "Y": -38.0,
+          "Z": 0.0078125,
+          "W": 0.796875
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Shell_gardening_tools_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 1.5,
+              "Y": 0.0,
+              "Z": -0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 121.0,
+            "Y": 10.0,
+            "Z": 127.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "3E565FD54D72773E29A097A98721B7EF"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Shell_gardening_tools_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Shell_gardening_tools'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/CoralandShell_outdoor/CoralandShell_outdoor_textures/Shell_gardening_tools.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Shell_gardening_tools_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/CoralandShell_outdoor/Shell_gardening_tools_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 62.0,
+          "Y": 63.0,
+          "Z": 0.984375,
+          "W": 0.0078125
+        },
+        {
+          "X": -59.0,
+          "Y": 63.0,
+          "Z": 0.0390625,
+          "W": 0.0078125
+        },
+        {
+          "X": -59.0,
+          "Y": -64.0,
+          "Z": 0.0390625,
+          "W": 1.0
+        },
+        {
+          "X": 62.0,
+          "Y": -64.0,
+          "Z": 0.984375,
+          "W": 1.0
+        },
+        {
+          "X": 62.0,
+          "Y": 63.0,
+          "Z": 0.984375,
+          "W": 0.0078125
+        },
+        {
+          "X": -59.0,
+          "Y": -64.0,
+          "Z": 0.0390625,
+          "W": 1.0
+        }
+      ]
+    }
+  }
+]
