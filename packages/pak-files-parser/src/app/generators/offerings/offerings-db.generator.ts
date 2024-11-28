@@ -6,8 +6,6 @@ import { RawOfferingAltar } from "../../../interfaces/raw-data-interfaces/raw-of
 import { OfferingDetailsDbGenerator } from "./offering-details-db.generator";
 import { nonNullable } from "@ci/util";
 import { StringTable } from "../../../util/string-table.class";
-import { RawOffering } from "../../../interfaces/raw-data-interfaces/raw-offering.interface";
-import { environment } from "../../../environments/environment";
 
 export class OfferingsDbGenerator extends BaseGenerator<RawOfferingAltar, OfferingAltar> {
 
@@ -20,19 +18,13 @@ export class OfferingsDbGenerator extends BaseGenerator<RawOfferingAltar, Offeri
 
         this.offeringDetails = offeringDetailsGenerator.generate();
 
-        if (!environment.isBeta)
-            this.datatable[0].Rows['CustomDiving'] = {
-                offeringId: Object.keys(readAsset<Datatable<RawOffering>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_DivingOfferingRegistry.json')[0].Rows),
-                offeringGroupTitle: {CultureInvariantString: null},
-                customType: "diving",
-                isHeritageOffering: false,
-                offeringGroupRewardText: {CultureInvariantString: null}
-            }
 
     }
 
     handleEntry(itemKey: string, dbItem: RawOfferingAltar): OfferingAltar {
 
+
+        const offeringType: Pick<OfferingAltar, 'offeringType'> = {offeringType: 'Temple'}
         const offerings = dbItem.offeringId
             .map(offeringKey => {
                 const rawData = this.offeringDetails.get(offeringKey);
@@ -42,14 +34,13 @@ export class OfferingsDbGenerator extends BaseGenerator<RawOfferingAltar, Offeri
                     return;
                 }
 
+                offeringType.offeringType = rawData.offeringType
+
+
                 return rawData
             })
             .filter(nonNullable)
 
-        let customType: Pick<OfferingAltar, 'customType'> = {}
-        if ('customType' in dbItem) {
-            customType.customType = dbItem.customType
-        }
 
         return {
             key: itemKey,
@@ -58,7 +49,7 @@ export class OfferingsDbGenerator extends BaseGenerator<RawOfferingAltar, Offeri
             offeringGroupRewardText: StringTable.getString(dbItem.offeringGroupRewardText) ?? '',
             offerings,
             isHeritageOffering: dbItem.isHeritageOffering,
-            ...customType
+            ...offeringType
 
         };
 

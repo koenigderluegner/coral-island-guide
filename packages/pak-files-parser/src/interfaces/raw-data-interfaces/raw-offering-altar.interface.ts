@@ -5,5 +5,4 @@ export interface RawOfferingAltar {
     offeringGroupRewardText: SourceString,
     offeringId: string[]
     isHeritageOffering: boolean;
-    customType?: 'diving'
 }

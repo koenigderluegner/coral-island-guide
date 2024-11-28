@@ -3,22 +3,16 @@ import { Datatable } from "../../../interfaces/datatable.interface";
 import { AssetPathNameToIcon, minifyItem, minifyTagBasedItem, readAsset } from "../../../util/functions";
 import { RawOffering } from "../../../interfaces/raw-data-interfaces/raw-offering.interface";
 import { CookingRecipe, Item, Offerings, TagBasedItem } from "@ci/data-types";
-import { getQuality, nonNullable, removeQualityFlag } from "@ci/util";
+import { getEnumValue, getQuality, nonNullable, removeQualityFlag } from "@ci/util";
 import { OfferingRewardsDbGenerator } from "./offering-rewards-db.generator";
 import { OfferingMatch } from "../../../interfaces/offering-match.interface";
 import { StringTable } from "../../../util/string-table.class";
 import { Logger } from "../../../util/logger.class";
-import { environment } from "../../../environments/environment";
 
 export class OfferingDetailsDbGenerator extends BaseGenerator<RawOffering, Offerings> {
 
-    datatable: Datatable<RawOffering>[] = [
-        readAsset<Datatable<RawOffering>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_OfferingRegistry.json'),
-        (environment.isBeta ? [] : readAsset<Datatable<RawOffering>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_DivingOfferingRegistry.json'))
-    ].reduce((previousValue, currentValue) => {
-        Object.assign(previousValue[0]?.Rows ?? {}, (currentValue)[0]?.Rows ?? {});
-        return previousValue
-    }).flat();
+    datatable: Datatable<RawOffering>[] =
+        readAsset<Datatable<RawOffering>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_OfferingRegistry.json')
     private offeringMatches: OfferingMatch[];
 
 
@@ -45,6 +39,7 @@ export class OfferingDetailsDbGenerator extends BaseGenerator<RawOffering, Offer
                 items: [],
                 recipes: []
             },
+            offeringType: getEnumValue(dbItem.offeringType),
             requiredItems: dbItem.requiredItems
                 .map(requiredItem => {
 

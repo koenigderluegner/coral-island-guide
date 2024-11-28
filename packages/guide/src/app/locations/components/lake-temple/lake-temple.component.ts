@@ -36,7 +36,7 @@ export class LakeTempleComponent extends BaseTabbedSelectableContainerComponent<
         super()
         this.offerings$ = this._database.fetchOfferings$().pipe(
             map((records) => {
-                    const altars = records.filter(r => !r.customType);
+                    const altars = records.filter(r => r.offeringType !== 'Diving');
                     const altarNames = altars.map(altar => altar.urlPath);
                     this.activateTabFromRoute(altarNames);
 
