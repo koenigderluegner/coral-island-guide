@@ -10,7 +10,7 @@
     "stackable": true,
     "inventoryCategory": "Artifact",
     "displayKey": "Artifact",
-    "description": "Sepenuhnya dekoratif. Tidak mungkin naga-naga ini bisa memotong apa pun.",
+    "description": "Sepenuhnya dekoratif. Tidak mungkin naga-naga ini bisa memotong apapun.",
     "qualities": {},
     "iconName": "Dragons_trisula_Sprite",
     "tags": [
@@ -79,15 +79,31 @@
       "machine": "SlimeOfReplicator"
     }
   ],
+  "asGift": [
+    {
+      "pref": {
+        "icon": "T_Icon_Love",
+        "label": "Love",
+        "preferenceField": "lovePreferences"
+      },
+      "npcs": [
+        {
+          "key": "KingKrakatoa",
+          "characterName": "King Krakatoa",
+          "iconName": "Icon_king_krakatoa"
+        }
+      ]
+    }
+  ],
   "requiredAsOffering": [
     {
       "key": "HeritageBased",
-      "offeringGroupTitle": "Altar Warisan",
+      "offeringGroupTitle": "Altar Penjaga",
       "urlPath": "guardianaltar",
       "offeringGroupRewardText": "Mural Penjaga",
       "offerings": [
         {
-          "title": "Master Slime",
+          "title": "MasterSlime",
           "imageName": "T_Art_OfferingSlime",
           "numOfItemRequired": 5,
           "rewards": {
@@ -103,6 +119,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Heritage",
           "requiredItems": [
             {
               "item": {
@@ -150,14 +167,15 @@
           ]
         }
       ],
-      "isHeritageOffering": true
+      "isHeritageOffering": true,
+      "offeringType": "Heritage"
     }
   ],
   "chanceAsProcessResult": [
     {
       "input": {
         "id": "item_51304",
-        "displayName": "Peti Marmer",
+        "displayName": "Peti marmer",
         "iconName": "Marble_coffer_Sprite"
       },
       "inputAmount": 1,

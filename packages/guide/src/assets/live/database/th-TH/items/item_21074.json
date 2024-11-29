@@ -325,7 +325,7 @@
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "อาหารจานผักสดๆเพื่อสุขภาพที่ดี ",
+        "description": "อาหารจานผักสด ๆ เพื่อสุขภาพที่ดี",
         "qualities": {
           "bronze": {
             "price": 63,
@@ -550,7 +550,7 @@
       "cookingKey": "PadThai",
       "item": {
         "id": "item_80070",
-        "displayName": "Pad thai",
+        "displayName": "Padthai",
         "price": 340,
         "sellPrice": 93,
         "sellAt": [],
@@ -640,7 +640,7 @@
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "อาหารจานด่วนที่อัดแน่นไปด้วยคุณประโยชน์จากธรรมชาติ ",
+        "description": "เมนูง่าย ๆ ที่เต็มไปด้วยของขวัญจากธรรมชาติ",
         "qualities": {
           "bronze": {
             "price": 219,
@@ -715,7 +715,7 @@
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "ได้ลิ้มรสความสดชื่นของฤดูใบไม้ผลิในทุกๆคำ",
+        "description": "ได้ลิ้มรสความสดชื่นของฤดูใบไม้ผลิในทุก ๆ คำ",
         "qualities": {
           "bronze": {
             "price": 150,
@@ -867,7 +867,7 @@
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "น้ำซุปรสปลาที่กลมกล่อมพร้อมกลิ่นหอมๆของเห็ดทรัฟเฟิล ",
+        "description": "น้ำซุปรสปลาที่กลมกล่อมพร้อมกลิ่นหอม ๆ ของเห็ดทรัฟเฟิล",
         "qualities": {
           "bronze": {
             "price": 817,
@@ -946,7 +946,7 @@
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "แกงกะทิผัก อาหารที่เหมาะกับฤดูใบไม้ร่วง ",
+        "description": "สตูว์ผักแบบง่าย ๆ ในน้ำกะทิ เป็นอาหารที่เพอร์เฟ็กต์สำหรับฤดูใบไม้ร่วง",
         "qualities": {
           "bronze": {
             "price": 322,
@@ -1033,7 +1033,7 @@
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "กินได้จริงหรอ? ใครอยากลอง ตามสบายเลยนะ ",
+        "description": "กินได้จริงเหรอ? ใครอยากลอง ตามสบายเลยนะ ",
         "qualities": {
           "bronze": {
             "price": 58,
@@ -1061,7 +1061,7 @@
       "craftingUnlock": {
         "key": "item_80088",
         "masteryLevel": 4,
-        "masteryType": "Mining"
+        "masteryType": "Value"
       },
       "utensils": [
         "Pot"
@@ -1103,6 +1103,21 @@
             "id": "item_41181",
             "displayName": "โยเกิร์ตนมแพะขวดใหญ่",
             "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50201",
+            "displayName": "เปลือกหอยตลับ",
+            "iconName": "Clam_shell_Sprite"
+          },
+          {
+            "id": "item_50203",
+            "displayName": "หอยแครง",
+            "iconName": "Cockle_Sprite"
+          },
+          {
+            "id": "item_50207",
+            "displayName": "หอยเชลล์เผา",
+            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -1310,15 +1325,31 @@
       ]
     }
   ],
+  "asGift": [
+    {
+      "pref": {
+        "icon": "T_Icon_Love",
+        "label": "Love",
+        "preferenceField": "lovePreferences"
+      },
+      "npcs": [
+        {
+          "key": "Denali",
+          "characterName": "Denali",
+          "iconName": "Icon_denali"
+        }
+      ]
+    }
+  ],
   "requiredAsOffering": [
     {
-      "key": "CustomDiving",
-      "offeringGroupTitle": "",
-      "urlPath": "",
+      "key": "DivingBased",
+      "offeringGroupTitle": "แท่นบูชาสำหรับการดำน้ำ",
+      "urlPath": "divingaltar",
       "offeringGroupRewardText": "",
       "offerings": [
         {
-          "title": "Dua Pulu (20m)",
+          "title": "Location_Diving20m",
           "imageName": "Ocean_Offerings",
           "numOfItemRequired": 4,
           "rewards": {
@@ -1334,6 +1365,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Diving",
           "requiredItems": [
             {
               "item": {
@@ -1375,7 +1407,7 @@
         }
       ],
       "isHeritageOffering": false,
-      "customType": "diving"
+      "offeringType": "Diving"
     }
   ],
   "consumables": {

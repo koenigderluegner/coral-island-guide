@@ -6,7 +6,7 @@
     "sellPrice": 110,
     "sellAt": [],
     "stackable": true,
-    "inventoryCategory": "Artisan product",
+    "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
     "description": "ของทานเล่นอบแห้งที่ทำจากอาหารทะเล ",
     "qualities": {
@@ -30,7 +30,8 @@
     "iconName": "Seafood_jerky_Sprite",
     "tags": [
       "income.farming",
-      "item.artisan.DriedScavengeables"
+      "item.artisan.DriedScavengeables",
+      "Artisan.Dehydrator"
     ]
   },
   "artisanResult": [
@@ -176,7 +177,7 @@
               "item.artisan.DriedScavengeables"
             ],
             "iconName": "Seafood_jerky",
-            "displayName": "ของจากทะเลตากแห้งใดก็ได้",
+            "displayName": "ของที่เก็บได้ในทะเลตากแห้งใดก็ได้",
             "items": [
               {
                 "id": "item_41295",
@@ -370,12 +371,12 @@
               },
               {
                 "id": "item_41402",
-                "displayName": "เห็ดแตรดำหั่นบาง ๆ ",
+                "displayName": "เห็ดแตรดำหั่นบาง ๆ",
                 "iconName": "Seafood_jerky_Sprite"
               },
               {
                 "id": "item_41403",
-                "displayName": "เห็ดมอเรลหั่นบาง ๆ ",
+                "displayName": "เห็ดมอเรลหั่นบาง ๆ",
                 "iconName": "Seafood_jerky_Sprite"
               },
               {
@@ -396,7 +397,7 @@
       "craftingUnlock": {
         "key": "item_63044",
         "masteryLevel": 8,
-        "masteryType": "Catching"
+        "masteryType": "Value"
       },
       "item": {
         "id": "item_63044",
@@ -407,9 +408,563 @@
         "stackable": true,
         "inventoryCategory": "Trap",
         "displayKey": "Trap",
-        "description": "กับดัก",
+        "description": "กับดักชนิดหนึ่ง",
         "qualities": {},
         "iconName": "Float_trap_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_64009",
+      "displayName": "Bamboo net small",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_62003",
+            "displayName": "สาหร่ายเคลป์สีเงิน",
+            "iconName": "Silver_Kelp_Sprite"
+          },
+          "amount": 3
+        },
+        {
+          "item": {
+            "id": "item_65032",
+            "displayName": "ไฟเบอร์",
+            "iconName": "Fiber_Sprite"
+          },
+          "amount": 2
+        },
+        {
+          "item": {
+            "id": "item_65003",
+            "displayName": "ไม้",
+            "iconName": "Wood_Sprite"
+          },
+          "amount": 4
+        }
+      ],
+      "genericIngredients": [
+        {
+          "key": "Any_DriedScavengables",
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_DriedScavengables",
+            "tags": [
+              "item.artisan.DriedScavengeables"
+            ],
+            "iconName": "Seafood_jerky",
+            "displayName": "ของที่เก็บได้ในทะเลตากแห้งใดก็ได้",
+            "items": [
+              {
+                "id": "item_41295",
+                "displayName": "หอยลายอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41296",
+                "displayName": "หอยแครงอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41297",
+                "displayName": "หอยไม้ไผ่อบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41298",
+                "displayName": "หอยเปลือกแข็งอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41299",
+                "displayName": "เอ็นหอยจอบสีเหลืองอำพันอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41300",
+                "displayName": "เพรียงคอห่านอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41301",
+                "displayName": "หอยหลอดอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41302",
+                "displayName": "หอยกาบอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41303",
+                "displayName": "หอยกูอีดั๊กอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41304",
+                "displayName": "เห็ดทะเลอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41305",
+                "displayName": "หอยปากเป็ดอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41306",
+                "displayName": "หอยม้าลายอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41307",
+                "displayName": "หอยแมลงภู่อบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41308",
+                "displayName": "หอยแมลงภู่เขียวอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41309",
+                "displayName": "หอยกะพงอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41310",
+                "displayName": "หอยนางรมแปซิฟิกอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41311",
+                "displayName": "หอยนางรมอีสต์เทินอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41312",
+                "displayName": "หอยนางรมเบอลงอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41313",
+                "displayName": "หอยนางรมบลูอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41314",
+                "displayName": "หอยนางรมคุมาโมโตะอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41315",
+                "displayName": "หอยนางรมโอลิมเปียอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41316",
+                "displayName": "หอยเชลล์เมดิเตอร์เรเนียนอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41317",
+                "displayName": "หอยเชลล์คาลิโคอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41318",
+                "displayName": "หอยเชลล์อบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41319",
+                "displayName": "หอยเชลล์พาทาโกเนี่ยนอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41320",
+                "displayName": "หอยเชลล์นางพญาอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41321",
+                "displayName": "หอยเชลล์ยักษ์อบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41322",
+                "displayName": "สาหร่ายอบกรอบ",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41323",
+                "displayName": "สาหร่ายอาราเมะอบกรอบ",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41324",
+                "displayName": "สาหร่ายคอมบุอบกรอบ",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41325",
+                "displayName": "สาหร่ายผักกาดทะเลอบกรอบ",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41326",
+                "displayName": "สาหร่ายพวงองุ่นอบกรอบ",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41327",
+                "displayName": "หอยเม่นสีดำอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41328",
+                "displayName": "หอยเม่นสีม่วงอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41329",
+                "displayName": "หอยเม่นสีเขียวอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41330",
+                "displayName": "หอยเม่นสีแดงอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41331",
+                "displayName": "หอยเม่นหัวใจอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41401",
+                "displayName": "เห็ดมัตสึทาเกะหั่นบาง ๆ",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41402",
+                "displayName": "เห็ดแตรดำหั่นบาง ๆ",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41403",
+                "displayName": "เห็ดมอเรลหั่นบาง ๆ",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41404",
+                "displayName": "เห็ดชิทาเกะหั่นบาง ๆ",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41405",
+                "displayName": "Coral cap chips",
+                "iconName": "Seafood_jerky_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Misc",
+      "craftingUnlock": {
+        "key": "item_64009",
+        "masteryLevel": 3,
+        "masteryType": "Value"
+      },
+      "item": {
+        "id": "item_64009",
+        "displayName": "ตาข่ายไม้ไผ่ขนาดเล็ก",
+        "price": 960,
+        "sellPrice": 240,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Trap",
+        "displayKey": "Trap",
+        "description": "สำหรับวางในน้ำเพื่อดักจับปลา",
+        "qualities": {},
+        "iconName": "Bamboo_net_small_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_64015",
+      "displayName": "Bamboo net large",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_62002",
+            "displayName": "สาหร่ายเคลป์สีทอง",
+            "iconName": "Gold_Kelp_Sprite"
+          },
+          "amount": 3
+        },
+        {
+          "item": {
+            "id": "item_65032",
+            "displayName": "ไฟเบอร์",
+            "iconName": "Fiber_Sprite"
+          },
+          "amount": 3
+        },
+        {
+          "item": {
+            "id": "item_65063",
+            "displayName": "ไม้เนื้อแข็ง",
+            "iconName": "HardWood_Sprite"
+          },
+          "amount": 4
+        }
+      ],
+      "genericIngredients": [
+        {
+          "key": "Any_DriedScavengables",
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_DriedScavengables",
+            "tags": [
+              "item.artisan.DriedScavengeables"
+            ],
+            "iconName": "Seafood_jerky",
+            "displayName": "ของที่เก็บได้ในทะเลตากแห้งใดก็ได้",
+            "items": [
+              {
+                "id": "item_41295",
+                "displayName": "หอยลายอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41296",
+                "displayName": "หอยแครงอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41297",
+                "displayName": "หอยไม้ไผ่อบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41298",
+                "displayName": "หอยเปลือกแข็งอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41299",
+                "displayName": "เอ็นหอยจอบสีเหลืองอำพันอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41300",
+                "displayName": "เพรียงคอห่านอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41301",
+                "displayName": "หอยหลอดอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41302",
+                "displayName": "หอยกาบอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41303",
+                "displayName": "หอยกูอีดั๊กอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41304",
+                "displayName": "เห็ดทะเลอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41305",
+                "displayName": "หอยปากเป็ดอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41306",
+                "displayName": "หอยม้าลายอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41307",
+                "displayName": "หอยแมลงภู่อบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41308",
+                "displayName": "หอยแมลงภู่เขียวอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41309",
+                "displayName": "หอยกะพงอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41310",
+                "displayName": "หอยนางรมแปซิฟิกอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41311",
+                "displayName": "หอยนางรมอีสต์เทินอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41312",
+                "displayName": "หอยนางรมเบอลงอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41313",
+                "displayName": "หอยนางรมบลูอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41314",
+                "displayName": "หอยนางรมคุมาโมโตะอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41315",
+                "displayName": "หอยนางรมโอลิมเปียอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41316",
+                "displayName": "หอยเชลล์เมดิเตอร์เรเนียนอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41317",
+                "displayName": "หอยเชลล์คาลิโคอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41318",
+                "displayName": "หอยเชลล์อบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41319",
+                "displayName": "หอยเชลล์พาทาโกเนี่ยนอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41320",
+                "displayName": "หอยเชลล์นางพญาอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41321",
+                "displayName": "หอยเชลล์ยักษ์อบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41322",
+                "displayName": "สาหร่ายอบกรอบ",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41323",
+                "displayName": "สาหร่ายอาราเมะอบกรอบ",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41324",
+                "displayName": "สาหร่ายคอมบุอบกรอบ",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41325",
+                "displayName": "สาหร่ายผักกาดทะเลอบกรอบ",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41326",
+                "displayName": "สาหร่ายพวงองุ่นอบกรอบ",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41327",
+                "displayName": "หอยเม่นสีดำอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41328",
+                "displayName": "หอยเม่นสีม่วงอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41329",
+                "displayName": "หอยเม่นสีเขียวอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41330",
+                "displayName": "หอยเม่นสีแดงอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41331",
+                "displayName": "หอยเม่นหัวใจอบแห้ง",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41401",
+                "displayName": "เห็ดมัตสึทาเกะหั่นบาง ๆ",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41402",
+                "displayName": "เห็ดแตรดำหั่นบาง ๆ",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41403",
+                "displayName": "เห็ดมอเรลหั่นบาง ๆ",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41404",
+                "displayName": "เห็ดชิทาเกะหั่นบาง ๆ",
+                "iconName": "Seafood_jerky_Sprite"
+              },
+              {
+                "id": "item_41405",
+                "displayName": "Coral cap chips",
+                "iconName": "Seafood_jerky_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Misc",
+      "craftingUnlock": {
+        "key": "item_64015",
+        "masteryLevel": 7,
+        "masteryType": "Value"
+      },
+      "item": {
+        "id": "item_64015",
+        "displayName": "ตาข่ายไม้ไผ่ขนาดใหญ่",
+        "price": 3200,
+        "sellPrice": 800,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Trap",
+        "displayKey": "Trap",
+        "description": "สำหรับวางในน้ำเพื่อดักจับปลา",
+        "qualities": {},
+        "iconName": "Bamboo_net_Large_Sprite",
         "tags": []
       }
     }
@@ -417,9 +972,9 @@
   "requiredAsOffering": [
     {
       "key": "SpecialityBased",
-      "offeringGroupTitle": "แท่นบูชาขั้นส฿ง",
+      "offeringGroupTitle": "แท่นบูชาขั้นสูง",
       "urlPath": "advancedaltar",
-      "offeringGroupRewardText": "ปลดล็อคห่อกระทงซีซาเจน",
+      "offeringGroupRewardText": "ปลดล็อกถ้ำแห่งความทรงจำ",
       "offerings": [
         {
           "title": "ผลิตภัณฑ์พื้นบ้านพื้นฐาน",
@@ -438,6 +993,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -466,7 +1022,7 @@
             {
               "item": {
                 "key": "Any_DriedScavengables",
-                "displayName": "ของจากทะเลตากแห้งใดก็ได้",
+                "displayName": "ของที่เก็บได้ในทะเลตากแห้งใดก็ได้",
                 "iconName": "Seafood_jerky"
               },
               "amount": 1
@@ -482,7 +1038,8 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "isHeritageOffering": false,
+      "offeringType": "Temple"
     }
   ],
   "consumables": {

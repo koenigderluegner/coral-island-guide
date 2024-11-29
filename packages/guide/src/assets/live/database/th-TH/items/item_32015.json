@@ -8,9 +8,9 @@
       "Sam"
     ],
     "stackable": true,
-    "inventoryCategory": "Animal product",
+    "inventoryCategory": "AnimalProduct",
     "displayKey": "AnimalProduct",
-    "description": "ขนนกขนาดใหญ่ที่สวยงาม",
+    "description": "ขนนกขนาดใหญ่สวยงาม",
     "qualities": {
       "bronze": {
         "price": 2420,
@@ -136,12 +136,28 @@
       "machine": "SlimeOfTransmutation"
     }
   ],
+  "asGift": [
+    {
+      "pref": {
+        "icon": "T_Icon_Love",
+        "label": "Love",
+        "preferenceField": "lovePreferences"
+      },
+      "npcs": [
+        {
+          "key": "QueenNandaDevi",
+          "characterName": "ราชินีนันทาเทวี",
+          "iconName": "Icon_queen_nanda_devi"
+        }
+      ]
+    }
+  ],
   "requiredAsOffering": [
     {
       "key": "RareBased",
       "offeringGroupTitle": "แท่นบูชาหายาก",
       "urlPath": "rarealtar",
-      "offeringGroupRewardText": "ปลดล็อกการเข้าถึงพื้นที่สะวันนา",
+      "offeringGroupRewardText": "ปลดล็อกขันธ์เครื่องบูชา",
       "offerings": [
         {
           "title": "ผลผลิตจากปศุสัตว์หายาก",
@@ -152,7 +168,7 @@
               {
                 "item": {
                   "id": "item_65509",
-                  "displayName": "ที่ให้อาหารสัตว์อัตโนมัติ",
+                  "displayName": "เครื่องลูบสัตว์อัตโนมัติ",
                   "iconName": "Auto_Petter_Sprite"
                 },
                 "amount": 1
@@ -160,6 +176,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -209,14 +226,21 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "isHeritageOffering": false,
+      "offeringType": "Temple"
     }
   ],
   "producedByAnimal": {
     "key": "Peafowl",
     "variants": [
       {
-        "variant": "Default",
+        "variant": "Key",
+        "icons": {
+          "adult": null
+        }
+      },
+      {
+        "variant": "Value",
         "icons": {
           "adult": "Peafowl_Sprite"
         }

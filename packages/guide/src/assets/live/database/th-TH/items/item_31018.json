@@ -8,7 +8,7 @@
       "Sam"
     ],
     "stackable": true,
-    "inventoryCategory": "Animal product",
+    "inventoryCategory": "AnimalProduct",
     "displayKey": "AnimalProduct",
     "description": "นมแพะขวดใหญ่",
     "qualities": {
@@ -496,7 +496,7 @@
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "ขนมหวานเย็นๆ เหมาะสำหรับวันที่อากาศร้อน หรือจริงๆ จะกินวันไหนก็ดีทั้งนั้นแหละ ",
+        "description": "ขนมหวานเย็น ๆ เหมาะสำหรับวันที่อากาศร้อน หรือจริง ๆ จะกินวันไหนก็ดีทั้งนั้นแหละ",
         "qualities": {
           "bronze": {
             "price": 92,
@@ -554,7 +554,7 @@
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "อาหารเช้าที่เหมาะสำหรับเริ่มต้นวันดีๆ ",
+        "description": "อาหารเช้าที่เหมาะสำหรับเริ่มต้นวันดี ๆ",
         "qualities": {
           "bronze": {
             "price": 167,
@@ -694,7 +694,7 @@
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "กินได้จริงหรอ? ใครอยากลอง ตามสบายเลยนะ ",
+        "description": "กินได้จริงเหรอ? ใครอยากลอง ตามสบายเลยนะ ",
         "qualities": {
           "bronze": {
             "price": 58,
@@ -722,7 +722,7 @@
       "craftingUnlock": {
         "key": "item_80088",
         "masteryLevel": 4,
-        "masteryType": "Mining"
+        "masteryType": "Value"
       },
       "utensils": [
         "Pot"
@@ -764,6 +764,21 @@
             "id": "item_41181",
             "displayName": "โยเกิร์ตนมแพะขวดใหญ่",
             "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50201",
+            "displayName": "เปลือกหอยตลับ",
+            "iconName": "Clam_shell_Sprite"
+          },
+          {
+            "id": "item_50203",
+            "displayName": "หอยแครง",
+            "iconName": "Cockle_Sprite"
+          },
+          {
+            "id": "item_50207",
+            "displayName": "หอยเชลล์เผา",
+            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -781,7 +796,7 @@
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "ทาร์ตอันเล็กๆน่ารัก ไส้ไข่สีเหลืองทอง ",
+        "description": "ทาร์ตอันเล็ก ๆ น่ารัก ไส้ไข่สีเหลืองทอง",
         "qualities": {
           "bronze": {
             "price": 259,
@@ -909,9 +924,9 @@
   "requiredAsOffering": [
     {
       "key": "SpecialityBased",
-      "offeringGroupTitle": "แท่นบูชาขั้นส฿ง",
+      "offeringGroupTitle": "แท่นบูชาขั้นสูง",
       "urlPath": "advancedaltar",
-      "offeringGroupRewardText": "ปลดล็อคห่อกระทงซีซาเจน",
+      "offeringGroupRewardText": "ปลดล็อกถ้ำแห่งความทรงจำ",
       "offerings": [
         {
           "title": "สัตว์ที่เลี้ยงในคอก",
@@ -930,11 +945,12 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
                 "id": "item_31004",
-                "displayName": "นมวัว",
+                "displayName": "นม",
                 "iconName": "Milk_Sprite_"
               },
               "amount": 1,
@@ -988,7 +1004,8 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "isHeritageOffering": false,
+      "offeringType": "Temple"
     }
   ],
   "consumables": {
@@ -1057,7 +1074,13 @@
     "key": "Goat",
     "variants": [
       {
-        "variant": "Default",
+        "variant": "Key",
+        "icons": {
+          "adult": null
+        }
+      },
+      {
+        "variant": "Value",
         "icons": {
           "adult": "Goat_Sprite"
         }

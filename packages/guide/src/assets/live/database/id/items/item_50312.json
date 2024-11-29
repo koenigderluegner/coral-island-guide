@@ -188,7 +188,7 @@
       "craftingUnlock": {
         "key": "item_94067",
         "masteryLevel": 4,
-        "masteryType": "Diving"
+        "masteryType": "Value"
       },
       "item": {
         "id": "item_94067",
@@ -197,7 +197,7 @@
         "sellPrice": 1240,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "None",
         "description": "Menghilangkan kelembaban dari buah-buahan dan sayuran. Memproses kentang, ubi jalar, kangkung, dan bit menjadi keripik.",
         "qualities": {},
@@ -233,7 +233,7 @@
             "items": [
               {
                 "id": "item_21013",
-                "displayName": "Peoni",
+                "displayName": "Peony",
                 "iconName": "Peony_Sprite"
               },
               {
@@ -243,27 +243,27 @@
               },
               {
                 "id": "item_21016",
-                "displayName": "Snowdrop",
+                "displayName": "Tetes salju",
                 "iconName": "Snowdrop_Sprite"
               },
               {
                 "id": "item_21045",
-                "displayName": "Poppy",
+                "displayName": "Popi",
                 "iconName": "Poppy_Sprite"
               },
               {
                 "id": "item_21077",
-                "displayName": "Bluebell blossom",
+                "displayName": "Benih kembang bluebell",
                 "iconName": "Bluebell_Blossom_Sprite"
               },
               {
                 "id": "item_21080",
-                "displayName": "Helixpur blossom",
+                "displayName": "Kembang helikspur",
                 "iconName": "Helixpur_Blossom_Sprite"
               },
               {
                 "id": "item_21081",
-                "displayName": "Marinethorn blossom",
+                "displayName": "Kembang durilaut",
                 "iconName": "Marinethorn_Blossom_Sprite"
               },
               {
@@ -278,7 +278,7 @@
               },
               {
                 "id": "item_22015",
-                "displayName": "Bunga Matahari",
+                "displayName": "Bunga matahari",
                 "iconName": "Sunflower_Sprite"
               },
               {
@@ -298,7 +298,7 @@
               },
               {
                 "id": "item_23014",
-                "displayName": "Dahlia Biru",
+                "displayName": "Dahlia biru",
                 "iconName": "Blue_Dahlia_Sprite"
               },
               {
@@ -328,12 +328,12 @@
               },
               {
                 "id": "item_51104",
-                "displayName": "Bunga Tulip",
+                "displayName": "Tulip",
                 "iconName": "Tulip_Sprite"
               },
               {
                 "id": "item_51105",
-                "displayName": "Bunga Violet",
+                "displayName": "Violet",
                 "iconName": "Violet_Sprite"
               },
               {
@@ -394,7 +394,7 @@
       "craftingUnlock": {
         "key": "item_64008",
         "masteryLevel": 9,
-        "masteryType": "Catching"
+        "masteryType": "Value"
       },
       "item": {
         "id": "item_64008",
@@ -405,13 +405,29 @@
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "Aroma yang dapat dibuat yang menurunkan kesadaran makhluk lautan mengambang. Dapat dikonsumsi atau melekat pada perangkap.",
+        "description": "Aroma yang bisa dibuat, bisa menurunkan kesadaran hewan laut mengapung. Bisa dikonsumsi atau dipasang pada perangkap.",
         "qualities": {},
         "iconName": "Floating_critter_scent_Sprite",
         "tags": [
           "Item.Consumable.Food"
         ]
       }
+    }
+  ],
+  "asGift": [
+    {
+      "pref": {
+        "icon": "T_Icon_Hate",
+        "label": "Hate",
+        "preferenceField": "hatePreferences"
+      },
+      "npcs": [
+        {
+          "key": "ChoOyu",
+          "characterName": "Cho Oyu",
+          "iconName": "Icon_oracle_chooyu"
+        }
+      ]
     }
   ],
   "requiredAsOffering": [
@@ -422,7 +438,7 @@
       "offeringGroupRewardText": "Membuka Rumah Kaca",
       "offerings": [
         {
-          "title": "Barang-Barang Laut",
+          "title": "Loot Laut",
           "imageName": "Ocean_Offerings",
           "numOfItemRequired": -1,
           "rewards": {
@@ -438,6 +454,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -451,7 +468,7 @@
             {
               "item": {
                 "id": "item_50344",
-                "displayName": "Kerang scallop raja",
+                "displayName": "Skalop raja",
                 "iconName": "King_Scallop_Sprite"
               },
               "amount": 1,
@@ -487,7 +504,8 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "isHeritageOffering": false,
+      "offeringType": "Temple"
     }
   ]
 }
