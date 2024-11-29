@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "extract-assets": " START /D \".\\packages\\file-extraction\\UnrealExporter\" UnrealExporter.exe config",
+    "extract-assets-live": "json -I -f \"./packages/file-extraction/UnrealExporter/configs/config.json\" -e \"this.outputDir='../../pak-files-parser/src/assets/live'\" &&  START /D \".\\packages\\file-extraction\\UnrealExporter\" UnrealExporter.exe config",
+    "extract-assets-beta": "json -I -f \"./packages/file-extraction/UnrealExporter/configs/config.json\" -e \"this.outputDir='../../pak-files-parser/src/assets/beta'\" &&  START /D \".\\packages\\file-extraction\\UnrealExporter\" UnrealExporter.exe config",
     "prepare-deploy": "nx run pak-files-parser:prepare:beta && nx run pak-files-parser:prepare:live && nx run guide:build:production && copy .\\dist\\packages\\guide\\browser\\index.html .\\dist\\packages\\guide\\browser\\404.html && git reset --hard"
   },
   "private": true,
@@ -36,6 +37,7 @@
     "autoprefixer": "^10.4.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.0.0",
+    "json": "^11.0.0",
     "nx": "19.1.0",
     "postcss": "^8.4.5",
     "prettier": "^2.6.2",
