@@ -186,7 +186,7 @@ export function extractOutfitPortraitsLocation(dbItem: RawNPC, itemKey: string) 
 
 export function generateGameVersionFile() {
     let version = 'unknown'
-    const versionFile = path.join(config.source.contentRoot, 'Version', 'Config.json');
+    const versionFile = path.join(config.source.contentRoot, 'Version', 'Config.ini');
     if (fs.existsSync(versionFile)) {
         version = fs.readFileSync(versionFile, {encoding: 'utf8', flag: 'r'}).trim();
         fs.writeFileSync(path.join(config.target.versionRootPath, 'version.json'), JSON.stringify({version}));
