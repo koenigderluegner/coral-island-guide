@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Baroque_Flooring_04_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 1.5,
+              "Y": 0.0,
+              "Z": -2.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 103.0,
+            "Y": 10.0,
+            "Z": 102.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "E699395B4D97121227D72CA2F147C070"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Baroque_Flooring_04_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Baroque_Flooring_04'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/Baroque_indoor/Baroque_indoor_textures/Baroque_Flooring_04.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Baroque_Flooring_04_Sprite:BodySetup_0'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/Baroque_indoor/Baroque_Flooring_04_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 53.0,
+          "Y": 49.0,
+          "Z": 0.9140625,
+          "W": 0.1171875
+        },
+        {
+          "X": -50.0,
+          "Y": 49.0,
+          "Z": 0.109375,
+          "W": 0.1171875
+        },
+        {
+          "X": -50.0,
+          "Y": -53.0,
+          "Z": 0.109375,
+          "W": 0.9140625
+        },
+        {
+          "X": 53.0,
+          "Y": -53.0,
+          "Z": 0.9140625,
+          "W": 0.9140625
+        },
+        {
+          "X": 53.0,
+          "Y": 49.0,
+          "Z": 0.9140625,
+          "W": 0.1171875
+        },
+        {
+          "X": -50.0,
+          "Y": -53.0,
+          "Z": 0.109375,
+          "W": 0.9140625
+        }
+      ]
+    }
+  }
+]

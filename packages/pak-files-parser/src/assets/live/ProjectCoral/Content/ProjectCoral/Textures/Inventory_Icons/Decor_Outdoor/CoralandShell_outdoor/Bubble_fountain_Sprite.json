@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Bubble_fountain_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -2.5,
+              "Y": -0.0,
+              "Z": -2.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 79.0,
+            "Y": 10.0,
+            "Z": 95.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "85756AF6453B200F4017A1A638ADB4C0"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Bubble_fountain_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Bubble_fountain'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/CoralandShell_outdoor/CoralandShell_outdoor_textures/Bubble_fountain.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Bubble_fountain_Sprite:BodySetup_0'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/CoralandShell_outdoor/Bubble_fountain_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 37.0,
+          "Y": 45.0,
+          "Z": 0.7890625,
+          "W": 0.1484375
+        },
+        {
+          "X": -42.0,
+          "Y": 45.0,
+          "Z": 0.171875,
+          "W": 0.1484375
+        },
+        {
+          "X": -42.0,
+          "Y": -50.0,
+          "Z": 0.171875,
+          "W": 0.890625
+        },
+        {
+          "X": 37.0,
+          "Y": -50.0,
+          "Z": 0.7890625,
+          "W": 0.890625
+        },
+        {
+          "X": 37.0,
+          "Y": 45.0,
+          "Z": 0.7890625,
+          "W": 0.1484375
+        },
+        {
+          "X": -42.0,
+          "Y": -50.0,
+          "Z": 0.171875,
+          "W": 0.890625
+        }
+      ]
+    }
+  }
+]

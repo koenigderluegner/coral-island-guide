@@ -7,13 +7,12 @@ import { GameplayEffectsConfig, GameplayEffectsConfigEntry } from "../../../type
 import { OfferingMatch } from "../../../interfaces/offering-match.interface";
 import { RawAddItemToInventoryEffect } from "../../../interfaces/raw-data-interfaces/da-file-parse/effects/add-item-to-inventory-effect.type";
 import { RawUnlockCookingRecipeEffect } from "../../../interfaces/raw-data-interfaces/da-file-parse/effects/unlock-cooking-recipe-effect.type";
-import { environment } from "../../../environments/environment";
 
 export class OfferingRewardsDbGenerator extends BaseGenerator<RawOfferingReward, OfferingMatch> {
 
     datatable: Datatable<RawOfferingReward>[] = [
         readAsset<Datatable<RawOfferingReward>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_OfferingRewardRegistry.json'),
-       readAsset<Datatable<RawOfferingReward>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_HeritageOfferingRewardRegistry.json') ,
+        readAsset<Datatable<RawOfferingReward>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_HeritageOfferingRewardRegistry.json'),
     ].reduce((previousValue, currentValue) => {
         Object.assign(previousValue[0]?.Rows ?? {}, (currentValue)[0]?.Rows ?? {});
         return previousValue
@@ -45,10 +44,10 @@ export class OfferingRewardsDbGenerator extends BaseGenerator<RawOfferingReward,
         let conf;
 
         if (Array.isArray(map)) {
-            const offeringRewardsConfigEffectsMaps = map.find(entry => Object.keys(entry).includes(dbItem.rewardID));
-            conf = offeringRewardsConfigEffectsMaps?.[dbItem.rewardID]?.effects
+            const offeringRewardsConfigEffectsMaps = map.find(entry => entry.Key.includes(dbItem.rewardID));
+            conf = offeringRewardsConfigEffectsMaps?.Value?.effects
         } else {
-            conf = map[dbItem.rewardID]?.effects
+            conf = map.Value?.effects
         }
 
         if (!conf) console.log('no reward conf for ', dbItem.rewardID)

@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Coral_Nightstand_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -2.5,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 75.0,
+            "Y": 10.0,
+            "Z": 124.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "A9AA4E174A5AE79906B842ACEAE9206A"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Coral_Nightstand_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Coral_Nightstand'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/CoralandShell_indoor/CoralandShell_indoor_textures/Coral_Nightstand.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Coral_Nightstand_Sprite:BodySetup_0'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/CoralandShell_indoor/Coral_Nightstand_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 35.0,
+          "Y": 62.0,
+          "Z": 0.7734375,
+          "W": 0.015625
+        },
+        {
+          "X": -40.0,
+          "Y": 62.0,
+          "Z": 0.1875,
+          "W": 0.015625
+        },
+        {
+          "X": -40.0,
+          "Y": -62.0,
+          "Z": 0.1875,
+          "W": 0.984375
+        },
+        {
+          "X": 35.0,
+          "Y": -62.0,
+          "Z": 0.7734375,
+          "W": 0.984375
+        },
+        {
+          "X": 35.0,
+          "Y": 62.0,
+          "Z": 0.7734375,
+          "W": 0.015625
+        },
+        {
+          "X": -40.0,
+          "Y": -62.0,
+          "Z": 0.1875,
+          "W": 0.984375
+        }
+      ]
+    }
+  }
+]

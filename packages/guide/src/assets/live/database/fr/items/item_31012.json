@@ -8,7 +8,7 @@
       "Sam"
     ],
     "stackable": true,
-    "inventoryCategory": "Animal product",
+    "inventoryCategory": "AnimalProduct",
     "displayKey": "AnimalProduct",
     "description": "Gros œuf de poule.",
     "qualities": {
@@ -1039,7 +1039,7 @@
       "craftingUnlock": {
         "key": "item_80033",
         "masteryLevel": 1,
-        "masteryType": "Ranching"
+        "masteryType": "Value"
       },
       "utensils": [
         "Skillet"
@@ -1132,6 +1132,22 @@
               "iconName": "Large_egg_Sprite_"
             },
             "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_31023",
+              "displayName": "Œuf doré",
+              "iconName": "Golden_egg_Sprite"
+            },
+            "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_31021",
+              "displayName": "Gros œuf doré",
+              "iconName": "Large_golden_egg_Sprite"
+            },
+            "amount": 1
           }
         ]
       ]
@@ -1177,7 +1193,7 @@
       "craftingUnlock": {
         "key": "item_80088",
         "masteryLevel": 4,
-        "masteryType": "Mining"
+        "masteryType": "Value"
       },
       "utensils": [
         "Pot"
@@ -1219,6 +1235,21 @@
             "id": "item_41181",
             "displayName": "Grand yaourt de chèvre",
             "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50201",
+            "displayName": "Coquille de palourde",
+            "iconName": "Clam_shell_Sprite"
+          },
+          {
+            "id": "item_50203",
+            "displayName": "Coquille",
+            "iconName": "Cockle_Sprite"
+          },
+          {
+            "id": "item_50207",
+            "displayName": "Pétoncle de flamme",
+            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -1433,7 +1464,7 @@
       "craftingUnlock": {
         "key": "item_64010",
         "masteryLevel": 6,
-        "masteryType": "Combat"
+        "masteryType": "Value"
       },
       "item": {
         "id": "item_64010",
@@ -1646,6 +1677,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -1686,7 +1718,8 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "isHeritageOffering": false,
+      "offeringType": "Temple"
     }
   ],
   "consumables": {
@@ -1755,15 +1788,27 @@
     "key": "Chicken",
     "variants": [
       {
-        "variant": "Default",
+        "variant": "Key",
+        "icons": {
+          "adult": null
+        }
+      },
+      {
+        "variant": "Value",
         "icons": {
           "adult": "Chicken_White_Sprite"
         }
       },
       {
-        "variant": "Brown",
+        "variant": "Key",
         "icons": {
-          "adult": "Chicken_Brown_Sprite"
+          "adult": null
+        }
+      },
+      {
+        "variant": "Value",
+        "icons": {
+          "adult": "Chicken_White_Sprite"
         }
       }
     ],

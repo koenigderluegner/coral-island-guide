@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Wizard_Robe_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -1.5,
+              "Y": 0.0,
+              "Z": 0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 67.0,
+            "Y": 10.0,
+            "Z": 123.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "1535D6EC40A5F2EF79BE9DBFF4922EAD"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Wizard_Robe_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Wizard_Robe'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/Wizardly_Indoor/Wizardly_Indoor_Textures/Wizard_Robe.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Wizard_Robe_Sprite:BodySetup_0'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/Wizardly_Indoor/Wizard_Robe_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 32.0,
+          "Y": 62.0,
+          "Z": 0.75,
+          "W": 0.015625
+        },
+        {
+          "X": -35.0,
+          "Y": 62.0,
+          "Z": 0.2265625,
+          "W": 0.015625
+        },
+        {
+          "X": -35.0,
+          "Y": -61.0,
+          "Z": 0.2265625,
+          "W": 0.9765625
+        },
+        {
+          "X": 32.0,
+          "Y": -61.0,
+          "Z": 0.75,
+          "W": 0.9765625
+        },
+        {
+          "X": 32.0,
+          "Y": 62.0,
+          "Z": 0.75,
+          "W": 0.015625
+        },
+        {
+          "X": -35.0,
+          "Y": -61.0,
+          "Z": 0.2265625,
+          "W": 0.9765625
+        }
+      ]
+    }
+  }
+]

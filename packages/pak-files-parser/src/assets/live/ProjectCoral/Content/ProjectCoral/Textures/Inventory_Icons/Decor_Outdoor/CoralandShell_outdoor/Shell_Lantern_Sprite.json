@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Shell_Lantern_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 1.0,
+              "Y": 0.0,
+              "Z": -0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 74.0,
+            "Y": 10.0,
+            "Z": 125.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "BCF7E3BF486FA24466A4E68099D722F3"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Shell_Lantern_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Shell_Lantern'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/CoralandShell_outdoor/CoralandShell_outdoor_textures/Shell_Lantern.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Shell_Lantern_Sprite:BodySetup_0'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/CoralandShell_outdoor/Shell_Lantern_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 38.0,
+          "Y": 62.0,
+          "Z": 0.796875,
+          "W": 0.015625
+        },
+        {
+          "X": -36.0,
+          "Y": 62.0,
+          "Z": 0.21875,
+          "W": 0.015625
+        },
+        {
+          "X": -36.0,
+          "Y": -63.0,
+          "Z": 0.21875,
+          "W": 0.9921875
+        },
+        {
+          "X": 38.0,
+          "Y": -63.0,
+          "Z": 0.796875,
+          "W": 0.9921875
+        },
+        {
+          "X": 38.0,
+          "Y": 62.0,
+          "Z": 0.796875,
+          "W": 0.015625
+        },
+        {
+          "X": -36.0,
+          "Y": -63.0,
+          "Z": 0.21875,
+          "W": 0.9921875
+        }
+      ]
+    }
+  }
+]

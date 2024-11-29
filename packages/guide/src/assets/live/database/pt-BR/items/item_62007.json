@@ -210,7 +210,7 @@
       "craftingUnlock": {
         "key": "item_94067",
         "masteryLevel": 4,
-        "masteryType": "Diving"
+        "masteryType": "Value"
       },
       "item": {
         "id": "item_94067",
@@ -219,7 +219,7 @@
         "sellPrice": 1240,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "None",
         "description": "Remove a umidade de espólios marinhos, como ostras e vieiras. Cria produtos artesanais secos.",
         "qualities": {},
@@ -279,61 +279,6 @@
         "description": "Um acessório de aspersor. Aplica fertilizante automaticamente às sementes próximas quando carregado.",
         "qualities": {},
         "iconName": "Auto_fertilizer_Sprite",
-        "tags": []
-      }
-    },
-    {
-      "key": "item_65511",
-      "displayName": "Auto feeder",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_65005",
-            "displayName": "Bateria",
-            "iconName": "Battery_Sprite"
-          },
-          "amount": 1
-        },
-        {
-          "item": {
-            "id": "item_62007",
-            "displayName": "Essência de kelp de prata",
-            "iconName": "Silver_Kelp_Essence_Sprite"
-          },
-          "amount": 3
-        },
-        {
-          "item": {
-            "id": "item_65033",
-            "displayName": "Feno",
-            "iconName": "Hay_Sprite"
-          },
-          "amount": 20
-        },
-        {
-          "item": {
-            "id": "item_65107",
-            "displayName": "Sucata",
-            "iconName": "Scrap_Sprite"
-          },
-          "amount": 50
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Farming",
-      "item": {
-        "id": "item_65511",
-        "displayName": "Comedouro automático",
-        "price": 1420,
-        "sellPrice": 850,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Farming",
-        "displayKey": "Farming",
-        "description": "Coloque na fazenda.",
-        "qualities": {},
-        "iconName": "Auto_Feeder_Sprite",
         "tags": []
       }
     },
@@ -581,6 +526,61 @@
         "description": "Uma anêmona como acessório de aspersor de lumina. Colhe as plantações subaquáticas automaticamente.",
         "qualities": {},
         "iconName": "Anemone_auto_harvest_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65511",
+      "displayName": "Auto feeder",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65005",
+            "displayName": "Bateria",
+            "iconName": "Battery_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_62007",
+            "displayName": "Essência de kelp de prata",
+            "iconName": "Silver_Kelp_Essence_Sprite"
+          },
+          "amount": 3
+        },
+        {
+          "item": {
+            "id": "item_65033",
+            "displayName": "Feno",
+            "iconName": "Hay_Sprite"
+          },
+          "amount": 20
+        },
+        {
+          "item": {
+            "id": "item_65107",
+            "displayName": "Sucata",
+            "iconName": "Scrap_Sprite"
+          },
+          "amount": 50
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Farming",
+      "item": {
+        "id": "item_65511",
+        "displayName": "Comedouro automático",
+        "price": 1420,
+        "sellPrice": 850,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Coloque na fazenda.",
+        "qualities": {},
+        "iconName": "Auto_Feeder_Sprite",
         "tags": []
       }
     }
@@ -873,6 +873,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -931,16 +932,17 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "isHeritageOffering": false,
+      "offeringType": "Temple"
     },
     {
-      "key": "CustomDiving",
-      "offeringGroupTitle": "",
-      "urlPath": "",
+      "key": "DivingBased",
+      "offeringGroupTitle": "Altar de Mergulho",
+      "urlPath": "divingaltar",
       "offeringGroupRewardText": "",
       "offerings": [
         {
-          "title": "Dua Pulu (20m)",
+          "title": "Location_Diving20m",
           "imageName": "Ocean_Offerings",
           "numOfItemRequired": 4,
           "rewards": {
@@ -956,6 +958,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Diving",
           "requiredItems": [
             {
               "item": {
@@ -997,7 +1000,7 @@
         }
       ],
       "isHeritageOffering": false,
-      "customType": "diving"
+      "offeringType": "Diving"
     }
   ]
 }

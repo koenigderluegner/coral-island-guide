@@ -8,7 +8,7 @@
       "Sam"
     ],
     "stackable": true,
-    "inventoryCategory": "Artisan product",
+    "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
     "description": "Mantequilla hecha con leche batida.",
     "qualities": {
@@ -466,6 +466,110 @@
       "eitherOrIngredients": []
     },
     {
+      "key": "item_80078",
+      "amount": 1,
+      "cookingKey": "ApplePie",
+      "item": {
+        "id": "item_80078",
+        "displayName": "Tarta de manzana",
+        "price": 450,
+        "sellPrice": 191,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Una tarta de hojaldre rellena de manzana dulce y especiada.",
+        "qualities": {
+          "bronze": {
+            "price": 518,
+            "sellPrice": 220
+          },
+          "silver": {
+            "price": 563,
+            "sellPrice": 239
+          },
+          "gold": {
+            "price": 675,
+            "sellPrice": 287
+          },
+          "osmium": {
+            "price": 900,
+            "sellPrice": 382
+          }
+        },
+        "iconName": "Apple_Pie_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "utensils": [
+        "Oven"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Butter_LargeButter",
+            "displayName": "Mantequilla/Mantequilla grande",
+            "tags": [],
+            "iconName": "Butter_Sprite"
+          },
+          "key": "Butter_LargeButter"
+        },
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Honey",
+            "tags": [
+              "item.artisan.honey"
+            ],
+            "iconName": "T_AnyHoney_Sprite",
+            "displayName": "Cualquier miel"
+          },
+          "key": "Any_Honey"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_23017",
+            "displayName": "Manzana",
+            "iconName": "Apple_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_41026",
+            "displayName": "Harina de trigo",
+            "iconName": "Wheat_flour_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [
+        [
+          {
+            "item": {
+              "id": "item_41039",
+              "displayName": "Butter",
+              "iconName": "Butter_Sprite"
+            },
+            "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_41049",
+              "displayName": "Mantequilla grande",
+              "iconName": "Large_Butter_Sprite"
+            },
+            "amount": 1
+          }
+        ]
+      ]
+    },
+    {
       "key": "item_80074",
       "amount": 1,
       "cookingKey": "MincedJackfruitPie",
@@ -590,7 +694,7 @@
           "amount": 1,
           "genericItem": {
             "key": "Butter_LargeButter",
-            "displayName": "Butter/Large Butter",
+            "displayName": "Mantequilla/Mantequilla grande",
             "tags": [],
             "iconName": "Butter_Sprite"
           },
@@ -827,7 +931,7 @@
       "craftingUnlock": {
         "key": "item_80088",
         "masteryLevel": 4,
-        "masteryType": "Mining"
+        "masteryType": "Value"
       },
       "utensils": [
         "Pot"
@@ -869,6 +973,21 @@
             "id": "item_41181",
             "displayName": "Yogur de cabra grande",
             "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50201",
+            "displayName": "Concha",
+            "iconName": "Clam_shell_Sprite"
+          },
+          {
+            "id": "item_50203",
+            "displayName": "Berberecho",
+            "iconName": "Cockle_Sprite"
+          },
+          {
+            "id": "item_50207",
+            "displayName": "Almeja de fuego",
+            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -898,6 +1017,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -942,7 +1062,8 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "isHeritageOffering": false,
+      "offeringType": "Temple"
     }
   ]
 }

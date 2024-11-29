@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Coral_Gazebo_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 3.5,
+              "Y": 0.0,
+              "Z": 1.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 105.0,
+            "Y": 10.0,
+            "Z": 123.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "D46AF32A4D44A289CF4BAE92AD76F057"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Coral_Gazebo_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Coral_Gazebo'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/CoralandShell_outdoor/CoralandShell_outdoor_textures/Coral_Gazebo.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Coral_Gazebo_Sprite:BodySetup_0'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/CoralandShell_outdoor/Coral_Gazebo_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 56.0,
+          "Y": 63.0,
+          "Z": 0.9375,
+          "W": 0.0078125
+        },
+        {
+          "X": -49.0,
+          "Y": 63.0,
+          "Z": 0.1171875,
+          "W": 0.0078125
+        },
+        {
+          "X": -49.0,
+          "Y": -60.0,
+          "Z": 0.1171875,
+          "W": 0.96875
+        },
+        {
+          "X": 56.0,
+          "Y": -60.0,
+          "Z": 0.9375,
+          "W": 0.96875
+        },
+        {
+          "X": 56.0,
+          "Y": 63.0,
+          "Z": 0.9375,
+          "W": 0.0078125
+        },
+        {
+          "X": -49.0,
+          "Y": -60.0,
+          "Z": 0.1171875,
+          "W": 0.96875
+        }
+      ]
+    }
+  }
+]

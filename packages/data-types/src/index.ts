@@ -15,6 +15,7 @@ export * from './lib/types/effects/update-npc-schedule-effect.type';
 export * from './lib/types/effects/vary-money-effect.type';
 export * from './lib/types/effects/unlock-special-item-effect.type';
 export * from './lib/types/effects/boost-max-health-effect.type';
+export * from './lib/types/effects/mark-dino-hologram-reward-claimed-effect.type';
 
 
 export * from './lib/types/requirements/complete-mining-requirement.type';
@@ -43,6 +44,9 @@ export * from './lib/types/requirements/special-item-requirements.type';
 export * from './lib/types/requirements/temple-level-requirement.type';
 export * from './lib/types/requirements/ship-to-unlock-requirement.type';
 export * from './lib/types/requirements/dino-hologram-item-reward-claimed-requirement.type';
+export * from './lib/types/requirements/date-season-requirement.type';
+export * from './lib/types/requirements/time-date-requirement.type';
+
 
 export * from './lib/interfaces/achievement.interface';
 export * from './lib/interfaces/animal-data.interface';
@@ -112,6 +116,7 @@ export * from './lib/types/shop-names.type';
 export * from './lib/types/treasure-hunt.type';
 export * from './lib/types/weather.type';
 export * from './lib/types/item-mixing-recipe-data.type';
+export * from './lib/types/offering-type.type';
 
 export * from './lib/dashboard/critter-dashboard-entry.type';
 export * from './lib/dashboard/fish-dashboard-entry.type';

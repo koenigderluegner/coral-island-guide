@@ -13,6 +13,14 @@ export function keys<T extends Readonly<Record<any, any>>>(object: T): T extends
     return Object.keys(object) as T extends EmptyObject ? [] : (keyof T)[];
 }
 
+export function unifyInternalPath(internalPath: string): string {
+    return internalPath
+        .replace('/Game/ProjectCoral/', '/ProjectCoral/Content/ProjectCoral/')
+        .replace('\\Game\\ProjectCoral\\', '/ProjectCoral/Content/ProjectCoral/')
+        .replace('\\', path.sep)
+        .replace('/', path.sep)
+}
+
 export function getParsedArgs(): Record<string, any> {
     return process.argv
         .filter(s => s.startsWith('-'))
@@ -30,7 +38,10 @@ export function getParsedArgs(): Record<string, any> {
 }
 
 export function readAsset<T = any>(fileName: string): T {
-    return JSON.parse(fs.readFileSync(path.join(environment.assetPath, fileName), {encoding: 'utf8', flag: 'r'}));
+    return JSON.parse(fs.readFileSync(unifyInternalPath(path.join(environment.assetPath, fileName)), {
+        encoding: 'utf8',
+        flag: 'r'
+    }));
 }
 
 export function generateJson(fileName: string, jsonContent: any, readable = false, lang: AvailableLanguage | 'none' = "en") {

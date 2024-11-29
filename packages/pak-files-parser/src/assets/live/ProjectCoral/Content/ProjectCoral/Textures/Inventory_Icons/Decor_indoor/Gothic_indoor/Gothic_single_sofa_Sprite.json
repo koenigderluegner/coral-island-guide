@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Gothic_single_sofa_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -9.0,
+              "Y": 0.0,
+              "Z": 1.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 90.0,
+            "Y": 10.0,
+            "Z": 126.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "5AF3E6774E81191847F440AF7F1E11FE"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Gothic_single_sofa_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Gothic_single_sofa'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/Gothic_indoor/Gothic_indoor_textures/Gothic_single_sofa.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Gothic_single_sofa_Sprite:BodySetup_0'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/Gothic_indoor/Gothic_single_sofa_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 36.0,
+          "Y": 64.0,
+          "Z": 0.78125,
+          "W": 0.0
+        },
+        {
+          "X": -54.0,
+          "Y": 64.0,
+          "Z": 0.078125,
+          "W": 0.0
+        },
+        {
+          "X": -54.0,
+          "Y": -62.0,
+          "Z": 0.078125,
+          "W": 0.984375
+        },
+        {
+          "X": 36.0,
+          "Y": -62.0,
+          "Z": 0.78125,
+          "W": 0.984375
+        },
+        {
+          "X": 36.0,
+          "Y": 64.0,
+          "Z": 0.78125,
+          "W": 0.0
+        },
+        {
+          "X": -54.0,
+          "Y": -62.0,
+          "Z": 0.078125,
+          "W": 0.984375
+        }
+      ]
+    }
+  }
+]

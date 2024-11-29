@@ -8,7 +8,7 @@
       "Sam"
     ],
     "stackable": true,
-    "inventoryCategory": "Artisan product",
+    "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
     "description": "A big chunk of butter made from churned milk.",
     "qualities": {
@@ -448,6 +448,110 @@
       "eitherOrIngredients": []
     },
     {
+      "key": "item_80078",
+      "amount": 1,
+      "cookingKey": "ApplePie",
+      "item": {
+        "id": "item_80078",
+        "displayName": "Apple pie",
+        "price": 450,
+        "sellPrice": 191,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Sweet, spiced apple filling in a flaky pastry crust.",
+        "qualities": {
+          "bronze": {
+            "price": 518,
+            "sellPrice": 220
+          },
+          "silver": {
+            "price": 563,
+            "sellPrice": 239
+          },
+          "gold": {
+            "price": 675,
+            "sellPrice": 287
+          },
+          "osmium": {
+            "price": 900,
+            "sellPrice": 382
+          }
+        },
+        "iconName": "Apple_Pie_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "utensils": [
+        "Oven"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Butter_LargeButter",
+            "displayName": "Butter/Large Butter",
+            "tags": [],
+            "iconName": "Butter_Sprite"
+          },
+          "key": "Butter_LargeButter"
+        },
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Honey",
+            "tags": [
+              "item.artisan.honey"
+            ],
+            "iconName": "T_AnyHoney_Sprite",
+            "displayName": "Any Honey"
+          },
+          "key": "Any_Honey"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_23017",
+            "displayName": "Apple",
+            "iconName": "Apple_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_41026",
+            "displayName": "Wheat flour",
+            "iconName": "Wheat_flour_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [
+        [
+          {
+            "item": {
+              "id": "item_41039",
+              "displayName": "Butter",
+              "iconName": "Butter_Sprite"
+            },
+            "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_41049",
+              "displayName": "Large butter",
+              "iconName": "Large_Butter_Sprite"
+            },
+            "amount": 1
+          }
+        ]
+      ]
+    },
+    {
       "key": "item_80074",
       "amount": 1,
       "cookingKey": "MincedJackfruitPie",
@@ -809,7 +913,7 @@
       "craftingUnlock": {
         "key": "item_80088",
         "masteryLevel": 4,
-        "masteryType": "Mining"
+        "masteryType": "Value"
       },
       "utensils": [
         "Pot"
@@ -851,6 +955,21 @@
             "id": "item_41181",
             "displayName": "Large goat yogurt",
             "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50201",
+            "displayName": "Clam shell",
+            "iconName": "Clam_shell_Sprite"
+          },
+          {
+            "id": "item_50203",
+            "displayName": "Cockle",
+            "iconName": "Cockle_Sprite"
+          },
+          {
+            "id": "item_50207",
+            "displayName": "Flame scallop",
+            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -880,6 +999,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -924,7 +1044,8 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "isHeritageOffering": false,
+      "offeringType": "Temple"
     }
   ]
 }

@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Wizard_Wall_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 2.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 122.0,
+            "Y": 10.0,
+            "Z": 128.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "1A426EF54E230AE0CD34D4AEB9B7B5C5"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Wizard_Wall_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Wizard_Wall'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/Wizardly_Indoor/Wizardly_Indoor_Textures/Wizard_Wall.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Wizard_Wall_Sprite:BodySetup_0'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/Wizardly_Indoor/Wizard_Wall_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 63.0,
+          "Y": 64.0,
+          "Z": 0.9921875,
+          "W": 0.0
+        },
+        {
+          "X": -59.0,
+          "Y": 64.0,
+          "Z": 0.0390625,
+          "W": 0.0
+        },
+        {
+          "X": -59.0,
+          "Y": -64.0,
+          "Z": 0.0390625,
+          "W": 1.0
+        },
+        {
+          "X": 63.0,
+          "Y": -64.0,
+          "Z": 0.9921875,
+          "W": 1.0
+        },
+        {
+          "X": 63.0,
+          "Y": 64.0,
+          "Z": 0.9921875,
+          "W": 0.0
+        },
+        {
+          "X": -59.0,
+          "Y": -64.0,
+          "Z": 0.0390625,
+          "W": 1.0
+        }
+      ]
+    }
+  }
+]

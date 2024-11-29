@@ -5,6 +5,7 @@ import { InventoryItem } from '../../../interfaces/inventory-item.interface';
 import { Item } from '@ci/data-types';
 import { getQuality, removeQualityFlag } from "@ci/util";
 import { StringTable } from "../../../util/string-table.class";
+import { InventoryItemEngineInterface } from "../../../interfaces/inventory-item-engine.interface";
 
 export class ItemDbGenerator {
 
@@ -27,8 +28,8 @@ export class ItemDbGenerator {
             const dbItem: InventoryItem = this.itemDb[0]?.Rows[itemKey];
 
             if (itemKey.endsWith('-a') || itemKey.endsWith('-b') || itemKey.endsWith('-c') || itemKey.endsWith('-d')) {
-                let qualities = map.get(removeQualityFlag(itemKey))?.['qualities'];
-                let quality = getQuality(itemKey);
+                const qualities = map.get(removeQualityFlag(itemKey))?.['qualities'];
+                const quality = getQuality(itemKey);
                 if (qualities && quality)
                     qualities[quality] = {
                         price: dbItem.price,
@@ -57,19 +58,19 @@ export class ItemDbGenerator {
             };
 
             const dataMap = this.itemEngineDataDb[0]?.Properties.dataMap;
-            let engineData;
+            let engineData: InventoryItemEngineInterface | undefined;
             if (Array.isArray(dataMap)) {
-                const offeringRewardsConfigEffectsMaps = dataMap.find(entry => Object.keys(entry).includes(itemKey));
-                engineData = offeringRewardsConfigEffectsMaps?.[itemKey]
+                const offeringRewardsConfigEffectsMaps = dataMap.find(entry => entry.Key.includes(itemKey));
+                engineData = offeringRewardsConfigEffectsMaps?.Value
             } else {
-                engineData = dataMap[itemKey]
+                engineData = dataMap?.Value
             }
 
             if (engineData) {
                 item.tags = engineData.tags ?? [];
 
                 const objectName = engineData.icon?.AssetPathName;
-                if (!!objectName) {
+                if (objectName) {
                     item.iconName = AssetPathNameToIcon(objectName);
                 }
 

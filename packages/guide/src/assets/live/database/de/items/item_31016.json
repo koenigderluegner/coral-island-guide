@@ -8,7 +8,7 @@
       "Sam"
     ],
     "stackable": true,
-    "inventoryCategory": "Animal product",
+    "inventoryCategory": "AnimalProduct",
     "displayKey": "AnimalProduct",
     "description": "Eine große Flasche Kuhmilch.",
     "qualities": {
@@ -709,6 +709,22 @@
               "iconName": "Large_milk_Sprite_"
             },
             "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_31024",
+              "displayName": "Goldene Milch",
+              "iconName": "Golden_milk_Sprite"
+            },
+            "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_31022",
+              "displayName": "Große goldene Milch",
+              "iconName": "Large_golden_milk_Sprite"
+            },
+            "amount": 1
           }
         ]
       ]
@@ -824,7 +840,7 @@
       "craftingUnlock": {
         "key": "item_80088",
         "masteryLevel": 4,
-        "masteryType": "Mining"
+        "masteryType": "Value"
       },
       "utensils": [
         "Pot"
@@ -866,6 +882,21 @@
             "id": "item_41181",
             "displayName": "Großer Ziegenjoghurt",
             "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50201",
+            "displayName": "Muschelschale",
+            "iconName": "Clam_shell_Sprite"
+          },
+          {
+            "id": "item_50203",
+            "displayName": "Herzmuschel",
+            "iconName": "Cockle_Sprite"
+          },
+          {
+            "id": "item_50207",
+            "displayName": "Flammen-Jakobsmuschel",
+            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -955,7 +986,7 @@
       "cookingKey": "EsDoger",
       "item": {
         "id": "item_80093",
-        "displayName": "Es doger",
+        "displayName": "Esdoger",
         "price": 260,
         "sellPrice": 100,
         "sellAt": [],
@@ -1049,6 +1080,22 @@
               "iconName": "Large_milk_Sprite_"
             },
             "amount": 0
+          },
+          {
+            "item": {
+              "id": "item_31024",
+              "displayName": "Goldene Milch",
+              "iconName": "Golden_milk_Sprite"
+            },
+            "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_31022",
+              "displayName": "Große goldene Milch",
+              "iconName": "Large_golden_milk_Sprite"
+            },
+            "amount": 1
           }
         ]
       ]
@@ -1136,6 +1183,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -1194,7 +1242,8 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "isHeritageOffering": false,
+      "offeringType": "Temple"
     }
   ],
   "consumables": {
@@ -1263,15 +1312,27 @@
     "key": "Cow",
     "variants": [
       {
-        "variant": "Default",
+        "variant": "Key",
+        "icons": {
+          "adult": null
+        }
+      },
+      {
+        "variant": "Value",
         "icons": {
           "adult": "Cow_White_Sprite"
         }
       },
       {
-        "variant": "Brown",
+        "variant": "Key",
         "icons": {
-          "adult": "Cow_Brown_Sprite"
+          "adult": null
+        }
+      },
+      {
+        "variant": "Value",
+        "icons": {
+          "adult": "Cow_White_Sprite"
         }
       }
     ],

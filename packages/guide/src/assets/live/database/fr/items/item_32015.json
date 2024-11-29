@@ -8,7 +8,7 @@
       "Sam"
     ],
     "stackable": true,
-    "inventoryCategory": "Animal product",
+    "inventoryCategory": "AnimalProduct",
     "displayKey": "AnimalProduct",
     "description": "Grande jolie plume.",
     "qualities": {
@@ -136,6 +136,22 @@
       "machine": "SlimeOfTransmutation"
     }
   ],
+  "asGift": [
+    {
+      "pref": {
+        "icon": "T_Icon_Love",
+        "label": "Love",
+        "preferenceField": "lovePreferences"
+      },
+      "npcs": [
+        {
+          "key": "QueenNandaDevi",
+          "characterName": "Reine  Nanda  Devi",
+          "iconName": "Icon_queen_nanda_devi"
+        }
+      ]
+    }
+  ],
   "requiredAsOffering": [
     {
       "key": "RareBased",
@@ -160,6 +176,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -209,14 +226,21 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "isHeritageOffering": false,
+      "offeringType": "Temple"
     }
   ],
   "producedByAnimal": {
     "key": "Peafowl",
     "variants": [
       {
-        "variant": "Default",
+        "variant": "Key",
+        "icons": {
+          "adult": null
+        }
+      },
+      {
+        "variant": "Value",
         "icons": {
           "adult": "Peafowl_Sprite"
         }

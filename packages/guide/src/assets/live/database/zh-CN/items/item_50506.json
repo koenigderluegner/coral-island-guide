@@ -32,7 +32,7 @@
             "iconName": "Slime_goop_Sprite"
           },
           "amount": 1,
-          "chance": 20
+          "chance": 40
         }
       ]
     },
@@ -51,7 +51,7 @@
             "iconName": "Slime_goop_Sprite"
           },
           "amount": 1,
-          "chance": 20
+          "chance": 40
         }
       ]
     },
@@ -70,7 +70,7 @@
             "iconName": "Slime_goop_Sprite"
           },
           "amount": 1,
-          "chance": 20
+          "chance": 40
         }
       ]
     },
@@ -89,7 +89,7 @@
             "iconName": "Slime_goop_Sprite"
           },
           "amount": 1,
-          "chance": 20
+          "chance": 40
         }
       ]
     },
@@ -108,7 +108,7 @@
             "iconName": "Slime_goop_Sprite"
           },
           "amount": 1,
-          "chance": 20
+          "chance": 40
         }
       ]
     },
@@ -193,7 +193,7 @@
       "craftingUnlock": {
         "key": "item_80053",
         "masteryLevel": 7,
-        "masteryType": "Mining"
+        "masteryType": "Value"
       },
       "utensils": [
         "SeasoningSet"
@@ -221,6 +221,40 @@
     }
   ],
   "usedToCraft": [
+    {
+      "key": "Item_41201",
+      "displayName": "Ball of goop",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_50506",
+            "displayName": "史莱姆泥",
+            "iconName": "Slime_goop_Sprite"
+          },
+          "amount": 3
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Misc",
+      "item": {
+        "id": "item_41201",
+        "displayName": "史莱姆信玄饼",
+        "price": 100,
+        "sellPrice": 30,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "绝望的探险家会吃的食物。可制作。",
+        "qualities": {},
+        "iconName": "Ball_of_Goop_Sprite",
+        "tags": [
+          "income.farming",
+          "Item.Consumable.Food"
+        ]
+      }
+    },
     {
       "key": "item_65313",
       "displayName": "Hydro III",
@@ -256,11 +290,11 @@
       "craftingUnlock": {
         "key": "item_65313",
         "masteryLevel": 8,
-        "masteryType": "Farming"
+        "masteryType": "Value"
       },
       "item": {
         "id": "item_65313",
-        "displayName": "Hydro III",
+        "displayName": "HydroIII",
         "price": 50,
         "sellPrice": 18,
         "sellAt": [],
@@ -270,66 +304,6 @@
         "description": "如果与土壤混合，将使土壤保持过夜的水分。",
         "qualities": {},
         "iconName": "Hydro_III_Sprite",
-        "tags": []
-      }
-    },
-    {
-      "key": "item_65268",
-      "displayName": "Slime of replication",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_50506",
-            "displayName": "史莱姆泥",
-            "iconName": "Slime_goop_Sprite"
-          },
-          "amount": 20
-        },
-        {
-          "item": {
-            "id": "item_61006",
-            "displayName": "金锭",
-            "iconName": "Gold_Bar_Sprite"
-          },
-          "amount": 5
-        },
-        {
-          "item": {
-            "id": "item_62008",
-            "displayName": "锇质海带精华",
-            "iconName": "Osmium_Kelp_Essence_Sprite"
-          },
-          "amount": 2
-        },
-        {
-          "item": {
-            "id": "item_65202",
-            "displayName": "玻璃",
-            "iconName": "Glass_Sprite"
-          },
-          "amount": 30
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Artisan",
-      "craftingUnlock": {
-        "key": "item_65268",
-        "masteryLevel": 10,
-        "masteryType": "Combat"
-      },
-      "item": {
-        "id": "item_65268",
-        "displayName": "史莱姆复制装置",
-        "price": 16000,
-        "sellPrice": 4750,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Artisan equipment",
-        "displayKey": "ArtisanEquipment",
-        "description": "这种史莱姆复制装置可以复制物品。大约三天左右的时间就能搞定。",
-        "qualities": {},
-        "iconName": "Slime_of_replication_Sprite",
         "tags": []
       }
     },
@@ -376,7 +350,7 @@
       "craftingUnlock": {
         "key": "item_65316",
         "masteryLevel": 8,
-        "masteryType": "Combat"
+        "masteryType": "Value"
       },
       "item": {
         "id": "item_65316",
@@ -385,7 +359,7 @@
         "sellPrice": 3250,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "将物品投入其中可提升该物品的质量。",
         "qualities": {},
@@ -394,8 +368,8 @@
       }
     },
     {
-      "key": "Item_41201",
-      "displayName": "Ball of goop",
+      "key": "item_65268",
+      "displayName": "Slime of replication",
       "amount": 1,
       "ingredients": [
         {
@@ -404,27 +378,53 @@
             "displayName": "史莱姆泥",
             "iconName": "Slime_goop_Sprite"
           },
-          "amount": 3
+          "amount": 20
+        },
+        {
+          "item": {
+            "id": "item_61006",
+            "displayName": "金锭",
+            "iconName": "Gold_Bar_Sprite"
+          },
+          "amount": 5
+        },
+        {
+          "item": {
+            "id": "item_62008",
+            "displayName": "锇质海带精华",
+            "iconName": "Osmium_Kelp_Essence_Sprite"
+          },
+          "amount": 2
+        },
+        {
+          "item": {
+            "id": "item_65202",
+            "displayName": "玻璃",
+            "iconName": "Glass_Sprite"
+          },
+          "amount": 30
         }
       ],
       "genericIngredients": [],
-      "category": "Misc",
+      "category": "Artisan",
+      "craftingUnlock": {
+        "key": "item_65268",
+        "masteryLevel": 10,
+        "masteryType": "Value"
+      },
       "item": {
-        "id": "item_41201",
-        "displayName": "史莱姆信玄饼",
-        "price": 100,
-        "sellPrice": 30,
+        "id": "item_65268",
+        "displayName": "史莱姆复制装置",
+        "price": 16000,
+        "sellPrice": 4750,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Consumable",
-        "displayKey": "Consumable",
-        "description": "绝望的探险家会吃的食物。可制作。",
+        "inventoryCategory": "ArtisanEquipment",
+        "displayKey": "ArtisanEquipment",
+        "description": "这种史莱姆复制装置可以复制物品。大约三天左右的时间就能搞定。",
         "qualities": {},
-        "iconName": "Ball_of_Goop_Sprite",
-        "tags": [
-          "income.farming",
-          "Item.Consumable.Food"
-        ]
+        "iconName": "Slime_of_replication_Sprite",
+        "tags": []
       }
     },
     {
@@ -494,17 +494,17 @@
       }
     },
     {
-      "key": "item_65602",
-      "displayName": "Alien scarecrow",
+      "key": "item_65778",
+      "displayName": "Anemone auto seed",
       "amount": 1,
       "ingredients": [
         {
           "item": {
-            "id": "item_65107",
-            "displayName": "碎渣",
-            "iconName": "Scrap_Sprite"
+            "id": "item_62006",
+            "displayName": "金质海带精华",
+            "iconName": "Gold_Kelp_Essence_Sprite"
           },
-          "amount": 20
+          "amount": 3
         },
         {
           "item": {
@@ -512,31 +512,231 @@
             "displayName": "史莱姆泥",
             "iconName": "Slime_goop_Sprite"
           },
-          "amount": 5
+          "amount": 2
         },
         {
           "item": {
-            "id": "item_41029",
-            "displayName": "树脂",
-            "iconName": "Resin_Sprite"
+            "id": "item_62010",
+            "displayName": "太阳核心",
+            "iconName": "Solar_Core_Sprite"
           },
           "amount": 1
         }
       ],
-      "genericIngredients": [],
-      "category": "Scarecrow",
+      "genericIngredients": [
+        {
+          "key": "Any_SeaScavenge",
+          "amount": 5,
+          "genericItem": {
+            "key": "Any_SeaScavenge",
+            "tags": [
+              "item.gathering.sea"
+            ],
+            "iconName": "Any_sea_scavangeable_Sprite",
+            "displayName": "任何海洋采集品",
+            "items": [
+              {
+                "id": "item_50302",
+                "displayName": "黑海胆",
+                "iconName": "Black_sea_urchin_Sprite"
+              },
+              {
+                "id": "item_50303",
+                "displayName": "海藻",
+                "iconName": "Seaweed_Sprite"
+              },
+              {
+                "id": "item_50306",
+                "displayName": "海菇",
+                "iconName": "Sea_Mushroom_Sprite"
+              },
+              {
+                "id": "item_50308",
+                "displayName": "蓝贻贝",
+                "iconName": "Blue_Mussel_Sprite"
+              },
+              {
+                "id": "item_50309",
+                "displayName": "印花扇贝",
+                "iconName": "Calico_Scallop_Sprite"
+              },
+              {
+                "id": "item_50310",
+                "displayName": "血蛤",
+                "iconName": "Blood_Clam_Sprite"
+              },
+              {
+                "id": "item_50311",
+                "displayName": "长牡蛎",
+                "iconName": "Pacific_Oyster_Sprite"
+              },
+              {
+                "id": "item_50313",
+                "displayName": "薄壳蛤蜊",
+                "iconName": "Steamer_Clam_Sprite"
+              },
+              {
+                "id": "item_50315",
+                "displayName": "剑蛏",
+                "iconName": "Jackknife_Clam_Sprite"
+              },
+              {
+                "id": "item_50316",
+                "displayName": "鸭嘴无齿蚌",
+                "iconName": "Duck_Mussel_Sprite"
+              },
+              {
+                "id": "item_50318",
+                "displayName": "地中海扇贝",
+                "iconName": "Mediterranean_Scallop_Sprite"
+              },
+              {
+                "id": "item_50320",
+                "displayName": "阿拉米",
+                "iconName": "Arame_Sprite"
+              },
+              {
+                "id": "item_50322",
+                "displayName": "小圆蛤",
+                "iconName": "Cherrystone_clam_Sprite"
+              },
+              {
+                "id": "item_50323",
+                "displayName": "琥珀江珧贝",
+                "iconName": "Amber_pen_shell_Sprite"
+              },
+              {
+                "id": "item_50324",
+                "displayName": "斑马纹贻贝",
+                "iconName": "Zebra_Mussel_Sprite"
+              },
+              {
+                "id": "item_50326",
+                "displayName": "东部牡蛎",
+                "iconName": "Eastern_Oyster_Sprite"
+              },
+              {
+                "id": "item_50327",
+                "displayName": "贝隆生蚝",
+                "iconName": "Belon_Oyster_Sprite"
+              },
+              {
+                "id": "item_50329",
+                "displayName": "紫色海胆",
+                "iconName": "Purple_urchin_Sprite"
+              },
+              {
+                "id": "item_50330",
+                "displayName": "蛏子",
+                "iconName": "Razor_Clam_Sprite"
+              },
+              {
+                "id": "item_50331",
+                "displayName": "绿唇贻贝",
+                "iconName": "Green_lipped_mussel_Sprite"
+              },
+              {
+                "id": "item_50332",
+                "displayName": "蓝牡蛎",
+                "iconName": "Blue_oyster_Sprite"
+              },
+              {
+                "id": "item_50333",
+                "displayName": "熊本生蚝",
+                "iconName": "Kumamoto_Oyster_Sprite"
+              },
+              {
+                "id": "item_50334",
+                "displayName": "嵌条扇贝",
+                "iconName": "Bay_Scallop_Sprite"
+              },
+              {
+                "id": "item_50335",
+                "displayName": "巴塔哥尼亚扇贝",
+                "iconName": "Patagonian_Scallop_Sprite"
+              },
+              {
+                "id": "item_50336",
+                "displayName": "Kombu",
+                "iconName": "Kombu_Sprite"
+              },
+              {
+                "id": "item_50337",
+                "displayName": "海白菜",
+                "iconName": "Sea_Lettuce_Sprite"
+              },
+              {
+                "id": "item_50338",
+                "displayName": "绿海胆",
+                "iconName": "Green_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50339",
+                "displayName": "Quahog",
+                "iconName": "Quahog_Sprite"
+              },
+              {
+                "id": "item_50340",
+                "displayName": "陆蛤",
+                "iconName": "Geoduck_Sprite"
+              },
+              {
+                "id": "item_50341",
+                "displayName": "马蛤",
+                "iconName": "Horse_Mussel_Sprite"
+              },
+              {
+                "id": "item_50342",
+                "displayName": "奥林匹亚牡蛎",
+                "iconName": "Olympia_oyster_Sprite"
+              },
+              {
+                "id": "item_50343",
+                "displayName": "女王扇贝",
+                "iconName": "Queen_Scallop_Sprite"
+              },
+              {
+                "id": "item_50344",
+                "displayName": "国王扇贝",
+                "iconName": "King_Scallop_Sprite"
+              },
+              {
+                "id": "item_50345",
+                "displayName": "马尾藻",
+                "iconName": "Sea_Grapes_Sprite"
+              },
+              {
+                "id": "item_50346",
+                "displayName": "红海胆",
+                "iconName": "Red_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50347",
+                "displayName": "心形海胆",
+                "iconName": "Heart_Urchin_Sprite"
+              },
+              {
+                "id": "item_50348",
+                "displayName": "鹅颈藤壶",
+                "iconName": "Gooseneck_Barnacle_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Farming",
       "item": {
-        "id": "item_65602",
-        "displayName": "外星人稻草人",
-        "price": 3000,
-        "sellPrice": 255,
+        "id": "item_65778",
+        "displayName": "自动播种海葵",
+        "price": 8100,
+        "sellPrice": 4850,
         "sellAt": [],
         "stackable": true,
         "inventoryCategory": "Farming",
         "displayKey": "Farming",
-        "description": "阻止乌鸦扰乱庄稼。保护一个11x11的区域。",
+        "description": "用于阳光喷洒器附件的海葵。装入种子后，会自动将种子播撒到翻耕过的空耕地上。",
         "qualities": {},
-        "iconName": "Alien_Scarecrow_Sprite",
+        "iconName": "Anemone_auto_seed_Sprite",
         "tags": []
       }
     },
@@ -1035,253 +1235,6 @@
       }
     },
     {
-      "key": "item_65778",
-      "displayName": "Anemone auto seed",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_62006",
-            "displayName": "金质海带精华",
-            "iconName": "Gold_Kelp_Essence_Sprite"
-          },
-          "amount": 3
-        },
-        {
-          "item": {
-            "id": "item_50506",
-            "displayName": "史莱姆泥",
-            "iconName": "Slime_goop_Sprite"
-          },
-          "amount": 2
-        },
-        {
-          "item": {
-            "id": "item_62010",
-            "displayName": "太阳核心",
-            "iconName": "Solar_Core_Sprite"
-          },
-          "amount": 1
-        }
-      ],
-      "genericIngredients": [
-        {
-          "key": "Any_SeaScavenge",
-          "amount": 5,
-          "genericItem": {
-            "key": "Any_SeaScavenge",
-            "tags": [
-              "item.gathering.sea"
-            ],
-            "iconName": "Any_sea_scavangeable_Sprite",
-            "displayName": "任何海洋采集品",
-            "items": [
-              {
-                "id": "item_50302",
-                "displayName": "黑海胆",
-                "iconName": "Black_sea_urchin_Sprite"
-              },
-              {
-                "id": "item_50303",
-                "displayName": "海藻",
-                "iconName": "Seaweed_Sprite"
-              },
-              {
-                "id": "item_50306",
-                "displayName": "海菇",
-                "iconName": "Sea_Mushroom_Sprite"
-              },
-              {
-                "id": "item_50308",
-                "displayName": "蓝贻贝",
-                "iconName": "Blue_Mussel_Sprite"
-              },
-              {
-                "id": "item_50309",
-                "displayName": "印花扇贝",
-                "iconName": "Calico_Scallop_Sprite"
-              },
-              {
-                "id": "item_50310",
-                "displayName": "血蛤",
-                "iconName": "Blood_Clam_Sprite"
-              },
-              {
-                "id": "item_50311",
-                "displayName": "长牡蛎",
-                "iconName": "Pacific_Oyster_Sprite"
-              },
-              {
-                "id": "item_50313",
-                "displayName": "薄壳蛤蜊",
-                "iconName": "Steamer_Clam_Sprite"
-              },
-              {
-                "id": "item_50315",
-                "displayName": "剑蛏",
-                "iconName": "Jackknife_Clam_Sprite"
-              },
-              {
-                "id": "item_50316",
-                "displayName": "鸭嘴无齿蚌",
-                "iconName": "Duck_Mussel_Sprite"
-              },
-              {
-                "id": "item_50318",
-                "displayName": "地中海扇贝",
-                "iconName": "Mediterranean_Scallop_Sprite"
-              },
-              {
-                "id": "item_50320",
-                "displayName": "阿拉米",
-                "iconName": "Arame_Sprite"
-              },
-              {
-                "id": "item_50322",
-                "displayName": "小圆蛤",
-                "iconName": "Cherrystone_clam_Sprite"
-              },
-              {
-                "id": "item_50323",
-                "displayName": "琥珀江珧贝",
-                "iconName": "Amber_pen_shell_Sprite"
-              },
-              {
-                "id": "item_50324",
-                "displayName": "斑马纹贻贝",
-                "iconName": "Zebra_Mussel_Sprite"
-              },
-              {
-                "id": "item_50326",
-                "displayName": "东部牡蛎",
-                "iconName": "Eastern_Oyster_Sprite"
-              },
-              {
-                "id": "item_50327",
-                "displayName": "贝隆生蚝",
-                "iconName": "Belon_Oyster_Sprite"
-              },
-              {
-                "id": "item_50329",
-                "displayName": "紫色海胆",
-                "iconName": "Purple_urchin_Sprite"
-              },
-              {
-                "id": "item_50330",
-                "displayName": "蛏子",
-                "iconName": "Razor_Clam_Sprite"
-              },
-              {
-                "id": "item_50331",
-                "displayName": "绿唇贻贝",
-                "iconName": "Green_lipped_mussel_Sprite"
-              },
-              {
-                "id": "item_50332",
-                "displayName": "蓝牡蛎",
-                "iconName": "Blue_oyster_Sprite"
-              },
-              {
-                "id": "item_50333",
-                "displayName": "熊本生蚝",
-                "iconName": "Kumamoto_Oyster_Sprite"
-              },
-              {
-                "id": "item_50334",
-                "displayName": "嵌条扇贝",
-                "iconName": "Bay_Scallop_Sprite"
-              },
-              {
-                "id": "item_50335",
-                "displayName": "巴塔哥尼亚扇贝",
-                "iconName": "Patagonian_Scallop_Sprite"
-              },
-              {
-                "id": "item_50336",
-                "displayName": "Kombu",
-                "iconName": "Kombu_Sprite"
-              },
-              {
-                "id": "item_50337",
-                "displayName": "海白菜",
-                "iconName": "Sea_Lettuce_Sprite"
-              },
-              {
-                "id": "item_50338",
-                "displayName": "绿海胆",
-                "iconName": "Green_Sea_Urchin_Sprite"
-              },
-              {
-                "id": "item_50339",
-                "displayName": "Quahog",
-                "iconName": "Quahog_Sprite"
-              },
-              {
-                "id": "item_50340",
-                "displayName": "陆蛤",
-                "iconName": "Geoduck_Sprite"
-              },
-              {
-                "id": "item_50341",
-                "displayName": "马蛤",
-                "iconName": "Horse_Mussel_Sprite"
-              },
-              {
-                "id": "item_50342",
-                "displayName": "奥林匹亚牡蛎",
-                "iconName": "Olympia_oyster_Sprite"
-              },
-              {
-                "id": "item_50343",
-                "displayName": "女王扇贝",
-                "iconName": "Queen_Scallop_Sprite"
-              },
-              {
-                "id": "item_50344",
-                "displayName": "国王扇贝",
-                "iconName": "King_Scallop_Sprite"
-              },
-              {
-                "id": "item_50345",
-                "displayName": "马尾藻",
-                "iconName": "Sea_Grapes_Sprite"
-              },
-              {
-                "id": "item_50346",
-                "displayName": "红海胆",
-                "iconName": "Red_Sea_Urchin_Sprite"
-              },
-              {
-                "id": "item_50347",
-                "displayName": "心形海胆",
-                "iconName": "Heart_Urchin_Sprite"
-              },
-              {
-                "id": "item_50348",
-                "displayName": "鹅颈藤壶",
-                "iconName": "Gooseneck_Barnacle_Sprite"
-              }
-            ]
-          }
-        }
-      ],
-      "category": "Farming",
-      "item": {
-        "id": "item_65778",
-        "displayName": "自动播种海葵",
-        "price": 8100,
-        "sellPrice": 4850,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Farming",
-        "displayKey": "Farming",
-        "description": "用于阳光喷洒器附件的海葵。装入种子后，会自动将种子播撒到翻耕过的空耕地上。",
-        "qualities": {},
-        "iconName": "Anemone_auto_seed_Sprite",
-        "tags": []
-      }
-    },
-    {
       "key": "item_65779",
       "displayName": "Anemone auto SFH",
       "amount": 1,
@@ -1527,6 +1480,83 @@
         "iconName": "Anemone_auto_SFH_Sprite",
         "tags": []
       }
+    },
+    {
+      "key": "item_65602",
+      "displayName": "Alien scarecrow",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65107",
+            "displayName": "碎渣",
+            "iconName": "Scrap_Sprite"
+          },
+          "amount": 20
+        },
+        {
+          "item": {
+            "id": "item_50506",
+            "displayName": "史莱姆泥",
+            "iconName": "Slime_goop_Sprite"
+          },
+          "amount": 5
+        },
+        {
+          "item": {
+            "id": "item_41029",
+            "displayName": "树脂",
+            "iconName": "Resin_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Scarecrow",
+      "item": {
+        "id": "item_65602",
+        "displayName": "外星人稻草人",
+        "price": 3000,
+        "sellPrice": 255,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "阻止乌鸦扰乱庄稼。保护一个11x11的区域。",
+        "qualities": {},
+        "iconName": "Alien_Scarecrow_Sprite",
+        "tags": []
+      }
+    }
+  ],
+  "asGift": [
+    {
+      "pref": {
+        "icon": "T_Icon_Like",
+        "label": "Like",
+        "preferenceField": "likePreferences"
+      },
+      "npcs": [
+        {
+          "key": "PrincessMiranjani",
+          "characterName": "Princes Miranjani",
+          "iconName": "Icon_princess_miranjani"
+        }
+      ]
+    },
+    {
+      "pref": {
+        "icon": "T_Icon_Dislike",
+        "label": "Dislike",
+        "preferenceField": "dislikePreferences"
+      },
+      "npcs": [
+        {
+          "key": "QueenNandaDevi",
+          "characterName": "南达德维王后",
+          "iconName": "Icon_queen_nanda_devi"
+        }
+      ]
     }
   ],
   "requiredAsOffering": [
@@ -1553,6 +1583,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -1602,7 +1633,8 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "isHeritageOffering": false,
+      "offeringType": "Temple"
     }
   ]
 }

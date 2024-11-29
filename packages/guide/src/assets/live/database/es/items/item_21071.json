@@ -8,7 +8,7 @@
       "MerfolkGeneral"
     ],
     "stackable": true,
-    "inventoryCategory": "Vegetables",
+    "inventoryCategory": "Fruit",
     "displayKey": "Fruit",
     "description": "No, esto no es una bola de discoteca cósmica, ¡es un Sproutfruit!",
     "qualities": {
@@ -1920,7 +1920,7 @@
       "craftingUnlock": {
         "key": "item_80088",
         "masteryLevel": 4,
-        "masteryType": "Mining"
+        "masteryType": "Value"
       },
       "utensils": [
         "Pot"
@@ -1962,6 +1962,21 @@
             "id": "item_41181",
             "displayName": "Yogur de cabra grande",
             "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50201",
+            "displayName": "Concha",
+            "iconName": "Clam_shell_Sprite"
+          },
+          {
+            "id": "item_50203",
+            "displayName": "Berberecho",
+            "iconName": "Cockle_Sprite"
+          },
+          {
+            "id": "item_50207",
+            "displayName": "Almeja de fuego",
+            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -2082,15 +2097,31 @@
       ]
     }
   ],
+  "asGift": [
+    {
+      "pref": {
+        "icon": "T_Icon_Love",
+        "label": "Love",
+        "preferenceField": "lovePreferences"
+      },
+      "npcs": [
+        {
+          "key": "Etna",
+          "characterName": "Etna",
+          "iconName": "Icon_etna_Sprite"
+        }
+      ]
+    }
+  ],
   "requiredAsOffering": [
     {
-      "key": "CustomDiving",
-      "offeringGroupTitle": "",
-      "urlPath": "",
+      "key": "DivingBased",
+      "offeringGroupTitle": "Altar de buceo",
+      "urlPath": "divingaltar",
       "offeringGroupRewardText": "",
       "offerings": [
         {
-          "title": "Dua Pulu (20m)",
+          "title": "Location_Diving20m",
           "imageName": "Ocean_Offerings",
           "numOfItemRequired": 4,
           "rewards": {
@@ -2106,6 +2137,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Diving",
           "requiredItems": [
             {
               "item": {
@@ -2147,7 +2179,7 @@
         }
       ],
       "isHeritageOffering": false,
-      "customType": "diving"
+      "offeringType": "Diving"
     }
   ],
   "consumables": {

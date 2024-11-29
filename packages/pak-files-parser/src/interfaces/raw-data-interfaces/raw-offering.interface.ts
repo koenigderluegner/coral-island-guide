@@ -1,5 +1,6 @@
 import { SourceString } from "../../types/source-string.type";
 import { AssetPath } from "../../types/asset-path.type";
+import { OfferingType } from "@ci/data-types";
 
 export interface RawOffering {
     "offeringTitleText": SourceString,
@@ -27,5 +28,6 @@ export interface RawOffering {
             "itemQuantity": number
         },
     ],
-    "numOfItemRequired": number
+    "numOfItemRequired": number;
+    "offeringType": `EC_OfferingType::${OfferingType}`,
 }

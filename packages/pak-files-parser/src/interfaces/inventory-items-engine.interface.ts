@@ -1,14 +1,11 @@
 import { InventoryItemEngineInterface } from './inventory-item-engine.interface';
+import { AssetMap } from "../types/asset-map.type";
 
 export interface InventoryItemsEngineInterface {
     "Type": string;
     "Name": string;
     "Properties": {
-        "dataMap": {
-            [key: string]: InventoryItemEngineInterface,
-        } | {
-            [key: string]: InventoryItemEngineInterface,
-        }[]
+        "dataMap": AssetMap<InventoryItemEngineInterface> | AssetMap<InventoryItemEngineInterface>[]
     }
     "decoratorConfig": {
         "ObjectName": string

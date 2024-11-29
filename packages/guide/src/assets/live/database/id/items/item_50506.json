@@ -32,7 +32,7 @@
             "iconName": "Slime_goop_Sprite"
           },
           "amount": 1,
-          "chance": 20
+          "chance": 40
         }
       ]
     },
@@ -51,7 +51,7 @@
             "iconName": "Slime_goop_Sprite"
           },
           "amount": 1,
-          "chance": 20
+          "chance": 40
         }
       ]
     },
@@ -70,7 +70,7 @@
             "iconName": "Slime_goop_Sprite"
           },
           "amount": 1,
-          "chance": 20
+          "chance": 40
         }
       ]
     },
@@ -89,7 +89,7 @@
             "iconName": "Slime_goop_Sprite"
           },
           "amount": 1,
-          "chance": 20
+          "chance": 40
         }
       ]
     },
@@ -108,7 +108,7 @@
             "iconName": "Slime_goop_Sprite"
           },
           "amount": 1,
-          "chance": 20
+          "chance": 40
         }
       ]
     },
@@ -193,7 +193,7 @@
       "craftingUnlock": {
         "key": "item_80053",
         "masteryLevel": 7,
-        "masteryType": "Mining"
+        "masteryType": "Value"
       },
       "utensils": [
         "SeasoningSet"
@@ -221,6 +221,40 @@
     }
   ],
   "usedToCraft": [
+    {
+      "key": "Item_41201",
+      "displayName": "Ball of goop",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_50506",
+            "displayName": "Gumpalan slime",
+            "iconName": "Slime_goop_Sprite"
+          },
+          "amount": 3
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Misc",
+      "item": {
+        "id": "item_41201",
+        "displayName": "Bola Goop",
+        "price": 100,
+        "sellPrice": 30,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Camilan yang dapat dibuat, digunakan oleh penjelajah yang putus asa.",
+        "qualities": {},
+        "iconName": "Ball_of_Goop_Sprite",
+        "tags": [
+          "income.farming",
+          "Item.Consumable.Food"
+        ]
+      }
+    },
     {
       "key": "item_65313",
       "displayName": "Hydro III",
@@ -256,11 +290,11 @@
       "craftingUnlock": {
         "key": "item_65313",
         "masteryLevel": 8,
-        "masteryType": "Farming"
+        "masteryType": "Value"
       },
       "item": {
         "id": "item_65313",
-        "displayName": "Hydro III",
+        "displayName": "HydroIII",
         "price": 50,
         "sellPrice": 18,
         "sellAt": [],
@@ -270,66 +304,6 @@
         "description": "Ini akan membuat tanah tetap berair semalaman jika dicampur dengan tanah.",
         "qualities": {},
         "iconName": "Hydro_III_Sprite",
-        "tags": []
-      }
-    },
-    {
-      "key": "item_65268",
-      "displayName": "Slime of replication",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_50506",
-            "displayName": "Gumpalan slime",
-            "iconName": "Slime_goop_Sprite"
-          },
-          "amount": 20
-        },
-        {
-          "item": {
-            "id": "item_61006",
-            "displayName": "Batang emas",
-            "iconName": "Gold_Bar_Sprite"
-          },
-          "amount": 5
-        },
-        {
-          "item": {
-            "id": "item_62008",
-            "displayName": "Saripati kelp osmium",
-            "iconName": "Osmium_Kelp_Essence_Sprite"
-          },
-          "amount": 2
-        },
-        {
-          "item": {
-            "id": "item_65202",
-            "displayName": "Kaca",
-            "iconName": "Glass_Sprite"
-          },
-          "amount": 30
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Artisan",
-      "craftingUnlock": {
-        "key": "item_65268",
-        "masteryLevel": 10,
-        "masteryType": "Combat"
-      },
-      "item": {
-        "id": "item_65268",
-        "displayName": "Slime replikasi",
-        "price": 16000,
-        "sellPrice": 4750,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Artisan equipment",
-        "displayKey": "ArtisanEquipment",
-        "description": "Slime replikasi ini dapat menduplikasi benda. Kasih waktu sekitar tiga hari atau lebih.",
-        "qualities": {},
-        "iconName": "Slime_of_replication_Sprite",
         "tags": []
       }
     },
@@ -376,7 +350,7 @@
       "craftingUnlock": {
         "key": "item_65316",
         "masteryLevel": 8,
-        "masteryType": "Combat"
+        "masteryType": "Value"
       },
       "item": {
         "id": "item_65316",
@@ -385,7 +359,7 @@
         "sellPrice": 3250,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "Tempatkan item untuk meningkatkan kualitasnya.",
         "qualities": {},
@@ -394,8 +368,8 @@
       }
     },
     {
-      "key": "Item_41201",
-      "displayName": "Ball of goop",
+      "key": "item_65268",
+      "displayName": "Slime of replication",
       "amount": 1,
       "ingredients": [
         {
@@ -404,27 +378,53 @@
             "displayName": "Gumpalan slime",
             "iconName": "Slime_goop_Sprite"
           },
-          "amount": 3
+          "amount": 20
+        },
+        {
+          "item": {
+            "id": "item_61006",
+            "displayName": "Batang emas",
+            "iconName": "Gold_Bar_Sprite"
+          },
+          "amount": 5
+        },
+        {
+          "item": {
+            "id": "item_62008",
+            "displayName": "Saripati kelp osmium",
+            "iconName": "Osmium_Kelp_Essence_Sprite"
+          },
+          "amount": 2
+        },
+        {
+          "item": {
+            "id": "item_65202",
+            "displayName": "Kaca",
+            "iconName": "Glass_Sprite"
+          },
+          "amount": 30
         }
       ],
       "genericIngredients": [],
-      "category": "Misc",
+      "category": "Artisan",
+      "craftingUnlock": {
+        "key": "item_65268",
+        "masteryLevel": 10,
+        "masteryType": "Value"
+      },
       "item": {
-        "id": "item_41201",
-        "displayName": "Bola Goop",
-        "price": 100,
-        "sellPrice": 30,
+        "id": "item_65268",
+        "displayName": "Slime replikasi",
+        "price": 16000,
+        "sellPrice": 4750,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Consumable",
-        "displayKey": "Consumable",
-        "description": "Camilan yang dapat dibuat, digunakan oleh penjelajah yang putus asa.",
+        "inventoryCategory": "ArtisanEquipment",
+        "displayKey": "ArtisanEquipment",
+        "description": "Slime Replikasi ini dapat menduplikasi barang. Kasih waktu sekitar tiga hari atau lebih.",
         "qualities": {},
-        "iconName": "Ball_of_Goop_Sprite",
-        "tags": [
-          "income.farming",
-          "Item.Consumable.Food"
-        ]
+        "iconName": "Slime_of_replication_Sprite",
+        "tags": []
       }
     },
     {
@@ -494,17 +494,17 @@
       }
     },
     {
-      "key": "item_65602",
-      "displayName": "Alien scarecrow",
+      "key": "item_65778",
+      "displayName": "Anemone auto seed",
       "amount": 1,
       "ingredients": [
         {
           "item": {
-            "id": "item_65107",
-            "displayName": "Kepingan",
-            "iconName": "Scrap_Sprite"
+            "id": "item_62006",
+            "displayName": "Saripati kelp emas",
+            "iconName": "Gold_Kelp_Essence_Sprite"
           },
-          "amount": 20
+          "amount": 3
         },
         {
           "item": {
@@ -512,31 +512,231 @@
             "displayName": "Gumpalan slime",
             "iconName": "Slime_goop_Sprite"
           },
-          "amount": 5
+          "amount": 2
         },
         {
           "item": {
-            "id": "item_41029",
-            "displayName": "Damar",
-            "iconName": "Resin_Sprite"
+            "id": "item_62010",
+            "displayName": "Inti surya",
+            "iconName": "Solar_Core_Sprite"
           },
           "amount": 1
         }
       ],
-      "genericIngredients": [],
-      "category": "Scarecrow",
+      "genericIngredients": [
+        {
+          "key": "Any_SeaScavenge",
+          "amount": 5,
+          "genericItem": {
+            "key": "Any_SeaScavenge",
+            "tags": [
+              "item.gathering.sea"
+            ],
+            "iconName": "Any_sea_scavangeable_Sprite",
+            "displayName": "Kutipan Laut Apapun",
+            "items": [
+              {
+                "id": "item_50302",
+                "displayName": "Landak laut hitam",
+                "iconName": "Black_sea_urchin_Sprite"
+              },
+              {
+                "id": "item_50303",
+                "displayName": "Rumput laut",
+                "iconName": "Seaweed_Sprite"
+              },
+              {
+                "id": "item_50306",
+                "displayName": "Jamur laut",
+                "iconName": "Sea_Mushroom_Sprite"
+              },
+              {
+                "id": "item_50308",
+                "displayName": "Kerang mussel biru",
+                "iconName": "Blue_Mussel_Sprite"
+              },
+              {
+                "id": "item_50309",
+                "displayName": "Kerang skalop belacu",
+                "iconName": "Calico_Scallop_Sprite"
+              },
+              {
+                "id": "item_50310",
+                "displayName": "Kerang darah",
+                "iconName": "Blood_Clam_Sprite"
+              },
+              {
+                "id": "item_50311",
+                "displayName": "Tiram pasifik",
+                "iconName": "Pacific_Oyster_Sprite"
+              },
+              {
+                "id": "item_50313",
+                "displayName": "Kerang cangkang lembut",
+                "iconName": "Steamer_Clam_Sprite"
+              },
+              {
+                "id": "item_50315",
+                "displayName": "Kerang bambu",
+                "iconName": "Jackknife_Clam_Sprite"
+              },
+              {
+                "id": "item_50316",
+                "displayName": "Kerang mussel bebek",
+                "iconName": "Duck_Mussel_Sprite"
+              },
+              {
+                "id": "item_50318",
+                "displayName": "Skalop mediterania",
+                "iconName": "Mediterranean_Scallop_Sprite"
+              },
+              {
+                "id": "item_50320",
+                "displayName": "Arame",
+                "iconName": "Arame_Sprite"
+              },
+              {
+                "id": "item_50322",
+                "displayName": "Kerang cherrystone",
+                "iconName": "Cherrystone_clam_Sprite"
+              },
+              {
+                "id": "item_50323",
+                "displayName": "Cangkang amber pen",
+                "iconName": "Amber_pen_shell_Sprite"
+              },
+              {
+                "id": "item_50324",
+                "displayName": "Kerang mussel zebra",
+                "iconName": "Zebra_Mussel_Sprite"
+              },
+              {
+                "id": "item_50326",
+                "displayName": "Tiram timur",
+                "iconName": "Eastern_Oyster_Sprite"
+              },
+              {
+                "id": "item_50327",
+                "displayName": "Tiram belon",
+                "iconName": "Belon_Oyster_Sprite"
+              },
+              {
+                "id": "item_50329",
+                "displayName": "Landak laut ungu",
+                "iconName": "Purple_urchin_Sprite"
+              },
+              {
+                "id": "item_50330",
+                "displayName": "Kerang pisau",
+                "iconName": "Razor_Clam_Sprite"
+              },
+              {
+                "id": "item_50331",
+                "displayName": "Kerang mussel bibir hijau",
+                "iconName": "Green_lipped_mussel_Sprite"
+              },
+              {
+                "id": "item_50332",
+                "displayName": "Tiram biru",
+                "iconName": "Blue_oyster_Sprite"
+              },
+              {
+                "id": "item_50333",
+                "displayName": "Tiram kumamoto",
+                "iconName": "Kumamoto_Oyster_Sprite"
+              },
+              {
+                "id": "item_50334",
+                "displayName": "Skalop teluk",
+                "iconName": "Bay_Scallop_Sprite"
+              },
+              {
+                "id": "item_50335",
+                "displayName": "Skalop patagonia",
+                "iconName": "Patagonian_Scallop_Sprite"
+              },
+              {
+                "id": "item_50336",
+                "displayName": "Kombu",
+                "iconName": "Kombu_Sprite"
+              },
+              {
+                "id": "item_50337",
+                "displayName": "Selada laut",
+                "iconName": "Sea_Lettuce_Sprite"
+              },
+              {
+                "id": "item_50338",
+                "displayName": "Landak laut hijau",
+                "iconName": "Green_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50339",
+                "displayName": "Quahog",
+                "iconName": "Quahog_Sprite"
+              },
+              {
+                "id": "item_50340",
+                "displayName": "Kerang gajah",
+                "iconName": "Geoduck_Sprite"
+              },
+              {
+                "id": "item_50341",
+                "displayName": "Kerang mussel kuda",
+                "iconName": "Horse_Mussel_Sprite"
+              },
+              {
+                "id": "item_50342",
+                "displayName": "Tiram olympia",
+                "iconName": "Olympia_oyster_Sprite"
+              },
+              {
+                "id": "item_50343",
+                "displayName": "Skalop ratu",
+                "iconName": "Queen_Scallop_Sprite"
+              },
+              {
+                "id": "item_50344",
+                "displayName": "Skalop raja",
+                "iconName": "King_Scallop_Sprite"
+              },
+              {
+                "id": "item_50345",
+                "displayName": "Anggur laut",
+                "iconName": "Sea_Grapes_Sprite"
+              },
+              {
+                "id": "item_50346",
+                "displayName": "Landak laut merah",
+                "iconName": "Red_Sea_Urchin_Sprite"
+              },
+              {
+                "id": "item_50347",
+                "displayName": "Landak laut hati",
+                "iconName": "Heart_Urchin_Sprite"
+              },
+              {
+                "id": "item_50348",
+                "displayName": "Teritip leher angsa",
+                "iconName": "Gooseneck_Barnacle_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Farming",
       "item": {
-        "id": "item_65602",
-        "displayName": "Orang-orangan sawah alien",
-        "price": 3000,
-        "sellPrice": 255,
+        "id": "item_65778",
+        "displayName": "Anemon tanam otomatis",
+        "price": 8100,
+        "sellPrice": 4850,
         "sellAt": [],
         "stackable": true,
         "inventoryCategory": "Farming",
         "displayKey": "Farming",
-        "description": "Mengusir gagak yang mengganggu tanaman. Melindungi area sebesar 11x11.",
+        "description": "Anemon tambahan untuk perenjis lumina. Jika diisi benih, akan menanam benih secara otomatis pada tanah dibajak.",
         "qualities": {},
-        "iconName": "Alien_Scarecrow_Sprite",
+        "iconName": "Anemone_auto_seed_Sprite",
         "tags": []
       }
     },
@@ -604,7 +804,7 @@
               },
               {
                 "id": "item_50309",
-                "displayName": "Kerang scallop calico",
+                "displayName": "Kerang skalop belacu",
                 "iconName": "Calico_Scallop_Sprite"
               },
               {
@@ -634,7 +834,7 @@
               },
               {
                 "id": "item_50318",
-                "displayName": "Kerang scallop mediterania",
+                "displayName": "Skalop mediterania",
                 "iconName": "Mediterranean_Scallop_Sprite"
               },
               {
@@ -694,12 +894,12 @@
               },
               {
                 "id": "item_50334",
-                "displayName": "Kerang scallop teluk",
+                "displayName": "Skalop teluk",
                 "iconName": "Bay_Scallop_Sprite"
               },
               {
                 "id": "item_50335",
-                "displayName": "Kerang scallop patagonian",
+                "displayName": "Skalop patagonia",
                 "iconName": "Patagonian_Scallop_Sprite"
               },
               {
@@ -739,12 +939,12 @@
               },
               {
                 "id": "item_50343",
-                "displayName": "Kerang scallop ratu",
+                "displayName": "Skalop ratu",
                 "iconName": "Queen_Scallop_Sprite"
               },
               {
                 "id": "item_50344",
-                "displayName": "Kerang scallop raja",
+                "displayName": "Skalop raja",
                 "iconName": "King_Scallop_Sprite"
               },
               {
@@ -781,7 +981,7 @@
         "stackable": true,
         "inventoryCategory": "Farming",
         "displayKey": "Farming",
-        "description": "Anemon tambahan sprinkler lumina. Jika diisi pupuk, akan memupuk tanaman sekitarnya secara otomatis.",
+        "description": "Anemon tambahan untuk perenjis lumina. Jika diisi pupuk, akan memupuk tanaman sekitarnya secara otomatis.",
         "qualities": {},
         "iconName": "Anemone_auto_fertilizer_Sprite",
         "tags": []
@@ -851,7 +1051,7 @@
               },
               {
                 "id": "item_50309",
-                "displayName": "Kerang scallop calico",
+                "displayName": "Kerang skalop belacu",
                 "iconName": "Calico_Scallop_Sprite"
               },
               {
@@ -881,7 +1081,7 @@
               },
               {
                 "id": "item_50318",
-                "displayName": "Kerang scallop mediterania",
+                "displayName": "Skalop mediterania",
                 "iconName": "Mediterranean_Scallop_Sprite"
               },
               {
@@ -941,12 +1141,12 @@
               },
               {
                 "id": "item_50334",
-                "displayName": "Kerang scallop teluk",
+                "displayName": "Skalop teluk",
                 "iconName": "Bay_Scallop_Sprite"
               },
               {
                 "id": "item_50335",
-                "displayName": "Kerang scallop patagonian",
+                "displayName": "Skalop patagonia",
                 "iconName": "Patagonian_Scallop_Sprite"
               },
               {
@@ -986,12 +1186,12 @@
               },
               {
                 "id": "item_50343",
-                "displayName": "Kerang scallop ratu",
+                "displayName": "Skalop ratu",
                 "iconName": "Queen_Scallop_Sprite"
               },
               {
                 "id": "item_50344",
-                "displayName": "Kerang scallop raja",
+                "displayName": "Skalop raja",
                 "iconName": "King_Scallop_Sprite"
               },
               {
@@ -1028,256 +1228,9 @@
         "stackable": true,
         "inventoryCategory": "Farming",
         "displayKey": "Farming",
-        "description": "Anemon tambahan sprinkler lumina. Memanen tanaman bawah laut secara otomatis.",
+        "description": "Anemon tambahan untuk perenjis lumina. Memanen tanaman bawah laut secara otomatis.",
         "qualities": {},
         "iconName": "Anemone_auto_harvest_Sprite",
-        "tags": []
-      }
-    },
-    {
-      "key": "item_65778",
-      "displayName": "Anemone auto seed",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_62006",
-            "displayName": "Saripati kelp Emas",
-            "iconName": "Gold_Kelp_Essence_Sprite"
-          },
-          "amount": 3
-        },
-        {
-          "item": {
-            "id": "item_50506",
-            "displayName": "Gumpalan slime",
-            "iconName": "Slime_goop_Sprite"
-          },
-          "amount": 2
-        },
-        {
-          "item": {
-            "id": "item_62010",
-            "displayName": "Inti surya",
-            "iconName": "Solar_Core_Sprite"
-          },
-          "amount": 1
-        }
-      ],
-      "genericIngredients": [
-        {
-          "key": "Any_SeaScavenge",
-          "amount": 5,
-          "genericItem": {
-            "key": "Any_SeaScavenge",
-            "tags": [
-              "item.gathering.sea"
-            ],
-            "iconName": "Any_sea_scavangeable_Sprite",
-            "displayName": "Kutipan Laut Apapun",
-            "items": [
-              {
-                "id": "item_50302",
-                "displayName": "Landak laut hitam",
-                "iconName": "Black_sea_urchin_Sprite"
-              },
-              {
-                "id": "item_50303",
-                "displayName": "Rumput laut",
-                "iconName": "Seaweed_Sprite"
-              },
-              {
-                "id": "item_50306",
-                "displayName": "Jamur laut",
-                "iconName": "Sea_Mushroom_Sprite"
-              },
-              {
-                "id": "item_50308",
-                "displayName": "Kerang mussel biru",
-                "iconName": "Blue_Mussel_Sprite"
-              },
-              {
-                "id": "item_50309",
-                "displayName": "Kerang scallop calico",
-                "iconName": "Calico_Scallop_Sprite"
-              },
-              {
-                "id": "item_50310",
-                "displayName": "Kerang darah",
-                "iconName": "Blood_Clam_Sprite"
-              },
-              {
-                "id": "item_50311",
-                "displayName": "Tiram pasifik",
-                "iconName": "Pacific_Oyster_Sprite"
-              },
-              {
-                "id": "item_50313",
-                "displayName": "Kerang cangkang lembut",
-                "iconName": "Steamer_Clam_Sprite"
-              },
-              {
-                "id": "item_50315",
-                "displayName": "Kerang bambu",
-                "iconName": "Jackknife_Clam_Sprite"
-              },
-              {
-                "id": "item_50316",
-                "displayName": "Kerang mussel bebek",
-                "iconName": "Duck_Mussel_Sprite"
-              },
-              {
-                "id": "item_50318",
-                "displayName": "Kerang scallop mediterania",
-                "iconName": "Mediterranean_Scallop_Sprite"
-              },
-              {
-                "id": "item_50320",
-                "displayName": "Arame",
-                "iconName": "Arame_Sprite"
-              },
-              {
-                "id": "item_50322",
-                "displayName": "Kerang cherrystone",
-                "iconName": "Cherrystone_clam_Sprite"
-              },
-              {
-                "id": "item_50323",
-                "displayName": "Cangkang amber pen",
-                "iconName": "Amber_pen_shell_Sprite"
-              },
-              {
-                "id": "item_50324",
-                "displayName": "Kerang mussel zebra",
-                "iconName": "Zebra_Mussel_Sprite"
-              },
-              {
-                "id": "item_50326",
-                "displayName": "Tiram timur",
-                "iconName": "Eastern_Oyster_Sprite"
-              },
-              {
-                "id": "item_50327",
-                "displayName": "Tiram belon",
-                "iconName": "Belon_Oyster_Sprite"
-              },
-              {
-                "id": "item_50329",
-                "displayName": "Landak laut ungu",
-                "iconName": "Purple_urchin_Sprite"
-              },
-              {
-                "id": "item_50330",
-                "displayName": "Kerang pisau",
-                "iconName": "Razor_Clam_Sprite"
-              },
-              {
-                "id": "item_50331",
-                "displayName": "Kerang mussel bibir hijau",
-                "iconName": "Green_lipped_mussel_Sprite"
-              },
-              {
-                "id": "item_50332",
-                "displayName": "Tiram biru",
-                "iconName": "Blue_oyster_Sprite"
-              },
-              {
-                "id": "item_50333",
-                "displayName": "Tiram kumamoto",
-                "iconName": "Kumamoto_Oyster_Sprite"
-              },
-              {
-                "id": "item_50334",
-                "displayName": "Kerang scallop teluk",
-                "iconName": "Bay_Scallop_Sprite"
-              },
-              {
-                "id": "item_50335",
-                "displayName": "Kerang scallop patagonian",
-                "iconName": "Patagonian_Scallop_Sprite"
-              },
-              {
-                "id": "item_50336",
-                "displayName": "Kombu",
-                "iconName": "Kombu_Sprite"
-              },
-              {
-                "id": "item_50337",
-                "displayName": "Selada laut",
-                "iconName": "Sea_Lettuce_Sprite"
-              },
-              {
-                "id": "item_50338",
-                "displayName": "Landak laut hijau",
-                "iconName": "Green_Sea_Urchin_Sprite"
-              },
-              {
-                "id": "item_50339",
-                "displayName": "Quahog",
-                "iconName": "Quahog_Sprite"
-              },
-              {
-                "id": "item_50340",
-                "displayName": "Kerang gajah",
-                "iconName": "Geoduck_Sprite"
-              },
-              {
-                "id": "item_50341",
-                "displayName": "Kerang mussel kuda",
-                "iconName": "Horse_Mussel_Sprite"
-              },
-              {
-                "id": "item_50342",
-                "displayName": "Tiram olympia",
-                "iconName": "Olympia_oyster_Sprite"
-              },
-              {
-                "id": "item_50343",
-                "displayName": "Kerang scallop ratu",
-                "iconName": "Queen_Scallop_Sprite"
-              },
-              {
-                "id": "item_50344",
-                "displayName": "Kerang scallop raja",
-                "iconName": "King_Scallop_Sprite"
-              },
-              {
-                "id": "item_50345",
-                "displayName": "Anggur laut",
-                "iconName": "Sea_Grapes_Sprite"
-              },
-              {
-                "id": "item_50346",
-                "displayName": "Landak laut merah",
-                "iconName": "Red_Sea_Urchin_Sprite"
-              },
-              {
-                "id": "item_50347",
-                "displayName": "Landak laut hati",
-                "iconName": "Heart_Urchin_Sprite"
-              },
-              {
-                "id": "item_50348",
-                "displayName": "Teritip leher angsa",
-                "iconName": "Gooseneck_Barnacle_Sprite"
-              }
-            ]
-          }
-        }
-      ],
-      "category": "Farming",
-      "item": {
-        "id": "item_65778",
-        "displayName": "Anemon tanam otomatis",
-        "price": 8100,
-        "sellPrice": 4850,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Farming",
-        "displayKey": "Farming",
-        "description": "Anemon tambahan sprinkler lumina. Jika diisi benih, akan menanam benih secara otomatis pada tanah dibajak.",
-        "qualities": {},
-        "iconName": "Anemone_auto_seed_Sprite",
         "tags": []
       }
     },
@@ -1345,7 +1298,7 @@
               },
               {
                 "id": "item_50309",
-                "displayName": "Kerang scallop calico",
+                "displayName": "Kerang skalop belacu",
                 "iconName": "Calico_Scallop_Sprite"
               },
               {
@@ -1375,7 +1328,7 @@
               },
               {
                 "id": "item_50318",
-                "displayName": "Kerang scallop mediterania",
+                "displayName": "Skalop mediterania",
                 "iconName": "Mediterranean_Scallop_Sprite"
               },
               {
@@ -1435,12 +1388,12 @@
               },
               {
                 "id": "item_50334",
-                "displayName": "Kerang scallop teluk",
+                "displayName": "Skalop teluk",
                 "iconName": "Bay_Scallop_Sprite"
               },
               {
                 "id": "item_50335",
-                "displayName": "Kerang scallop patagonian",
+                "displayName": "Skalop patagonia",
                 "iconName": "Patagonian_Scallop_Sprite"
               },
               {
@@ -1480,12 +1433,12 @@
               },
               {
                 "id": "item_50343",
-                "displayName": "Kerang scallop ratu",
+                "displayName": "Skalop ratu",
                 "iconName": "Queen_Scallop_Sprite"
               },
               {
                 "id": "item_50344",
-                "displayName": "Kerang scallop raja",
+                "displayName": "Skalop raja",
                 "iconName": "King_Scallop_Sprite"
               },
               {
@@ -1515,29 +1468,106 @@
       "category": "Farming",
       "item": {
         "id": "item_65779",
-        "displayName": "Anemon TPP otomatis",
+        "displayName": "Anemon PTP otomatis",
         "price": 13900,
         "sellPrice": 8350,
         "sellAt": [],
         "stackable": true,
         "inventoryCategory": "Farming",
         "displayKey": "Farming",
-        "description": "Anemon tambahan sprinkler lumina. Memupuk, menanam benih dan memanen tanaman secara otomatis pada tanah dibajak.",
+        "description": "Anemon tambahan untuk perenjis lumina. Memupuk, menanam benih dan memanen tanaman secara otomatis pada tanah dibajak.",
         "qualities": {},
         "iconName": "Anemone_auto_SFH_Sprite",
         "tags": []
       }
+    },
+    {
+      "key": "item_65602",
+      "displayName": "Alien scarecrow",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65107",
+            "displayName": "Kepingan",
+            "iconName": "Scrap_Sprite"
+          },
+          "amount": 20
+        },
+        {
+          "item": {
+            "id": "item_50506",
+            "displayName": "Gumpalan slime",
+            "iconName": "Slime_goop_Sprite"
+          },
+          "amount": 5
+        },
+        {
+          "item": {
+            "id": "item_41029",
+            "displayName": "Damar",
+            "iconName": "Resin_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Scarecrow",
+      "item": {
+        "id": "item_65602",
+        "displayName": "Orang-orangan sawah alien",
+        "price": 3000,
+        "sellPrice": 255,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Mengusir gagak yang mengganggu tanaman. Melindungi area sebesar 11x11.",
+        "qualities": {},
+        "iconName": "Alien_Scarecrow_Sprite",
+        "tags": []
+      }
+    }
+  ],
+  "asGift": [
+    {
+      "pref": {
+        "icon": "T_Icon_Like",
+        "label": "Like",
+        "preferenceField": "likePreferences"
+      },
+      "npcs": [
+        {
+          "key": "PrincessMiranjani",
+          "characterName": "Princes Miranjani",
+          "iconName": "Icon_princess_miranjani"
+        }
+      ]
+    },
+    {
+      "pref": {
+        "icon": "T_Icon_Dislike",
+        "label": "Dislike",
+        "preferenceField": "dislikePreferences"
+      },
+      "npcs": [
+        {
+          "key": "QueenNandaDevi",
+          "characterName": "Ratu  Nanda  Devi",
+          "iconName": "Icon_queen_nanda_devi"
+        }
+      ]
     }
   ],
   "requiredAsOffering": [
     {
       "key": "SpecialityBased",
-      "offeringGroupTitle": "Berbasis Spesialisasi",
+      "offeringGroupTitle": "Altar Lanjutan",
       "urlPath": "advancedaltar",
-      "offeringGroupRewardText": "Membuka Warp Sesajen",
+      "offeringGroupRewardText": "Membuka Gua Ingatan",
       "offerings": [
         {
-          "title": "Barang-Barang Monster",
+          "title": "Loot Monster",
           "imageName": "Monster_Drop_Offerings",
           "numOfItemRequired": -1,
           "rewards": {
@@ -1553,6 +1583,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -1602,7 +1633,8 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "isHeritageOffering": false,
+      "offeringType": "Temple"
     }
   ]
 }

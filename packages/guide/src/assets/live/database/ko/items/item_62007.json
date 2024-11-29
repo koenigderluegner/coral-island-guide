@@ -210,7 +210,7 @@
       "craftingUnlock": {
         "key": "item_94067",
         "masteryLevel": 4,
-        "masteryType": "Diving"
+        "masteryType": "Value"
       },
       "item": {
         "id": "item_94067",
@@ -219,7 +219,7 @@
         "sellPrice": 1240,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "None",
         "description": "굴이나 가리비 같은 바다 전리품에서 수분을 제거한다. 말린 전통 생산품을 생산한다.",
         "qualities": {},
@@ -279,61 +279,6 @@
         "description": "살수기에 장착하는 도구. 비료를 채우면 자동으로 근처의 씨앗에 비료를 준다.",
         "qualities": {},
         "iconName": "Auto_fertilizer_Sprite",
-        "tags": []
-      }
-    },
-    {
-      "key": "item_65511",
-      "displayName": "Auto feeder",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_65005",
-            "displayName": "배터리",
-            "iconName": "Battery_Sprite"
-          },
-          "amount": 1
-        },
-        {
-          "item": {
-            "id": "item_62007",
-            "displayName": "은 켈프 정수",
-            "iconName": "Silver_Kelp_Essence_Sprite"
-          },
-          "amount": 3
-        },
-        {
-          "item": {
-            "id": "item_65033",
-            "displayName": "건초",
-            "iconName": "Hay_Sprite"
-          },
-          "amount": 20
-        },
-        {
-          "item": {
-            "id": "item_65107",
-            "displayName": "폐품",
-            "iconName": "Scrap_Sprite"
-          },
-          "amount": 50
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Farming",
-      "item": {
-        "id": "item_65511",
-        "displayName": "자동 급식기",
-        "price": 1420,
-        "sellPrice": 850,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Farming",
-        "displayKey": "Farming",
-        "description": "농장에 배치한다.",
-        "qualities": {},
-        "iconName": "Auto_Feeder_Sprite",
         "tags": []
       }
     },
@@ -581,6 +526,61 @@
         "description": "살광기에 장착하는 말미잘. 자동으로 수중 작물을 수확한다.",
         "qualities": {},
         "iconName": "Anemone_auto_harvest_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65511",
+      "displayName": "Auto feeder",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65005",
+            "displayName": "배터리",
+            "iconName": "Battery_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_62007",
+            "displayName": "은 켈프 정수",
+            "iconName": "Silver_Kelp_Essence_Sprite"
+          },
+          "amount": 3
+        },
+        {
+          "item": {
+            "id": "item_65033",
+            "displayName": "건초",
+            "iconName": "Hay_Sprite"
+          },
+          "amount": 20
+        },
+        {
+          "item": {
+            "id": "item_65107",
+            "displayName": "폐품",
+            "iconName": "Scrap_Sprite"
+          },
+          "amount": 50
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Farming",
+      "item": {
+        "id": "item_65511",
+        "displayName": "자동 급식기",
+        "price": 1420,
+        "sellPrice": 850,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "농장에 배치한다.",
+        "qualities": {},
+        "iconName": "Auto_Feeder_Sprite",
         "tags": []
       }
     }
@@ -873,6 +873,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -931,16 +932,17 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "isHeritageOffering": false,
+      "offeringType": "Temple"
     },
     {
-      "key": "CustomDiving",
-      "offeringGroupTitle": "",
-      "urlPath": "",
+      "key": "DivingBased",
+      "offeringGroupTitle": "다이빙 제단",
+      "urlPath": "divingaltar",
       "offeringGroupRewardText": "",
       "offerings": [
         {
-          "title": "Dua Pulu (20m)",
+          "title": "Location_Diving20m",
           "imageName": "Ocean_Offerings",
           "numOfItemRequired": 4,
           "rewards": {
@@ -956,6 +958,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Diving",
           "requiredItems": [
             {
               "item": {
@@ -997,7 +1000,7 @@
         }
       ],
       "isHeritageOffering": false,
-      "customType": "diving"
+      "offeringType": "Diving"
     }
   ]
 }

@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Big_Sea_Flower_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.5,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 89.0,
+            "Y": 10.0,
+            "Z": 120.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "CF15C07F48A5D5A42EE811B5A7F01F17"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Big_Sea_Flower_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Big_Sea_Flower'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/CoralandShell_outdoor/CoralandShell_outdoor_textures/Big_Sea_Flower.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Big_Sea_Flower_Sprite:BodySetup_0'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_Outdoor/CoralandShell_outdoor/Big_Sea_Flower_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 45.0,
+          "Y": 60.0,
+          "Z": 0.8515625,
+          "W": 0.03125
+        },
+        {
+          "X": -44.0,
+          "Y": 60.0,
+          "Z": 0.15625,
+          "W": 0.03125
+        },
+        {
+          "X": -44.0,
+          "Y": -60.0,
+          "Z": 0.15625,
+          "W": 0.96875
+        },
+        {
+          "X": 45.0,
+          "Y": -60.0,
+          "Z": 0.8515625,
+          "W": 0.96875
+        },
+        {
+          "X": 45.0,
+          "Y": 60.0,
+          "Z": 0.8515625,
+          "W": 0.03125
+        },
+        {
+          "X": -44.0,
+          "Y": -60.0,
+          "Z": 0.15625,
+          "W": 0.96875
+        }
+      ]
+    }
+  }
+]

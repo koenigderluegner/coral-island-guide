@@ -40,7 +40,7 @@ export class OfferingsChecklistComponent extends BaseTabbedSelectableContainerCo
         this.offerings$ = this._database.fetchOfferings$().pipe(
             map((record) => {
 
-                    const records = record.filter(r => !r.customType);
+                    const records = record.filter(r => r.offeringType !== 'Diving');
                     const altarNames = records.map(altar => altar.urlPath);
 
                     this._altars = records;

@@ -5,7 +5,7 @@
     "Class": "UScriptClass'DataTable'",
     "Properties": {
       "RowStruct": {
-        "ObjectName": "ScriptStruct'C_BuildingEditShopData'",
+        "ObjectName": "Class'C_BuildingEditShopData'",
         "ObjectPath": "/Script/ProjectCoral"
       }
     },
@@ -13,13 +13,15 @@
       "item_110038": {
         "requirements": [
           {
-            "EC_BuildingShopAction::Move": {
+            "Key": "EC_BuildingShopAction::Move",
+            "Value": {
               "price": 300,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Destroy": {
+            "Key": "EC_BuildingShopAction::Destroy",
+            "Value": {
               "price": 1000,
               "resources": []
             }
@@ -28,7 +30,8 @@
         "overrideRequirements": [],
         "confirmationTextsOverwrite": [
           {
-            "EC_BuildingShopAction::Upgrade": {
+            "Key": "EC_BuildingShopAction::Upgrade",
+            "Value": {
               "Namespace": "",
               "Key": "04D8AF174185AC513ED7848771599A34",
               "SourceString": "This upgrade will increase the animal capacity from <Places>4 to 8</>. Do you want to expand?",
@@ -40,7 +43,7 @@
           "data": {
             "DataTable": {
               "ObjectName": "DataTable'DT_InventoryItems'",
-              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+              "ObjectPath": "/Game/ProjectCoral/Core/Data/DT_InventoryItems.0"
             },
             "RowName": "item_110038"
           },

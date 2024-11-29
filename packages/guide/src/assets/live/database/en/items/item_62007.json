@@ -210,7 +210,7 @@
       "craftingUnlock": {
         "key": "item_94067",
         "masteryLevel": 4,
-        "masteryType": "Diving"
+        "masteryType": "Value"
       },
       "item": {
         "id": "item_94067",
@@ -219,7 +219,7 @@
         "sellPrice": 1240,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "None",
         "description": "Removes moisture from ocean loot such as oysters and scallops. Produces dried artisan goods.",
         "qualities": {},
@@ -279,61 +279,6 @@
         "description": "A sprinkler attachment. Automatically applies fertilizer to nearby seeds when loaded with it.",
         "qualities": {},
         "iconName": "Auto_fertilizer_Sprite",
-        "tags": []
-      }
-    },
-    {
-      "key": "item_65511",
-      "displayName": "Auto feeder",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_65005",
-            "displayName": "Battery",
-            "iconName": "Battery_Sprite"
-          },
-          "amount": 1
-        },
-        {
-          "item": {
-            "id": "item_62007",
-            "displayName": "Silver kelp essence",
-            "iconName": "Silver_Kelp_Essence_Sprite"
-          },
-          "amount": 3
-        },
-        {
-          "item": {
-            "id": "item_65033",
-            "displayName": "Hay",
-            "iconName": "Hay_Sprite"
-          },
-          "amount": 20
-        },
-        {
-          "item": {
-            "id": "item_65107",
-            "displayName": "Scrap",
-            "iconName": "Scrap_Sprite"
-          },
-          "amount": 50
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Farming",
-      "item": {
-        "id": "item_65511",
-        "displayName": "Auto feeder",
-        "price": 1420,
-        "sellPrice": 850,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Farming",
-        "displayKey": "Farming",
-        "description": "Place on the farm.",
-        "qualities": {},
-        "iconName": "Auto_Feeder_Sprite",
         "tags": []
       }
     },
@@ -581,6 +526,61 @@
         "description": "An anemone for lumina sprinkler attachment. Automatically harvest underwater crops.",
         "qualities": {},
         "iconName": "Anemone_auto_harvest_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65511",
+      "displayName": "Auto feeder",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65005",
+            "displayName": "Battery",
+            "iconName": "Battery_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_62007",
+            "displayName": "Silver kelp essence",
+            "iconName": "Silver_Kelp_Essence_Sprite"
+          },
+          "amount": 3
+        },
+        {
+          "item": {
+            "id": "item_65033",
+            "displayName": "Hay",
+            "iconName": "Hay_Sprite"
+          },
+          "amount": 20
+        },
+        {
+          "item": {
+            "id": "item_65107",
+            "displayName": "Scrap",
+            "iconName": "Scrap_Sprite"
+          },
+          "amount": 50
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Farming",
+      "item": {
+        "id": "item_65511",
+        "displayName": "Auto feeder",
+        "price": 1420,
+        "sellPrice": 850,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Place on the farm.",
+        "qualities": {},
+        "iconName": "Auto_Feeder_Sprite",
         "tags": []
       }
     }
@@ -873,6 +873,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -931,16 +932,17 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "isHeritageOffering": false,
+      "offeringType": "Temple"
     },
     {
-      "key": "CustomDiving",
-      "offeringGroupTitle": "",
-      "urlPath": "",
+      "key": "DivingBased",
+      "offeringGroupTitle": "Diving Altar",
+      "urlPath": "divingaltar",
       "offeringGroupRewardText": "",
       "offerings": [
         {
-          "title": "Dua Pulu (20m)",
+          "title": "Location_Diving20m",
           "imageName": "Ocean_Offerings",
           "numOfItemRequired": 4,
           "rewards": {
@@ -956,6 +958,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Diving",
           "requiredItems": [
             {
               "item": {
@@ -997,7 +1000,7 @@
         }
       ],
       "isHeritageOffering": false,
-      "customType": "diving"
+      "offeringType": "Diving"
     }
   ]
 }

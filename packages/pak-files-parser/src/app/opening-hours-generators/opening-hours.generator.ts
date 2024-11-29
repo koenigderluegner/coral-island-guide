@@ -15,10 +15,10 @@ export class OpeningHoursGenerator {
     generate(): OpeningHours {
 
         const coreOpeningHoursConfig = this.openingHoursRaw.Properties.coreOpeningHoursConfig;
-        const coreOpeningDays = coreOpeningHoursConfig.coreOpeningDays.map(getEnumValue)
+        const coreOpeningDays = coreOpeningHoursConfig?.coreOpeningDays.map(getEnumValue)
 
-        const isCoreEveryDay = coreOpeningDays.length === 7;
-        const isCoreOnlyWeekdays = coreOpeningDays.length === 5
+        const isCoreEveryDay = coreOpeningDays?.length === 7;
+        const isCoreOnlyWeekdays = coreOpeningDays?.length === 5
             && !coreOpeningDays.includes('Saturday')
             && !coreOpeningDays.includes('Sunday');
 
@@ -27,21 +27,19 @@ export class OpeningHoursGenerator {
             "to": Time
         }> = {};
 
-        if (coreOpeningHoursConfig.dayOfTheWeekSpecificOpeningHours) {
+        if (coreOpeningHoursConfig?.dayOfTheWeekSpecificOpeningHours) {
             coreOpeningHoursConfig.dayOfTheWeekSpecificOpeningHours.forEach(dayOfTheWeekConfig => {
-                const daysOfTheWeek = Object.keys(dayOfTheWeekConfig);
-                const dayOfWeek = getEnumValue(daysOfTheWeek[0]);
-                if (daysOfTheWeek.length > 1)
-                    console.warn('multiple days of the week entries for opening hours found');
+                const dayOfWeek = getEnumValue(dayOfTheWeekConfig.Key);
+
 
                 dayOfTheWeekSpecificOpeningHours[dayOfWeek] = {
                     from: {
-                        hours: dayOfTheWeekConfig[daysOfTheWeek[0]].fromTime.hours,
-                        minutes: dayOfTheWeekConfig[daysOfTheWeek[0]].fromTime.minutes ?? 0,
+                        hours: dayOfTheWeekConfig.Value.fromTime.hours,
+                        minutes: dayOfTheWeekConfig.Value.fromTime.minutes ?? 0,
                     },
                     to: {
-                        hours: dayOfTheWeekConfig[daysOfTheWeek[0]].toTime.hours,
-                        minutes: dayOfTheWeekConfig[daysOfTheWeek[0]].toTime.minutes ?? 0,
+                        hours: dayOfTheWeekConfig.Value.toTime.hours,
+                        minutes: dayOfTheWeekConfig.Value.toTime.minutes ?? 0,
                     }
                 }
 
@@ -49,11 +47,9 @@ export class OpeningHoursGenerator {
             })
         }
 
-        const openingHours: OpeningHours = {
-            isCoreEveryDay,
-            isCoreOnlyWeekdays,
-            coreOpeningDays,
-            coreOpeningHours: {
+        const coreOpeningHours: Partial<Pick<OpeningHours, 'coreOpeningHours'>> = {};
+        if (coreOpeningHoursConfig) {
+            coreOpeningHours.coreOpeningHours = {
                 from: {
                     hours: coreOpeningHoursConfig.coreOpeningHours.fromTime.hours,
                     minutes: coreOpeningHoursConfig.coreOpeningHours.fromTime.minutes ?? 0,
@@ -62,7 +58,14 @@ export class OpeningHoursGenerator {
                     hours: coreOpeningHoursConfig.coreOpeningHours.toTime.hours,
                     minutes: coreOpeningHoursConfig.coreOpeningHours.toTime.minutes ?? 0,
                 }
-            },
+            }
+        }
+
+        const openingHours: OpeningHours = {
+            isCoreEveryDay,
+            isCoreOnlyWeekdays,
+            coreOpeningDays: coreOpeningDays ?? [],
+            ...coreOpeningHours
         };
 
         if (Object.keys(dayOfTheWeekSpecificOpeningHours).length) {

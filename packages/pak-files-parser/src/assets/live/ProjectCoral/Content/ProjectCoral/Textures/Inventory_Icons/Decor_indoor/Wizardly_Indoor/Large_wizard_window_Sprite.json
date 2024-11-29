@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Large_wizard_window_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 1.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 124.0,
+            "Y": 10.0,
+            "Z": 79.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "67A5E42847BBF579E27AB3B105E04D1F"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Large_wizard_window_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Small_wizard_window'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/Wizardly_Indoor/Wizardly_Indoor_Textures/Small_wizard_window.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Large_wizard_window_Sprite:BodySetup_0'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/Inventory_Icons/Decor_indoor/Wizardly_Indoor/Large_wizard_window_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 62.0,
+          "Y": 41.0,
+          "Z": 0.984375,
+          "W": 0.1796875
+        },
+        {
+          "X": -62.0,
+          "Y": 41.0,
+          "Z": 0.015625,
+          "W": 0.1796875
+        },
+        {
+          "X": -62.0,
+          "Y": -38.0,
+          "Z": 0.015625,
+          "W": 0.796875
+        },
+        {
+          "X": 62.0,
+          "Y": -38.0,
+          "Z": 0.984375,
+          "W": 0.796875
+        },
+        {
+          "X": 62.0,
+          "Y": 41.0,
+          "Z": 0.984375,
+          "W": 0.1796875
+        },
+        {
+          "X": -62.0,
+          "Y": -38.0,
+          "Z": 0.015625,
+          "W": 0.796875
+        }
+      ]
+    }
+  }
+]

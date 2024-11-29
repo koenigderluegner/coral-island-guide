@@ -8,7 +8,7 @@
       "Sam"
     ],
     "stackable": true,
-    "inventoryCategory": "Animal product",
+    "inventoryCategory": "AnimalProduct",
     "displayKey": "AnimalProduct",
     "description": "一个金蛋。又大又闪亮。",
     "qualities": {
@@ -1011,7 +1011,7 @@
       "craftingUnlock": {
         "key": "item_80033",
         "masteryLevel": 1,
-        "masteryType": "Ranching"
+        "masteryType": "Value"
       },
       "utensils": [
         "Skillet"
@@ -1032,6 +1032,97 @@
       ],
       "ingredients": [],
       "eitherOrIngredients": []
+    },
+    {
+      "key": "item_80087",
+      "amount": 1,
+      "cookingKey": "HardBoiledEgg",
+      "item": {
+        "id": "item_80087",
+        "displayName": "水煮蛋",
+        "price": 60,
+        "sellPrice": 25,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "简简单单的煮鸡蛋。",
+        "qualities": {
+          "bronze": {
+            "price": 69,
+            "sellPrice": 29
+          },
+          "silver": {
+            "price": 75,
+            "sellPrice": 31
+          },
+          "gold": {
+            "price": 90,
+            "sellPrice": 38
+          },
+          "osmium": {
+            "price": 120,
+            "sellPrice": 50
+          }
+        },
+        "iconName": "Hard-boiled_egg_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food"
+        ]
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Egg_LargeEgg",
+            "displayName": "鸡蛋/大鸡蛋",
+            "tags": [],
+            "iconName": "Egg_Sprite_"
+          },
+          "key": "Egg_LargeEgg"
+        }
+      ],
+      "ingredients": [],
+      "eitherOrIngredients": [
+        [
+          {
+            "item": {
+              "id": "item_31002",
+              "displayName": "鸡蛋",
+              "iconName": "Egg_Sprite_"
+            },
+            "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_31012",
+              "displayName": "鸡蛋（大）",
+              "iconName": "Large_egg_Sprite_"
+            },
+            "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_31023",
+              "displayName": "金蛋",
+              "iconName": "Golden_egg_Sprite"
+            },
+            "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_31021",
+              "displayName": "金蛋（大）",
+              "iconName": "Large_golden_egg_Sprite"
+            },
+            "amount": 1
+          }
+        ]
+      ]
     },
     {
       "key": "item_80088",
@@ -1074,7 +1165,7 @@
       "craftingUnlock": {
         "key": "item_80088",
         "masteryLevel": 4,
-        "masteryType": "Mining"
+        "masteryType": "Value"
       },
       "utensils": [
         "Pot"
@@ -1116,6 +1207,21 @@
             "id": "item_41181",
             "displayName": "山羊酸奶（大）",
             "iconName": "Large_Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_50201",
+            "displayName": "蛤蜊壳",
+            "iconName": "Clam_shell_Sprite"
+          },
+          {
+            "id": "item_50203",
+            "displayName": "鸟蛤",
+            "iconName": "Cockle_Sprite"
+          },
+          {
+            "id": "item_50207",
+            "displayName": "火焰贝",
+            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -1330,7 +1436,7 @@
       "craftingUnlock": {
         "key": "item_64010",
         "masteryLevel": 6,
-        "masteryType": "Combat"
+        "masteryType": "Value"
       },
       "item": {
         "id": "item_64010",
@@ -1538,15 +1644,27 @@
     "key": "Chicken",
     "variants": [
       {
-        "variant": "Default",
+        "variant": "Key",
+        "icons": {
+          "adult": null
+        }
+      },
+      {
+        "variant": "Value",
         "icons": {
           "adult": "Chicken_White_Sprite"
         }
       },
       {
-        "variant": "Brown",
+        "variant": "Key",
         "icons": {
-          "adult": "Chicken_Brown_Sprite"
+          "adult": null
+        }
+      },
+      {
+        "variant": "Value",
+        "icons": {
+          "adult": "Chicken_White_Sprite"
         }
       }
     ],

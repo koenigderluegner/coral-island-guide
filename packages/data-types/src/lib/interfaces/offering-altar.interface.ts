@@ -1,4 +1,5 @@
 import { Offerings } from "./offerings.interface";
+import { OfferingType } from "../types/offering-type.type";
 
 export interface OfferingAltar {
     key: string;
@@ -6,6 +7,6 @@ export interface OfferingAltar {
     offeringGroupTitle: string;
     offeringGroupRewardText: string;
     offerings: Offerings[]
-    isHeritageOffering: boolean
-    customType?: 'diving'
+    isHeritageOffering: boolean;
+    offeringType: OfferingType
 }

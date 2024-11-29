@@ -6,7 +6,7 @@
     "sellPrice": 1500,
     "sellAt": [],
     "stackable": true,
-    "inventoryCategory": "Animal product",
+    "inventoryCategory": "AnimalProduct",
     "displayKey": "AnimalProduct",
     "description": "Petite perle de coquicaque.",
     "qualities": {
@@ -117,11 +117,47 @@
       "machine": "SlimeOfTransmutation"
     }
   ],
+  "asGift": [
+    {
+      "pref": {
+        "icon": "T_Icon_Like",
+        "label": "Like",
+        "preferenceField": "likePreferences"
+      },
+      "npcs": [
+        {
+          "key": "QueenNandaDevi",
+          "characterName": "Reine  Nanda  Devi",
+          "iconName": "Icon_queen_nanda_devi"
+        }
+      ]
+    },
+    {
+      "pref": {
+        "icon": "T_Icon_Dislike",
+        "label": "Dislike",
+        "preferenceField": "dislikePreferences"
+      },
+      "npcs": [
+        {
+          "key": "PrincessMiranjani",
+          "characterName": "Princes Miranjani",
+          "iconName": "Icon_princess_miranjani"
+        }
+      ]
+    }
+  ],
   "producedByAnimal": {
     "key": "Shelluck",
     "variants": [
       {
-        "variant": "Default",
+        "variant": "Key",
+        "icons": {
+          "adult": null
+        }
+      },
+      {
+        "variant": "Value",
         "icons": {
           "adult": "Shell_cluck_Sprite"
         }

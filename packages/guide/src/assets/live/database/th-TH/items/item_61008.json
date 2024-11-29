@@ -10,7 +10,7 @@
     "stackable": true,
     "inventoryCategory": "Resource",
     "displayKey": "Resource",
-    "description": "แท่งออสเมี่ยมอันล้ำค่า",
+    "description": "ออสเมี่ยมล้ำค่าแท่งหนึ่ง",
     "qualities": {},
     "iconName": "Osmium_Bar_Sprite",
     "tags": [
@@ -178,7 +178,7 @@
       "craftingUnlock": {
         "key": "item_65022",
         "masteryLevel": 10,
-        "masteryType": "Farming"
+        "masteryType": "Value"
       },
       "item": {
         "id": "item_65022",
@@ -187,7 +187,7 @@
         "sellPrice": 2895,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "สำหรับหมักชา ข้าว หรือ ชีส",
         "qualities": {},
@@ -238,7 +238,7 @@
       "craftingUnlock": {
         "key": "item_65316",
         "masteryLevel": 8,
-        "masteryType": "Combat"
+        "masteryType": "Value"
       },
       "item": {
         "id": "item_65316",
@@ -247,7 +247,7 @@
         "sellPrice": 3250,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "วางไอเท็มเพื่อเพิ่มคุณภาพ",
         "qualities": {},
@@ -304,9 +304,56 @@
         "stackable": true,
         "inventoryCategory": "Farming",
         "displayKey": "Farming",
-        "description": "ส่วนต่อสปริงเกอร์ ลงปุ๋ย วางเมล็ด และเก็บเกี่ยวพืชผลให้กลายเป็นดินพร้อมปลูกเปล่าโดยอัตโนมัติ",
+        "description": "ส่วนต่อสปริงเกอร์ ลงปุ๋ย วางเมล็ด และเก็บเกี่ยวพืชผลบนดินที่พรวนแล้ว",
         "qualities": {},
         "iconName": "Auto_SFH_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65535",
+      "displayName": "Auto chest",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65005",
+            "displayName": "แบตเตอรี่",
+            "iconName": "Battery_Sprite"
+          },
+          "amount": 3
+        },
+        {
+          "item": {
+            "id": "item_62008",
+            "displayName": "เอสเซนส์สาหร่ายเคล์ปออสเมี่ยม",
+            "iconName": "Osmium_Kelp_Essence_Sprite"
+          },
+          "amount": 2
+        },
+        {
+          "item": {
+            "id": "item_61008",
+            "displayName": "แท่งออสเมี่ยม",
+            "iconName": "Osmium_Bar_Sprite"
+          },
+          "amount": 3
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Farming",
+      "item": {
+        "id": "item_65535",
+        "displayName": "หีบอัตโนมัติ",
+        "price": 10,
+        "sellPrice": 20,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "หีบที่สามารถผลักหรือดึงสิ่งของจากเครื่องจักรที่วางอยู่ทางขวาหรือซ้ายโดยอัตโนมัติ สามารถเก็บสิ่งของได้ถึง 40 ชิ้น",
+        "qualities": {},
+        "iconName": "Auto_Chest_Sprite",
         "tags": []
       }
     },
@@ -362,53 +409,6 @@
         "description": "สำหรับปูวางในไร่ ปกป้องพื้นที่ 19x19 ช่อง",
         "qualities": {},
         "iconName": "Ultimate_Scarecrow_Sprite",
-        "tags": []
-      }
-    },
-    {
-      "key": "item_65535",
-      "displayName": "Auto chest",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_65005",
-            "displayName": "แบตเตอรี่",
-            "iconName": "Battery_Sprite"
-          },
-          "amount": 3
-        },
-        {
-          "item": {
-            "id": "item_62004",
-            "displayName": "สาหร่ายเคลป์ระดับออสเมี่ยม",
-            "iconName": "Osmium_Kelp_Sprite"
-          },
-          "amount": 2
-        },
-        {
-          "item": {
-            "id": "item_61008",
-            "displayName": "แท่งออสเมี่ยม",
-            "iconName": "Osmium_Bar_Sprite"
-          },
-          "amount": 3
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Farming",
-      "item": {
-        "id": "item_65535",
-        "displayName": "หีบอัตโนมัติ",
-        "price": 10,
-        "sellPrice": 20,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Farming",
-        "displayKey": "Farming",
-        "description": "หีบที่สามารถผลักหรือดึงสิ่งของจากเครื่องจักรที่วางอยู่ทางขวาหรือซ้ายโดยอัตโนมัติ สามารถเก็บสิ่งของได้ถึง 40 ชิ้น",
-        "qualities": {},
-        "iconName": "Auto_Chest_Sprite",
         "tags": []
       }
     }
@@ -470,7 +470,7 @@
         {
           "item": {
             "id": "item_65069",
-            "displayName": "ขวานทองแดง",
+            "displayName": "ขวานทอง",
             "iconName": "Gold_axe_Sprite"
           },
           "amount": 1
@@ -496,7 +496,7 @@
         {
           "item": {
             "id": "item_65069",
-            "displayName": "ขวานทองแดง",
+            "displayName": "ขวานทอง",
             "iconName": "Gold_axe_Sprite"
           },
           "amount": 1
@@ -588,7 +588,7 @@
         {
           "item": {
             "id": "item_65065",
-            "displayName": "อีเต้อทองแดง",
+            "displayName": "อีเต้อทอง",
             "iconName": "Gold_pickaxe_Sprite"
           },
           "amount": 1
@@ -614,7 +614,7 @@
         {
           "item": {
             "id": "item_65069",
-            "displayName": "ขวานทองแดง",
+            "displayName": "ขวานทอง",
             "iconName": "Gold_axe_Sprite"
           },
           "amount": 1
