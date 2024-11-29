@@ -1,4 +1,5 @@
 import { DaEffects } from "../interfaces/raw-data-interfaces/da-file-parse/effects/da-effects.type";
+import { AssetMap } from "./asset-map.type";
 
 
 export type GameplayEffectsConfig = {
@@ -9,11 +10,11 @@ export type GameplayEffectsConfig = {
     }
 }
 
-export type GameplayEffectsConfigMap = Record<string, {
+export type GameplayEffectsConfigMap = AssetMap<{
     "effects": {
         "ObjectName": string;
         "ObjectPath": string;
-    }            []
+    }[]
 }>
 
 export type GameplayEffectsConfigEntry = GameplayEffectsConfig | DaEffects

@@ -1,4 +1,5 @@
 import { DaRequirements } from "./da-requirements.type";
+import { AssetMap } from "../../../../types/asset-map.type";
 
 export type GameplayRequirementsConfig = {
     "Type": "C_GameplayRequirementsConfig",
@@ -8,7 +9,7 @@ export type GameplayRequirementsConfig = {
     }
 }
 
-export type GameplayRequirementsConfigMap = Record<string, {
+export type GameplayRequirementsConfigMap = AssetMap<{
     "type": string;
     "requirements": [
         {

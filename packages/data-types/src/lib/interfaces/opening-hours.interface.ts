@@ -1,11 +1,11 @@
-import { Time } from "@ci/data-types";
+import { Time } from './time.interface';
 
 export interface OpeningHours {
     isCoreOnlyWeekdays: boolean;
     isCoreEveryDay: boolean;
 
     "coreOpeningDays": string[],
-    "coreOpeningHours": {
+    "coreOpeningHours"?: {
         "from": Time,
         "to": Time
     },
@@ -13,6 +13,5 @@ export interface OpeningHours {
         "from": Time,
         "to": Time
     }>
-
 
 }

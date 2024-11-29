@@ -1,4 +1,4 @@
-import { minifyItem, readAsset } from "../util/functions";
+import { minifyItem, readAsset, unifyInternalPath } from "../util/functions";
 import {
     GameplayEffectsConfig,
     GameplayEffectsConfigEntry,
@@ -16,6 +16,7 @@ import {
     CookingRecipe,
     CountNpcHeartLevelRequirement,
     DateSeasonRangeRequirement,
+    DateSeasonRequirement,
     DinoHologramItemRewardClaimedRequirement,
     EditorOnlyRequirement,
     Effect,
@@ -30,6 +31,7 @@ import {
     ItemInInventoryRequirement,
     ItemWithCategoryInInventoryRequirement,
     MailData,
+    MarkDinoHologramRewardClaimedEffect,
     MarriageHasProposedRequirement,
     MasteryLevelRequirements,
     MountAcquiredRequirement,
@@ -49,6 +51,7 @@ import {
     SpecialItem,
     SpecialItemRequirement,
     TempleLevelRequirement,
+    TimeDateRequirement,
     UnlockCookingRecipeEffect,
     UnlockCookingUtensilEffect,
     UnlockCraftingRecipeEffect,
@@ -65,9 +68,6 @@ import {
     GameplayRequirementsConfigEntry,
     GameplayRequirementsConfigMap
 } from "../interfaces/raw-data-interfaces/da-file-parse/requirements/gameplay-requirement-config.type";
-import { MarkDinoHologramRewardClaimedEffect } from "../../../data-types/src/lib/types/effects/mark-dino-hologram-reward-claimed-effect.type";
-import { TimeDateRequirement } from "../../../data-types/src/lib/types/requirements/time-date-requirement.type";
-import { DateSeasonRequirement } from "../../../data-types/src/lib/types/requirements/date-season-requirement.type";
 
 export type EffectEntry = {
     key: string,
@@ -86,7 +86,7 @@ export class DaFilesParser {
     static MailMap: Map<string, MailData>;
     static CookingMap: Map<string, Record<string, CookingRecipe[]>>;
 
-    readAssets: Map<string, GameplayEffectsConfigEntry[] | GameplayRequirementsConfigEntry[]> = new Map<string, GameplayEffectsConfigEntry[] | GameplayRequirementsConfigEntry[]>();
+    static readAssets: Map<string, GameplayEffectsConfigEntry[] | GameplayRequirementsConfigEntry[]> = new Map<string, GameplayEffectsConfigEntry[] | GameplayRequirementsConfigEntry[]>();
 
     private changeObjectEffectsCustomNames: Map<string, string> = new Map<string, string>([
         ['ComCenLobbyPiano', 'Community Center Piano'],
@@ -94,24 +94,24 @@ export class DaFilesParser {
     ])
 
     parse(filePath: string): EffectMap | RequirementMap | undefined {
-        const fullPath = path.join(environment.assetPath, filePath)
-        if (!this.readAssets.has(fullPath)) {
-
+        const fullPath = unifyInternalPath(path.join(environment.assetPath, filePath));
+        if (!DaFilesParser.readAssets.has(fullPath)) {
             if (fs.existsSync(fullPath)) {
-                this.readAssets.set(fullPath, readAsset<GameplayEffectsConfigEntry[] | GameplayRequirementsConfigEntry[]>(filePath));
+                const asset = readAsset<GameplayEffectsConfigEntry[] | GameplayRequirementsConfigEntry[]>(filePath);
+                DaFilesParser.readAssets.set(fullPath, asset);
             } else {
                 Logger.error(`Da-File does not exist ${fullPath}`)
             }
         }
 
-        const readFile = this.readAssets.get(fullPath)!
+        const readFile = DaFilesParser.readAssets.get(fullPath)!
 
-        let mappingEntry: GameplayRequirementsConfig | GameplayEffectsConfig | undefined = readFile.find((a): a is GameplayEffectsConfig => a.Type === "C_GameplayEffectsConfig");
+        let mappingEntry: GameplayRequirementsConfig | GameplayEffectsConfig | undefined = readFile.find((a): a is GameplayEffectsConfig => a.Type.includes("C_GameplayEffectsConfig"));
 
         if (mappingEntry) {
             return this.parseGameplayEffects(mappingEntry);
         }
-        mappingEntry = readFile.find((a): a is GameplayRequirementsConfig => a.Type === "C_GameplayRequirementsConfig");
+        mappingEntry = readFile.find((a): a is GameplayRequirementsConfig => a.Type.includes("C_GameplayRequirementsConfig"));
 
         if (mappingEntry) {
             return this.parseGameplayRequirements(mappingEntry);
@@ -132,26 +132,25 @@ export class DaFilesParser {
             return previousValue
         }, [])
 
-        let conf: GameplayEffectsConfigMap;
+        let conf: GameplayEffectsConfigMap[];
 
-        if (Array.isArray(map)) {
-            conf = map.reduce((previousValue, currentValue) => ({...previousValue, ...currentValue}), {})
+
+        if (!Array.isArray(map)) {
+            conf = [map]
         } else {
             conf = map
         }
 
 
-        const keys = Object.keys(conf);
+        conf.forEach(key => {
 
-        keys.forEach(key => {
-
-            const effects = conf[key].effects.map(effect => {
+            const effects = key.Value.effects.map(effect => {
 
                 const [daPath, index] = effect.ObjectPath.split('.');
 
-                const daJson = daPath + '.json';
-                const fullDaPath = path.join(environment.assetPath, daJson)
-                if (!this.readAssets.has(fullDaPath)) {
+                const daJson = unifyInternalPath(daPath + '.json');
+                const fullDaPath = unifyInternalPath(path.join(environment.assetPath, daJson))
+                if (!DaFilesParser.readAssets.has(fullDaPath)) {
 
                     // if (fs.existsSync(fullDaPath)) {
                     //     this.readAssets.set(fullDaPath, readAsset<(GameplayEffectsConfigEntry)[]>(daJson));
@@ -161,7 +160,7 @@ export class DaFilesParser {
 
                 }
 
-                const foundEffect = this.readAssets.get(fullDaPath)?.[+index];
+                const foundEffect = DaFilesParser.readAssets.get(fullDaPath)?.[+index];
 
                 if (!foundEffect) {
                     Logger.error(`Didnt find ${key}.${index}`);
@@ -412,7 +411,7 @@ export class DaFilesParser {
 
             }).filter(nonNullable)
 
-            result.set(key, {key, effects})
+            result.set(key.Key, {key: key.Key, effects})
         })
 
         return result
@@ -424,10 +423,10 @@ export class DaFilesParser {
 
         if (!map) return new Map()
 
-        let conf: GameplayRequirementsConfigMap;
+        let conf: GameplayRequirementsConfigMap[];
 
-        if (Array.isArray(map)) {
-            conf = map.reduce((previousValue, currentValue) => ({...previousValue, ...currentValue}), {})
+        if (!Array.isArray(map)) {
+            conf = [map]
         } else {
             conf = map
         }
@@ -435,19 +434,19 @@ export class DaFilesParser {
 
         const keys = Object.keys(conf);
 
-        keys.forEach(key => {
+        conf.forEach(key => {
 
 
-            const reqs = conf[key].requirements.map(effect => {
+            const reqs = key.Value.requirements.map(effect => {
 
 
                 if (!effect) return;
 
                 const [daPath, index] = effect.ObjectPath.split('.');
 
-                const daJson = daPath + '.json';
-                const fullDaPath = path.join(environment.assetPath, daJson)
-                if (!this.readAssets.has(fullDaPath)) {
+                const daJson = unifyInternalPath(daPath + '.json');
+                const fullDaPath = unifyInternalPath(path.join(environment.assetPath, daJson));
+                if (!DaFilesParser.readAssets.has(fullDaPath)) {
 
                     // if (fs.existsSync(fullDaPath)) {
                     //     this.readAssets.set(fullDaPath, readAsset<(GameplayEffectsConfigEntry)[]>(daJson));
@@ -457,7 +456,7 @@ export class DaFilesParser {
 
                 }
 
-                const foundEffect = (this.readAssets.get(fullDaPath) as GameplayRequirementsConfigEntry[] | undefined)?.[+index];
+                const foundEffect = (DaFilesParser.readAssets.get(fullDaPath) as GameplayRequirementsConfigEntry[] | undefined)?.[+index];
 
                 if (!foundEffect) {
                     Logger.error(`Didnt find ${key}.${index}`);
@@ -819,7 +818,7 @@ export class DaFilesParser {
 
             }).filter(nonNullable)
 
-            result.set(key, {key, type: getEnumValue(conf[key].type), requirements: reqs})
+            result.set(key.Key, {key: key.Key, type: getEnumValue(key.Value.type), requirements: reqs})
 
         })
 

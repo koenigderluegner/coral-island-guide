@@ -15,7 +15,7 @@ export class DashboardService extends BaseDbService {
 
     getFish$(): Observable<FishDashboardEntry[]> {
         if (!this.#fish().length) {
-            return this.http.get<FishDashboardEntry[]>(`${this.BASE_PATH}/dashboards/fish.json`)
+            return this.http.get<FishDashboardEntry[]>(`${this.BASE_PATH}/dashboards/museum-fish.json`)
                 .pipe(
                     tap(items => this.#fish.set(items)),
                     shareReplay(1)
