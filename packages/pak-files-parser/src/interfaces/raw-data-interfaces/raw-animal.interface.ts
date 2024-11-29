@@ -1,8 +1,8 @@
+import { AssetMap } from "../../types/asset-map.type";
+import { AssetPath } from "../../types/asset-path.type";
+
 export interface RawAnimal {
-    "animalClasses": Record<string, {
-        "AssetPathName": string;
-        "SubPathString": string;
-    }>[   ],
+    "animalClasses": AssetMap<AssetPath>[   ],
     "requiredRanchBuilding": string;
     "daysNeededToGrow": number;
     "harvestCooldown": number;
