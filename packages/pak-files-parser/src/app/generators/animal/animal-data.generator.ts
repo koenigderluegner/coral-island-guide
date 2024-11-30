@@ -21,7 +21,7 @@ export class AnimalDataGenerator extends BaseGenerator<RawAnimal, AnimalData> {
 
         const variants = dbItem
             .animalClasses
-            .map(entry => Object.keys(entry))
+            .map(entry => entry.Key)
             .flat();
 
         const rows = this.iconDB[0].Rows;
@@ -30,7 +30,8 @@ export class AnimalDataGenerator extends BaseGenerator<RawAnimal, AnimalData> {
         const mappedVariants: AnimalData["variants"] = variants.map(variant => {
 
             const row = rows[Object.keys(rows).find(key => key.toLowerCase() === itemKeyLowerCase) ?? ''];
-            const adult = row?.icons.find(iconEntry => !!iconEntry[variant])?.[variant].adult;
+            const value = row?.icons.find(iconEntry => iconEntry.Key === variant)?.Value;
+            const adult = value?.adult;
 
             if (!row) return null;
 

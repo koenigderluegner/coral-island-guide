@@ -12,6 +12,6 @@ export interface RawConsumable {
         "timeStep": number;
         "isNoDuration": boolean
         "duration": number;
-        "timerHandle": {}
+        "timerHandle": Record<string, never>
     }[    ]
 }

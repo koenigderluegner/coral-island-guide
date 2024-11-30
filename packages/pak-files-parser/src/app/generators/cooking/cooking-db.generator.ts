@@ -34,7 +34,7 @@ export class CookingDbGenerator {
         const eitherOrIngredients: CookingRecipe["eitherOrIngredients"] = [];
 
         const genericIngredients = dbItem.genericIngredients.map(genericIngredient => {
-            let foundGenericItem: RawTagBasedCookingGeneric | TagBasedItem | undefined = this.tagBasedCookingGenerics[genericIngredient.genericItem.RowName] ?? this.tagBasedItemMap.get(genericIngredient.genericItem.RowName);
+            const foundGenericItem: RawTagBasedCookingGeneric | TagBasedItem | undefined = this.tagBasedCookingGenerics[genericIngredient.genericItem.RowName] ?? this.tagBasedItemMap.get(genericIngredient.genericItem.RowName);
             let genericItem: Omit<TagBasedItem, 'items'> & { items?: MinimalItem[] } | undefined = undefined;
             if ('tagQuery' in foundGenericItem) {
                 genericItem = {
@@ -68,7 +68,7 @@ export class CookingDbGenerator {
 
                 const foundGenericIngredient = genericIngredients.find(genericIngredient => genericIngredient.genericItem?.displayName === tagName);
                 const foundTagBasedItem = [...this.tagBasedItemMap.values()].find(tbi => tbi.displayName === tagName);
-                let nonMatchingIngredients = ingredientList.filter(ingredient => !ingredient.item.tags?.some(tag => foundGenericIngredient?.genericItem?.tags.includes(tag)))
+                const nonMatchingIngredients = ingredientList.filter(ingredient => !ingredient.item.tags?.some(tag => foundGenericIngredient?.genericItem?.tags.includes(tag)))
                 const isMissingGenericIngredient = !foundGenericIngredient && foundTagBasedItem;
 
 

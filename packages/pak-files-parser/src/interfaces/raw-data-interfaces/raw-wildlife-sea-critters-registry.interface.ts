@@ -30,7 +30,7 @@ export interface RawWildlifeSeaCrittersRegistry {
         "spawnPeriod": string;
         "firstDayMaximize": boolean;
         "fillLimitOnFirstDay": boolean;
-        "zoneRarityDistribution": {}
+        "zoneRarityDistribution": Record<string, number>[]
     },
     "conditions": {
         "always": false,

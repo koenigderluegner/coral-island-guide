@@ -1,7 +1,6 @@
-type AssetInfo = {
-    "AssetPathName": string
-    "SubPathString": string
-};
+import { AssetPath } from "../../../types/asset-path.type";
+import { AssetMap } from "../../../types/asset-map.type";
+
 
 export interface RawAnimalIcons {
     "animal": {
@@ -11,20 +10,19 @@ export interface RawAnimalIcons {
         },
         "RowName": string
     },
-    "icons":
-        Record<string, {
-            "adult": AssetInfo,
-            "adultHappy": AssetInfo
-            "adultBadMood": AssetInfo
-            "adultSick": AssetInfo
-            "adultWinner": AssetInfo
-            "adultHappyWinner": AssetInfo
-            "adultBadMoodWinner": AssetInfo
-            "adultSickWinner": AssetInfo
-            "adultSad": AssetInfo
-            "baby": AssetInfo
-            "babyBadMood": AssetInfo
-            "babySick": AssetInfo
-            "babySad": AssetInfo
-        }>[    ]
+    "icons":AssetMap<{
+        "adult": AssetPath,
+        "adultHappy": AssetPath
+        "adultBadMood": AssetPath
+        "adultSick": AssetPath
+        "adultWinner": AssetPath
+        "adultHappyWinner": AssetPath
+        "adultBadMoodWinner": AssetPath
+        "adultSickWinner": AssetPath
+        "adultSad": AssetPath
+        "baby": AssetPath
+        "babyBadMood": AssetPath
+        "babySick": AssetPath
+        "babySad": AssetPath
+    }>[    ]
 }

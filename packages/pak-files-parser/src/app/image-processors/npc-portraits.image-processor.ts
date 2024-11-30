@@ -138,7 +138,7 @@ export class NpcPortraitsImageProcessor {
             imagesToCreate.push(image.webp().toFile(webpPath))
         }
         if (!webpThumbsPathExists && !!createThumbs) {
-            let clone = (image ?? sharp(sourceImagePath).trim()).clone().resize(400, 400, {fit: "inside"})
+            const clone = (image ?? sharp(sourceImagePath).trim()).clone().resize(400, 400, {fit: "inside"})
             imagesToCreate.push(clone.webp().toFile(webpThumbsPath));
         }
 

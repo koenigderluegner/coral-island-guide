@@ -1,4 +1,4 @@
-import { convertToIconName, createPathIfNotExists } from "../../util/functions";
+import { convertToIconName, createPathIfNotExists, unifyInternalPath } from "../../util/functions";
 import glob from "glob";
 import { Logger } from "../../util/logger.class";
 import fs from "fs";
@@ -76,7 +76,7 @@ export class ItemIconsImageProcessor {
 
         const webpTargetExists = fs.existsSync(webpPath);
 
-        const filePath = data.Properties.BakedSourceTexture.ObjectPath.split('.');
+        const filePath = unifyInternalPath(data.Properties.BakedSourceTexture.ObjectPath).split('.');
         filePath.pop()
 
         const basename = filePath.join('.').split('/').pop() + '.png';

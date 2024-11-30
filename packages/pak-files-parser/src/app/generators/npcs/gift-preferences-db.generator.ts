@@ -63,9 +63,9 @@ export class GiftPreferencesDbGenerator extends BaseGenerator<RawGiftPreferenceI
         if (data.data.category.data.RowName !== 'None') {
             giftPreference = {type: 'category', categoryName: data.data.category.data.RowName};
         } else if (data.data.item.itemID !== 'None') {
-            let item = this.itemMap.get(data.data.item.itemID);
+            const item = this.itemMap.get(data.data.item.itemID);
             if (!item) return null;
-            giftPreference = {type: 'item', item: minifyItem(item!)};
+            giftPreference = {type: 'item', item: minifyItem(item)};
         }
         // else if (data.data.tags.length) {
         //     // giftPreference = {type: 'tags', tags: data.data.tags};

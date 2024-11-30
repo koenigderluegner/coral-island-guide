@@ -5,23 +5,23 @@ export class Logger {
 
     static readonly PAD_SIZE = 10;
 
-    static log(...data: any) {
+    static log(...data: unknown[]) {
         console.log(chalk.gray('LOG:'.padEnd(this.PAD_SIZE, ' ')), ...data)
     }
 
-    static info(...data: any) {
+    static info(...data: unknown[]) {
         console.log(chalk.blue('INFO:'.padEnd(this.PAD_SIZE, ' ')), ...data)
     }
 
-    static error(...data: any) {
+    static error(...data: unknown[]) {
         console.log(chalk.red('ERROR:'.padEnd(this.PAD_SIZE, ' ')), ...data)
     }
 
-    static warn(...data: any) {
+    static warn(...data: unknown[]) {
         console.log(chalk.yellow('WARN:'.padEnd(this.PAD_SIZE, ' ')), ...data)
     }
 
-    static success(...data: any) {
+    static success(...data: unknown[]) {
         console.log(chalk.green('SUCCESS:'.padEnd(this.PAD_SIZE, ' ')), ...data)
     }
 

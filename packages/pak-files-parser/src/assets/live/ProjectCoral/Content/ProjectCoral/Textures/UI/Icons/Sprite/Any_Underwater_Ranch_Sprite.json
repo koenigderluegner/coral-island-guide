@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Any_Underwater_Ranch_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -1.5,
+              "Y": -0.0,
+              "Z": -2.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 231.0,
+            "Y": 10.0,
+            "Z": 231.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "DA2258A941B1CC2053F2EA937236161B"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Any_Underwater_Ranch_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 256.0,
+        "Y": 256.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Any_Underwater_Ranch'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/UI/Icons/Sprite/Any_icon_textures/Any_Underwater_Ranch.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Any_Underwater_Ranch_Sprite:BodySetup_0'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/UI/Icons/Sprite/Any_Underwater_Ranch_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 114.0,
+          "Y": 113.0,
+          "Z": 0.9453125,
+          "W": 0.05859375
+        },
+        {
+          "X": -117.0,
+          "Y": 113.0,
+          "Z": 0.04296875,
+          "W": 0.05859375
+        },
+        {
+          "X": -117.0,
+          "Y": -118.0,
+          "Z": 0.04296875,
+          "W": 0.9609375
+        },
+        {
+          "X": 114.0,
+          "Y": -118.0,
+          "Z": 0.9453125,
+          "W": 0.9609375
+        },
+        {
+          "X": 114.0,
+          "Y": 113.0,
+          "Z": 0.9453125,
+          "W": 0.05859375
+        },
+        {
+          "X": -117.0,
+          "Y": -118.0,
+          "Z": 0.04296875,
+          "W": 0.9609375
+        }
+      ]
+    }
+  }
+]
