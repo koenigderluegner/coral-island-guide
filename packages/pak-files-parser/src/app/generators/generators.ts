@@ -36,7 +36,6 @@ import { AnimalShopDataGenerator } from "./shops-and-festivals/animal-shop-data.
 import { BaseOpeningHoursGenerator } from "../opening-hours-generators/base-opening-hours.generator";
 import { BeachShackOpeningHoursGenerator } from "../opening-hours-generators/beach-shack-opening-hours.generator";
 import { CarpenterOpeningHoursGenerator } from "../opening-hours-generators/carpenter-opening-hours.generator";
-import { environment } from "../../environments/environment";
 import { PetShopAdoptionsGenerator } from "./shops-and-festivals/pet-shop-adoptions.generator";
 import { AnimalDataGenerator } from "./animal/animal-data.generator";
 import { AnimalMoodSizeGenerator } from "./animal/animal-mood-size.generator";

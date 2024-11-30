@@ -30,7 +30,7 @@ export class ItemMixingRecipeDataDbGenerator extends BaseGenerator<RawItemMixing
         const eitherOrIngredients: CookingRecipe["eitherOrIngredients"] = [];
 
         const genericIngredients = dbItem.genericIngredients.map(genericIngredient => {
-            let foundGenericItem: TagBasedItem | undefined = this.tagBasedItemMap.get(genericIngredient.genericItem.RowName);
+            const foundGenericItem: TagBasedItem | undefined = this.tagBasedItemMap.get(genericIngredient.genericItem.RowName);
             let genericItem: Omit<TagBasedItem, 'items'> & { items?: MinimalItem[] } | undefined = undefined;
             if (foundGenericItem) {
                 genericItem = {...foundGenericItem as TagBasedItem}
@@ -57,7 +57,7 @@ export class ItemMixingRecipeDataDbGenerator extends BaseGenerator<RawItemMixing
 
                 const foundGenericIngredient = genericIngredients.find(genericIngredient => genericIngredient.genericItem?.displayName === tagName);
                 const foundTagBasedItem = [...this.tagBasedItemMap.values()].find(tbi => tbi.displayName === tagName);
-                let nonMatchingIngredients = ingredientList.filter(ingredient => !ingredient.item.tags?.some(tag => foundGenericIngredient?.genericItem?.tags.includes(tag)))
+                const nonMatchingIngredients = ingredientList.filter(ingredient => !ingredient.item.tags?.some(tag => foundGenericIngredient?.genericItem?.tags.includes(tag)))
                 const isMissingGenericIngredient = !foundGenericIngredient && foundTagBasedItem;
 
 
@@ -140,7 +140,7 @@ export class ItemMixingRecipeDataDbGenerator extends BaseGenerator<RawItemMixing
         amount: number
     }[]) {
 
-        const {items: [], ...genericItem} = foundTagBasedItem;
+        const {items, ...genericItem} = foundTagBasedItem;
 
         genericIngredients.push({
             genericItem,

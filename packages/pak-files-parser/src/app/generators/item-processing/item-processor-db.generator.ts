@@ -35,7 +35,7 @@ export class ItemProcessorDbGenerator {
             }));
         });
 
-        let strings = Object.keys(this.datatables);
+        const strings = Object.keys(this.datatables);
 
         strings.forEach(machineName => {
             const recipes: ItemProcessing[] = [];
@@ -53,7 +53,7 @@ export class ItemProcessorDbGenerator {
                 const exisitingItem = exisitingItems.length === 1 ? exisitingItems[0] : exisitingItems.find(recipe => recipe.input.item.id === inputItem.id)
 
 
-                let newRecipe: ItemProcessing = {
+                const newRecipe: ItemProcessing = {
                     useCategory: dbItem.useCategory,
                     day: dbItem.day,
                     time: dbItem.time,
@@ -81,8 +81,8 @@ export class ItemProcessorDbGenerator {
 
                 if (exisitingItem) {
 
-                    let {qualities, ...qualitylessExistingItem} = exisitingItem;
-                    let {qualities: _, ...qualitylessNewItem} = newRecipe;
+                    const {qualities, ...qualitylessExistingItem} = exisitingItem;
+                    const {qualities: _, ...qualitylessNewItem} = newRecipe;
 
                     if (JSON.stringify(qualitylessExistingItem) === JSON.stringify(qualitylessNewItem))
                         return;

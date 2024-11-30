@@ -1,5 +1,5 @@
 import { SourceString } from "../../types/source-string.type";
-import { Season } from "../../../../data-types/src/lib/types/season.type";
+import { Season } from '@ci/data-types';
 
 export interface RawCalendarConfig {
     "Type": "C_TownCalendarConfig",

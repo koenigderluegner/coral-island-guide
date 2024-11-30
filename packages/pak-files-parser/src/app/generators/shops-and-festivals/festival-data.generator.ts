@@ -1,4 +1,3 @@
-import { GeneratorOptions } from "../_base/base-generator.class";
 import { Festival, FestivalData, FestivalShopItemData } from "@ci/data-types";
 import { Datatable } from "../../../interfaces/datatable.interface";
 import { readAsset } from "../../../util/functions";
@@ -15,7 +14,7 @@ export class FestivalDataGenerator {
 
     }
 
-    generate(options?: GeneratorOptions): Map<string, FestivalData> {
+    generate(): Map<string, FestivalData> {
         const res: Map<string, FestivalData> = new Map<string, FestivalData>()
 
         res.set('unused', {

@@ -1,7 +1,12 @@
 import { BaseGenerator } from '../_base/base-generator.class';
 import { CalendarBirthday, CalendarEvent, Item, NPC, SpecificDate } from '@ci/data-types';
 import { Datatable } from '../../../interfaces/datatable.interface';
-import { convertToIconName, extractOutfitPortraitsLocation, readAsset } from '../../../util/functions';
+import {
+    convertToIconName,
+    extractOutfitPortraitsLocation,
+    readAsset,
+    unifyInternalPath
+} from '../../../util/functions';
 import { RawNPC } from '../../../interfaces/raw-data-interfaces/raw-npc.interface';
 import { addSpacesToPascalCase, getEnumValue } from '@ci/util';
 import { RawNpcAppearances } from "../../../interfaces/raw-data-interfaces/raw-npc-appearances.interface";
@@ -63,7 +68,7 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
             const npcAppearance = npcAppearances[npcAppearanceKey]
 
             npcAppearance.images.forEach(imageDefinition => {
-                const assetPath = imageDefinition.texture.AssetPathName.replace('/Game/ProjectCoral/', '/ProjectCoral/Content/ProjectCoral/').split('.')[0];
+                const assetPath = unifyInternalPath(imageDefinition.texture.AssetPathName).split('.')[0];
                 if (assetPath === 'None') return;
                 const emotion = imageDefinition.EmotionRow.RowName;
 
@@ -97,7 +102,7 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
 
     private static getNPCAppearances(dbItem: RawNPC, itemKey: string) {
         let npcAppearances: Record<string, RawNpcAppearances> = {}
-        let {index, fileName} = extractOutfitPortraitsLocation(dbItem, itemKey);
+        const {index, fileName} = extractOutfitPortraitsLocation(dbItem, itemKey);
 
         try {
             npcAppearances = readAsset<Datatable<RawNpcAppearances>[]>(fileName)[+index].Rows;
@@ -110,7 +115,7 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
     private static extractAllAppearances(dbItem: RawNPC, itemKey: string) {
         let appearances: NPC['appearances'] = [];
 
-        let npcAppearances = NPCDbGenerator.getNPCAppearances(dbItem, itemKey);
+        const npcAppearances = NPCDbGenerator.getNPCAppearances(dbItem, itemKey);
         const defaultAppearance = NPCDbGenerator.formatRawAppearances(itemKey, npcAppearances);
         appearances.push({appearances: defaultAppearance});
 
@@ -119,7 +124,7 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
             .forEach(mapping => {
 
                 // set to null so it doenst auto-detect, maybe FIXME ?
-                let additionalAppearance = NPCDbGenerator.getNPCAppearances({
+                const additionalAppearance = NPCDbGenerator.getNPCAppearances({
                     ...dbItem,
                     portraitsDT: null
                 }, mapping.outfitKey);
@@ -154,7 +159,7 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
 
         let headerPortraitFileName: string | null = null
         let customHead;
-        const portraitPath = dbItem.Portrait.AssetPathName.replace('/Game/ProjectCoral/', '/ProjectCoral/Content/ProjectCoral/').split('.')[0];
+        const portraitPath = unifyInternalPath(dbItem.Portrait.AssetPathName).split('.')[0];
 
         const sourceImagePath = path.join(environment.assetPath, portraitPath + '.png');
         const guessedPath = path.join(environment.assetPath, 'ProjectCoral', 'Content', 'ProjectCoral', 'Textures', 'UI', 'NPCHeadPortraits', 'T_Relationship' + itemKey + '.png');
@@ -248,9 +253,7 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
             let specialForm;
 
 
-            if (!split?.length) {
-
-            } else {
+            if (split?.length) {
 
                 split.splice(0, 1);
 
@@ -360,7 +363,7 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
         const {headerPortraitFileName, customHead} = NPCDbGenerator.extractHeadPortrait(itemKey, dbItem);
         const appearances = NPCDbGenerator.extractAllAppearances(dbItem, itemKey);
 
-        let birthday = this.getBirthday(itemKey);
+        const birthday = this.getBirthday(itemKey);
 
         return {
             key: itemKey,

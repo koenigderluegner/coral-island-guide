@@ -9,7 +9,7 @@ export class BaseOpeningHoursGenerator<T extends Record<string, string>> {
 
     generate(): Map<string, Record<keyof T, OpeningHours>> {
 
-        // @ts-ignore
+        // @ts-expect-error we want an empty object to start which is not allowed per type
         const res: Record<keyof T, OpeningHours> = {};
 
         Array.from<keyof T>(Object.keys(this.openingHours)).forEach(key =>

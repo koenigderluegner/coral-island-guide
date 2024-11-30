@@ -94,6 +94,7 @@ export * from './lib/interfaces/tag-based-item.interface';
 export * from './lib/interfaces/time.interface';
 export * from './lib/interfaces/torn-page-data.interface';
 export * from './lib/interfaces/unlock-by-mastery.interface';
+export * from './lib/interfaces/base-catchable.interface';
 
 
 export * from './lib/enums/quality.enum';

@@ -1,4 +1,4 @@
-import { BaseCatchableInterface } from "../../../data-types/src/lib/interfaces/base-catchable.interface";
+import { BaseCatchableInterface } from "@ci/data-types";
 
 export type WildlifeSeaCrittersRegistry = {
     type: string;
