@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Any_caterpillar_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -0.5,
+              "Y": 0.0,
+              "Z": 2.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 223.0,
+            "Y": 10.0,
+            "Z": 222.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "4E150A3F4C3325A3669F7CA42C4D9CE2"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Any_caterpillar_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 256.0,
+        "Y": 256.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Any_caterpillar'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/UI/Icons/Any_caterpillar.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Any_caterpillar_Sprite:BodySetup_0'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/UI/Icons/Sprite/Any_caterpillar_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 111.0,
+          "Y": 113.0,
+          "Z": 0.93359375,
+          "W": 0.05859375
+        },
+        {
+          "X": -112.0,
+          "Y": 113.0,
+          "Z": 0.0625,
+          "W": 0.05859375
+        },
+        {
+          "X": -112.0,
+          "Y": -109.0,
+          "Z": 0.0625,
+          "W": 0.92578125
+        },
+        {
+          "X": 111.0,
+          "Y": -109.0,
+          "Z": 0.93359375,
+          "W": 0.92578125
+        },
+        {
+          "X": 111.0,
+          "Y": 113.0,
+          "Z": 0.93359375,
+          "W": 0.05859375
+        },
+        {
+          "X": -112.0,
+          "Y": -109.0,
+          "Z": 0.0625,
+          "W": 0.92578125
+        }
+      ]
+    }
+  }
+]

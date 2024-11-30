@@ -16,6 +16,7 @@ export const config: {
     source: {
         contentRoot: string;
         texturesPath: string;
+        treeIconPath: string;
         portraitsPath: string;
     }
 } = {
@@ -30,6 +31,7 @@ export const config: {
     source: {
         contentRoot: sourceContentPath,
         texturesPath: path.join(sourceContentPath, 'ProjectCoral', 'Textures'),
+        treeIconPath: path.join(sourceContentPath, 'ProjectCoral', 'Core', 'Data','TemporaryIcon'),
         portraitsPath: path.join(sourceContentPath, 'ProjectCoral', 'Characters'),
     },
 }

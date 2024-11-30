@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Any_rare_gem_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 2.0,
+              "Y": 0.0,
+              "Z": -1.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 228.0,
+            "Y": 10.0,
+            "Z": 222.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "5C60011047463D663B70C88A1A866853"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Any_rare_gem_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 256.0,
+        "Y": 256.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Any_rare_gem'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/UI/Icons/Sprite/Any_icon_textures/Any_rare_gem.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Any_rare_gem_Sprite:BodySetup_0'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/UI/Icons/Sprite/Any_rare_gem_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 116.0,
+          "Y": 110.0,
+          "Z": 0.953125,
+          "W": 0.0703125
+        },
+        {
+          "X": -112.0,
+          "Y": 110.0,
+          "Z": 0.0625,
+          "W": 0.0703125
+        },
+        {
+          "X": -112.0,
+          "Y": -112.0,
+          "Z": 0.0625,
+          "W": 0.9375
+        },
+        {
+          "X": 116.0,
+          "Y": -112.0,
+          "Z": 0.953125,
+          "W": 0.9375
+        },
+        {
+          "X": 116.0,
+          "Y": 110.0,
+          "Z": 0.953125,
+          "W": 0.0703125
+        },
+        {
+          "X": -112.0,
+          "Y": -112.0,
+          "Z": 0.0625,
+          "W": 0.9375
+        }
+      ]
+    }
+  }
+]

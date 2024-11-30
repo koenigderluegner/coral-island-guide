@@ -1,0 +1,109 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Any_spider_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -0.5,
+              "Y": 0.0,
+              "Z": 2.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 249.0,
+            "Y": 10.0,
+            "Z": 216.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "FB62CAEF4C426D63FDAC749E11E9DD81"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Any_spider_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 256.0,
+        "Y": 256.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Any_spider'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/UI/Icons/Any_spider.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial.0"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Any_spider_Sprite:BodySetup_0'",
+        "ObjectPath": "/Game/ProjectCoral/Textures/UI/Icons/Sprite/Any_spider_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 124.0,
+          "Y": 110.0,
+          "Z": 0.984375,
+          "W": 0.0703125
+        },
+        {
+          "X": -125.0,
+          "Y": 110.0,
+          "Z": 0.01171875,
+          "W": 0.0703125
+        },
+        {
+          "X": -125.0,
+          "Y": -106.0,
+          "Z": 0.01171875,
+          "W": 0.9140625
+        },
+        {
+          "X": 124.0,
+          "Y": -106.0,
+          "Z": 0.984375,
+          "W": 0.9140625
+        },
+        {
+          "X": 124.0,
+          "Y": 110.0,
+          "Z": 0.984375,
+          "W": 0.0703125
+        },
+        {
+          "X": -125.0,
+          "Y": -106.0,
+          "Z": 0.01171875,
+          "W": 0.9140625
+        }
+      ]
+    }
+  }
+]

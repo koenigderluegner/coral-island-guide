@@ -47,8 +47,10 @@ const parsedArgs = getParsedArgs()
 
 const itemIconPath = config.target.itemIconPath
 const itemIconsTexturesPath = config.source.texturesPath;
+const treeIconTexturesPath = config.source.treeIconPath;
 const skipIfExists = !parsedArgs['prepare'] && true;
 const itemIconsImageProcessor: ItemIconsImageProcessor = new ItemIconsImageProcessor(itemIconsTexturesPath, itemIconPath, skipIfExists);
+const treeIconImageProcessor: ItemIconsImageProcessor = new ItemIconsImageProcessor(treeIconTexturesPath, itemIconPath, skipIfExists);
 
 
 const readable = !parsedArgs['prepare'] && true;
@@ -487,8 +489,7 @@ NPCDbGenerator.AdditionalNpcAppearances = additionalNPCOutfitsMappings;
 
         }
 
-    } catch (e) {
-        // @ts-ignore
+    } catch (e: any) {
         Logger.error('Generators couldn\'t be executed', e.message, e.stack)
     }
 
@@ -504,4 +505,5 @@ new SimpleCopyImageProcessor([
 
 
 itemIconsImageProcessor.process();
+treeIconImageProcessor.process();
 new NpcPortraitsImageProcessor(config.source.portraitsPath, config.target.portraitPath, config.target.headPortraitPath, additionalNPCOutfitsMappings).process()
