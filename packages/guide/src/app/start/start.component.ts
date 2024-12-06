@@ -11,7 +11,7 @@ import { GAME_VERSION } from "../core/injection-tokens/version.injection-token";
 @Component({
     selector: 'app-start',
     templateUrl: './start.component.html',
-    imports: [CommonModule, SharedModule, MatProgressSpinnerModule, MarkdownComponent, MatButton],
+    imports: [CommonModule, SharedModule, MatProgressSpinnerModule, MarkdownComponent],
     styles: [`
         .app-start {
             @apply container block mx-auto my-10;

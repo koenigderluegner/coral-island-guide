@@ -18,13 +18,9 @@ import { addDays } from "@ci/util";
         MatLabel,
         MatOption,
         MatSelect,
-        MatSelectTrigger,
         ReactiveFormsModule,
-        MultiSelectTriggerComponent,
         MatCheckbox,
         MatInput,
-        MatPrefix,
-        MatSuffix
     ],
     templateUrl: './dashboard-filter.component.html'
 })

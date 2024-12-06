@@ -9,7 +9,6 @@ import { SharedModule } from "../../../shared/shared.module";
 @Component({
     selector: 'app-base-furniture-store',
     imports: [
-        AsyncPipe,
         LocationsModule,
         SharedModule
     ],

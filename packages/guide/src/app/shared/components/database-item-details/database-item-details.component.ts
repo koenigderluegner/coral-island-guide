@@ -34,7 +34,6 @@ import { MatProgressSpinner } from "@angular/material/progress-spinner";
         MatTooltipModule,
         RouterLink,
         AddSpacesToPascalCasePipe,
-        DatabaseItemDetailsDirective,
         SharedModule,
         ToDoToggleComponent,
         UiIconComponent,

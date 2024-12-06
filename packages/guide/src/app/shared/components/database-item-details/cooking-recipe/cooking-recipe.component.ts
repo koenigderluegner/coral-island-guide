@@ -8,7 +8,7 @@ import { RouterLink } from "@angular/router";
 
 @Component({
     selector: 'app-cooking-recipe',
-    imports: [CommonModule, SharedModule, JsonPipe, AddSpacesToPascalCasePipe, RouterLink],
+    imports: [CommonModule, SharedModule, AddSpacesToPascalCasePipe, RouterLink],
     templateUrl: './cooking-recipe.component.html'
 })
 export class CookingRecipeComponent {

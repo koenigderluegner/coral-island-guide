@@ -1,4 +1,4 @@
-import { importProvidersFrom, isDevMode, NgModule, Optional, inject, provideAppInitializer } from '@angular/core';
+import { importProvidersFrom, inject, isDevMode, NgModule, provideAppInitializer } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -121,14 +121,14 @@ const appRoutes: Route[] = [
     ],
     providers: [
         provideAppInitializer(() => {
-        const initializerFn = ((BETA_CODE: string | null, settingsService: SettingsService) => {
+            const initializerFn = ((BETA_CODE: string | null, settingsService: SettingsService) => {
                 if (!BETA_CODE) {
                     settingsService.saveSettings({...settingsService.getSettings(), useBeta: false})
                 }
                 return () => of()
-            })(inject([new Optional(), BETA_CODE]), inject(SettingsService));
-        return initializerFn();
-      }),
+            })(inject(BETA_CODE, {optional: true}), inject(SettingsService));
+            return initializerFn();
+        }),
         {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: {disabled: true}},
         {provide: MAT_TABS_CONFIG, useValue: {animationDuration: '0', stretchTabs: false} satisfies MatTabsConfig},
         {provide: TitleStrategy, useClass: PageTitleService},

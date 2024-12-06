@@ -7,10 +7,8 @@ import { SharedModule } from "../../../shared.module";
 @Component({
     selector: 'app-mixing-recipe',
     imports: [
-        AddSpacesToPascalCasePipe,
         KeyValuePipe,
         SharedModule,
-        TitleCasePipe
     ],
     templateUrl: './mixing-recipe.component.html'
 })

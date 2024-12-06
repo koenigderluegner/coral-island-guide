@@ -12,7 +12,6 @@ import { RouterLink } from "@angular/router";
         SharedModule,
         AddSpacesToPascalCasePipe,
         UiIconComponent,
-        MatTooltip,
         RouterLink
     ],
     templateUrl: './birthday-dashboard.component.html',
