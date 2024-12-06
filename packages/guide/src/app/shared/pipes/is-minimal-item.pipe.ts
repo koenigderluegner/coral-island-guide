@@ -3,6 +3,7 @@ import { MinimalItem } from "@ci/data-types";
 
 @Pipe({
     name: 'isMinimalItem',
+    standalone: false
 })
 export class IsMinimalItemPipe implements PipeTransform {
 

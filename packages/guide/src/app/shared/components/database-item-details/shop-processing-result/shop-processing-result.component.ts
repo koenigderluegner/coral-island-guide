@@ -5,7 +5,6 @@ import { SharedModule } from "../../../shared.module";
 
 @Component({
     selector: 'app-shop-processing-result',
-    standalone: true,
     imports: [CommonModule, SharedModule],
     templateUrl: './shop-processing-result.component.html'
 })

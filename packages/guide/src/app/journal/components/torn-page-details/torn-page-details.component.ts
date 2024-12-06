@@ -5,6 +5,7 @@ import { ListDetailService } from "../../../shared/components/list-detail-contai
 @Component({
     selector: 'app-torn-page-details',
     templateUrl: './torn-page-details.component.html',
+    standalone: false
 })
 export class TornPageDetailsComponent {
     tornPage = input.required<TornPageData>()

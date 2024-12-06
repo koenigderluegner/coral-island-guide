@@ -6,6 +6,7 @@ import { DatabaseService } from "../../../../shared/services/database.service";
 @Component({
     selector: 'app-processor-table',
     templateUrl: './processor-table.component.html',
+    standalone: false
 })
 export class ProcessorTableComponent extends BaseTableComponent<ItemProcessing> {
 

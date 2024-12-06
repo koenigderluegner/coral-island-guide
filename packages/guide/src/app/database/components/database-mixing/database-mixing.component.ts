@@ -4,7 +4,8 @@ import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.co
 @Component({
     selector: 'app-database-mixing',
     templateUrl: './database-mixing.component.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class DatabaseMixingComponent extends BaseDatabaseDetailPartComponent {
 }

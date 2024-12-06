@@ -24,6 +24,7 @@ import { UserDataService } from "../../../core/services/user-data.service";
 @Component({
     selector: 'app-index',
     templateUrl: './index.component.html',
+    standalone: false
 })
 export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem | MinimalTagBasedItem> {
 

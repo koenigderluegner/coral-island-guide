@@ -6,6 +6,7 @@ import { FilterForm } from "../../types/filter-form.type";
 @Component({
     selector: 'app-data-filter',
     templateUrl: './data-filter.component.html',
+    standalone: false
 })
 export class DataFilterComponent {
 

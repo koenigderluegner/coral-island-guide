@@ -7,6 +7,7 @@ import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 @Component({
     selector: 'app-people',
     templateUrl: './npcs.component.html',
+    standalone: false
 })
 export class NPCsComponent {
     uiIcons = UiIcon;

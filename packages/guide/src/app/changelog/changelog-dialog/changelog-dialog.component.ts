@@ -13,7 +13,6 @@ import { SettingsService } from "../../shared/services/settings.service";
 
 @Component({
     selector: 'app-changelog-dialog',
-    standalone: true,
     imports: [
         MatDialogActions,
         MatDialogClose,

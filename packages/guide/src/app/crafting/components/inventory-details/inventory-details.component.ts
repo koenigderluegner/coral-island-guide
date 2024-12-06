@@ -5,6 +5,7 @@ import { CraftingRecipe } from '@ci/data-types';
     selector: 'app-inventory-details',
     templateUrl: './inventory-details.component.html',
     styleUrls: ['./inventory-details.component.scss'],
+    standalone: false
 })
 export class InventoryDetailsComponent {
     @Input() craftingRecipe?: CraftingRecipe;

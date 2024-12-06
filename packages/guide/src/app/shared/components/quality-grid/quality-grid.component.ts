@@ -9,7 +9,8 @@ import { Item, Quality } from '@ci/data-types';
     host: {
         class: 'app-quality-grid',
         '[class.!grid-cols-1]': 'showOnlyBase()',
-    }
+    },
+    standalone: false
 })
 export class QualityGridComponent {
     QUALITY = Quality;

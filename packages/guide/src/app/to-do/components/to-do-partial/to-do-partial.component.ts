@@ -10,20 +10,14 @@ import { ItemEntry } from "../../../shared/types/item-entry.type";
     selector: 'app-to-do-partial',
     templateUrl: './to-do-partial.component.html',
     animations: [
-        trigger(
-            'leaveAnimation',
-            [
-                transition(
-                    ':leave',
-                    [
-                        style({height: '*', opacity: 1}),
-                        animate('200ms ease-in',
-                            style({height: 0, opacity: 0}))
-                    ]
-                )
-            ]
-        )
-    ]
+        trigger('leaveAnimation', [
+            transition(':leave', [
+                style({ height: '*', opacity: 1 }),
+                animate('200ms ease-in', style({ height: 0, opacity: 0 }))
+            ])
+        ])
+    ],
+    standalone: false
 })
 export class ToDoPartialComponent {
     entrySelected = output<ItemEntry>()

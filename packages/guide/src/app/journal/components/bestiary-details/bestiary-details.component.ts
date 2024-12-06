@@ -5,7 +5,8 @@ import { ListDetailService } from "../../../shared/components/list-detail-contai
 @Component({
     selector: 'app-bestiary-details',
     templateUrl: './bestiary-details.component.html',
-    encapsulation: ViewEncapsulation.Emulated
+    encapsulation: ViewEncapsulation.Emulated,
+    standalone: false
 })
 export class BestiaryDetailsComponent {
     enemy = input.required<Enemy>()

@@ -11,7 +11,6 @@ import { MixingRecipeComponent } from "../../shared/components/database-item-det
 
 @Component({
     selector: 'app-mixing',
-    standalone: true,
     imports: [
         CraftingModule,
         SharedModule,

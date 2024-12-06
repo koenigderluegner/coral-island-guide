@@ -4,6 +4,7 @@ import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.co
 @Component({
     selector: 'app-database-shop-data',
     templateUrl: './database-shop-data.component.html',
+    standalone: false
 })
 export class DatabaseShopDataComponent extends BaseDatabaseDetailPartComponent {
 }

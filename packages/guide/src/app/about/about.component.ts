@@ -6,7 +6,6 @@ import { SharedModule } from "../shared/shared.module";
 @Component({
     selector: 'app-about',
     templateUrl: './about.component.html',
-    standalone: true,
     imports: [CommonModule, ChangelogComponent, SharedModule],
     styles: [`
         .app-about {

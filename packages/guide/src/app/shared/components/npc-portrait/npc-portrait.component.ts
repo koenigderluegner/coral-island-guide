@@ -6,6 +6,7 @@ import { GAME_VERSION } from "../../../core/injection-tokens/version.injection-t
     selector: 'app-npc-portrait',
     templateUrl: './npc-portrait.component.html',
     encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class NpcPortraitComponent {
     portraitName = input.required<string | null | undefined>();

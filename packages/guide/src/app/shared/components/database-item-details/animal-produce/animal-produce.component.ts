@@ -6,7 +6,6 @@ import { SharedModule } from "../../../shared.module";
 
 @Component({
     selector: 'app-animal-produce',
-    standalone: true,
     imports: [CommonModule, AddSpacesToPascalCasePipe, SharedModule],
     templateUrl: './animal-produce.component.html'
 })

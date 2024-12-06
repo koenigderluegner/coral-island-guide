@@ -5,6 +5,7 @@ import { OpeningHours } from "@ci/data-types";
     selector: 'app-opening-hours',
     templateUrl: './opening-hours.component.html',
     styleUrls: ['./opening-hours.component.scss'],
+    standalone: false
 })
 export class OpeningHoursComponent {
     @Input({required: true}) openingHours!: Record<string, OpeningHours>

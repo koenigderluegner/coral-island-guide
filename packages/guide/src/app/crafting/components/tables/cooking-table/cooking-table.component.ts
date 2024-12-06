@@ -6,6 +6,7 @@ import { DatabaseService } from "../../../../shared/services/database.service";
 @Component({
     selector: 'app-cooking-table',
     templateUrl: './cooking-table.component.html',
+    standalone: false
 })
 export class CookingTableComponent extends BaseTableComponent<CookingRecipe> {
 

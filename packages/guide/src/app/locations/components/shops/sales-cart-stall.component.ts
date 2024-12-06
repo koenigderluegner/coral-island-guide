@@ -8,7 +8,6 @@ import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.comp
 
 @Component({
     selector: 'app-sales-cart-stall',
-    standalone: true,
     imports: [
         SharedModule,
         LocationsModule,

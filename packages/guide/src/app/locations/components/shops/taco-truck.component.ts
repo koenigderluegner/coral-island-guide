@@ -9,7 +9,6 @@ import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.comp
 @Component({
     selector: 'app-taco-truck',
     templateUrl: '../base-shop/base-shop.component.html',
-    standalone: true,
     imports: [LocationsModule, SharedModule, AsyncPipe, CommonModule, UiIconComponent]
 })
 export class TacoTruckComponent extends BaseShopComponent {

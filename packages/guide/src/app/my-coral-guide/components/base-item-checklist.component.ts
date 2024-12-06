@@ -6,7 +6,10 @@ import { MinimalItem } from "@ci/data-types";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { BaseChecklistService } from "../../core/services/checklists/base-checklist.service";
 
-@Component({template: ''})
+@Component({
+    template: '',
+    standalone: false
+})
 export abstract class BaseItemChecklistComponent extends BaseTabbedSelectableContainerComponent<any> implements OnInit {
     checklistForm: FormRecord<FormControl<boolean>> = new FormRecord<FormControl<boolean>>({})
     protected abstract checklistService: BaseChecklistService;

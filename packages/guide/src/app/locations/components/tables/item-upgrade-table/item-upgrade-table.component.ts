@@ -5,6 +5,7 @@ import { ItemUpgradeData } from "@ci/data-types";
 @Component({
     selector: 'app-item-upgrade-table',
     templateUrl: './item-upgrade-table.component.html',
+    standalone: false
 })
 export class ItemUpgradeTableComponent extends BaseTableComponent<ItemUpgradeData & {
     shop?: { url: string; displayName: string }

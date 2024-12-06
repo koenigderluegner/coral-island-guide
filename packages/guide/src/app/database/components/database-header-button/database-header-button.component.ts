@@ -4,6 +4,7 @@ import { ExpandableComponent } from "../../../shared/components/expandable/expan
 @Component({
     selector: 'app-database-header-button',
     templateUrl: './database-header-button.component.html',
+    standalone: false
 })
 export class DatabaseHeaderButtonComponent {
 

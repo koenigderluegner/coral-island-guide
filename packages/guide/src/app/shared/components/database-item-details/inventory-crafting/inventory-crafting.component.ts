@@ -4,7 +4,6 @@ import { SharedModule } from "../../../shared.module";
 
 @Component({
     selector: 'app-inventory-crafting',
-    standalone: true,
     imports: [
         SharedModule
     ],

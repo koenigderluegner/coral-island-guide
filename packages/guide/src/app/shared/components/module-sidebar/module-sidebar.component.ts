@@ -5,7 +5,8 @@ import { ModuleSidebarItemComponent } from '../module-sidebar-item/module-sideba
     selector: 'app-module-sidebar',
     templateUrl: './module-sidebar.component.html',
     styleUrls: ['./module-sidebar.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class ModuleSidebarComponent {
     @ContentChildren(ModuleSidebarItemComponent) viewChildren?: QueryList<ModuleSidebarItemComponent>;

@@ -12,6 +12,7 @@ import { Title } from '@angular/platform-browser';
 @Component({
     selector: 'app-database',
     templateUrl: './database.component.html',
+    standalone: false
 })
 export class DatabaseComponent {
     protected readonly items: Item[];

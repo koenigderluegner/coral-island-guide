@@ -10,6 +10,7 @@ import { startWith } from "rxjs";
 @Component({
     selector: 'app-found',
     templateUrl: './found.component.html',
+    standalone: false
 })
 export class FoundComponent extends BaseJournalPageComponent<Item> implements AfterViewInit {
 

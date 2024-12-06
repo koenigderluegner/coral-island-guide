@@ -3,6 +3,7 @@ import { MinimalTagBasedItem } from "@ci/data-types";
 
 @Pipe({
     name: 'isMinimalTagBasedItem',
+    standalone: false
 })
 export class IsMinimalTagBasedItemPipe implements PipeTransform {
     transform(value: any): value is MinimalTagBasedItem {

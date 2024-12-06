@@ -4,7 +4,8 @@ import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.co
 @Component({
     selector: 'app-database-cooking',
     templateUrl: './database-cooking.component.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class DatabaseCookingComponent extends BaseDatabaseDetailPartComponent {
 }

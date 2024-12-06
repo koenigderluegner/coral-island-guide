@@ -12,7 +12,6 @@ import { OfferingGroupComponent } from "../offering-group/offering-group.compone
 
 @Component({
     selector: 'app-orchestra-zones',
-    standalone: true,
     imports: [
         AsyncPipe,
         DatabaseItemDetailsDirective,

@@ -3,7 +3,6 @@ import { SettingsService } from "../../services/settings.service";
 
 @Component({
     selector: 'app-full-size-image',
-    standalone: true,
     imports: [],
     templateUrl: './full-size-image.component.html',
     encapsulation: ViewEncapsulation.None

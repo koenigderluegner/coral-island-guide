@@ -5,6 +5,7 @@ import { Item } from "@ci/data-types";
 @Component({
     selector: 'app-non-specialized-table',
     templateUrl: './non-specialized-table.component.html',
+    standalone: false
 })
 export class NonSpecializedTableComponent extends BaseTableComponent<Item> {
     protected readonly BASE_DISPLAY_COLUMNS: string[] = [

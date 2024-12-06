@@ -11,7 +11,6 @@ import { DatabaseItem } from "@ci/data-types";
 
 @Component({
     selector: 'app-offering',
-    standalone: true,
     imports: [CommonModule, AnimalProduceComponent, CookingRecipeComponent, CropComponent, FishComponent, InsectComponent, ProcessingComponent, ShopProcessingResultComponent],
     templateUrl: './offering.component.html',
     styles: `:host {

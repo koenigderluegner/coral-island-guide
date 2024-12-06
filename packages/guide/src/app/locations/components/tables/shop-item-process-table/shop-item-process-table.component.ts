@@ -5,6 +5,7 @@ import { ItemProcessShopData } from "@ci/data-types";
 @Component({
     selector: 'app-shop-item-process-table',
     templateUrl: './shop-item-process-table.component.html',
+    standalone: false
 })
 export class ShopItemProcessTableComponent extends BaseTableComponent<ItemProcessShopData & {
     shop?: { url: string; displayName: string }

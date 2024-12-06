@@ -8,7 +8,6 @@ import { ToDo } from "../../../core/types/to-do.type";
 
 @Component({
     selector: 'app-offering-group',
-    standalone: true,
     imports: [
         LocationsModule,
         NgOptimizedImage,

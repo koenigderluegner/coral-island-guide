@@ -7,7 +7,8 @@ import { Observable } from "rxjs";
     selector: 'app-database-details',
     templateUrl: './database-details.component.html',
     styleUrls: ['./database-details.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class DatabaseDetailsComponent implements OnInit {
     item = input.required<Item>();

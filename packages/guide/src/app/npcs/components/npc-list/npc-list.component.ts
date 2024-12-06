@@ -10,7 +10,8 @@ import { filterNPCs } from "../../filter-npcs.function";
     selector: 'app-npc-list',
     templateUrl: './npc-list.component.html',
     styleUrls: ['./npc-list.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class NpcListComponent {
 

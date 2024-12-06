@@ -8,7 +8,6 @@ import { RouterLink } from "@angular/router";
 
 @Component({
     selector: 'app-processing',
-    standalone: true,
     imports: [CommonModule, SharedModule, AddSpacesToPascalCasePipe, RouterLink],
     templateUrl: './processing.component.html'
 })

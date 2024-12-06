@@ -20,7 +20,6 @@ import { SharedModule } from "../../shared/shared.module";
 
 @Component({
     selector: 'app-mixing-table',
-    standalone: true,
     imports: [
         AddSpacesToPascalCasePipe,
         KeyValuePipe,

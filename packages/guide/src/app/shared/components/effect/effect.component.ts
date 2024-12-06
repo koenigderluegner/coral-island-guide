@@ -4,6 +4,7 @@ import { Effect, MinimalItem, RemoveItemFromInventoryEffect } from "@ci/data-typ
 @Component({
     selector: 'app-effect',
     templateUrl: './effect.component.html',
+    standalone: false
 })
 export class EffectComponent {
 

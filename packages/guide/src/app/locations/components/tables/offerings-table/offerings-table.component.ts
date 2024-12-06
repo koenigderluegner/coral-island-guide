@@ -5,6 +5,7 @@ import { OfferingAltar } from "@ci/data-types";
 @Component({
     selector: 'app-offerings-table',
     templateUrl: './offerings-table.component.html',
+    standalone: false
 })
 export class OfferingsTableComponent extends BaseTableComponent<OfferingAltar> {
     showAltar = input(false, {transform: booleanAttribute})

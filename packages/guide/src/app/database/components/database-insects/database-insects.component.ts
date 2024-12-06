@@ -4,7 +4,8 @@ import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.co
 @Component({
     selector: 'app-database-insects',
     templateUrl: './database-insects.component.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class DatabaseInsectsComponent extends BaseDatabaseDetailPartComponent {
 }

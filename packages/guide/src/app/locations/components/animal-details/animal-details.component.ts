@@ -6,6 +6,7 @@ import { ListDetailService } from "../../../shared/components/list-detail-contai
 @Component({
     selector: 'app-animal-details',
     templateUrl: './animal-details.component.html',
+    standalone: false
 })
 export class AnimalDetailsComponent {
     mappedAnimalShopData = input.required<MappedAnimalShopData>();

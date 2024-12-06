@@ -9,7 +9,6 @@ import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.comp
 @Component({
     selector: 'app-tidal-threads',
     templateUrl: '../base-shop/base-shop.component.html',
-    standalone: true,
     imports: [LocationsModule, SharedModule, AsyncPipe, CommonModule, UiIconComponent]
 })
 export class TidalThreadsComponent extends BaseShopComponent {

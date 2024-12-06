@@ -5,7 +5,8 @@ import { Fish } from "@ci/data-types";
 @Component({
     selector: 'app-database-fishing',
     templateUrl: './database-fishing.component.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class DatabaseFishingComponent extends BaseDatabaseDetailPartComponent implements OnInit {
     protected fish?: Fish;

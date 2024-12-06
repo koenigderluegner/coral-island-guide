@@ -6,7 +6,6 @@ import { SharedModule } from "../../../shared.module";
 
 @Component({
     selector: 'app-mixing-recipe',
-    standalone: true,
     imports: [
         AddSpacesToPascalCasePipe,
         KeyValuePipe,

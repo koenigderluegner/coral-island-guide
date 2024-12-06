@@ -5,6 +5,7 @@ import { BaseShopComponent } from "../../base-shop/base-shop.component";
 @Component({
     selector: 'app-merfolk-oracle-tail-store',
     templateUrl: '../../base-shop/base-shop.component.html',
+    standalone: false
 })
 export class MerfolkOracleTailStoreComponent extends BaseShopComponent {
 

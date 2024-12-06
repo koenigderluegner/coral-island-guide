@@ -5,7 +5,8 @@ import { MinimalItem } from '@ci/data-types';
     selector: 'app-inline-minimal-item',
     templateUrl: './inline-minimal-item.component.html',
     styleUrls: ['./inline-minimal-item.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class InlineMinimalItemComponent {
     minimalItem = input.required<MinimalItem>();

@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Quality } from "@ci/data-types";
 
 @Pipe({
-    name: 'castToQuality'
+    name: 'castToQuality',
+    standalone: false
 })
 export class CastToQualityPipe implements PipeTransform {
 

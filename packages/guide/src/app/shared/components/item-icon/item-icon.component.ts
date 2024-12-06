@@ -8,6 +8,7 @@ import { GAME_VERSION } from "../../../core/injection-tokens/version.injection-t
     templateUrl: './item-icon.component.html',
     styleUrls: ['./item-icon.component.scss'],
     encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class ItemIconComponent {
     @Input() itemName?: string | null | undefined;

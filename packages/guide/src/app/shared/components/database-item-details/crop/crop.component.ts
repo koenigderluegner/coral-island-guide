@@ -5,7 +5,6 @@ import { BaseCrop, Crop, FruitPlant, FruitTree } from "@ci/data-types";
 
 @Component({
     selector: 'app-crop',
-    standalone: true,
     imports: [CommonModule, SharedModule],
     templateUrl: './crop.component.html'
 })

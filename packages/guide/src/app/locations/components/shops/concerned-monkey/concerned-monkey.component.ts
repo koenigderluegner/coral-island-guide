@@ -5,6 +5,7 @@ import { ShopName } from "@ci/data-types";
 @Component({
     selector: 'app-concerned-monkey',
     templateUrl: '../../base-shop/base-shop.component.html',
+    standalone: false
 })
 export class ConcernedMonkeyComponent extends BaseShopComponent {
 

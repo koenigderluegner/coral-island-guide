@@ -6,7 +6,6 @@ import { RouterLink } from "@angular/router";
 
 @Component({
     selector: 'app-error-404',
-    standalone: true,
     imports: [
         AsyncPipe,
         ChangelogComponent,

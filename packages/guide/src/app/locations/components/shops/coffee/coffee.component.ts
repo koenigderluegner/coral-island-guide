@@ -5,6 +5,7 @@ import { BaseShopComponent } from "../../base-shop/base-shop.component";
 @Component({
     selector: 'app-coffee',
     templateUrl: '../../base-shop/base-shop.component.html',
+    standalone: false
 })
 export class CoffeeComponent extends BaseShopComponent {
 

@@ -7,7 +7,6 @@ import { GAME_VERSION } from "../../../core/injection-tokens/version.injection-t
     templateUrl: './ui-icon.component.html',
     styleUrls: ['./ui-icon.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    standalone: true,
     imports: []
 })
 export class UiIconComponent {

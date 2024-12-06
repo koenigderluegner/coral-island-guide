@@ -8,7 +8,8 @@ import { MailData } from "@ci/data-types";
         :host {
             display: block;
         }
-    `]
+    `],
+    standalone: false
 })
 export class MailComponent implements OnChanges {
 

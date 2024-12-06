@@ -6,6 +6,7 @@ import { GenericEntry, ItemEntry } from '@ci/data-types';
     selector: 'app-item-list',
     templateUrl: './item-list.component.html',
     styleUrls: ['./item-list.component.scss'],
+    standalone: false
 })
 export class ItemListComponent {
 

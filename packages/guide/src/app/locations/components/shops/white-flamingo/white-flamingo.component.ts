@@ -5,6 +5,7 @@ import { BaseShopComponent } from "../../base-shop/base-shop.component";
 @Component({
     selector: 'app-white-flamingo',
     templateUrl: '../../base-shop/base-shop.component.html',
+    standalone: false
 })
 export class WhiteFlamingoComponent extends BaseShopComponent {
 

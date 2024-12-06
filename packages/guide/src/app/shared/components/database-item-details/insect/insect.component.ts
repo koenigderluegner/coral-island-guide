@@ -6,7 +6,6 @@ import { AddSpacesToPascalCasePipe } from "../../../pipes/add-spaces-to-pascal-c
 
 @Component({
     selector: 'app-insect',
-    standalone: true,
     imports: [CommonModule, AddSpacesToPascalCasePipe],
     templateUrl: './insect.component.html'
 })

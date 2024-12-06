@@ -5,7 +5,8 @@ import { HeartEventsChecklistService } from "../../../core/services/checklists/h
 @Component({
     selector: 'app-heart-event-trigger',
     templateUrl: './heart-event-trigger.component.html',
-    styles: [':host{display: block;}']
+    styles: [':host{display: block;}'],
+    standalone: false
 })
 export class HeartEventTriggerComponent {
 

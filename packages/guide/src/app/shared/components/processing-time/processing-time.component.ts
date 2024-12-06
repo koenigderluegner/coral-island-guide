@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
     selector: 'app-processing-time',
     templateUrl: './processing-time.component.html',
+    standalone: false
 })
 export class ProcessingTimeComponent {
 

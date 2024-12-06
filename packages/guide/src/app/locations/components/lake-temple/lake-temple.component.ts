@@ -14,7 +14,6 @@ import { AsyncPipe } from "@angular/common";
 @Component({
     selector: 'app-lake-temple',
     templateUrl: './lake-temple.component.html',
-    standalone: true,
     imports: [
         MatTabGroup,
         ItemCardSwitchComponent,

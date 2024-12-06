@@ -15,7 +15,8 @@ import { MinimalNPC } from "@ci/data-types";
             }
         }
     `],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class DatabaseGiftsComponent extends BaseDatabaseDetailPartComponent implements OnInit {
 

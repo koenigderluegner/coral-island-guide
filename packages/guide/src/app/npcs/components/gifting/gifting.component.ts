@@ -16,7 +16,8 @@ type CombinedGiftPreference = {
     selector: 'app-gifting',
     templateUrl: './gifting.component.html',
     styleUrls: ['./gifting.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class GiftingComponent extends BaseSelectableContainerComponent<MinimalItem> {
 

@@ -4,7 +4,8 @@ import { MatSort } from "@angular/material/sort";
 import { MinimalItem, Season } from "@ci/data-types";
 
 @Component({
-    template: ''
+    template: '',
+    standalone: false
 })
 export abstract class BaseTableComponent<T> implements OnInit, OnChanges, AfterViewInit {
 

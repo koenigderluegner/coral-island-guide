@@ -5,6 +5,7 @@ import { ToDoContext } from "../../../core/types/to-do-context.type";
 @Component({
     selector: 'app-caught-details',
     templateUrl: './caught-details.component.html',
+    standalone: false
 })
 export class CaughtDetailsComponent implements OnInit, OnChanges {
     @Input({required: true}) critter!: Fish | Critter;

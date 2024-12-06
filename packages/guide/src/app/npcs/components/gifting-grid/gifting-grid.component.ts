@@ -6,7 +6,8 @@ import { preferencesMap } from "../../../shared/constants/preference-map.const";
     selector: 'app-gifting-grid',
     templateUrl: './gifting-grid.component.html',
     styleUrls: ['./gifting-grid.component.scss',],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class GiftingGridComponent {
     @HostBinding('class.gifting-preference-grid') setCssClass = true;

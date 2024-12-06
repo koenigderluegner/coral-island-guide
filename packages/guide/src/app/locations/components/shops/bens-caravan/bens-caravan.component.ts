@@ -5,6 +5,7 @@ import { ShopName } from "@ci/data-types";
 @Component({
     selector: 'app-bens-caravan',
     templateUrl: '../../base-shop/base-shop.component.html',
+    standalone: false
 })
 export class BensCaravanComponent extends BaseShopComponent {
 

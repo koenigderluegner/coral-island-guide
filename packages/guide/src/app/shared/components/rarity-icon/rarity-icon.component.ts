@@ -5,6 +5,7 @@ import { Quality } from '@ci/data-types';
     selector: 'app-rarity-icon',
     templateUrl: './rarity-icon.component.html',
     styleUrls: ['./rarity-icon.component.scss'],
+    standalone: false
 })
 // TODO rename to quality
 export class RarityIconComponent {

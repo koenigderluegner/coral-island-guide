@@ -10,7 +10,6 @@ import { ToDoContext } from "../../../core/types/to-do-context.type";
 
 @Component({
     selector: 'app-item-card-switch',
-    standalone: true,
     imports: [CommonModule, SharedModule, DatabaseItemDetailsComponent, DatabaseItemDetailsDirective],
     templateUrl: './item-card-switch.component.html'
 })

@@ -5,6 +5,7 @@ import { ShopItemData } from "@ci/data-types";
 @Component({
     selector: 'app-shop-item-data-table',
     templateUrl: './shop-item-data-table.component.html',
+    standalone: false
 })
 export class ShopItemDataTableComponent extends BaseTableComponent<ShopItemData & {
     shop?: { url: string; displayName: string }

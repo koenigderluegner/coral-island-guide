@@ -15,6 +15,7 @@ import { SettingsService } from "../shared/services/settings.service";
 @Component({
     selector: 'app-locations',
     templateUrl: './locations.component.html',
+    standalone: false
 })
 export class LocationsComponent {
     protected uiIcon = UiIcon;

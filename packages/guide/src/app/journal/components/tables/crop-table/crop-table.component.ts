@@ -5,6 +5,7 @@ import { BaseCrop } from "@ci/data-types";
 @Component({
     selector: 'app-crop-table',
     templateUrl: './crop-table.component.html',
+    standalone: false
 })
 export class CropTableComponent extends BaseTableComponent<BaseCrop> {
 

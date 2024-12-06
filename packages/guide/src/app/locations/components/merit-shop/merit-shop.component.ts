@@ -6,6 +6,7 @@ import { Observable } from "rxjs";
 @Component({
     selector: 'app-merit-shop',
     templateUrl: './merit-shop.component.html',
+    standalone: false
 })
 export class MeritShopComponent extends BaseSelectableContainerComponent<MeritExchangeShopData> {
 

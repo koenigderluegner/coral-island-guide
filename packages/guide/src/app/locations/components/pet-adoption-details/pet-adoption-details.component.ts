@@ -5,6 +5,7 @@ import { DatabaseService } from "../../../shared/services/database.service";
 @Component({
     selector: 'app-pet-adoption-details',
     templateUrl: './pet-adoption-details.component.html',
+    standalone: false
 })
 export class PetAdoptionDetailsComponent implements OnInit, OnChanges {
 

@@ -5,10 +5,9 @@ import { MarkdownModule, MarkdownService } from 'ngx-markdown';
 
 @Component({
     selector: 'app-changelog',
-    standalone: true,
     imports: [CommonModule, MarkdownModule],
     providers: [MarkdownService],
-    template: '<markdown [data]="markdown" />',
+    template: '<markdown [data]="markdown" />'
 })
 export class ChangelogComponent {
 

@@ -11,6 +11,7 @@ import { ItemEntry } from "../../../shared/types/item-entry.type";
     selector: 'app-to-do-entry-base',
     templateUrl: './to-do-entry-base.component.html',
     styleUrls: ['./to-do-entry-base.component.scss'],
+    standalone: false
 })
 export class ToDoEntryBaseComponent implements OnInit {
 

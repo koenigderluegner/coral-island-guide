@@ -4,6 +4,7 @@ import { ItemProcessShopData } from "@ci/data-types";
 @Component({
     selector: 'app-shop-item-process-data-details',
     templateUrl: './shop-item-process-data-details.component.html',
+    standalone: false
 })
 export class ShopItemProcessDataDetailsComponent {
 

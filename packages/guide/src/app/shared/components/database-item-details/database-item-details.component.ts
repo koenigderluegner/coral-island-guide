@@ -29,7 +29,6 @@ import { MatProgressSpinner } from "@angular/material/progress-spinner";
 @Component({
     selector: 'app-database-item-details',
     templateUrl: './database-item-details.component.html',
-    standalone: true,
     imports: [
         CommonModule,
         MatTooltipModule,
@@ -40,8 +39,7 @@ import { MatProgressSpinner } from "@angular/material/progress-spinner";
         ToDoToggleComponent,
         UiIconComponent,
         MatProgressSpinner
-    ],
-
+    ]
 })
 export class DatabaseItemDetailsComponent {
     itemId = input.required<string>();

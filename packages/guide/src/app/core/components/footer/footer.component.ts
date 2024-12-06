@@ -11,7 +11,8 @@ import { GAME_VERSION } from "../../injection-tokens/version.injection-token";
             min-height: var(--cg-min-footer-height);
         }
     `],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class FooterComponent {
     protected uiIcon = UiIcon;

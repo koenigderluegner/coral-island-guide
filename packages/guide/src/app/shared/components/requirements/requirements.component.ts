@@ -4,6 +4,7 @@ import { Requirement } from "@ci/data-types";
 @Component({
     selector: 'app-requirements',
     templateUrl: './requirements.component.html',
+    standalone: false
 })
 export class RequirementsComponent {
 

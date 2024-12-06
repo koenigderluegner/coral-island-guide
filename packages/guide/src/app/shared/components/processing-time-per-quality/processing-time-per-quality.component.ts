@@ -5,6 +5,7 @@ import { Quality, UiIcon } from "@ci/data-types";
     selector: 'app-processing-time-per-quality',
     templateUrl: './processing-time-per-quality.component.html',
     styleUrls: ['./processing-time-per-quality.component.scss'],
+    standalone: false
 })
 export class ProcessingTimePerQualityComponent {
 

@@ -6,7 +6,6 @@ import { AddSpacesToPascalCasePipe } from "../../../pipes/add-spaces-to-pascal-c
 
 @Component({
     selector: 'app-fish',
-    standalone: true,
     imports: [CommonModule, AddSpacesToPascalCasePipe],
     templateUrl: './fish.component.html'
 })

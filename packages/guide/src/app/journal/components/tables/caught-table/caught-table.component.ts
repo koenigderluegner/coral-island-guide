@@ -7,7 +7,8 @@ import { BaseTableComponent } from "../../../../shared/components/base-table/bas
 @Component({
     selector: 'app-caught-table',
     templateUrl: './caught-table.component.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class CaughtTableComponent extends BaseTableComponent<(Critter | Fish)> {
 

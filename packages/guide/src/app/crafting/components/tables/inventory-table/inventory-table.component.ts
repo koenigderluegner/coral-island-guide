@@ -5,6 +5,7 @@ import { CraftingRecipe } from "@ci/data-types";
 @Component({
     selector: 'app-inventory-table',
     templateUrl: './inventory-table.component.html',
+    standalone: false
 })
 export class InventoryTableComponent extends BaseTableComponent<CraftingRecipe> {
     protected readonly BASE_DISPLAY_COLUMNS: string[] = [

@@ -5,6 +5,7 @@ import { FestivalShopItemData } from "@ci/data-types";
 @Component({
     selector: 'app-festival-shop-item-table',
     templateUrl: './festival-shop-item-table.component.html',
+    standalone: false
 })
 export class FestivalShopItemTableComponent extends BaseTableComponent<FestivalShopItemData & {
     festival?: { url: string; displayName: string }

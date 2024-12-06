@@ -12,7 +12,6 @@ import { addDays } from "@ci/util";
 
 @Component({
     selector: 'app-dashboard-filter',
-    standalone: true,
     imports: [
         FormsModule,
         MatFormField,

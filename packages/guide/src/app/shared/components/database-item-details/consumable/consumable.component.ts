@@ -5,7 +5,6 @@ import { AddSpacesToPascalCasePipe } from "../../../pipes/add-spaces-to-pascal-c
 
 @Component({
     selector: 'app-consumable',
-    standalone: true,
     imports: [CommonModule, AddSpacesToPascalCasePipe],
     templateUrl: './consumable.component.html'
 })
