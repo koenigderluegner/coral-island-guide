@@ -1,4 +1,4 @@
-import { Component, HostBinding, ViewEncapsulation, contentChildren, signal } from '@angular/core';
+import { Component, contentChildren, signal, ViewEncapsulation } from '@angular/core';
 import { ModuleSidebarItemComponent } from '../module-sidebar-item/module-sidebar-item.component';
 
 @Component({
@@ -6,12 +6,14 @@ import { ModuleSidebarItemComponent } from '../module-sidebar-item/module-sideba
     templateUrl: './module-sidebar.component.html',
     styleUrls: ['./module-sidebar.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    standalone: false,
+    host: {
+        'class': 'app-module-sidebar'
+    }
 })
 export class ModuleSidebarComponent {
     readonly viewChildren = contentChildren(ModuleSidebarItemComponent);
     readonly showMenu = signal(false);
-    @HostBinding('class.app-module-sidebar') private _setClass = true;
 
     toggleMenu($event: MouseEvent) {
         $event.preventDefault();

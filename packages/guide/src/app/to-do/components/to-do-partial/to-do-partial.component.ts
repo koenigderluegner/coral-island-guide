@@ -1,4 +1,4 @@
-import { Component, HostBinding, inject, input, output } from '@angular/core';
+import { Component, computed, inject, input, output } from '@angular/core';
 import { ToDoService } from "../../../core/services/to-do.service";
 import { ToDoContext, ToDoContextDisplayNames } from "../../../core/types/to-do-context.type";
 import { ToDo } from "../../../core/types/to-do.type";
@@ -17,25 +17,25 @@ import { ItemEntry } from "../../../shared/types/item-entry.type";
             ])
         ])
     ],
+    host: {
+        '[class.hidden]': 'hidden()'
+    },
     standalone: false
 })
 export class ToDoPartialComponent {
     readonly entrySelected = output<ItemEntry>()
     readonly context = input.required<ToDoContext | 'uncategorized'>();
     readonly toDoId = input<ToDoFilterOptions[]>();
+    readonly hidden = computed(() => !this.toDoId()?.includes(this.context()) || !this.data.length)
     protected readonly ToDoContextDisplayNames = ToDoContextDisplayNames;
-    protected readonly _toDoService: ToDoService = inject(ToDoService);
+    protected readonly toDoService: ToDoService = inject(ToDoService);
 
     get data(): ToDo[] {
-        return this._toDoService.getCategoryList(this.context() === 'uncategorized' ? undefined : this.context());
-    }
-
-    @HostBinding('class.hidden') get hidden(): boolean {
-        return !this.toDoId()?.includes(this.context()) || !this.data.length
+        return this.toDoService.getCategoryList(this.context() === 'uncategorized' ? undefined : this.context());
     }
 
     completeList() {
-        this._toDoService.completeCategory(this.context() === 'uncategorized' ? undefined : this.context())
+        this.toDoService.completeCategory(this.context() === 'uncategorized' ? undefined : this.context())
     }
 
 }

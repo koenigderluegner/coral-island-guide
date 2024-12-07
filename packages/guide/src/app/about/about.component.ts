@@ -1,4 +1,4 @@
-import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from "../shared/shared.module";
 
@@ -11,10 +11,10 @@ import { SharedModule } from "../shared/shared.module";
             @apply container block mx-auto my-10;
         }
     `],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    host: {
+        'class': 'app-about'
+    }
 })
 export class AboutComponent {
-
-    @HostBinding('class.app-about') private _setCssClass = true;
-
 }

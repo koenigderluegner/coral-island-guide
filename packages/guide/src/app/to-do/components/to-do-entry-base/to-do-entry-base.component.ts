@@ -1,4 +1,4 @@
-import { Component, DestroyRef, HostBinding, inject, input, OnInit, output, viewChild } from '@angular/core';
+import { Component, DestroyRef, inject, input, OnInit, output, viewChild } from '@angular/core';
 import { Quality } from "@ci/data-types";
 import { ToDoService } from "../../../core/services/to-do.service";
 import { filter } from "rxjs";
@@ -11,18 +11,21 @@ import { ItemEntry } from "../../../shared/types/item-entry.type";
     selector: 'app-to-do-entry-base',
     templateUrl: './to-do-entry-base.component.html',
     styleUrls: ['./to-do-entry-base.component.scss'],
-    standalone: false
+    standalone: false,
+    host: {
+        '[class.opacity-50]': 'isChecked'
+    }
 })
 export class ToDoEntryBaseComponent implements OnInit {
 
-    readonly  amount = input<number>();
+    readonly amount = input<number>();
     readonly quality = input<Quality | undefined>();
     readonly item = input.required<ItemEntry>();
     readonly category = input.required<ToDoContext | undefined>();
     readonly entrySelected = output<ItemEntry>();
     readonly checkbox = viewChild(MatCheckbox);
     protected qualities = Quality;
-    @HostBinding('class.opacity-50') protected isChecked = false;
+    protected isChecked = false;
     #todoService = inject(ToDoService)
     #destroyRef = inject(DestroyRef);
 

@@ -1,4 +1,4 @@
-import { Component, HostBinding, inject, ViewEncapsulation } from '@angular/core';
+import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { UiIcon } from "@ci/data-types";
 import { GAME_VERSION } from "../../injection-tokens/version.injection-token";
 
@@ -11,11 +11,13 @@ import { GAME_VERSION } from "../../injection-tokens/version.injection-token";
             min-height: var(--cg-min-footer-height);
         }
     `],
+    host: {
+        'class': 'app-footer'
+    },
     encapsulation: ViewEncapsulation.None,
     standalone: false
 })
 export class FooterComponent {
     protected uiIcon = UiIcon;
     protected version = inject(GAME_VERSION);
-    @HostBinding('class.app-footer') private _setCssClass = true;
 }

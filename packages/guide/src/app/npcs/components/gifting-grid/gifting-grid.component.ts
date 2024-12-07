@@ -1,4 +1,4 @@
-import { Component, HostBinding, input, output, ViewEncapsulation } from '@angular/core';
+import { Component, input, output, ViewEncapsulation } from '@angular/core';
 import { GiftPreferences, MinimalItem } from "@ci/data-types";
 import { preferencesMap } from "../../../shared/constants/preference-map.const";
 
@@ -7,10 +7,12 @@ import { preferencesMap } from "../../../shared/constants/preference-map.const";
     templateUrl: './gifting-grid.component.html',
     styleUrls: ['./gifting-grid.component.scss',],
     encapsulation: ViewEncapsulation.None,
+    host: {
+        'class': 'gifting-preference-grid'
+    },
     standalone: false
 })
 export class GiftingGridComponent {
-    @HostBinding('class.gifting-preference-grid') setCssClass = true;
 
     readonly preferences = input.required<GiftPreferences>()
     readonly itemClicked = output<MinimalItem>();

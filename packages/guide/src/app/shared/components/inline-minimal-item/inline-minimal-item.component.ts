@@ -1,4 +1,4 @@
-import { Component, HostBinding, input, ViewEncapsulation } from '@angular/core';
+import { Component, input, ViewEncapsulation } from '@angular/core';
 import { MinimalItem } from '@ci/data-types';
 
 @Component({
@@ -6,9 +6,11 @@ import { MinimalItem } from '@ci/data-types';
     templateUrl: './inline-minimal-item.component.html',
     styleUrls: ['./inline-minimal-item.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    standalone: false,
+    host: {
+        'class': 'app-inline-minimal-item'
+    }
 })
 export class InlineMinimalItemComponent {
-    minimalItem = input.required<MinimalItem>();
-    @HostBinding('class.app-inline-minimal-item') private _setClass = true;
+    readonly minimalItem = input.required<MinimalItem>();
 }
