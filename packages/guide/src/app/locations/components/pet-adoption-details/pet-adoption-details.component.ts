@@ -1,5 +1,5 @@
-import { Component, inject, OnChanges, OnInit, SimpleChanges, input } from '@angular/core';
-import { NPC, PetShopAdoptions, UiIcon } from "@ci/data-types";
+import { Component, computed, inject, input } from '@angular/core';
+import { PetShopAdoptions, UiIcon } from "@ci/data-types";
 import { DatabaseService } from "../../../shared/services/database.service";
 
 @Component({
@@ -7,21 +7,11 @@ import { DatabaseService } from "../../../shared/services/database.service";
     templateUrl: './pet-adoption-details.component.html',
     standalone: false
 })
-export class PetAdoptionDetailsComponent implements OnInit, OnChanges {
+export class PetAdoptionDetailsComponent {
 
     readonly adoption = input.required<PetShopAdoptions>();
-
-    npc?: NPC;
     protected readonly UiIcon = UiIcon;
     private _database: DatabaseService = inject(DatabaseService)
+    petNPC = computed(() => this._database.getNPCs().find(npc => npc.key === this.adoption().npcData.npcId));
 
-    ngOnInit(): void {
-        this.npc = this._database.getNPCs().find(npc => npc.key === this.adoption().npcData.npcId);
-    }
-
-    ngOnChanges(changes: SimpleChanges): void {
-        if (changes['adoption'] && !changes['adoption'].isFirstChange()) {
-            this.npc = this._database.getNPCs().find(npc => npc.key === changes['adoption'].currentValue.npcData.npcId);
-        }
-    }
 }

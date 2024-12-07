@@ -1,4 +1,4 @@
-import { Component, computed, input, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { MailData } from "@ci/data-types";
 
 @Component({
@@ -11,12 +11,11 @@ import { MailData } from "@ci/data-types";
     `],
     standalone: false
 })
-export class MailComponent  {
+export class MailComponent {
 
-   mail = input.required<MailData>();
+    mail = input.required<MailData>();
 
-   parsedMail = computed( () => this._parseTexts(this.mail()))
-
+    parsedMail = computed(() => this._parseTexts(this.mail()))
 
 
     private _parseTexts(mail: MailData): MailData {
