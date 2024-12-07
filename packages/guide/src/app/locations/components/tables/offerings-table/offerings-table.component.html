@@ -3,9 +3,7 @@
         <table [dataSource]="matDataSource" mat-table matSort>
             <ng-container matColumnDef="icon" sticky>
                 <td *matCellDef="let element" class="!pl-2 !pr-0 w-10 text-center icon-col " mat-cell>
-                    <img alt="{{element.offerings[0].title}} offering icon" height="32"
-                         src="assets/ui/images/offering/{{element.offerings[0].imageName}}.png"
-                         width="32"/>
+                    <app-item-icon [itemName]="element.offerings[0].imageName"  />
                 </td>
             </ng-container>
 
