@@ -1,16 +1,19 @@
-@if (databaseItem.comesFromSeed && databaseItem.comesFromSeed.length) {
+@let comesFromSeed = databaseItem().comesFromSeed;
+@let isSeedFor = databaseItem().isSeedFor;
+
+@if (comesFromSeed && comesFromSeed.length) {
     <app-expandable #expandableComponent open>
         <h3 class="database-header" expandableHeader>
             <app-database-header-button [templateRef]="expandableComponent">Seed for</app-database-header-button>
         </h3>
-        <app-crop-table [dataSource]="databaseItem.comesFromSeed"/>
+        <app-crop-table [dataSource]="comesFromSeed"/>
     </app-expandable>
 }
-@if (databaseItem.isSeedFor && databaseItem.isSeedFor.length) {
+@if (isSeedFor && isSeedFor.length) {
     <app-expandable #expandableComponent open>
         <h3 class="database-header" expandableHeader>
             <app-database-header-button [templateRef]="expandableComponent">From seed</app-database-header-button>
         </h3>
-        <app-crop-table [dataSource]="databaseItem.isSeedFor"/>
+        <app-crop-table [dataSource]="isSeedFor"/>
     </app-expandable>
 }

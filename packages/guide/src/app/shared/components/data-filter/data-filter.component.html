@@ -1,14 +1,16 @@
-<button (click)="setShowTable(!showTable)" class="btn"
-        type="button">{{ showTable ? 'Show grid' : 'Show table' }}
+@let parentFG = parentFormGroup();
+
+<button (click)="setShowTable(!showTable())" class="btn"
+        type="button">{{ showTable() ? 'Show grid' : 'Show table' }}
 </button>
-@if (parentFormGroup) {
-    <ng-container [formGroup]="parentFormGroup">
-        @if (parentFormGroup.contains('season')) {
+@if (parentFG) {
+    <ng-container [formGroup]="parentFG">
+        @if (parentFG.contains('season')) {
             <mat-form-field class="semi-transparent-form-field grow lg:grow-0 shrink-0 basis-auto">
                 <mat-label>Season</mat-label>
                 <mat-select disableOptionCentering formControlName="season" multiple>
                     <mat-select-trigger>
-                        <app-multi-select-trigger [values]="parentFormGroup.value.season ?? []"/>
+                        <app-multi-select-trigger [values]="parentFG.value.season ?? []"/>
                     </mat-select-trigger>
                     @for (seasonOption of Seasons; track seasonOption) {
                         <mat-option [value]="seasonOption">{{ seasonOption }}</mat-option>
@@ -18,12 +20,12 @@
             </mat-form-field>
         }
 
-        @if (parentFormGroup.contains('weather')) {
+        @if (parentFG.contains('weather')) {
             <mat-form-field class="semi-transparent-form-field grow lg:grow-0 shrink-0 basis-auto">
                 <mat-label>Weather</mat-label>
                 <mat-select disableOptionCentering formControlName="weather" multiple>
                     <mat-select-trigger>
-                        <app-multi-select-trigger [values]="parentFormGroup.value.weather ?? []"/>
+                        <app-multi-select-trigger [values]="parentFG.value.weather ?? []"/>
                     </mat-select-trigger>
                     @for (weatherOption of Weathers; track weatherOption) {
                         <mat-option [value]="weatherOption">{{ weatherOption }}</mat-option>
@@ -31,12 +33,12 @@
                 </mat-select>
             </mat-form-field>
         }
-        @if (parentFormGroup.contains('location') && locations.length) {
+        @if (parentFG.contains('location') && locations().length) {
             <mat-form-field class="semi-transparent-form-field grow lg:grow-0 shrink-0 basis-auto">
                 <mat-label>Location</mat-label>
                 <mat-select disableOptionCentering formControlName="location">
                     <mat-option [value]="null">No filter</mat-option>
-                    @for (location of locations; track location) {
+                    @for (location of locations(); track location) {
                         <mat-option [value]="location">{{ location }}</mat-option>
                     }
                 </mat-select>

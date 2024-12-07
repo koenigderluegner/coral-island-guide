@@ -1,4 +1,4 @@
-import { Component, HostBinding, inject, Input, output } from '@angular/core';
+import { Component, HostBinding, inject, input, output } from '@angular/core';
 import { ToDoService } from "../../../core/services/to-do.service";
 import { ToDoContext, ToDoContextDisplayNames } from "../../../core/types/to-do-context.type";
 import { ToDo } from "../../../core/types/to-do.type";
@@ -12,30 +12,30 @@ import { ItemEntry } from "../../../shared/types/item-entry.type";
     animations: [
         trigger('leaveAnimation', [
             transition(':leave', [
-                style({ height: '*', opacity: 1 }),
-                animate('200ms ease-in', style({ height: 0, opacity: 0 }))
+                style({height: '*', opacity: 1}),
+                animate('200ms ease-in', style({height: 0, opacity: 0}))
             ])
         ])
     ],
     standalone: false
 })
 export class ToDoPartialComponent {
-    entrySelected = output<ItemEntry>()
-    @Input({required: true}) context!: ToDoContext | 'uncategorized';
-    @Input() toDoId?: ToDoFilterOptions[] | undefined;
+    readonly entrySelected = output<ItemEntry>()
+    readonly context = input.required<ToDoContext | 'uncategorized'>();
+    readonly toDoId = input<ToDoFilterOptions[]>();
     protected readonly ToDoContextDisplayNames = ToDoContextDisplayNames;
-    protected _toDoService: ToDoService = inject(ToDoService);
+    protected readonly _toDoService: ToDoService = inject(ToDoService);
 
     get data(): ToDo[] {
-        return this._toDoService.getCategoryList(this.context === 'uncategorized' ? undefined : this.context);
+        return this._toDoService.getCategoryList(this.context() === 'uncategorized' ? undefined : this.context());
     }
 
     @HostBinding('class.hidden') get hidden(): boolean {
-        return !this.toDoId?.includes(this.context) || !this.data.length
+        return !this.toDoId()?.includes(this.context()) || !this.data.length
     }
 
     completeList() {
-        this._toDoService.completeCategory(this.context === 'uncategorized' ? undefined : this.context)
+        this._toDoService.completeCategory(this.context() === 'uncategorized' ? undefined : this.context())
     }
 
 }

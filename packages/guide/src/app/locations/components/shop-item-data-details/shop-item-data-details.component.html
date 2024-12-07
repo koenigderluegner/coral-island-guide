@@ -1,118 +1,124 @@
-<app-base-item-card [item]="shopItemData.item">
-    @if (!shopItemData.enabled) {
+@let effects = shopItemData().effects;
+@let requirements = shopItemData().requirements;
+@let tillDate = shopItemData().tillDate;
+@let sinceDate = shopItemData().sinceDate;
+@let timeRange = shopItemData().timeRange;
+
+<app-base-item-card [item]="shopItemData().item">
+    @if (!shopItemData().enabled) {
         <div class="mb-3">Enabled: <span class="text-black">NO</span></div>
     }
 
     <div>Buy price:
         <span class="text-black">
             <app-money
-                    [amount]="shopItemData.priceOverride !== 0 ? shopItemData.priceOverride : shopItemData.item.price"/>
+                    [amount]="shopItemData().priceOverride !== 0 ? shopItemData().priceOverride : shopItemData().item.price"/>
         </span>
     </div>
     <div>Town rank:
         <span class="text-black">
-           {{ shopItemData.townRank | townrank }}
+           {{ shopItemData().townRank | townrank }}
         </span>
     </div>
-    @if (shopItemData.availableDuringTime && shopItemData.timeRange) {
+    @if (shopItemData().availableDuringTime && timeRange) {
         <div>Only at times:
             <span class="inline-flex">
-            {{ (shopItemData.timeRange.fromTime.hours | number: '2.0') + ':' + (shopItemData.timeRange.fromTime.minutes | number: '2.0') }}
+            {{ (timeRange.fromTime.hours | number: '2.0') + ':' + (timeRange.fromTime.minutes | number: '2.0') }}
                 -
-                {{ (shopItemData.timeRange.toTime.hours | number: '2.0') + ':' + (shopItemData.timeRange.toTime.minutes | number: '2.0') }}
+                {{ (timeRange.toTime.hours | number: '2.0') + ':' + (timeRange.toTime.minutes | number: '2.0') }}
         </span>
         </div>
     }
 
 
-    @if (shopItemData.availableSinceDate && shopItemData.sinceDate) {
+    @if (shopItemData().availableSinceDate && sinceDate) {
         <div>Available since:
             <span
-                    class="text-black">{{ shopItemData.sinceDate | ingameDate }}
+                    class="text-black">{{ sinceDate | ingameDate }}
         </span>
         </div>
     }
 
-    @if (shopItemData.availableTillDate && shopItemData.tillDate) {
+    @if (shopItemData().availableTillDate && tillDate) {
         <div>Available until:
             <span
-                    class="text-black">{{ shopItemData.tillDate | ingameDate }}
+                    class="text-black">{{ tillDate | ingameDate }}
         </span>
         </div>
     }
 
-    @if (shopItemData.forbiddenDays.length) {
+    @if (shopItemData().forbiddenDays.length) {
         <div>Except on days:
             <span
-                    class="text-black">{{ shopItemData.forbiddenDays.join(', ') }}
+                    class="text-black">{{ shopItemData().forbiddenDays.join(', ') }}
         </span>
         </div>
     }
 
-    @if (shopItemData.allowedDays.length && shopItemData.allowedDays.length !== 7) {
+    @if (shopItemData().allowedDays.length && shopItemData().allowedDays.length !== 7) {
         <div>Only on days:
             <span
-                    class="text-black">{{ shopItemData.allowedDays.join(', ') }}
+                    class="text-black">{{ shopItemData().allowedDays.join(', ') }}
         </span>
         </div>
     }
-    @if (shopItemData.forbiddenDays.length) {
+    @if (shopItemData().forbiddenDays.length) {
         <div>Except on days:
             <span
-                    class="text-black">{{ shopItemData.forbiddenDays.join(', ') }}
+                    class="text-black">{{ shopItemData().forbiddenDays.join(', ') }}
         </span>
         </div>
     }
 
-    @if (shopItemData.allowedWeather.length) {
+    @if (shopItemData().allowedWeather.length) {
         <div>Only at weather:
             <span
-                    class="text-black">{{ shopItemData.allowedWeather.join(', ') }}
+                    class="text-black">{{ shopItemData().allowedWeather.join(', ') }}
         </span>
         </div>
     }
-    @if (shopItemData.forbiddenWeather.length) {
+    @if (shopItemData().forbiddenWeather.length) {
         <div>Except at weather:
             <span
-                    class="text-black">{{ shopItemData.forbiddenWeather.join(', ') }}
+                    class="text-black">{{ shopItemData().forbiddenWeather.join(', ') }}
         </span>
         </div>
     }
 
 
-    @if (shopItemData.allowedSeasons.length && shopItemData.allowedSeasons.length !== 4) {
+    @if (shopItemData().allowedSeasons.length && shopItemData().allowedSeasons.length !== 4) {
         <div>Only at seasons:
             <span
-                    class="text-black">{{ shopItemData.allowedSeasons.join(', ') }}
+                    class="text-black">{{ shopItemData().allowedSeasons.join(', ') }}
         </span>
         </div>
     }
-    @if (shopItemData.forbiddenSeasons.length) {
+    @if (shopItemData().forbiddenSeasons.length) {
         <div>Except at seasons:
             <span
-                    class="text-black">{{ shopItemData.forbiddenSeasons.join(', ') }}
+                    class="text-black">{{ shopItemData().forbiddenSeasons.join(', ') }}
         </span>
         </div>
     }
 
-    @if (shopItemData.effects && shopItemData.effects.length) {
+    @if (effects && effects.length) {
         <div class="my-2">Effects when bought:
             <div class="flex flex-col text-black">
-                @for (effect of shopItemData.effects; track effect) {
+                @for (effect of effects; track effect) {
                     <app-effect [effect]="effect"/>
                 }
             </div>
         </div>
     }
 
-    @if (shopItemData.requirements && shopItemData.requirements.requirements.length) {
+    @if (requirements && requirements.requirements.length) {
         <div class="my-2">
-            @if (shopItemData.requirements.requirements.length > 1) {
+            @if (requirements.requirements.length > 1) {
 
-                Unlock requirements ({{ shopItemData.requirements.type === 'And' ? 'all' : 'any' }} of them):
+                Unlock requirements ({{ requirements.type === 'And' ? 'all' : 'any' }} of them):
 
             }
-            @if (shopItemData.requirements.requirements.length < 2) {
+            @if (requirements.requirements.length < 2) {
 
                 Unlock requirement:
 
@@ -120,7 +126,7 @@
 
 
             <div class="flex flex-col  text-black">
-                @for (requirement of shopItemData.requirements.requirements; track requirement) {
+                @for (requirement of requirements.requirements; track requirement) {
                     <app-requirements
                             [requirement]="requirement"/>
                 }

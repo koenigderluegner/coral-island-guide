@@ -1,16 +1,14 @@
 <img alt="" loading="lazy"
      onerror="this.onerror=null;this.src='assets/ui/images/placeholder.png'"
-     src="assets/{{environment}}/items/icons/{{itemName}}.webp?v={{version}}">
-@if (subIconName) {
-    <app-item-icon [itemName]="subIconName"
-                   class="!absolute bottom-[5px] left-[5px] w-[50%]"></app-item-icon>
+     src="assets/{{environment}}/items/icons/{{itemName()}}.webp?v={{version}}">
+@if (subIconName()) {
+    <app-item-icon [itemName]="subIconName()" class="!absolute bottom-[5px] left-[5px] w-[50%]"/>
 }
-@if (quality) {
-    <app-rarity-icon [quality]="quality"
-                     class="absolute top-[5px] left-[5px] w-[35%]"></app-rarity-icon>
+@if (quality()) {
+    <app-rarity-icon [quality]="quality()" class="absolute top-[5px] left-[5px] w-[35%]"/>
 }
-@if (amount > 1) {
-    <div
-            class="bg-[#F1D9B5] absolute bottom-0 right-0 py-1 px-2 text-black font-semibold text-lg rounded-lg">{{ amount }}
+@if (amount() > 1) {
+    <div class="bg-[#F1D9B5] absolute bottom-0 right-0 py-1 px-2 text-black font-semibold text-lg rounded-lg">
+        {{ amount() }}
     </div>
 }

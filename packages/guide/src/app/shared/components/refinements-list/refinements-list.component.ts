@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { ItemProcessingRefinement, Quality, UiIcon } from "@ci/data-types";
 
 @Component({
@@ -9,7 +9,7 @@ import { ItemProcessingRefinement, Quality, UiIcon } from "@ci/data-types";
 })
 export class RefinementsListComponent {
 
-    @Input() refinements?: ItemProcessingRefinement[];
+    readonly refinements = input<ItemProcessingRefinement[]>();
     protected quality = Quality;
     protected uiIcon = UiIcon;
 

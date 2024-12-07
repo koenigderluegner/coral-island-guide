@@ -1,4 +1,4 @@
-import { Component, ContentChildren, HostBinding, QueryList, ViewEncapsulation } from '@angular/core';
+import { Component, HostBinding, ViewEncapsulation, contentChildren, signal } from '@angular/core';
 import { ModuleSidebarItemComponent } from '../module-sidebar-item/module-sidebar-item.component';
 
 @Component({
@@ -9,14 +9,14 @@ import { ModuleSidebarItemComponent } from '../module-sidebar-item/module-sideba
     standalone: false
 })
 export class ModuleSidebarComponent {
-    @ContentChildren(ModuleSidebarItemComponent) viewChildren?: QueryList<ModuleSidebarItemComponent>;
-    showMenu = false;
+    readonly viewChildren = contentChildren(ModuleSidebarItemComponent);
+    readonly showMenu = signal(false);
     @HostBinding('class.app-module-sidebar') private _setClass = true;
 
     toggleMenu($event: MouseEvent) {
         $event.preventDefault();
         $event.stopPropagation();
 
-        this.showMenu = !this.showMenu;
+        this.showMenu.update(o => !o);
     }
 }

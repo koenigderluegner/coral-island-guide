@@ -110,8 +110,9 @@
         </div>
     }
 
-
-    <app-requirements-list [requirements]="mappedAnimalShopData().requirements"/>
+    @if (mappedAnimalShopData().requirements; as requirements) {
+        <app-requirements-list [requirements]="requirements"/>
+    }
 
     <div class="flex">
         Sells for:

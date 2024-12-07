@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges, input } from '@angular/core';
 import { Critter, Fish } from '@ci/data-types';
 import { ToDoContext } from "../../../core/types/to-do-context.type";
 
@@ -8,7 +8,7 @@ import { ToDoContext } from "../../../core/types/to-do-context.type";
     standalone: false
 })
 export class CaughtDetailsComponent implements OnInit, OnChanges {
-    @Input({required: true}) critter!: Fish | Critter;
+    readonly critter = input.required<Fish | Critter>();
 
     protected toDoContext!: ToDoContext;
 
@@ -23,9 +23,10 @@ export class CaughtDetailsComponent implements OnInit, OnChanges {
     }
 
     private _setCategory() {
-        this.toDoContext = 'fishName' in this.critter
+        const critter = this.critter();
+        this.toDoContext = 'fishName' in critter
             ? "journal_fish"
-            : this.critter.item.inventoryCategory.toLocaleLowerCase() === 'bug'
+            : critter.item.inventoryCategory.toLocaleLowerCase() === 'bug'
                 ? "journal_insects"
                 : "journal_critter"
     }

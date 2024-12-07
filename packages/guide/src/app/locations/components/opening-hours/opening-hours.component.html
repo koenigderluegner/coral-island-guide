@@ -1,4 +1,4 @@
-@for (keyValuePair of openingHours | keyvalue; track keyValuePair) {
+@for (keyValuePair of openingHours() | keyvalue; track keyValuePair) {
     <div>
         <div class="font-semibold text-xl">{{ keyValuePair.key }}</div>
         <div class="grid grid-cols-2 gap-2">

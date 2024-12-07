@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { Requirement } from "@ci/data-types";
 
 @Component({
@@ -7,7 +7,6 @@ import { Requirement } from "@ci/data-types";
     standalone: false
 })
 export class RequirementsComponent {
-
-    @Input({required: true}) requirement!: Requirement
+    readonly requirement = input.required<Requirement>()
 
 }

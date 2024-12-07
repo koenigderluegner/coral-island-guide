@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Consumable } from "@ci/data-types";
 import { AddSpacesToPascalCasePipe } from "../../../pipes/add-spaces-to-pascal-case.pipe";
@@ -9,5 +9,6 @@ import { AddSpacesToPascalCasePipe } from "../../../pipes/add-spaces-to-pascal-c
     templateUrl: './consumable.component.html'
 })
 export class ConsumableComponent {
-    @Input({required: true}) consumable!: Consumable
+
+    readonly consumable = input.required<Consumable>();
 }

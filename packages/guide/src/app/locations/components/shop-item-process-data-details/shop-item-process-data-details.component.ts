@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { ItemProcessShopData } from "@ci/data-types";
 
 @Component({
@@ -7,7 +7,6 @@ import { ItemProcessShopData } from "@ci/data-types";
     standalone: false
 })
 export class ShopItemProcessDataDetailsComponent {
-
-    @Input({required: true}) itemProcessData!: ItemProcessShopData
+    readonly itemProcessData = input.required<ItemProcessShopData>()
 
 }

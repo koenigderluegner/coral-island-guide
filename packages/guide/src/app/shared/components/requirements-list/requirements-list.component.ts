@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { RequirementEntry } from "@ci/data-types";
 
 @Component({
@@ -7,5 +7,5 @@ import { RequirementEntry } from "@ci/data-types";
     standalone: false
 })
 export class RequirementsListComponent {
-    @Input() requirements?: RequirementEntry
+    readonly requirements  = input.required<RequirementEntry>()
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Quality, UiIcon } from "@ci/data-types";
 
 @Component({
@@ -9,11 +9,14 @@ import { Quality, UiIcon } from "@ci/data-types";
 })
 export class ProcessingTimePerQualityComponent {
 
-    @Input() baseProcessingTime?: { day: number; time: { hours: number, minutes: number } };
-    @Input() processingTimePerQualities?: Record<string | Quality, {
+    readonly baseProcessingTime = input<{ day: number; time: { hours: number, minutes: number } }>();
+    readonly processingTimePerQualities = input<Record<string | Quality, {
         day: number;
-        time: { hours: number, minutes: number }
-    }>
+        time: {
+            hours: number;
+            minutes: number;
+        };
+    }>>();
 
     protected qualityValues: Quality[] = Object.values(Quality);
     protected quality = Quality;

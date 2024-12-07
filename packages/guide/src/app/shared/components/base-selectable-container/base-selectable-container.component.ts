@@ -39,7 +39,7 @@ export class BaseSelectableContainerComponent<T> {
         })
 
         effect(() => {
-            this.listDetailComponent().drawer?._closedStream.pipe(
+            this.listDetailComponent().drawer()?._closedStream.pipe(
                 takeUntilDestroyed(this.destroyRef)
             ).subscribe({
                 next: () => {

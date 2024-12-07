@@ -1,4 +1,5 @@
-<app-database-item-details [context]="toDoContext()" [itemId]="((item | isBaseCrop) ? item.dropData[0].item : item).id">
+@let produceItem = item();
+<app-database-item-details [context]="toDoContext()" [itemId]="((produceItem | isBaseCrop) ? produceItem.dropData[0].item : produceItem).id">
     <ng-template appDatabaseItemDetails let-details>
         @for (crop of details.isSeedFor; track crop) {
             <app-crop class="mb-4" [item]="crop"/>

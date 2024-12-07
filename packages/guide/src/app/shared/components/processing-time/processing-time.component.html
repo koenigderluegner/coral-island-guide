@@ -1,18 +1,18 @@
-@if (processingTime) {
+@if (processingTime()) {
 
-    @if (processingTime.day) {
-        {{ processingTime.day }}
-        day{{ processingTime.day > 1 ? 's' : '' }}
+    @if (processingTime().day) {
+        {{ processingTime().day }}
+        day{{ processingTime().day > 1 ? 's' : '' }}
     }
-    @if (processingTime.time.hours) {
-        {{ processingTime.time.hours }}
-        hour{{ processingTime.time.hours > 1 ? 's' : '' }}
+    @if (processingTime().time.hours) {
+        {{ processingTime().time.hours }}
+        hour{{ processingTime().time.hours > 1 ? 's' : '' }}
     }
-    @if (processingTime.time.minutes) {
-        {{ processingTime.time.minutes }}
-        minute{{ processingTime.time.minutes > 1 ? 's' : '' }}
+    @if (processingTime().time.minutes) {
+        {{ processingTime().time.minutes }}
+        minute{{ processingTime().time.minutes > 1 ? 's' : '' }}
     }
-    @if (processingTime.day === 0 && processingTime.time.hours === 0 && processingTime.time.minutes === 0) {
+    @if (processingTime().day === 0 && processingTime().time.hours === 0 && processingTime().time.minutes === 0) {
         instant
     }
 

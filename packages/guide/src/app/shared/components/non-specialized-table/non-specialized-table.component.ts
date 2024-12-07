@@ -14,7 +14,7 @@ export class NonSpecializedTableComponent extends BaseTableComponent<Item> {
         'sellPrice'
     ];
 
-    override sortingDataAccessor = (item: NonSpecializedTableComponent['dataSource'][0], property: string) => {
+    override sortingDataAccessor = (item: ReturnType<NonSpecializedTableComponent['dataSource']>[0], property: string) => {
         const sortHelperValue = this.sortHelper(item, property)
 
         return sortHelperValue ?? 0;

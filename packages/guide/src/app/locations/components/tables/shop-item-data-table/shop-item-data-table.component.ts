@@ -18,9 +18,8 @@ export class ShopItemDataTableComponent extends BaseTableComponent<ShopItemData 
         'sellPrice'
     ];
 
-    override ngOnInit() {
-        super.ngOnInit();
-        if (this.dataSource.length && this.dataSource[0].shop) {
+     ngOnInit() {
+        if (this._dataSource().length && this._dataSource()[0].shop) {
             this.displayedColumns.splice(2, 0, 'shop');
             this.displayHeaderColumns = this.displayedColumns.filter(column => column !== 'icon')
         }

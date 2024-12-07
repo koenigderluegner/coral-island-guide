@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from "../../../shared.module";
 import { BaseCrop, Crop, FruitPlant, FruitTree } from "@ci/data-types";
@@ -9,5 +9,6 @@ import { BaseCrop, Crop, FruitPlant, FruitTree } from "@ci/data-types";
     templateUrl: './crop.component.html'
 })
 export class CropComponent {
-    @Input({required: true}) item!: BaseCrop | Crop | FruitPlant | FruitTree;
+
+readonly item = input.required<BaseCrop | Crop | FruitPlant | FruitTree>() ;
 }

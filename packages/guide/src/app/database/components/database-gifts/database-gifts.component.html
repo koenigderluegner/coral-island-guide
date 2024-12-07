@@ -1,4 +1,6 @@
-@if (databaseItem.asGift && databaseItem.asGift.length) {
+@let asGift = databaseItem().asGift;
+
+@if (asGift && asGift.length) {
     <app-expandable #expandableComponent open>
         <h3 class="database-header" expandableHeader>
             <app-database-header-button [templateRef]="expandableComponent">Gifting</app-database-header-button>
@@ -6,7 +8,7 @@
 
         <app-responsive-table>
 
-            <table [dataSource]="databaseItem.asGift" mat-table>
+            <table [dataSource]="asGift" mat-table>
                 <ng-container matColumnDef="icon" sticky>
                     <td *matCellDef="let element" class="!pl-2 !pr-0 !pt-3 w-10 text-center icon-col " mat-cell>
                         <app-ui-icon [uiIcon]="element.pref.icon"

@@ -12,7 +12,8 @@ export class DatabaseFishingComponent extends BaseDatabaseDetailPartComponent im
     protected fish?: Fish;
 
     ngOnInit(): void {
-        if (this.databaseItem.fish)
-            this.fish = {...this.databaseItem.fish, item: this.databaseItem.item}
+        const fish = this.databaseItem().fish;
+        if (fish)
+            this.fish = {...fish, item: this.databaseItem().item}
     }
 }

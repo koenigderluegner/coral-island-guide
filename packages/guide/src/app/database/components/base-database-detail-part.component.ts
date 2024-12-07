@@ -1,4 +1,4 @@
-import { Component, inject, Input } from "@angular/core";
+import { Component, inject, input } from "@angular/core";
 import { DatabaseItem } from "@ci/data-types";
 import { DatabaseService } from "../../shared/services/database.service";
 
@@ -7,10 +7,6 @@ import { DatabaseService } from "../../shared/services/database.service";
     standalone: false
 })
 export class BaseDatabaseDetailPartComponent {
-
-    @Input({required: true}) databaseItem!: DatabaseItem;
-
-    protected database: DatabaseService = inject(DatabaseService);
-
-
+    readonly databaseItem = input.required<DatabaseItem>();
+    protected readonly database = inject(DatabaseService);
 }

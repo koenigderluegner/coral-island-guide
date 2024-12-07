@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { CraftingRecipe } from '@ci/data-types';
 
 @Component({
@@ -8,7 +8,8 @@ import { CraftingRecipe } from '@ci/data-types';
     standalone: false
 })
 export class InventoryDetailsComponent {
-    @Input() craftingRecipe?: CraftingRecipe;
+
+  readonly  craftingRecipe = input.required<CraftingRecipe>();
 
 
 }

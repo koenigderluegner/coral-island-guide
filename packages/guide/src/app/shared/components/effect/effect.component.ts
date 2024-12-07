@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { Effect, MinimalItem, RemoveItemFromInventoryEffect } from "@ci/data-types";
 
 @Component({
@@ -8,7 +8,7 @@ import { Effect, MinimalItem, RemoveItemFromInventoryEffect } from "@ci/data-typ
 })
 export class EffectComponent {
 
-    @Input({required: true}) effect!: Effect;
+    readonly effect = input.required<Effect>();
 
     hasMinimalItem(effectMeta: RemoveItemFromInventoryEffect["meta"]): effectMeta is {
         item: MinimalItem,

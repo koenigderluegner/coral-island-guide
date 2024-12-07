@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { ChancePerItem } from "@ci/data-types";
 
 @Component({
@@ -8,6 +8,6 @@ import { ChancePerItem } from "@ci/data-types";
 })
 export class ChancePerItemListComponent {
 
-    @Input({required: true}) chances!: ChancePerItem[]
+    readonly chances = input.required<ChancePerItem[]>();
 
 }

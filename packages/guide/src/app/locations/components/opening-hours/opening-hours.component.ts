@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { OpeningHours } from "@ci/data-types";
 
 @Component({
@@ -8,7 +8,7 @@ import { OpeningHours } from "@ci/data-types";
     standalone: false
 })
 export class OpeningHoursComponent {
-    @Input({required: true}) openingHours!: Record<string, OpeningHours>
+    readonly openingHours = input.required<Record<string, OpeningHours>>();
 
     protected shortenWeekdays(weekdays: string[]): string[] {
         return weekdays.map(s => s.substring(0, 3))

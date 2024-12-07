@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { TornPageData } from "@ci/data-types";
 
 @Component({
@@ -8,6 +8,6 @@ import { TornPageData } from "@ci/data-types";
 })
 export class TornPageComponent {
 
-    @Input({required: true}) tornPage!: TornPageData
+    readonly tornPage = input.required<TornPageData>();
 
 }

@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, input, Input } from '@angular/core';
+import { booleanAttribute, Component, computed, input } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { OfferingAltar } from "@ci/data-types";
 
@@ -8,7 +8,18 @@ import { OfferingAltar } from "@ci/data-types";
     standalone: false
 })
 export class OfferingsTableComponent extends BaseTableComponent<OfferingAltar> {
-    showAltar = input(false, {transform: booleanAttribute})
+    readonly showAltar = input(false, {transform: booleanAttribute})
+    override _dataSource = computed(() => {
+        const results: OfferingAltar[] = [];
+
+        this.dataSource().forEach(altar => {
+            altar.offerings.forEach(offering => {
+                results.push({...altar, offerings: [offering]})
+            })
+        })
+
+        return results;
+    })
     protected readonly BASE_DISPLAY_COLUMNS: string[] = [
         'icon',
         'displayName',
@@ -16,23 +27,6 @@ export class OfferingsTableComponent extends BaseTableComponent<OfferingAltar> {
         'requiredItems',
         'rewards'
     ];
-    private _datasource: OfferingAltar[] = []
-
-    @Input()
-    override get dataSource(): OfferingAltar[] {
-        return this._datasource
-    }
-
-    override set dataSource(altars: OfferingAltar[]) {
-        const results: OfferingAltar[] = [];
-
-        altars.forEach(altar => {
-            altar.offerings.forEach(offering => {
-                results.push({...altar, offerings: [offering]})
-            })
-        })
-        this._datasource = results;
-    }
 
     protected override setupDataSource(dataSource: OfferingAltar[]) {
         super.setupDataSource(dataSource);

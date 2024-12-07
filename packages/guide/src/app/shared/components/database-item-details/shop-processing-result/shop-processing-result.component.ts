@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DatabaseItem } from "@ci/data-types";
 import { SharedModule } from "../../../shared.module";
@@ -10,7 +10,7 @@ import { SharedModule } from "../../../shared.module";
 })
 export class ShopProcessingResultComponent {
 
-    @Input({required: true}) itemProcessData!: DatabaseItem["chanceAsProcessResult"]
+    readonly itemProcessData = input.required<DatabaseItem["chanceAsProcessResult"]>();
 
 
 }

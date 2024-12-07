@@ -46,9 +46,9 @@
 
                         </div>
 
-                        <i [class.down]="!expandableComponent.open"
-                           [class.translate-y-[-3px]]="expandableComponent.open"
-                           [class.up]="expandableComponent.open" class="arrow"></i>
+                        <i [class.down]="!expandableComponent.isOpen()"
+                           [class.translate-y-[-3px]]="expandableComponent.isOpen()"
+                           [class.up]="expandableComponent.isOpen()" class="arrow"></i>
 
                     </div>
                     <app-gifting-grid [preferences]="giftingPreferences.preferences"

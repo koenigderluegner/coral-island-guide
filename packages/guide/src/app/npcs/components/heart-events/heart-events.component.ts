@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { HeartEvent } from "@ci/data-types";
 
 @Component({
@@ -8,6 +8,6 @@ import { HeartEvent } from "@ci/data-types";
 })
 export class HeartEventsComponent {
 
-    @Input({required: true}) heartEvents!: HeartEvent[];
+    readonly heartEvents = input.required<HeartEvent[]>();
 
 }

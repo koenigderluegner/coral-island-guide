@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, inject, Input } from '@angular/core';
+import { booleanAttribute, Component, inject, Input, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ItemProcessing } from "@ci/data-types";
 import { SharedModule } from "../../../shared.module";
@@ -12,8 +12,8 @@ import { RouterLink } from "@angular/router";
     templateUrl: './processing.component.html'
 })
 export class ProcessingComponent {
-    @Input({required: true}) itemProcessing!: ItemProcessing;
-    @Input({transform: booleanAttribute}) hideMaschine = false;
+ readonly itemProcessing = input.required<ItemProcessing>();
+    readonly hideMaschine = input(false, { transform: booleanAttribute });
     protected processorMapping = inject(DatabaseService).getProcessorMapping();
 
 }

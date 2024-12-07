@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Quality } from '@ci/data-types';
 
 @Component({
@@ -11,5 +11,5 @@ import { Quality } from '@ci/data-types';
 export class RarityIconComponent {
 
     QUALITY = Quality;
-    @Input() quality?: Quality;
+    readonly quality = input<Quality>();
 }

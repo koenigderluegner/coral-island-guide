@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { getTruthyValues } from "@ci/util";
 import { Fish, FishSpawnSettings } from '@ci/data-types';
@@ -10,7 +10,7 @@ import { AddSpacesToPascalCasePipe } from "../../../pipes/add-spaces-to-pascal-c
     templateUrl: './fish.component.html'
 })
 export class FishComponent {
-    @Input({required: true}) fish!: Omit<Fish, 'item'>;
+    readonly fish = input.required<Omit<Fish, 'item'>>();
 
     protected readonly getTruthyValues = getTruthyValues;
 

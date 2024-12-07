@@ -10,7 +10,7 @@ import { DatabaseService } from "../../../../shared/services/database.service";
 })
 export class CookingTableComponent extends BaseTableComponent<CookingRecipe> {
 
-    showUtensil = input(false, {transform: booleanAttribute})
+    readonly showUtensil = input(false, {transform: booleanAttribute})
     protected readonly BASE_DISPLAY_COLUMNS: string[] = [
         'icon',
         'outputName',
@@ -30,7 +30,7 @@ export class CookingTableComponent extends BaseTableComponent<CookingRecipe> {
 
     };
 
-    protected override setupDataSource(dataSource: BaseTableComponent<CookingRecipe>["dataSource"]) {
+    protected override setupDataSource(dataSource: ReturnType<BaseTableComponent<CookingRecipe>["dataSource"]>) {
         super.setupDataSource(dataSource);
 
         const utensilIndex = this.displayedColumns.indexOf('utensil');

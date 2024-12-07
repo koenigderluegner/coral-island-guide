@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { ItemUpgradeData } from "@ci/data-types";
 
 @Component({
@@ -8,6 +8,6 @@ import { ItemUpgradeData } from "@ci/data-types";
 })
 export class ItemUpgradeDetailsComponent {
 
-    @Input({required: true}) itemUpgradeData!: ItemUpgradeData;
+    itemUpgradeData = input.required<ItemUpgradeData>()
 
 }

@@ -1,47 +1,50 @@
-@if (!hideAnimal) {
+@let harvestTool = animal().itemHarvestTool;
+
+
+@if (!hideAnimal()) {
     <div>Animal:
         <span class="text-black">
-               <app-item-icon [itemName]="animal.variants[0].icons.adult"
+               <app-item-icon [itemName]="animal().variants[0].icons.adult"
                               class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
-            {{ animal.displayName }}
+            {{ animal().displayName }}
             </span>
     </div>
 }
-@if (animal.animalProduceType !== 'None') {
+@if (animal().animalProduceType !== 'None') {
 
-    @if (animal.produceDropLocation !== 'None') {
+    @if (animal().produceDropLocation !== 'None') {
         <div>Drop location:
             <span class="text-black">
-              {{ animal.produceDropLocation  | addSpacesToPascalCase }}
+              {{ animal().produceDropLocation  | addSpacesToPascalCase }}
             </span>
         </div>
     }
     <div>Type of producing:
         <span class="text-black">
-                {{ animal.animalProduceType | addSpacesToPascalCase }}
+                {{ animal().animalProduceType | addSpacesToPascalCase }}
             </span>
     </div>
-    @if (animal.itemHarvestTool) {
+    @if (harvestTool) {
         <div>Tool for harvesting:
             <span class="text-black">
-               <app-item-icon [itemName]="animal.itemHarvestTool.iconName"
+               <app-item-icon [itemName]="harvestTool.iconName"
                               class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
-                {{ animal.itemHarvestTool.displayName }}
+                {{ harvestTool.displayName }}
             </span>
         </div>
     }
     <div>Harvest cooldown:
         <span class="text-black">
-                    {{ animal.harvestCooldown }} day{{ animal.harvestCooldown > 1 ? 's' : '' }}
+                    {{ animal().harvestCooldown }} day{{ animal().harvestCooldown > 1 ? 's' : '' }}
             </span>
     </div>
     <div class="my-3">Produces:
-        @for (produce of animal.produces; track produce) {
+        @for (produce of animal().produces; track produce) {
 
-            @for (keValuePair of produce | keyvalue: keyValueNoOrder; track keValuePair) {
+            @for (keValuePair of produce | keyvalue: null; track keValuePair) {
 
                 @if (keValuePair.value | isMinimalItem) {
-                    @if (!shownItemId || shownItemId === keValuePair.value.id) {
+                    @if (!shownItemId() || shownItemId() === keValuePair.value.id) {
                         <div
                                 class="text-black">
                             {{ keValuePair.key | addSpacesToPascalCase | titlecase }}:

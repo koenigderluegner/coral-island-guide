@@ -1,4 +1,4 @@
-@for (i of itemProcessData; track i.input.id) {
+@for (i of itemProcessData(); track i.input.id) {
     <div class="flex justify-between py-1">
         <div class="flex gap-x-3 items-center">
             <app-item-icon [itemName]="i.input.iconName" class="w-10"/>

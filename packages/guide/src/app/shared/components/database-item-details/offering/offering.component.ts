@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AnimalProduceComponent } from "../animal-produce/animal-produce.component";
 import { CookingRecipeComponent } from "../cooking-recipe/cooking-recipe.component";
@@ -20,5 +20,5 @@ import { DatabaseItem } from "@ci/data-types";
     }`
 })
 export class OfferingComponent {
-    @Input({required: true}) details!: DatabaseItem
+   readonly details = input.required<DatabaseItem>()
 }

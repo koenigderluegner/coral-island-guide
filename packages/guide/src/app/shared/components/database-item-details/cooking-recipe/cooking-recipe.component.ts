@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, inject, Input } from '@angular/core';
+import { booleanAttribute, Component, inject, Input, input } from '@angular/core';
 import { CommonModule, JsonPipe } from '@angular/common';
 import { CookingRecipe } from "@ci/data-types";
 import { SharedModule } from "../../../shared.module";
@@ -12,8 +12,9 @@ import { RouterLink } from "@angular/router";
     templateUrl: './cooking-recipe.component.html'
 })
 export class CookingRecipeComponent {
-    @Input({required: true}) cookingRecipe!: CookingRecipe
-    @Input({transform: booleanAttribute}) showUtensil = false
+
+   readonly  cookingRecipe = input.required<CookingRecipe>()
+    readonly showUtensil = input(false, { transform: booleanAttribute });
 
 
     protected cookingUtensilMapping = inject(DatabaseService).getCookingUtensilMapping();

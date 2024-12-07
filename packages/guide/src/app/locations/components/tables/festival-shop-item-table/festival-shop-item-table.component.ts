@@ -20,9 +20,8 @@ export class FestivalShopItemTableComponent extends BaseTableComponent<FestivalS
         'sellPrice'
     ];
 
-    override ngOnInit() {
-        super.ngOnInit();
-        if (this.dataSource.length && this.dataSource[0].festival) {
+     ngOnInit() {
+        if (this._dataSource().length && this._dataSource()[0].festival) {
             this.displayedColumns.splice(2, 0, 'shop');
             this.displayHeaderColumns = this.displayedColumns.filter(column => column !== 'icon')
         }

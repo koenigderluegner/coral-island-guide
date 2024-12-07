@@ -1,4 +1,4 @@
-import { Component, inject, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, inject, OnChanges, OnInit, SimpleChanges, input } from '@angular/core';
 import { NPC, PetShopAdoptions, UiIcon } from "@ci/data-types";
 import { DatabaseService } from "../../../shared/services/database.service";
 
@@ -9,14 +9,14 @@ import { DatabaseService } from "../../../shared/services/database.service";
 })
 export class PetAdoptionDetailsComponent implements OnInit, OnChanges {
 
-    @Input({required: true}) adoption!: PetShopAdoptions;
+    readonly adoption = input.required<PetShopAdoptions>();
 
     npc?: NPC;
     protected readonly UiIcon = UiIcon;
     private _database: DatabaseService = inject(DatabaseService)
 
     ngOnInit(): void {
-        this.npc = this._database.getNPCs().find(npc => npc.key === this.adoption.npcData.npcId);
+        this.npc = this._database.getNPCs().find(npc => npc.key === this.adoption().npcData.npcId);
     }
 
     ngOnChanges(changes: SimpleChanges): void {

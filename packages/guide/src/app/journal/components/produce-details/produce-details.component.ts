@@ -1,4 +1,4 @@
-import { Component, input, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Crop, FruitPlant, FruitTree, MinimalItem } from '@ci/data-types';
 import { ToDoContext } from "../../../core/types/to-do-context.type";
 
@@ -8,7 +8,7 @@ import { ToDoContext } from "../../../core/types/to-do-context.type";
     standalone: false
 })
 export class ProduceDetailsComponent {
-    @Input({required: true}) item!: MinimalItem | Crop | FruitPlant | FruitTree;
-    toDoContext = input.required<ToDoContext | undefined>()
+    readonly item = input.required<MinimalItem | Crop | FruitPlant | FruitTree>();
+    readonly toDoContext = input.required<ToDoContext | undefined>()
 
 }

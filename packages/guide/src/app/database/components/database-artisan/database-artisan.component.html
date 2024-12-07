@@ -1,17 +1,20 @@
-@if (databaseItem.artisanIngredient && databaseItem.artisanIngredient.length) {
+@let artisanIngredient = databaseItem().artisanIngredient;
+@let artisanResult = databaseItem().artisanResult;
+
+@if (artisanIngredient && artisanIngredient.length) {
     <app-expandable #expandableComponent open>
         <h3 class="database-header" expandableHeader>
             <app-database-header-button [templateRef]="expandableComponent">Usage in processing
             </app-database-header-button>
         </h3>
-        <app-processor-table [dataSource]="databaseItem.artisanIngredient" showProcessor/>
+        <app-processor-table [dataSource]="artisanIngredient" showProcessor/>
     </app-expandable>
 }
-@if (databaseItem.artisanResult && databaseItem.artisanResult.length) {
+@if (artisanResult && artisanResult.length) {
     <app-expandable #expandableComponent open>
         <h3 class="database-header" expandableHeader>
             <app-database-header-button [templateRef]="expandableComponent">Processing</app-database-header-button>
         </h3>
-        <app-processor-table [dataSource]="databaseItem.artisanResult" showProcessor/>
+        <app-processor-table [dataSource]="artisanResult" showProcessor/>
     </app-expandable>
 }

@@ -1,4 +1,4 @@
-import { Component, Input, numberAttribute } from '@angular/core';
+import { Component, numberAttribute, input } from '@angular/core';
 
 @Component({
     selector: 'app-merit-points',
@@ -8,6 +8,6 @@ import { Component, Input, numberAttribute } from '@angular/core';
 })
 export class MeritPointsComponent {
 
-    @Input({transform: numberAttribute, required: true}) amount!: number;
+    readonly amount = input.required<number, unknown>({ transform: numberAttribute });
 
 }

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject, OnDestroy, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnDestroy, viewChild } from '@angular/core';
 import { BaseCrop, JournalOrder, MinimalItem, UiIcon } from '@ci/data-types';
 import { combineLatest, map, Observable, of, startWith } from 'rxjs';
 import { MediaMatcher } from '@angular/cdk/layout';
@@ -23,7 +23,7 @@ export class BaseJournalPageComponent<D extends ({
     item: MinimalItem
 } | MinimalItem)> extends BaseTabbedSelectableContainerComponent<D> implements OnDestroy {
 
-    @ViewChild(MatTabGroup) matTabGroup?: MatTabGroup
+    readonly matTabGroup = viewChild(MatTabGroup);
 
     uiIcon = UiIcon;
     tabs: { title: string; data: Observable<D[]> }[] = [];

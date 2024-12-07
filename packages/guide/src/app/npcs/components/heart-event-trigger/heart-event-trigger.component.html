@@ -1,31 +1,33 @@
+@let requirements = heartEventTrigger().requirements;
+
 <header class="flex justify-between text-black mb-1">
     <div class="flex flex-col">
-        <h4>{{ heartEventTrigger.cutscene }}</h4>
-        <span>Id: {{ heartEventTrigger.id }} </span>
+        <h4>{{ heartEventTrigger().cutscene }}</h4>
+        <span>Id: {{ heartEventTrigger().id }} </span>
     </div>
     <mat-checkbox (change)="toggleHeartEvent($event.checked)"
-                  [checked]="heartEventChecklist.isChecked(heartEventTrigger.cutscene)">Cutscene seen
+                  [checked]="heartEventChecklist.isChecked(heartEventTrigger().cutscene)">Cutscene seen
     </mat-checkbox>
 </header>
 
 
 <div>Enabled: <span
-        class="text-black">{{ heartEventTrigger.enabled ? 'Yes' : 'No' }}</span>
+        class="text-black">{{ heartEventTrigger().enabled ? 'Yes' : 'No' }}</span>
 </div>
 <div>Location: <span
-        class="text-black">{{ heartEventTrigger.location }}</span>
+        class="text-black">{{ heartEventTrigger().location }}</span>
 </div>
 <div>Day Time of day:
     <span class="text-black">
-    {{ heartEventTrigger.time.fromTime | ingameTime }}-{{ heartEventTrigger.time.toTime | ingameTime }}
+    {{ heartEventTrigger().time.fromTime | ingameTime }}-{{ heartEventTrigger().time.toTime | ingameTime }}
 </span>
 </div>
 <div>Can trigger on the same day: <span
-        class="text-black">{{ heartEventTrigger.canTriggerSameDay ? 'Yes' : 'No' }}</span>
+        class="text-black">{{ heartEventTrigger().canTriggerSameDay ? 'Yes' : 'No' }}</span>
 </div>
-@if (heartEventTrigger.otherCutscenesState.length) {
+@if (heartEventTrigger().otherCutscenesState.length) {
     <div>Other cutscenes requirements:
-        @for (otherStates of heartEventTrigger.otherCutscenesState; track otherStates) {
+        @for (otherStates of heartEventTrigger().otherCutscenesState; track otherStates) {
 
             @for (cutscenes of (otherStates | keyvalue); track cutscenes) {
                 <div class="text-black">{{ cutscenes.key }}
@@ -36,45 +38,45 @@
         }
     </div>
 }
-@if (heartEventTrigger.specificDay.length) {
+@if (heartEventTrigger().specificDay.length) {
     <div>Only on days: <span
-            class="text-black">{{ heartEventTrigger.specificDay.join(', ') }}</span>
+            class="text-black">{{ heartEventTrigger().specificDay.join(', ') }}</span>
     </div>
 }
-@if (heartEventTrigger.specificMonth.length) {
+@if (heartEventTrigger().specificMonth.length) {
     <div>Only in seasons: <span
-            class="text-black">{{ heartEventTrigger.specificMonth.join(', ') }}</span>
+            class="text-black">{{ heartEventTrigger().specificMonth.join(', ') }}</span>
     </div>
 }
-@if (heartEventTrigger.specificWeather.length) {
+@if (heartEventTrigger().specificWeather.length) {
     <div>Only with weather: <span
-            class="text-black">{{ heartEventTrigger.specificWeather.join(', ') }}</span>
+            class="text-black">{{ heartEventTrigger().specificWeather.join(', ') }}</span>
     </div>
 }
 
-@if (heartEventTrigger.effects && heartEventTrigger.effects.length) {
+@if (heartEventTrigger().effects && heartEventTrigger().effects.length) {
     <div class="my-4">
         <span class="text-lg text-black">Effects when seen</span>
         <div class="flex flex-col text-black">
-            @for (effect of heartEventTrigger.effects; track effect) {
+            @for (effect of heartEventTrigger().effects; track effect) {
                 <app-effect [effect]="effect"/>
             }
         </div>
     </div>
 }
-@if (heartEventTrigger.requirements && heartEventTrigger.requirements.requirements.length) {
+@if (requirements && requirements.requirements.length) {
     <div class="my-4">
     <span class="text-lg text-black">
-        @if (heartEventTrigger.requirements.requirements.length > 1) {
-            Unlock requirements ({{ heartEventTrigger.requirements.type === 'And' ? 'all' : 'any' }} of them):
+        @if (requirements.requirements.length > 1) {
+            Unlock requirements ({{ requirements.type === 'And' ? 'all' : 'any' }} of them):
         }
-        @if (heartEventTrigger.requirements.requirements.length < 2) {
+        @if (requirements.requirements.length < 2) {
             Unlock requirement:
         }
     </span>
 
         <div class="flex flex-col  text-black">
-            @for (requirement of heartEventTrigger.requirements.requirements; track requirement) {
+            @for (requirement of requirements.requirements; track requirement) {
                 <app-requirements [requirement]="requirement"/>
             }
         </div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { ProductSizeByMood } from "@ci/data-types";
 
 @Component({
@@ -8,7 +8,7 @@ import { ProductSizeByMood } from "@ci/data-types";
 })
 export class AnimalMoodTableComponent {
 
-    @Input({required: true}) productSizeByMood!: ProductSizeByMood[]
+    readonly productSizeByMood = input.required<ProductSizeByMood[]>();
     protected displayHeaderColumns: string[] = [
         'hearts',
         'badSmall',
