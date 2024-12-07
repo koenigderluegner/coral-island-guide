@@ -76,6 +76,6 @@ export class DatabaseItemDetailsComponent {
                     untracked(() => this.isFetching.set(false))
                 }
             })
-        }, {allowSignalWrites: true});
+        });
     }
 }
