@@ -3,15 +3,38 @@ import { BaseTabbedSelectableContainerComponent } from "../../../shared/componen
 import { MinimalItem, MinimalTagBasedItem, Offering, OfferingAltar, Offerings } from "@ci/data-types";
 import { map, Observable } from "rxjs";
 import { OfferingChecklistService } from "../../../core/services/checklists/offering-checklist.service";
-import { FormControl, FormRecord } from "@angular/forms";
+import { FormControl, FormRecord, ReactiveFormsModule } from "@angular/forms";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { entityKey } from "@ci/util";
 import { SettingsService } from "../../../shared/services/settings.service";
+import { MatTab, MatTabGroup } from "@angular/material/tabs";
+import { AddSpacesToPascalCasePipe } from "../../../shared/pipes/add-spaces-to-pascal-case.pipe";
+import { ItemCardSwitchComponent } from "../../../shared/components/item-card-switch/item-card-switch.component";
+import { OfferingComponent } from "../../../shared/components/database-item-details/offering/offering.component";
+import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
+import { EntityKeyPipe } from "../../../shared/pipes/entity-key.pipe";
+import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
+import { MatCheckbox } from "@angular/material/checkbox";
+import { AsyncPipe, NgOptimizedImage } from "@angular/common";
 
 @Component({
     selector: 'app-offerings-checklist',
     templateUrl: './offerings-checklist.component.html',
-    standalone: false
+
+    imports: [
+        MatTab,
+        AddSpacesToPascalCasePipe,
+        ReactiveFormsModule,
+        MatTabGroup,
+        ItemCardSwitchComponent,
+        OfferingComponent,
+        ListDetailContainerComponent,
+        EntityKeyPipe,
+        ItemIconComponent,
+        MatCheckbox,
+        NgOptimizedImage,
+        AsyncPipe
+    ]
 })
 export class OfferingsChecklistComponent extends BaseTabbedSelectableContainerComponent<MinimalItem | MinimalTagBasedItem> {
     checklistService = inject(OfferingChecklistService);

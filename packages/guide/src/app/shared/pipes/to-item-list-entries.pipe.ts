@@ -3,7 +3,7 @@ import { GenericEntry, Item, ItemEntry, MinimalItem } from "@ci/data-types";
 
 @Pipe({
     name: 'toItemListEntries',
-    standalone: false
+
 })
 export class ToItemListEntriesPipe implements PipeTransform {
     transform(value: (MinimalItem | Item)[]): (ItemEntry | GenericEntry)[] {

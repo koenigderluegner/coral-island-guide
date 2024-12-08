@@ -1,17 +1,21 @@
-import { Component, inject, input, signal, output } from '@angular/core';
-import { LocationsModule } from "../../locations.module";
+import { Component, inject, input, output, signal } from '@angular/core';
 import { NgOptimizedImage } from "@angular/common";
-import { SharedModule } from "../../../shared/shared.module";
 import { MinimalItem, MinimalTagBasedItem, Offering, OfferingAltar, Offerings } from "@ci/data-types";
 import { SettingsService } from "../../../shared/services/settings.service";
 import { ToDo } from "../../../core/types/to-do.type";
+import { DataFilterComponent } from "../../../shared/components/data-filter/data-filter.component";
+import { OfferingsTableComponent } from "../tables/offerings-table/offerings-table.component";
+import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
+import { EntityKeyPipe } from "../../../shared/pipes/entity-key.pipe";
 
 @Component({
     selector: 'app-offering-group',
     imports: [
-        LocationsModule,
         NgOptimizedImage,
-        SharedModule
+        DataFilterComponent,
+        OfferingsTableComponent,
+        ItemIconComponent,
+        EntityKeyPipe
     ],
     templateUrl: './offering-group.component.html'
 })

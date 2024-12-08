@@ -2,6 +2,11 @@ import { Component } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { TornPageData } from "@ci/data-types";
 import { SelectionModel } from "@angular/cdk/collections";
+import { MailComponent } from "../../mail/mail.component";
+import { MatTableModule } from "@angular/material/table";
+import { MatButton } from "@angular/material/button";
+import { MatSort, MatSortHeader } from "@angular/material/sort";
+import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
 
 @Component({
     selector: 'app-torn-pages-table',
@@ -12,7 +17,15 @@ import { SelectionModel } from "@angular/cdk/collections";
             --mat-table-row-item-label-text-size: 16px;
         }
     `],
-    standalone: false
+
+    imports: [
+        MailComponent,
+        ResponsiveTableComponent,
+        MatButton,
+        MatSort,
+        MatSortHeader,
+        MatTableModule
+    ]
 })
 export class TornPagesTableComponent extends BaseTableComponent<TornPageData> {
     protected expandedRows: SelectionModel<string> = new SelectionModel<string>(true, [])

@@ -5,7 +5,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
     templateUrl: './responsive-table.component.html',
     styleUrls: ['./responsive-table.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    standalone: false,
+
     host: {
         'class': 'app-responsive-table'
     }

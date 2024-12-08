@@ -3,7 +3,7 @@ import { Quality } from "@ci/data-types";
 
 @Pipe({
     name: 'castToQuality',
-    standalone: false
+
 })
 export class CastToQualityPipe implements PipeTransform {
 

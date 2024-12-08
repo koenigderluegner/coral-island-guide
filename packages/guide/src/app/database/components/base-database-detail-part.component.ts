@@ -4,7 +4,7 @@ import { DatabaseService } from "../../shared/services/database.service";
 
 @Component({
     template: '',
-    standalone: false
+
 })
 export class BaseDatabaseDetailPartComponent {
     readonly databaseItem = input.required<DatabaseItem>();

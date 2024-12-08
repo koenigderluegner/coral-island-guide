@@ -3,7 +3,7 @@ import { Item } from "@ci/data-types";
 
 @Pipe({
     name: 'isItem',
-    standalone: false
+
 })
 export class IsItemPipe implements PipeTransform {
 

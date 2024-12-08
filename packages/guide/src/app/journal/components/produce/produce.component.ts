@@ -7,11 +7,32 @@ import { FilterForm } from "../../../shared/types/filter-form.type";
 import { nonNullable } from "@ci/util";
 import { ToDoContext } from "../../../core/types/to-do-context.type";
 import { SettingsService } from "../../../shared/services/settings.service";
+import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
+import { ProduceDetailsComponent } from "../produce-details/produce-details.component";
+import { MatTab, MatTabGroup } from "@angular/material/tabs";
+import { DataFilterComponent } from "../../../shared/components/data-filter/data-filter.component";
+import { AsyncPipe } from "@angular/common";
+import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
+import { IsMinimalItemPipe } from "../../../shared/pipes/is-minimal-item.pipe";
+import { NonSpecializedTableComponent } from "../../../shared/components/non-specialized-table/non-specialized-table.component";
+import { CropTableComponent } from "../tables/crop-table/crop-table.component";
 
 @Component({
     selector: 'app-produce',
     templateUrl: './produce.component.html',
-    standalone: false
+
+    imports: [
+        ListDetailContainerComponent,
+        ProduceDetailsComponent,
+        MatTabGroup,
+        MatTab,
+        DataFilterComponent,
+        AsyncPipe,
+        ItemIconComponent,
+        IsMinimalItemPipe,
+        NonSpecializedTableComponent,
+        CropTableComponent
+    ]
 })
 export class ProduceComponent extends BaseJournalPageComponent<MinimalItem | Crop | FruitPlant | FruitTree> {
     isBeta = inject(SettingsService).getSettings().useBeta
@@ -73,14 +94,14 @@ export class ProduceComponent extends BaseJournalPageComponent<MinimalItem | Cro
                     2
                 )
             },
-              {
-                    title: 'Ocean',
-                    data: this.getFilteredJournalData(
-                        this._database.fetchJournalOrder$('journal-ocean-products'),
-                        this._database.fetchItems$(),
-                        3
-                    )
-                },
+            {
+                title: 'Ocean',
+                data: this.getFilteredJournalData(
+                    this._database.fetchJournalOrder$('journal-ocean-products'),
+                    this._database.fetchItems$(),
+                    3
+                )
+            },
 
         ];
 

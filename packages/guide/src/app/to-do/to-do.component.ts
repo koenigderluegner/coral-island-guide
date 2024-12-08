@@ -1,11 +1,18 @@
 import { Component, inject, signal } from '@angular/core';
 import { ToDoService } from "../core/services/to-do.service";
-import { FormControl } from "@angular/forms";
+import { FormControl, ReactiveFormsModule } from "@angular/forms";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ToDoContext, ToDoContextDisplayNames, ToDoContexts } from "../core/types/to-do-context.type";
 import { ToDoFilterOptions } from "./types/to-do-filter-options.type";
 import { BaseSelectableContainerComponent } from "../shared/components/base-selectable-container/base-selectable-container.component";
 import { ItemEntry } from "../shared/types/item-entry.type";
+import { ToDoPartialComponent } from "./components/to-do-partial/to-do-partial.component";
+import { MatFormField, MatOption, MatSelect, MatSelectTrigger } from "@angular/material/select";
+import { CardComponent } from "../shared/components/card/card.component";
+import { ItemCardSwitchComponent } from "../shared/components/item-card-switch/item-card-switch.component";
+import { OfferingComponent } from "../shared/components/database-item-details/offering/offering.component";
+import { ListDetailContainerComponent } from "../shared/components/list-detail-container/list-detail-container.component";
+import { DatabaseItemDetailsDirective } from "../shared/directives/database-item-details.directive";
 
 @Component({
     selector: 'app-to-do',
@@ -15,7 +22,19 @@ import { ItemEntry } from "../shared/types/item-entry.type";
             display: none;
         }
     `],
-    standalone: false
+    imports: [
+        ToDoPartialComponent,
+        MatSelect,
+        MatSelectTrigger,
+        MatFormField,
+        CardComponent,
+        ItemCardSwitchComponent,
+        OfferingComponent,
+        ListDetailContainerComponent,
+        DatabaseItemDetailsDirective,
+        MatOption,
+        ReactiveFormsModule
+    ]
 })
 export class ToDoComponent extends BaseSelectableContainerComponent<ItemEntry> {
 

@@ -1,11 +1,26 @@
 import { Component } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { BaseCrop } from "@ci/data-types";
+import { MatTableModule } from "@angular/material/table";
+import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
+import { ItemIconComponent } from "../../../../shared/components/item-icon/item-icon.component";
+import { MatSort, MatSortHeader } from "@angular/material/sort";
+import { MaxPipe } from "../../../../shared/pipes/max.pipe";
+import { MoneyComponent } from "../../../../shared/components/money/money.component";
 
 @Component({
     selector: 'app-crop-table',
     templateUrl: './crop-table.component.html',
-    standalone: false
+
+    imports: [
+        ResponsiveTableComponent,
+        ItemIconComponent,
+        MatSort,
+        MatSortHeader,
+        MaxPipe,
+        MoneyComponent,
+        MatTableModule,
+    ]
 })
 export class CropTableComponent extends BaseTableComponent<BaseCrop> {
 

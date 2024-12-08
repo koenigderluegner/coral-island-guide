@@ -4,7 +4,7 @@ import { booleanAttribute, Component, input, linkedSignal } from '@angular/core'
     selector: 'app-expandable',
     templateUrl: './expandable.component.html',
     styles: [':host{display: block}'],
-    standalone: false
+
 })
 export class ExpandableComponent {
     readonly open = input(false, {transform: booleanAttribute});

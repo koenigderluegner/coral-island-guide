@@ -1,6 +1,8 @@
 import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { UiIcon } from "@ci/data-types";
 import { GAME_VERSION } from "../../injection-tokens/version.injection-token";
+import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
+import { RouterLink } from "@angular/router";
 
 @Component({
     selector: 'app-footer',
@@ -15,7 +17,10 @@ import { GAME_VERSION } from "../../injection-tokens/version.injection-token";
         'class': 'app-footer'
     },
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    imports: [
+        UiIconComponent,
+        RouterLink
+    ]
 })
 export class FooterComponent {
     protected uiIcon = UiIcon;

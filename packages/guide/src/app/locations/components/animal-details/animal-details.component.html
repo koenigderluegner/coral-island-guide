@@ -89,7 +89,7 @@
                 <div class="my-3">Produces:
                     @for (produce of animal.produces; track produce) {
 
-                        @for (keValuePair of produce | keyvalue: keyValueNoOrder; track keValuePair) {
+                        @for (keValuePair of produce | keyvalue: null; track keValuePair) {
 
                             @if (keValuePair.value | isMinimalItem) {
                                 <div

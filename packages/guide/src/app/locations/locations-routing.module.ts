@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { CanActivateFn, Route, RouterModule, Routes } from '@angular/router';
+import { CanActivateFn, Route, Routes } from '@angular/router';
 import { LocationsComponent } from './locations.component';
 import { onlyInBetaGuard } from "../core/guards/only-in-beta.guard";
 import { FestivalDisplayNames, ShopDisplayNames } from "@ci/data-types";
@@ -9,7 +8,7 @@ import { festivalRouteConfig } from "./locations-festival-route-config";
 import { onlyInLiveGuard } from "../core/guards/only-in-live.guard";
 
 
-const routes: Routes = [
+export const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
@@ -72,10 +71,3 @@ const routes: Routes = [
         ]
     }
 ];
-
-@NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule],
-})
-export class LocationsRoutingModule {
-}

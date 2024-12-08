@@ -1,16 +1,16 @@
 import { Component, inject, signal, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '../shared/shared.module';
 import { HttpClient } from "@angular/common/http";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { ChangelogService } from "../changelog/changelog.service";
 import { MarkdownComponent } from "ngx-markdown";
 import { GAME_VERSION } from "../core/injection-tokens/version.injection-token";
+import { CardComponent } from "../shared/components/card/card.component";
 
 @Component({
     selector: 'app-start',
     templateUrl: './start.component.html',
-    imports: [CommonModule, SharedModule, MatProgressSpinnerModule, MarkdownComponent],
+    imports: [CommonModule, MatProgressSpinnerModule, MarkdownComponent, CardComponent],
     encapsulation: ViewEncapsulation.None,
     host: {
         'class': 'app-start container block mx-auto my-10'

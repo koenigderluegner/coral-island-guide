@@ -2,11 +2,37 @@ import { booleanAttribute, Component, inject, input } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { CookingRecipe } from "@ci/data-types";
 import { DatabaseService } from "../../../../shared/services/database.service";
+import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
+import { MatTableModule } from "@angular/material/table";
+import { MatSort, MatSortHeader } from "@angular/material/sort";
+import { ItemIconComponent } from "../../../../shared/components/item-icon/item-icon.component";
+import { TableItemListComponent } from "../../../../shared/components/table-item-list/table-item-list.component";
+import { CookingRecipeIngredientsPipe } from "../../../../shared/pipes/cooking-recipe-ingredients.pipe";
+import { KeyValuePipe, TitleCasePipe } from "@angular/common";
+import { CastToMinimalItemArrayPipe } from "../../../../shared/pipes/cast-to-minimal-item-array.pipe";
+import { MoneyComponent } from "../../../../shared/components/money/money.component";
+import { RouterLink } from "@angular/router";
+import { AddSpacesToPascalCasePipe } from "../../../../shared/pipes/add-spaces-to-pascal-case.pipe";
 
 @Component({
     selector: 'app-cooking-table',
     templateUrl: './cooking-table.component.html',
-    standalone: false
+
+    imports: [
+        ResponsiveTableComponent,
+        MatSort,
+        ItemIconComponent,
+        TableItemListComponent,
+        CookingRecipeIngredientsPipe,
+        KeyValuePipe,
+        CastToMinimalItemArrayPipe,
+        MoneyComponent,
+        RouterLink,
+        AddSpacesToPascalCasePipe,
+        TitleCasePipe,
+        MatSortHeader,
+        MatTableModule
+    ]
 })
 export class CookingTableComponent extends BaseTableComponent<CookingRecipe> {
 

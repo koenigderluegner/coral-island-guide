@@ -15,7 +15,6 @@ import { DatabaseService } from "../../services/database.service";
 import { take } from "rxjs";
 import { DatabaseItem, Quality, UiIcon } from "@ci/data-types";
 import { MatTooltipModule } from "@angular/material/tooltip";
-import { SharedModule } from "../../shared.module";
 import { RouterLink } from "@angular/router";
 import { AddSpacesToPascalCasePipe } from "../../pipes/add-spaces-to-pascal-case.pipe";
 import { ToDoToggleComponent } from "../to-do-toggle/to-do-toggle.component";
@@ -23,6 +22,10 @@ import { ToDoContext } from "../../../core/types/to-do-context.type";
 import { ListDetailService } from "../list-detail-container/list-detail.service";
 import { UiIconComponent } from "../ui-icon/ui-icon.component";
 import { MatProgressSpinner } from "@angular/material/progress-spinner";
+import { MoneyComponent } from "../money/money.component";
+import { QualityGridComponent } from "../quality-grid/quality-grid.component";
+import { ItemIconComponent } from "../item-icon/item-icon.component";
+import { CardComponent } from "../card/card.component";
 
 
 @Component({
@@ -33,10 +36,13 @@ import { MatProgressSpinner } from "@angular/material/progress-spinner";
         MatTooltipModule,
         RouterLink,
         AddSpacesToPascalCasePipe,
-        SharedModule,
         ToDoToggleComponent,
         UiIconComponent,
-        MatProgressSpinner
+        MatProgressSpinner,
+        MoneyComponent,
+        QualityGridComponent,
+        ItemIconComponent,
+        CardComponent
     ]
 })
 export class DatabaseItemDetailsComponent {

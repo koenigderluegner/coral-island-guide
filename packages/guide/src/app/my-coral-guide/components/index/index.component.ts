@@ -17,14 +17,35 @@ import { FormControl, FormGroup } from "@angular/forms";
 import { DashboardFilter } from "../../types/dashboard-filter.type";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { ChecklistContext } from "../../types/checklist-context.type";
-import { MatCheckboxChange } from "@angular/material/checkbox";
+import { MatCheckbox, MatCheckboxChange } from "@angular/material/checkbox";
 import { addDays, dateInRanges } from "@ci/util";
 import { UserDataService } from "../../../core/services/user-data.service";
+import { BirthdayDashboardComponent } from "../../dashboards/birthday-dashboard/birthday-dashboard.component";
+import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
+import { ItemCardSwitchComponent } from "../../../shared/components/item-card-switch/item-card-switch.component";
+import { OfferingComponent } from "../../../shared/components/database-item-details/offering/offering.component";
+import { DashboardFilterComponent } from "../dashboard-filter/dashboard-filter.component";
+import { AsyncPipe } from "@angular/common";
+import { CardComponent } from "../../../shared/components/card/card.component";
+import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
+import { MatProgressSpinner } from "@angular/material/progress-spinner";
 
 @Component({
     selector: 'app-index',
     templateUrl: './index.component.html',
-    standalone: false
+
+    imports: [
+        BirthdayDashboardComponent,
+        ListDetailContainerComponent,
+        ItemCardSwitchComponent,
+        OfferingComponent,
+        DashboardFilterComponent,
+        AsyncPipe,
+        CardComponent,
+        ItemIconComponent,
+        MatCheckbox,
+        MatProgressSpinner
+    ]
 })
 export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem | MinimalTagBasedItem> {
 

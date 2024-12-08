@@ -1,8 +1,10 @@
 import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { UiIcon } from '@ci/data-types';
-import { NavigationStart, Router, RouterLink } from '@angular/router';
+import { NavigationStart, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { filter } from 'rxjs';
 import { SettingsService } from '../../../shared/services/settings.service';
+import { CdkConnectedOverlay, CdkOverlayOrigin } from "@angular/cdk/overlay";
+import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
 
 type NaviLinks = {
     path: RouterLink['routerLink'];
@@ -15,7 +17,14 @@ type NaviLinks = {
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    standalone: false,
+    imports: [
+        CdkConnectedOverlay,
+        RouterLinkActive,
+        RouterLink,
+        UiIconComponent,
+        CdkOverlayOrigin
+    ],
+
     host: {
         '[class.open-menu]': 'isOpen',
         'class': 'app-header'

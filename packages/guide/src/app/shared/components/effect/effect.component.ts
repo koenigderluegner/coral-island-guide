@@ -1,10 +1,18 @@
-import { Component, input, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Effect, MinimalItem, RemoveItemFromInventoryEffect } from "@ci/data-types";
+import { ItemIconComponent } from "../item-icon/item-icon.component";
+import { MoneyComponent } from "../money/money.component";
+import { RouterLink } from "@angular/router";
 
 @Component({
     selector: 'app-effect',
     templateUrl: './effect.component.html',
-    standalone: false
+
+    imports: [
+        ItemIconComponent,
+        MoneyComponent,
+        RouterLink
+    ]
 })
 export class EffectComponent {
 

@@ -5,6 +5,7 @@ import { ToDo } from "../../../core/types/to-do.type";
 import { ToDoFilterOptions } from "../../types/to-do-filter-options.type";
 import { animate, style, transition, trigger } from "@angular/animations";
 import { ItemEntry } from "../../../shared/types/item-entry.type";
+import { ToDoEntryBaseComponent } from "../to-do-entry-base/to-do-entry-base.component";
 
 @Component({
     selector: 'app-to-do-partial',
@@ -20,7 +21,10 @@ import { ItemEntry } from "../../../shared/types/item-entry.type";
     host: {
         '[class.hidden]': 'hidden()'
     },
-    standalone: false
+
+    imports: [
+        ToDoEntryBaseComponent
+    ]
 })
 export class ToDoPartialComponent {
     readonly entrySelected = output<ItemEntry>()

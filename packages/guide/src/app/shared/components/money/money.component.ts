@@ -1,11 +1,15 @@
-import { Component, numberAttribute, input } from '@angular/core';
+import { Component, input, numberAttribute } from '@angular/core';
+import { DecimalPipe } from "@angular/common";
 
 @Component({
     selector: 'app-money',
     templateUrl: './money.component.html',
     styleUrls: ['./money.component.scss'],
-    standalone: false
+
+    imports: [
+        DecimalPipe
+    ]
 })
 export class MoneyComponent {
-    readonly amount = input.required<number, unknown>({ transform: numberAttribute });
+    readonly amount = input.required<number, unknown>({transform: numberAttribute});
 }

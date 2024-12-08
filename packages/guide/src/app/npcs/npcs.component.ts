@@ -1,13 +1,22 @@
 import { Component, inject } from '@angular/core';
 import { UiIcon } from '@ci/data-types';
-import { NavigationEnd, Router } from "@angular/router";
+import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
 import { filter } from "rxjs";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
+import { ModuleSidebarItemComponent } from "../shared/components/module-sidebar-item/module-sidebar-item.component";
+import { ModuleSidebarComponent } from "../shared/components/module-sidebar/module-sidebar.component";
+import { SidebarContainerComponent } from "../shared/components/sidebar-container/sidebar-container.component";
 
 @Component({
     selector: 'app-people',
     templateUrl: './npcs.component.html',
-    standalone: false
+
+    imports: [
+        RouterOutlet,
+        ModuleSidebarItemComponent,
+        ModuleSidebarComponent,
+        SidebarContainerComponent
+    ]
 })
 export class NPCsComponent {
     uiIcons = UiIcon;

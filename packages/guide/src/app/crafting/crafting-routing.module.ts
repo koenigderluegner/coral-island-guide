@@ -1,12 +1,10 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { CraftingComponent } from './crafting.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
 import { ProcessorComponent } from './components/processor/processor.component';
 import { CookingComponent } from "./components/cooking/cooking.component";
-import { onlyInBetaGuard } from "../core/guards/only-in-beta.guard";
 
-const routes: Routes = [
+export const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
@@ -30,10 +28,3 @@ const routes: Routes = [
     },
 
 ];
-
-@NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule],
-})
-export class CraftingRoutingModule {
-}

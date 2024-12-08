@@ -14,7 +14,6 @@ import { Observable } from "rxjs";
 
 @Component({
     template: '',
-    standalone: false
 })
 export abstract class BaseShopComponent extends BaseSelectableContainerComponent<ShopItemData> {
 

@@ -13,6 +13,8 @@
     </div>
     @if (databaseItem(); as dbItem) {
         <app-item-icon [amount]="amount()" cardIcon itemName="{{dbItem.item.iconName}}"/>
+    }
+    @if (databaseItem(); as dbItem) {
         <div class="flex justify-between items-center">
             <div class="flex flex-col">
                 <div class="text-black text-2xl">{{ dbItem.item.displayName }}</div>

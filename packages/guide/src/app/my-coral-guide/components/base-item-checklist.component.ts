@@ -8,7 +8,7 @@ import { BaseChecklistService } from "../../core/services/checklists/base-checkl
 
 @Component({
     template: '',
-    standalone: false
+
 })
 export abstract class BaseItemChecklistComponent extends BaseTabbedSelectableContainerComponent<any> implements OnInit {
     checklistForm: FormRecord<FormControl<boolean>> = new FormRecord<FormControl<boolean>>({})
@@ -49,10 +49,6 @@ export abstract class BaseItemChecklistComponent extends BaseTabbedSelectableCon
 
             })
         );
-    }
-
-    protected keyValueNoOrder(): number {
-        return 0
     }
 
 }

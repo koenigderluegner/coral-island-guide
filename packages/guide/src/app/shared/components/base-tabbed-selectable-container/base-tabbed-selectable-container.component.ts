@@ -11,7 +11,7 @@ export interface BaseTabbedSelectableContainerComponent<T> {
 
 @Component({
     template: '',
-    standalone: false
+
 })
 export class BaseTabbedSelectableContainerComponent<T> extends BaseSelectableContainerComponent<T> {
 

@@ -6,6 +6,17 @@ import { MapKeyed } from '../../../shared/types/map-keyed.type';
 import { NpcFilterComponent } from "../../npc-filter/npc-filter.component";
 import { filterNPCs } from '../../filter-npcs.function';
 import { BaseSelectableContainerComponent } from "../../../shared/components/base-selectable-container/base-selectable-container.component";
+import { GiftingGridComponent } from "../gifting-grid/gifting-grid.component";
+import { CardComponent } from "../../../shared/components/card/card.component";
+import { ExpandableComponent } from "../../../shared/components/expandable/expandable.component";
+import { OfferingComponent } from "../../../shared/components/database-item-details/offering/offering.component";
+import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
+import { ItemCardSwitchComponent } from "../../../shared/components/item-card-switch/item-card-switch.component";
+import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
+import { IngameDatePipe } from "../../../shared/pipes/ingame-date.pipe";
+import { MatTooltip } from "@angular/material/tooltip";
+import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
+import { AsyncPipe } from "@angular/common";
 
 type CombinedGiftPreference = {
     preferences: MapKeyed<GiftPreferences>,
@@ -17,7 +28,21 @@ type CombinedGiftPreference = {
     templateUrl: './gifting.component.html',
     styleUrls: ['./gifting.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+
+    imports: [
+        GiftingGridComponent,
+        CardComponent,
+        ExpandableComponent,
+        OfferingComponent,
+        ListDetailContainerComponent,
+        ItemCardSwitchComponent,
+        UiIconComponent,
+        IngameDatePipe,
+        MatTooltip,
+        ItemIconComponent,
+        AsyncPipe,
+        NpcFilterComponent
+    ]
 })
 export class GiftingComponent extends BaseSelectableContainerComponent<MinimalItem> {
 
