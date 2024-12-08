@@ -18,7 +18,7 @@ import { BETA_CODE } from "./core/injection-tokens/beta-code.injection-token";
 import { MAT_RIPPLE_GLOBAL_OPTIONS } from "@angular/material/core";
 import { MAT_TABS_CONFIG, MatTabsConfig } from "@angular/material/tabs";
 import { PageTitleService } from "./shared/services/page-title.service";
-import { GameVersionModule } from "./core/injection-tokens/version.injection-token";
+import { provideGameVersion } from "./core/injection-tokens/version.injection-token";
 import { provideHttpClient, withInterceptors } from "@angular/common/http";
 import { assetVersionInterceptor } from "./core/interceptors/asset-version.interceptor";
 
@@ -50,7 +50,6 @@ export const appConfig: ApplicationConfig = {
         {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: {disabled: true}},
         {provide: MAT_TABS_CONFIG, useValue: {animationDuration: '0', stretchTabs: false} satisfies MatTabsConfig},
         {provide: TitleStrategy, useClass: PageTitleService},
-        importProvidersFrom(GameVersionModule),
         provideHttpClient(withInterceptors([assetVersionInterceptor])),
         importProvidersFrom(ServiceWorkerModule.register('ngsw-worker.js', {
             enabled: !isDevMode(),
@@ -58,5 +57,7 @@ export const appConfig: ApplicationConfig = {
             // or after 30 seconds (whichever comes first).
             registrationStrategy: 'registerWhenStable:30000'
         })),
+
+        provideGameVersion(),
     ]
 };
