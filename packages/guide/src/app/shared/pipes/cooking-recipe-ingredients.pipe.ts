@@ -4,7 +4,7 @@ import { CookingRecipe, GenericEntry, ItemEntry, ItemMixingRecipeData } from "@c
 
 @Pipe({
     name: 'cookingRecipeIngredients',
-    standalone: false
+
 })
 export class CookingRecipeIngredientsPipe implements PipeTransform {
 

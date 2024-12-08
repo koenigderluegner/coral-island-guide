@@ -1,12 +1,11 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { MyCoralGuideComponent } from './my-coral-guide.component';
 import { IndexComponent } from "./components/index/index.component";
 import { MuseumChecklistComponent } from "./components/museum-checklist/museum-checklist.component";
 import { CookingRecipesChecklistComponent } from "./components/cooking-recipes-checklist/cooking-recipes-checklist.component";
 import { OfferingsChecklistComponent } from "./components/offerings-checklist/offerings-checklist.component";
 
-const routes: Routes = [
+export const routes: Routes = [
     {
         path: '',
         component: MyCoralGuideComponent,
@@ -16,7 +15,7 @@ const routes: Routes = [
             },
             {
                 path: 'to-do',
-                loadChildren: () => import('../to-do/to-do.module').then(m => m.ToDoModule)
+                loadChildren: () => import('../to-do/to-do.module').then(m => m.routes)
             },
 
             {
@@ -51,7 +50,7 @@ const routes: Routes = [
             },
             {
                 path: 'settings',
-                loadChildren: () => import('../settings/settings.module').then((m) => m.SettingsModule),
+                loadChildren: () => import('../settings/settings-routing.module').then((m) => m.routes),
                 title: 'Settings - My Guide'
             },
 
@@ -59,10 +58,3 @@ const routes: Routes = [
     }
 
 ];
-
-@NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
-})
-export class MyCoralGuideRoutingModule {
-}

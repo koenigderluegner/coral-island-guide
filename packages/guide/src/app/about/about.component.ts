@@ -1,19 +1,14 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from "../shared/shared.module";
+import { CardComponent } from "../shared/components/card/card.component";
 
 @Component({
     selector: 'app-about',
     templateUrl: './about.component.html',
-    imports: [CommonModule, SharedModule],
-    styles: [`
-        .app-about {
-            @apply container block mx-auto my-10;
-        }
-    `],
+    imports: [CommonModule, CardComponent],
     encapsulation: ViewEncapsulation.None,
     host: {
-        'class': 'app-about'
+        'class': 'app-about container block mx-auto my-10'
     }
 })
 export class AboutComponent {

@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SharedModule } from "../shared/shared.module";
 import { RouterLink } from "@angular/router";
+import { CardComponent } from "../shared/components/card/card.component";
 
 @Component({
     selector: 'app-only-in-beta',
-    imports: [CommonModule, SharedModule, RouterLink],
+    imports: [RouterLink, CardComponent],
     templateUrl: './only-in-beta.component.html'
 })
 export class OnlyInBetaComponent {

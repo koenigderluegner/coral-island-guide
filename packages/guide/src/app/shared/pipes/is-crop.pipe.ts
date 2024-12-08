@@ -3,7 +3,7 @@ import { BaseCrop, Crop, FruitPlant, FruitTree } from "@ci/data-types";
 
 @Pipe({
     name: 'isCrop',
-    standalone: false
+
 })
 export class IsCropPipe implements PipeTransform {
 

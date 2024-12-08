@@ -12,7 +12,7 @@ export interface BaseSelectableContainerComponent<T> {
 
 @Component({
     template: '',
-    standalone: false
+
 })
 export class BaseSelectableContainerComponent<T> {
 

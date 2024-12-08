@@ -11,11 +11,21 @@ import {
 import { shopRouteConfig } from "./locations-shop-route-config";
 import { festivalRouteConfig } from "./locations-festival-route-config";
 import { SettingsService } from "../shared/services/settings.service";
+import { SidebarContainerComponent } from "../shared/components/sidebar-container/sidebar-container.component";
+import { ModuleSidebarItemComponent } from "../shared/components/module-sidebar-item/module-sidebar-item.component";
+import { RouterOutlet } from "@angular/router";
+import { ModuleSidebarComponent } from "../shared/components/module-sidebar/module-sidebar.component";
 
 @Component({
     selector: 'app-locations',
     templateUrl: './locations.component.html',
-    standalone: false
+
+    imports: [
+        SidebarContainerComponent,
+        ModuleSidebarComponent,
+        ModuleSidebarItemComponent,
+        RouterOutlet
+    ]
 })
 export class LocationsComponent {
     protected uiIcon = UiIcon;

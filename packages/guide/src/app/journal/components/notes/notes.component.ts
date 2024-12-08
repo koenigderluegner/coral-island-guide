@@ -2,11 +2,38 @@ import { Component } from '@angular/core';
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
 import { MailData, TornPageData, TreasureHunt, UiIcon } from "@ci/data-types";
 import { combineLatest, Observable, tap } from "rxjs";
+import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
+import { DataFilterComponent } from "../../../shared/components/data-filter/data-filter.component";
+import { MatTab, MatTabGroup } from "@angular/material/tabs";
+import { AsyncPipe } from "@angular/common";
+import { MailTableComponent } from "../tables/mail-table/mail-table.component";
+import { TornPageDetailsComponent } from "../torn-page-details/torn-page-details.component";
+import { MailDetailsComponent } from "../mail-details/mail-details.component";
+import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
+import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
+import { CardComponent } from "../../../shared/components/card/card.component";
+import { FullSizeImageComponent } from "../../../shared/components/full-size-image/full-size-image.component";
+import { TornPagesTableComponent } from "../tables/torn-pages-table/torn-pages-table.component";
 
 @Component({
     selector: 'app-notes',
     templateUrl: './notes.component.html',
-    standalone: false
+
+    imports: [
+        ItemIconComponent,
+        DataFilterComponent,
+        MatTabGroup,
+        AsyncPipe,
+        MatTab,
+        MailTableComponent,
+        TornPageDetailsComponent,
+        MailDetailsComponent,
+        ListDetailContainerComponent,
+        UiIconComponent,
+        CardComponent,
+        FullSizeImageComponent,
+        TornPagesTableComponent
+    ]
 })
 export class NotesComponent extends BaseTabbedSelectableContainerComponent<MailData> {
     selectedTornPage?: TornPageData;
@@ -17,6 +44,7 @@ export class NotesComponent extends BaseTabbedSelectableContainerComponent<MailD
     protected treasureMaps: TreasureHunt[] = [];
     protected data$: Observable<[mails: MailData[], tornPages: TornPageData[], treasureMaps: TreasureHunt[]]>;
     protected tabNames = ['Letters', 'Torn pages', 'Treasure Map'];
+    protected readonly uiIcon = UiIcon;
 
     constructor() {
         super()
@@ -75,6 +103,4 @@ export class NotesComponent extends BaseTabbedSelectableContainerComponent<MailD
         this.selectedTreasureHunt = treasureHunt;
         this.listDetail.open()
     }
-
-    protected readonly uiIcon = UiIcon;
 }

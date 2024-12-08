@@ -6,12 +6,23 @@ import { MatDialog } from "@angular/material/dialog";
 import { ChangelogDialogComponent } from "./changelog/changelog-dialog/changelog-dialog.component";
 import { SettingsService } from "./shared/services/settings.service";
 import { UserDataService } from "./core/services/user-data.service";
+import { HeaderComponent } from "./core/components/header/header.component";
+import { AsyncPipe } from "@angular/common";
+import { RouterOutlet } from "@angular/router";
+import { MatProgressSpinner } from "@angular/material/progress-spinner";
+import { FooterComponent } from "./core/components/footer/footer.component";
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    standalone: false
+    imports: [
+        HeaderComponent,
+        AsyncPipe,
+        RouterOutlet,
+        MatProgressSpinner,
+        FooterComponent
+    ]
 })
 export class AppComponent {
 

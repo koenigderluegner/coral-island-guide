@@ -36,9 +36,8 @@
 
         @if (!(fetchedItem | isTagBasedItem)) {
 
-            @if ((fetchedItem | isItem) && (fetchedItem.qualities | keyvalue).length && !hideQualityGrid()) {
+            @if ((fetchedItem | isItem) && (fetchedItem.qualities | keyvalue: null).length && !hideQualityGrid()) {
                 <app-quality-grid
-
                         [item]="fetchedItem"
                         class="mt-6"
                         includePrices/>

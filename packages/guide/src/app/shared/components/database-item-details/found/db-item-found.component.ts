@@ -7,8 +7,8 @@ import { ShopProcessingResultComponent } from "../shop-processing-result/shop-pr
     imports: [
         ShopProcessingResultComponent
     ],
-    templateUrl: './found.component.html'
+    templateUrl: './db-item-found.component.html'
 })
-export class FoundComponent {
+export class DbItemFoundComponent {
     details = input.required<DatabaseItem>()
 }

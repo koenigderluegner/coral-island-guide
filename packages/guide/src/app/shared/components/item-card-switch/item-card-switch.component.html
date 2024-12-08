@@ -10,7 +10,7 @@
                                    [quality]="quality()"
                                    [amount]="amount()">
             <ng-template let-details appDatabaseItemDetails>
-                <ng-container *ngTemplateOutlet="databaseItemDetails() ?? null; context: {$implicit: details}"></ng-container>
+                <ng-container *ngTemplateOutlet="databaseItemDetails() ?? null; context: {$implicit: details}"/>
             </ng-template>
         </app-database-item-details>
     }

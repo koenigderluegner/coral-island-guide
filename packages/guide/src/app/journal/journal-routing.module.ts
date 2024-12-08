@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { JournalComponent } from './journal.component';
 import { CaughtComponent } from './components/caught/caught.component';
 import { FoundComponent } from './components/found/found.component';
@@ -8,7 +7,7 @@ import { AchievementsComponent } from "./components/achievements/achievements.co
 import { NotesComponent } from "./components/notes/notes.component";
 import { BestiaryComponent } from "./components/bestiary/bestiary.component";
 
-const routes: Routes = [
+export const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
@@ -33,10 +32,3 @@ const routes: Routes = [
         ]
     },
 ];
-
-@NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule],
-})
-export class JournalRoutingModule {
-}

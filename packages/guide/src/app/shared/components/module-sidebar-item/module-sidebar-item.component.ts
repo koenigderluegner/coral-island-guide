@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
     selector: 'app-module-sidebar-item',
     templateUrl: './module-sidebar-item.component.html',
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+
 })
 export class ModuleSidebarItemComponent {
     readonly innerTemplate = viewChild.required<TemplateRef<any>>('innerTemplate');

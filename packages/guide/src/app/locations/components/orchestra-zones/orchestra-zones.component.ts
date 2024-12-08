@@ -5,10 +5,9 @@ import { map, Observable } from "rxjs";
 import { AsyncPipe } from "@angular/common";
 import { DatabaseItemDetailsDirective } from "../../../shared/directives/database-item-details.directive";
 import { ItemCardSwitchComponent } from "../../../shared/components/item-card-switch/item-card-switch.component";
-import { LocationsModule } from "../../locations.module";
 import { OfferingComponent } from "../../../shared/components/database-item-details/offering/offering.component";
-import { SharedModule } from "../../../shared/shared.module";
 import { OfferingGroupComponent } from "../offering-group/offering-group.component";
+import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
 
 @Component({
     selector: 'app-orchestra-zones',
@@ -16,10 +15,9 @@ import { OfferingGroupComponent } from "../offering-group/offering-group.compone
         AsyncPipe,
         DatabaseItemDetailsDirective,
         ItemCardSwitchComponent,
-        LocationsModule,
         OfferingComponent,
-        SharedModule,
-        OfferingGroupComponent
+        OfferingGroupComponent,
+        ListDetailContainerComponent
     ],
     templateUrl: './orchestra-zones.component.html'
 })

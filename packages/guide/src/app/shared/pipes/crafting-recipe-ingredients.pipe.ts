@@ -4,7 +4,7 @@ import { ItemListComponent } from "../components/item-list/item-list.component";
 
 @Pipe({
     name: 'craftingRecipeIngredients',
-    standalone: false
+
 })
 export class CraftingRecipeIngredientsPipe implements PipeTransform {
 

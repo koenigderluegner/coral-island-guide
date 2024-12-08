@@ -5,7 +5,7 @@ import { MinimalItem, Season } from "@ci/data-types";
 
 @Component({
     template: '',
-    standalone: false
+
 })
 export abstract class BaseTableComponent<T> implements AfterViewInit {
 

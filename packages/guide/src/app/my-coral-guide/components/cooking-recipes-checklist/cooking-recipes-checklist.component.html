@@ -10,7 +10,7 @@
         </app-database-item-details>
     }
     <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex()">
-        @for (tab of (checklistDefinition$ | async | keyvalue: keyValueNoOrder); track tab) {
+        @for (tab of (checklistDefinition$ | async | keyvalue: null); track tab) {
             <mat-tab
                     [formGroup]="checklistForm"
                     [label]="cookingUtensilMapping[tab.key.toLowerCase()] ? cookingUtensilMapping[tab.key.toLowerCase()].displayName : tab.key | addSpacesToPascalCase | titlecase">

@@ -2,11 +2,35 @@ import { Component } from '@angular/core';
 import { map, Observable, take, tap } from 'rxjs';
 import { ItemProcessing, Quality } from '@ci/data-types';
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
+import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
+import { DatabaseItemDetailsComponent } from "../../../shared/components/database-item-details/database-item-details.component";
+import { ProcessingComponent } from "../../../shared/components/database-item-details/processing/processing.component";
+import { MatTab, MatTabGroup } from "@angular/material/tabs";
+import { DataFilterComponent } from "../../../shared/components/data-filter/data-filter.component";
+import { AsyncPipe, TitleCasePipe } from "@angular/common";
+import { AddSpacesToPascalCasePipe } from "../../../shared/pipes/add-spaces-to-pascal-case.pipe";
+import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
+import { ProcessorTableComponent } from "../tables/processor-table/processor-table.component";
+import { DatabaseItemDetailsDirective } from "../../../shared/directives/database-item-details.directive";
 
 @Component({
     selector: 'app-processor',
     templateUrl: './processor.component.html',
-    standalone: false
+
+    imports: [
+        ListDetailContainerComponent,
+        DatabaseItemDetailsComponent,
+        ProcessingComponent,
+        MatTabGroup,
+        MatTab,
+        DataFilterComponent,
+        AsyncPipe,
+        AddSpacesToPascalCasePipe,
+        TitleCasePipe,
+        ItemIconComponent,
+        ProcessorTableComponent,
+        DatabaseItemDetailsDirective
+    ]
 })
 export class ProcessorComponent extends BaseTabbedSelectableContainerComponent<ItemProcessing> {
 

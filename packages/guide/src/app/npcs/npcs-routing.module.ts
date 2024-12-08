@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { NPCsComponent } from './npcs.component';
 import { GiftingComponent } from './components/gifting/gifting.component';
 import { NpcListComponent } from "./components/npc-list/npc-list.component";
 import { NpcComponent } from "./components/npc/npc.component";
 
-const routes: Routes = [
+export const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
@@ -22,10 +21,3 @@ const routes: Routes = [
         ]
     },
 ];
-
-@NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule],
-})
-export class NPCsRoutingModule {
-}

@@ -1,11 +1,11 @@
 import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DatabaseItem } from "@ci/data-types";
-import { SharedModule } from "../../../shared.module";
+import { ItemIconComponent } from "../../item-icon/item-icon.component";
 
 @Component({
     selector: 'app-shop-processing-result',
-    imports: [CommonModule, SharedModule],
+    imports: [CommonModule, ItemIconComponent],
     templateUrl: './shop-processing-result.component.html'
 })
 export class ShopProcessingResultComponent {

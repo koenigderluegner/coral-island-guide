@@ -1,40 +1,34 @@
 import { Component } from '@angular/core';
 import { ItemMixingRecipeData } from "@ci/data-types";
 import { BaseTableComponent } from "../../shared/components/base-table/base-table.component";
-import { AddSpacesToPascalCasePipe } from "../../shared/pipes/add-spaces-to-pascal-case.pipe";
-import { KeyValuePipe, TitleCasePipe } from "@angular/common";
-import {
-    MatCell,
-    MatCellDef,
-    MatColumnDef,
-    MatHeaderCell,
-    MatHeaderCellDef,
-    MatHeaderRow,
-    MatHeaderRowDef,
-    MatRow,
-    MatRowDef,
-    MatTable
-} from "@angular/material/table";
+import { KeyValuePipe } from "@angular/common";
+import { MatCell, MatColumnDef, MatHeaderCell, MatHeaderRow, MatRow, MatTable } from "@angular/material/table";
 import { MatSort, MatSortHeader } from "@angular/material/sort";
-import { SharedModule } from "../../shared/shared.module";
+import { ResponsiveTableComponent } from "../../shared/components/responsive-table/responsive-table.component";
+import { ItemIconComponent } from "../../shared/components/item-icon/item-icon.component";
+import { CookingRecipeIngredientsPipe } from "../../shared/pipes/cooking-recipe-ingredients.pipe";
+import { TableItemListComponent } from "../../shared/components/table-item-list/table-item-list.component";
+import { MoneyComponent } from "../../shared/components/money/money.component";
+import { CastToMinimalItemArrayPipe } from "../../shared/pipes/cast-to-minimal-item-array.pipe";
 
 @Component({
     selector: 'app-mixing-table',
     imports: [
         KeyValuePipe,
         MatCell,
-        MatCellDef,
         MatColumnDef,
         MatHeaderCell,
         MatHeaderRow,
-        MatHeaderRowDef,
         MatRow,
-        MatRowDef,
         MatSort,
         MatSortHeader,
         MatTable,
-        SharedModule,
-        MatHeaderCellDef
+        ResponsiveTableComponent,
+        ItemIconComponent,
+        CookingRecipeIngredientsPipe,
+        TableItemListComponent,
+        MoneyComponent,
+        CastToMinimalItemArrayPipe
     ],
     templateUrl: './mixing-table.component.html'
 })

@@ -9,7 +9,7 @@ import { MailData } from "@ci/data-types";
             display: block;
         }
     `],
-    standalone: false
+
 })
 export class MailComponent {
 

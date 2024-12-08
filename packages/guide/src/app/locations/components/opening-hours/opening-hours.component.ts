@@ -1,11 +1,17 @@
 import { Component, input } from '@angular/core';
 import { OpeningHours } from "@ci/data-types";
+import { KeyValuePipe } from "@angular/common";
+import { IngameTimePipe } from "../../../shared/pipes/ingame-time.pipe";
 
 @Component({
     selector: 'app-opening-hours',
     templateUrl: './opening-hours.component.html',
     styleUrls: ['./opening-hours.component.scss'],
-    standalone: false
+
+    imports: [
+        KeyValuePipe,
+        IngameTimePipe
+    ]
 })
 export class OpeningHoursComponent {
     readonly openingHours = input.required<Record<string, OpeningHours>>();

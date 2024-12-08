@@ -1,23 +1,28 @@
 import {
-  booleanAttribute,
-  ChangeDetectorRef,
-  Component,
-  effect,
-  inject,
-  input,
-  OnDestroy,
-  viewChild
+    booleanAttribute,
+    ChangeDetectorRef,
+    Component,
+    effect,
+    inject,
+    input,
+    OnDestroy,
+    viewChild
 } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { UiIcon } from '@ci/data-types';
-import { MatDrawer } from '@angular/material/sidenav';
+import { MatDrawer, MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
 import { ListDetailService } from "./list-detail.service";
 
 @Component({
     selector: 'app-list-detail-container',
     templateUrl: './list-detail-container.component.html',
     styleUrl: './list-detail-container.component.scss',
-    standalone: false
+
+    imports: [
+        MatSidenavContent,
+        MatSidenav,
+        MatSidenavContainer
+    ]
 })
 export class ListDetailContainerComponent implements OnDestroy {
     readonly drawer = viewChild<MatDrawer>('drawer');

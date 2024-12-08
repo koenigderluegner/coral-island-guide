@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
     name: 'townrank',
-    standalone: false
+
 })
 export class TownrankPipe implements PipeTransform {
     transform(value: number,): string {

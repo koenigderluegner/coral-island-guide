@@ -1,12 +1,12 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { SharedModule } from '../shared/shared.module';
 import { RouterLink } from "@angular/router";
+import { CardComponent } from "../shared/components/card/card.component";
 
 @Component({
     selector: 'app-error-404',
     imports: [
-        SharedModule,
-        RouterLink
+        RouterLink,
+        CardComponent
     ],
     templateUrl: './error-404.component.html',
     host: {

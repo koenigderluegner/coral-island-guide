@@ -4,11 +4,28 @@ import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page
 import { getTruthyValues } from '@ci/util';
 import { FilterForm } from "../../../shared/types/filter-form.type";
 import { FormControl, FormGroup } from "@angular/forms";
+import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
+import { CaughtDetailsComponent } from "../caught-details/caught-details.component";
+import { MatTab, MatTabGroup } from "@angular/material/tabs";
+import { DataFilterComponent } from "../../../shared/components/data-filter/data-filter.component";
+import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
+import { CaughtTableComponent } from "../tables/caught-table/caught-table.component";
+import { AsyncPipe } from "@angular/common";
 
 @Component({
     selector: 'app-caught',
     templateUrl: './caught.component.html',
-    standalone: false
+
+    imports: [
+        ListDetailContainerComponent,
+        CaughtDetailsComponent,
+        MatTabGroup,
+        MatTab,
+        DataFilterComponent,
+        ItemIconComponent,
+        CaughtTableComponent,
+        AsyncPipe
+    ]
 })
 export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
 

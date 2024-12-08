@@ -3,7 +3,6 @@ import { DatabaseItem } from "@ci/data-types";
 
 @Directive({
     selector: '[appDatabaseItemDetails]',
-    standalone: true
 })
 export class DatabaseItemDetailsDirective {
 

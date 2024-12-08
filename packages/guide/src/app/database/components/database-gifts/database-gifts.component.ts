@@ -2,6 +2,12 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.component";
 import { preferencesMap } from "../../../shared/constants/preference-map.const";
 import { MinimalNPC } from "@ci/data-types";
+import { ExpandableComponent } from "../../../shared/components/expandable/expandable.component";
+import { ResponsiveTableComponent } from "../../../shared/components/responsive-table/responsive-table.component";
+import { MatCell, MatColumnDef, MatHeaderCell, MatHeaderRow, MatRow, MatTable } from "@angular/material/table";
+import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
+import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
+import { DatabaseHeaderButtonComponent } from "../database-header-button/database-header-button.component";
 
 @Component({
     selector: 'app-database-gifts',
@@ -16,7 +22,20 @@ import { MinimalNPC } from "@ci/data-types";
         }
     `],
     encapsulation: ViewEncapsulation.None,
-    standalone: false,
+    imports: [
+        ExpandableComponent,
+        ResponsiveTableComponent,
+        MatTable,
+        MatColumnDef,
+        UiIconComponent,
+        MatCell,
+        MatHeaderCell,
+        ItemIconComponent,
+        MatHeaderRow,
+        MatRow,
+        DatabaseHeaderButtonComponent
+    ],
+
     host: {
         'class': 'database-gifts'
     }

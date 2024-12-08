@@ -5,13 +5,30 @@ import { toSignal } from "@angular/core/rxjs-interop";
 import { catchError, of } from "rxjs";
 import { NpcFilterComponent } from "../../npc-filter/npc-filter.component";
 import { filterNPCs } from "../../filter-npcs.function";
+import { RouterLink } from "@angular/router";
+import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
+import { NpcHeadPortraitComponent } from "../../../shared/components/npc-head-portrait/npc-head-portrait.component";
+import { IngameDatePipe } from "../../../shared/pipes/ingame-date.pipe";
+import { NgClass } from "@angular/common";
+import { MatProgressSpinner } from "@angular/material/progress-spinner";
+import { MatTooltip } from "@angular/material/tooltip";
 
 @Component({
     selector: 'app-npc-list',
     templateUrl: './npc-list.component.html',
     styleUrls: ['./npc-list.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+
+    imports: [
+        RouterLink,
+        NpcFilterComponent,
+        UiIconComponent,
+        NpcHeadPortraitComponent,
+        IngameDatePipe,
+        NgClass,
+        MatProgressSpinner,
+        MatTooltip
+    ]
 })
 export class NpcListComponent {
 

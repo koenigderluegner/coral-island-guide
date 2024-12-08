@@ -1,11 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { ItemProcessShopData } from "@ci/data-types";
+import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
+import { MatCell, MatHeaderCell, MatHeaderRow, MatRow, MatTable } from "@angular/material/table";
+import { MatSort, MatSortHeader } from "@angular/material/sort";
+import { ItemIconComponent } from "../../../../shared/components/item-icon/item-icon.component";
+import { ChancePerItemTableListComponent } from "../../../../shared/components/chance-per-item-table-list/chance-per-item-table-list.component";
+import { RouterLink } from "@angular/router";
 
 @Component({
     selector: 'app-shop-item-process-table',
     templateUrl: './shop-item-process-table.component.html',
-    standalone: false
+
+    imports: [
+        ResponsiveTableComponent,
+        MatTable,
+        MatSort,
+        MatSortHeader,
+        MatCell,
+        ItemIconComponent,
+        MatHeaderCell,
+        ChancePerItemTableListComponent,
+        MatHeaderRow,
+        MatRow,
+        RouterLink
+    ]
 })
 export class ShopItemProcessTableComponent extends BaseTableComponent<ItemProcessShopData & {
     shop?: { url: string; displayName: string }

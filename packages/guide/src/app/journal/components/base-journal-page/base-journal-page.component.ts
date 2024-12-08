@@ -17,7 +17,7 @@ export interface BaseJournalPageComponent<D> {
 
 @Component({
     template: '',
-    standalone: false
+
 })
 export class BaseJournalPageComponent<D extends ({
     item: MinimalItem

@@ -3,16 +3,31 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DatabaseService } from '../shared/services/database.service';
 import { Item, Quality } from '@ci/data-types';
 import { getQuality } from '@ci/util';
-import { FormControl } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { concat, debounceTime, map, Observable, take, tap } from 'rxjs';
 import { DatabaseDetailsComponent } from './components/database-details/database-details.component';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { Title } from '@angular/platform-browser';
+import { MatFormField, MatLabel } from "@angular/material/form-field";
+import { CardComponent } from "../shared/components/card/card.component";
+import { AsyncPipe, NgIf } from "@angular/common";
+import { ItemIconComponent } from "../shared/components/item-icon/item-icon.component";
+import { MatInput } from "@angular/material/input";
 
 @Component({
     selector: 'app-database',
     templateUrl: './database.component.html',
-    standalone: false
+
+    imports: [
+        MatLabel,
+        MatFormField,
+        CardComponent,
+        ReactiveFormsModule,
+        AsyncPipe,
+        ItemIconComponent,
+        NgIf,
+        MatInput
+    ]
 })
 export class DatabaseComponent {
     protected readonly items: Item[];

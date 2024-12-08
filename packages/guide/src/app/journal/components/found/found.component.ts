@@ -6,11 +6,30 @@ import { FilterForm } from "../../../shared/types/filter-form.type";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ToDoContext } from "../../../core/types/to-do-context.type";
 import { startWith } from "rxjs";
+import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
+import { DatabaseItemDetailsComponent } from "../../../shared/components/database-item-details/database-item-details.component";
+import { DbItemFoundComponent } from "../../../shared/components/database-item-details/found/db-item-found.component";
+import { MatTab, MatTabGroup } from "@angular/material/tabs";
+import { DataFilterComponent } from "../../../shared/components/data-filter/data-filter.component";
+import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
+import { AsyncPipe } from "@angular/common";
+import { NonSpecializedTableComponent } from "../../../shared/components/non-specialized-table/non-specialized-table.component";
 
 @Component({
     selector: 'app-found',
     templateUrl: './found.component.html',
-    standalone: false
+
+    imports: [
+        ListDetailContainerComponent,
+        DatabaseItemDetailsComponent,
+        MatTab,
+        MatTabGroup,
+        DbItemFoundComponent,
+        DataFilterComponent,
+        ItemIconComponent,
+        AsyncPipe,
+        NonSpecializedTableComponent
+    ]
 })
 export class FoundComponent extends BaseJournalPageComponent<Item> implements AfterViewInit {
 

@@ -4,13 +4,45 @@ import { DatabaseService } from '../../services/database.service';
 import { entityKey } from "@ci/util";
 import { ToDoContext } from "../../../core/types/to-do-context.type";
 import { ListDetailService } from "../list-detail-container/list-detail.service";
+import { CardComponent } from "../card/card.component";
+import { ToDoToggleComponent } from "../to-do-toggle/to-do-toggle.component";
+import { UiIconComponent } from "../ui-icon/ui-icon.component";
+import { ItemIconComponent } from "../item-icon/item-icon.component";
+import { IsTagBasedItemPipe } from "../../pipes/is-tag-based-item.pipe";
+import { MatTooltip } from "@angular/material/tooltip";
+import { AddSpacesToPascalCasePipe } from "../../pipes/add-spaces-to-pascal-case.pipe";
+import { RouterLink } from "@angular/router";
+import { QualityGridComponent } from "../quality-grid/quality-grid.component";
+import { IsItemPipe } from "../../pipes/is-item.pipe";
+import { KeyValuePipe } from "@angular/common";
+import { ToItemListEntriesPipe } from "../../pipes/to-item-list-entries.pipe";
+import { ItemListComponent } from "../item-list/item-list.component";
+import { MoneyComponent } from "../money/money.component";
+import { HasPipe } from "../../pipes/has.pipe";
 
 type ItemEntry = Item | MinimalItem | CustomEntry | MinimalTagBasedItem;
 
 @Component({
     selector: 'app-base-item-card',
     templateUrl: './base-item-card.component.html',
-    standalone: false
+
+    imports: [
+        CardComponent,
+        ToDoToggleComponent,
+        UiIconComponent,
+        ItemIconComponent,
+        IsTagBasedItemPipe,
+        MatTooltip,
+        AddSpacesToPascalCasePipe,
+        RouterLink,
+        QualityGridComponent,
+        IsItemPipe,
+        KeyValuePipe,
+        ToItemListEntriesPipe,
+        ItemListComponent,
+        MoneyComponent,
+        HasPipe
+    ]
 })
 export class BaseItemCardComponent {
     item = input.required<ItemEntry>();

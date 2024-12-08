@@ -13,11 +13,33 @@ import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { Observable, switchMap } from "rxjs";
 import { DatabaseService } from "../../../shared/services/database.service";
 import { ListDetailService } from "../../../shared/components/list-detail-container/list-detail.service";
+import { MatProgressSpinner } from "@angular/material/progress-spinner";
+import { FestivalShopItemTableComponent } from "../tables/festival-shop-item-table/festival-shop-item-table.component";
+import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
+import { DataFilterComponent } from "../../../shared/components/data-filter/data-filter.component";
+import { OpeningHoursComponent } from "../opening-hours/opening-hours.component";
+import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
+import { CardComponent } from "../../../shared/components/card/card.component";
+import { AsyncPipe } from "@angular/common";
+import { FestivalShopItemDetailsComponent } from "../festival-shop-item-details/festival-shop-item-details.component";
+import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
 
 @Component({
     selector: 'app-generic-festival',
     templateUrl: './generic-festival.component.html',
-    standalone: false
+
+    imports: [
+        MatProgressSpinner,
+        FestivalShopItemTableComponent,
+        ItemIconComponent,
+        DataFilterComponent,
+        OpeningHoursComponent,
+        UiIconComponent,
+        CardComponent,
+        AsyncPipe,
+        FestivalShopItemDetailsComponent,
+        ListDetailContainerComponent
+    ]
 })
 export class GenericFestivalComponent {
 

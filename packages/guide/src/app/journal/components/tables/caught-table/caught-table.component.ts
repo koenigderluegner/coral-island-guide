@@ -3,12 +3,32 @@ import { Critter, Fish, FishSpawnSettings } from '@ci/data-types';
 
 import { addSpacesToPascalCase, critterSizeMap, getTruthyValues, rarityMap } from '@ci/util';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
+import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
+import { MatCell, MatColumnDef, MatHeaderCell, MatHeaderRow, MatRow, MatTable } from "@angular/material/table";
+import { MatSort, MatSortHeader } from "@angular/material/sort";
+import { ItemIconComponent } from "../../../../shared/components/item-icon/item-icon.component";
+import { IsFishPipe } from "../../../../shared/pipes/is-fish.pipe";
+import { AddSpacesToPascalCasePipe } from "../../../../shared/pipes/add-spaces-to-pascal-case.pipe";
 
 @Component({
     selector: 'app-caught-table',
     templateUrl: './caught-table.component.html',
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+
+    imports: [
+        ResponsiveTableComponent,
+        MatTable,
+        MatSort,
+        MatColumnDef,
+        MatCell,
+        ItemIconComponent,
+        MatHeaderCell,
+        IsFishPipe,
+        AddSpacesToPascalCasePipe,
+        MatHeaderRow,
+        MatRow,
+        MatSortHeader
+    ]
 })
 export class CaughtTableComponent extends BaseTableComponent<(Critter | Fish)> {
 

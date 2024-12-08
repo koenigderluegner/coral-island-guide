@@ -1,18 +1,17 @@
 import { Component, input, output, ViewEncapsulation } from '@angular/core';
 import { BirthdayDashboardEntry, MinimalItem, UiIcon } from "@ci/data-types";
-import { SharedModule } from "../../../shared/shared.module";
 import { AddSpacesToPascalCasePipe } from "../../../shared/pipes/add-spaces-to-pascal-case.pipe";
 import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
-import { MatTooltip } from "@angular/material/tooltip";
 import { RouterLink } from "@angular/router";
+import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
 
 @Component({
     selector: 'app-birthday-dashboard',
     imports: [
-        SharedModule,
         AddSpacesToPascalCasePipe,
         UiIconComponent,
-        RouterLink
+        RouterLink,
+        ItemIconComponent
     ],
     templateUrl: './birthday-dashboard.component.html',
     styleUrl: './birthday-dashboard.component.scss',

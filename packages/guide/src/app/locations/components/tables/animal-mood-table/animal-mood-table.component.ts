@@ -1,10 +1,23 @@
 import { Component, input } from '@angular/core';
 import { ProductSizeByMood } from "@ci/data-types";
+import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
+import { MatCell, MatColumnDef, MatHeaderCell, MatHeaderRow, MatRow, MatTable } from "@angular/material/table";
+import { SlicePipe } from "@angular/common";
 
 @Component({
     selector: 'app-animal-mood-table',
     templateUrl: './animal-mood-table.component.html',
-    standalone: false
+
+    imports: [
+        ResponsiveTableComponent,
+        MatTable,
+        MatHeaderCell,
+        MatCell,
+        MatColumnDef,
+        SlicePipe,
+        MatHeaderRow,
+        MatRow
+    ]
 })
 export class AnimalMoodTableComponent {
 

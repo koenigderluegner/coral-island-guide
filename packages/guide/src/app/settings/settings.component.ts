@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { SettingsService } from '../shared/services/settings.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ToDoService } from '../core/services/to-do.service';
 import { BETA_CODE } from '../core/injection-tokens/beta-code.injection-token';
 import { AvailableLanguage, AvailableLanguageDisplayName, AvailableLanguages, UiIcon } from '@ci/data-types';
@@ -8,6 +8,10 @@ import { OfferingChecklistService } from '../core/services/checklists/offering-c
 import { CookingRecipesChecklistService } from '../core/services/checklists/cooking-recipes-checklist.service';
 import { MuseumChecklistService } from '../core/services/checklists/museum-checklist.service';
 import { HeartEventsChecklistService } from '../core/services/checklists/heart-events-checklist.service';
+import { CardComponent } from "../shared/components/card/card.component";
+import { MatFormField } from "@angular/material/form-field";
+import { MatOption, MatSelect } from "@angular/material/select";
+import { UiIconComponent } from "../shared/components/ui-icon/ui-icon.component";
 
 type SettingsFormGroup = {
     useBeta: FormControl<boolean>;
@@ -22,7 +26,15 @@ type SettingsFormGroup = {
 @Component({
     selector: 'app-settings',
     templateUrl: './settings.component.html',
-    standalone: false
+
+    imports: [
+        CardComponent,
+        ReactiveFormsModule,
+        MatFormField,
+        MatSelect,
+        UiIconComponent,
+        MatOption
+    ]
 })
 export class SettingsComponent {
     settingsForm: FormGroup<SettingsFormGroup>;

@@ -1,16 +1,17 @@
 import { Component, contentChild, input, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CustomEntry, MinimalTagBasedItem, Quality } from "@ci/data-types";
-import { SharedModule } from "../../shared.module";
 import { DatabaseItemDetailsComponent } from "../database-item-details/database-item-details.component";
 import { DatabaseItemDetailsDirective } from "../../directives/database-item-details.directive";
 import { ItemEntry } from "../../types/item-entry.type";
 import { ToDoContext } from "../../../core/types/to-do-context.type";
+import { BaseItemCardComponent } from "../base-item-card/base-item-card.component";
+import { IsMinimalItemPipe } from "../../pipes/is-minimal-item.pipe";
 
 
 @Component({
     selector: 'app-item-card-switch',
-    imports: [CommonModule, SharedModule, DatabaseItemDetailsComponent, DatabaseItemDetailsDirective],
+    imports: [CommonModule, DatabaseItemDetailsComponent, DatabaseItemDetailsDirective, BaseItemCardComponent, IsMinimalItemPipe],
     templateUrl: './item-card-switch.component.html'
 })
 export class ItemCardSwitchComponent {
