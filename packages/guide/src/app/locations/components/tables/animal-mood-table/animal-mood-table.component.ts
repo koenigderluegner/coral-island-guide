@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
 import { ProductSizeByMood } from "@ci/data-types";
 import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
-import { MatCell, MatColumnDef, MatHeaderCell, MatHeaderRow, MatRow, MatTable } from "@angular/material/table";
+import { MatTableModule } from "@angular/material/table";
 import { SlicePipe } from "@angular/common";
 
 @Component({
@@ -10,13 +10,8 @@ import { SlicePipe } from "@angular/common";
 
     imports: [
         ResponsiveTableComponent,
-        MatTable,
-        MatHeaderCell,
-        MatCell,
-        MatColumnDef,
         SlicePipe,
-        MatHeaderRow,
-        MatRow
+        MatTableModule
     ]
 })
 export class AnimalMoodTableComponent {

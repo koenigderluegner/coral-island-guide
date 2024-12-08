@@ -3,7 +3,7 @@ import { BaseTableComponent } from "../../../../shared/components/base-table/bas
 import { CraftingRecipe } from "@ci/data-types";
 import { TableItemListComponent } from "../../../../shared/components/table-item-list/table-item-list.component";
 import { CraftingRecipeIngredientsPipe } from "../../../../shared/pipes/crafting-recipe-ingredients.pipe";
-import { MatCell, MatColumnDef, MatHeaderCell, MatHeaderRow, MatRow, MatTable } from "@angular/material/table";
+import { MatTableModule } from "@angular/material/table";
 import { MoneyComponent } from "../../../../shared/components/money/money.component";
 import { MatSort, MatSortHeader } from "@angular/material/sort";
 import { ItemIconComponent } from "../../../../shared/components/item-icon/item-icon.component";
@@ -16,17 +16,12 @@ import { ResponsiveTableComponent } from "../../../../shared/components/responsi
     imports: [
         TableItemListComponent,
         CraftingRecipeIngredientsPipe,
-        MatCell,
-        MatHeaderCell,
-        MatColumnDef,
         MoneyComponent,
-        MatHeaderRow,
-        MatRow,
         MatSortHeader,
         ItemIconComponent,
-        MatTable,
         MatSort,
-        ResponsiveTableComponent
+        ResponsiveTableComponent,
+        MatTableModule
     ]
 })
 export class InventoryTableComponent extends BaseTableComponent<CraftingRecipe> {

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BaseTableComponent } from "../base-table/base-table.component";
 import { Item } from "@ci/data-types";
 import { ItemIconComponent } from "../item-icon/item-icon.component";
-import { MatCell, MatHeaderCell, MatHeaderRow, MatRow, MatTable } from "@angular/material/table";
+import { MatTableModule } from "@angular/material/table";
 import { ResponsiveTableComponent } from "../responsive-table/responsive-table.component";
 import { MatSort, MatSortHeader } from "@angular/material/sort";
 import { MoneyComponent } from "../money/money.component";
@@ -13,14 +13,10 @@ import { MoneyComponent } from "../money/money.component";
 
     imports: [
         ItemIconComponent,
-        MatTable,
         ResponsiveTableComponent,
         MatSort,
-        MatCell,
-        MatHeaderCell,
         MoneyComponent,
-        MatHeaderRow,
-        MatRow,
+        MatTableModule,
         MatSortHeader
     ]
 })

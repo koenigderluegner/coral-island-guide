@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { ItemProcessShopData } from "@ci/data-types";
 import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
-import { MatCell, MatHeaderCell, MatHeaderRow, MatRow, MatTable } from "@angular/material/table";
+import { MatTableModule } from "@angular/material/table";
 import { MatSort, MatSortHeader } from "@angular/material/sort";
 import { ItemIconComponent } from "../../../../shared/components/item-icon/item-icon.component";
 import { ChancePerItemTableListComponent } from "../../../../shared/components/chance-per-item-table-list/chance-per-item-table-list.component";
@@ -14,15 +14,11 @@ import { RouterLink } from "@angular/router";
 
     imports: [
         ResponsiveTableComponent,
-        MatTable,
+        MatTableModule,
         MatSort,
         MatSortHeader,
-        MatCell,
         ItemIconComponent,
-        MatHeaderCell,
         ChancePerItemTableListComponent,
-        MatHeaderRow,
-        MatRow,
         RouterLink
     ]
 })

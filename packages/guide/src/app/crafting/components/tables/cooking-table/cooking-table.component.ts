@@ -3,7 +3,7 @@ import { BaseTableComponent } from "../../../../shared/components/base-table/bas
 import { CookingRecipe } from "@ci/data-types";
 import { DatabaseService } from "../../../../shared/services/database.service";
 import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
-import { MatCell, MatColumnDef, MatHeaderCell, MatHeaderRow, MatRow, MatTable } from "@angular/material/table";
+import { MatTableModule } from "@angular/material/table";
 import { MatSort, MatSortHeader } from "@angular/material/sort";
 import { ItemIconComponent } from "../../../../shared/components/item-icon/item-icon.component";
 import { TableItemListComponent } from "../../../../shared/components/table-item-list/table-item-list.component";
@@ -20,23 +20,18 @@ import { AddSpacesToPascalCasePipe } from "../../../../shared/pipes/add-spaces-t
 
     imports: [
         ResponsiveTableComponent,
-        MatTable,
         MatSort,
-        MatColumnDef,
         ItemIconComponent,
         TableItemListComponent,
         CookingRecipeIngredientsPipe,
         KeyValuePipe,
         CastToMinimalItemArrayPipe,
-        MatHeaderCell,
         MoneyComponent,
         RouterLink,
-        MatCell,
         AddSpacesToPascalCasePipe,
         TitleCasePipe,
-        MatRow,
-        MatHeaderRow,
-        MatSortHeader
+        MatSortHeader,
+        MatTableModule
     ]
 })
 export class CookingTableComponent extends BaseTableComponent<CookingRecipe> {

@@ -4,7 +4,7 @@ import { FestivalShopItemData } from "@ci/data-types";
 import { MoneyComponent } from "../../../../shared/components/money/money.component";
 import { PercentPipe } from "@angular/common";
 import { TownrankPipe } from "../../../../shared/pipes/townrank.pipe";
-import { MatCell, MatColumnDef, MatHeaderCell, MatTable } from "@angular/material/table";
+import { MatTableModule } from "@angular/material/table";
 import { RouterLink } from "@angular/router";
 import { ItemIconComponent } from "../../../../shared/components/item-icon/item-icon.component";
 import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
@@ -18,13 +18,10 @@ import { MatSortHeader } from "@angular/material/sort";
         MoneyComponent,
         PercentPipe,
         TownrankPipe,
-        MatCell,
-        MatHeaderCell,
         RouterLink,
-        MatColumnDef,
         MatSortHeader,
         ItemIconComponent,
-        MatTable,
+        MatTableModule,
         ResponsiveTableComponent
     ]
 })

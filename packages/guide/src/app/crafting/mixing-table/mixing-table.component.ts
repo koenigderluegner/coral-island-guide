@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ItemMixingRecipeData } from "@ci/data-types";
 import { BaseTableComponent } from "../../shared/components/base-table/base-table.component";
 import { KeyValuePipe } from "@angular/common";
-import { MatCell, MatColumnDef, MatHeaderCell, MatHeaderRow, MatRow, MatTable } from "@angular/material/table";
+import { MatTableModule } from "@angular/material/table";
 import { MatSort, MatSortHeader } from "@angular/material/sort";
 import { ResponsiveTableComponent } from "../../shared/components/responsive-table/responsive-table.component";
 import { ItemIconComponent } from "../../shared/components/item-icon/item-icon.component";
@@ -15,20 +15,15 @@ import { CastToMinimalItemArrayPipe } from "../../shared/pipes/cast-to-minimal-i
     selector: 'app-mixing-table',
     imports: [
         KeyValuePipe,
-        MatCell,
-        MatColumnDef,
-        MatHeaderCell,
-        MatHeaderRow,
-        MatRow,
         MatSort,
         MatSortHeader,
-        MatTable,
         ResponsiveTableComponent,
         ItemIconComponent,
         CookingRecipeIngredientsPipe,
         TableItemListComponent,
         MoneyComponent,
-        CastToMinimalItemArrayPipe
+        CastToMinimalItemArrayPipe,
+        MatTableModule
     ],
     templateUrl: './mixing-table.component.html'
 })

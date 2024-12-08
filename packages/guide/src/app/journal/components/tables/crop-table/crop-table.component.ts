@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { BaseCrop } from "@ci/data-types";
-import { MatCell, MatColumnDef, MatHeaderCell, MatHeaderRow, MatRow, MatTable } from "@angular/material/table";
+import { MatTableModule } from "@angular/material/table";
 import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
 import { ItemIconComponent } from "../../../../shared/components/item-icon/item-icon.component";
 import { MatSort, MatSortHeader } from "@angular/material/sort";
@@ -13,18 +13,13 @@ import { MoneyComponent } from "../../../../shared/components/money/money.compon
     templateUrl: './crop-table.component.html',
 
     imports: [
-        MatTable,
         ResponsiveTableComponent,
         ItemIconComponent,
         MatSort,
         MatSortHeader,
-        MatHeaderCell,
-        MatCell,
         MaxPipe,
         MoneyComponent,
-        MatHeaderRow,
-        MatRow,
-        MatColumnDef
+        MatTableModule,
     ]
 })
 export class CropTableComponent extends BaseTableComponent<BaseCrop> {

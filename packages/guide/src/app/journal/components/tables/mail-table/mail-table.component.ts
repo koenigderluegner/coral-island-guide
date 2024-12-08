@@ -3,9 +3,9 @@ import { BaseTableComponent } from "../../../../shared/components/base-table/bas
 import { MailData } from "@ci/data-types";
 import { SelectionModel } from "@angular/cdk/collections";
 import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
-import { MatCell, MatColumnDef, MatHeaderCell, MatHeaderRow, MatRow, MatTable } from "@angular/material/table";
+import { MatTableModule } from "@angular/material/table";
 import { RemoveTagsPipe } from "../../../../shared/pipes/remove-tags.pipe";
-import { MatSortHeader } from "@angular/material/sort";
+import { MatSort, MatSortHeader } from "@angular/material/sort";
 import { AddSpacesToPascalCasePipe } from "../../../../shared/pipes/add-spaces-to-pascal-case.pipe";
 import { EffectComponent } from "../../../../shared/components/effect/effect.component";
 import { MatButton } from "@angular/material/button";
@@ -23,18 +23,14 @@ import { MailComponent } from "../../mail/mail.component";
 
     imports: [
         ResponsiveTableComponent,
-        MatTable,
-        MatColumnDef,
         RemoveTagsPipe,
+        MatSort,
         MatSortHeader,
         AddSpacesToPascalCasePipe,
-        MatCell,
-        MatHeaderCell,
         EffectComponent,
         MatButton,
         MailComponent,
-        MatHeaderRow,
-        MatRow
+        MatTableModule
     ]
 })
 export class MailTableComponent extends BaseTableComponent<MailData> {

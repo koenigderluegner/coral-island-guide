@@ -2,7 +2,7 @@ import { booleanAttribute, Component, computed, input } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { OfferingAltar } from "@ci/data-types";
 import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
-import { MatCell, MatColumnDef, MatHeaderCell, MatHeaderRow, MatRow, MatTable } from "@angular/material/table";
+import { MatTableModule } from "@angular/material/table";
 import { ItemIconComponent } from "../../../../shared/components/item-icon/item-icon.component";
 import { TableItemListComponent } from "../../../../shared/components/table-item-list/table-item-list.component";
 import { MatSortHeader } from "@angular/material/sort";
@@ -13,14 +13,9 @@ import { MatSortHeader } from "@angular/material/sort";
 
     imports: [
         ResponsiveTableComponent,
-        MatTable,
-        MatColumnDef,
+        MatTableModule,
         ItemIconComponent,
-        MatHeaderCell,
-        MatCell,
         TableItemListComponent,
-        MatHeaderRow,
-        MatRow,
         MatSortHeader
     ]
 })

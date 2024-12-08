@@ -7,7 +7,7 @@ import { TitleCasePipe } from "@angular/common";
 import { AddSpacesToPascalCasePipe } from "../../../../shared/pipes/add-spaces-to-pascal-case.pipe";
 import { ItemIconComponent } from "../../../../shared/components/item-icon/item-icon.component";
 import { RouterLink } from "@angular/router";
-import { MatCell, MatColumnDef, MatHeaderCell, MatHeaderRow, MatRow, MatTable } from "@angular/material/table";
+import { MatTableModule } from "@angular/material/table";
 import { ItemProcessingIngredientsPipe } from "../../../../shared/pipes/item-processing-ingredients.pipe";
 import { TableItemListComponent } from "../../../../shared/components/table-item-list/table-item-list.component";
 import { MatSort, MatSortHeader } from "@angular/material/sort";
@@ -24,18 +24,13 @@ import { MoneyComponent } from "../../../../shared/components/money/money.compon
         AddSpacesToPascalCasePipe,
         ItemIconComponent,
         RouterLink,
-        MatColumnDef,
-        MatHeaderCell,
-        MatHeaderRow,
-        MatRow,
         ItemProcessingIngredientsPipe,
         TableItemListComponent,
-        MatCell,
-        MatTable,
         MatSort,
         ResponsiveTableComponent,
         MatSortHeader,
-        MoneyComponent
+        MoneyComponent,
+        MatTableModule
     ]
 })
 export class ProcessorTableComponent extends BaseTableComponent<ItemProcessing> {

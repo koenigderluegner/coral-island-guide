@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { ItemUpgradeData } from "@ci/data-types";
 import { MoneyComponent } from "../../../../shared/components/money/money.component";
-import { MatCell, MatColumnDef, MatHeaderCell, MatHeaderRow, MatRow, MatTable } from "@angular/material/table";
+import { MatTableModule } from "@angular/material/table";
 import { TableItemListComponent } from "../../../../shared/components/table-item-list/table-item-list.component";
 import { TownrankPipe } from "../../../../shared/pipes/townrank.pipe";
 import { RouterLink } from "@angular/router";
@@ -16,16 +16,11 @@ import { MatSort, MatSortHeader } from "@angular/material/sort";
 
     imports: [
         MoneyComponent,
-        MatHeaderRow,
-        MatRow,
-        MatCell,
-        MatHeaderCell,
-        MatColumnDef,
         TableItemListComponent,
         TownrankPipe,
         RouterLink,
         ItemIconComponent,
-        MatTable,
+        MatTableModule,
         ResponsiveTableComponent,
         MatSort,
         MatSortHeader

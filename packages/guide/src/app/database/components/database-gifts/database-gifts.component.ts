@@ -4,7 +4,7 @@ import { preferencesMap } from "../../../shared/constants/preference-map.const";
 import { MinimalNPC } from "@ci/data-types";
 import { ExpandableComponent } from "../../../shared/components/expandable/expandable.component";
 import { ResponsiveTableComponent } from "../../../shared/components/responsive-table/responsive-table.component";
-import { MatCell, MatColumnDef, MatHeaderCell, MatHeaderRow, MatRow, MatTable } from "@angular/material/table";
+import { MatTableModule } from "@angular/material/table";
 import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
 import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
 import { DatabaseHeaderButtonComponent } from "../database-header-button/database-header-button.component";
@@ -25,14 +25,9 @@ import { DatabaseHeaderButtonComponent } from "../database-header-button/databas
     imports: [
         ExpandableComponent,
         ResponsiveTableComponent,
-        MatTable,
-        MatColumnDef,
+        MatTableModule,
         UiIconComponent,
-        MatCell,
-        MatHeaderCell,
         ItemIconComponent,
-        MatHeaderRow,
-        MatRow,
         DatabaseHeaderButtonComponent
     ],
 
