@@ -6,7 +6,7 @@ import { MatTableModule } from "@angular/material/table";
 import { ItemIconComponent } from "../../../../shared/components/item-icon/item-icon.component";
 import { RouterLink } from "@angular/router";
 import { TownrankPipe } from "../../../../shared/pipes/townrank.pipe";
-import { MatSortHeader } from "@angular/material/sort";
+import { MatSort, MatSortHeader } from "@angular/material/sort";
 import { MoneyComponent } from "../../../../shared/components/money/money.component";
 
 @Component({
@@ -21,6 +21,7 @@ import { MoneyComponent } from "../../../../shared/components/money/money.compon
         TownrankPipe,
         MatSortHeader,
         MoneyComponent,
+        MatSort,
     ]
 })
 export class ShopItemDataTableComponent extends BaseTableComponent<ShopItemData & {

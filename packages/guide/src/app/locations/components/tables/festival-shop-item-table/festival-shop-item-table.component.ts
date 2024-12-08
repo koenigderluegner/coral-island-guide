@@ -8,7 +8,7 @@ import { MatTableModule } from "@angular/material/table";
 import { RouterLink } from "@angular/router";
 import { ItemIconComponent } from "../../../../shared/components/item-icon/item-icon.component";
 import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
-import { MatSortHeader } from "@angular/material/sort";
+import { MatSort, MatSortHeader } from "@angular/material/sort";
 
 @Component({
     selector: 'app-festival-shop-item-table',
@@ -22,7 +22,8 @@ import { MatSortHeader } from "@angular/material/sort";
         MatSortHeader,
         ItemIconComponent,
         MatTableModule,
-        ResponsiveTableComponent
+        ResponsiveTableComponent,
+        MatSort
     ]
 })
 export class FestivalShopItemTableComponent extends BaseTableComponent<FestivalShopItemData & {
