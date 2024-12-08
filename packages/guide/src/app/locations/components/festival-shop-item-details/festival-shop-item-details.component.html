@@ -1,145 +1,151 @@
-<app-base-item-card [item]="festivalShopItemData.item">
-    @if (!festivalShopItemData.enabled) {
+@let requirements = festivalShopItemData().requirements;
+@let effects = festivalShopItemData().effects;
+@let tillDate = festivalShopItemData().tillDate;
+@let sinceDate = festivalShopItemData().sinceDate;
+@let timeRange = festivalShopItemData().timeRange;
+
+<app-base-item-card [item]="festivalShopItemData().item">
+    @if (!festivalShopItemData().enabled) {
         <div class="mb-3">Enabled: <span class="text-black">NO</span></div>
     }
 
     <div>Buy price:
         <span class="text-black">
-         @if (festivalShopItemData.festivalSetting.hasDiscount) {
+         @if (festivalShopItemData().festivalSetting.hasDiscount) {
              <span
-                     class="line-through mr-3">{{ festivalShopItemData.item.price }}</span>
+                     class="line-through mr-3">{{ festivalShopItemData().item.price }}</span>
          }
             <app-money
-                    [amount]="festivalShopItemData.item.price * (1 - (festivalShopItemData.festivalSetting.hasDiscount ? festivalShopItemData.festivalSetting.discount : 0))"/>
+                    [amount]="festivalShopItemData().item.price * (1 - (festivalShopItemData().festivalSetting.hasDiscount ? festivalShopItemData().festivalSetting.discount : 0))"/>
         </span>
     </div>
-    @if (festivalShopItemData.festivalSetting.hasDiscount) {
+    @if (festivalShopItemData().festivalSetting.hasDiscount) {
         <div>Discount:
             <span class="text-black">
-        {{ festivalShopItemData.festivalSetting.discount | percent }}
+        {{ festivalShopItemData().festivalSetting.discount | percent }}
         </span>
         </div>
     }
-    @if (festivalShopItemData.festivalSetting.isLimitedItem) {
+    @if (festivalShopItemData().festivalSetting.isLimitedItem) {
         <div>Item limit (all time):
             <span class="text-black">
-           {{ festivalShopItemData.festivalSetting.itemLimit }}
+           {{ festivalShopItemData().festivalSetting.itemLimit }}
         </span>
         </div>
     }
-    @if (festivalShopItemData.festivalSetting.hasYearlyLimit) {
+    @if (festivalShopItemData().festivalSetting.hasYearlyLimit) {
         <div>Yearly limit:
             <span class="text-black">
-           {{ festivalShopItemData.festivalSetting.itemLimitPerYear }}
+           {{ festivalShopItemData().festivalSetting.itemLimitPerYear }}
         </span>
         </div>
     }
     <div>Town rank:
         <span class="text-black">
-           {{ festivalShopItemData.townRank | townrank }}
+           {{ festivalShopItemData().townRank | townrank }}
         </span>
     </div>
-    @if (festivalShopItemData.availableDuringTime && festivalShopItemData.timeRange) {
+    @if (festivalShopItemData().availableDuringTime && timeRange) {
         <div>Only at times:
             <span class="inline-flex">
-            {{ (festivalShopItemData.timeRange.fromTime.hours | number: '2.0') + ':' + (festivalShopItemData.timeRange.fromTime.minutes | number: '2.0') }}
+            {{ (timeRange.fromTime.hours | number: '2.0') + ':' + (timeRange.fromTime.minutes | number: '2.0') }}
                 -
-                {{ (festivalShopItemData.timeRange.toTime.hours | number: '2.0') + ':' + (festivalShopItemData.timeRange.toTime.minutes | number: '2.0') }}
+                {{ (timeRange.toTime.hours | number: '2.0') + ':' + (timeRange.toTime.minutes | number: '2.0') }}
         </span>
         </div>
     }
 
 
-    @if (festivalShopItemData.availableSinceDate && festivalShopItemData.sinceDate) {
+    @if (festivalShopItemData().availableSinceDate && sinceDate) {
         <div>Available since:
             <span
-                    class="text-black">{{ festivalShopItemData.sinceDate | ingameDate }}
+                    class="text-black">{{ sinceDate | ingameDate }}
         </span>
         </div>
     }
 
-    @if (festivalShopItemData.availableTillDate && festivalShopItemData.tillDate) {
+    @if (festivalShopItemData().availableTillDate && tillDate) {
         <div>Available until:
             <span
-                    class="text-black">{{ festivalShopItemData.tillDate | ingameDate }}
+                    class="text-black">{{ tillDate | ingameDate }}
         </span>
         </div>
     }
 
-    @if (festivalShopItemData.forbiddenDays.length) {
+    @if (festivalShopItemData().forbiddenDays.length) {
         <div>Except on days:
             <span
-                    class="text-black">{{ festivalShopItemData.forbiddenDays.join(', ') }}
+                    class="text-black">{{ festivalShopItemData().forbiddenDays.join(', ') }}
         </span>
         </div>
     }
 
-    @if (festivalShopItemData.allowedDays.length && festivalShopItemData.allowedDays.length !== 7) {
+    @if (festivalShopItemData().allowedDays.length && festivalShopItemData().allowedDays.length !== 7) {
         <div>Only on days:
             <span
-                    class="text-black">{{ festivalShopItemData.allowedDays.join(', ') }}
+                    class="text-black">{{ festivalShopItemData().allowedDays.join(', ') }}
         </span>
         </div>
     }
-    @if (festivalShopItemData.forbiddenDays.length) {
+    @if (festivalShopItemData().forbiddenDays.length) {
         <div>Except on days:
             <span
-                    class="text-black">{{ festivalShopItemData.forbiddenDays.join(', ') }}
+                    class="text-black">{{ festivalShopItemData().forbiddenDays.join(', ') }}
         </span>
         </div>
     }
 
-    @if (festivalShopItemData.allowedWeather.length) {
+    @if (festivalShopItemData().allowedWeather.length) {
         <div>Only at weather:
             <span
-                    class="text-black">{{ festivalShopItemData.allowedWeather.join(', ') }}
+                    class="text-black">{{ festivalShopItemData().allowedWeather.join(', ') }}
         </span>
         </div>
     }
-    @if (festivalShopItemData.forbiddenWeather.length) {
+    @if (festivalShopItemData().forbiddenWeather.length) {
         <div>Except at weather:
             <span
-                    class="text-black">{{ festivalShopItemData.forbiddenWeather.join(', ') }}
+                    class="text-black">{{ festivalShopItemData().forbiddenWeather.join(', ') }}
         </span>
         </div>
     }
 
 
-    @if (festivalShopItemData.allowedSeasons.length && festivalShopItemData.allowedSeasons.length !== 4) {
+    @if (festivalShopItemData().allowedSeasons.length && festivalShopItemData().allowedSeasons.length !== 4) {
         <div>Only at
             seasons:
             <span
-                    class="text-black">{{ festivalShopItemData.allowedSeasons.join(', ') }}
+                    class="text-black">{{ festivalShopItemData().allowedSeasons.join(', ') }}
         </span>
         </div>
     }
-    @if (festivalShopItemData.forbiddenSeasons.length) {
+    @if (festivalShopItemData().forbiddenSeasons.length) {
         <div>Except at seasons:
             <span
-                    class="text-black">{{ festivalShopItemData.forbiddenSeasons.join(', ') }}
+                    class="text-black">{{ festivalShopItemData().forbiddenSeasons.join(', ') }}
         </span>
         </div>
     }
 
-    @if (festivalShopItemData.effects && festivalShopItemData.effects.length) {
+    @if (effects && effects.length) {
         <div class="my-2">Effects when bought:
             <div class="flex flex-col text-black">
-                @for (effect of festivalShopItemData.effects; track effect) {
+                @for (effect of effects; track effect) {
                     <app-effect [effect]="effect"/>
                 }
             </div>
         </div>
     }
 
-    @if (festivalShopItemData.requirements && festivalShopItemData.requirements.requirements.length) {
+    @if (requirements && requirements.requirements.length) {
         <div
                 class="my-2">
-            @if (festivalShopItemData.requirements.requirements.length > 1) {
+            @if (requirements.requirements.length > 1) {
 
-                Unlock requirements ({{ festivalShopItemData.requirements.type === 'And' ? 'all' : 'any' }} of them):
+                Unlock requirements ({{ requirements.type === 'And' ? 'all' : 'any' }} of them):
 
             }
-            @if (festivalShopItemData.requirements.requirements.length < 2) {
+            @if (requirements.requirements.length < 2) {
 
                 Unlock requirement:
 
@@ -147,7 +153,7 @@
 
 
             <div class="flex flex-col  text-black">
-                @for (requirement of festivalShopItemData.requirements.requirements; track requirement) {
+                @for (requirement of requirements.requirements; track requirement) {
                     <app-requirements
                             [requirement]="requirement"/>
                 }

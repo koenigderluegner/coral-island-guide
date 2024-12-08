@@ -1,12 +1,12 @@
 import {
-    booleanAttribute,
-    ChangeDetectorRef,
-    Component,
-    effect,
-    inject,
-    input,
-    OnDestroy,
-    ViewChild
+  booleanAttribute,
+  ChangeDetectorRef,
+  Component,
+  effect,
+  inject,
+  input,
+  OnDestroy,
+  viewChild
 } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { UiIcon } from '@ci/data-types';
@@ -16,11 +16,12 @@ import { ListDetailService } from "./list-detail.service";
 @Component({
     selector: 'app-list-detail-container',
     templateUrl: './list-detail-container.component.html',
-    styleUrl: './list-detail-container.component.scss'
+    styleUrl: './list-detail-container.component.scss',
+    standalone: false
 })
 export class ListDetailContainerComponent implements OnDestroy {
-    @ViewChild('drawer') drawer?: MatDrawer;
-    removePlaceholder = input(false, {transform: booleanAttribute})
+    readonly drawer = viewChild<MatDrawer>('drawer');
+    readonly removePlaceholder = input(false, {transform: booleanAttribute})
     uiIcon = UiIcon;
     mobileQuery: MediaQueryList;
     media: MediaMatcher = inject(MediaMatcher);
@@ -33,7 +34,7 @@ export class ListDetailContainerComponent implements OnDestroy {
 
         effect(() => {
             const isOpen = this.#drawerService.get()();
-            isOpen ? this.drawer?.open() : this.drawer?.close();
+            isOpen ? this.drawer()?.open() : this.drawer()?.close();
 
 
         });

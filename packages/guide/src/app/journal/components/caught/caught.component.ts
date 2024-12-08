@@ -8,6 +8,7 @@ import { FormControl, FormGroup } from "@angular/forms";
 @Component({
     selector: 'app-caught',
     templateUrl: './caught.component.html',
+    standalone: false
 })
 export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
 

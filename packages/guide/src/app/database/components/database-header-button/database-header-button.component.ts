@@ -1,11 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { ExpandableComponent } from "../../../shared/components/expandable/expandable.component";
 
 @Component({
     selector: 'app-database-header-button',
     templateUrl: './database-header-button.component.html',
+    standalone: false
 })
 export class DatabaseHeaderButtonComponent {
 
-    @Input({required: true}) templateRef!: ExpandableComponent
+    readonly templateRef = input.required<ExpandableComponent>();
 }

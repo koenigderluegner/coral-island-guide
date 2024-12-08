@@ -1,12 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { ItemProcessShopData } from "@ci/data-types";
 
 @Component({
     selector: 'app-shop-item-process-data-details',
     templateUrl: './shop-item-process-data-details.component.html',
+    standalone: false
 })
 export class ShopItemProcessDataDetailsComponent {
-
-    @Input({required: true}) itemProcessData!: ItemProcessShopData
+    readonly itemProcessData = input.required<ItemProcessShopData>()
 
 }

@@ -1,18 +1,21 @@
-@if (databaseItem.chanceAsProcessResult && databaseItem.chanceAsProcessResult.length) {
+@let asProcessInput = databaseItem().asProcessInput;
+@let chanceAsProcessResult = databaseItem().chanceAsProcessResult;
+
+@if (chanceAsProcessResult && chanceAsProcessResult.length) {
     <app-expandable #expandableComponent open>
         <h3 class="database-header" expandableHeader>
             <app-database-header-button [templateRef]="expandableComponent">Chance as processing result
             </app-database-header-button>
         </h3>
-        <app-shop-item-process-table [dataSource]="databaseItem.chanceAsProcessResult"/>
+        <app-shop-item-process-table [dataSource]="chanceAsProcessResult"/>
     </app-expandable>
 }
-@if (databaseItem.asProcessInput && databaseItem.asProcessInput.length) {
+@if (asProcessInput && asProcessInput.length) {
     <app-expandable #expandableComponent open>
         <h3 class="database-header" expandableHeader>
             <app-database-header-button [templateRef]="expandableComponent">Can be processed at
             </app-database-header-button>
         </h3>
-        <app-shop-item-process-table [dataSource]="databaseItem.asProcessInput"/>
+        <app-shop-item-process-table [dataSource]="asProcessInput"/>
     </app-expandable>
 }

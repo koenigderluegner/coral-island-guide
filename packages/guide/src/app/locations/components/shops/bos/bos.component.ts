@@ -5,6 +5,7 @@ import { ShopName } from "@ci/data-types";
 @Component({
     selector: 'app-bos',
     templateUrl: '../../base-shop/base-shop.component.html',
+    standalone: false
 })
 export class BosComponent extends BaseShopComponent {
 

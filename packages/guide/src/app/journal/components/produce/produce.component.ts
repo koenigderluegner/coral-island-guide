@@ -11,6 +11,7 @@ import { SettingsService } from "../../../shared/services/settings.service";
 @Component({
     selector: 'app-produce',
     templateUrl: './produce.component.html',
+    standalone: false
 })
 export class ProduceComponent extends BaseJournalPageComponent<MinimalItem | Crop | FruitPlant | FruitTree> {
     isBeta = inject(SettingsService).getSettings().useBeta

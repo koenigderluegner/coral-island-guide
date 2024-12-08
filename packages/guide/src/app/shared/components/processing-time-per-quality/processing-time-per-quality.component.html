@@ -1,19 +1,19 @@
 @for (qualityValue of qualityValues; track qualityValue) {
-
-    @if (qualityValue === quality.BASE && baseProcessingTime) {
+    @let baseTime = baseProcessingTime();
+    @if (qualityValue === quality.BASE && baseTime) {
 
         <app-ui-icon [uiIcon]="uiIcon.EMPTY_STAR"
                      class="!w-6 !h-6 !flex"/>
-        <span class="text-black text-right"><app-processing-time [processingTime]="baseProcessingTime"/></span>
+        <span class="text-black text-right"><app-processing-time [processingTime]="baseTime"/></span>
 
     }
-    @if (qualityValue !== quality.BASE && baseProcessingTime && !processingTimePerQualities?.[qualityValue]) {
+    @if (qualityValue !== quality.BASE && baseTime && !processingTimePerQualities()?.[qualityValue]) {
 
         <app-rarity-icon [quality]="qualityValue" class="!w-6 !h-6"/>
-        <span class="text-black text-right"><app-processing-time [processingTime]="baseProcessingTime"/></span>
+        <span class="text-black text-right"><app-processing-time [processingTime]="baseTime"/></span>
 
     }
-    @if (processingTimePerQualities?.[qualityValue]; as processingTime) {
+    @if (processingTimePerQualities()?.[qualityValue]; as processingTime) {
 
         <app-rarity-icon [quality]="qualityValue" class="!w-6 !h-6"/>
         <span class="text-black text-right"><app-processing-time [processingTime]="processingTime"/></span>

@@ -5,6 +5,7 @@ import { ItemProcessShopData } from "@ci/data-types";
 @Component({
     selector: 'app-shop-item-process-table',
     templateUrl: './shop-item-process-table.component.html',
+    standalone: false
 })
 export class ShopItemProcessTableComponent extends BaseTableComponent<ItemProcessShopData & {
     shop?: { url: string; displayName: string }
@@ -15,9 +16,8 @@ export class ShopItemProcessTableComponent extends BaseTableComponent<ItemProces
         'outputChances'
     ];
 
-    override ngOnInit() {
-        super.ngOnInit();
-        if (this.dataSource.length && this.dataSource[0].shop) {
+    ngOnInit() {
+        if (this._dataSource().length && this._dataSource()[0].shop) {
             this.displayedColumns.splice(2, 0, 'shop');
             this.displayHeaderColumns = this.displayedColumns.filter(column => column !== 'icon')
         }

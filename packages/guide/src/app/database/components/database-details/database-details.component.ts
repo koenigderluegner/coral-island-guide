@@ -1,4 +1,4 @@
-import { Component, HostBinding, inject, input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, inject, input, OnInit, ViewEncapsulation } from '@angular/core';
 import { DatabaseItem, Item } from "@ci/data-types";
 import { DatabaseService } from "../../../shared/services/database.service";
 import { Observable } from "rxjs";
@@ -7,14 +7,17 @@ import { Observable } from "rxjs";
     selector: 'app-database-details',
     templateUrl: './database-details.component.html',
     styleUrls: ['./database-details.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false,
+    host: {
+        'class': 'col-span-full database-details'
+    }
 })
 export class DatabaseDetailsComponent implements OnInit {
-    item = input.required<Item>();
+    readonly item = input.required<Item>();
 
     protected databaseItem$?: Observable<DatabaseItem>;
-    #databaseService = inject(DatabaseService);
-    @HostBinding('class') private _classes = 'col-span-full database-details';
+    readonly #databaseService = inject(DatabaseService);
 
     ngOnInit(): void {
         this.databaseItem$ = this.#databaseService.fetchDatabaseItem$(this.item().id)

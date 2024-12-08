@@ -1,17 +1,20 @@
-@if (databaseItem.usedToMix && databaseItem.usedToMix.length) {
+@let usedToMix = databaseItem().usedToMix;
+@let mixedFrom = databaseItem().mixedFrom;
+
+@if (usedToMix && usedToMix.length) {
     <app-expandable #expandableComponent open>
         <h3 class="database-header" expandableHeader>
             <app-database-header-button [templateRef]="expandableComponent">Usage in mixing
             </app-database-header-button>
         </h3>
-        <app-mixing-table [dataSource]="databaseItem.usedToMix"/>
+        <app-mixing-table [dataSource]="usedToMix"/>
     </app-expandable>
 }
-@if (databaseItem.mixedFrom && databaseItem.mixedFrom.length) {
+@if (mixedFrom && mixedFrom.length) {
     <app-expandable #expandableComponent open>
         <h3 class="database-header" expandableHeader>
             <app-database-header-button [templateRef]="expandableComponent">Mixing recipe</app-database-header-button>
         </h3>
-        <app-mixing-table [dataSource]="databaseItem.mixedFrom"/>
+        <app-mixing-table [dataSource]="mixedFrom"/>
     </app-expandable>
 }

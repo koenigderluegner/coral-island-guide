@@ -1,7 +1,9 @@
-@if (craftingRecipe && craftingRecipe.item) {
-    <app-database-item-details [amount]="craftingRecipe.amount" context="crafting" [itemId]="craftingRecipe.item.id">
+@if (craftingRecipe().item; as item) {
+    <app-database-item-details [amount]="craftingRecipe().amount" context="crafting"
+                               [itemId]="item.id">
         <ng-template let-details appDatabaseItemDetails>
             <app-inventory-crafting [details]="details"/>
         </ng-template>
     </app-database-item-details>
 }
+

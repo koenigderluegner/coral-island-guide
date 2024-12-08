@@ -17,6 +17,7 @@ import { ListDetailService } from "../../../shared/components/list-detail-contai
 @Component({
     selector: 'app-generic-festival',
     templateUrl: './generic-festival.component.html',
+    standalone: false
 })
 export class GenericFestivalComponent {
 

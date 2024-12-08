@@ -12,6 +12,7 @@ export interface BaseSelectableContainerComponent<T> {
 
 @Component({
     template: '',
+    standalone: false
 })
 export class BaseSelectableContainerComponent<T> {
 
@@ -38,7 +39,7 @@ export class BaseSelectableContainerComponent<T> {
         })
 
         effect(() => {
-            this.listDetailComponent().drawer?._closedStream.pipe(
+            this.listDetailComponent().drawer()?._closedStream.pipe(
                 takeUntilDestroyed(this.destroyRef)
             ).subscribe({
                 next: () => {

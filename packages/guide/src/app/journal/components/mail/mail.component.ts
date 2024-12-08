@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { MailData } from "@ci/data-types";
 
 @Component({
@@ -8,17 +8,15 @@ import { MailData } from "@ci/data-types";
         :host {
             display: block;
         }
-    `]
+    `],
+    standalone: false
 })
-export class MailComponent implements OnChanges {
+export class MailComponent {
 
-    @Input({required: true}) mail!: MailData
+    mail = input.required<MailData>();
 
-    ngOnChanges(changes: SimpleChanges): void {
-        if (changes['mail']) {
-            this.mail = this._parseTexts(changes['mail'].currentValue)
-        }
-    }
+    parsedMail = computed(() => this._parseTexts(this.mail()))
+
 
     private _parseTexts(mail: MailData): MailData {
         const mailCopy = {...mail};

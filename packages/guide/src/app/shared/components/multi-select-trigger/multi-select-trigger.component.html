@@ -1,6 +1,6 @@
-{{ values[0] || 'Filter' }}
-@if ((values.length || 0) > 1) {
+{{ values()[0] || 'Filter' }}
+@if ((values().length || 0) > 1) {
     <span class="text-sm opacity-80">
-        (+{{ (values.length || 0) - 1 }} {{ values.length === 2 ? 'other' : 'others' }})
+        (+{{ (values().length || 0) - 1 }} {{ values().length === 2 ? 'other' : 'others' }})
     </span>
 }

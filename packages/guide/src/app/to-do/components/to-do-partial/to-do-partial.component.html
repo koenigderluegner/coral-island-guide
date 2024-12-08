@@ -1,15 +1,15 @@
-@if (data.length && (toDoId?.includes(context))) {
+@if (data.length && (toDoId()?.includes(context()))) {
 
     <header class="flex justify-between items-center mt-5 mb-2">
-        <h2 class="font-semibold text-xl text-black">{{ context === 'uncategorized' || context === undefined ? 'Uncategorized' : ToDoContextDisplayNames[context] }}</h2>
+        <h2 class="font-semibold text-xl text-black">{{ context() === 'uncategorized' || context() === undefined ? 'Uncategorized' : ToDoContextDisplayNames[context()] }}</h2>
         <button (click)="completeList()" class="btn-amber">complete list</button>
     </header>
-    <div [@.disabled]="!(toDoId?.includes(context) || toDoId === undefined)">
+    <div [@.disabled]="!(toDoId()?.includes(context()) || toDoId() === undefined)">
         @for (entry of data; track entry) {
             <app-to-do-entry-base class="mb-2 block"
                                   (entrySelected)="entrySelected.emit($event)"
                                   [amount]="entry.amount"
-                                  [category]="context"
+                                  [category]="context()"
                                   [item]="entry.itemEntry"
                                   [quality]="entry.quality" @leaveAnimation/>
         }

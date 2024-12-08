@@ -4,7 +4,6 @@ import { ShopProcessingResultComponent } from "../shop-processing-result/shop-pr
 
 @Component({
     selector: 'app-db-item-found',
-    standalone: true,
     imports: [
         ShopProcessingResultComponent
     ],

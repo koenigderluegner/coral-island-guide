@@ -31,7 +31,7 @@
         <hr class="my-5"/>
         <span class="text-lg mb-6">{{ dbItem.item.description }}</span>
 
-        <ng-container *ngTemplateOutlet="databaseItemDetails; context: {$implicit: dbItem}"/>
+        <ng-container *ngTemplateOutlet="databaseItemDetails() ?? null; context: {$implicit: dbItem}"/>
 
         @if (((dbItem.item.qualities) | keyvalue).length && !hideQualityGrid()) {
             <app-quality-grid

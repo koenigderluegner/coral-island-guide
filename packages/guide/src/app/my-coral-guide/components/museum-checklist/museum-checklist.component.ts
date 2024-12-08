@@ -5,6 +5,7 @@ import { BaseItemChecklistComponent } from "../base-item-checklist.component";
 @Component({
     selector: 'app-museum-checklist',
     templateUrl: './museum-checklist.component.html',
+    standalone: false
 })
 export class MuseumChecklistComponent extends BaseItemChecklistComponent {
     checklistService = inject(MuseumChecklistService);

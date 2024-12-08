@@ -10,9 +10,8 @@ import { toSignal } from "@angular/core/rxjs-interop";
 
 @Component({
     selector: 'app-npc-filter',
-    standalone: true,
     imports: [CommonModule, MatFormField, MatInput, MatLabel, MatOption, MatSelect, ReactiveFormsModule],
-    templateUrl: './npc-filter.component.html',
+    templateUrl: './npc-filter.component.html'
 })
 export class NpcFilterComponent {
     searchControl: FormControl<string> = new FormControl<string>('', {nonNullable: true})

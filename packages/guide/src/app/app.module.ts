@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, importProvidersFrom, isDevMode, NgModule, Optional } from '@angular/core';
+import { importProvidersFrom, inject, isDevMode, NgModule, provideAppInitializer } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -120,17 +120,15 @@ const appRoutes: Route[] = [
         MatProgressSpinnerModule,
     ],
     providers: [
-        {
-            provide: APP_INITIALIZER,
-            multi: true,
-            useFactory: (BETA_CODE: string | null, settingsService: SettingsService) => {
+        provideAppInitializer(() => {
+            const initializerFn = ((BETA_CODE: string | null, settingsService: SettingsService) => {
                 if (!BETA_CODE) {
                     settingsService.saveSettings({...settingsService.getSettings(), useBeta: false})
                 }
                 return () => of()
-            },
-            deps: [[new Optional(), BETA_CODE], SettingsService]
-        },
+            })(inject(BETA_CODE, {optional: true}), inject(SettingsService));
+            return initializerFn();
+        }),
         {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: {disabled: true}},
         {provide: MAT_TABS_CONFIG, useValue: {animationDuration: '0', stretchTabs: false} satisfies MatTabsConfig},
         {provide: TitleStrategy, useClass: PageTitleService},

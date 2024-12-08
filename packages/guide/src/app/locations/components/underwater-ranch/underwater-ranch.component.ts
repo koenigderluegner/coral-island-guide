@@ -11,7 +11,6 @@ import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.comp
 @Component({
     selector: 'app-underwater-ranch',
     templateUrl: './underwater-ranch.component.html',
-    standalone: true,
     imports: [LocationsModule, SharedModule, AsyncPipe, UiIconComponent]
 })
 export class UnderwaterRanchComponent extends BaseShopComponent {

@@ -8,9 +8,7 @@ import { SharedModule } from "../../../shared/shared.module";
 
 @Component({
     selector: 'app-base-furniture-store',
-    standalone: true,
     imports: [
-        AsyncPipe,
         LocationsModule,
         SharedModule
     ],

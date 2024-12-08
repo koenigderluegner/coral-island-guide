@@ -1,7 +1,7 @@
-@if (refinements) {
+@if (refinements()) {
 
     <div class="refinement-list">
-        @for (refinement of refinements; track refinement) {
+        @for (refinement of refinements(); track refinement) {
 
             @if (refinement.from !== quality.BASE) {
                 <app-rarity-icon [quality]="refinement.from" class="size-6"/>

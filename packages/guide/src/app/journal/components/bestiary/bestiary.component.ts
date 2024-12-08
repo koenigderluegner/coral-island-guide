@@ -6,6 +6,7 @@ import { DatabaseService } from "../../../shared/services/database.service";
 @Component({
     selector: 'app-bestiary',
     templateUrl: './bestiary.component.html',
+    standalone: false
 })
 export class BestiaryComponent extends BaseSelectableContainerComponent<Enemy> {
 

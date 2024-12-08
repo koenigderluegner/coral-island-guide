@@ -1,26 +1,31 @@
-@if (details.fish) {
-    <app-fish [fish]="details.fish"/>
-} @else if (details.insect) {
-    <app-insect [critter]="details.insect"/>
-} @else if (details.oceanCritter) {
-    <app-insect [critter]="details.oceanCritter"/>
-} @else if (details.isSeedFor) {
-    @for (crop of details.isSeedFor; track crop.key) {
+@let producedByAnimal = details().producedByAnimal;
+@let oceanCritter = details().oceanCritter;
+@let insect = details().insect;
+@let fish = details().fish;
+
+@if (fish) {
+    <app-fish [fish]="fish"/>
+} @else if (insect) {
+    <app-insect [critter]="insect"/>
+} @else if (oceanCritter) {
+    <app-insect [critter]="oceanCritter"/>
+} @else if (details().isSeedFor) {
+    @for (crop of details().isSeedFor; track crop.key) {
         <app-crop [item]="crop"/>
     }
-} @else if (details.producedByAnimal) {
-    <app-animal-produce [animal]="details.producedByAnimal" [shownItemId]="details.item.id"/>
-} @else if (details.cookedFrom) {
-    @for (recipe of details.cookedFrom; track recipe.key) {
+} @else if (producedByAnimal) {
+    <app-animal-produce [animal]="producedByAnimal" [shownItemId]="details().item.id"/>
+} @else if (details().cookedFrom) {
+    @for (recipe of details().cookedFrom; track recipe.key) {
         <app-cooking-recipe [cookingRecipe]="recipe" showUtensil/>
     }
 }
 
-@if (details.chanceAsProcessResult) {
+@if (details().chanceAsProcessResult) {
     <div>Possible drop from:</div>
-    <app-shop-processing-result class="mb-4" [itemProcessData]="details.chanceAsProcessResult"/>
+    <app-shop-processing-result class="mb-4" [itemProcessData]="details().chanceAsProcessResult"/>
 }
 
-@for (product of details.artisanResult; track product) {
+@for (product of details().artisanResult; track product) {
     <app-processing [class.mt-3]="!$first" [itemProcessing]="product"/>
 }

@@ -5,6 +5,7 @@ import { CookingRecipesChecklistService } from "../../../core/services/checklist
 @Component({
     selector: 'app-cooking-recipes-checklist',
     templateUrl: './cooking-recipes-checklist.component.html',
+    standalone: false
 })
 export class CookingRecipesChecklistComponent extends BaseItemChecklistComponent {
     checklistService = inject(CookingRecipesChecklistService);

@@ -3,6 +3,7 @@ import { SpecificDate } from "@ci/data-types";
 
 @Pipe({
     name: 'ingameDate',
+    standalone: false
 })
 export class IngameDatePipe implements PipeTransform {
     transform(value: SpecificDate): string {

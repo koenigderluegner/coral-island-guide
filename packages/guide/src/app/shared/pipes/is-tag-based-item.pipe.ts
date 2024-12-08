@@ -4,6 +4,7 @@ import { IsMinimalTagBasedItemPipe } from "./is-minimal-tag-based-item.pipe";
 
 @Pipe({
     name: 'isTagBasedItem',
+    standalone: false
 })
 export class IsTagBasedItemPipe extends IsMinimalTagBasedItemPipe implements PipeTransform {
 

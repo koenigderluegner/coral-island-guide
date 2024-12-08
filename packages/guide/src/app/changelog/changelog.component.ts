@@ -1,17 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MarkdownModule, MarkdownService } from 'ngx-markdown';
+import { MarkdownModule } from 'ngx-markdown';
 
 
 @Component({
     selector: 'app-changelog',
-    standalone: true,
     imports: [CommonModule, MarkdownModule],
-    providers: [MarkdownService],
-    template: '<markdown [data]="markdown" />',
+    template: '<markdown [data]="markdown()" />'
 })
 export class ChangelogComponent {
 
-    @Input({required: true}) markdown!: string;
+    readonly markdown = input.required<string>();
 
 }

@@ -6,6 +6,7 @@ import { BaseSelectableContainerComponent } from "../../../shared/components/bas
 @Component({
     selector: 'app-inventory',
     templateUrl: './inventory.component.html',
+    standalone: false
 })
 export class InventoryComponent extends BaseSelectableContainerComponent<CraftingRecipe> {
 

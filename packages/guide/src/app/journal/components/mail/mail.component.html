@@ -1,14 +1,14 @@
 <div class="font-semibold font-coral">
-    @if (mail.title) {
-        <div [innerHTML]="mail.title" class="text-2xl mb-4 text-black"></div>
+    @if (parsedMail().title) {
+        <div [innerHTML]="parsedMail().title" class="text-2xl mb-4 text-black"></div>
     }
-    <div [innerHTML]="mail.content" class="mb-4 whitespace-break-spaces"></div>
+    <div [innerHTML]="parsedMail().content" class="mb-4 whitespace-break-spaces"></div>
     <div class="mt-4 flex flex-col items-end">
-        @if (mail.greetCloseMessage) {
-            <span [innerHTML]="mail.greetCloseMessage" class="text-accent"></span>
+        @if (parsedMail().greetCloseMessage) {
+            <span [innerHTML]="parsedMail().greetCloseMessage" class="text-accent"></span>
         }
-        @if (mail.sender) {
-            <span [innerHTML]="mail.sender" class="text-black"></span>
+        @if (parsedMail().sender) {
+            <span [innerHTML]="parsedMail().sender" class="text-black"></span>
         }
     </div>
 </div>

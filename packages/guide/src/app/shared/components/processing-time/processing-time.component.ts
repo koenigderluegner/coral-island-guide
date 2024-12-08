@@ -1,11 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
     selector: 'app-processing-time',
     templateUrl: './processing-time.component.html',
+    standalone: false
 })
 export class ProcessingTimeComponent {
-
-    @Input({required: true}) processingTime!: { day: number; time: { minutes: number; hours: number } };
+    readonly processingTime = input.required<{ day: number; time: { minutes: number; hours: number } }>()
 
 }

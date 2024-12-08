@@ -1,8 +1,8 @@
 <div class="expandable-header">
     <ng-content select="[expandableHeader]"></ng-content>
 </div>
-<div [class.grid-rows-0fr]="!open"
-     [class.grid-rows-1fr]="open"
+<div [class.grid-rows-0fr]="!isOpen()"
+     [class.grid-rows-1fr]="isOpen()"
      class="expandable-body grid transition-all duration-500 ease-in-out">
     <div class="overflow-hidden">
         <ng-content></ng-content>

@@ -20,9 +20,7 @@ import { SharedModule } from "../../shared/shared.module";
 
 @Component({
     selector: 'app-mixing-table',
-    standalone: true,
     imports: [
-        AddSpacesToPascalCasePipe,
         KeyValuePipe,
         MatCell,
         MatCellDef,
@@ -36,7 +34,6 @@ import { SharedModule } from "../../shared/shared.module";
         MatSortHeader,
         MatTable,
         SharedModule,
-        TitleCasePipe,
         MatHeaderCellDef
     ],
     templateUrl: './mixing-table.component.html'

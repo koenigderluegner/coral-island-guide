@@ -1,16 +1,17 @@
-import { booleanAttribute, Component, Input } from '@angular/core';
+import { booleanAttribute, Component, input, linkedSignal } from '@angular/core';
 
 @Component({
     selector: 'app-expandable',
     templateUrl: './expandable.component.html',
-    styles: [':host{display: block}']
+    styles: [':host{display: block}'],
+    standalone: false
 })
 export class ExpandableComponent {
-
-    @Input({transform: booleanAttribute}) open = false;
+    readonly open = input(false, {transform: booleanAttribute});
+    readonly isOpen = linkedSignal(() => this.open())
 
     toggle(): void {
-        this.open = !this.open;
+        this.isOpen.update(o => !o);
     }
 
 

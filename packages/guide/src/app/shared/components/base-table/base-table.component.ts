@@ -1,54 +1,39 @@
-import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, computed, effect, input, viewChild } from '@angular/core';
 import { MatTableDataSource } from "@angular/material/table";
 import { MatSort } from "@angular/material/sort";
 import { MinimalItem, Season } from "@ci/data-types";
 
 @Component({
-    template: ''
+    template: '',
+    standalone: false
 })
-export abstract class BaseTableComponent<T> implements OnInit, OnChanges, AfterViewInit {
+export abstract class BaseTableComponent<T> implements AfterViewInit {
 
     matDataSource?: MatTableDataSource<T>;
     displayedColumns: string[] = [];
     displayHeaderColumns: string[] = [];
-    @ViewChild(MatSort) sort?: MatSort;
+    readonly sort = viewChild(MatSort);
     sortingDataAccessor?: (item: T, property: string) => string | number
+    dataSource = input.required<T[]>()
+    protected _dataSource = computed<T[]>(() => this.dataSource());
     protected abstract readonly BASE_DISPLAY_COLUMNS: string[]
 
     constructor() {
         this.sortingDataAccessor = this.sortingDataAccessor?.bind(this);
         this.sortHelper = this.sortHelper.bind(this);
-    }
 
-    protected _dataSource: T[] = [];
-
-    @Input({required: true})
-    public get dataSource(): T[] {
-        return this._dataSource;
-    }
-
-    public set dataSource(value: T[]) {
-        this._dataSource = value;
+        effect(() => {
+            this.setupDataSource(this._dataSource());
+        });
     }
 
     ngAfterViewInit() {
-        if (this.matDataSource && this.sort) {
-            this.matDataSource.sort = this.sort;
+        const sort = this.sort();
+        if (this.matDataSource && sort) {
+            this.matDataSource.sort = sort;
             if (this.sortingDataAccessor)
                 this.matDataSource.sortingDataAccessor = this.sortingDataAccessor as MatTableDataSource<T>['sortingDataAccessor'];
         }
-    }
-
-    ngOnChanges(changes: SimpleChanges): void {
-        const currentValue: T[] | undefined = changes['dataSource'].currentValue;
-        if (currentValue) {
-            this.setupDataSource(currentValue);
-        }
-    }
-
-
-    ngOnInit(): void {
-        this.setupDataSource(this.dataSource);
     }
 
 

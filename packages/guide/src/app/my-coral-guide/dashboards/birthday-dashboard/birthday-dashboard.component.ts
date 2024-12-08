@@ -8,12 +8,10 @@ import { RouterLink } from "@angular/router";
 
 @Component({
     selector: 'app-birthday-dashboard',
-    standalone: true,
     imports: [
         SharedModule,
         AddSpacesToPascalCasePipe,
         UiIconComponent,
-        MatTooltip,
         RouterLink
     ],
     templateUrl: './birthday-dashboard.component.html',

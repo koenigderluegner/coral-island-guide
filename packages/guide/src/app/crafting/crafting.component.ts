@@ -7,6 +7,7 @@ import { addSpacesToPascalCase } from '@ci/util';
 @Component({
     selector: 'app-crafting',
     templateUrl: './crafting.component.html',
+    standalone: false
 })
 export class CraftingComponent {
     UI_ICONS = UiIcon;

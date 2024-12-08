@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { BaseCrop, Crop, FruitPlant, FruitTree, MinimalItem } from "@ci/data-types";
 
 @Pipe({
-    name: 'isBaseCrop'
+    name: 'isBaseCrop',
+    standalone: false
 })
 export class IsBaseCropPipe implements PipeTransform {
 

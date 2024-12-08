@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.component";
 import { preferencesMap } from "../../../shared/constants/preference-map.const";
 import { MinimalNPC } from "@ci/data-types";
@@ -15,11 +15,14 @@ import { MinimalNPC } from "@ci/data-types";
             }
         }
     `],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false,
+    host: {
+        'class': 'database-gifts'
+    }
 })
 export class DatabaseGiftsComponent extends BaseDatabaseDetailPartComponent implements OnInit {
 
-    @HostBinding('class.database-gifts')
     displayedHeaderColumns = ['preference', 'npcs'];
     displayedColumns = ['icon', ...this.displayedHeaderColumns];
 
@@ -41,7 +44,7 @@ export class DatabaseGiftsComponent extends BaseDatabaseDetailPartComponent impl
     ] as const
 
     ngOnInit(): void {
-        const item = this.databaseItem.item
+        const item = this.databaseItem().item
 
         if (!item) return;
 

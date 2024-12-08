@@ -5,6 +5,7 @@ import { ListDetailService } from "../../../shared/components/list-detail-contai
 @Component({
     selector: 'app-mail-details',
     templateUrl: './mail-details.component.html',
+    standalone: false
 })
 export class MailDetailsComponent {
 

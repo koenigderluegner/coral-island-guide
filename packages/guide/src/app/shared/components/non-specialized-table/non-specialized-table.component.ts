@@ -5,6 +5,7 @@ import { Item } from "@ci/data-types";
 @Component({
     selector: 'app-non-specialized-table',
     templateUrl: './non-specialized-table.component.html',
+    standalone: false
 })
 export class NonSpecializedTableComponent extends BaseTableComponent<Item> {
     protected readonly BASE_DISPLAY_COLUMNS: string[] = [
@@ -13,7 +14,7 @@ export class NonSpecializedTableComponent extends BaseTableComponent<Item> {
         'sellPrice'
     ];
 
-    override sortingDataAccessor = (item: NonSpecializedTableComponent['dataSource'][0], property: string) => {
+    override sortingDataAccessor = (item: ReturnType<NonSpecializedTableComponent['dataSource']>[0], property: string) => {
         const sortHelperValue = this.sortHelper(item, property)
 
         return sortHelperValue ?? 0;

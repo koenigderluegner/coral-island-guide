@@ -3,7 +3,8 @@ import { CraftingRecipe } from "@ci/data-types";
 import { ItemListComponent } from "../components/item-list/item-list.component";
 
 @Pipe({
-    name: 'craftingRecipeIngredients'
+    name: 'craftingRecipeIngredients',
+    standalone: false
 })
 export class CraftingRecipeIngredientsPipe implements PipeTransform {
 

@@ -7,6 +7,7 @@ import { BaseSelectableContainerComponent } from "../../../shared/components/bas
 @Component({
     selector: 'app-pet-shop',
     templateUrl: './pet-shop.component.html',
+    standalone: false
 })
 export class PetShopComponent extends BaseSelectableContainerComponent<ShopItemData> {
 

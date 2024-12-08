@@ -1,11 +1,11 @@
-<div>Health: <span class="text-black">{{ consumable.healthDelta }}</span></div>
-<div [class.mb-3]="consumable.buff === 'None'">Energy: <span
-        class="text-black">{{ consumable.staminaDelta }}</span></div>
-@if (consumable.buff !== 'None') {
+<div>Health: <span class="text-black">{{ consumable().healthDelta }}</span></div>
+<div [class.mb-3]="consumable().buff === 'None'">Energy: <span
+        class="text-black">{{ consumable().staminaDelta }}</span></div>
+@if (consumable().buff !== 'None') {
     <div class="mb-3">Buff:
         <span class="text-black">
-                  {{ consumable.buff | addSpacesToPascalCase }},
-                  Level {{ consumable.level }} for {{ consumable.duration }} seconds
+                  {{ consumable().buff | addSpacesToPascalCase }},
+                  Level {{ consumable().level }} for {{ consumable().duration }} seconds
                 </span>
     </div>
 }

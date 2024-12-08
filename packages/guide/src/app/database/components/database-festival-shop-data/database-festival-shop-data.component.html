@@ -1,9 +1,11 @@
-@if (databaseItem.buyAtFestivalShop && databaseItem.buyAtFestivalShop.length) {
+@let buyAtFestivalShop = databaseItem().buyAtFestivalShop;
+
+@if (buyAtFestivalShop && buyAtFestivalShop.length) {
     <app-expandable #expandableComponent open>
         <h3 class="database-header" expandableHeader>
             <app-database-header-button [templateRef]="expandableComponent">Buy at festival</app-database-header-button>
         </h3>
-        <app-festival-shop-item-table [dataSource]="databaseItem.buyAtFestivalShop"/>
+        <app-festival-shop-item-table [dataSource]="buyAtFestivalShop"/>
     </app-expandable>
 }
 

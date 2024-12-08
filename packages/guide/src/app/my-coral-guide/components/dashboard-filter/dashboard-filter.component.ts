@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Seasons, Weathers } from "@ci/data-types";
 import { FormGroup, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatFormField, MatLabel, MatPrefix, MatSuffix } from "@angular/material/form-field";
@@ -12,29 +12,24 @@ import { addDays } from "@ci/util";
 
 @Component({
     selector: 'app-dashboard-filter',
-    standalone: true,
     imports: [
         FormsModule,
         MatFormField,
         MatLabel,
         MatOption,
         MatSelect,
-        MatSelectTrigger,
         ReactiveFormsModule,
-        MultiSelectTriggerComponent,
         MatCheckbox,
         MatInput,
-        MatPrefix,
-        MatSuffix
     ],
     templateUrl: './dashboard-filter.component.html'
 })
 export class DashboardFilterComponent {
-    @Input({required: true}) parentFormGroup!: FormGroup<DashboardFilter>
+    readonly parentFormGroup = input.required<FormGroup<DashboardFilter>>();
     protected readonly Weathers = Weathers;
     protected readonly Seasons = Seasons;
 
     increaseDay(daysToAdd: number) {
-        this.parentFormGroup.patchValue(addDays(this.parentFormGroup.getRawValue(), daysToAdd))
+        this.parentFormGroup().patchValue(addDays(this.parentFormGroup().getRawValue(), daysToAdd))
     }
 }

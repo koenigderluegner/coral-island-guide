@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, inject, InjectionToken, NgModule } from "@angular/core";
+import { inject, InjectionToken, NgModule, provideAppInitializer } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { HttpBackend, HttpClient, provideHttpClient } from "@angular/common/http";
 import { map, Observable } from "rxjs";
@@ -13,7 +13,7 @@ export const GAME_VERSION = new InjectionToken<string>('GAME_VERSION');
         CommonModule
     ], providers: [
         provideHttpClient(),
-        {provide: APP_INITIALIZER, useValue: () => GameVersionModule._loading, multi: true},
+        provideAppInitializer(() => GameVersionModule._loading),
         {provide: GAME_VERSION, useFactory: () => GameVersionModule._value || {}}
     ]
 })

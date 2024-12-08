@@ -10,6 +10,7 @@ import { startWith } from "rxjs";
 @Component({
     selector: 'app-found',
     templateUrl: './found.component.html',
+    standalone: false
 })
 export class FoundComponent extends BaseJournalPageComponent<Item> implements AfterViewInit {
 
@@ -66,9 +67,10 @@ export class FoundComponent extends BaseJournalPageComponent<Item> implements Af
 
     ngAfterViewInit(): void {
 
-        this.matTabGroup?.selectedIndexChange.pipe(
+        const matTabGroup = this.matTabGroup();
+        matTabGroup?.selectedIndexChange.pipe(
             takeUntilDestroyed(this.destroyRef),
-            startWith(this.matTabGroup?.selectedIndex ?? 0)
+            startWith(matTabGroup?.selectedIndex ?? 0)
         ).subscribe({
             next: (selectedTabIndex) => {
                 this.selectedTabIndex.set(selectedTabIndex)

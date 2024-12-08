@@ -1,4 +1,4 @@
-import { Component, ContentChild, input, TemplateRef } from '@angular/core';
+import { Component, contentChild, input, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CustomEntry, MinimalTagBasedItem, Quality } from "@ci/data-types";
 import { SharedModule } from "../../shared.module";
@@ -10,16 +10,15 @@ import { ToDoContext } from "../../../core/types/to-do-context.type";
 
 @Component({
     selector: 'app-item-card-switch',
-    standalone: true,
     imports: [CommonModule, SharedModule, DatabaseItemDetailsComponent, DatabaseItemDetailsDirective],
     templateUrl: './item-card-switch.component.html'
 })
 export class ItemCardSwitchComponent {
-    item = input.required<ItemEntry>();
-    @ContentChild(TemplateRef) databaseItemDetails: TemplateRef<any> | null = null;
-    context = input<ToDoContext | undefined>();
-    amount = input<number | undefined>();
-    quality = input<Quality | undefined>();
+    readonly item = input.required<ItemEntry>();
+    readonly databaseItemDetails = contentChild(TemplateRef);
+    readonly context = input<ToDoContext | undefined>();
+    readonly amount = input<number | undefined>();
+    readonly quality = input<Quality | undefined>();
 
     isTagBasedItem(item: ItemEntry): item is MinimalTagBasedItem {
         return 'key' in item;

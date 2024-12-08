@@ -4,7 +4,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
     selector: 'app-sidebar-container',
     templateUrl: './sidebar-container.component.html',
     styleUrls: ['./sidebar-container.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class SidebarContainerComponent {
 

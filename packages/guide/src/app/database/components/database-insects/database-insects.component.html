@@ -1,9 +1,9 @@
-@if (databaseItem.insect) {
+@if (databaseItem().insect; as insect) {
     <app-expandable #expandableComponent open>
         <h3 class="database-header" expandableHeader>
             <app-database-header-button [templateRef]="expandableComponent">Bugs and insects
             </app-database-header-button>
         </h3>
-        <app-caught-table [dataSource]="[databaseItem.insect]"/>
+        <app-caught-table [dataSource]="[insect]"/>
     </app-expandable>
 }

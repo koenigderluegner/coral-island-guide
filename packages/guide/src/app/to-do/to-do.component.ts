@@ -14,7 +14,8 @@ import { ItemEntry } from "../shared/types/item-entry.type";
         app-to-do-partial:not(.hidden) ~ .show-when-none-displayed {
             display: none;
         }
-    `]
+    `],
+    standalone: false
 })
 export class ToDoComponent extends BaseSelectableContainerComponent<ItemEntry> {
 

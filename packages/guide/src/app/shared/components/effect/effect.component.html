@@ -1,108 +1,111 @@
-@if (effect.type === 'BoostMaxStamina') {
+@let eff = effect();
+
+@if (eff.type === 'BoostMaxStamina') {
     Increases max stamina
 }
-@if (effect.type === 'BoostMaxHealth') {
+@if (eff.type === 'BoostMaxHealth') {
     Increases max health
 }
-@if (effect.type === 'AddItemToInventory') {
+@if (eff.type === 'AddItemToInventory') {
 
-    Adds {{ (effect.meta.quantity ?? 1) > 1 ? effect.meta.quantity + 'x ' : '' }}
-    <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 -my-1 translate-y-1 !inline-block"/>
-    {{ effect.meta.item.displayName }} to inventory
+    Adds {{ (eff.meta.quantity ?? 1) > 1 ? eff.meta.quantity + 'x ' : '' }}
+    <app-item-icon [itemName]="eff.meta.item.iconName" class="!w-7 -my-1 translate-y-1 !inline-block"/>
+    {{ eff.meta.item.displayName }} to inventory
 
 }
-@if (effect.type === 'UnlockCraftingRecipe') {
+@if (eff.type === 'UnlockCraftingRecipe') {
     <div>
         Unlocks
-        <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
-        {{ effect.meta.item.displayName }} crafting recipe
+        <app-item-icon [itemName]="eff.meta.item.iconName" class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
+        {{ eff.meta.item.displayName }} crafting recipe
     </div>
 }
-@if (effect.type === 'UnlockCookingRecipe') {
+@if (eff.type === 'UnlockCookingRecipe') {
     <div>
         Unlocks
-        <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
-        {{ effect.meta.item.displayName }} cooking recipe
+        <app-item-icon [itemName]="eff.meta.item.iconName" class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
+        {{ eff.meta.item.displayName }} cooking recipe
     </div>
 }
-@if (effect.type === 'UnlockCookingUtensil') {
+@if (eff.type === 'UnlockCookingUtensil') {
 
-    Unlocks {{ effect.meta.utensil }} utensil
-
-}
-@if (effect.type === 'SetQuestFactValue') {
-
-    Sets quests fact '{{ effect.meta.factName }}'
+    Unlocks {{ eff.meta.utensil }} utensil
 
 }
-@if (effect.type === 'ConsumeItemMastery') {
+@if (eff.type === 'SetQuestFactValue') {
 
-    Unlocks 1 skill point for {{ effect.meta.mastery }} mastery
+    Sets quests fact '{{ eff.meta.factName }}'
 
 }
-@if (effect.type === 'VaryMoney') {
+@if (eff.type === 'ConsumeItemMastery') {
+
+    Unlocks 1 skill point for {{ eff.meta.mastery }} mastery
+
+}
+@if (eff.type === 'VaryMoney') {
     <div>
         Adds
-        <app-money [amount]="effect.meta.amount" class="!w-7 -my-1 translate-y-1 ml-1 !inline-block"/>
+        <app-money [amount]="eff.meta.amount" class="!w-7 -my-1 translate-y-1 ml-1 !inline-block"/>
     </div>
 }
-@if (effect.type === 'RemoveItemFromInventory') {
+@if (eff.type === 'RemoveItemFromInventory') {
     <div>
-        Removes {{ effect.meta.amount }}x
-        @if (hasMinimalItem(effect.meta)) {
+        Removes {{ eff.meta.amount }}x
+        @if (hasMinimalItem(eff.meta)) {
 
-            <app-item-icon [itemName]="effect.meta.item.iconName" class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
-            {{ effect.meta.item.displayName }}
+            <app-item-icon [itemName]="eff.meta.item.iconName"
+                           class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
+            {{ eff.meta.item.displayName }}
 
         }
-        @if (!hasMinimalItem(effect.meta)) {
+        @if (!hasMinimalItem(eff.meta)) {
 
-            items of category {{ effect.meta.category }}
+            items of category {{ eff.meta.category }}
 
         }
 
     </div>
 }
-@if (effect.type === 'SendMailToPlayer') {
+@if (eff.type === 'SendMailToPlayer') {
 
-    Sends mail '<a [queryParams]="{selectedId: effect.meta.mail.mailId}"
+    Sends mail '<a [queryParams]="{selectedId: eff.meta.mail.mailId}"
                    [routerLink]="['/journal', 'notes', 'letters']"
-                   class="underline">{{ effect.meta.mail.title }}</a>'
-    {{ effect.meta.dayDelay > 0 ? ' after ' + effect.meta.dayDelay + ' day(s)' : '' }}
+                   class="underline">{{ eff.meta.mail.title }}</a>'
+    {{ eff.meta.dayDelay > 0 ? ' after ' + eff.meta.dayDelay + ' day(s)' : '' }}
 
 }
-@if (effect.type === 'SetQuestActive') {
+@if (eff.type === 'SetQuestActive') {
 
-    Activates quest '{{ effect.meta.questId }}'
-
-}
-@if (effect.type === 'SetQuestCompleted') {
-
-    Completes quest '{{ effect.meta.questId }}'
+    Activates quest '{{ eff.meta.questId }}'
 
 }
-@if (effect.type === 'UpdateNpcSchedule') {
+@if (eff.type === 'SetQuestCompleted') {
 
-    Updates schedules of NPCs: '{{ effect.meta.npcIds.join(', ') }}'
-
-}
-@if (effect.type === 'ChangeObjectState') {
-
-    Sets state of '{{ effect.meta.customName ?? effect.meta.id }}' to '{{ effect.meta.state }}'
+    Completes quest '{{ eff.meta.questId }}'
 
 }
-@if (effect.type === 'UnlockSpecialItem') {
+@if (eff.type === 'UpdateNpcSchedule') {
+
+    Updates schedules of NPCs: '{{ eff.meta.npcIds.join(', ') }}'
+
+}
+@if (eff.type === 'ChangeObjectState') {
+
+    Sets state of '{{ eff.meta.customName ?? eff.meta.id }}' to '{{ eff.meta.state }}'
+
+}
+@if (eff.type === 'UnlockSpecialItem') {
 
     <div>
         Unlocks special item
-        <app-item-icon [itemName]="effect.meta.item.iconName"
+        <app-item-icon [itemName]="eff.meta.item.iconName"
                        class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
-        {{ effect.meta.item.displayName }}
+        {{ eff.meta.item.displayName }}
     </div>
 
 
 }
 
-@if (effect.type === 'MarkDinoHologramRewardClaimed') {
-    Marks dino hologram '{{ effect.meta.dinoName }}' as claimed
+@if (eff.type === 'MarkDinoHologramRewardClaimed') {
+    Marks dino hologram '{{ eff.meta.dinoName }}' as claimed
 }

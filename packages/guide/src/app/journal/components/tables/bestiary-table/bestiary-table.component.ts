@@ -5,6 +5,7 @@ import { BaseTableComponent } from "../../../../shared/components/base-table/bas
 @Component({
     selector: 'app-bestiary-table',
     templateUrl: './bestiary-table.component.html',
+    standalone: false
 })
 export class BestiaryTableComponent extends BaseTableComponent<Enemy> {
     protected readonly BASE_DISPLAY_COLUMNS: string[] = [

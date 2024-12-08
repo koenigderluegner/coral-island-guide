@@ -5,6 +5,7 @@ import { ItemUpgradeData } from "@ci/data-types";
 @Component({
     selector: 'app-item-upgrade-table',
     templateUrl: './item-upgrade-table.component.html',
+    standalone: false
 })
 export class ItemUpgradeTableComponent extends BaseTableComponent<ItemUpgradeData & {
     shop?: { url: string; displayName: string }
@@ -18,9 +19,8 @@ export class ItemUpgradeTableComponent extends BaseTableComponent<ItemUpgradeDat
         'requirements'
     ];
 
-    override ngOnInit() {
-        super.ngOnInit();
-        if (this.dataSource.length && this.dataSource[0].shop) {
+    ngOnInit() {
+        if (this._dataSource().length && this._dataSource()[0].shop) {
             this.displayedColumns.splice(2, 0, 'shop');
             this.displayHeaderColumns = this.displayedColumns.filter(column => column !== 'icon')
         }

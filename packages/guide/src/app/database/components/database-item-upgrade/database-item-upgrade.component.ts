@@ -4,6 +4,7 @@ import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.co
 @Component({
     selector: 'app-database-item-upgrade',
     templateUrl: './database-item-upgrade.component.html',
+    standalone: false
 })
 export class DatabaseItemUpgradeComponent extends BaseDatabaseDetailPartComponent {
 }

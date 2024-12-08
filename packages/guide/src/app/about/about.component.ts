@@ -1,22 +1,20 @@
-import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChangelogComponent } from "../changelog/changelog.component";
 import { SharedModule } from "../shared/shared.module";
 
 @Component({
     selector: 'app-about',
     templateUrl: './about.component.html',
-    standalone: true,
-    imports: [CommonModule, ChangelogComponent, SharedModule],
+    imports: [CommonModule, SharedModule],
     styles: [`
         .app-about {
             @apply container block mx-auto my-10;
         }
     `],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    host: {
+        'class': 'app-about'
+    }
 })
 export class AboutComponent {
-
-    @HostBinding('class.app-about') private _setCssClass = true;
-
 }

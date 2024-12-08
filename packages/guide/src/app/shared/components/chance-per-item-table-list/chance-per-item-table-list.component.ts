@@ -1,11 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { ChancePerItem } from "@ci/data-types";
 
 @Component({
     selector: 'app-chance-per-item-table-list',
     templateUrl: './chance-per-item-table-list.component.html',
+    standalone: false
 })
 export class ChancePerItemTableListComponent {
 
-    @Input({required: true}) chances!: ChancePerItem[]
+    readonly chances = input.required<ChancePerItem[]>();
 }

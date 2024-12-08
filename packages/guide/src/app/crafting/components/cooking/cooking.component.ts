@@ -6,6 +6,7 @@ import { BaseTabbedSelectableContainerComponent } from "../../../shared/componen
 @Component({
     selector: 'app-cooking',
     templateUrl: './cooking.component.html',
+    standalone: false
 })
 export class CookingComponent extends BaseTabbedSelectableContainerComponent<CookingRecipe> {
 

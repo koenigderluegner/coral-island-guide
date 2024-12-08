@@ -6,10 +6,11 @@ import { DatabaseService } from "../../../../shared/services/database.service";
 @Component({
     selector: 'app-processor-table',
     templateUrl: './processor-table.component.html',
+    standalone: false
 })
 export class ProcessorTableComponent extends BaseTableComponent<ItemProcessing> {
 
-    showProcessor = input(false, {transform: booleanAttribute})
+   readonly showProcessor = input(false, {transform: booleanAttribute})
     protected readonly BASE_DISPLAY_COLUMNS: string[] = [
         'icon',
         'outputName',
@@ -35,7 +36,7 @@ export class ProcessorTableComponent extends BaseTableComponent<ItemProcessing> 
 
     };
 
-    protected override setupDataSource(dataSource: BaseTableComponent<ItemProcessing>["dataSource"]) {
+    protected override setupDataSource(dataSource: ReturnType<BaseTableComponent<ItemProcessing>["dataSource"]>) {
         super.setupDataSource(dataSource);
 
         const utensilIndex = this.displayedColumns.indexOf('processor');

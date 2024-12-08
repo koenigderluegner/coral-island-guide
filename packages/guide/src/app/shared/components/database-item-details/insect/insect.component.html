@@ -1,15 +1,17 @@
-<div>Rarity: <span class="text-black">{{ critter.rarity | addSpacesToPascalCase }}</span></div>
-<div>Time: <span class="text-black">{{ getTruthyValues(critter.spawnTime) }}</span></div>
-<div> Season: <span class="text-black">{{ getTruthyValues(critter.spawnSeason) }}</span></div>
+@let spawnAmountModifiers = critter().spawnAmountModifiers;
 
-@if (getTruthyValues(critter.spawnWeather); as weather) {
+<div>Rarity: <span class="text-black">{{ critter().rarity | addSpacesToPascalCase }}</span></div>
+<div>Time: <span class="text-black">{{ getTruthyValues(critter().spawnTime) }}</span></div>
+<div> Season: <span class="text-black">{{ getTruthyValues(critter().spawnSeason) }}</span></div>
+
+@if (getTruthyValues(critter().spawnWeather); as weather) {
     <div>Weather: <span class="text-black">{{ weather }}</span></div>
 }
-<div> Location: <span class="text-black">{{ critter.spawnLocation.join(', ') }}</span></div>
+<div> Location: <span class="text-black">{{ critter().spawnLocation.join(', ') }}</span></div>
 
-@if (critter.spawnAmountModifiers && critter.spawnAmountModifiers.length) {
+@if (spawnAmountModifiers && spawnAmountModifiers.length) {
     <div>Spawn amount modifiers
-        @for (modifier of critter.spawnAmountModifiers; track modifier) {
+        @for (modifier of spawnAmountModifiers; track modifier) {
             <div class="flex justify-between">
                 <span>{{ modifier[0] }}</span>
                 <span class="text-black">{{ modifier[1] }}</span>

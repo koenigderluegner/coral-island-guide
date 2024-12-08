@@ -10,6 +10,7 @@ type ItemEntry = Item | MinimalItem | CustomEntry | MinimalTagBasedItem;
 @Component({
     selector: 'app-base-item-card',
     templateUrl: './base-item-card.component.html',
+    standalone: false
 })
 export class BaseItemCardComponent {
     item = input.required<ItemEntry>();

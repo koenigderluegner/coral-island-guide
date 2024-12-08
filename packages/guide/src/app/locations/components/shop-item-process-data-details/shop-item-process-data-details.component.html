@@ -1,14 +1,14 @@
-<app-base-item-card [item]="itemProcessData.input">
+<app-base-item-card [item]="itemProcessData().input">
 
-    @if (itemProcessData.inputAmount > 1) {
+    @if (itemProcessData().inputAmount > 1) {
         <div>
-            Amount needed for processing: <span class="text-black">{{ itemProcessData.inputAmount }}&#125;</span>
+            Amount needed for processing: <span class="text-black">{{ itemProcessData().inputAmount }}&#125;</span>
         </div>
     }
     <div>Cost to process:
-        <app-money [amount]="itemProcessData.processingCost"/>
+        <app-money [amount]="itemProcessData().processingCost"/>
     </div>
     <div class="my-2">
-        <app-chance-per-item-list [chances]="itemProcessData.outputChanges"/>
+        <app-chance-per-item-list [chances]="itemProcessData().outputChanges"/>
     </div>
 </app-base-item-card>

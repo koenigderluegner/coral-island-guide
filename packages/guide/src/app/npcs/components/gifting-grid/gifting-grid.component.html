@@ -1,13 +1,13 @@
 @for (prefMap of preferencesMap; track prefMap) {
 
-    @if (preferences[prefMap.preferenceField].length) {
+    @if (preferences()[prefMap.preferenceField].length) {
 
         <div class="font-semibold flex items-center sm:flex-col sm:pr-10 mb-1 text-black">
             <app-ui-icon [uiIcon]="prefMap.icon" class="!text-gifting mr-1 sm:mr-0 !h-6 !w-6"></app-ui-icon>
             {{ prefMap.label }}
         </div>
         <div class="gifting-gifts-grid ">
-            @for (loved of preferences[prefMap.preferenceField]; track loved) {
+            @for (loved of preferences()[prefMap.preferenceField]; track loved) {
 
                 @if (loved.type === 'item') {
                     <app-inline-minimal-item class="cursor-pointer" (click)="itemClicked.emit(loved.item)"

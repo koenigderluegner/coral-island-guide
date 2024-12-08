@@ -1,19 +1,19 @@
 <aside>
     <nav>
-        <ul [class.hide-menu]="!showMenu">
-            @for (child of (viewChildren?.toArray() ?? []); track child; let i = $index; let last = $last) {
+        <ul [class.hide-menu]="!showMenu()">
+            @for (child of (viewChildren()); track child; let i = $index; let last = $last) {
 
-                @if (child.routerLink) {
+                @if (child.routerLink()) {
                     <li>
-                        <a [routerLink]="child.routerLink" class="app-module-sidebar-list-item"
+                        <a [routerLink]="child.routerLink()" class="app-module-sidebar-list-item"
                            [routerLinkActive]="'active'"
-                           [routerLinkActiveOptions]="{exact: !!child.exact}"
-                           [class.custom-active]="child.active"
-                           [class.mb-4]="!last" (click)="showMenu = false">
-                            @if (child.uiIcon) {
-                                <app-ui-icon [uiIcon]="child.uiIcon" class="!h-6"></app-ui-icon>
+                           [routerLinkActiveOptions]="{exact: !!child.exact()}"
+                           [class.custom-active]="child.active()"
+                           [class.mb-4]="!last" (click)="showMenu.set(false)">
+                            @if (child.uiIcon(); as icon) {
+                                <app-ui-icon [uiIcon]="icon" class="!h-6"></app-ui-icon>
                             }
-                            <ng-template [ngTemplateOutlet]="child.innerTemplate"></ng-template>
+                            <ng-template [ngTemplateOutlet]="child.innerTemplate()"></ng-template>
                             <button class=" xl:hidden block ml-auto m-[-18px] border-l-2 px-5 h-[45px]"
                                     (click)="toggleMenu($event)">Menu
                             </button>
@@ -23,7 +23,7 @@
                 @if (!child.routerLink) {
                     <li
                             class="module-sidebar-list-divider mb-3 mt-9 text-xl text-white/70 font-semibold">
-                        <ng-template [ngTemplateOutlet]="child.innerTemplate"></ng-template>
+                        <ng-template [ngTemplateOutlet]="child.innerTemplate()"></ng-template>
                     </li>
                 }
 

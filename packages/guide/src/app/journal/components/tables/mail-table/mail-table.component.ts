@@ -11,7 +11,8 @@ import { SelectionModel } from "@angular/cdk/collections";
             --mat-table-row-item-container-height: 0;
             --mat-table-row-item-label-text-size: 16px;
         }
-    `]
+    `],
+    standalone: false
 })
 export class MailTableComponent extends BaseTableComponent<MailData> {
     protected expandedRows: SelectionModel<string> = new SelectionModel<string>(true, [])

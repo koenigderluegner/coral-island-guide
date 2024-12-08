@@ -22,6 +22,7 @@ type SettingsFormGroup = {
 @Component({
     selector: 'app-settings',
     templateUrl: './settings.component.html',
+    standalone: false
 })
 export class SettingsComponent {
     settingsForm: FormGroup<SettingsFormGroup>;

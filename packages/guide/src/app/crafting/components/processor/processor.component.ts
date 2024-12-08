@@ -6,6 +6,7 @@ import { BaseTabbedSelectableContainerComponent } from "../../../shared/componen
 @Component({
     selector: 'app-processor',
     templateUrl: './processor.component.html',
+    standalone: false
 })
 export class ProcessorComponent extends BaseTabbedSelectableContainerComponent<ItemProcessing> {
 

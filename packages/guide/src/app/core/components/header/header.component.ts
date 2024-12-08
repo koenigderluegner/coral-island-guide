@@ -1,4 +1,4 @@
-import { Component, HostBinding, inject, ViewEncapsulation } from '@angular/core';
+import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { UiIcon } from '@ci/data-types';
 import { NavigationStart, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
@@ -15,6 +15,11 @@ type NaviLinks = {
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss'],
     encapsulation: ViewEncapsulation.None,
+    standalone: false,
+    host: {
+        '[class.open-menu]': 'isOpen',
+        'class': 'app-header'
+    }
 })
 export class HeaderComponent {
     naviLinks: NaviLinks = [
@@ -49,18 +54,15 @@ export class HeaderComponent {
             path: 'database',
         },
     ];
-    @HostBinding('class.open-menu') isOpen = false;
+    isOpen = false;
     protected uiIcon = UiIcon;
-    protected isBeta = false;
-    private readonly _router = inject(Router);
-    private readonly _settingsService = inject(SettingsService);
-    @HostBinding('class.app-header') private _setClass = true;
+    protected readonly isBeta = inject(SettingsService).getSettings().useBeta;
+    readonly #router = inject(Router);
 
     constructor() {
-        this._router.events.pipe(filter((e) => e instanceof NavigationStart)).subscribe(() => {
+        this.#router.events.pipe(filter((e) => e instanceof NavigationStart)).subscribe(() => {
             this.isOpen = false;
         });
 
-        this.isBeta = this._settingsService.getSettings().useBeta;
     }
 }

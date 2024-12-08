@@ -5,6 +5,7 @@ import { BaseCrop } from "@ci/data-types";
 @Component({
     selector: 'app-crop-table',
     templateUrl: './crop-table.component.html',
+    standalone: false
 })
 export class CropTableComponent extends BaseTableComponent<BaseCrop> {
 
@@ -21,7 +22,7 @@ export class CropTableComponent extends BaseTableComponent<BaseCrop> {
         'sellPrice'
     ];
 
-    override sortingDataAccessor = (item: CropTableComponent['dataSource'][0], property: string) => {
+    override sortingDataAccessor = (item: ReturnType<CropTableComponent['dataSource']>[0], property: string) => {
 
         const sortHelperValue = this.sortHelper(item.dropData[0].item, property)
 

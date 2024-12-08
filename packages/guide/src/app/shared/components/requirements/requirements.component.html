@@ -1,150 +1,152 @@
-@if (requirement.type === 'IsAchievementCompleted') {
+@let req = requirement();
+
+@if (req.type === 'IsAchievementCompleted') {
     <div>
         Achievement
-        <app-item-icon [itemName]="requirement.meta.achievement.iconName"
+        <app-item-icon [itemName]="req.meta.achievement.iconName"
                        class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
-        {{ requirement.meta.achievement.title }} unlocked
+        {{ req.meta.achievement.title }} unlocked
     </div>
 }
-@if (requirement.type === 'MountAcquired') {
+@if (req.type === 'MountAcquired') {
 
-    Mount {{ requirement.meta.inverted ? 'not ' : '' }} acquired
+    Mount {{ req.meta.inverted ? 'not ' : '' }} acquired
 
 }
-@if (requirement.type === 'EditorOnly') {
+@if (req.type === 'EditorOnly') {
 
     Game in developer editor
 
 }
-@if (requirement.type === 'CountNPCHeartLevel') {
+@if (req.type === 'CountNPCHeartLevel') {
 
-    Reached {{ requirement.meta.expectedHeartLevel }} hearts with any NPC
-
-}
-@if (requirement.type === 'IsCutsceneTriggered') {
-
-    Viewed {{ requirement.meta.cutsceneTopic }} cutscene
+    Reached {{ req.meta.expectedHeartLevel }} hearts with any NPC
 
 }
-@if (requirement.type === 'MarriageHasProposed') {
+@if (req.type === 'IsCutsceneTriggered') {
 
-    Marriage {{ requirement.meta.inverted ? "hasn't been " : '' }}proposed
-
-}
-@if (requirement.type === 'IsGiantUnlocked') {
-
-    Unlocked {{ requirement.meta.types }} giants
+    Viewed {{ req.meta.cutsceneTopic }} cutscene
 
 }
-@if (requirement.type === 'QuestFact') {
+@if (req.type === 'MarriageHasProposed') {
 
-    Quest fact {{ requirement.meta.factName }} set
+    Marriage {{ req.meta.inverted ? "hasn't been " : '' }}proposed
 
 }
-@if (requirement.type === 'SpecialItem') {
+@if (req.type === 'IsGiantUnlocked') {
+
+    Unlocked {{ req.meta.types }} giants
+
+}
+@if (req.type === 'QuestFact') {
+
+    Quest fact {{ req.meta.factName }} set
+
+}
+@if (req.type === 'SpecialItem') {
     <div>
         Acquired special item
-        <app-item-icon [itemName]="requirement.meta.item.iconName"
+        <app-item-icon [itemName]="req.meta.item.iconName"
                        class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
-        {{ requirement.meta.item.displayName }}
+        {{ req.meta.item.displayName }}
     </div>
 }
-@if (requirement.type === 'DateSeasonRange') {
+@if (req.type === 'DateSeasonRange') {
 
-    Date is {{ requirement.meta.inverted ? 'not ' : '' }}between {{ requirement.meta.from | ingameDate }}
-    and  {{ requirement.meta.to | ingameDate }}
+    Date is {{ req.meta.inverted ? 'not ' : '' }}between {{ req.meta.from | ingameDate }}
+    and  {{ req.meta.to | ingameDate }}
 
 }
-@if (requirement.type === 'ItemInInventory') {
+@if (req.type === 'ItemInInventory') {
     <div>
-        Has {{ requirement.meta.amount }}x
-        <app-item-icon [itemName]="requirement.meta.item.iconName"
+        Has {{ req.meta.amount }}x
+        <app-item-icon [itemName]="req.meta.item.iconName"
                        class="!w-7 ml-1 -my-1 translate-y-1 mr-0.5  !inline-block"/>
-        {{ requirement.meta.item.displayName }}{{ requirement.meta.requiredQuality ? ' of ' + requirement.meta.requiredQuality + ' quality' : '' }}
+        {{ req.meta.item.displayName }}{{ req.meta.requiredQuality ? ' of ' + req.meta.requiredQuality + ' quality' : '' }}
         in inventory
     </div>
 }
-@if (requirement.type === 'ItemWithCategoryInInventory') {
+@if (req.type === 'ItemWithCategoryInInventory') {
 
-    Has {{ requirement.meta.amount }}x items of category {{ requirement.meta.categoryName }} in inventory
-
-}
-@if (requirement.type === 'ObjectState') {
-
-    State of '{{ requirement.meta.customName ?? requirement.meta.id }}' is '{{ requirement.meta.state }}'
+    Has {{ req.meta.amount }}x items of category {{ req.meta.categoryName }} in inventory
 
 }
-@if (requirement.type === 'QuestActive') {
+@if (req.type === 'ObjectState') {
 
-    Quest '{{ requirement.meta.questId }}' is active
-
-}
-@if (requirement.type === 'TempleLevel') {
-
-    Temple has reached level {{ requirement.meta.level }}
+    State of '{{ req.meta.customName ?? req.meta.id }}' is '{{ req.meta.state }}'
 
 }
-@if (requirement.type === 'CompleteMining') {
+@if (req.type === 'QuestActive') {
 
-    Has reached level {{ requirement.meta.level }} in {{ requirement.meta.mine }} mine
-
-}
-@if (requirement.type === 'FarmHouseLevel') {
-
-    Has upgraded farm house to level {{ requirement.meta.level }}
+    Quest '{{ req.meta.questId }}' is active
 
 }
-@if (requirement.type === 'HasCookingUtensil') {
+@if (req.type === 'TempleLevel') {
 
-    Has@if (requirement.meta.inverted) {
+    Temple has reached level {{ req.meta.level }}
+
+}
+@if (req.type === 'CompleteMining') {
+
+    Has reached level {{ req.meta.level }} in {{ req.meta.mine }} mine
+
+}
+@if (req.type === 'FarmHouseLevel') {
+
+    Has upgraded farm house to level {{ req.meta.level }}
+
+}
+@if (req.type === 'HasCookingUtensil') {
+
+    Has@if (req.meta.inverted) {
         <span class="font-bold"> not</span>
     } unlocked cooking
-            utensil {{ requirement.meta.utensil }}
+            utensil {{ req.meta.utensil }}
 
 }
-@if (requirement.type === 'MasteryLevel') {
+@if (req.type === 'MasteryLevel') {
 
-    Has reached level {{ requirement.meta.level }} in {{ requirement.meta.mastery }} mastery
-
-}
-@if (requirement.type === 'NPCHeartLevel') {
-
-    Has reached {{ requirement.meta.expectedHeartLevel }} hearts with {{ requirement.meta.npcKey }}
+    Has reached level {{ req.meta.level }} in {{ req.meta.mastery }} mastery
 
 }
-@if (requirement.type === 'QuestFactCompare') {
+@if (req.type === 'NPCHeartLevel') {
 
-    Quest fact '{{ requirement.meta.factName }}' has
-    @if (requirement.meta.comparator === 'MoreEqual') {
+    Has reached {{ req.meta.expectedHeartLevel }} hearts with {{ req.meta.npcKey }}
+
+}
+@if (req.type === 'QuestFactCompare') {
+
+    Quest fact '{{ req.meta.factName }}' has
+    @if (req.meta.comparator === 'MoreEqual') {
         at least
     }
-    a value of {{ requirement.meta.value }}
+    a value of {{ req.meta.value }}
 
 }
-@if (requirement.type === 'IsMailRead') {
+@if (req.type === 'IsMailRead') {
 
-    Player has read '<a [queryParams]="{selectedId: requirement.meta.mailId}"
+    Player has read '<a [queryParams]="{selectedId: req.meta.mailId}"
                         [routerLink]="['/journal', 'notes', 'letters']"
-                        class="underline">{{ requirement.meta.title }}</a>'
+                        class="underline">{{ req.meta.title }}</a>'
 
 }
-@if (requirement.type === 'DinoHologramItemRewardClaimed') {
+@if (req.type === 'DinoHologramItemRewardClaimed') {
 
-    Player received dinosaur hologram reward for {{ requirement.meta.dinosaursName }}
+    Player received dinosaur hologram reward for {{ req.meta.dinosaursName }}
 
 }
-@if (requirement.type === 'ShipToUnlock') {
-    Player shipped the following item(s) 50x{{ requirement.meta.includeAllQualities ? ' (any quality)' : '' }}:
-    @for (item of requirement.meta.itemsToShip; track item.id) {
+@if (req.type === 'ShipToUnlock') {
+    Player shipped the following item(s) 50x{{ req.meta.includeAllQualities ? ' (any quality)' : '' }}:
+    @for (item of req.meta.itemsToShip; track item.id) {
         <app-inline-minimal-item [minimalItem]="item"/>{{ !$last ? ', ' : '' }}
     }
 
 
 }
-@if (requirement.type === 'TimeDate') {
-    Date is {{ requirement.meta.inverted ? 'not ' : '' }}between {{ requirement.meta.dateRange.startsFrom | ingameDate }}
-    and  {{ requirement.meta.dateRange.lastsTill | ingameDate }}
+@if (req.type === 'TimeDate') {
+    Date is {{ req.meta.inverted ? 'not ' : '' }}between {{ req.meta.dateRange.startsFrom | ingameDate }}
+    and  {{ req.meta.dateRange.lastsTill | ingameDate }}
 }
-@if (requirement.type === 'DateSeason') {
-    Date is {{ requirement.meta.day }} {{ requirement.meta.season }}
+@if (req.type === 'DateSeason') {
+    Date is {{ req.meta.day }} {{ req.meta.season }}
 }

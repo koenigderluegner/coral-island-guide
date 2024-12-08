@@ -4,6 +4,7 @@ import { entityKey } from "@ci/util";
 
 @Pipe({
     name: 'entityKey',
+    standalone: false
 })
 export class EntityKeyPipe implements PipeTransform {
     transform(value: undefined): undefined;

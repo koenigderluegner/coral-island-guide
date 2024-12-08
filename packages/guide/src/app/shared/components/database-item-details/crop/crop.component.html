@@ -1,32 +1,34 @@
-@if ((item | isBaseCrop)) {
+@let crop = item();
+
+@if ((crop | isBaseCrop)) {
 
     <div class="flex items-center mb-2">
-        <app-item-icon [itemName]="item.item.iconName" class="h-10 w-10 mr-1"/>
-        <span class="text-black mr-3">{{ item.readableName }}</span>
-        <app-money [amount]="item.item.price"/>
+        <app-item-icon [itemName]="crop.item.iconName" class="h-10 w-10 mr-1"/>
+        <span class="text-black mr-3">{{ crop.readableName }}</span>
+        <app-money [amount]="crop.item.price"/>
     </div>
 
-    <div>Season: <span class="text-black">{{ (item.growableSeason.join(', ')) }}</span></div>
-    <div>Time to mature: <span class="text-black">{{ item.growTime }} days</span></div>
-    @if (item.isRegrowable) {
-        <div>Regrows: <span class="text-black">{{ [1, item.regrowableLength] | max }}
+    <div>Season: <span class="text-black">{{ (crop.growableSeason.join(', ')) }}</span></div>
+    <div>Time to mature: <span class="text-black">{{ crop.growTime }} days</span></div>
+    @if (crop.isRegrowable) {
+        <div>Regrows: <span class="text-black">{{ [1, crop.regrowableLength] | max }}
             days</span></div>
     }
-    @if (item |isCrop) {
+    @if (crop |isCrop) {
 
-        @if (item.canCombine) {
-            <div>Can combine: <span class="text-black">{{ item.chanceToCombine.chance }}%</span>
+        @if (crop.canCombine) {
+            <div>Can combine: <span class="text-black">{{ crop.chanceToCombine.chance }}%</span>
             </div>
         }
-        @if (item.isScytheRequired) {
+        @if (crop.isScytheRequired) {
             <div class="text-black">Scythe required</div>
         }
-        @if (item.isTrellisCrop) {
+        @if (crop.isTrellisCrop) {
             <div class="text-black">Is trellis crop</div>
         }
 
     }
-    <div>Size (WxL): <span class="text-black">{{ item.size.width }}x{{ item.size.length }}</span></div>
+    <div>Size (WxL): <span class="text-black">{{ crop.size.width }}x{{ crop.size.length }}</span></div>
 
 }
 

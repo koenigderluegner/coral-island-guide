@@ -7,6 +7,7 @@ import { MappedAnimalShopData } from "../../types/mapped-animal-shop-data.type";
 @Component({
     selector: 'app-ranch',
     templateUrl: './ranch.component.html',
+    standalone: false
 })
 export class RanchComponent extends BaseShopComponent {
 

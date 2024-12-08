@@ -6,6 +6,7 @@ import { combineLatest, Observable, tap } from "rxjs";
 @Component({
     selector: 'app-notes',
     templateUrl: './notes.component.html',
+    standalone: false
 })
 export class NotesComponent extends BaseTabbedSelectableContainerComponent<MailData> {
     selectedTornPage?: TornPageData;

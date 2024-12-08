@@ -7,7 +7,8 @@ import { BaseTableComponent } from "../../../../shared/components/base-table/bas
 @Component({
     selector: 'app-caught-table',
     templateUrl: './caught-table.component.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class CaughtTableComponent extends BaseTableComponent<(Critter | Fish)> {
 
@@ -35,7 +36,7 @@ export class CaughtTableComponent extends BaseTableComponent<(Critter | Fish)> {
         });
     }
 
-    override sortingDataAccessor = (critter: CaughtTableComponent['dataSource'][0], property: string) => {
+    override sortingDataAccessor = (critter: ReturnType<CaughtTableComponent['dataSource']>[0], property: string) => {
 
         switch (property) {
             case 'rarity': {
@@ -109,7 +110,7 @@ export class CaughtTableComponent extends BaseTableComponent<(Critter | Fish)> {
         }
 
         super.setupDataSource(data);
-        if (CaughtTableComponent._isFishArray(this.dataSource)) {
+        if (CaughtTableComponent._isFishArray(this._dataSource())) {
             this.displayedColumns.splice(3, 0, 'fishSize');
             this.displayHeaderColumns.splice(2, 0, 'fishSize');
 

@@ -1,9 +1,11 @@
-@if (databaseItem.fromEnemies && databaseItem.fromEnemies.length) {
+@let fromEnemies = databaseItem().fromEnemies;
+
+@if (fromEnemies && fromEnemies.length) {
     <app-expandable #expandableComponent open>
         <h3 class="database-header" expandableHeader>
             <app-database-header-button [templateRef]="expandableComponent">Can be dropped from enemies
             </app-database-header-button>
         </h3>
-        <app-bestiary-table [dataSource]="databaseItem.fromEnemies"/>
+        <app-bestiary-table [dataSource]="fromEnemies"/>
     </app-expandable>
 }

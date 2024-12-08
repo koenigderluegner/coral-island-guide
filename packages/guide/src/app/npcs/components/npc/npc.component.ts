@@ -10,7 +10,8 @@ import { GAME_VERSION } from "../../../core/injection-tokens/version.injection-t
     selector: 'app-npc',
     templateUrl: './npc.component.html',
     styleUrls: ['./npc.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class NpcComponent extends BaseSelectableContainerComponent<MinimalItem> implements OnInit {
 

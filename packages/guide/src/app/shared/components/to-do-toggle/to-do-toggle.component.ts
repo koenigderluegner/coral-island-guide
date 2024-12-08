@@ -8,7 +8,6 @@ import { UiIconComponent } from "../ui-icon/ui-icon.component";
 
 @Component({
     selector: 'app-to-do-toggle',
-    standalone: true,
     imports: [
         MatTooltip,
         UiIconComponent,

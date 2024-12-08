@@ -11,6 +11,7 @@ import { SettingsService } from "../../../shared/services/settings.service";
 @Component({
     selector: 'app-offerings-checklist',
     templateUrl: './offerings-checklist.component.html',
+    standalone: false
 })
 export class OfferingsChecklistComponent extends BaseTabbedSelectableContainerComponent<MinimalItem | MinimalTagBasedItem> {
     checklistService = inject(OfferingChecklistService);

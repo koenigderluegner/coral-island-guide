@@ -5,9 +5,8 @@ import { RouterLink } from "@angular/router";
 
 @Component({
     selector: 'app-only-in-beta',
-    standalone: true,
     imports: [CommonModule, SharedModule, RouterLink],
-    templateUrl: './only-in-beta.component.html',
+    templateUrl: './only-in-beta.component.html'
 })
 export class OnlyInBetaComponent {
 }
