@@ -6,12 +6,13 @@ import { RouterLink } from '@angular/router';
     selector: 'app-module-sidebar-item',
     templateUrl: './module-sidebar-item.component.html',
     encapsulation: ViewEncapsulation.None,
-
 })
 export class ModuleSidebarItemComponent {
     readonly innerTemplate = viewChild.required<TemplateRef<any>>('innerTemplate');
     readonly uiIcon = input<UiIcon>();
+    readonly label = input<string>();
+
     readonly routerLink = input<RouterLink['routerLink']>();
-    readonly exact = input<boolean, unknown>(undefined, {transform: booleanAttribute});
+    readonly exact = input(false, {transform: booleanAttribute});
     readonly active = input(false, {transform: booleanAttribute});
 }

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { afterNextRender, Component, inject } from '@angular/core';
 import { DatabaseService } from './shared/services/database.service';
 import { combineLatest, Observable } from 'rxjs';
 import { ChangelogService } from "./changelog/changelog.service";
@@ -37,23 +37,25 @@ export class AppComponent {
         inject(UserDataService).read();
 
         if (!this.#settingsService.getSettings().disableChangelogs) {
-            this.#changelogService.getLatestChangelog().subscribe({
-                next: changelog => {
+            afterNextRender(() => {
+                this.#changelogService.getLatestChangelog().subscribe({
+                    next: changelog => {
 
-                    if (changelog.version === this.#changelogService.getLatestSeen()) return;
+                        if (changelog.version === this.#changelogService.getLatestSeen()) return;
 
-                    const dialogRef = this.#dialog.open(ChangelogDialogComponent, {
-                        data: {changelog},
-                        hasBackdrop: true,
-                        width: '800px'
-                    });
+                        const dialogRef = this.#dialog.open(ChangelogDialogComponent, {
+                            data: {changelog},
+                            hasBackdrop: true,
+                            width: '800px'
+                        });
 
-                    dialogRef.afterClosed().subscribe({
-                        next: () => {
-                            this.#changelogService.setLatestSeen(changelog)
-                        }
-                    })
-                }
+                        dialogRef.afterClosed().subscribe({
+                            next: () => {
+                                this.#changelogService.setLatestSeen(changelog)
+                            }
+                        })
+                    }
+                })
             })
         }
 

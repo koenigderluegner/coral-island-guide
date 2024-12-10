@@ -1,11 +1,13 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Settings } from "../interfaces/settings.interface";
+import { LocalStorageService } from "../../core/local-storage/local-storage.service";
 
 @Injectable({
     providedIn: 'root'
 })
 export class SettingsService {
 
+    localStorage = inject(LocalStorageService);
     private readonly CURRENT_SETTINGS_VERSION = 1
     private readonly SETTINGS_STORAGE_KEY = 'coral-guide-settings';
     private readonly DEFAULT_SETTINGS: Settings = {
@@ -13,20 +15,19 @@ export class SettingsService {
         useBeta: false,
         language: "en"
     }
-
     private _settings?: Settings
 
     saveSettings(partialSettings: Partial<Settings>): void {
         const settings = {...this.DEFAULT_SETTINGS, ...partialSettings};
 
-        localStorage.setItem(this.SETTINGS_STORAGE_KEY, JSON.stringify(settings));
+        this.localStorage.setItem(this.SETTINGS_STORAGE_KEY, JSON.stringify(settings));
 
         this._settings = settings;
     }
 
 
     getSettings(): Settings {
-        const settings = localStorage.getItem(this.SETTINGS_STORAGE_KEY);
+        const settings = this.localStorage.getItem(this.SETTINGS_STORAGE_KEY);
 
         if (!settings) {
             this.saveSettings(this.DEFAULT_SETTINGS)

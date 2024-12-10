@@ -2,12 +2,14 @@ import { inject, Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { LatestChangelog } from "./latest-changelog.type";
 import { Observable } from "rxjs";
+import { LocalStorageService } from "../core/local-storage/local-storage.service";
 
 @Injectable({
     providedIn: 'root'
 })
 export class ChangelogService {
 
+    localStorage = inject(LocalStorageService);
     #http = inject(HttpClient);
     readonly #CHANGELOG_LOCAL_STORAGE_KEY = 'latest-changelogs'
 
@@ -16,11 +18,11 @@ export class ChangelogService {
     }
 
     setLatestSeen(latestChangelog: LatestChangelog): void {
-        localStorage.setItem(this.#CHANGELOG_LOCAL_STORAGE_KEY, JSON.stringify({version: latestChangelog.version}))
+        this.localStorage.setItem(this.#CHANGELOG_LOCAL_STORAGE_KEY, JSON.stringify({version: latestChangelog.version}))
     }
 
     getLatestSeen(): string | null {
-        const latestChangelogData = localStorage.getItem(this.#CHANGELOG_LOCAL_STORAGE_KEY);
+        const latestChangelogData = this.localStorage.getItem(this.#CHANGELOG_LOCAL_STORAGE_KEY);
         if (!latestChangelogData) return null;
 
         return JSON.parse(latestChangelogData).version;

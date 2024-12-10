@@ -13,12 +13,13 @@ export const appRoutes: Route[] = [
     },
     {
         path: 'database',
-        pathMatch: 'full',
-        redirectTo: 'database/',
+        title: 'Database',
+        loadComponent: () => import('./database/database.component').then(c => c.DatabaseComponent)
     },
     {
         path: 'database/:itemId',
-        loadChildren: () => import('./database/database-routing.module').then((m) => m.routes),
+        title: 'Database',
+        loadComponent: () => import('./database/database.component').then(c => c.DatabaseComponent)
     },
     {
         path: 'crafting',

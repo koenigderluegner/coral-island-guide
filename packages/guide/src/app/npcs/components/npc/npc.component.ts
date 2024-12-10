@@ -4,7 +4,7 @@ import { combineLatest } from "rxjs";
 import { MapKeyed } from "../../../shared/types/map-keyed.type";
 import { BaseSelectableContainerComponent } from "../../../shared/components/base-selectable-container/base-selectable-container.component";
 import { SettingsService } from "../../../shared/services/settings.service";
-import { GAME_VERSION } from "../../../core/injection-tokens/version.injection-token";
+import { GameVersionService } from "../../../core/injection-tokens/version.injection-token";
 import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
 import { ItemCardSwitchComponent } from "../../../shared/components/item-card-switch/item-card-switch.component";
 import { OfferingComponent } from "../../../shared/components/database-item-details/offering/offering.component";
@@ -52,7 +52,7 @@ export class NpcComponent extends BaseSelectableContainerComponent<MinimalItem> 
     protected giftingPreferences?: MapKeyed<GiftPreferences>;
     protected readonly uiIcon = UiIcon;
     protected environment = inject(SettingsService).getSettings().useBeta ? 'beta' : 'live';
-    protected version = inject(GAME_VERSION);
+    protected version = inject(GameVersionService).value();
 
     ngOnInit(): void {
         combineLatest([this._database.fetchNPCs$(), this._database.fetchHeartEvents$(), this._database.fetchGiftingPreferences$()]).subscribe({

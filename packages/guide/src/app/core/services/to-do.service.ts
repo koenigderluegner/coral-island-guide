@@ -9,6 +9,7 @@ import { ToDo } from "../types/to-do.type";
 import { UserDataService } from "./user-data.service";
 import { ToDoContext } from "../types/to-do-context.type";
 import { ItemEntry } from "../../shared/types/item-entry.type";
+import { LocalStorageService } from "../local-storage/local-storage.service";
 
 type MarkedSelection = { category: ToDoContext | undefined, item: MinimalItem | MinimalTagBasedItem };
 
@@ -22,6 +23,7 @@ export class ToDoService {
     clearTimer?: number;
     clearTimeout = 3000;
     userDataService = inject(UserDataService)
+    localStorage = inject(LocalStorageService);
     private readonly _settings = inject(SettingsService);
     private _completedCategory$: Subject<ToDoContext | undefined> = new Subject<ToDoContext | undefined>();
     private _markedAsCompleted: SelectionModel<MarkedSelection> = new SelectionModel<MarkedSelection>(true, [])
@@ -60,7 +62,7 @@ export class ToDoService {
     }
 
     read(): void {
-        const toDos = localStorage.getItem(ToDoService._LEGACY_TO_DO_STORE_KEY + this.versionSuffix);
+        const toDos = this.localStorage.getItem(ToDoService._LEGACY_TO_DO_STORE_KEY + this.versionSuffix);
         if (toDos) {
             this._migrate(JSON.parse(toDos));
 
@@ -86,13 +88,13 @@ export class ToDoService {
 
     resetLiveToDo(): void {
         // TODO migrate
-        localStorage.setItem(ToDoService._LEGACY_TO_DO_STORE_KEY + '_live', JSON.stringify([this._createEmptyToDo()]));
+        this.localStorage.setItem(ToDoService._LEGACY_TO_DO_STORE_KEY + '_live', JSON.stringify([this._createEmptyToDo()]));
         this.read();
     }
 
     resetBetaToDo(): void {
         // TODO migrate
-        localStorage.setItem(ToDoService._LEGACY_TO_DO_STORE_KEY + '_beta', JSON.stringify([this._createEmptyToDo()]));
+        this.localStorage.setItem(ToDoService._LEGACY_TO_DO_STORE_KEY + '_beta', JSON.stringify([this._createEmptyToDo()]));
         this.read()
     }
 
@@ -228,7 +230,7 @@ export class ToDoService {
 
             })
 
-            localStorage.removeItem(ToDoService._LEGACY_TO_DO_STORE_KEY + this.versionSuffix);
+            this.localStorage.removeItem(ToDoService._LEGACY_TO_DO_STORE_KEY + this.versionSuffix);
             this.userDataService.save()
         }
         return parsedSettings as ToDo[];

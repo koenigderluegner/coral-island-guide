@@ -13,7 +13,7 @@ import { UiIconComponent } from "../ui-icon/ui-icon.component";
         RouterLink,
         RouterLinkActive,
         NgTemplateOutlet,
-        UiIconComponent
+        UiIconComponent,
     ],
 
     host: {

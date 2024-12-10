@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { ChangelogService } from "../changelog/changelog.service";
 import { MarkdownComponent } from "ngx-markdown";
-import { GAME_VERSION } from "../core/injection-tokens/version.injection-token";
+import { GameVersionService } from "../core/injection-tokens/version.injection-token";
 import { CardComponent } from "../shared/components/card/card.component";
 
 @Component({
@@ -21,7 +21,7 @@ export class StartComponent {
     latestChangelog$ = inject(ChangelogService).getLatestChangelog()
     showWholeChangelog = signal<undefined | string>(undefined)
     isLoading = signal(false)
-    protected version = inject(GAME_VERSION);
+    protected version = inject(GameVersionService).value();
     markdown$ = inject(HttpClient).get(`CHANGELOG.md?v=${this.version}`, {responseType: 'text'})
 
     loadChangelog() {
