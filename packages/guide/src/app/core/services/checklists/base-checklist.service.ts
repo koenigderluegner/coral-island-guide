@@ -2,15 +2,14 @@ import { inject, Injectable } from '@angular/core';
 import { SettingsService } from "../../../shared/services/settings.service";
 import { Checklist } from "../../interfaces/checklist.interface";
 import { UserDataService } from "../user-data.service";
+import { LocalStorageService } from "../../local-storage/local-storage.service";
 
 @Injectable()
 export abstract class BaseChecklistService {
 
     protected static _TO_DO_STORE_KEY = 'checklist_'
-
+    localStorage = inject(LocalStorageService);
     protected readonly versionSuffix = inject(SettingsService).getSettings().useBeta ? '_beta' : '_live';
-
-
     protected readonly userData = inject(UserDataService);
 
     protected constructor(protected checklistName: string) {
@@ -23,14 +22,14 @@ export abstract class BaseChecklistService {
      * @see UserDataService
      */
     read(): void {
-        const toDos = localStorage.getItem(this.getChecklistStorageKey());
+        const toDos = this.localStorage.getItem(this.getChecklistStorageKey());
         if (toDos && !this.userData.getCurrentData().checklists[this.checklistName]) {
 
             const checklists: Checklist[] = JSON.parse(toDos);
 
             this.userData.getCurrentData().checklists[this.checklistName] = checklists[0] ?? [];
             this.userData.save();
-            localStorage.removeItem(this.getChecklistStorageKey())
+            this.localStorage.removeItem(this.getChecklistStorageKey())
         }
     }
 
@@ -83,12 +82,12 @@ export abstract class BaseChecklistService {
     }
 
     resetLiveChecklist(): void {
-        localStorage.setItem(BaseChecklistService._TO_DO_STORE_KEY + this.checklistName + '_live', JSON.stringify([this._createEmptyChecklist()]));
+        this.localStorage.setItem(BaseChecklistService._TO_DO_STORE_KEY + this.checklistName + '_live', JSON.stringify([this._createEmptyChecklist()]));
         this.read();
     }
 
     resetBetaChecklist(): void {
-        localStorage.setItem(BaseChecklistService._TO_DO_STORE_KEY + this.checklistName + '_beta', JSON.stringify([this._createEmptyChecklist()]));
+        this.localStorage.setItem(BaseChecklistService._TO_DO_STORE_KEY + this.checklistName + '_beta', JSON.stringify([this._createEmptyChecklist()]));
         this.read()
     }
 

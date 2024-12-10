@@ -1,19 +1,13 @@
 <app-sidebar-container>
     <app-module-sidebar>
-        <app-module-sidebar-item [uiIcon]="uiIcon.MY_CORAL" exact routerLink=".">Dashboard</app-module-sidebar-item>
-        <app-module-sidebar-item [uiIcon]="uiIcon.TO_DO" routerLink="to-do">To-dos</app-module-sidebar-item>
-        <app-module-sidebar-item [uiIcon]="uiIcon.OFFERING" routerLink="offerings-checklist">
-            Offerings checklist
-        </app-module-sidebar-item>
-        <app-module-sidebar-item [uiIcon]="uiIcon.MUSEUM" routerLink="museum-checklist">
-            Museum checklist
-        </app-module-sidebar-item>
-        <app-module-sidebar-item [uiIcon]="uiIcon.COOKING" routerLink="cooking-recipes-checklist">
-            Cooking recipes checklist
-        </app-module-sidebar-item>
-        <app-module-sidebar-item [uiIcon]="uiIcon.SETTINGS" routerLink="settings">
-            Settings
-        </app-module-sidebar-item>
+        <app-module-sidebar-item [uiIcon]="uiIcon.MY_CORAL" exact label="Dashboard" routerLink="."/>
+        <app-module-sidebar-item [uiIcon]="uiIcon.TO_DO" label="To-dos" routerLink="to-do"/>
+        <app-module-sidebar-item [uiIcon]="uiIcon.OFFERING" label="Offerings checklist"
+                                 routerLink="offerings-checklist"/>
+        <app-module-sidebar-item [uiIcon]="uiIcon.MUSEUM" label="Museum checklist" routerLink="museum-checklist"/>
+        <app-module-sidebar-item [uiIcon]="uiIcon.COOKING" label="Cooking recipes checklist"
+                                 routerLink="cooking-recipes-checklist"/>
+        <app-module-sidebar-item [uiIcon]="uiIcon.SETTINGS" label="Settings" routerLink="settings"/>
     </app-module-sidebar>
     <router-outlet class="hidden"/>
 </app-sidebar-container>

@@ -1,7 +1,7 @@
 import { Component, inject, input, numberAttribute, ViewEncapsulation } from '@angular/core';
 import { Quality } from '@ci/data-types';
 import { SettingsService } from '../../services/settings.service';
-import { GAME_VERSION } from "../../../core/injection-tokens/version.injection-token";
+import { GameVersionService } from "../../../core/injection-tokens/version.injection-token";
 import { RarityIconComponent } from "../rarity-icon/rarity-icon.component";
 
 @Component({
@@ -23,6 +23,6 @@ export class ItemIconComponent {
     readonly quality = input<Quality>();
     readonly amount = input(0, {transform: numberAttribute});
     protected environment = inject(SettingsService).getSettings().useBeta ? 'beta' : 'live';
-    protected version = inject(GAME_VERSION);
+    protected version = inject(GameVersionService).value();
 
 }

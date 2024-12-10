@@ -1,6 +1,6 @@
 import { Component, inject, input, ViewEncapsulation } from '@angular/core';
 import { UiIcon } from '@ci/data-types';
-import { GAME_VERSION } from "../../../core/injection-tokens/version.injection-token";
+import { GameVersionService } from "../../../core/injection-tokens/version.injection-token";
 
 @Component({
     selector: 'app-ui-icon',
@@ -13,5 +13,5 @@ import { GAME_VERSION } from "../../../core/injection-tokens/version.injection-t
 })
 export class UiIconComponent {
     readonly uiIcon = input.required<UiIcon>();
-    protected readonly version = inject(GAME_VERSION);
+    protected readonly version = inject(GameVersionService).value();
 }

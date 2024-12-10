@@ -1,42 +1,32 @@
-import {
-    inject,
-    Injectable,
-    InjectionToken,
-    makeEnvironmentProviders,
-    provideAppInitializer,
-    signal
-} from "@angular/core";
-import { HttpBackend, HttpClient, provideHttpClient } from "@angular/common/http";
-import { map } from "rxjs";
+import { inject, Injectable, makeEnvironmentProviders, provideAppInitializer, signal } from "@angular/core";
+import { HttpClient, provideHttpClient, withFetch } from "@angular/common/http";
+import { firstValueFrom, map } from "rxjs";
 import { SettingsService } from "../../shared/services/settings.service";
 
-
+// TODO split into separate files, clean up
 @Injectable({providedIn: 'root'})
-class GameVersionService {
+export class GameVersionService {
     value = signal('')
-    readonly #httpBackend = inject(HttpBackend);
+    readonly #http2 = inject(HttpClient);
     readonly #environment = inject(SettingsService).getSettings().useBeta ? 'beta' : 'live';
 
     value$() {
-        const http = new HttpClient(this.#httpBackend);
-        return http.get<{
+        const http = this.#http2;
+        return firstValueFrom(http.get<{
             version: string
         }>(`assets/${this.#environment}/version.json?t=${new Date().toISOString()}`).pipe(
             map(res => {
                 this.value.set(res.version)
                 return res.version
             }),
-        )
+        ))
+
     }
 }
 
-export const GAME_VERSION = new InjectionToken<string>('GAME_VERSION');
-
-
 export const provideGameVersion = () => makeEnvironmentProviders([
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
     provideAppInitializer(() => {
-
         const initializerFn = ((GameVersionService: GameVersionService) => {
             return () => GameVersionService.value$();
         })(inject(GameVersionService));
@@ -44,9 +34,4 @@ export const provideGameVersion = () => makeEnvironmentProviders([
         return initializerFn()
 
     }),
-    {
-        provide: GAME_VERSION,
-        useFactory: (GameVersionService: GameVersionService) => GameVersionService.value() || '',
-        deps: [GameVersionService]
-    }
 ])

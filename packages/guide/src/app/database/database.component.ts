@@ -1,4 +1,13 @@
-import { ApplicationRef, Component, ComponentRef, createComponent, EnvironmentInjector, inject } from '@angular/core';
+import {
+    afterNextRender,
+    ApplicationRef,
+    Component,
+    ComponentRef,
+    createComponent,
+    EnvironmentInjector,
+    inject,
+    runInInjectionContext
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DatabaseService } from '../shared/services/database.service';
 import { Item, Quality } from '@ci/data-types';
@@ -13,6 +22,7 @@ import { CardComponent } from "../shared/components/card/card.component";
 import { AsyncPipe, NgIf } from "@angular/common";
 import { ItemIconComponent } from "../shared/components/item-icon/item-icon.component";
 import { MatInput } from "@angular/material/input";
+import { LocalStorageService } from "../core/local-storage/local-storage.service";
 
 @Component({
     selector: 'app-database',
@@ -30,12 +40,14 @@ import { MatInput } from "@angular/material/input";
     ]
 })
 export class DatabaseComponent {
+    localStorage = inject(LocalStorageService);
     protected readonly items: Item[];
     protected searchTermControl: FormControl<string> = new FormControl<string>('', {nonNullable: true});
     protected filteredItems$: Observable<Item[]>;
     protected shouldHideImportantNote = false;
     protected filteredItems: Item[] = [];
     protected selectedItem?: Item;
+    private environmentInjector = inject(EnvironmentInjector);
     private readonly _route = inject(ActivatedRoute);
     private readonly _router = inject(Router);
     private readonly _database = inject(DatabaseService);
@@ -46,7 +58,7 @@ export class DatabaseComponent {
     private _didInitialLoad = false;
 
     constructor() {
-        this.shouldHideImportantNote = coerceBooleanProperty(localStorage.getItem(this._localStorageHideNoteKey));
+        this.shouldHideImportantNote = coerceBooleanProperty(this.localStorage.getItem(this._localStorageHideNoteKey));
 
         this.items = this._database.getItems().filter((item) => getQuality(item.id) === Quality.BASE);
         const mapToItems = map<string, Item[]>((searchTerm) => {
@@ -146,7 +158,7 @@ export class DatabaseComponent {
 
     hideImportantNote() {
         this.shouldHideImportantNote = true;
-        localStorage.setItem(this._localStorageHideNoteKey, 'true');
+        this.localStorage.setItem(this._localStorageHideNoteKey, 'true');
     }
 
     public updateQueryParam(searchTerm: string) {
@@ -160,7 +172,7 @@ export class DatabaseComponent {
 
     public updateRouteParam(itemId: string) {
         this._router
-            .navigate(['..', itemId], {
+            .navigate(['/database', itemId], {
                 relativeTo: this._route,
                 replaceUrl: true,
                 queryParamsHandling: 'preserve',
@@ -179,7 +191,9 @@ export class DatabaseComponent {
                     const indexOfFilteredItem = this.filteredItems.findIndex((item) => item.id === itemId);
 
                     if (indexOfFilteredItem > -1) {
-                        this.showDetails(this.filteredItems[indexOfFilteredItem], indexOfFilteredItem, true);
+                        runInInjectionContext(this.environmentInjector, () => {
+                            afterNextRender(() => this.showDetails(this.filteredItems[indexOfFilteredItem], indexOfFilteredItem, true));
+                        });
                     } else if (this.filteredItems.length === 0) {
                         const indexOfItem = this.items.findIndex((item) => item.id === itemId);
                         if (indexOfItem > -1) {

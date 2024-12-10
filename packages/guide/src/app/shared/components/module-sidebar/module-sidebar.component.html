@@ -1,29 +1,36 @@
 <aside>
     <nav>
         <ul [class.hide-menu]="!showMenu()">
-            @for (child of (viewChildren()); track child; let i = $index; let last = $last) {
-
+            @for (child of (viewChildren()); track $index) {
                 @if (child.routerLink()) {
                     <li>
                         <a [routerLink]="child.routerLink()" class="app-module-sidebar-list-item"
                            [routerLinkActive]="'active'"
                            [routerLinkActiveOptions]="{exact: !!child.exact()}"
                            [class.custom-active]="child.active()"
-                           [class.mb-4]="!last" (click)="showMenu.set(false)">
+                           [class.mb-4]="!$last" (click)="showMenu.set(false)">
                             @if (child.uiIcon(); as icon) {
                                 <app-ui-icon [uiIcon]="icon" class="!h-6"></app-ui-icon>
                             }
-                            <ng-template [ngTemplateOutlet]="child.innerTemplate()"></ng-template>
+
+                            @if (child.label()) {
+                                {{ child.label() }}
+                            } @else {
+                                <ng-container [ngTemplateOutlet]="child.innerTemplate()"/>
+                            }
                             <button class=" xl:hidden block ml-auto m-[-18px] border-l-2 px-5 h-[45px]"
                                     (click)="toggleMenu($event)">Menu
                             </button>
                         </a>
                     </li>
                 }
-                @if (!child.routerLink) {
-                    <li
-                            class="module-sidebar-list-divider mb-3 mt-9 text-xl text-white/70 font-semibold">
-                        <ng-template [ngTemplateOutlet]="child.innerTemplate()"></ng-template>
+                @if (!child.routerLink()) {
+                    <li class="module-sidebar-list-divider mb-3 mt-9 text-xl text-white/70 font-semibold">
+                        @if (child.label()) {
+                            {{ child.label() }}
+                        } @else {
+                            <ng-container [ngTemplateOutlet]="child.innerTemplate()"/>
+                        }
                     </li>
                 }
 

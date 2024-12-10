@@ -1,6 +1,7 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { SettingsService } from "../../shared/services/settings.service";
 import { UserData } from "../types/user-data.type";
+import { LocalStorageService } from "../local-storage/local-storage.service";
 
 @Injectable({
     providedIn: 'root'
@@ -14,15 +15,15 @@ export class UserDataService {
         currentIndex: -1,
         data: []
     })
+    localStorage = inject(LocalStorageService);
     readonly #versionSuffix = inject(SettingsService).getSettings().useBeta ? '_beta' : '_live';
 
-
     save(): void {
-        localStorage.setItem(UserDataService._USER_DATA_STORE_KEY + this.#versionSuffix, JSON.stringify(this.userData()));
+        this.localStorage.setItem(UserDataService._USER_DATA_STORE_KEY + this.#versionSuffix, JSON.stringify(this.userData()));
     }
 
     read(): void {
-        const userData = localStorage.getItem(UserDataService._USER_DATA_STORE_KEY + this.#versionSuffix);
+        const userData = this.localStorage.getItem(UserDataService._USER_DATA_STORE_KEY + this.#versionSuffix);
         if (userData) {
 
             const parsedJSON = JSON.parse(userData);
