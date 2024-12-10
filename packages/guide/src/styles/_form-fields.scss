@@ -45,7 +45,28 @@
 }
 
 
+.mat-mdc-form-field.mat-form-field-appearance-outline {
+  --mat-mdc-form-field-floating-label-scale: .9;
+}
 
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline .mat-mdc-notch-piece,
+.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field .mdc-notched-outline__notch,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mat-mdc-notch-piece {
+  border: none;
+}
+
+// TODO BROTHER WHAT ARE THOSE
+body .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mdc-notched-outline--upgraded .mdc-floating-label--float-above {
+  --mat-mdc-form-field-label-transform: translateY(calc(calc(17.75px + var(--mat-form-field-container-height, 56px) / 2) * -1)) scale(var(--mat-mdc-form-field-floating-label-scale, 1.75));
+}
+
+body .mdc-text-field--outlined .mdc-floating-label {
+  left: 13px;
+}
+
+body .mdc-notched-outline--upgraded .mdc-floating-label--float-above {
+  max-width: calc(150% + 1px);
+}
 
 
 
