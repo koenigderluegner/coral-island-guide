@@ -1,1 +1,1 @@
-{"version":"0.22.3","date":"2024-10-28","body":"\r\n#### Changed\r\n\r\n- Updated beta data to v1.1-616 (Steam version)\r\n\r"}
+{"version":"0.23.0","date":"2024-12-12","body":"\r\nThis update includes a lot of technical changes. If something broke please let me know, thanks.\r\n\r\n#### Added\r\n\r\n- Added static sites, this should help finding Coral Guide pages on search engines like Google.\r\n    - Not all pages are available at this point and this change will be improved over time.\r\n\r\n#### Changed\r\n\r\n- Updated live data to v1.1-1232 (Steam version)\r\n\r"}

@@ -1,5 +1,18 @@
 ## Changelog
 
+### 0.23.0 2024-12-12
+
+This update includes a lot of technical changes. If something broke please let me know, thanks.
+
+#### Added
+
+- Added static sites, this should help finding Coral Guide pages on search engines like Google.
+    - Not all pages are available at this point and this change will be improved over time.
+
+#### Changed
+
+- Updated live data to v1.1-1232 (Steam version)
+
 ### 0.22.3 2024-10-28
 
 #### Changed
