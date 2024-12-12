@@ -3,6 +3,7 @@
     "Type": "C_GameplayRequirementsConfig",
     "Name": "CalendarEventsRequirements",
     "Class": "UScriptClass'C_GameplayRequirementsConfig'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "map": [
         {
@@ -12,7 +13,7 @@
             "requirements": [
               {
                 "ObjectName": "C_QuestFactRequirement'CalendarEventsRequirements:C_QuestFactRequirement_1'",
-                "ObjectPath": "/Game/ProjectCoral/Data/Calendar/CalendarEventsRequirements.2"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Calendar/CalendarEventsRequirements.2"
               }
             ]
           }
@@ -24,7 +25,7 @@
             "requirements": [
               {
                 "ObjectName": "C_IsFestivalActiveRequirement'CalendarEventsRequirements:C_IsFestivalActiveRequirement_0'",
-                "ObjectPath": "/Game/ProjectCoral/Data/Calendar/CalendarEventsRequirements.1"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Calendar/CalendarEventsRequirements.1"
               }
             ]
           }
@@ -37,11 +38,12 @@
     "Name": "C_IsFestivalActiveRequirement_0",
     "Outer": "CalendarEventsRequirements",
     "Class": "UScriptClass'C_IsFestivalActiveRequirement'",
+    "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "festivalId": {
         "DataTable": {
           "ObjectName": "DataTable'DT_FestivalRegistry'",
-          "ObjectPath": "/Game/ProjectCoral/Data/Festival/DT_FestivalRegistry.0"
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Festival/DT_FestivalRegistry.0"
         },
         "RowName": "TreePlanting"
       }
@@ -52,6 +54,7 @@
     "Name": "C_QuestFactRequirement_1",
     "Outer": "CalendarEventsRequirements",
     "Class": "UScriptClass'C_QuestFactRequirement'",
+    "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "fact": {
         "factName": {
