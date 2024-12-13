@@ -7,7 +7,7 @@ import { LocalStorageService } from "../local-storage/local-storage.service";
     providedIn: 'root'
 })
 export class UserDataService {
-    private static readonly _CURRENT_USER_DATA_VERSION = 2
+    private static readonly _CURRENT_USER_DATA_VERSION = 3;
     private static readonly _USER_DATA_STORE_KEY = 'user-data'
     private static readonly _SAVE_GAME_NAME_PREFIX = 'Save game '
     userData = signal<{ version: number, currentIndex: number; data: UserData[] }>({
@@ -50,6 +50,7 @@ export class UserDataService {
         return {
             name: this.#getNextName(),
             myGuideFilter: {year: 1, day: 1, season: "Spring", weather: "Sunny", hideCompleted: true},
+            todoText: '',
             todos: [],
             checklists: {}
         }
@@ -75,6 +76,12 @@ export class UserDataService {
                     return d
                 });
                 existingVersion = 2;
+            } else if (existingVersion === 2) {
+                migratedData = migratedData.map(d => {
+                    d.todoText = '';
+                    return d
+                });
+                existingVersion = 3;
             }
 
 

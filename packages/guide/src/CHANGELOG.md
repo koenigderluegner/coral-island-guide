@@ -1,5 +1,11 @@
 ## Changelog
 
+### TBD
+
+#### Added
+
+- Added custom text for to-dos to add custom written information.
+
 ### 0.23.0 2024-12-12
 
 This update includes a lot of technical changes. If something broke please let me know, thanks.
