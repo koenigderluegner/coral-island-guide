@@ -51,7 +51,7 @@ export class ToDoComponent extends BaseSelectableContainerComponent<ItemEntry> {
     toDoCategoryControl: FormControl<ToDoFilterOptions[]> = new FormControl(['all', ...ToDoContexts, 'uncategorized'], {nonNullable: true});
     protected readonly toDoService = inject(ToDoService);
     protected readonly userDataService = inject(UserDataService);
-    protected todoText = linkedSignal(() => this.userDataService.getCurrentData().todoText);
+    protected todoText = linkedSignal(() => this.userDataService.currentData().todoText);
     protected selectedContext = signal<ToDoContext>('uncategorized');
     private hadAllBefore = true;
 
@@ -78,7 +78,7 @@ export class ToDoComponent extends BaseSelectableContainerComponent<ItemEntry> {
         effect(() => {
             const todoText = this.todoText();
             untracked(() => {
-                this.userDataService.getCurrentData().todoText = todoText;
+                this.userDataService.currentData().todoText = todoText;
                 this.userDataService.save();
             })
         });

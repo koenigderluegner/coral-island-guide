@@ -24,15 +24,15 @@ export class ToDoService {
     clearTimeout = 3000;
     userDataService = inject(UserDataService)
     localStorage = inject(LocalStorageService);
-    private readonly _settings = inject(SettingsService);
-    private _completedCategory$: Subject<ToDoContext | undefined> = new Subject<ToDoContext | undefined>();
-    private _markedAsCompleted: SelectionModel<MarkedSelection> = new SelectionModel<MarkedSelection>(true, [])
-    private readonly versionSuffix: string;
+    readonly #settings = inject(SettingsService);
+    #completedCategory$: Subject<ToDoContext | undefined> = new Subject<ToDoContext | undefined>();
+    #markedAsCompleted: SelectionModel<MarkedSelection> = new SelectionModel<MarkedSelection>(true, [])
+    readonly #versionSuffix: string;
 
     constructor() {
-        this.versionSuffix = this._settings.getSettings().useBeta ? '_beta' : '_live';
+        this.#versionSuffix = this.#settings.getSettings().useBeta ? '_beta' : '_live';
         this.read();
-        this._markedAsCompleted.compareWith = (o1, o2) => {
+        this.#markedAsCompleted.compareWith = (o1, o2) => {
             return o1.category === o2.category && entityKey(o1.item) === entityKey(o2.item)
         }
     }
@@ -54,7 +54,7 @@ export class ToDoService {
     }
 
     getCurrentToDo(): ToDo[] {
-        return this.userDataService.getCurrentData().todos
+        return this.userDataService.currentData().todos
     }
 
     save(): void {
@@ -62,9 +62,9 @@ export class ToDoService {
     }
 
     read(): void {
-        const toDos = this.localStorage.getItem(ToDoService._LEGACY_TO_DO_STORE_KEY + this.versionSuffix);
+        const toDos = this.localStorage.getItem(ToDoService._LEGACY_TO_DO_STORE_KEY + this.#versionSuffix);
         if (toDos) {
-            this._migrate(JSON.parse(toDos));
+            this.#migrate(JSON.parse(toDos));
 
         }
     }
@@ -72,15 +72,15 @@ export class ToDoService {
     updateStatus(category: ToDoContext | undefined, item: MinimalItem | MinimalTagBasedItem, checked: boolean, skipTimer = false) {
         const selection: MarkedSelection = {category, item}
         if (checked) {
-            this._markedAsCompleted.select(selection)
+            this.#markedAsCompleted.select(selection)
         } else {
-            this._markedAsCompleted.deselect(selection)
+            this.#markedAsCompleted.deselect(selection)
         }
 
         if (skipTimer) {
-            this._completeEntries()
+            this.#completeEntries()
         } else {
-            this._resetClearTimer();
+            this.#resetClearTimer();
         }
 
 
@@ -88,13 +88,13 @@ export class ToDoService {
 
     resetLiveToDo(): void {
         // TODO migrate
-        this.localStorage.setItem(ToDoService._LEGACY_TO_DO_STORE_KEY + '_live', JSON.stringify([this._createEmptyToDo()]));
+        this.localStorage.setItem(ToDoService._LEGACY_TO_DO_STORE_KEY + '_live', JSON.stringify([this.#createEmptyToDo()]));
         this.read();
     }
 
     resetBetaToDo(): void {
         // TODO migrate
-        this.localStorage.setItem(ToDoService._LEGACY_TO_DO_STORE_KEY + '_beta', JSON.stringify([this._createEmptyToDo()]));
+        this.localStorage.setItem(ToDoService._LEGACY_TO_DO_STORE_KEY + '_beta', JSON.stringify([this.#createEmptyToDo()]));
         this.read()
     }
 
@@ -120,21 +120,21 @@ export class ToDoService {
     }
 
     categoryCompleted$(): Observable<ToDoContext | undefined> {
-        return this._completedCategory$.asObservable();
+        return this.#completedCategory$.asObservable();
     }
 
     completeCategory(category: ToDoContext | undefined) {
-        this._completedCategory$.next(category);
+        this.#completedCategory$.next(category);
     }
 
-    private _resetClearTimer() {
+    #resetClearTimer() {
         clearTimeout(this.clearTimer);
         this.clearTimer = setTimeout(() => {
-            this._completeEntries()
+            this.#completeEntries()
         }, this.clearTimeout) as unknown as number;
     }
 
-    private _createEmptyToDo(): LegacyToDo {
+    #createEmptyToDo(): LegacyToDo {
         return {
             version: ToDoService._CURRENT_TO_DO_VERSION,
             offerings: [],
@@ -151,9 +151,9 @@ export class ToDoService {
         } satisfies LegacyToDo
     }
 
-    private _completeEntries() {
-        const completedEntries = this._markedAsCompleted.selected;
-        this._markedAsCompleted.clear();
+    #completeEntries() {
+        const completedEntries = this.#markedAsCompleted.selected;
+        this.#markedAsCompleted.clear();
 
         let foundIndex = -1
 
@@ -172,7 +172,7 @@ export class ToDoService {
         this.save()
     }
 
-    private _migrate(parsedSettings: LegacyToDo[] | ToDo[]): ToDo[] {
+    #migrate(parsedSettings: LegacyToDo[] | ToDo[]): ToDo[] {
         if (!parsedSettings.length) return [];
         if ('version' in parsedSettings[0]) {
 
@@ -230,7 +230,7 @@ export class ToDoService {
 
             })
 
-            this.localStorage.removeItem(ToDoService._LEGACY_TO_DO_STORE_KEY + this.versionSuffix);
+            this.localStorage.removeItem(ToDoService._LEGACY_TO_DO_STORE_KEY + this.#versionSuffix);
             this.userDataService.save()
         }
         return parsedSettings as ToDo[];

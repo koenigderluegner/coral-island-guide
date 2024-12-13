@@ -6,9 +6,12 @@
             </ng-template>
         </app-item-card-switch>
     }
-    <h1 class="mb-4 font-semibold text-3xl text-white flex items-center gap-x-4">
-        My Coral Guide
-    </h1>
+    <div class="flex gap-8">
+        <h1 class="mb-4 font-semibold text-3xl text-white flex items-center gap-x-4">
+            My Coral Guide
+        </h1>
+        <app-user-data-actions/>
+    </div>
     <app-dashboard-filter [parentFormGroup]="filterFormGroup" class="my-5 block"/>
     @if (requests$ | async) {
 

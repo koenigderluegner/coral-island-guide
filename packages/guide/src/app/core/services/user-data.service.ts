@@ -1,4 +1,4 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { computed, effect, inject, Injectable, linkedSignal, signal, untracked } from '@angular/core';
 import { SettingsService } from "../../shared/services/settings.service";
 import { UserData } from "../types/user-data.type";
 import { LocalStorageService } from "../local-storage/local-storage.service";
@@ -14,16 +14,33 @@ export class UserDataService {
         version: UserDataService._CURRENT_USER_DATA_VERSION,
         currentIndex: -1,
         data: []
-    })
-    localStorage = inject(LocalStorageService);
+    });
+    currentIndex = linkedSignal(() => this.userData().currentIndex);
+    readonly #localStorage = inject(LocalStorageService);
     readonly #versionSuffix = inject(SettingsService).getSettings().useBeta ? '_beta' : '_live';
+    #currentData = computed(() => this.userData().data[this.currentIndex()])
+
+    constructor() {
+        effect(() => {
+            const index = this.currentIndex();
+            untracked(() => {
+                this.userData().currentIndex = index;
+                this.save();
+            })
+
+        });
+    }
+
+    get currentData() {
+        return this.#currentData;
+    }
 
     save(): void {
-        this.localStorage.setItem(UserDataService._USER_DATA_STORE_KEY + this.#versionSuffix, JSON.stringify(this.userData()));
+        this.#localStorage.setItem(UserDataService._USER_DATA_STORE_KEY + this.#versionSuffix, JSON.stringify(this.userData()));
     }
 
     read(): void {
-        const userData = this.localStorage.getItem(UserDataService._USER_DATA_STORE_KEY + this.#versionSuffix);
+        const userData = this.#localStorage.getItem(UserDataService._USER_DATA_STORE_KEY + this.#versionSuffix);
         if (userData) {
 
             const parsedJSON = JSON.parse(userData);
@@ -54,10 +71,6 @@ export class UserDataService {
             todos: [],
             checklists: {}
         }
-    }
-
-    getCurrentData(): UserData {
-        return this.userData().data[this.userData().currentIndex]
     }
 
     #migrate(userData: any): { version: number, currentIndex: number; data: UserData[] } {
