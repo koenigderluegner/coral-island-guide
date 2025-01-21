@@ -41,7 +41,10 @@
   --cg-card-icon-height: 140px;
   --cg-main-space-horizontal: 0.5rem;
   --cg-main-space-vertical: 1.5rem;
-  --cg-main-space-card-placeholder-width: var(--cg-main-space-horizontal)
+  --cg-main-space-card-placeholder-width: var(--cg-main-space-horizontal);
+  --mdc-dialog-subhead-weight: 700;
+  --mdc-dialog-subhead-size: 1.5rem;
+  --mdc-dialog-subhead-line-height: 1.8rem;
 }
 
 html {
@@ -95,8 +98,22 @@ hr {
 }
 
 @layer components {
+  .btn-amber, .btn-danger, .btn-success {
+    @apply disabled:pointer-events-none disabled:opacity-40  inline-flex justify-center py-2 px-4 border border-transparent shadow-sm
+    font-medium rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+
   .btn-amber {
-    @apply inline-flex justify-center py-2 px-4 border border-transparent shadow-sm font-medium rounded-md text-white bg-amber-700 hover:bg-amber-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-700;
+    @apply text-white bg-amber-700 hover:bg-amber-900  focus:ring-amber-700;
+  }
+
+  .btn-danger {
+    @apply text-white bg-red-600 hover:bg-red-900  focus:ring-red-500;
+  }
+
+  .btn-success {
+    @apply bg-green-700 hover:bg-green-900  focus:ring-green-500;
   }
 }
 

@@ -1,9 +1,19 @@
-<mat-form-field class="semi-transparent-form-field">
+<mat-form-field class="semi-transparent-form-field" >
     <mat-label>Selected data</mat-label>
-    <mat-select [(ngModel)]="selectedIndex">
+    <mat-select [(ngModel)]="selectedIndex" [disabled]="options().length <= 1">
 
         @for (saveData of options(); track saveData) {
             <mat-option [value]="$index">{{ saveData.name }}</mat-option>
         }
     </mat-select>
 </mat-form-field>
+
+<button (click)="openEditDialog()" class="btn touch-manipulation">
+    <app-ui-icon class="!size-6" [uiIcon]="UiIcon.SETTINGS"/>
+</button>
+<button (click)="openDeleteDialog()" [disabled]="options().length <= 1" class="btn touch-manipulation">
+    <app-ui-icon class="!size-6" [uiIcon]="UiIcon.TRASH_CAN"/>
+</button>
+<button (click)="openAddDialog()" class="btn touch-manipulation">
+    <app-ui-icon class="!size-6" [uiIcon]="UiIcon.PLUS"/>
+</button>

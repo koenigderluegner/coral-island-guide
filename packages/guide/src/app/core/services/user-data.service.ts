@@ -63,9 +63,24 @@ export class UserDataService {
         }
     }
 
-    createEmptyUserData(): UserData {
+    delete(index?: number) {
+        const indexToDelete = index ?? this.currentIndex();
+
+
+        this.currentIndex.update(index => Math.max(0, index - 1));
+
+        // let signals settle
+        setTimeout(() => {
+            this.userData().data.splice(indexToDelete, 1);
+            this.save();
+        }, 0)
+
+
+    }
+
+    createEmptyUserData(name?: string): UserData {
         return {
-            name: this.#getNextName(),
+            name: name ?? this.#getNextName(),
             myGuideFilter: {year: 1, day: 1, season: "Spring", weather: "Sunny", hideCompleted: true},
             todoText: '',
             todos: [],
