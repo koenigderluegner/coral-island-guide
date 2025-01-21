@@ -5,6 +5,8 @@
 #### Added
 
 - Added custom text for to-dos to add custom written information.
+- Added possibility to create/delete/edit multiple user data (checklists, to-dos, etc.)
+  - You can choose a name to identify saves. You can't delete the last entry, create at least another one to delete the first one.
 
 ### 0.23.0 2024-12-12
 
