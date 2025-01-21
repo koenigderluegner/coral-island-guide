@@ -56,6 +56,11 @@
             </mat-form-field>
         </div>
 
+        <h2 class="mb-2 mt-4 font-semibold text-xl text-black">Custom to-dos</h2>
+        <mat-form-field class="btn btn-secondary mb-8">
+            <textarea [(ngModel)]="todoText" matInput  class="field-sizing-content min-h-18 max-h-60" cdkTextareaAutosize="false"></textarea>
+        </mat-form-field>
+
         @for (context of toDoContexts; track context) {
             <app-to-do-partial [context]="context"
                                [toDoId]="toDoCategoryControl.value"

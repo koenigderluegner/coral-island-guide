@@ -1,4 +1,4 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { computed, effect, inject, Injectable, linkedSignal, signal, untracked } from '@angular/core';
 import { SettingsService } from "../../shared/services/settings.service";
 import { UserData } from "../types/user-data.type";
 import { LocalStorageService } from "../local-storage/local-storage.service";
@@ -7,23 +7,40 @@ import { LocalStorageService } from "../local-storage/local-storage.service";
     providedIn: 'root'
 })
 export class UserDataService {
-    private static readonly _CURRENT_USER_DATA_VERSION = 2
+    private static readonly _CURRENT_USER_DATA_VERSION = 3;
     private static readonly _USER_DATA_STORE_KEY = 'user-data'
     private static readonly _SAVE_GAME_NAME_PREFIX = 'Save game '
     userData = signal<{ version: number, currentIndex: number; data: UserData[] }>({
         version: UserDataService._CURRENT_USER_DATA_VERSION,
         currentIndex: -1,
         data: []
-    })
-    localStorage = inject(LocalStorageService);
+    });
+    currentIndex = linkedSignal(() => this.userData().currentIndex);
+    readonly #localStorage = inject(LocalStorageService);
     readonly #versionSuffix = inject(SettingsService).getSettings().useBeta ? '_beta' : '_live';
+    #currentData = computed(() => this.userData().data[this.currentIndex()])
+
+    constructor() {
+        effect(() => {
+            const index = this.currentIndex();
+            untracked(() => {
+                this.userData().currentIndex = index;
+                this.save();
+            })
+
+        });
+    }
+
+    get currentData() {
+        return this.#currentData;
+    }
 
     save(): void {
-        this.localStorage.setItem(UserDataService._USER_DATA_STORE_KEY + this.#versionSuffix, JSON.stringify(this.userData()));
+        this.#localStorage.setItem(UserDataService._USER_DATA_STORE_KEY + this.#versionSuffix, JSON.stringify(this.userData()));
     }
 
     read(): void {
-        const userData = this.localStorage.getItem(UserDataService._USER_DATA_STORE_KEY + this.#versionSuffix);
+        const userData = this.#localStorage.getItem(UserDataService._USER_DATA_STORE_KEY + this.#versionSuffix);
         if (userData) {
 
             const parsedJSON = JSON.parse(userData);
@@ -46,17 +63,29 @@ export class UserDataService {
         }
     }
 
-    createEmptyUserData(): UserData {
+    delete(index?: number) {
+        const indexToDelete = index ?? this.currentIndex();
+
+
+        this.currentIndex.update(index => Math.max(0, index - 1));
+
+        // let signals settle
+        setTimeout(() => {
+            this.userData().data.splice(indexToDelete, 1);
+            this.save();
+        }, 0)
+
+
+    }
+
+    createEmptyUserData(name?: string): UserData {
         return {
-            name: this.#getNextName(),
+            name: name ?? this.#getNextName(),
             myGuideFilter: {year: 1, day: 1, season: "Spring", weather: "Sunny", hideCompleted: true},
+            todoText: '',
             todos: [],
             checklists: {}
         }
-    }
-
-    getCurrentData(): UserData {
-        return this.userData().data[this.userData().currentIndex]
     }
 
     #migrate(userData: any): { version: number, currentIndex: number; data: UserData[] } {
@@ -75,6 +104,12 @@ export class UserDataService {
                     return d
                 });
                 existingVersion = 2;
+            } else if (existingVersion === 2) {
+                migratedData = migratedData.map(d => {
+                    d.todoText = '';
+                    return d
+                });
+                existingVersion = 3;
             }
 
 

@@ -5,6 +5,7 @@ import { DashboardFilterData } from "../../my-coral-guide/types/dashboard-filter
 export type UserData = {
     name: string;
     myGuideFilter: DashboardFilterData;
+    todoText: string;
     todos: ToDo[];
     checklists: Record<string, Checklist>;
 }

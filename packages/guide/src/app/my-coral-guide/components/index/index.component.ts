@@ -1,4 +1,4 @@
-import { Component, computed, inject, Signal, signal } from '@angular/core';
+import { Component, computed, effect, inject, Signal, signal, untracked } from '@angular/core';
 import { DashboardService } from "../../services/dashboard.service";
 import { forkJoin, map, Observable, tap } from "rxjs";
 import {
@@ -29,6 +29,7 @@ import { AsyncPipe } from "@angular/common";
 import { CardComponent } from "../../../shared/components/card/card.component";
 import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
 import { MatProgressSpinner } from "@angular/material/progress-spinner";
+import { UserDataActionsComponent } from "../../user-data-actions/user-data-actions.component";
 
 @Component({
     selector: 'app-index',
@@ -44,7 +45,8 @@ import { MatProgressSpinner } from "@angular/material/progress-spinner";
         CardComponent,
         ItemIconComponent,
         MatCheckbox,
-        MatProgressSpinner
+        MatProgressSpinner,
+        UserDataActionsComponent,
     ]
 })
 export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem | MinimalTagBasedItem> {
@@ -93,13 +95,17 @@ export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem
             hideCompleted: new FormControl<boolean>(true, {nonNullable: true}),
         })
 
-        this.filterFormGroup.patchValue(this.userData.getCurrentData().myGuideFilter);
+
+        effect(() => {
+            const filterData = this.userData.currentData().myGuideFilter;
+            untracked(() => this.filterFormGroup.patchValue(filterData))
+        });
 
         const filterValues = toSignal(
             this.filterFormGroup.valueChanges.pipe(
                 map(() => this.filterFormGroup.getRawValue()),
                 tap(v => {
-                    this.userData.getCurrentData().myGuideFilter = v;
+                    this.userData.currentData().myGuideFilter = v;
                     this.userData.save()
                 })
             ),

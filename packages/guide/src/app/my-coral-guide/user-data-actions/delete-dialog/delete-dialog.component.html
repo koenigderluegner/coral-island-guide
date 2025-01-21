@@ -1,0 +1,15 @@
+<h1 class="font-xl font-bold" mat-dialog-title>Delete save game data</h1>
+<mat-dialog-content class="prose max-w-full">
+    <div class="flex gap-3 font-bold">
+        Are you sure you want to delete "{{ dialogData.userData.name }}"? This cannot be undone.
+    </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions class="!justify-between">
+    <button class="btn-amber" [matDialogClose]="false">No, cancel</button>
+    <button class="btn-danger space-x-2 items-center" [matDialogClose]="true">
+        <app-ui-icon [uiIcon]="UiIcon.TRASH_CAN" class="!size-5"/>
+        <span>Yes, delete</span>
+    </button>
+</mat-dialog-actions>

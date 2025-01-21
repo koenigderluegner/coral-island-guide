@@ -1,5 +1,6 @@
 const {createGlobPatternsForDependencies} = require('@nx/angular/tailwind');
 const {join} = require('path');
+const plugin = require("tailwindcss/plugin");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -15,6 +16,9 @@ module.exports = {
             },
             height: {
                 main: 'calc(100vh - (var(--cg-min-header-height) + var(--cg-min-footer-height)))'
+            },
+            minHeight: {
+                18: '4.5rem'
             },
             maxHeight: {
                 main: 'calc(100vh - (var(--cg-min-header-height) + var(--cg-min-footer-height)))'
@@ -49,5 +53,15 @@ module.exports = {
             },
         },
     },
-    plugins: [require('@tailwindcss/typography'), require('tailwindcss-safe-area'), require('@tailwindcss/container-queries'),],
+    plugins: [
+        require('@tailwindcss/typography'),
+        require('tailwindcss-safe-area'),
+        require('@tailwindcss/container-queries'),
+        plugin(({ addUtilities }) => {
+            addUtilities({
+                ".field-sizing-content": {
+                    "field-sizing": "content",
+                },
+            });
+        }),],
 };

@@ -1,0 +1,19 @@
+<h1 class="font-xl font-bold" mat-dialog-title>Add save game data</h1>
+<mat-dialog-content class="prose max-w-full">
+    <div class="flex gap-3 font-bold">
+        <mat-form-field class="semi-transparent-form-field semi-transparent-form-field-dark my-3">
+            <mat-label>Name</mat-label>
+            <input [formControl]="nameControl" matInput/>
+        </mat-form-field>
+    </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions class="!justify-between">
+    <button class="btn-amber" matDialogClose>Close</button>
+    <button class="btn-success space-x-2 items-center" (click)="save()"
+            [disabled]="nameControl.value.trim().length === 0">
+        <app-ui-icon [uiIcon]="UiIcon.PLUS" class="!size-5"/>
+        <span>Create</span>
+    </button>
+</mat-dialog-actions>

@@ -6,9 +6,12 @@
             </ng-template>
         </app-item-card-switch>
     }
-    <h1 class="mb-4 font-semibold text-3xl text-white flex items-center gap-x-4">
-        My Coral Guide
-    </h1>
+    <div class="flex flex-col md:flex-row gap-4 md:gap-8 mb-12">
+        <h1 class="font-semibold text-3xl text-white flex items-center gap-x-4">
+            My Coral Guide
+        </h1>
+        <app-user-data-actions/>
+    </div>
     <app-dashboard-filter [parentFormGroup]="filterFormGroup" class="my-5 block"/>
     @if (requests$ | async) {
 
@@ -54,7 +57,7 @@
                         </label>
                     </div>
                 } @empty {
-                    <p class="col-span-full">No more fish to catch :)</p>
+                    <p class="col-span-full text-white">No more fish to catch :)</p>
                 }
             </div>
         </section>
@@ -79,7 +82,7 @@
                         </label>
                     </div>
                 } @empty {
-                    <p class="col-span-full">No more fish to catch :)</p>
+                    <p class="col-span-full text-white">No more bugs to catch :)</p>
                 }
             </div>
         </section>
@@ -104,7 +107,7 @@
                         </label>
                     </div>
                 } @empty {
-                    <p class="col-span-full">No more fish to catch :)</p>
+                    <p class="col-span-full text-white">No more ocean critters to catch :)</p>
                 }
             </div>
         </section>

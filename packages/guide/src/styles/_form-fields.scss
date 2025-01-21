@@ -42,6 +42,14 @@
   &.mat-form-field-appearance-fill .mat-mdc-select-arrow-wrapper {
     transform: unset;
   }
+
+  &.semi-transparent-form-field-dark {
+    .mat-mdc-form-field-flex {
+      @apply px-4 py-2 text-black;
+      background: rgba(187, 187, 187, 0.3);
+      border: 2px solid rgba(0, 0, 0, 0.3);
+    }
+  }
 }
 
 
@@ -49,9 +57,9 @@
   --mat-mdc-form-field-floating-label-scale: .9;
 }
 
-.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline .mat-mdc-notch-piece,
+.mdc-text-field--outlined.mdc-text-field--focused .mdc-notched-outline .mat-mdc-notch-piece,
 .mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field .mdc-notched-outline__notch,
-.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mat-mdc-notch-piece {
+.mdc-text-field--outlined .mat-mdc-notch-piece {
   border: none;
 }
 

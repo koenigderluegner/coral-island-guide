@@ -8,9 +8,9 @@ import { LocalStorageService } from "../../local-storage/local-storage.service";
 export abstract class BaseChecklistService {
 
     protected static _TO_DO_STORE_KEY = 'checklist_'
-    localStorage = inject(LocalStorageService);
     protected readonly versionSuffix = inject(SettingsService).getSettings().useBeta ? '_beta' : '_live';
     protected readonly userData = inject(UserDataService);
+    readonly #localStorage = inject(LocalStorageService);
 
     protected constructor(protected checklistName: string) {
         if (checklistName.trim() === '') throw new Error(`checklistName can't be empty!`)
@@ -22,14 +22,14 @@ export abstract class BaseChecklistService {
      * @see UserDataService
      */
     read(): void {
-        const toDos = this.localStorage.getItem(this.getChecklistStorageKey());
-        if (toDos && !this.userData.getCurrentData().checklists[this.checklistName]) {
+        const toDos = this.#localStorage.getItem(this.getChecklistStorageKey());
+        if (toDos && !this.userData.currentData().checklists[this.checklistName]) {
 
             const checklists: Checklist[] = JSON.parse(toDos);
 
-            this.userData.getCurrentData().checklists[this.checklistName] = checklists[0] ?? [];
+            this.userData.currentData().checklists[this.checklistName] = checklists[0] ?? [];
             this.userData.save();
-            this.localStorage.removeItem(this.getChecklistStorageKey())
+            this.#localStorage.removeItem(this.getChecklistStorageKey())
         }
     }
 
@@ -38,11 +38,11 @@ export abstract class BaseChecklistService {
     }
 
     getCurrentChecklist(): Checklist {
-        let checklist = this.userData.getCurrentData().checklists[this.checklistName]
+        let checklist = this.userData.currentData().checklists[this.checklistName]
 
         if (!checklist) {
-            this.userData.getCurrentData().checklists[this.checklistName] = this._createEmptyChecklist();
-            checklist = this.userData.getCurrentData().checklists[this.checklistName]
+            this.userData.currentData().checklists[this.checklistName] = this._createEmptyChecklist();
+            checklist = this.userData.currentData().checklists[this.checklistName]
 
         }
         return checklist;
@@ -82,12 +82,12 @@ export abstract class BaseChecklistService {
     }
 
     resetLiveChecklist(): void {
-        this.localStorage.setItem(BaseChecklistService._TO_DO_STORE_KEY + this.checklistName + '_live', JSON.stringify([this._createEmptyChecklist()]));
+        this.#localStorage.setItem(BaseChecklistService._TO_DO_STORE_KEY + this.checklistName + '_live', JSON.stringify([this._createEmptyChecklist()]));
         this.read();
     }
 
     resetBetaChecklist(): void {
-        this.localStorage.setItem(BaseChecklistService._TO_DO_STORE_KEY + this.checklistName + '_beta', JSON.stringify([this._createEmptyChecklist()]));
+        this.#localStorage.setItem(BaseChecklistService._TO_DO_STORE_KEY + this.checklistName + '_beta', JSON.stringify([this._createEmptyChecklist()]));
         this.read()
     }
 
