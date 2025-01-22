@@ -49,7 +49,10 @@
         "serviceWorker": "packages/guide/ngsw-config.json",
         "server": "packages/guide/src/main.server.ts",
         "ssr": false,
-        "prerender": true
+        "prerender": {
+          "discoverRoutes": true,
+          "routesFile": "packages/guide/src/generated/routes.txt"
+        }
       },
       "configurations": {
         "production": {
@@ -109,6 +112,17 @@
         "extract": {
           "commands": [
             "ts-node changelog-extractor.ts"
+          ]
+        }
+      },
+      "defaultConfiguration": "extract"
+    } ,
+    "build-routes": {
+      "executor": "nx:run-commands",
+      "configurations": {
+        "extract": {
+          "commands": [
+            "ts-node static-routes-list-generator.ts"
           ]
         }
       },
