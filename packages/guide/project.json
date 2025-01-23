@@ -29,6 +29,9 @@
         "inlineStyleLanguage": "scss",
         "assets": [
           "packages/guide/src/favicon.ico",
+          "packages/guide/src/favicon-16x16.png",
+          "packages/guide/src/favicon-32x32.png",
+          "packages/guide/src/apple-touch-icon.png",
           "packages/guide/src/assets",
           "packages/guide/src/manifest.webmanifest",
           "packages/guide/src/CNAME",
@@ -49,7 +52,10 @@
         "serviceWorker": "packages/guide/ngsw-config.json",
         "server": "packages/guide/src/main.server.ts",
         "ssr": false,
-        "prerender": true
+        "prerender": {
+          "discoverRoutes": true,
+          "routesFile": "packages/guide/src/generated/routes.txt"
+        }
       },
       "configurations": {
         "production": {
@@ -109,6 +115,17 @@
         "extract": {
           "commands": [
             "ts-node changelog-extractor.ts"
+          ]
+        }
+      },
+      "defaultConfiguration": "extract"
+    } ,
+    "build-routes": {
+      "executor": "nx:run-commands",
+      "configurations": {
+        "extract": {
+          "commands": [
+            "ts-node static-routes-list-generator.ts"
           ]
         }
       },
