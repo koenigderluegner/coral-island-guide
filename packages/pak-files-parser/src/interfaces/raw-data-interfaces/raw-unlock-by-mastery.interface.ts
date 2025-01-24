@@ -1,27 +1,27 @@
+import { AssetMap } from "../../types/asset-map.type";
+
 type UnlockRecipe = {
-    [masteryNameEnum: string]: {
-        "craftingList": [
-            {
-                "useCustomID": boolean,
-                "item": {
-                    "data": {
-                        "DataTable": {
-                            "ObjectName": string,
-                            "ObjectPath": string
-                        },
-                        "RowName": string
+    "craftingList": [
+        {
+            "useCustomID": boolean,
+            "item": {
+                "data": {
+                    "DataTable": {
+                        "ObjectName": string,
+                        "ObjectPath": string
                     },
-                    "itemID": string
+                    "RowName": string
                 },
-                "customID": string
-            }
-        ]
-    }
+                "itemID": string
+            },
+            "customID": string
+        }
+    ]
 };
 
 export interface RawUnlockByMastery {
     "masteryLevel": number,
     "desc": string,
-    "unlockRecipe": UnlockRecipe | UnlockRecipe[]
+    "unlockRecipe": AssetMap<UnlockRecipe>
 
 }
