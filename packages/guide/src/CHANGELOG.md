@@ -10,6 +10,11 @@
 - Added Favicon (browser icon) and app icons if installed to phone or pc.
 - Added more routes to be found by search engines and increasing performance for initial load
 
+#### Changed
+
+- Fixed mastery unlocks showing "Value" instead of the mastery name.
+
+
 ### 0.23.0 2024-12-12
 
 This update includes a lot of technical changes. If something broke please let me know, thanks.

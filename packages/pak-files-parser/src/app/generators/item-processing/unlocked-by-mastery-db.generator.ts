@@ -17,39 +17,32 @@ export abstract class UnlockedByMasteryDbGenerator {
             const dbItem: RawUnlockByMastery = this.recipesDB[0]?.Rows[itemKey];
 
             const unlockRecipeList = dbItem.unlockRecipe;
-            let unlockRecipes;
-
-            if (!Array.isArray(unlockRecipeList)) {
-                unlockRecipes = [unlockRecipeList]
-            } else {
-                unlockRecipes = unlockRecipeList
-            }
+            const unlockRecipes = [unlockRecipeList].flat()
 
 
             unlockRecipes.forEach(unlockRecipe => {
 
 
-                const masteryTypes = Object.keys(unlockRecipe);
-                masteryTypes.forEach(typeEnum => {
-
-                    const craftingList = unlockRecipe[typeEnum]?.craftingList;
-
-                    if (!craftingList) return;
-
-                    craftingList.forEach(craftingItem => {
-
-                        if (craftingItem.item.itemID === 'None') return;
-
-                        const unlockByMastery: UnlockByMastery = {
-                            key: craftingItem.item.itemID,
-                            masteryLevel: dbItem.masteryLevel,
-                            masteryType: getEnumValue(typeEnum)
-                        }
-
-                        map.set(unlockByMastery.key, unlockByMastery);
+                const typeEnum = unlockRecipe.Key
 
 
-                    })
+                const craftingList = unlockRecipe.Value?.craftingList;
+
+                if (!craftingList) return;
+
+                craftingList.forEach(craftingItem => {
+
+                    if (craftingItem.item.itemID === 'None') return;
+
+                    const unlockByMastery: UnlockByMastery = {
+                        key: craftingItem.item.itemID,
+                        masteryLevel: dbItem.masteryLevel,
+                        masteryType: getEnumValue(typeEnum)
+                    }
+
+                    map.set(unlockByMastery.key, unlockByMastery);
+
+
                 })
 
 
