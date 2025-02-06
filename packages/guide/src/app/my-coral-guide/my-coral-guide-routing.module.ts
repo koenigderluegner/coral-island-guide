@@ -1,17 +1,17 @@
 import { Routes } from '@angular/router';
-import { MyCoralGuideComponent } from './my-coral-guide.component';
-import { IndexComponent } from "./components/index/index.component";
-import { MuseumChecklistComponent } from "./components/museum-checklist/museum-checklist.component";
-import { CookingRecipesChecklistComponent } from "./components/cooking-recipes-checklist/cooking-recipes-checklist.component";
-import { OfferingsChecklistComponent } from "./components/offerings-checklist/offerings-checklist.component";
+
+
+
+
+
 
 export const routes: Routes = [
     {
         path: '',
-        component: MyCoralGuideComponent,
+        loadComponent: () => import('./my-coral-guide.component').then(m => m.MyCoralGuideComponent),
         children: [
             {
-                path: '', component: IndexComponent
+                path: '', loadComponent: () => import('./components/index/index.component').then(m => m.IndexComponent)
             },
             {
                 path: 'to-do',
@@ -25,7 +25,7 @@ export const routes: Routes = [
             },
             {
                 path: 'museum-checklist/:tabName',
-                component: MuseumChecklistComponent,
+                loadComponent: () => import('./components/museum-checklist/museum-checklist.component').then(m => m.MuseumChecklistComponent),
                 title: 'Museum checklist - My Guide'
             },
             {
@@ -35,7 +35,7 @@ export const routes: Routes = [
             },
             {
                 path: 'cooking-recipes-checklist/:tabName',
-                component: CookingRecipesChecklistComponent,
+                loadComponent: () => import('./components/cooking-recipes-checklist/cooking-recipes-checklist.component').then(m => m.CookingRecipesChecklistComponent),
                 title: 'Cooking recipes checklist - My Guide'
             },
             {
@@ -45,7 +45,7 @@ export const routes: Routes = [
             },
             {
                 path: 'offerings-checklist/:tabName',
-                component: OfferingsChecklistComponent,
+                loadComponent: () => import('./components/offerings-checklist/offerings-checklist.component').then(m => m.OfferingsChecklistComponent),
                 title: 'Offerings checklist - My Guide'
             },
             {

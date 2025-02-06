@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { ToDoComponent } from './to-do.component';
+
 
 export const routes: Routes = [
-    {path: '', component: ToDoComponent},
+    {path: '', loadComponent: () => import('./to-do.component').then(m => m.ToDoComponent)},
     {path: ':toDoId', redirectTo: ''},
 ];

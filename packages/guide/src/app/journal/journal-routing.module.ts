@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { JournalComponent } from './journal.component';
-import { CaughtComponent } from './components/caught/caught.component';
-import { FoundComponent } from './components/found/found.component';
-import { ProduceComponent } from './components/produce/produce.component';
-import { AchievementsComponent } from "./components/achievements/achievements.component";
-import { NotesComponent } from "./components/notes/notes.component";
-import { BestiaryComponent } from "./components/bestiary/bestiary.component";
+
+
+
+
+
+
+
 
 export const routes: Routes = [
     {
@@ -16,19 +16,19 @@ export const routes: Routes = [
     {
 
         path: '',
-        component: JournalComponent,
+        loadComponent: () => import('./journal.component').then(m => m.JournalComponent),
         children: [
             {path: 'caught', redirectTo: 'caught/', pathMatch: 'full'},
-            {path: 'caught/:tabName', component: CaughtComponent, title: 'Caught - Journal'},
+            {path: 'caught/:tabName', loadComponent: () => import('./components/caught/caught.component').then(m => m.CaughtComponent), title: 'Caught - Journal'},
             {path: 'found', redirectTo: 'found/', pathMatch: 'full'},
-            {path: 'found/:tabName', component: FoundComponent, title: 'Found - Journal'},
+            {path: 'found/:tabName', loadComponent: () => import('./components/found/found.component').then(m => m.FoundComponent), title: 'Found - Journal'},
             {path: 'produce', redirectTo: 'produce/', pathMatch: 'full'},
-            {path: 'produce/:tabName', component: ProduceComponent, title: 'Produce - Journal'},
-            {path: 'bestiary', component: BestiaryComponent, title: 'Bestiary - Journal'},
+            {path: 'produce/:tabName', loadComponent: () => import('./components/produce/produce.component').then(m => m.ProduceComponent), title: 'Produce - Journal'},
+            {path: 'bestiary', loadComponent: () => import('./components/bestiary/bestiary.component').then(m => m.BestiaryComponent), title: 'Bestiary - Journal'},
             {path: 'notes', redirectTo: 'notes/', pathMatch: 'full'},
-            {path: 'notes/:tabName', component: NotesComponent, title: 'Notes - Journal'},
+            {path: 'notes/:tabName', loadComponent: () => import('./components/notes/notes.component').then(m => m.NotesComponent), title: 'Notes - Journal'},
             {path: 'achievements', redirectTo: 'achievements/', pathMatch: 'full'},
-            {path: 'achievements/:achievementId', component: AchievementsComponent, title: 'Achievements - Journal'},
+            {path: 'achievements/:achievementId', loadComponent: () => import('./components/achievements/achievements.component').then(m => m.AchievementsComponent), title: 'Achievements - Journal'},
         ]
     },
 ];

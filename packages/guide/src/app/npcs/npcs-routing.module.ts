@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { NPCsComponent } from './npcs.component';
-import { GiftingComponent } from './components/gifting/gifting.component';
-import { NpcListComponent } from "./components/npc-list/npc-list.component";
-import { NpcComponent } from "./components/npc/npc.component";
+
+
+
+
 
 export const routes: Routes = [
     {
@@ -13,11 +13,11 @@ export const routes: Routes = [
     {
 
         path: '',
-        component: NPCsComponent,
+        loadComponent: () => import('./npcs.component').then(m => m.NPCsComponent),
         children: [
-            {path: 'gifting', component: GiftingComponent, title: 'Gifting - NPCs'},
-            {path: 'overview', component: NpcListComponent, title: 'Overview - NPCs'},
-            {path: ':npcKey', component: NpcComponent},
+            {path: 'gifting', loadComponent: () => import('./components/gifting/gifting.component').then(m => m.GiftingComponent), title: 'Gifting - NPCs'},
+            {path: 'overview', loadComponent: () => import('./components/npc-list/npc-list.component').then(m => m.NpcListComponent), title: 'Overview - NPCs'},
+            {path: ':npcKey', loadComponent: () => import('./components/npc/npc.component').then(m => m.NpcComponent)},
         ]
     },
 ];

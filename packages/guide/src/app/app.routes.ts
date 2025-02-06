@@ -1,11 +1,11 @@
 import { Route } from "@angular/router";
-import { StartComponent } from "./start/start.component";
+
 
 export const appRoutes: Route[] = [
     {
         path: '',
         pathMatch: 'full',
-        component: StartComponent,
+        loadComponent: () => import('./start/start.component').then(m => m.StartComponent),
     },
     {
         path: 'journal',

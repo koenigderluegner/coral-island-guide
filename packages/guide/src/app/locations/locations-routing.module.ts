@@ -1,9 +1,9 @@
 import { CanActivateFn, Route, Routes } from '@angular/router';
-import { LocationsComponent } from './locations.component';
+
 import { onlyInBetaGuard } from "../core/guards/only-in-beta.guard";
 import { FestivalDisplayNames, ShopDisplayNames } from "@ci/data-types";
 import { shopRouteConfig } from "./locations-shop-route-config";
-import { MeritShopComponent } from "./components/merit-shop/merit-shop.component";
+
 import { festivalRouteConfig } from "./locations-festival-route-config";
 import { onlyInLiveGuard } from "../core/guards/only-in-live.guard";
 
@@ -16,7 +16,7 @@ export const routes: Routes = [
     },
     {
         path: '',
-        component: LocationsComponent,
+        loadComponent: () => import('./locations.component').then(m => m.LocationsComponent),
         children: [
             {path: 'lake-temple', redirectTo: 'lake-temple/', pathMatch: 'full'},
             {
@@ -58,7 +58,7 @@ export const routes: Routes = [
             ),
             {
                 path: 'merit-exchange',
-                component: MeritShopComponent,
+                loadComponent: () => import('./components/merit-shop/merit-shop.component').then(m => m.MeritShopComponent),
                 title: `Merit Exchange - Locations`
             },
             {
