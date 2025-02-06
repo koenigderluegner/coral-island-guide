@@ -27,6 +27,7 @@ import {
     IsCutsceneTriggeredRequirement,
     IsGiantUnlockedRequirement,
     IsMailReadRequirement,
+    IsMultiplayerRequirement,
     Item,
     ItemInInventoryRequirement,
     ItemWithCategoryInInventoryRequirement,
@@ -554,6 +555,14 @@ export class DaFilesParser {
                             type: "EditorOnly",
 
                         } satisfies EditorOnlyRequirement;
+
+                        break;
+                    }
+                    case "C_IsMultiplayerRequirement": {
+                        daEffect = {
+                            type: "IsMultiplayer",
+
+                        } satisfies IsMultiplayerRequirement;
 
                         break;
                     }

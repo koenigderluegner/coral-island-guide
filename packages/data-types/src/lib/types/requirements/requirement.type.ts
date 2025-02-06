@@ -25,6 +25,7 @@ import { ShipToUnlockRequirement } from "./ship-to-unlock-requirement.type";
 import { DinoHologramItemRewardClaimedRequirement } from "./dino-hologram-item-reward-claimed-requirement.type";
 import { DateSeasonRequirement } from "./date-season-requirement.type";
 import { TimeDateRequirement } from "./time-date-requirement.type";
+import { IsMultiplayerRequirement } from "./is-multiplayer-requirement.type";
 
 export type Requirement = CountNpcHeartLevelRequirement
     | EditorOnlyRequirement
@@ -53,4 +54,5 @@ export type Requirement = CountNpcHeartLevelRequirement
     | DinoHologramItemRewardClaimedRequirement
     | DateSeasonRequirement
     | TimeDateRequirement
+    | IsMultiplayerRequirement
 
