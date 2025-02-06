@@ -1,6 +1,6 @@
 ## Changelog
 
-### TBD
+### 2025-02-06
 
 #### Added
 
@@ -12,6 +12,7 @@
 
 #### Changed
 
+- Updated live data to v1.1-1234 (Steam version)
 - Fixed mastery unlocks showing "Value" instead of the mastery name.
 
 
