@@ -46,6 +46,7 @@ export * from './lib/types/requirements/ship-to-unlock-requirement.type';
 export * from './lib/types/requirements/dino-hologram-item-reward-claimed-requirement.type';
 export * from './lib/types/requirements/date-season-requirement.type';
 export * from './lib/types/requirements/time-date-requirement.type';
+export * from './lib/types/requirements/is-multiplayer-requirement.type';
 
 
 export * from './lib/interfaces/achievement.interface';

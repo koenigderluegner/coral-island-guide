@@ -24,6 +24,7 @@ import { RawIsMailReadRequirement } from "./is-mail-read.requirement.type";
 import { RawDinoHologramItemRewardClaimedRequirement } from "./dino-hologram-item-reward-claimed-requirement.type";
 import { RawTimeDateRequirement } from "./time-date-requirement.type";
 import { RawDateSeasonRequirement } from "./date-season-requirement.type";
+import { RawIsMultiplayerRequirement } from "./is-multiplayer-requirement.type";
 
 export type DaRequirements = RawIsAchievementCompletedRequirement
     | RawCountNpcHeartLevelRequirement
@@ -51,3 +52,4 @@ export type DaRequirements = RawIsAchievementCompletedRequirement
     | RawDinoHologramItemRewardClaimedRequirement
     | RawTimeDateRequirement
     | RawDateSeasonRequirement
+    | RawIsMultiplayerRequirement
