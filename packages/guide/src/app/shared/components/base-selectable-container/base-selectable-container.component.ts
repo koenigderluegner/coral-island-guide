@@ -44,6 +44,7 @@ export class BaseSelectableContainerComponent<T> {
             ).subscribe({
                 next: () => {
                     this.selectedEntity = undefined;
+                    this.listDetail.close();
                 }
             })
 
