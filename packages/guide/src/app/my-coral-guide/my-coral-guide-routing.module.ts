@@ -49,6 +49,16 @@ export const routes: Routes = [
                 title: 'Offerings checklist - My Guide'
             },
             {
+                path: 'orchestra-zones-checklist',
+                redirectTo: 'orchestra-zones-checklist/',
+                pathMatch: 'full'
+            },
+            {
+                path: 'orchestra-zones-checklist/:tabName',
+                loadComponent: () => import('./components/orchestra-zones-checklist/orchestra-zones-checklist').then(m => m.OrchestraZonesChecklistComponent),
+                title: 'Orchestra zones checklist - My Guide'
+            },
+            {
                 path: 'settings',
                 loadChildren: () => import('../settings/settings-routing.module').then((m) => m.routes),
                 title: 'Settings - My Guide'

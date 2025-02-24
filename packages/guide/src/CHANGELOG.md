@@ -1,5 +1,11 @@
 ## Changelog
 
+### TBD
+
+#### Added
+
+- Added orchestra zones to checklists.
+
 ### 2025-02-06
 
 #### Added
