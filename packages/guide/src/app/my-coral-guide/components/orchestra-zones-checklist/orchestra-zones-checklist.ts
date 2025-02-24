@@ -1,0 +1,113 @@
+import { Component, inject, signal } from '@angular/core';
+import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
+import { MinimalItem, MinimalTagBasedItem, Offering, OfferingAltar, Offerings } from "@ci/data-types";
+import { map, Observable } from "rxjs";
+import { FormControl, FormRecord, ReactiveFormsModule } from "@angular/forms";
+import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
+import { entityKey } from "@ci/util";
+import { SettingsService } from "../../../shared/services/settings.service";
+import { MatTab, MatTabGroup } from "@angular/material/tabs";
+import { AddSpacesToPascalCasePipe } from "../../../shared/pipes/add-spaces-to-pascal-case.pipe";
+import { ItemCardSwitchComponent } from "../../../shared/components/item-card-switch/item-card-switch.component";
+import { OfferingComponent } from "../../../shared/components/database-item-details/offering/offering.component";
+import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
+import { EntityKeyPipe } from "../../../shared/pipes/entity-key.pipe";
+import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
+import { MatCheckbox } from "@angular/material/checkbox";
+import { AsyncPipe, NgOptimizedImage } from "@angular/common";
+import { OrchestraZonesChecklistService } from "../../../core/services/checklists/orchestra-zones-checklist.service";
+
+@Component({
+    selector: 'app-orchestra-zones-checklist',
+    templateUrl: './orchestra-zones-checklist.component.html',
+    imports: [
+        MatTab,
+        AddSpacesToPascalCasePipe,
+        ReactiveFormsModule,
+        MatTabGroup,
+        ItemCardSwitchComponent,
+        OfferingComponent,
+        ListDetailContainerComponent,
+        EntityKeyPipe,
+        ItemIconComponent,
+        MatCheckbox,
+        NgOptimizedImage,
+        AsyncPipe
+    ]
+})
+export class OrchestraZonesChecklistComponent extends BaseTabbedSelectableContainerComponent<MinimalItem | MinimalTagBasedItem> {
+
+    // TODO pretty much a slightly changes copy of temple altars, refactor at some point to reduce duplication
+    checklistService = inject(OrchestraZonesChecklistService);
+    checklistForm: FormRecord<FormControl<boolean>> = new FormRecord<FormControl<boolean>>({})
+    protected activeOffering?: Offerings;
+    protected offerings$: Observable<OfferingAltar[]>;
+    protected entryForToDo?: Offering | MinimalItem | MinimalTagBasedItem;
+    protected useBeta = inject(SettingsService).getSettings().useBeta;
+    protected bundleAssetPath = signal(`assets/${this.useBeta ? 'beta' : 'live'}/items/icons/`);
+    private _altars: OfferingAltar[] = [];
+
+    constructor() {
+        super()
+        this.checklistForm.valueChanges.pipe(
+            takeUntilDestroyed()
+        ).subscribe({
+            next: value => {
+                const checkedItems: string[] = [];
+
+                Object.keys(value).forEach(key => {
+                    if (value[key]) checkedItems.push(key)
+                })
+
+                this.checklistService.set(checkedItems);
+            }
+        })
+        this.offerings$ = this._database.fetchOfferings$().pipe(
+            map((record) => {
+
+                    const records = record.filter(r => r.offeringType === 'Diving');
+                    const altarNames = records.map(altar => altar.urlPath);
+
+                    this._altars = records;
+                    records.forEach(checklist => {
+
+                        checklist.offerings.forEach(key => {
+                            key.requiredItems.forEach(item => {
+                                const key = entityKey(item.item);
+                                this.checklistForm.addControl(key, new FormControl<boolean>(this.checklistService.isChecked(key), {nonNullable: true}), {emitEvent: false})
+                            });
+                        })
+                    })
+                    this.activateTabFromRoute(altarNames);
+                    return records;
+                }
+            )
+        );
+
+    }
+
+    override showDetails(selectedEntry?: Offering | MinimalItem | MinimalTagBasedItem) {
+        this.entryForToDo = selectedEntry;
+
+        if (selectedEntry && 'amount' in selectedEntry) {
+            super.showDetails(selectedEntry.item);
+        } else {
+            super.showDetails(selectedEntry);
+        }
+
+    }
+
+    override urlPathFromLabel = (label: string) => {
+
+        const sanitizedLabel = label.toLowerCase().replaceAll(' ', '');
+        const offeringAltar = this._altars.find(altar => altar.offeringGroupTitle.toLowerCase().replaceAll(' ', '') === sanitizedLabel);
+
+        if (offeringAltar) {
+            return offeringAltar.urlPath
+        }
+
+        return label.toLowerCase().replaceAll(' ', '')
+    }
+
+
+}
