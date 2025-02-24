@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, inject, OnDestroy, viewChild } from '@angular/core';
-import { BaseCrop, JournalOrder, MinimalItem, UiIcon } from '@ci/data-types';
+import { BaseCrop, JournalOrder, MinimalItem, UiIcon, Fish } from '@ci/data-types';
 import { combineLatest, map, Observable, of, startWith } from 'rxjs';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { FormGroup } from '@angular/forms';
@@ -68,9 +68,18 @@ export class BaseJournalPageComponent<D extends ({
                             return 'item' in f ? f.item.id === journalOrder.key : f.id === journalOrder.key;
                         });
                         if (foundEntry) {
-                            if (!this.filterPredicate) res.push(foundEntry);
-                            if (this.filterPredicate && this.filterPredicate(foundEntry, filterValues, index)) {
-                                res.push(foundEntry);
+                            let entry = [foundEntry];
+                            if (filterValues.showTable && 'spawnSettings' in foundEntry) {
+                                const fish = foundEntry as Fish;
+                                entry = fish.spawnSettings
+                                    .map((s) => ({ ...foundEntry, spawnSettings: [s] }))
+                                    .flat() as D[];
+                            }
+                            for (const item of entry) {
+                                if (!this.filterPredicate) res.push(item);
+                                if (this.filterPredicate && this.filterPredicate(item, filterValues, index)) {
+                                    res.push(item);
+                                }
                             }
                         }
                     });

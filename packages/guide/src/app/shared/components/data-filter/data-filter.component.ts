@@ -33,5 +33,7 @@ export class DataFilterComponent {
 
     setShowTable(showTable: boolean): void {
         this.showTable.set(showTable);
+        if (this.parentFormGroup()?.contains('showTable'))
+            this.parentFormGroup()?.get('showTable')?.setValue(showTable);
     }
 }
