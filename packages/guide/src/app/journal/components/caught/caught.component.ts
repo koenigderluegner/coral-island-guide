@@ -29,17 +29,18 @@ import { AsyncPipe } from "@angular/common";
 })
 export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
 
-
+    
     private readonly SEA_CRITTERS_INDEX = 2;
 
     constructor() {
         super(new FormGroup<FilterForm>({
-            season: new FormControl<Season[]>([...Seasons], {nonNullable: true}),
-            weather: new FormControl<Weather[]>([...Weathers], {nonNullable: true}),
-            location: new FormControl<string | null>(null),
-        }));
+                season: new FormControl<Season[]>([...Seasons], {nonNullable: true}),
+                weather: new FormControl<Weather[]>([...Weathers], {nonNullable: true}),
+                location: new FormControl<string | null>(null),
+                showTable: new FormControl<boolean>(false, { nonNullable: true }),
+            }));
 
-
+            
         this.tabs = [
             {
                 title: 'Fish',
@@ -133,14 +134,14 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
         if (!entries.length) return [];
 
         return [...new Set(
-            entries
+                entries
                 .map(entry => {
-                    if ('fishName' in entry) {
+                        if ('fishName' in entry) {
                         return entry.spawnSettings.map(spawnSettings => spawnSettings.spawnLocation)
-                    } else {
+                        } else {
                         return entry.spawnLocation
-                    }
-                })
+                        }
+                    })
                 .flat(2))
         ].sort()
 
