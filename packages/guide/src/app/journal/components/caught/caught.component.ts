@@ -73,45 +73,60 @@ export class CaughtComponent extends BaseJournalPageComponent<Fish | Critter> {
         if (!filterValues.season?.length) return false;
         if (!filterValues.weather?.length) return false;
 
+        if ('spawnSettings' in foundEntry) {
+            //it's a fish and has multiple locations with different weather and seasons
+            return foundEntry.spawnSettings?.some((setting) => {
+                return (
+                    this.matchLocation(setting.spawnLocation, filterValues.location) &&
+                    this.matchSeason(setting.spawnSeason, filterValues.season) &&
+                    this.matchWeather(setting.spawnWeather, index, filterValues.weather)
+                );
+            });
+        }
 
-        const spawnSeason = 'spawnSettings' in foundEntry
-            ? foundEntry.spawnSettings?.map(s => s.spawnSeason)
-            : [foundEntry.spawnSeason];
+        return (
+            this.matchLocation(foundEntry.spawnLocation, filterValues.location) &&
+            this.matchSeason(foundEntry.spawnSeason, filterValues.season) &&
+            this.matchWeather(foundEntry.spawnWeather, index, filterValues.weather)
+        );
+    }
 
-        const spawnWeather = 'spawnSettings' in foundEntry
-            ? foundEntry.spawnSettings?.map(s => s.spawnWeather)
-            : [foundEntry.spawnWeather];
+    private matchLocation(spawnLocations: string[], desiredLocation?: string | null) {
+        return !desiredLocation || spawnLocations.includes(desiredLocation);
+    }
 
-        const locations = 'spawnSettings' in foundEntry
-            ? foundEntry.spawnSettings?.map(s => s.spawnLocation).flat()
-            : foundEntry.spawnLocation
+    private matchWeather(
+        spawnWeather: {
+            sunny: boolean;
+            rain: boolean;
+            storm: boolean;
+            windy: boolean;
+            snow: boolean;
+            blizzard: boolean;
+        },
+        index: number,
+        weather?: string[] | undefined
+    ) {
+        const weatherString = getTruthyValues(spawnWeather).toLowerCase();
+        const match =
+            index === this.SEA_CRITTERS_INDEX ||
+            weatherString === 'any' ||
+            weather?.length === Weathers.length ||
+            !!weather?.some((specificWeather) => weatherString.includes(('' + specificWeather).toLowerCase()));
+        return match;
+    }
 
-        const locationMatch = !filterValues.location || locations.includes(filterValues.location)
+    private matchSeason(
+        spawnSeason: { spring: boolean; summer: boolean; fall: boolean; winter: boolean },
+        season?: Season[]
+    ) {
+        const seasonString = getTruthyValues(spawnSeason).toLowerCase();
+        const match =
+            seasonString === 'any' ||
+            season?.length === Seasons.length ||
+            !!season?.some((specificSeason) => seasonString.includes(('' + specificSeason).toLowerCase()));
 
-        if (!locationMatch) return false;
-
-        const seasonMatch = spawnSeason.reduce((previousValue, currentValue) => {
-            const seasonString = getTruthyValues(currentValue).toLowerCase();
-            const match = seasonString === 'any'
-                || filterValues.season?.length === Seasons.length
-                || !!filterValues.season?.some(season => seasonString.includes(('' + season).toLowerCase()));
-
-            return previousValue || match
-        }, false)
-
-        if (!seasonMatch) return false;
-
-        const weatherMatch = spawnWeather.reduce((previousValue, currentValue) => {
-            const weatherString = getTruthyValues(currentValue).toLowerCase();
-            const match = (index === this.SEA_CRITTERS_INDEX)
-                || weatherString === 'any'
-                || filterValues.weather?.length === Weathers.length
-                || !!filterValues.weather?.some(weather => weatherString.includes(('' + weather).toLowerCase()));
-            return previousValue || match
-        }, false);
-
-        return weatherMatch;
-
+        return match;
     }
 
     getLocations(entries: (Fish | Critter)[]): string[] {
