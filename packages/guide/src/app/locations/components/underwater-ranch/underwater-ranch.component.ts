@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, computed } from '@angular/core';
 import { BaseShopComponent } from "../base-shop/base-shop.component";
 import { ProductSizeByMood, ShopItemData, ShopName } from "@ci/data-types";
-import { combineLatest, Observable, of, switchMap } from "rxjs";
+import { Observable } from "rxjs";
 import { MappedAnimalShopData } from "../../types/mapped-animal-shop-data.type";
 import { AsyncPipe } from "@angular/common";
 import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
@@ -14,6 +14,7 @@ import { DataFilterComponent } from "../../../shared/components/data-filter/data
 import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
 import { ShopItemDataTableComponent } from "../tables/shop-item-data-table/shop-item-data-table.component";
 import { AnimalMoodTableComponent } from "../tables/animal-mood-table/animal-mood-table.component";
+import { merge } from "../../../shared/util/http-resource-merge";
 
 @Component({
     selector: 'app-underwater-ranch',
@@ -23,29 +24,25 @@ import { AnimalMoodTableComponent } from "../tables/animal-mood-table/animal-moo
 export class UnderwaterRanchComponent extends BaseShopComponent {
 
     protected shopName: ShopName = "underwater-ranch";
-    protected animalData$: Observable<MappedAnimalShopData[]>;
-
     protected selectedAnimal?: MappedAnimalShopData
     protected sizeByMood$: Observable<ProductSizeByMood[]>;
+    #animalRequests = merge(this._database.fetchAnimals(), this._database.fetchAnimalShopData(this.shopName))
+    animalData = computed<MappedAnimalShopData[] | null>(() => {
+        const values = this.#animalRequests.values();
+        if (!values) return null;
+        const [animals, shopData] = values;
+
+        return shopData.map(stopEntry => {
+            const {animalKey, ...rest} = stopEntry;
+            return {...rest, animal: animals.find(animal => animal.key === animalKey)}
+        });
+    })
 
     constructor() {
         super();
         this.openingHours$ = this._database.fetchOpeningHours$(this.shopName);
         this.sizeByMood$ = this._database.fetchAnimalMoodData$();
-        this.animalData$ = combineLatest([
-            this._database.fetchAnimals$(),
-            this._database.fetchAnimalShopData$(this.shopName)
-        ]).pipe(
-            switchMap(([animals, shopData]) => {
 
-                return of(
-                    shopData.map(stopEntry => {
-                        const {animalKey, ...rest} = stopEntry;
-                        return {...rest, animal: animals.find(animal => animal.key === animalKey)}
-                    })
-                )
-            })
-        );
 
     }
 

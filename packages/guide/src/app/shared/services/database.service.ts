@@ -105,8 +105,6 @@ export class DatabaseService extends BaseDbService {
     private _BESTIARY$?: Observable<Enemy[]>;
 
 
-    private _ANIMAL_SHOP_DATA: Map<string, AnimalShopData[]> = new Map<string, AnimalShopData[]>();
-    private _ANIMAL_DATA$?: Observable<AnimalData[]>;
     private _ANIMAL_MOOD_DATA$?: Observable<ProductSizeByMood[]>;
 
     private _DATABASE_ITEMS: Map<string, DatabaseItem> = new Map<string, DatabaseItem>();
@@ -163,14 +161,8 @@ export class DatabaseService extends BaseDbService {
         return this._BESTIARY$;
     }
 
-    fetchAnimals$(): Observable<AnimalData[]> {
-        if (!this._ANIMAL_DATA$) {
-            this._ANIMAL_DATA$ = this.http.get<AnimalData[]>(`${this.BASE_PATH_WITH_LANG}/animal-data.json`)
-                .pipe(
-                    shareReplay(1)
-                );
-        }
-        return this._ANIMAL_DATA$;
+    fetchAnimals(){
+        return this.#getResource<AnimalData[]>(`${this.BASE_PATH_WITH_LANG}/animal-data.json`);
     }
 
     fetchAnimalMoodData$(): Observable<ProductSizeByMood[]> {
@@ -183,19 +175,10 @@ export class DatabaseService extends BaseDbService {
         return this._ANIMAL_MOOD_DATA$;
     }
 
-
-    fetchAnimalShopData$(shopName: ShopName): Observable<AnimalShopData[]> {
-        if (!this._ANIMAL_SHOP_DATA.has(shopName)) {
-            return this.http.get<AnimalShopData[]>(`${this.BASE_PATH_WITH_LANG}/${shopName}-animal-shop-data.json`)
-                .pipe(
-                    tap(items => this._ANIMAL_SHOP_DATA.set(shopName, items)),
-                    shareReplay(1)
-                );
-        } else {
-            return of(this._ANIMAL_SHOP_DATA.get(shopName)!)
-        }
-
+    fetchAnimalShopData(shopName: ShopName){
+        return this.#getResource<AnimalShopData[]>(`${this.BASE_PATH_WITH_LANG}/${shopName}-animal-shop-data.json`);
     }
+
 
 
     fetchTornPagesData$(): Observable<TornPageData[]> {

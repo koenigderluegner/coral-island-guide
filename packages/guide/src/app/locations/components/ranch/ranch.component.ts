@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, computed } from '@angular/core';
 import { BaseShopComponent } from "../base-shop/base-shop.component";
 import { ProductSizeByMood, ShopItemData, ShopName } from "@ci/data-types";
-import { combineLatest, Observable, of, switchMap } from "rxjs";
+import { Observable } from "rxjs";
 import { MappedAnimalShopData } from "../../types/mapped-animal-shop-data.type";
 import { ShopItemDataDetailsComponent } from "../shop-item-data-details/shop-item-data-details.component";
 import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
@@ -14,6 +14,7 @@ import { ItemIconComponent } from "../../../shared/components/item-icon/item-ico
 import { ShopItemDataTableComponent } from "../tables/shop-item-data-table/shop-item-data-table.component";
 import { AnimalMoodTableComponent } from "../tables/animal-mood-table/animal-mood-table.component";
 import { AnimalDetailsComponent } from "../animal-details/animal-details.component";
+import { merge } from "../../../shared/util/http-resource-merge";
 
 @Component({
     selector: 'app-ranch',
@@ -36,8 +37,17 @@ import { AnimalDetailsComponent } from "../animal-details/animal-details.compone
 export class RanchComponent extends BaseShopComponent {
 
     protected shopName: ShopName = "ranch";
-    protected animalData$: Observable<MappedAnimalShopData[]>;
+    #animalRequests = merge(this._database.fetchAnimals(), this._database.fetchAnimalShopData(this.shopName))
+    animalData = computed<MappedAnimalShopData[] | null>(() => {
+        const values = this.#animalRequests.values();
+        if (!values) return null;
+        const [animals, shopData] = values;
 
+        return shopData.map(stopEntry => {
+            const {animalKey, ...rest} = stopEntry;
+            return {...rest, animal: animals.find(animal => animal.key === animalKey)}
+        });
+    })
     protected selectedAnimal?: MappedAnimalShopData
     protected sizeByMood$: Observable<ProductSizeByMood[]>;
 
@@ -46,20 +56,6 @@ export class RanchComponent extends BaseShopComponent {
         this.shopItemData$ = this._database.fetchShopItemData$(this.shopName);
         this.openingHours$ = this._database.fetchOpeningHours$(this.shopName);
         this.sizeByMood$ = this._database.fetchAnimalMoodData$();
-        this.animalData$ = combineLatest([
-            this._database.fetchAnimals$(),
-            this._database.fetchAnimalShopData$(this.shopName)
-        ]).pipe(
-            switchMap(([animals, shopData]) => {
-
-                return of(
-                    shopData.map(stopEntry => {
-                        const {animalKey, ...rest} = stopEntry;
-                        return {...rest, animal: animals.find(animal => animal.key === animalKey)}
-                    })
-                )
-            })
-        );
 
     }
 
