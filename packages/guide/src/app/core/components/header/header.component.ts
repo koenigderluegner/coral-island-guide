@@ -35,7 +35,7 @@ export class HeaderComponent {
         {
             text: 'Journal',
             uiIcon: UiIcon.JOURNAL,
-            path: 'journal',
+            path: 'journal/produce/crops',
         },
         {
             text: 'Crafting',
