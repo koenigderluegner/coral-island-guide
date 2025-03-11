@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable, Injector } from '@angular/core';
 import { combineLatest, map, Observable, of, shareReplay, tap } from 'rxjs';
 import {
     Achievement,
@@ -42,11 +42,14 @@ import { AvailableJournalOrders } from '../types/available-journal-orders.type';
 import { MapKeyed } from '../types/map-keyed.type';
 import { flatObjectMap } from "@ci/util";
 import { BaseDbService } from "./base-db.service";
+import { httpResource, HttpResourceOptions, HttpResourceRef } from "@angular/common/http";
 
 @Injectable({
     providedIn: 'root'
 })
 export class DatabaseService extends BaseDbService {
+
+    #injector = inject(Injector)
 
     private _ITEMS$?: Observable<Item[]>;
     private _ITEMS: Item[] = [];
@@ -65,7 +68,6 @@ export class DatabaseService extends BaseDbService {
 
     private _ITEM_PROCESSING_RECIPE$?: Observable<Record<string, ItemProcessing[]>>;
     private _COOKING_RECIPE$?: Observable<Record<string, CookingRecipe[]>>;
-    private _ITEM_MIXING_RECIPE$?: Observable<ItemMixingRecipeData[]>;
     private _CONSUMABLES$?: Observable<Consumable[]>;
 
     private _GIFT_PREFERENCES$?: Observable<MapKeyed<GiftPreferences>[]>;
@@ -83,7 +85,6 @@ export class DatabaseService extends BaseDbService {
     private _PET_SHOP_ADOPTIONS$?: Observable<PetShopAdoptions[]>;
     private _NPCS: NPC[] = [];
     private _NPCS$?: Observable<NPC[]>;
-    private _ACHHIEVEMENTS$?: Observable<Achievement[]>;
     private _MERIT_EXCHANGE_SHOP_DATA$?: Observable<MeritExchangeShopData[]>;
 
     private _HEART_EVENTS$?: Observable<Record<string, HeartEvent[]>>;
@@ -109,6 +110,8 @@ export class DatabaseService extends BaseDbService {
     private _ANIMAL_MOOD_DATA$?: Observable<ProductSizeByMood[]>;
 
     private _DATABASE_ITEMS: Map<string, DatabaseItem> = new Map<string, DatabaseItem>();
+
+    #resources: Map<string, HttpResourceRef<any>> = new Map<string, HttpResourceRef<any>>()
 
 
     fetchDatabaseItem$(id: string): Observable<DatabaseItem> {
@@ -291,14 +294,8 @@ export class DatabaseService extends BaseDbService {
     }
 
 
-    fetchAchievements$(): Observable<Achievement[]> {
-        if (!this._ACHHIEVEMENTS$) {
-            this._ACHHIEVEMENTS$ = this.http.get<Achievement[]>(`${this.BASE_PATH_WITH_LANG}/achievements.json`)
-                .pipe(
-                    shareReplay(1)
-                );
-        }
-        return this._ACHHIEVEMENTS$;
+    fetchAchievements() {
+        return this.#getResource<Achievement[]>(`${this.BASE_PATH_WITH_LANG}/achievements.json`)
     }
 
     fetchOfferings$(): Observable<OfferingAltar[]> {
@@ -321,14 +318,8 @@ export class DatabaseService extends BaseDbService {
         return this._CONSUMABLES$;
     }
 
-    fetchItemMixingRecipeData$(): Observable<ItemMixingRecipeData[]> {
-        if (!this._ITEM_MIXING_RECIPE$) {
-            this._ITEM_MIXING_RECIPE$ = this.http.get<ItemMixingRecipeData[]>(`${this.BASE_PATH_WITH_LANG}/underwater-seeds-item-mixing-data.json`)
-                .pipe(
-                    shareReplay(1)
-                );
-        }
-        return this._ITEM_MIXING_RECIPE$;
+    fetchItemMixingRecipeData() {
+        return this.#getResource<ItemMixingRecipeData[]>(`${this.BASE_PATH_WITH_LANG}/underwater-seeds-item-mixing-data.json`)
     }
 
     fetchFish$(): Observable<Fish[]> {
@@ -574,7 +565,6 @@ export class DatabaseService extends BaseDbService {
 
     }
 
-
     fetchFestivalData$(festivalName: FestivalName): Observable<FestivalData> {
         if (!this._FESTIVAL_DATA.has(festivalName)) {
             return this.http.get<FestivalData[]>(`${this.BASE_PATH_WITH_LANG}/${festivalName}-festival-data.json`)
@@ -614,6 +604,22 @@ export class DatabaseService extends BaseDbService {
 
         return this._MERIT_EXCHANGE_SHOP_DATA$
 
+
+    }
+
+    #getResource<TResult = unknown>(url: string | (() => string | undefined), options?: Exclude<HttpResourceOptions<TResult, unknown>, 'injector'>): HttpResourceRef<TResult | undefined> {
+        const cacheKey = typeof url === 'string' ? url : url();
+
+        if (!cacheKey) throw new Error('Missing URL');
+
+        let res = this.#resources.get(cacheKey);
+
+        if (!res) {
+            res = httpResource<TResult>(url, {...options, injector: this.#injector});
+            this.#resources.set(cacheKey, res);
+        }
+
+        return res;
 
     }
 

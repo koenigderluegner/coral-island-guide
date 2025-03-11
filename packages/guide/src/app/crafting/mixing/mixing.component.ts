@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { BaseSelectableContainerComponent } from "../../shared/components/base-selectable-container/base-selectable-container.component";
 import { ItemMixingRecipeData } from "@ci/data-types";
-import { AsyncPipe } from "@angular/common";
 import { DatabaseItemDetailsComponent } from "../../shared/components/database-item-details/database-item-details.component";
 import { DatabaseItemDetailsDirective } from "../../shared/directives/database-item-details.directive";
 import { DatabaseService } from "../../shared/services/database.service";
@@ -13,7 +12,6 @@ import { ItemIconComponent } from "../../shared/components/item-icon/item-icon.c
     selector: 'app-mixing',
     imports: [
         DatabaseItemDetailsComponent,
-        AsyncPipe,
         DatabaseItemDetailsDirective,
         MixingRecipeComponent,
         ListDetailContainerComponent,
@@ -23,6 +21,6 @@ import { ItemIconComponent } from "../../shared/components/item-icon/item-icon.c
 })
 export class MixingComponent extends BaseSelectableContainerComponent<ItemMixingRecipeData> {
 
-    itemMixingRecipes = inject(DatabaseService).fetchItemMixingRecipeData$();
+    itemMixingRecipes = inject(DatabaseService).fetchItemMixingRecipeData();
 
 }
