@@ -8,7 +8,7 @@
     "stackable": true,
     "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
-    "description": "A bottle of healthy fruit juice.",
+    "description": "Eine Flasche mit gesundem Fruchtsaft.",
     "qualities": {
       "bronze": {
         "price": 10,
@@ -27,6 +27,175 @@
         "sellPrice": 10
       }
     },
-    "iconName": ""
-  }
+    "iconName": "Juice_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.Keg",
+      "Item.Consumable.Drink",
+      "item.artisan.FruitJuice",
+      "item.cooking.ingredient"
+    ]
+  },
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "Steinsuppe",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Sieht ungenießbar aus. Verzehr auf eigene Gefahr.",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "Alle essbaren Zutaten"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "Stein",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "Alle essbaren Zutaten": [
+          {
+            "id": "item_41180",
+            "displayName": "Ziegenjoghurt",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "Großer Ziegenjoghurt",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "SpecialityBased",
+      "offeringGroupTitle": "Fortgeschrittener Altar",
+      "urlPath": "advancedaltar",
+      "offeringGroupRewardText": "Schaltet Warp Sesajen frei",
+      "offerings": [
+        {
+          "title": "Einfacher Handwerker",
+          "imageName": "Artisan_Product_Offerings",
+          "numOfItemRequired": -1,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_65020",
+                  "displayName": "Fässchen",
+                  "iconName": "Keg_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "offeringType": "Temple",
+          "requiredItems": [
+            {
+              "item": {
+                "key": "Any_Mayonnaise",
+                "displayName": "Beliebige Mayonnaise",
+                "iconName": "T_AnyMayo_Sprite"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_FruitJuice",
+                "displayName": "Beliebiger Fruchtsaft",
+                "iconName": "Juice"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_Butter",
+                "displayName": "Beliebige Butter",
+                "iconName": "T_AnyButter_Sprite"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_DriedScavengables",
+                "displayName": "Jegliche Getrockneten Überreste",
+                "iconName": "Seafood_jerky"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_Pickle",
+                "displayName": "Beliebige Essiggurke",
+                "iconName": "Pickles"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "offeringType": "Temple"
+    }
+  ]
 }

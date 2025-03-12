@@ -6,6 +6,10 @@
 
 - Added orchestra zones to checklists.
 
+#### Changed
+
+- Updated live data to v1.1-1237 (Steam version)
+
 ### 2025-02-06
 
 #### Added

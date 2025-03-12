@@ -8,7 +8,7 @@
     "stackable": true,
     "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
-    "description": "It‘s earthy on the nose. Or maybe smoky? Drink in moderation.",
+    "description": "Hat einen erdigen Geruch. Oder vielleicht rauchig? In Maßen trinken.",
     "qualities": {
       "bronze": {
         "price": 10,
@@ -27,6 +27,178 @@
         "sellPrice": 10
       }
     },
-    "iconName": ""
-  }
+    "iconName": "Wine_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.AgingBarrel",
+      "Item.Consumable.Drink",
+      "item.artisan.FruitWine",
+      "item.cooking.ingredient"
+    ]
+  },
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "Steinsuppe",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Sieht ungenießbar aus. Verzehr auf eigene Gefahr.",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "Alle essbaren Zutaten"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "Stein",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "Alle essbaren Zutaten": [
+          {
+            "id": "item_41180",
+            "displayName": "Ziegenjoghurt",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "Großer Ziegenjoghurt",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "RareBased",
+      "offeringGroupTitle": "Seltener Altar",
+      "urlPath": "rarealtar",
+      "offeringGroupRewardText": "Schaltet Zugriff auf die Savanne frei",
+      "offerings": [
+        {
+          "title": "Seltener Kunsthandwerker",
+          "imageName": "Rare_Artisan_Offerings",
+          "numOfItemRequired": -1,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_65022",
+                  "displayName": "Alterungsfass",
+                  "iconName": "Aging_Barrel_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "offeringType": "Temple",
+          "requiredItems": [
+            {
+              "item": {
+                "id": "item_41169",
+                "displayName": "Schwarzer Titanenwurz-Honig",
+                "iconName": "Black_Honey_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "key": "Any_Kimchi",
+                "displayName": "Jeden Kimchi",
+                "iconName": "Kimchi"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_Wine",
+                "displayName": "Beliebiger Wein",
+                "iconName": "Wine"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "id": "item_41178",
+                "displayName": "Fermentiertes Ziegenkäse-Rad",
+                "iconName": "Fermented_Goat_Cheese_Wheel_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_41174",
+                "displayName": "Weißes Trüffelöl",
+                "iconName": "White_truffle_oil_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            }
+          ]
+        }
+      ],
+      "offeringType": "Temple"
+    }
+  ]
 }

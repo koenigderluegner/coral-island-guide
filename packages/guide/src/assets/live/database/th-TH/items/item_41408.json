@@ -8,7 +8,7 @@
     "stackable": true,
     "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
-    "description": "It‘s earthy on the nose. Or maybe smoky? Drink in moderation.",
+    "description": "เครื่องดิ่มที่มีกลิ่นไอดิน เอ๊ะ หรือว่าจะเรียกว่ากลิ่นสโมกี้ดี? ดื่มให้พอประมาณนะ",
     "qualities": {
       "bronze": {
         "price": 10,
@@ -27,6 +27,178 @@
         "sellPrice": 10
       }
     },
-    "iconName": ""
-  }
+    "iconName": "Wine_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.AgingBarrel",
+      "Item.Consumable.Drink",
+      "item.artisan.FruitWine",
+      "item.cooking.ingredient"
+    ]
+  },
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "ซุปหิน",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "กินได้จริงเหรอ? ใครอยากลอง ตามสบายเลยนะ ",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "วัตถุดิบที่กินได้ชนิดใดก็ได้"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "ก้อนหิน",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "วัตถุดิบที่กินได้ชนิดใดก็ได้": [
+          {
+            "id": "item_41180",
+            "displayName": "โยเกิร์ตนมแพะ",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "โยเกิร์ตนมแพะขวดใหญ่",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "RareBased",
+      "offeringGroupTitle": "แท่นบูชาหายาก",
+      "urlPath": "rarealtar",
+      "offeringGroupRewardText": "ปลดล็อกขันธ์เครื่องบูชา",
+      "offerings": [
+        {
+          "title": "ช่างฝีมือผู้หาตัวจับยาก",
+          "imageName": "Rare_Artisan_Offerings",
+          "numOfItemRequired": -1,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_65022",
+                  "displayName": "ถังหมัก",
+                  "iconName": "Aging_Barrel_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "offeringType": "Temple",
+          "requiredItems": [
+            {
+              "item": {
+                "id": "item_41169",
+                "displayName": "น้ำผึ้งดอกบุกยักษ์สีดำ",
+                "iconName": "Black_Honey_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "key": "Any_Kimchi",
+                "displayName": "กิมจิใด ๆ",
+                "iconName": "Kimchi"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_Wine",
+                "displayName": "ไวน์ใดก็ได้",
+                "iconName": "Wine"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "id": "item_41178",
+                "displayName": "ชีสวีลนมแพะหมัก",
+                "iconName": "Fermented_Goat_Cheese_Wheel_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_41174",
+                "displayName": "น้ำมันเห็ดทรัฟเฟิลขาว",
+                "iconName": "White_truffle_oil_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            }
+          ]
+        }
+      ],
+      "offeringType": "Temple"
+    }
+  ]
 }
