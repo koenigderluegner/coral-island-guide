@@ -8,7 +8,7 @@
     "stackable": true,
     "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
-    "description": "Preserved for a longer shelf life.",
+    "description": "Em preservação para aumentar o prazo de validade.",
     "qualities": {
       "bronze": {
         "price": 10,
@@ -27,6 +27,175 @@
         "sellPrice": 10
       }
     },
-    "iconName": ""
-  }
+    "iconName": "Pickles_Sprite",
+    "tags": [
+      "income.farming",
+      "Artisan.PreserveJar",
+      "Item.Consumable.Food",
+      "item.artisan.Pickle",
+      "item.cooking.ingredient"
+    ]
+  },
+  "usedToCook": [
+    {
+      "key": "item_80088",
+      "amount": 1,
+      "cookingKey": "StoneSoup",
+      "item": {
+        "id": "item_80088",
+        "displayName": "Sopa de pedra",
+        "price": 50,
+        "sellPrice": 5,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Não parece comestível. Consuma sob sua própria responsabilidade.",
+        "qualities": {
+          "bronze": {
+            "price": 58,
+            "sellPrice": 6
+          },
+          "silver": {
+            "price": 63,
+            "sellPrice": 6
+          },
+          "gold": {
+            "price": 75,
+            "sellPrice": 8
+          },
+          "osmium": {
+            "price": 100,
+            "sellPrice": 10
+          }
+        },
+        "iconName": "Stone_Soup_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
+        ]
+      },
+      "craftingUnlock": {
+        "key": "item_80088",
+        "masteryLevel": 4,
+        "masteryType": "Mining"
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Edible",
+            "tags": [
+              "Item.Consumable.Drink",
+              "Item.Consumable.Food"
+            ],
+            "iconName": "T_AnyIngridient_Sprite",
+            "displayName": "Qualquer Ingrediente Comestível"
+          },
+          "key": "Any_Edible"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65004",
+            "displayName": "Pedra",
+            "iconName": "Stone_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": [],
+      "additionsToGenerics": {
+        "Qualquer Ingrediente Comestível": [
+          {
+            "id": "item_41180",
+            "displayName": "Iogurte de cabra",
+            "iconName": "Goat_Yoghurt_Sprite"
+          },
+          {
+            "id": "item_41181",
+            "displayName": "Iogurte de cabra grande",
+            "iconName": "Large_Goat_Yoghurt_Sprite"
+          }
+        ]
+      }
+    }
+  ],
+  "requiredAsOffering": [
+    {
+      "key": "SpecialityBased",
+      "offeringGroupTitle": "Altar Avançado",
+      "urlPath": "advancedaltar",
+      "offeringGroupRewardText": "Desbloqueia Sesajen de Dobra",
+      "offerings": [
+        {
+          "title": "Artesanato Básico",
+          "imageName": "Artisan_Product_Offerings",
+          "numOfItemRequired": -1,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_65020",
+                  "displayName": "Barril",
+                  "iconName": "Keg_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "offeringType": "Temple",
+          "requiredItems": [
+            {
+              "item": {
+                "key": "Any_Mayonnaise",
+                "displayName": "Qualquer Maionese",
+                "iconName": "T_AnyMayo_Sprite"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_FruitJuice",
+                "displayName": "Qualquer Suco de Fruta",
+                "iconName": "Juice"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_Butter",
+                "displayName": "Qualquer Manteiga",
+                "iconName": "T_AnyButter_Sprite"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_DriedScavengables",
+                "displayName": "Quaisquer itens de catação secos",
+                "iconName": "Seafood_jerky"
+              },
+              "amount": 1
+            },
+            {
+              "item": {
+                "key": "Any_Pickle",
+                "displayName": "Qualquer Produto em Conserva",
+                "iconName": "Pickles"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "offeringType": "Temple"
+    }
+  ]
 }

@@ -548,7 +548,14 @@
         "specificMonth": [],
         "specificWeather": [],
         "otherCutscenesState": [],
-        "heartEventDescriptionRequirements": [],
+        "heartEventDescriptionRequirements": [
+          {
+            "TableId": "/Game/ProjectCoral/StringTable/ST_RequirementDescription.ST_RequirementDescription",
+            "Key": "Requirement_Day_15to28Fall",
+            "SourceString": "Not available on Fall 15 to Fall 28.",
+            "LocalizedString": "Not available on Fall 15 to Fall 28."
+          }
+        ],
         "canTriggerSameDay": false
       },
       "scott_2": {
@@ -877,11 +884,11 @@
         },
         "time": {
           "fromTime": {
-            "hours": 6,
+            "hours": 9,
             "minutes": 0
           },
           "toTime": {
-            "hours": 23,
+            "hours": 17,
             "minutes": 0
           }
         },
@@ -2761,7 +2768,7 @@
             "ObjectName": "DataTable'DT_LocationAreaInfo'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
           },
-          "RowName": "ForestRuin"
+          "RowName": "ForestArea"
         },
         "time": {
           "fromTime": {
@@ -2988,12 +2995,6 @@
             "Key": "Requirement_Weather_Sunny",
             "SourceString": "Only available on sunny weather.",
             "LocalizedString": "Only available on sunny weather."
-          },
-          {
-            "TableId": "/Game/ProjectCoral/StringTable/ST_RequirementDescription.ST_RequirementDescription",
-            "Key": "Requirement_Day_15to28Fall",
-            "SourceString": "Not available on Fall 15 to Fall 28.",
-            "LocalizedString": "Not available on Fall 15 to Fall 28."
           }
         ],
         "canTriggerSameDay": false
@@ -5399,7 +5400,7 @@
             "ObjectName": "DataTable'DT_LocationAreaInfo'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
           },
-          "RowName": "ForestRuin"
+          "RowName": "ForestArea"
         },
         "time": {
           "fromTime": {
@@ -5433,7 +5434,7 @@
             "ObjectName": "DataTable'DT_LocationAreaInfo'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
           },
-          "RowName": "ForestRuin"
+          "RowName": "ForestArea"
         },
         "time": {
           "fromTime": {
@@ -6540,7 +6541,7 @@
             "ObjectName": "DataTable'DT_LocationAreaInfo'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
           },
-          "RowName": "ForestRuin"
+          "RowName": "ForestArea"
         },
         "time": {
           "fromTime": {
@@ -8114,7 +8115,11 @@
           }
         },
         "specificDay": [],
-        "specificMonth": [],
+        "specificMonth": [
+          "EC_Season::Spring",
+          "EC_Season::Summer",
+          "EC_Season::Fall"
+        ],
         "specificWeather": [
           "EC_Weather::Sunny"
         ],
@@ -8125,6 +8130,12 @@
           }
         ],
         "heartEventDescriptionRequirements": [
+          {
+            "TableId": "/Game/ProjectCoral/StringTable/ST_RequirementDescription.ST_RequirementDescription",
+            "Key": "Requirement_Season_NoWinter",
+            "SourceString": "Not available during Winter.",
+            "LocalizedString": "Not available during Winter."
+          },
           {
             "TableId": "/Game/ProjectCoral/StringTable/ST_RequirementDescription.ST_RequirementDescription",
             "Key": "Requirement_Weather_Sunny",
@@ -8674,8 +8685,8 @@
             "minutes": 0
           },
           "toTime": {
-            "hours": 23,
-            "minutes": 59
+            "hours": 21,
+            "minutes": 0
           }
         },
         "specificDay": [],
@@ -8815,12 +8826,6 @@
             "Key": "Requirement_Weather_Sunny",
             "SourceString": "Only available on sunny weather.",
             "LocalizedString": "Only available on sunny weather."
-          },
-          {
-            "TableId": "/Game/ProjectCoral/StringTable/ST_RequirementDescription.ST_RequirementDescription",
-            "Key": "Requirement_Day_15to28Fall",
-            "SourceString": "Not available on Fall 15 to Fall 28.",
-            "LocalizedString": "Not available on Fall 15 to Fall 28."
           }
         ],
         "canTriggerSameDay": false
@@ -10593,16 +10598,12 @@
             "minutes": 0
           },
           "toTime": {
-            "hours": 23,
+            "hours": 21,
             "minutes": 0
           }
         },
         "specificDay": [],
-        "specificMonth": [
-          "EC_Season::Spring",
-          "EC_Season::Summer",
-          "EC_Season::Fall"
-        ],
+        "specificMonth": [],
         "specificWeather": [],
         "otherCutscenesState": [
           {
@@ -10610,14 +10611,7 @@
             "Value": true
           }
         ],
-        "heartEventDescriptionRequirements": [
-          {
-            "TableId": "/Game/ProjectCoral/StringTable/ST_RequirementDescription.ST_RequirementDescription",
-            "Key": "Requirement_Season_NoWinter",
-            "SourceString": "Not available during Winter.",
-            "LocalizedString": "Not available during Winter."
-          }
-        ],
+        "heartEventDescriptionRequirements": [],
         "canTriggerSameDay": true
       },
       "chaem_8": {
@@ -10643,11 +10637,7 @@
           }
         },
         "specificDay": [],
-        "specificMonth": [
-          "EC_Season::Spring",
-          "EC_Season::Summer",
-          "EC_Season::Fall"
-        ],
+        "specificMonth": [],
         "specificWeather": [],
         "otherCutscenesState": [
           {
@@ -10655,14 +10645,7 @@
             "Value": true
           }
         ],
-        "heartEventDescriptionRequirements": [
-          {
-            "TableId": "/Game/ProjectCoral/StringTable/ST_RequirementDescription.ST_RequirementDescription",
-            "Key": "Requirement_Season_NoWinter",
-            "SourceString": "Not available during Winter.",
-            "LocalizedString": "Not available during Winter."
-          }
-        ],
+        "heartEventDescriptionRequirements": [],
         "canTriggerSameDay": false
       },
       "chaem_8b": {
@@ -10684,15 +10667,11 @@
           },
           "toTime": {
             "hours": 23,
-            "minutes": 59
+            "minutes": 0
           }
         },
         "specificDay": [],
-        "specificMonth": [
-          "EC_Season::Spring",
-          "EC_Season::Summer",
-          "EC_Season::Fall"
-        ],
+        "specificMonth": [],
         "specificWeather": [],
         "otherCutscenesState": [
           {
@@ -10700,14 +10679,7 @@
             "Value": true
           }
         ],
-        "heartEventDescriptionRequirements": [
-          {
-            "TableId": "/Game/ProjectCoral/StringTable/ST_RequirementDescription.ST_RequirementDescription",
-            "Key": "Requirement_Season_NoWinter",
-            "SourceString": "Not available during Winter.",
-            "LocalizedString": "Not available during Winter."
-          }
-        ],
+        "heartEventDescriptionRequirements": [],
         "canTriggerSameDay": false
       },
       "chaem_10": {
@@ -10733,11 +10705,7 @@
           }
         },
         "specificDay": [],
-        "specificMonth": [
-          "EC_Season::Spring",
-          "EC_Season::Summer",
-          "EC_Season::Fall"
-        ],
+        "specificMonth": [],
         "specificWeather": [
           "EC_Weather::Sunny"
         ],
@@ -10748,12 +10716,6 @@
           }
         ],
         "heartEventDescriptionRequirements": [
-          {
-            "TableId": "/Game/ProjectCoral/StringTable/ST_RequirementDescription.ST_RequirementDescription",
-            "Key": "Requirement_Season_NoWinter",
-            "SourceString": "Not available during Winter.",
-            "LocalizedString": "Not available during Winter."
-          },
           {
             "TableId": "/Game/ProjectCoral/StringTable/ST_RequirementDescription.ST_RequirementDescription",
             "Key": "Requirement_Weather_Sunny",
@@ -12335,7 +12297,7 @@
             "ObjectName": "DataTable'DT_LocationAreaInfo'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
           },
-          "RowName": "ForestMonkeyTree"
+          "RowName": "ForestArea"
         },
         "time": {
           "fromTime": {
@@ -13045,7 +13007,7 @@
             "ObjectName": "DataTable'DT_LocationAreaInfo'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
           },
-          "RowName": "ForestMonkeyTree"
+          "RowName": "ForestArea"
         },
         "time": {
           "fromTime": {
@@ -16471,7 +16433,7 @@
         "enabled": false,
         "npc": "Millie",
         "heartLevel": 12,
-        "cutscene": "HS_Millie_Heart_12",
+        "cutscene": "HS_Millie_Heart_12_A",
         "locationRow": {
           "DataTable": {
             "ObjectName": "DataTable'DT_LocationAreaInfo'",
@@ -16538,7 +16500,11 @@
         "specificWeather": [],
         "otherCutscenesState": [
           {
-            "Key": "HS_Millie_Heart_12",
+            "Key": "HS_Millie_Heart_12_A",
+            "Value": true
+          },
+          {
+            "Key": "HS_Millie_Heart_12_B",
             "Value": true
           }
         ],
