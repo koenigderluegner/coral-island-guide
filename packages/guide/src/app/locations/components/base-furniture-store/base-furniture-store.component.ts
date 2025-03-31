@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BaseSelectableContainerComponent } from "../../../shared/components/base-selectable-container/base-selectable-container.component";
 import { OpeningHours, ShopDisplayNames, ShopIcons, ShopItemData, ShopName, UiIcon } from "@ci/data-types";
 import { Observable } from "rxjs";
+import { HttpResourceRef } from "@angular/common/http";
 
 @Component({
     selector: 'app-base-furniture-store',
@@ -17,7 +18,7 @@ export abstract class BaseFurnitureStoreComponent extends BaseSelectableContaine
     protected shopItemDataIndoor$?: Observable<ShopItemData[]>;
     protected shopItemDataOutdoor$?: Observable<ShopItemData[]>;
     protected uiIcon = UiIcon;
-    protected openingHours$?: Observable<Record<string, OpeningHours>>;
+    protected openingHours$?: HttpResourceRef<Record<string, OpeningHours> | undefined>;
 
 
 }

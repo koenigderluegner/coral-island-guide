@@ -10,7 +10,7 @@
         </app-database-item-details>
     }
 
-    @if (itemMixingRecipes | async; as processorItems) {
+    @if (itemMixingRecipes.value(); as processorItems) {
 
         @if (!showTable) {
             <div class="icon-grid">

@@ -16,7 +16,7 @@
         </h1>
         @if (openingHours$) {
 
-            @if ((openingHours$ |async); as openingHours) {
+            @if ((openingHours$.value()); as openingHours) {
                 <app-opening-hours [openingHours]="openingHours"/>
             }
 
@@ -52,7 +52,7 @@
 
 
     <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Animals</h2>
-    @if ((animalData$ |async); as shopItemData) {
+    @if (animalData(); as shopItemData) {
 
         <app-data-filter [(showTable)]="showTable"/>
         @if (!showTable) {
@@ -74,7 +74,8 @@
 
 
     <h2 class="mt-6 mb-3 font-semibold text-2xl text-white">Animal product size per mood and hearts</h2>
-    @if (sizeByMood$ | async; as sizeByMoods) {
+
+    @if (sizeByMood.value(); as sizeByMoods) {
         <app-animal-mood-table [productSizeByMood]="sizeByMoods"/>
     }
 

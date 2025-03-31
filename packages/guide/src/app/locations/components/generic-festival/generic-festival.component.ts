@@ -23,6 +23,7 @@ import { CardComponent } from "../../../shared/components/card/card.component";
 import { AsyncPipe } from "@angular/common";
 import { FestivalShopItemDetailsComponent } from "../festival-shop-item-details/festival-shop-item-details.component";
 import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
+import { HttpResourceRef } from "@angular/common/http";
 
 @Component({
     selector: 'app-generic-festival',
@@ -48,7 +49,7 @@ export class GenericFestivalComponent {
     protected readonly FESTIVAL_DISPLAY_NAMES = FestivalDisplayNames
     protected readonly FESTIVAL_ICONS = FestivalIcons
     protected readonly festivalData$: Observable<FestivalData>;
-    protected openingHours$?: Observable<Record<string, OpeningHours>>;
+    protected openingHours$?: HttpResourceRef<Record<string, OpeningHours> | undefined>;
     protected showTable = false;
     private readonly _router = inject(ActivatedRoute);
     private readonly _database = inject(DatabaseService);

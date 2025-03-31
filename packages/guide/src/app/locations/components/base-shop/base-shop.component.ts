@@ -11,6 +11,7 @@ import {
     UiIcon
 } from "@ci/data-types";
 import { Observable } from "rxjs";
+import { HttpResourceRef } from "@angular/common/http";
 
 @Component({
     template: '',
@@ -25,7 +26,7 @@ export abstract class BaseShopComponent extends BaseSelectableContainerComponent
 
     protected shopItemData$?: Observable<ShopItemData[]>;
     protected uiIcon = UiIcon;
-    protected openingHours$?: Observable<Record<string, OpeningHours>>;
+    protected openingHours$?: HttpResourceRef<Record<string, OpeningHours> | undefined>;
     protected itemProcessing$?: Observable<ItemProcessShopData[]>;
     protected selectedProcessEntity: ItemProcessShopData | undefined;
     protected showProcessingTable = false
