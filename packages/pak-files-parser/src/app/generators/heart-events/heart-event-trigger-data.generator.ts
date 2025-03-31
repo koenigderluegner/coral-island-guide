@@ -23,7 +23,7 @@ export class HeartEventTriggerDataGenerator extends BaseGenerator<RawHeartEventT
             npc: dbItem.npc,
             cutscene: dbItem.cutscene,
             enabled: dbItem.enabled,
-            otherCutscenesState: dbItem.otherCutscenesState,
+            otherCutscenesState: dbItem.otherCutscenesState.map(kv => ({[kv.Key]: kv.Value})),
             specificDay: dbItem.specificDay.map(getEnumValue),
             specificMonth: dbItem.specificMonth.map(getEnumValue),
             specificWeather: dbItem.specificWeather.map(getEnumValue),

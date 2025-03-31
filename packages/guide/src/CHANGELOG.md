@@ -9,6 +9,7 @@
 #### Changed
 
 - Updated live data to v1.1-1237 (Steam version)
+- Fixed heart events details showing Key/Value instead of the actual values 
 
 ### 2025-02-06
 

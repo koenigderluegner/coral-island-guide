@@ -1,3 +1,5 @@
+import { AssetMap } from "../../types/asset-map.type";
+
 export interface RawHeartEventTriggerData {
     enabled: boolean,
     npc: string
@@ -23,6 +25,6 @@ export interface RawHeartEventTriggerData {
     specificDay: string[ ],
     specificMonth: string[],
     specificWeather: string[],
-    otherCutscenesState: Record<string, boolean>[],
+    otherCutscenesState: AssetMap<boolean>[],
     canTriggerSameDay: boolean
 }
