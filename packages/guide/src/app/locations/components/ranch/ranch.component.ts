@@ -49,14 +49,12 @@ export class RanchComponent extends BaseShopComponent {
         });
     })
     protected selectedAnimal?: MappedAnimalShopData
-    protected sizeByMood$: Observable<ProductSizeByMood[]>;
+    protected sizeByMood= this._database.fetchAnimalMoodData();
 
     constructor() {
         super();
         this.shopItemData$ = this._database.fetchShopItemData$(this.shopName);
         this.openingHours$ = this._database.fetchOpeningHours$(this.shopName);
-        this.sizeByMood$ = this._database.fetchAnimalMoodData$();
-
     }
 
     override showDetails(selectedEntry: ShopItemData) {

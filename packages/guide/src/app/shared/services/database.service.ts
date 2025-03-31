@@ -42,7 +42,7 @@ import { AvailableJournalOrders } from '../types/available-journal-orders.type';
 import { MapKeyed } from '../types/map-keyed.type';
 import { flatObjectMap } from "@ci/util";
 import { BaseDbService } from "./base-db.service";
-import { httpResource, HttpResourceOptions, HttpResourceRef } from "@angular/common/http";
+import { httpResource, HttpResourceOptions, HttpResourceRef, HttpResourceRequest } from "@angular/common/http";
 
 @Injectable({
     providedIn: 'root'
@@ -80,7 +80,6 @@ export class DatabaseService extends BaseDbService {
     private _SHOP_ITEMS: Map<string, ShopItemData[]> = new Map<string, ShopItemData[]>();
     private _FESTIVAL_DATA: Map<string, FestivalData> = new Map<string, FestivalData>();
     private _SHOP_PROCESS_ITEMS: Map<string, ItemProcessShopData[]> = new Map<string, ItemProcessShopData[]>();
-    private _OPENING_HOURS: Map<string, Record<string, OpeningHours>> = new Map<string, Record<string, OpeningHours>>();
     private _ITEM_UPGRADE: Map<string, ItemUpgradeData[]> = new Map<string, ItemUpgradeData[]>();
     private _PET_SHOP_ADOPTIONS$?: Observable<PetShopAdoptions[]>;
     private _NPCS: NPC[] = [];
@@ -101,11 +100,6 @@ export class DatabaseService extends BaseDbService {
     private _MAIL_DATA$?: Observable<MailData[]>;
 
     private _TORN_PAGES_DATA$?: Observable<TornPageData[]>;
-
-    private _BESTIARY$?: Observable<Enemy[]>;
-
-
-    private _ANIMAL_MOOD_DATA$?: Observable<ProductSizeByMood[]>;
 
     private _DATABASE_ITEMS: Map<string, DatabaseItem> = new Map<string, DatabaseItem>();
 
@@ -151,28 +145,16 @@ export class DatabaseService extends BaseDbService {
         return this._MAIL_DATA$;
     }
 
-    fetchBestiary$(): Observable<Enemy[]> {
-        if (!this._BESTIARY$) {
-            this._BESTIARY$ = this.http.get<Enemy[]>(`${this.BASE_PATH_WITH_LANG}/bestiary.json`)
-                .pipe(
-                    shareReplay(1)
-                );
-        }
-        return this._BESTIARY$;
+    fetchBestiary(){
+            return this.#getResource<Enemy[]>(`${this.BASE_PATH_WITH_LANG}/bestiary.json`)
     }
 
     fetchAnimals(){
         return this.#getResource<AnimalData[]>(`${this.BASE_PATH_WITH_LANG}/animal-data.json`);
     }
 
-    fetchAnimalMoodData$(): Observable<ProductSizeByMood[]> {
-        if (!this._ANIMAL_MOOD_DATA$) {
-            this._ANIMAL_MOOD_DATA$ = this.http.get<ProductSizeByMood[]>(`${this.BASE_PATH_WITH_LANG}/animal-mood-size.json`)
-                .pipe(
-                    shareReplay(1)
-                );
-        }
-        return this._ANIMAL_MOOD_DATA$;
+    fetchAnimalMoodData(){
+     return this.#getResource<ProductSizeByMood[]>(`${this.BASE_PATH_WITH_LANG}/animal-mood-size.json`)
     }
 
     fetchAnimalShopData(shopName: ShopName){
@@ -521,17 +503,10 @@ export class DatabaseService extends BaseDbService {
 
     }
 
-    fetchOpeningHours$(shopName: ShopName): Observable<Record<string, OpeningHours>> {
-        if (!this._OPENING_HOURS.has(shopName)) {
-            return this.http.get<Record<string, OpeningHours>[]>(`${this.BASE_PATH_WITH_LANG}/${shopName}-opening-hours.json`)
-                .pipe(
-                    map(items => items[0]),
-                    tap(items => this._OPENING_HOURS.set(shopName, items)),
-                    shareReplay(1)
-                );
-        } else {
-            return of(this._OPENING_HOURS.get(shopName)!)
-        }
+    fetchOpeningHours$(shopName: ShopName) {
+        return this.#getResource<Record<string, OpeningHours>, Record<string, OpeningHours>[]>(`${this.BASE_PATH_WITH_LANG}/${shopName}-opening-hours.json`, {
+            parse: (value) => value[0]
+        })
 
     }
 
@@ -562,18 +537,10 @@ export class DatabaseService extends BaseDbService {
 
     }
 
-    fetchFestivalOpeningHours$(festivalName: FestivalName): Observable<Record<string, OpeningHours>> {
-        const key = 'festival_' + festivalName as ShopName
-        if (!this._OPENING_HOURS.has(key)) {
-            return this.http.get<Record<string, OpeningHours>[]>(`${this.BASE_PATH_WITH_LANG}/${festivalName}-festival-opening-hours.json`)
-                .pipe(
-                    map(items => items[0]),
-                    tap(items => this._OPENING_HOURS.set(key, items)),
-                    shareReplay(1)
-                );
-        } else {
-            return of(this._OPENING_HOURS.get(key)!)
-        }
+    fetchFestivalOpeningHours$(festivalName: FestivalName) {
+        return this.#getResource<Record<string, OpeningHours>, Record<string, OpeningHours>[]>(`${this.BASE_PATH_WITH_LANG}/${festivalName}-festival-opening-hours.json`, {
+            parse: (value) => value[0]
+        })
 
     }
 
@@ -590,7 +557,7 @@ export class DatabaseService extends BaseDbService {
 
     }
 
-    #getResource<TResult = unknown>(url: string | (() => string | undefined), options?: Exclude<HttpResourceOptions<TResult, unknown>, 'injector'>): HttpResourceRef<TResult | undefined> {
+    #getResource<TResult = unknown,TRaw = unknown>(url: string | (() => string | undefined), options?: Exclude<HttpResourceOptions<TResult, TRaw>, 'injector'>): HttpResourceRef<TResult | undefined> {
         const cacheKey = typeof url === 'string' ? url : url();
 
         if (!cacheKey) throw new Error('Missing URL');
@@ -598,7 +565,8 @@ export class DatabaseService extends BaseDbService {
         let res = this.#resources.get(cacheKey);
 
         if (!res) {
-            res = httpResource<TResult>(url, {...options, injector: this.#injector});
+            // @ts-expect-error incompatible types, TODO
+            res = httpResource<TResult>(url as unknown as HttpResourceRequest, {...options, injector: this.#injector});
             this.#resources.set(cacheKey, res);
         }
 

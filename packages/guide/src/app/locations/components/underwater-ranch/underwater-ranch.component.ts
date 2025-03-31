@@ -25,7 +25,7 @@ export class UnderwaterRanchComponent extends BaseShopComponent {
 
     protected shopName: ShopName = "underwater-ranch";
     protected selectedAnimal?: MappedAnimalShopData
-    protected sizeByMood$: Observable<ProductSizeByMood[]>;
+    protected sizeByMood= this._database.fetchAnimalMoodData();
     #animalRequests = merge(this._database.fetchAnimals(), this._database.fetchAnimalShopData(this.shopName))
     animalData = computed<MappedAnimalShopData[] | null>(() => {
         const values = this.#animalRequests.values();
@@ -41,9 +41,6 @@ export class UnderwaterRanchComponent extends BaseShopComponent {
     constructor() {
         super();
         this.openingHours$ = this._database.fetchOpeningHours$(this.shopName);
-        this.sizeByMood$ = this._database.fetchAnimalMoodData$();
-
-
     }
 
     override showDetails(selectedEntry: ShopItemData) {

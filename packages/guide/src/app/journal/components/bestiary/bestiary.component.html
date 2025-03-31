@@ -4,7 +4,7 @@
     }
 
     <app-data-filter [(showTable)]="showTable"/>
-    @if ((bestiary$  |async); as syncedData) {
+    @if ((bestiary.value()); as syncedData) {
 
         @if (!showTable) {
 
@@ -24,6 +24,9 @@
             <app-bestiary-table [dataSource]="syncedData"/>
 
         }
+
+    } @else if (bestiary.isLoading()) {
+        <mat-spinner class="mx-auto my-8 text-white"/>
 
     }
 

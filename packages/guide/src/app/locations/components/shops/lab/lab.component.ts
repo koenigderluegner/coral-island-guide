@@ -40,10 +40,10 @@ export class LabComponent extends BaseShopComponent {
 
     constructor() {
         super();
-        this.shopItemData$ = this._database.fetchShopItemData$("lab");
-        this.openingHours$ = this._database.fetchOpeningHours$("lab");
-        this.itemProcessing$ = this._database.fetchShopProcessItems$("lab");
-        this.itemUpgrade$ = this._database.fetchItemUpgradeData$("lab");
+        this.shopItemData$ = this._database.fetchShopItemData$(this.shopName);
+        this.openingHours$ = this._database.fetchOpeningHours$(this.shopName);
+        this.itemProcessing$ = this._database.fetchShopProcessItems$(this.shopName);
+        this.itemUpgrade$ = this._database.fetchItemUpgradeData$(this.shopName);
     }
 
 }

@@ -16,7 +16,7 @@
                 </h1>
                 @if (openingHours$) {
 
-                    @if ((openingHours$ |async); as openingHours) {
+                    @if ((openingHours$.value()); as openingHours) {
                         <app-opening-hours [openingHours]="openingHours"/>
                     }
 
