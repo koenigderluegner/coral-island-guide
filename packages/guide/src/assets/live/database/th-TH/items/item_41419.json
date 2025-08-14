@@ -1,30 +1,32 @@
 {
   "item": {
     "id": "item_41419",
-    "displayName": "Pickled taro root",
-    "price": 10,
-    "sellPrice": 10,
-    "sellAt": [],
+    "displayName": "หัวเผือกดอง",
+    "price": 85,
+    "sellPrice": 50,
+    "sellAt": [
+      "Sam"
+    ],
     "stackable": true,
     "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
     "description": "ดองไว้เพื่อการเก็บรักษาที่ยาวนานยิ่งขึ้น",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 90,
+        "sellPrice": 55
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 100,
+        "sellPrice": 60
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 115,
+        "sellPrice": 70
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 140,
+        "sellPrice": 85
       }
     },
     "iconName": "White_Pickles_Sprite",
@@ -36,6 +38,104 @@
       "item.cooking.ingredient"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_23012",
+          "displayName": "หัวเผือก",
+          "iconName": "Taro_root_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41419",
+          "displayName": "หัวเผือกดอง",
+          "iconName": "White_Pickles_Sprite",
+          "sellPrice": 50
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 4,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41419",
+          "displayName": "หัวเผือกดอง",
+          "iconName": "White_Pickles_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41415",
+          "displayName": "กิมจิหัวเผือก",
+          "iconName": "Kimchi_Sprite",
+          "sellPrice": 250
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 3,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 3,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 2,
+          "time": {
+            "hours": 16,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 2,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_80088",
@@ -197,5 +297,67 @@
       ],
       "offeringType": "Temple"
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41419",
+      "bVaryHealthToMax": false,
+      "healthDelta": 25,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 25,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_41419-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 30,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 30,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_41419-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 30,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 30,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_41419-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 40,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 40,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_41419-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 50,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 50,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  }
 }

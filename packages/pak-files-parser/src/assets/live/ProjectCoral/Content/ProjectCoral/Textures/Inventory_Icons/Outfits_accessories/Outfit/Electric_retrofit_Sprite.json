@@ -1,0 +1,111 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Electric_retrofit_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -6.5,
+              "Y": 0.0,
+              "Z": 0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 49.0,
+            "Y": 10.0,
+            "Z": 123.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "396B541F47224D7942D69E96B525E5C0"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Electric_retrofit_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Electric_retrofit'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Outfits_accessories/Outfit/Texture/Electric_retrofit.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Electric_retrofit_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Outfits_accessories/Outfit/Electric_retrofit_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 18.0,
+          "Y": 62.0,
+          "Z": 0.640625,
+          "W": 0.015625
+        },
+        {
+          "X": -31.0,
+          "Y": 62.0,
+          "Z": 0.2578125,
+          "W": 0.015625
+        },
+        {
+          "X": -31.0,
+          "Y": -61.0,
+          "Z": 0.2578125,
+          "W": 0.9765625
+        },
+        {
+          "X": 18.0,
+          "Y": -61.0,
+          "Z": 0.640625,
+          "W": 0.9765625
+        },
+        {
+          "X": 18.0,
+          "Y": 62.0,
+          "Z": 0.640625,
+          "W": 0.015625
+        },
+        {
+          "X": -31.0,
+          "Y": -61.0,
+          "Z": 0.2578125,
+          "W": 0.9765625
+        }
+      ]
+    }
+  }
+]

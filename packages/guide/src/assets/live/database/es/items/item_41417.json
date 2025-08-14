@@ -1,30 +1,32 @@
 {
   "item": {
     "id": "item_41417",
-    "displayName": "Pumpkin kimchi",
-    "price": 10,
-    "sellPrice": 10,
-    "sellAt": [],
+    "displayName": "Kimchi de calabaza",
+    "price": 2375,
+    "sellPrice": 950,
+    "sellAt": [
+      "Sam"
+    ],
     "stackable": true,
     "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
     "description": "Es amargo y picante… ¡Qué delicia!",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 2690,
+        "sellPrice": 1075
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 3000,
+        "sellPrice": 1200
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 3440,
+        "sellPrice": 1375
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 4565,
+        "sellPrice": 1825
       }
     },
     "iconName": "Kimchi_Sprite",
@@ -36,6 +38,74 @@
       "item.cooking.ingredient"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 4,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41421",
+          "displayName": "Calabaza encurtida",
+          "iconName": "Yellow_Pickles_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41417",
+          "displayName": "Kimchi de calabaza",
+          "iconName": "Kimchi_Sprite",
+          "sellPrice": 950
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 3,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 3,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 2,
+          "time": {
+            "hours": 16,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 2,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_80088",
@@ -200,5 +270,67 @@
       ],
       "offeringType": "Temple"
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41417",
+      "bVaryHealthToMax": false,
+      "healthDelta": 85,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 65,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_41417-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 100,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 70,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_41417-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 105,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 80,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_41417-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 130,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 95,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_41417-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 175,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 125,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  }
 }

@@ -1,0 +1,111 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Window_Backpack_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -1.5,
+              "Y": -0.0,
+              "Z": -0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 103.0,
+            "Y": 10.0,
+            "Z": 121.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "8B83F1B24230DA27E18960A142428920"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Window_Backpack_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Window_Backpack'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Outfits_accessories/Accessories/Accessories_textures/Window_Backpack.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Window_Backpack_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Outfits_accessories/Accessories/Window_Backpack_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 50.0,
+          "Y": 60.0,
+          "Z": 0.890625,
+          "W": 0.03125
+        },
+        {
+          "X": -53.0,
+          "Y": 60.0,
+          "Z": 0.0859375,
+          "W": 0.03125
+        },
+        {
+          "X": -53.0,
+          "Y": -61.0,
+          "Z": 0.0859375,
+          "W": 0.9765625
+        },
+        {
+          "X": 50.0,
+          "Y": -61.0,
+          "Z": 0.890625,
+          "W": 0.9765625
+        },
+        {
+          "X": 50.0,
+          "Y": 60.0,
+          "Z": 0.890625,
+          "W": 0.03125
+        },
+        {
+          "X": -53.0,
+          "Y": -61.0,
+          "Z": 0.0859375,
+          "W": 0.9765625
+        }
+      ]
+    }
+  }
+]

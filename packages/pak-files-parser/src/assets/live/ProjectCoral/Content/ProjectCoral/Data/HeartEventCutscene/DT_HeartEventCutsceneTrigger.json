@@ -548,14 +548,7 @@
         "specificMonth": [],
         "specificWeather": [],
         "otherCutscenesState": [],
-        "heartEventDescriptionRequirements": [
-          {
-            "TableId": "/Game/ProjectCoral/StringTable/ST_RequirementDescription.ST_RequirementDescription",
-            "Key": "Requirement_Day_15to28Fall",
-            "SourceString": "Not available on Fall 15 to Fall 28.",
-            "LocalizedString": "Not available on Fall 15 to Fall 28."
-          }
-        ],
+        "heartEventDescriptionRequirements": [],
         "canTriggerSameDay": false
       },
       "scott_2": {
@@ -965,7 +958,11 @@
           }
         },
         "specificDay": [],
-        "specificMonth": [],
+        "specificMonth": [
+          "EC_Season::Spring",
+          "EC_Season::Summer",
+          "EC_Season::Fall"
+        ],
         "specificWeather": [
           "EC_Weather::Sunny"
         ],
@@ -981,6 +978,12 @@
             "Key": "Requirement_Weather_Sunny",
             "SourceString": "Only available on sunny weather.",
             "LocalizedString": "Only available on sunny weather."
+          },
+          {
+            "TableId": "/Game/ProjectCoral/StringTable/ST_RequirementDescription.ST_RequirementDescription",
+            "Key": "Requirement_Season_NoWinter",
+            "SourceString": "Not available during Winter.",
+            "LocalizedString": "Not available during Winter."
           }
         ],
         "canTriggerSameDay": false
@@ -6156,7 +6159,7 @@
             "minutes": 0
           },
           "toTime": {
-            "hours": 21,
+            "hours": 20,
             "minutes": 0
           }
         },
@@ -6983,7 +6986,11 @@
           }
         },
         "specificDay": [],
-        "specificMonth": [],
+        "specificMonth": [
+          "EC_Season::Spring",
+          "EC_Season::Summer",
+          "EC_Season::Fall"
+        ],
         "specificWeather": [
           "EC_Weather::Sunny"
         ],
@@ -6994,6 +7001,12 @@
           }
         ],
         "heartEventDescriptionRequirements": [
+          {
+            "TableId": "/Game/ProjectCoral/StringTable/ST_RequirementDescription.ST_RequirementDescription",
+            "Key": "Requirement_Season_NoWinter",
+            "SourceString": "Not available during Winter.",
+            "LocalizedString": "Not available during Winter."
+          },
           {
             "TableId": "/Game/ProjectCoral/StringTable/ST_RequirementDescription.ST_RequirementDescription",
             "Key": "Requirement_Weather_Sunny",
@@ -7137,7 +7150,11 @@
           }
         },
         "specificDay": [],
-        "specificMonth": [],
+        "specificMonth": [
+          "EC_Season::Spring",
+          "EC_Season::Summer",
+          "EC_Season::Fall"
+        ],
         "specificWeather": [
           "EC_Weather::Sunny"
         ],
@@ -7148,6 +7165,12 @@
           }
         ],
         "heartEventDescriptionRequirements": [
+          {
+            "TableId": "/Game/ProjectCoral/StringTable/ST_RequirementDescription.ST_RequirementDescription",
+            "Key": "Requirement_Season_NoWinter",
+            "SourceString": "Not available during Winter.",
+            "LocalizedString": "Not available during Winter."
+          },
           {
             "TableId": "/Game/ProjectCoral/StringTable/ST_RequirementDescription.ST_RequirementDescription",
             "Key": "Requirement_Weather_Sunny",
@@ -7305,8 +7328,7 @@
           "EC_Season::Fall"
         ],
         "specificWeather": [
-          "EC_Weather::Sunny",
-          "EC_Weather::Windy"
+          "EC_Weather::Sunny"
         ],
         "otherCutscenesState": [
           {
@@ -7323,9 +7345,9 @@
           },
           {
             "TableId": "/Game/ProjectCoral/StringTable/ST_RequirementDescription.ST_RequirementDescription",
-            "Key": "Requirement_Weather_SunnyWindy",
-            "SourceString": "Only available on sunny and windy weather.",
-            "LocalizedString": "Only available on sunny and windy weather."
+            "Key": "Requirement_Weather_Sunny",
+            "SourceString": "Only available on sunny weather.",
+            "LocalizedString": "Only available on sunny weather."
           }
         ],
         "canTriggerSameDay": false
@@ -7923,7 +7945,7 @@
           },
           "toTime": {
             "hours": 23,
-            "minutes": 59
+            "minutes": 0
           }
         },
         "specificDay": [],
@@ -12135,7 +12157,7 @@
             "minutes": 0
           },
           "toTime": {
-            "hours": 23,
+            "hours": 11,
             "minutes": 0
           }
         },
@@ -15366,7 +15388,7 @@
         "canTriggerSameDay": false
       },
       "aaliyah_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Aaliyah",
         "heartLevel": 12,
         "cutscene": "HS_Aaliyah_Heart_12",
@@ -15409,7 +15431,7 @@
         "canTriggerSameDay": false
       },
       "aaliyah_15A": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Aaliyah",
         "heartLevel": 15,
         "cutscene": "HS_Aaliyah_Heart_15A",
@@ -15443,7 +15465,7 @@
         "canTriggerSameDay": false
       },
       "aaliyah_15B": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Aaliyah",
         "heartLevel": 15,
         "cutscene": "HS_Aaliyah_Heart_15B",
@@ -15477,7 +15499,7 @@
         "canTriggerSameDay": true
       },
       "alice_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Alice",
         "heartLevel": 12,
         "cutscene": "HS_Alice_Heart_12",
@@ -15520,7 +15542,7 @@
         "canTriggerSameDay": false
       },
       "alice_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Alice",
         "heartLevel": 15,
         "cutscene": "HS_Alice_Heart_15",
@@ -15554,7 +15576,7 @@
         "canTriggerSameDay": false
       },
       "ben_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Ben",
         "heartLevel": 12,
         "cutscene": "HS_Ben_Heart_12",
@@ -15597,7 +15619,7 @@
         "canTriggerSameDay": false
       },
       "ben_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Ben",
         "heartLevel": 15,
         "cutscene": "HS_Ben_Heart_15",
@@ -15650,7 +15672,7 @@
         "canTriggerSameDay": false
       },
       "chaem_12A": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Chaem",
         "heartLevel": 12,
         "cutscene": "HS_Chaem_Heart_12A",
@@ -15684,7 +15706,7 @@
         "canTriggerSameDay": false
       },
       "chaem_12B": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Chaem",
         "heartLevel": 12,
         "cutscene": "HS_Chaem_Heart_12B",
@@ -15718,7 +15740,7 @@
         "canTriggerSameDay": true
       },
       "chaem_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Chaem",
         "heartLevel": 15,
         "cutscene": "HS_Chaem_Heart_15",
@@ -15762,7 +15784,7 @@
         "canTriggerSameDay": false
       },
       "charles_12A": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Charles",
         "heartLevel": 12,
         "cutscene": "HS_Charles_Heart_12A",
@@ -15796,7 +15818,7 @@
         "canTriggerSameDay": false
       },
       "charles_12B": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Charles",
         "heartLevel": 12,
         "cutscene": "HS_Charles_Heart_12B",
@@ -15844,7 +15866,7 @@
         "canTriggerSameDay": false
       },
       "charles_12C": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Charles",
         "heartLevel": 12,
         "cutscene": "HS_Charles_Heart_12C",
@@ -15878,7 +15900,7 @@
         "canTriggerSameDay": false
       },
       "charles_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Charles",
         "heartLevel": 15,
         "cutscene": "HS_Charles_Heart_15",
@@ -15922,7 +15944,7 @@
         "canTriggerSameDay": false
       },
       "eva_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Eva",
         "heartLevel": 12,
         "cutscene": "HS_Eva_Heart_12",
@@ -15956,7 +15978,7 @@
         "canTriggerSameDay": false
       },
       "eva_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Eva",
         "heartLevel": 15,
         "cutscene": "HS_Eva_Heart_15",
@@ -16008,7 +16030,7 @@
         "canTriggerSameDay": false
       },
       "kenny_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Kenny",
         "heartLevel": 12,
         "cutscene": "HS_Kenny_Heart_12",
@@ -16042,7 +16064,7 @@
         "canTriggerSameDay": false
       },
       "kenny_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Kenny",
         "heartLevel": 15,
         "cutscene": "HS_Kenny_Heart_15",
@@ -16076,7 +16098,7 @@
         "canTriggerSameDay": false
       },
       "leah_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Leah",
         "heartLevel": 12,
         "cutscene": "HS_Leah_Heart_12",
@@ -16110,21 +16132,24 @@
         "canTriggerSameDay": false
       },
       "leah_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Leah",
         "heartLevel": 15,
         "cutscene": "HS_Leah_Heart_15",
         "locationRow": {
-          "DataTable": null,
-          "RowName": "None"
+          "DataTable": {
+            "ObjectName": "DataTable'DT_LocationAreaInfo'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
+          },
+          "RowName": "PlayerHome"
         },
         "time": {
           "fromTime": {
-            "hours": 0,
+            "hours": 9,
             "minutes": 0
           },
           "toTime": {
-            "hours": 0,
+            "hours": 17,
             "minutes": 0
           }
         },
@@ -16141,7 +16166,7 @@
         "canTriggerSameDay": false
       },
       "lily_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Lily",
         "heartLevel": 12,
         "cutscene": "HS_Lily_Heart_12",
@@ -16175,7 +16200,7 @@
         "canTriggerSameDay": false
       },
       "lily_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Lily",
         "heartLevel": 15,
         "cutscene": "HS_Lily_Heart_15",
@@ -16209,7 +16234,7 @@
         "canTriggerSameDay": false
       },
       "luke_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Luke",
         "heartLevel": 12,
         "cutscene": "HS_Luke_Heart_12_A",
@@ -16243,7 +16268,7 @@
         "canTriggerSameDay": false
       },
       "luke_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Luke",
         "heartLevel": 15,
         "cutscene": "HS_Luke_Heart_15_A",
@@ -16277,7 +16302,7 @@
         "canTriggerSameDay": false
       },
       "Macy_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Macy",
         "heartLevel": 12,
         "cutscene": "HS_Macy_Heart_12",
@@ -16328,7 +16353,7 @@
         "canTriggerSameDay": false
       },
       "Macy_15A": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Macy",
         "heartLevel": 15,
         "cutscene": "HS_Macy_Heart_15_A",
@@ -16362,7 +16387,7 @@
         "canTriggerSameDay": false
       },
       "mark_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Mark",
         "heartLevel": 12,
         "cutscene": "HS_Mark_Heart_12",
@@ -16396,7 +16421,7 @@
         "canTriggerSameDay": false
       },
       "mark_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Mark",
         "heartLevel": 15,
         "cutscene": "HS_Mark_Heart_15",
@@ -16430,7 +16455,7 @@
         "canTriggerSameDay": false
       },
       "millie_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Millie",
         "heartLevel": 12,
         "cutscene": "HS_Millie_Heart_12_A",
@@ -16474,7 +16499,7 @@
         "canTriggerSameDay": false
       },
       "millie_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Millie",
         "heartLevel": 15,
         "cutscene": "HS_Millie_Heart_15",
@@ -16512,7 +16537,7 @@
         "canTriggerSameDay": false
       },
       "nina_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Nina",
         "heartLevel": 12,
         "cutscene": "HS_Nina_Heart_12",
@@ -16546,7 +16571,7 @@
         "canTriggerSameDay": false
       },
       "nina_15A": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Nina",
         "heartLevel": 15,
         "cutscene": "HS_Nina_Heart_15_A",
@@ -16589,7 +16614,7 @@
         "canTriggerSameDay": false
       },
       "nina_15B": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Nina",
         "heartLevel": 15,
         "cutscene": "HS_Nina_Heart_15_B",
@@ -16632,7 +16657,7 @@
         "canTriggerSameDay": false
       },
       "noah_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Noah",
         "heartLevel": 12,
         "cutscene": "HS_Noah_Heart_12_A",
@@ -16666,7 +16691,7 @@
         "canTriggerSameDay": false
       },
       "noah_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Noah",
         "heartLevel": 15,
         "cutscene": "HS_Noah_Heart_15",
@@ -16700,7 +16725,7 @@
         "canTriggerSameDay": false
       },
       "pablo_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Pablo",
         "heartLevel": 12,
         "cutscene": "HS_Pablo_Heart_12",
@@ -16734,7 +16759,7 @@
         "canTriggerSameDay": false
       },
       "pablo_15A": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Pablo",
         "heartLevel": 15,
         "cutscene": "HS_Pablo_Heart_15_A",
@@ -16787,7 +16812,7 @@
         "canTriggerSameDay": false
       },
       "pablo_15B": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Pablo",
         "heartLevel": 15,
         "cutscene": "HS_Pablo_Heart_15_B",
@@ -16840,7 +16865,7 @@
         "canTriggerSameDay": true
       },
       "rafael_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Rafael",
         "heartLevel": 12,
         "cutscene": "HS_Rafael_Heart_12",
@@ -16883,7 +16908,7 @@
         "canTriggerSameDay": false
       },
       "rafael_13": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Rafael",
         "heartLevel": 13,
         "cutscene": "HS_Rafael_Heart_13",
@@ -16892,7 +16917,7 @@
             "ObjectName": "DataTable'DT_LocationAreaInfo'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
           },
-          "RowName": "Blacksmith"
+          "RowName": "PlayerHome"
         },
         "time": {
           "fromTime": {
@@ -16900,7 +16925,7 @@
             "minutes": 0
           },
           "toTime": {
-            "hours": 20,
+            "hours": 17,
             "minutes": 0
           }
         },
@@ -16917,7 +16942,7 @@
         "canTriggerSameDay": false
       },
       "rafael_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Rafael",
         "heartLevel": 15,
         "cutscene": "HS_Rafael_Heart_15",
@@ -16926,7 +16951,7 @@
             "ObjectName": "DataTable'DT_LocationAreaInfo'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
           },
-          "RowName": "Blacksmith"
+          "RowName": "PlayerHome"
         },
         "time": {
           "fromTime": {
@@ -16934,7 +16959,7 @@
             "minutes": 0
           },
           "toTime": {
-            "hours": 20,
+            "hours": 17,
             "minutes": 0
           }
         },
@@ -16951,7 +16976,7 @@
         "canTriggerSameDay": false
       },
       "raj_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Raj",
         "heartLevel": 12,
         "cutscene": "HS_Raj_Heart_12",
@@ -16994,7 +17019,7 @@
         "canTriggerSameDay": false
       },
       "raj_15A": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Raj",
         "heartLevel": 15,
         "cutscene": "HS_Raj_Heart_15_A",
@@ -17037,7 +17062,7 @@
         "canTriggerSameDay": false
       },
       "raj_15B": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Raj",
         "heartLevel": 15,
         "cutscene": "HS_Raj_Heart_15_B",
@@ -17080,7 +17105,7 @@
         "canTriggerSameDay": true
       },
       "scott_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Scott",
         "heartLevel": 12,
         "cutscene": "HS_Scott_Heart_12",
@@ -17114,7 +17139,7 @@
         "canTriggerSameDay": false
       },
       "scott_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Scott",
         "heartLevel": 15,
         "cutscene": "HS_Scott_Heart_15",
@@ -17148,7 +17173,7 @@
         "canTriggerSameDay": false
       },
       "suki_12A": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Suki",
         "heartLevel": 12,
         "cutscene": "HS_Suki_Heart_12_A",
@@ -17182,7 +17207,7 @@
         "canTriggerSameDay": false
       },
       "suki_12B": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Suki",
         "heartLevel": 12,
         "cutscene": "HS_Suki_Heart_12_B1",
@@ -17216,7 +17241,7 @@
         "canTriggerSameDay": true
       },
       "suki_15A": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Suki",
         "heartLevel": 15,
         "cutscene": "HS_Suki_Heart_15_A",
@@ -17259,7 +17284,7 @@
         "canTriggerSameDay": false
       },
       "suki_15B": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Suki",
         "heartLevel": 15,
         "cutscene": "HS_Suki_Heart_15_B",
@@ -17302,7 +17327,7 @@
         "canTriggerSameDay": true
       },
       "surya_12A": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Surya",
         "heartLevel": 12,
         "cutscene": "HS_Surya_Heart_12_A",
@@ -17336,7 +17361,7 @@
         "canTriggerSameDay": false
       },
       "surya_12B": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Surya",
         "heartLevel": 12,
         "cutscene": "HS_Surya_Heart_12_B",
@@ -17370,7 +17395,7 @@
         "canTriggerSameDay": true
       },
       "surya_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Surya",
         "heartLevel": 15,
         "cutscene": "HS_Surya_Heart_15",
@@ -17418,7 +17443,7 @@
         "canTriggerSameDay": false
       },
       "theo_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Theo",
         "heartLevel": 12,
         "cutscene": "HS_Theo_Heart_12",
@@ -17452,7 +17477,7 @@
         "canTriggerSameDay": false
       },
       "theo_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Theo",
         "heartLevel": 15,
         "cutscene": "HS_Theo_Heart_15",
@@ -17504,7 +17529,7 @@
         "canTriggerSameDay": false
       },
       "wakuu_12A": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Wakuu",
         "heartLevel": 12,
         "cutscene": "HS_Wakuu_Heart_12_A",
@@ -17538,7 +17563,7 @@
         "canTriggerSameDay": false
       },
       "wakuu_12B": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Wakuu",
         "heartLevel": 12,
         "cutscene": "HS_Wakuu_Heart_12_B",
@@ -17572,7 +17597,7 @@
         "canTriggerSameDay": true
       },
       "wakuu_15A": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Wakuu",
         "heartLevel": 15,
         "cutscene": "HS_Wakuu_Heart_15_A",
@@ -17625,7 +17650,7 @@
         "canTriggerSameDay": false
       },
       "wakuu_15B": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Wakuu",
         "heartLevel": 15,
         "cutscene": "HS_Wakuu_Heart_15_B",
@@ -17678,7 +17703,7 @@
         "canTriggerSameDay": true
       },
       "yuri_13": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Yuri",
         "heartLevel": 13,
         "cutscene": "HS_Yuri_Heart_13",
@@ -17735,7 +17760,7 @@
         "canTriggerSameDay": false
       },
       "yuri_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Yuri",
         "heartLevel": 15,
         "cutscene": "HS_Yuri_Heart_15",
@@ -17769,7 +17794,7 @@
         "canTriggerSameDay": false
       },
       "zarah_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Zarah",
         "heartLevel": 12,
         "cutscene": "HS_Zarah_Heart_12_A",
@@ -17813,7 +17838,7 @@
         "canTriggerSameDay": false
       },
       "zarah_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Zarah",
         "heartLevel": 15,
         "cutscene": "HS_Zarah_Heart_15",
@@ -18575,7 +18600,7 @@
         "canTriggerSameDay": false
       },
       "denali_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Denali",
         "heartLevel": 12,
         "cutscene": "HS_Denali_Heart_12",
@@ -18609,7 +18634,7 @@
         "canTriggerSameDay": false
       },
       "denali_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Denali",
         "heartLevel": 15,
         "cutscene": "HS_Denali_Heart_15",
@@ -18643,7 +18668,7 @@
         "canTriggerSameDay": false
       },
       "miranjani_12A": {
-        "enabled": false,
+        "enabled": true,
         "npc": "PrincessMiranjani",
         "heartLevel": 12,
         "cutscene": "HS_Miranjani_Heart_12_A",
@@ -18696,7 +18721,7 @@
         "canTriggerSameDay": false
       },
       "miranjani_12B": {
-        "enabled": false,
+        "enabled": true,
         "npc": "PrincessMiranjani",
         "heartLevel": 12,
         "cutscene": "HS_Miranjani_Heart_12_B",
@@ -18749,7 +18774,7 @@
         "canTriggerSameDay": false
       },
       "miranjani_13": {
-        "enabled": false,
+        "enabled": true,
         "npc": "PrincessMiranjani",
         "heartLevel": 13,
         "cutscene": "HS_Miranjani_Heart_13",
@@ -18783,7 +18808,7 @@
         "canTriggerSameDay": false
       },
       "miranjani_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "PrincessMiranjani",
         "heartLevel": 15,
         "cutscene": "HS_Miranjani_Heart_15",
@@ -18817,7 +18842,7 @@
         "canTriggerSameDay": false
       },
       "semeru_11": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Semeru",
         "heartLevel": 11,
         "cutscene": "HS_Semeru_Heart_11",
@@ -18870,7 +18895,7 @@
         "canTriggerSameDay": false
       },
       "semeru_12": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Semeru",
         "heartLevel": 12,
         "cutscene": "HS_Semeru_Heart_12",
@@ -18904,7 +18929,7 @@
         "canTriggerSameDay": false
       },
       "semeru_15": {
-        "enabled": false,
+        "enabled": true,
         "npc": "Semeru",
         "heartLevel": 15,
         "cutscene": "HS_Semeru_Heart_15",
