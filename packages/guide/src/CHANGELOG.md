@@ -6,6 +6,10 @@
 Coral Guide is now open source! You can find the code on [GitHub](https://github.com/koenigderluegner/coral-island-guide).
 Code is still a mess as it was never intended to be public, but I will work on it soon™.
 
+#### Changed
+
+- Updated live data to v1.2-1238 (Steam version)
+
 
 ### 0.25.0 2025-03-31
 
