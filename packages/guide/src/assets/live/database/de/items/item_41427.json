@@ -1,35 +1,197 @@
 {
   "item": {
     "id": "item_41427",
-    "displayName": "Coconut de mer water",
-    "price": 10,
-    "sellPrice": 10,
-    "sellAt": [],
+    "displayName": "Coco-de-Mer-Wasser",
+    "price": 550,
+    "sellPrice": 330,
+    "sellAt": [
+      "Sam"
+    ],
     "stackable": true,
     "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
-    "description": "tbd",
+    "description": "Ein erfrischendes Getränk frisch von der Kokosnuss. Löscht Durst und ist Balsam für die Seele.",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 635,
+        "sellPrice": 380
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 715,
+        "sellPrice": 430
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 825,
+        "sellPrice": 495
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1100,
+        "sellPrice": 660
       }
     },
-    "iconName": "placeholder_icon_Sprite",
+    "iconName": "Coconut_De_Mer_Water_Sprite",
     "tags": [
-      "Artisan.Keg"
+      "income.farming"
     ]
+  },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_54106",
+          "displayName": "Coco de Mer",
+          "iconName": "Coconut_De_Mer_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41427",
+          "displayName": "Coco-de-Mer-Wasser",
+          "iconName": "Coconut_De_Mer_Water_Sprite",
+          "sellPrice": 330
+        }
+      },
+      "genericInput": null,
+      "machine": "Keg"
+    }
+  ],
+  "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 4,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41427",
+          "displayName": "Coco-de-Mer-Wasser",
+          "iconName": "Coconut_De_Mer_Water_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41413",
+          "displayName": "Coco-de-Mer-Wein",
+          "iconName": "Wine_Sprite",
+          "sellPrice": 1485
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 3,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 3,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 2,
+          "time": {
+            "hours": 16,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 2,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    }
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41427",
+      "bVaryHealthToMax": false,
+      "healthDelta": 40,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 25,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_41427-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 45,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 30,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_41427-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 50,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 30,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_41427-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 60,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 35,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_41427-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 80,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 50,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
   }
 }

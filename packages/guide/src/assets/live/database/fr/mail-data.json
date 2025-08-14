@@ -508,7 +508,7 @@
     "key": "cherry_blossom_reminder",
     "sender": "<NPCName>Maire Connor</>",
     "title": "Cherry blossom potluck",
-    "content": "On se réunit au <Places>lac</> demain pour fêter l'arrivée du printemps. On organise un repas communautaire pour l'occasion, alors pense à ramener quelque chose de délicieux.//\r\n\r\nMerci d'arriver entre 9h et 14h.",
+    "content": "On se réunit au <Places>lac</> demain pour fêter l'arrivée du printemps. On organise un repas communautaire pour l'occasion, alors pense à ramener quelque chose de délicieux.\r\n\r\nMerci d'arriver entre 9h et 14h.",
     "isImportant": true,
     "tags": [],
     "mailType": null,
@@ -2524,7 +2524,7 @@
     "key": "winter_fair_reminder",
     "sender": "<NPCName>Maire Connor</>",
     "title": "Le Foire d'hiver commence demain !",
-    "content": "La foire d'hiver démarre demain et dure trois jours, du 17 au 21 d'hiver. Rejoignez-nous à la plage de 13h jusqu'à tard. Il y aura des boutiques, des jeux et les plus belles festivités hivernales.",
+    "content": "La foire d'hiver démarre demain et dure cinq jours, du 17 au 21 d'hiver. Rejoignez-nous à la plage de 17h jusqu'à tard. Il y aura des boutiques, des jeux et les plus belles festivités hivernales.",
     "isImportant": true,
     "tags": [],
     "mailType": null,
@@ -4404,7 +4404,7 @@
     "key": "FurnitureMoved",
     "sender": "<NPCName>Joko</>",
     "title": "Amélioration de maison",
-    "content": "We had to move some of your stuff around to complete the house renovation. Hope you don't mind!",
+    "content": "On a dû déplacer certaines de tes affaires pour finir les travaux de la maison. Ça ne te dérange pas j'espère !",
     "isImportant": true,
     "tags": [],
     "mailType": "OnlineShop",
@@ -4414,12 +4414,54 @@
   {
     "key": "dlc_6",
     "sender": "Stairway Games",
-    "title": "Exclusive Content: Funguys Swarm Pack",
-    "content": "Thank you for purchasing the Funguys Swarm pack! Your purchase includes:\r\n\r\n- Fungarian Outfit\r\n- Fungarian Chest\r\n- Mythical Pet Outfit: Rusdy",
+    "title": "Contenu exclusif : pack Funguys Swarm",
+    "content": "Merci d'avoir acheté le pack Funguys Swarm ! Ton achat comprend :\r\n\r\n- Tenue fongique\r\n- Coffre fongique\r\n- Tenue d'animal mythique : Rusdy",
     "isImportant": true,
     "tags": [],
     "mailType": "Gift",
-    "greetCloseMessage": "Enjoy your exclusive content, and thanks for your support!",
-    "greetOpenMessage": "Hé, toi,"
+    "greetCloseMessage": "Profite de ton contenu exclusif et merci pour ton soutien !",
+    "greetOpenMessage": "Hé, toi,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_120554",
+            "displayName": "Tenue fongique",
+            "iconName": "Fungarian_Outfit_Sprite"
+          }
+        }
+      },
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_65916",
+            "displayName": "Coffre fongique",
+            "iconName": "Fungarian_Chest_Sprite"
+          }
+        }
+      },
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_10032",
+            "displayName": "Rusdy",
+            "iconName": "Rusdy_Icon_Sprite"
+          }
+        }
+      },
+      {
+        "type": "UnlockCraftingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_65916",
+            "displayName": "Coffre fongique",
+            "iconName": "Fungarian_Chest_Sprite"
+          }
+        }
+      }
+    ]
   }
 ]

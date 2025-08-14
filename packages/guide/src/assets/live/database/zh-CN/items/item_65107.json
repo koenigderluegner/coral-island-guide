@@ -11,7 +11,9 @@
     "description": "从废品中回收的碎渣，可以用来打造物品。",
     "qualities": {},
     "iconName": "Scrap_Sprite",
-    "tags": []
+    "tags": [
+      "income.other"
+    ]
   },
   "artisanResult": [
     {
@@ -984,42 +986,6 @@
       }
     },
     {
-      "key": "item_65352",
-      "displayName": "Scrap sign",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_65107",
-            "displayName": "碎渣",
-            "iconName": "Scrap_Sprite"
-          },
-          "amount": 5
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Decor",
-      "craftingUnlock": {
-        "key": "item_65352",
-        "masteryLevel": 4,
-        "masteryType": "Diving"
-      },
-      "item": {
-        "id": "item_65352",
-        "displayName": "碎渣标志",
-        "price": 38,
-        "sellPrice": 15,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Decor",
-        "displayKey": "Decor",
-        "description": "由碎渣制成。可通过互动来展示物品。",
-        "qualities": {},
-        "iconName": "Scrap_Sign_Sprite",
-        "tags": []
-      }
-    },
-    {
       "key": "item_65351",
       "displayName": "Scrap arch",
       "amount": 1,
@@ -1052,6 +1018,42 @@
         "description": "放在农场里。",
         "qualities": {},
         "iconName": "Scrap_Arch_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65352",
+      "displayName": "Scrap sign",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65107",
+            "displayName": "碎渣",
+            "iconName": "Scrap_Sprite"
+          },
+          "amount": 5
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Decor",
+      "craftingUnlock": {
+        "key": "item_65352",
+        "masteryLevel": 4,
+        "masteryType": "Diving"
+      },
+      "item": {
+        "id": "item_65352",
+        "displayName": "碎渣标志",
+        "price": 38,
+        "sellPrice": 15,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Decor",
+        "displayKey": "Decor",
+        "description": "由碎渣制成。可通过互动来展示物品。",
+        "qualities": {},
+        "iconName": "Scrap_Sign_Sprite",
         "tags": []
       }
     },
@@ -1372,7 +1374,7 @@
       "category": "Farming",
       "item": {
         "id": "item_65511",
-        "displayName": "自动喂食机",
+        "displayName": "自动喂食器",
         "price": 1420,
         "sellPrice": 850,
         "sellAt": [],
@@ -1427,7 +1429,7 @@
       "category": "Farming",
       "item": {
         "id": "item_65509",
-        "displayName": "自动收集器",
+        "displayName": "自动撸宠机",
         "price": 4670,
         "sellPrice": 2800,
         "sellAt": [],
@@ -1482,14 +1484,14 @@
       "category": "Farming",
       "item": {
         "id": "item_65510",
-        "displayName": "自动收集器",
+        "displayName": "自动采集器",
         "price": 8920,
         "sellPrice": 5350,
         "sellAt": [],
         "stackable": true,
         "inventoryCategory": "Farming",
         "displayKey": "Farming",
-        "description": "放在农场",
+        "description": "自动采集动物资源。必须放置在畜棚或鸡舍内。",
         "qualities": {},
         "iconName": "Auto_Collector_Sprite",
         "tags": []
@@ -1855,14 +1857,6 @@
         },
         {
           "item": {
-            "id": "item_42011",
-            "displayName": "羊毛布",
-            "iconName": "Wool_Cloth_Sprite"
-          },
-          "amount": 1
-        },
-        {
-          "item": {
             "id": "item_65107",
             "displayName": "碎渣",
             "iconName": "Scrap_Sprite"
@@ -1870,7 +1864,32 @@
           "amount": 10
         }
       ],
-      "genericIngredients": [],
+      "genericIngredients": [
+        {
+          "key": "Any_Wool",
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Wool",
+            "tags": [
+              "item.artisan.SheepWoolCloth"
+            ],
+            "iconName": "Wool_Cloth",
+            "displayName": "Wool Cloth",
+            "items": [
+              {
+                "id": "item_42011",
+                "displayName": "羊毛布",
+                "iconName": "Wool_Cloth_Sprite"
+              },
+              {
+                "id": "item_42021",
+                "displayName": "羊毛布（大）",
+                "iconName": "Large_Wool_Cloth_Sprite"
+              }
+            ]
+          }
+        }
+      ],
       "category": "Scarecrow",
       "item": {
         "id": "item_65057",

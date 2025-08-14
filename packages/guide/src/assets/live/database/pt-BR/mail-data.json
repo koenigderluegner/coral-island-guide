@@ -23,7 +23,7 @@
   },
   {
     "key": "TestChieftanMail",
-    "sender": "<NPCName>Chieftain</>",
+    "sender": "<NpcName>Chefe</>",
     "title": "Pessoinha me encontre",
     "content": "Fiquei com medo quando você me convocou.\r\nMas abra o caminho que ela tem, até minha casa.\r\n\r\nIsso significa que Pessoinha deve vir me visitar.\r\nEntenda que você entenderá depois do encontro como curar a ilha.\r\n \r\nÀ esquerda da sua fazenda, minha casa. Se estiver confuso, veja o desenho que compartilho.",
     "isImportant": true,
@@ -34,7 +34,7 @@
   },
   {
     "key": "mq004_diving_oppurtunity",
-    "sender": "<NPCName>Ling</>-Chieftain do Laboratório de Estelita",
+    "sender": "<NPCName>Ling</>-Chefe do Laboratório de Estelita",
     "title": "Oportunidade para Mergulhadores",
     "content": "No momento, o laboratório está procurando um candidato apto a mergulhar.\r\nTodos os candidatos devem conduzir uma avaliação de compatibilidade no local.\r\n\r\nVisite o trapiche de mergulho para mais informações.",
     "isImportant": true,
@@ -69,7 +69,7 @@
     "key": "earth_giant_free",
     "sender": "<NPCName>????</>",
     "title": null,
-    "content": "Pessoinha. Agradeço por ajudar.\r\n\r\nQuero mostrar aldeia pra você.\r\n\r\nFalo com Chieftain. Chieftaindiz OK.\r\n\r\nEu aguardo.\r\n",
+    "content": "Pessoinha. Agradeço por ajudar.\r\n\r\nQuero mostrar aldeia pra você.\r\n\r\nFalo com <NPCName>Chefe</>. <NPCName>Chefe</> diz OK.\r\n\r\nEu aguardo.",
     "isImportant": true,
     "tags": [],
     "mailType": "MainQuest",
@@ -1823,7 +1823,7 @@
   },
   {
     "key": "UNUSEDchieftain_invitation",
-    "sender": "<NPCName>Chieftain</>",
+    "sender": "<NpcName>Chefe</>!",
     "title": null,
     "content": "Compilamos todos os dados de corais coletados no seu mergulho. Queremos compartilhá-los com você.\r\n\r\nVenha ao laboratório quando tiver um tempo.",
     "isImportant": true,
@@ -2373,7 +2373,7 @@
   },
   {
     "key": "PetrificationMystery",
-    "sender": "<NPCName>Chieftain</>",
+    "sender": "<NpcName>Chefe</>",
     "title": "Perpetrador Petrificado",
     "content": "Descansado e pronto para contar a história <NPCName>Giu</> está. Para a aldeia você deve vir e ouvir a história para te ajudar nós sentimos que você vai precisar. ",
     "isImportant": true,
@@ -2524,7 +2524,7 @@
     "key": "winter_fair_reminder",
     "sender": "<NPCName>Prefeito Connor</>",
     "title": "A Feira de Inverno começa amanhã!",
-    "content": "A Feira de Inverno começa amanhã e dura três dias, de 17 a 21 do Inverno. Junte-se a nós na praia, de 01:00 pm até tarde. teremos lojas, jogos e as melhores festividades de Inverno.",
+    "content": "A Feira de Inverno começa amanhã e dura cinco dias, de 17 a 21 do Inverno. Junte-se a nós na praia, das 17:00 até tarde. Teremos lojas, jogos e as melhores festividades de Inverno.",
     "isImportant": true,
     "tags": [],
     "mailType": null,
@@ -4404,7 +4404,7 @@
     "key": "FurnitureMoved",
     "sender": "<NPCName>Joko</>",
     "title": "Aprimoramento da casa",
-    "content": "We had to move some of your stuff around to complete the house renovation. Hope you don't mind!",
+    "content": "Espero que não se incomode, mas tivemos que mover suas coisas para terminar a renovação.",
     "isImportant": true,
     "tags": [],
     "mailType": "OnlineShop",
@@ -4414,12 +4414,54 @@
   {
     "key": "dlc_6",
     "sender": "Stairway Games",
-    "title": "Exclusive Content: Funguys Swarm Pack",
-    "content": "Thank you for purchasing the Funguys Swarm pack! Your purchase includes:\r\n\r\n- Fungarian Outfit\r\n- Fungarian Chest\r\n- Mythical Pet Outfit: Rusdy",
+    "title": "Conteúdo Exclusivo: Pacote Funguys Swarm",
+    "content": "Obrigado por comprar o pacote Funguys Swarm! Sua compra inclui:\r\n\r\n- Traje de Fungo\r\n- Baú de Fungo\r\n- Roupa Mítica de Bichinho: Rusdy",
     "isImportant": true,
     "tags": [],
     "mailType": "Gift",
-    "greetCloseMessage": "Enjoy your exclusive content, and thanks for your support!",
-    "greetOpenMessage": "Olá,"
+    "greetCloseMessage": "Aproveite o conteúdo. Obrigado por nos apoiar!",
+    "greetOpenMessage": "Olá,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_120554",
+            "displayName": "Traje funghi",
+            "iconName": "Fungarian_Outfit_Sprite"
+          }
+        }
+      },
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_65916",
+            "displayName": "Baú Funghi",
+            "iconName": "Fungarian_Chest_Sprite"
+          }
+        }
+      },
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_10032",
+            "displayName": "Rusdy",
+            "iconName": "Rusdy_Icon_Sprite"
+          }
+        }
+      },
+      {
+        "type": "UnlockCraftingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_65916",
+            "displayName": "Baú Funghi",
+            "iconName": "Fungarian_Chest_Sprite"
+          }
+        }
+      }
+    ]
   }
 ]

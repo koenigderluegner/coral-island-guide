@@ -507,7 +507,7 @@
   {
     "key": "cherry_blossom_reminder",
     "sender": "<NPCName>コナー市長</>",
-    "title": "桜の持ち寄り",
+    "title": "サクラの持ち寄りパーティー",
     "content": "春の始まりを祝うために、私たちは明日、<Places>湖</>に集まって持ち寄りパーティーを開きます。何か美味しいものを持ってきてください！\r\n\r\n午前9時から午後2時までの間にお越しください。",
     "isImportant": true,
     "tags": [],
@@ -2524,7 +2524,7 @@
     "key": "winter_fair_reminder",
     "sender": "<NPCName>コナー市長</>",
     "title": "ウィンターフェアが明日からスタート！",
-    "content": "明日から冬の17～21日の3日間、ウィンターフェアが開かれます。会場はビーチで、午後1時から夜遅くまでオープンしています。お店やゲームをご用意していますので、最高の冬のお祭りを楽しんでください。",
+    "content": "明日から冬の17～21日の5日間、ウィンターフェアが開かれます。会場はビーチで、午後5時から夜遅くまでオープンしています。お店やゲームをご用意していますので、最高の冬のお祭りを楽しんでください。",
     "isImportant": true,
     "tags": [],
     "mailType": null,
@@ -4291,7 +4291,7 @@
   },
   {
     "key": "unlock_cellar",
-    "sender": "<NPCName>Jeff Smith</>",
+    "sender": "<NPCName>ジェフ・スミス</>",
     "title": "貯蔵室の鍵",
     "content": "町の評価が「A」になりましたね。おめでとうございます！この偉業をお祝いするために、特別なプレゼントを送ります。同封した鍵を使えば、前回の訪問でその存在に気付いた地下室を解錠することができるはずです。\r\n\r\nこの新たなエリアが、ワクワクするような新たなチャンスをもたらしてくれることを祈っています。よく頑張りましたね！",
     "isImportant": true,
@@ -4404,7 +4404,7 @@
     "key": "FurnitureMoved",
     "sender": "<NPCName>ジョコ</>",
     "title": "家のアップグレード",
-    "content": "We had to move some of your stuff around to complete the house renovation. Hope you don't mind!",
+    "content": "家の改築を完了するために、家具を少し動かす必要がありました。ご理解いただけますと幸いです。",
     "isImportant": true,
     "tags": [],
     "mailType": "OnlineShop",
@@ -4414,12 +4414,54 @@
   {
     "key": "dlc_6",
     "sender": "Stairway Games",
-    "title": "Exclusive Content: Funguys Swarm Pack",
-    "content": "Thank you for purchasing the Funguys Swarm pack! Your purchase includes:\r\n\r\n- Fungarian Outfit\r\n- Fungarian Chest\r\n- Mythical Pet Outfit: Rusdy",
+    "title": "限定コンテンツ：『Funguys Swarm』パック",
+    "content": "『Funguys Swarm』パックを購入していただき、ありがとうございます！購入内容：\r\n\r\n- ファンガリアンの衣装\r\n- ファンガリアンの宝箱\r\n- 伝説のペットの衣装：ラスディ",
     "isImportant": true,
     "tags": [],
     "mailType": "Gift",
-    "greetCloseMessage": "Enjoy your exclusive content, and thanks for your support!",
-    "greetOpenMessage": "こんにちは"
+    "greetCloseMessage": "限定コンテンツをお楽しみください。ご支援に感謝します！",
+    "greetOpenMessage": "こんにちは",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_120554",
+            "displayName": "ファンガリアンの服",
+            "iconName": "Fungarian_Outfit_Sprite"
+          }
+        }
+      },
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_65916",
+            "displayName": "ファンガリアンの宝箱",
+            "iconName": "Fungarian_Chest_Sprite"
+          }
+        }
+      },
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_10032",
+            "displayName": "ラスディ",
+            "iconName": "Rusdy_Icon_Sprite"
+          }
+        }
+      },
+      {
+        "type": "UnlockCraftingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_65916",
+            "displayName": "ファンガリアンの宝箱",
+            "iconName": "Fungarian_Chest_Sprite"
+          }
+        }
+      }
+    ]
   }
 ]

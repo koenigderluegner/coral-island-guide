@@ -11,7 +11,9 @@
     "description": "Aus Müll gewonnener Schrott. Kann zur Herstellung verwendet werden.",
     "qualities": {},
     "iconName": "Scrap_Sprite",
-    "tags": []
+    "tags": [
+      "income.other"
+    ]
   },
   "artisanResult": [
     {
@@ -984,42 +986,6 @@
       }
     },
     {
-      "key": "item_65352",
-      "displayName": "Scrap sign",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_65107",
-            "displayName": "Schrott",
-            "iconName": "Scrap_Sprite"
-          },
-          "amount": 5
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Decor",
-      "craftingUnlock": {
-        "key": "item_65352",
-        "masteryLevel": 4,
-        "masteryType": "Diving"
-      },
-      "item": {
-        "id": "item_65352",
-        "displayName": "Schrottschild",
-        "price": 38,
-        "sellPrice": 15,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Decor",
-        "displayKey": "Decor",
-        "description": "Hergestellt aus Schrott. Verwende einen Gegenstand, um die Anzeige zu bearbeiten.",
-        "qualities": {},
-        "iconName": "Scrap_Sign_Sprite",
-        "tags": []
-      }
-    },
-    {
       "key": "item_65351",
       "displayName": "Scrap arch",
       "amount": 1,
@@ -1052,6 +1018,42 @@
         "description": "Wird auf der Farm platziert.",
         "qualities": {},
         "iconName": "Scrap_Arch_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65352",
+      "displayName": "Scrap sign",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65107",
+            "displayName": "Schrott",
+            "iconName": "Scrap_Sprite"
+          },
+          "amount": 5
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Decor",
+      "craftingUnlock": {
+        "key": "item_65352",
+        "masteryLevel": 4,
+        "masteryType": "Diving"
+      },
+      "item": {
+        "id": "item_65352",
+        "displayName": "Schrottschild",
+        "price": 38,
+        "sellPrice": 15,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Decor",
+        "displayKey": "Decor",
+        "description": "Hergestellt aus Schrott. Verwende einen Gegenstand, um die Anzeige zu bearbeiten.",
+        "qualities": {},
+        "iconName": "Scrap_Sign_Sprite",
         "tags": []
       }
     },
@@ -1855,14 +1857,6 @@
         },
         {
           "item": {
-            "id": "item_42011",
-            "displayName": "Wolltuch",
-            "iconName": "Wool_Cloth_Sprite"
-          },
-          "amount": 1
-        },
-        {
-          "item": {
             "id": "item_65107",
             "displayName": "Schrott",
             "iconName": "Scrap_Sprite"
@@ -1870,7 +1864,32 @@
           "amount": 10
         }
       ],
-      "genericIngredients": [],
+      "genericIngredients": [
+        {
+          "key": "Any_Wool",
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Wool",
+            "tags": [
+              "item.artisan.SheepWoolCloth"
+            ],
+            "iconName": "Wool_Cloth",
+            "displayName": "Wool Cloth",
+            "items": [
+              {
+                "id": "item_42011",
+                "displayName": "Wolltuch",
+                "iconName": "Wool_Cloth_Sprite"
+              },
+              {
+                "id": "item_42021",
+                "displayName": "Großes Wolltuch",
+                "iconName": "Large_Wool_Cloth_Sprite"
+              }
+            ]
+          }
+        }
+      ],
       "category": "Scarecrow",
       "item": {
         "id": "item_65057",

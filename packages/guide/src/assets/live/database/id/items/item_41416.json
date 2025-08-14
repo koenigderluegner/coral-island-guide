@@ -2,29 +2,31 @@
   "item": {
     "id": "item_41416",
     "displayName": "Kimchi wasabi",
-    "price": 10,
-    "sellPrice": 10,
-    "sellAt": [],
+    "price": 1250,
+    "sellPrice": 500,
+    "sellAt": [
+      "Sam"
+    ],
     "stackable": true,
     "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
     "description": "Asam dan segar. Nyam!",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1375,
+        "sellPrice": 550
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1565,
+        "sellPrice": 625
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1750,
+        "sellPrice": 700
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 2250,
+        "sellPrice": 900
       }
     },
     "iconName": "Kimchi_Sprite",
@@ -36,6 +38,74 @@
       "item.cooking.ingredient"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 4,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41420",
+          "displayName": "Acar wasabi",
+          "iconName": "Pickles_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41416",
+          "displayName": "Kimchi wasabi",
+          "iconName": "Kimchi_Sprite",
+          "sellPrice": 500
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 3,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 3,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 2,
+          "time": {
+            "hours": 16,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 2,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_80088",
@@ -200,5 +270,67 @@
       ],
       "offeringType": "Temple"
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41416",
+      "bVaryHealthToMax": false,
+      "healthDelta": 70,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 40,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "bronze": {
+      "key": "item_41416-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 85,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 50,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "silver": {
+      "key": "item_41416-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 85,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 55,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "gold": {
+      "key": "item_41416-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 105,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 65,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    },
+    "osmium": {
+      "key": "item_41416-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 135,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 85,
+      "level": 0,
+      "overwriteDuration": false,
+      "duration": 0,
+      "buff": "None",
+      "itemType": "Food"
+    }
+  }
 }

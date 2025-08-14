@@ -4,7 +4,9 @@
     "displayName": "ผ้าวูล",
     "price": 625,
     "sellPrice": 375,
-    "sellAt": [],
+    "sellAt": [
+      "Sam"
+    ],
     "stackable": true,
     "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
@@ -31,7 +33,8 @@
     "tags": [
       "income.ranching",
       "Artisan.Loom",
-      "item.artisan"
+      "item.artisan",
+      "item.artisan.SheepWoolCloth"
     ]
   },
   "artisanResult": [
@@ -178,14 +181,6 @@
         },
         {
           "item": {
-            "id": "item_42011",
-            "displayName": "ผ้าวูล",
-            "iconName": "Wool_Cloth_Sprite"
-          },
-          "amount": 1
-        },
-        {
-          "item": {
             "id": "item_65107",
             "displayName": "ขยะแปรรูป",
             "iconName": "Scrap_Sprite"
@@ -193,7 +188,32 @@
           "amount": 10
         }
       ],
-      "genericIngredients": [],
+      "genericIngredients": [
+        {
+          "key": "Any_Wool",
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Wool",
+            "tags": [
+              "item.artisan.SheepWoolCloth"
+            ],
+            "iconName": "Wool_Cloth",
+            "displayName": "Wool Cloth",
+            "items": [
+              {
+                "id": "item_42011",
+                "displayName": "ผ้าวูล",
+                "iconName": "Wool_Cloth_Sprite"
+              },
+              {
+                "id": "item_42021",
+                "displayName": "ผ้าวูลผืนใหญ่",
+                "iconName": "Large_Wool_Cloth_Sprite"
+              }
+            ]
+          }
+        }
+      ],
       "category": "Scarecrow",
       "item": {
         "id": "item_65057",

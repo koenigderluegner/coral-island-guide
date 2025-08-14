@@ -1,30 +1,32 @@
 {
   "item": {
     "id": "item_41410",
-    "displayName": "Coconut wine",
-    "price": 10,
-    "sellPrice": 10,
-    "sellAt": [],
+    "displayName": "코코넛 와인",
+    "price": 1125,
+    "sellPrice": 450,
+    "sellAt": [
+      "Sam"
+    ],
     "stackable": true,
     "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
     "description": "흙 내음에 약간 스모키한 향이 난다. 많이 마시면 안 된다.",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1300,
+        "sellPrice": 520
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1465,
+        "sellPrice": 585
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1690,
+        "sellPrice": 675
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 2250,
+        "sellPrice": 900
       }
     },
     "iconName": "Wine_Sprite",
@@ -36,6 +38,74 @@
       "item.cooking.ingredient"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 4,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41424",
+          "displayName": "코코넛 물",
+          "iconName": "Coconut_Water_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41410",
+          "displayName": "코코넛 와인",
+          "iconName": "Wine_Sprite",
+          "sellPrice": 450
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 3,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 3,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 2,
+          "time": {
+            "hours": 16,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 2,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_80088",
@@ -200,5 +270,67 @@
       ],
       "offeringType": "Temple"
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41410",
+      "bVaryHealthToMax": false,
+      "healthDelta": 55,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 25,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 120,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "bronze": {
+      "key": "item_41410-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 60,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 25,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 138,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "silver": {
+      "key": "item_41410-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 70,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 30,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 156,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "gold": {
+      "key": "item_41410-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 85,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 35,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 180,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "osmium": {
+      "key": "item_41410-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 105,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 50,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 240,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    }
+  }
 }

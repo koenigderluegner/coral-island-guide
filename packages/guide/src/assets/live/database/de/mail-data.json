@@ -2524,7 +2524,7 @@
     "key": "winter_fair_reminder",
     "sender": "<NPCName>Bürgermeister Connor</>",
     "title": "Der Wintermarkt beginnt morgen!",
-    "content": "Der Wintermarkt beginnt morgen und dauert drei Tage, vom 17. Wintertag bis zum 21. Leiste uns doch ab 13:00 Uhr bis spät in die Nacht am Strand Gesellschaft. Es gibt Läden, Spiele und die besten Winterfeierlichkeiten.",
+    "content": "Der Wintermarkt beginnt morgen und dauert fünf Tage, vom 17. Wintertag bis zum 21. Leiste uns doch ab 17:00 Uhr bis spät in die Nacht am Strand Gesellschaft. Es gibt Läden, Spiele und die besten Winterfeierlichkeiten.",
     "isImportant": true,
     "tags": [],
     "mailType": null,
@@ -4404,7 +4404,7 @@
     "key": "FurnitureMoved",
     "sender": "<NPCName>Joko</>",
     "title": "Haus-Aufwertung",
-    "content": "We had to move some of your stuff around to complete the house renovation. Hope you don't mind!",
+    "content": "Wir mussten ein paar Möbel verschieben, um die Renovierung abzuschließen. Stört dich hoffentlich nicht!",
     "isImportant": true,
     "tags": [],
     "mailType": "OnlineShop",
@@ -4414,12 +4414,54 @@
   {
     "key": "dlc_6",
     "sender": "Stairway Games",
-    "title": "Exclusive Content: Funguys Swarm Pack",
-    "content": "Thank you for purchasing the Funguys Swarm pack! Your purchase includes:\r\n\r\n- Fungarian Outfit\r\n- Fungarian Chest\r\n- Mythical Pet Outfit: Rusdy",
+    "title": "Exklusive Inhalte: „Funguys Swarm“-Pack",
+    "content": "Danke, dass du das „Funguys Swarm“-Pack gekauft hast! Dein Kauf beinhaltet:\r\n\r\n- Pilzfreund-Outfit\r\n- Fungarische Kiste\r\n- Mystische Haustierkleidung: Rusdy",
     "isImportant": true,
     "tags": [],
     "mailType": "Gift",
-    "greetCloseMessage": "Enjoy your exclusive content, and thanks for your support!",
-    "greetOpenMessage": "Hey du,"
+    "greetCloseMessage": "Viel Spaß mit diesen exklusiven Inhalten und danke für deine Unterstützung!",
+    "greetOpenMessage": "Hey du,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_120554",
+            "displayName": "Pilzfreund-Outfit",
+            "iconName": "Fungarian_Outfit_Sprite"
+          }
+        }
+      },
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_65916",
+            "displayName": "Fungarische Kiste",
+            "iconName": "Fungarian_Chest_Sprite"
+          }
+        }
+      },
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_10032",
+            "displayName": "Rusdy",
+            "iconName": "Rusdy_Icon_Sprite"
+          }
+        }
+      },
+      {
+        "type": "UnlockCraftingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_65916",
+            "displayName": "Fungarische Kiste",
+            "iconName": "Fungarian_Chest_Sprite"
+          }
+        }
+      }
+    ]
   }
 ]

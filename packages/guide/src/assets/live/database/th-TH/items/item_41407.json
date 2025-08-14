@@ -1,30 +1,32 @@
 {
   "item": {
     "id": "item_41407",
-    "displayName": "Pumpkin wine",
-    "price": 10,
-    "sellPrice": 10,
-    "sellAt": [],
+    "displayName": "ไวน์ฟักทอง",
+    "price": 1300,
+    "sellPrice": 520,
+    "sellAt": [
+      "Sam"
+    ],
     "stackable": true,
     "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
     "description": "เครื่องดิ่มที่มีกลิ่นไอดิน เอ๊ะ หรือว่าจะเรียกว่ากลิ่นสโมกี้ดี? ดื่มให้พอประมาณนะ",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1500,
+        "sellPrice": 600
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1700,
+        "sellPrice": 680
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1965,
+        "sellPrice": 785
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 2615,
+        "sellPrice": 1045
       }
     },
     "iconName": "Wine_Sprite",
@@ -36,6 +38,74 @@
       "item.cooking.ingredient"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 4,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41143",
+          "displayName": "น้ำฟักทอง",
+          "iconName": "Vegetable_juice_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41407",
+          "displayName": "ไวน์ฟักทอง",
+          "iconName": "Wine_Sprite",
+          "sellPrice": 520
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 3,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 3,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 2,
+          "time": {
+            "hours": 16,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 2,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_80088",
@@ -200,5 +270,67 @@
       ],
       "offeringType": "Temple"
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41407",
+      "bVaryHealthToMax": false,
+      "healthDelta": 85,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 65,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 120,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "bronze": {
+      "key": "item_41407-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 100,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 70,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 138,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "silver": {
+      "key": "item_41407-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 105,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 80,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 156,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "gold": {
+      "key": "item_41407-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 130,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 95,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 180,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "osmium": {
+      "key": "item_41407-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 175,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 125,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 240,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    }
+  }
 }

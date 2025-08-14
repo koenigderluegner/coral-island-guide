@@ -2524,7 +2524,7 @@
     "key": "winter_fair_reminder",
     "sender": "<NPCName>코너 시장</>",
     "title": "내일 겨울 축제가 시작됩니다!",
-    "content": "겨울 축제가 겨울 17일부터 21일까지, 내일부터 3일간 열립니다. 오후 1시부터 늦게까지 마을 사람들과 함께하세요. 각종 상점과 게임, 최고의 겨울 축제가 기다립니다.",
+    "content": "겨울 축제가 겨울 17일부터 21일까지, 내일부터 5일간 열립니다. 오후 5시부터 늦게까지 마을 사람들과 함께하세요. 각종 상점과 게임, 최고의 겨울 축제가 기다립니다.",
     "isImportant": true,
     "tags": [],
     "mailType": null,
@@ -4291,7 +4291,7 @@
   },
   {
     "key": "unlock_cellar",
-    "sender": "<NPCName>Jeff Smith</>",
+    "sender": "<NPCName>제프 스미스</>",
     "title": "저장고 열쇠",
     "content": "네 마을이 A등급을 달성한 걸 축하해! 이 업적을 축하하기 위해 특별한 선물을 보내. 동봉된 건 열쇠인데, 내가 저번에 방문했을 때 본 저장고를 열 수 있을 거야.\r\n\r\n새로운 지역을 모험하며 흥미진진한 기회들을 만나기를 바랄게. 다시 한번 축하해!",
     "isImportant": true,
@@ -4404,7 +4404,7 @@
     "key": "FurnitureMoved",
     "sender": "<NPCName>조코</>",
     "title": "집 업그레이드",
-    "content": "We had to move some of your stuff around to complete the house renovation. Hope you don't mind!",
+    "content": "집 리모델링을 완료하기 위해 물건 일부를 옮겨야 했어요. 양해해 주세요!",
     "isImportant": true,
     "tags": [],
     "mailType": "OnlineShop",
@@ -4414,12 +4414,54 @@
   {
     "key": "dlc_6",
     "sender": "Stairway Games",
-    "title": "Exclusive Content: Funguys Swarm Pack",
-    "content": "Thank you for purchasing the Funguys Swarm pack! Your purchase includes:\r\n\r\n- Fungarian Outfit\r\n- Fungarian Chest\r\n- Mythical Pet Outfit: Rusdy",
+    "title": "독점 콘텐츠: Funguys Swarm 팩",
+    "content": "Funguys Swarm 팩을 구매해 주셔서 감사합니다! 구매 포함 사항:\r\n\r\n- 펀가리안 의상\r\n- 펀가리안 상자\r\n- 신화 펫 의상: 루스디",
     "isImportant": true,
     "tags": [],
     "mailType": "Gift",
-    "greetCloseMessage": "Enjoy your exclusive content, and thanks for your support!",
-    "greetOpenMessage": "안녕,"
+    "greetCloseMessage": "독점 콘텐츠를 즐겨 주신 여러분의 성원에 감사드립니다!",
+    "greetOpenMessage": "안녕,",
+    "effects": [
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_120554",
+            "displayName": "버섯버섯 의상",
+            "iconName": "Fungarian_Outfit_Sprite"
+          }
+        }
+      },
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_65916",
+            "displayName": "버섯버섯 상자",
+            "iconName": "Fungarian_Chest_Sprite"
+          }
+        }
+      },
+      {
+        "type": "AddItemToInventory",
+        "meta": {
+          "item": {
+            "id": "item_10032",
+            "displayName": "루스디",
+            "iconName": "Rusdy_Icon_Sprite"
+          }
+        }
+      },
+      {
+        "type": "UnlockCraftingRecipe",
+        "meta": {
+          "item": {
+            "id": "item_65916",
+            "displayName": "버섯버섯 상자",
+            "iconName": "Fungarian_Chest_Sprite"
+          }
+        }
+      }
+    ]
   }
 ]

@@ -2,29 +2,31 @@
   "item": {
     "id": "item_41406",
     "displayName": "Sweet potato wine",
-    "price": 10,
-    "sellPrice": 10,
-    "sellAt": [],
+    "price": 740,
+    "sellPrice": 295,
+    "sellAt": [
+      "Sam"
+    ],
     "stackable": true,
     "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
     "description": "It‘s earthy on the nose. Or maybe smoky? Drink in moderation.",
     "qualities": {
       "bronze": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 850,
+        "sellPrice": 340
       },
       "silver": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 965,
+        "sellPrice": 385
       },
       "gold": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1125,
+        "sellPrice": 450
       },
       "osmium": {
-        "price": 10,
-        "sellPrice": 10
+        "price": 1465,
+        "sellPrice": 585
       }
     },
     "iconName": "Wine_Sprite",
@@ -36,6 +38,74 @@
       "item.cooking.ingredient"
     ]
   },
+  "artisanResult": [
+    {
+      "useCategory": false,
+      "day": 4,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41136",
+          "displayName": "Sweet potato juice",
+          "iconName": "Vegetable_juice_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41406",
+          "displayName": "Sweet potato wine",
+          "iconName": "Wine_Sprite",
+          "sellPrice": 295
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 3,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 3,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 2,
+          "time": {
+            "hours": 16,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 2,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    }
+  ],
   "usedToCook": [
     {
       "key": "item_80088",
@@ -200,5 +270,67 @@
       ],
       "offeringType": "Temple"
     }
-  ]
+  ],
+  "consumables": {
+    "base": {
+      "key": "item_41406",
+      "bVaryHealthToMax": false,
+      "healthDelta": 55,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 40,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 120,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "bronze": {
+      "key": "item_41406-a",
+      "bVaryHealthToMax": false,
+      "healthDelta": 60,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 50,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 138,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "silver": {
+      "key": "item_41406-b",
+      "bVaryHealthToMax": false,
+      "healthDelta": 70,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 50,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 156,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "gold": {
+      "key": "item_41406-c",
+      "bVaryHealthToMax": false,
+      "healthDelta": 85,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 60,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 180,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    },
+    "osmium": {
+      "key": "item_41406-d",
+      "bVaryHealthToMax": false,
+      "healthDelta": 105,
+      "bVaryStaminaToMax": false,
+      "staminaDelta": 80,
+      "level": 1,
+      "overwriteDuration": true,
+      "duration": 240,
+      "buff": "GetDrunk",
+      "itemType": "Drink"
+    }
+  }
 }
