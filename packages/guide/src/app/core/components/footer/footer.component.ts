@@ -3,6 +3,7 @@ import { UiIcon } from "@ci/data-types";
 import { GameVersionService } from "../../injection-tokens/version.injection-token";
 import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
 import { RouterLink } from "@angular/router";
+import { NgOptimizedImage } from "@angular/common";
 
 @Component({
     selector: 'app-footer',
@@ -19,7 +20,8 @@ import { RouterLink } from "@angular/router";
     encapsulation: ViewEncapsulation.None,
     imports: [
         UiIconComponent,
-        RouterLink
+        RouterLink,
+        NgOptimizedImage
     ]
 })
 export class FooterComponent {
