@@ -35,7 +35,7 @@ export class FruitTreeDbGenerator extends BaseGenerator<RawFruitTree, FruitTree>
             growableSeason: [getEnumValue(dbItem.producingSeason)],
             growTime: dbItem.stages.map(s => s.length).reduce((p, v) => p + v, 0),
             isRegrowable: true,
-            regrowableLength: 1,
+            regrowableLength: 4, // can't find a file containing this info, seems equal for all trees.
             readableName: dbItem.readableName,
             maxDroppedItems: dbItem.fruitsFloaties.maxDroppedItems,
             overrideExperience: dbItem.overrideExperience,
