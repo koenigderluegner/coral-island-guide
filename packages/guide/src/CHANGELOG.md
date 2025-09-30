@@ -1,9 +1,19 @@
 ## Changelog
 
+### 0.27.0 2025-09-30
+
+#### Added
+
+- Added first yield after x days to fruit trees in the journal.
+
+#### Changed
+
+- Updated live data to v1.2-1240 (Steam version)
 
 ### 0.26.0 2025-08-14
 
-Coral Guide is now open source! You can find the code on [GitHub](https://github.com/koenigderluegner/coral-island-guide).
+Coral Guide is now open source! You can find the code
+on [GitHub](https://github.com/koenigderluegner/coral-island-guide).
 Code is still a mess as it was never intended to be public, but I will work on it soon™.
 
 #### Changed
