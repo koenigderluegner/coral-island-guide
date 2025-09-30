@@ -14,6 +14,9 @@
         <div>Regrows: <span class="text-black">{{ [1, crop.regrowableLength] | max }}
             days</span></div>
     }
+    @if('firstYield' in crop) {
+        <div>First yield: <span class="text-black">{{ crop.firstYield }} days</span></div>
+    }
     @if (crop |isCrop) {
 
         @if (crop.canCombine) {

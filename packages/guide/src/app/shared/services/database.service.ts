@@ -417,7 +417,7 @@ export class DatabaseService extends BaseDbService {
 
     fetchFruitTrees$(): Observable<FruitTree[]> {
         if (!this._FRUIT_TREES$) {
-            this._FRUIT_TREES$ = this.http.get<Crop[]>(`${this.BASE_PATH_WITH_LANG}/fruit-trees.json`)
+            this._FRUIT_TREES$ = this.http.get<FruitTree[]>(`${this.BASE_PATH_WITH_LANG}/fruit-trees.json`)
                 .pipe(
                     shareReplay(1)
                 );
