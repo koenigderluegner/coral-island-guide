@@ -1,5 +1,4 @@
 import { Component, input } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { BaseCrop, Crop, FruitPlant, FruitTree } from "@ci/data-types";
 import { ItemIconComponent } from "../../item-icon/item-icon.component";
 import { IsBaseCropPipe } from "../../../pipes/is-base-crop.pipe";
@@ -9,7 +8,7 @@ import { MaxPipe } from "../../../pipes/max.pipe";
 
 @Component({
     selector: 'app-crop',
-    imports: [CommonModule, ItemIconComponent, IsBaseCropPipe, MoneyComponent, IsCropPipe, MaxPipe],
+    imports: [ItemIconComponent, IsBaseCropPipe, MoneyComponent, IsCropPipe, MaxPipe],
     templateUrl: './crop.component.html'
 })
 export class CropComponent {

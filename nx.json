@@ -4,10 +4,12 @@
   "generators": {
     "@schematics/angular:component": {
       "style": "none",
-      "skipTests": true
+      "skipTests": true,
+      "type": "component"
     },
     "@schematics/angular:service": {
-      "skipTests": true
+      "skipTests": true,
+      "type": "service"
     },
     "@nx/angular:application": {
       "style": "none",
@@ -21,7 +23,53 @@
     },
     "@nx/angular:component": {
       "style": "none",
-      "skipTests": true
+      "skipTests": true,
+      "type": "component"
+    },
+    "@nx/angular:directive": {
+      "type": "directive"
+    },
+    "@schematics/angular:directive": {
+      "type": "directive"
+    },
+    "@nx/angular:service": {
+      "type": "service"
+    },
+    "@nx/angular:scam": {
+      "type": "component"
+    },
+    "@nx/angular:scam-directive": {
+      "type": "directive"
+    },
+    "@nx/angular:guard": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:guard": {
+      "typeSeparator": "."
+    },
+    "@nx/angular:interceptor": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:interceptor": {
+      "typeSeparator": "."
+    },
+    "@nx/angular:module": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:module": {
+      "typeSeparator": "."
+    },
+    "@nx/angular:pipe": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:pipe": {
+      "typeSeparator": "."
+    },
+    "@nx/angular:resolver": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:resolver": {
+      "typeSeparator": "."
     }
   },
   "targetDefaults": {
@@ -34,6 +82,5 @@
     }
   },
   "defaultProject": "guide",
-  "defaultBase": "main",
-  "useLegacyCache": true
+  "defaultBase": "main"
 }
