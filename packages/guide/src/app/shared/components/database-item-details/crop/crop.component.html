@@ -10,6 +10,9 @@
 
     <div>Season: <span class="text-black">{{ (crop.growableSeason.join(', ')) }}</span></div>
     <div>Time to mature: <span class="text-black">{{ crop.growTime }} days</span></div>
+    @if ('firstYield' in crop) {
+        <div>First yield: <span class="text-black">{{ crop.firstYield }} days</span></div>
+    }
     @if (crop.isRegrowable) {
         <div>Regrows: <span class="text-black">{{ [1, crop.regrowableLength] | max }}
             days</span></div>

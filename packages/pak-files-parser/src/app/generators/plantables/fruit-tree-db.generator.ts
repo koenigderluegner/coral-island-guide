@@ -28,14 +28,18 @@ export class FruitTreeDbGenerator extends BaseGenerator<RawFruitTree, FruitTree>
         const item: FruitTree['item'] = {...minifyItem(seed), price: seed.price}
 
 
+        const growTime = dbItem.stages.map(s => s.length).reduce((p, v) => p + v, 0);
+        const regrowableLength = 4;
+
         const crop: FruitTree = {
             key: itemKey,
             item,
             size: dbItem.size,
             growableSeason: [getEnumValue(dbItem.producingSeason)],
-            growTime: dbItem.stages.map(s => s.length).reduce((p, v) => p + v, 0),
+            growTime,
             isRegrowable: true,
-            regrowableLength: 1,
+            regrowableLength, // can't find a file containing this info, seems equal for all trees.
+            firstYield: growTime + (regrowableLength - 1), // the first day of being grown counts as the first day of regrowing
             readableName: dbItem.readableName,
             maxDroppedItems: dbItem.fruitsFloaties.maxDroppedItems,
             overrideExperience: dbItem.overrideExperience,
