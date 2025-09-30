@@ -1,5 +1,4 @@
-import { Component, input, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, input } from '@angular/core';
 import { AnimalProduceComponent } from "../animal-produce/animal-produce.component";
 import { CookingRecipeComponent } from "../cooking-recipe/cooking-recipe.component";
 import { CropComponent } from "../crop/crop.component";
@@ -11,7 +10,7 @@ import { DatabaseItem } from "@ci/data-types";
 
 @Component({
     selector: 'app-offering',
-    imports: [CommonModule, AnimalProduceComponent, CookingRecipeComponent, CropComponent, FishComponent, InsectComponent, ProcessingComponent, ShopProcessingResultComponent],
+    imports: [AnimalProduceComponent, CookingRecipeComponent, CropComponent, FishComponent, InsectComponent, ProcessingComponent, ShopProcessingResultComponent],
     templateUrl: './offering.component.html',
     styles: `:host {
         display: flex;

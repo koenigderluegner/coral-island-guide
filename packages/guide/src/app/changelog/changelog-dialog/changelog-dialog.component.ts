@@ -24,9 +24,9 @@ import { SettingsService } from "../../shared/services/settings.service";
     templateUrl: './changelog-dialog.component.html',
     styles: `
         :host {
-            --mdc-dialog-subhead-weight: 700;
-            --mdc-dialog-subhead-size: 1.5rem;
-            --mdc-dialog-subhead-line-height: 1.8rem;
+            --mat-dialog-subhead-weight: 700;
+            --mat-dialog-subhead-size: 1.5rem;
+            --mat-dialog-subhead-line-height: 1.8rem;
 
         }`
 })

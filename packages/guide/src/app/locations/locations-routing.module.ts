@@ -1,9 +1,7 @@
 import { CanActivateFn, Route, Routes } from '@angular/router';
-
 import { onlyInBetaGuard } from "../core/guards/only-in-beta.guard";
 import { FestivalDisplayNames, ShopDisplayNames } from "@ci/data-types";
 import { shopRouteConfig } from "./locations-shop-route-config";
-
 import { festivalRouteConfig } from "./locations-festival-route-config";
 import { onlyInLiveGuard } from "../core/guards/only-in-live.guard";
 

@@ -19,7 +19,7 @@ import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { Title } from '@angular/platform-browser';
 import { MatFormField, MatLabel } from "@angular/material/form-field";
 import { CardComponent } from "../shared/components/card/card.component";
-import { AsyncPipe, NgIf } from "@angular/common";
+import { AsyncPipe } from "@angular/common";
 import { ItemIconComponent } from "../shared/components/item-icon/item-icon.component";
 import { MatInput } from "@angular/material/input";
 import { LocalStorageService } from "../core/local-storage/local-storage.service";
@@ -35,7 +35,6 @@ import { LocalStorageService } from "../core/local-storage/local-storage.service
         ReactiveFormsModule,
         AsyncPipe,
         ItemIconComponent,
-        NgIf,
         MatInput
     ]
 })

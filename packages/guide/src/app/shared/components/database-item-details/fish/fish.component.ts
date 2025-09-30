@@ -1,12 +1,11 @@
 import { Component, input } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { getTruthyValues } from "@ci/util";
 import { Fish, FishSpawnSettings } from '@ci/data-types';
 import { AddSpacesToPascalCasePipe } from "../../../pipes/add-spaces-to-pascal-case.pipe";
 
 @Component({
     selector: 'app-fish',
-    imports: [CommonModule, AddSpacesToPascalCasePipe],
+    imports: [AddSpacesToPascalCasePipe],
     templateUrl: './fish.component.html'
 })
 export class FishComponent {
