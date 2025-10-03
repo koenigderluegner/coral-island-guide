@@ -1,3 +1,6 @@
+export * from './lib/consts/preference-map.const';
+
+
 export * from './lib/types/effects/add-item-to-inventory-effect.type';
 export * from './lib/types/effects/boost-max-stamina-effect.type';
 export * from './lib/types/effects/change-object-state-effect.type';

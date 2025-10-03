@@ -21,6 +21,7 @@ import {
     ItemProcessShopData,
     ItemUpgradeData,
     MinimalNPC,
+    preferencesMap,
     Quality,
     ShopDisplayNames,
     ShopItemData,
@@ -28,7 +29,6 @@ import {
 } from "@ci/data-types";
 import path from "path";
 import { flatObjectMap, getQuality, nonNullable, omitFields, removeQualityFlag } from "@ci/util";
-import { preferencesMap } from "../../guide/src/app/shared/constants/preference-map.const";
 import { Datatable } from "./interfaces/datatable.interface";
 import { DashboardFilesCreation } from "./app/dashboard-files-creation.function";
 import { SimpleCopyImageProcessor } from "./app/image-processors/simple-copy.image-processor";

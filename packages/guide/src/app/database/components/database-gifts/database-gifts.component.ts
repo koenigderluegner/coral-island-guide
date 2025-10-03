@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.component";
-import { preferencesMap } from "../../../shared/constants/preference-map.const";
-import { MinimalNPC } from "@ci/data-types";
+import { MinimalNPC, preferencesMap } from "@ci/data-types";
 import { ExpandableComponent } from "../../../shared/components/expandable/expandable.component";
 import { ResponsiveTableComponent } from "../../../shared/components/responsive-table/responsive-table.component";
 import { MatTableModule } from "@angular/material/table";

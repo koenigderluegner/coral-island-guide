@@ -1,6 +1,5 @@
 import { Component, input, output, ViewEncapsulation } from '@angular/core';
-import { GiftPreferences, MinimalItem } from "@ci/data-types";
-import { preferencesMap } from "../../../shared/constants/preference-map.const";
+import { GiftPreferences, MinimalItem, preferencesMap } from "@ci/data-types";
 import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
 import { InlineMinimalItemComponent } from "../../../shared/components/inline-minimal-item/inline-minimal-item.component";
 import { AddSpacesToPascalCasePipe } from "../../../shared/pipes/add-spaces-to-pascal-case.pipe";
