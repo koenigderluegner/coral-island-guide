@@ -5,7 +5,7 @@
   "scripts": {
     "extract-assets-live": "json -I -f \"./packages/file-extraction/UnrealExporter/configs/config.json\" -e \"this.outputDir='../../pak-files-parser/src/assets/live'\" &&  START /D \".\\packages\\file-extraction\\UnrealExporter\" UnrealExporter.exe config",
     "extract-assets-beta": "json -I -f \"./packages/file-extraction/UnrealExporter/configs/config.json\" -e \"this.outputDir='../../pak-files-parser/src/assets/beta'\" &&  START /D \".\\packages\\file-extraction\\UnrealExporter\" UnrealExporter.exe config",
-    "prepare-deploy": "nx run pak-files-parser:prepare:beta && nx run pak-files-parser:prepare:live && nx run guide:build:production && copy .\\dist\\packages\\guide\\browser\\index.html .\\dist\\packages\\guide\\browser\\404.html && git reset --hard"
+    "prepare-deploy": "nx run pak-files-parser:prepare:beta & nx run pak-files-parser:prepare:live && nx run guide:build:production && copy .\\dist\\packages\\guide\\browser\\index.html .\\dist\\packages\\guide\\browser\\404.html && git reset --hard"
   },
   "private": true,
   "devDependencies": {
@@ -73,7 +73,7 @@
     "express-fileupload": "^1.4.3",
     "fast-glob": "^3.3.2",
     "glob": "^8.0.3",
-    "marked": "^15.0.3",
+    "marked": "^16.3.0",
     "ngx-markdown": "^20.1.0",
     "raw-loader": "^4.0.2",
     "rxjs": "~7.8.1",
