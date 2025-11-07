@@ -1,4 +1,4 @@
-import { TagBasedItem } from '@ci/data-types';
+import { TagBasedItem } from '../interfaces/tag-based-item.interface';
 
 /**
  * Minimal tag based item data for simple display.

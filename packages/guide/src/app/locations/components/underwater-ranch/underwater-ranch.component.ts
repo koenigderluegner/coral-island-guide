@@ -1,7 +1,6 @@
 import { Component, computed } from '@angular/core';
 import { BaseShopComponent } from "../base-shop/base-shop.component";
-import { ProductSizeByMood, ShopItemData, ShopName } from "@ci/data-types";
-import { Observable } from "rxjs";
+import { ShopItemData, ShopName } from "@ci/data-types";
 import { MappedAnimalShopData } from "../../types/mapped-animal-shop-data.type";
 import { AsyncPipe } from "@angular/common";
 import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";

@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, inject, OnDestroy, viewChild } from '@angular/core';
-import { BaseCrop, JournalOrder, MinimalItem, UiIcon, Fish } from '@ci/data-types';
+import { BaseCrop, Fish, JournalOrder, MinimalItem, UiIcon } from '@ci/data-types';
 import { combineLatest, map, Observable, of, startWith } from 'rxjs';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { FormGroup } from '@angular/forms';
@@ -34,6 +34,7 @@ export class BaseJournalPageComponent<D extends ({
     private changeDetectorRef: ChangeDetectorRef = inject(ChangeDetectorRef);
     private readonly _mobileQueryListener: () => void;
 
+    // eslint-disable-next-line @angular-eslint/prefer-inject
     constructor(formControl: FormGroup<FilterForm>) {
         super();
         this.mobileQuery = this.media.matchMedia('(max-width: 600px)');

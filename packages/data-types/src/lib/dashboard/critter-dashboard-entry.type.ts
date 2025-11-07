@@ -1,4 +1,5 @@
-import { Season, Weather } from "@ci/data-types";
+import { Season } from '../types/season.type';
+import { Weather } from '../types/weather.type';
 
 export type CritterDashboardEntry = {
     id: string,

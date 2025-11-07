@@ -1,4 +1,6 @@
-import { Fish, Season, Weather } from "@ci/data-types";
+import { Fish } from '../interfaces/fish.interface';
+import { Season } from '../types/season.type';
+import { Weather } from '../types/weather.type';
 
 export type FishDashboardEntry = {
     id: string,

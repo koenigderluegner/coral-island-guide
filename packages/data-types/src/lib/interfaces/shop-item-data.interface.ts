@@ -1,4 +1,10 @@
-import { CustomEntry, Effect, Item, MinimalItem, RequirementEntry, SpecificDate, Time } from "@ci/data-types";
+import { CustomEntry } from './custom-entry.interface';
+import { Effect } from '../types/effects/effect.type';
+import { Item } from './item.interface';
+import { MinimalItem } from '../types/minimal-item.type';
+import { RequirementEntry } from '../types/requirement-entry.type';
+import { SpecificDate } from './specific-date.interface';
+import { Time } from './time.interface';
 
 
 export type ShopItemData = {

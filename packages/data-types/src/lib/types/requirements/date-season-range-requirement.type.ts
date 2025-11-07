@@ -1,4 +1,4 @@
-import { SpecificDate } from "@ci/data-types";
+import { SpecificDate } from '../../interfaces/specific-date.interface';
 
 export type DateSeasonRangeRequirement = {
     type: 'DateSeasonRange',

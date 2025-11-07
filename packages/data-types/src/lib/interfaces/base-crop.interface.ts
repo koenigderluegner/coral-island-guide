@@ -1,4 +1,4 @@
-import { MinimalItem } from "@ci/data-types";
+import { MinimalItem } from '../types/minimal-item.type';
 import { Season } from "../types/season.type";
 
 export interface BaseCrop {

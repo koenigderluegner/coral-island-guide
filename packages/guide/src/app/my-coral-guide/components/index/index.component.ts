@@ -231,7 +231,7 @@ export class IndexComponent extends BaseSelectableContainerComponent<MinimalItem
         return critter;
     }
 
-    updateChecklist($event: MatCheckboxChange, id: string, context: ChecklistContext) {
+    updateChecklist($event: MatCheckboxChange, id: string) {
         this.museumChecklistService.isChecked(id) ? this.museumChecklistService.remove(id) : this.museumChecklistService.add(id)
     }
 }

@@ -1,4 +1,4 @@
-import { NPC } from '@ci/data-types';
+import { NPC } from '../interfaces/npc.interface';
 
 /**
  * Minimal npc data for simple display.

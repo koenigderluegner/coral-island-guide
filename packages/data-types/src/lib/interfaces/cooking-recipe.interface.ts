@@ -1,4 +1,7 @@
-import { Item, MinimalItem, MinimalTagBasedItem, UnlockByMastery } from "@ci/data-types";
+import { Item } from './item.interface';
+import { MinimalItem } from '../types/minimal-item.type';
+import { MinimalTagBasedItem } from '../types/minimal-tag-based-item.type';
+import { UnlockByMastery } from './unlock-by-mastery.interface';
 
 export interface CookingRecipe {
     key: string;

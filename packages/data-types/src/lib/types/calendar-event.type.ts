@@ -1,4 +1,5 @@
-import { Season, Time } from "@ci/data-types";
+import { Season } from './season.type';
+import { Time } from '../interfaces/time.interface';
 
 export type CalendarBirthday = {
     eventType: 'birthday',

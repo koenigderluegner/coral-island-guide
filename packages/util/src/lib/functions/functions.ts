@@ -11,7 +11,7 @@ import {
 
 export function getEnumValue<T extends string, D = T extends `${T}::${infer U}` ? U : T extends EnumString<infer R> ? R : T extends string ? T : never>(EnumString: T): D {
 
-    let strings = EnumString.split('::')
+    const strings = EnumString.split('::')
 
     return (strings[1] ?? strings[0]) as D;
 }
@@ -70,10 +70,10 @@ export function entityKey(entity: Item | MinimalItem | MinimalTagBasedItem | Cus
         : entity.key
 }
 
-export function omitFields<T extends Object, K extends Array<keyof T>>(
+export function omitFields<T extends object, K extends Array<keyof T>>(
     record: T, ...props: K): Omit<T, K[number]> {
     const newRecord: Omit<T, K[number]> = Object.assign({}, record);
-    for (let prop of props) {
+    for (const prop of props) {
         delete (newRecord as any)[prop];
     }
     return newRecord;

@@ -1,8 +1,8 @@
-import { ActivatedRouteSnapshot, CanActivateFn, RedirectCommand, Router } from "@angular/router";
+import { CanActivateFn, RedirectCommand, Router } from "@angular/router";
 import { inject } from "@angular/core";
 import { SettingsService } from "../../shared/services/settings.service";
 
-export const onlyInLiveGuard: CanActivateFn = (route: ActivatedRouteSnapshot,) => {
+export const onlyInLiveGuard: CanActivateFn = () => {
     const settings = inject(SettingsService);
     const router = inject(Router);
 

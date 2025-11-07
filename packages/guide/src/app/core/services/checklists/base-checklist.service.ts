@@ -12,6 +12,7 @@ export abstract class BaseChecklistService {
     protected readonly userData = inject(UserDataService);
     readonly #localStorage = inject(LocalStorageService);
 
+    // eslint-disable-next-line @angular-eslint/prefer-inject
     protected constructor(protected checklistName: string) {
         if (checklistName.trim() === '') throw new Error(`checklistName can't be empty!`)
         this.read();

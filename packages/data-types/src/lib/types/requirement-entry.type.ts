@@ -1,4 +1,4 @@
-import { Requirement } from "@ci/data-types";
+import { Requirement } from './requirements/requirement.type';
 
 export type RequirementEntry = {
     key: string,

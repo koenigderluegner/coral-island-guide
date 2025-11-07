@@ -1,5 +1,5 @@
 import { Season, SpecificDate } from "@ci/data-types";
-import { seasonMap } from "@ci/util";
+import { seasonMap } from "../maps/sort-helper.map";
 
 export function addDays(date: SpecificDate, days: number): SpecificDate {
 

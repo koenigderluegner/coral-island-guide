@@ -1,4 +1,4 @@
-import { Quality } from "@ci/data-types";
+import { Quality } from '../enums/quality.enum';
 import { Time } from "./time.interface";
 
 export interface ItemProcessingRefinement {

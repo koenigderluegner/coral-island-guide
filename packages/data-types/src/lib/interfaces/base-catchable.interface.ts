@@ -1,4 +1,4 @@
-import { Item } from "@ci/data-types";
+import { Item } from './item.interface';
 
 export interface BaseCatchableInterface {
     key: string;

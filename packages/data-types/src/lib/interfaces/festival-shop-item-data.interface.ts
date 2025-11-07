@@ -1,4 +1,4 @@
-import { ShopItemData } from "@ci/data-types";
+import { ShopItemData } from './shop-item-data.interface';
 
 export type FestivalShopItemData = ShopItemData & {
     "festivalSetting": {

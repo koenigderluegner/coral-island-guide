@@ -1,4 +1,4 @@
-import { MinimalItem } from "@ci/data-types";
+import { MinimalItem } from '../minimal-item.type';
 
 export type UnlockCookingRecipeEffect = {
     type: 'UnlockCookingRecipe',

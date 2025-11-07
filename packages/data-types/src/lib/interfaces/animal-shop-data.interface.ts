@@ -1,4 +1,4 @@
-import { RequirementEntry } from "@ci/data-types";
+import { RequirementEntry } from '../types/requirement-entry.type';
 
 export interface AnimalShopData {
     key: string;

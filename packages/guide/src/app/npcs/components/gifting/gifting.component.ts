@@ -55,7 +55,7 @@ export class GiftingComponent extends BaseSelectableContainerComponent<MinimalIt
     readonly #npcList = signal<CombinedGiftPreference[] | undefined>(undefined);
     protected filteredAndSortedNpcs = computed(() => {
 
-        let npcs = this.#npcList() ?? [];
+        const npcs = this.#npcList() ?? [];
         if (!this.#searchValueChanges || !this.#sortValueChanges) return npcs;
         const searchValue = this.#searchValueChanges().toLowerCase()
         const sortValue = this.#sortValueChanges()

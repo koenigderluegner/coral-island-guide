@@ -1,4 +1,4 @@
-import { MinimalItem } from "@ci/data-types";
+import { MinimalItem } from '../types/minimal-item.type';
 
 export interface ChancePerItem {
     item: MinimalItem;
