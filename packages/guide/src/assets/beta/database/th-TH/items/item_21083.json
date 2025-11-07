@@ -31,12 +31,13 @@
     },
     "iconName": "Bluecole_Sprite",
     "tags": [
-      "income.oceanfarming",
+      "income.farming",
       "item.crop.diving",
       "Item.Consumable.Food",
       "item.vegetable",
       "item.UnderwaterrVegetables",
-      "Item.Quality.Basic"
+      "Item.Quality.Basic",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -231,7 +232,8 @@
         "iconName": "Vegetable_jerky_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -289,7 +291,8 @@
         "iconName": "Green_smoothie_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Drink"
+          "Item.Consumable.Drink",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -347,7 +350,8 @@
         "iconName": "Fresh_salad_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -405,7 +409,8 @@
         "iconName": "Rainbow_sandwich_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -492,7 +497,8 @@
         "iconName": "Fried_Rice_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -550,7 +556,7 @@
       "cookingKey": "PadThai",
       "item": {
         "id": "item_80070",
-        "displayName": "Pad thai",
+        "displayName": "Padthai",
         "price": 340,
         "sellPrice": 93,
         "sellAt": [],
@@ -579,7 +585,8 @@
         "iconName": "Pad_Thai_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -662,7 +669,8 @@
         "iconName": "Vegan_taco_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -737,7 +745,8 @@
         "iconName": "Spring_Frittata_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -807,7 +816,8 @@
         "iconName": "Assorted_Grilled_Platter_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -889,7 +899,8 @@
         "iconName": "Fish_soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -968,7 +979,8 @@
         "iconName": "Lodeh_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1055,7 +1067,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -1103,21 +1116,6 @@
             "id": "item_41181",
             "displayName": "โยเกิร์ตนมแพะขวดใหญ่",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "เปลือกหอยตลับ",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "หอยแครง",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "หอยเชลล์เผา",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -1157,7 +1155,8 @@
         "iconName": "Burrito_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1244,7 +1243,8 @@
         "iconName": "Puree_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1328,12 +1328,12 @@
   "requiredAsOffering": [
     {
       "key": "DivingBased",
-      "offeringGroupTitle": "Diving Altar",
+      "offeringGroupTitle": "แท่นบูชาสำหรับการดำน้ำ",
       "urlPath": "divingaltar",
       "offeringGroupRewardText": "",
       "offerings": [
         {
-          "title": "Lima Pulu (50m)",
+          "title": "Location_Diving50m",
           "imageName": "Ocean_Offerings",
           "numOfItemRequired": 4,
           "rewards": {
@@ -1349,11 +1349,12 @@
             ],
             "recipes": []
           },
+          "offeringType": "Diving",
           "requiredItems": [
             {
               "item": {
                 "id": "item_62008",
-                "displayName": "เอสเซนส์สาหร่ายเคล์ปออสเมี่ยม",
+                "displayName": "สารสกัดสาหร่ายเคลป์ออสเมี่ยม",
                 "iconName": "Osmium_Kelp_Essence_Sprite"
               },
               "amount": 5,
@@ -1389,7 +1390,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Diving"
     }
   ],
   "consumables": {
@@ -1403,7 +1404,7 @@
       "overwriteDuration": false,
       "duration": 0,
       "buff": "None",
-      "itemType": "None"
+      "itemType": "Food"
     },
     "bronze": {
       "key": "item_21083-a",
@@ -1415,7 +1416,7 @@
       "overwriteDuration": false,
       "duration": 0,
       "buff": "None",
-      "itemType": "None"
+      "itemType": "Food"
     },
     "silver": {
       "key": "item_21083-b",
@@ -1427,7 +1428,7 @@
       "overwriteDuration": false,
       "duration": 0,
       "buff": "None",
-      "itemType": "None"
+      "itemType": "Food"
     },
     "gold": {
       "key": "item_21083-c",
@@ -1439,7 +1440,7 @@
       "overwriteDuration": false,
       "duration": 0,
       "buff": "None",
-      "itemType": "None"
+      "itemType": "Food"
     },
     "osmium": {
       "key": "item_21083-d",
@@ -1451,7 +1452,7 @@
       "overwriteDuration": false,
       "duration": 0,
       "buff": "None",
-      "itemType": "None"
+      "itemType": "Food"
     }
   }
 }

@@ -2,15 +2,53 @@
   "item": {
     "id": "item_10031",
     "displayName": "Diamond ring MP",
-    "price": 10,
-    "sellPrice": 10,
+    "price": 5000,
+    "sellPrice": 5000,
     "sellAt": [],
     "stackable": true,
     "inventoryCategory": "Others",
     "displayKey": "Others",
-    "description": "Used for a marriage proposal.",
+    "description": "Used for marriage proposals, exclusively for another player. Cannot be gifted to townies.",
     "qualities": {},
     "iconName": "Diamond_Ring_MP_Sprite",
     "tags": []
-  }
+  },
+  "buyAt": [
+    {
+      "item": {
+        "id": "item_10031",
+        "displayName": "Diamond ring MP",
+        "iconName": "Diamond_Ring_MP_Sprite",
+        "price": 5000,
+        "sellPrice": 5000
+      },
+      "allowedDays": [],
+      "allowedSeasons": [],
+      "allowedWeather": [],
+      "forbiddenDays": [],
+      "forbiddenSeasons": [],
+      "forbiddenWeather": [],
+      "townRank": 0,
+      "tag": [],
+      "priceOverride": 0,
+      "priority": 12,
+      "enabled": true,
+      "availableSinceDate": false,
+      "availableTillDate": false,
+      "availableDuringTime": false,
+      "requirements": {
+        "key": "mpDiamondRing",
+        "type": "And",
+        "requirements": [
+          {
+            "type": "IsMultiplayer"
+          }
+        ]
+      },
+      "shop": {
+        "url": "blacksmith",
+        "displayName": "Blacksmith"
+      }
+    }
+  ]
 }

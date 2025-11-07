@@ -4,9 +4,11 @@
     "displayName": "Telur asin besar",
     "price": 290,
     "sellPrice": 115,
-    "sellAt": [],
+    "sellAt": [
+      "Sam"
+    ],
     "stackable": true,
-    "inventoryCategory": "Artisan product",
+    "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
     "description": "Telur yang diawetkan dengan garam.",
     "qualities": {
@@ -29,10 +31,11 @@
     },
     "iconName": "Large_Salted_Egg_Sprite",
     "tags": [
-      "income.farming",
+      "income.ranching",
       "Artisan.PreserveJar",
       "Item.Consumable.Food",
-      "item.artisan"
+      "item.artisan",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -54,6 +57,34 @@
       },
       "output": {
         "amount": 1,
+        "item": {
+          "id": "item_41290",
+          "displayName": "Telur asin besar",
+          "iconName": "Large_Salted_Egg_Sprite",
+          "sellPrice": 115
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31021",
+          "displayName": "Telur emas besar",
+          "iconName": "Large_golden_egg_Sprite"
+        }
+      },
+      "output": {
+        "amount": 2,
         "item": {
           "id": "item_41290",
           "displayName": "Telur asin besar",
@@ -225,7 +256,7 @@
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "Tidak terlihat bisa dimakan. Mengkonsumsi risiko Anda sendiri.",
+        "description": "Tidak terlihat bisa dimakan. Risiko tanggung sendiri.",
         "qualities": {
           "bronze": {
             "price": 58,
@@ -247,7 +278,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -295,21 +327,6 @@
             "id": "item_41181",
             "displayName": "Yogurt kambing besar",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "Cangkang kerang",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "Kerang cockle",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "Skalop api",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }

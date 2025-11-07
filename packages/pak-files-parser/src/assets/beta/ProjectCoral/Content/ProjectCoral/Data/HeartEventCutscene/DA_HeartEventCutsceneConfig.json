@@ -3,6 +3,7 @@
     "Type": "C_HeartEventSubsystemConfig",
     "Name": "DA_HeartEventCutsceneConfig",
     "Class": "UScriptClass'C_HeartEventSubsystemConfig'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "heartEventConditionDT": {
         "ObjectName": "DataTable'DT_HeartEventCutsceneTrigger'",
@@ -10,7 +11,7 @@
       },
       "advanceHeartEventRequirement": {
         "ObjectName": "C_GameplayRequirementsConfig'DA_HeartEventCutsceneAdvanceRequirement'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneAdvanceRequirement.73"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneAdvanceRequirement.45"
       },
       "unlockHeartEventRequirement": {
         "ObjectName": "C_GameplayRequirementsConfig'DA_HeartEventCutsceneUnlockRequirement'",
@@ -23,7 +24,44 @@
       "locationAreaInfoDT": {
         "ObjectName": "DataTable'DT_LocationAreaInfo'",
         "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
-      }
+      },
+      "blacklistedWinterFairLocations": [
+        {
+          "DataTable": {
+            "ObjectName": "DataTable'DT_LocationAreaInfo'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
+          },
+          "RowName": "BeachArea"
+        },
+        {
+          "DataTable": {
+            "ObjectName": "DataTable'DT_LocationAreaInfo'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
+          },
+          "RowName": "BeachPierArea"
+        },
+        {
+          "DataTable": {
+            "ObjectName": "DataTable'DT_LocationAreaInfo'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
+          },
+          "RowName": "LighthouseArea"
+        },
+        {
+          "DataTable": {
+            "ObjectName": "DataTable'DT_LocationAreaInfo'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
+          },
+          "RowName": "BeachWestArea"
+        },
+        {
+          "DataTable": {
+            "ObjectName": "DataTable'DT_LocationAreaInfo'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
+          },
+          "RowName": "BeachWaterArea"
+        }
+      ]
     }
   }
 ]

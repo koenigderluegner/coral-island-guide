@@ -35,7 +35,8 @@
       "item.gathering.spring",
       "item.fruit",
       "item.coconut",
-      "Item.Consumable.Food"
+      "Item.Consumable.Food",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -80,6 +81,34 @@
     }
   ],
   "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_52107",
+          "displayName": "Kelapa",
+          "iconName": "coconut_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41428",
+          "displayName": "Santan",
+          "iconName": "coconut_milk_Sprite",
+          "sellPrice": 100
+        }
+      },
+      "genericInput": null,
+      "machine": "CheesePress"
+    },
     {
       "useCategory": false,
       "day": 0,
@@ -665,11 +694,6 @@
               "iconName": "Cotton_Sprite"
             },
             {
-              "id": "item_24003",
-              "displayName": "Almon",
-              "iconName": "Almond_Sprite"
-            },
-            {
               "id": "item_24004",
               "displayName": "Avocado",
               "iconName": "Avocado_Sprite"
@@ -1126,7 +1150,7 @@
             },
             {
               "id": "item_72012",
-              "displayName": "Ikan nila",
+              "displayName": "Ikan kakatua",
               "iconName": "Parrotfish_Sprite"
             },
             {
@@ -1543,6 +1567,90 @@
       "useCategory": false,
       "day": 0,
       "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_52107",
+          "displayName": "Kelapa",
+          "iconName": "coconut_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41424",
+          "displayName": "Air kelapa",
+          "iconName": "Coconut_Water_Sprite",
+          "sellPrice": 100
+        }
+      },
+      "genericInput": null,
+      "machine": "Keg"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_52107",
+          "displayName": "Kelapa",
+          "iconName": "coconut_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41432",
+          "displayName": "Minyak kelapa",
+          "iconName": "Coconut_Oil_Sprite",
+          "sellPrice": 115
+        }
+      },
+      "genericInput": null,
+      "machine": "OilPress"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_52107",
+          "displayName": "Kelapa",
+          "iconName": "coconut_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41440",
+          "displayName": "Selai kaya",
+          "iconName": "Jam_Yellow_Sprite",
+          "sellPrice": 85
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
         "hours": 2,
         "minutes": 0
       },
@@ -1615,7 +1723,8 @@
         "iconName": "Fruit_Tart_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1702,7 +1811,8 @@
         "iconName": "Smoothie_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Drink"
+          "Item.Consumable.Drink",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1731,7 +1841,7 @@
       "cookingKey": "WholeCoconutDrink",
       "item": {
         "id": "item_80081",
-        "displayName": "Minuman kelapa utuh",
+        "displayName": "Air kelapa muda",
         "price": 65,
         "sellPrice": 23,
         "sellAt": [],
@@ -1760,7 +1870,8 @@
         "iconName": "Whole_Coconut_Drink_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Drink"
+          "Item.Consumable.Drink",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1818,7 +1929,8 @@
         "iconName": "Pancakes_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1854,7 +1966,7 @@
         {
           "item": {
             "id": "item_41088",
-            "displayName": "Sirup maple",
+            "displayName": "Sirup mapel",
             "iconName": "Maple_Syrup_Sprite"
           },
           "amount": 1
@@ -1897,7 +2009,8 @@
         "iconName": "Serabi_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1980,7 +2093,8 @@
         "iconName": "Lodeh_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2067,7 +2181,8 @@
         "iconName": "Green_Curry_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2121,7 +2236,7 @@
       "cookingKey": "KueLapis",
       "item": {
         "id": "item_80092",
-        "displayName": "Kue lapis",
+        "displayName": "Kuelapis",
         "price": 195,
         "sellPrice": 57,
         "sellAt": [],
@@ -2150,7 +2265,8 @@
         "iconName": "Kue_Lapis_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2225,7 +2341,8 @@
         "iconName": "Red_Curry_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2286,7 +2403,7 @@
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "Tidak terlihat bisa dimakan. Mengkonsumsi risiko Anda sendiri.",
+        "description": "Tidak terlihat bisa dimakan. Risiko tanggung sendiri.",
         "qualities": {
           "bronze": {
             "price": 58,
@@ -2308,7 +2425,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -2356,21 +2474,6 @@
             "id": "item_41181",
             "displayName": "Yogurt kambing besar",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "Cangkang kerang",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "Kerang cockle",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "Skalop api",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -2410,7 +2513,8 @@
         "iconName": "Klepon_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2485,7 +2589,8 @@
         "iconName": "Cenil_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2531,14 +2636,14 @@
       "cookingKey": "EsCendol",
       "item": {
         "id": "item_80094",
-        "displayName": "Es cendol",
+        "displayName": "Escendol",
         "price": 220,
         "sellPrice": 90,
         "sellAt": [],
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "Tepung nasi hijau jeli berenang dalam santan manis dan segar.",
+        "description": "Agar-agar tepung beras hijau yang berenang di dalam santan yang manis dan segar",
         "qualities": {
           "bronze": {
             "price": 253,
@@ -2560,7 +2665,8 @@
         "iconName": "Es_cendol_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Drink"
+          "Item.Consumable.Drink",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2606,14 +2712,14 @@
       "cookingKey": "EsDoger",
       "item": {
         "id": "item_80093",
-        "displayName": "Es doger",
+        "displayName": "Esdoger",
         "price": 260,
         "sellPrice": 100,
         "sellAt": [],
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "Es santan kelapa merah muda berlapis dengan semua topping. Ho!",
+        "description": "Es santan kelapa merah muda dengan berbagai topping. Nyam!",
         "qualities": {
           "bronze": {
             "price": 299,
@@ -2635,23 +2741,14 @@
         "iconName": "Es_Doger_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
         "CeramicBowl"
       ],
       "genericIngredients": [
-        {
-          "amount": 1,
-          "genericItem": {
-            "key": "Milk_LargeMilk",
-            "displayName": "Susu/Susu Besar",
-            "tags": [],
-            "iconName": "Milk_Sprite_"
-          },
-          "key": "Milk_LargeMilk"
-        },
         {
           "amount": 1,
           "genericItem": {
@@ -2663,6 +2760,18 @@
             "displayName": "Kelapa Apapun"
           },
           "key": "Any_Coconut"
+        },
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Milk",
+            "tags": [
+              "item.animalproduct.milk"
+            ],
+            "iconName": "Any_Milk_Sprite",
+            "displayName": "Susu Apapun"
+          },
+          "key": "Any_Milk"
         }
       ],
       "ingredients": [
@@ -2683,26 +2792,7 @@
           "amount": 1
         }
       ],
-      "eitherOrIngredients": [
-        [
-          {
-            "item": {
-              "id": "item_31004",
-              "displayName": "Susu",
-              "iconName": "Milk_Sprite_"
-            },
-            "amount": 0
-          },
-          {
-            "item": {
-              "id": "item_31016",
-              "displayName": "Susu besar",
-              "iconName": "Large_milk_Sprite_"
-            },
-            "amount": 0
-          }
-        ]
-      ]
+      "eitherOrIngredients": []
     },
     {
       "key": "item_41036",
@@ -2739,7 +2829,8 @@
         "iconName": "Puree_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2779,7 +2870,7 @@
         },
         {
           "key": "KingKrakatoa",
-          "characterName": "King  Krakatoa",
+          "characterName": "King Krakatoa",
           "iconName": "Icon_king_krakatoa"
         }
       ]

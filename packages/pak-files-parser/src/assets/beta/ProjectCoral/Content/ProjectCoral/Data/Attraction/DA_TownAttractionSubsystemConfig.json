@@ -1,0 +1,252 @@
+[
+  {
+    "Type": "C_LoadMapEffect",
+    "Name": "C_LoadMapEffect_0",
+    "Outer": "DA_TownAttractionSubsystemConfig",
+    "Class": "UScriptClass'C_LoadMapEffect'",
+    "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "level": {
+        "AssetPathName": "/Game/ProjectCoral/Maps/Interior/Interior_RecreationCenter.Interior_RecreationCenter",
+        "SubPathString": ""
+      }
+    }
+  },
+  {
+    "Type": "C_TeleportPlayerEffect",
+    "Name": "C_TeleportPlayerEffect_1",
+    "Outer": "DA_TownAttractionSubsystemConfig",
+    "Class": "UScriptClass'C_TeleportPlayerEffect'",
+    "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "teleportToLocation": {
+        "X": -52583.71,
+        "Y": -48611.477,
+        "Z": 561.16876
+      },
+      "applyScope": "EC_GameplayEffectApplyScope::Individual"
+    }
+  },
+  {
+    "Type": "C_TownAttractionSubsystemConfig",
+    "Name": "DA_TownAttractionSubsystemConfig",
+    "Class": "UScriptClass'C_TownAttractionSubsystemConfig'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "projectCameraData": [
+        {
+          "projectId": "RecreationalCenter",
+          "cameraActors": [
+            {
+              "AssetPathName": "/Game/ProjectCoral/Maps/Buildings/CI_BuildingPufferfish.CI_BuildingPufferfish",
+              "SubPathString": "PersistentLevel.BP_Pufferfish_2"
+            }
+          ]
+        },
+        {
+          "projectId": "CommunityCenterSolarGarden",
+          "cameraActors": [
+            {
+              "AssetPathName": "/Game/ProjectCoral/Maps/MapZones/CI_Town.CI_Town",
+              "SubPathString": "PersistentLevel.BP_CommunityGardenLvl1_2"
+            }
+          ]
+        },
+        {
+          "projectId": "TownMural",
+          "cameraActors": [
+            {
+              "AssetPathName": "/Game/ProjectCoral/Maps/MapZones/CI_Town.CI_Town",
+              "SubPathString": "PersistentLevel.BP_MuralPainting_InProgress"
+            }
+          ]
+        },
+        {
+          "projectId": "HotAirBalloonRide",
+          "cameraActors": [
+            {
+              "AssetPathName": "/Game/ProjectCoral/Maps/MapZones/CI_Lookout.CI_Lookout",
+              "SubPathString": "PersistentLevel.BP_HotAirBalloon_Broken"
+            }
+          ]
+        },
+        {
+          "projectId": "RamenShop",
+          "cameraActors": [
+            {
+              "AssetPathName": "/Game/ProjectCoral/Maps/Buildings/CI_BuildingFurnitureRamen.CI_BuildingFurnitureRamen",
+              "SubPathString": "PersistentLevel.BP_FurnitureRamen_2"
+            }
+          ]
+        },
+        {
+          "projectId": "InnHeatedSwimmingPool",
+          "cameraActors": [
+            {
+              "AssetPathName": "/Game/ProjectCoral/Maps/Buildings/CI_BuildingCoralInn.CI_BuildingCoralInn",
+              "SubPathString": "PersistentLevel.BP_InnBackyard_RankF"
+            }
+          ]
+        },
+        {
+          "projectId": "PlasticArt",
+          "cameraActors": [
+            {
+              "AssetPathName": "/Game/ProjectCoral/Maps/MapZones/CI_Town.CI_Town",
+              "SubPathString": "PersistentLevel.BP_TrashRepurposeHidden_2"
+            },
+            {
+              "AssetPathName": "/Game/ProjectCoral/Maps/Buildings/CI_BuildingDumpSite.CI_BuildingDumpSite",
+              "SubPathString": "PersistentLevel.BP_DumpSiteController_2"
+            }
+          ]
+        },
+        {
+          "projectId": "MiniGolfArea",
+          "cameraActors": [
+            {
+              "AssetPathName": "/Game/ProjectCoral/Maps/Interior/Interior_RecreationCenter.Interior_RecreationCenter",
+              "SubPathString": "PersistentLevel.BP_Recreation_Minigolf_Empty"
+            }
+          ]
+        },
+        {
+          "projectId": "MovieTheater",
+          "cameraActors": [
+            {
+              "AssetPathName": "/Game/ProjectCoral/Maps/Interior/Interior_RecreationCenter.Interior_RecreationCenter",
+              "SubPathString": "PersistentLevel.BP_Recreation_MovieTheater_Empty"
+            }
+          ]
+        },
+        {
+          "projectId": "ArcadeCenter",
+          "cameraActors": [
+            {
+              "AssetPathName": "/Game/ProjectCoral/Maps/Interior/Interior_RecreationCenter.Interior_RecreationCenter",
+              "SubPathString": "PersistentLevel.BP_Recreation_Arcade_Empty"
+            }
+          ]
+        }
+      ],
+      "attractionCutsceneEffects": [
+        {
+          "Key": "RecreationalCenter",
+          "Value": {
+            "effects": [
+              {
+                "ObjectName": "C_TeleportPlayerEffect'DA_TownAttractionSubsystemConfig:C_TeleportPlayerEffect_1'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Attraction/DA_TownAttractionSubsystemConfig.1"
+              },
+              {
+                "ObjectName": "C_LoadMapEffect'DA_TownAttractionSubsystemConfig:C_LoadMapEffect_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Attraction/DA_TownAttractionSubsystemConfig.0"
+              }
+            ]
+          }
+        }
+      ],
+      "townAttractionLocationAreaRowHandles": [
+        {
+          "Key": "RecreationalCenter",
+          "Value": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_LocationAreaInfo'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
+            },
+            "RowName": "AttractionRecreationCenter"
+          }
+        },
+        {
+          "Key": "CommunityCenterSolarGarden",
+          "Value": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_LocationAreaInfo'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
+            },
+            "RowName": "AttractionSolarGarden"
+          }
+        },
+        {
+          "Key": "TownMural",
+          "Value": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_LocationAreaInfo'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
+            },
+            "RowName": "AttractionTownMural"
+          }
+        },
+        {
+          "Key": "HotAirBalloonRide",
+          "Value": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_LocationAreaInfo'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
+            },
+            "RowName": "AttractionBalloon"
+          }
+        },
+        {
+          "Key": "RamenShop",
+          "Value": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_LocationAreaInfo'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
+            },
+            "RowName": "AttractionRamen"
+          }
+        },
+        {
+          "Key": "InnHeatedSwimmingPool",
+          "Value": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_LocationAreaInfo'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
+            },
+            "RowName": "AttractionPool"
+          }
+        },
+        {
+          "Key": "PlasticArt",
+          "Value": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_LocationAreaInfo'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_LocationAreaInfo.0"
+            },
+            "RowName": "AttractionPlasticArt"
+          }
+        },
+        {
+          "Key": "MiniGolfArea",
+          "Value": {
+            "DataTable": null,
+            "RowName": "None"
+          }
+        },
+        {
+          "Key": "MovieTheater",
+          "Value": {
+            "DataTable": null,
+            "RowName": "None"
+          }
+        },
+        {
+          "Key": "ArcadeCenter",
+          "Value": {
+            "DataTable": null,
+            "RowName": "None"
+          }
+        }
+      ],
+      "attractionShopDataTable": {
+        "ObjectName": "DataTable'DT_TownAttractionShopData'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_TownAttractionShopData.0"
+      },
+      "townAttractionRewardDataTable": {
+        "ObjectName": "DataTable'DT_TownAttractionRewardTable'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Attraction/DT_TownAttractionRewardTable.0"
+      }
+    }
+  }
+]

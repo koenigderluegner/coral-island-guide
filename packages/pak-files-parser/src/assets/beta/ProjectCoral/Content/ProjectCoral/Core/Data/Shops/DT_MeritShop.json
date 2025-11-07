@@ -3,6 +3,7 @@
     "Type": "DataTable",
     "Name": "DT_MeritShop",
     "Class": "UScriptClass'DataTable'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "RowStruct": {
         "ObjectName": "ScriptStruct'C_MeritExchangeShopData'",
@@ -46,7 +47,47 @@
         },
         "useCategory": false,
         "category": "EC_ItemCategory::Rare",
-        "priority": 0,
+        "priority": 1,
+        "priceOverride": 2000,
+        "tag": []
+      },
+      "WellnessFruit": {
+        "isLimitedItem": true,
+        "itemLimit": 1,
+        "isUsingCustomEffect": true,
+        "isUnlockRecipe": false,
+        "enable": true,
+        "townRank": 0,
+        "item": {
+          "data": {
+            "DataTable": {
+              "ObjectName": "DataTable'DT_InventoryItems'",
+              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+            },
+            "RowName": "item_100015"
+          },
+          "itemID": "item_100015"
+        },
+        "useCustomName": false,
+        "shopItemName": {
+          "CultureInvariantString": null
+        },
+        "useCustomIcon": false,
+        "customIcon": {
+          "AssetPathName": "None",
+          "SubPathString": ""
+        },
+        "useCustomCategory": false,
+        "customCategory": {
+          "CultureInvariantString": null
+        },
+        "useCustomDescription": false,
+        "customDescription": {
+          "CultureInvariantString": null
+        },
+        "useCategory": false,
+        "category": "EC_ItemCategory::Rare",
+        "priority": 2,
         "priceOverride": 2000,
         "tag": []
       },
@@ -86,7 +127,7 @@
         },
         "useCategory": false,
         "category": "EC_ItemCategory::None",
-        "priority": 0,
+        "priority": 3,
         "priceOverride": 500,
         "tag": []
       },
@@ -126,7 +167,7 @@
         },
         "useCategory": false,
         "category": "EC_ItemCategory::None",
-        "priority": 0,
+        "priority": 4,
         "priceOverride": 500,
         "tag": []
       },
@@ -166,7 +207,7 @@
         },
         "useCategory": false,
         "category": "EC_ItemCategory::None",
-        "priority": 0,
+        "priority": 5,
         "priceOverride": 500,
         "tag": []
       },
@@ -206,7 +247,7 @@
         },
         "useCategory": false,
         "category": "EC_ItemCategory::None",
-        "priority": 0,
+        "priority": 6,
         "priceOverride": 500,
         "tag": []
       },
@@ -246,7 +287,7 @@
         },
         "useCategory": false,
         "category": "EC_ItemCategory::None",
-        "priority": 0,
+        "priority": 7,
         "priceOverride": 500,
         "tag": []
       },
@@ -286,7 +327,7 @@
         },
         "useCategory": false,
         "category": "EC_ItemCategory::None",
-        "priority": 0,
+        "priority": 8,
         "priceOverride": 500,
         "tag": []
       },
@@ -326,7 +367,7 @@
         },
         "useCategory": false,
         "category": "EC_ItemCategory::None",
-        "priority": 0,
+        "priority": 9,
         "priceOverride": 500,
         "tag": []
       },
@@ -366,14 +407,14 @@
         },
         "useCategory": false,
         "category": "EC_ItemCategory::None",
-        "priority": 0,
+        "priority": 10,
         "priceOverride": 500,
         "tag": []
       },
       "HumptyScarecrow": {
         "isLimitedItem": true,
         "itemLimit": 1,
-        "isUsingCustomEffect": false,
+        "isUsingCustomEffect": true,
         "isUnlockRecipe": true,
         "enable": true,
         "townRank": 0,
@@ -406,14 +447,14 @@
         },
         "useCategory": false,
         "category": "EC_ItemCategory::None",
-        "priority": 0,
+        "priority": 11,
         "priceOverride": 100,
         "tag": []
       },
       "UndeadScarecrow": {
         "isLimitedItem": true,
         "itemLimit": 1,
-        "isUsingCustomEffect": false,
+        "isUsingCustomEffect": true,
         "isUnlockRecipe": true,
         "enable": true,
         "townRank": 0,
@@ -446,14 +487,14 @@
         },
         "useCategory": false,
         "category": "EC_ItemCategory::None",
-        "priority": 0,
+        "priority": 12,
         "priceOverride": 100,
         "tag": []
       },
       "PrankensteinScarecrow": {
         "isLimitedItem": true,
         "itemLimit": 1,
-        "isUsingCustomEffect": false,
+        "isUsingCustomEffect": true,
         "isUnlockRecipe": true,
         "enable": true,
         "townRank": 0,
@@ -486,14 +527,14 @@
         },
         "useCategory": false,
         "category": "EC_ItemCategory::None",
-        "priority": 0,
+        "priority": 13,
         "priceOverride": 100,
         "tag": []
       },
       "JollyStalkScarecrow": {
         "isLimitedItem": true,
         "itemLimit": 1,
-        "isUsingCustomEffect": false,
+        "isUsingCustomEffect": true,
         "isUnlockRecipe": true,
         "enable": true,
         "townRank": 0,
@@ -526,14 +567,14 @@
         },
         "useCategory": false,
         "category": "EC_ItemCategory::None",
-        "priority": 0,
+        "priority": 14,
         "priceOverride": 100,
         "tag": []
       },
       "CoralHeroScarecrow": {
         "isLimitedItem": true,
         "itemLimit": 1,
-        "isUsingCustomEffect": false,
+        "isUsingCustomEffect": true,
         "isUnlockRecipe": true,
         "enable": true,
         "townRank": 0,
@@ -566,14 +607,14 @@
         },
         "useCategory": false,
         "category": "EC_ItemCategory::None",
-        "priority": 0,
+        "priority": 15,
         "priceOverride": 200,
         "tag": []
       },
       "GingerbreadScarecrow": {
         "isLimitedItem": true,
         "itemLimit": 1,
-        "isUsingCustomEffect": false,
+        "isUsingCustomEffect": true,
         "isUnlockRecipe": true,
         "enable": true,
         "townRank": 0,
@@ -606,14 +647,14 @@
         },
         "useCategory": false,
         "category": "EC_ItemCategory::None",
-        "priority": 0,
+        "priority": 16,
         "priceOverride": 200,
         "tag": []
       },
       "WalnutcrackerScarecrow": {
         "isLimitedItem": true,
         "itemLimit": 1,
-        "isUsingCustomEffect": false,
+        "isUsingCustomEffect": true,
         "isUnlockRecipe": true,
         "enable": true,
         "townRank": 0,
@@ -646,14 +687,14 @@
         },
         "useCategory": false,
         "category": "EC_ItemCategory::None",
-        "priority": 0,
+        "priority": 17,
         "priceOverride": 200,
         "tag": []
       },
       "PinoScarecrow": {
         "isLimitedItem": true,
         "itemLimit": 1,
-        "isUsingCustomEffect": false,
+        "isUsingCustomEffect": true,
         "isUnlockRecipe": true,
         "enable": true,
         "townRank": 0,
@@ -686,14 +727,14 @@
         },
         "useCategory": false,
         "category": "EC_ItemCategory::None",
-        "priority": 0,
+        "priority": 18,
         "priceOverride": 200,
         "tag": []
       },
       "OndelOndelHandsomeScarecrow": {
         "isLimitedItem": true,
         "itemLimit": 1,
-        "isUsingCustomEffect": false,
+        "isUsingCustomEffect": true,
         "isUnlockRecipe": true,
         "enable": true,
         "townRank": 0,
@@ -726,14 +767,14 @@
         },
         "useCategory": false,
         "category": "EC_ItemCategory::None",
-        "priority": 0,
+        "priority": 19,
         "priceOverride": 200,
         "tag": []
       },
       "OndelOndelPrettyScarecrow": {
         "isLimitedItem": true,
         "itemLimit": 1,
-        "isUsingCustomEffect": false,
+        "isUsingCustomEffect": true,
         "isUnlockRecipe": true,
         "enable": true,
         "townRank": 0,
@@ -766,48 +807,8 @@
         },
         "useCategory": false,
         "category": "EC_ItemCategory::None",
-        "priority": 0,
+        "priority": 20,
         "priceOverride": 200,
-        "tag": []
-      },
-      "WellnessFruit": {
-        "isLimitedItem": true,
-        "itemLimit": 1,
-        "isUsingCustomEffect": true,
-        "isUnlockRecipe": false,
-        "enable": true,
-        "townRank": 0,
-        "item": {
-          "data": {
-            "DataTable": {
-              "ObjectName": "DataTable'DT_InventoryItems'",
-              "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
-            },
-            "RowName": "item_100015"
-          },
-          "itemID": "item_100015"
-        },
-        "useCustomName": false,
-        "shopItemName": {
-          "CultureInvariantString": null
-        },
-        "useCustomIcon": false,
-        "customIcon": {
-          "AssetPathName": "None",
-          "SubPathString": ""
-        },
-        "useCustomCategory": false,
-        "customCategory": {
-          "CultureInvariantString": null
-        },
-        "useCustomDescription": false,
-        "customDescription": {
-          "CultureInvariantString": null
-        },
-        "useCategory": false,
-        "category": "EC_ItemCategory::Rare",
-        "priority": 0,
-        "priceOverride": 2000,
         "tag": []
       }
     }

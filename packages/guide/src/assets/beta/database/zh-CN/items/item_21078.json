@@ -31,12 +31,13 @@
     },
     "iconName": "Goldglow_Sprite",
     "tags": [
-      "income.oceanfarming",
+      "income.farming",
       "item.crop.diving",
       "Item.Consumable.Food",
       "item.fruit",
       "item.UnderwaterFruit",
-      "Item.Quality.Basic"
+      "Item.Quality.Basic",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -446,7 +447,7 @@
             },
             {
               "id": "item_21045",
-              "displayName": "罂粟花",
+              "displayName": "虞美人",
               "iconName": "Poppy_Sprite"
             },
             {
@@ -673,11 +674,6 @@
               "id": "item_24001",
               "displayName": "棉花",
               "iconName": "Cotton_Sprite"
-            },
-            {
-              "id": "item_24003",
-              "displayName": "杏仁",
-              "iconName": "Almond_Sprite"
             },
             {
               "id": "item_24004",
@@ -1690,7 +1686,8 @@
         "iconName": "Fruit_Tart_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1777,7 +1774,8 @@
         "iconName": "Smoothie_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Drink"
+          "Item.Consumable.Drink",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1835,7 +1833,8 @@
         "iconName": "Pancakes_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1914,7 +1913,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -1962,21 +1962,6 @@
             "id": "item_41181",
             "displayName": "山羊酸奶（大）",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "蛤蜊壳",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "鸟蛤",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "火焰贝",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -2016,7 +2001,8 @@
         "iconName": "Puree_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2101,12 +2087,12 @@
   "requiredAsOffering": [
     {
       "key": "DivingBased",
-      "offeringGroupTitle": "Diving Altar",
+      "offeringGroupTitle": "潜水祭坛",
       "urlPath": "divingaltar",
       "offeringGroupRewardText": "",
       "offerings": [
         {
-          "title": "Lima Pulu (50m)",
+          "title": "Location_Diving50m",
           "imageName": "Ocean_Offerings",
           "numOfItemRequired": 4,
           "rewards": {
@@ -2122,6 +2108,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Diving",
           "requiredItems": [
             {
               "item": {
@@ -2162,7 +2149,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Diving"
     }
   ],
   "consumables": {
@@ -2176,7 +2163,7 @@
       "overwriteDuration": false,
       "duration": 0,
       "buff": "None",
-      "itemType": "None"
+      "itemType": "Food"
     },
     "bronze": {
       "key": "item_21078-a",
@@ -2188,7 +2175,7 @@
       "overwriteDuration": false,
       "duration": 0,
       "buff": "None",
-      "itemType": "None"
+      "itemType": "Food"
     },
     "silver": {
       "key": "item_21078-b",
@@ -2200,7 +2187,7 @@
       "overwriteDuration": false,
       "duration": 0,
       "buff": "None",
-      "itemType": "None"
+      "itemType": "Food"
     },
     "gold": {
       "key": "item_21078-c",
@@ -2212,7 +2199,7 @@
       "overwriteDuration": false,
       "duration": 0,
       "buff": "None",
-      "itemType": "None"
+      "itemType": "Food"
     },
     "osmium": {
       "key": "item_21078-d",
@@ -2224,7 +2211,7 @@
       "overwriteDuration": false,
       "duration": 0,
       "buff": "None",
-      "itemType": "None"
+      "itemType": "Food"
     }
   }
 }

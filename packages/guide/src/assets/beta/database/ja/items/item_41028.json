@@ -8,7 +8,7 @@
       "Sam"
     ],
     "stackable": true,
-    "inventoryCategory": "Artisan product",
+    "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
     "description": "甘くてドロドロしています。",
     "qualities": {
@@ -33,7 +33,8 @@
     "tags": [
       "income.farming",
       "Item.Consumable.Drink",
-      "item.artisan"
+      "item.artisan",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -160,7 +161,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -208,21 +210,6 @@
             "id": "item_41181",
             "displayName": "大きなヤギのヨーグルト",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "貝殻",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "ザルガイ",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "ウコンハネガイ",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -233,7 +220,7 @@
       "cookingKey": "EsCendol",
       "item": {
         "id": "item_80094",
-        "displayName": "Es cendol",
+        "displayName": "Escendol",
         "price": 220,
         "sellPrice": 90,
         "sellAt": [],
@@ -262,7 +249,8 @@
         "iconName": "Es_cendol_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Drink"
+          "Item.Consumable.Drink",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -308,7 +296,7 @@
       "cookingKey": "EsDoger",
       "item": {
         "id": "item_80093",
-        "displayName": "Es doger",
+        "displayName": "Esdoger",
         "price": 260,
         "sellPrice": 100,
         "sellAt": [],
@@ -337,23 +325,14 @@
         "iconName": "Es_Doger_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
         "CeramicBowl"
       ],
       "genericIngredients": [
-        {
-          "amount": 1,
-          "genericItem": {
-            "key": "Milk_LargeMilk",
-            "displayName": "ミルク/大きなミルク",
-            "tags": [],
-            "iconName": "Milk_Sprite_"
-          },
-          "key": "Milk_LargeMilk"
-        },
         {
           "amount": 1,
           "genericItem": {
@@ -365,6 +344,18 @@
             "displayName": "ココナッツすべて"
           },
           "key": "Any_Coconut"
+        },
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Milk",
+            "tags": [
+              "item.animalproduct.milk"
+            ],
+            "iconName": "Any_Milk_Sprite",
+            "displayName": "ミルクすべて"
+          },
+          "key": "Any_Milk"
         }
       ],
       "ingredients": [
@@ -385,26 +376,7 @@
           "amount": 1
         }
       ],
-      "eitherOrIngredients": [
-        [
-          {
-            "item": {
-              "id": "item_31004",
-              "displayName": "ミルク",
-              "iconName": "Milk_Sprite_"
-            },
-            "amount": 0
-          },
-          {
-            "item": {
-              "id": "item_31016",
-              "displayName": "大きなミルク",
-              "iconName": "Large_milk_Sprite_"
-            },
-            "amount": 0
-          }
-        ]
-      ]
+      "eitherOrIngredients": []
     }
   ],
   "consumables": {

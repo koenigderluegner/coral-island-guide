@@ -3,6 +3,7 @@
     "Type": "DataTable",
     "Name": "DT_BuildingEditShop",
     "Class": "UScriptClass'DataTable'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "RowStruct": {
         "ObjectName": "ScriptStruct'C_BuildingEditShopData'",
@@ -13,7 +14,8 @@
       "item_110001": {
         "requirements": [
           {
-            "EC_BuildingShopAction::Upgrade": {
+            "Key": "EC_BuildingShopAction::Upgrade",
+            "Value": {
               "price": 6500,
               "resources": [
                 {
@@ -54,24 +56,40 @@
                     "itemID": "item_65032"
                   },
                   "amount": 10
+                },
+                {
+                  "item": {
+                    "data": {
+                      "DataTable": {
+                        "ObjectName": "DataTable'DT_InventoryItems'",
+                        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                      },
+                      "RowName": "item_61044"
+                    },
+                    "itemID": "item_61044"
+                  },
+                  "amount": 5
                 }
               ]
             }
           },
           {
-            "EC_BuildingShopAction::Move": {
+            "Key": "EC_BuildingShopAction::Move",
+            "Value": {
               "price": 300,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Destroy": {
+            "Key": "EC_BuildingShopAction::Destroy",
+            "Value": {
               "price": 1000,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::ChangeStyle": {
+            "Key": "EC_BuildingShopAction::ChangeStyle",
+            "Value": {
               "price": 1000,
               "resources": []
             }
@@ -80,7 +98,8 @@
         "overrideRequirements": [],
         "confirmationTextsOverwrite": [
           {
-            "EC_BuildingShopAction::Upgrade": {
+            "Key": "EC_BuildingShopAction::Upgrade",
+            "Value": {
               "Namespace": "",
               "Key": "96EF3AE446BA07C0862CD89D8690FD61",
               "SourceString": "This upgrade will increase the animal capacity from <Places>4 to 8</>. Do you want to expand?",
@@ -103,32 +122,99 @@
       "item_110002": {
         "requirements": [
           {
-            "EC_BuildingShopAction::Upgrade": {
-              "price": 0,
-              "resources": []
+            "Key": "EC_BuildingShopAction::Upgrade",
+            "Value": {
+              "price": 15000,
+              "resources": [
+                {
+                  "item": {
+                    "data": {
+                      "DataTable": {
+                        "ObjectName": "DataTable'DT_InventoryItems'",
+                        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                      },
+                      "RowName": "item_65063"
+                    },
+                    "itemID": "item_65063"
+                  },
+                  "amount": 60
+                },
+                {
+                  "item": {
+                    "data": {
+                      "DataTable": {
+                        "ObjectName": "DataTable'DT_InventoryItems'",
+                        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                      },
+                      "RowName": "item_65004"
+                    },
+                    "itemID": "item_65004"
+                  },
+                  "amount": 120
+                },
+                {
+                  "item": {
+                    "data": {
+                      "DataTable": {
+                        "ObjectName": "DataTable'DT_InventoryItems'",
+                        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                      },
+                      "RowName": "item_65032"
+                    },
+                    "itemID": "item_65032"
+                  },
+                  "amount": 20
+                },
+                {
+                  "item": {
+                    "data": {
+                      "DataTable": {
+                        "ObjectName": "DataTable'DT_InventoryItems'",
+                        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                      },
+                      "RowName": "item_61006"
+                    },
+                    "itemID": "item_61006"
+                  },
+                  "amount": 5
+                }
+              ]
             }
           },
           {
-            "EC_BuildingShopAction::Move": {
+            "Key": "EC_BuildingShopAction::Move",
+            "Value": {
               "price": 300,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Destroy": {
-              "price": 0,
+            "Key": "EC_BuildingShopAction::Destroy",
+            "Value": {
+              "price": 1000,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::ChangeStyle": {
+            "Key": "EC_BuildingShopAction::ChangeStyle",
+            "Value": {
               "price": 1000,
               "resources": []
             }
           }
         ],
         "overrideRequirements": [],
-        "confirmationTextsOverwrite": [],
+        "confirmationTextsOverwrite": [
+          {
+            "Key": "EC_BuildingShopAction::Upgrade",
+            "Value": {
+              "Namespace": "",
+              "Key": "0209F11344A5466D5D267088E2A32E99",
+              "SourceString": "This upgrade will increase the animal capacity from <Places>8 to 12</>. Do you want to expand?",
+              "LocalizedString": "This upgrade will increase the animal capacity from <Places>8 to 12</>. Do you want to expand?"
+            }
+          }
+        ],
         "itemResult": {
           "data": {
             "DataTable": {
@@ -144,25 +230,82 @@
       "item_110003": {
         "requirements": [
           {
-            "EC_BuildingShopAction::Upgrade": {
-              "price": 0,
-              "resources": []
+            "Key": "EC_BuildingShopAction::Upgrade",
+            "Value": {
+              "price": 15000,
+              "resources": [
+                {
+                  "item": {
+                    "data": {
+                      "DataTable": {
+                        "ObjectName": "DataTable'DT_InventoryItems'",
+                        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                      },
+                      "RowName": "item_65063"
+                    },
+                    "itemID": "item_65063"
+                  },
+                  "amount": 60
+                },
+                {
+                  "item": {
+                    "data": {
+                      "DataTable": {
+                        "ObjectName": "DataTable'DT_InventoryItems'",
+                        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                      },
+                      "RowName": "item_65004"
+                    },
+                    "itemID": "item_65004"
+                  },
+                  "amount": 120
+                },
+                {
+                  "item": {
+                    "data": {
+                      "DataTable": {
+                        "ObjectName": "DataTable'DT_InventoryItems'",
+                        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                      },
+                      "RowName": "item_65032"
+                    },
+                    "itemID": "item_65032"
+                  },
+                  "amount": 20
+                },
+                {
+                  "item": {
+                    "data": {
+                      "DataTable": {
+                        "ObjectName": "DataTable'DT_InventoryItems'",
+                        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                      },
+                      "RowName": "item_61006"
+                    },
+                    "itemID": "item_61006"
+                  },
+                  "amount": 5
+                }
+              ]
             }
           },
           {
-            "EC_BuildingShopAction::Move": {
+            "Key": "EC_BuildingShopAction::Move",
+            "Value": {
               "price": 300,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Destroy": {
-              "price": 0,
+            "Key": "EC_BuildingShopAction::Destroy",
+            "Value": {
+              "price": 1000,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::ChangeStyle": {
+            "Key": "EC_BuildingShopAction::ChangeStyle",
+            "Value": {
               "price": 1000,
               "resources": []
             }
@@ -185,7 +328,8 @@
       "item_110004": {
         "requirements": [
           {
-            "EC_BuildingShopAction::Upgrade": {
+            "Key": "EC_BuildingShopAction::Upgrade",
+            "Value": {
               "price": 4500,
               "resources": [
                 {
@@ -226,24 +370,40 @@
                     "itemID": "item_65032"
                   },
                   "amount": 10
+                },
+                {
+                  "item": {
+                    "data": {
+                      "DataTable": {
+                        "ObjectName": "DataTable'DT_InventoryItems'",
+                        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                      },
+                      "RowName": "item_61044"
+                    },
+                    "itemID": "item_61044"
+                  },
+                  "amount": 3
                 }
               ]
             }
           },
           {
-            "EC_BuildingShopAction::Move": {
+            "Key": "EC_BuildingShopAction::Move",
+            "Value": {
               "price": 300,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Destroy": {
+            "Key": "EC_BuildingShopAction::Destroy",
+            "Value": {
               "price": 1000,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::ChangeStyle": {
+            "Key": "EC_BuildingShopAction::ChangeStyle",
+            "Value": {
               "price": 1000,
               "resources": []
             }
@@ -252,7 +412,8 @@
         "overrideRequirements": [],
         "confirmationTextsOverwrite": [
           {
-            "EC_BuildingShopAction::Upgrade": {
+            "Key": "EC_BuildingShopAction::Upgrade",
+            "Value": {
               "Namespace": "",
               "Key": "240BC1F54D77E854965AA49E930CBA61",
               "SourceString": "This upgrade will increase the animal capacity from <Places>4 to 8</>. Do you want to expand?",
@@ -275,32 +436,99 @@
       "item_110005": {
         "requirements": [
           {
-            "EC_BuildingShopAction::Upgrade": {
-              "price": 0,
-              "resources": []
+            "Key": "EC_BuildingShopAction::Upgrade",
+            "Value": {
+              "price": 10000,
+              "resources": [
+                {
+                  "item": {
+                    "data": {
+                      "DataTable": {
+                        "ObjectName": "DataTable'DT_InventoryItems'",
+                        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                      },
+                      "RowName": "item_65063"
+                    },
+                    "itemID": "item_65063"
+                  },
+                  "amount": 35
+                },
+                {
+                  "item": {
+                    "data": {
+                      "DataTable": {
+                        "ObjectName": "DataTable'DT_InventoryItems'",
+                        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                      },
+                      "RowName": "item_65004"
+                    },
+                    "itemID": "item_65004"
+                  },
+                  "amount": 70
+                },
+                {
+                  "item": {
+                    "data": {
+                      "DataTable": {
+                        "ObjectName": "DataTable'DT_InventoryItems'",
+                        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                      },
+                      "RowName": "item_65032"
+                    },
+                    "itemID": "item_65032"
+                  },
+                  "amount": 20
+                },
+                {
+                  "item": {
+                    "data": {
+                      "DataTable": {
+                        "ObjectName": "DataTable'DT_InventoryItems'",
+                        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                      },
+                      "RowName": "item_61006"
+                    },
+                    "itemID": "item_61006"
+                  },
+                  "amount": 3
+                }
+              ]
             }
           },
           {
-            "EC_BuildingShopAction::Move": {
+            "Key": "EC_BuildingShopAction::Move",
+            "Value": {
               "price": 300,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Destroy": {
-              "price": 0,
+            "Key": "EC_BuildingShopAction::Destroy",
+            "Value": {
+              "price": 1000,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::ChangeStyle": {
+            "Key": "EC_BuildingShopAction::ChangeStyle",
+            "Value": {
               "price": 1000,
               "resources": []
             }
           }
         ],
         "overrideRequirements": [],
-        "confirmationTextsOverwrite": [],
+        "confirmationTextsOverwrite": [
+          {
+            "Key": "EC_BuildingShopAction::Upgrade",
+            "Value": {
+              "Namespace": "",
+              "Key": "0FA121794A64D68F103210AF59F29153",
+              "SourceString": "This upgrade will increase the animal capacity from <Places>8 to 12</>. Do you want to expand?",
+              "LocalizedString": "This upgrade will increase the animal capacity from <Places>8 to 12</>. Do you want to expand?"
+            }
+          }
+        ],
         "itemResult": {
           "data": {
             "DataTable": {
@@ -316,25 +544,82 @@
       "item_110006": {
         "requirements": [
           {
-            "EC_BuildingShopAction::Upgrade": {
-              "price": 0,
-              "resources": []
+            "Key": "EC_BuildingShopAction::Upgrade",
+            "Value": {
+              "price": 4500,
+              "resources": [
+                {
+                  "item": {
+                    "data": {
+                      "DataTable": {
+                        "ObjectName": "DataTable'DT_InventoryItems'",
+                        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                      },
+                      "RowName": "item_65063"
+                    },
+                    "itemID": "item_65063"
+                  },
+                  "amount": 35
+                },
+                {
+                  "item": {
+                    "data": {
+                      "DataTable": {
+                        "ObjectName": "DataTable'DT_InventoryItems'",
+                        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                      },
+                      "RowName": "item_65004"
+                    },
+                    "itemID": "item_65004"
+                  },
+                  "amount": 70
+                },
+                {
+                  "item": {
+                    "data": {
+                      "DataTable": {
+                        "ObjectName": "DataTable'DT_InventoryItems'",
+                        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                      },
+                      "RowName": "item_65032"
+                    },
+                    "itemID": "item_65032"
+                  },
+                  "amount": 20
+                },
+                {
+                  "item": {
+                    "data": {
+                      "DataTable": {
+                        "ObjectName": "DataTable'DT_InventoryItems'",
+                        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
+                      },
+                      "RowName": "item_61006"
+                    },
+                    "itemID": "item_61006"
+                  },
+                  "amount": 3
+                }
+              ]
             }
           },
           {
-            "EC_BuildingShopAction::Move": {
+            "Key": "EC_BuildingShopAction::Move",
+            "Value": {
               "price": 300,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Destroy": {
-              "price": 0,
+            "Key": "EC_BuildingShopAction::Destroy",
+            "Value": {
+              "price": 1000,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::ChangeStyle": {
+            "Key": "EC_BuildingShopAction::ChangeStyle",
+            "Value": {
               "price": 1000,
               "resources": []
             }
@@ -357,25 +642,29 @@
       "item_110007": {
         "requirements": [
           {
-            "EC_BuildingShopAction::Upgrade": {
+            "Key": "EC_BuildingShopAction::Upgrade",
+            "Value": {
               "price": 0,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Move": {
+            "Key": "EC_BuildingShopAction::Move",
+            "Value": {
               "price": 300,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Destroy": {
+            "Key": "EC_BuildingShopAction::Destroy",
+            "Value": {
               "price": 1000,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::ChangeStyle": {
+            "Key": "EC_BuildingShopAction::ChangeStyle",
+            "Value": {
               "price": 1000,
               "resources": []
             }
@@ -398,7 +687,8 @@
       "item_110008": {
         "requirements": [
           {
-            "EC_BuildingShopAction::Upgrade": {
+            "Key": "EC_BuildingShopAction::Upgrade",
+            "Value": {
               "price": 12000,
               "resources": [
                 {
@@ -431,19 +721,22 @@
             }
           },
           {
-            "EC_BuildingShopAction::Move": {
+            "Key": "EC_BuildingShopAction::Move",
+            "Value": {
               "price": 300,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Destroy": {
+            "Key": "EC_BuildingShopAction::Destroy",
+            "Value": {
               "price": 1000,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::ChangeStyle": {
+            "Key": "EC_BuildingShopAction::ChangeStyle",
+            "Value": {
               "price": 1000,
               "resources": []
             }
@@ -451,10 +744,12 @@
         ],
         "overrideRequirements": [
           {
-            "EC_BuildingShopAction::ChangeStyle": {
+            "Key": "EC_BuildingShopAction::ChangeStyle",
+            "Value": {
               "requirementStyleMap": [
                 {
-                  "1": {
+                  "Key": "1",
+                  "Value": {
                     "price": 0,
                     "resources": [
                       {
@@ -474,7 +769,8 @@
                   }
                 },
                 {
-                  "2": {
+                  "Key": "2",
+                  "Value": {
                     "price": 0,
                     "resources": [
                       {
@@ -494,7 +790,8 @@
                   }
                 },
                 {
-                  "3": {
+                  "Key": "3",
+                  "Value": {
                     "price": 0,
                     "resources": [
                       {
@@ -514,7 +811,8 @@
                   }
                 },
                 {
-                  "4": {
+                  "Key": "4",
+                  "Value": {
                     "price": 0,
                     "resources": [
                       {
@@ -534,7 +832,8 @@
                   }
                 },
                 {
-                  "5": {
+                  "Key": "5",
+                  "Value": {
                     "price": 0,
                     "resources": [
                       {
@@ -564,34 +863,38 @@
               "ObjectName": "DataTable'DT_InventoryItems'",
               "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/DT_InventoryItems.0"
             },
-            "RowName": "item_110008"
+            "RowName": "item_110009"
           },
-          "itemID": "item_110008"
+          "itemID": "item_110009"
         },
         "previewImage": null
       },
       "item_110009": {
         "requirements": [
           {
-            "EC_BuildingShopAction::Upgrade": {
+            "Key": "EC_BuildingShopAction::Upgrade",
+            "Value": {
               "price": 0,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Move": {
+            "Key": "EC_BuildingShopAction::Move",
+            "Value": {
               "price": 300,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Destroy": {
+            "Key": "EC_BuildingShopAction::Destroy",
+            "Value": {
               "price": 1000,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::ChangeStyle": {
+            "Key": "EC_BuildingShopAction::ChangeStyle",
+            "Value": {
               "price": 1000,
               "resources": []
             }
@@ -614,25 +917,29 @@
       "item_110010": {
         "requirements": [
           {
-            "EC_BuildingShopAction::Upgrade": {
+            "Key": "EC_BuildingShopAction::Upgrade",
+            "Value": {
               "price": 0,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Move": {
+            "Key": "EC_BuildingShopAction::Move",
+            "Value": {
               "price": 300,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Destroy": {
+            "Key": "EC_BuildingShopAction::Destroy",
+            "Value": {
               "price": 1000,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::ChangeStyle": {
+            "Key": "EC_BuildingShopAction::ChangeStyle",
+            "Value": {
               "price": 1000,
               "resources": []
             }
@@ -655,25 +962,29 @@
       "item_110011": {
         "requirements": [
           {
-            "EC_BuildingShopAction::Upgrade": {
+            "Key": "EC_BuildingShopAction::Upgrade",
+            "Value": {
               "price": 0,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Move": {
+            "Key": "EC_BuildingShopAction::Move",
+            "Value": {
               "price": 300,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Destroy": {
+            "Key": "EC_BuildingShopAction::Destroy",
+            "Value": {
               "price": 1000,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::ChangeStyle": {
+            "Key": "EC_BuildingShopAction::ChangeStyle",
+            "Value": {
               "price": 1000,
               "resources": []
             }
@@ -696,25 +1007,29 @@
       "item_110012": {
         "requirements": [
           {
-            "EC_BuildingShopAction::Upgrade": {
+            "Key": "EC_BuildingShopAction::Upgrade",
+            "Value": {
               "price": 0,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Move": {
+            "Key": "EC_BuildingShopAction::Move",
+            "Value": {
               "price": 300,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Destroy": {
+            "Key": "EC_BuildingShopAction::Destroy",
+            "Value": {
               "price": 1000,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::ChangeStyle": {
+            "Key": "EC_BuildingShopAction::ChangeStyle",
+            "Value": {
               "price": 1000,
               "resources": []
             }
@@ -737,25 +1052,29 @@
       "item_110023": {
         "requirements": [
           {
-            "EC_BuildingShopAction::Upgrade": {
+            "Key": "EC_BuildingShopAction::Upgrade",
+            "Value": {
               "price": 0,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Move": {
+            "Key": "EC_BuildingShopAction::Move",
+            "Value": {
               "price": 300,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Destroy": {
+            "Key": "EC_BuildingShopAction::Destroy",
+            "Value": {
               "price": 1000,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::ChangeStyle": {
+            "Key": "EC_BuildingShopAction::ChangeStyle",
+            "Value": {
               "price": 1000,
               "resources": []
             }
@@ -778,25 +1097,29 @@
       "item_65444": {
         "requirements": [
           {
-            "EC_BuildingShopAction::Upgrade": {
+            "Key": "EC_BuildingShopAction::Upgrade",
+            "Value": {
               "price": 0,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Move": {
+            "Key": "EC_BuildingShopAction::Move",
+            "Value": {
               "price": 300,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::Destroy": {
+            "Key": "EC_BuildingShopAction::Destroy",
+            "Value": {
               "price": 1000,
               "resources": []
             }
           },
           {
-            "EC_BuildingShopAction::ChangeStyle": {
+            "Key": "EC_BuildingShopAction::ChangeStyle",
+            "Value": {
               "price": 1000,
               "resources": []
             }

@@ -16,7 +16,8 @@
     "tags": [
       "resource",
       "rarity.common",
-      "income.other"
+      "income.other",
+      "item.cooking.ingredient"
     ]
   },
   "artisanIngredient": [
@@ -166,7 +167,7 @@
     },
     {
       "key": "tuku",
-      "displayName": "Tuku - Tuku",
+      "displayName": "Tuku - tuku",
       "description": null,
       "experience": 10,
       "iconName": "Tuku_Tuku_Sprite",
@@ -185,7 +186,7 @@
     },
     {
       "key": "tukuBronze",
-      "displayName": "Tuku - Tuku Perunggu",
+      "displayName": "Tuku - tuku Perunggu",
       "description": null,
       "experience": 10,
       "iconName": "Tuku_Tuku_Bronze_Sprite",
@@ -204,7 +205,7 @@
     },
     {
       "key": "tukuSilver",
-      "displayName": "Tuku - Tuku Perak",
+      "displayName": "Tuku - tuku Perak",
       "description": null,
       "experience": 12,
       "iconName": "Tuku_Tuku_Silver_Sprite",
@@ -223,7 +224,7 @@
     },
     {
       "key": "tukuGold",
-      "displayName": "Tuku - Tuku Emas",
+      "displayName": "Tuku - tuku Emas",
       "description": null,
       "experience": 12,
       "iconName": "Tuku_Tuku_Gold_Sprite",
@@ -242,7 +243,7 @@
     },
     {
       "key": "tukuOsmium",
-      "displayName": "Tuku - Tuku Osmium",
+      "displayName": "Tuku - tuku Osmium",
       "description": null,
       "experience": 15,
       "iconName": "Tuku_Tuku_Osmium_Sprite",
@@ -486,24 +487,14 @@
         "iconName": "Smoked_Salmon_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
         "Grill"
       ],
-      "genericIngredients": [
-        {
-          "amount": 1,
-          "genericItem": {
-            "key": "Salmon_SockeyeSalmon",
-            "displayName": "Salmon/Salmon Sockeye",
-            "tags": [],
-            "iconName": "Salmon_Sprite"
-          },
-          "key": "Salmon_SockeyeSalmon"
-        }
-      ],
+      "genericIngredients": [],
       "ingredients": [
         {
           "item": {
@@ -570,7 +561,8 @@
         "iconName": "Smoked_Fish_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -605,132 +597,49 @@
   ],
   "usedToCraft": [
     {
-      "key": "item_65109",
-      "displayName": "Makeshift chest",
+      "key": "item_65035",
+      "displayName": "Extractor",
       "amount": 1,
       "ingredients": [
+        {
+          "item": {
+            "id": "item_65107",
+            "displayName": "Kepingan",
+            "iconName": "Scrap_Sprite"
+          },
+          "amount": 20
+        },
+        {
+          "item": {
+            "id": "item_62001",
+            "displayName": "Kelp perunggu",
+            "iconName": "Bronze_kelp_Sprite"
+          },
+          "amount": 20
+        },
         {
           "item": {
             "id": "item_65003",
             "displayName": "Kayu",
             "iconName": "Wood_Sprite"
           },
-          "amount": 20
-        },
-        {
-          "item": {
-            "id": "item_65052",
-            "displayName": "Sampah",
-            "iconName": "Trash_Sprite"
-          },
-          "amount": 10
+          "amount": 40
         }
       ],
       "genericIngredients": [],
-      "category": "Farming",
+      "category": "Artisan",
       "item": {
-        "id": "item_65109",
-        "displayName": "Peti alakadar",
-        "price": 100,
-        "sellPrice": 40,
+        "id": "item_65035",
+        "displayName": "Ekstraktor",
+        "price": 1000,
+        "sellPrice": 240,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Farming",
-        "displayKey": "Farming",
-        "description": "Penyimpanan untuk semua jenis barang. Dapat ditempatkan di sekitar perkebunan, dan menampung hingga 20 benda.",
+        "inventoryCategory": "ResourceEquipment",
+        "displayKey": "ResourceEquipment",
+        "description": "Mengekstrak nutrisi dari kelp dan memasukkannya dalam botol.",
         "qualities": {},
-        "iconName": "Makeshift_chest_Sprite",
-        "tags": []
-      }
-    },
-    {
-      "key": "Item_65317",
-      "displayName": "Makeshift scarecrow",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_65003",
-            "displayName": "Kayu",
-            "iconName": "Wood_Sprite"
-          },
-          "amount": 10
-        },
-        {
-          "item": {
-            "id": "item_65052",
-            "displayName": "Sampah",
-            "iconName": "Trash_Sprite"
-          },
-          "amount": 15
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Scarecrow",
-      "item": {
-        "id": "item_65317",
-        "displayName": "Orang-orangan sawah alakadar",
-        "price": 90,
-        "sellPrice": 35,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Farming",
-        "displayKey": "Farming",
-        "description": "Melindungi tanaman dari gangguan gagak. Melindungi area 5x5.",
-        "qualities": {},
-        "iconName": "Makeshift_Scarecrow_Sprite",
-        "tags": []
-      }
-    },
-    {
-      "key": "item_65008",
-      "displayName": "Ordinary scarecrow",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_65003",
-            "displayName": "Kayu",
-            "iconName": "Wood_Sprite"
-          },
-          "amount": 20
-        },
-        {
-          "item": {
-            "id": "item_65032",
-            "displayName": "Serat",
-            "iconName": "Fiber_Sprite"
-          },
-          "amount": 20
-        },
-        {
-          "item": {
-            "id": "item_65108",
-            "displayName": "Getah",
-            "iconName": "Sap_Sprite"
-          },
-          "amount": 10
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Scarecrow",
-      "craftingUnlock": {
-        "key": "item_65008",
-        "masteryLevel": 4,
-        "masteryType": "Farming"
-      },
-      "item": {
-        "id": "item_65008",
-        "displayName": "Orang-orangan sawah biasa",
-        "price": 230,
-        "sellPrice": 90,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Farming",
-        "displayKey": "Farming",
-        "description": "Mengusir gagak yang mengganggu tanaman. Melindungi area sebesar 11x11.",
-        "qualities": {},
-        "iconName": "Ordinary_scarecrow_Sprite",
+        "iconName": "Extractor_Sprite",
         "tags": []
       }
     },
@@ -778,102 +687,11 @@
         "sellPrice": 50,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Resource equipment",
+        "inventoryCategory": "ResourceEquipment",
         "displayKey": "ResourceEquipment",
-        "description": "Turns trash into compost. Helpful in making fertilizer.",
+        "description": "Compostbindesc",
         "qualities": {},
         "iconName": "Compost_bin_Sprite",
-        "tags": []
-      }
-    },
-    {
-      "key": "item_65035",
-      "displayName": "Extractor",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_65107",
-            "displayName": "Kepingan",
-            "iconName": "Scrap_Sprite"
-          },
-          "amount": 20
-        },
-        {
-          "item": {
-            "id": "item_62001",
-            "displayName": "Kelp perunggu",
-            "iconName": "Bronze_kelp_Sprite"
-          },
-          "amount": 20
-        },
-        {
-          "item": {
-            "id": "item_65003",
-            "displayName": "Kayu",
-            "iconName": "Wood_Sprite"
-          },
-          "amount": 40
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Artisan",
-      "item": {
-        "id": "item_65035",
-        "displayName": "Ekstraktor",
-        "price": 1000,
-        "sellPrice": 240,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Resource equipment",
-        "displayKey": "ResourceEquipment",
-        "description": "Ekstrak dan botol nutrisi dari kelp.",
-        "qualities": {},
-        "iconName": "Extractor_Sprite",
-        "tags": []
-      }
-    },
-    {
-      "key": "item_65016",
-      "displayName": "Bee house",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_65003",
-            "displayName": "Kayu",
-            "iconName": "Wood_Sprite"
-          },
-          "amount": 50
-        },
-        {
-          "item": {
-            "id": "item_61001",
-            "displayName": "Bijih perunggu",
-            "iconName": "Bronze_Ore_Sprite"
-          },
-          "amount": 15
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Artisan",
-      "craftingUnlock": {
-        "key": "item_65016",
-        "masteryLevel": 6,
-        "masteryType": "Catching"
-      },
-      "item": {
-        "id": "item_65016",
-        "displayName": "Rumah lebah",
-        "price": 1000,
-        "sellPrice": 175,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Artisan equipment",
-        "displayKey": "ArtisanEquipment",
-        "description": "Letakkan bunga untuk menghasilkan madu.",
-        "qualities": {},
-        "iconName": "Beehouse_Sprite",
         "tags": []
       }
     },
@@ -913,11 +731,99 @@
         "sellPrice": 180,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "Melestarikan buah dan sayuran.",
         "qualities": {},
         "iconName": "Mason_jar_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65016",
+      "displayName": "Bee house",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65003",
+            "displayName": "Kayu",
+            "iconName": "Wood_Sprite"
+          },
+          "amount": 50
+        },
+        {
+          "item": {
+            "id": "item_61001",
+            "displayName": "Bijih perunggu",
+            "iconName": "Bronze_Ore_Sprite"
+          },
+          "amount": 15
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Artisan",
+      "craftingUnlock": {
+        "key": "item_65016",
+        "masteryLevel": 6,
+        "masteryType": "Catching"
+      },
+      "item": {
+        "id": "item_65016",
+        "displayName": "Rumah lebah",
+        "price": 1000,
+        "sellPrice": 175,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "ArtisanEquipment",
+        "displayKey": "ArtisanEquipment",
+        "description": "Letakkan bunga untuk menghasilkan madu.",
+        "qualities": {},
+        "iconName": "Beehouse_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65050",
+      "displayName": "Tap",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65003",
+            "displayName": "Kayu",
+            "iconName": "Wood_Sprite"
+          },
+          "amount": 40
+        },
+        {
+          "item": {
+            "id": "item_61005",
+            "displayName": "Batang perunggu",
+            "iconName": "Bronze_Bar_Sprite"
+          },
+          "amount": 3
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Artisan",
+      "craftingUnlock": {
+        "key": "item_65050",
+        "masteryLevel": 4,
+        "masteryType": "Foraging"
+      },
+      "item": {
+        "id": "item_65050",
+        "displayName": "Keran Penyadap",
+        "price": 1000,
+        "sellPrice": 155,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "ResourceEquipment",
+        "displayKey": "ResourceEquipment",
+        "description": "Mengumpulkan getah kental, sirup mapel dan resin dari pohon. Tidak bisa dipasang pada pohon buah.",
+        "qualities": {},
+        "iconName": "Tap_Sprite",
         "tags": []
       }
     },
@@ -965,55 +871,11 @@
         "sellPrice": 150,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "Mengubah telur menjadi satu stoples mayones.",
         "qualities": {},
         "iconName": "Mayonnaise_machine_Sprite",
-        "tags": []
-      }
-    },
-    {
-      "key": "item_65050",
-      "displayName": "Tap",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_65003",
-            "displayName": "Kayu",
-            "iconName": "Wood_Sprite"
-          },
-          "amount": 40
-        },
-        {
-          "item": {
-            "id": "item_61005",
-            "displayName": "Batang perunggu",
-            "iconName": "Bronze_Bar_Sprite"
-          },
-          "amount": 3
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Artisan",
-      "craftingUnlock": {
-        "key": "item_65050",
-        "masteryLevel": 4,
-        "masteryType": "Foraging"
-      },
-      "item": {
-        "id": "item_65050",
-        "displayName": "Keran Penyadap",
-        "price": 1000,
-        "sellPrice": 155,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Resource equipment",
-        "displayKey": "ResourceEquipment",
-        "description": "Mengumpulkan getah kental, sirup mapel dan resin dari pohon. Tidak bisa dipasang pada pohon buah.",
-        "qualities": {},
-        "iconName": "Tap_Sprite",
         "tags": []
       }
     },
@@ -1069,7 +931,7 @@
         "sellPrice": 245,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "Memproses buah atau sayuran menjadi minuman. Membuat jus, mead, wine, bir, sake, kopi, teh hijau.",
         "qualities": {},
@@ -1129,7 +991,7 @@
         "sellPrice": 350,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "Mengubah susu menjadi keju, dan tebu menjadi sirup.",
         "qualities": {},
@@ -1173,7 +1035,7 @@
         "sellPrice": 80,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "Tambahkan jamur untuk menumbuhkan lebih banyak.",
         "qualities": {},
@@ -1225,11 +1087,89 @@
         "sellPrice": 1135,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "Mengubah wol menjadi kain.",
         "qualities": {},
         "iconName": "Loom_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65109",
+      "displayName": "Makeshift chest",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65003",
+            "displayName": "Kayu",
+            "iconName": "Wood_Sprite"
+          },
+          "amount": 20
+        },
+        {
+          "item": {
+            "id": "item_65052",
+            "displayName": "Sampah",
+            "iconName": "Trash_Sprite"
+          },
+          "amount": 10
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Farming",
+      "item": {
+        "id": "item_65109",
+        "displayName": "Peti alakadar",
+        "price": 100,
+        "sellPrice": 40,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Penyimpanan untuk semua jenis barang. Dapat ditempatkan di sekitar perkebunan, dan menampung hingga 20 benda.",
+        "qualities": {},
+        "iconName": "Makeshift_chest_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65916",
+      "displayName": "Fungarian chest",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65003",
+            "displayName": "Kayu",
+            "iconName": "Wood_Sprite"
+          },
+          "amount": 30
+        },
+        {
+          "item": {
+            "id": "item_51107",
+            "displayName": "Morel",
+            "iconName": "Morel_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Farming",
+      "item": {
+        "id": "item_65916",
+        "displayName": "Peti fungarian",
+        "price": 11,
+        "sellPrice": 11,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Penyimpanan untuk berbagai jenis barang. Bisa diletakkan di perkebunan, dan bisa menyimpan 40 objek.",
+        "qualities": {},
+        "iconName": "Fungarian_Chest_Sprite",
         "tags": []
       }
     },
@@ -1263,7 +1203,7 @@
         "stackable": true,
         "inventoryCategory": "Farming",
         "displayKey": "Farming",
-        "description": "Simpanan untuk berbagai jenis barang. Bisa diletakkan di perkebunan, dan bisa menyimpan 40 objek.",
+        "description": "Penyimpanan untuk berbagai jenis barang. Bisa diletakkan di perkebunan, dan bisa menyimpan 40 objek.",
         "qualities": {},
         "iconName": "Wooden_Chest_Sprite",
         "tags": []
@@ -1695,6 +1635,72 @@
       }
     },
     {
+      "key": "Item_63031",
+      "displayName": "Spring trap",
+      "amount": 2,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65003",
+            "displayName": "Kayu",
+            "iconName": "Wood_Sprite"
+          },
+          "amount": 5
+        }
+      ],
+      "genericIngredients": [
+        {
+          "key": "Generic_Ore",
+          "amount": 2,
+          "genericItem": {
+            "key": "Generic_Ore",
+            "tags": [
+              "item.ore"
+            ],
+            "iconName": "T_AnyOre_Sprite",
+            "displayName": "Bijih Apapun",
+            "items": [
+              {
+                "id": "item_61001",
+                "displayName": "Bijih perunggu",
+                "iconName": "Bronze_Ore_Sprite"
+              },
+              {
+                "id": "item_61002",
+                "displayName": "Bijih emas",
+                "iconName": "Gold_Ore_Sprite"
+              },
+              {
+                "id": "item_61004",
+                "displayName": "Bijih osmium",
+                "iconName": "Osmium_Ore_Sprite"
+              },
+              {
+                "id": "item_61045",
+                "displayName": "Bijih perak",
+                "iconName": "Silver_Ore_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Misc",
+      "item": {
+        "id": "item_63031",
+        "displayName": "Perangkap per",
+        "price": 50,
+        "sellPrice": 15,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Trap",
+        "displayKey": "Trap",
+        "description": "Sebuah perangkap. Akan melemparkan musuh ke belakang.",
+        "qualities": {},
+        "iconName": "Spring_trap_Sprite",
+        "tags": []
+      }
+    },
+    {
       "key": "item_65361",
       "displayName": "Makeshift floor tile",
       "amount": 1,
@@ -2043,42 +2049,6 @@
       }
     },
     {
-      "key": "item_65028",
-      "displayName": "Wood sign",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_65003",
-            "displayName": "Kayu",
-            "iconName": "Wood_Sprite"
-          },
-          "amount": 5
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Decor",
-      "craftingUnlock": {
-        "key": "item_65028",
-        "masteryLevel": 4,
-        "masteryType": "Foraging"
-      },
-      "item": {
-        "id": "item_65028",
-        "displayName": "Plang kayu",
-        "price": 25,
-        "sellPrice": 10,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Decor",
-        "displayKey": "Decor",
-        "description": "Terbuat dari kayu terbarukan. Gunakan barang untuk mengatur tampilannya.",
-        "qualities": {},
-        "iconName": "Wood_Sign_Sprite",
-        "tags": []
-      }
-    },
-    {
       "key": "item_65362",
       "displayName": "Wooden arch",
       "amount": 1,
@@ -2111,6 +2081,42 @@
         "description": "Tempatkan di perkebunan.",
         "qualities": {},
         "iconName": "Wooden_Arch_Sprite",
+        "tags": []
+      }
+    },
+    {
+      "key": "item_65028",
+      "displayName": "Wood sign",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65003",
+            "displayName": "Kayu",
+            "iconName": "Wood_Sprite"
+          },
+          "amount": 5
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Decor",
+      "craftingUnlock": {
+        "key": "item_65028",
+        "masteryLevel": 4,
+        "masteryType": "Foraging"
+      },
+      "item": {
+        "id": "item_65028",
+        "displayName": "Plang kayu",
+        "price": 25,
+        "sellPrice": 10,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Decor",
+        "displayKey": "Decor",
+        "description": "Terbuat dari kayu terbarukan. Gunakan barang untuk mengatur tampilannya.",
+        "qualities": {},
+        "iconName": "Wood_Sign_Sprite",
         "tags": []
       }
     },
@@ -2159,8 +2165,8 @@
       }
     },
     {
-      "key": "item_65023",
-      "displayName": "Torch",
+      "key": "Item_65317",
+      "displayName": "Makeshift scarecrow",
       "amount": 1,
       "ingredients": [
         {
@@ -2169,40 +2175,38 @@
             "displayName": "Kayu",
             "iconName": "Wood_Sprite"
           },
-          "amount": 15
+          "amount": 10
         },
         {
           "item": {
-            "id": "item_42023",
-            "displayName": "Getah kental",
-            "iconName": "Nutty_Sap_Sprite"
+            "id": "item_65052",
+            "displayName": "Sampah",
+            "iconName": "Trash_Sprite"
           },
-          "amount": 1
+          "amount": 15
         }
       ],
       "genericIngredients": [],
-      "category": "Decor",
+      "category": "Scarecrow",
       "item": {
-        "id": "item_65023",
-        "displayName": "Obor",
-        "price": 300,
-        "sellPrice": 190,
-        "sellAt": [
-          "BandOfSmile"
-        ],
+        "id": "item_65317",
+        "displayName": "Orang-orangan sawah alakadar",
+        "price": 90,
+        "sellPrice": 35,
+        "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Decor",
-        "displayKey": "Decor",
-        "description": "Memancarkan radius cahaya kecil.",
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Melindungi tanaman dari gangguan gagak. Melindungi area 5x5.",
         "qualities": {},
-        "iconName": "Torch_Sprite",
+        "iconName": "Makeshift_Scarecrow_Sprite",
         "tags": []
       }
     },
     {
-      "key": "Item_63031",
-      "displayName": "Spring trap",
-      "amount": 2,
+      "key": "item_65008",
+      "displayName": "Ordinary scarecrow",
+      "amount": 1,
       "ingredients": [
         {
           "item": {
@@ -2210,58 +2214,44 @@
             "displayName": "Kayu",
             "iconName": "Wood_Sprite"
           },
-          "amount": 5
-        }
-      ],
-      "genericIngredients": [
+          "amount": 20
+        },
         {
-          "key": "Generic_Ore",
-          "amount": 2,
-          "genericItem": {
-            "key": "Generic_Ore",
-            "tags": [
-              "item.ore"
-            ],
-            "iconName": "T_AnyOre_Sprite",
-            "displayName": "Bijih Apapun",
-            "items": [
-              {
-                "id": "item_61001",
-                "displayName": "Bijih perunggu",
-                "iconName": "Bronze_Ore_Sprite"
-              },
-              {
-                "id": "item_61002",
-                "displayName": "Bijih emas",
-                "iconName": "Gold_Ore_Sprite"
-              },
-              {
-                "id": "item_61004",
-                "displayName": "Bijih osmium",
-                "iconName": "Osmium_Ore_Sprite"
-              },
-              {
-                "id": "item_61045",
-                "displayName": "Bijih perak",
-                "iconName": "Silver_Ore_Sprite"
-              }
-            ]
-          }
+          "item": {
+            "id": "item_65032",
+            "displayName": "Serat",
+            "iconName": "Fiber_Sprite"
+          },
+          "amount": 20
+        },
+        {
+          "item": {
+            "id": "item_65108",
+            "displayName": "Getah",
+            "iconName": "Sap_Sprite"
+          },
+          "amount": 10
         }
       ],
-      "category": "Misc",
+      "genericIngredients": [],
+      "category": "Scarecrow",
+      "craftingUnlock": {
+        "key": "item_65008",
+        "masteryLevel": 4,
+        "masteryType": "Farming"
+      },
       "item": {
-        "id": "item_63031",
-        "displayName": "Perangkap per",
-        "price": 50,
-        "sellPrice": 15,
+        "id": "item_65008",
+        "displayName": "Orang-orangan sawah biasa",
+        "price": 230,
+        "sellPrice": 90,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Trap",
-        "displayKey": "Trap",
-        "description": "Sebuah perangkap. Akan melemparkan musuh ke belakang.",
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "Mengusir gagak yang mengganggu tanaman. Melindungi area sebesar 11x11.",
         "qualities": {},
-        "iconName": "Spring_trap_Sprite",
+        "iconName": "Ordinary_scarecrow_Sprite",
         "tags": []
       }
     },
@@ -2430,7 +2420,7 @@
         {
           "item": {
             "id": "item_41088",
-            "displayName": "Sirup maple",
+            "displayName": "Sirup mapel",
             "iconName": "Maple_Syrup_Sprite"
           },
           "amount": 1
@@ -2649,7 +2639,7 @@
               },
               {
                 "id": "item_72012",
-                "displayName": "Ikan nila",
+                "displayName": "Ikan kakatua",
                 "iconName": "Parrotfish_Sprite"
               },
               {
@@ -4057,6 +4047,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -4124,7 +4115,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Temple"
     }
   ],
   "buyAt": [

@@ -4,9 +4,11 @@
     "displayName": "サツマイモジュース",
     "price": 110,
     "sellPrice": 65,
-    "sellAt": [],
+    "sellAt": [
+      "Sam"
+    ],
     "stackable": true,
-    "inventoryCategory": "Artisan product",
+    "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
     "description": "ヘルシーな野菜ジュースのボトル。",
     "qualities": {
@@ -32,7 +34,8 @@
       "income.farming",
       "Artisan.Keg",
       "Item.Consumable.Drink",
-      "item.artisan"
+      "item.artisan",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -114,6 +117,72 @@
     }
   ],
   "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 4,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41136",
+          "displayName": "サツマイモジュース",
+          "iconName": "Vegetable_juice_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41406",
+          "displayName": "サツマイモのワイン",
+          "iconName": "Wine_Sprite",
+          "sellPrice": 295
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 3,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 3,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 2,
+          "time": {
+            "hours": 16,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 2,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    },
     {
       "useCategory": false,
       "day": 0,
@@ -199,7 +268,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -247,21 +317,6 @@
             "id": "item_41181",
             "displayName": "大きなヤギのヨーグルト",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "貝殻",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "ザルガイ",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "ウコンハネガイ",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }

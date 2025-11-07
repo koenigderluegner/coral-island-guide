@@ -1,7 +1,7 @@
 {
   "item": {
     "id": "item_80093",
-    "displayName": "Es doger",
+    "displayName": "Esdoger",
     "price": 260,
     "sellPrice": 100,
     "sellAt": [],
@@ -30,7 +30,8 @@
     "iconName": "Es_Doger_Sprite",
     "tags": [
       "income.other",
-      "Item.Consumable.Food"
+      "Item.Consumable.Food",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -46,7 +47,7 @@
         "amount": 1,
         "item": {
           "id": "item_80093",
-          "displayName": "Es doger",
+          "displayName": "Esdoger",
           "iconName": "Es_Doger_Sprite"
         }
       },
@@ -54,7 +55,7 @@
         "amount": 1,
         "item": {
           "id": "item_80093",
-          "displayName": "Es doger",
+          "displayName": "Esdoger",
           "iconName": "Es_Doger_Sprite",
           "sellPrice": 100
         }
@@ -96,7 +97,7 @@
         "amount": 1,
         "item": {
           "id": "item_80093",
-          "displayName": "Es doger",
+          "displayName": "Esdoger",
           "iconName": "Es_Doger_Sprite"
         }
       },
@@ -104,7 +105,7 @@
         "amount": 1,
         "item": {
           "id": "item_80093",
-          "displayName": "Es doger",
+          "displayName": "Esdoger",
           "iconName": "Es_Doger_Sprite",
           "sellPrice": 100
         }
@@ -169,7 +170,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -217,21 +219,6 @@
             "id": "item_41181",
             "displayName": "山羊酸奶（大）",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "蛤蜊壳",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "鸟蛤",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "火焰贝",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -244,7 +231,7 @@
       "cookingKey": "EsDoger",
       "item": {
         "id": "item_80093",
-        "displayName": "Es doger",
+        "displayName": "Esdoger",
         "price": 260,
         "sellPrice": 100,
         "sellAt": [],
@@ -273,23 +260,14 @@
         "iconName": "Es_Doger_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
         "CeramicBowl"
       ],
       "genericIngredients": [
-        {
-          "amount": 1,
-          "genericItem": {
-            "key": "Milk_LargeMilk",
-            "displayName": "牛奶/大牛奶",
-            "tags": [],
-            "iconName": "Milk_Sprite_"
-          },
-          "key": "Milk_LargeMilk"
-        },
         {
           "amount": 1,
           "genericItem": {
@@ -301,6 +279,18 @@
             "displayName": "任何椰子"
           },
           "key": "Any_Coconut"
+        },
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Milk",
+            "tags": [
+              "item.animalproduct.milk"
+            ],
+            "iconName": "Any_Milk_Sprite",
+            "displayName": "任何牛奶"
+          },
+          "key": "Any_Milk"
         }
       ],
       "ingredients": [
@@ -321,26 +311,7 @@
           "amount": 1
         }
       ],
-      "eitherOrIngredients": [
-        [
-          {
-            "item": {
-              "id": "item_31004",
-              "displayName": "牛奶",
-              "iconName": "Milk_Sprite_"
-            },
-            "amount": 0
-          },
-          {
-            "item": {
-              "id": "item_31016",
-              "displayName": "牛奶（大）",
-              "iconName": "Large_milk_Sprite_"
-            },
-            "amount": 0
-          }
-        ]
-      ]
+      "eitherOrIngredients": []
     }
   ],
   "requiredAsOffering": [
@@ -367,6 +338,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Heritage",
           "requiredItems": [
             {
               "item": {
@@ -380,7 +352,7 @@
             {
               "item": {
                 "id": "item_80093",
-                "displayName": "Es doger",
+                "displayName": "Esdoger",
                 "iconName": "Es_Doger_Sprite"
               },
               "amount": 4,
@@ -407,7 +379,7 @@
           ]
         }
       ],
-      "isHeritageOffering": true
+      "offeringType": "Heritage"
     }
   ],
   "consumables": {

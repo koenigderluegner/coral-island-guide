@@ -11,7 +11,9 @@
     "description": "一瓶传奇锇品质海带精华。",
     "qualities": {},
     "iconName": "Osmium_Kelp_Essence_Sprite",
-    "tags": []
+    "tags": [
+      "income.diving"
+    ]
   },
   "artisanResult": [
     {
@@ -191,7 +193,7 @@
         "sellPrice": 4750,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "这种史莱姆复制装置可以复制物品。大约三天左右的时间就能搞定。",
         "qualities": {},
@@ -332,9 +334,19 @@
                 "iconName": "Pacific_Oyster_Sprite"
               },
               {
+                "id": "item_50312",
+                "displayName": "海盐",
+                "iconName": "Sea_Salt_Sprite"
+              },
+              {
                 "id": "item_50313",
                 "displayName": "薄壳蛤蜊",
                 "iconName": "Steamer_Clam_Sprite"
+              },
+              {
+                "id": "item_50314",
+                "displayName": "裙带菜丛",
+                "iconName": "Wakame_weed_Sprite"
               },
               {
                 "id": "item_50315",
@@ -543,14 +555,14 @@
       "category": "Farming",
       "item": {
         "id": "item_65510",
-        "displayName": "自动收集器",
+        "displayName": "自动采集器",
         "price": 8920,
         "sellPrice": 5350,
         "sellAt": [],
         "stackable": true,
         "inventoryCategory": "Farming",
         "displayKey": "Farming",
-        "description": "放在农场",
+        "description": "自动采集动物资源。必须放置在畜棚或鸡舍内。",
         "qualities": {},
         "iconName": "Auto_Collector_Sprite",
         "tags": []
@@ -590,7 +602,7 @@
       "category": "Farming",
       "item": {
         "id": "item_65535",
-        "displayName": "自动处理箱",
+        "displayName": "自动化储物箱",
         "price": 10,
         "sellPrice": 20,
         "sellAt": [],
@@ -871,12 +883,12 @@
   "requiredAsOffering": [
     {
       "key": "DivingBased",
-      "offeringGroupTitle": "Diving Altar",
+      "offeringGroupTitle": "潜水祭坛",
       "urlPath": "divingaltar",
       "offeringGroupRewardText": "",
       "offerings": [
         {
-          "title": "Lima Pulu (50m)",
+          "title": "Location_Diving50m",
           "imageName": "Ocean_Offerings",
           "numOfItemRequired": 4,
           "rewards": {
@@ -892,6 +904,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Diving",
           "requiredItems": [
             {
               "item": {
@@ -932,7 +945,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Diving"
     }
   ],
   "isBundleRewardIn": [
@@ -940,7 +953,7 @@
       "key": "RareBased",
       "offeringGroupTitle": "稀有祭坛",
       "urlPath": "rarealtar",
-      "offeringGroupRewardText": "解锁萨凡纳",
+      "offeringGroupRewardText": "解锁传送供品",
       "offerings": [
         {
           "title": "升级资源",
@@ -959,6 +972,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -1017,7 +1031,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Temple"
     }
   ]
 }

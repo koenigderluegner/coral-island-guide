@@ -31,12 +31,13 @@
     },
     "iconName": "Goldglow_Sprite",
     "tags": [
-      "income.oceanfarming",
+      "income.farming",
       "item.crop.diving",
       "Item.Consumable.Food",
       "item.fruit",
       "item.UnderwaterFruit",
-      "Item.Quality.Basic"
+      "Item.Quality.Basic",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -675,11 +676,6 @@
               "iconName": "Cotton_Sprite"
             },
             {
-              "id": "item_24003",
-              "displayName": "Amêndoa",
-              "iconName": "Almond_Sprite"
-            },
-            {
               "id": "item_24004",
               "displayName": "Avocado",
               "iconName": "Avocado_Sprite"
@@ -951,22 +947,22 @@
             },
             {
               "id": "item_62001",
-              "displayName": "Kelp de bronze",
+              "displayName": "Alga de bronze",
               "iconName": "Bronze_kelp_Sprite"
             },
             {
               "id": "item_62002",
-              "displayName": "Kelp de ouro",
+              "displayName": "alga de ouro",
               "iconName": "Gold_Kelp_Sprite"
             },
             {
               "id": "item_62003",
-              "displayName": "Kelp de prata",
+              "displayName": "alga de prata",
               "iconName": "Silver_Kelp_Sprite"
             },
             {
               "id": "item_62004",
-              "displayName": "Kelp de ósmio",
+              "displayName": "alga de ósmio",
               "iconName": "Osmium_Kelp_Sprite"
             },
             {
@@ -1271,7 +1267,7 @@
             },
             {
               "id": "item_72039",
-              "displayName": "Whelk",
+              "displayName": "Búzio",
               "iconName": "Whelk_Sprite"
             },
             {
@@ -1690,7 +1686,8 @@
         "iconName": "Fruit_Tart_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1777,7 +1774,8 @@
         "iconName": "Smoothie_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Drink"
+          "Item.Consumable.Drink",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1835,7 +1833,8 @@
         "iconName": "Pancakes_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1914,7 +1913,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -1962,21 +1962,6 @@
             "id": "item_41181",
             "displayName": "Iogurte de cabra grande",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "Concha de marisco",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "Berbigão",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "Vieiras de fogo",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -2016,7 +2001,8 @@
         "iconName": "Puree_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2101,12 +2087,12 @@
   "requiredAsOffering": [
     {
       "key": "DivingBased",
-      "offeringGroupTitle": "Diving Altar",
+      "offeringGroupTitle": "Altar de Mergulho",
       "urlPath": "divingaltar",
       "offeringGroupRewardText": "",
       "offerings": [
         {
-          "title": "Lima Pulu (50m)",
+          "title": "Location_Diving50m",
           "imageName": "Ocean_Offerings",
           "numOfItemRequired": 4,
           "rewards": {
@@ -2122,11 +2108,12 @@
             ],
             "recipes": []
           },
+          "offeringType": "Diving",
           "requiredItems": [
             {
               "item": {
                 "id": "item_62008",
-                "displayName": "Essência de kelp de ósmio",
+                "displayName": "Essência de alga de ósmio",
                 "iconName": "Osmium_Kelp_Essence_Sprite"
               },
               "amount": 5,
@@ -2162,7 +2149,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Diving"
     }
   ],
   "consumables": {
@@ -2176,7 +2163,7 @@
       "overwriteDuration": false,
       "duration": 0,
       "buff": "None",
-      "itemType": "None"
+      "itemType": "Food"
     },
     "bronze": {
       "key": "item_21078-a",
@@ -2188,7 +2175,7 @@
       "overwriteDuration": false,
       "duration": 0,
       "buff": "None",
-      "itemType": "None"
+      "itemType": "Food"
     },
     "silver": {
       "key": "item_21078-b",
@@ -2200,7 +2187,7 @@
       "overwriteDuration": false,
       "duration": 0,
       "buff": "None",
-      "itemType": "None"
+      "itemType": "Food"
     },
     "gold": {
       "key": "item_21078-c",
@@ -2212,7 +2199,7 @@
       "overwriteDuration": false,
       "duration": 0,
       "buff": "None",
-      "itemType": "None"
+      "itemType": "Food"
     },
     "osmium": {
       "key": "item_21078-d",
@@ -2224,7 +2211,7 @@
       "overwriteDuration": false,
       "duration": 0,
       "buff": "None",
-      "itemType": "None"
+      "itemType": "Food"
     }
   }
 }

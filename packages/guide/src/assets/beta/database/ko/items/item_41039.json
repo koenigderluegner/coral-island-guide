@@ -8,7 +8,7 @@
       "Sam"
     ],
     "stackable": true,
-    "inventoryCategory": "Artisan product",
+    "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
     "description": "우유를 휘저어 만든 버터.",
     "qualities": {
@@ -31,10 +31,11 @@
     },
     "iconName": "Butter_Sprite",
     "tags": [
-      "Artisan.PreserveJar",
+      "income.ranching",
       "item.artisan.Butter",
       "Item.Consumable.Food",
-      "item.artisan"
+      "item.artisan",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -247,7 +248,8 @@
         "iconName": "Cookies_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -326,7 +328,8 @@
         "iconName": "Oven-baked_risotto_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -418,7 +421,8 @@
         "iconName": "Butter_Croissant_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -500,23 +504,14 @@
         "iconName": "Apple_Pie_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
         "Oven"
       ],
       "genericIngredients": [
-        {
-          "amount": 1,
-          "genericItem": {
-            "key": "Butter_LargeButter",
-            "displayName": "버터/대용량 버터",
-            "tags": [],
-            "iconName": "Butter_Sprite"
-          },
-          "key": "Butter_LargeButter"
-        },
         {
           "amount": 1,
           "genericItem": {
@@ -604,7 +599,8 @@
         "iconName": "Minced_Jackfruit_Pie_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -683,24 +679,14 @@
         "iconName": "Peanut_Butter_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
         "Blender"
       ],
-      "genericIngredients": [
-        {
-          "amount": 1,
-          "genericItem": {
-            "key": "Butter_LargeButter",
-            "displayName": "버터/대용량 버터",
-            "tags": [],
-            "iconName": "Butter_Sprite"
-          },
-          "key": "Butter_LargeButter"
-        }
-      ],
+      "genericIngredients": [],
       "ingredients": [
         {
           "item": {
@@ -767,7 +753,8 @@
         "iconName": "Corn_On_The_Cob_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -834,7 +821,8 @@
         "iconName": "Gnocchi_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -925,7 +913,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -973,21 +962,6 @@
             "id": "item_41181",
             "displayName": "대용량 염소 요구르트",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "조개껍데기",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "꼬막",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "화염가리비",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -998,7 +972,7 @@
       "key": "SpecialityBased",
       "offeringGroupTitle": "고급 제단",
       "urlPath": "advancedaltar",
-      "offeringGroupRewardText": "순간이동 공물 잠금 해제",
+      "offeringGroupRewardText": "기억의 동굴 해금",
       "offerings": [
         {
           "title": "기본 전통 생산품",
@@ -1017,6 +991,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -1061,7 +1036,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Temple"
     }
   ]
 }

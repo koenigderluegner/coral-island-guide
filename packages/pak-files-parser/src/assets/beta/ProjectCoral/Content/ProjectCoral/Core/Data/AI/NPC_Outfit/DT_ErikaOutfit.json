@@ -3,6 +3,7 @@
     "Type": "DataTable",
     "Name": "DT_ErikaOutfit",
     "Class": "UScriptClass'DataTable'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "RowStruct": {
         "ObjectName": "ScriptStruct'C_NPCAppearances'",
@@ -12,6 +13,8 @@
     "Rows": {
       "Default": {
         "enabled": true,
+        "isHideOnUI": false,
+        "isUseOnPreFestival": false,
         "Appearances": {
           "DataTable": {
             "ObjectName": "DataTable'DT_NPCOutfitList'",
@@ -139,7 +142,8 @@
         "kawaiiPhysicsSetting": {
           "physicsSettingMap": [
             {
-              "BackHair": {
+              "Key": "BackHair",
+              "Value": {
                 "physicsSetting": {
                   "Damping": 0.1,
                   "WorldDampingLocation": 0.8,
@@ -161,6 +165,8 @@
       },
       "Summer": {
         "enabled": true,
+        "isHideOnUI": false,
+        "isUseOnPreFestival": false,
         "Appearances": {
           "DataTable": {
             "ObjectName": "DataTable'DT_NPCOutfitList'",
@@ -288,7 +294,8 @@
         "kawaiiPhysicsSetting": {
           "physicsSettingMap": [
             {
-              "BackHair": {
+              "Key": "BackHair",
+              "Value": {
                 "physicsSetting": {
                   "Damping": 0.1,
                   "WorldDampingLocation": 0.8,
@@ -310,6 +317,8 @@
       },
       "Fall": {
         "enabled": true,
+        "isHideOnUI": false,
+        "isUseOnPreFestival": false,
         "Appearances": {
           "DataTable": {
             "ObjectName": "DataTable'DT_NPCOutfitList'",
@@ -437,7 +446,8 @@
         "kawaiiPhysicsSetting": {
           "physicsSettingMap": [
             {
-              "BackHair": {
+              "Key": "BackHair",
+              "Value": {
                 "physicsSetting": {
                   "Damping": 0.1,
                   "WorldDampingLocation": 0.8,
@@ -459,6 +469,8 @@
       },
       "Winter": {
         "enabled": true,
+        "isHideOnUI": false,
+        "isUseOnPreFestival": false,
         "Appearances": {
           "DataTable": {
             "ObjectName": "DataTable'DT_NPCOutfitList'",
@@ -586,7 +598,8 @@
         "kawaiiPhysicsSetting": {
           "physicsSettingMap": [
             {
-              "BackHair": {
+              "Key": "BackHair",
+              "Value": {
                 "physicsSetting": {
                   "Damping": 0.1,
                   "WorldDampingLocation": 0.8,
@@ -604,7 +617,8 @@
               }
             },
             {
-              "ErikaSkirt": {
+              "Key": "ErikaSkirt",
+              "Value": {
                 "physicsSetting": {
                   "Damping": 0.1,
                   "WorldDampingLocation": 0.8,
@@ -622,7 +636,8 @@
               }
             },
             {
-              "ErikaSweater": {
+              "Key": "ErikaSweater",
+              "Value": {
                 "physicsSetting": {
                   "Damping": 0.3,
                   "WorldDampingLocation": 1.0,
@@ -644,6 +659,8 @@
       },
       "BathingSuit": {
         "enabled": false,
+        "isHideOnUI": false,
+        "isUseOnPreFestival": false,
         "Appearances": {
           "DataTable": {
             "ObjectName": "DataTable'DT_NPCOutfitList'",
@@ -816,6 +833,8 @@
       },
       "BeachCleanUp": {
         "enabled": false,
+        "isHideOnUI": false,
+        "isUseOnPreFestival": false,
         "Appearances": {
           "DataTable": {
             "ObjectName": "DataTable'DT_NPCOutfitList'",
@@ -988,6 +1007,8 @@
       },
       "Yoga": {
         "enabled": true,
+        "isHideOnUI": true,
+        "isUseOnPreFestival": false,
         "Appearances": {
           "DataTable": {
             "ObjectName": "DataTable'DT_NPCOutfitList'",
@@ -995,136 +1016,9 @@
           },
           "RowName": "Yoga"
         },
-        "images": [
-          {
-            "EmotionRow": {
-              "DataTable": {
-                "ObjectName": "DataTable'DT_EmotionList'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
-              },
-              "RowName": "Normal"
-            },
-            "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Leah/Portraits/Special/Leah_Yoga_Default.Leah_Yoga_Default",
-              "SubPathString": ""
-            },
-            "downedTextureCached": null
-          },
-          {
-            "EmotionRow": {
-              "DataTable": {
-                "ObjectName": "DataTable'DT_EmotionList'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
-              },
-              "RowName": "Annoyed"
-            },
-            "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Leah/Portraits/Special/Leah_Yoga_Annoyed.Leah_Yoga_Annoyed",
-              "SubPathString": ""
-            },
-            "downedTextureCached": null
-          },
-          {
-            "EmotionRow": {
-              "DataTable": {
-                "ObjectName": "DataTable'DT_EmotionList'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
-              },
-              "RowName": "Blushing"
-            },
-            "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Leah/Portraits/Special/Leah_Yoga_Blushing.Leah_Yoga_Blushing",
-              "SubPathString": ""
-            },
-            "downedTextureCached": null
-          },
-          {
-            "EmotionRow": {
-              "DataTable": {
-                "ObjectName": "DataTable'DT_EmotionList'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
-              },
-              "RowName": "Concerned"
-            },
-            "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Leah/Portraits/Special/Leah_Yoga_Concerned.Leah_Yoga_Concerned",
-              "SubPathString": ""
-            },
-            "downedTextureCached": null
-          },
-          {
-            "EmotionRow": {
-              "DataTable": {
-                "ObjectName": "DataTable'DT_EmotionList'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
-              },
-              "RowName": "Happy"
-            },
-            "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Leah/Portraits/Special/Leah_Yoga_Happy.Leah_Yoga_Happy",
-              "SubPathString": ""
-            },
-            "downedTextureCached": null
-          },
-          {
-            "EmotionRow": {
-              "DataTable": {
-                "ObjectName": "DataTable'DT_EmotionList'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
-              },
-              "RowName": "Happy02"
-            },
-            "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Leah/Portraits/Special/Leah_Yoga_Happy02.Leah_Yoga_Happy02",
-              "SubPathString": ""
-            },
-            "downedTextureCached": null
-          },
-          {
-            "EmotionRow": {
-              "DataTable": {
-                "ObjectName": "DataTable'DT_EmotionList'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
-              },
-              "RowName": "Angry"
-            },
-            "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Leah/Portraits/Special/Leah_Yoga_Angry.Leah_Yoga_Angry",
-              "SubPathString": ""
-            },
-            "downedTextureCached": null
-          },
-          {
-            "EmotionRow": {
-              "DataTable": {
-                "ObjectName": "DataTable'DT_EmotionList'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
-              },
-              "RowName": "Sad"
-            },
-            "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Leah/Portraits/Special/Leah_Yoga_Sad.Leah_Yoga_Sad",
-              "SubPathString": ""
-            },
-            "downedTextureCached": null
-          },
-          {
-            "EmotionRow": {
-              "DataTable": {
-                "ObjectName": "DataTable'DT_EmotionList'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
-              },
-              "RowName": "Surprised"
-            },
-            "texture": {
-              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Leah/Portraits/Special/Leah_Yoga_Surprised.Leah_Yoga_Surprised",
-              "SubPathString": ""
-            },
-            "downedTextureCached": null
-          }
-        ],
+        "images": [],
         "SkeletalMeshes": {
-          "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Erika/SK_Erika_V2_1.SK_Erika_V2_1",
+          "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Erika/Optimized/GymOutfit/SK_Erika_GymOutfit_V2_1.SK_Erika_GymOutfit_V2_1",
           "SubPathString": ""
         },
         "StaticMesh": {
@@ -1171,7 +1065,8 @@
         "kawaiiPhysicsSetting": {
           "physicsSettingMap": [
             {
-              "BackHair": {
+              "Key": "BackHair",
+              "Value": {
                 "physicsSetting": {
                   "Damping": 0.1,
                   "WorldDampingLocation": 1.3,

@@ -4,9 +4,11 @@
     "displayName": "호박 주스",
     "price": 425,
     "sellPrice": 255,
-    "sellAt": [],
+    "sellAt": [
+      "Sam"
+    ],
     "stackable": true,
-    "inventoryCategory": "Artisan product",
+    "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
     "description": "건강에 좋은 야채 주스 한 병.",
     "qualities": {
@@ -32,7 +34,8 @@
       "income.farming",
       "Artisan.Keg",
       "Item.Consumable.Drink",
-      "item.artisan"
+      "item.artisan",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -105,6 +108,72 @@
     }
   ],
   "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 4,
+      "time": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_41143",
+          "displayName": "호박 주스",
+          "iconName": "Vegetable_juice_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41407",
+          "displayName": "호박 와인",
+          "iconName": "Wine_Sprite",
+          "sellPrice": 520
+        }
+      },
+      "genericInput": null,
+      "refinements": [
+        {
+          "from": "base",
+          "to": "bronze",
+          "day": 3,
+          "time": {
+            "hours": 12,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "bronze",
+          "to": "silver",
+          "day": 3,
+          "time": {
+            "hours": 2,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "silver",
+          "to": "gold",
+          "day": 2,
+          "time": {
+            "hours": 16,
+            "minutes": 0
+          }
+        },
+        {
+          "from": "gold",
+          "to": "osmium",
+          "day": 2,
+          "time": {
+            "hours": 0,
+            "minutes": 0
+          }
+        }
+      ],
+      "machine": "Barrel"
+    },
     {
       "useCategory": false,
       "day": 0,
@@ -181,7 +250,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -229,21 +299,6 @@
             "id": "item_41181",
             "displayName": "대용량 염소 요구르트",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "조개껍데기",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "꼬막",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "화염가리비",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }

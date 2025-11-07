@@ -8,7 +8,7 @@
       "Sam"
     ],
     "stackable": true,
-    "inventoryCategory": "Animal product",
+    "inventoryCategory": "AnimalProduct",
     "displayKey": "AnimalProduct",
     "description": "황금 알. 크고 눈부시다.",
     "qualities": {
@@ -34,7 +34,8 @@
       "income.ranching",
       "item.animalproduct.egg",
       "Item.Consumable.Food",
-      "item.golden"
+      "item.golden",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -115,6 +116,34 @@
       },
       "genericInput": null,
       "machine": "MayoniseMachine"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31021",
+          "displayName": "큰 황금 알",
+          "iconName": "Large_golden_egg_Sprite"
+        }
+      },
+      "output": {
+        "amount": 2,
+        "item": {
+          "id": "item_41290",
+          "displayName": "큰 함압단",
+          "iconName": "Large_Salted_Egg_Sprite",
+          "sellPrice": 115
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
     },
     {
       "useCategory": false,
@@ -201,7 +230,8 @@
         "iconName": "Mooncake_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -280,7 +310,8 @@
         "iconName": "Red_velvet_cake_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -371,7 +402,8 @@
         "iconName": "Pumpkin_Pie_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -458,7 +490,8 @@
         "iconName": "Chocolate_chip_muffins_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -537,7 +570,8 @@
         "iconName": "Kue_Kancing_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -616,7 +650,8 @@
         "iconName": "Omurice_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -699,7 +734,8 @@
         "iconName": "Fried_Rice_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -786,7 +822,8 @@
         "iconName": "Spring_Frittata_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -856,7 +893,8 @@
         "iconName": "Hash_browns_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -935,7 +973,8 @@
         "iconName": "Scrambled_Eggs_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1005,7 +1044,8 @@
         "iconName": "Sunny-side-up_eggs_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -1032,6 +1072,87 @@
       ],
       "ingredients": [],
       "eitherOrIngredients": []
+    },
+    {
+      "key": "item_80087",
+      "amount": 1,
+      "cookingKey": "HardBoiledEgg",
+      "item": {
+        "id": "item_80087",
+        "displayName": "삶은 달걀",
+        "price": 60,
+        "sellPrice": 25,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "간단한 삶은 달걀.",
+        "qualities": {
+          "bronze": {
+            "price": 69,
+            "sellPrice": 29
+          },
+          "silver": {
+            "price": 75,
+            "sellPrice": 31
+          },
+          "gold": {
+            "price": 90,
+            "sellPrice": 38
+          },
+          "osmium": {
+            "price": 120,
+            "sellPrice": 50
+          }
+        },
+        "iconName": "Hard-boiled_egg_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
+        ]
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [],
+      "ingredients": [],
+      "eitherOrIngredients": [
+        [
+          {
+            "item": {
+              "id": "item_31002",
+              "displayName": "달걀",
+              "iconName": "Egg_Sprite_"
+            },
+            "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_31012",
+              "displayName": "큰 알",
+              "iconName": "Large_egg_Sprite_"
+            },
+            "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_31023",
+              "displayName": "황금 알",
+              "iconName": "Golden_egg_Sprite"
+            },
+            "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_31021",
+              "displayName": "큰 황금 알",
+              "iconName": "Large_golden_egg_Sprite"
+            },
+            "amount": 1
+          }
+        ]
+      ]
     },
     {
       "key": "item_80088",
@@ -1068,7 +1189,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -1116,21 +1238,6 @@
             "id": "item_41181",
             "displayName": "대용량 염소 요구르트",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "조개껍데기",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "꼬막",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "화염가리비",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -1170,7 +1277,8 @@
         "iconName": "Egg_Custard_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1360,7 +1468,8 @@
         "qualities": {},
         "iconName": "Increase_aggro_scent_Sprite",
         "tags": [
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       }
     },

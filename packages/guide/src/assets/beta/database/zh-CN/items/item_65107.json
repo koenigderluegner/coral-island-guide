@@ -11,7 +11,9 @@
     "description": "从废品中回收的碎渣，可以用来打造物品。",
     "qualities": {},
     "iconName": "Scrap_Sprite",
-    "tags": []
+    "tags": [
+      "income.other"
+    ]
   },
   "artisanResult": [
     {
@@ -305,7 +307,7 @@
         "sellPrice": 240,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Resource equipment",
+        "inventoryCategory": "ResourceEquipment",
         "displayKey": "ResourceEquipment",
         "description": "从海带中提炼营养物质，并装制成瓶。",
         "qualities": {},
@@ -365,7 +367,7 @@
         "sellPrice": 1240,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "None",
         "description": "为水果和蔬菜脱水。将土豆、红薯、羽衣甘蓝和甜菜头加工成脆片。",
         "qualities": {},
@@ -417,7 +419,7 @@
         "sellPrice": 150,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "可以把鸡蛋打成一罐蛋黄酱。",
         "qualities": {},
@@ -477,7 +479,7 @@
         "sellPrice": 245,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "将水果或蔬菜加工成饮料。可制作果汁、蜂蜜酒、红酒、啤酒、清酒、咖啡、绿茶和麝香咖啡。",
         "qualities": {},
@@ -537,7 +539,7 @@
         "sellPrice": 350,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "将牛奶转化为奶酪块，将甘蔗转化为糖浆。  ",
         "qualities": {},
@@ -589,7 +591,7 @@
         "sellPrice": 1135,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "可以把羊毛织成布。",
         "qualities": {},
@@ -641,7 +643,7 @@
         "sellPrice": 1010,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Resource equipment",
+        "inventoryCategory": "ResourceEquipment",
         "displayKey": "ResourceEquipment",
         "description": "太阳能电池转换器。它需要放置在室外，利用阳光并将其转化为电池电量。",
         "qualities": {},
@@ -701,7 +703,7 @@
         "sellPrice": 890,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "用于制作各种油。",
         "qualities": {},
@@ -855,6 +857,11 @@
       ],
       "genericIngredients": [],
       "category": "Decor",
+      "craftingUnlock": {
+        "key": "item_65353",
+        "masteryLevel": 3,
+        "masteryType": "Diving"
+      },
       "item": {
         "id": "item_65353",
         "displayName": "碎渣步道",
@@ -970,7 +977,7 @@
         "sellPrice": 15,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Resource equipment",
+        "inventoryCategory": "ResourceEquipment",
         "displayKey": "ResourceEquipment",
         "description": "必须装在2道栅栏之间。",
         "qualities": {},
@@ -1367,7 +1374,7 @@
       "category": "Farming",
       "item": {
         "id": "item_65511",
-        "displayName": "自动喂食机",
+        "displayName": "自动喂食器",
         "price": 1420,
         "sellPrice": 850,
         "sellAt": [],
@@ -1422,7 +1429,7 @@
       "category": "Farming",
       "item": {
         "id": "item_65509",
-        "displayName": "自动收集器",
+        "displayName": "自动撸宠机",
         "price": 4670,
         "sellPrice": 2800,
         "sellAt": [],
@@ -1477,14 +1484,14 @@
       "category": "Farming",
       "item": {
         "id": "item_65510",
-        "displayName": "自动收集器",
+        "displayName": "自动采集器",
         "price": 8920,
         "sellPrice": 5350,
         "sellAt": [],
         "stackable": true,
         "inventoryCategory": "Farming",
         "displayKey": "Farming",
-        "description": "放在农场",
+        "description": "自动采集动物资源。必须放置在畜棚或鸡舍内。",
         "qualities": {},
         "iconName": "Auto_Collector_Sprite",
         "tags": []
@@ -1639,8 +1646,8 @@
         "sellPrice": 110,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Resource equipment",
-        "displayKey": "ResourceEquipment",
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
         "description": "阻止乌鸦扰乱庄稼。保护一个11x11的区域。",
         "qualities": {},
         "iconName": "Scrap_scarecrow_Sprite",
@@ -1850,14 +1857,6 @@
         },
         {
           "item": {
-            "id": "item_42011",
-            "displayName": "羊毛布",
-            "iconName": "Wool_Cloth_Sprite"
-          },
-          "amount": 1
-        },
-        {
-          "item": {
             "id": "item_65107",
             "displayName": "碎渣",
             "iconName": "Scrap_Sprite"
@@ -1865,7 +1864,32 @@
           "amount": 10
         }
       ],
-      "genericIngredients": [],
+      "genericIngredients": [
+        {
+          "key": "Any_Wool",
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Wool",
+            "tags": [
+              "item.artisan.SheepWoolCloth"
+            ],
+            "iconName": "Wool_Cloth",
+            "displayName": "羊毛布",
+            "items": [
+              {
+                "id": "item_42011",
+                "displayName": "羊毛布",
+                "iconName": "Wool_Cloth_Sprite"
+              },
+              {
+                "id": "item_42021",
+                "displayName": "羊毛布（大）",
+                "iconName": "Large_Wool_Cloth_Sprite"
+              }
+            ]
+          }
+        }
+      ],
       "category": "Scarecrow",
       "item": {
         "id": "item_65057",
@@ -2142,7 +2166,9 @@
         "isLimitedItem": false,
         "itemLimit": 0,
         "hasYearlyLimit": false,
-        "itemLimitPerYear": 0
+        "itemLimitPerYear": 0,
+        "isUnlockRecipe": false,
+        "isItemUnLimitNotUnlockRecipe": false
       },
       "item": {
         "id": "item_65107",

@@ -8,7 +8,7 @@
       "Sam"
     ],
     "stackable": true,
-    "inventoryCategory": "Animal product",
+    "inventoryCategory": "AnimalProduct",
     "displayKey": "AnimalProduct",
     "description": "Grande bouteille de lait de vache.",
     "qualities": {
@@ -34,7 +34,8 @@
       "income.ranching",
       "item.townrank.0",
       "item.animalproduct.milk",
-      "Item.Consumable.Drink"
+      "Item.Consumable.Drink",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -275,7 +276,8 @@
         "iconName": "Red_velvet_cake_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -366,7 +368,8 @@
         "iconName": "Jackfruit_casserole_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -454,7 +457,8 @@
         "iconName": "Butter_Croissant_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -536,7 +540,8 @@
         "iconName": "Ice_Cream_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -594,7 +599,8 @@
         "iconName": "Scrambled_Eggs_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -664,24 +670,14 @@
         "iconName": "Hot_Cocoa_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Drink"
+          "Item.Consumable.Drink",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
         "Pot"
       ],
-      "genericIngredients": [
-        {
-          "amount": 1,
-          "genericItem": {
-            "key": "Milk_LargeMilk",
-            "displayName": "Lait/Grand lait",
-            "tags": [],
-            "iconName": "Milk_Sprite_"
-          },
-          "key": "Milk_LargeMilk"
-        }
-      ],
+      "genericIngredients": [],
       "ingredients": [
         {
           "item": {
@@ -707,6 +703,22 @@
               "id": "item_31016",
               "displayName": "Grand lait",
               "iconName": "Large_milk_Sprite_"
+            },
+            "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_31024",
+              "displayName": "Lait doré",
+              "iconName": "Golden_milk_Sprite"
+            },
+            "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_31022",
+              "displayName": "Grand lait doré",
+              "iconName": "Large_golden_milk_Sprite"
             },
             "amount": 1
           }
@@ -748,7 +760,8 @@
         "iconName": "Clam_Chowder_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -818,7 +831,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -866,21 +880,6 @@
             "id": "item_41181",
             "displayName": "Grand yaourt de chèvre",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "Coquille de palourde",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "Coquille",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "Pétoncle de flamme",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -920,7 +919,8 @@
         "iconName": "Egg_Custard_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -970,7 +970,7 @@
       "cookingKey": "EsDoger",
       "item": {
         "id": "item_80093",
-        "displayName": "Es doger",
+        "displayName": "Esdoger",
         "price": 260,
         "sellPrice": 100,
         "sellAt": [],
@@ -999,23 +999,14 @@
         "iconName": "Es_Doger_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
         "CeramicBowl"
       ],
       "genericIngredients": [
-        {
-          "amount": 1,
-          "genericItem": {
-            "key": "Milk_LargeMilk",
-            "displayName": "Lait/Grand lait",
-            "tags": [],
-            "iconName": "Milk_Sprite_"
-          },
-          "key": "Milk_LargeMilk"
-        },
         {
           "amount": 1,
           "genericItem": {
@@ -1027,6 +1018,18 @@
             "displayName": "Toute noix de coco"
           },
           "key": "Any_Coconut"
+        },
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Milk",
+            "tags": [
+              "item.animalproduct.milk"
+            ],
+            "iconName": "Any_Milk_Sprite",
+            "displayName": "Lait"
+          },
+          "key": "Any_Milk"
         }
       ],
       "ingredients": [
@@ -1047,26 +1050,7 @@
           "amount": 1
         }
       ],
-      "eitherOrIngredients": [
-        [
-          {
-            "item": {
-              "id": "item_31004",
-              "displayName": "Lait",
-              "iconName": "Milk_Sprite_"
-            },
-            "amount": 0
-          },
-          {
-            "item": {
-              "id": "item_31016",
-              "displayName": "Grand lait",
-              "iconName": "Large_milk_Sprite_"
-            },
-            "amount": 0
-          }
-        ]
-      ]
+      "eitherOrIngredients": []
     },
     {
       "key": "item_41016",
@@ -1103,7 +1087,8 @@
         "iconName": "Yoghurt_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1132,7 +1117,7 @@
       "key": "SpecialityBased",
       "offeringGroupTitle": "Autel avancé",
       "urlPath": "advancedaltar",
-      "offeringGroupRewardText": "Débloque les téléporteurs d'offrandes",
+      "offeringGroupRewardText": "Débloque la Grotte des souvenirs",
       "offerings": [
         {
           "title": "Animaux de grange",
@@ -1151,6 +1136,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -1209,7 +1195,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Temple"
     }
   ],
   "consumables": {

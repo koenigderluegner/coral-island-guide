@@ -11,7 +11,9 @@
     "description": "Eine Flasche mit Seetang-Essenz.",
     "qualities": {},
     "iconName": "Bronze_kelp_essence_Sprite",
-    "tags": []
+    "tags": [
+      "income.diving"
+    ]
   },
   "artisanResult": [
     {
@@ -217,9 +219,19 @@
                 "iconName": "Pacific_Oyster_Sprite"
               },
               {
+                "id": "item_50312",
+                "displayName": "Meersalz",
+                "iconName": "Sea_Salt_Sprite"
+              },
+              {
                 "id": "item_50313",
                 "displayName": "Klaffmuschel",
                 "iconName": "Steamer_Clam_Sprite"
+              },
+              {
+                "id": "item_50314",
+                "displayName": "Wakame-Alge",
+                "iconName": "Wakame_weed_Sprite"
               },
               {
                 "id": "item_50315",
@@ -706,7 +718,7 @@
       "key": "RareBased",
       "offeringGroupTitle": "Seltener Altar",
       "urlPath": "rarealtar",
-      "offeringGroupRewardText": "Schaltet Zugriff auf die Savanne frei",
+      "offeringGroupRewardText": "Schaltet Warp Sesajen frei",
       "offerings": [
         {
           "title": "Seltene Ressourcen",
@@ -725,6 +737,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -783,16 +796,16 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Temple"
     },
     {
       "key": "DivingBased",
-      "offeringGroupTitle": "Diving Altar",
+      "offeringGroupTitle": "Tauchaltar",
       "urlPath": "divingaltar",
       "offeringGroupRewardText": "",
       "offerings": [
         {
-          "title": "Se Pulu (10m)",
+          "title": "Location_Diving10m",
           "imageName": "Ocean_Offerings",
           "numOfItemRequired": 4,
           "rewards": {
@@ -808,6 +821,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Diving",
           "requiredItems": [
             {
               "item": {
@@ -848,7 +862,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Diving"
     }
   ]
 }

@@ -3,6 +3,7 @@
     "Type": "C_EnemyAttack",
     "Name": "DA_SphekterAttack",
     "Class": "UScriptClass'C_EnemyAttack'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "enemyAttackStructs": [
         {
@@ -15,10 +16,6 @@
               {
                 "ObjectName": "Class'C_DamagePlayerBehaviour'",
                 "ObjectPath": "/Script/ProjectCoral"
-              },
-              {
-                "ObjectName": "BlueprintGeneratedClass'BP_SphekterPoisonBuffBehaviour_C'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/BP_SphekterPoisonBuffBehaviour.0"
               }
             ],
             "attackAnimMontage": {
@@ -27,7 +24,13 @@
             },
             "shadowAnimMontage": null,
             "damageMultiplier": 1.0,
-            "attackDelay": 0.0
+            "attackDelay": 0.0,
+            "hitEffectInfo": {
+              "flashOffset": 0.0,
+              "hitStopDuration": 0.1,
+              "knockbackDistance": -100.0,
+              "knockbackDuration": 0.1
+            }
           },
           "attackWeight": 1.0
         }

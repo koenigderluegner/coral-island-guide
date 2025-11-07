@@ -4,6 +4,7 @@
     "Name": "C_CountNPCHeartLevelRequirement_0",
     "Outer": "DA_BlacksmithItemRequirement",
     "Class": "UScriptClass'C_CountNPCHeartLevelRequirement'",
+    "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "expectedHeartLevel": 8
     }
@@ -13,6 +14,7 @@
     "Name": "C_CountNPCHeartLevelRequirement_1",
     "Outer": "DA_BlacksmithItemRequirement",
     "Class": "UScriptClass'C_CountNPCHeartLevelRequirement'",
+    "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "expectedHeartLevel": 10
     }
@@ -21,40 +23,47 @@
     "Type": "C_GameplayRequirementsConfig",
     "Name": "DA_BlacksmithItemRequirement",
     "Class": "UScriptClass'C_GameplayRequirementsConfig'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "map": [
         {
-          "Charcoal": {
+          "Key": "Charcoal",
+          "Value": {
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           }
         },
         {
-          "BronzeOre": {
+          "Key": "BronzeOre",
+          "Value": {
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           }
         },
         {
-          "SilverOre": {
+          "Key": "SilverOre",
+          "Value": {
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           }
         },
         {
-          "GoldOre": {
+          "Key": "GoldOre",
+          "Value": {
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           }
         },
         {
-          "BluntSword": {
+          "Key": "BluntSword",
+          "Value": {
             "type": "EC_RequirementCollectionType::And",
             "requirements": []
           }
         },
         {
-          "locket": {
+          "Key": "locket",
+          "Value": {
             "type": "EC_RequirementCollectionType::And",
             "requirements": [
               {
@@ -65,7 +74,8 @@
           }
         },
         {
-          "diamondRing": {
+          "Key": "diamondRing",
+          "Value": {
             "type": "EC_RequirementCollectionType::And",
             "requirements": [
               {
@@ -74,6 +84,18 @@
               },
               {
                 "ObjectName": "C_MarriageHasProposedRequirement'DA_BlacksmithItemRequirement:C_MarriageHasProposedRequirement_0'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DA_BlacksmithItemRequirement.4"
+              }
+            ]
+          }
+        },
+        {
+          "Key": "mpDiamondRing",
+          "Value": {
+            "type": "EC_RequirementCollectionType::And",
+            "requirements": [
+              {
+                "ObjectName": "C_IsMultiplayerRequirement'DA_BlacksmithItemRequirement:C_IsMultiplayerRequirement_0'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/AlphaV1/DA_BlacksmithItemRequirement.3"
               }
             ]
@@ -83,10 +105,18 @@
     }
   },
   {
+    "Type": "C_IsMultiplayerRequirement",
+    "Name": "C_IsMultiplayerRequirement_0",
+    "Outer": "DA_BlacksmithItemRequirement",
+    "Class": "UScriptClass'C_IsMultiplayerRequirement'",
+    "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted"
+  },
+  {
     "Type": "C_MarriageHasProposedRequirement",
     "Name": "C_MarriageHasProposedRequirement_0",
     "Outer": "DA_BlacksmithItemRequirement",
     "Class": "UScriptClass'C_MarriageHasProposedRequirement'",
+    "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "invertResult": true
     }

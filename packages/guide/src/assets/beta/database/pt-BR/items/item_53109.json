@@ -35,7 +35,8 @@
       "item.gathering.fall",
       "item.fruit",
       "item.coconut",
-      "Item.Consumable.Food"
+      "Item.Consumable.Food",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -89,6 +90,34 @@
     }
   ],
   "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_53109",
+          "displayName": "Coco Macapuno",
+          "iconName": "Macapuno_Coconut_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41430",
+          "displayName": "Leite de Macapuno",
+          "iconName": "coconut_milk_Sprite",
+          "sellPrice": 165
+        }
+      },
+      "genericInput": null,
+      "machine": "CheesePress"
+    },
     {
       "useCategory": false,
       "day": 0,
@@ -674,11 +703,6 @@
               "iconName": "Cotton_Sprite"
             },
             {
-              "id": "item_24003",
-              "displayName": "Amêndoa",
-              "iconName": "Almond_Sprite"
-            },
-            {
               "id": "item_24004",
               "displayName": "Avocado",
               "iconName": "Avocado_Sprite"
@@ -950,22 +974,22 @@
             },
             {
               "id": "item_62001",
-              "displayName": "Kelp de bronze",
+              "displayName": "Alga de bronze",
               "iconName": "Bronze_kelp_Sprite"
             },
             {
               "id": "item_62002",
-              "displayName": "Kelp de ouro",
+              "displayName": "alga de ouro",
               "iconName": "Gold_Kelp_Sprite"
             },
             {
               "id": "item_62003",
-              "displayName": "Kelp de prata",
+              "displayName": "alga de prata",
               "iconName": "Silver_Kelp_Sprite"
             },
             {
               "id": "item_62004",
-              "displayName": "Kelp de ósmio",
+              "displayName": "alga de ósmio",
               "iconName": "Osmium_Kelp_Sprite"
             },
             {
@@ -1270,7 +1294,7 @@
             },
             {
               "id": "item_72039",
-              "displayName": "Whelk",
+              "displayName": "Búzio",
               "iconName": "Whelk_Sprite"
             },
             {
@@ -1552,6 +1576,90 @@
       "useCategory": false,
       "day": 0,
       "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_53109",
+          "displayName": "Coco Macapuno",
+          "iconName": "Macapuno_Coconut_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41426",
+          "displayName": "Água de Macapuno",
+          "iconName": "Macapuno_Coconut_Water_Sprite",
+          "sellPrice": 165
+        }
+      },
+      "genericInput": null,
+      "machine": "Keg"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_53109",
+          "displayName": "Coco Macapuno",
+          "iconName": "Macapuno_Coconut_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41434",
+          "displayName": "Óleo de Macapuno",
+          "iconName": "Macapuno_Coconut_Oil_Sprite",
+          "sellPrice": 190
+        }
+      },
+      "genericInput": null,
+      "machine": "OilPress"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_53109",
+          "displayName": "Coco Macapuno",
+          "iconName": "Macapuno_Coconut_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41442",
+          "displayName": "Geleia Kaya de Macapuno",
+          "iconName": "Jam_Yellow_Sprite",
+          "sellPrice": 130
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
         "hours": 3,
         "minutes": 0
       },
@@ -1633,7 +1741,8 @@
         "iconName": "Fruit_Tart_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1720,7 +1829,8 @@
         "iconName": "Smoothie_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Drink"
+          "Item.Consumable.Drink",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1778,7 +1888,8 @@
         "iconName": "Whole_Coconut_Drink_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Drink"
+          "Item.Consumable.Drink",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1836,7 +1947,8 @@
         "iconName": "Pancakes_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1915,7 +2027,8 @@
         "iconName": "Serabi_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1998,7 +2111,8 @@
         "iconName": "Lodeh_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2085,7 +2199,8 @@
         "iconName": "Green_Curry_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2139,7 +2254,7 @@
       "cookingKey": "KueLapis",
       "item": {
         "id": "item_80092",
-        "displayName": "Kue lapis",
+        "displayName": "Kuelapis",
         "price": 195,
         "sellPrice": 57,
         "sellAt": [],
@@ -2168,7 +2283,8 @@
         "iconName": "Kue_Lapis_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2243,7 +2359,8 @@
         "iconName": "Red_Curry_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2326,7 +2443,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -2374,21 +2492,6 @@
             "id": "item_41181",
             "displayName": "Iogurte de cabra grande",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "Concha de marisco",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "Berbigão",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "Vieiras de fogo",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -2428,7 +2531,8 @@
         "iconName": "Klepon_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2503,7 +2607,8 @@
         "iconName": "Cenil_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2549,7 +2654,7 @@
       "cookingKey": "EsCendol",
       "item": {
         "id": "item_80094",
-        "displayName": "Es cendol",
+        "displayName": "Escendol",
         "price": 220,
         "sellPrice": 90,
         "sellAt": [],
@@ -2578,7 +2683,8 @@
         "iconName": "Es_cendol_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Drink"
+          "Item.Consumable.Drink",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2624,7 +2730,7 @@
       "cookingKey": "EsDoger",
       "item": {
         "id": "item_80093",
-        "displayName": "Es doger",
+        "displayName": "Esdoger",
         "price": 260,
         "sellPrice": 100,
         "sellAt": [],
@@ -2653,23 +2759,14 @@
         "iconName": "Es_Doger_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
         "CeramicBowl"
       ],
       "genericIngredients": [
-        {
-          "amount": 1,
-          "genericItem": {
-            "key": "Milk_LargeMilk",
-            "displayName": "Leite/Leite Grande",
-            "tags": [],
-            "iconName": "Milk_Sprite_"
-          },
-          "key": "Milk_LargeMilk"
-        },
         {
           "amount": 1,
           "genericItem": {
@@ -2681,6 +2778,18 @@
             "displayName": "Qualquer Coco"
           },
           "key": "Any_Coconut"
+        },
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Milk",
+            "tags": [
+              "item.animalproduct.milk"
+            ],
+            "iconName": "Any_Milk_Sprite",
+            "displayName": "Qualquer Leite"
+          },
+          "key": "Any_Milk"
         }
       ],
       "ingredients": [
@@ -2701,26 +2810,7 @@
           "amount": 1
         }
       ],
-      "eitherOrIngredients": [
-        [
-          {
-            "item": {
-              "id": "item_31004",
-              "displayName": "Leite",
-              "iconName": "Milk_Sprite_"
-            },
-            "amount": 0
-          },
-          {
-            "item": {
-              "id": "item_31016",
-              "displayName": "Leite grande",
-              "iconName": "Large_milk_Sprite_"
-            },
-            "amount": 0
-          }
-        ]
-      ]
+      "eitherOrIngredients": []
     },
     {
       "key": "item_41036",
@@ -2757,7 +2847,8 @@
         "iconName": "Puree_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [

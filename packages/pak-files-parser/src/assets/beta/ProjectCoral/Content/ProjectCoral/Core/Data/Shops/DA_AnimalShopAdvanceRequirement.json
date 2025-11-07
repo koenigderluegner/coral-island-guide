@@ -3,10 +3,12 @@
     "Type": "C_GameplayRequirementsConfig",
     "Name": "DA_AnimalShopAdvanceRequirement",
     "Class": "UScriptClass'C_GameplayRequirementsConfig'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "map": [
         {
-          "Horse": {
+          "Key": "Horse",
+          "Value": {
             "type": "EC_RequirementCollectionType::And",
             "requirements": [
               {
@@ -24,6 +26,7 @@
     "Name": "C_MountAcquiredRequirement_1",
     "Outer": "DA_AnimalShopAdvanceRequirement",
     "Class": "UScriptClass'C_MountAcquiredRequirement'",
+    "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "invertResult": true
     }

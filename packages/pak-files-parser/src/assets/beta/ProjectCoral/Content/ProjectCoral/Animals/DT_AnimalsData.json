@@ -3,6 +3,7 @@
     "Type": "DataTable",
     "Name": "DT_AnimalsData",
     "Class": "UScriptClass'DataTable'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "RowStruct": {
         "ObjectName": "ScriptStruct'C_AnimalData'",
@@ -14,13 +15,15 @@
         "animalName": "Chicken",
         "animalClasses": [
           {
-            "EC_AnimalVariant::Default": {
+            "Key": "EC_AnimalVariant::Default",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/BP_Pawn_Chicken.BP_Pawn_Chicken_C",
               "SubPathString": ""
             }
           },
           {
-            "EC_AnimalVariant::Brown": {
+            "Key": "EC_AnimalVariant::Brown",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/BP_Pawn_Chicken_Brown.BP_Pawn_Chicken_Brown_C",
               "SubPathString": ""
             }
@@ -76,6 +79,7 @@
         ],
         "animalProduceType": "EC_AnimalProduceType::DropAtDayBegin",
         "produceDropLocation": "EC_AnimalProduceDropLocation::None",
+        "allowProduceDropInsideBuildingIfBuildingLvl3": false,
         "baseProduceDropChance": 10.0,
         "incrementProduceDropChance": 2.0,
         "harvestTool": "EC_ToolType::None",
@@ -94,7 +98,8 @@
         "animalName": "Pig",
         "animalClasses": [
           {
-            "EC_AnimalVariant::Default": {
+            "Key": "EC_AnimalVariant::Default",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/BP_Pawn_Pig.BP_Pawn_Pig_C",
               "SubPathString": ""
             }
@@ -150,6 +155,7 @@
         ],
         "animalProduceType": "EC_AnimalProduceType::DropInAllDay",
         "produceDropLocation": "EC_AnimalProduceDropLocation::OutsideBuildingOnly",
+        "allowProduceDropInsideBuildingIfBuildingLvl3": true,
         "baseProduceDropChance": 10.0,
         "incrementProduceDropChance": 2.0,
         "harvestTool": "EC_ToolType::None",
@@ -168,13 +174,15 @@
         "animalName": "Cow",
         "animalClasses": [
           {
-            "EC_AnimalVariant::Default": {
+            "Key": "EC_AnimalVariant::Default",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/BP_Pawn_Cow.BP_Pawn_Cow_C",
               "SubPathString": ""
             }
           },
           {
-            "EC_AnimalVariant::Brown": {
+            "Key": "EC_AnimalVariant::Brown",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/BP_Pawn_Brown_Cow.BP_Pawn_Brown_Cow_C",
               "SubPathString": ""
             }
@@ -230,6 +238,7 @@
         ],
         "animalProduceType": "EC_AnimalProduceType::UsingTools",
         "produceDropLocation": "EC_AnimalProduceDropLocation::None",
+        "allowProduceDropInsideBuildingIfBuildingLvl3": false,
         "baseProduceDropChance": 10.0,
         "incrementProduceDropChance": 2.0,
         "harvestTool": "EC_ToolType::MilkPail",
@@ -248,13 +257,15 @@
         "animalName": "Duck",
         "animalClasses": [
           {
-            "EC_AnimalVariant::Default": {
+            "Key": "EC_AnimalVariant::Default",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/BP_Pawn_Duck.BP_Pawn_Duck_C",
               "SubPathString": ""
             }
           },
           {
-            "EC_AnimalVariant::White": {
+            "Key": "EC_AnimalVariant::White",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/BP_Pawn_White_Duck.BP_Pawn_White_Duck_C",
               "SubPathString": ""
             }
@@ -310,6 +321,7 @@
         ],
         "animalProduceType": "EC_AnimalProduceType::DropAtDayBegin",
         "produceDropLocation": "EC_AnimalProduceDropLocation::None",
+        "allowProduceDropInsideBuildingIfBuildingLvl3": false,
         "baseProduceDropChance": 10.0,
         "incrementProduceDropChance": 2.0,
         "harvestTool": "EC_ToolType::None",
@@ -328,7 +340,8 @@
         "animalName": "Quail",
         "animalClasses": [
           {
-            "EC_AnimalVariant::Default": {
+            "Key": "EC_AnimalVariant::Default",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/BP_Pawn_Quail.BP_Pawn_Quail_C",
               "SubPathString": ""
             }
@@ -384,6 +397,7 @@
         ],
         "animalProduceType": "EC_AnimalProduceType::DropAtDayBegin",
         "produceDropLocation": "EC_AnimalProduceDropLocation::None",
+        "allowProduceDropInsideBuildingIfBuildingLvl3": false,
         "baseProduceDropChance": 10.0,
         "incrementProduceDropChance": 2.0,
         "harvestTool": "EC_ToolType::None",
@@ -402,7 +416,8 @@
         "animalName": "Peafowl",
         "animalClasses": [
           {
-            "EC_AnimalVariant::Default": {
+            "Key": "EC_AnimalVariant::Default",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/BP_Pawn_Peafowl.BP_Pawn_Peafowl_C",
               "SubPathString": ""
             }
@@ -458,6 +473,7 @@
         ],
         "animalProduceType": "EC_AnimalProduceType::DropInAllDay",
         "produceDropLocation": "EC_AnimalProduceDropLocation::None",
+        "allowProduceDropInsideBuildingIfBuildingLvl3": false,
         "baseProduceDropChance": 10.0,
         "incrementProduceDropChance": 2.0,
         "harvestTool": "EC_ToolType::None",
@@ -476,7 +492,8 @@
         "animalName": "Llama",
         "animalClasses": [
           {
-            "EC_AnimalVariant::Default": {
+            "Key": "EC_AnimalVariant::Default",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/BP_Pawn_Llama.BP_Pawn_Llama_C",
               "SubPathString": ""
             }
@@ -532,6 +549,7 @@
         ],
         "animalProduceType": "EC_AnimalProduceType::UsingTools",
         "produceDropLocation": "EC_AnimalProduceDropLocation::None",
+        "allowProduceDropInsideBuildingIfBuildingLvl3": false,
         "baseProduceDropChance": 10.0,
         "incrementProduceDropChance": 2.0,
         "harvestTool": "EC_ToolType::Shears",
@@ -550,7 +568,8 @@
         "animalName": "Goat",
         "animalClasses": [
           {
-            "EC_AnimalVariant::Default": {
+            "Key": "EC_AnimalVariant::Default",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/BP_Pawn_Goat.BP_Pawn_Goat_C",
               "SubPathString": ""
             }
@@ -606,6 +625,7 @@
         ],
         "animalProduceType": "EC_AnimalProduceType::UsingTools",
         "produceDropLocation": "EC_AnimalProduceDropLocation::None",
+        "allowProduceDropInsideBuildingIfBuildingLvl3": false,
         "baseProduceDropChance": 10.0,
         "incrementProduceDropChance": 2.0,
         "harvestTool": "EC_ToolType::MilkPail",
@@ -624,7 +644,8 @@
         "animalName": "Luwak",
         "animalClasses": [
           {
-            "EC_AnimalVariant::Default": {
+            "Key": "EC_AnimalVariant::Default",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/BP_Pawn_Luwak.BP_Pawn_Luwak_C",
               "SubPathString": ""
             }
@@ -680,6 +701,7 @@
         ],
         "animalProduceType": "EC_AnimalProduceType::DropInAllDay",
         "produceDropLocation": "EC_AnimalProduceDropLocation::OutsideBuildingOnly",
+        "allowProduceDropInsideBuildingIfBuildingLvl3": true,
         "baseProduceDropChance": 10.0,
         "incrementProduceDropChance": 2.0,
         "harvestTool": "EC_ToolType::None",
@@ -698,7 +720,8 @@
         "animalName": "Sheep",
         "animalClasses": [
           {
-            "EC_AnimalVariant::Default": {
+            "Key": "EC_AnimalVariant::Default",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/BP_Pawn_Sheep.BP_Pawn_Sheep_C",
               "SubPathString": ""
             }
@@ -754,6 +777,7 @@
         ],
         "animalProduceType": "EC_AnimalProduceType::UsingTools",
         "produceDropLocation": "EC_AnimalProduceDropLocation::None",
+        "allowProduceDropInsideBuildingIfBuildingLvl3": false,
         "baseProduceDropChance": 10.0,
         "incrementProduceDropChance": 2.0,
         "harvestTool": "EC_ToolType::Shears",
@@ -772,7 +796,8 @@
         "animalName": "Horse",
         "animalClasses": [
           {
-            "EC_AnimalVariant::Default": {
+            "Key": "EC_AnimalVariant::Default",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/MountRiding/BP_Pawn_Mount.BP_Pawn_Mount_C",
               "SubPathString": ""
             }
@@ -784,6 +809,7 @@
         "Produce": [],
         "animalProduceType": "EC_AnimalProduceType::None",
         "produceDropLocation": "EC_AnimalProduceDropLocation::None",
+        "allowProduceDropInsideBuildingIfBuildingLvl3": false,
         "baseProduceDropChance": 10.0,
         "incrementProduceDropChance": 2.0,
         "harvestTool": "EC_ToolType::None",
@@ -802,7 +828,8 @@
         "animalName": "Ostrich",
         "animalClasses": [
           {
-            "EC_AnimalVariant::Default": {
+            "Key": "EC_AnimalVariant::Default",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/BP_Pawn_Ostrich.BP_Pawn_Ostrich_C",
               "SubPathString": ""
             }
@@ -858,6 +885,7 @@
         ],
         "animalProduceType": "EC_AnimalProduceType::DropAtDayBegin",
         "produceDropLocation": "EC_AnimalProduceDropLocation::None",
+        "allowProduceDropInsideBuildingIfBuildingLvl3": false,
         "baseProduceDropChance": 10.0,
         "incrementProduceDropChance": 2.0,
         "harvestTool": "EC_ToolType::None",
@@ -876,7 +904,8 @@
         "animalName": "Buffaloo",
         "animalClasses": [
           {
-            "EC_AnimalVariant::Default": {
+            "Key": "EC_AnimalVariant::Default",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/BP_Pawn_Buffaloo.BP_Pawn_Buffaloo_C",
               "SubPathString": ""
             }
@@ -932,6 +961,7 @@
         ],
         "animalProduceType": "EC_AnimalProduceType::UsingTools",
         "produceDropLocation": "EC_AnimalProduceDropLocation::None",
+        "allowProduceDropInsideBuildingIfBuildingLvl3": false,
         "baseProduceDropChance": 10.0,
         "incrementProduceDropChance": 2.0,
         "harvestTool": "EC_ToolType::MilkPail",
@@ -950,7 +980,8 @@
         "animalName": "Carapoultry",
         "animalClasses": [
           {
-            "EC_AnimalVariant::Default": {
+            "Key": "EC_AnimalVariant::Default",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/Underwater/BP_Pawn_Carapoultry.BP_Pawn_Carapoultry_C",
               "SubPathString": ""
             }
@@ -1006,6 +1037,7 @@
         ],
         "animalProduceType": "EC_AnimalProduceType::DropAtDayBegin",
         "produceDropLocation": "EC_AnimalProduceDropLocation::None",
+        "allowProduceDropInsideBuildingIfBuildingLvl3": false,
         "baseProduceDropChance": 10.0,
         "incrementProduceDropChance": 2.0,
         "harvestTool": "EC_ToolType::None",
@@ -1024,7 +1056,8 @@
         "animalName": "Mermoo",
         "animalClasses": [
           {
-            "EC_AnimalVariant::Default": {
+            "Key": "EC_AnimalVariant::Default",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/Underwater/BP_Pawn_Mermoo.BP_Pawn_Mermoo_C",
               "SubPathString": ""
             }
@@ -1080,6 +1113,7 @@
         ],
         "animalProduceType": "EC_AnimalProduceType::UsingTools",
         "produceDropLocation": "EC_AnimalProduceDropLocation::None",
+        "allowProduceDropInsideBuildingIfBuildingLvl3": false,
         "baseProduceDropChance": 10.0,
         "incrementProduceDropChance": 2.0,
         "harvestTool": "EC_ToolType::MilkPail",
@@ -1098,7 +1132,8 @@
         "animalName": "Inkhog",
         "animalClasses": [
           {
-            "EC_AnimalVariant::Default": {
+            "Key": "EC_AnimalVariant::Default",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/Underwater/BP_Pawn_Inkhog.BP_Pawn_Inkhog_C",
               "SubPathString": ""
             }
@@ -1154,6 +1189,7 @@
         ],
         "animalProduceType": "EC_AnimalProduceType::UsingTools",
         "produceDropLocation": "EC_AnimalProduceDropLocation::None",
+        "allowProduceDropInsideBuildingIfBuildingLvl3": false,
         "baseProduceDropChance": 10.0,
         "incrementProduceDropChance": 2.0,
         "harvestTool": "EC_ToolType::MilkPail",
@@ -1172,7 +1208,8 @@
         "animalName": "Shelluck",
         "animalClasses": [
           {
-            "EC_AnimalVariant::Default": {
+            "Key": "EC_AnimalVariant::Default",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/Underwater/BP_Pawn_Shelluck.BP_Pawn_Shelluck_C",
               "SubPathString": ""
             }
@@ -1228,6 +1265,7 @@
         ],
         "animalProduceType": "EC_AnimalProduceType::DropAtDayBegin",
         "produceDropLocation": "EC_AnimalProduceDropLocation::None",
+        "allowProduceDropInsideBuildingIfBuildingLvl3": false,
         "baseProduceDropChance": 10.0,
         "incrementProduceDropChance": 2.0,
         "harvestTool": "EC_ToolType::None",
@@ -1246,7 +1284,8 @@
         "animalName": "Seashroud",
         "animalClasses": [
           {
-            "EC_AnimalVariant::Default": {
+            "Key": "EC_AnimalVariant::Default",
+            "Value": {
               "AssetPathName": "/Game/ProjectCoral/Animals/AnimalPawns/Underwater/BP_Pawn_Seashroud.BP_Pawn_Seashroud_C",
               "SubPathString": ""
             }
@@ -1302,6 +1341,7 @@
         ],
         "animalProduceType": "EC_AnimalProduceType::UsingTools",
         "produceDropLocation": "EC_AnimalProduceDropLocation::None",
+        "allowProduceDropInsideBuildingIfBuildingLvl3": false,
         "baseProduceDropChance": 10.0,
         "incrementProduceDropChance": 2.0,
         "harvestTool": "EC_ToolType::Shears",

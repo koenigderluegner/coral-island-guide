@@ -11,7 +11,9 @@
     "description": "Eine Flasche mit legendärer Osmium-Seetang-Essenz.",
     "qualities": {},
     "iconName": "Osmium_Kelp_Essence_Sprite",
-    "tags": []
+    "tags": [
+      "income.diving"
+    ]
   },
   "artisanResult": [
     {
@@ -191,7 +193,7 @@
         "sellPrice": 4750,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "Dieser Schleim der Replikation kann Gegenstände duplizieren. Gib ihm drei Tage oder so.",
         "qualities": {},
@@ -332,9 +334,19 @@
                 "iconName": "Pacific_Oyster_Sprite"
               },
               {
+                "id": "item_50312",
+                "displayName": "Meersalz",
+                "iconName": "Sea_Salt_Sprite"
+              },
+              {
                 "id": "item_50313",
                 "displayName": "Klaffmuschel",
                 "iconName": "Steamer_Clam_Sprite"
+              },
+              {
+                "id": "item_50314",
+                "displayName": "Wakame-Alge",
+                "iconName": "Wakame_weed_Sprite"
               },
               {
                 "id": "item_50315",
@@ -871,12 +883,12 @@
   "requiredAsOffering": [
     {
       "key": "DivingBased",
-      "offeringGroupTitle": "Diving Altar",
+      "offeringGroupTitle": "Tauchaltar",
       "urlPath": "divingaltar",
       "offeringGroupRewardText": "",
       "offerings": [
         {
-          "title": "Lima Pulu (50m)",
+          "title": "Location_Diving50m",
           "imageName": "Ocean_Offerings",
           "numOfItemRequired": 4,
           "rewards": {
@@ -892,6 +904,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Diving",
           "requiredItems": [
             {
               "item": {
@@ -932,7 +945,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Diving"
     }
   ],
   "isBundleRewardIn": [
@@ -940,7 +953,7 @@
       "key": "RareBased",
       "offeringGroupTitle": "Seltener Altar",
       "urlPath": "rarealtar",
-      "offeringGroupRewardText": "Schaltet Zugriff auf die Savanne frei",
+      "offeringGroupRewardText": "Schaltet Warp Sesajen frei",
       "offerings": [
         {
           "title": "Seltene Ressourcen",
@@ -959,6 +972,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -1017,7 +1031,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Temple"
     }
   ]
 }

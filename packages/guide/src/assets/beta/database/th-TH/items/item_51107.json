@@ -34,7 +34,8 @@
       "income.scavenging",
       "item.gathering.spring",
       "item.mushroom",
-      "Item.Consumable.Food"
+      "Item.Consumable.Food",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -664,11 +665,6 @@
               "iconName": "Cotton_Sprite"
             },
             {
-              "id": "item_24003",
-              "displayName": "อัลมอนด์",
-              "iconName": "Almond_Sprite"
-            },
-            {
               "id": "item_24004",
               "displayName": "Avocado",
               "iconName": "Avocado_Sprite"
@@ -710,7 +706,7 @@
             },
             {
               "id": "item_50207",
-              "displayName": "หอยเชลล์เผา",
+              "displayName": "หอยเชลล์เปลวไฟ",
               "iconName": "Flame_Scallop_Sprite"
             },
             {
@@ -1165,7 +1161,7 @@
             },
             {
               "id": "item_72020",
-              "displayName": "ปลาเทวดา",
+              "displayName": "ปลาสินสมุทร",
               "iconName": "Angelfish_Sprite"
             },
             {
@@ -1642,7 +1638,8 @@
         "iconName": "Pizza_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1734,7 +1731,8 @@
         "iconName": "Jackfruit_casserole_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1822,7 +1820,8 @@
         "iconName": "Oven-baked_risotto_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1914,7 +1913,8 @@
         "iconName": "Mushroom_Jerky_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1973,7 +1973,8 @@
         "iconName": "Roasted_Mushroom_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2049,7 +2050,8 @@
         "iconName": "Pepper_and_Mushroom_Flatbread_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2086,7 +2088,7 @@
         {
           "item": {
             "id": "item_22008",
-            "displayName": "พริกหยวก",
+            "displayName": "พริกหวาน",
             "iconName": "Bell_pepper_Sprite"
           },
           "amount": 1
@@ -2100,7 +2102,7 @@
       "cookingKey": "VeggieRamen",
       "item": {
         "id": "item_80016",
-        "displayName": "ราเมงเจ",
+        "displayName": "ราเม็งเจ",
         "price": 205,
         "sellPrice": 70,
         "sellAt": [],
@@ -2129,7 +2131,8 @@
         "iconName": "Veggie_Ramen_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2205,7 +2208,8 @@
         "iconName": "Wild_Mushroom_Polenta_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2273,7 +2277,8 @@
         "iconName": "Stew_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2341,7 +2346,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -2389,23 +2395,49 @@
             "id": "item_41181",
             "displayName": "โยเกิร์ตนมแพะขวดใหญ่",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "เปลือกหอยตลับ",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "หอยแครง",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "หอยเชลล์เผา",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
+      }
+    }
+  ],
+  "usedToCraft": [
+    {
+      "key": "item_65916",
+      "displayName": "Fungarian chest",
+      "amount": 1,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65003",
+            "displayName": "ไม้",
+            "iconName": "Wood_Sprite"
+          },
+          "amount": 30
+        },
+        {
+          "item": {
+            "id": "item_51107",
+            "displayName": "เห็ดมอเรล",
+            "iconName": "Morel_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "genericIngredients": [],
+      "category": "Farming",
+      "item": {
+        "id": "item_65916",
+        "displayName": "หีบฟันกาเรียน",
+        "price": 11,
+        "sellPrice": 11,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "สำหรับเก็บไอเท็มทุกชนิด สามารถนำไปวางได้ทุกพื้นที่ของไร่ เก็บของได้ 40 ชิ้น",
+        "qualities": {},
+        "iconName": "Fungarian_Chest_Sprite",
+        "tags": []
       }
     }
   ],
@@ -2463,6 +2495,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -2512,7 +2545,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Temple"
     }
   ],
   "buyAt": [

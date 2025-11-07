@@ -585,7 +585,7 @@
       },
       "item": {
         "id": "item_64011",
-        "displayName": "怪物香水",
+        "displayName": "隐藏气息I",
         "price": 70,
         "sellPrice": 18,
         "sellAt": [],
@@ -596,7 +596,8 @@
         "qualities": {},
         "iconName": "Decrease_aggro_scent_Sprite",
         "tags": [
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       }
     },
@@ -733,7 +734,7 @@
       },
       "item": {
         "id": "item_64010",
-        "displayName": "怪物诱饵的香水",
+        "displayName": "挑衅气息II",
         "price": 140,
         "sellPrice": 35,
         "sellAt": [],
@@ -744,7 +745,8 @@
         "qualities": {},
         "iconName": "Increase_aggro_scent_Sprite",
         "tags": [
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       }
     },
@@ -816,7 +818,7 @@
       },
       "item": {
         "id": "item_64013",
-        "displayName": "怪物香水II",
+        "displayName": "隐藏气息II",
         "price": 100,
         "sellPrice": 25,
         "sellAt": [],
@@ -827,7 +829,8 @@
         "qualities": {},
         "iconName": "Decrease_spawn_scent_Sprite",
         "tags": [
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       }
     },
@@ -909,7 +912,7 @@
               },
               {
                 "id": "item_41150",
-                "displayName": "罂粟花蜜",
+                "displayName": "虞美人蜜",
                 "iconName": "Honey_Sprite"
               },
               {
@@ -1044,7 +1047,7 @@
       },
       "item": {
         "id": "item_64012",
-        "displayName": "怪物诱饵的香水II",
+        "displayName": "挑衅气息II",
         "price": 140,
         "sellPrice": 35,
         "sellAt": [],
@@ -1055,7 +1058,8 @@
         "qualities": {},
         "iconName": "Increase_spawn_scent_Sprite",
         "tags": [
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       }
     },
@@ -1074,14 +1078,6 @@
         },
         {
           "item": {
-            "id": "item_42011",
-            "displayName": "羊毛布",
-            "iconName": "Wool_Cloth_Sprite"
-          },
-          "amount": 1
-        },
-        {
-          "item": {
             "id": "item_65107",
             "displayName": "碎渣",
             "iconName": "Scrap_Sprite"
@@ -1089,7 +1085,32 @@
           "amount": 10
         }
       ],
-      "genericIngredients": [],
+      "genericIngredients": [
+        {
+          "key": "Any_Wool",
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Wool",
+            "tags": [
+              "item.artisan.SheepWoolCloth"
+            ],
+            "iconName": "Wool_Cloth",
+            "displayName": "羊毛布",
+            "items": [
+              {
+                "id": "item_42011",
+                "displayName": "羊毛布",
+                "iconName": "Wool_Cloth_Sprite"
+              },
+              {
+                "id": "item_42021",
+                "displayName": "羊毛布（大）",
+                "iconName": "Large_Wool_Cloth_Sprite"
+              }
+            ]
+          }
+        }
+      ],
       "category": "Scarecrow",
       "item": {
         "id": "item_65057",
@@ -1112,7 +1133,7 @@
       "key": "SpecialityBased",
       "offeringGroupTitle": "高级祭坛",
       "urlPath": "advancedaltar",
-      "offeringGroupRewardText": "解锁鲜花运输",
+      "offeringGroupRewardText": "解锁记忆之洞",
       "offerings": [
         {
           "title": "怪物掉落",
@@ -1131,6 +1152,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -1180,7 +1202,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Temple"
     }
   ],
   "buyAt": [

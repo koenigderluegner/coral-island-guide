@@ -8,7 +8,7 @@
       "Sam"
     ],
     "stackable": true,
-    "inventoryCategory": "Animal product",
+    "inventoryCategory": "AnimalProduct",
     "displayKey": "AnimalProduct",
     "description": "염소젖 큰 병.",
     "qualities": {
@@ -34,7 +34,8 @@
       "income.ranching",
       "item.townrank.2",
       "item.animalproduct.milk",
-      "Item.Consumable.Drink"
+      "Item.Consumable.Drink",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -257,7 +258,8 @@
         "iconName": "Red_velvet_cake_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -348,7 +350,8 @@
         "iconName": "Jackfruit_casserole_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -436,7 +439,8 @@
         "iconName": "Butter_Croissant_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -518,7 +522,8 @@
         "iconName": "Ice_Cream_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -576,7 +581,8 @@
         "iconName": "Scrambled_Eggs_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -646,7 +652,8 @@
         "iconName": "Clam_Chowder_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -716,7 +723,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -764,21 +772,6 @@
             "id": "item_41181",
             "displayName": "대용량 염소 요구르트",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "조개껍데기",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "꼬막",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "화염가리비",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -818,7 +811,8 @@
         "iconName": "Egg_Custard_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -863,6 +857,94 @@
       "eitherOrIngredients": []
     },
     {
+      "key": "item_80093",
+      "amount": 1,
+      "cookingKey": "EsDoger",
+      "item": {
+        "id": "item_80093",
+        "displayName": "Esdoger",
+        "price": 260,
+        "sellPrice": 100,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "갖가지 토핑을 올린 분홍색 코코넛밀크 빙수. 냠냠!",
+        "qualities": {
+          "bronze": {
+            "price": 299,
+            "sellPrice": 115
+          },
+          "silver": {
+            "price": 325,
+            "sellPrice": 125
+          },
+          "gold": {
+            "price": 390,
+            "sellPrice": 150
+          },
+          "osmium": {
+            "price": 520,
+            "sellPrice": 200
+          }
+        },
+        "iconName": "Es_Doger_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
+        ]
+      },
+      "utensils": [
+        "CeramicBowl"
+      ],
+      "genericIngredients": [
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Coconut",
+            "tags": [
+              "item.coconut"
+            ],
+            "iconName": "Any_Coconut_Sprite",
+            "displayName": "아무 코코넛"
+          },
+          "key": "Any_Coconut"
+        },
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Milk",
+            "tags": [
+              "item.animalproduct.milk"
+            ],
+            "iconName": "Any_Milk_Sprite",
+            "displayName": "아무 우유"
+          },
+          "key": "Any_Milk"
+        }
+      ],
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_41028",
+            "displayName": "시럽",
+            "iconName": "Syrup_Sprite"
+          },
+          "amount": 1
+        },
+        {
+          "item": {
+            "id": "item_23013",
+            "displayName": "고구마",
+            "iconName": "Sweet_Potato_Sprite"
+          },
+          "amount": 1
+        }
+      ],
+      "eitherOrIngredients": []
+    },
+    {
       "key": "item_41016",
       "amount": 1,
       "cookingKey": "Yogurt",
@@ -897,7 +979,8 @@
         "iconName": "Yoghurt_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -926,7 +1009,7 @@
       "key": "SpecialityBased",
       "offeringGroupTitle": "고급 제단",
       "urlPath": "advancedaltar",
-      "offeringGroupRewardText": "순간이동 공물 잠금 해제",
+      "offeringGroupRewardText": "기억의 동굴 해금",
       "offerings": [
         {
           "title": "외양간 동물",
@@ -945,6 +1028,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -1003,7 +1087,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Temple"
     }
   ],
   "consumables": {

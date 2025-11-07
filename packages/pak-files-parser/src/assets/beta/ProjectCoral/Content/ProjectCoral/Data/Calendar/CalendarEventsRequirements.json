@@ -3,10 +3,12 @@
     "Type": "C_GameplayRequirementsConfig",
     "Name": "CalendarEventsRequirements",
     "Class": "UScriptClass'C_GameplayRequirementsConfig'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "map": [
         {
-          "weekly_religious_event": {
+          "Key": "weekly_religious_event",
+          "Value": {
             "type": "EC_RequirementCollectionType::And",
             "requirements": [
               {
@@ -17,7 +19,8 @@
           }
         },
         {
-          "earthDay": {
+          "Key": "earthDay",
+          "Value": {
             "type": "EC_RequirementCollectionType::And",
             "requirements": [
               {
@@ -35,6 +38,7 @@
     "Name": "C_IsFestivalActiveRequirement_0",
     "Outer": "CalendarEventsRequirements",
     "Class": "UScriptClass'C_IsFestivalActiveRequirement'",
+    "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "festivalId": {
         "DataTable": {
@@ -50,6 +54,7 @@
     "Name": "C_QuestFactRequirement_1",
     "Outer": "CalendarEventsRequirements",
     "Class": "UScriptClass'C_QuestFactRequirement'",
+    "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "fact": {
         "factName": {

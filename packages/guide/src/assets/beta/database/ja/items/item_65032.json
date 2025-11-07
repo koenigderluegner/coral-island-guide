@@ -29,7 +29,7 @@
       },
       "additionalInput": [],
       "input": {
-        "amount": 2,
+        "amount": 1,
         "item": {
           "id": "item_65032",
           "displayName": "繊維",
@@ -254,58 +254,6 @@
       }
     },
     {
-      "key": "item_65008",
-      "displayName": "Ordinary scarecrow",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_65003",
-            "displayName": "木材",
-            "iconName": "Wood_Sprite"
-          },
-          "amount": 20
-        },
-        {
-          "item": {
-            "id": "item_65032",
-            "displayName": "繊維",
-            "iconName": "Fiber_Sprite"
-          },
-          "amount": 20
-        },
-        {
-          "item": {
-            "id": "item_65108",
-            "displayName": "樹液",
-            "iconName": "Sap_Sprite"
-          },
-          "amount": 10
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Scarecrow",
-      "craftingUnlock": {
-        "key": "item_65008",
-        "masteryLevel": 4,
-        "masteryType": "Farming"
-      },
-      "item": {
-        "id": "item_65008",
-        "displayName": "普通のかかし",
-        "price": 230,
-        "sellPrice": 90,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Farming",
-        "displayKey": "Farming",
-        "description": "作物に危害を加えるカラスを追い払います。効果は11x11エリアまで及びます。",
-        "qualities": {},
-        "iconName": "Ordinary_scarecrow_Sprite",
-        "tags": []
-      }
-    },
-    {
       "key": "item_64007",
       "displayName": "Flying insect scent",
       "amount": 2,
@@ -509,7 +457,92 @@
         "qualities": {},
         "iconName": "Flying_insect_scent_Sprite",
         "tags": [
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
+        ]
+      }
+    },
+    {
+      "key": "item_64011",
+      "displayName": "Monster scent",
+      "amount": 2,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65032",
+            "displayName": "繊維",
+            "iconName": "Fiber_Sprite"
+          },
+          "amount": 5
+        }
+      ],
+      "genericIngredients": [
+        {
+          "key": "Any_MonsterEssence",
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "モンスターのエッセンスすべて",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "炎のエッセンス",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "闇のエッセンス",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "モンスターのエッセンス",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "土のエッセンス",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "水のエッセンス",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "風のエッセンス",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Misc",
+      "craftingUnlock": {
+        "key": "item_64011",
+        "masteryLevel": 4,
+        "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64011",
+        "displayName": "モンスターの香料",
+        "price": 70,
+        "sellPrice": 18,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "攻撃性が減少",
+        "qualities": {},
+        "iconName": "Decrease_aggro_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       }
     },
@@ -605,7 +638,7 @@
               "item.artisan.DriedScavengeables"
             ],
             "iconName": "Seafood_jerky",
-            "displayName": "乾燥スカベンジ可能品すべて",
+            "displayName": "乾燥回収可能品すべて",
             "items": [
               {
                 "id": "item_41295",
@@ -882,7 +915,7 @@
               "item.artisan.DriedScavengeables"
             ],
             "iconName": "Seafood_jerky",
-            "displayName": "乾燥スカベンジ可能品すべて",
+            "displayName": "乾燥回収可能品すべて",
             "items": [
               {
                 "id": "item_41295",
@@ -1208,86 +1241,55 @@
       }
     },
     {
-      "key": "item_64011",
-      "displayName": "Monster scent",
-      "amount": 2,
+      "key": "item_65008",
+      "displayName": "Ordinary scarecrow",
+      "amount": 1,
       "ingredients": [
+        {
+          "item": {
+            "id": "item_65003",
+            "displayName": "木材",
+            "iconName": "Wood_Sprite"
+          },
+          "amount": 20
+        },
         {
           "item": {
             "id": "item_65032",
             "displayName": "繊維",
             "iconName": "Fiber_Sprite"
           },
-          "amount": 5
-        }
-      ],
-      "genericIngredients": [
+          "amount": 20
+        },
         {
-          "key": "Any_MonsterEssence",
-          "amount": 1,
-          "genericItem": {
-            "key": "Any_MonsterEssence",
-            "tags": [
-              "Item.loot.MonsterEssence"
-            ],
-            "iconName": "T_AnyMonsterEssence_Sprite",
-            "displayName": "モンスターのエッセンスすべて",
-            "items": [
-              {
-                "id": "item_50504",
-                "displayName": "炎のエッセンス",
-                "iconName": "Flame_essence_Sprite"
-              },
-              {
-                "id": "item_50505",
-                "displayName": "闇のエッセンス",
-                "iconName": "Dark_Essence_Sprite"
-              },
-              {
-                "id": "item_50510",
-                "displayName": "モンスターのエッセンス",
-                "iconName": "Monster_Essence_Sprite"
-              },
-              {
-                "id": "item_50512",
-                "displayName": "土のエッセンス",
-                "iconName": "Earth_essence_Sprite"
-              },
-              {
-                "id": "item_50513",
-                "displayName": "水のエッセンス",
-                "iconName": "Water_essence_Sprite"
-              },
-              {
-                "id": "item_50514",
-                "displayName": "風のエッセンス",
-                "iconName": "Wind_essence_Sprite"
-              }
-            ]
-          }
+          "item": {
+            "id": "item_65108",
+            "displayName": "樹液",
+            "iconName": "Sap_Sprite"
+          },
+          "amount": 10
         }
       ],
-      "category": "Misc",
+      "genericIngredients": [],
+      "category": "Scarecrow",
       "craftingUnlock": {
-        "key": "item_64011",
+        "key": "item_65008",
         "masteryLevel": 4,
-        "masteryType": "Combat"
+        "masteryType": "Farming"
       },
       "item": {
-        "id": "item_64011",
-        "displayName": "モンスターの香料",
-        "price": 70,
-        "sellPrice": 18,
+        "id": "item_65008",
+        "displayName": "普通のかかし",
+        "price": 230,
+        "sellPrice": 90,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Consumable",
-        "displayKey": "Consumable",
-        "description": "攻撃性が減少",
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "作物に危害を加えるカラスを追い払います。効果は11x11エリアまで及びます。",
         "qualities": {},
-        "iconName": "Decrease_aggro_scent_Sprite",
-        "tags": [
-          "Item.Consumable.Food"
-        ]
+        "iconName": "Ordinary_scarecrow_Sprite",
+        "tags": []
       }
     },
     {
@@ -1614,6 +1616,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -1681,7 +1684,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Temple"
     }
   ]
 }

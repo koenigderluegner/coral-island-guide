@@ -1,0 +1,111 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Amethyst_Silk_Set_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 6.5,
+              "Y": 0.0,
+              "Z": -0.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 101.0,
+            "Y": 10.0,
+            "Z": 127.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "4690B642464AABE131501FAA4268F8B4"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Amethyst_Silk_Set_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Amethyst_Silk_Set'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Outfits_accessories/Outfit/Texture/Amethyst_Silk_Set.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Amethyst_Silk_Set_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Outfits_accessories/Outfit/Amethyst_Silk_Set_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 57.0,
+          "Y": 63.0,
+          "Z": 0.9453125,
+          "W": 0.0078125
+        },
+        {
+          "X": -44.0,
+          "Y": 63.0,
+          "Z": 0.15625,
+          "W": 0.0078125
+        },
+        {
+          "X": -44.0,
+          "Y": -64.0,
+          "Z": 0.15625,
+          "W": 1.0
+        },
+        {
+          "X": 57.0,
+          "Y": -64.0,
+          "Z": 0.9453125,
+          "W": 1.0
+        },
+        {
+          "X": 57.0,
+          "Y": 63.0,
+          "Z": 0.9453125,
+          "W": 0.0078125
+        },
+        {
+          "X": -44.0,
+          "Y": -64.0,
+          "Z": 0.15625,
+          "W": 1.0
+        }
+      ]
+    }
+  }
+]

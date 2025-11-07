@@ -11,14 +11,16 @@
     "description": "순수한 은 켈프 정수 한 병.",
     "qualities": {},
     "iconName": "Silver_Kelp_Essence_Sprite",
-    "tags": []
+    "tags": [
+      "income.diving"
+    ]
   },
   "artisanResult": [
     {
       "useCategory": false,
       "day": 0,
       "time": {
-        "hours": 3,
+        "hours": 2,
         "minutes": 0
       },
       "additionalInput": [
@@ -219,7 +221,7 @@
         "sellPrice": 1240,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "None",
         "description": "굴이나 가리비 같은 바다 전리품에서 수분을 제거한다. 말린 전통 생산품을 생산한다.",
         "qualities": {},
@@ -360,9 +362,19 @@
                 "iconName": "Pacific_Oyster_Sprite"
               },
               {
+                "id": "item_50312",
+                "displayName": "바다 소금",
+                "iconName": "Sea_Salt_Sprite"
+              },
+              {
                 "id": "item_50313",
                 "displayName": "우럭조개",
                 "iconName": "Steamer_Clam_Sprite"
+              },
+              {
+                "id": "item_50314",
+                "displayName": "미역",
+                "iconName": "Wakame_weed_Sprite"
               },
               {
                 "id": "item_50315",
@@ -854,7 +866,7 @@
       "key": "RareBased",
       "offeringGroupTitle": "희귀 제단",
       "urlPath": "rarealtar",
-      "offeringGroupRewardText": "사바나 지역 잠금 해제",
+      "offeringGroupRewardText": "순간이동 공물 해금",
       "offerings": [
         {
           "title": "희귀 자원",
@@ -873,6 +885,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -931,16 +944,16 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Temple"
     },
     {
       "key": "DivingBased",
-      "offeringGroupTitle": "Diving Altar",
+      "offeringGroupTitle": "다이빙 제단",
       "urlPath": "divingaltar",
       "offeringGroupRewardText": "",
       "offerings": [
         {
-          "title": "Dua Pulu (20m)",
+          "title": "Location_Diving20m",
           "imageName": "Ocean_Offerings",
           "numOfItemRequired": 4,
           "rewards": {
@@ -956,6 +969,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Diving",
           "requiredItems": [
             {
               "item": {
@@ -996,7 +1010,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Diving"
     }
   ]
 }

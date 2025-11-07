@@ -11,7 +11,9 @@
     "description": "Kepingan yang didaur ulang dari sampah. Dapat digunakan untuk berkerajinan.",
     "qualities": {},
     "iconName": "Scrap_Sprite",
-    "tags": []
+    "tags": [
+      "income.other"
+    ]
   },
   "artisanResult": [
     {
@@ -305,9 +307,9 @@
         "sellPrice": 240,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Resource equipment",
+        "inventoryCategory": "ResourceEquipment",
         "displayKey": "ResourceEquipment",
-        "description": "Ekstrak dan botol nutrisi dari kelp.",
+        "description": "Mengekstrak nutrisi dari kelp dan memasukkannya dalam botol.",
         "qualities": {},
         "iconName": "Extractor_Sprite",
         "tags": []
@@ -365,9 +367,9 @@
         "sellPrice": 1240,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "None",
-        "description": "Menghilangkan kelembaban dari buah-buahan dan sayuran. Memproses kentang, ubi jalar, kangkung, dan bit menjadi keripik.",
+        "description": "Menghilangkan kelembaban dari buah-buahan dan sayuran. Menghasilkan produk artisan kering.",
         "qualities": {},
         "iconName": "Dehydrator_Sprite",
         "tags": []
@@ -417,7 +419,7 @@
         "sellPrice": 150,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "Mengubah telur menjadi satu stoples mayones.",
         "qualities": {},
@@ -477,7 +479,7 @@
         "sellPrice": 245,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "Memproses buah atau sayuran menjadi minuman. Membuat jus, mead, wine, bir, sake, kopi, teh hijau.",
         "qualities": {},
@@ -537,7 +539,7 @@
         "sellPrice": 350,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "Mengubah susu menjadi keju, dan tebu menjadi sirup.",
         "qualities": {},
@@ -589,7 +591,7 @@
         "sellPrice": 1135,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "Mengubah wol menjadi kain.",
         "qualities": {},
@@ -641,7 +643,7 @@
         "sellPrice": 1010,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Resource equipment",
+        "inventoryCategory": "ResourceEquipment",
         "displayKey": "ResourceEquipment",
         "description": "Konverter baterai tenaga surya. Alat ini harus ditempatkan di luar ruangan untuk memanfaatkan sinar matahari dan mengubahnya jadi baterai.",
         "qualities": {},
@@ -701,7 +703,7 @@
         "sellPrice": 890,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Artisan equipment",
+        "inventoryCategory": "ArtisanEquipment",
         "displayKey": "ArtisanEquipment",
         "description": "Digunakan untuk membuat semua jenis minyak.",
         "qualities": {},
@@ -855,6 +857,11 @@
       ],
       "genericIngredients": [],
       "category": "Decor",
+      "craftingUnlock": {
+        "key": "item_65353",
+        "masteryLevel": 3,
+        "masteryType": "Diving"
+      },
       "item": {
         "id": "item_65353",
         "displayName": "Jalur kepingan",
@@ -970,7 +977,7 @@
         "sellPrice": 15,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Resource equipment",
+        "inventoryCategory": "ResourceEquipment",
         "displayKey": "ResourceEquipment",
         "description": "Harus dipasang di antara 2 pagar.",
         "qualities": {},
@@ -1639,8 +1646,8 @@
         "sellPrice": 110,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Resource equipment",
-        "displayKey": "ResourceEquipment",
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
         "description": "Mengusir gagak yang mengganggu tanaman. Melindungi area sebesar 11x11.",
         "qualities": {},
         "iconName": "Scrap_scarecrow_Sprite",
@@ -1850,14 +1857,6 @@
         },
         {
           "item": {
-            "id": "item_42011",
-            "displayName": "Kain wol",
-            "iconName": "Wool_Cloth_Sprite"
-          },
-          "amount": 1
-        },
-        {
-          "item": {
             "id": "item_65107",
             "displayName": "Kepingan",
             "iconName": "Scrap_Sprite"
@@ -1865,7 +1864,32 @@
           "amount": 10
         }
       ],
-      "genericIngredients": [],
+      "genericIngredients": [
+        {
+          "key": "Any_Wool",
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Wool",
+            "tags": [
+              "item.artisan.SheepWoolCloth"
+            ],
+            "iconName": "Wool_Cloth",
+            "displayName": "Kain Wol",
+            "items": [
+              {
+                "id": "item_42011",
+                "displayName": "Kain wol",
+                "iconName": "Wool_Cloth_Sprite"
+              },
+              {
+                "id": "item_42021",
+                "displayName": "Kain wol besar",
+                "iconName": "Large_Wool_Cloth_Sprite"
+              }
+            ]
+          }
+        }
+      ],
       "category": "Scarecrow",
       "item": {
         "id": "item_65057",
@@ -2142,7 +2166,9 @@
         "isLimitedItem": false,
         "itemLimit": 0,
         "hasYearlyLimit": false,
-        "itemLimitPerYear": 0
+        "itemLimitPerYear": 0,
+        "isUnlockRecipe": false,
+        "isItemUnLimitNotUnlockRecipe": false
       },
       "item": {
         "id": "item_65107",
@@ -2275,7 +2301,7 @@
     {
       "item": {
         "id": "item_110011",
-        "displayName": "Kandang kuda",
+        "displayName": "Kandang Kuda",
         "iconName": "Stable_Sprite"
       },
       "price": 7500,

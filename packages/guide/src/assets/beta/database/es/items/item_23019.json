@@ -8,8 +8,8 @@
       "Sam"
     ],
     "stackable": true,
-    "inventoryCategory": "Fruit",
-    "displayKey": "Grains",
+    "inventoryCategory": "Grains",
+    "displayKey": "Grain",
     "description": "Una vaina marrón con una textura rugosa. Ingrediente principal del chocolate.",
     "qualities": {
       "bronze": {
@@ -35,7 +35,8 @@
       "item.crop.fall",
       "item.townrank.1",
       "item.grain",
-      "Item.Consumable.Food"
+      "Item.Consumable.Food",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -89,6 +90,62 @@
     }
   ],
   "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_23019",
+          "displayName": "Grano de cacao",
+          "iconName": "Cocoa_Bean_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41423",
+          "displayName": "Zumo de pulpa de cacao",
+          "iconName": "Juice_Sprite",
+          "sellPrice": 185
+        }
+      },
+      "genericInput": null,
+      "machine": "Keg"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 3,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_23019",
+          "displayName": "Grano de cacao",
+          "iconName": "Cocoa_Bean_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41436",
+          "displayName": "Cacao en polvo",
+          "iconName": "Chocolate_Powder_Sprite",
+          "sellPrice": 170
+        }
+      },
+      "genericInput": null,
+      "machine": "Mill"
+    },
     {
       "useCategory": false,
       "day": 0,
@@ -174,7 +231,8 @@
         "iconName": "Cookies_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -253,7 +311,8 @@
         "iconName": "Chocolate_chip_muffins_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -332,24 +391,14 @@
         "iconName": "Hot_Cocoa_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Drink"
+          "Item.Consumable.Drink",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
         "Pot"
       ],
-      "genericIngredients": [
-        {
-          "amount": 1,
-          "genericItem": {
-            "key": "Milk_LargeMilk",
-            "displayName": "Milk/Large Milk",
-            "tags": [],
-            "iconName": "Milk_Sprite_"
-          },
-          "key": "Milk_LargeMilk"
-        }
-      ],
+      "genericIngredients": [],
       "ingredients": [
         {
           "item": {
@@ -375,6 +424,22 @@
               "id": "item_31016",
               "displayName": "Leche grande",
               "iconName": "Large_milk_Sprite_"
+            },
+            "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_31024",
+              "displayName": "Leche dorada",
+              "iconName": "Golden_milk_Sprite"
+            },
+            "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_31022",
+              "displayName": "Leche dorada grande",
+              "iconName": "Large_golden_milk_Sprite"
             },
             "amount": 1
           }
@@ -416,7 +481,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -464,21 +530,6 @@
             "id": "item_41181",
             "displayName": "Yogur de cabra grande",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "Concha",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "Berberecho",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "Almeja de fuego",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -547,7 +598,7 @@
       "key": "SpecialityBased",
       "offeringGroupTitle": "Altar avanzado",
       "urlPath": "advancedaltar",
-      "offeringGroupRewardText": "Desbloquea una ofrenda deforme",
+      "offeringGroupRewardText": "Desbloquea la Cueva de los Recuerdos",
       "offerings": [
         {
           "title": "Planta frutal",
@@ -566,6 +617,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -642,7 +694,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Temple"
     }
   ],
   "consumables": {

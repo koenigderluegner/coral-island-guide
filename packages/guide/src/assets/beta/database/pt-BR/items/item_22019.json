@@ -35,7 +35,8 @@
       "item.crop.summer",
       "item.townrank.3",
       "item.fruit",
-      "Item.Consumable.Food"
+      "Item.Consumable.Food",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -683,11 +684,6 @@
               "iconName": "Cotton_Sprite"
             },
             {
-              "id": "item_24003",
-              "displayName": "Amêndoa",
-              "iconName": "Almond_Sprite"
-            },
-            {
               "id": "item_24004",
               "displayName": "Avocado",
               "iconName": "Avocado_Sprite"
@@ -959,22 +955,22 @@
             },
             {
               "id": "item_62001",
-              "displayName": "Kelp de bronze",
+              "displayName": "Alga de bronze",
               "iconName": "Bronze_kelp_Sprite"
             },
             {
               "id": "item_62002",
-              "displayName": "Kelp de ouro",
+              "displayName": "alga de ouro",
               "iconName": "Gold_Kelp_Sprite"
             },
             {
               "id": "item_62003",
-              "displayName": "Kelp de prata",
+              "displayName": "alga de prata",
               "iconName": "Silver_Kelp_Sprite"
             },
             {
               "id": "item_62004",
-              "displayName": "Kelp de ósmio",
+              "displayName": "alga de ósmio",
               "iconName": "Osmium_Kelp_Sprite"
             },
             {
@@ -1279,7 +1275,7 @@
             },
             {
               "id": "item_72039",
-              "displayName": "Whelk",
+              "displayName": "Búzio",
               "iconName": "Whelk_Sprite"
             },
             {
@@ -1707,7 +1703,8 @@
         "iconName": "Fruit_Tart_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1794,7 +1791,8 @@
         "iconName": "Smoothie_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Drink"
+          "Item.Consumable.Drink",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1852,7 +1850,8 @@
         "iconName": "Pancakes_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1931,7 +1930,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -1979,21 +1979,6 @@
             "id": "item_41181",
             "displayName": "Iogurte de cabra grande",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "Concha de marisco",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "Berbigão",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "Vieiras de fogo",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -2033,7 +2018,8 @@
         "iconName": "Puree_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2076,7 +2062,8 @@
       ],
       "growTime": 25,
       "isRegrowable": true,
-      "regrowableLength": 1,
+      "regrowableLength": 4,
+      "firstYield": 28,
       "readableName": "Mango sapling",
       "maxDroppedItems": 3,
       "overrideExperience": false,
@@ -2134,7 +2121,7 @@
       "key": "SpecialityBased",
       "offeringGroupTitle": "Altar Avançado",
       "urlPath": "advancedaltar",
-      "offeringGroupRewardText": "Desbloqueia Sesajen de Dobra",
+      "offeringGroupRewardText": "Desbloqueia a Caverna de Memórias",
       "offerings": [
         {
           "title": "Planta Frutífera",
@@ -2153,6 +2140,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -2229,7 +2217,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Temple"
     },
     {
       "key": "HeritageBased",
@@ -2238,7 +2226,7 @@
       "offeringGroupRewardText": "Mural do Guardião",
       "offerings": [
         {
-          "title": "King Tan",
+          "title": "KingTan",
           "imageName": "T_Art_OfferingKingtan",
           "numOfItemRequired": 4,
           "rewards": {
@@ -2254,6 +2242,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Heritage",
           "requiredItems": [
             {
               "item": {
@@ -2294,7 +2283,7 @@
           ]
         }
       ],
-      "isHeritageOffering": true
+      "offeringType": "Heritage"
     }
   ],
   "consumables": {

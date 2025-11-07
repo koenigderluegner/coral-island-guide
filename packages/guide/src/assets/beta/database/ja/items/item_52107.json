@@ -35,7 +35,8 @@
       "item.gathering.spring",
       "item.fruit",
       "item.coconut",
-      "Item.Consumable.Food"
+      "Item.Consumable.Food",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -80,6 +81,34 @@
     }
   ],
   "artisanIngredient": [
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 5,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_52107",
+          "displayName": "ココナッツ",
+          "iconName": "coconut_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41428",
+          "displayName": "ココナッツミルク",
+          "iconName": "coconut_milk_Sprite",
+          "sellPrice": 100
+        }
+      },
+      "genericInput": null,
+      "machine": "CheesePress"
+    },
     {
       "useCategory": false,
       "day": 0,
@@ -663,11 +692,6 @@
               "id": "item_24001",
               "displayName": "コットン",
               "iconName": "Cotton_Sprite"
-            },
-            {
-              "id": "item_24003",
-              "displayName": "アーモンド",
-              "iconName": "Almond_Sprite"
             },
             {
               "id": "item_24004",
@@ -1543,6 +1567,90 @@
       "useCategory": false,
       "day": 0,
       "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_52107",
+          "displayName": "ココナッツ",
+          "iconName": "coconut_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41424",
+          "displayName": "ココナッツウォーター",
+          "iconName": "Coconut_Water_Sprite",
+          "sellPrice": 100
+        }
+      },
+      "genericInput": null,
+      "machine": "Keg"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 12,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_52107",
+          "displayName": "ココナッツ",
+          "iconName": "coconut_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41432",
+          "displayName": "ココナッツオイル",
+          "iconName": "Coconut_Oil_Sprite",
+          "sellPrice": 115
+        }
+      },
+      "genericInput": null,
+      "machine": "OilPress"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_52107",
+          "displayName": "ココナッツ",
+          "iconName": "coconut_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41440",
+          "displayName": "カヤジャム",
+          "iconName": "Jam_Yellow_Sprite",
+          "sellPrice": 85
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
         "hours": 2,
         "minutes": 0
       },
@@ -1615,7 +1723,8 @@
         "iconName": "Fruit_Tart_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1702,7 +1811,8 @@
         "iconName": "Smoothie_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Drink"
+          "Item.Consumable.Drink",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1760,7 +1870,8 @@
         "iconName": "Whole_Coconut_Drink_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Drink"
+          "Item.Consumable.Drink",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1818,7 +1929,8 @@
         "iconName": "Pancakes_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1897,7 +2009,8 @@
         "iconName": "Serabi_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1980,7 +2093,8 @@
         "iconName": "Lodeh_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2067,7 +2181,8 @@
         "iconName": "Green_Curry_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2121,7 +2236,7 @@
       "cookingKey": "KueLapis",
       "item": {
         "id": "item_80092",
-        "displayName": "Kue lapis",
+        "displayName": "Kuelapis",
         "price": 195,
         "sellPrice": 57,
         "sellAt": [],
@@ -2150,7 +2265,8 @@
         "iconName": "Kue_Lapis_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2225,7 +2341,8 @@
         "iconName": "Red_Curry_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2308,7 +2425,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -2356,21 +2474,6 @@
             "id": "item_41181",
             "displayName": "大きなヤギのヨーグルト",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "貝殻",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "ザルガイ",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "ウコンハネガイ",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -2410,7 +2513,8 @@
         "iconName": "Klepon_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2485,7 +2589,8 @@
         "iconName": "Cenil_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2531,7 +2636,7 @@
       "cookingKey": "EsCendol",
       "item": {
         "id": "item_80094",
-        "displayName": "Es cendol",
+        "displayName": "Escendol",
         "price": 220,
         "sellPrice": 90,
         "sellAt": [],
@@ -2560,7 +2665,8 @@
         "iconName": "Es_cendol_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Drink"
+          "Item.Consumable.Drink",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2606,7 +2712,7 @@
       "cookingKey": "EsDoger",
       "item": {
         "id": "item_80093",
-        "displayName": "Es doger",
+        "displayName": "Esdoger",
         "price": 260,
         "sellPrice": 100,
         "sellAt": [],
@@ -2635,23 +2741,14 @@
         "iconName": "Es_Doger_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
         "CeramicBowl"
       ],
       "genericIngredients": [
-        {
-          "amount": 1,
-          "genericItem": {
-            "key": "Milk_LargeMilk",
-            "displayName": "ミルク/大きなミルク",
-            "tags": [],
-            "iconName": "Milk_Sprite_"
-          },
-          "key": "Milk_LargeMilk"
-        },
         {
           "amount": 1,
           "genericItem": {
@@ -2663,6 +2760,18 @@
             "displayName": "ココナッツすべて"
           },
           "key": "Any_Coconut"
+        },
+        {
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_Milk",
+            "tags": [
+              "item.animalproduct.milk"
+            ],
+            "iconName": "Any_Milk_Sprite",
+            "displayName": "ミルクすべて"
+          },
+          "key": "Any_Milk"
         }
       ],
       "ingredients": [
@@ -2683,26 +2792,7 @@
           "amount": 1
         }
       ],
-      "eitherOrIngredients": [
-        [
-          {
-            "item": {
-              "id": "item_31004",
-              "displayName": "ミルク",
-              "iconName": "Milk_Sprite_"
-            },
-            "amount": 0
-          },
-          {
-            "item": {
-              "id": "item_31016",
-              "displayName": "大きなミルク",
-              "iconName": "Large_milk_Sprite_"
-            },
-            "amount": 0
-          }
-        ]
-      ]
+      "eitherOrIngredients": []
     },
     {
       "key": "item_41036",
@@ -2739,7 +2829,8 @@
         "iconName": "Puree_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2779,7 +2870,7 @@
         },
         {
           "key": "KingKrakatoa",
-          "characterName": "King  Krakatoa",
+          "characterName": "King Krakatoa",
           "iconName": "Icon_king_krakatoa"
         }
       ]

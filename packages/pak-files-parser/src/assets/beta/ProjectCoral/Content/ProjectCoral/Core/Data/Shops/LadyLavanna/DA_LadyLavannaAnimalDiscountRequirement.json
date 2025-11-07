@@ -3,10 +3,12 @@
     "Type": "C_GameplayRequirementsConfig",
     "Name": "DA_LadyLavannaAnimalDiscountRequirement",
     "Class": "UScriptClass'C_GameplayRequirementsConfig'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "map": [
         {
-          "savannahRaceMiniGame30s": {
+          "Key": "savannahRaceMiniGame30s",
+          "Value": {
             "type": "EC_RequirementCollectionType::And",
             "requirements": [
               {
@@ -24,6 +26,7 @@
     "Name": "C_ObjectStateRequirement_1",
     "Outer": "DA_LadyLavannaAnimalDiscountRequirement",
     "Class": "UScriptClass'C_ObjectStateRequirement'",
+    "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "id": "SavannahRaceState",
       "requiredState": "WinUnder30s",

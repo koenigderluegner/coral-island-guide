@@ -3,6 +3,7 @@
     "Type": "C_DonationSubsystemConfig",
     "Name": "DA_MuesumDonationConfig",
     "Class": "UScriptClass'C_DonationSubsystemConfig'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "fishDT": {
         "ObjectName": "DataTable'DT_Fish'",
@@ -22,37 +23,43 @@
       },
       "donationDT": [
         {
-          "EC_DonationCategory::ARTIFACT": {
+          "Key": "EC_DonationCategory::ARTIFACT",
+          "Value": {
             "ObjectName": "DataTable'DT_ArtifactDonationList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Museum/Data/DT_ArtifactDonationList.0"
           }
         },
         {
-          "EC_DonationCategory::FOSSIL": {
+          "Key": "EC_DonationCategory::FOSSIL",
+          "Value": {
             "ObjectName": "DataTable'DT_FossilDonationList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Museum/Data/DT_FossilDonationList.0"
           }
         },
         {
-          "EC_DonationCategory::FISH": {
+          "Key": "EC_DonationCategory::FISH",
+          "Value": {
             "ObjectName": "DataTable'DT_FishDonationList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Museum/Data/DT_FishDonationList.0"
           }
         },
         {
-          "EC_DonationCategory::BUG": {
+          "Key": "EC_DonationCategory::BUG",
+          "Value": {
             "ObjectName": "DataTable'DT_BugsDonationList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Museum/Data/DT_BugsDonationList.0"
           }
         },
         {
-          "EC_DonationCategory::GEM": {
+          "Key": "EC_DonationCategory::GEM",
+          "Value": {
             "ObjectName": "DataTable'DT_GemsDonationList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Museum/Data/DT_GemsDonationList.0"
           }
         },
         {
-          "EC_DonationCategory::OCEAN_CRITTER": {
+          "Key": "EC_DonationCategory::OCEAN_CRITTER",
+          "Value": {
             "ObjectName": "DataTable'DT_OceanCritterDonationList'",
             "ObjectPath": "ProjectCoral/Content/ProjectCoral/Museum/Data/DT_OceanCritterDonationList.0"
           }

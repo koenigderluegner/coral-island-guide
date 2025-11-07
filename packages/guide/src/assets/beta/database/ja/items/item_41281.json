@@ -4,9 +4,11 @@
     "displayName": "熟成ゲイシャコーヒー（大）",
     "price": 7200,
     "sellPrice": 2860,
-    "sellAt": [],
+    "sellAt": [
+      "Sam"
+    ],
     "stackable": true,
-    "inventoryCategory": "Artisan product",
+    "inventoryCategory": "ArtisanProduct",
     "displayKey": "ArtisanProduct",
     "description": "飲みすぎに注意しましょう。",
     "qualities": {
@@ -29,10 +31,11 @@
     },
     "iconName": "Aged_Large_Gesha_Coffee_Sprite",
     "tags": [
-      "income.farming",
+      "income.ranching",
       "Artisan.AgingBarrel",
       "Item.Consumable.Drink",
-      "item.artisan"
+      "item.artisan",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -237,7 +240,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -285,24 +289,39 @@
             "id": "item_41181",
             "displayName": "大きなヤギのヨーグルト",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "貝殻",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "ザルガイ",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "ウコンハネガイ",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
+    }
+  ],
+  "asGift": [
+    {
+      "pref": {
+        "icon": "T_Icon_Love",
+        "label": "Love",
+        "preferenceField": "lovePreferences"
+      },
+      "npcs": [
+        {
+          "key": "Semeru",
+          "characterName": "セメル",
+          "iconName": "Icon_semeru"
+        }
+      ]
+    },
+    {
+      "pref": {
+        "icon": "T_Icon_Hate",
+        "label": "Hate",
+        "preferenceField": "hatePreferences"
+      },
+      "npcs": [
+        {
+          "key": "Mark",
+          "characterName": "Mark",
+          "iconName": "Icon_mark"
+        }
+      ]
     }
   ],
   "consumables": {

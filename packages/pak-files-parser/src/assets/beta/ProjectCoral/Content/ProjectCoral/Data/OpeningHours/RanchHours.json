@@ -3,6 +3,7 @@
     "Type": "C_OpeningHoursConfig",
     "Name": "RanchHours",
     "Class": "UScriptClass'C_OpeningHoursConfig'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "coreOpeningHoursConfig": {
         "coreOpeningDays": [
@@ -22,7 +23,8 @@
         },
         "dayOfTheWeekSpecificOpeningHours": [
           {
-            "EC_DayOfTheWeek::Friday": {
+            "Key": "EC_DayOfTheWeek::Friday",
+            "Value": {
               "fromTime": {
                 "hours": 8,
                 "minutes": 0

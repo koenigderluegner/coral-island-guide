@@ -29,7 +29,7 @@
       },
       "additionalInput": [],
       "input": {
-        "amount": 2,
+        "amount": 1,
         "item": {
           "id": "item_65032",
           "displayName": "纤维",
@@ -93,7 +93,7 @@
               },
               {
                 "id": "item_21045",
-                "displayName": "罂粟花",
+                "displayName": "虞美人",
                 "iconName": "Poppy_Sprite"
               },
               {
@@ -254,58 +254,6 @@
       }
     },
     {
-      "key": "item_65008",
-      "displayName": "Ordinary scarecrow",
-      "amount": 1,
-      "ingredients": [
-        {
-          "item": {
-            "id": "item_65003",
-            "displayName": "木头",
-            "iconName": "Wood_Sprite"
-          },
-          "amount": 20
-        },
-        {
-          "item": {
-            "id": "item_65032",
-            "displayName": "纤维",
-            "iconName": "Fiber_Sprite"
-          },
-          "amount": 20
-        },
-        {
-          "item": {
-            "id": "item_65108",
-            "displayName": "树液",
-            "iconName": "Sap_Sprite"
-          },
-          "amount": 10
-        }
-      ],
-      "genericIngredients": [],
-      "category": "Scarecrow",
-      "craftingUnlock": {
-        "key": "item_65008",
-        "masteryLevel": 4,
-        "masteryType": "Farming"
-      },
-      "item": {
-        "id": "item_65008",
-        "displayName": "普通稻草人",
-        "price": 230,
-        "sellPrice": 90,
-        "sellAt": [],
-        "stackable": true,
-        "inventoryCategory": "Farming",
-        "displayKey": "Farming",
-        "description": "阻止乌鸦扰乱庄稼。保护一个11x11的区域。",
-        "qualities": {},
-        "iconName": "Ordinary_scarecrow_Sprite",
-        "tags": []
-      }
-    },
-    {
       "key": "item_64007",
       "displayName": "Flying insect scent",
       "amount": 2,
@@ -348,7 +296,7 @@
               },
               {
                 "id": "item_21045",
-                "displayName": "罂粟花",
+                "displayName": "虞美人",
                 "iconName": "Poppy_Sprite"
               },
               {
@@ -498,18 +446,103 @@
       },
       "item": {
         "id": "item_64007",
-        "displayName": "飞虫专用香水",
+        "displayName": "飞虫专用诱香",
         "price": 50,
         "sellPrice": 13,
         "sellAt": [],
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "一种可制作的香水，可降低飞虫的警觉性。可以食用或附在陷阱上。",
+        "description": "一种可制作的诱香，可降低飞虫的警觉性。可以食用或附在陷阱上。",
         "qualities": {},
         "iconName": "Flying_insect_scent_Sprite",
         "tags": [
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
+        ]
+      }
+    },
+    {
+      "key": "item_64011",
+      "displayName": "Monster scent",
+      "amount": 2,
+      "ingredients": [
+        {
+          "item": {
+            "id": "item_65032",
+            "displayName": "纤维",
+            "iconName": "Fiber_Sprite"
+          },
+          "amount": 5
+        }
+      ],
+      "genericIngredients": [
+        {
+          "key": "Any_MonsterEssence",
+          "amount": 1,
+          "genericItem": {
+            "key": "Any_MonsterEssence",
+            "tags": [
+              "Item.loot.MonsterEssence"
+            ],
+            "iconName": "T_AnyMonsterEssence_Sprite",
+            "displayName": "任何怪物精华",
+            "items": [
+              {
+                "id": "item_50504",
+                "displayName": "火焰精华",
+                "iconName": "Flame_essence_Sprite"
+              },
+              {
+                "id": "item_50505",
+                "displayName": "黑暗精华",
+                "iconName": "Dark_Essence_Sprite"
+              },
+              {
+                "id": "item_50510",
+                "displayName": "怪物精华",
+                "iconName": "Monster_Essence_Sprite"
+              },
+              {
+                "id": "item_50512",
+                "displayName": "地精华",
+                "iconName": "Earth_essence_Sprite"
+              },
+              {
+                "id": "item_50513",
+                "displayName": "水精华",
+                "iconName": "Water_essence_Sprite"
+              },
+              {
+                "id": "item_50514",
+                "displayName": "风精华",
+                "iconName": "Wind_essence_Sprite"
+              }
+            ]
+          }
+        }
+      ],
+      "category": "Misc",
+      "craftingUnlock": {
+        "key": "item_64011",
+        "masteryLevel": 4,
+        "masteryType": "Combat"
+      },
+      "item": {
+        "id": "item_64011",
+        "displayName": "隐藏气息I",
+        "price": 70,
+        "sellPrice": 18,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "减少攻击性的香水",
+        "qualities": {},
+        "iconName": "Decrease_aggro_scent_Sprite",
+        "tags": [
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       }
     },
@@ -1208,86 +1241,55 @@
       }
     },
     {
-      "key": "item_64011",
-      "displayName": "Monster scent",
-      "amount": 2,
+      "key": "item_65008",
+      "displayName": "Ordinary scarecrow",
+      "amount": 1,
       "ingredients": [
+        {
+          "item": {
+            "id": "item_65003",
+            "displayName": "木头",
+            "iconName": "Wood_Sprite"
+          },
+          "amount": 20
+        },
         {
           "item": {
             "id": "item_65032",
             "displayName": "纤维",
             "iconName": "Fiber_Sprite"
           },
-          "amount": 5
-        }
-      ],
-      "genericIngredients": [
+          "amount": 20
+        },
         {
-          "key": "Any_MonsterEssence",
-          "amount": 1,
-          "genericItem": {
-            "key": "Any_MonsterEssence",
-            "tags": [
-              "Item.loot.MonsterEssence"
-            ],
-            "iconName": "T_AnyMonsterEssence_Sprite",
-            "displayName": "任何怪物精华",
-            "items": [
-              {
-                "id": "item_50504",
-                "displayName": "火焰精华",
-                "iconName": "Flame_essence_Sprite"
-              },
-              {
-                "id": "item_50505",
-                "displayName": "黑暗精华",
-                "iconName": "Dark_Essence_Sprite"
-              },
-              {
-                "id": "item_50510",
-                "displayName": "怪物精华",
-                "iconName": "Monster_Essence_Sprite"
-              },
-              {
-                "id": "item_50512",
-                "displayName": "地精华",
-                "iconName": "Earth_essence_Sprite"
-              },
-              {
-                "id": "item_50513",
-                "displayName": "水精华",
-                "iconName": "Water_essence_Sprite"
-              },
-              {
-                "id": "item_50514",
-                "displayName": "风精华",
-                "iconName": "Wind_essence_Sprite"
-              }
-            ]
-          }
+          "item": {
+            "id": "item_65108",
+            "displayName": "树液",
+            "iconName": "Sap_Sprite"
+          },
+          "amount": 10
         }
       ],
-      "category": "Misc",
+      "genericIngredients": [],
+      "category": "Scarecrow",
       "craftingUnlock": {
-        "key": "item_64011",
+        "key": "item_65008",
         "masteryLevel": 4,
-        "masteryType": "Combat"
+        "masteryType": "Farming"
       },
       "item": {
-        "id": "item_64011",
-        "displayName": "怪物香水",
-        "price": 70,
-        "sellPrice": 18,
+        "id": "item_65008",
+        "displayName": "普通稻草人",
+        "price": 230,
+        "sellPrice": 90,
         "sellAt": [],
         "stackable": true,
-        "inventoryCategory": "Consumable",
-        "displayKey": "Consumable",
-        "description": "减少攻击性的香水",
+        "inventoryCategory": "Farming",
+        "displayKey": "Farming",
+        "description": "阻止乌鸦扰乱庄稼。保护一个11x11的区域。",
         "qualities": {},
-        "iconName": "Decrease_aggro_scent_Sprite",
-        "tags": [
-          "Item.Consumable.Food"
-        ]
+        "iconName": "Ordinary_scarecrow_Sprite",
+        "tags": []
       }
     },
     {
@@ -1614,6 +1616,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -1681,7 +1684,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Temple"
     }
   ]
 }

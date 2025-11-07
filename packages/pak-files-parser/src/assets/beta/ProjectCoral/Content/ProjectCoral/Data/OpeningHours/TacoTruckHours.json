@@ -1,0 +1,41 @@
+[
+  {
+    "Type": "C_OpeningHoursConfig",
+    "Name": "TacoTruckHours",
+    "Class": "UScriptClass'C_OpeningHoursConfig'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "coreOpeningHoursConfig": {
+        "coreOpeningDays": [
+          "EC_DayOfTheWeek::Monday",
+          "EC_DayOfTheWeek::Tuesday",
+          "EC_DayOfTheWeek::Wednesday",
+          "EC_DayOfTheWeek::Friday"
+        ],
+        "coreOpeningHours": {
+          "fromTime": {
+            "hours": 9
+          },
+          "toTime": {
+            "hours": 18
+          }
+        },
+        "dayOfTheWeekSpecificOpeningHours": [
+          {
+            "Key": "EC_DayOfTheWeek::Thursday",
+            "Value": {
+              "fromTime": {
+                "hours": 13,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 18,
+                "minutes": 0
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+]

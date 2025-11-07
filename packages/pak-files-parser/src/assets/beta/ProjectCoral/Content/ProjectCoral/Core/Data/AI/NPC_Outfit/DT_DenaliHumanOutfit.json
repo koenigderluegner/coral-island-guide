@@ -3,6 +3,7 @@
     "Type": "DataTable",
     "Name": "DT_DenaliHumanOutfit",
     "Class": "UScriptClass'DataTable'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
       "RowStruct": {
         "ObjectName": "ScriptStruct'C_NPCAppearances'",
@@ -12,6 +13,8 @@
     "Rows": {
       "Default": {
         "enabled": true,
+        "isHideOnUI": false,
+        "isUseOnPreFestival": false,
         "Appearances": {
           "DataTable": {
             "ObjectName": "DataTable'DT_NPCOutfitList'",
@@ -181,7 +184,8 @@
         "kawaiiPhysicsSetting": {
           "physicsSettingMap": [
             {
-              "BackHair": {
+              "Key": "BackHair",
+              "Value": {
                 "physicsSetting": {
                   "Damping": 0.08,
                   "WorldDampingLocation": 1.0,
@@ -199,7 +203,8 @@
               }
             },
             {
-              "DenaliSkirt": {
+              "Key": "DenaliSkirt",
+              "Value": {
                 "physicsSetting": {
                   "Damping": 0.1,
                   "WorldDampingLocation": 0.8,
@@ -221,6 +226,8 @@
       },
       "Summer": {
         "enabled": true,
+        "isHideOnUI": false,
+        "isUseOnPreFestival": false,
         "Appearances": {
           "DataTable": {
             "ObjectName": "DataTable'DT_NPCOutfitList'",
@@ -390,7 +397,8 @@
         "kawaiiPhysicsSetting": {
           "physicsSettingMap": [
             {
-              "BackHair": {
+              "Key": "BackHair",
+              "Value": {
                 "physicsSetting": {
                   "Damping": 0.08,
                   "WorldDampingLocation": 1.0,
@@ -408,7 +416,8 @@
               }
             },
             {
-              "DenaliSkirt": {
+              "Key": "DenaliSkirt",
+              "Value": {
                 "physicsSetting": {
                   "Damping": 0.1,
                   "WorldDampingLocation": 0.8,
@@ -430,6 +439,8 @@
       },
       "Fall": {
         "enabled": true,
+        "isHideOnUI": false,
+        "isUseOnPreFestival": false,
         "Appearances": {
           "DataTable": {
             "ObjectName": "DataTable'DT_NPCOutfitList'",
@@ -599,7 +610,8 @@
         "kawaiiPhysicsSetting": {
           "physicsSettingMap": [
             {
-              "BackHair": {
+              "Key": "BackHair",
+              "Value": {
                 "physicsSetting": {
                   "Damping": 0.08,
                   "WorldDampingLocation": 1.0,
@@ -621,6 +633,8 @@
       },
       "Winter": {
         "enabled": true,
+        "isHideOnUI": false,
+        "isUseOnPreFestival": false,
         "Appearances": {
           "DataTable": {
             "ObjectName": "DataTable'DT_NPCOutfitList'",
@@ -790,7 +804,8 @@
         "kawaiiPhysicsSetting": {
           "physicsSettingMap": [
             {
-              "BackHair": {
+              "Key": "BackHair",
+              "Value": {
                 "physicsSetting": {
                   "Damping": 0.08,
                   "WorldDampingLocation": 1.0,
@@ -812,6 +827,8 @@
       },
       "BathingSuit": {
         "enabled": true,
+        "isHideOnUI": false,
+        "isUseOnPreFestival": false,
         "Appearances": {
           "DataTable": {
             "ObjectName": "DataTable'DT_NPCOutfitList'",
@@ -981,7 +998,8 @@
         "kawaiiPhysicsSetting": {
           "physicsSettingMap": [
             {
-              "BackHair": {
+              "Key": "BackHair",
+              "Value": {
                 "physicsSetting": {
                   "Damping": 0.095,
                   "WorldDampingLocation": 0.8,
@@ -999,7 +1017,8 @@
               }
             },
             {
-              "DenaliScarfWaist": {
+              "Key": "DenaliScarfWaist",
+              "Value": {
                 "physicsSetting": {
                   "Damping": 0.05,
                   "WorldDampingLocation": 0.8,
@@ -1012,6 +1031,200 @@
                   "X": 0.0,
                   "Y": 0.0,
                   "Z": -500.0
+                },
+                "kawaiiAlpha": 1.0
+              }
+            }
+          ]
+        }
+      },
+      "SpookyDay": {
+        "enabled": true,
+        "isHideOnUI": false,
+        "isUseOnPreFestival": true,
+        "Appearances": {
+          "DataTable": {
+            "ObjectName": "DataTable'DT_NPCOutfitList'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/DT_NPCOutfitList.0"
+          },
+          "RowName": "SpookyDay"
+        },
+        "images": [
+          {
+            "EmotionRow": {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_EmotionList'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
+              },
+              "RowName": "Normal"
+            },
+            "texture": {
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Denali/Portraits/Special/Spooky/Denali_Spooky_Default.Denali_Spooky_Default",
+              "SubPathString": ""
+            },
+            "downedTextureCached": null
+          },
+          {
+            "EmotionRow": {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_EmotionList'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
+              },
+              "RowName": "Annoyed"
+            },
+            "texture": {
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Denali/Portraits/Special/Spooky/Denali_Spooky_annoyed.Denali_Spooky_annoyed",
+              "SubPathString": ""
+            },
+            "downedTextureCached": null
+          },
+          {
+            "EmotionRow": {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_EmotionList'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
+              },
+              "RowName": "Blushing"
+            },
+            "texture": {
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Denali/Portraits/Special/Spooky/Denali_Spooky_blushing.Denali_Spooky_blushing",
+              "SubPathString": ""
+            },
+            "downedTextureCached": null
+          },
+          {
+            "EmotionRow": {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_EmotionList'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
+              },
+              "RowName": "Concerned"
+            },
+            "texture": {
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Denali/Portraits/Special/Spooky/Denali_Spooky_concerned.Denali_Spooky_concerned",
+              "SubPathString": ""
+            },
+            "downedTextureCached": null
+          },
+          {
+            "EmotionRow": {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_EmotionList'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
+              },
+              "RowName": "Happy"
+            },
+            "texture": {
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Denali/Portraits/Special/Spooky/Denali_Spooky_happy.Denali_Spooky_happy",
+              "SubPathString": ""
+            },
+            "downedTextureCached": null
+          },
+          {
+            "EmotionRow": {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_EmotionList'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
+              },
+              "RowName": "Angry"
+            },
+            "texture": {
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Denali/Portraits/Special/Spooky/Denali_Spooky_angry.Denali_Spooky_angry",
+              "SubPathString": ""
+            },
+            "downedTextureCached": null
+          },
+          {
+            "EmotionRow": {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_EmotionList'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
+              },
+              "RowName": "Sad"
+            },
+            "texture": {
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Denali/Portraits/Special/Spooky/Denali_Spooky_sad.Denali_Spooky_sad",
+              "SubPathString": ""
+            },
+            "downedTextureCached": null
+          },
+          {
+            "EmotionRow": {
+              "DataTable": {
+                "ObjectName": "DataTable'DT_EmotionList'",
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/AI/Dialogue/DT_EmotionList.0"
+              },
+              "RowName": "Surprised"
+            },
+            "texture": {
+              "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Denali/Portraits/Special/Spooky/Denali_Spooky_surprised.Denali_Spooky_surprised",
+              "SubPathString": ""
+            },
+            "downedTextureCached": null
+          }
+        ],
+        "SkeletalMeshes": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Denali/Optimized/SpookyOutfit/SK_DenaliSpookyOutfit.SK_DenaliSpookyOutfit",
+          "SubPathString": ""
+        },
+        "StaticMesh": {
+          "AssetPathName": "/Game/ProjectCoral/Characters/Human/NPC/Denali/Optimized/SpookyOutfit/SM_DenaliSpookyOutfit.SM_DenaliSpookyOutfit",
+          "SubPathString": ""
+        },
+        "dialogPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScale": 1.0,
+        "dialogPortraitPositionNewForm": {
+          "X": 15.0,
+          "Y": 285.0
+        },
+        "dialogPortraitScaleNewForm": 1.05,
+        "dialogPortraitPositionZoomed": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScaleZoomed": 0.5,
+        "dialogPortraitPositionForPortraitMode": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "dialogPortraitScaleForPortraitMode": 1.0,
+        "vfxPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "vfxPortraitPositionNewForm": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "vfxPortraitPositionZoomed": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "relationshipPortraitPosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "relationshipPortraitScale": 1.0,
+        "kawaiiPhysicsSetting": {
+          "physicsSettingMap": [
+            {
+              "Key": "BackHair",
+              "Value": {
+                "physicsSetting": {
+                  "Damping": 0.08,
+                  "WorldDampingLocation": 1.0,
+                  "WorldDampingRotation": 1.0,
+                  "Stiffness": 0.05,
+                  "Radius": 4.0,
+                  "LimitAngle": 0.0
+                },
+                "kawaiiGravity": {
+                  "X": 0.0,
+                  "Y": 0.0,
+                  "Z": -1000.0
                 },
                 "kawaiiAlpha": 1.0
               }

@@ -8,7 +8,7 @@
       "Sam"
     ],
     "stackable": true,
-    "inventoryCategory": "Animal product",
+    "inventoryCategory": "AnimalProduct",
     "displayKey": "AnimalProduct",
     "description": "Telur emas. Mengkilap.",
     "qualities": {
@@ -34,7 +34,8 @@
       "income.ranching",
       "item.animalproduct.egg",
       "Item.Consumable.Food",
-      "item.golden"
+      "item.golden",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -115,6 +116,34 @@
       },
       "genericInput": null,
       "machine": "MayoniseMachine"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_31023",
+          "displayName": "Telur emas",
+          "iconName": "Golden_egg_Sprite"
+        }
+      },
+      "output": {
+        "amount": 2,
+        "item": {
+          "id": "item_41293",
+          "displayName": "Telur asin",
+          "iconName": "Salted_Egg_Sprite",
+          "sellPrice": 75
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
     },
     {
       "useCategory": false,
@@ -201,7 +230,8 @@
         "iconName": "Mooncake_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -280,7 +310,8 @@
         "iconName": "Red_velvet_cake_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -371,7 +402,8 @@
         "iconName": "Pumpkin_Pie_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -458,7 +490,8 @@
         "iconName": "Chocolate_chip_muffins_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -537,7 +570,8 @@
         "iconName": "Kue_Kancing_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -616,7 +650,8 @@
         "iconName": "Omurice_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -699,7 +734,8 @@
         "iconName": "Fried_Rice_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -786,7 +822,8 @@
         "iconName": "Spring_Frittata_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -856,7 +893,8 @@
         "iconName": "Hash_browns_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -935,7 +973,8 @@
         "iconName": "Scrambled_Eggs_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -983,7 +1022,7 @@
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "Hidangan telur asli.",
+        "description": "Hidangan telur original.",
         "qualities": {
           "bronze": {
             "price": 69,
@@ -1005,7 +1044,8 @@
         "iconName": "Sunny-side-up_eggs_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -1034,6 +1074,87 @@
       "eitherOrIngredients": []
     },
     {
+      "key": "item_80087",
+      "amount": 1,
+      "cookingKey": "HardBoiledEgg",
+      "item": {
+        "id": "item_80087",
+        "displayName": "Telur rebus",
+        "price": 60,
+        "sellPrice": 25,
+        "sellAt": [],
+        "stackable": true,
+        "inventoryCategory": "Consumable",
+        "displayKey": "Consumable",
+        "description": "Telur rebus sederhana.",
+        "qualities": {
+          "bronze": {
+            "price": 69,
+            "sellPrice": 29
+          },
+          "silver": {
+            "price": 75,
+            "sellPrice": 31
+          },
+          "gold": {
+            "price": 90,
+            "sellPrice": 38
+          },
+          "osmium": {
+            "price": 120,
+            "sellPrice": 50
+          }
+        },
+        "iconName": "Hard-boiled_egg_Sprite",
+        "tags": [
+          "income.other",
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
+        ]
+      },
+      "utensils": [
+        "Pot"
+      ],
+      "genericIngredients": [],
+      "ingredients": [],
+      "eitherOrIngredients": [
+        [
+          {
+            "item": {
+              "id": "item_31002",
+              "displayName": "Telur",
+              "iconName": "Egg_Sprite_"
+            },
+            "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_31012",
+              "displayName": "Telur besar",
+              "iconName": "Large_egg_Sprite_"
+            },
+            "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_31023",
+              "displayName": "Telur emas",
+              "iconName": "Golden_egg_Sprite"
+            },
+            "amount": 1
+          },
+          {
+            "item": {
+              "id": "item_31021",
+              "displayName": "Telur emas besar",
+              "iconName": "Large_golden_egg_Sprite"
+            },
+            "amount": 1
+          }
+        ]
+      ]
+    },
+    {
       "key": "item_80088",
       "amount": 1,
       "cookingKey": "StoneSoup",
@@ -1046,7 +1167,7 @@
         "stackable": true,
         "inventoryCategory": "Consumable",
         "displayKey": "Consumable",
-        "description": "Tidak terlihat bisa dimakan. Mengkonsumsi risiko Anda sendiri.",
+        "description": "Tidak terlihat bisa dimakan. Risiko tanggung sendiri.",
         "qualities": {
           "bronze": {
             "price": 58,
@@ -1068,7 +1189,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -1116,21 +1238,6 @@
             "id": "item_41181",
             "displayName": "Yogurt kambing besar",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "Cangkang kerang",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "Kerang cockle",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "Skalop api",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -1170,7 +1277,8 @@
         "iconName": "Egg_Custard_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1360,7 +1468,8 @@
         "qualities": {},
         "iconName": "Increase_aggro_scent_Sprite",
         "tags": [
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       }
     },

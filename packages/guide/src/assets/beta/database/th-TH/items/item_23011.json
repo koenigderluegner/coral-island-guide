@@ -35,7 +35,8 @@
       "item.crop.fall",
       "item.townrank.1",
       "item.fruit",
-      "Item.Consumable.Food"
+      "Item.Consumable.Food",
+      "item.cooking.ingredient"
     ]
   },
   "artisanResult": [
@@ -683,11 +684,6 @@
               "iconName": "Cotton_Sprite"
             },
             {
-              "id": "item_24003",
-              "displayName": "อัลมอนด์",
-              "iconName": "Almond_Sprite"
-            },
-            {
               "id": "item_24004",
               "displayName": "Avocado",
               "iconName": "Avocado_Sprite"
@@ -729,7 +725,7 @@
             },
             {
               "id": "item_50207",
-              "displayName": "หอยเชลล์เผา",
+              "displayName": "หอยเชลล์เปลวไฟ",
               "iconName": "Flame_Scallop_Sprite"
             },
             {
@@ -1184,7 +1180,7 @@
             },
             {
               "id": "item_72020",
-              "displayName": "ปลาเทวดา",
+              "displayName": "ปลาสินสมุทร",
               "iconName": "Angelfish_Sprite"
             },
             {
@@ -1617,6 +1613,34 @@
       "useCategory": false,
       "day": 0,
       "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "additionalInput": [],
+      "input": {
+        "amount": 1,
+        "item": {
+          "id": "item_23011",
+          "displayName": "ฟักทอง",
+          "iconName": "Pumpkin_Sprite"
+        }
+      },
+      "output": {
+        "amount": 1,
+        "item": {
+          "id": "item_41421",
+          "displayName": "ฟักทองดอง",
+          "iconName": "Yellow_Pickles_Sprite",
+          "sellPrice": 190
+        }
+      },
+      "genericInput": null,
+      "machine": "PreserveJar"
+    },
+    {
+      "useCategory": false,
+      "day": 0,
+      "time": {
         "hours": 0,
         "minutes": 0
       },
@@ -1735,7 +1759,8 @@
         "iconName": "Fruit_Tart_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1822,7 +1847,8 @@
         "iconName": "Pumpkin_Pie_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1909,7 +1935,8 @@
         "iconName": "Smoothie_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Drink"
+          "Item.Consumable.Drink",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -1967,7 +1994,8 @@
         "iconName": "Pancakes_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2046,7 +2074,8 @@
         "iconName": "Stone_Soup_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "craftingUnlock": {
@@ -2094,21 +2123,6 @@
             "id": "item_41181",
             "displayName": "โยเกิร์ตนมแพะขวดใหญ่",
             "iconName": "Large_Goat_Yoghurt_Sprite"
-          },
-          {
-            "id": "item_50201",
-            "displayName": "เปลือกหอยตลับ",
-            "iconName": "Clam_shell_Sprite"
-          },
-          {
-            "id": "item_50203",
-            "displayName": "หอยแครง",
-            "iconName": "Cockle_Sprite"
-          },
-          {
-            "id": "item_50207",
-            "displayName": "หอยเชลล์เผา",
-            "iconName": "Flame_Scallop_Sprite"
           }
         ]
       }
@@ -2148,7 +2162,8 @@
         "iconName": "Puree_Sprite",
         "tags": [
           "income.other",
-          "Item.Consumable.Food"
+          "Item.Consumable.Food",
+          "item.cooking.ingredient"
         ]
       },
       "utensils": [
@@ -2285,6 +2300,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Temple",
           "requiredItems": [
             {
               "item": {
@@ -2334,7 +2350,7 @@
           ]
         }
       ],
-      "isHeritageOffering": false
+      "offeringType": "Temple"
     }
   ],
   "consumables": {
@@ -2422,7 +2438,7 @@
         {
           "item": {
             "id": "item_50207",
-            "displayName": "หอยเชลล์เผา",
+            "displayName": "หอยเชลล์เปลวไฟ",
             "iconName": "Flame_Scallop_Sprite"
           },
           "amount": 1

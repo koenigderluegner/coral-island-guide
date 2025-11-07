@@ -1,0 +1,111 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Princess_cow_suit_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -1.5,
+              "Y": 0.0,
+              "Z": 1.5
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 89.0,
+            "Y": 10.0,
+            "Z": 125.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "DEB48D01490D22F930274A90D37488EF"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Princess_cow_suit_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 128.0,
+        "Y": 128.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Princess_cow_suit'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Outfits_accessories/Outfit/Texture/Princess_cow_suit.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Princess_cow_suit_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Outfits_accessories/Outfit/Princess_cow_suit_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 43.0,
+          "Y": 64.0,
+          "Z": 0.8359375,
+          "W": 0.0
+        },
+        {
+          "X": -46.0,
+          "Y": 64.0,
+          "Z": 0.140625,
+          "W": 0.0
+        },
+        {
+          "X": -46.0,
+          "Y": -61.0,
+          "Z": 0.140625,
+          "W": 0.9765625
+        },
+        {
+          "X": 43.0,
+          "Y": -61.0,
+          "Z": 0.8359375,
+          "W": 0.9765625
+        },
+        {
+          "X": 43.0,
+          "Y": 64.0,
+          "Z": 0.8359375,
+          "W": 0.0
+        },
+        {
+          "X": -46.0,
+          "Y": -61.0,
+          "Z": 0.140625,
+          "W": 0.9765625
+        }
+      ]
+    }
+  }
+]

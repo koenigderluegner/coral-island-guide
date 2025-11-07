@@ -10,11 +10,14 @@
     "stackable": true,
     "inventoryCategory": "Fossil",
     "displayKey": "Fossil",
-    "description": "Pendiente",
+    "description": "Proyecta el holograma del velocirraptor cuando se completa.",
     "qualities": {},
     "iconName": "Velociraptor_prints_Sprite",
     "tags": [
-      "item.DinoPrint"
+      "income.mining",
+      "item.DinoPrint",
+      "EnhancementRarity.Uncommon",
+      "item.fossil"
     ]
   },
   "artisanResult": [
@@ -80,10 +83,74 @@
   "requiredAsOffering": [
     {
       "key": "HeritageBased",
-      "offeringGroupTitle": "Guardian Altar",
+      "offeringGroupTitle": "Altar del Guardián",
       "urlPath": "guardianaltar",
-      "offeringGroupRewardText": "Mural del guardián",
+      "offeringGroupRewardText": "Mural del Guardián",
       "offerings": [
+        {
+          "title": "MasterSlime",
+          "imageName": "T_Art_OfferingSlime",
+          "numOfItemRequired": 5,
+          "rewards": {
+            "items": [
+              {
+                "item": {
+                  "id": "item_120550",
+                  "displayName": "Atuendo de limo maestro",
+                  "iconName": "Master_Slime_Outfit_Sprite"
+                },
+                "amount": 1
+              }
+            ],
+            "recipes": []
+          },
+          "offeringType": "Heritage",
+          "requiredItems": [
+            {
+              "item": {
+                "key": "Any_Artifact",
+                "displayName": "Cualquier artefacto",
+                "iconName": "T_Mastery_Artifact"
+              },
+              "amount": 4
+            },
+            {
+              "item": {
+                "key": "Any_Fossil",
+                "displayName": "Cualquier fósil",
+                "iconName": "Brontosaurus_Fossil_Bone_02"
+              },
+              "amount": 4
+            },
+            {
+              "item": {
+                "id": "item_120442",
+                "displayName": "Mochila plegable",
+                "iconName": "Plop_backpack_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_120360",
+                "displayName": "Anillo de coleccionista",
+                "iconName": "Hoarder_Ring_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            },
+            {
+              "item": {
+                "id": "item_65527",
+                "displayName": "Ordenador robusto",
+                "iconName": "Sturdy_Computer_Sprite"
+              },
+              "amount": 1,
+              "quality": "base"
+            }
+          ]
+        },
         {
           "title": "Dama Lavanna",
           "imageName": "T_Art_OfferingSavanna",
@@ -101,6 +168,7 @@
             ],
             "recipes": []
           },
+          "offeringType": "Heritage",
           "requiredItems": [
             {
               "item": {
@@ -141,7 +209,7 @@
             {
               "item": {
                 "key": "Any_DinoPrint",
-                "displayName": "Any Dino Print",
+                "displayName": "Cualquier huella de dinosaurio",
                 "iconName": "Any_Dino_Prints_Sprite"
               },
               "amount": 5
@@ -149,7 +217,8 @@
           ]
         }
       ],
-      "isHeritageOffering": true
+      "offeringType": "Heritage"
     }
-  ]
+  ],
+  "enchantmentPoints": 35
 }
