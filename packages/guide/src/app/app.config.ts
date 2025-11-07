@@ -8,7 +8,6 @@ import {
     withRouterConfig,
 } from '@angular/router';
 import { appRoutes } from './app.routes';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldDefaultOptions } from '@angular/material/form-field';
 import { provideMarkdown } from 'ngx-markdown';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -38,12 +37,12 @@ export const appConfig: ApplicationConfig = {
             withEnabledBlockingInitialNavigation(),
             withRouterConfig(routerOptions)
         ),
-        provideAnimationsAsync(),
         provideMarkdown(),
         {
             provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
             useValue: {appearance: 'outline', hideRequiredMarker: false} satisfies MatFormFieldDefaultOptions,
         },
+        {provide: BETA_CODE, useValue: 'Grappling6Snub6Enlighten2Endowment3Sly4'},
         provideAppInitializer(() => {
             const initializerFn = ((BETA_CODE: string | null, settingsService: SettingsService) => {
                 if (!BETA_CODE) {
