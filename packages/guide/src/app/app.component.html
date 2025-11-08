@@ -1,10 +1,6 @@
 <app-header class="flex-grow-0 flex-shrink-0"/>
 <main>
-    @if (prefetchData$ | async; as data) {
-        <router-outlet></router-outlet>
-    } @else {
-        <mat-spinner class="text-white mx-auto my-5"></mat-spinner>
-    }
+    <router-outlet></router-outlet>
 </main>
 <app-footer class="flex-grow-0 flex-shrink-0"/>
 

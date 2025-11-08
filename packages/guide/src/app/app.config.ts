@@ -4,7 +4,6 @@ import {
     provideRouter,
     TitleStrategy,
     withComponentInputBinding,
-    withEnabledBlockingInitialNavigation,
     withRouterConfig,
 } from '@angular/router';
 import { appRoutes } from './app.routes';
@@ -37,7 +36,6 @@ export const appConfig: ApplicationConfig = {
         provideRouter(
             appRoutes,
             withComponentInputBinding(),
-            withEnabledBlockingInitialNavigation(),
             withRouterConfig(routerOptions)
         ),
         provideMarkdown(),
