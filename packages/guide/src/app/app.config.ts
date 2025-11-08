@@ -18,12 +18,12 @@ import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
 import { MAT_TABS_CONFIG, MatTabsConfig } from '@angular/material/tabs';
 import { PageTitleService } from './shared/services/page-title.service';
 import { provideGameVersion } from './core/injection-tokens/version.injection-token';
-import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { assetVersionInterceptor } from './core/interceptors/asset-version.interceptor';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-import { provideTranslateCompiler, provideTranslateService } from "@ngx-translate/core";
-import { provideTranslateHttpLoader } from "@ngx-translate/http-loader";
+import { provideTranslateCompiler, provideTranslateService, TranslateLoader } from "@ngx-translate/core";
 import { TranslateMessageFormatCompiler } from "ngx-translate-messageformat-compiler";
+import { TranslationLoaderService } from "./shared/services/translation-loader.service";
 
 const routerOptions: ExtraOptions = {
     scrollPositionRestoration: 'disabled',
@@ -61,10 +61,11 @@ export const appConfig: ApplicationConfig = {
         provideHttpClient(withInterceptors([assetVersionInterceptor]), withFetch()),
         provideHttpClient(),
         provideTranslateService({
-            loader: provideTranslateHttpLoader({
-                prefix: '/assets/live/database/i18n/',
-                suffix: '.json'
-            }),
+            loader: {
+                provide: TranslateLoader,
+                useClass: TranslationLoaderService,
+                deps: [HttpClient, SettingsService],
+            },
             compiler: provideTranslateCompiler(TranslateMessageFormatCompiler),
             fallbackLang: 'en',
             lang: 'en'
