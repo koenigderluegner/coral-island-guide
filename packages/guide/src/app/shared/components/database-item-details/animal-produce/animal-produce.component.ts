@@ -4,10 +4,11 @@ import { DatabaseItem } from "@ci/data-types";
 import { AddSpacesToPascalCasePipe } from "../../../pipes/add-spaces-to-pascal-case.pipe";
 import { ItemIconComponent } from "../../item-icon/item-icon.component";
 import { IsMinimalItemPipe } from "../../../pipes/is-minimal-item.pipe";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-animal-produce',
-    imports: [CommonModule, AddSpacesToPascalCasePipe, ItemIconComponent, IsMinimalItemPipe],
+    imports: [CommonModule, AddSpacesToPascalCasePipe, ItemIconComponent, IsMinimalItemPipe, TranslatePipe],
     templateUrl: './animal-produce.component.html'
 })
 export class AnimalProduceComponent {

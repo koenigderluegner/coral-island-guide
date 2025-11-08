@@ -8,6 +8,7 @@ import { MoneyComponent } from "../../../../shared/components/money/money.compon
 import { MatSort, MatSortHeader } from "@angular/material/sort";
 import { ItemIconComponent } from "../../../../shared/components/item-icon/item-icon.component";
 import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-inventory-table',
@@ -21,7 +22,8 @@ import { ResponsiveTableComponent } from "../../../../shared/components/responsi
         ItemIconComponent,
         MatSort,
         ResponsiveTableComponent,
-        MatTableModule
+        MatTableModule,
+        TranslatePipe
     ]
 })
 export class InventoryTableComponent extends BaseTableComponent<CraftingRecipe> {

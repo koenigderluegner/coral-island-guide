@@ -6,6 +6,7 @@ import { MatTableModule } from "@angular/material/table";
 import { ItemIconComponent } from "../../../../shared/components/item-icon/item-icon.component";
 import { ChancePerItemTableListComponent } from "../../../../shared/components/chance-per-item-table-list/chance-per-item-table-list.component";
 import { MatSort, MatSortHeader } from "@angular/material/sort";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-bestiary-table',
@@ -17,7 +18,8 @@ import { MatSort, MatSortHeader } from "@angular/material/sort";
         ChancePerItemTableListComponent,
         MatSort,
         MatSortHeader,
-        MatTableModule
+        MatTableModule,
+        TranslatePipe
     ]
 })
 export class BestiaryTableComponent extends BaseTableComponent<Enemy> {

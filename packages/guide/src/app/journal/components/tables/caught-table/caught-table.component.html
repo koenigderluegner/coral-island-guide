@@ -9,7 +9,7 @@
 
             <ng-container matColumnDef="key">
                 <th *matHeaderCellDef [attr.colspan]="2" mat-header-cell mat-sort-header> Name</th>
-                <td mat-cell *matCellDef="let element">{{ element.item.displayName }}</td>
+                <td mat-cell *matCellDef="let element">{{ element.item.displayName  | translate }}</td>
             </ng-container>
 
             <ng-container matColumnDef="rarity">

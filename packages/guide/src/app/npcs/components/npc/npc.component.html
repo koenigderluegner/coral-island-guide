@@ -14,11 +14,11 @@
                 <app-item-icon class="h-16 mr-3"
                                [itemName]="npc.iconName"/>
                 <div class="flex flex-col">
-                    <div class="flex gap-2 items-center"> {{ npc.characterName }}
+                    <div class="flex gap-2 items-center"> {{ npc.characterName | translate | addSpacesToPascalCase }}
                         @if (npc.isDateable) {
                             <app-ui-icon
                                     [uiIcon]="uiIcon.LOVE" class="!text-gifting !h-6 !w-6"
-                                    matTooltip="{{npc.characterName}} is dateable"/>
+                                    matTooltip="{{npc.characterName | translate | addSpacesToPascalCase }} is dateable"/>
                         }
                     </div>
                     @if (npc.birthday) {
@@ -33,7 +33,7 @@
 
             </div>
             @if (npc.description) {
-                <p class="mt-2">{{ npc.description }}</p>
+                <p class="mt-2">{{ npc.description | translate }}</p>
             }
         </app-card>
 
@@ -47,7 +47,7 @@
             }
             @if (!giftingPreferences) {
                 <p class="text-black text-lg">
-                    {{ npc.characterName }} has no specialized preferences.
+                    {{ npc.characterName | translate | addSpacesToPascalCase }} has no specialized preferences.
                 </p>
             }
         </app-card>
@@ -61,7 +61,7 @@
             }
             @if (!heartEvents.length) {
                 <p class="text-black text-lg">
-                    {{ npc.characterName }} has no heart events.
+                    {{ npc.characterName | translate | addSpacesToPascalCase }} has no heart events.
                 </p>
             }
         </app-card>
@@ -107,7 +107,7 @@
 
                     @if (!appearancePairs.length) {
                         <p class="text-black text-lg">
-                            {{ npc.characterName }} has no appearances.
+                            {{ npc.characterName | translate }} has no appearances.
                         </p>
                     }
 

@@ -10,6 +10,7 @@ import { ItemListComponent } from "../../item-list/item-list.component";
 import { ItemProcessingIngredientsPipe } from "../../../pipes/item-processing-ingredients.pipe";
 import { ProcessingTimeComponent } from "../../processing-time/processing-time.component";
 import { ItemIconComponent } from "../../item-icon/item-icon.component";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-processing',
@@ -22,7 +23,8 @@ import { ItemIconComponent } from "../../item-icon/item-icon.component";
         ItemListComponent,
         ItemProcessingIngredientsPipe,
         ProcessingTimeComponent,
-        ItemIconComponent
+        ItemIconComponent,
+        TranslatePipe
     ],
     templateUrl: './processing.component.html'
 })

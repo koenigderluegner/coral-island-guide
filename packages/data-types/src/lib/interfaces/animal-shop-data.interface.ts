@@ -1,4 +1,5 @@
 import { RequirementEntry } from '../types/requirement-entry.type';
+import { TranslationKey } from "../types/translation-key";
 
 export interface AnimalShopData {
     key: string;
@@ -9,9 +10,9 @@ export interface AnimalShopData {
     itemLimit: number,
     animalKey: string | null,
     isAdult: boolean,
-    description: string | null,
-    readableCategory: string | null,
-    readableRequirement: string | null,
-    readableName: string | null,
+    description: TranslationKey | null,
+    readableCategory: TranslationKey | null,
+    readableRequirement: TranslationKey | null,
+    readableName: TranslationKey | null,
     requirements?: RequirementEntry
 }

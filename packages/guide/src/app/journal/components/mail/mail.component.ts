@@ -1,15 +1,19 @@
 import { Component, computed, input } from '@angular/core';
 import { MailData } from "@ci/data-types";
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-    selector: 'app-mail',
-    templateUrl: './mail.component.html',
-    styles: [`
-        :host {
-            display: block;
-        }
-    `],
+  selector: 'app-mail',
+  templateUrl: './mail.component.html',
+  styles: [`
+    :host {
+      display: block;
+    }
+  `],
 
+  imports: [
+    TranslatePipe
+  ]
 })
 export class MailComponent {
 

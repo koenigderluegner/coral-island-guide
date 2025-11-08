@@ -1,6 +1,8 @@
+import { TranslationKey } from "../types/translation-key";
+
 export interface SpecialItem {
     id: string;
-    displayName: string;
-    description: string;
+    displayName: TranslationKey;
+    description: TranslationKey;
     iconName: string | null;
 }

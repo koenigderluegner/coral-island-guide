@@ -1,6 +1,8 @@
+import { TranslationKey } from "../types/translation-key";
+
 export interface Festival {
     eventId: string;
-    displayName: string;
+    displayName: TranslationKey;
     iconName: string;
     image: string;
 }

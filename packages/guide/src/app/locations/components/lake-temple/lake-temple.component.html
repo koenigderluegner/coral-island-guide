@@ -9,7 +9,7 @@
     @if (offerings$ | async; as offeringAltars) {
         <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex()">
             @for (offeringAltar of offeringAltars; track offeringAltar) {
-                <mat-tab label="{{offeringAltar.offeringGroupTitle | addSpacesToPascalCase}}">
+                <mat-tab label="{{offeringAltar.offeringGroupTitle | translate | addSpacesToPascalCase}}">
                     <app-offering-group (selected)="showDetails($event)" [offeringAltar]="offeringAltar"
                                         [selectedEntity]="selectedEntity"/>
 

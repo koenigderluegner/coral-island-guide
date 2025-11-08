@@ -1,16 +1,15 @@
 import { readAsset } from "./functions";
 import { RawStringTable } from "../interfaces/raw-data-interfaces/raw-string-table.interface";
 import { SourceString } from "../types/source-string.type";
-import { AvailableLanguage, AvailableLanguages } from "@ci/data-types";
+import { AvailableLanguage, AvailableLanguages, TranslationKey } from "@ci/data-types";
 
 export class StringTable {
 
-    static defaultLang: AvailableLanguage = 'en';
     private static readonly cachedStringTables: Map<string, RawStringTable> = new Map<string, RawStringTable>()
     private static readonly cachedLocalizationFiles: Map<string, Record<string, Record<string, string>>> = new Map<string, Record<string, Record<string, string>>>()
      static translations: Record<string, Record<string, string>> = {};
 
-    public static getString(ref: SourceString, lang?: AvailableLanguage): string | null {
+    public static getString(ref: SourceString, lang?: AvailableLanguage): TranslationKey | null {
 
 
         AvailableLanguages.forEach(l => {

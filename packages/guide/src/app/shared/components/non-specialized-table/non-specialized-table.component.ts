@@ -6,6 +6,7 @@ import { MatTableModule } from "@angular/material/table";
 import { ResponsiveTableComponent } from "../responsive-table/responsive-table.component";
 import { MatSort, MatSortHeader } from "@angular/material/sort";
 import { MoneyComponent } from "../money/money.component";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-non-specialized-table',
@@ -17,7 +18,8 @@ import { MoneyComponent } from "../money/money.component";
         MatSort,
         MoneyComponent,
         MatTableModule,
-        MatSortHeader
+        MatSortHeader,
+        TranslatePipe
     ]
 })
 export class NonSpecializedTableComponent extends BaseTableComponent<Item> {

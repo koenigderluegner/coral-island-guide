@@ -41,11 +41,13 @@ export class OfferingsDbGenerator extends BaseGenerator<RawOfferingAltar, Offeri
             })
             .filter(nonNullable)
 
+const key= StringTable.getString(dbItem.offeringGroupTitle, "en") ?? ''
+
 
         return {
             key: itemKey,
             offeringGroupTitle: StringTable.getString(dbItem.offeringGroupTitle) ?? '',
-            urlPath: (StringTable.getString(dbItem.offeringGroupTitle, "en") ?? '').toLowerCase().replaceAll(' ', ''),
+            urlPath: (StringTable.translations['en'][key] ?? '').toLowerCase().replaceAll(' ', ''),
             offeringGroupRewardText: StringTable.getString(dbItem.offeringGroupRewardText) ?? '',
             offerings,
             isHeritageOffering: dbItem.isHeritageOffering,

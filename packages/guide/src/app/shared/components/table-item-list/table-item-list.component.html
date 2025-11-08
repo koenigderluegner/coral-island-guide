@@ -6,7 +6,7 @@
             @if (itemListItem.item) {
                 <div class="flex gap-2 items-center">
                     <app-item-icon [itemName]="itemListItem.item.iconName" class="!size-7"/>
-                    <span class="ml-1 whitespace-nowrap">{{ itemListItem.item.displayName }}</span>
+                    <span class="ml-1 whitespace-nowrap">{{ itemListItem.item.displayName | translate }}</span>
                     @if (itemListItem.quality) {
                         <app-rarity-icon [quality]="itemListItem.quality" class="!size-4"/>
                     }
@@ -19,7 +19,7 @@
             @if (itemListItem.genericItem) {
                 <div class="flex gap-x-3 items-center">
                     <app-item-icon [itemName]="itemListItem.genericItem.iconName" class="!size-7"/>
-                    <span class="whitespace-nowrap">{{ itemListItem.genericItem.displayName }}
+                    <span class="whitespace-nowrap">{{ itemListItem.genericItem.displayName | translate }}
                         @if (itemListItem.shouldBeSameItem) {
                             (all the same)
                         }

@@ -7,20 +7,22 @@ import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.comp
 import { CardComponent } from "../../../shared/components/card/card.component";
 import { ChancePerItemListComponent } from "../../../shared/components/chance-per-item-list/chance-per-item-list.component";
 import { MatTooltip } from "@angular/material/tooltip";
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-bestiary-details',
     templateUrl: './bestiary-details.component.html',
     encapsulation: ViewEncapsulation.Emulated,
 
-    imports: [
-        FullSizeImageComponent,
-        ItemIconComponent,
-        UiIconComponent,
-        CardComponent,
-        ChancePerItemListComponent,
-        MatTooltip
-    ]
+  imports: [
+    FullSizeImageComponent,
+    ItemIconComponent,
+    UiIconComponent,
+    CardComponent,
+    ChancePerItemListComponent,
+    MatTooltip,
+    TranslatePipe
+  ]
 })
 export class BestiaryDetailsComponent {
     enemy = input.required<Enemy>()

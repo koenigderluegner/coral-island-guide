@@ -6,7 +6,7 @@
         <span class="text-black">
                <app-item-icon [itemName]="animal().variants[0].icons.adult"
                               class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
-            {{ animal().displayName }}
+            {{ animal().displayName | translate }}
             </span>
     </div>
 }
@@ -29,7 +29,7 @@
             <span class="text-black">
                <app-item-icon [itemName]="harvestTool.iconName"
                               class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
-                {{ harvestTool.displayName }}
+                {{ harvestTool.displayName | translate }}
             </span>
         </div>
     }
@@ -50,7 +50,7 @@
                             {{ keValuePair.key | addSpacesToPascalCase | titlecase }}:
                             <app-item-icon [itemName]="keValuePair.value.iconName"
                                            class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
-                            {{ keValuePair.value.displayName }}
+                            {{ keValuePair.value.displayName | translate }}
                         </div>
                     }
                 }

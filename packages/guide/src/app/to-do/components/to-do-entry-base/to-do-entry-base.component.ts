@@ -8,6 +8,7 @@ import { ToDoContext } from "../../../core/types/to-do-context.type";
 import { ItemEntry } from "../../../shared/types/item-entry.type";
 import { RarityIconComponent } from "../../../shared/components/rarity-icon/rarity-icon.component";
 import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-to-do-entry-base',
@@ -16,7 +17,8 @@ import { ItemIconComponent } from "../../../shared/components/item-icon/item-ico
     imports: [
         MatCheckbox,
         RarityIconComponent,
-        ItemIconComponent
+        ItemIconComponent,
+        TranslatePipe
     ],
 
     host: {

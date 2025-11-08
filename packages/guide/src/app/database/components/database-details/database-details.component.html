@@ -5,7 +5,7 @@
             <header class="flex items-center flex-wrap mb-5">
                 <app-item-icon [itemName]="databaseItem.item.iconName" class="mr-3 w-14"/>
                 <div class="flex flex-col gap-0.5">
-                    <h2 class="!my-0 font-semibold text-xl text-black">{{ databaseItem.item.displayName }}</h2>
+                    <h2 class="!my-0 font-semibold text-xl text-black">{{ databaseItem.item.displayName | translate }}</h2>
                     <span>{{ databaseItem.item.id }}</span>
                 </div>
                 <div class="card-actions ml-4">
@@ -19,7 +19,7 @@
                 />
             </header>
 
-            <p class="text-lg">{{ databaseItem.item.description }}</p>
+            <p class="text-lg">{{ databaseItem.item.description | translate }}</p>
 
             <div class="empty-details text-black my-5 text-lg">There's currently no data for this item. :(</div>
 

@@ -1,6 +1,7 @@
 import { Component, input } from '@angular/core';
 import { GenericEntry, ItemEntry } from '@ci/data-types';
 import { ItemIconComponent } from "../item-icon/item-icon.component";
+import { TranslatePipe } from "@ngx-translate/core";
 
 
 @Component({
@@ -8,7 +9,8 @@ import { ItemIconComponent } from "../item-icon/item-icon.component";
     templateUrl: './item-list.component.html',
 
     imports: [
-        ItemIconComponent
+        ItemIconComponent,
+        TranslatePipe
     ]
 })
 export class ItemListComponent {

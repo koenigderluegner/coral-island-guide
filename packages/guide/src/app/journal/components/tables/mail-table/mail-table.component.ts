@@ -10,6 +10,7 @@ import { AddSpacesToPascalCasePipe } from "../../../../shared/pipes/add-spaces-t
 import { EffectComponent } from "../../../../shared/components/effect/effect.component";
 import { MatButton } from "@angular/material/button";
 import { MailComponent } from "../../mail/mail.component";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-mail-table',
@@ -30,7 +31,8 @@ import { MailComponent } from "../../mail/mail.component";
         EffectComponent,
         MatButton,
         MailComponent,
-        MatTableModule
+        MatTableModule,
+        TranslatePipe
     ]
 })
 export class MailTableComponent extends BaseTableComponent<MailData> {

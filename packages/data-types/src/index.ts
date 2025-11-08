@@ -123,6 +123,7 @@ export * from './lib/types/treasure-hunt.type';
 export * from './lib/types/weather.type';
 export * from './lib/types/item-mixing-recipe-data.type';
 export * from './lib/types/offering-type.type';
+export * from './lib/types/translation-key';
 
 export * from './lib/dashboard/critter-dashboard-entry.type';
 export * from './lib/dashboard/fish-dashboard-entry.type';

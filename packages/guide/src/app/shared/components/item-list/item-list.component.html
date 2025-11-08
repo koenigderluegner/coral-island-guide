@@ -6,7 +6,7 @@
             @if (itemListItem.item) {
                 <div class="flex gap-x-3 items-center">
                     <app-item-icon class="size-10" [itemName]="itemListItem.item.iconName"/>
-                    <span>{{ itemListItem.item.displayName }}</span>
+                    <span>{{ itemListItem.item.displayName | translate }}</span>
                 </div>
             }
 
@@ -16,7 +16,7 @@
             @if (itemListItem.genericItem) {
                 <div class="flex gap-x-3 items-center">
                     <app-item-icon class="w-10" [itemName]="itemListItem.genericItem.iconName"></app-item-icon>
-                    <span>{{ itemListItem.genericItem.displayName }}
+                    <span>{{ itemListItem.genericItem.displayName | translate }}
                         @if (itemListItem.shouldBeSameItem) {
                             (all the same)
                         }

@@ -11,6 +11,7 @@ import { TownrankPipe } from "../../../shared/pipes/townrank.pipe";
 import { KeyValuePipe, TitleCasePipe } from "@angular/common";
 import { IsMinimalItemPipe } from "../../../shared/pipes/is-minimal-item.pipe";
 import { RequirementsListComponent } from "../../../shared/components/requirements-list/requirements-list.component";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-animal-details',
@@ -26,7 +27,8 @@ import { RequirementsListComponent } from "../../../shared/components/requiremen
         KeyValuePipe,
         IsMinimalItemPipe,
         TitleCasePipe,
-        RequirementsListComponent
+        RequirementsListComponent,
+        TranslatePipe
     ]
 })
 export class AnimalDetailsComponent {

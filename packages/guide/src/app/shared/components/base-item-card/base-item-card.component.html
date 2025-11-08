@@ -10,9 +10,9 @@
         <app-item-icon [amount]="amount()" cardIcon itemName="{{fetchedItem.iconName}}"/>
         <div class="flex justify-between items-center">
             <div class="flex flex-col">
-                <div class="text-black text-2xl">{{ fetchedItem.displayName }}</div>
+                <div class="text-black text-2xl">{{ fetchedItem.displayName | translate }}</div>
                 @if (!(fetchedItem | isTagBasedItem)) {
-                    <span class="text-accent text-2xl">{{ fetchedItem.displayKey | addSpacesToPascalCase }}</span>
+                    <span class="text-accent text-2xl">{{ fetchedItem.displayKey | translate | addSpacesToPascalCase }}</span>
                 }
             </div>
             @if (!(fetchedItem | isTagBasedItem)) {
@@ -25,7 +25,7 @@
         </div>
         <hr class="my-5"/>
         @if (!(fetchedItem | isTagBasedItem)) {
-            <span class="text-lg mb-6">{{ fetchedItem.description }}</span>
+            <span class="text-lg mb-6">{{ fetchedItem.description | translate }}</span>
         }
 
         <ng-content></ng-content>
@@ -45,7 +45,7 @@
 
                 <div class="flex">
                     Sells for:
-                    @if (fetchedItem && (fetchedItem | has: 'sellPrice')) {
+                    @if (fetchedItem && ('sellPrice' in fetchedItem)) {
                         <app-money [amount]="fetchedItem.sellPrice" class="ml-2 text-black"/>
                     }
                 </div>

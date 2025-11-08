@@ -5,7 +5,7 @@
         @if (itemListItem.item) {
             <div class="flex gap-2 items-center">
                 <app-item-icon [itemName]="itemListItem.item.iconName" class="!w-7"/>
-                <span class="ml-1 whitespace-nowrap">{{ itemListItem.item.displayName }}&nbsp;x{{ itemListItem.amount }}</span>
+                <span class="ml-1 whitespace-nowrap">{{ itemListItem.item.displayName | translate }}&nbsp;x{{ itemListItem.amount }}</span>
             </div>
         }
 

@@ -16,6 +16,7 @@ import { EntityKeyPipe } from "../../../shared/pipes/entity-key.pipe";
 import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
 import { MatCheckbox } from "@angular/material/checkbox";
 import { AsyncPipe, NgOptimizedImage } from "@angular/common";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-offerings-checklist',
@@ -33,7 +34,8 @@ import { AsyncPipe, NgOptimizedImage } from "@angular/common";
         ItemIconComponent,
         MatCheckbox,
         NgOptimizedImage,
-        AsyncPipe
+        AsyncPipe,
+        TranslatePipe
     ]
 })
 export class OfferingsChecklistComponent extends BaseTabbedSelectableContainerComponent<MinimalItem | MinimalTagBasedItem> {

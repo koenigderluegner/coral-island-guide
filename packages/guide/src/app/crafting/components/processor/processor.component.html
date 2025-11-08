@@ -14,7 +14,7 @@
     <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex()">
         @for (machineName of machineNames; track machineName) {
             <mat-tab
-                    [label]="processorMapping[machineName.toLowerCase()] ? processorMapping[machineName.toLowerCase()].displayName : machineName |  addSpacesToPascalCase | titlecase">
+                    [label]="processorMapping[machineName.toLowerCase()] ? (processorMapping[machineName.toLowerCase()].displayName | translate) : machineName |  addSpacesToPascalCase | titlecase">
                 <app-data-filter [(showTable)]="showTable"/>
                 @if ((filteredData$(machineName) | async); as processorItems) {
 

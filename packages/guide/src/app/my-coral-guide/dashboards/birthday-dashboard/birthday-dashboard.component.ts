@@ -4,6 +4,7 @@ import { AddSpacesToPascalCasePipe } from "../../../shared/pipes/add-spaces-to-p
 import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
 import { RouterLink } from "@angular/router";
 import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-birthday-dashboard',
@@ -11,7 +12,8 @@ import { ItemIconComponent } from "../../../shared/components/item-icon/item-ico
         AddSpacesToPascalCasePipe,
         UiIconComponent,
         RouterLink,
-        ItemIconComponent
+        ItemIconComponent,
+        TranslatePipe
     ],
     templateUrl: './birthday-dashboard.component.html',
     styleUrl: './birthday-dashboard.component.scss',

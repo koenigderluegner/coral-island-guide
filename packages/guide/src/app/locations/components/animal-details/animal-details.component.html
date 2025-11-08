@@ -9,16 +9,16 @@
 
     <div class="flex justify-between items-center">
         <div class="flex flex-col">
-            <div class="text-black text-2xl">{{ mappedAnimalShopData().readableName }}</div>
+            <div class="text-black text-2xl">{{ mappedAnimalShopData().readableName |translate }}</div>
             @if (!mappedAnimalShopData().readableCategory) {
                 <span
-                        class="text-accent text-2xl">   {{ mappedAnimalShopData().readableCategory }}</span>
+                        class="text-accent text-2xl">   {{ mappedAnimalShopData().readableCategory |translate }}</span>
             }
         </div>
     </div>
     <hr class="my-5"/>
     @if (mappedAnimalShopData().description) {
-        <span class="text-lg mb-6">{{ mappedAnimalShopData().description }}</span>
+        <span class="text-lg mb-6">{{ mappedAnimalShopData().description |translate }}</span>
     }
 
     <div class="flex">Price:
@@ -77,7 +77,7 @@
                         <span class="text-black">
                <app-item-icon [itemName]="animal.itemHarvestTool.iconName"
                               class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
-                            {{ animal.itemHarvestTool.displayName }}
+                            {{ animal.itemHarvestTool.displayName  | translate }}
             </span>
                     </div>
                 }
@@ -97,7 +97,7 @@
                                     {{ keValuePair.key | addSpacesToPascalCase | titlecase }}:
                                     <app-item-icon [itemName]="keValuePair.value.iconName"
                                                    class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
-                                    {{ keValuePair.value.displayName }}
+                                    {{ keValuePair.value.displayName |translate }}
                                 </div>
                             }
 

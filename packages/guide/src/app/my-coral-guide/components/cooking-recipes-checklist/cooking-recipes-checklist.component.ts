@@ -10,6 +10,7 @@ import { AsyncPipe, KeyValuePipe, TitleCasePipe } from "@angular/common";
 import { MatCheckbox } from "@angular/material/checkbox";
 import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
 import { CookingRecipeComponent } from "../../../shared/components/database-item-details/cooking-recipe/cooking-recipe.component";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-cooking-recipes-checklist',
@@ -27,7 +28,8 @@ import { CookingRecipeComponent } from "../../../shared/components/database-item
         ItemIconComponent,
         AsyncPipe,
         KeyValuePipe,
-        CookingRecipeComponent
+        CookingRecipeComponent,
+        TranslatePipe
     ]
 })
 export class CookingRecipesChecklistComponent extends BaseItemChecklistComponent {

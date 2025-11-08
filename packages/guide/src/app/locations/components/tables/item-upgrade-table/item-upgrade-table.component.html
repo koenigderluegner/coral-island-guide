@@ -11,7 +11,7 @@
                 <th *matHeaderCellDef [attr.colspan]="2" class="backdrop-blur-xl" mat-header-cell mat-sort-header>Item
                 </th>
                 <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
-                    {{ element.item.displayName }}
+                    {{ element.item.displayName | translate }}
                 </td>
             </ng-container>
 
@@ -20,7 +20,7 @@
                 </th>
                 <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
                     <a [routerLink]="['/locations', element.shop.url]"
-                       class="underline">{{ element.shop.displayName }}</a>
+                       class="underline">{{ element.shop.displayName | translate }}</a>
                 </td>
             </ng-container>
 

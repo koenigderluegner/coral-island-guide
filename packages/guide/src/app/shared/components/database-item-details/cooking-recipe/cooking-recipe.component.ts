@@ -8,10 +8,11 @@ import { ItemIconComponent } from "../../item-icon/item-icon.component";
 import { ItemListComponent } from "../../item-list/item-list.component";
 import { CookingRecipeIngredientsPipe } from "../../../pipes/cooking-recipe-ingredients.pipe";
 import { CastToMinimalItemArrayPipe } from "../../../pipes/cast-to-minimal-item-array.pipe";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-cooking-recipe',
-    imports: [CommonModule, AddSpacesToPascalCasePipe, RouterLink, ItemIconComponent, ItemListComponent, CookingRecipeIngredientsPipe, CastToMinimalItemArrayPipe],
+    imports: [CommonModule, AddSpacesToPascalCasePipe, RouterLink, ItemIconComponent, ItemListComponent, CookingRecipeIngredientsPipe, CastToMinimalItemArrayPipe, TranslatePipe],
     templateUrl: './cooking-recipe.component.html'
 })
 export class CookingRecipeComponent {

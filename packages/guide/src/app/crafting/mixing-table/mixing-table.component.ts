@@ -10,6 +10,7 @@ import { CookingRecipeIngredientsPipe } from "../../shared/pipes/cooking-recipe-
 import { TableItemListComponent } from "../../shared/components/table-item-list/table-item-list.component";
 import { MoneyComponent } from "../../shared/components/money/money.component";
 import { CastToMinimalItemArrayPipe } from "../../shared/pipes/cast-to-minimal-item-array.pipe";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-mixing-table',
@@ -23,7 +24,8 @@ import { CastToMinimalItemArrayPipe } from "../../shared/pipes/cast-to-minimal-i
         TableItemListComponent,
         MoneyComponent,
         CastToMinimalItemArrayPipe,
-        MatTableModule
+        MatTableModule,
+        TranslatePipe
     ],
     templateUrl: './mixing-table.component.html'
 })

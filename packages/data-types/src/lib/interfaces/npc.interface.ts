@@ -1,9 +1,10 @@
 import { SpecificDate } from "./specific-date.interface";
+import { TranslationKey } from "../types/translation-key";
 
 export interface NPC {
     key: string;
-    characterName: string;
-    description: string;
+    characterName: TranslationKey;
+    description: TranslationKey;
     isDateable: boolean,
     canHaveRelationships: boolean,
     canReceiveGifts: boolean,

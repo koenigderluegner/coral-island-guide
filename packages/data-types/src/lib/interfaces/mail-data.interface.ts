@@ -1,12 +1,13 @@
 import { Effect } from "../types/effects/effect.type";
+import { TranslationKey } from "../types/translation-key";
 
 export interface MailData {
     key: string;
-    sender: string | null,
-    title: string | null,
-    content: string,
-    greetOpenMessage: string | null,
-    greetCloseMessage: string | null,
+    sender: TranslationKey | null,
+    title: TranslationKey | null,
+    content: TranslationKey,
+    greetOpenMessage: TranslationKey | null,
+    greetCloseMessage: TranslationKey | null,
     mailType: string | null
     tags: string[],
 

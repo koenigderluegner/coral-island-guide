@@ -3,6 +3,7 @@ import { Effect, MinimalItem, RemoveItemFromInventoryEffect } from "@ci/data-typ
 import { ItemIconComponent } from "../item-icon/item-icon.component";
 import { MoneyComponent } from "../money/money.component";
 import { RouterLink } from "@angular/router";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-effect',
@@ -11,7 +12,8 @@ import { RouterLink } from "@angular/router";
     imports: [
         ItemIconComponent,
         MoneyComponent,
-        RouterLink
+        RouterLink,
+        TranslatePipe
     ]
 })
 export class EffectComponent {

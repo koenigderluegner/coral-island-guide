@@ -8,6 +8,7 @@ import { MatSort, MatSortHeader } from "@angular/material/sort";
 import { ItemIconComponent } from "../../../../shared/components/item-icon/item-icon.component";
 import { IsFishPipe } from "../../../../shared/pipes/is-fish.pipe";
 import { AddSpacesToPascalCasePipe } from "../../../../shared/pipes/add-spaces-to-pascal-case.pipe";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-caught-table',
@@ -21,7 +22,8 @@ import { AddSpacesToPascalCasePipe } from "../../../../shared/pipes/add-spaces-t
         IsFishPipe,
         AddSpacesToPascalCasePipe,
         MatSortHeader,
-        MatTableModule
+        MatTableModule,
+        TranslatePipe
     ]
 })
 export class CaughtTableComponent extends BaseTableComponent<(Critter | Fish)> {

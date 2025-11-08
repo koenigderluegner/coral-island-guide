@@ -17,7 +17,7 @@
                             @if (npc.isDateable) {
                                 <app-ui-icon
                                         [uiIcon]="uiIcon.LOVE" class="!text-gifting !h-6 !w-6"
-                                        matTooltip="{{npc.characterName}} is dateable"/>
+                                        matTooltip="{{npc.characterName }} is dateable"/>
                             }
                         </div>
                         @if (npc.birthday) {
@@ -26,7 +26,7 @@
                                 {{ npc.birthday | ingameDate }}
                             </div>
                         }
-                        <div [ngClass]="{'line-clamp-2': !npc.customHead, 'line-clamp-1': npc.customHead}">{{ npc.description }}</div>
+                        <div [ngClass]="{'line-clamp-2': !npc.customHead, 'line-clamp-1': npc.customHead}">{{ npc.description | translate }}</div>
 
                         @if (npc.customHead) {
                             <div clasS="mt-auto">unofficial head portrait</div>

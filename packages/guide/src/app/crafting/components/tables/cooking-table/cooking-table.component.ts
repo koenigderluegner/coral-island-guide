@@ -13,6 +13,7 @@ import { CastToMinimalItemArrayPipe } from "../../../../shared/pipes/cast-to-min
 import { MoneyComponent } from "../../../../shared/components/money/money.component";
 import { RouterLink } from "@angular/router";
 import { AddSpacesToPascalCasePipe } from "../../../../shared/pipes/add-spaces-to-pascal-case.pipe";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-cooking-table',
@@ -31,7 +32,8 @@ import { AddSpacesToPascalCasePipe } from "../../../../shared/pipes/add-spaces-t
         AddSpacesToPascalCasePipe,
         TitleCasePipe,
         MatSortHeader,
-        MatTableModule
+        MatTableModule,
+        TranslatePipe
     ]
 })
 export class CookingTableComponent extends BaseTableComponent<CookingRecipe> {

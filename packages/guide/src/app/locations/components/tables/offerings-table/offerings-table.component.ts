@@ -6,6 +6,7 @@ import { MatTableModule } from "@angular/material/table";
 import { ItemIconComponent } from "../../../../shared/components/item-icon/item-icon.component";
 import { TableItemListComponent } from "../../../../shared/components/table-item-list/table-item-list.component";
 import { MatSort, MatSortHeader } from "@angular/material/sort";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-offerings-table',
@@ -17,7 +18,8 @@ import { MatSort, MatSortHeader } from "@angular/material/sort";
         ItemIconComponent,
         TableItemListComponent,
         MatSortHeader,
-        MatSort
+        MatSort,
+        TranslatePipe
     ]
 })
 export class OfferingsTableComponent extends BaseTableComponent<OfferingAltar> {

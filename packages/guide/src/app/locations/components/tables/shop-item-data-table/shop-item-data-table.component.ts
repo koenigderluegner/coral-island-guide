@@ -8,6 +8,7 @@ import { RouterLink } from "@angular/router";
 import { TownrankPipe } from "../../../../shared/pipes/townrank.pipe";
 import { MatSort, MatSortHeader } from "@angular/material/sort";
 import { MoneyComponent } from "../../../../shared/components/money/money.component";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-shop-item-data-table',
@@ -22,6 +23,7 @@ import { MoneyComponent } from "../../../../shared/components/money/money.compon
         MatSortHeader,
         MoneyComponent,
         MatSort,
+        TranslatePipe,
     ]
 })
 export class ShopItemDataTableComponent extends BaseTableComponent<ShopItemData & {

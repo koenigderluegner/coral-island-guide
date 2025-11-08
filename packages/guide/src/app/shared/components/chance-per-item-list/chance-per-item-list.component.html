@@ -4,7 +4,7 @@
         @if (itemListItem.item) {
             <div class="flex gap-x-3 items-center">
                 <app-item-icon [itemName]="itemListItem.item.iconName" class="size-10"/>
-                <span>{{ itemListItem.item.displayName }}</span>
+                <span>{{ itemListItem.item.displayName  | translate }}</span>
                 <span>x{{ itemListItem.amount }}</span>
             </div>
         }

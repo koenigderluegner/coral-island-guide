@@ -12,6 +12,7 @@ import { AddSpacesToPascalCasePipe } from "../../../shared/pipes/add-spaces-to-p
 import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
 import { ProcessorTableComponent } from "../tables/processor-table/processor-table.component";
 import { DatabaseItemDetailsDirective } from "../../../shared/directives/database-item-details.directive";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-processor',
@@ -29,7 +30,8 @@ import { DatabaseItemDetailsDirective } from "../../../shared/directives/databas
         TitleCasePipe,
         ItemIconComponent,
         ProcessorTableComponent,
-        DatabaseItemDetailsDirective
+        DatabaseItemDetailsDirective,
+        TranslatePipe
     ]
 })
 export class ProcessorComponent extends BaseTabbedSelectableContainerComponent<ItemProcessing> {

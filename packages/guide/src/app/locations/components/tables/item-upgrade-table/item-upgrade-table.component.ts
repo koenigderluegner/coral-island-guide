@@ -9,6 +9,7 @@ import { RouterLink } from "@angular/router";
 import { ItemIconComponent } from "../../../../shared/components/item-icon/item-icon.component";
 import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
 import { MatSort, MatSortHeader } from "@angular/material/sort";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-item-upgrade-table',
@@ -23,7 +24,8 @@ import { MatSort, MatSortHeader } from "@angular/material/sort";
         MatTableModule,
         ResponsiveTableComponent,
         MatSort,
-        MatSortHeader
+        MatSortHeader,
+        TranslatePipe
     ]
 })
 export class ItemUpgradeTableComponent extends BaseTableComponent<ItemUpgradeData & {

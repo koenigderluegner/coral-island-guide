@@ -23,6 +23,7 @@ import { ItemIconComponent } from "../../../shared/components/item-icon/item-ico
 import { CardComponent } from "../../../shared/components/card/card.component";
 import { AsyncPipe } from "@angular/common";
 import { MatProgressSpinner } from "@angular/material/progress-spinner";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-database-details',
@@ -50,7 +51,8 @@ import { MatProgressSpinner } from "@angular/material/progress-spinner";
         ItemIconComponent,
         CardComponent,
         AsyncPipe,
-        MatProgressSpinner
+        MatProgressSpinner,
+        TranslatePipe
     ],
 
     host: {

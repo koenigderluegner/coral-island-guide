@@ -18,7 +18,7 @@ import { KeyValuePipe } from "@angular/common";
 import { ToItemListEntriesPipe } from "../../pipes/to-item-list-entries.pipe";
 import { ItemListComponent } from "../item-list/item-list.component";
 import { MoneyComponent } from "../money/money.component";
-import { HasPipe } from "../../pipes/has.pipe";
+import { TranslatePipe } from "@ngx-translate/core";
 
 type ItemEntry = Item | MinimalItem | CustomEntry | MinimalTagBasedItem;
 
@@ -41,7 +41,7 @@ type ItemEntry = Item | MinimalItem | CustomEntry | MinimalTagBasedItem;
         ToItemListEntriesPipe,
         ItemListComponent,
         MoneyComponent,
-        HasPipe
+        TranslatePipe,
     ]
 })
 export class BaseItemCardComponent {

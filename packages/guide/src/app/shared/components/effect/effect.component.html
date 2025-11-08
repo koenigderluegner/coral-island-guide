@@ -13,21 +13,21 @@
 
     Adds {{ (eff.meta.quantity ?? 1) > 1 ? eff.meta.quantity + 'x ' : '' }}
     <app-item-icon [itemName]="eff.meta.item.iconName" class="!w-7 -my-1 translate-y-1 !inline-block"/>
-    {{ eff.meta.item.displayName }} to inventory
+    {{ eff.meta.item.displayName | translate }} to inventory
 
 }
 @if (eff.type === 'UnlockCraftingRecipe') {
     <div>
         Unlocks
         <app-item-icon [itemName]="eff.meta.item.iconName" class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
-        {{ eff.meta.item.displayName }} crafting recipe
+        {{ eff.meta.item.displayName | translate }} crafting recipe
     </div>
 }
 @if (eff.type === 'UnlockCookingRecipe') {
     <div>
         Unlocks
         <app-item-icon [itemName]="eff.meta.item.iconName" class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
-        {{ eff.meta.item.displayName }} cooking recipe
+        {{ eff.meta.item.displayName | translate }} cooking recipe
     </div>
 }
 @if (eff.type === 'UnlockCookingUtensil') {
@@ -58,12 +58,12 @@
 
             <app-item-icon [itemName]="eff.meta.item.iconName"
                            class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
-            {{ eff.meta.item.displayName }}
+            {{ eff.meta.item.displayName | translate }}
 
         }
         @if (!hasMinimalItem(eff.meta)) {
 
-            items of category {{ eff.meta.category }}
+            items of category {{ eff.meta.category | translate }}
 
         }
 

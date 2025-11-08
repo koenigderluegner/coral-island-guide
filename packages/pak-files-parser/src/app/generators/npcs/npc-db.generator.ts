@@ -371,8 +371,7 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
             canInteract: dbItem.canInteract,
             canReceiveGifts: dbItem.canReceiveGifts,
             isDateable: dbItem.isDateable,
-            // TODO get name from translation file
-            characterName: addSpacesToPascalCase(StringTable.getString(dbItem.CharacterName) ?? ''),
+            characterName: StringTable.getString(dbItem.CharacterName) ?? '',
             characterCategory: getEnumValue(dbItem.CharacterCategory),
             description: StringTable.getString(dbItem.Description) ?? '',
             iconName: convertToIconName(objectName).replace('.png', ''),

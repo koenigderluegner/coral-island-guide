@@ -1,13 +1,15 @@
+import { TranslationKey } from "../types/translation-key";
+
 export interface Item {
     id: string;
-    displayName: string;
+    displayName: TranslationKey;
     price: number;
     sellPrice: number;
     sellAt: string[];
     stackable: boolean
-    inventoryCategory: string;
+    inventoryCategory: TranslationKey;
     displayKey: string;
-    description: string;
+    description: TranslationKey;
     qualities: {
         bronze?: QualityPrices;
         silver?: QualityPrices;

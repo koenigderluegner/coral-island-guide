@@ -5,6 +5,7 @@ import { ItemListComponent } from "../../item-list/item-list.component";
 import { CookingRecipeIngredientsPipe } from "../../../pipes/cooking-recipe-ingredients.pipe";
 import { ItemIconComponent } from "../../item-icon/item-icon.component";
 import { CastToMinimalItemArrayPipe } from "../../../pipes/cast-to-minimal-item-array.pipe";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-mixing-recipe',
@@ -14,6 +15,7 @@ import { CastToMinimalItemArrayPipe } from "../../../pipes/cast-to-minimal-item-
         CookingRecipeIngredientsPipe,
         ItemIconComponent,
         CastToMinimalItemArrayPipe,
+        TranslatePipe,
     ],
     templateUrl: './mixing-recipe.component.html'
 })

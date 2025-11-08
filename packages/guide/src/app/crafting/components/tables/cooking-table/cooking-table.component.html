@@ -12,7 +12,7 @@
                     Output
                 </th>
                 <td *matCellDef="let element" class="text-col whitespace-nowrap"
-                    mat-cell>{{ element.item?.displayName }}
+                    mat-cell>{{ element.item?.displayName | translate }}
                     ({{ element.amount }})
                 </td>
             </ng-container>
@@ -51,7 +51,7 @@
                                     @if (item) {
                                         <div class="flex gap-x-3 items-center">
                                             <app-item-icon [itemName]="item.iconName" class="!w-7"></app-item-icon>
-                                            <span class="whitespace-nowrap">{{ item.displayName }}</span>
+                                            <span class="whitespace-nowrap">{{ item.displayName | translate }}</span>
                                         </div>
                                     }
 
@@ -98,7 +98,7 @@
                                 <a [routerLink]="['crafting/cooking', utensil.toLowerCase()]"
                                    class="flex gap-2 items-center">
                                     <app-item-icon [itemName]="minimalItem.iconName" class="!w-7"/>
-                                    <span class="ml-1 whitespace-nowrap underline">{{ minimalItem.displayName }}</span>
+                                    <span class="ml-1 whitespace-nowrap underline">{{ minimalItem.displayName | translate }}</span>
                                 </a>
 
                             }

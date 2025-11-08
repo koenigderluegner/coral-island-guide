@@ -23,6 +23,7 @@ import { AsyncPipe } from "@angular/common";
 import { ItemIconComponent } from "../shared/components/item-icon/item-icon.component";
 import { MatInput } from "@angular/material/input";
 import { LocalStorageService } from "../core/local-storage/local-storage.service";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-database',
@@ -55,11 +56,15 @@ export class DatabaseComponent {
     private readonly _title = inject(Title);
     private _localStorageHideNoteKey = 'databaseHideImportantNote';
     private _didInitialLoad = false;
+    private readonly translate = inject(TranslateService);
 
     constructor() {
         this.shouldHideImportantNote = coerceBooleanProperty(this.localStorage.getItem(this._localStorageHideNoteKey));
 
-        this.items = this._database.getItems().filter((item) => getQuality(item.id) === Quality.BASE);
+        this.items = this._database.getItems().filter((item) => getQuality(item.id) === Quality.BASE).map(item => ({
+            ...item,
+            displayName: this.translate.instant(item.displayName).toLocaleLowerCase()
+        }));
         const mapToItems = map<string, Item[]>((searchTerm) => {
             const regex = /tag:(?<tag>[a-zA-Z.]+)/gm;
             const match = regex.exec(searchTerm);
@@ -77,7 +82,7 @@ export class DatabaseComponent {
                 if (!tagMatch) return false;
 
                 return (
-                    item.displayName.toLocaleLowerCase().includes(searchString) ||
+                    item.displayName.includes(searchString) ||
                     (searchString.startsWith('item_') && item.id.startsWith(searchString))
                 );
             });

@@ -13,6 +13,7 @@ import { DatabaseItemDetailsDirective } from "../../../shared/directives/databas
 import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
 import { AddSpacesToPascalCasePipe } from "../../../shared/pipes/add-spaces-to-pascal-case.pipe";
 import { AsyncPipe, TitleCasePipe } from "@angular/common";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-cooking',
@@ -31,7 +32,8 @@ import { AsyncPipe, TitleCasePipe } from "@angular/common";
         ListDetailContainerComponent,
         AddSpacesToPascalCasePipe,
         TitleCasePipe,
-        AsyncPipe
+        AsyncPipe,
+        TranslatePipe
     ]
 })
 export class CookingComponent extends BaseTabbedSelectableContainerComponent<CookingRecipe> {

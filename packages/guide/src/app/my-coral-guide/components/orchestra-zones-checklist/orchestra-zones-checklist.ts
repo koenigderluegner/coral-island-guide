@@ -16,6 +16,7 @@ import { ItemIconComponent } from "../../../shared/components/item-icon/item-ico
 import { MatCheckbox } from "@angular/material/checkbox";
 import { AsyncPipe, NgOptimizedImage } from "@angular/common";
 import { OrchestraZonesChecklistService } from "../../../core/services/checklists/orchestra-zones-checklist.service";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-orchestra-zones-checklist',
@@ -32,7 +33,8 @@ import { OrchestraZonesChecklistService } from "../../../core/services/checklist
         ItemIconComponent,
         MatCheckbox,
         NgOptimizedImage,
-        AsyncPipe
+        AsyncPipe,
+        TranslatePipe
     ]
 })
 export class OrchestraZonesChecklistComponent extends BaseTabbedSelectableContainerComponent<MinimalItem | MinimalTagBasedItem> {

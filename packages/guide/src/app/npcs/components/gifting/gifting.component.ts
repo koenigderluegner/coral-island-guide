@@ -17,6 +17,8 @@ import { IngameDatePipe } from "../../../shared/pipes/ingame-date.pipe";
 import { MatTooltip } from "@angular/material/tooltip";
 import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
 import { AsyncPipe } from "@angular/common";
+import { addSpacesToPascalCase } from "@ci/util";
+import { TranslateService } from "@ngx-translate/core";
 
 type CombinedGiftPreference = {
     preferences: MapKeyed<GiftPreferences>,
@@ -52,6 +54,8 @@ export class GiftingComponent extends BaseSelectableContainerComponent<MinimalIt
     #searchValueChanges = computed(() => this.npcFilter()?.searchValueChanges() ?? '')
     #sortValueChanges = computed(() => this.npcFilter()?.sortValueChanges() ?? 'default')
     #filterNPCs = filterNPCs
+
+    readonly #translate = inject(TranslateService);
     readonly #npcList = signal<CombinedGiftPreference[] | undefined>(undefined);
     protected filteredAndSortedNpcs = computed(() => {
 
@@ -73,7 +77,10 @@ export class GiftingComponent extends BaseSelectableContainerComponent<MinimalIt
             npcs: this.#database.fetchNPCs$(),
         }).pipe(
             switchMap(({gifts, npcs}) => {
-
+                npcs = npcs.map(npc => ({
+                    ...npc,
+                    characterName: addSpacesToPascalCase(this.#translate.instant(npc.characterName))
+                }));
                 const mappedGifts: CombinedGiftPreference[] = gifts.map(gift => {
                     return {
                         preferences: gift,

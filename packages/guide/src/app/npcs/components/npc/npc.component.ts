@@ -19,6 +19,8 @@ import { NpcPortraitComponent } from "../../../shared/components/npc-portrait/np
 import { MatProgressSpinner } from "@angular/material/progress-spinner";
 import { DatabaseItemDetailsDirective } from "../../../shared/directives/database-item-details.directive";
 import { MatTooltip } from "@angular/material/tooltip";
+import { TranslatePipe } from "@ngx-translate/core";
+import { AddSpacesToPascalCasePipe } from "../../../shared/pipes/add-spaces-to-pascal-case.pipe";
 
 @Component({
     selector: 'app-npc',
@@ -40,7 +42,9 @@ import { MatTooltip } from "@angular/material/tooltip";
         NpcPortraitComponent,
         MatProgressSpinner,
         DatabaseItemDetailsDirective,
-        MatTooltip
+        MatTooltip,
+        TranslatePipe,
+        AddSpacesToPascalCasePipe
     ]
 })
 export class NpcComponent extends BaseSelectableContainerComponent<MinimalItem> implements OnInit {

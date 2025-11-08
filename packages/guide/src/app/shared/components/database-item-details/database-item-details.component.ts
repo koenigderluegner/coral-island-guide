@@ -26,6 +26,7 @@ import { MoneyComponent } from "../money/money.component";
 import { QualityGridComponent } from "../quality-grid/quality-grid.component";
 import { ItemIconComponent } from "../item-icon/item-icon.component";
 import { CardComponent } from "../card/card.component";
+import { TranslatePipe } from "@ngx-translate/core";
 
 
 @Component({
@@ -42,7 +43,8 @@ import { CardComponent } from "../card/card.component";
         MoneyComponent,
         QualityGridComponent,
         ItemIconComponent,
-        CardComponent
+        CardComponent,
+        TranslatePipe
     ]
 })
 export class DatabaseItemDetailsComponent {

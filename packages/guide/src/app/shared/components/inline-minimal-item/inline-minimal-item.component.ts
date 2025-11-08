@@ -1,6 +1,7 @@
 import { Component, input, ViewEncapsulation } from '@angular/core';
 import { MinimalItem } from '@ci/data-types';
 import { ItemIconComponent } from "../item-icon/item-icon.component";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-inline-minimal-item',
@@ -8,7 +9,8 @@ import { ItemIconComponent } from "../item-icon/item-icon.component";
     styleUrls: ['./inline-minimal-item.component.scss'],
     encapsulation: ViewEncapsulation.None,
     imports: [
-        ItemIconComponent
+        ItemIconComponent,
+        TranslatePipe
     ],
 
     host: {

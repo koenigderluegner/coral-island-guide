@@ -12,7 +12,7 @@
                     Offering
                 </th>
                 <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
-                    {{ element.offerings[0].title }}
+                    {{ element.offerings[0].title | translate }}
                 </td>
             </ng-container>
 
@@ -20,7 +20,7 @@
             <ng-container matColumnDef="altar">
                 <th *matHeaderCellDef class="backdrop-blur-xl" mat-header-cell mat-sort-header>Altar</th>
                 <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
-                    {{ element.offeringGroupTitle }}
+                    {{ element.offeringGroupTitle | translate}}
                 </td>
             </ng-container>
 

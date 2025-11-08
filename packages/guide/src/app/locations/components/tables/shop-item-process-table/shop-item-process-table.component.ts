@@ -7,6 +7,7 @@ import { MatSort, MatSortHeader } from "@angular/material/sort";
 import { ItemIconComponent } from "../../../../shared/components/item-icon/item-icon.component";
 import { ChancePerItemTableListComponent } from "../../../../shared/components/chance-per-item-table-list/chance-per-item-table-list.component";
 import { RouterLink } from "@angular/router";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-shop-item-process-table',
@@ -19,7 +20,8 @@ import { RouterLink } from "@angular/router";
         MatSortHeader,
         ItemIconComponent,
         ChancePerItemTableListComponent,
-        RouterLink
+        RouterLink,
+        TranslatePipe
     ]
 })
 export class ShopItemProcessTableComponent extends BaseTableComponent<ItemProcessShopData & {

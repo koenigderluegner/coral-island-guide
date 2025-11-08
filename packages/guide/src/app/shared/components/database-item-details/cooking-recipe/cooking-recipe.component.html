@@ -9,7 +9,7 @@
                         <a [routerLink]="['/crafting/cooking', utensil.toLowerCase()]"
                            class="flex gap-2 items-center">
                             <app-item-icon [itemName]="minimalItem.iconName" class="!w-7"/>
-                            <span class="ml-1 whitespace-nowrap underline">{{ minimalItem.displayName }}</span>
+                            <span class="ml-1 whitespace-nowrap underline">{{ minimalItem.displayName | translate }}</span>
                         </a>
                     }
 
@@ -61,7 +61,7 @@
                     @if (item) {
                         <div class="flex gap-x-3 items-center">
                             <app-item-icon class="w-10" [itemName]="item.iconName"/>
-                            <span>{{ item.displayName }}</span>
+                            <span>{{ item.displayName | translate }}</span>
                         </div>
                     }
 

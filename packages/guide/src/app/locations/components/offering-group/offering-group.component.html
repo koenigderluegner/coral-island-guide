@@ -1,7 +1,7 @@
 <app-data-filter [(showTable)]="showTable"/>
 @if (offeringAltar().offeringGroupRewardText) {
     <div class="bg-merino rounded-lg mb-4 text-lg font-semibold p-4">
-        Reward: {{ offeringAltar().offeringGroupRewardText }}
+        Reward: {{ offeringAltar().offeringGroupRewardText | translate }}
     </div>
 }
 @if (!showTable) {
@@ -9,12 +9,12 @@
         @for (offering of offeringAltar().offerings; track offering) {
             <div (click)="activeOffering = offering"
 
-                 [class.bg-merino-300]="activeOffering?.title === offering.title"
+                 [class.bg-merino-300]="(activeOffering?.title  | translate) === (offering.title | translate)"
                  class="rounded-lg bg-merino flex flex-col items-center gap-4 px-4 py-8 hover:bg-merino-200">
-                <img alt="{{offering.title}} offering icon" height="128"
+                <img alt="{{offering.title | translate}} offering icon" height="128"
                      ngSrc="{{bundleAssetPath() + offering.imageName}}.webp"
                      width="128"/>
-                <div class="text-lg font-semibold">{{ offering.title }}</div>
+                <div class="text-lg font-semibold">{{ offering.title | translate }}</div>
             </div>
         }
     </div>

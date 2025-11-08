@@ -7,6 +7,7 @@ import { ItemIconComponent } from "../../../../shared/components/item-icon/item-
 import { MatSort, MatSortHeader } from "@angular/material/sort";
 import { MaxPipe } from "../../../../shared/pipes/max.pipe";
 import { MoneyComponent } from "../../../../shared/components/money/money.component";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-crop-table',
@@ -20,6 +21,7 @@ import { MoneyComponent } from "../../../../shared/components/money/money.compon
         MaxPipe,
         MoneyComponent,
         MatTableModule,
+        TranslatePipe,
     ]
 })
 export class CropTableComponent extends BaseTableComponent<BaseCrop> {

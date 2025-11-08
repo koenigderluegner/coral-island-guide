@@ -7,6 +7,7 @@ import { DataFilterComponent } from "../../../shared/components/data-filter/data
 import { OfferingsTableComponent } from "../tables/offerings-table/offerings-table.component";
 import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
 import { EntityKeyPipe } from "../../../shared/pipes/entity-key.pipe";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-offering-group',
@@ -15,7 +16,8 @@ import { EntityKeyPipe } from "../../../shared/pipes/entity-key.pipe";
         DataFilterComponent,
         OfferingsTableComponent,
         ItemIconComponent,
-        EntityKeyPipe
+        EntityKeyPipe,
+        TranslatePipe
     ],
     templateUrl: './offering-group.component.html'
 })

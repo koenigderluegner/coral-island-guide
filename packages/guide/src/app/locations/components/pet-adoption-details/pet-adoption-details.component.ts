@@ -4,6 +4,7 @@ import { DatabaseService } from "../../../shared/services/database.service";
 import { MoneyComponent } from "../../../shared/components/money/money.component";
 import { NpcPortraitComponent } from "../../../shared/components/npc-portrait/npc-portrait.component";
 import { CardComponent } from "../../../shared/components/card/card.component";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-pet-adoption-details',
@@ -12,7 +13,8 @@ import { CardComponent } from "../../../shared/components/card/card.component";
     imports: [
         MoneyComponent,
         NpcPortraitComponent,
-        CardComponent
+        CardComponent,
+        TranslatePipe
     ]
 })
 export class PetAdoptionDetailsComponent {

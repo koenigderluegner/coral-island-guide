@@ -10,6 +10,7 @@ import { AddSpacesToPascalCasePipe } from "../../../shared/pipes/add-spaces-to-p
 import { DatabaseItemDetailsDirective } from "../../../shared/directives/database-item-details.directive";
 import { AsyncPipe } from "@angular/common";
 import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-lake-temple',
@@ -23,7 +24,8 @@ import { ListDetailContainerComponent } from "../../../shared/components/list-de
         AddSpacesToPascalCasePipe,
         DatabaseItemDetailsDirective,
         AsyncPipe,
-        ListDetailContainerComponent
+        ListDetailContainerComponent,
+        TranslatePipe
     ]
 })
 export class LakeTempleComponent extends BaseTabbedSelectableContainerComponent<MinimalItem | MinimalTagBasedItem> {
