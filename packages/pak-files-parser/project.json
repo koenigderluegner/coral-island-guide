@@ -3,6 +3,8 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/pak-files-parser/src",
   "projectType": "application",
+  "tags": [],
+  "implicitDependencies": ["data-types"],
   "targets": {
     "build": {
       "executor": "@nx/webpack:webpack",
@@ -77,7 +79,5 @@
         "jestConfig": "packages/pak-files-parser/jest.config.ts"
       }
     }
-  },
-  "tags": [],
-  "implicitDependencies": ["data-types"]
+  }
 }

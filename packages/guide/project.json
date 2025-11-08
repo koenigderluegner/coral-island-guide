@@ -8,9 +8,7 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "dependsOn": [
         {
           "projects": "self",
@@ -26,9 +24,7 @@
         "outputPath": "dist/packages/guide",
         "index": "packages/guide/src/index.html",
         "browser": "packages/guide/src/main.ts",
-        "polyfills": [
-          "packages/guide/src/polyfills.ts"
-        ],
+        "polyfills": ["packages/guide/src/polyfills.ts"],
         "tsConfig": "packages/guide/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -42,13 +38,9 @@
           "packages/guide/src/CHANGELOG.md",
           "packages/guide/src/assets/latest-changelog.md"
         ],
-        "styles": [
-          "packages/guide/src/styles.scss"
-        ],
+        "styles": ["packages/guide/src/styles.scss"],
         "stylePreprocessorOptions": {
-          "includePaths": [
-            "packages/guide/src/styles"
-          ]
+          "includePaths": ["packages/guide/src/styles"]
         },
         "scripts": [],
         "serviceWorker": "packages/guide/ngsw-config.json",
@@ -116,9 +108,7 @@
       "executor": "nx:run-commands",
       "configurations": {
         "extract": {
-          "commands": [
-            "ts-node changelog-extractor.ts"
-          ]
+          "commands": ["ts-node changelog-extractor.ts"]
         }
       },
       "defaultConfiguration": "extract"
@@ -127,9 +117,7 @@
       "executor": "nx:run-commands",
       "configurations": {
         "extract": {
-          "commands": [
-            "ts-node static-routes-list-generator.ts"
-          ]
+          "commands": ["ts-node static-routes-list-generator.ts"]
         }
       },
       "defaultConfiguration": "extract"
