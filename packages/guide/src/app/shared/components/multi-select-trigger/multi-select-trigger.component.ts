@@ -5,5 +5,5 @@ import { Component, input } from '@angular/core';
     templateUrl: './multi-select-trigger.component.html'
 })
 export class MultiSelectTriggerComponent {
- readonly values = input.required<string[] | number[]>()
+    readonly values = input.required<string[] | number[]>()
 }

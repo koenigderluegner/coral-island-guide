@@ -73,7 +73,7 @@ export class BaseJournalPageComponent<D extends ({
                             if (filterValues.showTable && 'spawnSettings' in foundEntry) {
                                 const fish = foundEntry as Fish;
                                 entry = fish.spawnSettings
-                                    .map((s) => ({ ...foundEntry, spawnSettings: [s] }))
+                                    .map((s) => ({...foundEntry, spawnSettings: [s]}))
                                     .flat() as D[];
                             }
                             for (const item of entry) {

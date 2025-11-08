@@ -3,12 +3,12 @@ import { TornPageData } from "@ci/data-types";
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-torn-page',
-  templateUrl: './torn-page.component.html',
+    selector: 'app-torn-page',
+    templateUrl: './torn-page.component.html',
 
-  imports: [
-    TranslatePipe
-  ]
+    imports: [
+        TranslatePipe
+    ]
 })
 export class TornPageComponent {
 

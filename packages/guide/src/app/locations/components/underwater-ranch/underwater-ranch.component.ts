@@ -24,7 +24,7 @@ export class UnderwaterRanchComponent extends BaseShopComponent {
 
     protected shopName: ShopName = "underwater-ranch";
     protected selectedAnimal?: MappedAnimalShopData
-    protected sizeByMood= this._database.fetchAnimalMoodData();
+    protected sizeByMood = this._database.fetchAnimalMoodData();
     #animalRequests = merge(this._database.fetchAnimals(), this._database.fetchAnimalShopData(this.shopName))
     animalData = computed<MappedAnimalShopData[] | null>(() => {
         const values = this.#animalRequests.values();

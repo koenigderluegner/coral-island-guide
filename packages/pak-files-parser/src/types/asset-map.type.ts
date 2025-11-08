@@ -1,1 +1,1 @@
-export type AssetMap<T> = {Key: string, Value: T}
+export type AssetMap<T> = { Key: string, Value: T }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BaseChecklistService } from "./base-checklist.service";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class OrchestraZonesChecklistService extends BaseChecklistService {
 

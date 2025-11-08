@@ -1,6 +1,4 @@
 import { afterNextRender, Component, inject } from '@angular/core';
-import { DatabaseService } from './shared/services/database.service';
-import { combineLatest } from 'rxjs';
 import { ChangelogService } from "./changelog/changelog.service";
 import { MatDialog } from "@angular/material/dialog";
 import { ChangelogDialogComponent } from "./changelog/changelog-dialog/changelog-dialog.component";

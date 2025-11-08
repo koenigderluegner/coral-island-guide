@@ -28,7 +28,7 @@
             <span class="text-lg mb-6">{{ fetchedItem.description | translate }}</span>
         }
 
-        <ng-content />
+        <ng-content/>
         @if ((fetchedItem | isTagBasedItem)) {
             <app-item-list [itemList]="fetchedItem.items | toItemListEntries" class="mt-6"/>
         }

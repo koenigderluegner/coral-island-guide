@@ -10,7 +10,7 @@ import { AddSpacesToPascalCasePipe } from "../../../pipes/add-spaces-to-pascal-c
 })
 export class InsectComponent {
 
-   readonly critter = input.required<Critter>();
+    readonly critter = input.required<Critter>();
 
     protected readonly getTruthyValues = getTruthyValues;
 }

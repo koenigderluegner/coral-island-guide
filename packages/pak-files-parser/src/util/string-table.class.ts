@@ -7,17 +7,16 @@ export class StringTable {
 
     private static readonly cachedStringTables: Map<string, RawStringTable> = new Map<string, RawStringTable>()
     private static readonly cachedLocalizationFiles: Map<string, Record<string, Record<string, string>>> = new Map<string, Record<string, Record<string, string>>>()
-     static translations: Record<string, Record<string, string>> = {};
+    static translations: Record<string, Record<string, string>> = {};
 
     public static getString(ref: SourceString, lang?: AvailableLanguage): TranslationKey | null {
 
 
         AvailableLanguages.forEach(l => {
-            if(this.translations[l] === undefined){
+            if (this.translations[l] === undefined) {
                 this.translations[l] = {}
             }
         })
-
 
 
         if ('TableId' in ref) {
@@ -31,14 +30,13 @@ export class StringTable {
             }
 
 
-
             const translatedString = stringTable.StringTable.KeysToMetaData[ref.Key] ?? ref.Key;
             AvailableLanguages.forEach(l => this.translations[l][ref.Key] = translatedString)
             return ref.Key
 
         } else if ('SourceString' in ref) {
 
-            const key = [ref.Namespace , ref.Key].filter(Boolean).join('.')
+            const key = [ref.Namespace, ref.Key].filter(Boolean).join('.')
 
             AvailableLanguages.forEach(lang => {
                 let stringTable = StringTable.cachedLocalizationFiles.get(lang);

@@ -38,7 +38,9 @@
                     }
                     @if (((element | isFish) ? element.spawnSettings[0] : element).isUsingSpecificDate) {
 
-                        @for (rage of dateRangesToString(((element | isFish) ? element.spawnSettings[0] : element).dateRangeList); track rage; let last = $last) {
+                        @for (
+                                rage of dateRangesToString(((element | isFish) ? element.spawnSettings[0] : element).dateRangeList); track rage; let
+                                last = $last) {
                             <div class="whitespace-nowrap"
                             >{{ rage }}{{ !last ? ', ' : '' }}
                             </div>

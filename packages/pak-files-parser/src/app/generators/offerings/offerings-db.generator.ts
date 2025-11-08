@@ -41,7 +41,7 @@ export class OfferingsDbGenerator extends BaseGenerator<RawOfferingAltar, Offeri
             })
             .filter(nonNullable)
 
-const key= StringTable.getString(dbItem.offeringGroupTitle, "en") ?? ''
+        const key = StringTable.getString(dbItem.offeringGroupTitle, "en") ?? ''
 
 
         return {

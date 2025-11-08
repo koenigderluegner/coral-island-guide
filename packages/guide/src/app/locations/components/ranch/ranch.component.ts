@@ -48,7 +48,7 @@ export class RanchComponent extends BaseShopComponent {
         });
     })
     protected selectedAnimal?: MappedAnimalShopData
-    protected sizeByMood= this._database.fetchAnimalMoodData();
+    protected sizeByMood = this._database.fetchAnimalMoodData();
 
     constructor() {
         super();

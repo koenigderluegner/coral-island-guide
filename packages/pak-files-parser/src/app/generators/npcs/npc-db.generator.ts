@@ -8,7 +8,7 @@ import {
     unifyInternalPath
 } from '../../../util/functions';
 import { RawNPC } from '../../../interfaces/raw-data-interfaces/raw-npc.interface';
-import { addSpacesToPascalCase, getEnumValue } from '@ci/util';
+import { getEnumValue } from '@ci/util';
 import { RawNpcAppearances } from "../../../interfaces/raw-data-interfaces/raw-npc-appearances.interface";
 import path from "path";
 import { environment } from "../../../environments/environment";

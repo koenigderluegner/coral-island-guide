@@ -19,5 +19,5 @@ import { DatabaseItem } from "@ci/data-types";
     }`
 })
 export class OfferingComponent {
-   readonly details = input.required<DatabaseItem>()
+    readonly details = input.required<DatabaseItem>()
 }

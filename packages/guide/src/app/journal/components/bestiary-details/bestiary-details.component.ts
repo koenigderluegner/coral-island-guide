@@ -14,15 +14,15 @@ import { TranslatePipe } from '@ngx-translate/core';
     templateUrl: './bestiary-details.component.html',
     encapsulation: ViewEncapsulation.Emulated,
 
-  imports: [
-    FullSizeImageComponent,
-    ItemIconComponent,
-    UiIconComponent,
-    CardComponent,
-    ChancePerItemListComponent,
-    MatTooltip,
-    TranslatePipe
-  ]
+    imports: [
+        FullSizeImageComponent,
+        ItemIconComponent,
+        UiIconComponent,
+        CardComponent,
+        ChancePerItemListComponent,
+        MatTooltip,
+        TranslatePipe
+    ]
 })
 export class BestiaryDetailsComponent {
     enemy = input.required<Enemy>()

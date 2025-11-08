@@ -63,9 +63,9 @@ export class GenericFestivalComponent {
                         const routeData = data as FestivalRouteData
                         this.festivalName = routeData.name;
 
-                    if (!routeData.hasNoOpeningHours) {
-                        this.openingHours$ = this._database.fetchFestivalOpeningHours$(routeData.name)
-                    }
+                        if (!routeData.hasNoOpeningHours) {
+                            this.openingHours$ = this._database.fetchFestivalOpeningHours$(routeData.name)
+                        }
 
                         return this._database.fetchFestivalData$(routeData.name)
 

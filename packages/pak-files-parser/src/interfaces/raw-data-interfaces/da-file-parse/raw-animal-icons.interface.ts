@@ -10,7 +10,7 @@ export interface RawAnimalIcons {
         },
         "RowName": string
     },
-    "icons":AssetMap<{
+    "icons": AssetMap<{
         "adult": AssetPath,
         "adultHappy": AssetPath
         "adultBadMood": AssetPath

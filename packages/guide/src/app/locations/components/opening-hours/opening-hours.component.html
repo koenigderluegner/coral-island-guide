@@ -2,7 +2,7 @@
     <div>
         <div class="font-semibold text-xl">{{ keyValuePair.key }}</div>
         <div class="grid grid-cols-2 gap-2">
-            @if ( (keyValuePair.value.isCoreOnlyWeekdays || keyValuePair.value.isCoreEveryDay) && keyValuePair.value.coreOpeningHours) {
+            @if ((keyValuePair.value.isCoreOnlyWeekdays || keyValuePair.value.isCoreEveryDay) && keyValuePair.value.coreOpeningHours) {
 
                 <div> {{ keyValuePair.value.isCoreEveryDay ? 'Every day' : 'Weekdays' }}:</div>
                 <div>{{ keyValuePair.value.coreOpeningHours.from | ingameTime }}-{{
@@ -22,7 +22,8 @@
             }
             @if (keyValuePair.value.dayOfTheWeekSpecificOpeningHours) {
 
-                @for (specificKeyValuePair of keyValuePair.value.dayOfTheWeekSpecificOpeningHours | keyvalue; track specificKeyValuePair) {
+                @for (
+                        specificKeyValuePair of keyValuePair.value.dayOfTheWeekSpecificOpeningHours | keyvalue; track specificKeyValuePair) {
 
                     <div> {{ specificKeyValuePair.key }}:</div>
                     <div> {{ specificKeyValuePair.value.from | ingameTime }}-{{

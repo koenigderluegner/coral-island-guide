@@ -3,17 +3,17 @@ import { MailData } from "@ci/data-types";
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-mail',
-  templateUrl: './mail.component.html',
-  styles: [`
+    selector: 'app-mail',
+    templateUrl: './mail.component.html',
+    styles: [`
     :host {
       display: block;
     }
   `],
 
-  imports: [
-    TranslatePipe
-  ]
+    imports: [
+        TranslatePipe
+    ]
 })
 export class MailComponent {
 
