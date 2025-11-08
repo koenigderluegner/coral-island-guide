@@ -4,7 +4,7 @@ import { CookingRecipe, ItemProcessing, NPC, OfferingAltar } from "./packages/da
 
 const routes: string[] = [];
 
-const assetPath = path.join(__dirname, 'packages/guide/src/assets/live/database/en')
+const assetPath = path.join(__dirname, 'packages/guide/src/assets/live/database')
 
 function getAsset<T>(fileName: string): T {
     return JSON.parse(fs.readFileSync(path.join(assetPath, fileName + '.json'), {encoding: "utf8"}));
