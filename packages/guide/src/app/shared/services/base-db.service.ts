@@ -14,8 +14,7 @@ export class BaseDbService {
 
     constructor() {
         const version = this.settings.useBeta ? 'beta' : 'live';
-        const lang = this.settings.language ?? 'en'
         this.BASE_PATH = `assets/${version}/database`;
-        this.BASE_PATH_WITH_LANG = `assets/${version}/database/${lang}`;
+        this.BASE_PATH_WITH_LANG = `assets/${version}/database`;
     }
 }

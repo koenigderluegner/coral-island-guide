@@ -21,6 +21,9 @@ import { provideGameVersion } from './core/injection-tokens/version.injection-to
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { assetVersionInterceptor } from './core/interceptors/asset-version.interceptor';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { provideTranslateCompiler, provideTranslateService } from "@ngx-translate/core";
+import { provideTranslateHttpLoader } from "@ngx-translate/http-loader";
+import { TranslateMessageFormatCompiler } from "ngx-translate-messageformat-compiler";
 
 const routerOptions: ExtraOptions = {
     scrollPositionRestoration: 'disabled',
@@ -56,6 +59,16 @@ export const appConfig: ApplicationConfig = {
         {provide: MAT_TABS_CONFIG, useValue: {animationDuration: '0', stretchTabs: false} satisfies MatTabsConfig},
         {provide: TitleStrategy, useClass: PageTitleService},
         provideHttpClient(withInterceptors([assetVersionInterceptor]), withFetch()),
+        provideHttpClient(),
+        provideTranslateService({
+            loader: provideTranslateHttpLoader({
+                prefix: '/assets/live/database/i18n/',
+                suffix: '.json'
+            }),
+            compiler: provideTranslateCompiler(TranslateMessageFormatCompiler),
+            fallbackLang: 'en',
+            lang: 'en'
+        }),
         importProvidersFrom(
             ServiceWorkerModule.register('ngsw-worker.js', {
                 enabled: !isDevMode(),

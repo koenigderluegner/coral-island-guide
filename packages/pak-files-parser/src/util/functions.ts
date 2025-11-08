@@ -45,10 +45,8 @@ export function readAsset<T = any>(fileName: string): T {
 }
 
 export function generateJson(fileName: string, jsonContent: any, readable = false, lang: AvailableLanguage | 'none' = "en") {
-    let databasePath = path.join(config.target.databasePath)
-    if (lang !== "none") {
-        databasePath = path.join(databasePath, lang)
-    }
+    const databasePath = path.join(config.target.databasePath)
+
     const filePath = path.join(databasePath, fileName);
     const fileTargetLocation = filePath.split(path.sep).slice(0, -1).join(path.sep)
 

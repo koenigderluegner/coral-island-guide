@@ -11,6 +11,8 @@ import { AsyncPipe } from "@angular/common";
 import { RouterOutlet } from "@angular/router";
 import { MatProgressSpinner } from "@angular/material/progress-spinner";
 import { FooterComponent } from "./core/components/footer/footer.component";
+import { TranslateService } from "@ngx-translate/core";
+import { AvailableLanguage, AvailableLanguages } from "@ci/data-types";
 
 @Component({
     selector: 'app-root',
@@ -34,6 +36,11 @@ export class AppComponent {
 
 
     constructor() {
+        const usedLang: AvailableLanguage = 'en'
+    const  translate = inject(TranslateService);
+        translate.addLangs([...AvailableLanguages]);
+        translate.setFallbackLang(usedLang);
+        translate.use(usedLang);
         inject(UserDataService).read();
 
         if (!this.#settingsService.getSettings().disableChangelogs) {

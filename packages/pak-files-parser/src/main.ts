@@ -8,7 +8,7 @@ import { Logger } from "./util/logger.class";
 import { NpcPortraitsImageProcessor } from "./app/image-processors/npc-portraits.image-processor";
 import { StringTable } from "./util/string-table.class";
 import {
-    AnimalShopData,
+    AnimalShopData, AvailableLanguage,
     AvailableLanguages,
     CookingRecipe,
     CraftingRecipe,
@@ -37,6 +37,7 @@ import { getBetaGenerators } from "./app/generators/generators.beta";
 import { getLiveGenerators } from "./app/generators/generators.live";
 import { getBaseGenerators } from "./app/generators/generators";
 import { generate, MappedGeneratorResults } from "./app/generators/generator-util.type";
+import { exitCodeFromResult } from "@angular/compiler-cli";
 
 
 const version = generateGameVersionFile();
@@ -69,9 +70,8 @@ const additionalNPCOutfitsMappings = [
 
 NPCDbGenerator.AdditionalNpcAppearances = additionalNPCOutfitsMappings;
 
-(AvailableLanguages).forEach((lang, langIndex) => {
-    Logger.info(`Generators for "${lang}" starting...`);
-    StringTable.defaultLang = lang;
+
+    Logger.info(`Generators starting...`);
 
     const {
         itemDbMap,
@@ -126,7 +126,7 @@ NPCDbGenerator.AdditionalNpcAppearances = additionalNPCOutfitsMappings;
 
                 // @ts-ignore
                 generatorResults[generatorName] = generatorValues
-                generateJson(`${generatorName}.json`, generatorValues, readable, lang);
+                generateJson(`${generatorName}.json`, generatorValues, readable, 'none');
             } catch (e) {
                 const error = e as Error;
                 Logger.error(error.message, error.stack)
@@ -476,24 +476,31 @@ NPCDbGenerator.AdditionalNpcAppearances = additionalNPCOutfitsMappings;
                 usedToMix: usedToMix.length ? usedToMix : undefined,
             }
 
-            generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, lang);
+            generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, 'none');
             dbItems.push(dbItem);
 
         })
 
 
-        if (langIndex === AvailableLanguages.length - 1) {
+
             Logger.info('Create dashboard files')
             DashboardFilesCreation(dbItems, npcDbMap, calendarDbMap, generatorResults['gift-preferences']);
             Logger.info('Creating dashboard files done')
 
-        }
+
 
     } catch (e: any) {
         Logger.error('Generators couldn\'t be executed', e.message, e.stack)
     }
 
+
+Object.keys(StringTable.translations).forEach(lang => {
+    generateJson(path.join('i18n', `${lang}.json`), StringTable.translations[lang], false, 'none');
 })
+
+// console.log(StringTable.translations['en']);
+
+process.exit(0);
 // Treasure Map Images
 new SimpleCopyImageProcessor([
     {
