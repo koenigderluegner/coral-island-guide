@@ -1,5 +1,16 @@
 ## Changelog
 
+### TBD
+
+The whole system of loading data has changed completely. This may cause some bugs or strange behaviors (which I tried to solve as best as I can).
+If you find some cryptic names or misbehaving features, please let me know.
+
+#### Changed
+
+- Updated live data to v1.2-1243 (Steam version)
+- Updated beta data to v1.2b-2047 (Steam version)
+- Drastically reduced the number of assets in favor of a new data-loading system
+
 ### 0.27.1 2025-10-20
 
 #### Changed
