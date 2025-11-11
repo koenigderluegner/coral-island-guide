@@ -7,15 +7,14 @@
   "implicitDependencies": ["data-types"],
   "targets": {
     "build": {
-      "executor": "@nx/webpack:webpack",
+      "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "webpackConfig": "packages/pak-files-parser/webpack.config.js",
-        "target": "node",
         "compiler": "tsc",
         "outputPath": "dist/packages/pak-files-parser",
         "main": "packages/pak-files-parser/src/main.ts",
-        "tsConfig": "packages/pak-files-parser/tsconfig.app.json"
+        "tsConfig": "packages/pak-files-parser/tsconfig.app.json",
+        "format": ["cjs"]
       },
       "configurations": {
         "production": {
