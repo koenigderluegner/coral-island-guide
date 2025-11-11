@@ -1,4 +1,5 @@
 import { TranslationKey } from "../types/translation-key";
+import { InterpolationParameters } from "@ngx-translate/core";
 
 export interface Item {
     id: string;
@@ -19,6 +20,7 @@ export interface Item {
     },
     tags?: string[];
     iconName: string | null;
+    translateParams?: InterpolationParameters;
 }
 
 interface QualityPrices {

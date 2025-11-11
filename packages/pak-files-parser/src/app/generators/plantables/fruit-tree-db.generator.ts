@@ -36,9 +36,9 @@ export class FruitTreeDbGenerator extends BaseGenerator<RawFruitTree, FruitTree>
             item,
             size: dbItem.size,
             growableSeason: [getEnumValue(dbItem.producingSeason)],
-            growTime,
+            growTime: growTime,
             isRegrowable: true,
-            regrowableLength, // can't find a file containing this info, seems equal for all trees.
+            regrowableLength: regrowableLength, // can't find a file containing this info, seems equal for all trees.
             firstYield: growTime + (regrowableLength - 1), // the first day of being grown counts as the first day of regrowing
             readableName: dbItem.readableName,
             maxDroppedItems: dbItem.fruitsFloaties.maxDroppedItems,
@@ -62,9 +62,6 @@ export class FruitTreeDbGenerator extends BaseGenerator<RawFruitTree, FruitTree>
 
 
         };
-
-        seed.description = (seed.description ?? '').replace('{cropGrowLength}', '' + crop.growTime);
-        seed.description = seed.description.replace('{cropRegrowLength}', '' + crop.regrowableLength);
 
         return crop;
 

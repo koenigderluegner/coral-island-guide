@@ -68,10 +68,6 @@ export class CropsDbGenerator {
 
                 };
 
-                seed.description = seed.description.replace('{cropGrowLength}', '' + crop.growTime);
-                seed.description = seed.description.replace('{cropRegrowLength}', '' + crop.regrowableLength);
-                seed.description = seed.description.replace('{harvestedCountLimit}', '' + crop.regrowableLimit);
-
                 map.set(crop.key, crop);
             }
 

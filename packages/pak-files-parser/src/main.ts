@@ -86,6 +86,22 @@ const {
 } = generateBaseMaps()
 
 
+function applyTranslationParams(dbItem: DatabaseItem) {
+    if ('comesFromSeed' in dbItem && dbItem.comesFromSeed?.length) {
+        if (!dbItem.item.translateParams) {
+            dbItem.item.translateParams = {}
+        }
+
+        const comesFromSeedElement = dbItem.comesFromSeed?.[0];
+        dbItem.item.translateParams['cropGrowLength'] = comesFromSeedElement?.growTime;
+        dbItem.item.translateParams['cropRegrowLength'] = comesFromSeedElement?.regrowableLength;
+        if('harvestedCountLimit' in comesFromSeedElement) {
+            dbItem.item.translateParams['harvestedCountLimit'] = comesFromSeedElement?.harvestedCountLimit;
+        }
+
+    }
+}
+
 try {
 
     const baseGenerators = getBaseGenerators(
@@ -472,6 +488,8 @@ try {
             mixedFrom: mixedFrom.length ? mixedFrom : undefined,
             usedToMix: usedToMix.length ? usedToMix : undefined,
         }
+
+        applyTranslationParams(dbItem);
 
         generateJson(path.join('items', `${item.id.toLowerCase()}.json`), dbItem, readable, 'none');
         dbItems.push(dbItem);
