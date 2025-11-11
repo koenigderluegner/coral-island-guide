@@ -10,7 +10,6 @@ If you find some cryptic names or misbehaving features, please let me know.
 - Updated live data to v1.2-1243 (Steam version)
 - Updated beta data to v1.2b-2047 (Steam version)
 - Drastically reduced the number of assets in favor of a new data-loading system
-- Improved startup by delaying loading of data
 
 ### 0.27.1 2025-10-20
 

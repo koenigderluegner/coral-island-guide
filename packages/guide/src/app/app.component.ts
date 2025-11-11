@@ -1,11 +1,15 @@
 import { afterNextRender, Component, inject } from '@angular/core';
+import { DatabaseService } from './shared/services/database.service';
+import { combineLatest, Observable } from 'rxjs';
 import { ChangelogService } from "./changelog/changelog.service";
 import { MatDialog } from "@angular/material/dialog";
 import { ChangelogDialogComponent } from "./changelog/changelog-dialog/changelog-dialog.component";
 import { SettingsService } from "./shared/services/settings.service";
 import { UserDataService } from "./core/services/user-data.service";
 import { HeaderComponent } from "./core/components/header/header.component";
+import { AsyncPipe } from "@angular/common";
 import { RouterOutlet } from "@angular/router";
+import { MatProgressSpinner } from "@angular/material/progress-spinner";
 import { FooterComponent } from "./core/components/footer/footer.component";
 import { TranslateService } from "@ngx-translate/core";
 import { AvailableLanguage, AvailableLanguages } from "@ci/data-types";
@@ -16,28 +20,37 @@ import { AvailableLanguage, AvailableLanguages } from "@ci/data-types";
     styleUrls: ['./app.component.scss'],
     imports: [
         HeaderComponent,
+        AsyncPipe,
         RouterOutlet,
+        MatProgressSpinner,
         FooterComponent
     ]
 })
 export class AppComponent {
 
+    prefetchData$: Observable<any>;
+    #databaseService = inject(DatabaseService)
+    #changelogService = inject(ChangelogService)
+    #dialog = inject(MatDialog);
+    #settingsService = inject(SettingsService);
+
+
     constructor() {
         const usedLang: AvailableLanguage = 'en'
-        const translate = inject(TranslateService);
+    const  translate = inject(TranslateService);
         translate.addLangs([...AvailableLanguages]);
         translate.setFallbackLang(usedLang);
         translate.use(usedLang);
         inject(UserDataService).read();
-        const changelogService = inject(ChangelogService);
-        if (!inject(SettingsService).getSettings().disableChangelogs) {
+
+        if (!this.#settingsService.getSettings().disableChangelogs) {
             afterNextRender(() => {
-                changelogService.getLatestChangelog().subscribe({
+                this.#changelogService.getLatestChangelog().subscribe({
                     next: changelog => {
 
-                        if (changelog.version === changelogService.getLatestSeen()) return;
+                        if (changelog.version === this.#changelogService.getLatestSeen()) return;
 
-                        const dialogRef = inject(MatDialog).open(ChangelogDialogComponent, {
+                        const dialogRef = this.#dialog.open(ChangelogDialogComponent, {
                             data: {changelog},
                             hasBackdrop: true,
                             width: '800px'
@@ -45,7 +58,7 @@ export class AppComponent {
 
                         dialogRef.afterClosed().subscribe({
                             next: () => {
-                                changelogService.setLatestSeen(changelog)
+                                this.#changelogService.setLatestSeen(changelog)
                             }
                         })
                     }
@@ -53,6 +66,12 @@ export class AppComponent {
             })
         }
 
+        this.prefetchData$ = combineLatest([
+            this.#databaseService.fetchItems$(),
+            this.#databaseService.fetchTagBasedItems$(),
+            this.#databaseService.fetchProcessorMapping$(),
+            this.#databaseService.fetchCookingUtensilMapping$(),
+        ]);
     }
 
 }
