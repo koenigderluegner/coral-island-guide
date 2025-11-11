@@ -1,4 +1,5 @@
-@if (computedItem(); as fetchedItem) {
+
+@if (fetchedItems |async; as fetchedItem) {
     <app-card class="text-lg font-semibold relative">
         <div cardActions class="card-actions">
             <app-to-do-toggle [amount]="amount()" [quality]="quality()" [item]="item()" [context]="context()"/>
@@ -25,7 +26,7 @@
         </div>
         <hr class="my-5"/>
         @if (!(fetchedItem | isTagBasedItem)) {
-            <span class="text-lg mb-6">{{ fetchedItem.description | translate }}</span>
+            <span class="text-lg mb-6">{{ fetchedItem.description | translate: 'translateParams' in fetchedItem ? fetchedItem.translateParams : undefined }}</span>
         }
 
         <ng-content/>

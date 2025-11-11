@@ -1,5 +1,14 @@
-import { booleanAttribute, Component, computed, inject, input } from '@angular/core';
-import { CustomEntry, Item, MinimalItem, MinimalTagBasedItem, Quality, TagBasedItem, UiIcon } from '@ci/data-types';
+import { booleanAttribute, Component, computed, inject, Injector, input } from '@angular/core';
+import {
+    CustomEntry,
+    DatabaseItem,
+    Item,
+    MinimalItem,
+    MinimalTagBasedItem,
+    Quality,
+    TagBasedItem,
+    UiIcon
+} from '@ci/data-types';
 import { DatabaseService } from '../../services/database.service';
 import { entityKey } from "@ci/util";
 import { ToDoContext } from "../../../core/types/to-do-context.type";
@@ -14,11 +23,13 @@ import { AddSpacesToPascalCasePipe } from "../../pipes/add-spaces-to-pascal-case
 import { RouterLink } from "@angular/router";
 import { QualityGridComponent } from "../quality-grid/quality-grid.component";
 import { IsItemPipe } from "../../pipes/is-item.pipe";
-import { KeyValuePipe } from "@angular/common";
+import { AsyncPipe, KeyValuePipe } from "@angular/common";
 import { ToItemListEntriesPipe } from "../../pipes/to-item-list-entries.pipe";
 import { ItemListComponent } from "../item-list/item-list.component";
 import { MoneyComponent } from "../money/money.component";
 import { TranslatePipe } from "@ngx-translate/core";
+import { toObservable } from "@angular/core/rxjs-interop";
+import { map, of, switchMap } from "rxjs";
 
 type ItemEntry = Item | MinimalItem | CustomEntry | MinimalTagBasedItem;
 
@@ -42,6 +53,7 @@ type ItemEntry = Item | MinimalItem | CustomEntry | MinimalTagBasedItem;
         ItemListComponent,
         MoneyComponent,
         TranslatePipe,
+        AsyncPipe,
     ]
 })
 export class BaseItemCardComponent {
@@ -54,31 +66,27 @@ export class BaseItemCardComponent {
     protected uiIcon = UiIcon;
     protected readonly UiIcon = UiIcon;
     protected readonly listDetails = inject(ListDetailService);
+
     readonly #database: DatabaseService = inject(DatabaseService);
-    protected computedItem = computed<Item | CustomEntry | TagBasedItem | undefined>(() => {
+    fetchedItems = toObservable(this.item).pipe(
+        switchMap(item => {
 
-        const item = this.item()
+            if (!this.isItem(item)) {
+                const entityKey1 = entityKey(item);
 
-        if (!this.isItem(item)) {
-            const fetchedItem = this.#database.getItems().find(i => i.id === entityKey(item));
+                if (this.isCustomEntry(item)) {
+                    return of(item);
+                } else if (this.isTagBasedItem(item)) {
+                    return of(this.#database.getTagBasedItems().find(i => i.key === entityKey1));
+                } else {
+                    return this.#database.fetchDatabaseItem$(entityKey1).pipe(map(dbItem => dbItem.item))
+                }
 
-            if (fetchedItem) {
-                return fetchedItem;
-            } else if (this.isCustomEntry(item)) {
-                return item;
-            } else if (this.isTagBasedItem(item)) {
-                return this.#database.getTagBasedItems().find(i => i.key === entityKey(item));
+            } else {
+                return of(item);
             }
-            console.error(`couldn't find ${entityKey(item)} in base-card`)
-
-            return;
-
-        } else {
-            return item;
-        }
-
-
-    });
+        })
+    )
 
     isTagBasedItem(item: ItemEntry): item is MinimalTagBasedItem {
         return 'key' in item;
