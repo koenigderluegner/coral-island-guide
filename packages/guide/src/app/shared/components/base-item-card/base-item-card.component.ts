@@ -72,14 +72,14 @@ export class BaseItemCardComponent {
         switchMap(item => {
 
             if (!this.isItem(item)) {
-                const entityKey1 = entityKey(item);
+                const key = entityKey(item);
 
                 if (this.isCustomEntry(item)) {
                     return of(item);
                 } else if (this.isTagBasedItem(item)) {
-                    return of(this.#database.getTagBasedItems().find(i => i.key === entityKey1));
+                    return of(this.#database.getTagBasedItems().find(i => i.key === key));
                 } else {
-                    return this.#database.fetchDatabaseItem$(entityKey1).pipe(map(dbItem => dbItem.item))
+                    return this.#database.fetchDatabaseItem$(key).pipe(map(dbItem => dbItem.item))
                 }
 
             } else {
