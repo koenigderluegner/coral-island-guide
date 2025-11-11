@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, effect } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { FestivalShopItemData } from "@ci/data-types";
 import { MoneyComponent } from "../../../../shared/components/money/money.component";
@@ -30,7 +30,7 @@ import { TranslatePipe } from "@ngx-translate/core";
 })
 export class FestivalShopItemTableComponent extends BaseTableComponent<FestivalShopItemData & {
     festival?: { url: string; displayName: string }
-}> implements OnInit {
+}> {
     protected readonly BASE_DISPLAY_COLUMNS: string[] = [
         'icon',
         'displayName',
@@ -41,10 +41,13 @@ export class FestivalShopItemTableComponent extends BaseTableComponent<FestivalS
         'sellPrice'
     ];
 
-    ngOnInit() {
-        if (this._dataSource().length && this._dataSource()[0].festival) {
-            this.displayedColumns.splice(2, 0, 'shop');
-            this.displayHeaderColumns = this.displayedColumns.filter(column => column !== 'icon')
-        }
+    constructor() {
+        super();
+        effect(() => {
+            if (this._dataSource().length && this._dataSource()[0].festival) {
+                this.displayedColumns.splice(2, 0, 'shop');
+                this.displayHeaderColumns = this.displayedColumns.filter(column => column !== 'icon')
+            }
+        });
     }
 }
