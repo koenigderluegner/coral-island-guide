@@ -1,7 +1,9 @@
 import { EnvironmentConfig } from "./environment-config.interface";
 import path from "path";
+import { workspaceRoot } from "nx/src/utils/workspace-root";
+
 
 export const environment: EnvironmentConfig = {
     isBeta: true,
-    assetPath: path.join(__dirname, 'assets', 'beta')
+    assetPath: path.join(workspaceRoot, 'pak-assets', 'beta')
 };
