@@ -4,6 +4,7 @@ import { ItemIconComponent } from "../item-icon/item-icon.component";
 import { RouterLink } from "@angular/router";
 import { InlineMinimalItemComponent } from "../inline-minimal-item/inline-minimal-item.component";
 import { IngameDatePipe } from "../../pipes/ingame-date.pipe";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-requirements',
@@ -13,7 +14,8 @@ import { IngameDatePipe } from "../../pipes/ingame-date.pipe";
         ItemIconComponent,
         RouterLink,
         InlineMinimalItemComponent,
-        IngameDatePipe
+        IngameDatePipe,
+        TranslatePipe
     ]
 })
 export class RequirementsComponent {

@@ -5,7 +5,7 @@
         Achievement
         <app-item-icon [itemName]="req.meta.achievement.iconName"
                        class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
-        {{ req.meta.achievement.title }} unlocked
+        {{ req.meta.achievement.title | translate }} unlocked
     </div>
 }
 @if (req.type === 'MountAcquired') {
@@ -53,7 +53,7 @@
         Acquired special item
         <app-item-icon [itemName]="req.meta.item.iconName"
                        class="!w-7 -my-1 translate-y-1 ml-1 mr-0.5  !inline-block"/>
-        {{ req.meta.item.displayName }}
+        {{ req.meta.item.displayName  | translate }}
     </div>
 }
 @if (req.type === 'DateSeasonRange') {
@@ -67,13 +67,13 @@
         Has {{ req.meta.amount }}x
         <app-item-icon [itemName]="req.meta.item.iconName"
                        class="!w-7 ml-1 -my-1 translate-y-1 mr-0.5  !inline-block"/>
-        {{ req.meta.item.displayName }}{{ req.meta.requiredQuality ? ' of ' + req.meta.requiredQuality + ' quality' : '' }}
+        {{ req.meta.item.displayName  | translate }}{{ req.meta.requiredQuality ? ' of ' + req.meta.requiredQuality + ' quality' : '' }}
         in inventory
     </div>
 }
 @if (req.type === 'ItemWithCategoryInInventory') {
 
-    Has {{ req.meta.amount }}x items of category {{ req.meta.categoryName }} in inventory
+    Has {{ req.meta.amount }}x items of category {{ req.meta.categoryName | translate }} in inventory
 
 }
 @if (req.type === 'ObjectState') {
@@ -116,7 +116,7 @@
 }
 @if (req.type === 'NPCHeartLevel') {
 
-    Has reached {{ req.meta.expectedHeartLevel }} hearts with {{ req.meta.npcKey }}
+    Has reached {{ req.meta.expectedHeartLevel }} hearts with {{ req.meta.npcKey  | translate }}
 
 }
 @if (req.type === 'QuestFactCompare') {
@@ -132,12 +132,12 @@
 
     Player has read '<a [queryParams]="{selectedId: req.meta.mailId}"
                         [routerLink]="['/journal', 'notes', 'letters']"
-                        class="underline">{{ req.meta.title }}</a>'
+                        class="underline">{{ req.meta.title  | translate }}</a>'
 
 }
 @if (req.type === 'DinoHologramItemRewardClaimed') {
 
-    Player received dinosaur hologram reward for {{ req.meta.dinosaursName }}
+    Player received dinosaur hologram reward for {{ req.meta.dinosaursName  | translate }}
 
 }
 @if (req.type === 'ShipToUnlock') {
