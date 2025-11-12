@@ -1,6 +1,6 @@
 ## Changelog
 
-### TBD
+### 0.28.0 2025-11-12
 
 The whole system of loading data has changed completely. This may cause some bugs or strange behaviors (which I tried to solve as best as I can).
 If you find some cryptic names or misbehaving features, please let me know.
