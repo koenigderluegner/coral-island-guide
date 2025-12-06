@@ -1,5 +1,11 @@
 ## Changelog
 
+### TBD
+
+#### Changed
+
+- Updated live data to v1.2-1244 (Steam version)
+
 ### 0.28.0 2025-11-12
 
 The whole system of loading data has changed completely. This may cause some bugs or strange behaviors (which I tried to solve as best as I can).
