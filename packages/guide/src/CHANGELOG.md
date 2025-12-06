@@ -1,10 +1,11 @@
 ## Changelog
 
-### TBD
+### 0.28.1 2025-12-06
 
 #### Changed
 
 - Updated live data to v1.2-1244 (Steam version)
+- Fixed translation is not working after changing it in settings (still requires a page reload)
 
 ### 0.28.0 2025-11-12
 

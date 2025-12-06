@@ -36,14 +36,15 @@ export class AppComponent {
 
 
     constructor() {
+        const settings = this.#settingsService.getSettings();
         const usedLang: AvailableLanguage = 'en'
-    const  translate = inject(TranslateService);
+        const translate = inject(TranslateService);
         translate.addLangs([...AvailableLanguages]);
         translate.setFallbackLang(usedLang);
-        translate.use(usedLang);
+        translate.use(settings.language ?? usedLang);
         inject(UserDataService).read();
 
-        if (!this.#settingsService.getSettings().disableChangelogs) {
+        if (!settings.disableChangelogs) {
             afterNextRender(() => {
                 this.#changelogService.getLatestChangelog().subscribe({
                     next: changelog => {
