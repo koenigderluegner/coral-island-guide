@@ -1,17 +1,12 @@
-export type RawAddItemToInventoryEffect = {
-    "Type": "C_AddItemToInventoryEffect",
-    "Name": string;
-    "Outer": string;
-    "Class": "UScriptClass'C_AddItemToInventoryEffect'",
-    "Properties": {
-        "itemData": {
-            "data": {
-                "RowName": string
-            },
-            "itemID": string
-        },
-        "quantity"?: number;
+import { RawEffectWithMeta } from "./raw-effect-with-meta";
 
-        "isQuestReward"?: boolean
-    }
-}
+export type RawAddItemToInventoryEffect = RawEffectWithMeta<'AddItemToInventory', {
+    itemData: {
+        data: {
+            RowName: string;
+        },
+        itemID: string;
+    },
+    quantity?: number;
+    isQuestReward?: boolean
+}> 

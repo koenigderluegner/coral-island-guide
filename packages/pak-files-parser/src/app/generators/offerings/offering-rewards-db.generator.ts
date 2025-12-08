@@ -6,7 +6,9 @@ import { RawOfferingReward } from "../../../interfaces/raw-data-interfaces/raw-o
 import { GameplayEffectsConfig, GameplayEffectsConfigEntry } from "../../../types/offering-reward-config.type";
 import { OfferingMatch } from "../../../interfaces/offering-match.interface";
 import { RawAddItemToInventoryEffect } from "../../../interfaces/raw-data-interfaces/da-file-parse/effects/add-item-to-inventory-effect.type";
-import { RawUnlockCookingRecipeEffect } from "../../../interfaces/raw-data-interfaces/da-file-parse/effects/unlock-cooking-recipe-effect.type";
+import { DaEffects } from "../../../interfaces/raw-data-interfaces/da-file-parse/effects/da-effects.type";
+
+
 
 export class OfferingRewardsDbGenerator extends BaseGenerator<RawOfferingReward, OfferingMatch> {
 
@@ -57,8 +59,7 @@ export class OfferingRewardsDbGenerator extends BaseGenerator<RawOfferingReward,
 
                 // need to trim ' as they changed their syntax using ' instead of whitespaces
                 key = key.replace(/^\'+/, '').replace(/\'+$/, '');
-                const reward = this.rewardsDa.find(a => a.Name === key) as RawUnlockCookingRecipeEffect | RawAddItemToInventoryEffect;
-
+                const reward = this.rewardsDa.find(a => a.Name === key) as Extract<DaEffects, {Type: `C_UnlockCookingRecipeEffect`}> | RawAddItemToInventoryEffect;
                 if ('itemData' in reward.Properties) {
                     const item = this.itemMap.get(reward.Properties.itemData.itemID);
                     if (!item) {

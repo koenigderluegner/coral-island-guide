@@ -1,26 +1,17 @@
-export type RawConsumeItemMasterEffect = {
-    "Type": "C_ConsumeItemMasteryEffect",
-    "Name": string;
-    "Outer": string;
-    "Class": "UScriptClass'C_ConsumeItemMasteryEffect'",
-    "Properties": {
-        "masteryType": string;
-        "itemData": {
-            "data": {
-                "RowName": string;
-            },
-            "itemID": string;
+import { ObjectPath } from "../../../../types/object-path.type";
+import { RawEffectWithMeta } from "./raw-effect-with-meta";
+
+export type RawConsumeItemMasterEffect = RawEffectWithMeta<'ConsumeItemMastery', {
+    masteryType: string;
+    itemData: {
+        data: {
+            RowName: string;
         },
-        "playAnimationTrigger": boolean,
-        "animationMontage": {
-            "ObjectName": string;
-            "ObjectPath": string;
-        },
-        "sectionName": string;
-        "animationSpeed": number;
-        "endAnimMontage": {
-            "ObjectName": string;
-            "ObjectPath": string;
-        }
-    }
-}
+        itemID: string;
+    },
+    playAnimationTrigger: boolean;
+    animationMontage: ObjectPath;
+    sectionName: string;
+    animationSpeed: number;
+    endAnimMontage: ObjectPath;
+}>;

@@ -1,5 +1,5 @@
 import { ItemDbGenerator } from "./items/item-db.generator";
-import { DaFilesParser } from "../da-files-parser";
+import { DaFilesParser } from "../da-parser/da-files-parser";
 import { CalendarGenerator } from "./misc/calendar.generator";
 import { NPCDbGenerator } from "./npcs/npc-db.generator";
 import { CraftingRecipeUnlockedByMasteryDbGenerator } from "./item-processing/crafting-recipe-unlocked-by-mastery-db.generator";

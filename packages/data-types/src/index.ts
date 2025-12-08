@@ -1,26 +1,8 @@
 export * from './lib/consts/preference-map.const';
 
-
-export * from './lib/types/effects/add-item-to-inventory-effect.type';
-export * from './lib/types/effects/boost-max-stamina-effect.type';
-export * from './lib/types/effects/change-object-state-effect.type';
-export * from './lib/types/effects/consume-mastery-item-effect.type';
 export * from './lib/types/effects/effect.type';
-export * from './lib/types/effects/remove-item-from-inventory-effect.type';
-export * from './lib/types/effects/send-mail-to-player-effect.type';
-export * from './lib/types/effects/set-quest-active-effect.type';
-export * from './lib/types/effects/set-quest-completed-effect.type';
-export * from './lib/types/effects/set-quest-fact-value-effect.type';
-export * from './lib/types/effects/unlock-cooking-recipe-effect.type';
-export * from './lib/types/effects/unlock-cooking-utensil-effect.type';
-export * from './lib/types/effects/unlock-crafting-recipe-effect.type';
-export * from './lib/types/effects/update-npc-schedule-effect.type';
-export * from './lib/types/effects/vary-money-effect.type';
-export * from './lib/types/effects/unlock-special-item-effect.type';
-export * from './lib/types/effects/boost-max-health-effect.type';
-export * from './lib/types/effects/mark-dino-hologram-reward-claimed-effect.type';
-export * from './lib/types/effects/change-appearance-potion-effect';
-
+export * from './lib/types/effects/effect-without-meta';
+export * from './lib/types/effects/effect-with-meta';
 
 export * from './lib/types/requirements/complete-mining-requirement.type';
 export * from './lib/types/requirements/count-npc-heart-level-requirement.type';

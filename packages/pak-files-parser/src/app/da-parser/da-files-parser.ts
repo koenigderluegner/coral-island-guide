@@ -1,19 +1,13 @@
-import { minifyItem, readAsset, unifyInternalPath } from "../util/functions";
+import { minifyItem, readAsset, unifyInternalPath } from "../../util/functions";
 import {
     GameplayEffectsConfig,
     GameplayEffectsConfigEntry,
     GameplayEffectsConfigMap
-} from "../types/offering-reward-config.type";
-import { Logger } from "../util/logger.class";
+} from "../../types/offering-reward-config.type";
+import { Logger } from "../../util/logger.class";
 import {
     Achievement,
-    AddItemToInventoryEffect,
-    BoostMaxHealthEffect,
-    BoostMaxStaminaEffect,
-    ChangeAppearancePotionEffect,
-    ChangeObjectStateEffect,
     CompleteMiningRequirement,
-    ConsumeMasteryItemEffect,
     CookingRecipe,
     CountNpcHeartLevelRequirement,
     DateSeasonRangeRequirement,
@@ -33,9 +27,9 @@ import {
     ItemInInventoryRequirement,
     ItemWithCategoryInInventoryRequirement,
     MailData,
-    MarkDinoHologramRewardClaimedEffect,
     MarriageHasProposedRequirement,
     MasteryLevelRequirements,
+    MetaForType,
     MountAcquiredRequirement,
     NpcHeartLevelRequirement,
     ObjectStateRequirement,
@@ -43,33 +37,24 @@ import {
     QuestFactComparators,
     QuestFactCompareRequirement,
     QuestFactRequirement,
-    RemoveItemFromInventoryEffect,
     Requirement,
     RequirementEntry,
-    SendMailToPlayerEffect,
-    SetQuestActiveEffect,
-    SetQuestCompletedEffect,
-    SetQuestFactValueEffect,
     SpecialItem,
     SpecialItemRequirement,
     TempleLevelRequirement,
     TimeDateRequirement,
-    UnlockCookingRecipeEffect,
-    UnlockCookingUtensilEffect,
-    UnlockCraftingRecipeEffect,
-    UnlockSpecialItemEffect,
-    UpdateNpcScheduleEffect,
-    VaryMoneyEffect
 } from "@ci/data-types";
 import { getEnumValue, nonNullable } from "@ci/util";
 import path from "path";
 import fs from 'fs';
-import { environment } from "../environments/environment";
+import { environment } from "../../environments/environment";
 import {
     GameplayRequirementsConfig,
     GameplayRequirementsConfigEntry,
     GameplayRequirementsConfigMap
-} from "../interfaces/raw-data-interfaces/da-file-parse/requirements/gameplay-requirement-config.type";
+} from "../../interfaces/raw-data-interfaces/da-file-parse/requirements/gameplay-requirement-config.type";
+import { convertEffectsWithoutMeta } from "../../interfaces/raw-data-interfaces/da-file-parse/effects/raw-effect-without-meta";
+import { convertEffectsWithMeta, } from "../../interfaces/raw-data-interfaces/da-file-parse/effects/raw-effect-with-meta";
 
 export type EffectEntry = {
     key: string,
@@ -171,18 +156,11 @@ export class DaFilesParser {
                 let daEffect: Effect | undefined = undefined;
 
                 switch (foundEffect.Type) {
+                    case "C_ChangeAppearancePotionEffect":
+                    case "C_BoostMaxStaminaEffect":
                     case "C_BoostMaxHealthEffect": {
 
-                        daEffect = {type: "BoostMaxHealth"} satisfies BoostMaxHealthEffect;
-                        break;
-                    }
-                    case "C_ChangeAppearancePotionEffect": {
-                        daEffect = {type: "ChangeAppearancePotion"} satisfies ChangeAppearancePotionEffect;
-                        break;
-                    }
-                    case "C_BoostMaxStaminaEffect": {
-
-                        daEffect = {type: "BoostMaxStamina"} satisfies BoostMaxStaminaEffect;
+                        daEffect = convertEffectsWithoutMeta(foundEffect);
                         break;
                     }
                     case 'C_UnlockSpecialItemEffect':
@@ -190,12 +168,10 @@ export class DaFilesParser {
 
                         if (!item) return;
 
-                        daEffect = {
-                            type: "UnlockSpecialItem",
-                            meta: {
+                        daEffect = convertEffectsWithMeta(foundEffect, () => ({
                                 item: minifyItem(item)
-                            }
-                        } satisfies UnlockSpecialItemEffect;
+                            })
+                        );
                         break;
                     case "C_AddItemToInventoryEffect": {
 
@@ -204,43 +180,42 @@ export class DaFilesParser {
 
                         if (!item) return;
 
-                        daEffect = {
-                            type: "AddItemToInventory",
-                            meta: {
+                        daEffect = convertEffectsWithMeta(foundEffect, () => ({
                                 item: minifyItem(item),
                                 ...rest
-                            }
-                        } satisfies AddItemToInventoryEffect;
+                            })
+                        );
+
                         break;
                     }
                     case "C_UnlockCookingUtelsilEffect": {
-                        daEffect = {
-                            type: "UnlockCookingUtensil",
-                            meta: {
-                                // TODO check if correct?
-                                utensil: foundEffect.Properties?.utensilToUnlock ? getEnumValue(foundEffect.Properties.utensilToUnlock) : 'FryingPan'
-                            }
-                        } satisfies UnlockCookingUtensilEffect;
+                        daEffect = convertEffectsWithMeta({
+                            ...foundEffect,
+                            Type: 'C_UnlockCookingUtensilEffect',
+                            Class: `UScriptClass'C_UnlockCookingUtensilEffect'`,
+                            Properties: foundEffect.Properties ?? {utensilToUnlock: 'FryingPan'}
+                        }, (p) => ({
+                            utensil: getEnumValue(p.utensilToUnlock)
+                        }));
+
                         break;
                     }
                     case "C_SetQuestFactValueEffect": {
-
-                        daEffect = {
-                            type: "SetQuestFactValue",
-                            meta: {
-                                factName: foundEffect.Properties.fact.factName.RowName
-                            }
-                        } satisfies SetQuestFactValueEffect;
+                        daEffect = convertEffectsWithMeta(foundEffect, (p) => ({
+                                factName: p.fact.factName.RowName
+                            })
+                        );
                         break;
                     }
                     case "C_MarkDinoHologramRewardClaimed": {
-
-                        daEffect = {
-                            type: "MarkDinoHologramRewardClaimed",
-                            meta: {
-                                dinoName: foundEffect.Properties.dinoId.dinosaursName.RowName
-                            }
-                        } satisfies MarkDinoHologramRewardClaimedEffect;
+                        daEffect = convertEffectsWithMeta({
+                            ...foundEffect,
+                            Type: 'C_MarkDinoHologramRewardClaimedEffect',
+                            Class: `UScriptClass'C_MarkDinoHologramRewardClaimedEffect'`,
+                            Properties: foundEffect.Properties ?? {utensil: 'FryingPan'}
+                        }, (p) => ({
+                            dinoName: p.dinoId.dinosaursName.RowName
+                        }));
                         break;
                     }
                     case "C_UnlockCookingRecipeEffect": {
@@ -252,12 +227,10 @@ export class DaFilesParser {
                             return;
                         }
 
-                        daEffect = {
-                            type: "UnlockCookingRecipe",
-                            meta: {
+                        daEffect = convertEffectsWithMeta(foundEffect, () => ({
                                 item: minifyItem(item)
-                            }
-                        } satisfies UnlockCookingRecipeEffect;
+                            })
+                        );
                         break;
                     }
                     case "C_UnlockCraftingRecipeEffect": {
@@ -266,67 +239,50 @@ export class DaFilesParser {
 
                         if (!item) return;
 
-                        daEffect = {
-                            type: "UnlockCraftingRecipe",
-                            meta: {
+                        daEffect = convertEffectsWithMeta(foundEffect, () => ({
                                 item: minifyItem(item)
-                            }
-                        } satisfies UnlockCraftingRecipeEffect;
+                            })
+                        );
+
                         break;
 
 
                     }
                     case "C_ConsumeItemMasteryEffect": {
 
-                        daEffect = {
-                            type: "ConsumeItemMastery",
-                            meta: {
-                                mastery: getEnumValue(foundEffect.Properties.masteryType)
-                            }
-                        } satisfies ConsumeMasteryItemEffect;
+                        daEffect = convertEffectsWithMeta(foundEffect, (p) => ({
+                                mastery: getEnumValue(p.masteryType)
+                            })
+                        );
                         break;
 
 
                     }
                     case "C_VaryMoneyEffect": {
 
-                        daEffect = {
-                            type: "VaryMoney",
-                            meta: {
-                                amount: foundEffect.Properties.amount
-                            }
-                        } satisfies VaryMoneyEffect;
+                        daEffect = convertEffectsWithMeta(foundEffect, (p) => ({amount: p.amount}))
                         break;
 
 
                     }
                     case "C_ChangeObjectStateEffect": {
-
-                        daEffect = {
-                            type: "ChangeObjectState",
-                            meta: {
-                                id: foundEffect.Properties.id,
-                                state: foundEffect.Properties.state
-                            }
-                        } satisfies ChangeObjectStateEffect;
-
+                        const meta: MetaForType<'ChangeObjectState'> = {
+                            id: foundEffect.Properties.id,
+                            state: foundEffect.Properties.state
+                        };
                         const customName = this.changeObjectEffectsCustomNames.get(foundEffect.Properties.id);
 
                         if (customName) {
-                            daEffect.meta['customName'] = customName
+                            meta['customName'] = customName
                         }
+                        daEffect = daEffect = convertEffectsWithMeta(foundEffect, () => meta)
                         break;
 
 
                     }
                     case "C_UpdateNPCScheduleEffect": {
 
-                        daEffect = {
-                            type: "UpdateNpcSchedule",
-                            meta: {
-                                npcIds: foundEffect.Properties.npcIDs
-                            }
-                        } satisfies UpdateNpcScheduleEffect;
+                        daEffect = convertEffectsWithMeta(foundEffect, (p) => ({npcIds: p.npcIDs}))
 
                         break;
 
@@ -340,49 +296,26 @@ export class DaFilesParser {
                             Logger.error(`DaFilesParser: Can't find mail with mailId ${mailId}`)
                             return;
                         }
-
-                        daEffect = {
-                            type: "SendMailToPlayer",
-                            meta: {
-                                mail: {
-                                    mailId,
-                                    title: mail.title ?? mailId
-                                },
-                                dayDelay: foundEffect.Properties.dayDelay
-                            }
-                        } satisfies SendMailToPlayerEffect;
+                        daEffect = convertEffectsWithMeta(foundEffect, (p) => ({
+                            mail: {
+                                mailId,
+                                title: mail.title ?? mailId
+                            },
+                            dayDelay: p.dayDelay
+                        }))
                         break;
 
 
                     }
+                    case "C_SetQuestCompletedEffect":
                     case "C_SetQuestActiveEffect": {
-
-                        daEffect = {
-                            type: "SetQuestActive",
-                            meta: {
-                                questId: foundEffect.Properties.questId
-                            }
-                        } satisfies SetQuestActiveEffect;
+                        daEffect = convertEffectsWithMeta(foundEffect, (p) => ({questId: p.questId}))
                         break;
-
-
-                    }
-                    case "C_SetQuestCompletedEffect": {
-
-                        daEffect = {
-                            type: "SetQuestCompleted",
-                            meta: {
-                                questId: foundEffect.Properties.questId
-                            }
-                        } satisfies SetQuestCompletedEffect;
-                        break;
-
-
                     }
 
                     case "C_RemoveItemFromInventoryEffect": {
 
-                        let meta: RemoveItemFromInventoryEffect['meta'];
+                        let meta: MetaForType<'RemoveItemFromInventory'>;
 
                         if ('removeByCategory' in foundEffect.Properties) {
                             //get  GiftCategory
@@ -398,11 +331,7 @@ export class DaFilesParser {
                             meta = {item: minifyItem(item), amount: foundEffect.Properties.quantity ?? 1}
                         }
 
-
-                        daEffect = {
-                            type: "RemoveItemFromInventory",
-                            meta
-                        } satisfies RemoveItemFromInventoryEffect;
+                        daEffect = convertEffectsWithMeta(foundEffect, () => meta)
                         break;
 
 
@@ -437,8 +366,6 @@ export class DaFilesParser {
             conf = map
         }
 
-
-        const keys = Object.keys(conf);
 
         conf.forEach(key => {
 

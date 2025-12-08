@@ -3,7 +3,7 @@ import path from 'path';
 import { AvailableLanguage, Item, MinimalItem, MinimalNPC, MinimalTagBasedItem } from '@ci/data-types';
 import { config } from "../config";
 import { environment } from "../environments/environment";
-import { EffectMap, RequirementMap } from "../app/da-files-parser";
+import { EffectMap, RequirementMap } from "../app/da-parser/da-files-parser";
 import { AssetPath } from "../types/asset-path.type";
 import { ObjectPath } from "../types/object-path.type";
 import { RawNPC } from "../interfaces/raw-data-interfaces/raw-npc.interface";

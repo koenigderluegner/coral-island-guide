@@ -1,38 +1,29 @@
 import { RawAddItemToInventoryEffect } from "./add-item-to-inventory-effect.type";
-import { RawBoostMaxStaminaEffect } from "./boost-max-stamina-effect.type";
-import { RawUnlockCookingRecipeEffect } from "./unlock-cooking-recipe-effect.type";
-import { RawUnlockCraftingRecipeEffect } from "./unlock-crafting-recipe-effect.type";
-import { RawSetQuestFactValueEffect } from "./set-quest-fact-value-effect.type";
-import { RawUnlockCookingUtensilEffect } from "./unlock-cooking-utensil-effect.type";
 import { RawConsumeItemMasterEffect } from "./consume-item-master-effect.type";
 import { RawRemoteItemFromInventoryEffect } from "./remove-item-from-inventory-effect.type";
-import { RawSetQuestActiveEffect } from "./set-quest-active-effect.type";
-import { RawSetQuestCompletedEffect } from "./set-quest-completed-effect.type";
-import { RawVaryMoneyEffect } from "./vary-money-effect.type";
-import { RawSendMailToPlayerEffect } from "./send-mail-to-player-effect.type";
-import { RawChangeObjectStateEffect } from "./change-object-state-effect.type";
-import { RawUpdateNpcScheduleEffect } from "./update-npc-schedule-effect.type";
-import { RawUnlockSpecialItemEffect } from "./unlock-special-item-effect.type";
-import { RawBoostMaxHealthEffect } from "./boost-max-health-effect.type";
 import { RawMarkDinoHologramRewardClaimedEffect } from "./mark-dino-hologram-reward-claimed-effect.type";
-import { RawChangeAppearancePotionEffect } from "./change-appearance-potion-effect";
+import { RawEffectWithoutMeta } from "./raw-effect-without-meta";
+import { RawEffectWithMeta } from "./raw-effect-with-meta";
+import { DatatableRef } from "../../../../types/datatable-ref.type";
+import { ObjectPath } from "../../../../types/object-path.type";
+import { AssetPath } from "../../../../types/asset-path.type";
 
 export type DaEffects =
-    RawAddItemToInventoryEffect
-    | RawBoostMaxStaminaEffect
-    | RawSetQuestFactValueEffect
-    | RawUnlockCookingRecipeEffect
-    | RawUnlockCookingUtensilEffect
-    | RawUnlockCraftingRecipeEffect
+    | RawAddItemToInventoryEffect
+    | RawEffectWithMeta<'SetQuestFactValue', { fact: { factName: { RowName: string } } }>
+    | RawEffectWithMeta<'UnlockCookingRecipe', { recipe: { RowName: string } }>
+    | RawEffectWithMeta<'UnlockCookingUtelsil', { utensilToUnlock: string }>
+    | RawEffectWithMeta<'UnlockCraftingRecipe', { recipe: { RowName: string } }>
     | RawConsumeItemMasterEffect
     | RawRemoteItemFromInventoryEffect
-    | RawSetQuestActiveEffect
-    | RawSetQuestCompletedEffect
-    | RawVaryMoneyEffect
-    | RawSendMailToPlayerEffect
-    | RawChangeObjectStateEffect
-    | RawUpdateNpcScheduleEffect
-    | RawUnlockSpecialItemEffect
-    | RawBoostMaxHealthEffect
+    | RawEffectWithMeta<'SetQuestActive', { quest: ObjectPath, questId: string }>
+    | RawEffectWithMeta<'SetQuestCompleted', { quest: ObjectPath, questId: string }>
+    | RawEffectWithMeta<'VaryMoney', { amount: number, incomeCategory: string[] }>
+    | RawEffectWithMeta<'SendMailToPlayer', { mailRow: DatatableRef, mailId: string; dayDelay: number }>
+    | RawEffectWithMeta<'ChangeObjectState', {    actorRef: AssetPath,    id: string;    state: string;    stateInput: string}>
+    | RawEffectWithMeta<'UpdateNPCSchedule', { forceRefresh: boolean, npcIDs: string[] }>
+    | RawEffectWithMeta<'UnlockSpecialItem', { item: DatatableRef, isQuestReward?: boolean }>
     | RawMarkDinoHologramRewardClaimedEffect
-    | RawChangeAppearancePotionEffect
+    | RawEffectWithoutMeta<'BoostMaxHealth'>
+    | RawEffectWithoutMeta<'BoostMaxStamina'>
+    | RawEffectWithoutMeta<'ChangeAppearancePotion'>

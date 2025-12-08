@@ -1,5 +1,5 @@
 import { Datatable } from '../../../interfaces/datatable.interface';
-import { DaFilesParser, EffectMap, RequirementMap } from "../../da-files-parser";
+import { DaFilesParser, EffectMap, RequirementMap } from "../../da-parser/da-files-parser";
 import { Effect, RequirementEntry } from "@ci/data-types";
 import { isEffectMap, isRequirementMap } from "../../../util/functions";
 import { nonNullable } from "@ci/util";
