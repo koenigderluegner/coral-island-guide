@@ -1,5 +1,5 @@
 import { BaseGenerator } from "../_base/base-generator.class";
-import { CookingRecipe, Item, OfferingReward } from "@ci/data-types";
+import { CookingRecipe, Item, OfferingReward, SafeExtract } from "@ci/data-types";
 import { Datatable } from "../../../interfaces/datatable.interface";
 import { minifyItem, readAsset } from "../../../util/functions";
 import { RawOfferingReward } from "../../../interfaces/raw-data-interfaces/raw-offering-reward.interface";
@@ -59,7 +59,7 @@ export class OfferingRewardsDbGenerator extends BaseGenerator<RawOfferingReward,
 
                 // need to trim ' as they changed their syntax using ' instead of whitespaces
                 key = key.replace(/^\'+/, '').replace(/\'+$/, '');
-                const reward = this.rewardsDa.find(a => a.Name === key) as Extract<DaEffects, {Type: `C_UnlockCookingRecipeEffect`}> | RawAddItemToInventoryEffect;
+                const reward = this.rewardsDa.find(a => a.Name === key) as SafeExtract<DaEffects, {Type: `C_UnlockCookingRecipeEffect`}> | RawAddItemToInventoryEffect;
                 if ('itemData' in reward.Properties) {
                     const item = this.itemMap.get(reward.Properties.itemData.itemID);
                     if (!item) {
