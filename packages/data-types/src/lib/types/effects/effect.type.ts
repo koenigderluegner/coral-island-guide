@@ -2,9 +2,7 @@ import { EffectWithoutMeta } from "./effect-without-meta";
 import { EffectWithMeta } from "./effect-with-meta";
 import { MinimalItem } from "../minimal-item.type";
 
-export type Effect =
-    | EffectsWithMeta
-    | EffectsWithoutMeta
+export type Effect = EffectsWithMeta | EffectsWithoutMeta
 
 export type EffectsWithoutMeta =
     | EffectWithoutMeta<"BoostMaxHealth">
@@ -29,4 +27,4 @@ export type EffectsWithMeta =
     | EffectWithMeta<'UpdateNPCSchedule', { npcIds: string[] }>
     | EffectWithMeta<'VaryMoney', { amount: number }>
 
-export type MetaForType<T extends EffectsWithMeta['type']> = Extract<EffectsWithMeta, { type: T }>['meta'];
+export type EffectMetaForType<T extends EffectsWithMeta['type']> = Extract<EffectsWithMeta, { type: T }>['meta'];

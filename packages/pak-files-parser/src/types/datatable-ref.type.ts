@@ -1,7 +1,6 @@
+import { ObjectPath } from "./object-path.type";
+
 export type DatatableRef = {
-    "DataTable": {
-        "ObjectName": string
-        "ObjectPath": string
-    },
+    "DataTable": ObjectPath,
     "RowName": "None" | string
 }

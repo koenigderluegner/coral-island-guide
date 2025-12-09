@@ -1,9 +1,6 @@
-export type RawDateSeasonRangeRequirement = {
-    "Type": "C_DateSeasonRangeRequirement",
-    "Name": string
-    "Outer": string
-    "Class": "UScriptClass'C_DateSeasonRangeRequirement'",
-    "Properties": {
+import { RawRequirementWithMeta } from "./raw-requirement-with-meta";
+
+export type RawDateSeasonRangeRequirement = RawRequirementWithMeta<'DateSeasonRange', {
         "expectedDateSeason": {
             "from": {
                 "season": string
@@ -16,4 +13,4 @@ export type RawDateSeasonRangeRequirement = {
         },
         "invertResult": boolean
     }
-}
+>

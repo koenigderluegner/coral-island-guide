@@ -7,42 +7,17 @@ import {
 import { Logger } from "../../util/logger.class";
 import {
     Achievement,
-    CompleteMiningRequirement,
     CookingRecipe,
-    CountNpcHeartLevelRequirement,
-    DateSeasonRangeRequirement,
-    DateSeasonRequirement,
-    DinoHologramItemRewardClaimedRequirement,
-    EditorOnlyRequirement,
     Effect,
-    FarmHouseRequirement,
-    HasCookingUtensilRequirement,
-    HealedCoralRequirement,
-    IsAchievementCompletedRequirement,
-    IsCutsceneTriggeredRequirement,
-    IsGiantUnlockedRequirement,
-    IsMailReadRequirement,
-    IsMultiplayerRequirement,
+    EffectMetaForType,
     Item,
-    ItemInInventoryRequirement,
-    ItemWithCategoryInInventoryRequirement,
     MailData,
-    MarriageHasProposedRequirement,
-    MasteryLevelRequirements,
-    MetaForType,
-    MountAcquiredRequirement,
-    NpcHeartLevelRequirement,
-    ObjectStateRequirement,
-    QuestActiveRequirement,
+    QuestFactComparator,
     QuestFactComparators,
-    QuestFactCompareRequirement,
-    QuestFactRequirement,
     Requirement,
     RequirementEntry,
+    RequirementMetaForType,
     SpecialItem,
-    SpecialItemRequirement,
-    TempleLevelRequirement,
-    TimeDateRequirement,
 } from "@ci/data-types";
 import { getEnumValue, nonNullable } from "@ci/util";
 import path from "path";
@@ -55,6 +30,8 @@ import {
 } from "../../interfaces/raw-data-interfaces/da-file-parse/requirements/gameplay-requirement-config.type";
 import { convertEffectsWithoutMeta } from "../../interfaces/raw-data-interfaces/da-file-parse/effects/raw-effect-without-meta";
 import { convertEffectsWithMeta, } from "../../interfaces/raw-data-interfaces/da-file-parse/effects/raw-effect-with-meta";
+import { convertRequirementWithMeta } from "../../interfaces/raw-data-interfaces/da-file-parse/requirements/raw-requirement-with-meta";
+import { convertRequirementWithoutMeta } from "../../interfaces/raw-data-interfaces/da-file-parse/requirements/raw-requirement-without-meta";
 
 export type EffectEntry = {
     key: string,
@@ -266,7 +243,7 @@ export class DaFilesParser {
 
                     }
                     case "C_ChangeObjectStateEffect": {
-                        const meta: MetaForType<'ChangeObjectState'> = {
+                        const meta: EffectMetaForType<'ChangeObjectState'> = {
                             id: foundEffect.Properties.id,
                             state: foundEffect.Properties.state
                         };
@@ -315,7 +292,7 @@ export class DaFilesParser {
 
                     case "C_RemoveItemFromInventoryEffect": {
 
-                        let meta: MetaForType<'RemoveItemFromInventory'>;
+                        let meta: EffectMetaForType<'RemoveItemFromInventory'>;
 
                         if ('removeByCategory' in foundEffect.Properties) {
                             //get  GiftCategory
@@ -370,12 +347,12 @@ export class DaFilesParser {
         conf.forEach(key => {
 
 
-            const reqs = key.Value.requirements.map(effect => {
+            const reqs = key.Value.requirements.map(requirement => {
 
 
-                if (!effect) return;
+                if (!requirement) return;
 
-                const [daPath, index] = effect.ObjectPath.split('.');
+                const [daPath, index] = requirement.ObjectPath.split('.');
 
                 const daJson = unifyInternalPath(daPath + '.json');
                 const fullDaPath = unifyInternalPath(path.join(environment.assetPath, daJson));
@@ -389,18 +366,18 @@ export class DaFilesParser {
 
                 }
 
-                const foundEffect = (DaFilesParser.readAssets.get(fullDaPath) as GameplayRequirementsConfigEntry[] | undefined)?.[+index];
+                const foundRequirement = (DaFilesParser.readAssets.get(fullDaPath) as GameplayRequirementsConfigEntry[] | undefined)?.[+index];
 
-                if (!foundEffect) {
+                if (!foundRequirement) {
                     Logger.error(`Didnt find ${key}.${index}`);
                     return
                 }
 
                 let daEffect: Requirement | undefined = undefined;
 
-                switch (foundEffect.Type) {
+                switch (foundRequirement.Type) {
                     case "C_IsMailReadRequirement":
-                        const mailId = foundEffect.Properties.mailId;
+                        const mailId = foundRequirement.Properties.mailId;
                         const mail = DaFilesParser.MailMap.get(mailId)
 
                         if (!mail) {
@@ -408,348 +385,317 @@ export class DaFilesParser {
                             return;
                         }
 
-                        daEffect = {
-                            type: "IsMailRead",
-                            meta: {
+                        daEffect = convertRequirementWithMeta(foundRequirement, () => (
+                            {
                                 mailId,
                                 title: mail.title ?? mailId
                             }
-                        } satisfies IsMailReadRequirement;
+                        ))
                         break;
                     case "C_CountNPCHeartLevelRequirement": {
-                        daEffect = {
-                            type: "CountNPCHeartLevel",
-                            meta: {
-                                expectedHeartLevel: foundEffect.Properties.expectedHeartLevel
-                            }
-                        } satisfies CountNpcHeartLevelRequirement;
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => ({
+                                expectedHeartLevel: p.expectedHeartLevel
+                            })
+                        );
                         break;
                     }
                     case "C_DinoHologramItemRewardClaimed": {
-                        daEffect = {
-                            type: "DinoHologramItemRewardClaimed",
-                            meta: {
-                                dinosaursName: foundEffect.Properties.dinoHologram.dinosaursName.RowName
+                        daEffect = convertRequirementWithMeta({
+                            ...foundRequirement,
+                            Type: 'C_DinoHologramItemRewardClaimedRequirement',
+                            Class: `UScriptClass'C_DinoHologramItemRewardClaimedRequirement'`
+                        }, (p) => (
+                            {
+                                dinosaursName: p.dinoHologram.dinosaursName.RowName
                             }
-                        } satisfies DinoHologramItemRewardClaimedRequirement;
+                        ));
                         break;
                     }
                     case "C_NPCHeartLevelRequirement": {
-                        daEffect = {
-                            type: "NPCHeartLevel",
-                            meta: {
-                                expectedHeartLevel: foundEffect.Properties.expectedHeartLevel,
-                                npcKey: foundEffect.Properties.NPCId
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => (
+                            {
+                                expectedHeartLevel: p.expectedHeartLevel,
+                                npcKey: p.NPCId
                             }
-                        } satisfies NpcHeartLevelRequirement;
+                        ))
                         break;
                     }
                     case "C_TimeDateRequirement": {
-                        daEffect = {
-                            type: "TimeDate",
-                            meta: {
-                                inverted: foundEffect.Properties.invertResult,
-                                clampDateRange: foundEffect.Properties.clampDateRange,
-                                conditionType: getEnumValue(foundEffect.Properties.conditionType),
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => (
+                            {
+                                inverted: p.invertResult,
+                                clampDateRange: p.clampDateRange,
+                                conditionType: getEnumValue(p.conditionType),
                                 dateRange: {
-                                    isValidIndefinitelyOnceStarted: foundEffect.Properties.dateRange.isValidIndefinitelyOnceStarted,
-                                    isValidOnSpecificDate: foundEffect.Properties.dateRange.isValidOnSpecificDate,
+                                    isValidIndefinitelyOnceStarted: p.dateRange.isValidIndefinitelyOnceStarted,
+                                    isValidOnSpecificDate: p.dateRange.isValidOnSpecificDate,
                                     startsFrom: {
-                                        day: foundEffect.Properties.dateRange.startsFrom.day ?? 1,
-                                        season: getEnumValue(foundEffect.Properties.dateRange.startsFrom.season),
-                                        year: foundEffect.Properties.dateRange.startsFrom.year ?? 1,
+                                        day: p.dateRange.startsFrom.day ?? 1,
+                                        season: getEnumValue(p.dateRange.startsFrom.season),
+                                        year: p.dateRange.startsFrom.year ?? 1,
 
                                     },
                                     lastsTill: {
-                                        day: foundEffect.Properties.dateRange.lastsTill.day ?? 1,
-                                        season: getEnumValue(foundEffect.Properties.dateRange.lastsTill.season),
-                                        year: foundEffect.Properties.dateRange.lastsTill.year ?? 1,
+                                        day: p.dateRange.lastsTill.day ?? 1,
+                                        season: getEnumValue(p.dateRange.lastsTill.season),
+                                        year: p.dateRange.lastsTill.year ?? 1,
 
                                     }
                                 }
                             }
-                        } satisfies TimeDateRequirement;
+                        ));
                         break;
                     }
                     case "C_DateSeasonRequirement": {
-                        daEffect = {
-                            type: "DateSeason",
-                            meta: {
-                                day: foundEffect.Properties.expectedDateSeason.day,
-                                season: getEnumValue(foundEffect.Properties.expectedDateSeason.season)
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => (
+                            {
+                                day: p.expectedDateSeason.day,
+                                season: getEnumValue(p.expectedDateSeason.season)
                             }
-                        } satisfies DateSeasonRequirement;
+                        ))
                         break;
                     }
-
+                    case "C_IsMultiplayerRequirement":
                     case "C_EditorOnlyRequirement": {
-                        daEffect = {
-                            type: "EditorOnly",
-
-                        } satisfies EditorOnlyRequirement;
-
+                        daEffect = convertRequirementWithoutMeta(foundRequirement)
                         break;
                     }
-                    case "C_IsMultiplayerRequirement": {
-                        daEffect = {
-                            type: "IsMultiplayer",
 
-                        } satisfies IsMultiplayerRequirement;
-
-                        break;
-                    }
 
                     case "C_IsAchievementCompletedRequirement": {
 
-                        const achievement = DaFilesParser.AchievementMap.get(foundEffect.Properties.achievementId)
+                        const achievement = DaFilesParser.AchievementMap.get(foundRequirement.Properties.achievementId)
 
                         if (!achievement) return;
 
 
-                        daEffect = {
-                            type: "IsAchievementCompleted",
-                            meta: {
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => (
+                            {
                                 achievement
                             }
-                        } satisfies IsAchievementCompletedRequirement;
+                        ))
                         break;
                     }
                     case "C_IsCutsceneTriggeredRequirement": {
-                        daEffect = {
-                            type: "IsCutsceneTriggered",
-                            meta: {
-                                cutsceneTopic: foundEffect.Properties.cutsceneTopic
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => (
+                            {
+                                cutsceneTopic: p.cutsceneTopic
                             }
-                        } satisfies IsCutsceneTriggeredRequirement;
+                        ))
                         break;
                     }
 
                     case "C_IsGiantUnlockedRequirement": {
-                        daEffect = {
-                            type: "IsGiantUnlocked",
-                            meta: {
-                                types: foundEffect.Properties.types
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => (
+                            {
+                                types: p.types
                             }
-                        } satisfies IsGiantUnlockedRequirement;
+                        ))
                         break;
                     }
 
 
                     case "C_MarriageHasProposedRequirement": {
-                        daEffect = {
-                            type: "MarriageHasProposed",
-                            meta: {inverted: foundEffect.Properties?.invertResult},
-
-                        } satisfies MarriageHasProposedRequirement;
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => (
+                            {
+                                inverted: p?.invertResult
+                            }
+                        ))
                         break;
                     }
 
 
                     case "C_MountAcquiredRequirement": {
-                        daEffect = {
-                            type: "MountAcquired",
-                            meta: {
-                                inverted: foundEffect.Properties?.invertResult
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => (
+                            {
+                                inverted: p?.invertResult
                             }
-
-                        } satisfies MountAcquiredRequirement;
+                        ))
                         break;
                     }
 
                     case "C_HasCookingUtensilReuirement": {
-                        daEffect = {
-                            type: "HasCookingUtensil",
-                            meta: {
-                                utensil: foundEffect.Properties.requiredUtensil ? getEnumValue(foundEffect.Properties.requiredUtensil) : undefined,
-                                inverted: foundEffect.Properties.invertResult
+                        daEffect = convertRequirementWithMeta({
+                            ...foundRequirement,
+                            Type: 'C_HasCookingUtensilRequirement',
+                            Class: `UScriptClass'C_HasCookingUtensilRequirement'`
+                        }, (p) => (
+                            {
+                                utensil: p.requiredUtensil ? getEnumValue(p.requiredUtensil) : undefined,
+                                inverted: p.invertResult
                             }
-
-                        } satisfies HasCookingUtensilRequirement;
+                        ))
                         break;
                     }
 
 
                     case "C_QuestFactRequirement": {
-                        daEffect = {
-                            type: "QuestFact",
-                            meta: {
-                                factName: foundEffect.Properties.fact.factName.RowName
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => (
+                            {
+                                factName: p.fact.factName.RowName
                             }
-                        } satisfies QuestFactRequirement;
+                        ))
                         break;
                     }
 
                     case "C_QuestFactCompareRequirement": {
-                        const comparator: QuestFactCompareRequirement['meta']['comparator'] = getEnumValue(foundEffect.Properties.factCompare.compareType) as QuestFactCompareRequirement['meta']['comparator'];
+                        const comparator: QuestFactComparator = getEnumValue(foundRequirement.Properties.factCompare.compareType);
                         if (!QuestFactComparators.includes(comparator)) {
                             Logger.error(`Unknown comparator for quest fact compare: ${comparator}`)
                             return;
                         }
-                        daEffect = {
-                            type: "QuestFactCompare",
-                            meta: {
-                                factName: foundEffect.Properties.fact.factName.RowName,
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => (
+                            {
+                                factName: p.fact.factName.RowName,
                                 comparator,
-                                value: foundEffect.Properties.factCompare.comparedInteger
+                                value: p.factCompare.comparedInteger
                             }
-                        } satisfies QuestFactCompareRequirement;
+                        ))
                         break;
                     }
 
                     case "C_ObjectStateRequirement": {
-
-                        daEffect = {
-                            type: "ObjectState",
-                            meta: {
-                                id: foundEffect.Properties.id,
-                                state: foundEffect.Properties.requiredState
-                            }
-                        } satisfies ObjectStateRequirement;
-
-                        const customName = this.changeObjectEffectsCustomNames.get(foundEffect.Properties.id);
+                        const meta: RequirementMetaForType<'ObjectState'> = {
+                            id: foundRequirement.Properties.id,
+                            state: foundRequirement.Properties.requiredState
+                        }
+                        const customName = this.changeObjectEffectsCustomNames.get(foundRequirement.Properties.id);
 
                         if (customName) {
-                            daEffect.meta['customName'] = customName
+                            meta['customName'] = customName
                         }
+
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => meta)
+
+
                         break;
 
 
                     }
                     case "C_HealedCoralRequirement": {
 
-                        daEffect = {
-                            type: "HealedCoral",
-                            meta: {
-                                required: foundEffect.Properties.required,
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => (
+                            {
+                                required: p.required,
                             }
-                        } satisfies HealedCoralRequirement;
+                        ))
 
                         break;
                     }
 
 
                     case "C_TempleLevelRequirement": {
-                        daEffect = {
-                            type: "TempleLevel",
-                            meta: {
-                                level: foundEffect.Properties.requiredLevel
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => (
+                            {
+                                level: p.requiredLevel
                             }
-                        } satisfies TempleLevelRequirement;
+                        ))
                         break;
                     }
                     case "C_MasteryLevelRequirement": {
-                        daEffect = {
-                            type: "MasteryLevel",
-                            meta: {
-                                level: foundEffect.Properties.expectedMasteryLevel,
-                                mastery: getEnumValue(foundEffect.Properties.masteryType)
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => (
+                            {
+                                level: p.expectedMasteryLevel,
+                                mastery: getEnumValue(p.masteryType)
                             }
-                        } satisfies MasteryLevelRequirements;
+                        ))
                         break;
                     }
                     case "C_CompleteMiningRequirement": {
-                        daEffect = {
-                            type: "CompleteMining",
-                            meta: {
-                                level: foundEffect.Properties.requiredLevel,
-                                mine: foundEffect.Properties.miningTheme ? getEnumValue(foundEffect.Properties.miningTheme) : 'Earth'
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => (
+                            {
+                                level: p.requiredLevel,
+                                mine: p.miningTheme ? getEnumValue(p.miningTheme) : 'Earth'
                             }
-                        } satisfies CompleteMiningRequirement;
+                        ))
                         break;
                     }
                     case "C_FarmHouseRequirement": {
-                        daEffect = {
-                            type: "FarmHouseLevel",
-                            meta: {
-                                level: foundEffect.Properties.requiredLevel
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => (
+                            {
+                                level: p.requiredLevel
                             }
-                        } satisfies FarmHouseRequirement;
+                        ))
                         break;
                     }
 
                     case "C_QuestActiveRequirement": {
-                        daEffect = {
-                            type: "QuestActive",
-                            meta: {
-                                questId: foundEffect.Properties.questId
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => (
+                            {
+                                questId: p.questId
                             }
-                        } satisfies QuestActiveRequirement;
+                        ))
                         break;
                     }
 
 
                     case "C_SpecialItemRequirement": {
 
-                        const item = DaFilesParser.SpecialItemMap.get(foundEffect.Properties.item.RowName)
+                        const item = DaFilesParser.SpecialItemMap.get(foundRequirement.Properties.item.RowName)
 
                         if (!item) return;
 
 
-                        daEffect = {
-                            type: "SpecialItem",
-                            meta: {
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => (
+                            {
                                 item: minifyItem(item)
                             }
-                        } satisfies SpecialItemRequirement;
+                        ))
                         break;
                     }
 
                     case "C_ItemInInventoryRequirement": {
 
-                        const item = DaFilesParser.ItemMap.get(foundEffect.Properties.inventoryItem.itemID)
+                        const item = DaFilesParser.ItemMap.get(foundRequirement.Properties.inventoryItem.itemID)
 
                         if (!item) return;
 
-
-                        daEffect = {
-                            type: "ItemInInventory",
-                            meta: {
-                                item: minifyItem(item),
-                                amount: foundEffect.Properties.expectedAmount ?? 1,
-                            }
-                        } satisfies ItemInInventoryRequirement;
-
-                        if (foundEffect.Properties.qualityRequirement) {
-                            daEffect.meta.requiredQuality = getEnumValue(foundEffect.Properties.qualityRequirement.rules)
+                        const meta: RequirementMetaForType<'ItemInInventory'> = {
+                            item: minifyItem(item),
+                            amount: foundRequirement.Properties.expectedAmount ?? 1,
                         }
+
+                        if (foundRequirement.Properties.qualityRequirement) {
+                            meta.requiredQuality = getEnumValue(foundRequirement.Properties.qualityRequirement.rules)
+                        }
+
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => meta)
                         break;
                     }
 
                     case "C_ItemWithCategoryInInventoryRequirement": {
 
-                        daEffect = {
-                            type: "ItemWithCategoryInInventory",
-                            meta: {
-                                categoryName: foundEffect.Properties.category.data.RowName,
-                                amount: foundEffect.Properties.expectedAmount ?? 1,
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => (
+                            {
+                                categoryName: foundRequirement.Properties.category.data.RowName,
+                                amount: foundRequirement.Properties.expectedAmount ?? 1,
                             }
-                        } satisfies ItemWithCategoryInInventoryRequirement;
+                        ))
 
                         break;
                     }
                     case "C_DateSeasonRangeRequirement": {
 
-                        daEffect = {
-                            type: "DateSeasonRange",
-                            meta: {
-                                inverted: foundEffect.Properties.invertResult,
+                        daEffect = convertRequirementWithMeta(foundRequirement, (p) => (
+                            {
+                                inverted: foundRequirement.Properties.invertResult,
                                 from: {
-                                    day: foundEffect.Properties.expectedDateSeason.from.day,
-                                    season: getEnumValue(foundEffect.Properties.expectedDateSeason.from.season),
+                                    day: foundRequirement.Properties.expectedDateSeason.from.day,
+                                    season: getEnumValue(foundRequirement.Properties.expectedDateSeason.from.season),
                                     year: -1
                                 },
                                 to: {
-                                    day: foundEffect.Properties.expectedDateSeason.to.day,
-                                    season: getEnumValue(foundEffect.Properties.expectedDateSeason.to.season),
+                                    day: foundRequirement.Properties.expectedDateSeason.to.day,
+                                    season: getEnumValue(foundRequirement.Properties.expectedDateSeason.to.season),
                                     year: -1
                                 }
                             }
-                        } satisfies DateSeasonRangeRequirement;
+                        ))
                         break;
                     }
 
                     default: {
-                        Logger.error(`Cannot find requirement definition for ${foundEffect.Type} in ${fullDaPath}`)
+                        Logger.error(`Cannot find requirement definition for ${foundRequirement.Type} in ${fullDaPath}`)
                     }
 
                 }

@@ -1,5 +1,13 @@
 import { BaseGenerator } from "../_base/base-generator.class";
-import { CustomEntry, Effect, Item, RequirementEntry, ShipToUnlockRequirement, ShopItemData } from "@ci/data-types";
+import {
+    CustomEntry,
+    Effect,
+    Item,
+    RequirementEntry,
+    RequirementsWithMeta,
+    SafeExtract,
+    ShopItemData
+} from "@ci/data-types";
 import { RawShopItemData } from "../../../interfaces/raw-data-interfaces/raw-shop-item-data.interface";
 import { AssetPathNameToIcon, minifyItem, readAsset } from "../../../util/functions";
 import { Datatable } from "../../../interfaces/datatable.interface";
@@ -13,7 +21,7 @@ export class ShopItemDataGenerator<T extends RawShopItemData = RawShopItemData> 
 
     datatable: Datatable<T>[];
 
-    shipToUnlock: Record<string, ShipToUnlockRequirement> = {}
+    shipToUnlock: Record<string, SafeExtract<RequirementsWithMeta, { type: 'ShipToUnlock' }>> = {}
 
     constructor(protected itemMap: Map<string, Item>, protected datatablePath: string, options?: {
         itemShipUnlockData?: string | string[]

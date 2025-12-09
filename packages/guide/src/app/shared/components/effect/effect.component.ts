@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Effect, MetaForType, MinimalItem } from "@ci/data-types";
+import { Effect, EffectMetaForType, MinimalItem } from "@ci/data-types";
 import { ItemIconComponent } from "../item-icon/item-icon.component";
 import { MoneyComponent } from "../money/money.component";
 import { RouterLink } from "@angular/router";
@@ -20,7 +20,7 @@ export class EffectComponent {
 
     readonly effect = input.required<Effect>();
 
-    hasMinimalItem(effectMeta: MetaForType<'RemoveItemFromInventory'>): effectMeta is {
+    hasMinimalItem(effectMeta: EffectMetaForType<'RemoveItemFromInventory'>): effectMeta is {
         item: MinimalItem,
         amount: number;
     } {

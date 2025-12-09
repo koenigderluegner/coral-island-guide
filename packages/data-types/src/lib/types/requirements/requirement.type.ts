@@ -1,58 +1,47 @@
-import { MountAcquiredRequirement } from "./mount-acquired-requirement.type";
-import { IsAchievementCompletedRequirement } from "./is-achivement-completed-requirement.type";
-import { CountNpcHeartLevelRequirement } from "./count-npc-heart-level-requirement.type";
-import { EditorOnlyRequirement } from "./editor-only-requirement.type";
-import { IsCutsceneTriggeredRequirement } from "./is-cutscene-triggered-requirement.type";
-import { IsGiantUnlockedRequirement } from "./is-giant-unlocked-requirement.type";
-import { MarriageHasProposedRequirement } from "./marriage-has-proposed-requirement.type";
-import { QuestFactRequirement } from "./quest-fact-requirement.type";
-import { SpecialItemRequirement } from "./special-item-requirements.type";
-import { DateSeasonRangeRequirement } from "./date-season-range-requirement.type";
-import { QuestActiveRequirement } from "./quest-active-requirement.type";
-import { TempleLevelRequirement } from "./temple-level-requirement.type";
-import { ItemInInventoryRequirement } from "./item-in-inventory-requirement.type";
-import { ItemWithCategoryInInventoryRequirement } from "./item-with-category-in-inventory-requirement.type";
-import { ObjectStateRequirement } from "./object-state-requirement.type";
-import { CompleteMiningRequirement } from "./complete-mining-requirement.type";
-import { QuestFactCompareRequirement } from "./quest-fact-compare-requirement.type";
-import { FarmHouseRequirement } from "./farm-house-requirement.type";
-import { HasCookingUtensilRequirement } from "./has-cooking-utensil-requirement.type";
-import { NpcHeartLevelRequirement } from "./npc-heart-level-requirement.type";
-import { HealedCoralRequirement } from "./healed-coral-requirement.type";
-import { MasteryLevelRequirements } from "./mastery-level-requirements.type";
-import { IsMailReadRequirement } from "./is-mail-read-requirement.type";
-import { ShipToUnlockRequirement } from "./ship-to-unlock-requirement.type";
-import { DinoHologramItemRewardClaimedRequirement } from "./dino-hologram-item-reward-claimed-requirement.type";
-import { DateSeasonRequirement } from "./date-season-requirement.type";
 import { TimeDateRequirement } from "./time-date-requirement.type";
-import { IsMultiplayerRequirement } from "./is-multiplayer-requirement.type";
+import { RequirementWithMeta } from "./requirement-with-meta";
+import { SpecificDate } from "../../interfaces/specific-date.interface";
+import { Season } from "../season.type";
+import { RequirementWithoutMeta } from "./requirement-without-meta";
+import { Achievement } from "../../interfaces/achievement.interface";
+import { MinimalItem } from "../minimal-item.type";
 
-export type Requirement = CountNpcHeartLevelRequirement
-    | EditorOnlyRequirement
-    | IsAchievementCompletedRequirement
-    | IsCutsceneTriggeredRequirement
-    | IsGiantUnlockedRequirement
-    | MarriageHasProposedRequirement
-    | MountAcquiredRequirement
-    | QuestFactRequirement
-    | SpecialItemRequirement
-    | DateSeasonRangeRequirement
-    | QuestActiveRequirement
-    | TempleLevelRequirement
-    | ItemInInventoryRequirement
-    | ItemWithCategoryInInventoryRequirement
-    | ObjectStateRequirement
-    | CompleteMiningRequirement
-    | QuestFactCompareRequirement
-    | FarmHouseRequirement
-    | HasCookingUtensilRequirement
-    | NpcHeartLevelRequirement
-    | HealedCoralRequirement
-    | MasteryLevelRequirements
-    | IsMailReadRequirement
-    | ShipToUnlockRequirement
-    | DinoHologramItemRewardClaimedRequirement
-    | DateSeasonRequirement
+export const QuestFactComparators = ['MoreEqual', 'Equal'] as const
+export type QuestFactComparator = typeof QuestFactComparators[number];
+
+export type Requirement = RequirementsWithMeta | RequirementsWithoutMeta
+
+
+export type RequirementsWithMeta =
+    | RequirementWithMeta<'CompleteMining', { mine: string, level: number }>
+    | RequirementWithMeta<'CountNPCHeartLevel', { expectedHeartLevel: number }>
+    | RequirementWithMeta<'DateSeason', { season: Season; day: number; }>
+    | RequirementWithMeta<'DateSeasonRange', { from: SpecificDate, to: SpecificDate; inverted?: boolean }>
+    | RequirementWithMeta<'DinoHologramItemRewardClaimed', { dinosaursName: string }>
+    | RequirementWithMeta<'FarmHouse', { level: number }>
+    | RequirementWithMeta<'HasCookingUtensil', { utensil?: string; inverted?: boolean }>
+    | RequirementWithMeta<'HealedCoral', { required: number; }>
+    | RequirementWithMeta<'IsAchievementCompleted', { achievement: Achievement }>
+    | RequirementWithMeta<'IsCutsceneTriggered', { cutsceneTopic: string }>
+    | RequirementWithMeta<'IsGiantUnlocked', { types: number }>
+    | RequirementWithMeta<'IsMailRead', { mailId: string, title: string }>
+    | RequirementWithMeta<'ItemInInventory', { item: MinimalItem, amount: number, requiredQuality?: string; }>
+    | RequirementWithMeta<'ItemWithCategoryInInventory', { categoryName: string; amount: number }>
+    | RequirementWithMeta<'MarriageHasProposed', { inverted?: boolean }>
+    | RequirementWithMeta<'MasteryLevel', { mastery: string; level: number }>
+    | RequirementWithMeta<'MountAcquired', { inverted?: boolean }>
+    | RequirementWithMeta<'NPCHeartLevel', { npcKey: string; expectedHeartLevel: number }>
+    | RequirementWithMeta<'ObjectState', { id: string; state: string; customName?: string }>
+    | RequirementWithMeta<'QuestActive', { questId: string }>
+    | RequirementWithMeta<'QuestFact', { factName: string; }>
+    | RequirementWithMeta<'QuestFactCompare', { factName: string; value: number; comparator: QuestFactComparator; }>
+    | RequirementWithMeta<'ShipToUnlock', { itemsToShip: MinimalItem[], includeAllQualities: boolean; }>
+    | RequirementWithMeta<'SpecialItem', { item: MinimalItem }>
+    | RequirementWithMeta<'TempleLevel', { level: number }>
     | TimeDateRequirement
-    | IsMultiplayerRequirement
 
+export type RequirementsWithoutMeta =
+    | RequirementWithoutMeta<'EditorOnly'>
+    | RequirementWithoutMeta<'IsMultiplayer'>
+
+export type RequirementMetaForType<T extends RequirementsWithMeta['type']> = Extract<RequirementsWithMeta, { type: T }>['meta'];

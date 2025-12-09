@@ -1,5 +1,5 @@
 import { BaseGenerator } from "../_base/base-generator.class";
-import { Item, ShipToUnlockRequirement } from "@ci/data-types";
+import { Item, RequirementsWithMeta, SafeExtract } from "@ci/data-types";
 import { Datatable } from "../../../interfaces/datatable.interface";
 import { minifyItem, readAsset } from "../../../util/functions";
 import { RawShipToUnlockData } from "../../../interfaces/raw-data-interfaces/raw-ship-to-unlock-data.interface";
@@ -8,7 +8,7 @@ import { nonNullable } from "@ci/util";
 
 export class ItemShipUnlockDataGenerator extends BaseGenerator<RawShipToUnlockData, {
     itemId: string,
-    value: ShipToUnlockRequirement
+    value: SafeExtract<RequirementsWithMeta, { type: 'ShipToUnlock' }>
 }> {
     datatable: Datatable<RawShipToUnlockData>[];
 
@@ -19,7 +19,7 @@ export class ItemShipUnlockDataGenerator extends BaseGenerator<RawShipToUnlockDa
 
     handleEntry(itemKey: string, dbItem: RawShipToUnlockData): {
         itemId: string,
-        value: ShipToUnlockRequirement
+        value: SafeExtract<RequirementsWithMeta, { type: 'ShipToUnlock' }>
     } | undefined {
 
         return {

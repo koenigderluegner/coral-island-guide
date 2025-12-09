@@ -4,34 +4,10 @@ export * from './lib/types/effects/effect-with-meta';
 export * from './lib/types/effects/effect-without-meta';
 export * from './lib/types/effects/effect.type';
 
-export * from './lib/types/requirements/complete-mining-requirement.type';
-export * from './lib/types/requirements/count-npc-heart-level-requirement.type';
-export * from './lib/types/requirements/date-season-range-requirement.type';
-export * from './lib/types/requirements/date-season-requirement.type';
-export * from './lib/types/requirements/dino-hologram-item-reward-claimed-requirement.type';
-export * from './lib/types/requirements/editor-only-requirement.type';
-export * from './lib/types/requirements/farm-house-requirement.type';
-export * from './lib/types/requirements/has-cooking-utensil-requirement.type';
-export * from './lib/types/requirements/healed-coral-requirement.type';
-export * from './lib/types/requirements/is-achivement-completed-requirement.type';
-export * from './lib/types/requirements/is-cutscene-triggered-requirement.type';
-export * from './lib/types/requirements/is-giant-unlocked-requirement.type';
-export * from './lib/types/requirements/is-mail-read-requirement.type';
-export * from './lib/types/requirements/is-multiplayer-requirement.type';
-export * from './lib/types/requirements/item-in-inventory-requirement.type';
-export * from './lib/types/requirements/item-with-category-in-inventory-requirement.type';
-export * from './lib/types/requirements/marriage-has-proposed-requirement.type';
-export * from './lib/types/requirements/mastery-level-requirements.type';
-export * from './lib/types/requirements/mount-acquired-requirement.type';
-export * from './lib/types/requirements/npc-heart-level-requirement.type';
-export * from './lib/types/requirements/object-state-requirement.type';
-export * from './lib/types/requirements/quest-active-requirement.type';
-export * from './lib/types/requirements/quest-fact-compare-requirement.type';
-export * from './lib/types/requirements/quest-fact-requirement.type';
+
 export * from './lib/types/requirements/requirement.type';
-export * from './lib/types/requirements/ship-to-unlock-requirement.type';
-export * from './lib/types/requirements/special-item-requirements.type';
-export * from './lib/types/requirements/temple-level-requirement.type';
+export * from './lib/types/requirements/requirement-with-meta';
+export * from './lib/types/requirements/requirement-without-meta';
 export * from './lib/types/requirements/time-date-requirement.type';
 
 
