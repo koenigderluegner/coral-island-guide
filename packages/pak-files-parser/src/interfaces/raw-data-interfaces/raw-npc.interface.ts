@@ -1,25 +1,15 @@
 import { SourceString } from "../../types/source-string.type";
+import { ObjectPath } from "../../types/object-path.type";
+import { AssetPath } from "../../types/asset-path.type";
 
 export interface RawNPC {
     "characterID": string,
     "CharacterName": SourceString,
     "Description": SourceString,
-    "portraitsDT": {
-        "ObjectName": string,
-        "ObjectPath": string,
-    } | null,
-    "Portrait": {
-        "AssetPathName": string,
-        "SubPathString": string,
-    },
-    "PortraitConcealed": {
-        "AssetPathName": string,
-        "SubPathString": string,
-    },
-    "mapIcon": {
-        "AssetPathName": string,
-        "SubPathString": string,
-    },
+    "portraitsDT": ObjectPath | null,
+    "Portrait": AssetPath,
+    "PortraitConcealed":AssetPath,
+    "mapIcon": AssetPath,
     "isDateable": boolean,
     "canHaveRelationships": boolean,
     "canReceiveGifts": boolean,
@@ -29,10 +19,7 @@ export interface RawNPC {
         "Y": number
     },
     "dialogPortraitScale": number
-    "PortraitMenu": {
-        "AssetPathName": string
-        "SubPathString": string
-    },
+    "PortraitMenu": AssetPath,
     "PortraitScale": number
     "PortraitScroll": {
         "X": number

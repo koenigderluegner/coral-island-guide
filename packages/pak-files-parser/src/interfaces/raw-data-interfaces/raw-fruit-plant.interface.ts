@@ -1,4 +1,7 @@
 import { EnumString, Season } from "@ci/data-types";
+import { ObjectPath } from "../../types/object-path.type";
+import { DatatableRef } from "../../types/datatable-ref.type";
+import { ItemDatatableRef } from "../../types/item-datatable-ref";
 
 export interface RawFruitPlant {
     "growableSeason": EnumString<Season>[],
@@ -6,32 +9,17 @@ export interface RawFruitPlant {
         {
             "length": number,
             "healthPoint": number,
-            "fruitPlantMesh": {
-                "ObjectName": string;
-                "ObjectPath": string;
-            }
+            "fruitPlantMesh": ObjectPath
         }[],
     "regrowingStageData": {
         "length": number,
         "healthPoint": number,
-        "fruitPlantMesh": {
-            "ObjectName": string;
-            "ObjectPath": string;
-        }
+        "fruitPlantMesh": ObjectPath
     },
     "fruitsFloaties": {
         "maxDroppedItems": number,
         "dropData": {
-            "itemId": {
-                "data": {
-                    "DataTable": {
-                        "ObjectName": string;
-                        "ObjectPath": string;
-                    },
-                    "RowName": string;
-                },
-                "itemID": string;
-            },
+            "itemId": ItemDatatableRef,
             "dropChance": number,
             "dropRange": {
                 "min": number,
@@ -43,19 +31,10 @@ export interface RawFruitPlant {
     "overrideExperience": boolean,
     "overrideExperienceOnHarvest": number,
     "emitterOnPlanted": null,
-    "nonMaturedStageReactionAnim": {
-        "ObjectName": string;
-        "ObjectPath": string;
-    },
-    "maturedStageReactionAnim": {
-        "ObjectName": string;
-        "ObjectPath": string;
-    },
+    "nonMaturedStageReactionAnim": ObjectPath,
+    "maturedStageReactionAnim": ObjectPath,
     "seedStageReactionFX": null,
-    "plantStageReactionFX": {
-        "ObjectName": string;
-        "ObjectPath": string;
-    },
+    "plantStageReactionFX": ObjectPath,
     "readableName": string;
     "size": {
         "length": number;

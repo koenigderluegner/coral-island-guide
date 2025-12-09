@@ -1,3 +1,5 @@
+import { ObjectPath } from "../types/object-path.type";
+
 export interface Frame {
     "Type": string;
     "Name": string;
@@ -10,9 +12,6 @@ export interface Frame {
             "X": number
             "Y": number
         },
-        "BakedSourceTexture": {
-            "ObjectName": string
-            "ObjectPath": string
-        },
+        "BakedSourceTexture": ObjectPath,
     };
 }

@@ -1,17 +1,8 @@
+import { ItemDatatableRef } from "../../types/item-datatable-ref";
+import { AssetPath } from "../../types/asset-path.type";
+
 export type RawTreasureHunt = {
     "treasureId": number,
-    "mapItemData": {
-        "data": {
-            "DataTable": {
-                "ObjectName": string
-                "ObjectPath": string
-            },
-            "RowName": string
-        },
-        "itemID": string
-    },
-    "treasureLocationImage": {
-        "AssetPathName": string
-        "SubPathString": string
-    }
+    "mapItemData": ItemDatatableRef,
+    "treasureLocationImage": AssetPath
 }

@@ -1,15 +1,10 @@
 import { AssetPath } from "../../../types/asset-path.type";
 import { AssetMap } from "../../../types/asset-map.type";
+import { DatatableRef } from "../../../types/datatable-ref.type";
 
 
 export interface RawAnimalIcons {
-    "animal": {
-        "DataTable": {
-            "ObjectName": string
-            "ObjectPath": string
-        },
-        "RowName": string
-    },
+    "animal": DatatableRef,
     "icons": AssetMap<{
         "adult": AssetPath,
         "adultHappy": AssetPath
@@ -24,5 +19,5 @@ export interface RawAnimalIcons {
         "babyBadMood": AssetPath
         "babySick": AssetPath
         "babySad": AssetPath
-    }>[    ]
+    }>[]
 }

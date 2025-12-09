@@ -1,41 +1,29 @@
+import { ObjectPath } from "../../types/object-path.type";
+import { ItemDatatableRef } from "../../types/item-datatable-ref";
+
 export interface RawFruitTree {
     "producingSeason": string;
     "stages": {
         "length": number;
         "healthPoint": number;
-        "fruitTreeData": {
-            "ObjectName": string;
-            "ObjectPath": string;
-        },
+        "fruitTreeData": ObjectPath,
         "floatiesOnDestroyed": {
             "maxDroppedItems": number;
             "dropData": [],
             "dropRequirement": null
         }
     }[        ],
-    "meshesForFruits": {
-        "ObjectName": string;
-        "ObjectPath": string;
-    }    [],
+    "meshesForFruits": ObjectPath[],
     "fruitsFloaties": {
         "maxDroppedItems": number;
         "dropData": {
-            "itemId": {
-                "data": {
-                    "DataTable": {
-                        "ObjectName": string;
-                        "ObjectPath": string;
-                    },
-                    "RowName": string;
-                },
-                "itemID": string;
-            },
+            "itemId": ItemDatatableRef,
             "dropChance": number;
             "dropRange": {
                 "min": number;
                 "max": number;
             }
-        }        [ ],
+        }[],
         "dropRequirement": null
     },
     "overrideExperience": false,

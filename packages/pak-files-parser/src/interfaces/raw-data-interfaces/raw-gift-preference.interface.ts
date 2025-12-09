@@ -1,4 +1,6 @@
 import { SourceString } from "../../types/source-string.type";
+import { ItemDatatableRef } from "../../types/item-datatable-ref";
+import { DatatableRef } from "../../types/datatable-ref.type";
 
 export interface RawGiftPreferenceInterface {
     favoritePreferences: RawPreferecne[],
@@ -13,24 +15,9 @@ export interface RawGiftPreferenceInterface {
 
 interface RawPreferecne {
     "data": {
-        "item": {
-            "data": {
-                "DataTable": {
-                    "ObjectName": string,
-                    "ObjectPath": string
-                },
-                "RowName": string
-            },
-            "itemID": string
-        },
+        "item": ItemDatatableRef,
         "category": {
-            "data": {
-                "DataTable": {
-                    "ObjectName": string
-                    "ObjectPath": string
-                },
-                "RowName": string
-            }
+            "data": DatatableRef
         },
         "tags": string[],
         "dialogueText": SourceString,

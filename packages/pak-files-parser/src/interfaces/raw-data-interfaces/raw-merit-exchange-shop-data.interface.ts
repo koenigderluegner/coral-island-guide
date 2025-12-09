@@ -1,4 +1,6 @@
 import { SourceString } from "../../types/source-string.type";
+import { ItemDatatableRef } from "../../types/item-datatable-ref";
+import { AssetPath } from "../../types/asset-path.type";
 
 export interface RawMeritExchangeShopData {
     "isLimitedItem": boolean,
@@ -8,23 +10,11 @@ export interface RawMeritExchangeShopData {
     "isUnlockRecipe": boolean,
     "enable": boolean,
     "townRank": number,
-    "item": {
-        "data": {
-            "DataTable": {
-                "ObjectName": string
-                "ObjectPath": string
-            },
-            "RowName": string
-        },
-        "itemID": string
-    },
+    "item": ItemDatatableRef,
     "useCustomName": boolean,
     "shopItemName": SourceString,
     "useCustomIcon": boolean,
-    "customIcon": {
-        "AssetPathName": string
-        "SubPathString": string
-    },
+    "customIcon": AssetPath,
     "useCustomCategory": boolean,
     "customCategory": SourceString,
     "useCustomDescription": boolean,

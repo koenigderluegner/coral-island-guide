@@ -1,5 +1,6 @@
 import { DaRequirements } from "./da-requirements.type";
 import { AssetMap } from "../../../../types/asset-map.type";
+import { ObjectPath } from "../../../../types/object-path.type";
 
 export type GameplayRequirementsConfig = {
     "Type": "C_GameplayRequirementsConfig",
@@ -11,12 +12,7 @@ export type GameplayRequirementsConfig = {
 
 export type GameplayRequirementsConfigMap = AssetMap<{
     "type": string;
-    "requirements": [
-        {
-            "ObjectName": string
-            "ObjectPath": string
-        }
-    ]
+    "requirements": ObjectPath[]
 }>
 
 export type GameplayRequirementsConfigEntry = GameplayRequirementsConfig | DaRequirements;

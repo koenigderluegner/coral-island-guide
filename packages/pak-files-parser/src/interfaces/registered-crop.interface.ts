@@ -1,4 +1,5 @@
 import { EnumString, Season } from "@ci/data-types";
+import { ItemDatatableRef } from "../types/item-datatable-ref";
 
 export interface RegisteredCrop {
     "growableSeason": EnumString<Season>[],
@@ -11,30 +12,12 @@ export interface RegisteredCrop {
     "chanceToCombine": {
         "chance": 5.0
     },
-    "pickupableItem": {
-        "data": {
-            "DataTable": {
-                "ObjectName": string
-                "ObjectPath": string
-            },
-            "RowName": string
-        },
-        "itemID": string
-    },
+    "pickupableItem": ItemDatatableRef,
     "floatiesConfig": {
         "maxDroppedItems": 1,
         "dropData": [
             {
-                "itemId": {
-                    "data": {
-                        "DataTable": {
-                            "ObjectName": string
-                            "ObjectPath": string
-                        },
-                        "RowName": string
-                    },
-                    "itemID": string
-                },
+                "itemId": ItemDatatableRef,
                 "dropChance": number
                 "dropRange": {
                     "min": number

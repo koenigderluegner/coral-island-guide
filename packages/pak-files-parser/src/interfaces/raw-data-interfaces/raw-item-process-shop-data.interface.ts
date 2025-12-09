@@ -1,32 +1,16 @@
+import { ItemDatatableRef } from "../../types/item-datatable-ref";
+
 export interface RawItemProcessShopData {
     "input": {
-        "item": {
-            "data": {
-                "DataTable": {
-                    "ObjectName": string
-                    "ObjectPath": string
-                },
-                "RowName": string
-            },
-            "itemID": string
-        },
+        "item": ItemDatatableRef,
         "amount": number
     },
     "gold": number,
     "outputChance": {
         "item": {
-            "item": {
-                "data": {
-                    "DataTable": {
-                        "ObjectName": string
-                        "ObjectPath": string
-                    },
-                    "RowName": string
-                },
-                "itemID": string
-            },
+            "item": ItemDatatableRef,
             "amount": number
         },
         "chance": number
-    }    [ ]
+    }[]
 }

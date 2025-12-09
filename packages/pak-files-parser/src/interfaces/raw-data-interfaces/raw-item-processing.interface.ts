@@ -1,26 +1,14 @@
+import { DatatableRef } from "../../types/datatable-ref.type";
+import { ItemDatatableRef } from "../../types/item-datatable-ref";
+
 export interface RawItemProcessing {
     "useCategory": boolean,
     "input": {
-        "item": {
-            "data": {
-                "DataTable": {
-                    "ObjectName": string
-                    "ObjectPath": string
-                },
-                "RowName": string
-            },
-            "itemID": string
-        },
+        "item": ItemDatatableRef,
         "amount": number
     },
     "category": {
-        "data": {
-            "DataTable": {
-                "ObjectName": string
-                "ObjectPath": string
-            },
-            "RowName": string
-        }
+        "data": DatatableRef
     },
     "useGenericRequirement": boolean,
     "genericInput": {
@@ -32,28 +20,10 @@ export interface RawItemProcessing {
     },
     "inputAmount": number,
     "additionalInput": {
-        "item": {
-            "data": {
-                "DataTable": {
-                    "ObjectName": string
-                    "ObjectPath": string
-                },
-                "RowName": string
-            },
-            "itemID": string
-        },
+        "item": ItemDatatableRef,
         "amount": number
     }[],
-    "output": {
-        "data": {
-            "DataTable": {
-                "ObjectName": string
-                "ObjectPath": string
-            },
-            "RowName": string
-        },
-        "itemID": string
-    },
+    "output": ItemDatatableRef,
     "amount": number,
     "day": number,
     "time": {

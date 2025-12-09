@@ -1,29 +1,14 @@
+import { ItemDatatableRef } from "../../types/item-datatable-ref";
+import { ObjectPath } from "../../types/object-path.type";
+
 export interface RawEnemyData {
-    "animalClass": {
-        "ObjectName": string
-        "ObjectPath": string
-    },
+    "animalClass": ObjectPath,
     "possibleEnemiesDrops": {
-        "dropItem": {
-            "data": {
-                "DataTable": {
-                    "ObjectName": string
-                    "ObjectPath": string
-                },
-                "RowName": string
-            },
-            "itemID": string
-        },
+        "dropItem": ItemDatatableRef,
         "dropChance": number
-    }        [ ],
+    }[],
     "experiencePoint": number
-    "healthLevelModifier": {
-        "ObjectName": string
-        "ObjectPath": string
-    },
-    "attackLevelModifier": {
-        "ObjectName": string
-        "ObjectPath": string
-    },
+    "healthLevelModifier": ObjectPath,
+    "attackLevelModifier": ObjectPath,
     "defenseLevelModifier": null
 }

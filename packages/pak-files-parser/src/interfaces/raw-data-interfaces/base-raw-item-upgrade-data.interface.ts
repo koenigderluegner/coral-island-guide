@@ -1,32 +1,17 @@
 import { SourceString } from "../../types/source-string.type";
+import { DatatableRef } from "../../types/datatable-ref.type";
+import { AssetPath } from "../../types/asset-path.type";
+import { ItemDatatableRef } from "../../types/item-datatable-ref";
 
 export interface BaseRawItemUpgradeData {
     "price": number;
     "daysDelay": number;
     "unlockRequirements": {
-        "item": {
-            "data": {
-                "DataTable": {
-                    "ObjectName": string;
-                    "ObjectPath": string;
-                },
-                "RowName": string;
-            },
-            "itemID": string;
-        },
+        "item":ItemDatatableRef,
         "amount": number;
     }    [ ],
     "requirements": {
-        "item": {
-            "data": {
-                "DataTable": {
-                    "ObjectName": string;
-                    "ObjectPath": string;
-                },
-                "RowName": string;
-            },
-            "itemID": string;
-        },
+        "item": ItemDatatableRef,
         "amount": number;
     }[],
     "hardnessLevel": string;
@@ -34,23 +19,11 @@ export interface BaseRawItemUpgradeData {
     "imagePreview": null,
     "enable": boolean,
     "townRank": number;
-    "item": {
-        "data": {
-            "DataTable": {
-                "ObjectName": string;
-                "ObjectPath": string;
-            },
-            "RowName": string;
-        },
-        "itemID": string;
-    },
+    "item": ItemDatatableRef,
     "useCustomName": boolean,
     "shopItemName": SourceString,
     "useCustomIcon": boolean,
-    "customIcon": {
-        "AssetPathName": string;
-        "SubPathString": string;
-    },
+    "customIcon": AssetPath,
     "useCustomCategory": boolean,
     "customCategory": SourceString,
     "useCustomDescription": boolean,
@@ -60,6 +33,5 @@ export interface BaseRawItemUpgradeData {
     "priority": number;
     "priceOverride": number;
     "tag": string[]
-
     "isCurrentlyOutOfStock": boolean,
 }

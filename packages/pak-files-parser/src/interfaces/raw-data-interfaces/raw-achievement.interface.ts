@@ -1,17 +1,12 @@
 import { SourceString } from "../../types/source-string.type";
+import { AssetPath } from "../../types/asset-path.type";
 
 export interface RawAchievement {
     "achievementId": string;
     "achievementTitle": SourceString,
     "achievementDesc": SourceString,
-    "quest": {
-        "AssetPathName": string;
-        "SubPathString": string;
-    },
-    "icon": {
-        "AssetPathName": string;
-        "SubPathString": string;
-    },
+    "quest": AssetPath,
+    "icon": AssetPath,
     "isTrackingProgress": boolean,
     "questCondition": string;
 }

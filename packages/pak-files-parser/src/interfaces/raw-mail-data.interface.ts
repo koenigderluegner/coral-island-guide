@@ -1,5 +1,6 @@
 import { SourceString } from "../types/source-string.type";
 import { Color } from "../types/color.type";
+import { AssetPath } from "../types/asset-path.type";
 
 
 export interface RawMailData {
@@ -13,9 +14,6 @@ export interface RawMailData {
     "isPhotoAttached": true,
     "photoPaperColor": Color,
     "photoBGColor": Color,
-    "photoImage": {
-        "AssetPathName": string
-        "SubPathString": string
-    },
+    "photoImage":AssetPath,
     "isImportantMail": boolean
 }

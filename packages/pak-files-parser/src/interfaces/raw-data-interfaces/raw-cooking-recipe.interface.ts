@@ -1,4 +1,7 @@
 import { SourceString } from "../../types/source-string.type";
+import { DatatableRef } from "../../types/datatable-ref.type";
+import { ObjectPath } from "../../types/object-path.type";
+import { ItemDatatableRef } from "../../types/item-datatable-ref";
 
 export type CookingIngredients = ({
     "useCustomName": false,
@@ -9,25 +12,10 @@ export type CookingIngredients = ({
 }) & {
     "listIngredients":
         {
-            "itemData": {
-                "data": {
-                    "DataTable": {
-                        "ObjectName": string;
-                        "ObjectPath": string;
-                    },
-                    "RowName": string;
-                },
-                "itemID": string;
-            },
+            "itemData": ItemDatatableRef,
             "useCategoryData": boolean
             "categoryData": {
-                "data": {
-                    "DataTable": {
-                        "ObjectName": string;
-                        "ObjectPath": string;
-                    },
-                    "RowName": string;
-                }
+                "data": DatatableRef
             },
             "canUseSameItem": boolean
             "quantity": number,
@@ -40,45 +28,12 @@ export interface RawCookingRecipe {
     "description": SourceString,
     "ingredients": CookingIngredients[],
     "genericIngredients": {
-        "genericItem": {
-            "DataTable": {
-                "ObjectName": string;
-                "ObjectPath": string;
-            },
-            "RowName": string;
-        },
+        "genericItem": DatatableRef,
         "amount": number
     }    [],
-    "excludeIngredients":
-        {
-            "data": {
-                "DataTable": {
-                    "ObjectName": string;
-                    "ObjectPath": string;
-                },
-                "RowName": string;
-            },
-            "itemID": string;
-        } [],
-    "smallIcon": {
-        "ObjectName": string;
-        "ObjectPath": string;
-    },
-    "bigIcon": {
-        "ObjectName": string;
-        "ObjectPath": string;
-    },
-    "utensils": string[
-
-        ],
-    "result": {
-        "data": {
-            "DataTable": {
-                "ObjectName": string;
-                "ObjectPath": string;
-            },
-            "RowName": string;
-        },
-        "itemID": string;
-    }
+    "excludeIngredients": ItemDatatableRef[],
+    "smallIcon": ObjectPath,
+    "bigIcon": ObjectPath,
+    "utensils": string[],
+    "result": ItemDatatableRef
 }

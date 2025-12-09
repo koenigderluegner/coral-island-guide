@@ -1,19 +1,11 @@
 import { AssetMap } from "../../types/asset-map.type";
+import { ItemDatatableRef } from "../../types/item-datatable-ref";
 
 type UnlockRecipe = {
     "craftingList": [
         {
             "useCustomID": boolean,
-            "item": {
-                "data": {
-                    "DataTable": {
-                        "ObjectName": string,
-                        "ObjectPath": string
-                    },
-                    "RowName": string
-                },
-                "itemID": string
-            },
+            "item": ItemDatatableRef,
             "customID": string
         }
     ]

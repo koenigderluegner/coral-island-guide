@@ -1,13 +1,8 @@
 import { SourceString } from "../../types/source-string.type";
+import { DatatableRef } from "../../types/datatable-ref.type";
 
 export interface RawPetShopData {
-    "npcData": {
-        "DataTable": {
-            "ObjectName": string;
-            "ObjectPath": string;
-        },
-        "RowName": string;
-    },
+    "npcData": DatatableRef,
     "portraitFullVerticalAlignment": string;
     "portraitFullRenderTranslation": {
         "X": number

@@ -1,47 +1,20 @@
+import { DatatableRef } from "../types/datatable-ref.type";
+import { ItemDatatableRef } from "../types/item-datatable-ref";
+
 export interface RawCraftingRecipe {
     "readableName": string,
-    "item": {
-        "data": {
-            "DataTable": {
-                "ObjectName": string
-                "ObjectPath": string
-            },
-            "RowName": string
-        },
-        "itemID": string
-    },
+    "item": ItemDatatableRef,
     "amount": 1,
     "ingredients": [
         {
-            "item": {
-                "data": {
-                    "DataTable": {
-                        "ObjectName": string
-                        "ObjectPath": string
-                    },
-                    "RowName": string
-                },
-                "itemID": string
-            },
+            "item": ItemDatatableRef,
             "amount": number
         }
     ],
     "genericIngredients": {
-        "genericItem": {
-            "DataTable": {
-                "ObjectName": string;
-                "ObjectPath": string;
-            },
-            "RowName": string;
-        },
+        "genericItem": DatatableRef,
         "shouldBeSameItem": false,
         "amount": 3
     }[],
-    "dataCategory": {
-        "DataTable": {
-            "ObjectName": string
-            "ObjectPath": string
-        },
-        "RowName": string
-    }
+    "dataCategory": DatatableRef
 }

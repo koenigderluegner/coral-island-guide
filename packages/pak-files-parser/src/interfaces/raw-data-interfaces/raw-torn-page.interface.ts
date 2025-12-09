@@ -1,23 +1,15 @@
 import { SourceString } from "../../types/source-string.type";
 import { Color } from "../../types/color.type";
+import { AssetPath } from "../../types/asset-path.type";
 
 export interface RawTornPage {
     "titleText": SourceString,
-    "image": {
-        "AssetPathName": string
-        "SubPathString": string
-    },
+    "image": AssetPath,
     "type": string
     "contentText": SourceString,
-    "tornPagesEffects": {
-        "AssetPathName": string
-        "SubPathString": string
-    },
+    "tornPagesEffects": AssetPath,
     "isPhotoAttached": boolean,
     "photoPaperColor": Color,
     "photoBGColor": Color,
-    "photoImage": {
-        "AssetPathName": string
-        "SubPathString": string
-    }
+    "photoImage": AssetPath
 }

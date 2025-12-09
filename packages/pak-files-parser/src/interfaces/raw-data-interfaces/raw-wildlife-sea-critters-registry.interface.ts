@@ -1,11 +1,9 @@
+import { ObjectPath } from "../../types/object-path.type";
+import { AssetPath } from "../../types/asset-path.type";
+import { DatatableRef } from "../../types/datatable-ref.type";
+
 export interface RawWildlifeSeaCrittersRegistry {
-    "type": {
-        "ObjectName": string;
-        "ObjectPath": string;
-    } | {
-        "AssetPathName": string,
-        "SubPathString": string
-    },
+    "type": ObjectPath | AssetPath,
     "spawnOptions": {
         "spawnLimit": {
             "Type": string;
@@ -21,10 +19,7 @@ export interface RawWildlifeSeaCrittersRegistry {
                 "Value": number;
             }
         },
-        "spawnAmountGenerator": {
-            "ObjectName": string;
-            "ObjectPath": string;
-        },
+        "spawnAmountGenerator": ObjectPath,
         "spawnAmountConditionModifier": Record<string, number>,
         "lifetime": string;
         "spawnPeriod": string;
@@ -34,13 +29,7 @@ export interface RawWildlifeSeaCrittersRegistry {
     },
     "conditions": {
         "always": false,
-        "zones": {
-            "DataTable": {
-                "ObjectName": string;
-                "ObjectPath": string;
-            },
-            "RowName": string;
-        }[],
+        "zones": DatatableRef[],
         "seasons": string[],
         "dayTimeAllowed": boolean,
         "nightTimeAllowed": boolean,

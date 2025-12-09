@@ -1,26 +1,13 @@
 import { SourceString } from "../../types/source-string.type";
+import { DatatableRef } from "../../types/datatable-ref.type";
+import { ItemDatatableRef } from "../../types/item-datatable-ref";
 
 export interface RawOfferingReward {
-    "offeringId": {
-        "DataTable": {
-            "ObjectName": string
-            "ObjectPath": string
-        },
-        "RowName": string
-    },
+    "offeringId": DatatableRef,
     "rewardID": string
     "description": SourceString,
     "useItemMesh": boolean,
     "scaleItemMesh": boolean,
-    "rewardItem": {
-        "data": {
-            "DataTable": {
-                "ObjectName": string
-                "ObjectPath": string
-            },
-            "RowName": string
-        },
-        "itemID": string;
-    },
+    "rewardItem": ItemDatatableRef,
     "rewardMesh": null
 }

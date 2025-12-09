@@ -1,5 +1,7 @@
 import { CookingIngredients } from "../../../interfaces/raw-data-interfaces/raw-cooking-recipe.interface";
 import { SourceString } from "../../../types/source-string.type";
+import { DatatableRef } from "../../../types/datatable-ref.type";
+import { ObjectPath } from "../../../types/object-path.type";
 // TODO  Very similar to cooking recipe , maybe re-use?
 
 export type RawItemMixingRecipeData = {
@@ -7,42 +9,18 @@ export type RawItemMixingRecipeData = {
     "description": SourceString,
     "ingredients": CookingIngredients[    ],
     "genericIngredients": {
-        "genericItem": {
-            "DataTable": {
-                "ObjectName": string;
-                "ObjectPath": string;
-            },
-            "RowName": string;
-        },
+        "genericItem": DatatableRef,
         "amount": number
     }    [],
     "excludeIngredients":
         {
-            "data": {
-                "DataTable": {
-                    "ObjectName": string;
-                    "ObjectPath": string;
-                },
-                "RowName": string;
-            },
+            "data": DatatableRef,
             "itemID": string;
         } [],
-    "smallIcon": {
-        "ObjectName": string;
-        "ObjectPath": string;
-    },
-    "bigIcon": {
-        "ObjectName": string;
-        "ObjectPath": string;
-    },
+    "smallIcon": ObjectPath,
+    "bigIcon": ObjectPath,
     "result": {
-        "data": {
-            "DataTable": {
-                "ObjectName": string;
-                "ObjectPath": string;
-            },
-            "RowName": string;
-        },
+        "data": DatatableRef,
         "itemID": string;
     }
     "resultQtyMultiplier": 2
