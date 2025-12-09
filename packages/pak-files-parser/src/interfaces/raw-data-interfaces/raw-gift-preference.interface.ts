@@ -1,47 +1,34 @@
-import { SourceString } from "../../types/source-string.type";
+import { SourceString } from '../../types/source-string.type';
+import { ItemDatatableRef } from '../../types/item-datatable-ref';
+import { DatatableRef } from '../../types/datatable-ref.type';
 
 export interface RawGiftPreferenceInterface {
-    favoritePreferences: RawPreferecne[],
-    lovePreferences: RawPreferecne[],
-    likePreferences: RawPreferecne[],
-    neutralPreferences: RawPreferecne[],
-    dislikePreferences: RawPreferecne[],
-    hatePreferences: RawPreferecne[],
+    favoritePreferences: RawPreferecne[];
+    lovePreferences: RawPreferecne[];
+    likePreferences: RawPreferecne[];
+    neutralPreferences: RawPreferecne[];
+    dislikePreferences: RawPreferecne[];
+    hatePreferences: RawPreferecne[];
 
-    [key: string]: RawPreferecne[]
+    [key: string]: RawPreferecne[];
 }
 
 interface RawPreferecne {
-    "data": {
-        "item": {
-            "data": {
-                "DataTable": {
-                    "ObjectName": string,
-                    "ObjectPath": string
-                },
-                "RowName": string
-            },
-            "itemID": string
-        },
-        "category": {
-            "data": {
-                "DataTable": {
-                    "ObjectName": string
-                    "ObjectPath": string
-                },
-                "RowName": string
-            }
-        },
-        "tags": string[],
-        "dialogueText": SourceString,
-        "dialogueBirthdayText": SourceString,
-        "emoji": {
-            "DataTable": null,
-            "RowName": "None"
-        },
-        "portrait": {
-            "DataTable": null,
-            "RowName": "None"
-        }
+    data: {
+        item: ItemDatatableRef;
+        category: {
+            data: DatatableRef;
+        };
+        tags: string[];
+        dialogueText: SourceString;
+        dialogueBirthdayText: SourceString;
+        emoji: {
+            DataTable: null;
+            RowName: 'None';
+        };
+        portrait: {
+            DataTable: null;
+            RowName: 'None';
+        };
     };
 }

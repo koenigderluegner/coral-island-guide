@@ -1,10 +1,6 @@
+import { DatatableRef } from '../../types/datatable-ref.type';
+
 export type RawTreasureReward = {
-    "data": {
-        "DataTable": {
-            "ObjectName": string
-            "ObjectPath": string
-        },
-        "RowName": string
-    },
-    "itemID": string
-}
+    data: DatatableRef;
+    itemID: string;
+};

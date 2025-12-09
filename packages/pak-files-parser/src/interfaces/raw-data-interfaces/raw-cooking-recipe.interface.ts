@@ -1,84 +1,41 @@
-import { SourceString } from "../../types/source-string.type";
+import { SourceString } from '../../types/source-string.type';
+import { DatatableRef } from '../../types/datatable-ref.type';
+import { ObjectPath } from '../../types/object-path.type';
+import { ItemDatatableRef } from '../../types/item-datatable-ref';
 
-export type CookingIngredients = ({
-    "useCustomName": false,
-    "customName": SourceString,
-} | {
-    "useCustomName": true,
-    "customName": SourceString
-}) & {
-    "listIngredients":
-        {
-            "itemData": {
-                "data": {
-                    "DataTable": {
-                        "ObjectName": string;
-                        "ObjectPath": string;
-                    },
-                    "RowName": string;
-                },
-                "itemID": string;
-            },
-            "useCategoryData": boolean
-            "categoryData": {
-                "data": {
-                    "DataTable": {
-                        "ObjectName": string;
-                        "ObjectPath": string;
-                    },
-                    "RowName": string;
-                }
-            },
-            "canUseSameItem": boolean
-            "quantity": number,
-            "excludeItemData": []
-        }[]
-}
+export type CookingIngredients = (
+    | {
+          useCustomName: false;
+          customName: SourceString;
+      }
+    | {
+          useCustomName: true;
+          customName: SourceString;
+      }
+) & {
+    listIngredients: {
+        itemData: ItemDatatableRef;
+        useCategoryData: boolean;
+        categoryData: {
+            data: DatatableRef;
+        };
+        canUseSameItem: boolean;
+        quantity: number;
+        excludeItemData: [];
+    }[];
+};
 
 export interface RawCookingRecipe {
-    "name": SourceString,
-    "description": SourceString,
-    "ingredients": CookingIngredients[],
-    "genericIngredients": {
-        "genericItem": {
-            "DataTable": {
-                "ObjectName": string;
-                "ObjectPath": string;
-            },
-            "RowName": string;
-        },
-        "amount": number
-    }    [],
-    "excludeIngredients":
-        {
-            "data": {
-                "DataTable": {
-                    "ObjectName": string;
-                    "ObjectPath": string;
-                },
-                "RowName": string;
-            },
-            "itemID": string;
-        } [],
-    "smallIcon": {
-        "ObjectName": string;
-        "ObjectPath": string;
-    },
-    "bigIcon": {
-        "ObjectName": string;
-        "ObjectPath": string;
-    },
-    "utensils": string[
-
-        ],
-    "result": {
-        "data": {
-            "DataTable": {
-                "ObjectName": string;
-                "ObjectPath": string;
-            },
-            "RowName": string;
-        },
-        "itemID": string;
-    }
+    name: SourceString;
+    description: SourceString;
+    ingredients: CookingIngredients[];
+    genericIngredients: {
+        genericItem: DatatableRef;
+        amount: number;
+    }[];
+    excludeIngredients: ItemDatatableRef[];
+    smallIcon: ObjectPath;
+    bigIcon: ObjectPath;
+    utensils: string[];
+    result: ItemDatatableRef;
 }

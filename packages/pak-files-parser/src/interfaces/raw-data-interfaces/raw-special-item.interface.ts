@@ -1,12 +1,10 @@
-import { SourceString } from "../../types/source-string.type";
+import { SourceString } from '../../types/source-string.type';
+import { ObjectPath } from '../../types/object-path.type';
 
 export interface RawSpecialItem {
-    "id": string
-    "advancedVariant": string[],
-    "name": SourceString,
-    "description": SourceString,
-    "icon": {
-        "ObjectName": string
-        "ObjectPath": string
-    }
+    id: string;
+    advancedVariant: string[];
+    name: SourceString;
+    description: SourceString;
+    icon: ObjectPath;
 }

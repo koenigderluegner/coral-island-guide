@@ -1,13 +1,13 @@
 import fs from 'fs';
 import path from 'path';
 import { AvailableLanguage, Item, MinimalItem, MinimalNPC, MinimalTagBasedItem } from '@ci/data-types';
-import { config } from "../config";
-import { environment } from "../environments/environment";
-import { EffectMap, RequirementMap } from "../app/da-files-parser";
-import { AssetPath } from "../types/asset-path.type";
-import { ObjectPath } from "../types/object-path.type";
-import { RawNPC } from "../interfaces/raw-data-interfaces/raw-npc.interface";
-import { EmptyObject } from "./empty-object.type";
+import { config } from '../config';
+import { environment } from '../environments/environment';
+import { EffectMap, RequirementMap } from '../app/da-parser/da-files-parser';
+import { AssetPath } from '../types/asset-path.type';
+import { ObjectPath } from '../types/object-path.type';
+import { RawNPC } from '../interfaces/raw-data-interfaces/raw-npc.interface';
+import { EmptyObject } from './empty-object.type';
 
 export function keys<T extends Readonly<Record<any, any>>>(object: T): T extends EmptyObject ? [] : (keyof T)[] {
     return Object.keys(object) as T extends EmptyObject ? [] : (keyof T)[];
@@ -18,60 +18,62 @@ export function unifyInternalPath(internalPath: string): string {
         .replace('/Game/ProjectCoral/', '/ProjectCoral/Content/ProjectCoral/')
         .replace('\\Game\\ProjectCoral\\', '/ProjectCoral/Content/ProjectCoral/')
         .replace('\\', path.sep)
-        .replace('/', path.sep)
+        .replace('/', path.sep);
 }
 
 export function getParsedArgs(): Record<string, any> {
     return process.argv
-        .filter(s => s.startsWith('-'))
-        .map(s => s.replace(/^-+/, "").toLocaleLowerCase())
+        .filter((s) => s.startsWith('-'))
+        .map((s) => s.replace(/^-+/, '').toLocaleLowerCase())
         .reduce((prev: Record<string, any>, current) => {
             const parts = current.split('=');
             if (parts.length === 2) {
                 prev[parts[0]] = parts[1] === 'false' ? false : parts[1] === 'true' ? true : parts[1];
             } else {
-                prev[parts[0]] = true
+                prev[parts[0]] = true;
             }
 
             return prev;
-        }, {})
+        }, {});
 }
 
 export function readAsset<T = any>(fileName: string): T {
-    return JSON.parse(fs.readFileSync(unifyInternalPath(path.join(environment.assetPath, fileName)), {
-        encoding: 'utf8',
-        flag: 'r'
-    }));
-}
-
-export function generateJson(fileName: string, jsonContent: any, readable = false, lang: AvailableLanguage | 'none' = "en") {
-    const databasePath = path.join(config.target.databasePath)
-
-    const filePath = path.join(databasePath, fileName);
-    const fileTargetLocation = filePath.split(path.sep).slice(0, -1).join(path.sep)
-
-    createPathIfNotExists(fileTargetLocation);
-
-    fs.writeFileSync(
-        filePath,
-        JSON.stringify(jsonContent, null, readable ? 2 : undefined).replace(/\n/g, "\r\n"),
-        {
+    return JSON.parse(
+        fs.readFileSync(unifyInternalPath(path.join(environment.assetPath, fileName)), {
             encoding: 'utf8',
-            flag: 'w+',
-        }
+            flag: 'r',
+        }),
     );
 }
 
+export function generateJson(
+    fileName: string,
+    jsonContent: any,
+    readable = false,
+    lang: AvailableLanguage | 'none' = 'en',
+) {
+    const databasePath = path.join(config.target.databasePath);
+
+    const filePath = path.join(databasePath, fileName);
+    const fileTargetLocation = filePath.split(path.sep).slice(0, -1).join(path.sep);
+
+    createPathIfNotExists(fileTargetLocation);
+
+    fs.writeFileSync(filePath, JSON.stringify(jsonContent, null, readable ? 2 : undefined).replace(/\n/g, '\r\n'), {
+        encoding: 'utf8',
+        flag: 'w+',
+    });
+}
+
 export function createPathIfNotExists(path: string): void {
-    if (!fs.existsSync(path))
-        fs.mkdirSync(path, {recursive: true});
+    if (!fs.existsSync(path)) fs.mkdirSync(path, { recursive: true });
 }
 
 export function copyAssetsForFiles(files: string[]): void {
     const generatedDirPath = path.join(__dirname, 'generated', 'images', 'icons');
     const outputPath = path.join(__dirname, 'output', 'images', 'icons');
     createPathIfNotExists(outputPath);
-    files.forEach(fileName => {
+    files.forEach((fileName) => {
         if (fs.existsSync(path.join(generatedDirPath, fileName)))
             fs.copyFileSync(path.join(generatedDirPath, fileName), path.join(outputPath, fileName));
     });
@@ -89,14 +91,12 @@ export function convertToIconName(objectName: string): string {
 
 export function AssetPathNameToIcon(assetPathName: string | AssetPath | ObjectPath): string {
     if (typeof assetPathName === 'string') {
-        return convertToIconName(assetPathName.split('.').pop() ?? '').replace('.png', '')
+        return convertToIconName(assetPathName.split('.').pop() ?? '').replace('.png', '');
     } else if ('ObjectPath' in assetPathName) {
-        return convertToIconName(getReferencedString(assetPathName.ObjectName)).replace('.png', '')
+        return convertToIconName(getReferencedString(assetPathName.ObjectName)).replace('.png', '');
     }
 
-    return convertToIconName(assetPathName.AssetPathName.split('.').pop() ?? '').replace('.png', '')
-
-
+    return convertToIconName(assetPathName.AssetPathName.split('.').pop() ?? '').replace('.png', '');
 }
 
 /**
@@ -104,41 +104,52 @@ export function AssetPathNameToIcon(assetPathName: string | AssetPath | ObjectPa
  * @param item
  * @deprecated
  */
-export function minifyItem(item: undefined): undefined ;
-export function minifyItem(item: null): null ;
+export function minifyItem(item: undefined): undefined;
+export function minifyItem(item: null): null;
 export function minifyItem(item: Item | MinimalItem): MinimalItem;
-export function minifyItem(item: {
-    id: string,
-    displayName: string,
-    iconName: string | null
-} | undefined): MinimalItem | undefined;
-export function minifyItem(item: {
-    id: string,
-    displayName: string,
-    iconName: string | null
-} | Item | MinimalItem | null | undefined): MinimalItem | null | undefined {
+export function minifyItem(
+    item:
+        | {
+              id: string;
+              displayName: string;
+              iconName: string | null;
+          }
+        | undefined,
+): MinimalItem | undefined;
+export function minifyItem(
+    item:
+        | {
+              id: string;
+              displayName: string;
+              iconName: string | null;
+          }
+        | Item
+        | MinimalItem
+        | null
+        | undefined,
+): MinimalItem | null | undefined {
     if (!item) return item;
 
     return {
         id: item.id,
         displayName: item.displayName,
-        iconName: item.iconName
+        iconName: item.iconName,
     };
 }
 
-export function minifyTagBasedItem(item: { key: string, displayName: string, iconName: string }): MinimalTagBasedItem {
+export function minifyTagBasedItem(item: { key: string; displayName: string; iconName: string }): MinimalTagBasedItem {
     return {
         key: item.key,
         displayName: item.displayName,
-        iconName: item.iconName
+        iconName: item.iconName,
     };
 }
 
-export function minifyNPC(item: { key: string, characterName: string, iconName: string | null }): MinimalNPC {
+export function minifyNPC(item: { key: string; characterName: string; iconName: string | null }): MinimalNPC {
     return {
         key: item.key,
         characterName: item.characterName,
-        iconName: item.iconName
+        iconName: item.iconName,
     };
 }
 
@@ -146,48 +157,55 @@ export function notEmpty<TValue>(value: TValue | null | undefined): value is TVa
     return value !== null && value !== undefined;
 }
 
-
 export function getReferencedString(a: string): string {
     if (a.includes(' ')) {
         return a.split(' ')[1] ?? '';
     } else {
-        return a.split('\'')[1] ?? '';
+        return a.split("'")[1] ?? '';
     }
 }
 
 export function isEffectMap(value: EffectMap | RequirementMap | undefined): value is EffectMap {
     if (!notEmpty(value)) return false;
     const keys = [...value.keys()];
-    return !!keys.length && 'effects' in value.get(keys[0])!
+    return !!keys.length && 'effects' in value.get(keys[0])!;
 }
 
 export function isRequirementMap(value: EffectMap | RequirementMap | undefined): value is RequirementMap {
     if (!notEmpty(value)) return false;
     const keys = [...value.keys()];
-    return !!keys.length && 'requirements' in value.get(keys[0])!
+    return !!keys.length && 'requirements' in value.get(keys[0])!;
 }
-
 
 export function extractOutfitPortraitsLocation(dbItem: RawNPC, itemKey: string) {
     let index = 0;
-    let fileName = ''
+    let fileName = '';
     if (dbItem.portraitsDT) {
         const [portaitsPath, foundIndex] = dbItem.portraitsDT.ObjectPath.split('.');
 
         fileName = path.join(portaitsPath + '.json');
         index = +foundIndex;
     } else {
-        fileName = path.join('ProjectCoral', 'Content', 'ProjectCoral', 'Core', 'Data', 'AI', 'NPC_Outfit', `DT_${itemKey}Outfit.json`)
+        fileName = path.join(
+            'ProjectCoral',
+            'Content',
+            'ProjectCoral',
+            'Core',
+            'Data',
+            'AI',
+            'NPC_Outfit',
+            `DT_${itemKey}Outfit.json`,
+        );
     }
-    return {index, fileName};
+    return { index, fileName };
 }
 
 export function generateGameVersionFile() {
-    let version = 'unknown'
+    let version = 'unknown';
     const versionFile = path.join(config.source.contentRoot, 'Version', 'Config.ini');
     if (fs.existsSync(versionFile)) {
-        version = fs.readFileSync(versionFile, {encoding: 'utf8', flag: 'r'}).trim();
-        fs.writeFileSync(path.join(config.target.versionRootPath, 'version.json'), JSON.stringify({version}));
+        version = fs.readFileSync(versionFile, { encoding: 'utf8', flag: 'r' }).trim();
+        fs.writeFileSync(path.join(config.target.versionRootPath, 'version.json'), JSON.stringify({ version }));
     }
 
     return version;

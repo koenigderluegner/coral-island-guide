@@ -1,13 +1,7 @@
+import { DatatableRef } from '../../types/datatable-ref.type';
+import { ItemDatatableRef } from '../../types/item-datatable-ref';
+
 export interface RawJournalOrder {
-    "itemData": {
-        "data": {
-            "DataTable": {
-                "ObjectName": string
-                "ObjectPath": string
-            },
-            "RowName": string
-        },
-        "itemID": string
-    },
-    "listOrder": number
+    itemData: ItemDatatableRef;
+    listOrder: number;
 }
