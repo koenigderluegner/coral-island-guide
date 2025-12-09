@@ -4,12 +4,10 @@ export * from './lib/types/effects/effect-with-meta';
 export * from './lib/types/effects/effect-without-meta';
 export * from './lib/types/effects/effect.type';
 
-
 export * from './lib/types/requirements/requirement.type';
 export * from './lib/types/requirements/requirement-with-meta';
 export * from './lib/types/requirements/requirement-without-meta';
 export * from './lib/types/requirements/time-date-requirement.type';
-
 
 export * from './lib/interfaces/achievement.interface';
 export * from './lib/interfaces/animal-data.interface';
@@ -58,7 +56,6 @@ export * from './lib/interfaces/tag-based-item.interface';
 export * from './lib/interfaces/time.interface';
 export * from './lib/interfaces/torn-page-data.interface';
 export * from './lib/interfaces/unlock-by-mastery.interface';
-
 
 export * from './lib/enums/quality.enum';
 export * from './lib/enums/ui-icon.enum';

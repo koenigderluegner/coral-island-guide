@@ -1,6 +1,6 @@
-import { DatatableRef } from "../../types/datatable-ref.type";
+import { DatatableRef } from '../../types/datatable-ref.type';
 
 export type RawTreasureReward = {
-    "data": DatatableRef,
-    "itemID": string
-}
+    data: DatatableRef;
+    itemID: string;
+};

@@ -1,88 +1,96 @@
-import { BaseGenerator } from "../_base/base-generator.class";
-import { CookingRecipe, Item, OfferingReward, SafeExtract } from "@ci/data-types";
-import { Datatable } from "../../../interfaces/datatable.interface";
-import { minifyItem, readAsset } from "../../../util/functions";
-import { RawOfferingReward } from "../../../interfaces/raw-data-interfaces/raw-offering-reward.interface";
-import { GameplayEffectsConfig, GameplayEffectsConfigEntry } from "../../../types/offering-reward-config.type";
-import { OfferingMatch } from "../../../interfaces/offering-match.interface";
-import { RawAddItemToInventoryEffect } from "../../../interfaces/raw-data-interfaces/da-file-parse/effects/add-item-to-inventory-effect.type";
-import { DaEffects } from "../../../interfaces/raw-data-interfaces/da-file-parse/effects/da-effects.type";
-
-
+import { BaseGenerator } from '../_base/base-generator.class';
+import { CookingRecipe, Item, OfferingReward, SafeExtract } from '@ci/data-types';
+import { Datatable } from '../../../interfaces/datatable.interface';
+import { minifyItem, readAsset } from '../../../util/functions';
+import { RawOfferingReward } from '../../../interfaces/raw-data-interfaces/raw-offering-reward.interface';
+import { GameplayEffectsConfig, GameplayEffectsConfigEntry } from '../../../types/offering-reward-config.type';
+import { OfferingMatch } from '../../../interfaces/offering-match.interface';
+import { RawAddItemToInventoryEffect } from '../../../interfaces/raw-data-interfaces/da-file-parse/effects/add-item-to-inventory-effect.type';
+import { DaEffects } from '../../../interfaces/raw-data-interfaces/da-file-parse/effects/da-effects.type';
 
 export class OfferingRewardsDbGenerator extends BaseGenerator<RawOfferingReward, OfferingMatch> {
-
     datatable: Datatable<RawOfferingReward>[] = [
-        readAsset<Datatable<RawOfferingReward>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_OfferingRewardRegistry.json'),
-        readAsset<Datatable<RawOfferingReward>[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DT_HeritageOfferingRewardRegistry.json'),
-    ].reduce((previousValue, currentValue) => {
-        Object.assign(previousValue[0]?.Rows ?? {}, (currentValue)[0]?.Rows ?? {});
-        return previousValue
-    }).flat();
+        readAsset<Datatable<RawOfferingReward>[]>(
+            'ProjectCoral/Content/ProjectCoral/Data/Offering/DT_OfferingRewardRegistry.json',
+        ),
+        readAsset<Datatable<RawOfferingReward>[]>(
+            'ProjectCoral/Content/ProjectCoral/Data/Offering/DT_HeritageOfferingRewardRegistry.json',
+        ),
+    ]
+        .reduce((previousValue, currentValue) => {
+            Object.assign(previousValue[0]?.Rows ?? {}, currentValue[0]?.Rows ?? {});
+            return previousValue;
+        })
+        .flat();
     private rewardsDa: GameplayEffectsConfigEntry[];
     private rewardsConfig: GameplayEffectsConfig;
     private cookingrecipes: CookingRecipe[];
 
-    constructor(protected itemMap: Map<string, Item>, protected cookingMap: Map<string, Record<string, CookingRecipe[]>>) {
+    constructor(
+        protected itemMap: Map<string, Item>,
+        protected cookingMap: Map<string, Record<string, CookingRecipe[]>>,
+    ) {
         super();
 
-        this.rewardsDa = readAsset<GameplayEffectsConfigEntry[]>('ProjectCoral/Content/ProjectCoral/Data/Offering/DA_OfferingReward.json');
+        this.rewardsDa = readAsset<GameplayEffectsConfigEntry[]>(
+            'ProjectCoral/Content/ProjectCoral/Data/Offering/DA_OfferingReward.json',
+        );
 
-        this.rewardsConfig = this.rewardsDa.find((a): a is GameplayEffectsConfig => a.Type === "C_GameplayEffectsConfig")!;
+        this.rewardsConfig = this.rewardsDa.find(
+            (a): a is GameplayEffectsConfig => a.Type === 'C_GameplayEffectsConfig',
+        )!;
 
         const utensilRecipes = [...this.cookingMap.values()][0];
-        this.cookingrecipes = []
-        Object.keys(utensilRecipes).forEach(utensil => this.cookingrecipes.push(...utensilRecipes[utensil]))
-
-
+        this.cookingrecipes = [];
+        Object.keys(utensilRecipes).forEach((utensil) => this.cookingrecipes.push(...utensilRecipes[utensil]));
     }
 
     handleEntry(itemKey: string, dbItem: RawOfferingReward): OfferingMatch {
-
-        const rewards: OfferingReward = {items: [], recipes: []}
+        const rewards: OfferingReward = { items: [], recipes: [] };
 
         const map = this.rewardsConfig.Properties.map;
 
         let conf;
 
         if (Array.isArray(map)) {
-            const offeringRewardsConfigEffectsMaps = map.find(entry => entry.Key.includes(dbItem.rewardID));
-            conf = offeringRewardsConfigEffectsMaps?.Value?.effects
+            const offeringRewardsConfigEffectsMaps = map.find((entry) => entry.Key.includes(dbItem.rewardID));
+            conf = offeringRewardsConfigEffectsMaps?.Value?.effects;
         } else {
-            conf = map.Value?.effects
+            conf = map.Value?.effects;
         }
 
-        if (!conf) console.log('no reward conf for ', dbItem.rewardID)
+        if (!conf) console.log('no reward conf for ', dbItem.rewardID);
         if (conf) {
-            conf.forEach(effect => {
+            conf.forEach((effect) => {
                 let key = effect.ObjectName.split(':')[1];
 
                 // need to trim ' as they changed their syntax using ' instead of whitespaces
                 key = key.replace(/^\'+/, '').replace(/\'+$/, '');
-                const reward = this.rewardsDa.find(a => a.Name === key) as SafeExtract<DaEffects, {Type: `C_UnlockCookingRecipeEffect`}> | RawAddItemToInventoryEffect;
+                const reward = this.rewardsDa.find((a) => a.Name === key) as
+                    | SafeExtract<DaEffects, { Type: `C_UnlockCookingRecipeEffect` }>
+                    | RawAddItemToInventoryEffect;
                 if ('itemData' in reward.Properties) {
                     const item = this.itemMap.get(reward.Properties.itemData.itemID);
                     if (!item) {
-                        console.log('cant find item reward for key ', reward.Properties.itemData.itemID)
+                        console.log('cant find item reward for key ', reward.Properties.itemData.itemID);
                         return;
                     }
-                    rewards.items.push({item: minifyItem(item), amount: reward.Properties.quantity ?? 1})
+                    rewards.items.push({ item: minifyItem(item), amount: reward.Properties.quantity ?? 1 });
                 } else if ('recipe' in reward.Properties) {
-                    const cookingKey = reward.Properties.recipe.RowName
-                    const recipe = this.cookingrecipes.find(cookingrecipe => cookingrecipe.cookingKey === cookingKey);
+                    const cookingKey = reward.Properties.recipe.RowName;
+                    const recipe = this.cookingrecipes.find((cookingrecipe) => cookingrecipe.cookingKey === cookingKey);
                     if (!recipe) {
-                        console.log('cant find cooking reward for key ', cookingKey)
+                        console.log('cant find cooking reward for key ', cookingKey);
                         return;
                     }
-                    rewards.recipes.push({item: minifyItem(recipe.item!), cookingKey})
+                    rewards.recipes.push({ item: minifyItem(recipe.item!), cookingKey });
                 }
-            })
+            });
         }
 
-
-        if (!rewards.items.find(item => item.item.id === dbItem.rewardItem.itemID)) {
+        if (!rewards.items.find((item) => item.item.id === dbItem.rewardItem.itemID)) {
             const rewardItem = this.itemMap.get(dbItem.rewardItem.itemID);
-            if (rewardItem) rewards.items.push({item: minifyItem(rewardItem), amount: 1});
+            if (rewardItem) rewards.items.push({ item: minifyItem(rewardItem), amount: 1 });
         }
 
         return {
@@ -90,10 +98,7 @@ export class OfferingRewardsDbGenerator extends BaseGenerator<RawOfferingReward,
             offeringId: dbItem.offeringId.RowName,
             rewardID: dbItem.rewardID,
             rewardItem: dbItem.rewardItem.itemID,
-            rewards
+            rewards,
         };
-
     }
-
-
 }
