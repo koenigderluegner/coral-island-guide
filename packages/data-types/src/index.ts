@@ -60,6 +60,7 @@ export * from './lib/interfaces/unlock-by-mastery.interface';
 export * from './lib/enums/quality.enum';
 export * from './lib/enums/ui-icon.enum';
 
+export * from './lib/types/attraction';
 export * from './lib/types/available-languages.type';
 export * from './lib/types/calendar-event.type';
 export * from './lib/types/enum-string.type';
@@ -77,6 +78,7 @@ export * from './lib/types/requirement-entry.type';
 export * from './lib/types/safe-extract';
 export * from './lib/types/season.type';
 export * from './lib/types/shop-names.type';
+export * from './lib/types/town-rank-points';
 export * from './lib/types/translation-key';
 export * from './lib/types/treasure-hunt.type';
 export * from './lib/types/weather.type';
