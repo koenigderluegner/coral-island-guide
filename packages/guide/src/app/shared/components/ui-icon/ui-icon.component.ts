@@ -1,12 +1,16 @@
 import { Component, inject, input, ViewEncapsulation } from '@angular/core';
 import { UiIcon } from '@ci/data-types';
 import { GameVersionService } from "../../../core/injection-tokens/version.injection-token";
+import { MaskedImageComponent } from "../../masked-image/masked-image.component";
 
 @Component({
     selector: 'app-ui-icon',
     templateUrl: './ui-icon.component.html',
     styleUrls: ['./ui-icon.component.scss'],
     encapsulation: ViewEncapsulation.None,
+    imports: [
+        MaskedImageComponent
+    ],
     host: {
         'class': 'app-ui-icon'
     }
