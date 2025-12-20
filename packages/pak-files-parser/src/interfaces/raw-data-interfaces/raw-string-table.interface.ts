@@ -5,6 +5,7 @@ export interface RawStringTable {
     "StringTable": {
         "TableNamespace": string;
         "KeysToMetaData": Record<string, string>;
-    },
+        "KeysToEntries"?: Record<string, string>;
+    } ,
     "StringTableId": number;
 }

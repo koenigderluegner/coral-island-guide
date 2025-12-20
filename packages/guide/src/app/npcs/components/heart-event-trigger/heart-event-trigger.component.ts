@@ -6,6 +6,7 @@ import { EffectComponent } from "../../../shared/components/effect/effect.compon
 import { KeyValuePipe } from "@angular/common";
 import { IngameTimePipe } from "../../../shared/pipes/ingame-time.pipe";
 import { MatCheckbox } from "@angular/material/checkbox";
+import { TranslatePipe } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-heart-event-trigger',
@@ -17,7 +18,8 @@ import { MatCheckbox } from "@angular/material/checkbox";
         EffectComponent,
         KeyValuePipe,
         IngameTimePipe,
-        MatCheckbox
+        MatCheckbox,
+        TranslatePipe
     ]
 })
 export class HeartEventTriggerComponent {

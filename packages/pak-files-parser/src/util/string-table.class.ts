@@ -5,9 +5,9 @@ import { AvailableLanguage, AvailableLanguages, TranslationKey } from "@ci/data-
 
 export class StringTable {
 
+    static translations: Record<string, Record<string, string>> = {};
     private static readonly cachedStringTables: Map<string, RawStringTable> = new Map<string, RawStringTable>()
     private static readonly cachedLocalizationFiles: Map<string, Record<string, Record<string, string>>> = new Map<string, Record<string, Record<string, string>>>()
-    static translations: Record<string, Record<string, string>> = {};
 
     public static getString(ref: SourceString, lang?: AvailableLanguage): TranslationKey | null {
 
@@ -25,6 +25,10 @@ export class StringTable {
             let stringTable = StringTable.cachedStringTables.get(stringTablePath);
             if (!stringTable) {
                 const asset = readAsset<RawStringTable[]>(stringTablePath)[0];
+                asset.StringTable.KeysToMetaData = {
+                    ...(asset.StringTable.KeysToMetaData ?? {}),
+                    ...(asset.StringTable.KeysToEntries ?? {}),
+                }
                 StringTable.cachedStringTables.set(stringTablePath, asset)
                 stringTable = asset;
             }
