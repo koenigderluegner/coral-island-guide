@@ -6,6 +6,10 @@
 
 - Added attractions/town projects to locations
 
+#### Changed
+
+- Fixed various translation issues, for example, heart event locations
+
 ### 0.28.1 2025-12-06
 
 #### Changed
