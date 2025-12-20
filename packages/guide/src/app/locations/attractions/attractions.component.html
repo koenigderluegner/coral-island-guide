@@ -1,0 +1,26 @@
+<app-list-detail-container>
+    @if (selectedEntity) {
+        <app-attraction [attraction]="selectedEntity" listDetail/>
+    }
+
+    @let att = attractions.value();
+    <div class="flex gap-4 flex-wrap">
+        @for (attraction of att; track attraction) {
+            <div
+                    (click)="showDetails(attraction)"
+                    [class.to-merino-300]="selectedEntity?.key === attraction.key"
+                    class="cursor-pointer rounded-xl flex flex-col items-center gap-4 max-w-52 bg-gradient-to-b from-transparent from-30% to-30% to-merino  hover:to-merino-200">
+                <img alt="{{attraction.name | translate}} icon" class="w-full aspect-square"
+                     src="{{iconsPath + attraction.projectImage}}.webp"
+                     width="256"/>
+                <div class="text-lg font-semibold flex flex-col items-center justify-center px-4 pb-2 size-full">
+                    <app-item-icon [itemName]="attraction.projectIcon" class="size-8"/>
+
+                    {{ attraction.name | translate }}
+
+                    <span class="mt-auto">{{ attraction.daysToComplete }} days</span>
+                </div>
+            </div>
+        }
+    </div>
+</app-list-detail-container>

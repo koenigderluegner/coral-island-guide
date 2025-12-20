@@ -64,6 +64,11 @@ export const routes: Routes = [
                 loadComponent: () => import('./components/orchestra-zones/orchestra-zones.component').then(c => c.OrchestraZonesComponent),
                 title: `Orchestra Zones - Locations`,
                 canActivate: [onlyInLiveGuard]
+            },
+            {
+                path: 'attractions',
+                loadComponent: () => import('./attractions/attractions.component').then(c => c.AttractionsComponent),
+                title: `Attractions - Locations`,
             }
 
         ]

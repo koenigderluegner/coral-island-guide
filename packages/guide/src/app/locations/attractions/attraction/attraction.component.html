@@ -1,0 +1,60 @@
+<header class="bg-merino-200 px-[--cg-card-padding] py-3 rounded-t-[--cg-card-radius] relative mt-2 font-semibold">
+    <div class="flex flex-col">
+        <span class="text-2xl text-merino-950">{{ attraction().contractors.contractor | translate }}</span>
+        <span class="text-lg opacity-70 leading-none">Contractor</span>
+    </div>
+
+    <div class="flex flex-row xl:-space-x-10 -space-x-8 absolute bottom-0 right-0">
+        @for (a of images(); track a; ) {
+            <img alt="" loading="lazy" class="h-[80px] xl:h-[100px] relative"
+                 [style.z-index]="$count - $index"
+                 onerror="this.onerror=null;this.src='assets/ui/images/placeholder.png'"
+                 src="{{iconsPath}}{{a}}.webp">
+        }
+    </div>
+</header>
+<div class="bg-merino p-[--cg-card-padding] font-semibold ">
+    <div class="flex flex-col">
+        <app-item-icon [itemName]="attraction().projectIcon" class="size-8"/>
+        <span class="text-2xl text-black">  {{ attraction().name | translate }}</span>
+
+
+        <span class="mt-auto text-lg ">{{ attraction().daysToComplete }} days</span>
+    </div>
+    <hr class="my-3">
+    <span class="text-lg">Rewards</span>
+    <div class="bg-[#ede6db] rounded-lg p-1 mb-2">
+        <div class="flex gap-2 items-center text-merino-900 text-lg">
+            <app-ui-icon [uiIcon]="UiIcon.HEART" class="!size-8 text-merino-900"/>
+            Friendship increase
+        </div>
+        <div class="text-merino-800 opacity-80">
+            @for (npc of attraction().rewards.heartPoints; track npc.key) {
+                {{ npc.characterName | translate }}{{ $last ? '' : ',' }}
+            }
+        </div>
+
+    </div>
+
+    <span class="text-lg">Requirements</span>
+    <app-item-list [itemList]="attraction().requirements" class="mb-3"/>
+
+    @if (attraction().perkData.length > 0) {
+        <div class="my-3">
+            <span class="text-lg">Project Perk(s)</span>
+            <div class="space-y-2">
+                @for (perk of attraction().perkData; track perk.description) {
+                    <div class=" flex items-center gap-2">
+                        <app-masked-image class="text-merino-800 size-7" [src]="iconsPath +   perk.icon + '.webp'"/>
+                        {{ perk.description | translate }}
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+
+<footer class="bg-merino-200 p-[--cg-card-padding] rounded-b-[--cg-card-radius] font-semibold text-2xl text-black flex justify-center">
+    <app-money [amount]="attraction().price"/>
+</footer>
