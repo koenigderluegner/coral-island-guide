@@ -10,6 +10,7 @@ export enum UiIcon {
     MAGNIFYING_GLASS = 'T_Icon_Magnifying_Glass',
     PLUS = 'T_Icon_Plus',
     TRASH_CAN = 'T_Icon_Trash',
+    TOWN_RANK = 'T_Icon_Townrank',
 
     // PAUSE MENU TOP
     JOURNAL = 'T_Icon_Journal',
