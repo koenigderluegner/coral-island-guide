@@ -3,7 +3,7 @@ import { combineLatest, map, Observable, of, shareReplay, tap } from 'rxjs';
 import {
     Achievement,
     AnimalData,
-    AnimalShopData,
+    AnimalShopData, type Attraction,
     Consumable,
     CookingRecipe,
     CraftingRecipe,
@@ -541,6 +541,10 @@ export class DatabaseService extends BaseDbService {
             parse: (value) => value[0]
         })
 
+    }
+
+    fetchAttractions() {
+        return this.#getResource<Attraction[]>(`${this.BASE_PATH_WITH_LANG}/attractions.json`)
     }
 
     fetchMeritExchangeShopData$(): Observable<MeritExchangeShopData[]> {

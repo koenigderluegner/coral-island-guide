@@ -124,7 +124,7 @@ try {
     if (environment.isBeta) {
         generators = {...generators, ...getBetaGenerators(itemDbMap, tagBasedItemsDbMap)}
     } else {
-        generators = {...generators, ...getLiveGenerators(itemDbMap)}
+        generators = {...generators, ...getLiveGenerators(itemDbMap, npcDbMap)}
     }
 
 
