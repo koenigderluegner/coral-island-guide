@@ -55,6 +55,7 @@ export enum UiIcon {
 
     //
     GIFTING = 'Icons_Gift',
+    HEART = 'T_Icon_Heart',
 
     // Gifting ProjetCoral Content ProjectCoral Textures Ui Relationship
     LOVE = 'T_Icon_Love',
