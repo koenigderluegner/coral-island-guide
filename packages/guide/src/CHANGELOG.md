@@ -10,6 +10,7 @@
 #### Changed
 
 - Fixed various translation issues, for example, heart event locations
+- Fixed errors in to-do list
 
 ### 0.28.1 2025-12-06
 
