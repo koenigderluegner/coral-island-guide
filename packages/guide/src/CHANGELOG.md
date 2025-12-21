@@ -9,6 +9,7 @@
 
 #### Changed
 
+- Updated live data to v1.2-1245 (Steam version)
 - Fixed various translation issues, for example, heart event locations
 - Fixed errors in to-do list
 
