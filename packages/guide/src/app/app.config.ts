@@ -45,7 +45,6 @@ export const appConfig: ApplicationConfig = {
             provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
             useValue: {appearance: 'outline', hideRequiredMarker: false} satisfies MatFormFieldDefaultOptions,
         },
-        {provide: BETA_CODE, useValue: 'Grappling6Snub6Enlighten2Endowment3Sly4'},
         provideAppInitializer(() => {
             const initializerFn = ((BETA_CODE: string | null, settingsService: SettingsService) => {
                 if (!BETA_CODE) {
