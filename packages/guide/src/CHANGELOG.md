@@ -5,6 +5,7 @@
 #### Added
 
 - Added attractions/town projects to locations
+- Added more descriptive text to heart events to match in-game text
 
 #### Changed
 
