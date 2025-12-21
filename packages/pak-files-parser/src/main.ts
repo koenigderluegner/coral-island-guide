@@ -507,6 +507,9 @@ try {
 }
 
 
+StringTable.addTranslationForKey('0AD71F744EB56C2BD487E88073281F7B') // "Go to {locationName} between {timeRange} to see the event.",
+
+
 Object.keys(StringTable.translations).forEach(lang => {
     generateJson(path.join('i18n', `${lang}.json`), StringTable.translations[lang], false, 'none');
 })

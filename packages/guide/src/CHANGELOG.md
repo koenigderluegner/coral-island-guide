@@ -5,6 +5,11 @@
 #### Added
 
 - Added attractions/town projects to locations
+- Added more descriptive text to heart events to match in-game text
+
+#### Changed
+
+- Fixed various translation issues, for example, heart event locations
 
 ### 0.28.1 2025-12-06
 
