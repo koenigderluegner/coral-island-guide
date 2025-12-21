@@ -3,25 +3,15 @@ import { ToDoService } from "../../../core/services/to-do.service";
 import { ToDoContext, ToDoContextDisplayNames } from "../../../core/types/to-do-context.type";
 import { ToDo } from "../../../core/types/to-do.type";
 import { ToDoFilterOptions } from "../../types/to-do-filter-options.type";
-import { animate, style, transition, trigger } from "@angular/animations";
 import { ItemEntry } from "../../../shared/types/item-entry.type";
 import { ToDoEntryBaseComponent } from "../to-do-entry-base/to-do-entry-base.component";
 
 @Component({
     selector: 'app-to-do-partial',
     templateUrl: './to-do-partial.component.html',
-    animations: [
-        trigger('leaveAnimation', [
-            transition(':leave', [
-                style({height: '*', opacity: 1}),
-                animate('200ms ease-in', style({height: 0, opacity: 0}))
-            ])
-        ])
-    ],
     host: {
         '[class.hidden]': 'hidden()'
     },
-
     imports: [
         ToDoEntryBaseComponent
     ]
