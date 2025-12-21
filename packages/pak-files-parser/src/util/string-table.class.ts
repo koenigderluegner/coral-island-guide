@@ -61,4 +61,18 @@ export class StringTable {
 
     }
 
+    public static addTranslationForKey(key: string, namespace = '') {
+
+        AvailableLanguages.forEach(lang => {
+            let stringTable = StringTable.cachedLocalizationFiles.get(lang);
+
+            if (!stringTable) {
+                const asset = readAsset<Record<string, Record<string, string>>>(`/ProjectCoral/Content/Localization/Game/${lang}/Game.json`);
+                StringTable.cachedLocalizationFiles.set(lang, asset);
+                stringTable = asset;
+            }
+            this.translations[lang][key] = stringTable[namespace][key] ?? key;
+        })
+    }
+
 }

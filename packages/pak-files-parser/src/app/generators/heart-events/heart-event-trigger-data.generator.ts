@@ -1,9 +1,10 @@
 import { readAsset } from "../../../util/functions";
 import { Datatable } from "../../../interfaces/datatable.interface";
 import { BaseGenerator } from "../_base/base-generator.class";
-import { HeartEventTriggerData, LocationInfo } from "@ci/data-types";
+import { HeartEventTriggerData, LocationInfo, type TranslationKey } from "@ci/data-types";
 import { getEnumValue } from "@ci/util";
 import { RawHeartEventTriggerData } from "../../../interfaces/raw-data-interfaces/raw-heart-event-trigger-data.interface";
+import { StringTable } from "../../../util/string-table.class";
 
 
 export class HeartEventTriggerDataGenerator extends BaseGenerator<RawHeartEventTriggerData, HeartEventTriggerData> {
@@ -29,6 +30,7 @@ export class HeartEventTriggerDataGenerator extends BaseGenerator<RawHeartEventT
             specificWeather: dbItem.specificWeather.map(getEnumValue),
             time: dbItem.time,
             effects: this.getEffects(itemKey),
+            descriptionRequirements: dbItem.heartEventDescriptionRequirements.map(t => StringTable.getString(t)).filter((t): t is TranslationKey => !!t),
             requirements: this.getRequirements(itemKey),
         };
     }

@@ -11,8 +11,6 @@ import { TranslatePipe } from "@ngx-translate/core";
 @Component({
     selector: 'app-heart-event-trigger',
     templateUrl: './heart-event-trigger.component.html',
-    styles: [':host{display: block;}'],
-
     imports: [
         RequirementsComponent,
         EffectComponent,
@@ -20,12 +18,16 @@ import { TranslatePipe } from "@ngx-translate/core";
         IngameTimePipe,
         MatCheckbox,
         TranslatePipe
-    ]
+    ],
+    host: {
+        'class': 'block text-md font-semibold',
+    }
 })
 export class HeartEventTriggerComponent {
 
     readonly heartEventTrigger = input.required<HeartEvent["trigger"][0]>();
-    heartEventChecklist = inject(HeartEventsChecklistService)
+    protected heartEventChecklist = inject(HeartEventsChecklistService);
+    protected readonly HEART_EVENT_TRIGGER_LOCATION_KEY = '0AD71F744EB56C2BD487E88073281F7B'; // "Go to {locationName} between {timeRange} to see the event.",
 
     toggleHeartEvent(checked: boolean) {
         if (checked) {

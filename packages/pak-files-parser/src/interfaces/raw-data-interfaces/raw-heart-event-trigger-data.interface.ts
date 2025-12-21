@@ -1,4 +1,5 @@
 import { AssetMap } from "../../types/asset-map.type";
+import type { SourceString } from "../../types/source-string.type";
 
 export interface RawHeartEventTriggerData {
     enabled: boolean,
@@ -26,5 +27,6 @@ export interface RawHeartEventTriggerData {
     specificMonth: string[],
     specificWeather: string[],
     otherCutscenesState: AssetMap<boolean>[],
+    heartEventDescriptionRequirements: SourceString[];
     canTriggerSameDay: boolean
 }
