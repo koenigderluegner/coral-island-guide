@@ -1,1 +1,1 @@
-{"version":"0.28.1","date":"2025-12-06","body":"\r\n#### Changed\r\n\r\n- Updated live data to v1.2-1244 (Steam version)\r\n- Fixed translation is not working after changing it in settings (still requires a page reload)\r\n\r"}
+{"version":"0.29.0","date":"2025-12-21","body":"\r\n#### Added\r\n\r\n- Added attractions/town projects to locations\r\n- Added more descriptive text to heart events to match in-game text\r\n\r\n#### Changed\r\n\r\n- Fixed various translation issues, for example, heart event locations\r\n- Fixed errors in to-do list\r\n\r"}
