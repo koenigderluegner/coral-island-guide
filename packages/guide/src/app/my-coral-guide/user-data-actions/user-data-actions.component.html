@@ -8,12 +8,34 @@
     </mat-select>
 </mat-form-field>
 
-<button (click)="openEditDialog()" class="btn touch-manipulation">
-    <app-ui-icon class="!size-6" [uiIcon]="UiIcon.SETTINGS"/>
+<button [matMenuTriggerFor]="menu" class="btn touch-manipulation">
+    <app-ui-icon class="!size-6" [uiIcon]="UiIcon.BURGER_MENU"/>
 </button>
-<button (click)="openDeleteDialog()" [disabled]="options().length <= 1" class="btn touch-manipulation">
-    <app-ui-icon class="!size-6" [uiIcon]="UiIcon.TRASH_CAN"/>
-</button>
-<button (click)="openAddDialog()" class="btn touch-manipulation">
-    <app-ui-icon class="!size-6" [uiIcon]="UiIcon.PLUS"/>
-</button>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="openAddDialog()">
+        <app-ui-icon class="!size-6 inline-block" [uiIcon]="UiIcon.PLUS"/>
+        <span>Add save game</span>
+    </button>
+    <button mat-menu-item (click)="openEditDialog()">
+        <span class="inline-flex gap-2">
+        <app-ui-icon class="!size-6 inline-block" [uiIcon]="UiIcon.SETTINGS"/>
+        <span>Edit name</span>
+            </span>
+    </button>
+    <button mat-menu-item (click)="openDeleteDialog()" [disabled]="options().length <= 1">
+        <app-ui-icon class="!size-6 inline-block" [uiIcon]="UiIcon.TRASH_CAN"/>
+        <span>Delete</span>
+    </button>
+
+    <button mat-menu-item (click)="export()">
+        <app-ui-icon class="!size-6 inline-block" [uiIcon]="UiIcon.MAP"/>
+        <span>Export data</span>
+    </button>
+    <button mat-menu-item (click)="fileInput.click()">
+        <app-ui-icon class="!size-6 inline-block" [uiIcon]="UiIcon.CRAFTING"/>
+        <span>Import data</span>
+    </button>
+</mat-menu>
+
+<input type="file" #fileInput (change)="import($event)" accept=".json" class="hidden">

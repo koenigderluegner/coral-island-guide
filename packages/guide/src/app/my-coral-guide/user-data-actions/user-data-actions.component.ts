@@ -1,6 +1,7 @@
 import { Component, computed, effect, inject, linkedSignal, untracked } from '@angular/core';
 import { MatFormField, MatLabel } from "@angular/material/form-field";
 import { MatOption, MatSelect } from "@angular/material/select";
+import { MatMenu, MatMenuItem, MatMenuTrigger } from "@angular/material/menu";
 import { UserDataService } from "../../core/services/user-data.service";
 import { FormsModule } from "@angular/forms";
 import { EditDialogComponent } from "./edit-dialog/edit-dialog.component";
@@ -18,7 +19,10 @@ import { UiIcon } from "@ci/data-types";
         MatOption,
         MatLabel,
         FormsModule,
-        UiIconComponent
+        UiIconComponent,
+        MatMenu,
+        MatMenuTrigger,
+        MatMenuItem
     ],
     templateUrl: './user-data-actions.component.html',
     host: {
@@ -92,5 +96,25 @@ export class UserDataActionsComponent {
                 }
             }
         })
+    }
+
+    export() {
+        this.#userDataService.exportData();
+    }
+
+    import(event: Event) {
+        const input = event.target as HTMLInputElement;
+        if (input.files && input.files[0]) {
+            const file = input.files[0];
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const text = e.target?.result?.toString();
+                if (!text) return;
+                this.#userDataService.importData(text);
+                // Clear the input so the same file can be selected again if needed
+                input.value = '';
+            };
+            reader.readAsText(file);
+        }
     }
 }

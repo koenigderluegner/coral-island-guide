@@ -88,6 +88,58 @@ export class UserDataService {
         }
     }
 
+    exportData(): void {
+        const data = JSON.stringify(this.userData(), null, 2);
+        const blob = new Blob([data], {type: 'application/json'});
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `coral-island-guide-user-data-${new Date().toISOString().split('T')[0]}.json`;
+        link.click();
+        window.URL.revokeObjectURL(url);
+    }
+
+    importData(json: string): void {
+        try {
+            const imported = JSON.parse(json);
+            if (imported && Array.isArray(imported.data)) {
+                const currentData = this.userData();
+
+                const newData = this.#mergeData(currentData, imported);
+
+                const migrated = this.#migrate({
+                    version: imported.version || 1,
+                    currentIndex: currentData.currentIndex,
+                    data: newData
+                });
+
+                this.userData.set(migrated);
+                this.save();
+            }
+        } catch (e) {
+            console.error('Failed to import user data', e);
+        }
+    }
+
+    // TODO just assuming type, use zod or similar to actually verify
+     #mergeData(currentData: { version: number; currentIndex: number; data: UserData[] }, imported: { version: number; currentIndex: number; data: UserData[] }) {
+        const newData = [...currentData.data];
+
+        imported.data.forEach((item: UserData) => {
+            // Ensure unique names
+            let uniqueName = item.name;
+            let counter = 1;
+            const existingNames = new Set(newData.map(d => d.name));
+            while (existingNames.has(uniqueName)) {
+                uniqueName = `${item.name} (${counter})`;
+                counter++;
+            }
+            item.name = uniqueName;
+            newData.push(item);
+        });
+        return newData;
+    }
+
     #migrate(userData: any): { version: number, currentIndex: number; data: UserData[] } {
         let migratedData: UserData[] = userData.data ?? [];
         let existingVersion = userData.version
