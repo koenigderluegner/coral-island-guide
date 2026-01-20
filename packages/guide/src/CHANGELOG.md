@@ -1,5 +1,11 @@
 ## Changelog
 
+### TBD
+
+#### Added
+
+- Added options to import/export user data
+
 ### 0.29.0 2025-12-21
 
 #### Added
