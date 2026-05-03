@@ -2,6 +2,11 @@
 
 ### TBD
 
+### Changed
+
+- Updated live data to v1.2-1246 (Steam version)
+- Sort museum checklist by journal order
+
 #### Added
 
 - Added options to import/export user data
