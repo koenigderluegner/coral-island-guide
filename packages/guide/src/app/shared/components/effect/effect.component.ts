@@ -15,7 +15,7 @@ export class EffectComponent {
 
     hasMinimalItem(effectMeta: EffectMetaForType<'RemoveItemFromInventory'>): effectMeta is {
         item: MinimalItem;
-        amount: number;
+        quantity: number;
     } {
         return 'item' in effectMeta;
     }
