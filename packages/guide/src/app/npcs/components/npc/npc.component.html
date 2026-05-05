@@ -7,7 +7,7 @@
         </app-item-card-switch>
     }
 
-    @if (npc) {
+    @if (npc(); as npc) {
 
         <app-card>
             <div class="text-2xl text-black font-semibold flex items-center gifting-portrait">
@@ -118,7 +118,7 @@
             }
         </app-card>
 
-    } @else if (npc === undefined) {
+    } @else if (npc() === undefined) {
 
         <app-card>
             <h1 class="mb-4 font-semibold text-3xl text-black flex items-center gap-x-4 ">
@@ -126,7 +126,7 @@
             </h1>
         </app-card>
 
-    } @else if (npc === null) {
+    } @else if (npc() === null) {
         <mat-spinner class="mx-auto text-white"/>
     }
 </app-list-detail-container>

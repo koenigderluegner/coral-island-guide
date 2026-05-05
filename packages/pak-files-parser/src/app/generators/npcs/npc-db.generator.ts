@@ -127,7 +127,7 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
                 appearances: newAppearance
             });
         }
-        
+
         const foundImages = [...NPCDbGenerator.filePaths.appearances].map(s => s.image).map(s => fg.convertPathToPattern(s));
         const fullPath = config.source.portraitsPath + `/**/${fg.escapePath(itemKey)}/**/Po*traits/**/*.png`;
         const imagePaths = fg.sync(fg.convertPathToPattern(fullPath))
