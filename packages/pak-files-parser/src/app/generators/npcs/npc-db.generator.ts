@@ -100,9 +100,9 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
         return defaultAppearance;
     }
 
-    private static getNPCAppearances(dbItem: RawNPC, itemKey: string) {
+    private static getNPCAppearances(dbItem: RawNPC, itemKey: string, newAppearances = false) {
         let npcAppearances: Record<string, RawNpcAppearances> = {}
-        const {index, fileName} = extractOutfitPortraitsLocation(dbItem, itemKey);
+        const {index, fileName} = extractOutfitPortraitsLocation(dbItem, itemKey, newAppearances);
 
         try {
             npcAppearances = readAsset<Datatable<RawNpcAppearances>[]>(fileName)[+index].Rows;
@@ -119,29 +119,15 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
         const defaultAppearance = NPCDbGenerator.formatRawAppearances(itemKey, npcAppearances);
         appearances.push({appearances: defaultAppearance});
 
-        NPCDbGenerator.AdditionalNpcAppearances
-            .filter(mapping => mapping.npcKey === itemKey)
-            .forEach(mapping => {
-
-                // set to null so it doenst auto-detect, maybe FIXME ?
-                const additionalAppearance = NPCDbGenerator.getNPCAppearances({
-                    ...dbItem,
-                    defaultAppearance: {
-                        appearanceDT: null,
-                        mapIcon: {AssetPathName: 'None', SubPathString: '',},
-                        halfBodyPortrait: {AssetPathName: 'None', SubPathString: '',},
-                        halfBodyPortraitConcealed: {AssetPathName: 'None', SubPathString: ''}
-                    }
-                }, mapping.outfitKey);
-                const formattedAdditionalAppearance = NPCDbGenerator.formatRawAppearances(itemKey, additionalAppearance);
-
-                appearances.push({
-                    appearanceCategory: mapping.appearanceName,
-                    appearances: formattedAdditionalAppearance
-                });
-            })
-
-
+        if (dbItem.newFormAppearance.appearanceDT) {
+            const newNpcAppearances = NPCDbGenerator.getNPCAppearances(dbItem, itemKey, true);
+            const newAppearance = NPCDbGenerator.formatRawAppearances(itemKey, newNpcAppearances);
+            appearances.push({
+                appearanceCategory: NPCDbGenerator.AdditionalNpcAppearances.find(acctionalNpcAppearance => acctionalNpcAppearance.npcKey === itemKey)?.appearanceName ?? 'New form appearances',
+                appearances: newAppearance
+            });
+        }
+        
         const foundImages = [...NPCDbGenerator.filePaths.appearances].map(s => s.image).map(s => fg.convertPathToPattern(s));
         const fullPath = config.source.portraitsPath + `/**/${fg.escapePath(itemKey)}/**/Po*traits/**/*.png`;
         const imagePaths = fg.sync(fg.convertPathToPattern(fullPath))

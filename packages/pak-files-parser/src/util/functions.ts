@@ -177,10 +177,16 @@ export function isRequirementMap(value: EffectMap | RequirementMap | undefined):
     return !!keys.length && 'requirements' in value.get(keys[0])!;
 }
 
-export function extractOutfitPortraitsLocation(dbItem: RawNPC, itemKey: string) {
+export function extractOutfitPortraitsLocation(dbItem: RawNPC, itemKey: string, newAppearances = false) {
     let index = 0;
     let fileName = '';
-    if (dbItem.defaultAppearance.appearanceDT) {
+    if(newAppearances && dbItem.newFormAppearance.appearanceDT){
+        const [portaitsPath, foundIndex] = dbItem.newFormAppearance.appearanceDT.ObjectPath.split('.');
+
+        fileName = path.join(portaitsPath + '.json');
+        index = +foundIndex;
+    }
+    else if (dbItem.defaultAppearance.appearanceDT) {
         const [portaitsPath, foundIndex] = dbItem.defaultAppearance.appearanceDT.ObjectPath.split('.');
 
         fileName = path.join(portaitsPath + '.json');

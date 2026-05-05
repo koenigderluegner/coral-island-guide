@@ -56,6 +56,7 @@ const readable = !parsedArgs['prepare'] && true;
 
 const additionalNPCOutfitsMappings = [
     {npcKey: 'Semeru', outfitKey: 'SemeruHuman', appearanceName: 'Human Form'},
+    {npcKey: 'Agung', outfitKey: 'AgungHuman', appearanceName: 'Human Form'},
     {npcKey: 'Denali', outfitKey: 'DenaliHuman', appearanceName: 'Human Form'},
     {npcKey: 'PrincessMiranjani', outfitKey: 'MiranjaniHuman', appearanceName: 'Human Form'},
     {npcKey: 'Raina', outfitKey: 'RainaRecCenter', appearanceName: 'Rec Center'},
