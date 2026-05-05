@@ -45,6 +45,10 @@ export const appConfig: ApplicationConfig = {
             provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
             useValue: {appearance: 'outline', hideRequiredMarker: false} satisfies MatFormFieldDefaultOptions,
         },
+        {
+            provide: BETA_CODE,
+            useValue: 'NO CODE REQUIRED',
+        },
         provideAppInitializer(() => {
             const initializerFn = ((BETA_CODE: string | null, settingsService: SettingsService) => {
                 if (!BETA_CODE) {
