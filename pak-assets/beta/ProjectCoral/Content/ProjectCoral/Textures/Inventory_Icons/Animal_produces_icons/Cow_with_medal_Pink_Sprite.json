@@ -1,0 +1,111 @@
+[
+  {
+    "Type": "BodySetup",
+    "Name": "BodySetup_0",
+    "Outer": "Cow_with_medal_Pink_Sprite",
+    "Class": "UScriptClass'BodySetup'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -2.0,
+              "Y": -0.0,
+              "Z": -1.0
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "X": 174.0,
+            "Y": 10.0,
+            "Z": 250.0,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "ObjectType": "ECC_WorldDynamic",
+        "CollisionProfileName": "BlockAllDynamic",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "PhysicalSurface",
+              "Response": "ECR_Block"
+            }
+          ]
+        }
+      },
+      "CollisionTraceFlag": "CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "C0F6A0134D345B02277735A970C9B69C"
+  },
+  {
+    "Type": "PaperSprite",
+    "Name": "Cow_with_medal_Pink_Sprite",
+    "Class": "UScriptClass'PaperSprite'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "BakedSourceDimension": {
+        "X": 256.0,
+        "Y": 256.0
+      },
+      "BakedSourceTexture": {
+        "ObjectName": "Texture2D'Cow_with_medal_Pink'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Textures/Cow_with_medal_Pink.0"
+      },
+      "DefaultMaterial": {
+        "ObjectName": "MaterialInstanceConstant'TranslucentUnlitSpriteMaterial'",
+        "ObjectPath": "/Paper2D/TranslucentUnlitSpriteMaterial"
+      },
+      "PixelsPerUnrealUnit": 1.0,
+      "BodySetup": {
+        "ObjectName": "BodySetup'Cow_with_medal_Pink_Sprite:BodySetup_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Textures/Inventory_Icons/Animal_produces_icons/Cow_with_medal_Pink_Sprite.0"
+      },
+      "BakedRenderData": [
+        {
+          "X": 85.0,
+          "Y": 124.0,
+          "Z": 0.83203125,
+          "W": 0.015625
+        },
+        {
+          "X": -89.0,
+          "Y": 124.0,
+          "Z": 0.15234375,
+          "W": 0.015625
+        },
+        {
+          "X": -89.0,
+          "Y": -126.0,
+          "Z": 0.15234375,
+          "W": 0.9921875
+        },
+        {
+          "X": 85.0,
+          "Y": -126.0,
+          "Z": 0.83203125,
+          "W": 0.9921875
+        },
+        {
+          "X": 85.0,
+          "Y": 124.0,
+          "Z": 0.83203125,
+          "W": 0.015625
+        },
+        {
+          "X": -89.0,
+          "Y": -126.0,
+          "Z": 0.15234375,
+          "W": 0.9921875
+        }
+      ]
+    }
+  }
+]

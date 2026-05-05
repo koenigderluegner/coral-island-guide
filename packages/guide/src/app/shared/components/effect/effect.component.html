@@ -53,15 +53,18 @@
 }
 @if (eff.type === 'RemoveItemFromInventory') {
     <div>
-        Removes {{ eff.meta.amount }}x
+        Removes {{ eff.meta.quantity }}x
         @if (hasMinimalItem(eff.meta)) {
 
             <app-item-icon [itemName]="eff.meta.item.iconName"
                            class="!w-7 ml-1 -my-1 translate-y-1 !inline-block"/>
             {{ eff.meta.item.displayName | translate }}
 
-        }
-        @if (!hasMinimalItem(eff.meta)) {
+        } @else if ('tags' in eff.meta) {
+
+            items with tags {{ eff.meta.tags.join(', ') }}
+
+        } @else if ('category' in eff.meta) {
 
             items of category {{ eff.meta.category | translate }}
 

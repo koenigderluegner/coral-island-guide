@@ -38,6 +38,8 @@ export const knownAppearances = [
     'Wedding',
     'Winter',
     'Yoga',
+    'SpringSummer',
+    'FallWinter'
 ].map(s => s.toLowerCase());
 
 export const knownSpecialForms = [

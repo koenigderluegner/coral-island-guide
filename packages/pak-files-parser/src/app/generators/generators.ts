@@ -65,6 +65,14 @@ export const getBaseGenerators = (itemDbMap: Map<string, Item>,
                                   festivalDbMap: Map<string, Festival>,
                                   heartEventTriggerDataMap: Map<string, HeartEventTriggerData>) => {
     const festivalDbValues = [...festivalDbMap.values()];
+    const museumOrders = {
+        'journal-fish': new JournalOrderDbGenerator('Caught/DT_JournalFish.json'),
+        'journal-insects': new JournalOrderDbGenerator('Caught/DT_JournalInsects.json'),
+        'journal-sea-critters': new JournalOrderDbGenerator('Caught/DT_JournalSeaCritters.json'),
+        'journal-artifacts': new JournalOrderDbGenerator('Found/DT_JournalArtifact.json'),
+        'journal-fossils': new JournalOrderDbGenerator('Found/DT_JournalFossils.json'),
+        'journal-gems': new JournalOrderDbGenerator('Found/DT_JournalGems.json'),
+    } as const;
     return {
         'crafting-recipes': new CraftingRecipeDbGenerator(itemDbMap, craftingRecipeUnlockedByMasteryDbMap),
         'bugs-and-insects': new BugsAndInsectsDbGenerator(itemDbMap),
@@ -75,16 +83,9 @@ export const getBaseGenerators = (itemDbMap: Map<string, Item>,
         'fruit-plants': new FruitPlantDbGenerator(itemDbMap),
         'item-processing': new ItemProcessorDbGenerator(itemDbMap),
 
-        'journal-fish': new JournalOrderDbGenerator('Caught/DT_JournalFish.json'),
-        'journal-insects': new JournalOrderDbGenerator('Caught/DT_JournalInsects.json'),
-        'journal-sea-critters': new JournalOrderDbGenerator('Caught/DT_JournalSeaCritters.json'),
+        ...museumOrders,
 
-        'journal-artifacts': new JournalOrderDbGenerator('Found/DT_JournalArtifact.json'),
-        'journal-fossils': new JournalOrderDbGenerator('Found/DT_JournalFossils.json'),
-        'journal-gems': new JournalOrderDbGenerator('Found/DT_JournalGems.json'),
         'journal-scavangable': new JournalOrderDbGenerator('Found/DT_JournalScavangable.json'),
-
-
         'journal-animal-products': new JournalOrderDbGenerator('Produce/DT_JournalAnimalProducts.json'),
 
         'journal-artisan-products': new JournalOrderDbGenerator('Produce/DT_JournalArtisanProducts.json'),
@@ -353,7 +354,7 @@ export const getBaseGenerators = (itemDbMap: Map<string, Item>,
 
         'heart-events': new HeartEventsDbGenerator(heartEventTriggerDataMap),
 
-        'museum-checklist': new MuseumChecklistGenerator(itemDbMap),
+        'museum-checklist': new MuseumChecklistGenerator(itemDbMap, museumOrders),
         'cooking-recipes-checklist': new CookingRecipesChecklistGenerator(itemDbMap, cookingDbMap),
 
         'processor-mapping': new ItemProcessorMapGenerator(itemDbMap),

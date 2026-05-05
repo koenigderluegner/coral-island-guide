@@ -2,14 +2,20 @@ import { SourceString } from '../../types/source-string.type';
 import { ObjectPath } from '../../types/object-path.type';
 import { AssetPath } from '../../types/asset-path.type';
 
+type DefaultAppearance = {
+    halfBodyPortrait: AssetPath;
+    appearanceDT: ObjectPath | null;
+    "halfBodyPortraitConcealed": AssetPath,
+    "mapIcon": AssetPath
+};
+
 export interface RawNPC {
     characterID: string;
     CharacterName: SourceString;
     Description: SourceString;
-    portraitsDT: ObjectPath | null;
-    Portrait: AssetPath;
-    PortraitConcealed: AssetPath;
-    mapIcon: AssetPath;
+    mapIcon: AssetPath
+    defaultAppearance: DefaultAppearance
+    newFormAppearance: DefaultAppearance
     isDateable: boolean;
     canHaveRelationships: boolean;
     canReceiveGifts: boolean;
