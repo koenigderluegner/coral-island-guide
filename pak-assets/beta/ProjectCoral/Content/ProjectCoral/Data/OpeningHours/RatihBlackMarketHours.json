@@ -7,7 +7,6 @@
     "Properties": {
       "coreOpeningHoursConfig": {
         "coreOpeningDays": [
-          "EC_DayOfTheWeek::Tuesday",
           "EC_DayOfTheWeek::Thursday",
           "EC_DayOfTheWeek::Friday"
         ],
@@ -18,7 +17,22 @@
           "toTime": {
             "hours": 22
           }
-        }
+        },
+        "dayOfTheWeekSpecificOpeningHours": [
+          {
+            "Key": "EC_DayOfTheWeek::Tuesday",
+            "Value": {
+              "fromTime": {
+                "hours": 20,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 22,
+                "minutes": 0
+              }
+            }
+          }
+        ]
       }
     }
   }

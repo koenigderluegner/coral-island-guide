@@ -19,12 +19,12 @@
           }
         },
         {
-          "Key": "earthDay",
+          "Key": "MerfolkFestival",
           "Value": {
             "type": "EC_RequirementCollectionType::And",
             "requirements": [
               {
-                "ObjectName": "C_IsFestivalActiveRequirement'CalendarEventsRequirements:C_IsFestivalActiveRequirement_0'",
+                "ObjectName": "C_QuestFactRequirement'CalendarEventsRequirements:C_QuestFactRequirement_0'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Calendar/CalendarEventsRequirements.1"
               }
             ]
@@ -34,18 +34,16 @@
     }
   },
   {
-    "Type": "C_IsFestivalActiveRequirement",
-    "Name": "C_IsFestivalActiveRequirement_0",
+    "Type": "C_QuestFactRequirement",
+    "Name": "C_QuestFactRequirement_0",
     "Outer": "CalendarEventsRequirements",
-    "Class": "UScriptClass'C_IsFestivalActiveRequirement'",
+    "Class": "UScriptClass'C_QuestFactRequirement'",
     "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
-      "festivalId": {
-        "DataTable": {
-          "ObjectName": "DataTable'DT_FestivalRegistry'",
-          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Festival/DT_FestivalRegistry.0"
-        },
-        "RowName": "TreePlanting"
+      "fact": {
+        "factName": {
+          "RowName": "merfolk_festival_unlocked"
+        }
       }
     }
   },
