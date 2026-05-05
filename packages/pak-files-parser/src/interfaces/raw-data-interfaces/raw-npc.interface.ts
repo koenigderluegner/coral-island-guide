@@ -6,6 +6,7 @@ export interface RawNPC {
     characterID: string;
     CharacterName: SourceString;
     Description: SourceString;
+    mapIcon: AssetPath
     defaultAppearance: {
         halfBodyPortrait: AssetPath;
         appearanceDT: ObjectPath | null;

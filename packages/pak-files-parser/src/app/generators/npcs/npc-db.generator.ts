@@ -363,7 +363,7 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
             dbItem = petNPC;
         }
 
-        const objectName = dbItem.defaultAppearance.mapIcon.AssetPathName.split('.').pop() ?? '';
+        const objectName = dbItem.mapIcon.AssetPathName.split('.').pop() ?? '';
 
         const {headerPortraitFileName, customHead} = NPCDbGenerator.extractHeadPortrait(itemKey, dbItem);
         const appearances = NPCDbGenerator.extractAllAppearances(dbItem, itemKey);
