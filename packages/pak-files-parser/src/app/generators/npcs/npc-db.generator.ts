@@ -126,7 +126,12 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
                 // set to null so it doenst auto-detect, maybe FIXME ?
                 const additionalAppearance = NPCDbGenerator.getNPCAppearances({
                     ...dbItem,
-                    portraitsDT: null
+                    defaultAppearance: {
+                        appearanceDT: null,
+                        mapIcon: {AssetPathName: 'None', SubPathString: '',},
+                        halfBodyPortrait: {AssetPathName: 'None', SubPathString: '',},
+                        halfBodyPortraitConcealed: {AssetPathName: 'None', SubPathString: ''}
+                    }
                 }, mapping.outfitKey);
                 const formattedAdditionalAppearance = NPCDbGenerator.formatRawAppearances(itemKey, additionalAppearance);
 
@@ -159,7 +164,7 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
 
         let headerPortraitFileName: string | null = null
         let customHead;
-        const portraitPath = unifyInternalPath(dbItem.Portrait.AssetPathName).split('.')[0];
+        const portraitPath = unifyInternalPath(dbItem.defaultAppearance.halfBodyPortrait.AssetPathName).split('.')[0];
 
         const sourceImagePath = path.join(environment.assetPath, portraitPath + '.png');
         const guessedPath = path.join(environment.assetPath, 'ProjectCoral', 'Content', 'ProjectCoral', 'Textures', 'UI', 'NPCHeadPortraits', 'T_Relationship' + itemKey + '.png');
@@ -358,7 +363,7 @@ export class NPCDbGenerator extends BaseGenerator<RawNPC, NPC> {
             dbItem = petNPC;
         }
 
-        const objectName = dbItem.mapIcon.AssetPathName.split('.').pop() ?? '';
+        const objectName = dbItem.defaultAppearance.mapIcon.AssetPathName.split('.').pop() ?? '';
 
         const {headerPortraitFileName, customHead} = NPCDbGenerator.extractHeadPortrait(itemKey, dbItem);
         const appearances = NPCDbGenerator.extractAllAppearances(dbItem, itemKey);

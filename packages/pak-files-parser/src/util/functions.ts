@@ -180,8 +180,8 @@ export function isRequirementMap(value: EffectMap | RequirementMap | undefined):
 export function extractOutfitPortraitsLocation(dbItem: RawNPC, itemKey: string) {
     let index = 0;
     let fileName = '';
-    if (dbItem.portraitsDT) {
-        const [portaitsPath, foundIndex] = dbItem.portraitsDT.ObjectPath.split('.');
+    if (dbItem.defaultAppearance.appearanceDT) {
+        const [portaitsPath, foundIndex] = dbItem.defaultAppearance.appearanceDT.ObjectPath.split('.');
 
         fileName = path.join(portaitsPath + '.json');
         index = +foundIndex;

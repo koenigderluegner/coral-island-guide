@@ -7,6 +7,7 @@ import { Item, ItemProcessing } from '@ci/data-types';
 import { minifyItem } from '../../../util/functions';
 import { getQuality, removeQualityFlag } from "@ci/util";
 import { environment } from "../../../environments/environment";
+import { Logger } from "../../../util/logger.class";
 
 export class ItemProcessorDbGenerator {
 
@@ -40,14 +41,20 @@ export class ItemProcessorDbGenerator {
         strings.forEach(machineName => {
             const recipes: ItemProcessing[] = [];
 
-            Object.keys(this.datatables[machineName][0].Rows).forEach(pseudoItemKey => {
+            for (const pseudoItemKey of Object.keys(this.datatables[machineName][0].Rows)) {
 
                 const dbItem: RawItemProcessing | undefined = this.datatables[machineName][0].Rows[pseudoItemKey];
 
-                if (dbItem.input.item.itemID === 'None') return;
+                if (dbItem.input.item.itemID === 'None') continue;
 
                 const inputItem = minifyItem(this.itemMap.get(removeQualityFlag(dbItem.input.item.itemID))!);
                 const outputItem = minifyItem(this.itemMap.get(removeQualityFlag(dbItem.output.itemID))!);
+
+
+                if (!inputItem || !outputItem) {
+                    Logger.warn(`Missing input or output item for input: ${dbItem.input.item.itemID}; output: ${dbItem.output.itemID}`)
+                    continue
+                }
 
                 const exisitingItems = recipes.filter(recipe => recipe.output.item.id === outputItem.id);
                 const exisitingItem = exisitingItems.length === 1 ? exisitingItems[0] : exisitingItems.find(recipe => recipe.input.item.id === inputItem.id)
@@ -85,7 +92,7 @@ export class ItemProcessorDbGenerator {
                     const {qualities: _, ...qualitylessNewItem} = newRecipe;
 
                     if (JSON.stringify(qualitylessExistingItem) === JSON.stringify(qualitylessNewItem))
-                        return;
+                        continue;
 
                     const inputQuality = getQuality(dbItem.input.item.itemID);
                     const outputQuality = getQuality(dbItem.output.itemID);
@@ -105,7 +112,7 @@ export class ItemProcessorDbGenerator {
                             day: newRecipe.day,
                             time: newRecipe.time
                         };
-                        return
+                        continue;
                     }
 
                     if (!inputQualityMatchesOutputQuality && inputItem.id === outputItem.id) {
@@ -121,7 +128,7 @@ export class ItemProcessorDbGenerator {
                             time: newRecipe.time
                         })
 
-                        return;
+                        continue;
 
                     }
 
@@ -129,7 +136,7 @@ export class ItemProcessorDbGenerator {
 
                 recipes.push(newRecipe);
 
-            });
+            }
 
             rec[machineName] = recipes;
         });

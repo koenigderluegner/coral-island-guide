@@ -14,7 +14,7 @@ export type EffectsWithMeta =
     | EffectWithMeta<'ChangeObjectState', { id: string; state: string; customName?: string }>
     | EffectWithMeta<'ConsumeItemMastery', { mastery: string }>
     | EffectWithMeta<'MarkDinoHologramRewardClaimed', { dinoName: string }>
-    | EffectWithMeta<'RemoveItemFromInventory', ({ category: string } | { item: MinimalItem }) & { amount: number }>
+    | EffectWithMeta<'RemoveItemFromInventory', ({ category: string } | { item: MinimalItem } | {tags: string[]}) & { quantity: number }>
     | EffectWithMeta<'SendMailToPlayer', { mail: { mailId: string; title: string }; dayDelay: number }>
     | EffectWithMeta<'SetQuestActive', { questId: string }>
     | EffectWithMeta<'SetQuestCompleted', { questId: string }>

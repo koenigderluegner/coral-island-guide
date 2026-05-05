@@ -6,10 +6,12 @@ export interface RawNPC {
     characterID: string;
     CharacterName: SourceString;
     Description: SourceString;
-    portraitsDT: ObjectPath | null;
-    Portrait: AssetPath;
-    PortraitConcealed: AssetPath;
-    mapIcon: AssetPath;
+    defaultAppearance: {
+        halfBodyPortrait: AssetPath;
+        appearanceDT: ObjectPath | null;
+        "halfBodyPortraitConcealed": AssetPath,
+        "mapIcon": AssetPath
+    }
     isDateable: boolean;
     canHaveRelationships: boolean;
     canReceiveGifts: boolean;

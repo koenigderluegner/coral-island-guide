@@ -12,6 +12,7 @@ export interface Frame {
             X: number;
             Y: number;
         };
-        BakedSourceTexture: ObjectPath;
+        BakedSourceTexture?: ObjectPath;
+        BodySetup?: ObjectPath;
     };
 }

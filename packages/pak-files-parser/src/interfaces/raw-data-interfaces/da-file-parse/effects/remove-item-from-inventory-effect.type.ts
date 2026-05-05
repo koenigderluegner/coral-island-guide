@@ -2,7 +2,7 @@ import { RawEffectWithMeta } from './raw-effect-with-meta';
 
 export type RawRemoteItemFromInventoryEffect = RawEffectWithMeta<
     'RemoveItemFromInventory',
-    RemoveItem | RemoveCategory
+    RemoveItem | RemoveCategory | RemoveTags
 >;
 
 type RemoveItem = {
@@ -22,5 +22,13 @@ type RemoveCategory = {
             RowName: string;
         };
     };
+    quantity: number;
+};
+
+type RemoveTags = {
+    "removeByTag": true,
+    "itemTags": [
+        "item.flower"
+    ],
     quantity: number;
 };

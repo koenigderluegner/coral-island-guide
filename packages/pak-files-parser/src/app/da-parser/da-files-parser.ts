@@ -146,7 +146,7 @@ export class DaFilesParser {
                             }));
                             break;
                         case 'C_AddItemToInventoryEffect': {
-                            const { itemData, ...rest } = foundEffect.Properties;
+                            const {itemData, ...rest} = foundEffect.Properties;
                             const item = DaFilesParser.ItemMap.get(itemData.itemID);
 
                             if (!item) return;
@@ -164,7 +164,7 @@ export class DaFilesParser {
                                     ...foundEffect,
                                     Type: 'C_UnlockCookingUtensilEffect',
                                     Class: `UScriptClass'C_UnlockCookingUtensilEffect'`,
-                                    Properties: foundEffect.Properties ?? { utensilToUnlock: 'FryingPan' },
+                                    Properties: foundEffect.Properties ?? {utensilToUnlock: 'FryingPan'},
                                 },
                                 (p) => ({
                                     utensil: getEnumValue(p.utensilToUnlock),
@@ -185,7 +185,7 @@ export class DaFilesParser {
                                     ...foundEffect,
                                     Type: 'C_MarkDinoHologramRewardClaimedEffect',
                                     Class: `UScriptClass'C_MarkDinoHologramRewardClaimedEffect'`,
-                                    Properties: foundEffect.Properties ?? { utensil: 'FryingPan' },
+                                    Properties: foundEffect.Properties ?? {utensil: 'FryingPan'},
                                 },
                                 (p) => ({
                                     dinoName: p.dinoId.dinosaursName.RowName,
@@ -228,7 +228,7 @@ export class DaFilesParser {
                             break;
                         }
                         case 'C_VaryMoneyEffect': {
-                            daEffect = convertEffectsWithMeta(foundEffect, (p) => ({ amount: p.amount }));
+                            daEffect = convertEffectsWithMeta(foundEffect, (p) => ({amount: p.amount}));
                             break;
                         }
                         case 'C_ChangeObjectStateEffect': {
@@ -245,7 +245,7 @@ export class DaFilesParser {
                             break;
                         }
                         case 'C_UpdateNPCScheduleEffect': {
-                            daEffect = convertEffectsWithMeta(foundEffect, (p) => ({ npcIds: p.npcIDs }));
+                            daEffect = convertEffectsWithMeta(foundEffect, (p) => ({npcIds: p.npcIDs}));
 
                             break;
                         }
@@ -268,7 +268,7 @@ export class DaFilesParser {
                         }
                         case 'C_SetQuestCompletedEffect':
                         case 'C_SetQuestActiveEffect': {
-                            daEffect = convertEffectsWithMeta(foundEffect, (p) => ({ questId: p.questId }));
+                            daEffect = convertEffectsWithMeta(foundEffect, (p) => ({questId: p.questId}));
                             break;
                         }
 
@@ -279,14 +279,20 @@ export class DaFilesParser {
                                 //get  GiftCategory
                                 meta = {
                                     category: foundEffect.Properties.itemCategory.data.RowName,
-                                    amount: foundEffect.Properties.quantity ?? 1,
+                                    quantity: foundEffect.Properties.quantity ?? 1,
                                 };
+                            } else if ('removeByTag' in foundEffect.Properties) {
+                                meta = {
+                                    tags: foundEffect.Properties.itemTags,
+                                    quantity: foundEffect.Properties.quantity ?? 1,
+                                }
+
                             } else {
                                 const item = DaFilesParser.ItemMap.get(foundEffect.Properties.itemId.itemID);
 
                                 if (!item) return;
 
-                                meta = { item: minifyItem(item), amount: foundEffect.Properties.quantity ?? 1 };
+                                meta = {item: minifyItem(item), quantity: foundEffect.Properties.quantity ?? 1};
                             }
 
                             daEffect = convertEffectsWithMeta(foundEffect, () => meta);
@@ -302,7 +308,7 @@ export class DaFilesParser {
                 })
                 .filter(nonNullable);
 
-            result.set(key.Key, { key: key.Key, effects });
+            result.set(key.Key, {key: key.Key, effects});
         });
 
         return result;
@@ -628,7 +634,7 @@ export class DaFilesParser {
                 })
                 .filter(nonNullable);
 
-            result.set(key.Key, { key: key.Key, type: getEnumValue(key.Value.type), requirements: reqs });
+            result.set(key.Key, {key: key.Key, type: getEnumValue(key.Value.type), requirements: reqs});
         });
 
         return result;

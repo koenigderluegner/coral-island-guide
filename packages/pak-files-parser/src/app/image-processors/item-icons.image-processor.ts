@@ -76,7 +76,12 @@ export class ItemIconsImageProcessor {
 
         const webpTargetExists = fs.existsSync(webpPath);
 
-        const filePath = unifyInternalPath(data.Properties.BakedSourceTexture.ObjectPath).split('.');
+        const objectPath = (data.Properties.BakedSourceTexture ?? data.Properties.BodySetup)?.ObjectPath
+        if (!objectPath) {
+            console.warn(`No source for Frame of ${data.Name}`)
+            return;
+        }
+        const filePath = unifyInternalPath(objectPath).split('.');
         filePath.pop()
 
         const basename = filePath.join('.').split('/').pop() + '.png';
