@@ -7,6 +7,7 @@ import { NPCDbGenerator } from "./app/generators/npcs/npc-db.generator";
 import { Logger } from "./util/logger.class";
 import { NpcPortraitsImageProcessor } from "./app/image-processors/npc-portraits.image-processor";
 import { StringTable } from "./util/string-table.class";
+import type { Checklist } from "@ci/data-types";
 import {
     AnimalShopData,
     CookingRecipe,
@@ -19,6 +20,7 @@ import {
     ItemProcessing,
     ItemProcessShopData,
     ItemUpgradeData,
+    type MinimalItem,
     MinimalNPC,
     preferencesMap,
     Quality,
@@ -96,7 +98,7 @@ function applyTranslationParams(dbItem: DatabaseItem) {
         const comesFromSeedElement = dbItem.comesFromSeed?.[0];
         dbItem.item.translateParams['cropGrowLength'] = comesFromSeedElement?.growTime;
         dbItem.item.translateParams['cropRegrowLength'] = comesFromSeedElement?.regrowableLength;
-        if('harvestedCountLimit' in comesFromSeedElement) {
+        if ('harvestedCountLimit' in comesFromSeedElement) {
             dbItem.item.translateParams['harvestedCountLimit'] = comesFromSeedElement?.harvestedCountLimit;
         }
 
@@ -460,8 +462,40 @@ try {
 
         item.tags?.forEach(tag => entchantmentLevel.has(tag) ? enchantmentPoints = entchantmentLevel.get(tag) : '');
 
+        const partOfChecklists: Checklist[] = [];
+
+        const a = {
+            'bought-checklist': 'bought',
+            'museum-checklist': 'museum',
+            'cooking-recipes-checklist': 'cooking-recipes',
+        } as const  satisfies  Record<keyof typeof generatorValues, Checklist>;
+
+
+        Object.keys(a).forEach(checklistKey => {
+            const generatorValueElement = generatorValues[checklistKey]![0] as Record<string, MinimalItem[]>;
+            // @ts-ignore
+            Object.values(generatorValueElement).find(checklist => checklist.some(i => i.id === item.id) ? partOfChecklists.push(a[checklistKey]) : void 0);
+        })
+
+        generatorValues['crafting-recipes'].forEach(recipe => {
+            if (recipe.item?.id === item.id) {
+                partOfChecklists.push('crafted')
+            }
+        });
+        generatorValues['offerings'].forEach(recipe => {
+            recipe.offerings.map(offering => {
+                offering.requiredItems.map(requiredItem => {
+                    if ('id' in requiredItem.item && requiredItem.item.id === item.id) {
+                        partOfChecklists.push('offerings')
+                    }
+                })
+            });
+        });
+
+
         const dbItem: DatabaseItem = {
             item,
+            partOfChecklists,
             fish: fish ? omitFields(fish, 'item') : undefined,
             artisanResult: artisanResult.length ? artisanResult : undefined,
             artisanIngredient: artisanIngredient.length ? artisanIngredient : undefined,

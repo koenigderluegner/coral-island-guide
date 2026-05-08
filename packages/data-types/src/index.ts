@@ -82,6 +82,7 @@ export * from './lib/types/town-rank-points';
 export * from './lib/types/translation-key';
 export * from './lib/types/treasure-hunt.type';
 export * from './lib/types/weather.type';
+export * from './lib/types/checklists';
 
 export * from './lib/dashboard/birthday-dashboard-entry.type';
 export * from './lib/dashboard/critter-dashboard-entry.type';

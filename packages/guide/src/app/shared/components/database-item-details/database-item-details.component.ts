@@ -27,6 +27,7 @@ import { QualityGridComponent } from "../quality-grid/quality-grid.component";
 import { ItemIconComponent } from "../item-icon/item-icon.component";
 import { CardComponent } from "../card/card.component";
 import { TranslatePipe } from "@ngx-translate/core";
+import { ChecklistToggles } from "./checklist-toggles";
 
 
 @Component({
@@ -44,7 +45,8 @@ import { TranslatePipe } from "@ngx-translate/core";
         QualityGridComponent,
         ItemIconComponent,
         CardComponent,
-        TranslatePipe
+        TranslatePipe,
+        ChecklistToggles
     ]
 })
 export class DatabaseItemDetailsComponent {

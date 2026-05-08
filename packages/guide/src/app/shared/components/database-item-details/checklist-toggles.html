@@ -1,0 +1,52 @@
+@if (isInMusuemChecklist()) {
+    <button (click)="toggle('museum')" [class.text-[#D1CAC0]]="!isActive('museum')">
+        Donated
+        <div class="flex items-center justify-center p-2 text-[#D1CAC0]"
+             [class.bg-[#9ABF71]]="isActive('museum')" [class.bg-[#EDE6DB]]="!isActive('museum')"
+             [class.text-[#5D7443]]="isActive('museum')" [class.text-[#D1CAC0]]="!isActive('museum')">
+            <app-ui-icon class="!size-6" [uiIcon]="UiIcon.MUSEUM"/>
+        </div>
+    </button>
+}
+@if (isInBoughtChecklist()) {
+    <button (click)="toggle('bought')" [class.text-[#D1CAC0]]="!isActive('bought')">
+        Bought
+        <div class="flex items-center justify-center p-2 text-[#D1CAC0]"
+             [class.bg-[#6C8ED2]]="isActive('bought')" [class.bg-[#EDE6DB]]="!isActive('bought')"
+             [class.text-[#404E94]]="isActive('bought')" [class.text-[#D1CAC0]]="!isActive('bought')">
+            <app-ui-icon class="!size-6" [uiIcon]="UiIcon.CLOTHING"/>
+        </div>
+    </button>
+}
+@if (isInOfferingsChecklist()) {
+    <button (click)="toggle('offerings')" [class.text-[#D1CAC0]]="!isActive('offerings')">
+        Offered
+        <div class="flex items-center justify-center p-2 text-[#D1CAC0]"
+             [class.bg-[#CBA76F]]="isActive('offerings')" [class.bg-[#EDE6DB]]="!isActive('offerings')"
+             [class.text-[#786240]]="isActive('offerings')" [class.text-[#D1CAC0]]="!isActive('offerings')">
+            <app-ui-icon class="!size-6" [uiIcon]="UiIcon.OFFERING"/>
+        </div>
+    </button>
+}
+
+@if (isInCookingRecipesChecklist()) {
+    <button (click)="toggle('cooking-recipes')" [class.text-[#D1CAC0]]="!isActive('cooking-recipes')">
+        Cooked
+        <div class="flex items-center justify-center p-2 text-[#D1CAC0]"
+             [class.bg-[#C18CE7]]="isActive('cooking-recipes')" [class.bg-[#EDE6DB]]="!isActive('cooking-recipes')"
+             [class.text-[#804D7D]]="isActive('cooking-recipes')" [class.text-[#D1CAC0]]="!isActive('cooking-recipes')">
+            <app-ui-icon class="!size-6" [uiIcon]="UiIcon.COOKING"/>
+        </div>
+    </button>
+}
+
+@if (isInOrchestraZonesChecklist()) {
+    <button (click)="toggle('orchestra-zones')" [class.text-[#D1CAC0]]="!isActive('orchestra-zones')">
+        Offered
+        <div class="flex items-center justify-center p-2 text-[#D1CAC0]"
+             [class.bg-[#C18CE7]]="isActive('orchestra-zones')" [class.bg-[#EDE6DB]]="!isActive('orchestra-zones')"
+             [class.text-[#804D7D]]="isActive('orchestra-zones')" [class.text-[#D1CAC0]]="!isActive('orchestra-zones')">
+            <app-ui-icon class="!size-6" [uiIcon]="UiIcon.COOKING"/>
+        </div>
+    </button>
+}

@@ -18,9 +18,11 @@ import { OfferingAltar } from './offering-altar.interface';
 import { Offerings } from './offerings.interface';
 import { ShopItemData } from './shop-item-data.interface';
 import { UiIcon } from "../enums/ui-icon.enum";
+import type { Checklist } from "../types/checklists";
 
 export interface DatabaseItem {
     item: Item;
+    partOfChecklists: Checklist[]
     fish?: Omit<Fish, 'item'>;
     artisanResult?: ItemProcessing[];
     artisanIngredient?: ItemProcessing[];

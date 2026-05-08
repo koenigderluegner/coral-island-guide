@@ -12,7 +12,14 @@
         </button>
     </div>
     @if (databaseItem(); as dbItem) {
-        <app-item-icon [amount]="amount()" cardIcon itemName="{{dbItem.item.iconName}}"/>
+        <div cardIcon class="flex justify-between">
+            <app-item-icon class="xl:[&>img]:size-[180px] [&>img]:size-[140px]" [amount]="amount()"
+                           itemName="{{dbItem.item.iconName}}"/>
+            <div class="pt-3">
+                <app-checklist-toggles [databaseItem]="dbItem"/>
+            </div>
+        </div>
+
     }
     @if (databaseItem(); as dbItem) {
         <div class="flex justify-between items-center">
