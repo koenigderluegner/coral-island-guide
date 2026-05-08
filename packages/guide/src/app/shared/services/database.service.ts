@@ -94,6 +94,7 @@ export class DatabaseService extends BaseDbService {
     private _COOKING_UTENSIL_MAPPING$?: Observable<Record<string, MinimalItem>>;
 
     private _MUSEUM_CHECKLIST$?: Observable<Record<string, MinimalItem[]>>;
+    private _BOUGHT_CHECKLIST$?: Observable<Record<string, MinimalItem[]>>;
 
     private _COOKING_RECIPES_CHECKLIST$?: Observable<Record<string, MinimalItem[]>>;
 
@@ -244,6 +245,17 @@ export class DatabaseService extends BaseDbService {
                 );
         }
         return this._MUSEUM_CHECKLIST$;
+    }
+
+    fetchBoughtChecklist$(): Observable<Record<string, MinimalItem[]>> {
+        if (!this._BOUGHT_CHECKLIST$) {
+            this._BOUGHT_CHECKLIST$ = this.http.get<Record<string, MinimalItem[]>[]>(`${this.BASE_PATH_WITH_LANG}/bought-checklist.json`)
+                .pipe(
+                    map(events => events[0]),
+                    shareReplay(1)
+                );
+        }
+        return this._BOUGHT_CHECKLIST$;
     }
 
     fetchCookingRecipesChecklist$(): Observable<Record<string, MinimalItem[]>> {

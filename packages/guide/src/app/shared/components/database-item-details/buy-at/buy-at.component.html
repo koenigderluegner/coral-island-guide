@@ -1,0 +1,8 @@
+<div>Buy at</div>
+<div class="flex justify-between text-black">
+    @for (shop of buyAt(); track shop.shop.url) {
+        <a [routerLink]="['/locations', shop.shop.url]"
+           class="underline">{{ shop.shop.displayName | translate }}</a>
+        <app-money [amount]="shop.item.price"/>
+    }
+</div>

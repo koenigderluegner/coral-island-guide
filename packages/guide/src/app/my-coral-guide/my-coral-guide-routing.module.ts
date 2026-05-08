@@ -55,6 +55,16 @@ export const routes: Routes = [
                 title: 'Orchestra zones checklist - My Guide'
             },
             {
+                path: 'clothing-checklist',
+                redirectTo: 'clothing-checklist/',
+                pathMatch: 'full'
+            },
+            {
+                path: 'clothing-checklist/:tabName',
+                loadComponent: () => import('./components/bought-checklist/bought-checklist').then(m => m.BoughtChecklistComponent),
+                title: 'Clothing checklist - My Guide'
+            },
+            {
                 path: 'settings',
                 loadChildren: () => import('../settings/settings-routing.module').then((m) => m.routes),
                 title: 'Settings - My Guide'

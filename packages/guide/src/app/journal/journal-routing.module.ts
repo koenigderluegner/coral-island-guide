@@ -32,6 +32,11 @@ export const routes: Routes = [
                 title: 'Notes - Journal'
             },
             {
+                path: 'clothing/:tabName',
+                loadComponent: () => import('./components/bought/bought.component').then(m => m.BoughtComponent),
+                title: 'Clothing - Journal'
+            },
+            {
                 path: 'achievements',
                 loadComponent: () => import('./components/achievements/achievements.component').then(m => m.AchievementsComponent),
                 title: 'Achievements - Journal'

@@ -1,0 +1,36 @@
+<app-list-detail-container>
+    @if (selectedEntity) {
+        <app-database-item-details [itemId]="selectedEntity.id" listDetail>
+            <ng-template let-details appDatabaseItemDetails>
+                <app-buy-at [buyAt]="details.buyAt" class="mb-3"/>
+            </ng-template>
+        </app-database-item-details>
+    }
+    @if (checklistDefinition$ | async; as checklistDefinition) {
+
+
+        <mat-tab-group (selectedTabChange)="updateUrl($event)" [selectedIndex]="selectedTabIndex()">
+            @for (tab of (checklistDefinition | keyvalue: null); track tab) {
+                <mat-tab [label]="tab.key | titlecase">
+
+                    @if (!showTable) {
+
+                        <div class="icon-grid">
+                            @for (entry of tab.value; track entry) {
+                                <div
+                                        [class.selected-icon]="selectedEntity?.id === entry.id"
+                                        class="icon-grid-item checklist-item  flex flex-col">
+                                    <app-item-icon
+                                            (click)="showDetails(entry)"
+                                            [itemName]="entry.iconName"/>
+                                </div>
+                            }
+                        </div>
+
+                    }
+                </mat-tab>
+            }
+        </mat-tab-group>
+
+    }
+</app-list-detail-container>

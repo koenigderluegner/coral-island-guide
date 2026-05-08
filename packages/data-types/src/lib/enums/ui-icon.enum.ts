@@ -36,6 +36,7 @@ export enum UiIcon {
     ACHIEVEMENT = 'T_Icon_Achievement',
     BADGES = 'T_Icon_Badges',
     PLANT = 'T_Icon_Plant',
+    CLOTHING = 'T_Indicator_Clothes',
 
     // BUILDINGS
     BLACKSMITH = 'T_Icon_Blacksmith',
