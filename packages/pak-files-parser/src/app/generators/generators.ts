@@ -51,6 +51,7 @@ import { ItemProcessorMapGenerator } from "./item-processing/item-processor-map.
 import { CookingUtensilMapGenerator } from "./cooking/cooking-utensil-map.generator";
 import { ItemMixingRecipeDataDbGenerator } from "./item-mixing-recipe-data/item-mixing-recipe-data-db.generator";
 import { TreasureHuntGenerator } from "./journal/treasure-hunt.generator";
+import { BoughtChecklistGenerator } from "./misc/bought-checklist.generator";
 
 export const getBaseGenerators = (itemDbMap: Map<string, Item>,
                                   calendarDbMap: Map<string, CalendarEvent[]>,
@@ -354,6 +355,7 @@ export const getBaseGenerators = (itemDbMap: Map<string, Item>,
 
         'heart-events': new HeartEventsDbGenerator(heartEventTriggerDataMap),
 
+        'bought-checklist': new BoughtChecklistGenerator(itemDbMap),
         'museum-checklist': new MuseumChecklistGenerator(itemDbMap, museumOrders),
         'cooking-recipes-checklist': new CookingRecipesChecklistGenerator(itemDbMap, cookingDbMap),
 
