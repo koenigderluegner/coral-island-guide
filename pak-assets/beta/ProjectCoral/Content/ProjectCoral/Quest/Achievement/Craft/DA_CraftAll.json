@@ -1,0 +1,55 @@
+[
+  {
+    "Type": "C_Quest",
+    "Name": "DA_CraftAll",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_CraftAll",
+      "isSharedQuest": false,
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_CraftAll:C_QuestStep_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Craft/DA_CraftAll.2"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestCraftingRecipeCraftedCountCondition",
+    "Name": "C_QuestCraftingRecipeCraftedCountCondition_0",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_QuestCraftingRecipeCraftedCountCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "countUnique": true,
+      "useRequirementDT": true,
+      "requiredCraftingCount": 123,
+      "invertBitflags": true,
+      "flags": 6,
+      "requiredCraftingDT": {
+        "ObjectName": "DataTable'DT_UnlockCraftingRecipeRequirement'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Craft/DT_UnlockCraftingRecipeRequirement.0"
+      },
+      "conditionId": "checkCondition"
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_0",
+    "Outer": "DA_CraftAll",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "checkState",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_QuestCraftingRecipeCraftedCountCondition'DA_CraftAll:C_QuestStep_0.C_QuestCraftingRecipeCraftedCountCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Craft/DA_CraftAll.1"
+          }
+        ]
+      }
+    }
+  }
+]

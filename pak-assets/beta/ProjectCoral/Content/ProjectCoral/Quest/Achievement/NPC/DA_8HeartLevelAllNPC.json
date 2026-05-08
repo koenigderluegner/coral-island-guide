@@ -1,0 +1,58 @@
+[
+  {
+    "Type": "C_Quest",
+    "Name": "DA_8HeartLevelAllNPC",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_10HeartLevelAllNPC",
+      "isSharedQuest": false,
+      "tags": [
+        "quest.type.hidden"
+      ],
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_8HeartLevelAllNPC:C_QuestStep_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/NPC/DA_8HeartLevelAllNPC.2"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestNPCHeartLevelCountCondition",
+    "Name": "C_QuestNPCHeartLevelCountCondition_0",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_QuestNPCHeartLevelCountCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "requiredHeartLevel": 8,
+      "shouldDateableOnly": false,
+      "useDTFilter": true,
+      "filterDT": {
+        "ObjectName": "DataTable'DT_AllAvailableNPCFilter'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/NPC/DT_AllAvailableNPCFilter.0"
+      },
+      "requiredAllNpc": true,
+      "requiredNPCCount": 25,
+      "conditionId": "heartCheckCondition"
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_0",
+    "Outer": "DA_8HeartLevelAllNPC",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "heartCheck",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_QuestNPCHeartLevelCountCondition'DA_8HeartLevelAllNPC:C_QuestStep_0.C_QuestNPCHeartLevelCountCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/NPC/DA_8HeartLevelAllNPC.1"
+          }
+        ]
+      }
+    }
+  }
+]

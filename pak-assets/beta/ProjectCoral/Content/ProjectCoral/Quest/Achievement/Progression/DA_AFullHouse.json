@@ -1,0 +1,79 @@
+[
+  {
+    "Type": "C_CutSceneFinishCondition",
+    "Name": "C_CutSceneFinishCondition_1",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_CutSceneFinishCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "CutSceneTopic": "GS_Baby_Introduction",
+      "conditionId": "C_CutSceneFinishCondition_0"
+    }
+  },
+  {
+    "Type": "C_HaveChildRequirement",
+    "Name": "C_HaveChildRequirement_1",
+    "Outer": "C_PlayerMarriageQuestRequirementCondition_1",
+    "Class": "UScriptClass'C_HaveChildRequirement'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "childCount": 2,
+      "compareType": "EC_CompareType::GREATER_EQUAL"
+    }
+  },
+  {
+    "Type": "C_PlayerMarriageQuestRequirementCondition",
+    "Name": "C_PlayerMarriageQuestRequirementCondition_1",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_PlayerMarriageQuestRequirementCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "requirement": {
+        "ObjectName": "C_HaveChildRequirement'DA_AFullHouse:C_QuestStep_0.C_PlayerMarriageQuestRequirementCondition_1.C_HaveChildRequirement_1'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Progression/DA_AFullHouse.1"
+      },
+      "conditionId": "C_PlayerMarriageQuestRequirementCondition_0"
+    }
+  },
+  {
+    "Type": "C_Quest",
+    "Name": "DA_AFullHouse",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_AFullHouse",
+      "isSharedQuest": false,
+      "tags": [
+        "quest.type.hidden"
+      ],
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_AFullHouse:C_QuestStep_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Progression/DA_AFullHouse.4"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_0",
+    "Outer": "DA_AFullHouse",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "checkState",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_PlayerMarriageQuestRequirementCondition'DA_AFullHouse:C_QuestStep_0.C_PlayerMarriageQuestRequirementCondition_1'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Progression/DA_AFullHouse.2"
+          },
+          {
+            "ObjectName": "C_CutSceneFinishCondition'DA_AFullHouse:C_QuestStep_0.C_CutSceneFinishCondition_1'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Progression/DA_AFullHouse.0"
+          }
+        ]
+      }
+    }
+  }
+]

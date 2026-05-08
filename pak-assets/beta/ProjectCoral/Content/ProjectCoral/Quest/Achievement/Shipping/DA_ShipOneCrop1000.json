@@ -1,0 +1,59 @@
+[
+  {
+    "Type": "C_ItemShippedCondition",
+    "Name": "C_ItemShippedCondition_0",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_ItemShippedCondition'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "categorizedPerUnique": true,
+      "uniqueByBaseId": true,
+      "itemTags": [
+        "item.crop"
+      ],
+      "requireTags": [
+        "event.player.ship"
+      ],
+      "questOwnerOnly": true,
+      "requiredProgress": 1000,
+      "conditionId": "shipCheckCondition"
+    }
+  },
+  {
+    "Type": "C_Quest",
+    "Name": "DA_ShipOneCrop1000",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_ShipOneCrop1000",
+      "isSharedQuest": false,
+      "tags": [
+        "quest.type.hidden"
+      ],
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_ShipOneCrop1000:C_QuestStep_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Shipping/DA_ShipOneCrop1000.2"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_0",
+    "Outer": "DA_ShipOneCrop1000",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "shipCheck",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_ItemShippedCondition'DA_ShipOneCrop1000:C_QuestStep_0.C_ItemShippedCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Shipping/DA_ShipOneCrop1000.0"
+          }
+        ]
+      }
+    }
+  }
+]

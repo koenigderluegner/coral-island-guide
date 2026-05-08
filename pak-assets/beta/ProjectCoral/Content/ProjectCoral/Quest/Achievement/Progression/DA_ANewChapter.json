@@ -1,0 +1,78 @@
+[
+  {
+    "Type": "C_MarriedRequirement",
+    "Name": "C_MarriedRequirement_0",
+    "Outer": "C_PlayerMarriageQuestRequirementCondition_0",
+    "Class": "UScriptClass'C_MarriedRequirement'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted"
+  },
+  {
+    "Type": "C_PlayerMarriageQuestRequirementCondition",
+    "Name": "C_PlayerMarriageQuestRequirementCondition_0",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_PlayerMarriageQuestRequirementCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "requirement": {
+        "ObjectName": "C_MarriedRequirement'DA_ANewChapter:C_QuestStep_0.C_PlayerMarriageQuestRequirementCondition_0.C_MarriedRequirement_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Progression/DA_ANewChapter.0"
+      },
+      "conditionId": "C_PlayerMarriageQuestRequirementCondition_0"
+    }
+  },
+  {
+    "Type": "C_Quest",
+    "Name": "DA_ANewChapter",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_ANewChapter",
+      "isSharedQuest": false,
+      "tags": [
+        "quest.type.hidden"
+      ],
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_ANewChapter:C_QuestStep_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Progression/DA_ANewChapter.3"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_0",
+    "Outer": "DA_ANewChapter",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "checkState",
+      "entryConditionsList": {
+        "passStrategy": "EC_QuestConditionsPassStrategy::PassAny",
+        "conditions": [
+          {
+            "ObjectName": "C_RelationshipStatusCondition'DA_ANewChapter:C_QuestStep_0.C_RelationshipStatusCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Progression/DA_ANewChapter.4"
+          },
+          {
+            "ObjectName": "C_PlayerMarriageQuestRequirementCondition'DA_ANewChapter:C_QuestStep_0.C_PlayerMarriageQuestRequirementCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Progression/DA_ANewChapter.1"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Type": "C_RelationshipStatusCondition",
+    "Name": "C_RelationshipStatusCondition_0",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_RelationshipStatusCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "requiredStatus": "EC_RelationshipStatus::SPOUSE",
+      "compareType": "EC_CompareType::GREATER_EQUAL",
+      "onlyCheckOnChange": false,
+      "conditionId": "C_RelationshipStatusCondition_0"
+    }
+  }
+]

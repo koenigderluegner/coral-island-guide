@@ -1,0 +1,48 @@
+[
+  {
+    "Type": "C_MiningLevelEnteredCondition",
+    "Name": "C_MiningLevelEnteredCondition_0",
+    "Outer": "C_QuestStep_1",
+    "Class": "UScriptClass'C_MiningLevelEnteredCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "levelIndex": 159,
+      "questOwnerOnly": true,
+      "conditionId": "C_MiningLevelEnteredCondition_0"
+    }
+  },
+  {
+    "Type": "C_Quest",
+    "Name": "DA_ClearAllMiningGate",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_ClearMiningAllGatev2",
+      "isSharedQuest": false,
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_ClearAllMiningGate:C_QuestStep_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Mining/DA_ClearAllMiningGate.2"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_1",
+    "Outer": "DA_ClearAllMiningGate",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "checkState",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_MiningLevelEnteredCondition'DA_ClearAllMiningGate:C_QuestStep_1.C_MiningLevelEnteredCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Mining/DA_ClearAllMiningGate.0"
+          }
+        ]
+      }
+    }
+  }
+]

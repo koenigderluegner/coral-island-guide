@@ -1,0 +1,51 @@
+[
+  {
+    "Type": "C_Quest",
+    "Name": "DA_Craft15",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_Craft15",
+      "isSharedQuest": false,
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_Craft15:C_QuestStep_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Craft/DA_Craft15.2"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestCraftingRecipeCraftedCountCondition",
+    "Name": "C_QuestCraftingRecipeCraftedCountCondition_0",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_QuestCraftingRecipeCraftedCountCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "countUnique": true,
+      "requiredCraftingCount": 15,
+      "useBitFlag": true,
+      "invertBitflags": true,
+      "flags": 6,
+      "conditionId": "checkCondition"
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_0",
+    "Outer": "DA_Craft15",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "checkState",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_QuestCraftingRecipeCraftedCountCondition'DA_Craft15:C_QuestStep_0.C_QuestCraftingRecipeCraftedCountCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Craft/DA_Craft15.1"
+          }
+        ]
+      }
+    }
+  }
+]

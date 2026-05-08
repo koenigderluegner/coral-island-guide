@@ -1,0 +1,54 @@
+[
+  {
+    "Type": "C_GiftedNPCsCountCondition",
+    "Name": "C_GiftedNPCsCountCondition_0",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_GiftedNPCsCountCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "requirementNPCDT": {
+        "ObjectName": "DataTable'DT_AllAvailableNPCFilter'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/NPC/DT_AllAvailableNPCFilter.0"
+      },
+      "requiredProgress": 25,
+      "conditionId": "giftNpc"
+    }
+  },
+  {
+    "Type": "C_Quest",
+    "Name": "DA_GiftNPC25",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_GiftNPC25",
+      "isSharedQuest": false,
+      "tags": [
+        "quest.type.hidden"
+      ],
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_GiftNPC25:C_QuestStep_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/NPC/DA_GiftNPC25.2"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_0",
+    "Outer": "DA_GiftNPC25",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "giftCheck",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_GiftedNPCsCountCondition'DA_GiftNPC25:C_QuestStep_0.C_GiftedNPCsCountCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/NPC/DA_GiftNPC25.0"
+          }
+        ]
+      }
+    }
+  }
+]

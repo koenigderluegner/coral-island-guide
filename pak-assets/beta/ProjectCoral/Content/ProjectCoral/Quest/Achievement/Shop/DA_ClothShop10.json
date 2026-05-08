@@ -1,0 +1,57 @@
+[
+  {
+    "Type": "C_ItemBoughtCondition",
+    "Name": "C_ItemBoughtCondition_0",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_ItemBoughtCondition'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "countUnique": true,
+      "filterByShopDT": true,
+      "shopDT": {
+        "ObjectName": "DataTable'DT_ClothShop'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Core/Data/Shops/DT_ClothShop.0"
+      },
+      "questOwnerOnly": true,
+      "requiredProgress": 10,
+      "conditionId": "itemBoughtCheck"
+    }
+  },
+  {
+    "Type": "C_Quest",
+    "Name": "DA_ClothShop10",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_ClothShop10",
+      "isSharedQuest": false,
+      "tags": [
+        "quest.type.hidden"
+      ],
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_ClothShop10:C_QuestStep_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Shop/DA_ClothShop10.2"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_0",
+    "Outer": "DA_ClothShop10",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "shopCheck",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_ItemBoughtCondition'DA_ClothShop10:C_QuestStep_0.C_ItemBoughtCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Shop/DA_ClothShop10.0"
+          }
+        ]
+      }
+    }
+  }
+]

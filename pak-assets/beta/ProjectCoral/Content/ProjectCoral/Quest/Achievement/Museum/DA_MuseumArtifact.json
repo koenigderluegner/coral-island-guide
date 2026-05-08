@@ -1,0 +1,64 @@
+[
+  {
+    "Type": "C_ItemAddedToInventoryCondition",
+    "Name": "C_ItemAddedToInventoryCondition_0",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_ItemAddedToInventoryCondition'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "conditionId": "C_ItemAddedToInventoryCondition"
+    }
+  },
+  {
+    "Type": "C_MuseumCollectionCategoryCollectedCondition",
+    "Name": "C_MuseumCollectionCategoryCollectedCondition_0",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_MuseumCollectionCategoryCollectedCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "donationCategory": "EC_DonationCategory::ARTIFACT",
+      "conditionId": "categoryCollected"
+    }
+  },
+  {
+    "Type": "C_Quest",
+    "Name": "DA_MuseumArtifact",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_MuseumArtifact",
+      "isSharedQuest": false,
+      "tags": [
+        "quest.type.hidden"
+      ],
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_MuseumArtifact:C_QuestStep_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Museum/DA_MuseumArtifact.3"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_0",
+    "Outer": "DA_MuseumArtifact",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "museumCheck",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_MuseumCollectionCategoryCollectedCondition'DA_MuseumArtifact:C_QuestStep_0.C_MuseumCollectionCategoryCollectedCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Museum/DA_MuseumArtifact.1"
+          },
+          {
+            "ObjectName": "C_ItemAddedToInventoryCondition'DA_MuseumArtifact:C_QuestStep_0.C_ItemAddedToInventoryCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Museum/DA_MuseumArtifact.0"
+          }
+        ]
+      }
+    }
+  }
+]

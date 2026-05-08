@@ -1,0 +1,74 @@
+[
+  {
+    "Type": "C_ObjectStateChangedCondition",
+    "Name": "C_ObjectStateChangedCondition_0",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_ObjectStateChangedCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "actorRef": {
+        "AssetPathName": "/Game/ProjectCoral/Maps/Diving/Diving_MerfolkKingdom_Base.Diving_MerfolkKingdom_Base",
+        "SubPathString": "PersistentLevel.BP_MerfolkGate_door2"
+      },
+      "id": "merfolk_gate",
+      "state": "unlocked",
+      "stateInput": "unlocked",
+      "conditionId": "C_ObjectStateChangedCondition_0"
+    }
+  },
+  {
+    "Type": "C_Quest",
+    "Name": "DA_UnderTheSeaMystery",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_UnderTheSeaMystery",
+      "isSharedQuest": false,
+      "tags": [
+        "quest.type.hidden"
+      ],
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_UnderTheSeaMystery:C_QuestStep_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Progression/DA_UnderTheSeaMystery.3"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestIsActorInsideQuestAreaCondition",
+    "Name": "C_QuestIsActorInsideQuestAreaCondition_0",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_QuestIsActorInsideQuestAreaCondition'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "areaTag": {
+        "TagName": "quest.area.merfolk.kingdom"
+      },
+      "conditionTitle": "Is Inside Mermaid Kingdom",
+      "conditionId": "C_QuestIsActorInsideQuestAreaCondition_0"
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_0",
+    "Outer": "DA_UnderTheSeaMystery",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "checkState",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_ObjectStateChangedCondition'DA_UnderTheSeaMystery:C_QuestStep_0.C_ObjectStateChangedCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Progression/DA_UnderTheSeaMystery.0"
+          },
+          {
+            "ObjectName": "C_QuestIsActorInsideQuestAreaCondition'DA_UnderTheSeaMystery:C_QuestStep_0.C_QuestIsActorInsideQuestAreaCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Progression/DA_UnderTheSeaMystery.2"
+          }
+        ]
+      }
+    }
+  }
+]
