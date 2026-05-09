@@ -13,6 +13,8 @@
 #### Added
 
 - Added options to import/export user data
+- Added toggles in item details card to trigger matching checklists
+- Added clothing checklist/journal page
 
 ### 0.29.0 2025-12-21
 
