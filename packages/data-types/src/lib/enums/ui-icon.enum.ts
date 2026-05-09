@@ -29,7 +29,8 @@ export enum UiIcon {
     CATCHING = 'T_Icon_CatchingM',
     FARMING = 'T_Icon_FarmingM',
     ARTISAN = 'T_Icon_ArtisanM',
-    COOKING = 'T_Icon_ConsumablesM',
+    COOKING = 'T_Icon_Cooking',
+    CONSUMABLE = 'T_Icon_ConsumablesM',
     OFFERING = 'T_Icon_Offering',
     BESTIARY = 'T_Icon_Bestiary',
     NOTES = 'T_Icon_Notes',
@@ -37,6 +38,13 @@ export enum UiIcon {
     BADGES = 'T_Icon_Badges',
     PLANT = 'T_Icon_Plant',
     CLOTHING = 'T_Indicator_Clothes',
+
+    // JOURNAL ICONS
+    BOUGHT = 'T_Icon_Bought',
+    COMBAT = 'T_Icon_CombatM',
+    CRAFTING_SMALL = 'T_Icon_CraftingSmall',
+    MUSEUM_SMALL = 'T_Icon_MuseumS',
+    OFFERED_MURAL = 'T_Icon_OfferedMural',
 
     // BUILDINGS
     BLACKSMITH = 'T_Icon_Blacksmith',
