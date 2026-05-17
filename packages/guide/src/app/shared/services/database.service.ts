@@ -163,6 +163,11 @@ export class DatabaseService extends BaseDbService {
     }
 
 
+    fetchUnlinkedNPCImages() {
+        return this.#getResource<string[]>(`${this.BASE_PATH}/unlinked-npc-images.json`);
+    }
+
+
     fetchTornPagesData$(): Observable<TornPageData[]> {
         if (!this._TORN_PAGES_DATA$) {
             this._TORN_PAGES_DATA$ = this.http.get<TornPageData[]>(`${this.BASE_PATH_WITH_LANG}/torn-pages.json`)

@@ -22,6 +22,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./components/npc-list/npc-list.component').then(m => m.NpcListComponent),
                 title: 'Overview - NPCs'
             },
+            {
+                path: 'unlinked-images',
+                loadComponent: () => import('./components/unlinked-npc-images/unlinked-npc-images.component').then(m => m.UnlinkedNpcImages)
+            },
             {path: ':npcKey', loadComponent: () => import('./components/npc/npc.component').then(m => m.NpcComponent)},
         ]
     },

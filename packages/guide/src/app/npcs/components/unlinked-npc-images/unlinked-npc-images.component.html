@@ -1,0 +1,43 @@
+@if (paths.isLoading()) {
+    <mat-spinner class="mx-auto text-white"/>
+} @else {
+    <app-card class="mt-6">
+        <h2 class="mb-4 font-semibold text-2xl text-black">
+            Unlinked images
+        </h2>
+
+        <p class="text-black">
+            The following images couldn't get matched with any data at the moment. They may contain <strong>future
+            content/spoilers</strong>, leftovers, tests/not planned content or just are wrongly matched.
+        </p>
+
+        <app-expandable #expandableComponent>
+            <h3 class="text-xl p-2 mt-2 text-black" expandableHeader>
+                <app-database-header-button [templateRef]="expandableComponent">Open images
+                </app-database-header-button>
+            </h3>
+            <div class="font-semibold text-black mb-6">
+                <div class="grid portrait-grid gap-4">
+                    @for (portraitName of paths.value(); track portraitName) {
+                        <div class="flex flex-col shadow-lg p-2 relative group">
+                            <a href="assets/{{environment}}/portraits/no-linked-npc/{{portraitName}}.webp?v={{version}}"
+                               target="_blank"
+                               class="hidden group-focus-visible:block group-hover:block absolute top-2.5 right-2.5">
+                                <app-ui-icon [uiIcon]="uiIcon.MAGNIFYING_GLASS"/>
+                            </a>
+                            <app-npc-portrait [npcKey]="'no-linked-npc'" [portraitName]="portraitName"
+                                              class="h-[400px] flex items-end justify-center"/>
+                            <span class="truncate" [title]="portraitName">{{ portraitName }}</span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </app-expandable>
+
+
+
+
+
+
+    </app-card>
+}

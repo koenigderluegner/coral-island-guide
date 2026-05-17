@@ -18,6 +18,7 @@
 - Added toggles in item details card to trigger matching checklists
 - Added clothing checklist/journal page
 - Added animal variant icons
+- Added unlinked npc images
 
 ### 0.29.0 2025-12-21
 
