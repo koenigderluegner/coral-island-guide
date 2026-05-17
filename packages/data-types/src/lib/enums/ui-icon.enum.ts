@@ -11,6 +11,7 @@ export enum UiIcon {
     PLUS = 'T_Icon_Plus',
     TRASH_CAN = 'T_Icon_Trash',
     TOWN_RANK = 'T_Icon_Townrank',
+    QUESTION_MARK = 'T_Icon_DialogQuestion',
 
     // PAUSE MENU TOP
     JOURNAL = 'T_Icon_Journal',
