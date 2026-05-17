@@ -9,6 +9,7 @@
 - Sort museum checklist by journal order
 - Improved loading of NPC when called directly via url to reduce "No NPC found" errors
 - Improved detection of character images to show more portraits
+- Fixed missing tooltip in animal details
 
 #### Added
 
