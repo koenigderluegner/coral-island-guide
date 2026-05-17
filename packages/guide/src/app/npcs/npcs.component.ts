@@ -36,7 +36,7 @@ export class NPCsComponent {
     }
 
     updateIsNPCListActive(url: string): void {
-        this.isNPCListActive = url.startsWith('/npcs/') && !url.includes('overview') && !url.includes('gifting')
+        this.isNPCListActive = url.startsWith('/npcs/') && !url.includes('overview') && !url.includes('gifting') && !url.includes('unlinked-images')
     }
 
 
