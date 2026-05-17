@@ -68,7 +68,13 @@
       "cache": true
     },
     "@nx/eslint:lint": {
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json", "{workspaceRoot}/eslint.config.mjs"],
+      "inputs": [
+        "default",
+        "^default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/eslint.config.mjs",
+        "{workspaceRoot}/tools/eslint-rules/**/*"
+      ],
       "cache": true
     },
     "@nx/esbuild:esbuild": {
@@ -78,5 +84,6 @@
     }
   },
   "defaultProject": "guide",
-  "defaultBase": "main"
+  "defaultBase": "main",
+  "analytics": false
 }
