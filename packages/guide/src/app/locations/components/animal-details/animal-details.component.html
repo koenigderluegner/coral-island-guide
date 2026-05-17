@@ -48,7 +48,7 @@
                 <span class="text-black">
                 @for (variant of animal.variants; track variant; let last = $last) {
 
-                    {{ variant.variant }}{{ !last ? ', ' : '' }}
+                    {{ variant.variant | addSpacesToPascalCase }}{{ !last ? ', ' : '' }}
 
                 }
             </span>
