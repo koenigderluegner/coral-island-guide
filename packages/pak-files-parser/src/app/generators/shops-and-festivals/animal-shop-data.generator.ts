@@ -4,6 +4,7 @@ import { readAsset } from "../../../util/functions";
 import { RawAnimalShopData } from "../../../interfaces/raw-data-interfaces/raw-animal-shop-data.interface";
 import { AnimalShopData } from "@ci/data-types";
 import { StringTable } from "../../../util/string-table.class";
+import { getEnumValue } from "@ci/util";
 
 export class AnimalShopDataGenerator extends BaseGenerator<RawAnimalShopData, AnimalShopData> {
     datatable: Datatable<RawAnimalShopData>[];
@@ -15,6 +16,8 @@ export class AnimalShopDataGenerator extends BaseGenerator<RawAnimalShopData, An
 
     handleEntry(itemKey: string, dbItem: RawAnimalShopData): AnimalShopData | undefined {
 
+
+        const variant = dbItem.isStarletAnimalVariant ? getEnumValue(dbItem.starletAnimalVariant) : undefined
 
         return {
             key: itemKey,
@@ -29,7 +32,8 @@ export class AnimalShopDataGenerator extends BaseGenerator<RawAnimalShopData, An
             price: dbItem.price,
             sellPrice: dbItem.SellPrice,
             townRank: dbItem.townRank,
-            requirements: this.getRequirements(itemKey)
+            requirements: this.getRequirements(itemKey),
+            variant
         };
     }
 

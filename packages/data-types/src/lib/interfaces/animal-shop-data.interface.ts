@@ -15,4 +15,5 @@ export interface AnimalShopData {
     readableRequirement: TranslationKey | null,
     readableName: TranslationKey | null,
     requirements?: RequirementEntry
+    variant?: string
 }

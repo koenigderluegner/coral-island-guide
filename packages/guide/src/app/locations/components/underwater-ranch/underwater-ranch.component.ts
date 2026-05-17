@@ -31,9 +31,11 @@ export class UnderwaterRanchComponent extends BaseShopComponent {
         if (!values) return null;
         const [animals, shopData] = values;
 
-        return shopData.map(stopEntry => {
-            const {animalKey, ...rest} = stopEntry;
-            return {...rest, animal: animals.find(animal => animal.key === animalKey)}
+        return shopData.map(shopEntry => {
+            const {animalKey, ...rest} = shopEntry;
+            const animal = animals.find(animal => animal.key === animalKey);
+            return {...rest, animal, iconName: animal?.variants.find(variant => variant.variant === shopEntry.variant)?.icons?.adult ?? animal?.variants?.[0]?.icons?.adult ?? null}
+
         });
     })
 

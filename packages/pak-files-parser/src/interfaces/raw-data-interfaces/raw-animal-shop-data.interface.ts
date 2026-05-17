@@ -14,5 +14,7 @@ export interface RawAnimalShopData {
     "readableCategory": SourceString,
     "readableRequirement": SourceString,
     "readableName": SourceString,
-    "priority": number
+    "priority": number;
+    "isStarletAnimalVariant": boolean,
+    "starletAnimalVariant": string
 }

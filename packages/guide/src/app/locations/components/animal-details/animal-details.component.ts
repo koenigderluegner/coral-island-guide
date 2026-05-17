@@ -12,6 +12,7 @@ import { KeyValuePipe, TitleCasePipe } from "@angular/common";
 import { IsMinimalItemPipe } from "../../../shared/pipes/is-minimal-item.pipe";
 import { RequirementsListComponent } from "../../../shared/components/requirements-list/requirements-list.component";
 import { TranslatePipe } from "@ngx-translate/core";
+import { MatTooltip } from "@angular/material/tooltip";
 
 @Component({
     selector: 'app-animal-details',
@@ -28,7 +29,8 @@ import { TranslatePipe } from "@ngx-translate/core";
         IsMinimalItemPipe,
         TitleCasePipe,
         RequirementsListComponent,
-        TranslatePipe
+        TranslatePipe,
+        MatTooltip
     ]
 })
 export class AnimalDetailsComponent {

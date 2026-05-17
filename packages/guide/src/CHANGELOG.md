@@ -15,6 +15,7 @@
 - Added options to import/export user data
 - Added toggles in item details card to trigger matching checklists
 - Added clothing checklist/journal page
+- Added animal variant icons
 
 ### 0.29.0 2025-12-21
 
