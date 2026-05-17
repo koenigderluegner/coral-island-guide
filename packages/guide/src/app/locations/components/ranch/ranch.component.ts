@@ -44,7 +44,7 @@ export class RanchComponent extends BaseShopComponent {
 
         return shopData.map(shopEntry => {
             const {animalKey, ...rest} = shopEntry;
-            const animal = animals.find(animal => animal.key === animalKey);
+            const animal = animals.find(animal => animal.key.toLocaleLowerCase() === animalKey?.toLocaleLowerCase());
             return {...rest, animal, iconName: animal?.variants.find(variant => variant.variant === shopEntry.variant)?.icons?.adult ?? animal?.variants?.[0]?.icons?.adult ?? null}
         });
     })

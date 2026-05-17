@@ -10,6 +10,7 @@
 - Improved loading of NPC when called directly via url to reduce "No NPC found" errors
 - Improved detection of character images to show more portraits
 - Fixed missing tooltip in animal details
+- Fixed Llama mapping in animal list
 
 #### Added
 
