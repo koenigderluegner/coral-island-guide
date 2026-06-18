@@ -1,16 +1,6 @@
 ## Changelog
 
-### 0.30.0 - 2026-06-18
-
-### Changed
-
-- Updated beta data to v1.3-366 (Steam version)
-- Updated live data to v1.3-1247 (Steam version)
-- Sort museum checklist by journal order
-- Improved loading of NPC when called directly via url to reduce "No NPC found" errors
-- Improved detection of character images to show more portraits
-- Fixed missing tooltip in animal details
-- Fixed Llama mapping in animal list
+### 0.30.0 2026-06-18
 
 #### Added
 
@@ -19,6 +9,16 @@
 - Added clothing checklist/journal page
 - Added animal variant icons
 - Added unlinked npc images
+
+#### Changed
+
+- Updated beta data to v1.3-366 (Steam version)
+- Updated live data to v1.3-1247 (Steam version)
+- Sort museum checklist by journal order
+- Improved loading of NPC when called directly via url to reduce "No NPC found" errors
+- Improved detection of character images to show more portraits
+- Fixed missing tooltip in animal details
+- Fixed Llama mapping in animal list
 
 ### 0.29.0 2025-12-21
 
@@ -42,7 +42,8 @@
 
 ### 0.28.0 2025-11-12
 
-The whole system of loading data has changed completely. This may cause some bugs or strange behaviors (which I tried to solve as best as I can).
+The whole system of loading data has changed completely. This may cause some bugs or strange behaviors (which I tried to
+solve as best as I can).
 If you find some cryptic names or misbehaving features, please let me know.
 
 #### Changed
@@ -78,7 +79,6 @@ Code is still a mess as it was never intended to be public, but I will work on i
 
 - Updated live data to v1.2-1238 (Steam version)
 
-
 ### 0.25.0 2025-03-31
 
 #### Added
@@ -88,15 +88,16 @@ Code is still a mess as it was never intended to be public, but I will work on i
 #### Changed
 
 - Updated live data to v1.1-1237 (Steam version)
-- Fixed heart events details showing Key/Value instead of the actual values 
+- Fixed heart events details showing Key/Value instead of the actual values
 
-###  0.24.0 2025-02-06
+### 0.24.0 2025-02-06
 
 #### Added
 
 - Added custom text for to-dos to add custom written information.
 - Added possibility to create/delete/edit multiple user data (checklists, to-dos, etc.)
-  - You can choose a name to identify saves. You can't delete the last entry, create at least another one to delete the first one.
+    - You can choose a name to identify saves. You can't delete the last entry, create at least another one to delete
+      the first one.
 - Added Favicon (browser icon) and app icons if installed to phone or pc.
 - Added more routes to be found by search engines and increasing performance for initial load
 
@@ -104,7 +105,6 @@ Code is still a mess as it was never intended to be public, but I will work on i
 
 - Updated live data to v1.1-1234 (Steam version)
 - Fixed mastery unlocks showing "Value" instead of the mastery name.
-
 
 ### 0.23.0 2024-12-12
 
