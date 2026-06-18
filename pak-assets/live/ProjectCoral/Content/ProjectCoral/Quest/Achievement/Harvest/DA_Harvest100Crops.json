@@ -1,0 +1,55 @@
+[
+  {
+    "Type": "C_EventCondition",
+    "Name": "C_EventCondition_1",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_EventCondition'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "requireTags": [
+        "event.player.harvest.crop.farm"
+      ],
+      "questOwnerOnly": true,
+      "countProgress": true,
+      "requiredProgress": 100,
+      "conditionId": "harvestCheck"
+    }
+  },
+  {
+    "Type": "C_Quest",
+    "Name": "DA_Harvest100Crops",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_Harvest100Crops",
+      "isSharedQuest": false,
+      "tags": [
+        "quest.type.hidden"
+      ],
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_Harvest100Crops:C_QuestStep_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Harvest/DA_Harvest100Crops.2"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_0",
+    "Outer": "DA_Harvest100Crops",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "checkState",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_EventCondition'DA_Harvest100Crops:C_QuestStep_0.C_EventCondition_1'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Harvest/DA_Harvest100Crops.0"
+          }
+        ]
+      }
+    }
+  }
+]

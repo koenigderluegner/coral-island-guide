@@ -1,0 +1,49 @@
+[
+  {
+    "Type": "C_Quest",
+    "Name": "DA_CookAll",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_CookAll",
+      "isSharedQuest": false,
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_CookAll:C_QuestStep_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Cook/DA_CookAll.2"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestCookCountCondition",
+    "Name": "C_QuestCookCountCondition_0",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_QuestCookCountCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "countUnique": true,
+      "requiredAll": true,
+      "requiredCookingCount": 15,
+      "conditionId": "C_QuestCookCountCondition_0"
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_0",
+    "Outer": "DA_CookAll",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "checkState",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_QuestCookCountCondition'DA_CookAll:C_QuestStep_0.C_QuestCookCountCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Cook/DA_CookAll.1"
+          }
+        ]
+      }
+    }
+  }
+]

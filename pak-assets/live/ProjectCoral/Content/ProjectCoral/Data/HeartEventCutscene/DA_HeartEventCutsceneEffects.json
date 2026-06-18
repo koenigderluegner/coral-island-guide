@@ -44,7 +44,7 @@
               },
               {
                 "ObjectName": "C_VaryMoneyEffect'DA_HeartEventCutsceneEffects:C_VaryMoneyEffect_0'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneEffects.17"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneEffects.16"
               },
               {
                 "ObjectName": "C_RemoveItemFromInventoryEffect'DA_HeartEventCutsceneEffects:C_RemoveItemFromInventoryEffect_1'",
@@ -120,10 +120,6 @@
               {
                 "ObjectName": "C_SetQuestCompletedEffect'DA_HeartEventCutsceneEffects:C_SetQuestCompletedEffect_2'",
                 "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneEffects.14"
-              },
-              {
-                "ObjectName": "C_UnlockCookingRecipeEffect'DA_HeartEventCutsceneEffects:C_UnlockCookingRecipeEffect_0'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneEffects.15"
               }
             ]
           }
@@ -156,7 +152,7 @@
             "effects": [
               {
                 "ObjectName": "C_UpdateNPCScheduleEffect'DA_HeartEventCutsceneEffects:C_UpdateNPCScheduleEffect_0'",
-                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneEffects.16"
+                "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/HeartEventCutscene/DA_HeartEventCutsceneEffects.15"
               }
             ]
           }
@@ -198,7 +194,10 @@
     "Class": "UScriptClass'C_RemoveItemFromInventoryEffect'",
     "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
     "Properties": {
-      "removeByCategory": true,
+      "removeByTag": true,
+      "itemTags": [
+        "item.flower"
+      ],
       "itemCategory": {
         "data": {
           "RowName": "Flowers"
@@ -355,21 +354,9 @@
     "Properties": {
       "quest": {
         "ObjectName": "C_Quest'jim_5_helper_quest'",
-        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/QuestProduction/HeartEventTrigger/jim_5_helper_quest.6"
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/QuestProduction/HeartEventTrigger/jim_5_helper_quest.8"
       },
       "questId": "jim_5_helper"
-    }
-  },
-  {
-    "Type": "C_UnlockCookingRecipeEffect",
-    "Name": "C_UnlockCookingRecipeEffect_0",
-    "Outer": "DA_HeartEventCutsceneEffects",
-    "Class": "UScriptClass'C_UnlockCookingRecipeEffect'",
-    "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
-    "Properties": {
-      "recipe": {
-        "RowName": "SmokedSalmon"
-      }
     }
   },
   {

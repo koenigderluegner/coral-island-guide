@@ -1,0 +1,64 @@
+[
+  {
+    "Type": "C_ItemAddedToInventoryCondition",
+    "Name": "C_ItemAddedToInventoryCondition_0",
+    "Outer": "museumCheck_1",
+    "Class": "UScriptClass'C_ItemAddedToInventoryCondition'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "conditionId": "C_ItemAddedToInventoryCondition"
+    }
+  },
+  {
+    "Type": "C_MuseumCollectionCategoryCollectedCondition",
+    "Name": "C_MuseumCollectionCategoryCollectedCondition_0",
+    "Outer": "museumCheck_1",
+    "Class": "UScriptClass'C_MuseumCollectionCategoryCollectedCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "entireCollection": true,
+      "conditionId": "categoryCollected"
+    }
+  },
+  {
+    "Type": "C_Quest",
+    "Name": "DA_MuseumAll",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_MuseumAll",
+      "isSharedQuest": false,
+      "tags": [
+        "quest.type.hidden"
+      ],
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_MuseumAll:museumCheck_1'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Museum/DA_MuseumAll.3"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "museumCheck_1",
+    "Outer": "DA_MuseumAll",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "museumCheck",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_MuseumCollectionCategoryCollectedCondition'DA_MuseumAll:museumCheck_1.C_MuseumCollectionCategoryCollectedCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Museum/DA_MuseumAll.1"
+          },
+          {
+            "ObjectName": "C_ItemAddedToInventoryCondition'DA_MuseumAll:museumCheck_1.C_ItemAddedToInventoryCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Museum/DA_MuseumAll.0"
+          }
+        ]
+      }
+    }
+  }
+]

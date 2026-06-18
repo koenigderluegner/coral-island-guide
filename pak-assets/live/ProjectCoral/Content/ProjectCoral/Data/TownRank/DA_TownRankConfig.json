@@ -1,5 +1,40 @@
 [
   {
+    "Type": "C_IsCutsceneTriggeredRequirement",
+    "Name": "C_IsCutsceneTriggeredRequirement_0",
+    "Outer": "DA_TownRankConfig",
+    "Class": "UScriptClass'C_IsCutsceneTriggeredRequirement'",
+    "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "cutsceneTopic": "GS_Pufferfish_Leaves"
+    }
+  },
+  {
+    "Type": "C_IsCutsceneTriggeredRequirement",
+    "Name": "C_IsCutsceneTriggeredRequirement_1",
+    "Outer": "DA_TownRankConfig",
+    "Class": "UScriptClass'C_IsCutsceneTriggeredRequirement'",
+    "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "cutsceneTopic": "GS_Town_Rank_A"
+    }
+  },
+  {
+    "Type": "C_QuestStateRequirement",
+    "Name": "C_QuestStateRequirement_0",
+    "Outer": "DA_TownRankConfig",
+    "Class": "UScriptClass'C_QuestStateRequirement'",
+    "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "quest": {
+        "AssetPathName": "/Game/ProjectCoral/Quest/QuestProduction/MainQuest/Update_1-3/mq013_RoadToRankA.mq013_RoadToRankA",
+        "SubPathString": ""
+      },
+      "questId": "mq013_RoadToRankA",
+      "state": "EC_QuestState::Completed"
+    }
+  },
+  {
     "Type": "C_TownRankPointConfig",
     "Name": "DA_TownRankConfig",
     "Class": "UScriptClass'C_TownRankPointConfig'",
@@ -261,6 +296,36 @@
         "SourceString": "Milestone achieved! You’ve just received {0}c!",
         "LocalizedString": "Milestone achieved! You’ve just received {0}c!"
       },
+      "townRankGates": [
+        {
+          "Key": "5",
+          "Value": {
+            "displayProgressCap": 1.0,
+            "unlockDisplayRequirements": {
+              "type": "EC_RequirementCollectionType::And",
+              "requirements": [
+                {
+                  "ObjectName": "C_IsCutsceneTriggeredRequirement'DA_TownRankConfig:C_IsCutsceneTriggeredRequirement_0'",
+                  "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/TownRank/DA_TownRankConfig.0"
+                }
+              ]
+            },
+            "unlockRequirements": {
+              "type": "EC_RequirementCollectionType::Or",
+              "requirements": [
+                {
+                  "ObjectName": "C_IsCutsceneTriggeredRequirement'DA_TownRankConfig:C_IsCutsceneTriggeredRequirement_1'",
+                  "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/TownRank/DA_TownRankConfig.1"
+                },
+                {
+                  "ObjectName": "C_QuestStateRequirement'DA_TownRankConfig:C_QuestStateRequirement_0'",
+                  "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/TownRank/DA_TownRankConfig.2"
+                }
+              ]
+            }
+          }
+        }
+      ],
       "pointPerCategory": [
         {
           "Key": "EC_TownRankCategory::Museum",

@@ -1,0 +1,78 @@
+[
+  {
+    "Type": "C_Quest",
+    "Name": "DA_TempleRestore",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_TempleRestore",
+      "isSharedQuest": false,
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_TempleRestore:C_QuestStep_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Temple/DA_TempleRestore.3"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestIsActorInsideQuestAreaCondition",
+    "Name": "C_QuestIsActorInsideQuestAreaCondition_0",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_QuestIsActorInsideQuestAreaCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "areaTag": {
+        "TagName": "quest.area.lake.temple"
+      },
+      "conditionTitle": "inInsideTemple",
+      "conditionId": "C_QuestIsActorInsideQuestAreaCondition_0"
+    }
+  },
+  {
+    "Type": "C_QuestOfferingGroupCompletedCondition",
+    "Name": "C_QuestOfferingGroupCompletedCondition_1",
+    "Outer": "DA_TempleRestore",
+    "Class": "UScriptClass'C_QuestOfferingGroupCompletedCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "requirement": {
+        "ObjectName": "C_TempleLevelRequirement'DA_TempleRestore:C_QuestOfferingGroupCompletedCondition_1.C_TempleLevelRequirement_0'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Temple/DA_TempleRestore.4"
+      },
+      "conditionId": "levelCheck"
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_0",
+    "Outer": "DA_TempleRestore",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "checkState",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_QuestOfferingGroupCompletedCondition'DA_TempleRestore:C_QuestOfferingGroupCompletedCondition_1'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Temple/DA_TempleRestore.2"
+          },
+          {
+            "ObjectName": "C_QuestIsActorInsideQuestAreaCondition'DA_TempleRestore:C_QuestStep_0.C_QuestIsActorInsideQuestAreaCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Temple/DA_TempleRestore.1"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Type": "C_TempleLevelRequirement",
+    "Name": "C_TempleLevelRequirement_0",
+    "Outer": "C_QuestOfferingGroupCompletedCondition_1",
+    "Class": "UScriptClass'C_TempleLevelRequirement'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "requiredLevel": 12
+    }
+  }
+]

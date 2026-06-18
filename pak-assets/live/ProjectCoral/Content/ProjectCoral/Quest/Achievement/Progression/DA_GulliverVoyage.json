@@ -1,0 +1,74 @@
+[
+  {
+    "Type": "C_ObjectStateChangedCondition",
+    "Name": "C_ObjectStateChangedCondition_0",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_ObjectStateChangedCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "actorRef": {
+        "AssetPathName": "/Game/ProjectCoral/Maps/MapZones/CI_Giants_Area.CI_Giants_Area",
+        "SubPathString": "PersistentLevel.BP_GiantVillage_Blockers"
+      },
+      "id": "giant_village_blocker",
+      "state": "open",
+      "stateInput": "open",
+      "conditionId": "C_ObjectStateChangedCondition_0"
+    }
+  },
+  {
+    "Type": "C_Quest",
+    "Name": "DA_GulliverVoyage",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_GulliverVoyage",
+      "isSharedQuest": false,
+      "tags": [
+        "quest.type.hidden"
+      ],
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_GulliverVoyage:C_QuestStep_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Progression/DA_GulliverVoyage.3"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestIsActorInsideQuestAreaCondition",
+    "Name": "C_QuestIsActorInsideQuestAreaCondition_0",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_QuestIsActorInsideQuestAreaCondition'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "areaTag": {
+        "TagName": "quest.area.giantVillage"
+      },
+      "conditionTitle": "Is Inside GIant Village",
+      "conditionId": "C_QuestIsActorInsideQuestAreaCondition_0"
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_0",
+    "Outer": "DA_GulliverVoyage",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "checkState",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_ObjectStateChangedCondition'DA_GulliverVoyage:C_QuestStep_0.C_ObjectStateChangedCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Progression/DA_GulliverVoyage.0"
+          },
+          {
+            "ObjectName": "C_QuestIsActorInsideQuestAreaCondition'DA_GulliverVoyage:C_QuestStep_0.C_QuestIsActorInsideQuestAreaCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Progression/DA_GulliverVoyage.2"
+          }
+        ]
+      }
+    }
+  }
+]

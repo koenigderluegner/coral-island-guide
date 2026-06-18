@@ -1,11 +1,11 @@
 ## Changelog
 
-### TBD
+### 0.30.0 - 2026-06-18
 
 ### Changed
 
 - Updated beta data to v1.3-366 (Steam version)
-- Updated live data to v1.2-1246 (Steam version)
+- Updated live data to v1.3-1247 (Steam version)
 - Sort museum checklist by journal order
 - Improved loading of NPC when called directly via url to reduce "No NPC found" errors
 - Improved detection of character images to show more portraits

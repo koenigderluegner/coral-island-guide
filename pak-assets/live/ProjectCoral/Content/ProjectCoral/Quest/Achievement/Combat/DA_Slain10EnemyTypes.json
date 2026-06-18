@@ -1,0 +1,69 @@
+[
+  {
+    "Type": "C_Quest",
+    "Name": "DA_Slain10EnemyTypes",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_Slain10EnemyTypes",
+      "isSharedQuest": false,
+      "tags": [
+        "quest.type.hidden"
+      ],
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_Slain10EnemyTypes:C_QuestStep_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Combat/DA_Slain10EnemyTypes.1"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_0",
+    "Outer": "DA_Slain10EnemyTypes",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "checkStep",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_SlainEnemyCountCondition'DA_Slain10EnemyTypes:C_SlainEnemyCountCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Combat/DA_Slain10EnemyTypes.2"
+          },
+          {
+            "ObjectName": "C_SlainEnemyCountCondition'DA_Slain10EnemyTypes:C_SlainEnemyCountCondition_1'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Combat/DA_Slain10EnemyTypes.3"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Type": "C_SlainEnemyCountCondition",
+    "Name": "C_SlainEnemyCountCondition_0",
+    "Outer": "DA_Slain10EnemyTypes",
+    "Class": "UScriptClass'C_SlainEnemyCountCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "countUnique": true,
+      "questOwnerOnly": true,
+      "requiredProgress": 10,
+      "conditionId": "checkCondition"
+    }
+  },
+  {
+    "Type": "C_SlainEnemyCountCondition",
+    "Name": "C_SlainEnemyCountCondition_1",
+    "Outer": "DA_Slain10EnemyTypes",
+    "Class": "UScriptClass'C_SlainEnemyCountCondition'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questOwnerOnly": true,
+      "requiredProgress": 1,
+      "conditionTitle": "Defeat at least 1 enemy",
+      "conditionId": "checkCondition_1"
+    }
+  }
+]

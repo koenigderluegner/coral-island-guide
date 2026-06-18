@@ -1,0 +1,68 @@
+[
+  {
+    "Type": "C_HealedCoralCondition",
+    "Name": "C_HealedCoralCondition_0",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_HealedCoralCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "required": 85,
+      "conditionId": "C_HealedCoralCondition_0"
+    }
+  },
+  {
+    "Type": "C_Quest",
+    "Name": "DA_HealingTheOcean",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_HealingTheOcean",
+      "isSharedQuest": false,
+      "tags": [
+        "quest.type.hidden"
+      ],
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_HealingTheOcean:C_QuestStep_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Progression/DA_HealingTheOcean.3"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestIsActorInsideQuestAreaCondition",
+    "Name": "C_QuestIsActorInsideQuestAreaCondition_0",
+    "Outer": "DA_HealingTheOcean",
+    "Class": "UScriptClass'C_QuestIsActorInsideQuestAreaCondition'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "areaTag": {
+        "TagName": "quest.area.underwater"
+      },
+      "conditionTitle": "Is Player Underwater",
+      "conditionId": "C_QuestIsActorInsideQuestAreaCondition"
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_0",
+    "Outer": "DA_HealingTheOcean",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "checkState",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_HealedCoralCondition'DA_HealingTheOcean:C_QuestStep_0.C_HealedCoralCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Progression/DA_HealingTheOcean.0"
+          },
+          {
+            "ObjectName": "C_QuestIsActorInsideQuestAreaCondition'DA_HealingTheOcean:C_QuestIsActorInsideQuestAreaCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Progression/DA_HealingTheOcean.2"
+          }
+        ]
+      }
+    }
+  }
+]

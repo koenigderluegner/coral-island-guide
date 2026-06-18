@@ -9,7 +9,6 @@ import { UiIcon } from "@ci/data-types";
 import { MatProgressSpinner } from "@angular/material/progress-spinner";
 import { DatabaseHeaderButtonComponent } from "../../../database/components/database-header-button/database-header-button.component";
 import { ExpandableComponent } from "../../../shared/components/expandable/expandable.component";
-import { ShopItemProcessTableComponent } from "../../../locations/components/tables/shop-item-process-table/shop-item-process-table.component";
 
 @Component({
     selector: 'app-unlinked-npc-images',
@@ -23,7 +22,6 @@ import { ShopItemProcessTableComponent } from "../../../locations/components/tab
         MatProgressSpinner,
         DatabaseHeaderButtonComponent,
         ExpandableComponent,
-        ShopItemProcessTableComponent
     ],
     host: {
         class: 'block px-main-hz py-main-vt w-full'

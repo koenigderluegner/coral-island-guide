@@ -279,7 +279,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Day_17to21Winter"
             ],
             "requirements": {
               "key": "aaliyah_10",
@@ -338,8 +339,31 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Weather_Sunny"
-            ]
+              "Requirement_Weather_Sunny",
+              "Requirement_Day_17to21Winter"
+            ],
+            "requirements": {
+              "key": "aaliyah_12",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 17,
+                      "season": "Winter",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 21,
+                      "season": "Winter",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -407,13 +431,13 @@
     "agung": [
       {
         "npc": "Agung",
-        "heartLevel": 3,
+        "heartLevel": 2,
         "trigger": [
           {
-            "id": "Agung_3",
+            "id": "Agung_2",
             "location": "Location_AgungHouse",
             "canTriggerSameDay": false,
-            "cutscene": "HS_Agung_Heart_3",
+            "cutscene": "HS_Agung_Heart_2_V2",
             "enabled": true,
             "otherCutscenesState": [],
             "specificDay": [],
@@ -436,17 +460,17 @@
       },
       {
         "npc": "Agung",
-        "heartLevel": 5,
+        "heartLevel": 4,
         "trigger": [
           {
-            "id": "Agung_5",
+            "id": "Agung_4",
             "location": "Location_MerfolkCenter",
             "canTriggerSameDay": false,
-            "cutscene": "HS_Agung_Heart_5",
+            "cutscene": "HS_Agung_Heart_4_V2",
             "enabled": true,
             "otherCutscenesState": [
               {
-                "HS_Agung_Heart_3": true
+                "HS_Agung_Heart_2_V2": true
               }
             ],
             "specificDay": [],
@@ -469,17 +493,17 @@
       },
       {
         "npc": "Agung",
-        "heartLevel": 7,
+        "heartLevel": 5,
         "trigger": [
           {
-            "id": "Agung_7",
+            "id": "Agung_5",
             "location": "Location_AgungHouse",
             "canTriggerSameDay": false,
-            "cutscene": "HS_Agung_Heart_7",
+            "cutscene": "HS_Agung_Heart_5_V2",
             "enabled": true,
             "otherCutscenesState": [
               {
-                "HS_Agung_Heart_5": true
+                "HS_Agung_Heart_4_V2": true
               }
             ],
             "specificDay": [],
@@ -502,17 +526,17 @@
       },
       {
         "npc": "Agung",
-        "heartLevel": 8,
+        "heartLevel": 7,
         "trigger": [
           {
-            "id": "Agung_8",
+            "id": "Agung_7",
             "location": "Location_Diving50mOrchestra",
             "canTriggerSameDay": false,
-            "cutscene": "HS_Agung_Heart_8",
+            "cutscene": "HS_Agung_Heart_7_V2",
             "enabled": true,
             "otherCutscenesState": [
               {
-                "HS_Agung_Heart_7": true
+                "HS_Agung_Heart_5_V2": true
               }
             ],
             "specificDay": [],
@@ -535,17 +559,17 @@
       },
       {
         "npc": "Agung",
-        "heartLevel": 10,
+        "heartLevel": 8,
         "trigger": [
           {
-            "id": "Agung_10",
+            "id": "Agung_8",
             "location": "Location_AgungHouse",
             "canTriggerSameDay": false,
-            "cutscene": "HS_Agung_Heart_10",
+            "cutscene": "HS_Agung_Heart_8_V2",
             "enabled": true,
             "otherCutscenesState": [
               {
-                "HS_Agung_Heart_8": true
+                "HS_Agung_Heart_7_V2": true
               }
             ],
             "specificDay": [],
@@ -563,6 +587,186 @@
             },
             "effects": [],
             "descriptionRequirements": []
+          }
+        ]
+      },
+      {
+        "npc": "Agung",
+        "heartLevel": 9,
+        "trigger": [
+          {
+            "id": "Agung_9",
+            "location": "Location_MerfolkCenter",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Agung_Heart_9_V2",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Agung_Heart_8_V2": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 9,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 17,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "descriptionRequirements": []
+          }
+        ]
+      },
+      {
+        "npc": "Agung",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "Agung_10",
+            "location": "97885E3C40DEFF030BA7A1B907DE64C1",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Agung_Heart_10_V2",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Agung_Heart_9_V2": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 10,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 15,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "descriptionRequirements": []
+          }
+        ]
+      },
+      {
+        "npc": "Agung",
+        "heartLevel": 11,
+        "trigger": [
+          {
+            "id": "Agung_11",
+            "location": "3AA8DDF341386A9D7BCE21A26D846941",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Agung_Heart_11",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Agung_Heart_10_V2": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Rain",
+              "Storm"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 8,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 16,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "descriptionRequirements": [
+              "Requirement_Weather_RainStorm"
+            ]
+          }
+        ]
+      },
+      {
+        "npc": "Agung",
+        "heartLevel": 13,
+        "trigger": [
+          {
+            "id": "Agung_13",
+            "location": "Location_RanchOutside",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Agung_Heart_13",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Agung_Heart_11": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 8,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 17,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "descriptionRequirements": [
+              "Requirement_Weather_SunnyWindy"
+            ]
+          }
+        ]
+      },
+      {
+        "npc": "Agung",
+        "heartLevel": 15,
+        "trigger": [
+          {
+            "id": "Agung_15A",
+            "location": "Location_PlayerHome",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Agung_Heart_15",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Agung_Heart_13": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 6,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 12,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "descriptionRequirements": [
+              "Requirement_Weather_SunnyWindy"
+            ]
           }
         ]
       }
@@ -640,7 +844,8 @@
               }
             ],
             "descriptionRequirements": [
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Day_17to21Winter"
             ],
             "requirements": {
               "key": "alice_4",
@@ -835,7 +1040,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Day_17to21Winter"
             ],
             "requirements": {
               "key": "alice_10",
@@ -1222,7 +1428,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Day_17to21Winter"
             ],
             "requirements": {
               "key": "antonio_6",
@@ -1423,8 +1630,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Day_SaturdaySunday",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Day_SaturdaySunday"
             ]
           }
         ]
@@ -2026,8 +2233,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ]
           }
         ]
@@ -2313,7 +2520,7 @@
         "trigger": [
           {
             "id": "bree_6",
-            "location": "Location_DumpArea",
+            "location": "Location_RecyclingCenter",
             "canTriggerSameDay": false,
             "cutscene": "HS_Bree_Heart_6",
             "enabled": true,
@@ -2530,8 +2737,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ],
             "requirements": {
               "key": "chaem_3",
@@ -2595,8 +2802,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_SunnyWindy"
+              "Requirement_Weather_SunnyWindy",
+              "Requirement_Season_NoWinter"
             ]
           }
         ]
@@ -2676,8 +2883,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ],
             "requirements": {
               "key": "chaem_7",
@@ -3180,7 +3387,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Day_NoTuesday"
+              "Requirement_Day_NoTuesday",
+              "Requirement_Day_17to21Winter"
             ],
             "requirements": {
               "key": "charles_7",
@@ -5598,8 +5806,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_SpringSummer",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_SpringSummer"
             ]
           }
         ]
@@ -6844,7 +7052,31 @@
               }
             },
             "effects": [],
-            "descriptionRequirements": []
+            "descriptionRequirements": [
+              "Requirement_Day_15to28Fall"
+            ],
+            "requirements": {
+              "key": "jack_9",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -6956,7 +7188,7 @@
                     "displayName": "DT_InventoryItems.item_72030_name",
                     "iconName": "Salmon_Sprite"
                   },
-                  "amount": 1
+                  "quantity": 1
                 }
               },
               {
@@ -6964,20 +7196,11 @@
                 "meta": {
                   "questId": "jim_5_helper"
                 }
-              },
-              {
-                "type": "UnlockCookingRecipe",
-                "meta": {
-                  "item": {
-                    "id": "item_80064",
-                    "displayName": "DT_InventoryItems.item_80064_name",
-                    "iconName": "Smoked_Salmon_Sprite"
-                  }
-                }
               }
             ],
             "descriptionRequirements": [
-              "Requirement_Day_NoTuesday"
+              "Requirement_Day_NoTuesday",
+              "Requirement_Quest_Jim_5"
             ],
             "requirements": {
               "key": "jim_5",
@@ -7150,7 +7373,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Weather_SunnyWindy"
+              "Requirement_Weather_SunnyWindy",
+              "Requirement_Day_17to21Winter"
             ],
             "requirements": {
               "key": "jim_10",
@@ -7319,8 +7543,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ],
             "requirements": {
               "key": "joko_6",
@@ -8239,7 +8463,9 @@
               }
             },
             "effects": [],
-            "descriptionRequirements": [],
+            "descriptionRequirements": [
+              "Requirement_Day_17to21Winter"
+            ],
             "requirements": {
               "key": "leah_3",
               "type": "And",
@@ -8366,8 +8592,31 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Weather_Sunny"
-            ]
+              "Requirement_Weather_Sunny",
+              "Requirement_Day_15to28Fall"
+            ],
+            "requirements": {
+              "key": "leah_6b",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -8510,8 +8759,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ]
           }
         ]
@@ -8650,7 +8899,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Day_NoTuesday"
+              "Requirement_Day_NoTuesday",
+              "Requirement_Day_17to21Winter"
             ],
             "requirements": {
               "key": "lily_3",
@@ -8721,7 +8971,7 @@
         "trigger": [
           {
             "id": "lily_7",
-            "location": "Museum",
+            "location": "E875F44C466B9B9B45A894835B98196C",
             "canTriggerSameDay": false,
             "cutscene": "HS_Lily_Heart_7",
             "enabled": true,
@@ -8744,7 +8994,9 @@
               }
             },
             "effects": [],
-            "descriptionRequirements": [],
+            "descriptionRequirements": [
+              "Requirement_Day_17to21Winter"
+            ],
             "requirements": {
               "key": "lily_7",
               "type": "And",
@@ -8793,7 +9045,9 @@
               }
             },
             "effects": [],
-            "descriptionRequirements": [],
+            "descriptionRequirements": [
+              "Requirement_Day_17to21Winter"
+            ],
             "requirements": {
               "key": "lily_7b",
               "type": "And",
@@ -9610,8 +9864,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ]
           }
         ]
@@ -9924,8 +10178,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ]
           }
         ]
@@ -9964,8 +10218,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_Summer",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_Summer"
             ]
           }
         ]
@@ -10233,8 +10487,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ],
             "requirements": {
               "key": "mark_10",
@@ -10443,8 +10697,31 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Weather_Sunny"
-            ]
+              "Requirement_Weather_Sunny",
+              "Requirement_Day_15to28Fall"
+            ],
+            "requirements": {
+              "key": "millie_6",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -10577,8 +10854,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ],
             "requirements": {
               "key": "millie_10",
@@ -11101,8 +11378,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ],
             "requirements": {
               "key": "nina_10",
@@ -11349,12 +11626,16 @@
               {
                 "type": "RemoveItemFromInventory",
                 "meta": {
-                  "category": "Flowers",
-                  "amount": 2
+                  "tags": [
+                    "item.flower"
+                  ],
+                  "quantity": 2
                 }
               }
             ],
-            "descriptionRequirements": [],
+            "descriptionRequirements": [
+              "Requirement_Quest_Noah_3"
+            ],
             "requirements": {
               "key": "noah_3",
               "type": "And",
@@ -11486,7 +11767,7 @@
                     "displayName": "DT_InventoryItems.item_65003_name",
                     "iconName": "Wood_Sprite"
                   },
-                  "amount": 4
+                  "quantity": 4
                 }
               },
               {
@@ -11501,7 +11782,8 @@
               }
             ],
             "descriptionRequirements": [
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Quest_Noah_6"
             ],
             "requirements": {
               "key": "noah_6",
@@ -11860,8 +12142,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ],
             "requirements": {
               "key": "oliver_3",
@@ -11962,7 +12244,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Day_NoTuesday"
+              "Requirement_Day_NoTuesday",
+              "Requirement_Day_17to21Winter"
             ],
             "requirements": {
               "key": "oliver_6",
@@ -12018,7 +12301,9 @@
               }
             },
             "effects": [],
-            "descriptionRequirements": [],
+            "descriptionRequirements": [
+              "Requirement_Day_17to21Winter"
+            ],
             "requirements": {
               "key": "oliver_7",
               "type": "And",
@@ -12081,7 +12366,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Day_NoTuesday"
+              "Requirement_Day_NoTuesday",
+              "Requirement_Day_17to21Winter"
             ],
             "requirements": {
               "key": "oliver_8",
@@ -12137,7 +12423,9 @@
               }
             },
             "effects": [],
-            "descriptionRequirements": [],
+            "descriptionRequirements": [
+              "Requirement_Day_17to21Winter"
+            ],
             "requirements": {
               "key": "oliver_10",
               "type": "And",
@@ -12393,7 +12681,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Day_17to21Winter"
             ],
             "requirements": {
               "key": "pablo_10",
@@ -12489,8 +12778,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ]
           },
           {
@@ -12525,8 +12814,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ]
           }
         ]
@@ -12565,8 +12854,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ]
           }
         ]
@@ -12683,8 +12972,31 @@
             },
             "effects": [],
             "descriptionRequirements": [
+              "Requirement_Day_15to28Fall",
               "Requirement_Season_NoWinter"
-            ]
+            ],
+            "requirements": {
+              "key": "paul_7",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -12724,8 +13036,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ]
           }
         ]
@@ -12766,8 +13078,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ]
           }
         ]
@@ -12836,7 +13148,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Weather_SunnyWindy"
+              "Requirement_Weather_SunnyWindy",
+              "Requirement_Day_17to21Winter"
             ],
             "requirements": {
               "key": "Miranjani_4A",
@@ -13003,8 +13316,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ]
           },
           {
@@ -13039,8 +13352,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ]
           }
         ]
@@ -13482,8 +13795,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ]
           }
         ]
@@ -13583,6 +13896,409 @@
               },
               "toTime": {
                 "hours": 17,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "descriptionRequirements": []
+          }
+        ]
+      }
+    ],
+    "raina": [
+      {
+        "npc": "Raina",
+        "heartLevel": 2,
+        "trigger": [
+          {
+            "id": "Raina_2",
+            "location": "Location_RainaRoom",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Raina_Heart_2",
+            "enabled": true,
+            "otherCutscenesState": [],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 20,
+                "minutes": 0
+              }
+            },
+            "effects": [
+              {
+                "type": "SetQuestActive",
+                "meta": {
+                  "questId": "raina_2_helper_quest"
+                }
+              }
+            ],
+            "descriptionRequirements": []
+          }
+        ]
+      },
+      {
+        "npc": "Raina",
+        "heartLevel": 4,
+        "trigger": [
+          {
+            "id": "Raina_4",
+            "location": "Location_CoralInn",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Raina_Heart_4",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Raina_Heart_2": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 20,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "descriptionRequirements": []
+          }
+        ]
+      },
+      {
+        "npc": "Raina",
+        "heartLevel": 6,
+        "trigger": [
+          {
+            "id": "Raina_6",
+            "location": "Location_RainaRoom",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Raina_Heart_6",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Raina_Heart_4": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 20,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "descriptionRequirements": []
+          }
+        ]
+      },
+      {
+        "npc": "Raina",
+        "heartLevel": 8,
+        "trigger": [
+          {
+            "id": "Raina_8",
+            "location": "Location_RainaRoom",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Raina_Heart_8",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Raina_Heart_6": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 20,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "descriptionRequirements": []
+          }
+        ]
+      },
+      {
+        "npc": "Raina",
+        "heartLevel": 9,
+        "trigger": [
+          {
+            "id": "Raina_9a",
+            "location": "Location_CoralInn",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Raina_Heart_9",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Raina_Heart_8": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 20,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "descriptionRequirements": []
+          },
+          {
+            "id": "Raina_9b",
+            "location": "Location_CoralInn",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Raina_Heart_9b",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Raina_Heart_9": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 20,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "descriptionRequirements": []
+          }
+        ]
+      },
+      {
+        "npc": "Raina",
+        "heartLevel": 10,
+        "trigger": [
+          {
+            "id": "Raina_10a",
+            "location": "Location_CoralInnKitchen",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Raina_Heart_10",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Raina_Heart_9b": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 7,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 20,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "descriptionRequirements": []
+          },
+          {
+            "id": "Raina_10b",
+            "location": "Location_BeachWest",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Raina_Heart_10b",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Raina_Heart_10": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 18,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 22,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "descriptionRequirements": [
+              "Requirement_Weather_Sunny"
+            ]
+          }
+        ]
+      },
+      {
+        "npc": "Raina",
+        "heartLevel": 12,
+        "trigger": [
+          {
+            "id": "Raina_12",
+            "location": "Location_RajCoffee",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Raina_Heart_12",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Raina_Heart_10b": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 8,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 18,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "descriptionRequirements": [
+              "Requirement_Weather_SunnyWindy"
+            ]
+          }
+        ]
+      },
+      {
+        "npc": "Raina",
+        "heartLevel": 13,
+        "trigger": [
+          {
+            "id": "Raina_13",
+            "location": "Location_PlayerHome",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Raina_Heart_13",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Raina_Heart_12": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 6,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 11,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "descriptionRequirements": []
+          }
+        ]
+      },
+      {
+        "npc": "Raina",
+        "heartLevel": 14,
+        "trigger": [
+          {
+            "id": "Raina_14",
+            "location": "Location_RajCoffee",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Raina_Heart_14",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Raina_Heart_13": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
+            "time": {
+              "fromTime": {
+                "hours": 8,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 18,
+                "minutes": 0
+              }
+            },
+            "effects": [],
+            "descriptionRequirements": [
+              "Requirement_Weather_SunnyWindy"
+            ]
+          }
+        ]
+      },
+      {
+        "npc": "Raina",
+        "heartLevel": 15,
+        "trigger": [
+          {
+            "id": "Raina_15",
+            "location": "Location_PlayerHome",
+            "canTriggerSameDay": false,
+            "cutscene": "HS_Raina_Heart_15",
+            "enabled": true,
+            "otherCutscenesState": [
+              {
+                "HS_Raina_Heart_14": true
+              }
+            ],
+            "specificDay": [],
+            "specificMonth": [],
+            "specificWeather": [],
+            "time": {
+              "fromTime": {
+                "hours": 18,
+                "minutes": 0
+              },
+              "toTime": {
+                "hours": 22,
                 "minutes": 0
               }
             },
@@ -13833,7 +14549,9 @@
               }
             },
             "effects": [],
-            "descriptionRequirements": []
+            "descriptionRequirements": [
+              "Requirement_Weather_SunnyWindy"
+            ]
           },
           {
             "id": "raj_8b",
@@ -13863,7 +14581,9 @@
               }
             },
             "effects": [],
-            "descriptionRequirements": []
+            "descriptionRequirements": [
+              "Requirement_Weather_SunnyWindy"
+            ]
           }
         ]
       },
@@ -14123,7 +14843,31 @@
               }
             },
             "effects": [],
-            "descriptionRequirements": []
+            "descriptionRequirements": [
+              "Requirement_Day_15to28Fall"
+            ],
+            "requirements": {
+              "key": "sam_2",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -14372,7 +15116,7 @@
         "trigger": [
           {
             "id": "scott_10",
-            "location": "Museum",
+            "location": "E875F44C466B9B9B45A894835B98196C",
             "canTriggerSameDay": false,
             "cutscene": "HS_Scott_Heart_10",
             "enabled": true,
@@ -14558,7 +15302,9 @@
               }
             },
             "effects": [],
-            "descriptionRequirements": [],
+            "descriptionRequirements": [
+              "Requirement_Day_17to21Winter"
+            ],
             "requirements": {
               "key": "Semeru_8",
               "type": "And",
@@ -14620,8 +15366,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ],
             "requirements": {
               "key": "Semeru_10",
@@ -14684,8 +15430,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_SpringSummer",
-              "Requirement_Weather_SunnyWindy"
+              "Requirement_Weather_SunnyWindy",
+              "Requirement_Season_SpringSummer"
             ]
           }
         ]
@@ -14868,8 +15614,31 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Weather_Sunny"
-            ]
+              "Requirement_Weather_Sunny",
+              "Requirement_Day_15to28Fall"
+            ],
+            "requirements": {
+              "key": "suki_2",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -14907,8 +15676,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Day_Thursday",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Day_Thursday"
             ]
           }
         ]
@@ -14950,8 +15719,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Day_MondayToThursday",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Day_MondayToThursday"
             ]
           }
         ]
@@ -15027,8 +15796,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Day_Thursday",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Day_Thursday"
             ]
           },
           {
@@ -15064,8 +15833,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Day_MondayToThursday",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Day_MondayToThursday"
             ]
           }
         ]
@@ -15567,8 +16336,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ],
             "requirements": {
               "key": "surya_10",
@@ -15824,8 +16593,31 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Weather_Sunny"
-            ]
+              "Requirement_Weather_Sunny",
+              "Requirement_Day_15to28Fall"
+            ],
+            "requirements": {
+              "key": "theo_3",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -15835,7 +16627,7 @@
         "trigger": [
           {
             "id": "theo_4",
-            "location": "Location_DumpArea",
+            "location": "Location_RecyclingCenter",
             "canTriggerSameDay": true,
             "cutscene": "HS_Theo_Heart_4",
             "enabled": true,
@@ -16053,7 +16845,31 @@
               }
             },
             "effects": [],
-            "descriptionRequirements": []
+            "descriptionRequirements": [
+              "Requirement_Day_15to28Fall"
+            ],
+            "requirements": {
+              "key": "theo_8b",
+              "type": "And",
+              "requirements": [
+                {
+                  "type": "DateSeasonRange",
+                  "meta": {
+                    "inverted": true,
+                    "from": {
+                      "day": 15,
+                      "season": "Fall",
+                      "year": -1
+                    },
+                    "to": {
+                      "day": 28,
+                      "season": "Fall",
+                      "year": -1
+                    }
+                  }
+                }
+              ]
+            }
           }
         ]
       },
@@ -16185,8 +17001,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_SpringSummer",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_SpringSummer"
             ]
           }
         ]
@@ -16258,8 +17074,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ],
             "requirements": {
               "key": "valentina_6",
@@ -16516,8 +17332,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Day_NoSaturdaySunday",
-              "Requirement_Weather_SunnyWindy"
+              "Requirement_Weather_SunnyWindy",
+              "Requirement_Day_NoSaturdaySunday"
             ]
           }
         ]
@@ -16727,8 +17543,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ]
           },
           {
@@ -16763,8 +17579,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ]
           }
         ]
@@ -16934,7 +17750,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Day_NoTuesday"
+              "Requirement_Day_NoTuesday",
+              "Requirement_Day_17to21Winter"
             ],
             "requirements": {
               "key": "wataru_4",
@@ -17484,7 +18301,10 @@
             ],
             "specificDay": [],
             "specificMonth": [],
-            "specificWeather": [],
+            "specificWeather": [
+              "Sunny",
+              "Windy"
+            ],
             "time": {
               "fromTime": {
                 "hours": 6,
@@ -17496,7 +18316,9 @@
               }
             },
             "effects": [],
-            "descriptionRequirements": []
+            "descriptionRequirements": [
+              "Requirement_Weather_SunnyWindy"
+            ]
           },
           {
             "id": "yuri_8b",
@@ -17523,7 +18345,9 @@
               }
             },
             "effects": [],
-            "descriptionRequirements": [],
+            "descriptionRequirements": [
+              "Requirement_Day_17to21Winter"
+            ],
             "requirements": {
               "key": "yuri_8b",
               "type": "And",
@@ -17642,8 +18466,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Day_NoSunday",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Day_NoSunday"
             ]
           }
         ]
@@ -17688,8 +18512,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Day_NoSunday",
-              "Requirement_Weather_SunnyWindy"
+              "Requirement_Weather_SunnyWindy",
+              "Requirement_Day_NoSunday"
             ]
           }
         ]
@@ -17862,7 +18686,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Quest_Zarah_6"
             ],
             "requirements": {
               "key": "zarah_6B",
@@ -17997,7 +18822,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Day_17to21Winter"
             ],
             "requirements": {
               "key": "zarah_10",
@@ -18098,8 +18924,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ]
           }
         ]
@@ -18208,8 +19034,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Season_NoWinter",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Season_NoWinter"
             ],
             "requirements": {
               "key": "zoe_6",
@@ -18303,8 +19129,8 @@
             },
             "effects": [],
             "descriptionRequirements": [
-              "Requirement_Day_Saturday",
-              "Requirement_Weather_Sunny"
+              "Requirement_Weather_Sunny",
+              "Requirement_Day_Saturday"
             ]
           }
         ]
@@ -18325,7 +19151,11 @@
               }
             ],
             "specificDay": [],
-            "specificMonth": [],
+            "specificMonth": [
+              "Spring",
+              "Summer",
+              "Fall"
+            ],
             "specificWeather": [],
             "time": {
               "fromTime": {
@@ -18338,7 +19168,9 @@
               }
             },
             "effects": [],
-            "descriptionRequirements": []
+            "descriptionRequirements": [
+              "Requirement_Season_NoWinter"
+            ]
           }
         ]
       }

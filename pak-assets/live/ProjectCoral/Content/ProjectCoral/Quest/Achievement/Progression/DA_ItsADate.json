@@ -1,0 +1,52 @@
+[
+  {
+    "Type": "C_Quest",
+    "Name": "DA_ItsADate",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_ItsADate",
+      "isSharedQuest": false,
+      "tags": [
+        "quest.type.hidden"
+      ],
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_ItsADate:C_QuestStep_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Progression/DA_ItsADate.1"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_0",
+    "Outer": "DA_ItsADate",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "checkState",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_RelationshipStatusCondition'DA_ItsADate:C_QuestStep_0.C_RelationshipStatusCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Progression/DA_ItsADate.2"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Type": "C_RelationshipStatusCondition",
+    "Name": "C_RelationshipStatusCondition_0",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_RelationshipStatusCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "requiredStatus": "EC_RelationshipStatus::DATE",
+      "compareType": "EC_CompareType::GREATER_EQUAL",
+      "onlyCheckOnChange": false,
+      "conditionId": "C_RelationshipStatusCondition_0"
+    }
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "Type": "C_ItemShippedCondition",
+    "Name": "C_ItemShippedCondition_0",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_ItemShippedCondition'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "useDTRequirement": true,
+      "countUnique": true,
+      "uniqueByBaseId": true,
+      "itemTags": [
+        "item.crop"
+      ],
+      "requiredShippedItemDT": {
+        "ObjectName": "DataTable'DT_JournalCrops'",
+        "ObjectPath": "ProjectCoral/Content/ProjectCoral/Data/Journal/Produce/DT_JournalCrops.0"
+      },
+      "retroactive": true,
+      "requireTags": [
+        "event.player.ship"
+      ],
+      "questOwnerOnly": true,
+      "requiredProgress": 74,
+      "conditionId": "shipCheck",
+      "shouldDebug": true
+    }
+  },
+  {
+    "Type": "C_Quest",
+    "Name": "DA_ShipCropsAll",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_ShipCropsAll",
+      "isSharedQuest": false,
+      "tags": [
+        "quest.type.hidden"
+      ],
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_ShipCropsAll:C_QuestStep_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Shipping/DA_ShipCropsAll.2"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_0",
+    "Outer": "DA_ShipCropsAll",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "checkState",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_ItemShippedCondition'DA_ShipCropsAll:C_QuestStep_0.C_ItemShippedCondition_0'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/Shipping/DA_ShipCropsAll.0"
+          }
+        ]
+      }
+    }
+  }
+]

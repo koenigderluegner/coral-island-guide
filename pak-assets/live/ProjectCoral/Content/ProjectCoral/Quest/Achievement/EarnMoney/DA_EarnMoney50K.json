@@ -1,0 +1,52 @@
+[
+  {
+    "Type": "C_IncomeCondition",
+    "Name": "C_IncomeCondition_1",
+    "Outer": "C_QuestStep_0",
+    "Class": "UScriptClass'C_IncomeCondition'",
+    "Flags": "RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "requiredIncome": 50000,
+      "checkProgression": true,
+      "evaluateOnRegister": false,
+      "conditionId": "earnMoney"
+    }
+  },
+  {
+    "Type": "C_Quest",
+    "Name": "DA_EarnMoney50K",
+    "Class": "UScriptClass'C_Quest'",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "questId": "DA_EarnMoney50K",
+      "isSharedQuest": false,
+      "tags": [
+        "quest.type.hidden"
+      ],
+      "questStepList": [
+        {
+          "ObjectName": "C_QuestStep'DA_EarnMoney50K:C_QuestStep_0'",
+          "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/EarnMoney/DA_EarnMoney50K.2"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "C_QuestStep",
+    "Name": "C_QuestStep_0",
+    "Outer": "DA_EarnMoney50K",
+    "Class": "UScriptClass'C_QuestStep'",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Properties": {
+      "stateId": "IncomeState",
+      "entryConditionsList": {
+        "conditions": [
+          {
+            "ObjectName": "C_IncomeCondition'DA_EarnMoney50K:C_QuestStep_0.C_IncomeCondition_1'",
+            "ObjectPath": "ProjectCoral/Content/ProjectCoral/Quest/Achievement/EarnMoney/DA_EarnMoney50K.0"
+          }
+        ]
+      }
+    }
+  }
+]
