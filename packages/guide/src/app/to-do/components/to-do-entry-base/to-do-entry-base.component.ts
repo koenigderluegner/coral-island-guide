@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, input, OnInit, output, viewChild } from '@angular/core';
+import { Component, DestroyRef, inject, input, OnInit, output, viewChild, ChangeDetectionStrategy } from '@angular/core';
 import { Quality } from "@ci/data-types";
 import { ToDoService } from "../../../core/services/to-do.service";
 import { filter } from "rxjs";
@@ -21,6 +21,7 @@ import { TranslatePipe } from "@ngx-translate/core";
         TranslatePipe
     ],
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     host: {
         '[class.opacity-50]': 'isChecked'
     }

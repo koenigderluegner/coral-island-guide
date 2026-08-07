@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, input, ViewEncapsulation } from '@angular/core';
+import { booleanAttribute, Component, input, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { Item, Quality } from '@ci/data-types';
 import { MoneyComponent } from "../money/money.component";
 import { ItemIconComponent } from "../item-icon/item-icon.component";
@@ -13,6 +13,7 @@ import { ItemIconComponent } from "../item-icon/item-icon.component";
         '[class.!grid-cols-1]': 'showOnlyBase()',
     },
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         MoneyComponent,
         ItemIconComponent

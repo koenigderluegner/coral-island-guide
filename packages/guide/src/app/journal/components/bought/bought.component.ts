@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { type MinimalItem, UiIcon } from '@ci/data-types';
 import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
 import { DatabaseItemDetailsComponent } from "../../../shared/components/database-item-details/database-item-details.component";
@@ -15,6 +15,7 @@ import { tap } from "rxjs";
     selector: 'app-bought',
     templateUrl: './bought.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ListDetailContainerComponent,
         DatabaseItemDetailsComponent,

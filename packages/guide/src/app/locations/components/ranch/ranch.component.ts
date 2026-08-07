@@ -1,4 +1,4 @@
-import { Component, computed } from '@angular/core';
+import { Component, computed, ChangeDetectionStrategy } from '@angular/core';
 import { BaseShopComponent } from "../base-shop/base-shop.component";
 import { ShopItemData, ShopName } from "@ci/data-types";
 import { MappedAnimalShopData } from "../../types/mapped-animal-shop-data.type";
@@ -19,6 +19,7 @@ import { merge } from "../../../shared/util/http-resource-merge";
     selector: 'app-ranch',
     templateUrl: './ranch.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ShopItemDataDetailsComponent,
         ListDetailContainerComponent,

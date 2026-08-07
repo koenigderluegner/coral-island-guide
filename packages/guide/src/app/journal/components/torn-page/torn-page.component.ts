@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { TornPageData } from "@ci/data-types";
 import { TranslatePipe } from '@ngx-translate/core';
 
@@ -6,6 +6,7 @@ import { TranslatePipe } from '@ngx-translate/core';
     selector: 'app-torn-page',
     templateUrl: './torn-page.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         TranslatePipe
     ]

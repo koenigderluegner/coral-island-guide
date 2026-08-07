@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, inject, input } from '@angular/core';
+import { booleanAttribute, Component, inject, input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ItemProcessing } from "@ci/data-types";
 import { DatabaseService } from "../../../services/database.service";
@@ -26,6 +26,7 @@ import { TranslatePipe } from "@ngx-translate/core";
         ItemIconComponent,
         TranslatePipe
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './processing.component.html'
 })
 export class ProcessingComponent {

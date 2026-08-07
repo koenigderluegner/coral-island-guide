@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject, OnDestroy, viewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnDestroy, viewChild, ChangeDetectionStrategy } from '@angular/core';
 import { BaseCrop, Fish, JournalOrder, MinimalItem, UiIcon } from '@ci/data-types';
 import { combineLatest, map, Observable, of, startWith } from 'rxjs';
 import { MediaMatcher } from '@angular/cdk/layout';
@@ -16,6 +16,7 @@ export interface BaseJournalPageComponent<D> {
 }
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.Eager,
     template: '',
 
 })

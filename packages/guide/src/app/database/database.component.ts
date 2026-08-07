@@ -1,12 +1,13 @@
 import {
-    afterNextRender,
-    ApplicationRef,
-    Component,
-    ComponentRef,
-    createComponent,
-    EnvironmentInjector,
-    inject,
-    runInInjectionContext
+  afterNextRender,
+  ApplicationRef,
+  Component,
+  ComponentRef,
+  createComponent,
+  EnvironmentInjector,
+  inject,
+  runInInjectionContext,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DatabaseService } from '../shared/services/database.service';
@@ -29,6 +30,7 @@ import { TranslateService } from "@ngx-translate/core";
     selector: 'app-database',
     templateUrl: './database.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         MatLabel,
         MatFormField,

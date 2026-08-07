@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { BaseSelectableContainerComponent } from "../../../shared/components/base-selectable-container/base-selectable-container.component";
 import { OpeningHours, ShopDisplayNames, ShopIcons, ShopItemData, ShopName, UiIcon } from "@ci/data-types";
 import { Observable } from "rxjs";
@@ -7,6 +7,7 @@ import { HttpResourceRef } from "@angular/common/http";
 @Component({
     selector: 'app-base-furniture-store',
     imports: [],
+    changeDetection: ChangeDetectionStrategy.Eager,
     template: ''
 })
 export abstract class BaseFurnitureStoreComponent extends BaseSelectableContainerComponent<ShopItemData> {

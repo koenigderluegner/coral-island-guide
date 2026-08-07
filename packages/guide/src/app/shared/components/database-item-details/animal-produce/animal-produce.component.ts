@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, input } from '@angular/core';
+import { booleanAttribute, Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DatabaseItem } from "@ci/data-types";
 import { AddSpacesToPascalCasePipe } from "../../../pipes/add-spaces-to-pascal-case.pipe";
@@ -9,6 +9,7 @@ import { TranslatePipe } from "@ngx-translate/core";
 @Component({
     selector: 'app-animal-produce',
     imports: [CommonModule, AddSpacesToPascalCasePipe, ItemIconComponent, IsMinimalItemPipe, TranslatePipe],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './animal-produce.component.html'
 })
 export class AnimalProduceComponent {

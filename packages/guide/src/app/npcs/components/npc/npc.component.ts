@@ -1,4 +1,4 @@
-import { Component, computed, inject, input, OnInit, signal, ViewEncapsulation } from '@angular/core';
+import { Component, computed, inject, input, OnInit, signal, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { GiftPreferences, HeartEvent, MinimalItem, NPC, UiIcon } from "@ci/data-types";
 import { combineLatest } from "rxjs";
 import { MapKeyed } from "../../../shared/types/map-keyed.type";
@@ -28,6 +28,7 @@ import { AddSpacesToPascalCasePipe } from "../../../shared/pipes/add-spaces-to-p
     styleUrls: ['./npc.component.scss'],
     encapsulation: ViewEncapsulation.None,
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ListDetailContainerComponent,
         ItemCardSwitchComponent,

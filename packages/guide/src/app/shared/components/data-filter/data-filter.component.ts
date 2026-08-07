@@ -1,4 +1,4 @@
-import { Component, input, model } from '@angular/core';
+import { Component, input, model, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from "@angular/forms";
 import { Seasons, Weathers } from "@ci/data-types";
 import { FilterForm } from "../../types/filter-form.type";
@@ -19,6 +19,7 @@ import { MultiSelectTriggerComponent } from "../multi-select-trigger/multi-selec
         MultiSelectTriggerComponent
     ],
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     host: {
         'class': 'my-3 flex gap-x-3 gap-y-4 flex-wrap'
     }

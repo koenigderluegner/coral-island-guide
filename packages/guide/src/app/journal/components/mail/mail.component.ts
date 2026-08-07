@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, input, ChangeDetectionStrategy } from '@angular/core';
 import { MailData } from "@ci/data-types";
 import { TranslatePipe } from '@ngx-translate/core';
 
@@ -11,6 +11,7 @@ import { TranslatePipe } from '@ngx-translate/core';
     }
   `],
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         TranslatePipe
     ]

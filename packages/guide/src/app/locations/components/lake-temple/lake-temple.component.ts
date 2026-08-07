@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { MinimalItem, MinimalTagBasedItem, OfferingAltar } from "@ci/data-types";
 import { map, Observable } from "rxjs";
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
@@ -15,6 +15,7 @@ import { TranslatePipe } from "@ngx-translate/core";
 @Component({
     selector: 'app-lake-temple',
     templateUrl: './lake-temple.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         MatTabGroup,
         ItemCardSwitchComponent,

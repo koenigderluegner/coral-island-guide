@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Critter, Fish, Season, Seasons, Weather, Weathers } from '@ci/data-types';
 import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page.component';
 import { getTruthyValues } from '@ci/util';
@@ -16,6 +16,7 @@ import { AsyncPipe } from "@angular/common";
     selector: 'app-caught',
     templateUrl: './caught.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ListDetailContainerComponent,
         CaughtDetailsComponent,

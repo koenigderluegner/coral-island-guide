@@ -1,4 +1,4 @@
-import { Component, inject, input, ViewEncapsulation } from '@angular/core';
+import { Component, inject, input, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { UiIcon } from '@ci/data-types';
 import { GameVersionService } from "../../../core/injection-tokens/version.injection-token";
 import { MaskedImageComponent } from "../../masked-image/masked-image.component";
@@ -11,6 +11,7 @@ import { MaskedImageComponent } from "../../masked-image/masked-image.component"
     imports: [
         MaskedImageComponent
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     host: {
         'class': 'app-ui-icon'
     }

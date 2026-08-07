@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { BaseCrop } from "@ci/data-types";
 import { MatTableModule } from "@angular/material/table";
@@ -13,6 +13,7 @@ import { TranslatePipe } from "@ngx-translate/core";
     selector: 'app-crop-table',
     templateUrl: './crop-table.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ResponsiveTableComponent,
         ItemIconComponent,

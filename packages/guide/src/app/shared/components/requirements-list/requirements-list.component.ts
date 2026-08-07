@@ -1,10 +1,11 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { RequirementEntry } from "@ci/data-types";
 import { RequirementsComponent } from "../requirements/requirements.component";
 
 @Component({
     selector: 'app-requirements-list',
     templateUrl: './requirements-list.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         RequirementsComponent
     ]

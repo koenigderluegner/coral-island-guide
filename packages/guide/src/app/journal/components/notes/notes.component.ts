@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
 import { MailData, TornPageData, TreasureHunt, UiIcon } from "@ci/data-types";
 import { combineLatest, Observable, tap } from "rxjs";
@@ -19,6 +19,7 @@ import { TornPagesTableComponent } from "../tables/torn-pages-table/torn-pages-t
     selector: 'app-notes',
     templateUrl: './notes.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ItemIconComponent,
         DataFilterComponent,

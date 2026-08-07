@@ -1,4 +1,4 @@
-import { Component, effect } from '@angular/core';
+import { Component, effect, ChangeDetectionStrategy } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { ItemUpgradeData } from "@ci/data-types";
 import { MoneyComponent } from "../../../../shared/components/money/money.component";
@@ -15,6 +15,7 @@ import { TranslatePipe } from "@ngx-translate/core";
     selector: 'app-item-upgrade-table',
     templateUrl: './item-upgrade-table.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         MoneyComponent,
         TableItemListComponent,

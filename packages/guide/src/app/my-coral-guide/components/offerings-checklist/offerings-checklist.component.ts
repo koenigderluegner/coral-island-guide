@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
 import { MinimalItem, MinimalTagBasedItem, Offering, OfferingAltar, Offerings } from "@ci/data-types";
 import { map, Observable } from "rxjs";
@@ -22,6 +22,7 @@ import { TranslatePipe } from "@ngx-translate/core";
     selector: 'app-offerings-checklist',
     templateUrl: './offerings-checklist.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         MatTab,
         AddSpacesToPascalCasePipe,

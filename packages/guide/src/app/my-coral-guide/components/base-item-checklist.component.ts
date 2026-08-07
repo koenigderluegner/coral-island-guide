@@ -1,12 +1,13 @@
 import { BaseTabbedSelectableContainerComponent } from "../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
 import { FormControl, FormRecord } from "@angular/forms";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { Observable, take, tap } from "rxjs";
 import { MinimalItem } from "@ci/data-types";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { BaseChecklistService } from "../../core/services/checklists/base-checklist.service";
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.Eager,
     template: '',
 
 })

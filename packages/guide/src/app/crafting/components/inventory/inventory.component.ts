@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CraftingRecipe } from '@ci/data-types';
 import { Observable } from 'rxjs';
 import { BaseSelectableContainerComponent } from "../../../shared/components/base-selectable-container/base-selectable-container.component";
@@ -14,6 +14,7 @@ import { ListDetailContainerComponent } from "../../../shared/components/list-de
     selector: 'app-inventory',
     templateUrl: './inventory.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         InventoryTableComponent,
         ItemIconComponent,

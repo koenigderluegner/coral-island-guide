@@ -1,4 +1,4 @@
-import { Component, effect } from '@angular/core';
+import { Component, effect, ChangeDetectionStrategy } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { ItemProcessShopData } from "@ci/data-types";
 import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
@@ -13,6 +13,7 @@ import { TranslatePipe } from "@ngx-translate/core";
     selector: 'app-shop-item-process-table',
     templateUrl: './shop-item-process-table.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ResponsiveTableComponent,
         MatTableModule,

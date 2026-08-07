@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { Crop, FruitPlant, FruitTree, MinimalItem } from '@ci/data-types';
 import { ToDoContext } from "../../../core/types/to-do-context.type";
 import { ProcessingComponent } from "../../../shared/components/database-item-details/processing/processing.component";
@@ -12,6 +12,7 @@ import { IsBaseCropPipe } from "../../../shared/pipes/is-base-crop.pipe";
     selector: 'app-produce-details',
     templateUrl: './produce-details.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ProcessingComponent,
         AnimalProduceComponent,

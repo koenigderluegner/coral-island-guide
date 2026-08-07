@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { UiIcon } from "@ci/data-types";
 import { SidebarContainerComponent } from "../shared/components/sidebar-container/sidebar-container.component";
 import { ModuleSidebarItemComponent } from "../shared/components/module-sidebar-item/module-sidebar-item.component";
@@ -9,6 +9,7 @@ import { ModuleSidebarComponent } from "../shared/components/module-sidebar/modu
     selector: 'app-my-coral-guide',
     templateUrl: './my-coral-guide.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         SidebarContainerComponent,
         ModuleSidebarComponent,

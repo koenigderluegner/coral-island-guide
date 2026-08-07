@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.component";
 import { ExpandableComponent } from "../../../shared/components/expandable/expandable.component";
 import { DatabaseHeaderButtonComponent } from "../database-header-button/database-header-button.component";
@@ -9,6 +9,7 @@ import { CookingTableComponent } from "../../../crafting/components/tables/cooki
     templateUrl: './database-cooking.component.html',
     encapsulation: ViewEncapsulation.None,
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ExpandableComponent,
         DatabaseHeaderButtonComponent,

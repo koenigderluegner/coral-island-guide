@@ -1,4 +1,4 @@
-import { Component, inject, input, ViewEncapsulation } from '@angular/core';
+import { Component, inject, input, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { SettingsService } from '../../services/settings.service';
 import { GameVersionService } from "../../../core/injection-tokens/version.injection-token";
 
@@ -7,6 +7,7 @@ import { GameVersionService } from "../../../core/injection-tokens/version.injec
     templateUrl: './npc-portrait.component.html',
     encapsulation: ViewEncapsulation.None,
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     host: {
         'class': 'npc-portrait'
     }

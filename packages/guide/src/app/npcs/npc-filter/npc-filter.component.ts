@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { NpcSortValues, sortOptions } from "../npc-sort-options.const";
 import { MatFormField, MatLabel } from "@angular/material/form-field";
 import { MatInput } from "@angular/material/input";
@@ -10,6 +10,7 @@ import { toSignal } from "@angular/core/rxjs-interop";
 @Component({
     selector: 'app-npc-filter',
     imports: [MatFormField, MatInput, MatLabel, MatOption, MatSelect, ReactiveFormsModule],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './npc-filter.component.html'
 })
 export class NpcFilterComponent {

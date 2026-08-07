@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'app-responsive-table',
@@ -6,6 +6,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
     styleUrls: ['./responsive-table.component.scss'],
     encapsulation: ViewEncapsulation.None,
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     host: {
         'class': 'app-responsive-table'
     }

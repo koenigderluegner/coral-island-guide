@@ -3,7 +3,7 @@
         <table [dataSource]="matDataSource" mat-table matSort>
             <ng-container matColumnDef="icon" sticky>
                 <td *matCellDef="let element" class="!pl-2 !pr-0  w-10 text-center icon-col " mat-cell>
-                    <app-item-icon [itemName]="element.item?.iconName"/>
+                    <app-item-icon [itemName]="$safeNavigationMigration(element.item?.iconName)"/>
                 </td>
             </ng-container>
 
@@ -12,7 +12,7 @@
                     Output
                 </th>
                 <td *matCellDef="let element" class="text-col whitespace-nowrap"
-                    mat-cell>{{ element.item?.displayName | translate }}
+                    mat-cell>{{ $safeNavigationMigration(element.item?.displayName) | translate }}
                     ({{ element.amount }})
                 </td>
             </ng-container>

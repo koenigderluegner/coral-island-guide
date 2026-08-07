@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { Effect, EffectMetaForType, MinimalItem } from '@ci/data-types';
 import { ItemIconComponent } from '../item-icon/item-icon.component';
 import { MoneyComponent } from '../money/money.component';
@@ -8,6 +8,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 @Component({
     selector: 'app-effect',
     templateUrl: './effect.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [ItemIconComponent, MoneyComponent, RouterLink, TranslatePipe],
 })
 export class EffectComponent {

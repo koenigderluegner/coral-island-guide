@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { MailData } from "@ci/data-types";
 import { SelectionModel } from "@angular/cdk/collections";
@@ -22,6 +22,7 @@ import { TranslatePipe } from "@ngx-translate/core";
         }
     `],
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ResponsiveTableComponent,
         RemoveTagsPipe,

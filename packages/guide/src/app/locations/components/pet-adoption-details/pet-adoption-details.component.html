@@ -6,7 +6,7 @@
                           cardIcon/>
     }
 
-    <div class="text-black text-2xl">{{ npc?.characterName | translate }}</div>
+    <div class="text-black text-2xl">{{ $safeNavigationMigration(npc?.characterName) | translate }}</div>
     <hr class="my-5"/>
     <span class="text-lg mb-6">{{ adoption().description  | translate }}</span>
     <div>Price:

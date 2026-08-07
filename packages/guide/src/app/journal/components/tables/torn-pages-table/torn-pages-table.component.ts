@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { TornPageData } from "@ci/data-types";
 import { SelectionModel } from "@angular/cdk/collections";
@@ -18,6 +18,7 @@ import { ResponsiveTableComponent } from "../../../../shared/components/responsi
         }
     `],
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         MailComponent,
         ResponsiveTableComponent,

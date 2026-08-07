@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, Signal, signal, untracked } from '@angular/core';
+import { Component, computed, effect, inject, Signal, signal, untracked, ChangeDetectionStrategy } from '@angular/core';
 import { DashboardService } from "../../services/dashboard.service";
 import { forkJoin, map, Observable, tap } from "rxjs";
 import {
@@ -35,6 +35,7 @@ import { UserDataActionsComponent } from "../../user-data-actions/user-data-acti
     selector: 'app-index',
     templateUrl: './index.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         BirthdayDashboardComponent,
         ListDetailContainerComponent,

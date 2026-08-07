@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Consumable, CookingRecipe, Quality } from "@ci/data-types";
 import { combineLatest, map, Observable, take, tap } from "rxjs";
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
@@ -19,6 +19,7 @@ import { TranslatePipe } from "@ngx-translate/core";
     selector: 'app-cooking',
     templateUrl: './cooking.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         CookingTableComponent,
         ItemIconComponent,

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Enemy } from "@ci/data-types";
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
@@ -12,6 +12,7 @@ import { TranslatePipe } from "@ngx-translate/core";
     selector: 'app-bestiary-table',
     templateUrl: './bestiary-table.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ResponsiveTableComponent,
         ItemIconComponent,

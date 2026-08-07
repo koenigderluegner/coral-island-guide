@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { ItemUpgradeData } from "@ci/data-types";
 import { ItemListComponent } from "../../../shared/components/item-list/item-list.component";
 import { MoneyComponent } from "../../../shared/components/money/money.component";
@@ -9,6 +9,7 @@ import { TownrankPipe } from "../../../shared/pipes/townrank.pipe";
     selector: 'app-item-upgrade-details',
     templateUrl: './item-upgrade-details.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ItemListComponent,
         MoneyComponent,

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { GenericEntry, ItemEntry } from '@ci/data-types';
 import { ItemIconComponent } from "../item-icon/item-icon.component";
 import { TranslatePipe } from "@ngx-translate/core";
@@ -8,6 +8,7 @@ import { TranslatePipe } from "@ngx-translate/core";
     selector: 'app-item-list',
     templateUrl: './item-list.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ItemIconComponent,
         TranslatePipe

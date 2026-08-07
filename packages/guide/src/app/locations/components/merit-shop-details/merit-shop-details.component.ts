@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { MeritExchangeShopData } from "@ci/data-types";
 import { MeritPointsComponent } from "../../../shared/components/merit-points/merit-points.component";
 import { BaseItemCardComponent } from "../../../shared/components/base-item-card/base-item-card.component";
@@ -10,6 +10,7 @@ import { RequirementsComponent } from "../../../shared/components/requirements/r
     selector: 'app-merit-shop-details',
     templateUrl: './merit-shop-details.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         MeritPointsComponent,
         BaseItemCardComponent,

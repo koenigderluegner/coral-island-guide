@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { UserData } from "../../../core/types/user-data.type";
 import {
     MAT_DIALOG_DATA,
@@ -19,6 +19,7 @@ import { UiIcon } from "@ci/data-types";
         MatDialogTitle,
         UiIconComponent
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './delete-dialog.component.html'
 })
 export class DeleteDialogComponent {

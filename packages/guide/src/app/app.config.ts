@@ -18,9 +18,9 @@ import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
 import { MAT_TABS_CONFIG, MatTabsConfig } from '@angular/material/tabs';
 import { PageTitleService } from './shared/services/page-title.service';
 import { provideGameVersion } from './core/injection-tokens/version.injection-token';
-import { HttpClient, provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withFetch, withInterceptors, withXhr } from '@angular/common/http';
 import { assetVersionInterceptor } from './core/interceptors/asset-version.interceptor';
-import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { provideClientHydration, withEventReplay, withNoIncrementalHydration } from '@angular/platform-browser';
 import { provideTranslateCompiler, provideTranslateService, TranslateLoader } from "@ngx-translate/core";
 import { TranslateMessageFormatCompiler } from "ngx-translate-messageformat-compiler";
 import { TranslationLoaderService } from "./shared/services/translation-loader.service";
@@ -33,7 +33,7 @@ const routerOptions: ExtraOptions = {
 
 export const appConfig: ApplicationConfig = {
     providers: [
-        provideClientHydration(withEventReplay()),
+        provideClientHydration(withEventReplay(), withNoIncrementalHydration()),
         provideRouter(
             appRoutes,
             withComponentInputBinding(),
@@ -62,7 +62,7 @@ export const appConfig: ApplicationConfig = {
         {provide: MAT_TABS_CONFIG, useValue: {animationDuration: '0', stretchTabs: false} satisfies MatTabsConfig},
         {provide: TitleStrategy, useClass: PageTitleService},
         provideHttpClient(withInterceptors([assetVersionInterceptor]), withFetch()),
-        provideHttpClient(),
+        provideHttpClient(withXhr()),
         provideTranslateService({
             loader: {
                 provide: TranslateLoader,

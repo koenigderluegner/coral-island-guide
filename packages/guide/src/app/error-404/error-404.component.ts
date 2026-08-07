@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from "@angular/router";
 import { CardComponent } from "../shared/components/card/card.component";
 
@@ -12,6 +12,7 @@ import { CardComponent } from "../shared/components/card/card.component";
     host: {
         'class': 'app-error container mx-auto my-10 block'
     },
+    changeDetection: ChangeDetectionStrategy.Eager,
     encapsulation: ViewEncapsulation.None
 })
 export class Error404Component {

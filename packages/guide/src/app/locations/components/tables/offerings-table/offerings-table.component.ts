@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, computed, input } from '@angular/core';
+import { booleanAttribute, Component, computed, input, ChangeDetectionStrategy } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { OfferingAltar } from "@ci/data-types";
 import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
@@ -12,6 +12,7 @@ import { TranslatePipe } from "@ngx-translate/core";
     selector: 'app-offerings-table',
     templateUrl: './offerings-table.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ResponsiveTableComponent,
         MatTableModule,

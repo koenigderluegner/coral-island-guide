@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { Quality, UiIcon } from "@ci/data-types";
 import { UiIconComponent } from "../ui-icon/ui-icon.component";
 import { RarityIconComponent } from "../rarity-icon/rarity-icon.component";
@@ -9,6 +9,7 @@ import { ProcessingTimeComponent } from "../processing-time/processing-time.comp
     templateUrl: './processing-time-per-quality.component.html',
     styleUrls: ['./processing-time-per-quality.component.scss'],
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         UiIconComponent,
         RarityIconComponent,

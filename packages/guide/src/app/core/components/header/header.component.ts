@@ -1,4 +1,4 @@
-import { Component, inject, ViewEncapsulation } from '@angular/core';
+import { Component, inject, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { UiIcon } from '@ci/data-types';
 import { NavigationStart, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { filter } from 'rxjs';
@@ -25,6 +25,7 @@ type NaviLinks = {
         CdkOverlayOrigin
     ],
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     host: {
         '[class.open-menu]': 'isOpen',
         'class': 'app-header'

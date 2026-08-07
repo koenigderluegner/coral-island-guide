@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, inject, input } from '@angular/core';
+import { booleanAttribute, Component, inject, input, ChangeDetectionStrategy } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { ItemProcessing } from "@ci/data-types";
 import { DatabaseService } from "../../../../shared/services/database.service";
@@ -19,6 +19,7 @@ import { TranslatePipe } from "@ngx-translate/core";
     selector: 'app-processor-table',
     templateUrl: './processor-table.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ProcessingTimeComponent,
         TitleCasePipe,

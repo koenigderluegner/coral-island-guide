@@ -1,4 +1,4 @@
-import { Component, DestroyRef, effect, inject, viewChild } from '@angular/core';
+import { Component, DestroyRef, effect, inject, viewChild, ChangeDetectionStrategy } from '@angular/core';
 import { DatabaseService } from "../../services/database.service";
 import { ActivatedRoute } from "@angular/router";
 import { take } from "rxjs";
@@ -11,6 +11,7 @@ export interface BaseSelectableContainerComponent<T> {
 }
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.Eager,
     template: '',
 
 })

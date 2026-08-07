@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { DatabaseItem } from "@ci/data-types";
 import { ShopProcessingResultComponent } from "../shop-processing-result/shop-processing-result.component";
 
@@ -7,6 +7,7 @@ import { ShopProcessingResultComponent } from "../shop-processing-result/shop-pr
     imports: [
         ShopProcessingResultComponent
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './db-item-found.component.html'
 })
 export class DbItemFoundComponent {

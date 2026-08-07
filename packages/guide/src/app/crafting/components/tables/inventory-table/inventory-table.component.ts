@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
 import { CraftingRecipe } from "@ci/data-types";
 import { TableItemListComponent } from "../../../../shared/components/table-item-list/table-item-list.component";
@@ -14,6 +14,7 @@ import { TranslatePipe } from "@ngx-translate/core";
     selector: 'app-inventory-table',
     templateUrl: './inventory-table.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         TableItemListComponent,
         CraftingRecipeIngredientsPipe,

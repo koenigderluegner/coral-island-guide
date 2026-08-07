@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { getTruthyValues } from "@ci/util";
 import { Fish, FishSpawnSettings } from '@ci/data-types';
 import { AddSpacesToPascalCasePipe } from "../../../pipes/add-spaces-to-pascal-case.pipe";
@@ -6,6 +6,7 @@ import { AddSpacesToPascalCasePipe } from "../../../pipes/add-spaces-to-pascal-c
 @Component({
     selector: 'app-fish',
     imports: [AddSpacesToPascalCasePipe],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './fish.component.html'
 })
 export class FishComponent {

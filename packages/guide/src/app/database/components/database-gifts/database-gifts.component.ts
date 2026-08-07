@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.component";
 import { MinimalNPC, preferencesMap } from "@ci/data-types";
 import { ExpandableComponent } from "../../../shared/components/expandable/expandable.component";
@@ -30,6 +30,7 @@ import { DatabaseHeaderButtonComponent } from "../database-header-button/databas
         DatabaseHeaderButtonComponent
     ],
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     host: {
         'class': 'database-gifts'
     }

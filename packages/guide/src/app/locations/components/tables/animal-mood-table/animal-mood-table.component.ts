@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { ProductSizeByMood } from "@ci/data-types";
 import { ResponsiveTableComponent } from "../../../../shared/components/responsive-table/responsive-table.component";
 import { MatTableModule } from "@angular/material/table";
@@ -8,6 +8,7 @@ import { SlicePipe } from "@angular/common";
     selector: 'app-animal-mood-table',
     templateUrl: './animal-mood-table.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ResponsiveTableComponent,
         SlicePipe,

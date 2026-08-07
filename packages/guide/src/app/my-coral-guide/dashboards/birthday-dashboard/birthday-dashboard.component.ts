@@ -1,4 +1,4 @@
-import { Component, input, output, ViewEncapsulation } from '@angular/core';
+import { Component, input, output, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { BirthdayDashboardEntry, MinimalItem, UiIcon } from "@ci/data-types";
 import { AddSpacesToPascalCasePipe } from "../../../shared/pipes/add-spaces-to-pascal-case.pipe";
 import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
@@ -18,6 +18,7 @@ import { TranslatePipe } from "@ngx-translate/core";
     templateUrl: './birthday-dashboard.component.html',
     styleUrl: './birthday-dashboard.component.scss',
     encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.Eager,
     host: {
         'class': 'flex flex-col gap-3'
     }

@@ -1,4 +1,4 @@
-import { Component, inject, input, output, signal } from '@angular/core';
+import { Component, inject, input, output, signal, ChangeDetectionStrategy } from '@angular/core';
 import { NgOptimizedImage } from "@angular/common";
 import { MinimalItem, MinimalTagBasedItem, Offering, OfferingAltar, Offerings } from "@ci/data-types";
 import { SettingsService } from "../../../shared/services/settings.service";
@@ -19,6 +19,7 @@ import { TranslatePipe } from "@ngx-translate/core";
         EntityKeyPipe,
         TranslatePipe
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './offering-group.component.html'
 })
 export class OfferingGroupComponent {

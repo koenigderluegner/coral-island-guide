@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, computed } from '@angular/core';
+import { AfterViewInit, Component, computed, ChangeDetectionStrategy } from '@angular/core';
 import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page.component';
 import { Item } from '@ci/data-types';
 import { FormGroup } from "@angular/forms";
@@ -19,6 +19,7 @@ import { NonSpecializedTableComponent } from "../../../shared/components/non-spe
     selector: 'app-found',
     templateUrl: './found.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ListDetailContainerComponent,
         DatabaseItemDetailsComponent,

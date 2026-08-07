@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { SettingsService } from '../shared/services/settings.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ToDoService } from '../core/services/to-do.service';
@@ -27,6 +27,7 @@ type SettingsFormGroup = {
     selector: 'app-settings',
     templateUrl: './settings.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         CardComponent,
         ReactiveFormsModule,

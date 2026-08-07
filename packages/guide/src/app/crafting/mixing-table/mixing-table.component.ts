@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ItemMixingRecipeData } from "@ci/data-types";
 import { BaseTableComponent } from "../../shared/components/base-table/base-table.component";
 import { KeyValuePipe } from "@angular/common";
@@ -27,6 +27,7 @@ import { TranslatePipe } from "@ngx-translate/core";
         MatTableModule,
         TranslatePipe
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './mixing-table.component.html'
 })
 export class MixingTableComponent extends BaseTableComponent<ItemMixingRecipeData> {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { BaseTabbedSelectableContainerComponent } from "../../../shared/components/base-tabbed-selectable-container/base-tabbed-selectable-container.component";
 import { MinimalItem, MinimalTagBasedItem, OfferingAltar } from "@ci/data-types";
 import { map, Observable } from "rxjs";
@@ -19,6 +19,7 @@ import { ListDetailContainerComponent } from "../../../shared/components/list-de
         OfferingGroupComponent,
         ListDetailContainerComponent
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './orchestra-zones.component.html'
 })
 export class OrchestraZonesComponent extends BaseTabbedSelectableContainerComponent<MinimalItem | MinimalTagBasedItem> {

@@ -1,14 +1,15 @@
 import {
-    booleanAttribute,
-    Component,
-    contentChild,
-    effect,
-    inject,
-    input,
-    signal,
-    TemplateRef,
-    untracked,
-    WritableSignal
+  booleanAttribute,
+  Component,
+  contentChild,
+  effect,
+  inject,
+  input,
+  signal,
+  TemplateRef,
+  untracked,
+  WritableSignal,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DatabaseService } from "../../services/database.service";
@@ -33,6 +34,7 @@ import { ChecklistToggles } from "./checklist-toggles";
 @Component({
     selector: 'app-database-item-details',
     templateUrl: './database-item-details.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         CommonModule,
         MatTooltipModule,

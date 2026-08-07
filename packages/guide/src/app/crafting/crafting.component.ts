@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { ItemProcessing, UiIcon } from '@ci/data-types';
 import { DatabaseService } from '../shared/services/database.service';
 import { Observable } from 'rxjs';
@@ -13,6 +13,7 @@ import { ModuleSidebarComponent } from "../shared/components/module-sidebar/modu
     selector: 'app-crafting',
     templateUrl: './crafting.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         SidebarContainerComponent,
         ModuleSidebarItemComponent,

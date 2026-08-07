@@ -1,4 +1,4 @@
-import { Component, contentChildren, signal, ViewEncapsulation } from '@angular/core';
+import { Component, contentChildren, signal, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { ModuleSidebarItemComponent } from '../module-sidebar-item/module-sidebar-item.component';
 import { RouterLink, RouterLinkActive } from "@angular/router";
 import { NgTemplateOutlet } from "@angular/common";
@@ -16,6 +16,7 @@ import { UiIconComponent } from "../ui-icon/ui-icon.component";
         UiIconComponent,
     ],
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     host: {
         'class': 'app-module-sidebar'
     }

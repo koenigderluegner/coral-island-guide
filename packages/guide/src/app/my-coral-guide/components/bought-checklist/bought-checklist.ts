@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { ReactiveFormsModule } from "@angular/forms";
 import { MatTab, MatTabGroup } from "@angular/material/tabs";
 import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
@@ -14,6 +14,7 @@ import { BuyAtComponent } from "../../../shared/components/database-item-details
 @Component({
     selector: 'app-bought-checklist',
     templateUrl: './bought-checklist.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         MatTab,
         ReactiveFormsModule,

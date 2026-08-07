@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { Requirement } from "@ci/data-types";
 import { ItemIconComponent } from "../item-icon/item-icon.component";
 import { RouterLink } from "@angular/router";
@@ -10,6 +10,7 @@ import { TranslatePipe } from "@ngx-translate/core";
     selector: 'app-requirements',
     templateUrl: './requirements.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ItemIconComponent,
         RouterLink,

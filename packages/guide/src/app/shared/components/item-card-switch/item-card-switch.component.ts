@@ -1,4 +1,4 @@
-import { Component, contentChild, input, TemplateRef } from '@angular/core';
+import { Component, contentChild, input, TemplateRef, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CustomEntry, MinimalTagBasedItem, Quality } from "@ci/data-types";
 import { DatabaseItemDetailsComponent } from "../database-item-details/database-item-details.component";
@@ -12,6 +12,7 @@ import { IsMinimalItemPipe } from "../../pipes/is-minimal-item.pipe";
 @Component({
     selector: 'app-item-card-switch',
     imports: [CommonModule, DatabaseItemDetailsComponent, DatabaseItemDetailsDirective, BaseItemCardComponent, IsMinimalItemPipe],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './item-card-switch.component.html'
 })
 export class ItemCardSwitchComponent {

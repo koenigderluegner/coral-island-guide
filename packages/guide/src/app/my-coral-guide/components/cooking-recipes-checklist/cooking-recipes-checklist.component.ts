@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { BaseItemChecklistComponent } from "../base-item-checklist.component";
 import { CookingRecipesChecklistService } from "../../../core/services/checklists/cooking-recipes-checklist.service";
 import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
@@ -16,6 +16,7 @@ import { TranslatePipe } from "@ngx-translate/core";
     selector: 'app-cooking-recipes-checklist',
     templateUrl: './cooking-recipes-checklist.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ListDetailContainerComponent,
         DatabaseItemDetailsComponent,

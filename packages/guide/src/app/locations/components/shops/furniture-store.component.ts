@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { AsyncPipe } from "@angular/common";
 import { ShopName } from "@ci/data-types";
 import { BaseFurnitureStoreComponent } from "../base-furniture-store/base-furniture-store.component";
@@ -24,6 +24,7 @@ import { ListDetailContainerComponent } from "../../../shared/components/list-de
         ShopItemDataDetailsComponent,
         ListDetailContainerComponent
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: '../base-furniture-store/base-furniture-store.component.html'
 })
 export class FurnitureStoreComponent extends BaseFurnitureStoreComponent {

@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, input, ChangeDetectionStrategy } from '@angular/core';
 import { TornPageData, UiIcon } from "@ci/data-types";
 import { ListDetailService } from "../../../shared/components/list-detail-container/list-detail.service";
 import { TornPageComponent } from "../torn-page/torn-page.component";
@@ -9,6 +9,7 @@ import { CardComponent } from "../../../shared/components/card/card.component";
     selector: 'app-torn-page-details',
     templateUrl: './torn-page-details.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         TornPageComponent,
         UiIconComponent,

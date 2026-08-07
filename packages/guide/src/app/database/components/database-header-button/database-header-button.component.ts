@@ -1,8 +1,9 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { ExpandableComponent } from "../../../shared/components/expandable/expandable.component";
 
 @Component({
     selector: 'app-database-header-button',
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './database-header-button.component.html',
 
 })

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.component";
 import { ExpandableComponent } from "../../../shared/components/expandable/expandable.component";
 import { DatabaseHeaderButtonComponent } from "../database-header-button/database-header-button.component";
@@ -8,6 +8,7 @@ import { FestivalShopItemTableComponent } from "../../../locations/components/ta
     selector: 'app-database-festival-shop-data',
     templateUrl: './database-festival-shop-data.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ExpandableComponent,
         DatabaseHeaderButtonComponent,

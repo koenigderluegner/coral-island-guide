@@ -1,4 +1,4 @@
-import { Component, computed, inject, input, output } from '@angular/core';
+import { Component, computed, inject, input, output, ChangeDetectionStrategy } from '@angular/core';
 import { ToDoService } from "../../../core/services/to-do.service";
 import { ToDoContext, ToDoContextDisplayNames } from "../../../core/types/to-do-context.type";
 import { ToDo } from "../../../core/types/to-do.type";
@@ -12,6 +12,7 @@ import { ToDoEntryBaseComponent } from "../to-do-entry-base/to-do-entry-base.com
     host: {
         '[class.hidden]': 'hidden()'
     },
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ToDoEntryBaseComponent
     ]

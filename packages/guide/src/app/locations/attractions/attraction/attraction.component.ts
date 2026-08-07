@@ -1,4 +1,4 @@
-import { Component, computed, inject, input } from '@angular/core';
+import { Component, computed, inject, input, ChangeDetectionStrategy } from '@angular/core';
 import { type Attraction, UiIcon } from "@ci/data-types";
 import { TranslatePipe } from "@ngx-translate/core";
 import { ItemIconComponent } from "../../../shared/components/item-icon/item-icon.component";
@@ -18,6 +18,7 @@ import { MaskedImageComponent } from "../../../shared/masked-image/masked-image.
         UiIconComponent,
         MaskedImageComponent
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './attraction.component.html'
 })
 export class AttractionComponent {

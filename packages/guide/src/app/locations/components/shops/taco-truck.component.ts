@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ShopName } from "@ci/data-types";
 import { BaseShopComponent } from "../base-shop/base-shop.component";
 import { AsyncPipe, CommonModule } from "@angular/common";
@@ -18,6 +18,7 @@ import { ShopItemProcessDataDetailsComponent } from "../shop-item-process-data-d
 @Component({
     selector: 'app-taco-truck',
     templateUrl: '../base-shop/base-shop.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [AsyncPipe, CommonModule, UiIconComponent, ListDetailContainerComponent, ItemUpgradeDetailsComponent, ItemUpgradeTableComponent, DataFilterComponent, ItemIconComponent, ShopItemProcessTableComponent, ShopItemDataTableComponent, OpeningHoursComponent, CardComponent, ShopItemDataDetailsComponent, ShopItemProcessDataDetailsComponent]
 })
 export class TacoTruckComponent extends BaseShopComponent {

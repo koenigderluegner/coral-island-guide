@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, inject, input } from '@angular/core';
+import { booleanAttribute, Component, inject, input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CookingRecipe } from "@ci/data-types";
 import { AddSpacesToPascalCasePipe } from "../../../pipes/add-spaces-to-pascal-case.pipe";
@@ -13,6 +13,7 @@ import { TranslatePipe } from "@ngx-translate/core";
 @Component({
     selector: 'app-cooking-recipe',
     imports: [CommonModule, AddSpacesToPascalCasePipe, RouterLink, ItemIconComponent, ItemListComponent, CookingRecipeIngredientsPipe, CastToMinimalItemArrayPipe, TranslatePipe],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './cooking-recipe.component.html'
 })
 export class CookingRecipeComponent {

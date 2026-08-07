@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { UiIcon } from '@ci/data-types';
 import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
 import { filter } from "rxjs";
@@ -11,6 +11,7 @@ import { SidebarContainerComponent } from "../shared/components/sidebar-containe
     selector: 'app-people',
     templateUrl: './npcs.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         RouterOutlet,
         ModuleSidebarItemComponent,

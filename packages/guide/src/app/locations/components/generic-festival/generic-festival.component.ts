@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import {
     FestivalData,
     FestivalDisplayNames,
@@ -29,6 +29,7 @@ import { HttpResourceRef } from "@angular/common/http";
     selector: 'app-generic-festival',
     templateUrl: './generic-festival.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         MatProgressSpinner,
         FestivalShopItemTableComponent,

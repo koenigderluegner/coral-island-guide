@@ -1,4 +1,4 @@
-import { Component, input, output, ViewEncapsulation } from '@angular/core';
+import { Component, input, output, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { GiftPreferences, MinimalItem, preferencesMap } from "@ci/data-types";
 import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
 import { InlineMinimalItemComponent } from "../../../shared/components/inline-minimal-item/inline-minimal-item.component";
@@ -13,6 +13,7 @@ import { AddSpacesToPascalCasePipe } from "../../../shared/pipes/add-spaces-to-p
         'class': 'gifting-preference-grid'
     },
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         UiIconComponent,
         InlineMinimalItemComponent,

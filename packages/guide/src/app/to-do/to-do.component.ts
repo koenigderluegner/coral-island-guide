@@ -1,4 +1,4 @@
-import { Component, effect, inject, linkedSignal, signal, untracked } from '@angular/core';
+import { Component, effect, inject, linkedSignal, signal, untracked, ChangeDetectionStrategy } from '@angular/core';
 import { ToDoService } from "../core/services/to-do.service";
 import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
@@ -26,6 +26,7 @@ import { UserDataService } from "../core/services/user-data.service";
             display: none;
         }
     `],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ToDoPartialComponent,
         MatSelect,

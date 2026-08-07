@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { FestivalShopItemData } from "@ci/data-types";
 import { RequirementsComponent } from "../../../shared/components/requirements/requirements.component";
 import { EffectComponent } from "../../../shared/components/effect/effect.component";
@@ -12,6 +12,7 @@ import { BaseItemCardComponent } from "../../../shared/components/base-item-card
     selector: 'app-festival-shop-item-details',
     templateUrl: './festival-shop-item-details.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         RequirementsComponent,
         EffectComponent,

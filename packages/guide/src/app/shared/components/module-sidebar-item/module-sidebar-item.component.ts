@@ -1,10 +1,11 @@
-import { booleanAttribute, Component, input, TemplateRef, viewChild, ViewEncapsulation } from '@angular/core';
+import { booleanAttribute, Component, input, TemplateRef, viewChild, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { UiIcon } from '@ci/data-types';
 import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-module-sidebar-item',
     templateUrl: './module-sidebar-item.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     encapsulation: ViewEncapsulation.None,
 })
 export class ModuleSidebarItemComponent {

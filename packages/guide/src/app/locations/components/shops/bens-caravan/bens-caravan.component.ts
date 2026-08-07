@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { BaseShopComponent } from "../../base-shop/base-shop.component";
 import { ShopName } from "@ci/data-types";
 import { UiIconComponent } from "../../../../shared/components/ui-icon/ui-icon.component";
@@ -18,6 +18,7 @@ import { AsyncPipe } from "@angular/common";
 @Component({
     selector: 'app-bens-caravan',
     templateUrl: '../../base-shop/base-shop.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         UiIconComponent,
         ListDetailContainerComponent,

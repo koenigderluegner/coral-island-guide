@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { BaseSelectableContainerComponent } from "../../shared/components/base-selectable-container/base-selectable-container.component";
 import { ItemMixingRecipeData } from "@ci/data-types";
 import { DatabaseItemDetailsComponent } from "../../shared/components/database-item-details/database-item-details.component";
@@ -17,6 +17,7 @@ import { ItemIconComponent } from "../../shared/components/item-icon/item-icon.c
         ListDetailContainerComponent,
         ItemIconComponent
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './mixing.component.html'
 })
 export class MixingComponent extends BaseSelectableContainerComponent<ItemMixingRecipeData> {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { PetShopAdoptions, ShopItemData, UiIcon } from "@ci/data-types";
 import { combineLatest, map, Observable } from "rxjs";
 import { BaseSelectableContainerComponent } from "../../../shared/components/base-selectable-container/base-selectable-container.component";
@@ -17,6 +17,7 @@ import { ShopItemDataTableComponent } from "../tables/shop-item-data-table/shop-
     selector: 'app-pet-shop',
     templateUrl: './pet-shop.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         CardComponent,
         PetAdoptionDetailsComponent,

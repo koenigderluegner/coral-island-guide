@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { BaseSelectableContainerComponent } from "../../../shared/components/base-selectable-container/base-selectable-container.component";
 import { MeritExchangeShopData, UiIcon } from "@ci/data-types";
 import { Observable } from "rxjs";
@@ -13,6 +13,7 @@ import { AsyncPipe } from "@angular/common";
     selector: 'app-merit-shop',
     templateUrl: './merit-shop.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         UiIconComponent,
         CardComponent,

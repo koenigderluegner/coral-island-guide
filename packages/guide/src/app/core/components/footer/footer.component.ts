@@ -1,4 +1,4 @@
-import { Component, inject, ViewEncapsulation } from '@angular/core';
+import { Component, inject, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { UiIcon } from "@ci/data-types";
 import { GameVersionService } from "../../injection-tokens/version.injection-token";
 import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
@@ -18,6 +18,7 @@ import { NgOptimizedImage } from "@angular/common";
         'class': 'app-footer'
     },
     encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         UiIconComponent,
         RouterLink,

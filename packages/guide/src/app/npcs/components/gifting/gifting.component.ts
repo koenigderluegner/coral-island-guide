@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal, viewChild, ViewEncapsulation } from '@angular/core';
+import { Component, computed, inject, signal, viewChild, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { DatabaseService } from '../../../shared/services/database.service';
 import { forkJoin, Observable, of, switchMap } from 'rxjs';
 import { GiftPreferences, MinimalItem, NPC, UiIcon } from '@ci/data-types';
@@ -31,6 +31,7 @@ type CombinedGiftPreference = {
     styleUrls: ['./gifting.component.scss'],
     encapsulation: ViewEncapsulation.None,
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         GiftingGridComponent,
         CardComponent,

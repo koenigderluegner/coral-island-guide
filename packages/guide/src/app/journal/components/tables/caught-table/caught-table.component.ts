@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { Critter, Fish, FishSpawnSettings } from '@ci/data-types';
 import { addSpacesToPascalCase, critterSizeMap, getTruthyValues, rarityMap } from '@ci/util';
 import { BaseTableComponent } from "../../../../shared/components/base-table/base-table.component";
@@ -15,6 +15,7 @@ import { TranslatePipe } from "@ngx-translate/core";
     templateUrl: './caught-table.component.html',
     encapsulation: ViewEncapsulation.None,
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ResponsiveTableComponent,
         MatSort,

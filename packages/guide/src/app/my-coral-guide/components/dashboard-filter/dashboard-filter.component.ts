@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { Seasons, Weathers } from "@ci/data-types";
 import { FormGroup, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatFormField, MatLabel } from "@angular/material/form-field";
@@ -21,6 +21,7 @@ import { addDays } from "@ci/util";
         MatCheckbox,
         MatInput,
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './dashboard-filter.component.html'
 })
 export class DashboardFilterComponent {

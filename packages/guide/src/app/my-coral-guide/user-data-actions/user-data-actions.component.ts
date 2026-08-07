@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, linkedSignal, untracked } from '@angular/core';
+import { Component, computed, effect, inject, linkedSignal, untracked, ChangeDetectionStrategy } from '@angular/core';
 import { MatFormField, MatLabel } from "@angular/material/form-field";
 import { MatOption, MatSelect } from "@angular/material/select";
 import { MatMenu, MatMenuItem, MatMenuTrigger } from "@angular/material/menu";
@@ -25,6 +25,7 @@ import { UiIcon } from "@ci/data-types";
         MatMenuItem
     ],
     templateUrl: './user-data-actions.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     host: {
         'class': 'inline-flex gap-2 items-start flex-wrap'
     }

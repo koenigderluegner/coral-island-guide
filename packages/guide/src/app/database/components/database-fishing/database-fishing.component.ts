@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { BaseDatabaseDetailPartComponent } from "../base-database-detail-part.component";
 import { Fish } from "@ci/data-types";
 import { CaughtTableComponent } from "../../../journal/components/tables/caught-table/caught-table.component";
@@ -10,6 +10,7 @@ import { ExpandableComponent } from "../../../shared/components/expandable/expan
     templateUrl: './database-fishing.component.html',
     encapsulation: ViewEncapsulation.None,
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         CaughtTableComponent,
         DatabaseHeaderButtonComponent,

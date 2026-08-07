@@ -1,4 +1,4 @@
-import { Component, computed, inject, input, ViewEncapsulation } from "@angular/core";
+import { Component, computed, inject, input, ViewEncapsulation, ChangeDetectionStrategy } from "@angular/core";
 import { BoughtChecklistService } from "../../../core/services/checklists/bought-checklist.service";
 import { CookingRecipesChecklistService } from "../../../core/services/checklists/cooking-recipes-checklist.service";
 import { OfferingChecklistService } from "../../../core/services/checklists/offering-checklist.service";
@@ -19,6 +19,7 @@ import { UiIconComponent } from "../ui-icon/ui-icon.component";
     host: {
         class: 'flex flex-col border border-2 border-[#EDE6DB] rounded-lg overflow-hidden *:flex *:justify-end *:items-stretch *:min-w-[130px] [&_span]:border-y-2 [&_span]:flex [&_span]:items-center [&_span]:border-t-[#EDE6DB] [&_span]:border-b-transparent [&_span]:h-10 [&_span]:px-2 [&_span]:grow [&>button:first-child>span]:border-t-transparent'
     },
+    changeDetection: ChangeDetectionStrategy.Eager,
     encapsulation: ViewEncapsulation.None
 })
 export class ChecklistToggles {

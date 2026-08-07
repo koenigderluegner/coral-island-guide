@@ -1,4 +1,4 @@
-import { Component, input, numberAttribute } from '@angular/core';
+import { Component, input, numberAttribute, ChangeDetectionStrategy } from '@angular/core';
 import { DecimalPipe } from "@angular/common";
 
 @Component({
@@ -6,6 +6,7 @@ import { DecimalPipe } from "@angular/common";
     templateUrl: './money.component.html',
     styleUrls: ['./money.component.scss'],
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         DecimalPipe
     ]

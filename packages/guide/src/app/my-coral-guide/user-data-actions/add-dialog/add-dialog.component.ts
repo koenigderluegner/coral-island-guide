@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import {
     MatDialogActions,
     MatDialogClose,
@@ -26,6 +26,7 @@ import { UiIcon } from "@ci/data-types";
         ReactiveFormsModule,
         UiIconComponent
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './add-dialog.component.html'
 })
 export class AddDialogComponent {

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { BaseSelectableContainerComponent } from "../../../shared/components/base-selectable-container/base-selectable-container.component";
 import { Enemy } from "@ci/data-types";
 import { DatabaseService } from "../../../shared/services/database.service";
@@ -12,6 +12,7 @@ import { MatProgressSpinner } from "@angular/material/progress-spinner";
 @Component({
     selector: 'app-bestiary',
     templateUrl: './bestiary.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         BestiaryDetailsComponent,
         ListDetailContainerComponent,

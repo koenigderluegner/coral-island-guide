@@ -1,4 +1,4 @@
-import { Component, inject, input, ViewEncapsulation } from '@angular/core';
+import { Component, inject, input, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { Enemy, UiIcon } from "@ci/data-types";
 import { ListDetailService } from "../../../shared/components/list-detail-container/list-detail.service";
 import { FullSizeImageComponent } from "../../../shared/components/full-size-image/full-size-image.component";
@@ -14,6 +14,7 @@ import { TranslatePipe } from '@ngx-translate/core';
     templateUrl: './bestiary-details.component.html',
     encapsulation: ViewEncapsulation.Emulated,
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FullSizeImageComponent,
         ItemIconComponent,

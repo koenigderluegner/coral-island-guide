@@ -1,10 +1,11 @@
-import { booleanAttribute, Component, computed, inject, input, ViewEncapsulation } from '@angular/core';
+import { booleanAttribute, Component, computed, inject, input, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { SettingsService } from "../../services/settings.service";
 
 @Component({
     selector: 'app-full-size-image',
     templateUrl: './full-size-image.component.html',
     encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.Eager,
     host: {
         'class': 'full-size-image'
     }

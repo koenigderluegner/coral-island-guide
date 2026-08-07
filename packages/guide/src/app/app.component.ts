@@ -1,4 +1,4 @@
-import { afterNextRender, Component, inject } from '@angular/core';
+import { afterNextRender, Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { DatabaseService } from './shared/services/database.service';
 import { combineLatest, Observable } from 'rxjs';
 import { ChangelogService } from "./changelog/changelog.service";
@@ -18,6 +18,7 @@ import { AvailableLanguage, AvailableLanguages } from "@ci/data-types";
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         HeaderComponent,
         AsyncPipe,

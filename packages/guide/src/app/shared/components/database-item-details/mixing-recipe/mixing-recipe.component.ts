@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { ItemMixingRecipeData } from "@ci/data-types";
 import { KeyValuePipe } from "@angular/common";
 import { ItemListComponent } from "../../item-list/item-list.component";
@@ -17,6 +17,7 @@ import { TranslatePipe } from "@ngx-translate/core";
         CastToMinimalItemArrayPipe,
         TranslatePipe,
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './mixing-recipe.component.html'
 })
 export class MixingRecipeComponent {

@@ -1,8 +1,9 @@
-import { booleanAttribute, Component, input, linkedSignal } from '@angular/core';
+import { booleanAttribute, Component, input, linkedSignal, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'app-expandable',
     templateUrl: './expandable.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styles: [':host{display: block}'],
 
 })

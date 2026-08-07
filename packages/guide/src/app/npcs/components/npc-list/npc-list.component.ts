@@ -1,4 +1,4 @@
-import { Component, computed, inject, viewChild, ViewEncapsulation } from '@angular/core';
+import { Component, computed, inject, viewChild, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { DatabaseService } from "../../../shared/services/database.service";
 import { UiIcon } from "@ci/data-types";
 import { toSignal } from "@angular/core/rxjs-interop";
@@ -21,6 +21,7 @@ import { addSpacesToPascalCase } from "@ci/util";
     styleUrls: ['./npc-list.component.scss'],
     encapsulation: ViewEncapsulation.None,
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         RouterLink,
         NpcFilterComponent,

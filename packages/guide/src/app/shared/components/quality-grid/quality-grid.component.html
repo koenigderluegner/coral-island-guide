@@ -8,10 +8,10 @@
     @if (includePrices()) {
 
         <app-money [amount]="item().sellPrice" class="text-black"/>
-        <app-money [amount]="item().qualities.bronze?.sellPrice" class="text-black"/>
-        <app-money [amount]="item().qualities.silver?.sellPrice" class="text-black"/>
-        <app-money [amount]="item().qualities.gold?.sellPrice" class="text-black"/>
-        <app-money [amount]="item().qualities.osmium?.sellPrice" class="text-black"/>
+        <app-money [amount]="$safeNavigationMigration(item().qualities.bronze?.sellPrice)" class="text-black"/>
+        <app-money [amount]="$safeNavigationMigration(item().qualities.silver?.sellPrice)" class="text-black"/>
+        <app-money [amount]="$safeNavigationMigration(item().qualities.gold?.sellPrice)" class="text-black"/>
+        <app-money [amount]="$safeNavigationMigration(item().qualities.osmium?.sellPrice)" class="text-black"/>
 
     }
 

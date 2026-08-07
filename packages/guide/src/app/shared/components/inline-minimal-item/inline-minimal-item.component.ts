@@ -1,4 +1,4 @@
-import { Component, input, ViewEncapsulation } from '@angular/core';
+import { Component, input, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { MinimalItem } from '@ci/data-types';
 import { ItemIconComponent } from "../item-icon/item-icon.component";
 import { TranslatePipe } from "@ngx-translate/core";
@@ -13,6 +13,7 @@ import { TranslatePipe } from "@ngx-translate/core";
         TranslatePipe
     ],
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     host: {
         'class': 'app-inline-minimal-item'
     }

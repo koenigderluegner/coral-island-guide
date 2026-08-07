@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { MuseumChecklistService } from "../../../core/services/checklists/museum-checklist.service";
 import { BaseItemChecklistComponent } from "../base-item-checklist.component";
 import { ListDetailContainerComponent } from "../../../shared/components/list-detail-container/list-detail-container.component";
@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from "@angular/forms";
     selector: 'app-museum-checklist',
     templateUrl: './museum-checklist.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ListDetailContainerComponent,
         DatabaseItemDetailsComponent,

@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, input, ChangeDetectionStrategy } from '@angular/core';
 import { UiIcon } from '@ci/data-types';
 import { MappedAnimalShopData } from "../../types/mapped-animal-shop-data.type";
 import { ListDetailService } from "../../../shared/components/list-detail-container/list-detail.service";
@@ -18,6 +18,7 @@ import { MatTooltip } from "@angular/material/tooltip";
     selector: 'app-animal-details',
     templateUrl: './animal-details.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         CardComponent,
         UiIconComponent,

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { AnimalProduceComponent } from "../animal-produce/animal-produce.component";
 import { CookingRecipeComponent } from "../cooking-recipe/cooking-recipe.component";
 import { CropComponent } from "../crop/crop.component";
@@ -12,6 +12,7 @@ import { DatabaseItem } from "@ci/data-types";
     selector: 'app-offering',
     imports: [AnimalProduceComponent, CookingRecipeComponent, CropComponent, FishComponent, InsectComponent, ProcessingComponent, ShopProcessingResultComponent],
     templateUrl: './offering.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styles: `:host {
         display: flex;
         gap: 1rem;

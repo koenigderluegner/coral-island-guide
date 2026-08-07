@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import { DatabaseService } from "../../shared/services/database.service";
 import { TranslatePipe } from "@ngx-translate/core";
 import { SettingsService } from "../../shared/services/settings.service";
@@ -17,6 +17,7 @@ import { ConfigService } from "../../core/services/config.service";
         ListDetailContainerComponent,
         AttractionComponent
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './attractions.component.html'
 })
 export class AttractionsComponent extends BaseTabbedSelectableContainerComponent<Attraction> {

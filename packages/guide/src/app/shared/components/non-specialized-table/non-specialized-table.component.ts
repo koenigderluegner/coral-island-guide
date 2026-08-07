@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { BaseTableComponent } from "../base-table/base-table.component";
 import { Item } from "@ci/data-types";
 import { ItemIconComponent } from "../item-icon/item-icon.component";
@@ -12,6 +12,7 @@ import { TranslatePipe } from "@ngx-translate/core";
     selector: 'app-non-specialized-table',
     templateUrl: './non-specialized-table.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ItemIconComponent,
         ResponsiveTableComponent,

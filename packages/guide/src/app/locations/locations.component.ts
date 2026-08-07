@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import {
     FestivalDisplayNames,
     FestivalIcons,
@@ -20,6 +20,7 @@ import { ModuleSidebarComponent } from "../shared/components/module-sidebar/modu
     selector: 'app-locations',
     templateUrl: './locations.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         SidebarContainerComponent,
         ModuleSidebarComponent,

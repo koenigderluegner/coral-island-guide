@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import {
     MAT_DIALOG_DATA,
     MatDialogActions,
@@ -22,6 +22,7 @@ import { SettingsService } from "../../shared/services/settings.service";
         MatCheckbox
     ],
     templateUrl: './changelog-dialog.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styles: `
         :host {
             --mat-dialog-subhead-weight: 700;

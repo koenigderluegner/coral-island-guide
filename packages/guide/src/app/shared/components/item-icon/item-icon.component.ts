@@ -1,4 +1,4 @@
-import { Component, inject, input, numberAttribute, ViewEncapsulation } from '@angular/core';
+import { Component, inject, input, numberAttribute, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { Quality } from '@ci/data-types';
 import { SettingsService } from '../../services/settings.service';
 import { GameVersionService } from "../../../core/injection-tokens/version.injection-token";
@@ -13,6 +13,7 @@ import { RarityIconComponent } from "../rarity-icon/rarity-icon.component";
         RarityIconComponent
     ],
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     host: {
         'class': 'app-item-icon'
     }

@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, input, ChangeDetectionStrategy } from '@angular/core';
 import { MailData, UiIcon } from "@ci/data-types";
 import { ListDetailService } from "../../../shared/components/list-detail-container/list-detail.service";
 import { CardComponent } from "../../../shared/components/card/card.component";
@@ -10,6 +10,7 @@ import { EffectComponent } from "../../../shared/components/effect/effect.compon
     selector: 'app-mail-details',
     templateUrl: './mail-details.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         CardComponent,
         UiIconComponent,

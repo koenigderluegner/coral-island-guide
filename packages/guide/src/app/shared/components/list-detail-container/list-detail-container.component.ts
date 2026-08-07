@@ -1,12 +1,13 @@
 import {
-    booleanAttribute,
-    ChangeDetectorRef,
-    Component,
-    effect,
-    inject,
-    input,
-    OnDestroy,
-    viewChild
+  booleanAttribute,
+  ChangeDetectorRef,
+  Component,
+  effect,
+  inject,
+  input,
+  OnDestroy,
+  viewChild,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { UiIcon } from '@ci/data-types';
@@ -18,6 +19,7 @@ import { ListDetailService } from "./list-detail.service";
     templateUrl: './list-detail-container.component.html',
     styleUrl: './list-detail-container.component.scss',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         MatSidenavContent,
         MatSidenav,

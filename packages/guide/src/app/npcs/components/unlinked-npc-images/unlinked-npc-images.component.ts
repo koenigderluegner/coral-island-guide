@@ -1,4 +1,4 @@
-import { Component, inject, ViewEncapsulation } from '@angular/core';
+import { Component, inject, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { CardComponent } from "../../../shared/components/card/card.component";
 import { UiIconComponent } from "../../../shared/components/ui-icon/ui-icon.component";
 import { NpcPortraitComponent } from "../../../shared/components/npc-portrait/npc-portrait.component";
@@ -23,6 +23,7 @@ import { ExpandableComponent } from "../../../shared/components/expandable/expan
         DatabaseHeaderButtonComponent,
         ExpandableComponent,
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     host: {
         class: 'block px-main-hz py-main-vt w-full'
     }

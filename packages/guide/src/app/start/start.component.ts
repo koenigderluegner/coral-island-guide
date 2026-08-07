@@ -1,4 +1,4 @@
-import { Component, inject, signal, ViewEncapsulation } from '@angular/core';
+import { Component, inject, signal, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from "@angular/common/http";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
@@ -12,6 +12,7 @@ import { CardComponent } from "../shared/components/card/card.component";
     templateUrl: './start.component.html',
     imports: [CommonModule, MatProgressSpinnerModule, MarkdownComponent, CardComponent],
     encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.Eager,
     host: {
         'class': 'app-start container block mx-auto my-10'
     }

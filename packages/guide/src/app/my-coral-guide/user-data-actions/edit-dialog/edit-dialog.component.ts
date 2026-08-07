@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import {
     MAT_DIALOG_DATA,
     MatDialogActions,
@@ -28,6 +28,7 @@ import { UserData } from "../../../core/types/user-data.type";
         UiIconComponent,
         ReactiveFormsModule
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './edit-dialog.component.html'
 })
 export class EditDialogComponent {

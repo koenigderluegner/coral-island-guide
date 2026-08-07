@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, computed, inject, Injector, input } from '@angular/core';
+import { booleanAttribute, Component, computed, inject, Injector, input, ChangeDetectionStrategy } from '@angular/core';
 import {
     CustomEntry,
     DatabaseItem,
@@ -37,6 +37,7 @@ type ItemEntry = Item | MinimalItem | CustomEntry | MinimalTagBasedItem;
     selector: 'app-base-item-card',
     templateUrl: './base-item-card.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         CardComponent,
         ToDoToggleComponent,

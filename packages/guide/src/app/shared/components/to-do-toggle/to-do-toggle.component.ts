@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, input, ChangeDetectionStrategy } from '@angular/core';
 import { ToDoContext } from "../../../core/types/to-do-context.type";
 import { ToDoService } from "../../../core/services/to-do.service";
 import { ItemEntry } from "../../types/item-entry.type";
@@ -12,6 +12,7 @@ import { UiIconComponent } from "../ui-icon/ui-icon.component";
         MatTooltip,
         UiIconComponent,
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './to-do-toggle.component.html'
 })
 export class ToDoToggleComponent {

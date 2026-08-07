@@ -3,7 +3,7 @@
         <table [dataSource]="matDataSource" mat-table matSort>
             <ng-container matColumnDef="icon" sticky>
                 <td *matCellDef="let element" class="!pl-2 !pr-0  w-10 text-center icon-col " mat-cell>
-                    <app-item-icon [itemName]="element.dropData[0]?.item?.iconName"/>
+                    <app-item-icon [itemName]="$safeNavigationMigration(element.dropData[0]?.item?.iconName)"/>
                 </td>
             </ng-container>
 
@@ -12,7 +12,7 @@
                     Output
                 </th>
                 <td *matCellDef="let element" class="text-col whitespace-nowrap"
-                    mat-cell>{{ element.dropData[0]?.item.displayName | translate }}
+                    mat-cell>{{ $safeNavigationMigration(element.dropData[0]?.item.displayName) | translate }}
                 </td>
             </ng-container>
 
@@ -54,7 +54,7 @@
                 <th *matHeaderCellDef class="whitespace-nowrap" mat-header-cell mat-sort-header> Seed</th>
                 <td *matCellDef="let element" class="text-col whitespace-nowrap" mat-cell>
                     <div class="flex gap-x-3 items-center">
-                        <app-item-icon [itemName]="element.item?.iconName" class="!w-7"/>
+                        <app-item-icon [itemName]="$safeNavigationMigration(element.item?.iconName)" class="!w-7"/>
                         {{ element.readableName }}
                     </div>
                 </td>
@@ -71,7 +71,7 @@
             <ng-container matColumnDef="sellPrice">
                 <th *matHeaderCellDef class="whitespace-nowrap" mat-header-cell mat-sort-header> Sell price</th>
                 <td *matCellDef="let element" class="text-col !text-right w-[1%]" mat-cell>
-                    <app-money [amount]="element.dropData[0]?.item?.sellPrice"/>
+                    <app-money [amount]="$safeNavigationMigration(element.dropData[0]?.item?.sellPrice)"/>
                 </td>
             </ng-container>
 

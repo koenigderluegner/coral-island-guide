@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, ChangeDetectionStrategy } from '@angular/core';
 import { BaseJournalPageComponent } from '../base-journal-page/base-journal-page.component';
 import { BaseCrop, Crop, FruitPlant, FruitTree, Item, MinimalItem, Season, Seasons } from '@ci/data-types';
 import { combineLatest, of, switchMap } from 'rxjs';
@@ -21,6 +21,7 @@ import { CropTableComponent } from "../tables/crop-table/crop-table.component";
     selector: 'app-produce',
     templateUrl: './produce.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         ListDetailContainerComponent,
         ProduceDetailsComponent,

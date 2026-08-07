@@ -9,7 +9,7 @@
         @for (offering of offeringAltar().offerings; track offering) {
             <div (click)="activeOffering = offering"
 
-                 [class.bg-merino-300]="(activeOffering?.title  | translate) === (offering.title | translate)"
+                 [class.bg-merino-300]="($safeNavigationMigration(activeOffering?.title)  | translate) === (offering.title | translate)"
                  class="rounded-lg bg-merino flex flex-col items-center gap-4 px-4 py-8 hover:bg-merino-200">
                 <img alt="{{offering.title | translate}} offering icon" height="128"
                      ngSrc="{{bundleAssetPath() + offering.imageName}}.webp"

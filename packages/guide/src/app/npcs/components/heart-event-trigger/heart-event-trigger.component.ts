@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, input, ChangeDetectionStrategy } from '@angular/core';
 import { HeartEvent } from "@ci/data-types";
 import { HeartEventsChecklistService } from "../../../core/services/checklists/heart-events-checklist.service";
 import { RequirementsComponent } from "../../../shared/components/requirements/requirements.component";
@@ -19,6 +19,7 @@ import { TranslatePipe } from "@ngx-translate/core";
         MatCheckbox,
         TranslatePipe
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     host: {
         'class': 'block text-md font-semibold',
     }

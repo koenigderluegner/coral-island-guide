@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { ShopItemData } from "@ci/data-types";
 import { DecimalPipe } from "@angular/common";
 import { TownrankPipe } from "../../../shared/pipes/townrank.pipe";
@@ -12,6 +12,7 @@ import { RequirementsComponent } from "../../../shared/components/requirements/r
     selector: 'app-shop-item-data-details',
     templateUrl: './shop-item-data-details.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         DecimalPipe,
         TownrankPipe,

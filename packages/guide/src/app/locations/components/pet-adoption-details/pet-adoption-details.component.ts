@@ -1,4 +1,4 @@
-import { Component, computed, inject, input } from '@angular/core';
+import { Component, computed, inject, input, ChangeDetectionStrategy } from '@angular/core';
 import { PetShopAdoptions, UiIcon } from "@ci/data-types";
 import { DatabaseService } from "../../../shared/services/database.service";
 import { MoneyComponent } from "../../../shared/components/money/money.component";
@@ -10,6 +10,7 @@ import { TranslatePipe } from "@ngx-translate/core";
     selector: 'app-pet-adoption-details',
     templateUrl: './pet-adoption-details.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         MoneyComponent,
         NpcPortraitComponent,

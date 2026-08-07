@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import { BaseSelectableContainerComponent } from "../base-selectable-container/base-selectable-container.component";
 import { MatTabChangeEvent } from "@angular/material/tabs";
 import { Router } from "@angular/router";
@@ -10,6 +10,7 @@ export interface BaseTabbedSelectableContainerComponent<T> {
 }
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.Eager,
     template: '',
 
 })

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { OpeningHours } from "@ci/data-types";
 import { KeyValuePipe } from "@angular/common";
 import { IngameTimePipe } from "../../../shared/pipes/ingame-time.pipe";
@@ -8,6 +8,7 @@ import { IngameTimePipe } from "../../../shared/pipes/ingame-time.pipe";
     templateUrl: './opening-hours.component.html',
     styleUrls: ['./opening-hours.component.scss'],
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         KeyValuePipe,
         IngameTimePipe

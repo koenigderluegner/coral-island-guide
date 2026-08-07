@@ -1,4 +1,4 @@
-import { Component, effect, input } from '@angular/core';
+import { Component, effect, input, ChangeDetectionStrategy } from '@angular/core';
 import { Critter, Fish } from '@ci/data-types';
 import { ToDoContext } from "../../../core/types/to-do-context.type";
 import { InsectComponent } from "../../../shared/components/database-item-details/insect/insect.component";
@@ -10,6 +10,7 @@ import { DatabaseItemDetailsDirective } from "../../../shared/directives/databas
     selector: 'app-caught-details',
     templateUrl: './caught-details.component.html',
 
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         InsectComponent,
         FishComponent,
